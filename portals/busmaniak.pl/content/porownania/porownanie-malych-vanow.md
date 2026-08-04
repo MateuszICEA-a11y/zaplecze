@@ -31,7 +31,7 @@ sources:
 ---
 ## Małe vany – czym się różnią?
 
-Segment małych vanów dostawczych w Europie jest zdominowany przez dwie konkurujące platformy technologiczne. Z jednej strony mamy grupę pojazdów koncernu Stellantis: Citroën Berlingo, Peugeot Partner, Fiat Doblò, a także Opel Combo i Toyota ProAce City. Z drugiej stoi samodzielna konstrukcja Renault – model Kangoo.
+Segment małych vanów dostawczych w Europie jest zdominowany przez dwie konkurujące platformy technologiczne. Z jednej strony mamy grupę pojazdów koncernu Stellantis: Citroën Berlingo, Peugeot Partner, Fiat Doblò, a także Opel Combo i Toyota ProAce City. Z drugiej strony stoi samodzielna konstrukcja Renault – model Kangoo.
 
 Kluczem do zrozumienia tego segmentu jest właśnie przynależność platformowa. Pojazdy z rodziny Stellantis bazują na tej samej architekturze EMP2, co oznacza identyczne wymiary, silniki i większość podzespołów. Renault Kangoo, oparty na platformie [CMF-C/D](https://en.wikipedia.org/wiki/Renault%E2%80%93Nissan_Common_Module_Family), stanowi dla nich jedyną realną alternatywę konstrukcyjną.
 
@@ -43,7 +43,7 @@ Kluczem do zrozumienia tego segmentu jest właśnie przynależność platformowa
 | Bliźniak | Partner, Doblò IV, Combo, ProAce City | Mercedes Citan, Nissan Townstar | Berlingo, Doblò IV, Combo, ProAce City | Berlingo, Partner, Combo, ProAce City |
 | Produkcja | Vigo (Hiszpania) | Maubeuge (Francja) | Vigo (Hiszpania) | Vigo (Hiszpania) |
 
-W praktyce więc porównanie sprowadza się do starcia dwóch koncepcji: jednej, niezwykle popularnej konstrukcji Stellantis, sprzedawanej pod pięcioma markami, oraz jej francuskiego rywala od Renault i jego technologicznych bliźniaków.
+W praktyce porównanie sprowadza się więc do starcia dwóch koncepcji: niezwykle popularnej konstrukcji Stellantis, sprzedawanej pod pięcioma markami, oraz francuskiego rywala Renault i jego technologicznych bliźniaków.
 
 ## Citroën Berlingo – wygodny bestseller
 
@@ -60,28 +60,28 @@ Jeśli priorytetem jest komfort kierowcy podczas długich tras, Berlingo często
 
 ## Renault Kangoo – nowa generacja na platformie CMF
 
-Kangoo III z 2021 roku jest jedynym autem w zestawieniu, które nie ma powiązań ze Stellantisem. Bazuje na platformie CMF-C/D, co oznacza inną konstrukcję zawieszenia, inną architekturę elektryczną i gamę silnikową Renault.
+Kangoo III z 2021 roku jest jedynym autem w zestawieniu, które nie ma powiązań ze Stellantisem. Bazuje na platformie CMF-C/D, co oznacza inną konstrukcję zawieszenia, inną architekturę elektryczną i odrębną gamę silnikową Renault.
 
-Największym atutem nowego Kangoo jest rekordowa przestrzeń ładunkowa. Wersja L2 (Maxi) oferuje objętość do 4,9 m³, co jest wartością nieosiągalną dla konkurencji. Renault uzyskał ten wynik dzięki niemal pionowym ścianom bocznym ładowni i zoptymalizowanym nadkolom.
+Największym atutem nowego Kangoo jest rekordowa przestrzeń ładunkowa. Wersja L2 (Maxi) oferuje objętość do 4,9 m³, co jest wartością nieosiągalną dla konkurencji. Renault osiągnął ten wynik dzięki niemal pionowym ścianom bocznym ładowni i zoptymalizowanym nadkolom.
 
 Kangoo III wprowadził też innowacyjne rozwiązanie Open Sesame by Renault. Jest to system pozbawiony słupka B po stronie pasażera, co tworzy boczny otwór załadunkowy o rekordowej szerokości 1446 mm. Ułatwia to załadunek długich i nieporęcznych przedmiotów.
 
-{{% info title="Open Sesame" icon="engineering" %}}System Open Sesame eliminuje słupek B po stronie pasażera, ale wymaga rezygnacji z bocznych drzwi przesuwanych po tej stronie. W zamian zyskujesz boczny otwór załadunkowy niemal 1,5 m szerokości – przydatny przy załadunku mebli czy sprzętu budowlanego.{{% /info %}}
+{{% info title="Open Sesame" icon="engineering" %}}System Open Sesame eliminuje słupek B po stronie pasażera, ale wymaga rezygnacji z bocznych drzwi przesuwnych po tej stronie. W zamian zyskujesz boczny otwór załadunkowy niemal 1,5 m szerokości – przydatny przy załadunku mebli czy sprzętu budowlanego.{{% /info %}}
 
-Warto jednak zauważyć, że Kangoo ma nieco węższe drzwi tylne niż jego konkurenci ze Stellantis i wyżej umieszczony próg załadunku. Te detale mogą mieć znaczenie w codziennej pracy kurierskiej.
+Warto jednak zauważyć, że Kangoo ma nieco węższe drzwi tylne i wyżej umieszczony próg załadunku niż modele z grupy Stellantis. Te detale mogą mieć znaczenie w codziennej pracy kurierskiej.
 
 ## Peugeot Partner – bliźniak Berlingo z lwim pazurem
 
-Partner III to techniczny brat bliźniak Berlingo, bazujący na tej samej platformie EMP2, tych samych silnikach i oferujący identyczną przestrzeń ładunkową. Różnice sprowadzają się do stylistyki oraz filozofii projektowania wnętrza.
+Partner III to techniczny brat bliźniak Berlingo, bazujący na tej samej platformie EMP2 i tych samych silnikach oraz oferujący identyczną przestrzeń ładunkową. Różnice sprowadzają się do stylistyki oraz filozofii projektowania wnętrza.
 
-Peugeot konsekwentnie stosuje swój i-Cockpit, charakteryzujący się małą kierownicą i zegarami umieszczonymi ponad nią. To rozwiązanie ma zwolenników doceniających sportową pozycję, jak i przeciwników narzekających na zasłanianie wskaźników przez wieniec kierownicy.
+Peugeot konsekwentnie stosuje swój i-Cockpit, charakteryzujący się małą kierownicą i zegarami umieszczonymi ponad nią. To rozwiązanie ma zarówno zwolenników doceniających sportową pozycję, jak i przeciwników narzekających na zasłanianie wskaźników przez wieniec kierownicy.
 
 Warianty długości są identyczne jak w Citroënie:
 
 - **Partner Standard** – 3,3 m³, ładowność do 900 kg
 - **Partner Long** – 3,9 m³, ładowność do 1000 kg
 
-Cenowo Partner często bywa pozycjonowany nieco niżej od Berlingo przy porównywalnym wyposażeniu. Sieć dealerska Peugeota w Polsce jest bardzo rozbudowana, co ułatwia dostęp do serwisu.
+Cenowo Partner często wypada nieco korzystniej niż Berlingo przy porównywalnym wyposażeniu. Sieć dealerska Peugeota w Polsce jest bardzo rozbudowana, co ułatwia dostęp do serwisu.
 
 Ostateczny wybór między Partnerem a Berlingo to głównie kwestia indywidualnych preferencji dotyczących kokpitu oraz dostępności i cen u lokalnych dealerów.
 
@@ -95,7 +95,7 @@ To samo dotyczy Opla Combo oraz Toyoty ProAce City, które uzupełniają rodzin�
 
 Atutem Doblò pozostaje rozpoznawalność marki Fiat Professional i rozbudowana sieć serwisowa, doceniana przez firmy transportowe. Podobnie jak w przypadku Partnera, ceny Fiata bywają konkurencyjne w stosunku do Citroëna.
 
-Kupując używanego vana, należy pamiętać o odróżnieniu generacji Doblò. Modele produkowane do 2022 roku to zupełnie inna konstrukcja, z innymi silnikami i częściami.
+Kupując używanego vana, należy pamiętać o rozróżnieniu generacji Doblò. Modele produkowane do 2022 roku to zupełnie inna konstrukcja, z innymi silnikami i częściami.
 
 ## Porównanie wymiarów i ładowności małych vanów
 
@@ -111,7 +111,7 @@ Kupując używanego vana, należy pamiętać o odróżnieniu generacji Doblò. M
 
 Grupa vanów Stellantis (Berlingo, Partner, Doblò IV, Combo, ProAce City) ma identyczne wymiary, ponieważ korzysta z tego samego nadwozia. Na ich tle wyróżnia się Renault Kangoo w wersji Maxi, oferując aż 4,9 m³ objętości ładunkowej. To wynik nieosiągalny dla konkurencji z platformy EMP2 i kluczowy atut, jeśli priorytetem jest przestrzeń.
 
-Z kolei modele Stellantis w wersjach przedłużonych (XL/Long) mogą zabrać na pokład do 1000 kg ładunku. Kangoo oferuje maksymalnie ok. 850 kg, co może być ograniczeniem przy transporcie cięższych materiałów.
+Z kolei modele Stellantis w wersjach przedłużonych (XL/Long) mogą zabrać do 1000 kg ładunku. Kangoo oferuje maksymalnie ok. 850 kg, co może być ograniczeniem przy transporcie cięższych materiałów.
 
 ## Silniki i spalanie kompaktowych dostawczaków
 
@@ -130,7 +130,7 @@ Renault Kangoo III ma własną gamę jednostek napędowych:
 
 W 2024 roku cała rodzina elektrycznych vanów Stellantis przeszła lifting. Wprowadzono nową baterię LFP o pojemności 50 kWh i standardową pompę ciepła, co zwiększyło realny zasięg z ok. 275 km do 330–340 km w cyklu WLTP. Zmieniono też stylistykę frontu i wprowadzono nowy system multimedialny.
 
-{{% expert name="Marek Kowalczyk" %}}W codziennej eksploatacji kurierskiej najlepszy stosunek dynamiki do spalania oferuje silnik 1.5 BlueHDi 130 KM z automatem EAT8. Średnie zużycie na poziomie 5,5–6,5 l/100 km w cyklu mieszanym jest w pełni osiągalne. Kangoo z dieslem 1.5 dCi spala podobne ilości paliwa, ale subiektywnie lepiej radzi sobie pod dużym obciążeniem dzięki charakterystyce momentu obrotowego.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}W codziennej eksploatacji kurierskiej najlepszy stosunek dynamiki do spalania oferuje silnik 1.5 BlueHDi 130 KM z automatem EAT8. Średnie zużycie na poziomie 5,5–6,5 l/100 km w cyklu mieszanym jest w pełni realne. Kangoo z dieslem 1.5 dCi spala podobne ilości paliwa, ale subiektywnie lepiej radzi sobie pod dużym obciążeniem dzięki charakterystyce momentu obrotowego.{{% /expert %}}
 
 | Silnik | Berlingo/Partner/Doblò | Kangoo |
 |--------|----------------------|--------|
@@ -161,10 +161,10 @@ Przy zakupie używanego vana z silnikiem 1.5 BlueHDi należy zwrócić szczegól
 
 Odpowiedź zależy od priorytetów. Oto krótki przewodnik:
 
-- **Maksymalna objętość ładowni** – Renault Kangoo Maxi (4,9 m³). Jedyny wybór, gdy potrzebujesz przestrzeni zbliżonej do większych vanów, jak Renault Trafic.
+- **Maksymalna objętość ładowni** – Renault Kangoo Maxi (4,9 m³). Jedyny wybór, gdy potrzebujesz przestrzeni zbliżonej do większych vanów, takich jak Renault Trafic.
 - **Komfort kierowcy** – Citroën Berlingo, tradycyjnie stawiający na komfort jazdy. Najlepszy wybór na dłuższe trasy.
-- **Najniższa cena zakupu** – Zazwyczaj Peugeot Partner, Fiat Doblò lub Opel Combo. Oferują identyczną technikę jak Berlingo, ale często w atrakcyjniejszej cenie.
+- **Najniższa cena zakupu** – Zazwyczaj Peugeot Partner, Fiat Doblò lub Opel Combo. Oferują tę samą technikę co Berlingo, ale często w atrakcyjniejszej cenie.
 - **Tani serwis i części** – Cała rodzina Stellantis. Wspólna baza części oznacza ogromną dostępność zamienników i niskie ceny.
-- **Załadunek niestandardowy** – Kangoo z systemem Open Sesame. Boczny otwór 1446 mm bez słupka B to unikalna i bardzo praktyczna cecha.
+- **Załadunek niestandardowy** – Kangoo z systemem Open Sesame. Boczny otwór 1446 mm bez słupka B to wyjątkowa i bardzo praktyczna cecha.
 
 Grupa vanów Stellantis to bezpieczny i racjonalny wybór – sprawdzona konstrukcja, niskie koszty serwisu i ogromna podaż na rynku. Kangoo III to ciekawa alternatywa dla firm, które potrzebują rekordowej przestrzeni ładunkowej lub cenią innowacyjne rozwiązania Renault. Każdy z tych pojazdów sprawdzi się jako solidne narzędzie pracy.

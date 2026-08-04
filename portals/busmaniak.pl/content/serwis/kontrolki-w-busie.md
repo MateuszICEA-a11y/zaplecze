@@ -13,18 +13,18 @@ image: "/images/kontrolki-w-busie-hero.webp"
 image_alt: "Deska rozdzielcza busa dostawczego z podświetlonymi kontrolkami ostrzegawczymi w różnych kolorach"
 youtube: "8ah9jovavMM"
 youtube_title: "Co oznaczają kontrolki na desce rozdzielczej?"
-lead: "Współczesny bus dostawczy ma na desce rozdzielczej 30–50 kontrolek – od znanych ikon oleju i temperatury po specyficzne symbole DPF, AdBlue czy przeciążenia osi. Czerwona kontrolka oznacza natychmiastowe zatrzymanie, żółta wymaga uwagi, a zielona jedynie informuje. W tym artykule znajdziesz kompletną listę kontrolek z opisami, ich znaczenie w busach oraz schemat postępowania, gdy zapali się ostrzeżenie."
+lead: "Współczesny bus dostawczy ma na desce rozdzielczej 30–50 kontrolek – od znanych ikon oleju i temperatury po specyficzne symbole DPF, AdBlue czy przeciążenia osi. Czerwona kontrolka oznacza natychmiastowe zatrzymanie, żółta wymaga uwagi, a zielona jedynie informuje. W tym artykule znajdziesz kompletną listę kontrolek z opisami, ich znaczenie w busach oraz schemat postępowania, gdy zapali się kontrolka ostrzegawcza."
 faq:
   - question: "Co oznacza żółta kontrolka trójkąta z wykrzyknikiem w busie?"
     answer: "Żółty trójkąt z wykrzyknikiem to ogólna kontrolka ostrzegawcza – informuje, że w systemie pojazdu wystąpił problem. Szczegóły wyświetlane są na ekranie komputera pokładowego. Może oznaczać niski poziom płynu spryskiwacza, zużyte klocki hamulcowe lub inny problem wymagający uwagi."
   - question: "Czy mogę jechać dalej, gdy zapali się żółta kontrolka?"
     answer: "Zazwyczaj tak – żółte kontrolki oznaczają problem, który nie wymaga natychmiastowego zatrzymania. Możesz dojechać do celu lub serwisu, ale nie ignoruj ostrzeżenia na dłuższą metę. Wyjątek: żółta kontrolka temperatury oleju – w tym przypadku zmniejsz obciążenie silnika."
   - question: "Co zrobić, gdy zapali się czerwona kontrolka oleju?"
-    answer: "Natychmiast zjedź na pobocze i wyłącz silnik. Sprawdź poziom oleju bagnetem – jeśli jest poniżej minimum, dolej olej. Nie uruchamiaj silnika bez uzupełnienia oleju, bo praca na sucho nawet w kilkadziesiąt sekund prowadzi do zatarcia."
+    answer: "Natychmiast zjedź na pobocze i wyłącz silnik. Sprawdź poziom oleju bagnetem – jeśli jest poniżej minimum, dolej olej. Nie uruchamiaj silnika bez uzupełnienia oleju, bo praca na sucho nawet przez kilkadziesiąt sekund prowadzi do zatarcia."
   - question: "Dlaczego kontrolki w busie zapalają się po przekręceniu kluczyka?"
-    answer: "To normalny autotest – po włączeniu zapłonu (przed uruchomieniem silnika) wszystkie kontrolki zapalają się na 3–5 sekund, a następnie gasną. Sprawdzasz w ten sposób, czy żarówki kontrolek są sprawne. Jeśli któraś nie gaśnie po starcie – oznacza to realny problem."
+    answer: "To normalny autotest – po włączeniu zapłonu (przed uruchomieniem silnika) wszystkie kontrolki zapalają się na 3–5 sekund, a następnie gasną. W ten sposób sprawdzasz, czy żarówki kontrolek są sprawne. Jeśli któraś nie gaśnie po uruchomieniu silnika – oznacza to rzeczywisty problem."
   - question: "Co oznacza migająca kontrolka check engine w busie?"
-    answer: "Migająca kontrolka check engine (w odróżnieniu od stałego świecenia) oznacza aktywne uszkodzenie wymagające natychmiastowej reakcji – najczęściej wypadanie zapłonów, które mogą uszkodzić katalizator lub filtr DPF. Zmniejsz obroty i jedź do najbliższego serwisu."
+    answer: "Migająca kontrolka check engine (w odróżnieniu od stałego świecenia) oznacza poważną usterkę wymagającą natychmiastowej reakcji – najczęściej wypadanie zapłonów, które może uszkodzić katalizator lub filtr DPF. Zmniejsz obroty i jedź do najbliższego serwisu."
 sources:
   - "OtoMoto.pl – kontrolki w samochodzie – co oznaczają (2025)"
   - "Rankomat.pl – pełna lista kontrolek i ich znaczenie"
@@ -48,11 +48,11 @@ Wyjątki od reguły natychmiastowego zatrzymania:
 
 ### Żółte / pomarańczowe kontrolki – UWAGA
 
-Żółta kontrolka oznacza problem wymagający uwagi, ale pozwalający na kontynuowanie jazdy do serwisu. Nie ignoruj żółtych kontrolek – z czasem problem się pogłębia i może przerodzić się w awarię krytyczną.
+Żółta kontrolka oznacza problem wymagający uwagi, ale pozwalający kontynuować jazdę do serwisu. Nie ignoruj żółtych kontrolek – z czasem problem się pogłębia i może przerodzić się w awarię krytyczną.
 
 ### Zielone i niebieskie kontrolki – INFO
 
-Kontrolki informacyjne potwierdzają aktywność funkcji – kierunkowskazy, światła mijania, tempomat, tryb ECO. Nie wymagają reakcji.
+Kontrolki informacyjne potwierdzają włączenie funkcji – kierunkowskazy, światła mijania, tempomat, tryb ECO. Nie wymagają reakcji.
 
 | Kolor | Znaczenie | Reakcja |
 | :--- | :--- | :--- |
@@ -79,7 +79,7 @@ Czerwone kontrolki w busie dostawczym to sygnały, na które musisz reagować na
 - **Kierownica z wykrzyknikiem** – usterka wspomagania kierownicy. W busach z elektrycznym wspomaganiem (EPS) kierownica staje się bardzo ciężka – w busie ważącym 3 tony to poważny problem.
 
 {{% info title="Autotest kontrolek" icon="info" %}}
-Po włączeniu zapłonu (przed startem silnika) wszystkie kontrolki powinny zapalić się na 3–5 sekund – to autotest. Jeśli któraś kontrolka nie świeci podczas testu, jej żarówka może być spalona, a Ty nie dowiesz się o awarii. W nowszych busach z wyświetlaczem LED ten problem nie występuje.
+Po włączeniu zapłonu (przed uruchomieniem silnika) wszystkie kontrolki powinny zapalić się na 3–5 sekund – to autotest. Jeśli któraś kontrolka nie świeci podczas testu, jej żarówka może być spalona, a Ty nie dowiesz się o awarii. W nowszych busach z wyświetlaczem LED ten problem nie występuje.
 {{% /info %}}
 
 ## Żółte kontrolki – kompletna lista {#zolte}
@@ -94,15 +94,15 @@ Po włączeniu zapłonu (przed startem silnika) wszystkie kontrolki powinny zapa
 - **EDC (napis EDC)** – często spotykana w Iveco Daily i starszych Mercedesach kontrolka systemu Electronic Diesel Control. Jest odpowiednikiem Check Engine dla układu wtryskowego i doładowania. Jej pojawienie się często skutkuje natychmiastowym ograniczeniem mocy silnika do 30–50%.
 - **DPF (filtr z kropkami)** – filtr cząstek stałych wymaga regeneracji. Przejedź 20–30 km autostradą na wyższych obrotach. Jeśli nie zareagujesz, filtr się zapcha i silnik przejdzie w tryb awaryjny. Szczegóły w artykule [wypalanie DPF](/serwis/wypalanie-dpf/).
 - **[AdBlue](/serwis/adblue/) (zbiornik z kroplą)** – niski poziom płynu AdBlue. Uzupełnij w ciągu 2400 km – po wyczerpaniu AdBlue silnik nie odpali po kolejnym wyłączeniu.
-- **Świece żarowe (spirala)** – aktywna w dieslu po włączeniu zapłonu (normalne). Jeśli świeci podczas jazdy – usterka systemu wstępnego podgrzewania. W wielu busach (np. VW Crafter, T6) migająca "sprężynka" oznacza ogólną awarię sterowania silnikiem, analogiczną do Check Engine i zwiastuje tryb awaryjny.
-- **Woda w filtrze paliwa (dystrybutor z kroplami)** – krytyczna dla diesli kontrolka (np. w Ducato, Master) informująca o wodzie na dnie filtra paliwa. Zatrzymaj się i spuść wodę korkiem spustowym pod filtrem. Dalsza jazda grozi zniszczeniem układu wtryskowego (koszt naprawy 6–8 tys. zł).
+- **Świece żarowe (spirala)** – aktywna w dieslu po włączeniu zapłonu (normalne). Jeśli świeci podczas jazdy – usterka systemu wstępnego podgrzewania. W wielu busach (np. VW Crafter, T6) migająca „sprężynka” oznacza ogólną awarię sterowania silnikiem, analogiczną do Check Engine, i zwiastuje tryb awaryjny.
+- **Woda w filtrze paliwa (dystrybutor z kroplami)** – kontrolka krytyczna dla diesli (np. w Ducato, Master), informująca o wodzie na dnie filtra paliwa. Zatrzymaj się i spuść wodę korkiem spustowym pod filtrem. Dalsza jazda grozi zniszczeniem układu wtryskowego (koszt naprawy 6–8 tys. zł).
 
 ### Układ hamulcowy i bezpieczeństwo
 
 - **ESP / ESC (samochód na śliskiej)** – miganie = ESP aktywnie stabilizuje pojazd (normalne na śliskiej nawierzchni). Stałe świecenie = ESP wyłączone lub niesprawne.
-- **ABS (napis ABS w kole)** – układ ABS niesprawny. Hamulce działają, ale bez wspomagania antyblokadowego – na śliskiej nawierzchni droga hamowania się wydłuża.
+- **ABS (napis ABS w kole)** – układ ABS niesprawny. Hamulce działają, ale bez funkcji antyblokadowej – na śliskiej nawierzchni droga hamowania się wydłuża.
 - **ABS + ESP jednocześnie** – usterka czujnika prędkości obrotowej koła (najczęściej korozja czujnika lub uszkodzony kabel).
-- **Zużyte klocki hamulcowe (koło z klockiem)** – klocki osiągnęły minimalną grubość. W załadowanym busie margines bezpieczeństwa to ok. 300–500 km zanim dojdzie do uszkodzenia tarcz hamulcowych.
+- **Zużyte klocki hamulcowe (koło z klockiem)** – klocki osiągnęły minimalną grubość. W załadowanym busie margines bezpieczeństwa to ok. 300–500 km, zanim dojdzie do uszkodzenia tarcz hamulcowych.
 
 ### Pozostałe żółte kontrolki
 
@@ -123,7 +123,7 @@ Kontrolki informacyjne nie wymagają reakcji – potwierdzają, że dana funkcja
 - **Kierunkowskazy (strzałki)** – lewy lub prawy kierunkowskaz aktywny. Migają synchronicznie z lampami.
 - **Światła mijania (reflektor z ukośnymi liniami)** – światła mijania włączone.
 - **Tempomat (prędkościomierz ze strzałką)** – tempomat aktywny i utrzymuje zadaną prędkość.
-- **Tryb ECO (napis ECO)** – ekonomiczny styl jazdy. W busach z automatem (9G-Tronic, ZF 8HP) wskazuje tryb oszczędny skrzyni.
+- **Tryb ECO (napis ECO)** – ekonomiczny styl jazdy. W busach z automatem (9G-Tronic, ZF 8HP) wskazuje oszczędny tryb pracy skrzyni biegów.
 
 ### Niebieskie
 
@@ -136,7 +136,7 @@ Busy dostawcze mają kilka kontrolek, których nie znajdziesz w osobówkach. Wyn
 
 ### Drzwi boczne przesuwane
 
-Kontrolka otwartych drzwi bocznych to standard, ale w autach dostawczych ma dodatkowe znaczenie. Jazda z uchylonymi drzwiami grozi utratą ładunku. Nowsze modele z automatycznymi skrzyniami biegów (np. Sprinter W907) mogą przy otwartych drzwiach bocznych automatycznie włączyć elektroniczny hamulec postojowy lub zablokować możliwość zmiany biegu na "Drive".
+Kontrolka otwartych drzwi bocznych to standard, ale w autach dostawczych ma dodatkowe znaczenie. Jazda z uchylonymi drzwiami grozi utratą ładunku. Nowsze modele z automatycznymi skrzyniami biegów (np. Sprinter W907) mogą przy otwartych drzwiach bocznych automatycznie włączyć elektroniczny hamulec postojowy lub zablokować możliwość zmiany biegu na „Drive”.
 
 ### Kontrolka przeciążenia
 
@@ -146,19 +146,19 @@ Busy z zawieszeniem pneumatycznym (Iveco Daily, Mercedes Sprinter 5xx) mają czu
 
 W busach z pneumatyką (opcja w Sprinterze i Daily) żółta kontrolka oznacza tryb załadunkowy lub wyrównywanie poziomu, a czerwona – usterkę kompresora lub wyciek powietrza z mieszka.
 
-Warto też zwrócić uwagę na alerty z tachografu, jeśli pojazd go posiada (np. praca z przyczepą i DMC zespołu > 3.5t). Pomarańczowa litera "T" lub ikona wykrzyknika na zegarach może sygnalizować brak karty kierowcy, błąd czujnika lub przekroczenie dozwolonego czasu jazdy.
+Warto też zwrócić uwagę na ostrzeżenia z tachografu, jeśli pojazd go posiada (np. przy pracy z przyczepą, gdy DMC zespołu przekracza 3,5 t). Pomarańczowa litera „T” lub ikona wykrzyknika na zegarach może sygnalizować brak karty kierowcy, błąd czujnika lub przekroczenie dozwolonego czasu jazdy.
 
 
 {{% youtube %}}
 
-## Schemat postępowania – co robić gdy zapali się kontrolka {#schemat}
+## Schemat postępowania – co robić, gdy zapali się kontrolka {#schemat}
 
-Zamiast pamiętać 50 symboli, wystarczy zapamiętać prosty schemat decyzyjny oparty na kolorze kontrolki.
+Zamiast pamiętać 50 symboli, wystarczy zapamiętać prosty schemat postępowania oparty na kolorze kontrolki.
 
 ### Algorytm reakcji
 
 1.  **Określ kolor kontrolki** – czerwona, żółta czy zielona?
-2.  **Czerwona** – dotyczy oleju, temperatury lub hamulców? Tak → natychmiastowy zjazd na pobocze. Nie (pasy, drzwi) → zareaguj bez zatrzymywania.
+2.  **Czerwona** – dotyczy oleju, temperatury lub hamulców? Tak → natychmiast zjedź na pobocze. Nie (pasy, drzwi) → zareaguj bez zatrzymywania.
 3.  **Żółta** – silnik pracuje normalnie? Tak → jedź do serwisu w ciągu 1–2 dni. Nie → zmniejsz obroty i jedź ostrożnie.
 4.  **Zielona/niebieska** – kontrolka informacyjna, nie wymaga reakcji.
 5.  **Po dotarciu do celu** – zanotuj kontrolkę i okoliczności (zimny silnik, po rozgrzaniu, konkretna prędkość) – to pomoże mechanikowi w diagnostyce.
@@ -170,7 +170,7 @@ Nie próbuj dojechać do serwisu, jeśli:
 - Temperatura płynu chłodniczego przekracza 120°C i rośnie.
 - Kontrolka oleju nie gaśnie po dolaniu oleju do normy.
 - Układ hamulcowy sygnalizuje awarię, a pedał hamulca jest miękki.
-- Silnik przeszedł w tryb awaryjny i nie rozwija prędkości powyżej 50 km/h na drodze szybkiego ruchu.
+- Silnik przeszedł w tryb awaryjny i nie pozwala rozpędzić się powyżej 50 km/h na drodze szybkiego ruchu.
 
 Więcej o konkretnych kontrolkach znajdziesz w dedykowanych artykułach – [kontrolka oleju](/serwis/kontrolka-oleju/), [kontrolka silnika](/serwis/kontrolka-silnika/) i [kontrolki Fiat Ducato](/serwis/kontrolki-fiat-ducato/). Jeśli problem dotyczy [AdBlue](/serwis/adblue/), sprawdź osobny poradnik – system SCR ma własną logikę ostrzeżeń z odliczaniem kilometrów do blokady silnika.
 

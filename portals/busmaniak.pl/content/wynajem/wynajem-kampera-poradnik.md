@@ -20,7 +20,7 @@ faq:
   - question: "Czy mogę wynająć kampera mając 18 lat?"
     answer: "Większość wypożyczalni wymaga ukończenia 21 lat i minimum 2 lat posiadania prawa jazdy kat. B. Część firm podnosi granicę do 23 lub 25 lat. Warto sprawdzić warunki konkretnej wypożyczalni."
   - question: "Co się stanie, jeśli uszkodzę kampera w trakcie podróży?"
-    answer: "Drobne szkody (zarysowania, uszkodzenia wnętrza) są pokrywane z kaucji – wypożyczalnia potrąca koszt naprawy. Większe szkody komunikacyjne idą z polisy OC/AC kampera. Zawsze zrób zdjęcia i zgłoś szkodę wypożyczalni telefonicznie."
+    answer: "Drobne szkody (zarysowania, uszkodzenia wnętrza) są pokrywane z kaucji – wypożyczalnia potrąca koszt naprawy. Większe szkody komunikacyjne pokrywa polisa OC/AC kampera. Zawsze zrób zdjęcia i zgłoś szkodę wypożyczalni telefonicznie."
 sources:
   - "Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy)"
   - "Rankomat.pl"
@@ -30,16 +30,16 @@ sources:
 
 ## Na co zwrócić uwagę przed wynajmem kampera
 
-Zanim zarezerwujesz termin, musisz odpowiedzieć sobie na trzy pytania – ile osób jedzie, jaką trasę planujesz i jaki masz budżet. Od tego zależy typ kampera, a typ kampera determinuje cenę, komfort i styl podróżowania.
+Zanim zarezerwujesz termin, musisz odpowiedzieć sobie na trzy pytania – ile osób jedzie, jaką trasę planujesz i jaki masz budżet. Od tego zależy typ kampera, a typ kampera decyduje o cenie, komforcie i stylu podróżowania.
 
 **Typ kampera a liczba osób:**
 
-- **Camper van (2–3 osoby)** – kompaktowy, łatwy w prowadzeniu, tańszy w wynajmie (250–600 zł/dobę). Idealny dla par i solo podróżników. Klasyczne camper vany (tzw. furgony) posiadają w pełni funkcjonalną łazienkę z toaletą – jej brak to domena mniejszych miejskich minivanów (urban camperów).
-- **Półintegra (2–4 osoby)** – złoty środek. Pełne zaplecze sanitarne, rozsądne wymiary (6–7 m), dobra relacja cena/przestrzeń.
+- **Camper van (2–3 osoby)** – kompaktowy, łatwy w prowadzeniu, tańszy w wynajmie (250–600 zł/dobę). Idealny dla par i osób podróżujących samotnie. Klasyczne camper vany (tzw. furgony) posiadają w pełni funkcjonalną łazienkę z toaletą – jej brak to domena mniejszych miejskich minivanów (urban camperów).
+- **Półintegra (2–4 osoby)** – złoty środek. Pełne zaplecze sanitarne, rozsądne wymiary (6–7 m), dobry stosunek ceny do przestrzeni.
 - **Alkowa (4–6 osób)** – łóżko nad kabiną kierowcy oznacza więcej miejsc do spania bez rozkładania. Najlepszy wybór dla rodzin z dziećmi.
 - **Integra (2–4 osoby)** – premium: najlepsza izolacja, cichy silnik, najwyższy komfort, ale i najwyższa cena.
 
-Sezon ma znaczenie. W lipcu i sierpniu ceny wynajmu kampera rosną o 30–50% względem maja czy września. Minimalny okres rezerwacji w szczycie sezonu to zwykle 7 dni, a popularne terminy (długi weekend majowy, wakacje) rezerwuje się 3–6 miesięcy wcześniej. Jeśli masz elastyczność – wynajem w czerwcu lub wrześniu oznacza niższe ceny, mniejszy tłok na kempingach i łagodniejszą pogodę.
+Sezon ma znaczenie. W lipcu i sierpniu ceny wynajmu kampera rosną o 30–50% względem maja czy września. Minimalny okres rezerwacji w szczycie sezonu to zwykle 7 dni, a popularne terminy (długi weekend majowy, wakacje) rezerwuje się 3–6 miesięcy wcześniej. Jeśli dysponujesz elastycznym terminem – wynajem w czerwcu lub wrześniu oznacza niższe ceny, mniejszy tłok na kempingach i łagodniejszą pogodę.
 
 ## Dokumenty i wymagania – co przygotować
 
@@ -61,9 +61,9 @@ Praktycznie każda wypożyczalnia dolicza do ceny najmu jednorazową opłatę se
 
 Więcej o przepisach dotyczących prawa jazdy przeczytasz w [poradniku o prawie jazdy kategorii B](/przepisy/prawo-jazdy-kategoria-b/).
 
-## Odbieranie kampera – checklist na dzień odbioru
+## Odbieranie kampera – lista kontrolna na dzień odbioru
 
-Dzień odbioru to moment, w którym decyduje się, czy Twój wyjazd będzie bezproblemowy. Pośpiech jest Twoim wrogiem – zarezerwuj na odbiór minimum 60–90 minut.
+Dzień odbioru to moment, w którym rozstrzyga się, czy Twój wyjazd będzie bezproblemowy. Pośpiech jest Twoim wrogiem – zarezerwuj na odbiór minimum 60–90 minut.
 
 ![Wynajem kampera – odbiór pojazdu z wypożyczalni](/images/wynajem-kampera-poradnik-hero.webp)
 
@@ -77,17 +77,17 @@ Dzień odbioru to moment, w którym decyduje się, czy Twój wyjazd będzie bezp
 
 **Fotodokumentacja stanu pojazdu** to absolutna konieczność. Obejdź kampera dookoła i sfotografuj każdą rysę, wgniecenie, odprysk lakieru. Wewnątrz zwróć uwagę na tapicerkę, blaty kuchenne, drzwiczki szafek i rolety okienne. Zdjęcia z datą i godziną to Twoje jedyne zabezpieczenie przed naliczeniem szkód, których nie spowodowałeś.
 
-Upewnij się, co wchodzi w skład standardowego wyposażenia. Garnki, talerze, sztućce oraz zewnętrzny stolik z krzesłami często oferowane są jako dodatkowo płatny „pakiet kempingowy” (150–300 zł). Własną pościel, poduszki lub śpiwory oraz ręczniki należy zabrać ze sobą.
+Upewnij się, co wchodzi w skład standardowego wyposażenia. Garnki, talerze, sztućce oraz zewnętrzny stolik z krzesłami często oferowane są w ramach dodatkowo płatnego „pakietu kempingowego” (150–300 zł). Własną pościel, poduszki lub śpiwory oraz ręczniki należy zabrać ze sobą.
 
-{{% info title="Checklist odbioru kampera" icon="checklist" %}}
+{{% info title="Lista kontrolna odbioru kampera" icon="checklist" %}}
 Sprawdź: poziom paliwa (pełny bak?), stan opon i ciśnienie, działanie wszystkich świateł, poziom płynu AdBlue, kompletność apteczki i trójkąta, obecność klina pod koło, kabel 230V, wąż do napełniania wody, klucz do koła zapasowego. Każdy brak zgłoś i wpisz do protokołu.
 {{% /info %}}
 
 ## Jazda kamperem po raz pierwszy – praktyczne wskazówki
 
-Pierwsza godzina za kierownicą kampera bywa stresująca, ale po kilkudziesięciu kilometrach większość osób stwierdza, że to łatwiejsze niż się spodziewali. Kilka zasad, które ułatwią start.
+Pierwsza godzina za kierownicą kampera bywa stresująca, ale po kilkudziesięciu kilometrach większość osób stwierdza, że to łatwiejsze, niż się spodziewała. Kilka zasad, które ułatwią start.
 
-**Wymiary pojazdu.** Zapamiętaj trzy liczby – wysokość (zwykle 2,7–3,2 m), szerokość (2,2–2,35 m) i długość (5,4–7,5 m, zależnie od typu). Wysokość jest krytyczna – nie przejedziesz pod każdym wiaduktem i przez każdy parking wielopoziomowy. Pamiętaj też, że gabaryty wpływają na portfel – wysokość powyżej 3 metrów może drastycznie podnieść opłaty za autostrady we Francji, a długość ponad 6 metrów zwielokrotnić koszt promów w Norwegii.
+**Wymiary pojazdu.** Zapamiętaj trzy liczby – wysokość (zwykle 2,7–3,2 m), szerokość (2,2–2,35 m) i długość (5,4–7,5 m, zależnie od typu). Wysokość ma kluczowe znaczenie – nie przejedziesz pod każdym wiaduktem i przez każdy parking wielopoziomowy. Pamiętaj też, że gabaryty wpływają na portfel – wysokość powyżej 3 metrów może znacznie podnieść opłaty za autostrady we Francji, a długość ponad 6 metrów zwielokrotnić koszt promów w Norwegii.
 
 **Ładowność i DMC.** Kluczowym parametrem jest dopuszczalna masa całkowita. Kampery do 3,5 t mają ograniczoną ładowność – duży pojazd z wyposażeniem, paliwem i pełnym, 120-litrowym zbiornikiem wody może ważyć 3300 kg, pozostawiając margines tylko dla dwóch osób bez bagażu. Przeładowanie jest plagą i bywa surowo karane.
 
@@ -95,11 +95,11 @@ Inspekcje wagowe w Austrii, Niemczech czy Szwajcarii są bezwzględne, a mandaty
 
 **Parkowanie tyłem.** Kamper nie ma tylnej szyby (w alkowie i integrze) lub ma bardzo ograniczoną widoczność. Korzystaj z lusterek i poproś pasażera o naprowadzanie. Wiele nowych kamperów ma kamerę cofania – jeśli Twój ją ma, przetestuj ją na parkingu wypożyczalni.
 
-**Tankowanie.** Kampery bazują na silnikach diesla i spalają 10–14 l/100 km (camper vany 8–10 l). Wlew paliwa bywa po prawej lub lewej stronie – sprawdź przed pierwszym tankowaniem. Zbiornik to zwykle 75–90 litrów, co daje zasięg 500–800 km.
+**Tankowanie.** Kampery wyposażone są w silniki diesla i spalają 10–14 l/100 km (camper vany 8–10 l). Wlew paliwa bywa po prawej lub lewej stronie – sprawdź przed pierwszym tankowaniem. Zbiornik to zwykle 75–90 litrów, co daje zasięg 500–800 km.
 
-**Opróżnianie toalety kasetowej.** Kasetka WC mieści 15–20 litrów i przy użytkowaniu przez 2–4 osoby wymaga opróżniania co 2–3 dni. Na kempingach szukaj stanowiska oznaczonego „cassette disposal" lub „WC chemiczne". Procedura trwa 5 minut – wyciągnij kasetkę z klapy serwisowej na zewnątrz kampera, opróżnij, wypłucz, dodaj płyn chemiczny i gotowe.
+**Opróżnianie toalety kasetowej.** Kasetka WC mieści 15–20 litrów i przy użytkowaniu przez 2–4 osoby wymaga opróżniania co 2–3 dni. Na kempingach szukaj stanowiska oznaczonego „cassette disposal” lub „WC chemiczne”. Procedura trwa 5 minut – wyciągnij kasetkę z klapy serwisowej na zewnątrz kampera, opróżnij, wypłucz, dodaj płyn chemiczny i gotowe.
 
-**Szara woda.** Zbiornik na brudną wodę z kuchni i prysznica (80–120 l) opróżniasz przez zawór pod podwoziem na stanowisku „grey water" na kempingu. Nie wylewaj jej na trawę – to niezgodne z regulaminem większości obiektów.
+**Szara woda.** Zbiornik na brudną wodę z kuchni i prysznica (80–120 l) opróżniasz przez zawór pod podwoziem na stanowisku „grey water” na kempingu. Nie wylewaj jej na trawę – to niezgodne z regulaminem większości obiektów.
 
 **Nocleg poza kempingiem.** W Polsce nie ma jednoznacznego zakazu noclegu w kamperze na parkingach, ale gminy mogą to regulować lokalnie. Bezpieczne opcje to oznakowane parkingi dla kamperów (coraz więcej przy atrakcjach turystycznych) i aplikacje typu Park4Night czy Camper Contact.
 
@@ -112,7 +112,7 @@ Dzień zwrotu decyduje o tym, czy odzyskasz pełną kaucję. Większość potrą
 
 **Pełny bak paliwa.** Kampera odbierasz z pełnym bakiem i z pełnym go oddajesz. Zatankuj na ostatniej stacji przed wypożyczalnią i zachowaj paragon – niektóre firmy doliczają karę za brakujące paliwo po zawyżonej stawce.
 
-**Czystość pojazdu.** Umowa najczęściej wymaga zwrotu „w stanie czystości odpowiadającym odbiorowi". W praktyce oznacza to: odkurzenie wnętrza, umycie naczyń, wyczyszczenie kuchenki i lodówki, umycie podłogi. Mycie zewnętrzne zwykle nie jest wymagane, ale za brudne wnętrze naliczana jest opłata 200–500 zł.
+**Czystość pojazdu.** Umowa najczęściej wymaga zwrotu „w stanie czystości odpowiadającym odbiorowi”. W praktyce oznacza to: odkurzenie wnętrza, umycie naczyń, wyczyszczenie kuchenki i lodówki, umycie podłogi. Mycie zewnętrzne zwykle nie jest wymagane, ale za brudne wnętrze naliczana jest opłata 200–500 zł.
 
 {{% expert name="Marek Kowalczyk" %}}
 Najczęstszym powodem potrąceń z kaucji nie są wypadki drogowe, tylko uszkodzenia wnętrza – urwane zawiasy szafek, pęknięte rolety, zabrudzenia tapicerki, które nie schodzą. Koszt takich napraw to 1000–2000 zł. Obchodź się z wyposażeniem kampera tak, jak ze swoimi meblami w domu.
@@ -122,8 +122,8 @@ Najczęstszym powodem potrąceń z kaucji nie są wypadki drogowe, tylko uszkodz
 
 **Godzina zwrotu.** Standardowa godzina to 10:00 lub 12:00. Spóźnienie nawet o godzinę bywa traktowane jako kolejna doba wynajmu – a stawka karna sięga 150% normalnej ceny. Planuj trasę powrotną z zapasem czasu.
 
-**Protokół zwrotu.** Pracownik wypożyczalni obejrzy kampera razem z Tobą. Każde nowe uszkodzenie zostanie wpisane do protokołu. Masz prawo nie zgodzić się z oceną – w takim wypadku powoływanie się na fotodokumentację z odbioru jest kluczowe. Podpisuj protokół dopiero po dokładnym sprawdzeniu jego treści.
+**Protokół zwrotu.** Pracownik wypożyczalni obejrzy kampera razem z Tobą. Każde nowe uszkodzenie zostanie wpisane do protokołu. Masz prawo nie zgodzić się z oceną – w takim przypadku powołanie się na fotodokumentację z odbioru jest kluczowe. Podpisuj protokół dopiero po dokładnym sprawdzeniu jego treści.
 
-Jeśli interesują Cię konkretne ceny i cenniki wypożyczalni, sprawdź [aktualny cennik wynajmu kampera na 2026 rok](/wynajem/wynajem-kampera-cena/). A jeśli szukasz kompaktowej opcji – przeczytaj o [wynajmie camper vana](/wynajem/camper-van-wynajem/) lub zajrzyj do [przeglądu wypożyczalni kamperów](/wynajem/wypozyczalnie-kamperow/) po całej Polsce.
+Jeśli interesują Cię konkretne ceny i cenniki wypożyczalni, sprawdź [aktualny cennik wynajmu kampera na 2026 rok](/wynajem/wynajem-kampera-cena/). A jeśli szukasz kompaktowej opcji – przeczytaj o [wynajmie camper vana](/wynajem/camper-van-wynajem/) lub zajrzyj do [przeglądu wypożyczalni kamperów](/wynajem/wypozyczalnie-kamperow/) z całej Polski.
 
 Rozważasz zakup własnego kampera po udanym wynajmie? Odwiedź naszą sekcję o [kamperach](/kampery/) – znajdziesz tam porównania modeli, poradniki zakupowe i recenzje.

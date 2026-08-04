@@ -13,10 +13,10 @@ image: "/images/zabudowa-sklejka-diy-hero.webp"
 image_alt: "Wnętrze busa podczas zabudowy sklejką wodoodporną – widoczne panele i narzędzia"
 youtube: "POvCR6oByW0"
 youtube_title: "BUS MARZEŃ! | Zabudowa samochodu dostawczego RHINO MR4"
-lead: "Zabudowa busa sklejką to najpopularniejszy sposób na samodzielne zagospodarowanie przestrzeni ładunkowej. Sklejka wodoodporna jest tania, łatwa w obróbce i wystarczająco wytrzymała na potrzeby większości zabudów – od prostych regałów po kompletne wnętrze kamperowe. Ten poradnik prowadzi krok po kroku przez cały proces – od wyboru materiału, przez narzędzia, po montaż i wykończenie."
+lead: "Zabudowa busa sklejką to najpopularniejszy sposób na samodzielne zagospodarowanie przestrzeni ładunkowej. Sklejka wodoodporna jest tania, łatwa w obróbce i wystarczająco wytrzymała do większości zabudów – od prostych regałów po kompletne wnętrze kamperowe. Ten poradnik prowadzi krok po kroku przez cały proces – od wyboru materiału, przez narzędzia, po montaż i wykończenie."
 faq:
   - question: "Jaka sklejka do zabudowy busa jest najlepsza?"
-    answer: "Sklejka brzozowa ze spoiną wodoodporną (WBP) i klasą jakości powierzchni II/III o grubości 12–18 mm to optymalny wybór. Na podłogę warto zastosować 15–18 mm, na ściany 6-9 mm, a na meble 12–15 mm. Sklejka antypoślizgowa (hexa) jest idealna podłogę niewymagającą dodatkowej wykładziny."
+    answer: "Sklejka brzozowa ze spoiną wodoodporną (WBP) i klasą jakości powierzchni II/III o grubości 12–18 mm to optymalny wybór. Na podłogę warto zastosować 15–18 mm, na ściany 6–9 mm, a na meble 12–15 mm. Sklejka antypoślizgowa (hexa) jest idealna na podłogę niewymagającą dodatkowej wykładziny."
   - question: "Ile kosztuje zabudowa busa sklejką?"
     answer: "Materiały na kompletną zabudowę (podłoga, ściany, regały) kosztują 1 150–2 400 zł w zależności od wielkości busa i standardu. Narzędzia, jeśli trzeba je kupić, to dodatkowe 500–2 000 zł."
   - question: "Czy sklejka w busie wymaga impregnacji?"
@@ -37,9 +37,9 @@ Na rynku dostępne są dwa główne rodzaje sklejki stosowane w zabudowach busó
 
 **Sklejka laminowana (foliowana)** – rdzeń ze sklejki wodoodpornej pokryty z jednej lub obu stron gładką folią fenolową. Powierzchnia jest łatwa do czyszczenia i znacznie bardziej odporna na ścieranie. Laminat ciemnobrązowy (tzw. szalunkowy) jest najtańszy, ale dostępne są też wersje z białą lub szarą powierzchnią, popularne w zabudowach kamperowych.
 
-Alternatywą dla ciężkiej sklejki brzozowej (ok. 700–740 kg/m³) jest sklejka topolowa lub egzotyczna ceiba. Materiały te ważą zaledwie 400–450 kg/m³, co pozwala zaoszczędzić 35–40% masy mebli. To kluczowe w pojazdach do 3.5t DMC, gdzie każdy kilogram ma znaczenie, a oszczędność może sięgnąć nawet 80–150 kg dodatkowej ładowności.
+Alternatywą dla ciężkiej sklejki brzozowej (ok. 700–740 kg/m³) jest sklejka topolowa lub egzotyczna ceiba. Materiały te ważą zaledwie 400–450 kg/m³, co pozwala zaoszczędzić 35–40% masy mebli. To kluczowe w pojazdach do 3,5 t DMC, gdzie każdy kilogram ma znaczenie, a zysk na ładowności może sięgnąć nawet 80–150 kg.
 
-Planując cięcia, warto pamiętać o standardowych formatach arkuszy. Najbardziej powszechny wymiar to 1250 × 2500 mm (3,125 m²). Na większe podłogi warto poszukać arkuszy w formacie 1500 × 3000 mm, by zminimalizować liczbę łączeń.
+Planując cięcia, warto pamiętać o standardowych formatach arkuszy. Najpowszechniejszy wymiar to 1250 × 2500 mm (3,125 m²). Na większe podłogi warto poszukać arkuszy w formacie 1500 × 3000 mm, by zminimalizować liczbę łączeń.
 
 ### Grubości i zastosowania
 
@@ -72,7 +72,7 @@ Do samodzielnej zabudowy busa sklejką potrzebne są następujące narzędzia:
 
 - **Wyrzynarka z brzeszczotem do drewna** – cięcie krzywoliniowe i dopasowywanie do kształtu karoserii
 - **Piła tarczowa ręczna (opcjonalnie)** – proste, długie cięcia, szybciej i precyzyjniej niż wyrzynarka
-- **Wiertarko-wkrętarka akumulatorowa** – minimum 18 V, 50 Nm momentu
+- **Wiertarko-wkrętarka akumulatorowa** – minimum 18 V, moment obrotowy 50 Nm
 - **Szlifierka oscylacyjna** – wygładzanie krawędzi i powierzchni
 - **Miara, kątownik, ołówek stolarski** – podstawowe narzędzia pomiarowe
 - **Poziomnica** – kontrola poziomu podłogi i półek
@@ -87,13 +87,13 @@ Poza sklejką potrzebne są materiały montażowe i wykończeniowe:
 
 - **Wkręty do drewna 3,5–5 × 30–50 mm** – ok. 200–400 sztuk
 - **Kątowniki stalowe** – łączenie elementów pod kątem prostym
-- **Klej [MS Polimer](https://pl.wikipedia.org/wiki/Poliuretan) (Sikaflex, Bostik)** – elastyczny, wibroodporny
+- **Klej [MS Polimer](https://pl.wikipedia.org/wiki/Poliuretan) (Sikaflex, Bostik)** – elastyczny, odporny na wibracje
 - **Nitonakrętki stalowe M5/M6 i śruby metryczne** – do mocowania do karoserii
 - **Lakier jachtowy lub olej do drewna** – impregnacja
 - **Taśma obrzeżowa** – na krawędzie mebli
 - **Wykładzina antypoślizgowa** – na podłogę
 
-{{% info title="Nitonakrętki – bezpieczny montaż" icon="engineering" %}}Jedyną profesjonalną i w pełni bezpieczną metodą mocowania mebli i ścian do karoserii busa jest użycie nitonakrętek. Zaciska się je w otworach technologicznych profili nośnych, tworząc trwały gwint (najczęściej M5 lub M6). Pozwala to na mocowanie śrubami metrycznymi, co gwarantuje odporność na wibracje, bezpieczeństwo w razie wypadku i nie niszczy blachy jak blachowkręty.{{% /info %}}
+{{% info title="Nitonakrętki – bezpieczny montaż" icon="engineering" %}}Jedyną profesjonalną i w pełni bezpieczną metodą mocowania mebli i ścian do karoserii busa jest użycie nitonakrętek. Zaciska się je w otworach technologicznych profili nośnych, tworząc trwały gwint (najczęściej M5 lub M6). Pozwala to na mocowanie śrubami metrycznymi, co zapewnia odporność na wibracje, bezpieczeństwo w razie wypadku i nie niszczy blachy – w przeciwieństwie do blachowkrętów.{{% /info %}}
 
 ## Zabudowa krok po kroku {#krok-po-kroku}
 
@@ -123,7 +123,7 @@ Przenieś wymiary z szablonów na sklejkę, zachowując 2–3 mm luzu na krawęd
 
 Kolejność montażu:
 
-- **Podłoga** – najpierw w tzw. dolne ryfle blachy wklej na klej MS Polimer drewniane listwy stelażowe, wyrównując podłogę. Między listwy ułóż izolację XPS. Sklejkę (15–18 mm) przykręć do listew lub – co jest najbezpieczniejsze – zamocuj do podłogi używając fabrycznych otworów po uchwytach ładunkowych.
+- **Podłoga** – najpierw wklej w tzw. dolne ryfle blachy drewniane listwy stelażowe na klej MS Polimer, wyrównując poziom podłogi. Między listwami ułóż izolację XPS. Sklejkę (15–18 mm) przykręć do listew lub – co jest najbezpieczniejsze – zamocuj do podłogi z wykorzystaniem fabrycznych otworów po uchwytach ładunkowych.
 - **Ściany boczne** – panele 6–9 mm, mocowane do żeber karoserii za pomocą wkrętów lub nitonakrętek.
 - **Regały i półki** – budowane z elementów 12–18 mm, łączone kątownikami i wkrętami. Całe konstrukcje meblowe mocuj do punktów w karoserii za pomocą nitonakrętek i śrub metrycznych.
 
@@ -136,7 +136,7 @@ Surowa sklejka, nawet ta o podwyższonej odporności na wilgoć, wymaga solidneg
 Nawet sklejka wodoodporna wymaga dodatkowej ochrony – szczególnie krawędzi, przez które woda wnika najszybciej. Metody impregnacji:
 
 - **Lakier jachtowy (poliuretanowy)** – 2–3 warstwy, tworzy twardą, wodoodporną i odporną na ścieranie powłokę
-- **Olej do drewna (np. Osmo, Remmers)** – wnika w strukturę drewna, pozwala mu oddychać, jest łatwy w odnowieniu
+- **Olej do drewna (np. Osmo, Remmers)** – wnika w strukturę drewna, pozwala mu oddychać, jest łatwy do odnowienia
 - **Lakier akrylowy** – szybkoschnący i tani, wystarczający na ściany, ale zbyt miękki na podłogę i blaty
 - **Wosk twardy olejny** – nadaje naturalny wygląd, dobry na meble kamperowe, wymaga odświeżania
 
@@ -154,7 +154,7 @@ Krawędzie sklejki to jej najsłabszy punkt, ponieważ odsłonięte warstwy forn
 
 ## Koszty i najczęstsze błędy {#koszty}
 
-Samodzielna zabudowa to przede wszystkim oszczędność pieniędzy. Warto jednak dobrze skalkulować budżet i poznać błędy innych, by uniknąć niepotrzebnych wydatków.
+Samodzielna zabudowa to przede wszystkim oszczędność pieniędzy. Warto jednak dobrze oszacować budżet i poznać błędy innych, by uniknąć niepotrzebnych wydatków.
 
 ### Budżet na zabudowę sklejką
 
@@ -175,8 +175,8 @@ Kompletna zabudowa Fiata Ducato L2H2 ze sklejki – podłoga, ściany, 2 regały
 
 Początkujący popełniają powtarzalne błędy, które kosztują czas i materiał:
 
-- **Brak szablonów** – cięcie "na oko" prowadzi do niedokładności i strat materiału, kartonowy szablon to podstawa
+- **Brak szablonów** – cięcie „na oko” prowadzi do niedokładności i strat materiału; kartonowy szablon to podstawa
 - **Za cienka podłoga** – sklejka 9–12 mm na podłodze ugina się pod ciężarem i może pęknąć
-- **Sklejka bezpośrednio na blasze** – powoduje mostki termiczne, trzeszczenie i sprzyja korozji
+- **Sklejka bezpośrednio na blasze** – powoduje mostki termiczne i trzeszczenie oraz sprzyja korozji
 - **Pomijanie impregnacji** – nieimpregnowana sklejka, szczególnie na krawędziach, pęcznieje i rozwarstwia się
 - **Zbyt ciasne dopasowanie** – sklejka pracuje pod wpływem temperatury i wilgoci, bez luzu dylatacyjnego 2–3 mm będzie się wypaczać

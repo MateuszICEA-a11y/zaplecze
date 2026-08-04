@@ -26,7 +26,7 @@ sources:
   - "Chalifornia.pl"
   - "BookingCamper.pl"
   - "FastCamper.eu"
-  - "Auto Swiat"
+  - "Auto Świat"
 ---
 
 ## Czym jest camper van i czym różni się od dużego kampera
@@ -35,7 +35,7 @@ Camper van to pojazd kempingowy zbudowany na bazie standardowego samochodu dosta
 
 Wyróżniamy dwie główne kategorie. Pierwsza to kompaktowe „urban campery” na bazie minivanów (VW California, Mercedes Marco Polo), mierzące 4,9–5,4 m długości i ok. 1,99 m wysokości z zamkniętym dachem. Ich kluczową zaletą jest możliwość wjazdu na parkingi podziemne i unikanie wyższych opłat drogowych.
 
-Drugą, dominującą na europejskim rynku kategorią, są camper vany bazujące na pełnowymiarowych furgonach (np. Fiat Ducato, Peugeot Boxer). Mają one długość 5,99–6,36 m i wysokość 2,5–2,6 m, co pozwala na wygospodarowanie wewnątrz w pełni funkcjonalnej łazienki z toaletą kasetową i prysznicem.
+Drugą, dominującą na europejskim rynku kategorią są camper vany bazujące na pełnowymiarowych furgonach (np. Fiat Ducato, Peugeot Boxer). Mają one długość 5,99–6,36 m i wysokość 2,5–2,6 m, co pozwala na wygospodarowanie wewnątrz w pełni funkcjonalnej łazienki z toaletą kasetową i prysznicem.
 
 | Cecha | Camper van (minivan) | Camper van (furgon) | Półintegra/alkowa |
 |---|---|---|---|
@@ -48,7 +48,7 @@ Drugą, dominującą na europejskim rynku kategorią, są camper vany bazujące 
 
 Camper van prowadzi się jak duży samochód osobowy. Jego zwrotność ułatwia manewrowanie w ciasnych uliczkach miast i na górskich serpentynach. Wysokość poniżej 2 m w przypadku urban camperów eliminuje problem z prześwitami pod większością wiaduktów.
 
-## Zalety wynajmu camper vana vs dużego kampera
+## Zalety wynajmu camper vana w porównaniu z dużym kamperem
 
 Wynajem camper vana ma sens w kilku konkretnych scenariuszach – i w każdym z nich przewaga nad dużym kamperem jest wymierna.
 
@@ -57,7 +57,7 @@ Wynajem camper vana ma sens w kilku konkretnych scenariuszach – i w każdym z 
 **Łatwiejsze prowadzenie.** Brak nadbudowy oznacza niższy środek ciężkości, mniejszą podatność na boczny wiatr i lepszą zwinność. Osoby, które nigdy nie prowadziły niczego większego niż osobówka, wsiadają do camper vana bez stresu.
 
 - **Parkowanie** – kompaktowy camper van mieści się na standardowym miejscu postojowym (5,0 x 2,5 m). Eliminuje to konieczność szukania parkingów dla pojazdów ponadgabarytowych.
-- **Opłaty drogowe i parkingi** – pojazdy o wysokości do 2 m (np. VW California) są traktowane jak auta osobowe na autostradach we Francji, Hiszpanii czy Chorwacji. Opłaty mogą być niższe o 30–40% w stosunku do pojazdów wyższych. Taka wysokość pozwala પણ wjeżdżać na tańsze parkingi podziemne.
+- **Opłaty drogowe i parkingi** – pojazdy o wysokości do 2 m (np. VW California) są traktowane jak auta osobowe na autostradach we Francji, Hiszpanii czy Chorwacji. Opłaty mogą być niższe o 30–40% w stosunku do pojazdów wyższych. Taka wysokość pozwala też wjeżdżać na tańsze parkingi podziemne.
 - **Promy i tunele** – stawki na promach bałtyckich i w tunelach alpejskich zależą od długości pojazdu. Camper van płaci jak samochód osobowy, alkowa – jak pojazd kempingowy (różnica 30–50%).
 - **Spalanie w mieście** – camper van w cyklu miejskim spala 9–11 l, alkowa 13–16 l. Jeśli planujesz zwiedzanie miast, ta różnica rośnie.
 
@@ -71,7 +71,7 @@ Jeśli jedziesz z dziećmi (3+ osoby), potrzebujesz toalety na pokładzie lub pl
 
 ## Ceny wynajmu camper vanów w 2026 roku
 
-Ceny camper vanów w polskich wypożyczalniach na sezon 2026 prezentują się następująco:
+Ceny camper vanów w polskich wypożyczalniach na sezon 2026 kształtują się następująco:
 
 | Model | Sezon niski (zł/dobę) | Sezon średni (zł/dobę) | Sezon wysoki (zł/dobę) |
 |---|---|---|---|
@@ -84,7 +84,7 @@ Ceny camper vanów w polskich wypożyczalniach na sezon 2026 prezentują się na
 
 Do ceny najmu należy doliczyć kaucję zwrotną, która wynosi zazwyczaj od 3 000 do 5 000 zł. Jest to zabezpieczenie na poczet ewentualnych szkód. Większość wypożyczalni pobiera również jednorazową opłatę serwisową (250–450 zł), która pokrywa koszt przygotowania pojazdu – napełnienia butli z gazem, zbiorników z wodą i przeprowadzenia szkolenia z obsługi.
 
-VW California jest najdroższym camper vanem na rynku wynajmu – za markę i prestiż płacisz premię 50–100 zł/dobę w porównaniu z Pösslem czy Randgerem o podobnym wyposażeniu. Z drugiej strony California ma wysoką jakość wykończenia i intuicyjną obsługę, co przekłada się na nowszą flotę w wypożyczalniach.
+VW California jest najdroższym camper vanem na rynku wynajmu – za markę i prestiż dopłacasz 50–100 zł za dobę w porównaniu z Pösslem czy Randgerem o podobnym wyposażeniu. Z drugiej strony California oferuje wysoką jakość wykończenia i intuicyjną obsługę, a wypożyczalnie utrzymują te modele w stosunkowo nowej flocie.
 
 Wypożyczalnie specjalizujące się w camper vanach to m.in. Chalifornia.pl (wyłącznie VW California – Beach, Coast, Ocean), VanCamp.pl (VW California z pełnym wyposażeniem) i FastCamper.eu (California + Marco Polo).
 
@@ -93,10 +93,10 @@ Wypożyczalnie specjalizujące się w camper vanach to m.in. Chalifornia.pl (wy�
 Na rynku wynajmu dominuje kilka sprawdzonych modeli, które różnią się układem wnętrza i pojazdem bazowym.
 
 ### VW California (T6.1 / T7)
-Ikona segmentu – podnoszony dach pop-up, 4 miejsca do spania (2 na dole, 2 na górze), lodówka i ogrzewanie postojowe Webasto. Aneks kuchenny jest wbudowany na stałe wzdłuż lewej ściany pojazdu, tuż za fotelem kierowcy. Długość 4,9 m, DMC 3,0–3,2 t. Dostępność w wypożyczalniach jest bardzo dobra, ale wymaga wczesnej rezerwacji.
+Ikona segmentu – podnoszony dach pop-up, 4 miejsca do spania (2 na dole, 2 na górze), lodówka i ogrzewanie postojowe Webasto. Aneks kuchenny jest wbudowany na stałe wzdłuż lewej ściany pojazdu, tuż za fotelem kierowcy. Długość 4,9 m, DMC 3,0–3,2 t. Modele te są w wypożyczalniach łatwo dostępne, wymagają jednak wczesnej rezerwacji.
 
 ### Mercedes Marco Polo (V-klasa)
-Główny rywal Californii – podobny koncept, podnoszony dach, 4 miejsca do spania i długość 5,14 m. Wyróżnia się lepszym wyciszeniem kabiny i nowocześniejszymi systemami wspomagania kierowcy. Zazwyczaj jest droższy w wynajmie o 30–50 zł/dobę niż porównywalna California.
+Główny rywal Californii – podobna koncepcja, podnoszony dach, 4 miejsca do spania i długość 5,14 m. Wyróżnia się lepszym wyciszeniem kabiny i nowocześniejszymi systemami wspomagania kierowcy. Zazwyczaj jest droższy w wynajmie o 30–50 zł/dobę niż porównywalna California.
 
 ### Pössl Campster / Vanster
 Niemiecki producent budujący na bazie Citroëna SpaceTourer lub Peugeota Traveller. Campster to kompaktowy van (4,95 m) z dachem pop-up i 4 miejscami do spania. Solidne wykończenie i niższa cena wynajmu czynią go atrakcyjną alternatywą dla droższych konkurentów.
@@ -115,9 +115,9 @@ Na pierwszy wynajem camper vana polecam VW California Ocean – nie dlatego, że
 
 Camper van nie jest pojazdem uniwersalnym – i właśnie dlatego dla odpowiedniej grupy użytkowników jest lepszy niż jakikolwiek duży kamper.
 
-**Pary** stanowią główną grupę wynajmującą camper vany. Dwie osoby w pojeździe o długości 5 metrów mają wystarczająco miejsca na wygodne spanie, gotowanie i przechowywanie bagażu na 2–3-tygodniowy wyjazd.
+**Pary** stanowią główną grupę wynajmującą camper vany. Dwie osoby w pojeździe o długości 5 metrów mają wystarczająco dużo miejsca na wygodne spanie, gotowanie i przechowywanie bagażu na 2–3-tygodniowy wyjazd.
 
-**Solo podróżnicy** doceniają camper vana za jeden powód – samodzielne prowadzenie i parkowanie nie różni się od jazdy osobówką. Nie potrzebujesz nikogo do naprowadzania przy cofaniu, nie boisz się wąskich dróg, a na dziko zaparkujesz tam, gdzie [pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy) o długości 7 metrów nie zmieściłby się fizycznie.
+**Solo podróżnicy** doceniają camper vana za jeden powód – samodzielne prowadzenie i parkowanie nie różnią się od jazdy osobówką. Nie potrzebujesz nikogo do naprowadzania przy cofaniu, nie boisz się wąskich dróg, a na dziko zaparkujesz tam, gdzie [pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy) o długości 7 metrów nie zmieściłby się fizycznie.
 
 **Osoby wynajmujące po raz pierwszy** zyskują łagodne wprowadzenie w świat karawaningu. Camper van nie wymaga nauki obsługi kasetki WC ani manewrowania pojazdem o dużym zwisie tylnym. Jeśli pierwszy wynajem okaże się sukcesem, następnym razem można świadomie wybrać większy pojazd.
 

@@ -18,7 +18,7 @@ faq:
   - question: "Ile kosztuje zabudowa izotermiczna busa?"
     answer: "Sama zabudowa izotermiczna (bez agregatu) kosztuje 8 000–20 000 zł netto w zależności od wielkości busa i grubości izolacji. Z agregatem chłodniczym łączny koszt to 25 000–60 000 zł netto."
   - question: "Czy zabudowa izotermiczna wymaga homologacji?"
-    answer: "Tak, pojazd z zabudową izotermiczną wymaga wpisu w dowodzie rejestracyjnym (adnotacja 'izoterma' lub 'chłodnia') oraz świadectwa ATP, jeśli transportuje się żywność podlegającą kontroli temperatury."
+    answer: "Tak, pojazd z zabudową izotermiczną wymaga wpisu w dowodzie rejestracyjnym (adnotacja „izoterma” lub „chłodnia”) oraz świadectwa ATP, jeśli transportuje się żywność podlegającą kontroli temperatury."
   - question: "Jak długo ważne jest świadectwo ATP?"
     answer: "Nowe świadectwo ATP jest ważne 6 lat. Po tym okresie wymaga odnowienia na kolejne 3 lata, po przeprowadzeniu badania technicznego potwierdzającego, że izolacja nadal spełnia normy."
   - question: "Jaki agregat chłodniczy do busa dostawczego?"
@@ -29,16 +29,16 @@ faq:
 
 ### Definicja i zastosowanie
 
-Zabudowa izotermiczna to nadbudówka lub wyłożenie przestrzeni ładunkowej busa materiałami izolacyjnymi, które ograniczają wymianę ciepła z otoczeniem. W wersji podstawowej (izoterma bez agregatu) utrzymuje temperaturę przez kilka godzin, w wersji z agregatem chłodniczym (chłodnia) zapewnia stałą temperaturę przez cały czas transportu.
+Zabudowa izotermiczna to nadbudówka lub wyłożenie przestrzeni ładunkowej busa materiałami izolacyjnymi, które ograniczają wymianę ciepła z otoczeniem. W wersji podstawowej (izoterma bez agregatu) utrzymuje temperaturę przez kilka godzin, a w wersji z agregatem chłodniczym (chłodnia) zapewnia stałą temperaturę przez cały czas transportu.
 
-Z zabudów izotermicznych korzystają firmy cateringowe, dystrybutorzy żywności, apteki i hurtownie farmaceutyczne, kwiaciarnie oraz firmy transportowe specjalizujące się w dostawach last mile. W Polsce transport produktów spożywczych w kontrolowanej temperaturze reguluje umowa ATP – międzynarodowa konwencja o przewozie szybko psujących się artykułów żywnościowych.
+Z zabudów izotermicznych korzystają firmy cateringowe, dystrybutorzy żywności, apteki i hurtownie farmaceutyczne, kwiaciarnie oraz firmy transportowe specjalizujące się w dostawach na ostatniej mili. W Polsce transport produktów spożywczych w kontrolowanej temperaturze reguluje umowa ATP – międzynarodowa konwencja o przewozie szybko psujących się artykułów żywnościowych.
 
 ### Klasy zabudów izotermicznych
 
 Umowa ATP dzieli pojazdy izotermiczne na cztery główne klasy w zależności od współczynnika przenikania ciepła (K):
 
 - **IN – izoterma normalna** – K ≤ 0,70 W/m²·K, wystarczająca do transportu warzyw i owoców w umiarkowanym klimacie
-- **IR – izoterma wzmocniona** – K ≤ 0,40 W/m²·K, standard dla transportu nabiału i mięsa
+- **IR – izoterma wzmocniona** – K ≤ 0,40 W/m²·K, standard w transporcie nabiału i mięsa
 - **FNA/FRC – chłodnia** – izoterma z agregatem mechanicznym, utrzymuje temperaturę od +12°C do -20°C
 - **RNA/RRC – ogrzewana** – izoterma z systemem grzewczym, do transportu w temperaturach ujemnych
 
@@ -51,34 +51,34 @@ Umowa ATP dzieli pojazdy izotermiczne na cztery główne klasy w zależności od
 
 ## Materiały izolacyjne {#materialy}
 
-Sercem zabudowy jest izolacja, jednak równie ważne jest jej wykończenie. Wnętrze musi spełniać wymogi sanitarne HACCP, co oznacza, że powierzchnie muszą być gładkie, nienasiąkliwe i łatwe do mycia. Ściany najczęściej pokrywa się laminatem poliestrowo-szklanym (powłoka Gelcoat), a podłogę zabezpiecza antypoślizgowa wylewka z żywicy poliuretanowej lub blacha aluminiowa ryflowana z wyoblonymi cokołami.
+Sercem zabudowy jest izolacja, jednak równie ważne jest jej wykończenie. Wnętrze musi spełniać wymogi sanitarne HACCP, co oznacza, że powierzchnie mają być gładkie, nienasiąkliwe i łatwe do mycia. Ściany najczęściej pokrywa się laminatem poliestrowo-szklanym (powłoka Gelcoat), a podłogę zabezpiecza antypoślizgowa wylewka z żywicy poliuretanowej lub blacha aluminiowa ryflowana z wyoblonymi cokołami.
 
 ### Pianka poliuretanowa (PUR/PIR)
 
-Pianka poliuretanowa to najczęściej stosowany materiał izolacyjny w zabudowach izotermicznych. Nakładana metodą natryskową lub w formie gotowych paneli sandwiczowych, zapewnia współczynnik przewodzenia ciepła λ = 0,022–0,028 W/m·K. Panele PUR o grubości 60–80 mm wystarczają do uzyskania klasy IR, natomiast 100 mm i więcej spełnia wymagania dla chłodni FRC.
+Pianka poliuretanowa to najczęściej stosowany materiał izolacyjny w zabudowach izotermicznych. Nakładana metodą natryskową lub w formie gotowych paneli sandwiczowych zapewnia współczynnik przewodzenia ciepła λ = 0,022–0,028 W/m·K. Panele PUR o grubości 60–80 mm wystarczają do uzyskania klasy IR, natomiast 100 mm i więcej spełnia wymagania dla chłodni FRC.
 
-Pianka PIR (poliizocyjanuratowa) to ulepszona wersja PUR – ma nieco lepszą izolacyjność i wyższą odporność ogniową. Stosuje się ją w zabudowach premium i tam, gdzie przepisy wymagają trudnopalności klasy B.
+Pianka PIR (poliizocyjanuratowa) to ulepszona odmiana PUR – ma nieco lepszą izolacyjność i wyższą odporność ogniową. Stosuje się ją w zabudowach z wyższej półki oraz tam, gdzie przepisy wymagają trudnopalności klasy B.
 
 ### Porównanie materiałów
 
 - **Panele sandwiczowe PUR** – gotowe elementy z okładziną z laminatu lub blachy, szybki montaż, jednolita grubość izolacji
 - **Pianka natryskowa PUR** – nakładana bezpośrednio na ściany busa, eliminuje mostki termiczne, ale wymaga doświadczonego wykonawcy
 - **Styropian XPS** – tańsza alternatywa (λ = 0,032–0,038), stosowana w zabudowach budżetowych, gorsza izolacyjność
-- **Wełna mineralna** – rzadko stosowana w busach ze względu na nasiąkliwość i wagę
+- **Wełna mineralna** – rzadko stosowana w busach ze względu na nasiąkliwość i masę
 
-{{% expert name="Tomasz Zieliński" %}}Najsłabszym ogniwem izolacji izotermicznej nie są ściany, ale drzwi i uszczelki. Wymiana uszczelek co 2–3 lata i stosowanie kurtyn paskowych PVC przy drzwiach tylnych potrafi poprawić efektywność izolacji o 15–25% – taniej niż docieplanie ścian.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Najsłabszym ogniwem izolacji izotermicznej nie są ściany, lecz drzwi i uszczelki. Wymiana uszczelek co 2–3 lata i stosowanie kurtyn paskowych PVC przy drzwiach tylnych potrafi poprawić skuteczność izolacji o 15–25% – taniej niż docieplanie ścian.{{% /expert %}}
 
 ## Agregaty chłodnicze {#agregaty}
 
-Agregat chłodniczy przekształca izotermę w pełnoprawną chłodnię, aktywnie utrzymując zadaną temperaturę, niezależnie od warunków zewnętrznych. W busach dostawczych stosuje się kilka typów agregatów różniących się sposobem napędu i przeznaczeniem.
+Agregat chłodniczy przekształca izotermę w pełnoprawną chłodnię, aktywnie utrzymując zadaną temperaturę niezależnie od warunków zewnętrznych. W busach dostawczych stosuje się kilka typów agregatów różniących się sposobem napędu i przeznaczeniem.
 
 ![Bus dostawczy z zabudową izotermiczną i agregatem chłodniczym](/images/zabudowa-izotermiczna-hero.webp)
 
 ### Typy agregatów do busów
 
-- **Agregaty napędzane silnikiem pojazdu** – najpopularniejsze rozwiązanie, kompresor podłączony jest paskiem do silnika busa; działają tylko przy uruchomionym silniku
-- **Agregaty napędzane silnikiem z opcją zasilania postojowego (stand-by)** – hybryda, która podczas jazdy korzysta z silnika pojazdu, a na postoju może być podłączona do zewnętrznej sieci elektrycznej 230V/400V
-- **Agregaty elektryczne** – zasilane z gniazdka 230 V na postoju i z przetwornika podczas jazdy, ciche, bez emisji spalin, popularne w transporcie miejskim i nocnym
+- **Agregaty napędzane silnikiem pojazdu** – najpopularniejsze rozwiązanie; kompresor jest połączony paskiem z silnikiem busa i działa wyłącznie przy uruchomionym silniku
+- **Agregaty napędzane silnikiem z opcją zasilania postojowego (stand-by)** – rozwiązanie hybrydowe, które podczas jazdy korzysta z silnika pojazdu, a na postoju może być podłączone do zewnętrznej sieci elektrycznej 230 V/400 V
+- **Agregaty elektryczne** – zasilane z gniazdka 230 V na postoju i z przetwornicy podczas jazdy; ciche, bez emisji spalin, chętnie wybierane w transporcie miejskim i nocnym
 
 | Producent    | Model         | Zakres temperatur | Typ napędu    | Cena od (netto) |
 |--------------|---------------|-------------------|---------------|-----------------|
@@ -89,34 +89,34 @@ Agregat chłodniczy przekształca izotermę w pełnoprawną chłodnię, aktywnie
 
 ### Wydajność chłodnicza a objętość paki
 
-Dobór agregatu musi uwzględniać objętość przestrzeni ładunkowej i wymagany zakres temperatur. Agregat o zbyt małej wydajności nie utrzyma temperatury w upalne dni, a przewymiarowany zużywa więcej paliwa. Zasada kciuka: na każdy 1 m³ paki potrzeba ok. 300–500 W wydajności chłodniczej przy temperaturze docelowej 0°C i 500–800 W przy -18°C.
+Dobór agregatu musi uwzględniać objętość przestrzeni ładunkowej i wymagany zakres temperatur. Agregat o zbyt małej wydajności nie utrzyma temperatury w upalne dni, a przewymiarowany zużywa więcej paliwa. Orientacyjna reguła: na każdy 1 m³ paki potrzeba ok. 300–500 W wydajności chłodniczej przy temperaturze docelowej 0°C oraz 500–800 W przy -18°C.
 
-Kluczową kwestią staje się unijna ustawa F-gazowa, która wymusza wycofanie czynnika chłodniczego R404A. Nowoczesne agregaty korzystają z zamienników o niższym [GWP (Global Warming Potential)](https://pl.wikipedia.org/wiki/GWP), takich jak R452A (mroźnie) lub R134a (chłodnie). W zależności od ilości czynnika w układzie, operator może być zobowiązany do rejestracji urządzenia w Centralnym Rejestrze Operatorów (CRO).
+Kluczowe stają się unijne przepisy F-gazowe, które wymuszają wycofanie czynnika chłodniczego R404A. Nowoczesne agregaty pracują na zamiennikach o niższym [GWP (Global Warming Potential)](https://pl.wikipedia.org/wiki/GWP), takich jak R452A (mroźnie) lub R134a (chłodnie). W zależności od ilości czynnika w układzie operator może być zobowiązany do rejestracji urządzenia w Centralnym Rejestrze Operatorów (CRO).
 
-{{% info title="Rejestracja temperatury" icon="engineering" %}}Od 2006 roku przepisy wymagają ciągłej rejestracji temperatury podczas transportu żywności. Nowoczesne agregaty mają wbudowane rejestratory (data loggery), ale w starszych modelach trzeba montować zewnętrzne czujniki z wydrukiem termicznym lub łącznością GSM.{{% /info %}}
+{{% info title="Rejestracja temperatury" icon="engineering" %}}Od 2006 roku przepisy wymagają ciągłej rejestracji temperatury podczas transportu żywności. Nowoczesne agregaty mają wbudowane rejestratory danych, ale w starszych modelach trzeba montować zewnętrzne czujniki z wydrukiem termicznym lub łącznością GSM.{{% /info %}}
 
 ## DMC, ładowność i homologacja {#dmc}
 
 ### Wpływ zabudowy na ładowność
 
-Zabudowa izotermiczna znacząco obcina użyteczną ładowność busa. Panele izolacyjne, podłoga, agregat chłodniczy i wzmocnienia strukturalne dodają 200–500 kg do masy własnej pojazdu, co jest krytyczne w segmencie do 3,5 tony.
+Zabudowa izotermiczna znacznie zmniejsza użyteczną ładowność busa. Panele izolacyjne, podłoga, agregat chłodniczy i wzmocnienia konstrukcyjne dodają 200–500 kg do masy własnej pojazdu, co ma kluczowe znaczenie w segmencie do 3,5 tony.
 
 - **Izoterma bez agregatu (bus 3,5 t)** – zabudowa waży 150–250 kg, ładowność netto 800–1 100 kg
 - **Chłodnia z agregatem (bus 3,5 t)** – zabudowa waży 300–500 kg, ładowność netto 600–900 kg
 - **Chłodnia z agregatem (bus 5,0 t)** – zabudowa waży 350–550 kg, ładowność netto 1 500–2 000 kg
 
-Dlatego przy zabudowie izotermicznej kluczowy jest wybór busa o odpowiednim DMC. Popularne modele to [Fiat Ducato](/modele/fiat-ducato/) Maxi (legalizowane na 3 500 kg lub rejestrowane na 4 250 kg dla kat. C), [Mercedes Sprinter](/modele/mercedes-sprinter/) 316/319 (DMC 3 500–5 000 kg) i [Ford Transit](/modele/ford-transit/) w wersji ciężarowej.
+Dlatego przy zabudowie izotermicznej decydujące znaczenie ma wybór busa o odpowiednim DMC. Popularne modele to [Fiat Ducato](/modele/fiat-ducato/) Maxi (legalizowany na 3 500 kg lub rejestrowany na 4 250 kg dla kat. C), [Mercedes Sprinter](/modele/mercedes-sprinter/) 316/319 (DMC 3 500–5 000 kg) i [Ford Transit](/modele/ford-transit/) w wersji ciężarowej.
 
 ### Proces homologacji
 
-Pojazd z zabudową izotermiczną wymaga kilku formalności:
+Pojazd z zabudową izotermiczną wymaga dopełnienia kilku formalności:
 
 - **Badanie techniczne** – stacja kontroli pojazdów potwierdza zgodność zabudowy z przepisami
-- **Wpis w dowodzie rejestracyjnym** – adnotacja "izoterma" lub "chłodnia" w polu uwagi
+- **Wpis w dowodzie rejestracyjnym** – adnotacja „izoterma” lub „chłodnia” w polu uwag
 - **Świadectwo ATP** – wydawane przez Transportowy Dozór Techniczny (TDT) po badaniu współczynnika K, ważne 6 lat (nowe) lub 3 lata (odnowienie)
 - **Książka kontroli temperatury** – wymagana podczas transportu, z wydrukami z rejestratorów
 
-Należy pamiętać, że transport żywności w Polsce wymaga zatwierdzenia pojazdu przez Państwową Inspekcję Sanitarną (Sanepid) i wpisu do rejestru zakładów. Materiały wykończeniowe muszą posiadać Atest Higieniczny PZH. Podczas gdy certyfikat ATP jest kluczowy w transporcie międzynarodowym, na rynku krajowym nadrzędna jest decyzja Sanepidu.
+Należy pamiętać, że transport żywności w Polsce wymaga zatwierdzenia pojazdu przez Państwową Inspekcję Sanitarną (Sanepid) oraz wpisu do rejestru zakładów. Materiały wykończeniowe muszą mieć Atest Higieniczny PZH. Certyfikat ATP ma kluczowe znaczenie w transporcie międzynarodowym, natomiast na rynku krajowym nadrzędna jest decyzja Sanepidu.
 
 
 {{% youtube %}}
@@ -135,6 +135,6 @@ Koszt zabudowy izotermicznej zależy od klasy izolacji, typu agregatu i wielkoś
 
 ### Koszty eksploatacji
 
-Eksploatacja chłodni generuje dodatkowe koszty poza paliwem. Coroczny serwis agregatu, obejmujący kontrolę szczelności układu, poziomu czynnika i wymianę filtra osuszacza, to wydatek rzędu 800–2 000 zł. Uszczelki drzwi, kluczowe dla utrzymania izolacyjności, należy wymieniać co 2–3 lata (500–1 500 zł).
+Eksploatacja chłodni wiąże się z dodatkowymi kosztami poza paliwem. Coroczny serwis agregatu, obejmujący kontrolę szczelności układu, poziomu czynnika i wymianę filtra osuszacza, to wydatek rzędu 800–2 000 zł. Uszczelki drzwi, kluczowe dla utrzymania izolacyjności, należy wymieniać co 2–3 lata (500–1 500 zł).
 
-Więcej o opcjach zabudowy przestrzeni ładunkowej opisuje [przewodnik po zabudowach busa](/zabudowy/zabudowa-busa-przewodnik/).
+Więcej o wariantach zabudowy przestrzeni ładunkowej przeczytasz w [przewodniku po zabudowach busa](/zabudowy/zabudowa-busa-przewodnik/).

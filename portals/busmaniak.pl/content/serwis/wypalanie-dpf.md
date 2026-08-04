@@ -11,7 +11,7 @@ volume: 2900
 main_keyword: "wypalanie dpf"
 image: "/images/wypalanie-dpf-hero.webp"
 image_alt: "Filtr cząstek stałych DPF wyjęty z układu wydechowego busa dostawczego podczas regeneracji w serwisie"
-lead: "Zapchany filtr DPF w busie to utrata mocy, tryb awaryjny i wizyta w serwisie za 500–1 500 zł. Problem dotyczy praktycznie każdego diesla wyprodukowanego po 2009 roku – a busy dostawcze są szczególnie narażone przez częstą jazdę w mieście z niskimi obrotami. W tym artykule wyjaśniamy trzy rodzaje regeneracji DPF, objawy zapchania i realne koszty naprawy."
+lead: "Zapchany filtr DPF w busie to utrata mocy, tryb awaryjny i wizyta w serwisie za 500–1 500 zł. Problem dotyczy praktycznie każdego diesla wyprodukowanego po 2009 roku – a busy dostawcze są szczególnie narażone ze względu na częstą jazdę po mieście przy niskich obrotach. W tym artykule wyjaśniamy trzy rodzaje regeneracji DPF, objawy zapchania i realne koszty naprawy."
 faq:
   - question: "Ile kosztuje wypalanie DPF w busie?"
     answer: "Wymuszona regeneracja komputerowa kosztuje 80–250 zł. Profesjonalne czyszczenie hydrodynamiczne filtra to wydatek rzędu 800–1 500 zł dla busów. Wymiana nowego filtra DPF w busie to koszt od 3 000 do 12 000 zł w zależności od modelu."
@@ -20,7 +20,7 @@ faq:
   - question: "Czy mogę sam wymusić regenerację DPF?"
     answer: "Kierowca nie może samodzielnie \"wymusić\" regeneracji w sensie serwisowym. Może jednak stworzyć idealne warunki do jej automatycznego uruchomienia (tzw. regeneracji aktywnej) poprzez dłuższą jazdę ze stałą, podwyższoną prędkością obrotową, np. 2 500–3 000 obr./min na niższym biegu przez 20–30 minut."
   - question: "Czy usunięcie DPF jest legalne w Polsce?"
-    answer: "Nie, usunięcie filtra DPF jest nielegalne. Grozi za to mandat do 3 000 zł nałożony przez policję (na podstawie art. 97 Kodeksu Wykroczeń), utrata dowodu rejestracyjnego i odholowanie pojazdu. W Polsce stacje kontroli pojazdów na razie nie mają obowiązku używania liczników cząstek stałych, ale takie kontrole są standardem np. w Niemczech czy Belgii, co stanowi ryzyko w transporcie międzynarodowym."
+    answer: "Nie, usunięcie filtra DPF jest nielegalne. Grozi za to mandat do 3 000 zł nakładany przez policję (na podstawie art. 97 Kodeksu wykroczeń), utrata dowodu rejestracyjnego i odholowanie pojazdu. W Polsce stacje kontroli pojazdów na razie nie mają obowiązku używania liczników cząstek stałych, ale takie kontrole są standardem np. w Niemczech czy Belgii, co stanowi ryzyko w transporcie międzynarodowym."
   - question: "Po czym poznać, że DPF jest zapchany?"
     answer: "Typowe objawy to kontrolka DPF lub check engine na desce rozdzielczej, wyczuwalny spadek mocy, zwiększone spalanie, nieprzyjemny zapach z wydechu i w skrajnych przypadkach – przejście silnika w tryb awaryjny z ograniczeniem obrotów do 2 500–3 000 obr./min."
 sources:
@@ -59,17 +59,17 @@ W busach dostawczych regeneracja pasywna jest rzadkością – pojazd często st
 
 ### Regeneracja aktywna
 
-Gdy filtr zapełni się w ok. 40–45%, sterownik ECU automatycznie inicjuje regenerację aktywną. Polega ona na dodatkowym wtrysku paliwa po głównym suwie pracy. Paliwo to dopala się w kolektorze wydechowym i unosi temperaturę w filtrze do 550–650°C. W tej temperaturze sadza spala się w ciągu 10–20 minut.
+Gdy filtr zapełni się w ok. 40–45%, sterownik ECU automatycznie inicjuje regenerację aktywną. Polega ona na dodatkowym wtrysku paliwa po głównym suwie pracy. To paliwo dopala się w kolektorze wydechowym i podnosi temperaturę w filtrze do 550–650°C. W tej temperaturze sadza spala się w ciągu 10–20 minut.
 
 Regeneracja aktywna ma swoją cenę – dodatkowy wtrysk zwiększa chwilowe spalanie o 1–3 l/100 km. Kierowca może ją zauważyć po wyższych obrotach biegu jałowego (o 100–200 obr./min) i lekko innym zapachu z wydechu.
 
 {{% info title="Nie przerywaj regeneracji" icon="warning" %}}
-Jeśli podczas regeneracji aktywnej wyłączysz silnik, proces zostanie przerwany, a niedopalone paliwo spłynie po ściankach cylindrów do miski olejowej. Rozcieńczony olej traci właściwości smarne, co jest szczególnie sygnalizowane w busach takich jak Renault Master 2.3 dCi specjalną kontrolką. Regularnie sprawdzaj bagnet – poziom oleju powyżej oznaczenia MAX lub specjalnego znaku "X" oznacza konieczność natychmiastowej wymiany oleju, by uniknąć ryzyka zatarcia panewek.
+Jeśli podczas regeneracji aktywnej wyłączysz silnik, proces zostanie przerwany, a niedopalone paliwo spłynie po ściankach cylindrów do miski olejowej. Rozcieńczony olej traci właściwości smarne, co w busach takich jak Renault Master 2.3 dCi jest sygnalizowane specjalną kontrolką. Regularnie sprawdzaj bagnet – poziom oleju powyżej oznaczenia MAX lub specjalnego znaku "X" oznacza konieczność natychmiastowej wymiany oleju, aby uniknąć ryzyka zatarcia panewek.
 {{% /info %}}
 
 ### Regeneracja wymuszona (serwisowa)
 
-Gdy regeneracja pasywna i aktywna nie nadążają za zapychaniem, a filtr przekracza 70–80% zapełnienia, konieczna jest regeneracja wymuszona. Wykonuje się ją w serwisie za pomocą komputera diagnostycznego. Technik uruchamia procedurę, w której silnik pracuje na podwyższonych obrotach na postoju, a wtryskiwacze podają dawki paliwa w celu wypalenia sadzy.
+Gdy regeneracja pasywna i aktywna nie nadążają za zapychaniem się filtra, a zapełnienie przekracza 70–80%, konieczna jest regeneracja wymuszona. Wykonuje się ją w serwisie za pomocą komputera diagnostycznego. Technik uruchamia procedurę, w której silnik pracuje na podwyższonych obrotach na postoju, a wtryskiwacze podają dawki paliwa w celu wypalenia sadzy.
 
 ## Objawy zapchania filtra DPF {#objawy-zapchania}
 
@@ -87,14 +87,14 @@ Zapchany DPF nie jest problemem, który pojawia się z dnia na dzień. Proces te
 6.  **Nieprzyjemny zapach** – intensywny, gryzący zapach spalenizny z wydechu świadczy o niedopalaniu sadzy.
 
 {{% expert name="Marek Kowalczyk" %}}
-Najczęstszy scenariusz w busach kurierskich to cykl: jazda w mieście → kontrolka DPF → ignorowanie → check engine → tryb awaryjny → panika. Wystarczy raz w tygodniu przejechać 30–40 km autostradą, żeby filtr się sam zregenerował. Koszt? Kilka litrów paliwa zamiast kilkuset złotych w serwisie.
+Najczęstszy scenariusz w busach kurierskich to cykl: jazda w mieście → kontrolka DPF → ignorowanie → check engine → tryb awaryjny → panika. Wystarczy raz w tygodniu przejechać 30–40 km autostradą, żeby filtr sam się zregenerował. Koszt? Kilka litrów paliwa zamiast kilkuset złotych w serwisie.
 {{% /expert %}}
 
-Pamiętaj, że problemy z DPF nie zawsze oznaczają zapchanie go sadzą. W popularnych w firmach kurierskich Fordach Transit z silnikiem 2.0 EcoBlue nagminną usterką jest awaria parownika filtra, czyli dodatkowego wtryskiwacza paliwa w układzie wydechowym. Uszkodzenie tego elementu uniemożliwia regenerację, a jego wymiana to koszt około 800–1 200 zł.
+Pamiętaj, że problemy z DPF nie zawsze oznaczają jego zapchanie sadzą. W Fordach Transit z silnikiem 2.0 EcoBlue, popularnych w firmach kurierskich, nagminną usterką jest awaria parownika filtra, czyli dodatkowego wtryskiwacza paliwa w układzie wydechowym. Uszkodzenie tego elementu uniemożliwia regenerację, a jego wymiana to koszt około 800–1 200 zł.
 
 ## Wymuszenie regeneracji – jak to zrobić {#wymuszenie-regeneracji}
 
-Zanim pojedziesz do serwisu, możesz spróbować samodzielnie zainicjować regenerację. Warunek – kontrolka DPF świeci się na żółto, ale silnik nie przeszedł jeszcze w tryb awaryjny.
+Zanim pojedziesz do serwisu, możesz spróbować samodzielnie uruchomić regenerację. Warunek – kontrolka DPF świeci się na żółto, ale silnik nie przeszedł jeszcze w tryb awaryjny.
 
 ### Metoda jazdy trasowej
 
@@ -131,20 +131,20 @@ Wycięcie filtra DPF to pokusa dla właścicieli busów – eliminuje problem za
 
 ### Stan prawny w 2026 roku
 
-- **Mandat do 3 000 zł** – nakładany przez policję na podstawie art. 97 Kodeksu Wykroczeń w związku z naruszeniem art. 66 ust. 2 Prawa o Ruchu Drogowym.
+- **Mandat do 3 000 zł** – nakładany przez policję na podstawie art. 97 Kodeksu wykroczeń w związku z naruszeniem art. 66 ust. 2 Prawa o ruchu drogowym.
 - **Utrata dowodu rejestracyjnego** – pojazd nie spełnia warunków technicznych i zostaje wycofany z ruchu.
 - **Niezaliczenie przeglądu** – choć polskie stacje kontroli pojazdów wciąż nie mają obowiązku posiadania liczników cząstek stałych, usunięcie DPF jest łatwe do wykrycia podczas standardowej analizy spalin.
-- **Problem z ubezpieczeniem** – ubezpieczyciel może odmówić wypłaty odszkodowania, jeśli pojazd miał zmodyfikowany układ wydechowy.
+- **Problem z ubezpieczeniem** – ubezpieczyciel może odmówić wypłaty odszkodowania, jeśli w pojeździe zmodyfikowano układ wydechowy.
 
-Problemy czekają zwłaszcza w transporcie międzynarodowym. Kontrola niemieckiej służby BALM (dawniej BAG) i wykrycie wyciętego filtra DPF w busie kończy się mandatem w wysokości 1 000–2 500 EUR. Co gorsza, inspektorzy demontują tablice rejestracyjne i odholowują pojazd na parking depozytowy do momentu usunięcia usterki, co oznacza całkowity paraliż dla firmy transportowej.
+Problemy czekają zwłaszcza w transporcie międzynarodowym. Wykrycie wyciętego filtra DPF w busie podczas kontroli niemieckiej służby BALM (dawniej BAG) kończy się mandatem w wysokości 1 000–2 500 EUR. Co gorsza, inspektorzy demontują tablice rejestracyjne i odholowują pojazd na parking depozytowy do momentu usunięcia usterki, co oznacza całkowity paraliż dla firmy transportowej.
 
-Warto pamiętać, że obowiązkowy pomiar za pomocą liczników cząstek stałych (PN) został już wprowadzony w krajach takich jak Niemcy, Holandia czy Belgia. Oznacza to, że bus z wyciętym DPF nie przejdzie tam przeglądu technicznego ani nie przetrwa wnikliwej kontroli drogowej.
+Warto pamiętać, że obowiązkowy pomiar za pomocą liczników cząstek stałych (PN) został już wprowadzony w krajach takich jak Niemcy, Holandia czy Belgia. Oznacza to, że bus z wyciętym DPF nie przejdzie tam przeglądu technicznego ani nie przejdzie wnikliwej kontroli drogowej.
 
 ### DPF w busach – specyfika Ducato i Sprintera
 
 Busy dostawcze mają dodatkowy problem – system [AdBlue](/serwis/adblue/) (SCR) ściśle współpracujący z DPF. W Fiacie Ducato Euro 6 filtr DPF jest zintegrowany z katalizatorem SCR w jednej obudowie (tzw. SCRF), co oznacza, że usunięcie DPF wymaga ingerencji w cały system oczyszczania spalin.
 
-W Mercedesie Sprinterze z silnikami OM651, OM642 czy OM654 filtr DPF ma dodatkową powłokę katalityczną – tzw. cDPF (coated DPF). Usunięcie takiego filtra i zastąpienie go zwykłą rurą powoduje drastyczny wzrost emisji tlenków azotu (NOx), a nie tylko sadzy.
+W Mercedesie Sprinterze z silnikami OM651, OM642 czy OM654 filtr DPF ma dodatkową powłokę katalityczną – tzw. cDPF (coated DPF). Usunięcie takiego filtra i zastąpienie go zwykłą rurą powoduje drastyczny wzrost emisji tlenków azotu (NOx), a nie wyłącznie sadzy.
 
 ### Alternatywy zamiast usuwania
 
@@ -155,6 +155,6 @@ Zamiast usuwać DPF, warto zainwestować w profilaktykę:
 - **Dodatki do paliwa** – preparaty z tlenkiem ceru obniżają temperaturę zapłonu sadzy o 100–150°C, wspomagając regenerację pasywną.
 - **Czyszczenie profilaktyczne** – co 80 000–100 000 km, zanim filtr się całkowicie zapcha.
 
-Jeśli na desce rozdzielczej zapala się kontrolka silnika wraz z kontrolką DPF, sprawdź najpierw [co oznacza kontrolka silnika](/serwis/kontrolka-silnika/) – problem może leżeć nie w filtrze, a w jednym z jego czujników.
+Jeśli na desce rozdzielczej zapala się kontrolka silnika wraz z kontrolką DPF, sprawdź najpierw [co oznacza kontrolka silnika](/serwis/kontrolka-silnika/) – problem może tkwić nie w filtrze, lecz w jednym z jego czujników.
 
 ---

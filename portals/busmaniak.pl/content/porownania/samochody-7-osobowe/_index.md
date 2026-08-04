@@ -11,7 +11,7 @@ type: "page"
 image: "/images/samochody-7-osobowe-hero.webp"
 image_alt: "Samochody 7-osobowe – porównanie vanów i MPV na polskim rynku"
 main_keyword: "samochody 7 osobowe"
-lead: "Siedmioosobowy van z drzwiami przesuwanymi to najlepszy wybór dla rodziny, która potrzebuje przestrzeni bez gabarytów dużego busa. Kompaktowe wymiary zbliżone do osobówki, bagażnik pomieszczący wózek dziecięcy i trzeci rząd siedzeń na wyciągnięcie ręki. Oto konkretne porównanie ośmiu modeli dostępnych w Polsce."
+lead: "Siedmioosobowy van z drzwiami przesuwanymi to najlepszy wybór dla rodziny, która potrzebuje przestrzeni bez gabarytów dużego busa. Kompaktowe wymiary zbliżone do osobówki, bagażnik pomieszczający wózek dziecięcy i trzeci rząd siedzeń na wyciągnięcie ręki. Oto konkretne porównanie ośmiu modeli dostępnych w Polsce."
 faq:
   - question: "Jaki van 7-osobowy jest najlepszy dla rodziny?"
     answer: "Najlepszy stosunek przestrzeni do ceny oferuje Dacia Jogger – jest najtańsza i ma 4,55 m długości. Jeśli zależy Ci na drzwiach przesuwanych, postaw na Peugeot Rifter Long lub Citroën Berlingo Long."
@@ -20,9 +20,9 @@ faq:
   - question: "Czy van 7-osobowy ma drzwi przesuwane?"
     answer: "Tak – wszystkie vany w zestawieniu (Rifter, Berlingo, Combo Life, Caddy, Tourneo Connect, ProAce City Verso, Kangoo) mają drzwi przesuwane. Wyjątkiem jest Dacia Jogger, która ma klasyczne drzwi na zawiasach."
   - question: "Jaki bagażnik ma van 7-osobowy z rozłożonym trzecim rzędem?"
-    answer: "Z trzecim rzędem siedzeń bagażnik wynosi od 160 l (Dacia Jogger) do 400 l (Renault Kangoo Long). Po złożeniu trzeciego rzędu pojemność rośnie do 2000–3100 l."
+    answer: "Z trzecim rzędem siedzeń pojemność bagażnika wynosi od 160 l (Dacia Jogger) do 400 l (Renault Kangoo Long). Po złożeniu trzeciego rzędu rośnie do 2000–3100 l."
   - question: "Czy van 7-osobowy da się prowadzić jak osobówkę?"
-    answer: "Tak – wszystkie modele w zestawieniu mają długość poniżej 4,80 m i prowadzą się zbliżenie do kompaktowych SUV-ów. Jedyna różnica to wyższy środek ciężkości przy większej wysokości nadwozia."
+    answer: "Tak – wszystkie modele w zestawieniu mają długość poniżej 4,80 m i prowadzą się podobnie do kompaktowych SUV-ów. Jedyna różnica to wyższy środek ciężkości przy większej wysokości nadwozia."
 sources:
   - "UltimateSpecs.com"
   - "oficjalne cenniki producentów"
@@ -60,15 +60,15 @@ Trzeci bliźniak platformy Stellantis K9. Wyróżnia się systemem IntelliGrip d
 {{% /ranking-entry %}}
 
 {{% ranking-entry position="4" title="Dacia Jogger" image="/images/dacia-dokker-hero.webp" score="8.5" url="/modele/dacia-dokker/" engine="1.0 TCe / 1.6 Hybrid" fuel="benzyna / hybryda" seats="7" price-new="od 95 000 zł" price-used="70 000–90 000 zł" pros="Najniższa cena w zestawieniu – od 95 000 zł|Wersja hybrydowa 140 KM ze spalaniem 4,8 l/100 km|Długość 4547 mm – najdłuższy w segmencie" cons="Brak drzwi przesuwanych – klasyczne zawiasy|Mikroskopijny bagażnik 160 l przy 7 osobach|Słabsze materiały wykończeniowe" %}}
-Jedyny model w zestawieniu bez drzwi przesuwanych, ale za to najdłuższy i najtańszy. Silnik 1.0 TCe 110 KM lub hybryda 140 KM oferują przyzwoite osiągi przy niskim spalaniu. Idealny wybór budżetowy dla rodziny, która nie potrzebuje drzwi przesuwanych.
+Jedyny model w zestawieniu bez drzwi przesuwanych, ale za to najdłuższy i najtańszy. Silnik 1.0 TCe 110 KM lub hybryda 140 KM oferują przyzwoite osiągi przy niskim spalaniu. Idealny wybór w niskim budżecie dla rodziny, która nie potrzebuje drzwi przesuwanych.
 {{% /ranking-entry %}}
 
-{{% ranking-entry position="5" title="VW Caddy Maxi" image="/images/volkswagen-caddy-maxi-hero.webp" score="8.3" url="/modele/volkswagen-caddy/" engine="2.0 TDI / 1.5 TSI" fuel="diesel / benzyna" seats="7" price-new="od 140 000 zł" price-used="60 000–140 000 zł" pros="Największy bagażnik w zestawieniu – do 3105 l|Premium materiały i wyciszenie kabiny|Najwyższa wartość rezydualna" cons="Najdroższa opcja – od 140 000 zł nowy|Mały bagażnik 315 l przy 7 osobach|Droższe części i serwis niż Stellantis" %}}
-Premium w segmencie małych vanów. Diesel 2.0 TDI 122 KM lub benzyna 1.5 TSI 115 KM zapewniają kulturalną pracę silnika. Największy bagażnik w zestawieniu – do 3105 l ze złożonymi siedzeniami – ale przy 7 osobach kurczy się do zaledwie 315 l.
+{{% ranking-entry position="5" title="VW Caddy Maxi" image="/images/volkswagen-caddy-maxi-hero.webp" score="8.3" url="/modele/volkswagen-caddy/" engine="2.0 TDI / 1.5 TSI" fuel="diesel / benzyna" seats="7" price-new="od 140 000 zł" price-used="60 000–140 000 zł" pros="Największy bagażnik w zestawieniu – do 3105 l|Wysokiej jakości materiały i wyciszenie kabiny|Najwyższa wartość rezydualna" cons="Najdroższa opcja – od 140 000 zł nowy|Mały bagażnik 315 l przy 7 osobach|Droższe części i serwis niż w grupie Stellantis" %}}
+Model z wyższej półki w segmencie małych vanów. Diesel 2.0 TDI 122 KM lub benzyna 1.5 TSI 115 KM zapewniają kulturalną pracę silnika. Największy bagażnik w zestawieniu – do 3105 l ze złożonymi siedzeniami – ale przy 7 osobach kurczy się do zaledwie 315 l.
 {{% /ranking-entry %}}
 
 {{% ranking-entry position="6" title="Ford Tourneo Connect Long" image="/images/ford-transit-connect-hero.webp" score="7.8" url="/modele/ford-transit-connect/" engine="1.5 EcoBlue" fuel="diesel" seats="7" price-new="od 130 000 zł" price-used="90 000–130 000 zł" pros="Platforma MQB Volkswagena – sprawdzona mechanika|Nowoczesny system multimedialny SYNC 4|Dobra dynamika jazdy" cons="Brak opcji hybrydowej lub benzynowej|Krótka historia modelu – od 2024 roku|Wysoka cena względem bliźniaka Caddy" %}}
-Nowy model (2024+) na platformie VW Caddy. Diesel 1.5 EcoBlue 115 KM zapewnia niskie spalanie i solidny moment obrotowy. Krótka obecność na rynku oznacza ograniczoną dostępność na rynku wtórnym.
+Nowy model (2024+) na platformie VW Caddy. Diesel 1.5 EcoBlue 115 KM zapewnia niskie spalanie i solidny moment obrotowy. Krótka obecność w ofercie oznacza ograniczoną dostępność na rynku wtórnym.
 {{% /ranking-entry %}}
 
 {{% ranking-entry position="7" title="Toyota ProAce City Verso Long" image="/images/toyota-proace-city-long-hero.webp" score="7.5" url="/modele/toyota-proace-city/" engine="1.5 BlueHDi / 1.2 PureTech" fuel="diesel / benzyna" seats="7" price-new="od 125 000 zł" price-used="80 000–110 000 zł" pros="5-letnia gwarancja Toyota – najdłuższa w segmencie|Identyczna mechanika Stellantis – sprawdzona|Wysoka niezawodność potwierdzona rankingami" cons="Droższa od bliźniaków Stellantis o 5–10 tys. zł|Mniejsza sieć serwisowa vanów Toyota|Identyczny samochód za wyższą cenę" %}}
@@ -127,7 +127,7 @@ Na rynku wtórnym szukaj diesla 1.5 BlueHDi/dCi z manualną skrzynią. Ten silni
 
 ## Ceny – nowe i używane
 
-Segment vanów 7-osobowych to jeden z najbardziej przystępnych cenowo. Nowa Dacia Jogger kosztuje mniej niż używany 3-letni VW Caddy.
+Segment vanów 7-osobowych należy do najbardziej przystępnych cenowo. Nowa Dacia Jogger kosztuje mniej niż używany 3-letni VW Caddy.
 
 | Model | Cena nowego (2025–2026) | Cena używanego (2020–2023) | Cena używanego (2017–2019) |
 | :--- | :--- | :--- | :--- |
@@ -140,11 +140,11 @@ Segment vanów 7-osobowych to jeden z najbardziej przystępnych cenowo. Nowa Dac
 | **Toyota ProAce City Verso Long** | od 125 000 zł | 80 000–110 000 zł | – |
 | **Renault Kangoo Long** | od 110 000 zł | 60 000–85 000 zł | 35 000–55 000 zł |
 
-Najlepszą wartość na rynku wtórnym oferują [Citroën Berlingo](/modele/citroen-berlingo/) i [Renault Kangoo](/modele/renault-kangoo/) – mają najniższe ceny przy identycznej (Berlingo) lub zbliżonej (Kangoo) mechanice co drożsi konkurenci. VW Caddy trzyma cenę najdłużej – 3-letnie egzemplarze kosztują 70–80% ceny nowego.
+Najkorzystniejszy stosunek ceny do możliwości na rynku wtórnym oferują [Citroën Berlingo](/modele/citroen-berlingo/) i [Renault Kangoo](/modele/renault-kangoo/) – mają najniższe ceny przy mechanice identycznej (Berlingo) lub zbliżonej (Kangoo) jak u droższych konkurentów. VW Caddy trzyma cenę najdłużej – 3-letnie egzemplarze kosztują 70–80% ceny nowego.
 
 ## Na co uważać przy zakupie używanego vana 7-osobowego
 
-Używany van 7-osobowy to świetna opcja budżetowa, ale wymaga dokładnej weryfikacji. Vany rodzinne mają specyficzne problemy wynikające z codziennego użytkowania z dziećmi.
+Używany van 7-osobowy to świetna opcja w niskim budżecie, ale wymaga dokładnej weryfikacji. Vany rodzinne mają specyficzne problemy wynikające z codziennego użytkowania z dziećmi.
 
 Na co zwrócić uwagę:
 
@@ -154,6 +154,6 @@ Na co zwrócić uwagę:
 - **Sprzęgło** – w vanach z manualną skrzynią sprzęgło przy dużym obciążeniu zużywa się szybciej. Wymiana: 2000–3500 zł
 - **Wnętrze** – vany rodzinne mają intensywnie eksploatowane tapicerki. Sprawdź stan siedzeń, schowków i plastików deski rozdzielczej
 
-Unikaj egzemplarzy z historią taxi lub shuttle – mają duże przebiegi i intensywnie eksploatowane wnętrza. Najlepsze okazje to vany z leasingów firmowych, gdzie kierowcy dbali o samochód, a serwis był regularny.
+Unikaj egzemplarzy z historią taksówki lub busa wahadłowego – mają duże przebiegi i intensywnie eksploatowane wnętrza. Najlepsze okazje to vany z leasingów firmowych, gdzie kierowcy dbali o samochód, a serwis był regularny.
 
 Przy budżecie 60 000–80 000 zł optymalnym wyborem jest [Citroën Berlingo](/modele/citroen-berlingo/) Long lub Peugeot Rifter Long z lat 2019–2021 z silnikiem 1.5 BlueHDi 130 KM. Przy wyższym budżecie 100 000–130 000 zł warto rozważyć [VW Caddy](/modele/volkswagen-caddy/) Maxi z 2020–2022 – lepsze materiały, cichsze wnętrze i wyższa wartość rezydualna.

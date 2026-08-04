@@ -10,7 +10,7 @@ volume: 1500
 main_keyword: "olej silnikowy do busa"
 image: "/images/olej-silnikowy-hero.webp"
 image_alt: "Wlew oleju silnikowego w busie dostawczym"
-lead: "Wybór oleju silnikowego do busa sprowadza się do trzech parametrów: klasy lepkości (np. 5W-30), normy producenta (np. Fiat 9.55535-S1, MB 229.52, VW 507.00, Ford WSS-M2C950-A) i pojemności miski olejowej, która w dużych dostawczakach sięga nawet 12 litrów. Poniżej znajdziesz konkretne zalecenia per model, interwały wymiany oraz tabelę pojemności – wszystko, żebyś nie musiał szukać w instrukcji obsługi."
+lead: "Wybór oleju silnikowego do busa sprowadza się do trzech parametrów: klasy lepkości (np. 5W-30), normy producenta (np. Fiat 9.55535-S1, MB 229.52, VW 507.00, Ford WSS-M2C950-A) i pojemności miski olejowej, która w dużych dostawczakach sięga nawet 12 litrów. Poniżej znajdziesz konkretne zalecenia dla poszczególnych modeli, interwały wymiany oraz tabelę pojemności – wszystko, żebyś nie musiał szukać w instrukcji obsługi."
 faq:
   - question: "Czy mogę wlać 5W-40 zamiast 5W-30 do Ducato?"
     answer: "W silnikach 2.3 MultiJet Fiat dopuszcza oba warianty, jednak 5W-30 z normą Fiat 9.55535-S1 i ACEA C2 jest zalecany dla wersji z DPF. Olej 5W-40 (normy Fiat 9.55535-N2/S2, ACEA C3) sprawdzi się w starszych Ducato bez filtra cząstek stałych."
@@ -27,17 +27,17 @@ sources:
 
 Oznaczenie na opakowaniu mówi więcej, niż się wydaje. Pierwsza liczba (np. 5W) określa płynność oleju w niskich temperaturach – im niższa, tym łatwiejszy rozruch zimą. Druga liczba (np. 30 lub 40) to lepkość w temperaturze roboczej silnika.
 
-- **5W-30** – cieńszy film olejowy, mniejsze opory wewnętrzne, niższe spalanie. Zalecany przez większość producentów busów z filtrami DPF, ponieważ generuje mniej popiołu siarczanego.
+- **5W-30** – cieńszy film olejowy, mniejsze opory wewnętrzne, niższe spalanie. Zalecany przez większość producentów busów z filtrami DPF, ponieważ generuje mniej popiołu siarczanowego.
 - **5W-40** – grubsza warstwa ochronna, lepsza w starszych silnikach z większymi luzami montażowymi. Sprawdza się w Ducato II (2.8 JTD) czy starszych Sprinterach bez DPF.
-- **0W-30** – najrzadsza opcja, stosowana głównie przez Forda w silnikach EcoBlue i grupę Stellantis. Obniża spalanie, ale wymaga ścisłego trzymania się normy producenta.
+- **0W-30** – najrzadziej spotykana opcja, stosowana głównie przez Forda w silnikach EcoBlue oraz przez grupę Stellantis. Obniża spalanie, ale wymaga ścisłego trzymania się normy producenta.
 
 {{% info title="Uwaga" icon="engineering" %}}
-Nigdy nie mieszaj olejów o różnych bazach (syntetyk z mineralnym). Jeśli dolewasz w trasie awaryjnie, stosuj ten sam typ i lepkość. Po dojeździe do warsztatu wymień olej w całości.
+Nigdy nie mieszaj olejów o różnych bazach (syntetyk z mineralnym). Jeśli dolewasz w trasie awaryjnie, stosuj ten sam typ i lepkość. Po dojechaniu do warsztatu wymień olej w całości.
 {{% /info %}}
 
 ## Normy producentów – które są obowiązkowe
 
-Sama lepkość nie wystarczy. Każdy producent busa wymaga spełnienia konkretnej normy (dopuszczenia), która gwarantuje kompatybilność z filtrem DPF, turbosprężarką i uszczelnieniami. Ignorowanie tych oznaczeń to prosta droga do awarii.
+Sama lepkość nie wystarczy. Każdy producent busa wymaga spełnienia konkretnej normy (dopuszczenia), która gwarantuje prawidłową pracę filtra DPF, turbosprężarki i uszczelnień. Ignorowanie tych oznaczeń to prosta droga do awarii.
 
 | Producent | Norma/Dopuszczenie | Lepkość | Uwagi |
 | :--- | :--- | :--- | :--- |
@@ -47,11 +47,11 @@ Sama lepkość nie wystarczy. Każdy producent busa wymaga spełnienia konkretne
 | Ford (Transit) | WSS-M2C950-A | 0W-30 | Bezwzględnie wymagana w silnikach 2.0 EcoBlue z mokrym paskiem. |
 | PSA (Boxer/Jumper) | PSA B71 2290 / B71 2312 | 5W-30 / 0W-30 | Norma B71 2312 obowiązkowa dla nowszych silników BlueHDi (Euro 6). |
 | Renault (Master) | RN 0720 | 5W-30 | Low SAPS dla silników dCi z filtrem DPF. |
-| Iveco (Daily) | Iveco 18-1811 SC1 LV | 5W-30 | Niezbędna dla silników Euro 6 (np. F1C); Iveco ma własne, restrykcyjne normy. |
+| Iveco (Daily) | Iveco 18-1811 SC1 LV | 5W-30 | Niezbędna dla silników Euro 6 (np. F1C); Iveco ma własne, rygorystyczne normy. |
 
 W silnikach 2.0 EcoBlue Forda (prod. 2016–2023) pasek rozrządu pracuje w kąpieli olejowej. Zastosowanie oleju niespełniającego normy WSS-M2C950-A prowadzi do jego degradacji. Fragmenty paska zatykają smok pompy oleju, co kończy się zatarciem silnika.
 
-{{% expert name="Marek Kowalczyk" %}}Norma MB 229.52 dla Sprintera to nie fanaberia – to olej niskopopiołowy (Low SAPS), który chroni filtr DPF. Wlanie oleju ACEA A3/B4 zamiast C3 skraca żywotność filtra nawet o połowę. Widuję takie oszczędności na co dzień – kończą się rachunkiem za nowy DPF za 4–6 tys. zł.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Norma MB 229.52 dla Sprintera to nie fanaberia – to olej niskopopiołowy (Low SAPS), który chroni filtr DPF. Wlanie oleju ACEA A3/B4 zamiast C3 skraca żywotność filtra nawet o połowę. Widuję takie oszczędności na co dzień – kończą się rachunkiem rzędu 4–6 tys. zł za nowy DPF.{{% /expert %}}
 
 ## Jaki olej do Ducato, Sprintera i Transita – tabela doboru
 
@@ -71,17 +71,17 @@ Trzy najpopularniejsze busy w Polsce mają bardzo różne wymagania. Poniższa t
 
 ## Co ile wymieniać olej w busie
 
-Interwały wymiany oleju to jeden z najbardziej kontrowersyjnych tematów. Producenci maksymalnie je wydłużają, a mechanicy słusznie zalecają ich skracanie. W pracy kurierskiej olej degraduje się znacznie szybciej z powodu notorycznie przerywanych cykli wypalania DPF. Niespalony olej napędowy przedostaje się do miski, rozrzedzając olej silnikowy i podnosząc jego stan na bagnecie.
+Interwały wymiany oleju to jeden z najbardziej kontrowersyjnych tematów. Producenci maksymalnie je wydłużają, a mechanicy słusznie zalecają ich skracanie. W pracy kurierskiej olej degraduje się znacznie szybciej z powodu notorycznie przerywanych cykli wypalania DPF. Niespalony olej napędowy przedostaje się do miski, rozrzedzając olej silnikowy i podnosząc jego poziom na bagnecie.
 
 - **Fiat Ducato** – maksymalnie co 40 000–48 000 km lub 2 lata (wg Fiata), ale przy eksploatacji miejskiej lub kamperowej lepiej wymieniać co 15–20 tys. km.
-- **Mercedes Sprinter** – system ASSYST adaptuje interwał do stylu jazdy, dopuszczając przebiegi 40 000–60 000 km. Bezpieczną praktyką jest skracanie go do 20 000 km.
-- **Ford Transit** – silniki EcoBlue są wrażliwe na jakość oleju. Komputer pokładowy monitoruje jego degradację i w warunkach miejskich może zażądać wymiany już po 8000–12 000 km.
+- **Mercedes Sprinter** – system ASSYST dostosowuje interwał do stylu jazdy, dopuszczając przebiegi 40 000–60 000 km. Bezpieczną praktyką jest skracanie go do 20 000 km.
+- **Ford Transit** – silniki EcoBlue są wrażliwe na jakość oleju. Komputer pokładowy śledzi jego degradację i w warunkach miejskich może zażądać wymiany już po 8000–12 000 km.
 - **VW Crafter** – interwał LongLife do 30 000 km, ale wyłącznie z olejem o normie VW 507.00. Przy standardowym trybie wymiana jest zalecana co 15 000 km.
 - **Iveco Daily** – interwał fabryczny dla silników F1C to 40 000 km. Niezależne serwisy zalecają skrócenie go do 20–25 tys. km dla zachowania żywotności jednostki.
 
 ## Ile oleju potrzeba – tabela pojemności
 
-Kupowanie oleju "na oko" to przepis na problemy. Za mało – silnik się nie smaruje. Za dużo – olej pieni się i może uszkodzić uszczelnienia wału korbowego. Zawsze weryfikuj pojemność układu smarowania dla swojej wersji silnikowej i napędowej.
+Kupowanie oleju „na oko” to prosta droga do kłopotów. Za mało – silnik nie jest należycie smarowany. Za dużo – olej się pieni i może uszkodzić uszczelnienia wału korbowego. Zawsze weryfikuj pojemność układu smarowania dla swojej wersji silnikowej i napędowej.
 
 | Model | Silnik | Pojemność z filtrem (l) |
 | :--- | :--- | :--- |
@@ -117,7 +117,7 @@ Na rynku dostępnych jest kilkadziesiąt marek, ale w praktyce mechanicy serwisu
 - **Total Quartz Ineo ECS** – 5W-30, kluczowy dla normy PSA B71 2290.
 - **Fuchs Titan GT1 Pro C3** – 5W-30, dobry stosunek jakości do ceny.
 
-Niezależnie od marki, liczy się wyłącznie dopuszczenie producenta pojazdu. Olej za 30 zł/litr z właściwą normą jest zawsze lepszy niż najdroższy olej na rynku, który tej normy nie posiada.
+Niezależnie od marki liczy się wyłącznie dopuszczenie producenta pojazdu. Olej za 30 zł/litr z właściwą normą jest zawsze lepszy niż najdroższy olej na rynku, który tej normy nie posiada.
 
 - Ford Transit – pojemności układów: https://www.fordservicecontent.com
 - Mercedes-Benz – instrukcje eksploatacji: https://www.mercedes-benz.pl/passengercars/services/manuals.html

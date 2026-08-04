@@ -10,16 +10,16 @@ volume: 5000
 image: "/images/przeglad-techniczny-hero.webp"
 image_alt: "Przegląd techniczny busa na stacji kontroli pojazdów"
 main_keyword: "przegląd techniczny"
-lead: "Od września 2025 roku badanie techniczne busa kosztuje 149 zł zamiast dotychczasowych 99 zł – to pierwsza podwyżka od ponad dwudziestu lat. Ale sama opłata to najmniejszy problem. Negatywny wynik przeglądu oznacza zakaz poruszania się po drogach i konieczność naprawy usterki w ciągu 14 dni. Busy dostawcze oblewają przegląd częściej niż osobówki, bo ich eksploatacja jest intensywniejsza. Sprawdź, co dokładnie kontroluje diagnosta i jak przygotować busa, żeby przejść badanie za pierwszym razem."
+lead: "Od września 2025 roku badanie techniczne busa kosztuje 149 zł zamiast dotychczasowych 99 zł – to pierwsza podwyżka od ponad dwudziestu lat. Ale sama opłata to najmniejszy problem. Negatywny wynik przeglądu oznacza zakaz poruszania się po drogach i konieczność naprawy usterki w ciągu 14 dni. Busy dostawcze oblewają przegląd częściej niż osobówki, bo ich eksploatacja jest intensywniejsza. Sprawdź, co dokładnie kontroluje diagnosta i jak przygotować busa, aby przejść badanie za pierwszym razem."
 faq:
   - question: "Ile kosztuje przegląd techniczny busa w 2026 roku?"
-    answer: "Badanie techniczne busa dostawczego do 3,5 t kosztuje 149 zł (+ 1 zł opłaty CEPiK). Bus powyżej 3,5 t – 199 zł (+ 1 zł). Kampery (samochody specjalne kempingowe) – 149 zł (+ 1 zł). Dodatkowe badanie po przeróbce lub zmianie DMC – 99 zł."
+    answer: "Badanie techniczne busa dostawczego do 3,5 t kosztuje 149 zł (+ 1 zł opłaty CEPiK). Bus o DMC powyżej 3,5 t – 199 zł (+ 1 zł). Kampery (samochody specjalne kempingowe) – 149 zł (+ 1 zł). Dodatkowe badanie po przeróbce lub zmianie DMC – 99 zł."
   - question: "Co ile trzeba robić przegląd techniczny busa?"
-    answer: "Nowy bus osobowy lub dostawczy do 3,5 t przechodzi pierwszy przegląd po 3 latach, drugi po kolejnych 2 latach, a następne co roku. Bus DMC powyżej 3,5 t (kategoria C) – co rok od pierwszej rejestracji. Autobus do 15 osób (np. bus 9-osobowy zarejestrowany jako autobus) – co 6 miesięcy."
+    answer: "Nowy bus osobowy lub dostawczy do 3,5 t przechodzi pierwszy przegląd po 3 latach, drugi po kolejnych 2 latach, a następne co roku. Bus o DMC powyżej 3,5 t (kategoria C) – co rok od pierwszej rejestracji. Autobus do 15 osób (np. bus 9-osobowy zarejestrowany jako autobus) – co 6 miesięcy."
   - question: "Czy mogę jeździć z negatywnym wynikiem przeglądu?"
     answer: "Nie. Negatywny wynik przeglądu technicznego oznacza zakaz poruszania się po drogach publicznych, z wyjątkiem dojazdu do warsztatu i z powrotem na SKP. Masz 14 dni na usunięcie usterki i ponowne stawienie się na badanie, które wiąże się z opłatami cząstkowymi za sprawdzenie naprawionych elementów."
   - question: "Jaka kara za brak przeglądu technicznego busa?"
-    answer: "Jazda bez ważnego badania technicznego grozi mandatem od 1500 zł (w razie zakwalifikowania pojazdu jako niedopuszczony do ruchu) do 3000 zł. W lżejszych przypadkach może zakończyć się pouczeniem. Policja obligatoryjnie zatrzymuje dowód rejestracyjny. Ubezpieczyciel może też odmówić wypłaty odszkodowania z AC lub wystąpić z regresem w ramach OC."
+    answer: "Jazda bez ważnego badania technicznego grozi mandatem od 1500 zł (w razie zakwalifikowania pojazdu jako niedopuszczonego do ruchu) do 3000 zł. W lżejszych przypadkach może zakończyć się pouczeniem. Policja obowiązkowo zatrzymuje dowód rejestracyjny. Ubezpieczyciel może też odmówić wypłaty odszkodowania z AC lub wystąpić z regresem w ramach OC."
 sources:
   - "Prawo o ruchu drogowym (Dz.U. 2024 poz. 1251)"
   - "Rozporządzenie MI w sprawie badań technicznych"
@@ -37,27 +37,27 @@ Terminy przeglądów dla poszczególnych kategorii:
 - **Bus dostawczy do 3,5 t (kategoria N1)** – pierwszy przegląd po 3 latach od pierwszej rejestracji, drugi po kolejnych 2 latach, a następne co 12 miesięcy.
 - **Bus osobowy do 9 osób (kategoria M1)** – identycznie jak dostawczy: pierwszy przegląd po 3 latach, drugi po 2 latach, a następnie co rok.
 - **Bus powyżej 3,5 t (kategoria N2/N3)** – co 12 miesięcy od pierwszej rejestracji (bez okresu początkowego).
-- **Autobus do 15 osób (kategoria M2)** – co 6 miesięcy. Dotyczy busów zarejestrowanych jako autobus, np. 9-osobowy bus przewoźnika.
+- **Autobus do 15 osób (kategoria M2)** – co 6 miesięcy. Dotyczy busów zarejestrowanych jako autobus, np. 9-osobowego busa przewoźnika.
 - **Kamper (pojazd specjalny kempingowy)** – co 12 miesięcy od pierwszej rejestracji.
 - **Taksówka/bus na licencji** – co 12 miesięcy, niezależnie od wieku pojazdu.
 
 {{% info title="Nowy vs używany" icon="calendar" %}}
-3-letni okres dla nowych busów dotyczy wyłącznie pojazdów, które nie były wcześniej rejestrowane. Kupując „nowy" bus ze stocku dealera, który był zarejestrowany jako pojazd demonstracyjny, okres ten liczy się od daty pierwszej rejestracji, a nie od daty zakupu.
+3-letni okres dla nowych busów dotyczy wyłącznie pojazdów, które nie były wcześniej zarejestrowane. Kupując „nowy” bus z magazynu dealera, który był zarejestrowany jako pojazd demonstracyjny, okres ten liczy się od daty pierwszej rejestracji, a nie od daty zakupu.
 {{% /info %}}
 
 ## Co sprawdzają na przeglądzie technicznym
 
 Badanie techniczne na stacji kontroli pojazdów (SKP) trwa 20–40 minut i obejmuje kontrolę ponad 80 punktów podzielonych na kilka kategorii. Diagnosta sprawdza zarówno bezpieczeństwo czynne (czy bus hamuje i skręca prawidłowo), jak i bierne (czy pasy i poduszki działają).
 
-Coraz częstszą przyczyną negatywnego wyniku jest świecenie się kontrolek sygnalizujących awarię kluczowych systemów. Diagnosta obligatoryjnie odrzuci pojazd z aktywną kontrolką „Check Engine”, błędem systemu poduszek powietrznych „Airbag” lub usterką systemu ratunkowego „eCall”, sygnalizowaną czerwoną diodą na podsufitce.
+Coraz częstszą przyczyną negatywnego wyniku jest świecenie się kontrolek sygnalizujących awarię kluczowych systemów. Diagnosta obowiązkowo odrzuci pojazd z aktywną kontrolką „Check Engine”, błędem systemu poduszek powietrznych „Airbag” lub usterką systemu ratunkowego „eCall”, sygnalizowaną czerwoną diodą na podsufitce.
 
 ### Układ hamulcowy
 
 To najważniejszy element przeglądu i jednocześnie najczęstsza przyczyna negatywnego wyniku. Diagnosta mierzy na rolkach:
 
-- Siłę hamowania na każdym kole (minimum 50% masy przypadającej na oś)
+- Siłę hamowania na każdym kole (co najmniej 50% masy przypadającej na oś)
 - Równomierność hamowania lewo-prawo (różnica maksymalnie 30%)
-- Działanie hamulca postojowego (minimum 16% DMC)
+- Działanie hamulca postojowego (co najmniej 16% DMC)
 - Stan przewodów i węży hamulcowych (pęknięcia, korozja, wycieki)
 
 ![Przegląd techniczny busa na stacji kontroli pojazdów](/images/przeglad-techniczny-hero.webp)
@@ -104,7 +104,7 @@ Przegląd techniczny busów elektrycznych (EV) wygląda nieco inaczej. Są one z
 
 ## Przegląd busa dostawczego vs osobowego – różnice
 
-Na poziomie procedury badawczej różnice między busem dostawczym a osobowym są minimalne – diagnosta sprawdza te same punkty. Istotne różnice dotyczą jednak kryteriów i wymagań dodatkowych.
+W procedurze badawczej różnice między busem dostawczym a osobowym są minimalne – diagnosta sprawdza te same punkty. Istotne różnice dotyczą jednak kryteriów i wymagań dodatkowych.
 
 | Aspekt | Bus dostawczy (N1) | Bus osobowy (M1) |
 | :--- | :--- | :--- |
@@ -119,7 +119,7 @@ Na poziomie procedury badawczej różnice między busem dostawczym a osobowym s�
 
 Kluczowa różnica pojawia się przy busach powyżej 3,5 t (N2). Te pojazdy wymagają dodatkowej kontroli tachografu (legalizacja co 2 lata), ogranicznika prędkości i urządzeń mocujących ładunek. Opłata za badanie wynosi 199 zł zamiast 149 zł.
 
-{{% expert name="Marek Kowalczyk" %}}Największa pułapka dotyczy busów 9-osobowych. Jeśli bus jest zarejestrowany jako M1 (samochód osobowy), przegląd jest zgodny z zasadą 3-2-1. Ale jeśli ten sam bus wpisany jest jako M2 (autobus) – przegląd jest wymagany co 6 miesięcy. Przy kupnie sprawdź kategorię w dowodzie rejestracyjnym, bo to wpływa nie tylko na częstotliwość przeglądów, ale i na ubezpieczenie.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Największa pułapka dotyczy busów 9-osobowych. Jeśli bus jest zarejestrowany jako M1 (samochód osobowy), przeglądy odbywają się według zasady 3-2-1. Ale jeśli ten sam bus wpisany jest jako M2 (autobus) – przegląd jest wymagany co 6 miesięcy. Przy zakupie sprawdź kategorię w dowodzie rejestracyjnym, bo to wpływa nie tylko na częstotliwość przeglądów, ale i na ubezpieczenie.{{% /expert %}}
 
 ## Koszt przeglądu technicznego w 2026 roku
 
@@ -137,9 +137,9 @@ We wrześniu 2025 roku weszły w życie nowe stawki za badania techniczne – to
 
 *Powtórne badanie po negatywnym wyniku, wykonane w ciągu 14 dni, wiąże się z opłatami cząstkowymi za sprawdzenie usuniętych usterek (od 14 do 36 zł za element), do maksymalnej kwoty pełnego badania.
 
-Do każdej podanej stawki za pozytywny wynik należy doliczyć 1 zł opłaty ewidencyjnej na rzecz CEPiK. Oznacza to, że realny koszt badania dla busa wynosił 99 zł, a obecnie 150 zł.
+Do każdej podanej stawki za pozytywny wynik należy doliczyć 1 zł opłaty ewidencyjnej na rzecz CEPiK. Oznacza to, że realny koszt badania dla busa wynosił 99 zł, a obecnie wynosi 150 zł.
 
-W przepisach regularnie pojawiają się projekty wprowadzenia kar za spóźnienie z badaniem technicznym o ponad 30 dni – najczęściej w postaci podwójnej stawki za przegląd. Choć na razie przepisy te nie weszły w życie, należy pamiętać, że diagnosta ma obowiązek wpisać datę następnego badania licząc od terminu pierwotnego, a nie od daty spóźnionego przeglądu.
+W przepisach regularnie pojawiają się projekty wprowadzenia kar za spóźnienie z badaniem technicznym o ponad 30 dni – najczęściej w postaci podwójnej stawki za przegląd. Choć na razie przepisy te nie weszły w życie, należy pamiętać, że diagnosta ma obowiązek wpisać datę następnego badania, licząc od terminu pierwotnego, a nie od daty spóźnionego przeglądu.
 
 ## Najczęstsze przyczyny negatywnego wyniku
 
@@ -152,10 +152,10 @@ Lista najczęstszych usterek skutkujących negatywnym wynikiem:
 3. **Nadmierne zadymienie spalin** – zapchany filtr DPF, zużyte wtryskiwacze lub awaria systemu [AdBlue](/serwis/adblue/). Aktywny błąd w systemie OBD związany z emisją spalin to automatycznie negatywny wynik.
 4. **Luzy w zawieszeniu** – zużyte sworznie zwrotnic, końcówki drążków kierowniczych, tuleje wahaczy. Busy dostawcze po 150 000 km prawie zawsze mają nadmierne luzy.
 5. **Korozja podwozia** – perforacja podłużnic, belek nośnych lub progów. W busach eksploatowanych zimą z solą drogową korozja postępuje szybko, szczególnie w okolicach mocowań zawieszenia.
-6. **Wycieki płynów** – olej silnikowy, płyn hamulcowy, płyn chłodniczy. Jakikolwiek wyciek płynu hamulcowego na przewodzie to automatyczny negatywny wynik ze względu na zagrożenie bezpieczeństwa.
-7. **Uszkodzone szyby** – pęknięcie w polu widzenia kierowcy (strefa pracy wycieraczek) dyskwalifikuje bus z ruchu.
+6. **Wycieki płynów** – olej silnikowy, płyn hamulcowy, płyn chłodniczy. Jakikolwiek wyciek płynu hamulcowego z przewodu to automatyczny negatywny wynik ze względu na zagrożenie bezpieczeństwa.
+7. **Uszkodzone szyby** – pęknięcie w polu widzenia kierowcy (strefa pracy wycieraczek) wyklucza dopuszczenie busa do ruchu.
 
-Przed przeglądem warto samodzielnie zweryfikować te punkty – większość usterek da się naprawić niewielkim kosztem, unikając straty czasu na powtórne badanie.
+Przed przeglądem warto samodzielnie sprawdzić te punkty – większość usterek da się naprawić niewielkim kosztem i uniknąć straty czasu na powtórne badanie.
 
 ## Przegląd kampera – dodatkowe wymagania
 
@@ -169,6 +169,6 @@ Dodatkowe elementy kontrolowane w kamperze:
 - **Zamocowanie mebli i wyposażenia** – luźne szafki i meble to zagrożenie przy zderzeniu. Diagnosta sprawdza, czy zabudowa jest trwale zamocowana do nadwozia.
 - **[DMC](/przepisy/dmc-co-to/) i masa własna** – kamper po przeróbce ma zmienioną masę własną, co musi być odnotowane w dokumentach.
 
-Bytowe instalacje gazowe (kuchenka, ogrzewanie, lodówka) nie podlegają kontroli z wpisem do dowodu – ich stan techniczny weryfikuje się we własnym zakresie lub w serwisach karawaningowych w ramach tzw. przeglądu G 607. Od 1 lipca 2022 roku przy badaniu technicznym po zmianie konstrukcyjnej z busa (N1) na kamper (M1) diagnosta wymaga okazania dokumentu potwierdzającego zapłatę akcyzy. Bez zaświadczenia z Urzędu Skarbowego badanie rozszerzone nie zostanie zaliczone.
+Bytowe instalacje gazowe (kuchenka, ogrzewanie, lodówka) nie podlegają kontroli odnotowywanej w dowodzie rejestracyjnym – ich stan techniczny weryfikuje się we własnym zakresie lub w serwisach karawaningowych w ramach tzw. przeglądu G 607. Od 1 lipca 2022 roku przy badaniu technicznym po zmianie konstrukcyjnej z busa (N1) na kamper (M1) diagnosta wymaga okazania dokumentu potwierdzającego zapłatę akcyzy. Bez zaświadczenia z urzędu skarbowego badanie rozszerzone nie zostanie zaliczone.
 
-Informacje o ciśnieniu w oponach, które diagnosta sprawdza podczas badania, znajdziesz w artykule [ciśnienie w oponach busa](/serwis/cisnienie-w-oponach/). Stan opon (głębokość bieżnika minimum 1,6 mm, brak uszkodzeń) to kolejny element kontroli – w busach dostawczych opony zużywają się nierównomiernie przy częstej jeździe z pełnym obciążeniem, dlatego warto sprawdzić je przed wizytą na SKP.
+Informacje o ciśnieniu w oponach, które diagnosta sprawdza podczas badania, znajdziesz w artykule [ciśnienie w oponach busa](/serwis/cisnienie-w-oponach/). Stan opon (głębokość bieżnika co najmniej 1,6 mm, brak uszkodzeń) to kolejny element kontroli – w busach dostawczych opony zużywają się nierównomiernie przy częstej jeździe z pełnym obciążeniem, dlatego warto sprawdzić je przed wizytą na SKP.

@@ -10,14 +10,14 @@ type: "page"
 main_keyword: "wymiary busów"
 image: "/images/wymiary-tabela-hero.webp"
 image_alt: "Porównanie wymiarów busów dostawczych – od małych vanów po duże busy"
-lead: "Wybór busa zaczyna się od wymiarów – bo to one decydują, czy samochód zmieści się w garażu, wjedzie pod wiadukt i pomieści ładunek. Zebraliśmy wymiary wszystkich popularnych busów i vanów dostępnych na polskim rynku – od dużych dostawczaków jak Ducato i Sprinter, przez średnie vany typu Vivaro i Trafic, aż po kompaktowe Berlingo i Kangoo. Każdy model w każdej wersji nadwoziowej."
+lead: "Wybór busa zaczyna się od wymiarów – bo to one decydują, czy samochód zmieści się w garażu, wjedzie pod wiadukt i pomieści ładunek. Zebraliśmy wymiary wszystkich popularnych busów i vanów dostępnych na polskim rynku – od dużych dostawczaków, takich jak Ducato i Sprinter, przez średnie vany typu Vivaro i Trafic, aż po kompaktowe Berlingo i Kangoo. Każdy model w każdej wersji nadwoziowej."
 faq:
   - question: "Co oznaczają oznaczenia L1H1, L2H2 przy busach?"
-    answer: "L oznacza długość nadwozia (Length), H – wysokość (Height). L1H1 to najkrótsza i najniższa wersja, L4H3 – najdłuższa i najwyższa. Oznaczenia różnią się między producentami – Fiat używa systemu L1–L4/H1–H3, Mercedes stosuje nazwy Standard/Long/Extra Long i normalny/wysoki/superwysoki dach."
+    answer: "L oznacza długość nadwozia (Length), H – wysokość (Height). L1H1 to najkrótsza i najniższa wersja, L4H3 – najdłuższa i najwyższa. Oznaczenia różnią się między producentami – Fiat używa systemu L1–L4/H1–H3, Mercedes stosuje nazwy Standard/Long/Extra Long oraz określenia dachu: normalny, wysoki i superwysoki."
   - question: "Jaki bus zmieści się w standardowym garażu?"
     answer: "Standardowy garaż ma ok. 5,5 m długości i 2,4 m wysokości. Zmieszczą się w nim małe vany (Berlingo, Kangoo, Caddy) oraz najkrótsze wersje średnich vanów (Vito L1, Vivaro L1). Duże busy w żadnej wersji nie wjadą do typowego garażu."
   - question: "Który bus dostawczy jest najdłuższy?"
-    answer: "Najdłuższy jest Iveco Daily w wersji opartej na najdłuższym rozstawie osi – 7540 mm (ponad 7,5 m). Wśród popularnych modeli Mercedes Sprinter L4 ma 7367 mm, Ford Transit L4 – 6704 mm, a Fiat Ducato L4 – 6363 mm."
+    answer: "Najdłuższy jest Iveco Daily w wersji z najdłuższym rozstawem osi – 7540 mm (ponad 7,5 m). Wśród popularnych modeli Mercedes Sprinter L4 ma 7367 mm, Ford Transit L4 – 6704 mm, a Fiat Ducato L4 – 6363 mm."
   - question: "Jaka jest maksymalna wysokość busa na prawo jazdy kat. B?"
     answer: "Prawo jazdy kat. B nie ogranicza wysokości pojazdu, a jedynie DMC (3,5 t). Najwyższe busy to Iveco Daily H3 i Mercedes Sprinter H3 – oba przekraczają 2700 mm wysokości, ale istnieją w wersjach do 3,5 t DMC."
 ---
@@ -57,12 +57,12 @@ Duże busy dostawcze to segment, w którym wymiary odgrywają kluczową rolę �
 Najszersze nadwozie poprzedniej generacji oferował Renault Master (2070 mm), choć dziś różnice w tym parametrze są minimalne – wszystkie duże busy mieszczą się w przedziale 1993–2059 mm. To ważna informacja dla kurierów i firm logistycznych planujących trasy z wąskimi dojazdami.
 
 {{% expert name="Marek Kowalczyk" %}}
-Wymiary zewnętrzne to nie wszystko – kluczowa jest przestrzeń ładunkowa. Fiat Ducato L2 (5,4 m długości) oferuje 3120 mm długości paki i 11,5 m³ objętości. W wersji L4 (6,36 m) długość ładowni rośnie do 4070 mm, a kubatura do 17 m³. Dla porównania, Mercedes Sprinter L2 (5,9 m) ma pakę o długości 3272 mm, ale w wersji L3 (7 m) przestrzeń na ładunek skacze aż do 4307 mm. To pokazuje, że oznaczenia "L" nie przekładają się wprost na użyteczność. Zawsze sprawdzaj wymiary wewnętrzne.
+Wymiary zewnętrzne to nie wszystko – kluczowa jest przestrzeń ładunkowa. Fiat Ducato L2 (5,4 m długości) oferuje 3120 mm długości ładowni i 11,5 m³ objętości. W wersji L4 (6,36 m) długość ładowni rośnie do 4070 mm, a kubatura do 17 m³. Dla porównania Mercedes Sprinter L2 (5,9 m) ma ładownię o długości 3272 mm, ale w wersji L3 (7 m) przestrzeń ładunkowa rośnie aż do 4307 mm. To pokazuje, że oznaczenia "L" nie przekładają się wprost na użyteczność. Zawsze sprawdzaj wymiary wewnętrzne.
 {{% /expert %}}
 
 ## Wymiary średnich vanów
 
-Średnie vany to kompromis między ładownością a manewrowością. Idealnie sprawdzają się w miastach i przy dostawach ostatniej mili – są wystarczająco pojemne, żeby pomieścić europaletę, a jednocześnie na tyle kompaktowe, żeby zaparkować na typowym miejscu postojowym.
+Średnie vany to kompromis między ładownością a manewrowością. Idealnie sprawdzają się w miastach i przy dostawach ostatniej mili – są wystarczająco pojemne, by pomieścić europaletę, a jednocześnie na tyle kompaktowe, by zaparkować na typowym miejscu postojowym.
 
 | Model | Wersja | Długość (mm) | Szerokość (mm) | Wysokość (mm) | Rozstaw osi (mm) |
 |---|---|---|---|---|---|
@@ -80,11 +80,11 @@ Wymiary zewnętrzne to nie wszystko – kluczowa jest przestrzeń ładunkowa. Fi
 | Mercedes Vito | L2 | 5140 | 1928 | 1910 | 3200 |
 | Mercedes Vito | L3 | 5370 | 1928 | 1910 | 3430 |
 
-Vivaro, Expert i ProAce to bliźniaki platformowe grupy Stellantis – dzielą identyczne wymiary zewnętrzne i różnią się głównie designem przodu i wyposażeniem. Zestawienie uzupełnia absolutny lider segmentu w Polsce, Ford Transit Custom. Jego najnowsza generacja mierzy 5050 mm (wersja L1) oraz 5450 mm (L2), podobnie jak bazujący na tej samej platformie Volkswagen Transporter.
+Vivaro, Expert i ProAce to bliźniaki platformowe grupy Stellantis – dzielą identyczne wymiary zewnętrzne i różnią się głównie stylizacją przodu oraz wyposażeniem. Zestawienie uzupełnia Ford Transit Custom – absolutny lider segmentu w Polsce. Jego najnowsza generacja mierzy 5050 mm (wersja L1) oraz 5450 mm (L2), podobnie jak oparty na tej samej platformie Volkswagen Transporter.
 
 ## Wymiary małych vanów
 
-Małe vany, czyli kombivany, to najszybciej rosnący segment rynku dostawczego w Polsce. Sprawdzają się w centrum miasta, przy dostawach e-commerce i jako auta serwisowe. Wymiarami zbliżają się do dużych kombi, ale oferują znacznie lepszą konfigurację przestrzeni ładunkowej.
+Małe vany, czyli kombivany, to najszybciej rosnący segment rynku dostawczego w Polsce. Sprawdzają się w centrum miasta, przy dostawach internetowych i jako pojazdy serwisowe. Wymiarami zbliżają się do dużych kombi, ale oferują znacznie lepszą konfigurację przestrzeni ładunkowej.
 
 | Model | Wersja | Długość (mm) | Szerokość (mm) | Wysokość (mm) | Rozstaw osi (mm) |
 |---|---|---|---|---|---|
@@ -99,7 +99,7 @@ Małe vany, czyli kombivany, to najszybciej rosnący segment rynku dostawczego w
 | Volkswagen Caddy | L1 | 4500 | 1855 | 1797 | 2755 |
 | Volkswagen Caddy | L2 (Maxi) | 4853 | 1855 | 1811 | 2970 |
 
-Analogicznie do segmentu średniego, w klasie małych vanów dominują konstrukcje bliźniacze. Berlingo, Partner i najnowszy Doblo to technicznie ten sam samochód. Volkswagen Caddy wyróżnia się najniższą wysokością nadwozia (1797 mm w L1), co jest zaletą w parkingach podziemnych, ale potencjalną wadą przy przewozie wyższych ładunków.
+Analogicznie do segmentu średniego w klasie małych vanów dominują konstrukcje bliźniacze. Berlingo, Partner i najnowszy Doblo to technicznie ten sam samochód. Volkswagen Caddy wyróżnia się najniższą wysokością nadwozia (1797 mm w L1), co jest zaletą na parkingach podziemnych, ale potencjalną wadą przy przewozie wyższych ładunków.
 
 ![Tabela wymiarów busów i vanów](/images/wymiary-tabela-hero.webp)
 
@@ -121,9 +121,9 @@ Nie porównuj oznaczeń między markami. L2 Fiata Ducato (5413 mm) to zupełnie 
 Dobór rozmiaru zależy przede wszystkim od zastosowania. Nie ma uniwersalnego "najlepszego" rozmiaru – jest optymalny rozmiar dla konkretnego zadania.
 
 - **Kurier miejski** – średni van w wersji L1 lub L2 (Vivaro, Trafic, Vito). Mieści się na miejskich parkingach, jest wystarczająco pojemny na dzienne trasy z paczkami.
-- **Transport ładunków paletowych** – duży bus minimum L2H2. Fiat Ducato L2H2 pomieści 3 europalety, a Sprinter L3H2 – nawet 4 europalety.
+- **Transport ładunków paletowych** – duży bus w wersji co najmniej L2H2. Fiat Ducato L2H2 pomieści 3 europalety, a Sprinter L3H2 – nawet 4 europalety.
 - **Baza kamperowa** – Ducato L3H2 lub L4H3 to standard branżowy. Sprinter L3H2 to z kolei częsty wybór w segmencie premium.
-- **Serwis mobilny** – mały van (Berlingo L2, Kangoo L2) lub średni van L1. Łatwo parkować, a przestrzeń jest wystarczająca na narzędzia.
+- **Serwis mobilny** – mały van (Berlingo L2, Kangoo L2) lub średni van L1. Łatwo zaparkować, a przestrzeń jest wystarczająca na narzędzia.
 - **Firma przeprowadzkowa** – Iveco Daily w najdłuższych wersjach (do 19,6 m³) lub Sprinter L4H3 (17 m³). Maksymalna kubatura to priorytet.
 
-Warto pamiętać, że dłuższy bus oznacza gorszy promień skrętu i trudniejsze manewrowanie w ciasnych zaułkach. Przykładowo, Ford Transit L4 ma promień skrętu 7,6 m – to więcej niż niejedna ciężarówka. Z tego powodu wielu operatorów flot wybiera dwa mniejsze busy zamiast jednego dużego, zyskując elastyczność kosztem nieznacznie wyższych kosztów eksploatacji.
+Warto pamiętać, że dłuższy bus oznacza większy promień skrętu i trudniejsze manewrowanie w ciasnych zaułkach. Przykładowo Ford Transit L4 ma promień skrętu 7,6 m – to więcej niż niejedna ciężarówka. Z tego powodu wielu operatorów flot wybiera dwa mniejsze busy zamiast jednego dużego, zyskując elastyczność kosztem nieznacznie wyższych kosztów eksploatacji.

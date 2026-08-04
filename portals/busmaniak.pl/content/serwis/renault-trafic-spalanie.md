@@ -29,7 +29,7 @@ sources:
 
 Trzecia generacja to najczęściej spotykany model we flotach, początkowo z silnikami 1.6 dCi, a od 2019 roku z jednostkami 2.0 dCi. Wersje 1.6 dCi z normą Euro 6 oraz wszystkie silniki 2.0 dCi wyposażono w układ [SCR](https://pl.wikipedia.org/wiki/Selektywna_redukcja_katalityczna), który wymaga stosowania płynu AdBlue. Do kosztów paliwa należy doliczyć jego zużycie, wynoszące 1,5–2 litry na 1000 km.
 
-Poniższa tabela bazuje na realnych wartościach z eksploatacji, a nie danych homologacyjnych. Po liftingu na rocznik 2022 gamę silników 2.0 dCi dostosowano do normy Euro 6d-Full.
+Poniższa tabela opiera się na realnych wartościach z eksploatacji, a nie na danych homologacyjnych. Po liftingu na rocznik 2022 gamę silników 2.0 dCi dostosowano do normy Euro 6d-Full.
 
 | Silnik | Trasa | Miasto | Mieszane |
 |---|---|---|---|
@@ -44,7 +44,7 @@ Poniższa tabela bazuje na realnych wartościach z eksploatacji, a nie danych ho
 | 2.0 Blue dCi 170 KM | 7,5–8,5 l | 9,5–11 l | 8–9,5 l |
 
 {{% info title="Skąd te liczby?" icon="engineering" %}}
-Dane w tabeli pochodzą z pomiarów użytkowników i fleet managerów, nie z testu WLTP. Producent podaje wartości o 1–1,5 l niższe – osiągalne tylko przy spokojnej jeździe trasowej bez klimatyzacji i z minimalnym obciążeniem.
+Dane w tabeli pochodzą z pomiarów użytkowników i zarządców flot, nie z testu WLTP. Producent podaje wartości o 1–1,5 l niższe – osiągalne tylko przy spokojnej jeździe trasowej bez klimatyzacji i z minimalnym obciążeniem.
 {{% /info %}}
 
 ## Tabela spalania – Trafic II (2001–2014)
@@ -62,9 +62,9 @@ Druga generacja nie jest tak oszczędna jak następca, ale jej proste silniki wc
 
 ## Co realnie wpływa na spalanie?
 
-Raportowane zużycie paliwa to wypadkowa kilku kluczowych czynników. Różnica między dwoma identycznymi egzemplarzami, pracującymi w innych warunkach, może sięgnąć 2 l/100 km.
+Notowane zużycie paliwa to wypadkowa kilku kluczowych czynników. Różnica między dwoma identycznymi egzemplarzami, pracującymi w innych warunkach, może sięgnąć 2 l/100 km.
 
-**Wersja nadwozia H1 vs H2** – podwyższony dach H2 generuje znacznie większy opór aerodynamiczny. Różnica 0,5–1 l/100 km jest szczególnie widoczna na autostradzie.
+**Wersja nadwozia H1 vs H2** – podwyższony dach H2 powoduje znacznie większy opór aerodynamiczny. Różnica 0,5–1 l/100 km jest szczególnie widoczna na autostradzie.
 
 **Załadunek** – w pełni obciążona ładownia to wzrost spalania o 1–2 l/100 km. Fizyki nie da się oszukać, choć silnik pracuje wtedy w optymalnym zakresie momentu obrotowego.
 
@@ -72,17 +72,17 @@ Raportowane zużycie paliwa to wypadkowa kilku kluczowych czynników. Różnica 
 
 **Tryb ECO** – fabryczny tryb ECO ogranicza moment obrotowy, łagodzi reakcję na gaz i optymalizuje pracę klimatyzacji. W jeździe miejskiej jego aktywacja obniża spalanie o około 5–7%, co przekłada się na oszczędność 0,5 l/100 km. 
 
-**Opony i skrzynia biegów** – ogumienie typu cargo o twardym bieżniku zużywa mniej paliwa niż opony komfortowe (różnica do 0,3 l/100 km). Automatyczna skrzynia EDC w mieście spali 0,3–0,5 l więcej niż manual, natomiast na trasie wartości te się wyrównują.
+**Opony i skrzynia biegów** – ogumienie typu cargo o twardym bieżniku zużywa mniej paliwa niż opony komfortowe (różnica do 0,3 l/100 km). Automatyczna skrzynia EDC w mieście spala o 0,3–0,5 l więcej niż manualna, natomiast na trasie wartości te się wyrównują.
 
 ![Renault Trafic na stacji paliw](/images/renault-trafic-spalanie-hero.webp)
 
 {{% expert name="Marek Kowalczyk" %}}
-Najczęstszy błąd, który widzę u klientów flot, to porównywanie spalania między pojazdami bez uwzględnienia wersji H1/H2 i stylu eksploatacji. Kierowca jeżdżący głównie po mieście z klimatyzacją i pełnym załadunkiem nigdy nie osiągnie wyników trasowych. Zamiast gonić "normę", warto ustalić realny punkt odniesienia dla konkretnej trasy i ładunku – i na tej podstawie wykrywać anomalie sygnalizujące problemy mechaniczne.
+Najczęstszy błąd, który widzę u klientów flot, to porównywanie spalania między pojazdami bez uwzględnienia wersji H1/H2 i stylu eksploatacji. Kierowca jeżdżący głównie po mieście z klimatyzacją i pełnym załadunkiem nigdy nie osiągnie wyników trasowych. Zamiast gonić „normę”, warto ustalić realny punkt odniesienia dla konkretnej trasy i ładunku – i na tej podstawie wykrywać anomalie sygnalizujące problemy mechaniczne.
 {{% /expert %}}
 
 ## Kiedy spalanie rośnie bez powodu?
 
-Jeśli Trafic nagle zaczyna palić wyraźnie więcej przy identycznym stylu jazdy i tych samych zadaniach, warto sprawdzić kilka typowych usterek.
+Jeśli Trafic nagle zaczyna palić wyraźnie więcej przy identycznym stylu jazdy i tych samych trasach, warto sprawdzić kilka typowych usterek.
 
 *   **EGR** – zapchany zawór recyrkulacji spalin to klasyczny problem silnika 1.6 dCi. Ogranicza moc i podnosi zużycie paliwa.
 *   **DPF** – zapełniony filtr cząstek stałych wymusza częste regeneracje, co bezpośrednio przekłada się na wyższe spalanie.

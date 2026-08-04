@@ -29,7 +29,7 @@ sources:
 
 ## Gdzie szukać przekaźników w Fiacie Ducato?
 
-Skrzynki z przekaźnikami i bezpiecznikami są w Ducato w trzech podstawowych lokalizacjach. Do każdej z nich można uzyskać dostęp bez specjalistycznych narzędzi, co ułatwia diagnostykę w trasie.
+Skrzynki z przekaźnikami i bezpiecznikami znajdują się w Ducato w trzech podstawowych lokalizacjach. Do każdej z nich można uzyskać dostęp bez specjalistycznych narzędzi, co ułatwia diagnostykę w trasie.
 
 1.  **Komora silnika** – główna skrzynka znajduje się po prawej stronie (patrząc od przodu), tuż przy reflektorze. Umieszczono w niej przekaźniki kluczowe dla pracy układu napędowego: wentylatory, pompę paliwa czy świece żarowe.
 2.  **Deska rozdzielcza** – skrzynka CPL umieszczona po lewej stronie kierownicy, pod demontowalną osłoną. Obsługuje głównie funkcje komfortu, takie jak blokada drzwi czy sterowanie szybami. Znajdziemy tu m.in. przekaźnik T12 (podgrzewanie lusterek/szyby tylnej), T13 (moduł zasilania dodatkowego) oraz T31 (światła przeciwmgielne – jeśli występują).
@@ -41,7 +41,7 @@ Zanim wymienisz przekaźnik, sprawdź stan styków w gnieździe. W Ducato X250 c
 
 ## Schemat przekaźników – komora silnika (Ducato 2006–2014)
 
-Skrzynka w komorze silnika zawiera kluczowe dla pracy silnika przekaźniki. Fiat stosuje w niej znormalizowane komponenty, które można łatwo zidentyfikować po kolorze i oznaczeniu amperażu – czarne to zazwyczaj 20A, czerwone 30A (nr OEM 46520411), a duże, szare lub żółte przekaźniki (50A) sterują obwodami wysokoprądowymi, takimi jak wentylatory chłodnicy (T01/T02).
+Skrzynka w komorze silnika zawiera przekaźniki kluczowe dla pracy silnika. Fiat stosuje w niej znormalizowane komponenty, które można łatwo zidentyfikować po kolorze i oznaczeniu amperażu – czarne to zazwyczaj 20A, czerwone 30A (nr OEM 46520411), a duże, szare lub żółte przekaźniki (50A) sterują obwodami wysokoprądowymi, takimi jak wentylatory chłodnicy (T01/T02).
 
 | Oznaczenie | Funkcja przekaźnika | Typowe objawy awarii |
 |------------|---------------------|----------------------|
@@ -76,4 +76,4 @@ Ducato jest autem solidnym pod względem elektryki, ale ma kilka słabych punkt�
 *   **Kierunkowskazy** – w modelach po 2006 roku nie ma klasycznego przekaźnika. Funkcję tę przejął moduł BSI. Jeśli kierunkowskazy działają nieprawidłowo, przyczyną jest najczęściej zalana manetka lub wilgoć w samym module.
 *   **Wycieraczki** – praca wyłącznie na najwyższej prędkości sugeruje problem z układem sterowania czasowego. W nowszych generacjach jest on zintegrowany z silniczkiem wycieraczek lub modułem BSI.
 
-Jak sprawdzić przekaźnik w trasie? Najszybszą metodą jest zamiana miejscami z innym o identycznym kolorze i amperażu – na przykład przekaźnik klaksonu (T10) można przełożyć w gniazdo pompy paliwa (T14), by awaryjnie uruchomić silnik. Doświadczeni kierowcy mogą też zewrzeć styki robocze (zazwyczaj piny 30 i 87) w gnieździe za pomocą kawałka przewodu, uruchamiając obwód „na krótko”.
+Jak sprawdzić przekaźnik w trasie? Najszybszą metodą jest zamiana miejscami z innym przekaźnikiem o identycznym kolorze i amperażu – na przykład przekaźnik klaksonu (T10) można przełożyć do gniazda pompy paliwa (T14), by awaryjnie uruchomić silnik. Doświadczeni kierowcy mogą też zewrzeć styki robocze (zazwyczaj piny 30 i 87) w gnieździe za pomocą kawałka przewodu, uruchamiając obwód „na krótko”.

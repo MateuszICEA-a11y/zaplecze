@@ -13,7 +13,7 @@ image_alt: ""
 youtube: "bBf2vMSs0tE"
 youtube_title: "Fiat Ducato 2,3 JTD 130km wymiana rozrządu"
 main_keyword: "Fiat Ducato Rozrząd"
-lead: "Rozrząd w Fiacie Ducato najlepiej wymieniać co 120 000 km lub co 5 lat, mimo że oficjalne instrukcje dopuszczają znacznie dłuższe interwały. W przypadku aut eksploatowanych w trudnych warunkach miejskich lub jako ciężkie kampery, mechanicy zalecają skrócenie tego czasu, aby uniknąć kosztownej awarii silnika MultiJet."
+lead: "Rozrząd w Fiacie Ducato najlepiej wymieniać co 120 000 km lub co 5 lat, mimo że oficjalne instrukcje dopuszczają znacznie dłuższe interwały. W przypadku aut eksploatowanych w trudnych warunkach miejskich lub jako ciężkie kampery mechanicy zalecają skrócenie tego czasu, aby uniknąć kosztownej awarii silnika MultiJet."
 faq:
   - question: "Czy w silniku 2.3 MultiJet rozrząd jest bezkolizyjny?"
     answer: "Nie, silnik 2.3 MultiJet jest jednostką kolizyjną. Zerwanie paska rozrządu w trakcie pracy silnika niemal zawsze kończy się uderzeniem tłoków w zawory, co generuje ogromne koszty naprawy."
@@ -35,7 +35,7 @@ sources:
 ---
 ## Co ile wymiana rozrządu w Fiacie Ducato 2.3 MultiJet?
 
-Oficjalne instrukcje producenta często podają optymistyczne interwały, sięgające nawet 180 000 km. Jednak praktyka warsztatowa i doświadczenia mechaników sugerują znacznie większą ostrożność w przypadku tak eksploatowanego pojazdu jak Fiat Ducato. Rozrząd warto traktować jako priorytet.
+Oficjalne instrukcje producenta często podają optymistyczne interwały, sięgające nawet 180 000 km. Jednak praktyka warsztatowa i doświadczenia mechaników sugerują znacznie większą ostrożność w przypadku intensywnie eksploatowanego pojazdu, jakim jest Fiat Ducato. Wymianę rozrządu warto traktować priorytetowo.
 
 W silnikach 2.3 MultiJet (Euro 4, Euro 5 oraz Euro 6) standardem przyjętym przez ekspertów jest wymiana co **120 000 km lub co 5 lat**. Jeśli auto pracuje w ciężkich warunkach miejskich, kurierskich lub jako ciężki kamper o DMC 3,5 tony, interwał ten warto skrócić do **100 000 km**.
 
@@ -56,7 +56,7 @@ Ile kosztuje serwis rozrządu w Ducato? Ceny zależą od jakości użytych podze
 
 Przy przebiegach rzędu 200–250 tys. km lub podczas drugiej wymiany rozrządu warto profilaktycznie wymienić także uszczelniacze wału korbowego i wałka rozrządu. Koszt markowych części (np. Elring, Corteco) to zaledwie 50–80 zł, a ewentualny wyciek oleju w przyszłości będzie wymagał ponownego demontażu całego napędu.
 
-Chociaż pompa wody w silniku 2.3 MultiJet jest napędzana paskiem wielorowkowym (osprzętu), a nie bezpośrednio paskiem rozrządu, jej wymiana jest absolutnie kluczowa. Zatarcie łożyska pompy powoduje zerwanie paska osprzętu, którego strzępy często dostają się pod osłonę rozrządu, prowadząc do jego przeskoczenia lub zerwania i zniszczenia silnika.
+Chociaż pompa wody w silniku 2.3 MultiJet jest napędzana paskiem wielorowkowym (osprzętu), a nie bezpośrednio paskiem rozrządu, jej wymiana jest wręcz niezbędna. Zatarcie łożyska pompy powoduje zerwanie paska osprzętu, którego strzępy często dostają się pod osłonę rozrządu, prowadząc do jego przeskoku lub zerwania i zniszczenia silnika.
 
 ## Objawy zużycia i typowe błędy podczas wymiany
 
@@ -65,12 +65,12 @@ Rozrząd napędzany paskiem rzadko daje wyraźne objawy zbliżającej się awari
 *   Wycieki płynu chłodniczego w okolicy pompy wody.
 *   Widoczne spękania lub zaolejenie paska (wymaga zdjęcia osłony do inspekcji).
 
-Najczęstszą przyczyną awarii układu rozrządu w Ducato 2.3 nie jest jednak samoistne pęknięcie paska zębatego. Zwykle winowajcą jest zerwany pasek wielorowkowy napędu osprzętu, którego fragmenty wciągane są pod osłonę rozrządu i powodują jego zablokowanie lub przeskok.
+Najczęstszą przyczyną awarii układu rozrządu w Ducato 2.3 nie jest jednak samoistne pęknięcie paska zębatego. Zwykle winowajcą jest zerwany pasek wielorowkowy napędu osprzętu, którego fragmenty są wciągane pod osłonę rozrządu i powodują jego zablokowanie lub przeskok.
 
 Dlatego podczas wymiany rozrządu należy bezwzględnie wymienić pasek osprzętu (ok. 60–80 zł), jego napinacz (150–200 zł) oraz skontrolować stan sprzęgiełka jednokierunkowego alternatora.
 
 {{% expert name="Marek Kowalczyk" %}}
-Najczęstszym błędem podczas wymiany rozrządu w Ducato 2.3 jest próba ustawiania go „na znaki" malowane flamastrem zamiast użycia profesjonalnych blokad. Ten silnik jest bardzo czuły na precyzję synchronizacji. Nawet przesunięcie o jeden ząb może nie spowodować kolizji zaworów z tłokami, ale drastycznie pogorszy kulturę pracy, zwiększy spalanie i skróci życie filtra DPF.
+Najczęstszym błędem podczas wymiany rozrządu w Ducato 2.3 jest próba ustawiania go „na znaki” malowane flamastrem zamiast użycia profesjonalnych blokad. Ten silnik jest bardzo czuły na precyzję synchronizacji. Nawet przesunięcie o jeden ząb może nie spowodować kolizji zaworów z tłokami, ale drastycznie pogorszy kulturę pracy, zwiększy spalanie i skróci żywotność filtra DPF.
 {{% /expert %}}
 
 ![Fiat Ducato rozrząd – co ile wymiana, koszty, objawy zużycia](/images/fiat-ducato-rozrzad-hero.webp)
@@ -83,6 +83,6 @@ Najczęstszym błędem podczas wymiany rozrządu w Ducato 2.3 jest próba ustawi
 Nie każdy Fiat Ducato ma silnik 2.3 MultiJet. To ważne przy zakupie używanego egzemplarza lub planowaniu serwisu.
 
 1.  **Silnik 2.2 MultiJet (do 2021 r., jednostka Ford/PSA)** – posiada łańcuch rozrządu, który bywał problematyczny i potrafił się przedwcześnie rozciągnąć.
-2.  **Silnik 2.2 MultiJet3 (od 2021 r., jednostka Stellantis)** – to całkowicie nowa konstrukcja na pasku rozrządu, która zastąpiła silnik 2.3. Interwał wymiany wynosi 144 000 km lub 5 lat. Pasek pracuje na sucho, a koszt zestawu części jest zbliżony do silnika 2.3 MultiJet, choć sama wymiana wymaga nowszych blokad wałka rozrządu.
+2.  **Silnik 2.2 MultiJet3 (od 2021 r., jednostka Stellantis)** – to całkowicie nowa konstrukcja z paskiem rozrządu, która zastąpiła silnik 2.3. Interwał wymiany wynosi 144 000 km lub 5 lat. Pasek pracuje na sucho, a koszt zestawu części jest zbliżony do silnika 2.3 MultiJet, choć sama wymiana wymaga nowszych blokad wałka rozrządu.
 3.  **Silnik 3.0 MultiJet (IVECO)** – legendarna jednostka na łańcuchu. Przy odpowiednim serwisie olejowym łańcuch wytrzymuje tu nawet 400–500 tys. km.
 4.  **Silnik 2.0 MultiJet** – mniejsza jednostka, również na pasku, wymagająca regularnej wymiany co ok. 120 tys. km.

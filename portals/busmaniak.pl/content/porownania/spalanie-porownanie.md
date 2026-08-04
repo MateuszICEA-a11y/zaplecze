@@ -25,9 +25,9 @@ faq:
 
 Duże busy dostawcze o DMC 3,5 tony to [Fiat Ducato](/modele/fiat-ducato/), [Mercedes Sprinter](/modele/mercedes-sprinter/), [Ford Transit](/modele/ford-transit/), [Iveco Daily](/modele/iveco-daily/), Renault Master, MAN TGE i Volkswagen Crafter. Ich spalanie zależy przede wszystkim od masy ładunku, wersji nadwozia (L1H1 kontra L4H3) i stylu jazdy.
 
-Warto podkreślić, że poniższe dane dotyczą głównie furgonów (tzw. blaszaków). W przypadku popularnych w transporcie międzynarodowym podwozi z zabudową skrzyniową i plandeką, spalanie jest znacznie wyższe. Ze względu na olbrzymi opór czołowy, realne zużycie paliwa takich pojazdów jak Master czy Ducato na autostradzie wynosi 12,5–15 l/100 km.
+Warto podkreślić, że poniższe dane dotyczą głównie furgonów (tzw. blaszaków). W przypadku popularnych w transporcie międzynarodowym podwozi z zabudową skrzyniową i plandeką spalanie jest znacznie wyższe. Ze względu na ogromny opór czołowy realne zużycie paliwa takich pojazdów jak Master czy Ducato na autostradzie wynosi 12,5–15 l/100 km.
 
-Realne spalanie dużych busów jest wyższe niż deklaracje WLTP o 1–2,5 l/100 km. Wpływ ma opór aerodynamiczny – wysoka zabudowa H3 zwiększa zużycie paliwa o ok. 15% w porównaniu z niską H1 przy prędkości autostradowej.
+Realne spalanie dużych busów jest o 1–2,5 l/100 km wyższe od wartości deklarowanych w WLTP. Na tę różnicę wpływa opór aerodynamiczny – wysoka zabudowa H3 zwiększa zużycie paliwa o ok. 15% w porównaniu z niską H1 przy prędkości autostradowej.
 
 | Model i silnik | Moc (KM) | WLTP (l/100 km) | Realne – miasto | Realne – trasa | Realne – autostrada |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -41,7 +41,7 @@ Realne spalanie dużych busów jest wyższe niż deklaracje WLTP o 1–2,5 l/100
 | **Renault Master 2.0 dCi** | 150 | 8,5 | 10,5–12,5 | 8,5–9,5 | 10,5–12 |
 | **MAN TGE / VW Crafter 2.0 TDI** | 140 | 8,6 | 10,5–12,5 | 8,5–9,5 | 10,5–12,5 |
 
-Mercedes Sprinter w wersji 114 KM osiąga najniższe zużycie w segmencie, ale słabszy silnik oznacza wolniejsze przyspieszanie z ładunkiem. Ford Transit 2.0 EcoBlue 130 KM to dobry kompromis między spalaniem a dynamiką – turbo o zmiennej geometrii zapewnia przyzwoity moment obrotowy już od 1500 obr./min.
+Mercedes Sprinter w wersji 114 KM osiąga najniższe zużycie w segmencie, ale słabszy silnik oznacza wolniejsze przyspieszanie z ładunkiem. Ford Transit 2.0 EcoBlue 130 KM to dobry kompromis między spalaniem a dynamiką – turbosprężarka o zmiennej geometrii zapewnia przyzwoity moment obrotowy już od 1500 obr./min.
 
 {{% info title="Wpływ ładunku na spalanie" icon="engineering" %}}
 Każde 100 kg ładunku zwiększa spalanie dużego busa o ok. 0,3–0,5 l/100 km. Przy pełnym obciążeniu (1000–1200 kg ładunku) realne spalanie może być wyższe od deklaracji WLTP nawet o 3 l/100 km. Dlatego dane WLTP traktuj jako punkt odniesienia, a nie gwarancję.
@@ -49,7 +49,7 @@ Każde 100 kg ładunku zwiększa spalanie dużego busa o ok. 0,3–0,5 l/100 km.
 
 ## Spalanie średnich vanów
 
-Średnie vany to segment obejmujący [Renault Trafic](/modele/renault-trafic/), [Opel Vivaro](/modele/opel-vivaro/), Peugeot Expert, Citroën Jumpy, [Ford Transit Custom](/modele/ford-transit-custom/), [Volkswagen Transporter](/modele/volkswagen-transporter/), [Mercedes Vito](/modele/mercedes-vito/) i [Toyota ProAce](/modele/toyota-proace/). Te pojazdy spalają znacząco mniej od dużych busów, zachowując przy tym ładowność 1000–1400 kg.
+Średnie vany to segment obejmujący [Renault Trafic](/modele/renault-trafic/), [Opel Vivaro](/modele/opel-vivaro/), Peugeot Expert, Citroën Jumpy, [Ford Transit Custom](/modele/ford-transit-custom/), [Volkswagen Transporter](/modele/volkswagen-transporter/), [Mercedes Vito](/modele/mercedes-vito/) i [Toyota ProAce](/modele/toyota-proace/). Te pojazdy spalają znacznie mniej niż duże busy, a przy tym zachowują ładowność 1000–1400 kg.
 
 | Model i silnik | Moc (KM) | WLTP (l/100 km) | Realne – miasto | Realne – trasa | Realne – autostrada |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -62,13 +62,13 @@ Każde 100 kg ładunku zwiększa spalanie dużego busa o ok. 0,3–0,5 l/100 km.
 | **Mercedes Vito 2.0 CDI** | 136 | 7,1 | 9–11 | 7–8 | 8,5–10,5 |
 | **Toyota ProAce 2.0 D** | 145 | 6,5 | 8,5–10 | 6,5–7,5 | 8–9,5 |
 
-Platformy bliźniacze dają zbliżone wyniki – Opel Vivaro, Peugeot Expert, Citroën Jumpy i Toyota ProAce dzielą tę samą jednostkę napędową Stellantis 2.0 BlueHDi i mają praktycznie identyczne spalanie. Renault Trafic z silnikiem 2.0 dCi 130 KM regularnie wygrywa testy spalania w tym segmencie.
+Platformy bliźniacze dają zbliżone wyniki – Opel Vivaro, Peugeot Expert, Citroën Jumpy i Toyota ProAce korzystają z tej samej jednostki napędowej Stellantis 2.0 BlueHDi i mają praktycznie identyczne spalanie. Renault Trafic z silnikiem 2.0 dCi 130 KM regularnie wygrywa testy spalania w tym segmencie.
 
 ![Spalanie busów i vanów – porównanie zużycia paliwa](/images/spalanie-porownanie-hero.webp)
 
 ## Spalanie małych vanów miejskich
 
-Małe vany to kategoria obejmująca Citroën Berlingo, Peugeot Partner/Rifter, Opel Combo, [Renault Kangoo](/modele/renault-kangoo/), [Fiat Doblò](/modele/fiat-doblo/), [Ford Transit Connect](/modele/ford-transit-connect/) i [Toyota ProAce City](/modele/toyota-proace-city/). Ich spalanie jest zbliżone do samochodów osobowych klasy C, a ładowność sięga 600–1000 kg.
+Małe vany to kategoria obejmująca Citroën Berlingo, Peugeot Partner/Rifter, Opel Combo, [Renault Kangoo](/modele/renault-kangoo/), [Fiat Doblò](/modele/fiat-doblo/), [Ford Transit Connect](/modele/ford-transit-connect/) i [Toyota ProAce City](/modele/toyota-proace-city/). Ich spalanie jest zbliżone do zużycia w samochodach osobowych klasy C, a ładowność sięga 600–1000 kg.
 
 | Model i silnik | Moc (KM) | WLTP (l/100 km) | Realne – miasto | Realne – trasa | Realne – autostrada |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -80,38 +80,38 @@ Małe vany to kategoria obejmująca Citroën Berlingo, Peugeot Partner/Rifter, O
 | **Ford Transit Connect 2.0 EcoBlue**| 102 lub 122 | 5,5 | 7–8,5 | 5,5–6,5 | 7–8 |
 | **Toyota ProAce City 1.5 D** | 130 | 5,3 | 6,5–8 | 5–6 | 6,5–7,5 |
 
-Bliźniaki Stellantis (Berlingo, Partner, Combo, ProAce City) ponownie dominują – wspólna platforma i silnik 1.5 BlueHDi 130 KM to najoszczędniejszy zestaw w segmencie. Renault Kangoo ze starszym silnikiem 1.5 dCi spala minimalnie więcej, ale różnica w praktyce wynosi 0,5 l/100 km.
+Bliźniaki Stellantis (Berlingo, Partner, Combo, ProAce City) ponownie dominują – wspólna platforma i silnik 1.5 BlueHDi 130 KM to najoszczędniejszy zestaw w segmencie. Renault Kangoo ze starszym silnikiem 1.5 dCi spala nieco więcej, ale różnica w praktyce wynosi 0,5 l/100 km.
 
 ## Co wpływa na spalanie busa
 
-Zużycie paliwa busa zależy od wielu czynników, z których część można kontrolować, a część wynika z konstrukcji pojazdu. Zrozumienie tych zależności pozwala świadomie wybrać model i optymalizować koszty eksploatacji.
+Zużycie paliwa busa zależy od wielu czynników, z których część można kontrolować, a część wynika z konstrukcji pojazdu. Zrozumienie tych zależności pozwala świadomie wybrać model i ograniczyć koszty eksploatacji.
 
 Główne czynniki wpływające na spalanie:
 
 - **Masa ładunku** – każde 100 kg dodatkowego obciążenia to 0,3–0,5 l/100 km więcej. Pusty bus spala nawet 25% mniej niż w pełni załadowany
 - **[Opór aerodynamiczny](https://pl.wikipedia.org/wiki/Op%C3%B3r_aerodynamiczny)** – wysoka zabudowa (H2, H3) zwiększa spalanie na autostradzie o 10–20%. Bagażnik dachowy dodaje 0,5–1,5 l/100 km przy 120 km/h
-- **Przełożenie tylnego mostu** – w pojazdach z napędem na tył (np. Sprinter, Daily) wybór „krótkiego” przełożenia, idealnego do holowania przyczep, zwiększa obroty silnika na autostradzie, podnosząc spalanie o 1–2,5 l/100 km w porównaniu z mostem „długim”, zoptymalizowanym pod trasy
-- **Ogumienie** – opony klasy C (dostawcze) o niskich oporach toczenia oszczędzają 0,3–0,5 l/100 km w porównaniu z tanimi zamiennikami. Niedopompowane opony (0,5 bar poniżej normy) zwiększają spalanie o 3–5%
-- **Styl jazdy** – agresywne przyspieszanie i hamowanie zwiększa zużycie paliwa o 15–25% w porównaniu z jazdą ekonomiczną. Tempomat na trasie obniża spalanie o 5–10%
-- **Stan techniczny** – zatkany filtr DPF, zużyte wtryskiwacze lub nieprawidłowo działająca turbosprężarka mogą zwiększyć spalanie o 1–3 l/100 km
-- **Zużycie AdBlue** – nowoczesne silniki diesla z normą Euro 6e wymagają płynu AdBlue, którego zużycie przy dużym obciążeniu sięga 1,5–3 litrów na 1000 km. Stanowi to dodatkowy, stały koszt eksploatacyjny, który należy uwzględnić w ogólnym budżecie paliwowym
+- **Przełożenie tylnego mostu** – w pojazdach z napędem na tył (np. Sprinter, Daily) wybór „krótkiego” przełożenia, idealnego do holowania przyczep, podnosi obroty silnika na autostradzie i zwiększa spalanie o 1–2,5 l/100 km w porównaniu z mostem „długim”, zoptymalizowanym pod kątem tras dalekobieżnych
+- **Ogumienie** – opony klasy C (dostawcze) o niskich oporach toczenia oszczędzają 0,3–0,5 l/100 km w porównaniu z tanimi zamiennikami. Niedopompowane opony (0,5 bara poniżej normy) zwiększają spalanie o 3–5%
+- **Styl jazdy** – agresywne przyspieszanie i hamowanie zwiększają zużycie paliwa o 15–25% w porównaniu z jazdą ekonomiczną. Tempomat na trasie obniża spalanie o 5–10%
+- **Stan techniczny** – zatkany filtr DPF, zużyte wtryskiwacze lub niesprawna turbosprężarka mogą podnieść spalanie o 1–3 l/100 km
+- **Zużycie AdBlue** – nowoczesne silniki diesla z normą Euro 6e wymagają płynu AdBlue, którego zużycie przy dużym obciążeniu sięga 1,5–3 litrów na 1000 km. To dodatkowy, stały koszt eksploatacji, który należy uwzględnić w ogólnym bilansie kosztów paliwa
 - **Temperatura otoczenia** – zimą spalanie rośnie o 10–20% z powodu dłuższego nagrzewania silnika, gęstszego powietrza i włączonego ogrzewania
 
 {{% expert title="Tip" icon="sports_score" %}}
-Najszybszy sposób na obniżenie spalania busa bez żadnych inwestycji to redukcja prędkości autostradowej ze 130 do 110 km/h. W przypadku dużego busa (Ducato, Sprinter) ta zmiana oszczędza 1,5–2 l/100 km, co przy 30 000 km rocznie na autostradzie daje 3000–4000 zł oszczędności na paliwie.
+Najszybszy sposób na obniżenie spalania busa bez żadnych inwestycji to zmniejszenie prędkości autostradowej ze 130 do 110 km/h. W przypadku dużego busa (Ducato, Sprinter) ta zmiana oszczędza 1,5–2 l/100 km, co przy 30 000 km rocznie na autostradzie daje 3000–4000 zł oszczędności na paliwie.
 {{% /expert %}}
 
 ## Jak obniżyć spalanie busa dostawczego
 
-Obniżenie zużycia paliwa to proces, który wymaga podejścia systemowego. Jednorazowe sztuczki dają marginalne efekty – trwałe oszczędności wynikają z połączenia kilku działań.
+Obniżenie zużycia paliwa to proces wymagający kompleksowego podejścia. Jednorazowe sztuczki dają niewielkie efekty – trwałe oszczędności wynikają z połączenia kilku działań.
 
-Skuteczne metody redukcji spalania:
+Skuteczne metody ograniczania spalania:
 
-- **Eco-driving** – płynne przyspieszanie, wcześniejsze zmiany biegów (przy 2000 obr./min dla diesla), wykorzystanie bezwładności pojazdu zamiast hamowania. Szkolenie z eco-drivingu obniża spalanie floty o 8–15%
-- **Optymalizacja tras** – nawigacja z uwzględnieniem korków i topografii. Unikanie tras górskich z pełnym ładunkiem oszczędza nawet 2 l/100 km
-- **Regularne serwisowanie** – wymiana filtrów (powietrza, paliwa) zgodnie z harmonogramem, kontrola ciśnienia w oponach co 2 tygodnie, regeneracja DPF przed zapchaniem
-- **Aerodynamika akcesoryjna** – montaż i prawidłowa regulacja spojlera dachowego na kabinie busa z zabudową kontenerową lub plandekową może obniżyć spalanie o 1,5–3 l/100 km przy prędkościach powyżej 90 km/h
-- **Odpowiednie opony** – opony o niskich oporach toczenia (klasa A lub B na etykiecie UE) i utrzymywanie ciśnienia 0,2 bar powyżej normy przy pełnym obciążeniu
-- **Redukcja masy** – usunięcie zbędnego wyposażenia z przestrzeni ładunkowej. Regały, półki i narzędzia, które nie są potrzebne na danej trasie, to dodatkowe kilogramy
+- **Eco-driving** – płynne przyspieszanie, wcześniejsza zmiana biegów (przy 2000 obr./min dla diesla), wykorzystywanie bezwładności pojazdu zamiast hamowania. Szkolenie z eco-drivingu obniża spalanie floty o 8–15%
+- **Optymalizacja tras** – nawigacja uwzględniająca korki i ukształtowanie terenu. Unikanie tras górskich z pełnym ładunkiem oszczędza nawet 2 l/100 km
+- **Regularne serwisowanie** – wymiana filtrów (powietrza, paliwa) zgodnie z harmonogramem, kontrola ciśnienia w oponach co 2 tygodnie, regeneracja DPF zanim dojdzie do zapchania
+- **Akcesoria aerodynamiczne** – montaż i prawidłowa regulacja spojlera dachowego na kabinie busa z zabudową kontenerową lub plandekową może obniżyć spalanie o 1,5–3 l/100 km przy prędkościach powyżej 90 km/h
+- **Odpowiednie opony** – opony o niskich oporach toczenia (klasa A lub B na etykiecie UE) oraz utrzymywanie ciśnienia 0,2 bara powyżej normy przy pełnym obciążeniu
+- **Redukcja masy** – usunięcie zbędnego wyposażenia z przestrzeni ładunkowej. Regały, półki i narzędzia niepotrzebne na danej trasie to dodatkowe kilogramy
 
-Dla flot dostawczych warto rozważyć monitoring GPS z analizą stylu jazdy – systemy telematyczne (np. Webfleet, Frotcom) identyfikują kierowców o najwyższym spalaniu i pozwalają wdrożyć ukierunkowane szkolenia. Firmy logistyczne raportują oszczędności rzędu 10–18% po wdrożeniu takich systemów.
+Dla flot dostawczych warto rozważyć monitoring GPS z analizą stylu jazdy – systemy telematyczne (np. Webfleet, Frotcom) wskazują kierowców o najwyższym spalaniu i pozwalają wdrożyć celowane szkolenia. Firmy logistyczne odnotowują oszczędności rzędu 10–18% po wdrożeniu takich systemów.

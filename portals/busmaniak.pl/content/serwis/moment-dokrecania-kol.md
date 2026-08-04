@@ -22,7 +22,7 @@ faq:
     answer: "Po wymianie koła należy dokręcić śruby ponownie po przejechaniu 50–100 km. Dotyczy to zarówno felg stalowych, jak i aluminiowych."
   - question: "Czy mogę dokręcać koła kluczem udarowym?"
     answer: "Klucz udarowy można stosować do wstępnego dokręcania, ale końcowe dokręcenie powinno zawsze odbywać się kluczem dynamometrycznym. Klucz udarowy nie pozwala kontrolować momentu obrotowego."
-  - question: "Co się stanie jeśli za mocno dokręcę koła?"
+  - question: "Co się stanie, jeśli za mocno dokręcę koła?"
     answer: "Zbyt wysoki moment dokręcania może spowodować rozciągnięcie lub zerwanie śrub, odkształcenie tarczy hamulcowej (bicie kierownicy przy hamowaniu) oraz uszkodzenie gwintu w piaście."
 sources:
   - "Instrukcje serwisowe: Fiat Ducato (2014–2026), Mercedes Sprinter (W906/W907), Ford Transit MK8"
@@ -32,7 +32,7 @@ sources:
 ---
 ## Dlaczego moment dokręcania kół jest tak ważny {#dlaczego}
 
-Moment dokręcania to siła obrotowa, z jaką śruba lub nakrętka koła przyciska felgę do piasty. Wyrażamy ją w niutonometrach (Nm) – jest to iloczyn siły przyłożonej na ramieniu o określonej długości. W busach dostawczych, gdzie masa pojazdu z ładunkiem sięga 3,5 tony, prawidłowe dokręcenie kół ma krytyczne znaczenie dla bezpieczeństwa.
+Moment dokręcania to siła obrotowa, z jaką śruba lub nakrętka koła przyciska felgę do piasty. Wyrażamy ją w niutonometrach (Nm) – jest to iloczyn siły oraz długości ramienia, na którym ją przyłożono. W busach dostawczych, gdzie masa pojazdu z ładunkiem sięga 3,5 tony, prawidłowe dokręcenie kół ma krytyczne znaczenie dla bezpieczeństwa.
 
 Konsekwencje nieprawidłowego momentu:
 
@@ -44,7 +44,7 @@ W busach dostawczych problem jest poważniejszy niż w autach osobowych. Wyższe
 
 ## Tabela momentów dokręcania kół dla busów {#tabela}
 
-Poniższa tabela zbiera wartości momentów dokręcania kół dla najpopularniejszych busów. Dane dotyczą fabrycznych felg stalowych. W przypadku felg aluminiowych zawsze należy sprawdzić dokumentację ich producenta.
+Poniższa tabela zawiera wartości momentów dokręcania kół dla najpopularniejszych busów. Dane dotyczą fabrycznych felg stalowych. W przypadku felg aluminiowych zawsze należy sprawdzić dokumentację ich producenta.
 
 | Model | Moment Nm (felgi stalowe) | Element mocujący | Rozmiar klucza |
 | :--- | :--- | :--- | :--- |
@@ -65,10 +65,10 @@ Poniższa tabela zbiera wartości momentów dokręcania kół dla najpopularniej
 | **Opel/Vauxhall Movano (baza Ducato)** | 160 Nm / 180 Nm | 5 śrub M14×1,5 | 21 mm |
 
 {{% info title="Ducato, Jumper, Boxer – ten sam moment" icon="info" %}}
-Fiat Ducato, Citroën Jumper i Peugeot Boxer powstają w tej samej fabryce Sevel Sud (Stellantis Atessa) we Włoszech i dzielą identyczną konstrukcję podwozia. Moment dokręcania kół zależy od wersji tonażowej (Light lub Maxi/Heavy), ale jest taki sam dla wszystkich trzech marek.
+Fiat Ducato, Citroën Jumper i Peugeot Boxer powstają w tej samej fabryce Sevel Sud (Stellantis Atessa) we Włoszech i mają identyczną konstrukcję podwozia. Moment dokręcania kół zależy od wersji tonażowej (Light lub Maxi/Heavy), ale jest taki sam dla wszystkich trzech marek.
 {{% /info %}}
 
-## Jak użyć klucza dynamometrycznego {#klucz}
+## Jak używać klucza dynamometrycznego {#klucz}
 
 ![Klucz dynamometryczny przy kole busa](/images/moment-dokrecania-kol-hero.webp)
 
@@ -79,7 +79,7 @@ Klucz dynamometryczny to jedyne narzędzie pozwalające precyzyjnie kontrolować
 1. **Ustaw moment na kluczu** – obróć pokrętło na rękojeści do żądanej wartości (np. 160 Nm dla Ducato Light). Cyfrowe klucze ustawia się przyciskami.
 2. **Załóż nasadkę** – użyj nasadki o rozmiarze pasującym do śrub lub nakrętek (sprawdź w tabeli).
 3. **Dokręcaj powoli** – obracaj klucz równomiernym ruchem, bez szarpania.
-4. **Poczekaj na sygnał** – klucz typu „klik” wyda charakterystyczne kliknięcie po osiągnięciu ustawionego momentu. Klucz cyfrowy zasygnalizuje to dźwiękiem i/lub wibracją.
+4. **Poczekaj na sygnał** – klucz typu „klik” wyda charakterystyczne kliknięcie po osiągnięciu ustawionego momentu. Klucz cyfrowy zasygnalizuje to dźwiękiem lub wibracją.
 5. **Przestań dokręcać** – po sygnale natychmiast przestań przykładać siłę. Dalsze dokręcanie przekroczy zadany moment.
 6. **Dokręcaj na krzyż** – śruby lub nakrętki dokręcaj w kolejności krzyżowej (naprzemiennie), a nie po kolei. Zapewnia to równomierne przyleganie felgi.
 
@@ -94,10 +94,10 @@ Dla felg z 6 otworami (Sprinter, Daily bliźniak):
 - 1 → 4 → 2 → 5 → 3 → 6 (dokręcając naprzeciwległe pary)
 
 {{% expert name="Marek Kowalczyk" %}}
-Najczęstszy błąd, jaki widzę w warsztatach, to dokręcanie kół kluczem udarowym bez końcowej weryfikacji kluczem dynamometrycznym. Klucze udarowe generują moment 300–800 Nm – często dwu- lub trzykrotnie więcej niż potrzeba. Efektem są zdeformowane tarcze hamulcowe i rozciągnięte śruby. Jeśli oddajesz busa do wulkanizatora, poproś o dokręcenie kół kluczem dynamometrycznym.
+Najczęstszy błąd, jaki widzę w warsztatach, to dokręcanie kół kluczem udarowym bez końcowej weryfikacji kluczem dynamometrycznym. Klucze udarowe generują moment 300–800 Nm – często dwu- lub trzykrotnie wyższy od wymaganego. Efektem są zdeformowane tarcze hamulcowe i rozciągnięte śruby. Jeśli oddajesz busa do wulkanizatora, poproś o dokręcenie kół kluczem dynamometrycznym.
 {{% /expert %}}
 
-## Docieranie po wymianie koła {#docieranie}
+## Dokręcanie kontrolne po wymianie koła {#docieranie}
 
 Wymiana koła to nie koniec procedury. Nowe lub ponownie zamontowane koło wymaga kontrolnego dokręcenia po przejechaniu 50–100 km. Dotyczy to zarówno wymiany sezonowej, jak i naprawy awaryjnej na drodze.
 
@@ -105,13 +105,13 @@ Wymiana koła to nie koniec procedury. Nowe lub ponownie zamontowane koło wymag
 
 Podczas pierwszych kilometrów po wymianie zachodzą procesy, które mogą minimalnie poluzować mocowanie. Powierzchnie styku felgi i piasty dopasowują się do siebie pod obciążeniem, a naprężenia w świeżo dokręconych śrubach wyrównują się.
 
-W busach dostawczych, które często jeżdżą z pełnym obciążeniem, dokręcenie kontrolne jest absolutnie kluczowe. Wyższe siły działające na koła przyspieszają proces osiadania materiału.
+W busach dostawczych, które często jeżdżą z pełnym obciążeniem, dokręcenie kontrolne jest niezbędne. Wyższe siły działające na koła przyspieszają proces osiadania materiału.
 
 ### Procedura kontrolna
 
 1. Po przejechaniu 50–100 km zatrzymaj się w bezpiecznym miejscu na równej powierzchni.
 2. Kluczem dynamometrycznym, ustawionym na prawidłową wartość, sprawdź moment każdej śruby w kolejności krzyżowej.
-3. Jeśli którakolwiek śruba „puści" (klucz zacznie się obracać przed kliknięciem), dokręć ją do właściwego momentu.
+3. Jeśli którakolwiek śruba „puści” (klucz zacznie się obracać przed kliknięciem), dokręć ją do właściwego momentu.
 4. Po pozytywnej kontroli dalsze dokręcanie nie jest konieczne aż do następnej wymiany koła.
 
 
@@ -123,15 +123,15 @@ Nieprawidłowe dokręcanie kół w busach to częsty problem, który może prowa
 
 ### Błędy techniczne
 
-- **Brak klucza dynamometrycznego** – dokręcanie „na wyczucie" kluczem krzyżakowym nigdy nie zapewnia prawidłowego momentu. W ciężkich busach margines błędu jest zbyt mały.
+- **Brak klucza dynamometrycznego** – dokręcanie „na wyczucie” kluczem krzyżakowym nigdy nie zapewnia prawidłowego momentu. W ciężkich busach margines błędu jest zbyt mały.
 - **Smarowanie gwintów** – nakładanie smaru na gwinty śrub lub szpilek zmienia współczynnik tarcia. Powoduje to zbyt mocne rozciągnięcie śruby przy tej samej wartości momentu na kluczu. Gwinty powinny być czyste i suche, chyba że producent wyraźnie zaleca inaczej.
-- **Mieszanie śrub** – śruby do felg stalowych i aluminiowych mogą mieć inny kształt gniazda (stożek vs kula). Użycie niewłaściwych śrub powoduje uszkodzenie otworów w feldze i niepewne mocowanie.
+- **Mieszanie śrub** – śruby do felg stalowych i aluminiowych mogą mieć inny kształt gniazda (stożek albo kula). Użycie niewłaściwych śrub powoduje uszkodzenie otworów w feldze i niepewne mocowanie.
 - **Zardzewiałe gwinty** – dokręcanie na zardzewiałych gwintach daje fałszywy odczyt momentu. Siła jest zużywana na pokonanie oporu rdzy, a nie na dociśnięcie felgi.
 
 ### Błędy organizacyjne
 
-- **Pominięcie kontrolnego dokręcenia** – najbardziej niebezpieczny błąd, szczególnie po sezonowej wymianie opon, gdy rdza nalotowa ze styku piasty i felgi jest usuwana.
-- **Używanie przedłużki na kluczach** – nałożenie rury na klucz zwiększa moment w sposób niekontrolowany i grozi nieodwracalnym uszkodzeniem mechanizmu klucza dynamometrycznego.
+- **Pominięcie kontrolnego dokręcenia** – najbardziej niebezpieczny błąd, szczególnie po sezonowej wymianie opon, gdy usuwana jest rdza nalotowa ze styku piasty i felgi.
+- **Używanie przedłużki na kluczu** – nałożenie rury na klucz zwiększa moment w sposób niekontrolowany i grozi nieodwracalnym uszkodzeniem mechanizmu klucza dynamometrycznego.
 - **Brak kalibracji klucza** – klucz dynamometryczny wymaga okresowej kalibracji (zwykle co 12 miesięcy lub 5000 użyć). Nieskalibrowany klucz może wskazywać moment z błędem nawet 20%.
 
 | Błąd | Skutek | Koszt naprawy |

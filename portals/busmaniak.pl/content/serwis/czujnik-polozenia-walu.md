@@ -12,12 +12,12 @@ image_alt: "Czujnik położenia wału korbowego CKP zamontowany przy kole zamach
 youtube: "yYqhg9spjfU"
 youtube_title: "Sprawdzenie czujnika położenia wału korbowego"
 main_keyword: "czujnik położenia wału korbowego"
-lead: "Czujnik położenia wału korbowego (CKP) to niewielki element wielkości kciuka, bez którego silnik busa nie uruchomi się lub zgaśnie w najmniej oczekiwanym momencie. Monitoruje obroty i pozycję wału, dostarczając sterownikowi dane kluczowe dla synchronizacji wtrysku paliwa. Awaria tego czujnika jest jedną z częstszych przyczyn nagłego unieruchomienia busa na trasie, a diagnostyka wymaga znajomości kodów P0335 i P0336."
+lead: "Czujnik położenia wału korbowego (CKP) to niewielki element wielkości kciuka, bez którego silnik busa nie uruchomi się lub zgaśnie w najmniej oczekiwanym momencie. Monitoruje obroty i położenie wału, dostarczając sterownikowi kluczowe dane do synchronizacji wtrysku paliwa. Awaria tego czujnika jest jedną z częstszych przyczyn nagłego unieruchomienia busa na trasie, a diagnostyka wymaga znajomości kodów P0335 i P0336."
 faq:
   - question: "Jakie są objawy uszkodzonego czujnika położenia wału?"
     answer: "Najczęstsze objawy to nagłe gaśnięcie silnika (zwłaszcza na gorąco), problemy z rozruchem, szarpanie podczas jazdy, zapalona kontrolka check engine z kodem P0335 lub P0336 oraz przejście silnika w tryb awaryjny z ograniczeniem obrotów do ok. 2000–2500 obr/min."
   - question: "Ile kosztuje wymiana czujnika CKP w busie?"
-    answer: "Sam czujnik kosztuje 50–300 zł w zależności od modelu busa i producenta części. Robocizna to 100–400 zł, zależnie od dostępności czujnika w komorze silnika. Łączny koszt wymiany wynosi więc 150–700 zł."
+    answer: "Sam czujnik kosztuje 50–300 zł w zależności od modelu busa i producenta części. Robocizna to 100–400 zł, zależnie od tego, jak łatwy jest dostęp do czujnika w komorze silnika. Łączny koszt wymiany wynosi więc 150–700 zł."
   - question: "Czy uszkodzony czujnik wału może uszkodzić silnik?"
     answer: "Bezpośrednio nie – czujnik jest elementem pomiarowym, nie wykonawczym. Jednak jazda z wadliwym czujnikiem powoduje nieprawidłowy wtrysk paliwa, co obciąża filtr DPF i może prowadzić do jego przedwczesnego zapchania."
   - question: "Gdzie znajduje się czujnik położenia wału w Fiacie Ducato 2.3?"
@@ -32,18 +32,18 @@ sources:
 
 ## Czym jest czujnik CKP i jak działa
 
-Czujnik położenia wału korbowego (CKP – Crankshaft Position Sensor) to czujnik elektromagnetyczny zamontowany w pobliżu koła zamachowego lub tarczy zębatej na wale korbowym. Jego zadanie jest proste, ale krytyczne – informuje sterownik silnika (ECU) o dwóch rzeczach: aktualnej pozycji wału korbowego i prędkości jego obrotów.
+Czujnik położenia wału korbowego (CKP – Crankshaft Position Sensor) to czujnik elektromagnetyczny zamontowany w pobliżu koła zamachowego lub tarczy zębatej na wale korbowym. Jego zadanie jest proste, ale kluczowe – informuje sterownik silnika (ECU) o dwóch rzeczach: aktualnym położeniu wału korbowego i prędkości jego obrotów.
 
 Na podstawie tych danych sterownik oblicza moment wtrysku paliwa, a w silnikach benzynowych także moment zapłonu. Bez sygnału z czujnika CKP sterownik nie wie, w jakiej fazie cyklu pracy znajduje się silnik – i albo go nie uruchomi, albo wyłączy.
 
 ### Czujnik indukcyjny (VR – Variable Reluctance)
 
-Starszy typ, stosowany w busach produkowanych przed 2010 rokiem i wielu modelach do dziś. Składa się z cewki nawiniętej na rdzeń ferromagnetyczny z magnesem trwałym. Gdy ząb koła zamachowego przesuwa się obok czujnika, zmienia się pole magnetyczne i w cewce indukuje się napięcie zmienne.
+Starszy typ, stosowany w busach produkowanych przed 2010 rokiem oraz w wielu modelach do dziś. Składa się z cewki nawiniętej na rdzeń ferromagnetyczny z magnesem trwałym. Gdy ząb koła zamachowego przesuwa się obok czujnika, zmienia się pole magnetyczne i w cewce indukuje się napięcie zmienne.
 
 Cechy czujnika indukcyjnego:
 
 - **Złącze 2-pinowe** (czasem 3-pinowe z ekranem)
-- **Nie wymaga zasilania zewnętrznego** – generuje sygnał sam
+- **Nie wymaga zasilania zewnętrznego** – generuje sygnał samodzielnie
 - **Amplituda sygnału zależy od obrotów** – przy rozruchu sygnał jest słaby, co czasem utrudnia start
 - **Niska awaryjność** – brak elementów elektronicznych oznacza, że psuje się głównie mechanicznie (pęknięcie cewki, korozja)
 - **Typowa rezystancja** – 600–1200 Ohm (w Ducato 2.3 JTD ok. 900 Ohm)
@@ -56,11 +56,11 @@ Cechy czujnika Halla:
 
 - **Złącze 3-pinowe** (zasilanie, masa, sygnał)
 - **Wymaga zasilania 5V lub 12V** – nie działa bez prądu
-- **Sygnał jest niezależny od obrotów** – równie silny przy rozruchu, jak przy 4000 obr/min
+- **Sygnał jest niezależny od obrotów** – równie silny przy rozruchu jak przy 4000 obr/min
 - **Bardziej precyzyjny**, ale droższy i bardziej podatny na uszkodzenia elektroniczne
 
 {{% info title="Technika" icon="engineering" %}}
-Czujnik CKP współpracuje z czujnikiem położenia wałka rozrządu (CMP). Sterownik porównuje sygnały z obu czujników, żeby precyzyjnie określić, który cylinder znajduje się w fazie pracy. Naprawa silnika Common Rail bez sygnału z CKP jest niemożliwa.
+Czujnik CKP współpracuje z czujnikiem położenia wałka rozrządu (CMP). Sterownik porównuje sygnały z obu czujników, żeby precyzyjnie określić, który cylinder znajduje się w fazie pracy. Praca silnika Common Rail bez sygnału z CKP jest niemożliwa.
 {{% /info %}}
 
 ## Objawy uszkodzenia czujnika CKP
@@ -90,13 +90,13 @@ Diagnostyka czujnika CKP nie wymaga drogiego sprzętu – w większości przypad
 Podłącz skaner OBD2 i sprawdź kody DTC. Kody istotne dla czujnika CKP:
 
 - **P0335** – brak sygnału z czujnika. Może oznaczać uszkodzony czujnik, przerwany przewód lub uszkodzone koło zamachowe (brakujące zęby).
-- **P0336** – nieprawidłowy zakres sygnału. Czujnik działa, ale sygnał jest zakłócony – zanieczyszczenie opiłkami metalu, zbyt duży luz między czujnikiem a kołem, uszkodzone zęby koła.
+- **P0336** – nieprawidłowy zakres sygnału. Czujnik działa, ale sygnał jest zakłócony – przyczyną bywa zanieczyszczenie opiłkami metalu, zbyt duży luz między czujnikiem a kołem albo uszkodzone zęby koła.
 - **P0337** – niski sygnał. Typowe dla czujnika indukcyjnego z pękającą cewką.
 - **P0338** – wysoki sygnał. Zwarcie w obwodzie czujnika.
 
 ### Krok 2 – Analiza parametrów Live Data
 
-Najprostsza metoda to podgląd parametru "Prędkość obrotowa silnika" (Engine Speed) na skanerze OBD2 podczas kręcenia rozrusznikiem. Jeśli rozrusznik działa poprawnie, sprawny czujnik powinien pokazać odczyt w granicach 250–300 obr/min. Wskazanie 0 obr/min jednoznacznie wskazuje na brak sygnału z czujnika CKP.
+Najprostsza metoda to podgląd parametru „Prędkość obrotowa silnika” (Engine Speed) na skanerze OBD2 podczas kręcenia rozrusznikiem. Jeśli rozrusznik działa poprawnie, przy sprawnym czujniku powinien pojawić się odczyt w granicach 250–300 obr/min. Odczyt 0 obr/min jednoznacznie oznacza brak sygnału z czujnika CKP.
 
 ### Krok 3 – Pomiar rezystancji (czujnik indukcyjny)
 
@@ -109,11 +109,11 @@ Odłącz złącze czujnika i zmierz rezystancję multimetrem na zakresie 2 kOhm:
 
 ### Krok 4 – Oscyloskop (opcjonalnie)
 
-Oscyloskop podłączony do wyjścia czujnika pokazuje przebieg sygnału w czasie rzeczywistym. Pozwala wykryć krótkotrwałe przerwy, które multimetr przeoczy. Prawidłowy przebieg czujnika indukcyjnego to sinusoida o rosnącej amplitudzie wraz z obrotami. Brakujące impulsy wskazują na uszkodzone zęby koła zamachowego.
+Oscyloskop podłączony do wyjścia czujnika pokazuje przebieg sygnału w czasie rzeczywistym. Pozwala wykryć krótkotrwałe przerwy, które multimetr może przeoczyć. Prawidłowy przebieg czujnika indukcyjnego to sinusoida o rosnącej amplitudzie wraz z obrotami. Brakujące impulsy wskazują na uszkodzone zęby koła zamachowego.
 
 ## Wymiana – trudność i koszt w popularnych busach
 
-Wymiana czujnika CKP to operacja, której trudność zależy wyłącznie od jego lokalizacji. Sam czujnik to jeden śrubowy uchwyt i złącze – 5 minut pracy. Problem w tym, że producenci montują go w miejscach, do których dojście wymaga podnośnika, demontażu osłon i zawodowej cierpliwości.
+Wymiana czujnika CKP to operacja, której trudność zależy wyłącznie od jego lokalizacji. Sam czujnik mocuje się jedną śrubą i złączem – to 5 minut pracy. Problem w tym, że producenci montują go w miejscach, do których dojście wymaga podnośnika, demontażu osłon i niemałej cierpliwości.
 
 | Model busa                            | Lokalizacja czujnika                      | Trudność wymiany | Koszt części | Koszt robocizny | Suma       |
 | :------------------------------------ | :---------------------------------------- | :--------------- | :----------- | :-------------- | :--------- |
@@ -126,19 +126,19 @@ Wymiana czujnika CKP to operacja, której trudność zależy wyłącznie od jego
 
 Przy wymianie warto jednocześnie:
 
-- Sprawdzić stan złącza elektrycznego – korozja na pinach to częsta przyczyna nawrotów problemu.
+- Sprawdzić stan złącza elektrycznego – korozja na pinach to częsta przyczyna powrotu usterki.
 - Wyczyścić powierzchnię montażową z opiłków metalu, które przyciąga magnes czujnika indukcyjnego.
 - Pamiętać o odpowiednim momencie dokręcania – zazwyczaj 8–10 Nm. Obudowa czujnika jest plastikowa i łatwo ją uszkodzić.
 - Sprawdzić luz między czujnikiem a kołem zamachowym – powinien wynosić 0,5–1,5 mm.
 
-{{% expert name="Marek Kowalczyk" %}}W wielu busach plastikowa obudowa czujnika zapieka się w aluminiowym otworze bloku lub skrzyni biegów. Próba wyciagnięcia go na siłę kończy się ułamaniem na równo z blokiem. Wydobycie resztek wymaga wtedy nawiercania lub nawet demontażu skrzyni. Zawsze stosujcie penetrator i ostrożnie obracajcie czujnikiem na boki, zanim użyjecie siły.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}W wielu busach plastikowa obudowa czujnika zapieka się w aluminiowym otworze bloku lub skrzyni biegów. Próba wyciągnięcia go na siłę kończy się ułamaniem równo z blokiem. Wydobycie resztek wymaga wtedy nawiercania lub nawet demontażu skrzyni. Zawsze stosujcie penetrator i ostrożnie obracajcie czujnikiem na boki, zanim użyjecie siły.{{% /expert %}}
 
 
 {{% youtube %}}
 
 ## Gdzie jest czujnik w popularnych busach
 
-Lokalizacja czujnika CKP różni się między modelami, ale w każdym przypadku jest zamontowany w pobliżu koła zamachowego lub tarczy sygnałowej na wale korbowym.
+Lokalizacja czujnika CKP różni się między modelami, ale w każdym przypadku czujnik jest zamontowany w pobliżu koła zamachowego lub tarczy sygnałowej na wale korbowym.
 
 - **Fiat Ducato 2.3 MultiJet** – z tyłu bloku silnika, od strony skrzyni biegów, gdzie odczytuje dane z koła zamachowego. Czujnik indukcyjny, złącze 3-pinowe (z ekranem), rezystancja ok. 900 Ohm.
 - **Mercedes Sprinter OM651** – z tyłu bloku silnika, w dzwonie skrzyni biegów, odczytuje sygnał z koła zamachowego. Czujnik Halla, złącze 3-pinowe.
@@ -146,6 +146,6 @@ Lokalizacja czujnika CKP różni się między modelami, ale w każdym przypadku 
 - **Renault Master 2.3 dCi** – z tyłu bloku, od strony koła zamachowego. Czujnik indukcyjny.
 - **Iveco Daily 3.0** – z tyłu bloku, od strony koła zamachowego. Najtrudniejszy dostęp spośród popularnych busów – wymaga demontażu osłony koła zamachowego.
 
-Pamiętaj, że w każdym z tych silników oprócz czujnika CKP na wale korbowym zamontowany jest również czujnik CMP na wałku rozrządu. Oba muszą „widzieć się" poprawnie, żeby sterownik zsynchronizował wtrysk. Wymiana jednego przy objawach wskazujących na oba (kody P0335 + P0340 jednocześnie) może nie rozwiązać problemu.
+Pamiętaj, że w każdym z tych silników oprócz czujnika CKP na wale korbowym zamontowany jest również czujnik CMP na wałku rozrządu. Oba muszą „widzieć się” poprawnie, żeby sterownik zsynchronizował wtrysk. Wymiana jednego przy objawach wskazujących na oba (kody P0335 + P0340 jednocześnie) może nie rozwiązać problemu.
 
-Jeśli diagnostyka wykazała sprawny czujnik CKP, a objawy przypominają awarię [immobilizera](/serwis/immobilizer/) (rozrusznik kręci, silnik nie odpala), sprawdź, czy sterownik nie blokuje wtrysku z innego powodu. W busach z dużym przebiegiem problemy z komunikacją CAN-bus potrafią imitować awarię czujnika wału. Kontrolka [check engine](/serwis/check-engine/) z kodem P0335 w [Fiacie Ducato](/modele/fiat-ducato/) lub [Mercedesie Sprinterze](/modele/mercedes-sprinter/) wymaga zawsze sprawdzenia zarówno czujnika, jak i stanu koła zamachowego.
+Jeśli diagnostyka wykazała sprawny czujnik CKP, a objawy przypominają awarię [immobilizera](/serwis/immobilizer/) (rozrusznik kręci, silnik nie odpala), sprawdź, czy sterownik nie blokuje wtrysku z innego powodu. W busach z dużym przebiegiem problemy z komunikacją CAN-bus potrafią przypominać awarię czujnika wału. Kontrolka [check engine](/serwis/check-engine/) z kodem P0335 w [Fiacie Ducato](/modele/fiat-ducato/) lub [Mercedesie Sprinterze](/modele/mercedes-sprinter/) wymaga zawsze sprawdzenia zarówno czujnika, jak i stanu koła zamachowego.

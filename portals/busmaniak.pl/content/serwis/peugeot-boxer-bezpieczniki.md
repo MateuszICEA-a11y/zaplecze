@@ -10,7 +10,7 @@ type: "post"
 volume: 800
 main_keyword: "peugeot boxer bezpieczniki"
 image: "/images/peugeot-boxer-bezpieczniki-hero.webp"
-image_alt: "Skrzynka bezpieczników w Peugeocie Boxer pod deską rozdzielczą"
+image_alt: "Skrzynka bezpieczników w Peugeocie Boxerze pod deską rozdzielczą"
 youtube: "dxIymQCZEfc"
 youtube_title: "Fiat Ducato Bezpieczniki opis"
 lead: "Peugeot Boxer dzieli platformę z Fiatem Ducato i Citroënem Jumperem, więc układ bezpieczników jest bardzo zbliżony – ale nie identyczny. Różnice w oznaczeniach i rozmieszczeniu funkcji potrafią zmylić nawet doświadczonych mechaników. Poniżej znajdziesz schematy obu wersji (2006–2014 i facelift od 2014), lokalizacje skrzynek oraz instrukcję wymiany."
@@ -21,17 +21,17 @@ faq:
     answer: "Tak – oba modele używają tych samych typów bezpieczników (mini, standard, maxi). Numery gniazd i przypisane funkcje są zbliżone, ale nie zawsze identyczne. Zawsze weryfikuj schemat konkretnego rocznika."
   - question: "Dlaczego bezpiecznik przepala się natychmiast po wymianie?"
     answer: "To objaw zwarcia w obwodzie. Nie wstawiaj bezpiecznika o wyższym amperażu – grozi to pożarem instalacji. Szukaj przyczyny: uszkodzona wiązka, zalany sterownik lub wadliwy odbiornik."
-  - question: "Ile kosztuje wymiana skrzynki bezpieczników w Boxer?"
-    answer: "Sama skrzynka (moduł BSI) to koszt 800–2 000 zł za część używaną lub 2 500–4 500 zł za nową. Do tego dochodzi programowanie – BSI wymaga zakodowania do konkretnego VIN."
+  - question: "Ile kosztuje wymiana skrzynki bezpieczników w Boxerze?"
+    answer: "Sama skrzynka (moduł BSI) kosztuje 800–2 000 zł za część używaną lub 2 500–4 500 zł za nową. Do tego dochodzi programowanie – BSI wymaga kodowania pod konkretny numer VIN."
 sources:
   - "Instrukcja obsługi Peugeot Boxer III (2006–2018) – dokumentacja serwisowa PSA"
 ---
 
 ## Lokalizacja skrzynek bezpieczników
 
-Peugeot Boxer III (od 2006) ma bezpieczniki rozlokowane w trzech kluczowych miejscach. Warto wiedzieć, gdzie szukać, zanim zaczniesz demontować losowe osłony w kabinie.
+Peugeot Boxer III (od 2006) ma bezpieczniki rozmieszczone w trzech kluczowych miejscach. Warto wiedzieć, gdzie szukać, zanim zaczniesz demontować losowe osłony w kabinie.
 
-1.  **Skrzynka bezpieczników głównych na akumulatorze** – zlokalizowana pod podłogą przed fotelem kierowcy, bezpośrednio na klemie dodatniej. Znajdują się tam krytyczne bezpieczniki typu CAL (np. 70A, 150A) chroniące alternator, moduł BSI czy układ podgrzewania silnika. Ich przepalenie skutkuje całkowitym brakiem zasilania.
+1.  **Skrzynka bezpieczników głównych na akumulatorze** – zlokalizowana pod podłogą przed fotelem kierowcy, bezpośrednio na klemie dodatniej. Znajdują się tam krytyczne bezpieczniki typu CAL (np. 70A, 150A) chroniące alternator, moduł BSI oraz układ podgrzewania silnika. Ich przepalenie skutkuje całkowitym brakiem zasilania.
 2.  **Skrzynka pod deską rozdzielczą (strona kierowcy)** – główny moduł BSI (Body System Interface) z bezpiecznikami mini i standard. Obsługuje oświetlenie, audio, zegary, gniazda 12V i systemy komfortu. Dostęp uzyskasz po odkręceniu dwóch śrub osłony pod kierownicą.
 3.  **Skrzynka w komorze silnika** – umieszczona po lewej stronie, patrząc od przodu pojazdu. Znajdują się w niej bezpieczniki maxi (30–60A) chroniące obwody wysokoprądowe: wentylator chłodnicy, układ ABS, klimatyzację oraz rozrusznik.
 
@@ -73,7 +73,7 @@ Poniższe tabele prezentują najważniejsze obwody elektryczne. Pełny schemat (
 | MF11 | Rozrusznik | 50A |
 | MF13 | Świece żarowe | 60A |
 
-{{% expert name="Marek Kowalczyk" %}}Bezpiecznik F49 w Boxerze to dokładnie ten sam problem co w Ducato – odpowiada za pamięć radia i komputera pokładowego. Jeśli radio "zapomina" stację po każdym wyłączeniu silnika, a zegar resetuje się do 00:00, zacznij od tego bezpiecznika. Kosztuje grosze, a oszczędza godziny diagnostyki.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Bezpiecznik F49 w Boxerze sprawia dokładnie ten sam problem, co w Ducato – odpowiada za pamięć radia i komputera pokładowego. Jeśli radio „zapomina” stację po każdym wyłączeniu silnika, a zegar wraca do 00:00, zacznij od tego bezpiecznika. Kosztuje grosze, a oszczędza godziny diagnostyki.{{% /expert %}}
 
 ## Schemat bezpieczników Boxer III FL (2014+)
 
@@ -81,9 +81,9 @@ Facelift z 2014 roku wprowadził zmiany w kilku obwodach. Najważniejsze różni
 
 ### Zmiany względem wersji 2006–2014
 
--   **Gniazdo USB** – dodatkowy bezpiecznik 5A w skrzynce pod deską (brak w starszej wersji)
+-   **Gniazdo USB** – dodatkowy bezpiecznik 5A w skrzynce pod deską (którego nie było w starszej wersji)
 -   **System Start-Stop** – osobny obwód z bezpiecznikiem 10A
--   **Czujniki parkowania** – przeniesione z obwodu ogólnego do dedykowanego bezpiecznika 5A
+-   **Czujniki parkowania** – przeniesione z obwodu ogólnego do osobnego bezpiecznika 5A
 -   **Tempomat/limiter** – w starszej wersji dzielił obwód z zegarami, w FL ma osobne gniazdo
 
 Struktura skrzynek pozostała taka sama (trzy lokalizacje), a typy bezpieczników się nie zmieniły. Jeśli masz schemat z [Fiata Ducato](/serwis/bezpieczniki-fiat-ducato/) X290 (po 2014), będzie on w 90% zgodny z Boxerem FL.
@@ -92,7 +92,7 @@ Struktura skrzynek pozostała taka sama (trzy lokalizacje), a typy bezpiecznikó
 
 ## Najczęstsze awarie elektryczne w Boxerze
 
-Elektryka to pięta achillesowa platformy Sevel – niezależnie od tego, czy masz Boxera, Ducato czy Jumpera. Oto najczęstsze problemy:
+Elektryka to pięta Achillesa platformy Sevel – niezależnie od tego, czy masz Boxera, Ducato czy Jumpera. Oto najczęstsze problemy:
 
 -   **Przepalanie bezpiecznika F44 lub F33** – odpowiednio gniazdo zapalniczki i dodatkowe gniazdo 12V. Przyczyna: ładowarki o zbyt dużym poborze prądu lub zwarcie w gnieździe spowodowane metalowymi drobiazgami.
 -   **Korozja skrzynki i sterownika ECU** – wada fabryczna polegająca na nieszczelności podszybia. Woda kapie bezpośrednio na elektronikę w komorze silnika, prowadząc do zwarć i uszkodzeń. Kluczowe jest profilaktyczne uszczelnienie plastików pod wycieraczkami.
@@ -118,7 +118,7 @@ Procedura jest prosta, ale wymaga przestrzegania kilku zasad bezpieczeństwa, ab
 6.  Wstaw nowy bezpiecznik o identycznym amperażu i kolorze: czerwony = 10A, niebieski = 15A, żółty = 20A.
 7.  Włącz zapłon i sprawdź, czy obwód działa. Jeśli bezpiecznik natychmiast się przepala, w instalacji występuje zwarcie.
 
-Warto wiedzieć, że złącze diagnostyczne OBD2 znajduje się pod tą samą osłoną co skrzynka BSI, po lewej stronie kierownicy. Jeżeli komputer diagnostyczny nie może połączyć się z autem, w pierwszej kolejności sprawdź bezpiecznik F36 lub F39 (10A), który odpowiada za zasilanie tego gniazda.
+Warto wiedzieć, że złącze diagnostyczne OBD2 znajduje się pod tą samą osłoną, co skrzynka BSI, po lewej stronie kierownicy. Jeżeli komputer diagnostyczny nie może połączyć się z autem, w pierwszej kolejności sprawdź bezpiecznik F36 lub F39 (10A), który odpowiada za zasilanie tego gniazda.
 
 Ogólny przegląd typów i kolorów bezpieczników opisujemy w materiale o [bezpiecznikach w busach](/serwis/bezpieczniki-busy/). W razie problemów z elektroniką sprawdź też [przekaźniki Fiata Ducato](/serwis/przekazniki-fiat-ducato/) – są kompatybilne z Boxerem i montowane w tych samych gniazdach. Informacje o modelu znajdziesz na stronie [Peugeot Boxer](/modele/peugeot-boxer/).
 

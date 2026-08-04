@@ -15,13 +15,13 @@ main_keyword: "wymiana rozrządu"
 lead: "Rozrząd to jeden z najważniejszych układów w silniku busa – synchronizuje pracę wału korbowego z wałkiem rozrządu i decyduje o tym, czy zawory otwierają się we właściwym momencie. Zerwanie paska rozrządu w Fiacie Ducato 2.3 kończy się pogięciem zaworów i rachunkiem za 8000–15 000 zł. Tymczasem planowa wymiana razem z napinaczem, rolkami i pompą wody kosztuje 1500–3500 zł. To jeden z tych serwisów, na którym nie warto oszczędzać."
 faq:
   - question: "Co ile wymieniać rozrząd w busie?"
-    answer: "Zależy od modelu i silnika. Fiat Ducato 2.3 – co 120 000 km lub 5 lat. Ford Transit 2.0 EcoBlue – producent skrócił interwał do 160 000 km, ale warsztaty zalecają wymianę co 100 000 – 120 000 km. Iveco Daily 2.3 – co 120 000 km. Łańcuch rozrządu w Mercedesie Sprinterze wymaga kontroli, a wymiany zwykle po 150 000 – 200 000 km."
+    answer: "Zależy od modelu i silnika. Fiat Ducato 2.3 – co 120 000 km lub 5 lat. Ford Transit 2.0 EcoBlue – producent skrócił interwał do 160 000 km, ale warsztaty zalecają wymianę co 100 000–120 000 km. Iveco Daily 2.3 – co 120 000 km. Łańcuch rozrządu w Mercedesie Sprinterze wymaga kontroli, a wymiany zwykle po 150 000–200 000 km."
   - question: "Ile kosztuje wymiana rozrządu w Fiacie Ducato?"
     answer: "Wymiana paska rozrządu z kompletem rolek, napinaczem i pompą wody w Ducato 2.3 kosztuje 1500–2500 zł (części + robocizna). W autoryzowanym serwisie Fiata cena sięga 3500–5000 zł."
   - question: "Czy łańcuch rozrządu wymaga wymiany?"
     answer: "Tak, choć znacznie rzadziej niż pasek. W Mercedesie Sprinterze z silnikiem OM651 łańcuch rozciąga się po 150 000–200 000 km, co objawia się charakterystycznym dzwonieniem na zimnym silniku. Wymiana kosztuje 4300–6500 zł ze względu na umiejscowienie rozrządu od strony skrzyni biegów."
   - question: "Co się stanie, gdy zerwie się pasek rozrządu w busie?"
-    answer: "W silnikach z kolidującymi zaworami (większość diesli w busach) zerwanie paska powoduje zderzenie tłoków z zaworami. Skutki to pogięte zawory, uszkodzone tłoki, a w skrajnych przypadkach pęknięty blok silnika. Koszt naprawy to 8000–15 000 zł, często przekraczający wartość starszego busa."
+    answer: "W silnikach kolizyjnych (większość diesli w busach) zerwanie paska powoduje zderzenie tłoków z zaworami. Skutki to pogięte zawory, uszkodzone tłoki, a w skrajnych przypadkach pęknięty blok silnika. Koszt naprawy to 8000–15 000 zł, często przekraczający wartość starszego busa."
 sources:
   - "dokumentacja serwisowa Fiat Professional"
   - "Ford Etis"
@@ -62,7 +62,7 @@ Interwały wymiany rozrządu różnią się diametralnie między modelami. Poni�
 *Producenci określają łańcuch jako element bezobsługowy, jednak praktyka warsztatowa wymusza kontrolę i wymianę w przypadku objawów zużycia.
 
 {{% info title="Pasek w oleju – cicha pułapka" icon="build" %}}
-Ford Transit 2.0 EcoBlue wykorzystuje tzw. mokry pasek rozrządu, pracujący w kąpieli olejowej. Rozwiązanie to miało zapewnić cichą pracę i trwałość, jednak w praktyce generuje poważne ryzyko. Z czasem pasek z gumy HNBR łuszczy się pod wpływem sadzy w oleju, a jego mikrowłókna zatykają smok pompy olejowej. Prowadzi to do spadku ciśnienia smarowania, zatarcia turbosprężarki i panewek. Dlatego przy wymianie paska bezwzględnie konieczny jest demontaż miski olejowej i dokładne wyczyszczenie smoka.
+Ford Transit 2.0 EcoBlue wykorzystuje tzw. mokry pasek rozrządu, pracujący w kąpieli olejowej. To rozwiązanie miało zapewnić cichą pracę i trwałość, jednak w praktyce stwarza poważne ryzyko. Z czasem pasek z gumy HNBR łuszczy się pod wpływem sadzy w oleju, a jego mikrowłókna zatykają smok pompy olejowej. Prowadzi to do spadku ciśnienia smarowania, zatarcia turbosprężarki i panewek. Dlatego przy wymianie paska bezwzględnie konieczny jest demontaż miski olejowej i dokładne wyczyszczenie smoka.
 {{% /info %}}
 
 ## Objawy zużycia rozrządu
@@ -82,14 +82,14 @@ Objawy rozciągniętego łańcucha rozrządu:
 
 - **Metaliczne dzwonienie na zimnym silniku** – klasyczny objaw rozciągniętego łańcucha w Sprinterze OM651, ustępuje po rozgrzaniu oleju.
 - **Zapalona kontrolka [check engine](/serwis/check-engine/)** – sterownik wykrywa błąd synchronizacji wału korbowego z wałkiem rozrządu (kody P0016, P0017).
-- **Utrudniony rozruch** – przeskok łańcucha o ogniwo zmienia kąt wyprzedzenia, rozrusznik kręci dłużej przed zapłonem.
+- **Utrudniony rozruch** – przeskok łańcucha o ogniwo zmienia kąt wyprzedzenia, rozrusznik kręci dłużej, zanim silnik zaskoczy.
 - **Nierówna praca na biegu jałowym** – wibracje i wahania obrotów spowodowane rozregulowaniem faz.
 
 {{% expert name="Marek Kowalczyk" %}}Przy zakupie używanego Sprintera z silnikiem OM651 i przebiegiem powyżej 150 000 km zawsze nasłuchuję pracy zimnego silnika przez pierwsze 10–15 sekund. Rozciągnięty łańcuch to koszt naprawy rzędu 4500–6500 zł, o którym sprzedający często „zapominają". W Ducato 2.3 patrzę na datę produkcji paska – nawet jeśli przebieg jest niski, pasek starszy niż 5 lat wymaga wymiany, bo guma twardnieje i traci elastyczność.{{% /expert %}}
 
 ## Co wymieniać razem z paskiem rozrządu
 
-Wymiana samego paska bez osprzętu to pozorna oszczędność. Rolki i napinacz pracują pod identycznym obciążeniem – jeśli jeden z tych elementów ulegnie awarii, nowy pasek zerwie się w ciągu kilkuset kilometrów.
+Wymiana samego paska bez osprzętu to pozorna oszczędność. Rolki i napinacz pracują pod takim samym obciążeniem – jeśli jeden z tych elementów ulegnie awarii, nowy pasek zerwie się w ciągu kilkuset kilometrów.
 
 Kompletna wymiana rozrządu powinna obejmować:
 
@@ -99,7 +99,7 @@ Kompletna wymiana rozrządu powinna obejmować:
 - **Pompa wody** – w większości busów napędzana jest paskiem rozrządu. Jej wymiana osobno oznacza ponowny demontaż rozrządu za kilkanaście tysięcy kilometrów.
 - **Uszczelniacz wału korbowego** – simmering, który przy okazji demontażu koła pasowego warto wymienić profilaktycznie.
 
-Szczególną uwagę należy zwrócić na VW Craftera z silnikiem 2.0 TDI (EA288 Nutz). Producent przewidział interwał wymiany paska na 210 000 km i jest on bardzo wytrzymały. Niestety, piętą achillesową układu jest pompa wody, która często ulega rozszczelnieniu lub awarii rolki już po 120 000–150 000 km, wymuszając przedwczesną i kompletną wymianę całego napędu rozrządu.
+Szczególną uwagę należy zwrócić na VW Craftera z silnikiem 2.0 TDI (EA288 Nutz). Producent przewidział interwał wymiany paska na 210 000 km i sam pasek jest bardzo wytrzymały. Niestety, piętą Achillesa układu jest pompa wody, która często ulega rozszczelnieniu lub awarii rolki już po 120 000–150 000 km, wymuszając przedwczesną, kompletną wymianę całego napędu rozrządu.
 
 ## Koszt wymiany rozrządu w 2026 roku
 
@@ -116,7 +116,7 @@ Cena wymiany rozrządu zależy od modelu busa, typu napędu i lokalizacji warszt
 | Iveco Daily 2.3 | 500–800 zł | 800–1500 zł | 1300–2300 zł | 3000–4500 zł |
 | VW Crafter 2.0 TDI | 600–900 zł | 1000–1800 zł | 1600–2700 zł | 3500–5000 zł |
 
-Różnica między niezależnym warsztatem a ASO sięga 50–100%. Przy wymianie rozrządu jakość wykonania jest ważniejsza niż cena – błędne ustawienie faz o jeden ząb paska powoduje spadek mocy o 10–15% i zwiększone spalanie. Szukaj warsztatu, który specjalizuje się w danej marce i ma dedykowane blokady rozrządu.
+Różnica między niezależnym warsztatem a ASO sięga 50–100%. Przy wymianie rozrządu jakość wykonania jest ważniejsza niż cena – błędne ustawienie faz o jeden ząb paska powoduje spadek mocy o 10–15% i zwiększone spalanie. Szukaj warsztatu, który specjalizuje się w danej marce i dysponuje odpowiednimi blokadami rozrządu.
 
 
 {{% youtube %}}
@@ -125,7 +125,7 @@ Różnica między niezależnym warsztatem a ASO sięga 50–100%. Przy wymianie 
 
 Mercedes i inni producenci reklamują łańcuch jako element bezobsługowy, który wytrzymuje cały okres eksploatacji silnika. W teorii to prawda – stalowy łańcuch nie starzeje się jak gumowy pasek. W praktyce jednak łańcuch się rozciąga, a napinacz hydrauliczny ma ograniczoną zdolność kompensacji tego luzu.
 
-Kluczową informacją, która wpływa na koszty, jest umiejscowienie napędu. W popularnych silnikach Mercedesa 2.1 CDI (OM651) i 2.0 CDI (OM654) łańcuch znajduje się z tyłu jednostki, od strony skrzyni biegów. Taka lokalizacja fundamentalnie zmienia procedurę serwisową – wymiana niemal zawsze wymaga wyjęcia silnika lub demontażu skrzyni, co winduje koszt robocizny w porównaniu do klasycznych konstrukcji z rozrządem z przodu.
+Kluczową informacją, która wpływa na koszty, jest umiejscowienie napędu. W popularnych silnikach Mercedesa 2.1 CDI (OM651) i 2.0 CDI (OM654) łańcuch znajduje się z tyłu jednostki, od strony skrzyni biegów. Taka lokalizacja zasadniczo zmienia procedurę serwisową – wymiana niemal zawsze wymaga wyjęcia silnika lub demontażu skrzyni, co znacznie podnosi koszt robocizny w porównaniu z klasycznymi konstrukcjami z rozrządem z przodu.
 
 Najczęstsze problemy z łańcuchem rozrządu w busach:
 
@@ -133,6 +133,6 @@ Najczęstsze problemy z łańcuchem rozrządu w busach:
 - **Zużycie ślizgów** – plastikowe prowadnice łańcucha ścierają się i mogą pękać, powodując grzechotanie napędu.
 - **Awaria napinacza** – napinacz zasilany ciśnieniem oleju. Przy niskim ciśnieniu (np. z powodu rzadkich wymian oleju) nie kompensuje luzu i łańcuch zaczyna hałasować.
 
-Wymiana łańcucha rozrządu w Sprinterze OM651 trwa 8–12 roboczogodzin. Całkowity koszt operacji w niezależnym warsztacie to 4300–6500 zł – więcej niż wymiana paska w Ducato, ale przy dwukrotnie dłuższych interwałach koszt roczny jest porównywalny. Nowszy silnik OM654 (w Sprinterze od 2018 roku) ma łańcuch o znacznie lepszej trwałości i problemy pojawiają się zwykle powyżej 250 000 km.
+Wymiana łańcucha rozrządu w Sprinterze OM651 trwa 8–12 roboczogodzin. Całkowity koszt wymiany w niezależnym warsztacie wynosi 4300–6500 zł – więcej niż wymiana paska w Ducato, jednak przy dwukrotnie dłuższych interwałach koszt roczny jest porównywalny. Nowszy silnik OM654 (w Sprinterze od 2018 roku) ma łańcuch o znacznie lepszej trwałości, a problemy pojawiają się zwykle powyżej 250 000 km.
 
 Więcej o rozrządzie w najpopularniejszym busie znajdziesz w artykule [rozrząd Fiat Ducato – co ile wymiana](/serwis/fiat-ducato-rozrzad/).
