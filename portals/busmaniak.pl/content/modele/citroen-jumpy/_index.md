@@ -72,8 +72,8 @@ Najważniejsze jest to, że Jumpy występuje nie tylko w popularnych odmianach M
 | Rozstaw osi | 2925 mm | 3275 mm | 3275 mm |
 | Szerokość bez lusterek / z lusterkami | 1920 mm / ok. 2204 mm | 1920 mm / ok. 2204 mm | 1920 mm / ok. 2204 mm |
 | Wysokość | ok. 1895–1940 mm | ok. 1895–1940 mm | ok. 1895–1940 mm |
-| Objętość ładowni | 4,6 m3 | 5,3 m3 | 6,1 m3 |
-| Objętość z Moduwork | 5,1 m3 | 5,8 m3 | 6,6 m3 |
+| Objętość ładowni | 4,6 m³ | 5,3 m³ | 6,1 m³ |
+| Objętość z Moduwork | 5,1 m³ | 5,8 m³ | 6,6 m³ |
 | Długość przestrzeni ładunkowej | ok. 2162 mm | ok. 2512 mm | ok. 2862 mm |
 | Maks. długość z Moduwork | ok. 3324 mm | ok. 3674 mm | ok. 4024 mm |
 | DMC | zwykle 2660–3100 kg w zależności od wersji | 2660–3100 kg | 2660–3100 kg |
@@ -104,7 +104,7 @@ Do lekkiej pracy miejskiej i krótkich tras najczęściej wybierane są 1.5 Blue
 
 Jumpy nie ogranicza się do jednego „blaszaka”. Na rynku występuje w kilku odmianach, które różnią się zastosowaniem, liczbą miejsc i długością użytecznej przestrzeni.
 
-- **Furgon blaszany** – 2–3 miejsca, długości XS/M/XL, ładownia **4,6–6,6 m3** w zależności od wersji i systemu Moduwork.
+- **Furgon blaszany** – 2–3 miejsca, długości XS/M/XL, ładownia **4,6–6,6 m³** w zależności od wersji i systemu Moduwork.
 - **Brygadówka / double cab** – 5–6 miejsc, ale z mniejszą przestrzenią ładunkową niż w klasycznym furgonie.
 - **Kombi / osobowy SpaceTourer / Jumpy Combi** – odmiany 5–9-osobowe do przewozu ludzi.
 - **Platforma / podwozie** – dostępność zależna od rynku lokalnego.
@@ -176,10 +176,10 @@ Na rynku średnich vanów Jumpy konkuruje nie tylko z własnymi bliźniakami. Dl
 
 | Model | Długości | Objętość ładowni | Ładowność | Silniki | Plusy | Minusy |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Citroën Jumpy | XS/M/XL | 4,6–6,6 m3 | do ok. 1400 kg | 1.5/2.0 BlueHDi, BEV | niska wysokość, dobre prowadzenie, szeroka dostępność części | przeciętne wyciszenie, problemy AdBlue |
-| Ford Transit Custom | L1/L2 | ok. 5,8–9,0 m3 w zależności od wersji | do ok. 1400 kg | 2.0 EcoBlue/PHEV/BEV | bardzo dobre prowadzenie, bogata oferta | droższy serwis |
-| Renault Trafic | L1/L2 | ok. 5,8–8,9 m3 | do ok. 1200–1300 kg | 2.0 dCi | trwałe diesle, duża popularność | starsza konstrukcja |
-| VW Transporter T6.1/T7 | różne długości | ok. 5,8–9,3 m3 | do ok. 1200–1300 kg | 2.0 TDI / BEV w T7 | mocna marka, wysoka wartość rezydualna | zwykle wyższe ceny zakupu |
+| Citroën Jumpy | XS/M/XL | 4,6–6,6 m³ | do ok. 1400 kg | 1.5/2.0 BlueHDi, BEV | niska wysokość, dobre prowadzenie, szeroka dostępność części | przeciętne wyciszenie, problemy AdBlue |
+| Ford Transit Custom | L1/L2 | ok. 5,8–9,0 m³ w zależności od wersji | do ok. 1400 kg | 2.0 EcoBlue/PHEV/BEV | bardzo dobre prowadzenie, bogata oferta | droższy serwis |
+| Renault Trafic | L1/L2 | ok. 5,8–8,9 m³ | do ok. 1200–1300 kg | 2.0 dCi | trwałe diesle, duża popularność | starsza konstrukcja |
+| VW Transporter T6.1/T7 | różne długości | ok. 5,8–9,3 m³ | do ok. 1200–1300 kg | 2.0 TDI / BEV w T7 | mocna marka, wysoka wartość rezydualna | zwykle wyższe ceny zakupu |
 
 Pełne porównanie średnich vanów znajdziesz w artykule [Vivaro vs Trafic vs ProAce vs Expert](/porownania/porownanie-srednich-vanow/).
 

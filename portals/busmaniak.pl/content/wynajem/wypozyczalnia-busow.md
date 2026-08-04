@@ -69,9 +69,9 @@ Stawki zależą od wielkości pojazdu, długości wynajmu i lokalizacji. Poniżs
 
 | Kategoria pojazdu | Przykładowe modele | Cena za dobę (netto) | Typowa kaucja |
 | :--- | :--- | :--- | :--- |
-| Mały van (do 4 m3) | VW Caddy, Renault Kangoo, Citroen Berlingo | 99–180 zł | 500–1000 zł |
-| Średni van (6–9 m3) | Ford Transit Custom, Opel Vivaro, Toyota Proace | 150–250 zł | 1000–1500 zł |
-| Duży bus (10–17 m3) | Fiat Ducato L3H2, Mercedes Sprinter, Renault Master | 250–400 zł | 1000–3000 zł |
+| Mały van (do 4 m³) | VW Caddy, Renault Kangoo, Citroen Berlingo | 99–180 zł | 500–1000 zł |
+| Średni van (6–9 m³) | Ford Transit Custom, Opel Vivaro, Toyota Proace | 150–250 zł | 1000–1500 zł |
+| Duży bus (10–17 m³) | Fiat Ducato L3H2, Mercedes Sprinter, Renault Master | 250–400 zł | 1000–3000 zł |
 | Bus z windą | Iveco Daily, Fiat Ducato z windą | 350–500 zł | 2000–3000 zł |
 
 Przy wynajmie dłuższym niż 7 dni stawki spadają o 15–25%. Wynajem długoterminowy (miesiąc i dłużej) negocjuje się indywidualnie, zwykle za 60–70% ceny katalogowej.
@@ -114,9 +114,9 @@ Wynajem busa na przeprowadzkę to najczęstszy powód, dla którego osoby prywat
 
 Wybór wielkości busa zależy od metrażu mieszkania. Orientacyjne przeliczniki:
 
-- **Kawalerka (do 30 m2)** – wystarczy średni van (6–9 m3), np. Ford Transit Custom lub Opel Vivaro.
-- **Mieszkanie 2-pokojowe (40–55 m2)** – duży bus (10–14 m3), np. Fiat Ducato L3H2 lub Renault Master.
-- **Mieszkanie 3-pokojowe (60–80 m2)** – największy bus (15–17 m3), np. Ducato L4H3 lub Sprinter L3H3. Przy dużej liczbie mebli mogą być potrzebne dwa kursy.
+- **Kawalerka (do 30 m²)** – wystarczy średni van (6–9 m³), np. Ford Transit Custom lub Opel Vivaro.
+- **Mieszkanie 2-pokojowe (40–55 m²)** – duży bus (10–14 m³), np. Fiat Ducato L3H2 lub Renault Master.
+- **Mieszkanie 3-pokojowe (60–80 m²)** – największy bus (15–17 m³), np. Ducato L4H3 lub Sprinter L3H3. Przy dużej liczbie mebli mogą być potrzebne dwa kursy.
 
 Poza kubaturą warto sprawdzić długość podłogi przestrzeni ładunkowej, zwłaszcza przy transporcie długich przedmiotów. Przykładowo Fiat Ducato w wersji L2 oferuje ok. 3,12 m, wersja L3 – ok. 3,70 m, a najdłuższy model L4 aż 4,07 m.
 

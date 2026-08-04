@@ -62,7 +62,7 @@ Największy atut Fiorino to połączenie krótkiego nadwozia z sensowną paką. 
 
 | Wersja | Długość | Szerokość bez lusterek | Wysokość | Rozstaw osi | Pojemność paki/bagażnika | DMC | Ładowność |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Fiorino Cargo 1.3 MJT | 3864 mm | 1716 mm | 1721 mm | 2513 mm | 2,5 m3 (do 2,8 m3 z Cargo Plus) | 1700–1750 kg | ok. 610–660 kg |
+| Fiorino Cargo 1.3 MJT | 3864 mm | 1716 mm | 1721 mm | 2513 mm | 2,5 m³ (do 2,8 m³ z Cargo Plus) | 1700–1750 kg | ok. 610–660 kg |
 | Qubo 1.4 | 3957–3959 mm | 1716 mm | ok. 1735 mm | 2513 mm | bagażnik ok. 330 l / do ok. 2500 l po złożeniu siedzeń | ok. 1740–1760 kg | zależnie od wersji |
 
 ### Przestrzeń ładunkowa Fiorino Cargo
@@ -109,7 +109,7 @@ Fiorino występowało nie tylko jako typowy furgon. W zależności od rynku moż
 
 ### Fiorino Cargo
 
-To podstawowy wariant użytkowy. Ma 2 miejsca, pełną przegrodę i pakę o pojemności **2,5 m3**, a w układzie Cargo Plus do **2,8 m3**.
+To podstawowy wariant użytkowy. Ma 2 miejsca, pełną przegrodę i pakę o pojemności **2,5 m³**, a w układzie Cargo Plus do **2,8 m³**.
 
 Cargo ma przedział towarowy o długości **1523 mm**, a po wykorzystaniu miejsca pasażera nawet **2491 mm**. To wersja stworzona do pracy – prosta, łatwa do mycia i sensownie zaprojektowana pod kątem załadunku.
 
@@ -187,10 +187,10 @@ Fiorino zajmuje bardzo konkretną niszę – ma być maksymalnie krótkie, łatw
 
 | Model | Długość | Pojemność paki | Ładowność | Silniki | Plusy | Minusy |
 |---|---:|---:|---:|---|---|---|
-| Fiat Fiorino | 3864 mm | 2,5–2,8 m3 | do 660 kg | 1.3 MJT, 1.4 | bardzo kompaktowy, tani serwis | ciasna kabina, głośny w trasie |
-| Renault Kangoo Compact | 3938 mm | ok. 3,0 m3 | ok. 650 kg | 1.5 dCi | większa paka, lepsza trasa | wyższe ceny zakupu |
-| Ford Transit Courier I | 4157 mm | ok. 2,3 m3 | do ok. 660 kg | 1.5/1.6 TDCi, 1.0 EcoBoost | nowsza konstrukcja, lepsze multimedia | droższy serwis benzyn EcoBoost |
-| VW Caddy Panel Van | 4408 mm | od ok. 3,2 m3 | 700+ kg | 1.6/2.0 TDI, 1.2 TSI | bardziej uniwersalny, trasa | większe gabaryty, droższy zakup |
+| Fiat Fiorino | 3864 mm | 2,5–2,8 m³ | do 660 kg | 1.3 MJT, 1.4 | bardzo kompaktowy, tani serwis | ciasna kabina, głośny w trasie |
+| Renault Kangoo Compact | 3938 mm | ok. 3,0 m³ | ok. 650 kg | 1.5 dCi | większa paka, lepsza trasa | wyższe ceny zakupu |
+| Ford Transit Courier I | 4157 mm | ok. 2,3 m³ | do ok. 660 kg | 1.5/1.6 TDCi, 1.0 EcoBoost | nowsza konstrukcja, lepsze multimedia | droższy serwis benzyn EcoBoost |
+| VW Caddy Panel Van | 4408 mm | od ok. 3,2 m³ | 700+ kg | 1.6/2.0 TDI, 1.2 TSI | bardziej uniwersalny, trasa | większe gabaryty, droższy zakup |
 
 Jeśli porównujesz Fiorino z jego bliźniakami, czyli Nemo i Bipperem, różnice są kosmetyczne. W praktyce częściej wygrywa jednak z większymi rywalami ceną i zwrotnością, a przegrywa wyciszeniem, przestrzenią w kabinie i komfortem na trasie.
 

@@ -76,7 +76,7 @@ Najłatwiej porównywać Scudo według długości nadwozia, rozstawu osi i łado
 
 Pierwsza generacja była wyraźnie mniejsza od Scudo II i III. To ważne, jeśli szukasz starego auta do miasta albo lekkiej zabudowy.
 
-| Wariant | Długość [mm] | Rozstaw osi [mm] | Szerokość [mm] | Wysokość [mm] | DMC [kg]     | Ładowność [kg] | Objętość [m3] |
+| Wariant | Długość [mm] | Rozstaw osi [mm] | Szerokość [mm] | Wysokość [mm] | DMC [kg]     | Ładowność [kg] | Objętość [m³] |
 |---------|--------------|------------------|----------------|---------------|--------------|----------------|---------------|
 | L1      | 4444         | 2824             | ok. 1810       | ok. 1940      | ok. 2275–2515 | ok. 815–900    | ok. 4,0–4,5   |
 | L2      | 4744         | 3244             | ok. 1810       | ok. 1940      | ok. 2525–2660 | ok. 900–1000   | ok. 5,0       |
@@ -87,7 +87,7 @@ Wartości zależą od wersji furgon/kombi i rynku.
 
 W praktyce III generacja daje więcej wariantów długości, a II generacja utrzymuje prostszą ofertę z dwoma głównymi wersjami. Dla firmy najważniejsze są zwykle trzy liczby: długość paki, ładowność i DMC.
 
-| Generacja | Wariant   | Długość [mm] | Rozstaw osi [mm] | Szerokość bez lusterek [mm] | Wysokość [mm] | Objętość ład. [m3] | DMC [kg]   | Ładowność [kg] | Długość paki [mm] |
+| Generacja | Wariant   | Długość [mm] | Rozstaw osi [mm] | Szerokość bez lusterek [mm] | Wysokość [mm] | Objętość ład. [m³] | DMC [kg]   | Ładowność [kg] | Długość paki [mm] |
 |-----------|-----------|--------------|------------------|-----------------------------|---------------|--------------------|------------|----------------|-------------------|
 | Scudo II  | L1H1      | 4805         | 3000             | 1895                        | 1942          | 5,0                | 2661–2963  | ok. 1000–1200  | ok. 2254          |
 | Scudo II  | L2H1      | 5135         | 3122             | 1895                        | 1980          | 6,0–7,0            | 2791–2963  | ok. 1000–1200  | ok. 2584          |
@@ -157,7 +157,7 @@ Scudo nie kończy się na zwykłym furgonie. W zależności od generacji i rynku
 
 | Wersja                           | Generacje                    | Liczba miejsc | Kluczowe parametry                                  |
 |----------------------------------|------------------------------|---------------|-----------------------------------------------------|
-| Furgon                           | I, II, III                   | 2–3           | 4,0–6,6 m3, do 1400 kg                              |
+| Furgon                           | I, II, III                   | 2–3           | 4,0–6,6 m³, do 1400 kg                              |
 | Furgon brygadowy / podwójna kabina | II, III                    | 5–6           | krótsza paka o ok. 600–800 mm                       |
 | Kombi                            | I, II, III                   | 5–9           | przesuwne drzwi, składane rzędy siedzeń             |
 | Panorama / Combi M1              | II, III                      | 8–9           | układ 2+3+3, większe przeszklenie i wykończenie     |
@@ -166,7 +166,7 @@ Scudo nie kończy się na zwykłym furgonie. W zależności od generacji i rynku
 
 ### Furgon
 
-Najpopularniejsza wersja użytkowa. W zależności od długości nadwozia oferuje od **4,6 m3 do 6,6 m3** przestrzeni ładunkowej i do **1400 kg** ładowności.
+Najpopularniejsza wersja użytkowa. W zależności od długości nadwozia oferuje od **4,6 m³ do 6,6 m³** przestrzeni ładunkowej i do **1400 kg** ładowności.
 
 W praktyce to właśnie furgon najczęściej trafia do kurierów, ekip montażowych i serwisowych. W zależności od konfiguracji można mieć **1 lub 2 drzwi przesuwne**, a z tyłu **drzwi 50/50 albo klapę**.
 
@@ -240,7 +240,7 @@ Scudo III konkuruje w bardzo wymagającym segmencie. Rywale są więksi, bardzie
 
 Na tle konkurencji Scudo wypada dobrze tam, gdzie liczy się stosunek ceny do możliwości. [Renault Trafic](/modele/renault-trafic/) daje bardziej klasyczne proporcje przestrzeni ładunkowej, a [Ford Transit Custom](/modele/ford-transit-custom/) wygrywa większą paką i dopracowanym prowadzeniem. Fiat broni się kosztami zakupu i dostępnością zamienników wspólnych z Expertem i Jumpy.
 
-Scudo III L2 najlepiej porównywać z Trafikiem L2H1 (**ładowność ok. 1050–1220 kg, objętość 6,0 m3**), Transit Custom L2H1 (**do ok. 1360 kg, 6,8 m3**) oraz Transporterem T6.1 L2H1 (**ok. 930–1280 kg, 6,7 m3**). Fiat wygrywa niewielką wysokością ok. **1,90 m**, dobrą zwrotnością i wspólną bazą części z Expertem, Jumpy, ProAce i Vivaro.
+Scudo III L2 najlepiej porównywać z Trafikiem L2H1 (**ładowność ok. 1050–1220 kg, objętość 6,0 m³**), Transit Custom L2H1 (**do ok. 1360 kg, 6,8 m³**) oraz Transporterem T6.1 L2H1 (**ok. 930–1280 kg, 6,7 m³**). Fiat wygrywa niewielką wysokością ok. **1,90 m**, dobrą zwrotnością i wspólną bazą części z Expertem, Jumpy, ProAce i Vivaro.
 
 ## Ceny Scudo
 

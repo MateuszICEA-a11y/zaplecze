@@ -70,7 +70,7 @@ Dla wersji użytkowych ważniejsze są parametry przestrzeni ładunkowej i łado
 
 | Parametr użytkowy | Berlingo Van M | Berlingo Van XL |
 |-------------------|----------------|-----------------|
-| Przestrzeń ładunkowa | 3,3 m3 | 3,9 m3 |
+| Przestrzeń ładunkowa | 3,3 m³ | 3,9 m³ |
 | Długość podłogi (mm) | 1817 | 2167 |
 | Długość z Extenso (mm) | do 3090 | do 3440 |
 | Szerokość między nadkolami (mm) | ok. 1229 | ok. 1229 |
@@ -128,8 +128,8 @@ Berlingo występuje w kilku odmianach, ale sedno oferty pozostaje niezmienne: ro
 
 W praktyce najważniejsze odmiany użytkowe wyglądają tak:
 
-- **Van M** – przestrzeń ładunkowa **3,3 m3**, bardziej poręczny w mieście.
-- **Van XL** – przestrzeń ładunkowa **3,9 m3**, lepszy do dłuższych ładunków.
+- **Van M** – przestrzeń ładunkowa **3,3 m³**, bardziej poręczny w mieście.
+- **Van XL** – przestrzeń ładunkowa **3,9 m³**, lepszy do dłuższych ładunków.
 - **Crew Van / brygadówka** – 5-osobowa wersja z przegrodą, dla ekip serwisowych i montażowych.
 
 Wersje dostawcze mają też parametry ważne przy codziennej pracy: próg załadunku około **613 mm** i **1229 mm** szerokości między nadkolami. To wystarcza do sensownego wykorzystania auta przez kurierów, serwisantów czy małe firmy budowlane.

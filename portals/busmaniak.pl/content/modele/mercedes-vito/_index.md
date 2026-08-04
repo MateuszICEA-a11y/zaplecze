@@ -102,7 +102,7 @@ Najważniejsze liczby dla Vito W447 warto mieć w jednym miejscu. To ułatwia wy
 | Szerokość bez lusterek | 1928 mm | 1928 mm | 1928 mm |
 | Wysokość | ok. 1910 mm | ok. 1910 mm | ok. 1910 mm |
 | Długość przestrzeni ładunkowej | 2586 mm | 2831 mm | 3061 mm |
-| Objętość przestrzeni ładunkowej | 5,5 m3 | 6,0 m3 | 6,6 m3 |
+| Objętość przestrzeni ładunkowej | 5,5 m³ | 6,0 m³ | 6,6 m³ |
 | DMC – typowe wersje | 2800 / 3050 / 3200 kg | 2800 / 3050 / 3200 kg | 3050 / 3200 kg |
 | Ładowność – typowy zakres | 824–1149 kg | 900–1369 kg | 880–1300 kg |
 | Masa przyczepy z hamulcem | do 2000–2500 kg zależnie od wersji | do 2000–2500 kg | do 2000–2500 kg |
@@ -175,7 +175,7 @@ Mercedes Vito nie kończy się na jednym furgonie. Ten model występuje w kilku 
 
 | Wersja | Miejsca | Homologacja | Długości | Cechy |
 |---|---:|---|---|---|
-| Furgon | 2–3 | N1 | Compact/Long/Extra Long | 5,5–6,6 m3, pełna przegroda |
+| Furgon | 2–3 | N1 | Compact/Long/Extra Long | 5,5–6,6 m³, pełna przegroda |
 | Mixto | 5–6 | zwykle N1 | Long/Extra Long | drugi rząd siedzeń + część ładunkowa |
 | Tourer BASE/PRO/SELECT | 8–9 | M1 | Compact/Long/Extra Long | przewóz osób, shuttle, taxi, transfer hotelowy |
 | Podwozie do zabudowy specjalnej* | 2–3 | N1 | zależnie od rynku i zabudowy | chłodnia, serwis, specjalistyczne zabudowy |
@@ -186,7 +186,7 @@ Mercedes Vito nie kończy się na jednym furgonie. Ten model występuje w kilku 
 
 ### Furgon (Panel Van)
 
-Klasyczny dostawczak z pełną przegrodą. Występuje jako **Compact, Long i Extra Long**, zwykle z kabiną **2- lub 3-miejscową** i przestrzenią ładunkową **5,5–6,6 m3**. Do wyboru są drzwi przesuwne po lewej lub prawej stronie, a z tyłu klapa albo drzwi skrzydłowe.
+Klasyczny dostawczak z pełną przegrodą. Występuje jako **Compact, Long i Extra Long**, zwykle z kabiną **2- lub 3-miejscową** i przestrzenią ładunkową **5,5–6,6 m³**. Do wyboru są drzwi przesuwne po lewej lub prawej stronie, a z tyłu klapa albo drzwi skrzydłowe.
 
 ### Mixto (brygadówka)
 
@@ -283,7 +283,7 @@ Vito konkuruje nie tylko ceną, ale też charakterem. Jedni szukają maksymalnej
 |----------|--------------------|------------------------|------------------------|-------------------|-----------------------------|
 | Długość | 5140 mm | 5304 mm | 5340 mm | 5080 mm | – |
 | Wysokość pojazdu | ok. 1910 mm | ok. 1990 mm | ok. 1972 mm | ok. 1971 mm | – |
-| Objętość paki | 6,0 m3 | 6,7 m3 | 6,8 m3 | 5,2 m3 | – |
+| Objętość paki | 6,0 m³ | 6,7 m³ | 6,8 m³ | 5,2 m³ | – |
 | Ładowność | 1369 kg | 1300 kg | 1400 kg | 1200 kg | – |
 | Liczba miejsc osobowych | do 9 | do 9 | do 9 | do 9 | do 9 |
 | Diesel bazowy | 2.0 CDI 116 KM | 2.0 TDI 110 KM | 2.0 EcoBlue 105 KM | 2.0 dCi 110 KM | – |

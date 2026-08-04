@@ -101,12 +101,12 @@ Wymiary i parametry Caddy zależą od wersji nadwozia. W praktyce dla firmy najw
 
 | Wersja           | Długość | Rozstaw osi | Szerokość bez lusterek | Wysokość           | Miejsca | Objętość / bagażnik            | Długość podłogi | Szerokość max | Między nadkolami | Ładowność        | DMC              | Maks. masa przyczepy z hamulcem |
 |------------------|--------:|------------:|-----------------------:|-------------------:|--------:|-------------------------------:|----------------:|--------------:|-----------------:|-----------------:|-----------------:|--------------------------------:|
-| Cargo krótki     | 4500 mm | 2755 mm     | 1855 mm                | ok. 1833–1856 mm   | 2/3     | **3,1 m3**                     | 1797 mm         | 1614 mm       | 1230 mm          | do ok. 723 kg    | 2220–2300 kg     | ok. 1400–1500 kg                |
-| Cargo Long       | 4853 mm | 2970 mm     | 1855 mm                | ok. 1833–1856 mm   | 2/3     | **3,7 m3**                     | 2150 mm         | –             | 1230 mm          | do ok. 776 kg    | ok. 2300–2350 kg | ok. 1400–1500 kg                |
+| Cargo krótki     | 4500 mm | 2755 mm     | 1855 mm                | ok. 1833–1856 mm   | 2/3     | **3,1 m³**                     | 1797 mm         | 1614 mm       | 1230 mm          | do ok. 723 kg    | 2220–2300 kg     | ok. 1400–1500 kg                |
+| Cargo Long       | 4853 mm | 2970 mm     | 1855 mm                | ok. 1833–1856 mm   | 2/3     | **3,7 m³**                     | 2150 mm         | –             | 1230 mm          | do ok. 776 kg    | ok. 2300–2350 kg | ok. 1400–1500 kg                |
 | Osobowy krótki   | 4500 mm | 2755 mm     | 1855 mm                | ok. 1833–1856 mm   | 5       | ok. **1213 l** do linii okien  | –               | –             | –                | –                | –                | ok. 1400–1500 kg                |
 | Osobowy Long     | 4853 mm | 2970 mm     | 1855 mm                | ok. 1833–1856 mm   | 5 lub 7 | ok. **1720 l** do linii okien  | –               | –             | –                | –                | –                | ok. 1400–1500 kg                |
 
-W krótkim Caddy Cargo zmieścisz **3,1 m3**, a w wydłużonym **3,7 m3**. Maksymalna szerokość przestrzeni to **1614 mm**, a **1230 mm między nadkolami** pozwala załadować europaletę bokiem.
+W krótkim Caddy Cargo zmieścisz **3,1 m³**, a w wydłużonym **3,7 m³**. Maksymalna szerokość przestrzeni to **1614 mm**, a **1230 mm między nadkolami** pozwala załadować europaletę bokiem.
 
 W wersjach osobowych bagażnik do linii okien ma około **1213 l** w krótkim nadwoziu i około **1720 l** w odmianie Long. To właśnie dlatego Caddy w wersji osobowej bywa traktowany jak pełnoprawny rodzinny van, a nie tylko podniesiony kombivan.
 
@@ -152,8 +152,8 @@ Volkswagen Caddy występował i występuje w kilku wyraźnie różnych odmianach
 
 | Wersja                         | Miejsca | Drzwi przesuwne                   | Przeznaczenie                         | Kluczowe parametry użytkowe |
 |--------------------------------|--------:|-----------------------------------|---------------------------------------|-----------------------------|
-| **Caddy Cargo**                | 2/3     | 1 lub 2 zależnie od konfiguracji  | typowy furgon do pracy                | **3,1 m3**, europaleta bokiem dzięki **1230 mm** między nadkolami |
-| **Caddy Cargo Long**           | 2/3     | 1 lub 2 zależnie od konfiguracji  | więcej miejsca na towar               | **3,7 m3**, długość podłogi **2150 mm** |
+| **Caddy Cargo**                | 2/3     | 1 lub 2 zależnie od konfiguracji  | typowy furgon do pracy                | **3,1 m³**, europaleta bokiem dzięki **1230 mm** między nadkolami |
+| **Caddy Cargo Long**           | 2/3     | 1 lub 2 zależnie od konfiguracji  | więcej miejsca na towar               | **3,7 m³**, długość podłogi **2150 mm** |
 | **Caddy Kombi**                | 5       | –                                 | kompromis między ludźmi a towarem     | zwykle **5 miejsc** |
 | **Life / Style / Move**        | 5       | –                                 | rodzinny van i auto codzienne         | bagażnik ok. **1213 l** lub **1720 l** do linii okien |
 | **Long**                       | 5 lub 7 | –                                 | więcej miejsca na pasażerów i bagaże  | opcjonalnie **7 miejsc** |
@@ -161,8 +161,8 @@ Volkswagen Caddy występował i występuje w kilku wyraźnie różnych odmianach
 
 W III i IV generacji wydłużona odmiana nosiła nazwę **Maxi**, a w V spotkasz oznaczenie **Long**. Idea jest ta sama: więcej długości, więcej bagażnika i więcej praktycznego sensu, jeśli auto ma wozić rodzinę albo większy ładunek bez składania wszystkiego na styk.
 
-- **Caddy Cargo** – dostawczy furgon z przegrodą, **2 lub 3 miejsca**, przestrzeń ładunkowa **3,1 m3**, długość **4500 mm**
-- **Caddy Cargo Maxi/Long** – wydłużony furgon, **2 lub 3 miejsca**, przestrzeń **3,7 m3**, długość **4853 mm**
+- **Caddy Cargo** – dostawczy furgon z przegrodą, **2 lub 3 miejsca**, przestrzeń ładunkowa **3,1 m³**, długość **4500 mm**
+- **Caddy Cargo Maxi/Long** – wydłużony furgon, **2 lub 3 miejsca**, przestrzeń **3,7 m³**, długość **4853 mm**
 - **Caddy Kombi** – zwykle **5 miejsc**, wersja użytkowo-osobowa; może pracować jako auto brygadowe
 - **[Caddy osobowy](/modele/volkswagen-caddy/osobowy/) (Life/Style/Move)** – standardowo **5 miejsc**, w wersji Long opcjonalnie **7 miejsc**, bagażnik około **1213 l** lub **1720 l**
 - **[Caddy Maxi](/modele/volkswagen-caddy/maxi/) / [Long](/modele/volkswagen-caddy/long/)** – wydłużone nadwozie z rozstawem osi **2970 mm**; w układzie 7-osobowym konfiguracja siedzeń **2+3+2**
@@ -175,7 +175,7 @@ W III i IV generacji wydłużona odmiana nosiła nazwę **Maxi**, a w V spotkasz
 
 W segmencie kombivanów i małych furgonów Caddy ma mocnych rywali. Różnice nie sprowadzają się tylko do ceny – liczą się też wymiary, ładowność, dostępność 7 miejsc i to, czy szukasz wersji dostawczej, czy bardziej rodzinnej.
 
-| Model                          | Długość standard (mm) | Długość long (mm) | Objętość ładunkowa (m3) | Ładowność (kg)      | 7 miejsc | Automat | Moc bazowego diesla | Cena nowego od                |
+| Model                          | Długość standard (mm) | Długość long (mm) | Objętość ładunkowa (m³) | Ładowność (kg)      | 7 miejsc | Automat | Moc bazowego diesla | Cena nowego od                |
 |--------------------------------|----------------------:|------------------:|------------------------:|--------------------:|:--------:|:-------:|--------------------:|------------------------------|
 | VW Caddy Cargo / osobowy       | 4500                  | 4853              | 3,1–3,7                 | ok. 723–776         | tak      | tak     | 102 KM              | ok. **115 tys. zł netto**    |
 | Citroën Berlingo / Opel Combo  | 4403                  | 4753              | 3,3–4,4                 | do ok. 1000         | –        | –       | 100 KM              | ok. **95–105 tys. zł netto** |

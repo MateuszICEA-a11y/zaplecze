@@ -45,13 +45,13 @@ Gama silników obejmowała benzynowe 1.4 i 1.6 oraz diesle 1.7 D i 1.7 DI. Był 
 
 ### Opel Combo C (2001–2011)
 
-Combo C bazowało na Corsie C i urosło w każdym kierunku. Długość nadwozia wynosiła około **4322 mm**, a pojemność przestrzeni ładunkowej dochodziła do około **3,2 m3**.
+Combo C bazowało na Corsie C i urosło w każdym kierunku. Długość nadwozia wynosiła około **4322 mm**, a pojemność przestrzeni ładunkowej dochodziła do około **3,2 m³**.
 
 W gamie znalazły się między innymi benzynowe 1.4 oraz diesle 1.3 CDTI i 1.7 CDTI. Właśnie ta generacja mocno spopularyzowała Combo wśród kurierów, serwisów mobilnych i drobnych wykonawców – dawała już sensowną pakę, a nadal była zwrotna w mieście.
 
 ### Opel Combo D (2011–2018)
 
-Generacja D była technicznym bliźniakiem Fiata Doblò II. To był duży krok naprzód pod względem użytkowym – auto oferowano w długościach około **4390 mm** i **4740 mm**, a pojemność przestrzeni ładunkowej wynosiła od **3,4 do 5,4 m3**.
+Generacja D była technicznym bliźniakiem Fiata Doblò II. To był duży krok naprzód pod względem użytkowym – auto oferowano w długościach około **4390 mm** i **4740 mm**, a pojemność przestrzeni ładunkowej wynosiła od **3,4 do 5,4 m³**.
 
 W gamie były m.in. **1.3 CDTI, 1.6 CDTI, 2.0 CDTI oraz benzynowe 1.4 i wersje CNG w zależności od rynku**. W tej generacji Combo przestało być wyłącznie małym vanem do miasta i zaczęło na serio konkurować z większymi kombivanami pod względem funkcjonalności.
 
@@ -59,7 +59,7 @@ W gamie były m.in. **1.3 CDTI, 1.6 CDTI, 2.0 CDTI oraz benzynowe 1.4 i wersje C
 
 Piąta generacja powstała na modułowej [platformie PSA EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform) i stała się bliźniakiem takich modeli jak [Citroën Berlingo](/modele/citroen-berlingo/) oraz [Peugeot Partner](/modele/peugeot-partner/). W ofercie są wersje Cargo, Life i e-Combo.
 
-Nadwozie występuje w dwóch długościach: Standard/M **4403 mm** oraz XL/Long **4753 mm**. Pojemność przestrzeni ładunkowej wynosi **3,3–4,4 m3**, na pakę wchodzą **2 europalety**, a po liftingu z lat 2023/2024 model dostał nowy pas przedni i zaktualizowane systemy ADAS.
+Nadwozie występuje w dwóch długościach: Standard/M **4403 mm** oraz XL/Long **4753 mm**. Pojemność przestrzeni ładunkowej wynosi **3,3–4,4 m³**, na pakę wchodzą **2 europalety**, a po liftingu z lat 2023/2024 model dostał nowy pas przedni i zaktualizowane systemy ADAS.
 
 ## Dane techniczne i wymiary
 
@@ -74,7 +74,7 @@ Obecne Combo E występuje jako dostawczy Cargo i osobowy Life. Najważniejsze li
 | Wysokość | ok. 1841–1860 mm | ok. 1812–1860 mm |
 | Szerokość bez lusterek | 1848 mm | 1848 mm |
 | Szerokość z lusterkami | ok. 2107 mm | ok. 2107 mm |
-| Objętość przestrzeni ładunkowej | 3,3–3,8 m3 | 3,9–4,4 m3 |
+| Objętość przestrzeni ładunkowej | 3,3–3,8 m³ | 3,9–4,4 m³ |
 | Długość paki | 1817 mm | 2167 mm |
 | Długość z systemem FlexCargo | do 3090 mm | do 3440 mm |
 | Szerokość między nadkolami | 1229 mm | 1229 mm |
@@ -97,8 +97,8 @@ Poniżej masz szybkie zestawienie najważniejszych parametrów użytkowych. To d
 
 | Wersja | Długość | Rozstaw osi | Wysokość | Pojemność paki / bagażnika | DMC | Masa własna | Ładowność | Masa przyczepy z hamulcem |
 |--------|---------|-------------|----------|-----------------------------|-----|-------------|-----------|---------------------------|
-| **Combo E Cargo M 1.5 Diesel 100** | 4403 mm | 2785 mm | – | 3,3–3,8 m3 | ok. 2370 kg | – | do ok. 1000 kg | do ok. 1000–1500 kg |
-| **Combo E Cargo XL 1.5 Diesel 100** | 4753 mm | 2975 mm | – | 3,9–4,4 m3 | ok. 2400 kg | – | do ok. 950–1000 kg | – |
+| **Combo E Cargo M 1.5 Diesel 100** | 4403 mm | 2785 mm | – | 3,3–3,8 m³ | ok. 2370 kg | – | do ok. 1000 kg | do ok. 1000–1500 kg |
+| **Combo E Cargo XL 1.5 Diesel 100** | 4753 mm | 2975 mm | – | 3,9–4,4 m³ | ok. 2400 kg | – | do ok. 950–1000 kg | – |
 | **Combo Life M** | 4403 mm | – | – | bagażnik 597 l | – | – | – | – |
 | **Combo Life XL** | 4753 mm | – | – | bagażnik 850 l, za 3. rzędem 322 l | – | – | – | – |
 
@@ -110,7 +110,7 @@ W wersji dostawczej najważniejsze są trzy rzeczy: długość paki, objętość
 |----------|--------------------|-----------------|
 | Długość całkowita | 4403 mm | 4753 mm |
 | Rozstaw osi | 2785 mm | 2975 mm |
-| Objętość przestrzeni | 3,3–3,8 m3 | 3,9–4,4 m3 |
+| Objętość przestrzeni | 3,3–3,8 m³ | 3,9–4,4 m³ |
 | Długość paki | 1817 mm | 2167 mm |
 | Długość z FlexCargo | do 3090 mm | do 3440 mm |
 | Szerokość między nadkolami | 1229 mm | 1229 mm |
@@ -151,8 +151,8 @@ To nie jest jedno auto różniące się jedynie detalami. W praktyce Combo Cargo
 
 | Wersja | Dla kogo | Najważniejsze parametry |
 |--------|----------|-------------------------|
-| **Cargo 2-miejscowy** | kurier, serwis, handel | **3,3 m3** w M, **3,9 m3** w XL, pełna przegroda |
-| **Cargo FlexCargo 3-miejscowy** | ekipy techniczne, monterzy | do **3,8 m3** w M i **4,4 m3** w XL, długość ładunku do **3090 / 3440 mm** |
+| **Cargo 2-miejscowy** | kurier, serwis, handel | **3,3 m³** w M, **3,9 m³** w XL, pełna przegroda |
+| **Cargo FlexCargo 3-miejscowy** | ekipy techniczne, monterzy | do **3,8 m³** w M i **4,4 m³** w XL, długość ładunku do **3090 / 3440 mm** |
 | **Crew Cab 5-miejscowy** | brygady i firmy usługowe | 5 miejsc, krótsza paka, wariant dla ekip |
 | **Life 5-osobowy** | rodzina, shuttle, taxi | bagażnik **597 l** w M lub **850 l** w XL |
 | **Life XL 7-osobowy** | większa rodzina, przewóz osób | **322 l** za 3. rzędem |
@@ -211,11 +211,11 @@ Najbliższymi rywalami Combo E są dziś przede wszystkim modele z tego samego s
 
 | Model | Długość | Objętość paki | Ładowność | Szerokość między nadkolami | Max długość z klapą / przelotką | 2 europalety | Diesel | EV | 7 miejsc w wersji osobowej |
 |-------|---------|---------------|-----------|-----------------------------|---------------------------------|--------------|--------|----|----------------------------|
-| **Opel Combo E** | 4403 / 4753 mm | 3,3–4,4 m3 | do ok. 1000 kg | 1229 mm | do 3090 / 3440 mm | tak | 1.5 100 / 130 KM | 136 KM | tak |
-| **Citroën Berlingo Van** | 4403 / 4753 mm | 3,3–4,4 m3 | do ok. 1000 kg | 1229 mm | do 3090 / 3440 mm | tak | 1.5 100 / 130 KM | 136 KM | tak |
-| **Peugeot Partner** | 4403 / 4753 mm | 3,3–4,4 m3 | do ok. 1000 kg | 1229 mm | do 3090 / 3440 mm | tak | 1.5 100 / 130 KM | 136 KM | tak |
-| **Renault Kangoo Van L1 / L2** | ok. 4486 / 4910 mm | 3,3–4,9 m3 | zwykle ok. 650–1000 kg | ok. 1248 mm | – | – | 1.5 Blue dCi 95 / 115 KM | E-Tech 122 KM | – |
-| **VW Caddy Cargo / Maxi** | 4500 / 4853 mm | ok. 3,1 / 3,7 m3 | zwykle ok. 700–750 kg | ok. 1230 mm | – | – | 2.0 TDI 75 / 102 / 122 KM | – | tak, w osobowym Caddy Maxi |
+| **Opel Combo E** | 4403 / 4753 mm | 3,3–4,4 m³ | do ok. 1000 kg | 1229 mm | do 3090 / 3440 mm | tak | 1.5 100 / 130 KM | 136 KM | tak |
+| **Citroën Berlingo Van** | 4403 / 4753 mm | 3,3–4,4 m³ | do ok. 1000 kg | 1229 mm | do 3090 / 3440 mm | tak | 1.5 100 / 130 KM | 136 KM | tak |
+| **Peugeot Partner** | 4403 / 4753 mm | 3,3–4,4 m³ | do ok. 1000 kg | 1229 mm | do 3090 / 3440 mm | tak | 1.5 100 / 130 KM | 136 KM | tak |
+| **Renault Kangoo Van L1 / L2** | ok. 4486 / 4910 mm | 3,3–4,9 m³ | zwykle ok. 650–1000 kg | ok. 1248 mm | – | – | 1.5 Blue dCi 95 / 115 KM | E-Tech 122 KM | – |
+| **VW Caddy Cargo / Maxi** | 4500 / 4853 mm | ok. 3,1 / 3,7 m³ | zwykle ok. 700–750 kg | ok. 1230 mm | – | – | 2.0 TDI 75 / 102 / 122 KM | – | tak, w osobowym Caddy Maxi |
 
 Jeśli zależy Ci na aucie maksymalnie podobnym do Combo, to najbliżej są [Citroën Berlingo](/modele/citroen-berlingo/) i [Peugeot Partner](/modele/peugeot-partner/). Renault Kangoo Van może wygrać pojemnością w części konfiguracji, a VW Caddy Cargo często broni się bardziej osobowym prowadzeniem, ale przegrywa samą objętością paki.
 

@@ -69,10 +69,10 @@ W nowej generacji gama furgonów jest prostsza niż kiedyś. Nie ma już krótki
 
 | Wariant | Długość całk. | Wysokość | Rozstaw osi | Objętość ładunkowa | Długość paki | DMC | Ładowność |
 |---------|---------------|----------|-------------|--------------------|--------------|-----|-----------|
-| L2H2 | ok. 5680 mm | ok. 2498 mm | ok. 3585 mm | 10,8 m3 | ok. 3115 mm | 3,5–4,0 t | do ok. 1,6 t |
-| L3H2 | ok. 6315 mm | ok. 2498 mm | ok. 4215 mm | 13,0 m3 | ok. 3740 mm | 3,5–4,0 t | do ok. 1,5 t |
-| L3H3 | ok. 6315 mm | ok. 2755 mm | ok. 4215 mm | 14,8 m3 | ok. 3740 mm | 3,5–4,0 t | do ok. 1,45 t |
-| L4H3 | ok. 6845 mm | ok. 2755 mm | ok. 4215 mm + zwis | 15,0 m3 | ok. 4385 mm | 3,5–4,0 t | do ok. 1,4 t |
+| L2H2 | ok. 5680 mm | ok. 2498 mm | ok. 3585 mm | 10,8 m³ | ok. 3115 mm | 3,5–4,0 t | do ok. 1,6 t |
+| L3H2 | ok. 6315 mm | ok. 2498 mm | ok. 4215 mm | 13,0 m³ | ok. 3740 mm | 3,5–4,0 t | do ok. 1,5 t |
+| L3H3 | ok. 6315 mm | ok. 2755 mm | ok. 4215 mm | 14,8 m³ | ok. 3740 mm | 3,5–4,0 t | do ok. 1,45 t |
+| L4H3 | ok. 6845 mm | ok. 2755 mm | ok. 4215 mm + zwis | 15,0 m³ | ok. 4385 mm | 3,5–4,0 t | do ok. 1,4 t |
 
 Wymiary użytkowe również mają znaczenie przy wyborze zabudowy i codziennej pracy. Szerokość zewnętrzna bez lusterek to ok. 2080 mm, szerokość między nadkolami ok. 1380 mm, a maksymalna szerokość wewnętrzna ok. 1760 mm.
 
@@ -156,11 +156,11 @@ Na papierze Interstar jest blisko spokrewniony z Masterem i Movano, ale przy zak
 
 | Model | DMC | Maks. objętość | Maks. ładowność | Napęd | Cena bazowa netto | Gwarancja |
 |-------|-----|----------------|-----------------|-------|-------------------|-----------|
-| Nissan Interstar | do 4,0 t | do 15 m3 | do ok. 1,6 t | FWD | od ok. 139 400 zł netto | – |
-| Renault Master | do 4,0 t | do 15 m3 | – | – | – | – |
-| Opel Movano | do 4,0 t | do 15 m3 | – | – | – | – |
-| Mercedes Sprinter | zwykle 3,5–5,5 t zależnie od wersji | do ok. 14 m3 w porównywalnych odmianach | – | – | cena wyższa | – |
-| Ford Transit | – | do ok. 15,1 m3 | – | – | – | – |
+| Nissan Interstar | do 4,0 t | do 15 m³ | do ok. 1,6 t | FWD | od ok. 139 400 zł netto | – |
+| Renault Master | do 4,0 t | do 15 m³ | – | – | – | – |
+| Opel Movano | do 4,0 t | do 15 m³ | – | – | – | – |
+| Mercedes Sprinter | zwykle 3,5–5,5 t zależnie od wersji | do ok. 14 m³ w porównywalnych odmianach | – | – | cena wyższa | – |
+| Ford Transit | – | do ok. 15,1 m³ | – | – | – | – |
 
 W gamie napędowej Interstar, Master i Movano oferują diesle o mocy 130–170 KM. Sprinter ma zwykle szerszą konfigurację wersji i DMC, a Transit jest silną propozycją tam, gdzie liczy się rozbudowana sieć serwisowa i dostępność finansowania.
 

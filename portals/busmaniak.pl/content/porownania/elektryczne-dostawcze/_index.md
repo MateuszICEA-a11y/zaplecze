@@ -44,7 +44,7 @@ Segmenty elektrycznych dostawczaków odpowiadają klasycznym kategoriom spalinow
 
 ## Duże elektryczne dostawcze (segment Ducato/Sprinter)
 
-Duże furgony elektryczne celują w firmy kurierskie, logistykę miejską i transport specjalistyczny. Oferują ładowność do 1900 kg i przestrzeń ładunkową powyżej 10 m3.
+Duże furgony elektryczne celują w firmy kurierskie, logistykę miejską i transport specjalistyczny. Oferują ładowność do 1900 kg i przestrzeń ładunkową powyżej 10 m³.
 
 | Model | Bateria (kWh) | Zasięg WLTP (km) | Ładowność (kg) | Ładowanie DC | Cena netto (zł) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -84,7 +84,7 @@ Ford E-Transit Custom oferuje najlepszy stosunek zasięgu do ceny. Mercedes eVit
 
 Małe elektryczne dostawczaki to segment ostatniej mili – idealne do dostaw paczek, cateringu i serwisu w centrach miast. Kompaktowe wymiary ułatwiają parkowanie, a zasięg 275 km wystarcza na cały dzień pracy.
 
-- **[Citroën ë-Berlingo](/modele/citroen-berlingo/) Van** – bateria 50 kWh, zasięg 275 km WLTP, ładowność do 800 kg. Drzwi przesuwne po obu stronach, przestrzeń ładunkowa 3,3–3,9 m3
+- **[Citroën ë-Berlingo](/modele/citroen-berlingo/) Van** – bateria 50 kWh, zasięg 275 km WLTP, ładowność do 800 kg. Drzwi przesuwne po obu stronach, przestrzeń ładunkowa 3,3–3,9 m³
 - **Peugeot e-Partner** – bliźniak ë-Berlingo, identyczna mechanika. Cena zbliżona, różnice w wykończeniu
 - **[Opel Combo](/modele/opel-combo/) Electric** – trzeci bliźniak z platformy Stellantis K9. Bateria 50 kWh, zasięg 275 km
 - **VW ID. Buzz Cargo** – bateria 77–91 kWh, zasięg do 420 km, ładowność 700–1450 kg. Ładowanie DC do 188 kW. Najnowocześniejszy model w segmencie, ale też najdroższy (od ok. 220 000 zł netto)

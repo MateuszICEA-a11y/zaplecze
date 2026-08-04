@@ -27,7 +27,7 @@ faq:
 
 [Renault Trafic](/modele/renault-trafic/) w trzeciej generacji był oferowany jako diesel i właśnie od doboru silnika zależą osiągi, koszty oraz zakres obsługi osprzętu. W praktyce trzeba też patrzeć szerzej niż tylko na moc – znaczenie mają norma emisji, obecność DPF i SCR oraz to, czy auto pracowało w trasie, czy głównie w mieście.
 
-Trafic III występował z długościami L1 i L2, z rozstawem osi około 3098 mm i 3498 mm, a także z wysokościami H1 i H2. Pojemność przestrzeni ładunkowej wynosiła około 5,2–8,6 m3, ładowność zwykle około 1000–1250 kg, a DMC typowo 2,8–3,07 t w zależności od wersji.
+Trafic III występował z długościami L1 i L2, z rozstawem osi około 3098 mm i 3498 mm, a także z wysokościami H1 i H2. Pojemność przestrzeni ładunkowej wynosiła około 5,2–8,6 m³, ładowność zwykle około 1000–1250 kg, a DMC typowo 2,8–3,07 t w zależności od wersji.
 
 Przed liftingiem 1.6 dCi występował, zależnie od rocznika, w normach Euro 5 i Euro 6. Po liftingu od 2019 roku 2.0 Blue dCi na wielu rynkach był już powiązany z normami Euro 6d-Temp lub Euro 6d, co ma znaczenie dla stref czystego transportu i kosztów osprzętu spalin.
 

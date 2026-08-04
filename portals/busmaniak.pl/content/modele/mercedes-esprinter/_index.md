@@ -91,8 +91,8 @@ W przypadku eSprintera same kilowaty i zasięg nie wystarczą. Dla firmy ważnie
 
 | Wersja | Rozstaw osi | Dach | Długość przestrzeni ładunkowej | Wysokość przestrzeni | Pojemność | DMC | Ładowność |
 |--------|------------:|------|-------------------------------:|---------------------:|----------:|-----|-----------|
-| Furgon L2H2 | 3665 mm | H2 | ok. 3267 mm | ok. 2009 mm | 11 m3 | 3500 / 4250 kg | ok. 1200–1600 kg zależnie od baterii |
-| Furgon L3H2 | 4325 mm | H2 | ok. 4307 mm | ok. 2009 mm | 14 m3 | 3500 / 4250 kg | ok. 1000–1400 kg |
+| Furgon L2H2 | 3665 mm | H2 | ok. 3267 mm | ok. 2009 mm | 11 m³ | 3500 / 4250 kg | ok. 1200–1600 kg zależnie od baterii |
+| Furgon L3H2 | 4325 mm | H2 | ok. 4307 mm | ok. 2009 mm | 14 m³ | 3500 / 4250 kg | ok. 1000–1400 kg |
 | Podwozie L3 | 4325 mm | – | długość zabudowy wg producenta | – | – | 3500 / 4250 / 5000 kg | do ok. 1730 kg |
 
 Powyższe dane należy traktować jako orientacyjne i zależne od rynku oraz wersji. W praktyce ostateczne liczby mogą się zmienić wraz z baterią, kabiną, wyposażeniem i typem homologacji.
@@ -130,7 +130,7 @@ W mieście eSprinter korzysta z rekuperacji i częstych faz toczenia, więc wyni
 
 Oferta nadwoziowa eSprintera zależy od rynku i wersji. Zamiast patrzeć tylko na długość i wysokość, lepiej rozdzielić ją według przeznaczenia – wtedy łatwiej dobrać auto do pracy kurierskiej, serwisu mobilnego czy pod zabudowę specjalną.
 
-- **Furgon** – **11 lub 14 m3**, zwykle **2 lub 3 miejsca z przodu**
+- **Furgon** – **11 lub 14 m³**, zwykle **2 lub 3 miejsca z przodu**
 - **Podwozie do zabudowy** – baza pod kontener, chłodnię, skrzynię lub lawetę
 - **Zabudowy specjalne** – warianty serwisowe, kurierskie, izotermy
 - **Kamper** – obecnie brak seryjnej oferty kamperowej eSprintera na polskim rynku, ale technicznie możliwe są konwersje indywidualne; ograniczeniem pozostają masa baterii i zasięg pod obciążeniem
@@ -197,7 +197,7 @@ Na rynku dużych elektrycznych dostawczaków sensowne porównanie trzeba robić 
 | Bateria | 113 kWh | 68 kWh użyteczne / 89 kWh brutto | 37 / 74 / 111 kWh brutto |
 | Zasięg | do 440 km WLTP | do ok. 317 km WLTP | do ok. 400 km miejskiego/WLTP zależnie od wersji |
 | Ładowanie DC | 115 kW | 115 kW | zależnie od wersji |
-| Pojemność przestrzeni ładunkowej | do 14 m3 | do 15,1 m3 | zależnie od zabudowy |
+| Pojemność przestrzeni ładunkowej | do 14 m³ | do 15,1 m³ | zależnie od zabudowy |
 | DMC | do 4,25 t | zależnie od wersji | nawet do 7,2 t |
 | Charakter auta | duży zasięg i dopracowana oferta flotowa | mocna pozycja cenowa i duża sieć | wysoka nośność i duże możliwości zabudowy |
 

@@ -94,7 +94,7 @@ Tu najlepiej widać, jak mocno różnią się między sobą wersje osobowe i Car
 | Wysokość | ok. 1927–1937 mm | ok. 1927–1937 mm | ok. 1932–1938 mm |
 | Rozstaw osi | 2988 mm | 3239 mm | 2988 mm |
 | Miejsca | 5 | 6–7 | 2–3 |
-| Bagażnik / ładownia | 1121–2205 l | 306–2469 l | 3,9 m3 |
+| Bagażnik / ładownia | 1121–2205 l | 306–2469 l | 3,9 m³ |
 | DMC | ok. 3000–3400 kg w zależności od wersji | ok. 3000–3400 kg w zależności od wersji | ok. 3000–3400 kg w zależności od wersji |
 | Ładowność | zwykle ok. 600–750 kg | zwykle ok. 600–750 kg | do ok. 650–824 kg |
 | Uciąg przyczepy | do 1000 kg (RWD) | do 1000 kg (RWD) | do 1000 kg (RWD) / do 1800 kg (GTX AWD) |
@@ -145,7 +145,7 @@ Dłuższa odmiana ma 4962 mm długości i 3239 mm rozstawu osi. W kabinie może 
 
 ### ID. Buzz Cargo
 
-Dostawcza wersja przewozi 2 lub 3 osoby z przodu i oferuje 3,9 m3 przestrzeni ładunkowej. Długość przestrzeni ładunkowej to ok. 2208 mm, szerokość maksymalna ok. 1732 mm, a szerokość między nadkolami ok. 1230 mm. Ładowność sięga do 824 kg.
+Dostawcza wersja przewozi 2 lub 3 osoby z przodu i oferuje 3,9 m³ przestrzeni ładunkowej. Długość przestrzeni ładunkowej to ok. 2208 mm, szerokość maksymalna ok. 1732 mm, a szerokość między nadkolami ok. 1230 mm. Ładowność sięga do 824 kg.
 
 ### GTX
 

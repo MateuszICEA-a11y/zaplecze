@@ -46,7 +46,7 @@ Dla porządku warto przyjąć podział na okresy: 1994–2001, 2002–2006, 2006
 
 ### Dobór silnika do tonażu
 
-Sama moc nie wystarcza przy wyborze dużego vana. W praktyce trzeba zestawić silnik z DMC 3,0 / 3,3 / 3,5 t, ładownością zwykle około 1000–1500+ kg, długością nadwozia L1–L4, wysokością H1–H3 i objętością przestrzeni ładunkowej około 8–17 m3.
+Sama moc nie wystarcza przy wyborze dużego vana. W praktyce trzeba zestawić silnik z DMC 3,0 / 3,3 / 3,5 t, ładownością zwykle około 1000–1500+ kg, długością nadwozia L1–L4, wysokością H1–H3 i objętością przestrzeni ładunkowej około 8–17 m³.
 
 Im większa buda i wyższe DMC, tym bardziej odczuwalna staje się różnica między słabszymi a mocniejszymi wariantami 2.2. To ważne zwłaszcza w autach pracujących stale pod obciążeniem albo w zabudowach specjalnych.
 
@@ -71,7 +71,7 @@ W przypadku Peugeota Boxera HDI dane techniczne trzeba czytać szerzej niż tylk
 
 W praktyce oznaczenie „Peugeot Boxer HDI” obejmuje więc kilka różnych etapów rozwoju modelu. Nie da się rzetelnie ująć całej gamy w jednej tabeli z jednym kodem silnika i jednym interwałem serwisowym.
 
-Z użytkowego punktu widzenia ważne są też parametry samego auta. W zależności od wersji Boxer występuje z DMC 3,0 / 3,3 / 3,5 t, nadwoziami L1–L4, wysokościami H1–H3 i przestrzenią ładunkową około 8–17 m3. To one w realnej eksploatacji decydują o dynamice, spalaniu i opłacalności danej wersji silnika.
+Z użytkowego punktu widzenia ważne są też parametry samego auta. W zależności od wersji Boxer występuje z DMC 3,0 / 3,3 / 3,5 t, nadwoziami L1–L4, wysokościami H1–H3 i przestrzenią ładunkową około 8–17 m³. To one w realnej eksploatacji decydują o dynamice, spalaniu i opłacalności danej wersji silnika.
 
 Na wybór wpływa również emisja spalin. W kolejnych latach w gamie pojawiały się wersje Euro 4, Euro 5 i Euro 6, z układami EGR, DPF/FAP oraz później SCR z AdBlue. Dla kierowcy jeżdżącego po mieście albo w strefach z ograniczeniami emisji to często ważniejsze niż sama różnica kilku koni mechanicznych.
 

@@ -66,16 +66,16 @@ W modelu Maxus Deliver 9 same oznaczenia L i H robią dużą różnicę. Inaczej
 
 | Wersja | Długość | Wysokość | Rozstaw osi | Objętość | DMC | Ładowność | Dł. paki | Szer. paki | Wys. paki |
 |--------|---------|----------|-------------|----------|-----|-----------|----------|------------|-----------|
-| L2H2 | 5548 mm | 2535–2537 mm | 3366 mm | 9,7 m3 | 3500 kg | do ok. 1350–1500 kg | ok. 3017 mm | ok. 1800 mm | ok. 1790 mm |
-| L3H2 | 5992 mm | 2535–2537 mm | 3760/3748 mm | 11,5 m3 | 3500 kg | do ok. 1300–1450 kg | ok. 3413 mm | ok. 1800 mm | ok. 1790 mm |
-| L3H3 | 5992 mm | ok. 2800 mm | 3748 mm | 12,4 m3 | 3500 kg | do ok. 1250–1400 kg | ok. 3413 mm | ok. 1800 mm | ok. 2020 mm |
-| L4H3 | 6753 mm | ok. 2800 mm | 4200 mm | 15,1 m3 | 3500 kg | do ok. 1100–1350 kg | ok. 4136 mm | ok. 1800 mm | ok. 2020 mm |
+| L2H2 | 5548 mm | 2535–2537 mm | 3366 mm | 9,7 m³ | 3500 kg | do ok. 1350–1500 kg | ok. 3017 mm | ok. 1800 mm | ok. 1790 mm |
+| L3H2 | 5992 mm | 2535–2537 mm | 3760/3748 mm | 11,5 m³ | 3500 kg | do ok. 1300–1450 kg | ok. 3413 mm | ok. 1800 mm | ok. 1790 mm |
+| L3H3 | 5992 mm | ok. 2800 mm | 3748 mm | 12,4 m³ | 3500 kg | do ok. 1250–1400 kg | ok. 3413 mm | ok. 1800 mm | ok. 2020 mm |
+| L4H3 | 6753 mm | ok. 2800 mm | 4200 mm | 15,1 m³ | 3500 kg | do ok. 1100–1350 kg | ok. 4136 mm | ok. 1800 mm | ok. 2020 mm |
 
 W zależności od wersji masa własna wynosi około **2000–2400 kg**, a średnica zawracania to mniej więcej **13,4–16,2 m**. To ważne przy wyborze auta do miasta, bo różnica między krótszym L2 a długim L4 jest odczuwalna od pierwszego dnia pracy.
 
 ### Przestrzeń ładunkowa i praktyka
 
-Pod względem przewozu towarów Deliver 9 celuje w środek segmentu dużych vanów. Najmniejszy furgon daje **9,7 m3**, a największy **15,1 m3**.
+Pod względem przewozu towarów Deliver 9 celuje w środek segmentu dużych vanów. Najmniejszy furgon daje **9,7 m³**, a największy **15,1 m³**.
 
 Do tego dochodzą drzwi tylne otwierane do **236°**, boczne drzwi przesuwane z otworem o szerokości **1274 mm** oraz stalowe punkty mocowania w przestrzeni ładunkowej. W praktyce zakres ładowności do około **1500 kg** pozwala traktować ten model jako realnego rywala dla [Renault Mastera](/modele/renault-master/) i [Fiata Ducato](/modele/fiat-ducato/).
 
@@ -117,7 +117,7 @@ Gama Delivera 9 jest szersza, niż może się wydawać po samych ogłoszeniach z
 
 ### Furgon
 
-Podstawą oferty jest furgon w wersjach **L2H2, L3H2, L3H3 i L4H3**. Objętość przestrzeni ładunkowej wynosi od **9,7 do 15,1 m3**, a typowa ładowność w zależności od długości i wysokości to około **1100–1500 kg**.
+Podstawą oferty jest furgon w wersjach **L2H2, L3H2, L3H3 i L4H3**. Objętość przestrzeni ładunkowej wynosi od **9,7 do 15,1 m³**, a typowa ładowność w zależności od długości i wysokości to około **1100–1500 kg**.
 
 To wariant do kurierki, dystrybucji, przewozu narzędzi i klasycznej pracy budowlano-serwisowej. W kabinie znajdziesz typowe wyposażenie robocze, a sam układ nadwozia jest nastawiony na szybki załadunek.
 
@@ -229,10 +229,10 @@ Poniżej porównujemy Deliver 9 z czterema popularnymi rywalami w segmencie duż
 
 | Model | Dostępne długości / wysokości | Objętość maks. | Typ napędu | Maks. DMC | Gwarancja | Cena bazowa netto |
 |-------|-------------------------------|----------------|------------|-----------|-----------|-------------------|
-| Maxus Deliver 9 | L2H2, L3H2, L3H3, L4H3 | 15,1 m3 | RWD | 3,5 t | 5 lat / 100 tys. km | od ok. 96 000 zł |
-| Fiat Ducato | różne wersje zależnie od rynku | do ok. 17 m3 | FWD | 3,0–4,25 t | 2 lata | wyżej niż Deliver 9 |
-| Renault Master | różne wersje zależnie od generacji i rynku | do ok. 14,8 m3 | FWD/RWD zależnie od generacji i rynku | brak danych | 3 lata | wyżej niż Deliver 9 |
-| Mercedes Sprinter | różne wersje zależnie od rynku | do ok. 17 m3 | FWD/RWD/AWD | brak danych | 2 lata | wyżej niż Deliver 9 |
+| Maxus Deliver 9 | L2H2, L3H2, L3H3, L4H3 | 15,1 m³ | RWD | 3,5 t | 5 lat / 100 tys. km | od ok. 96 000 zł |
+| Fiat Ducato | różne wersje zależnie od rynku | do ok. 17 m³ | FWD | 3,0–4,25 t | 2 lata | wyżej niż Deliver 9 |
+| Renault Master | różne wersje zależnie od generacji i rynku | do ok. 14,8 m³ | FWD/RWD zależnie od generacji i rynku | brak danych | 3 lata | wyżej niż Deliver 9 |
+| Mercedes Sprinter | różne wersje zależnie od rynku | do ok. 17 m³ | FWD/RWD/AWD | brak danych | 2 lata | wyżej niż Deliver 9 |
 | Iveco Daily | różne wersje zależnie od rynku | brak danych | RWD | nawet powyżej 3,5 t | brak danych | wyżej niż Deliver 9 |
 
 Deliver 9 wygrywa głównie ceną bazową i długą gwarancją. Do tego dokłada napęd na tył, którego część konkurentów w tym pułapie cenowym po prostu nie oferuje.

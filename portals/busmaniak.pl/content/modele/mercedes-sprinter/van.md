@@ -165,6 +165,6 @@ Przy zakupie używanego egzemplarza warto osobno oceniać auta z OM651 i OM654, 
 
 ## Kiedy wybrać Sprinter Van zamiast konkurencji
 
-Porównanie Sprintera z VW Crafterem, Fordem Transitem czy Fiatem Ducato warto oprzeć na twardych danych, a nie na ogólnych hasłach. Najważniejsze są: długość podłogi ładunkowej, kubatura w zakresie około 10,5–17 m3, ładowność, szerokość między nadkolami, dostępne napędy FWD/RWD/AWD oraz zakres DMC od 3,5 do 5,5 t.
+Porównanie Sprintera z VW Crafterem, Fordem Transitem czy Fiatem Ducato warto oprzeć na twardych danych, a nie na ogólnych hasłach. Najważniejsze są: długość podłogi ładunkowej, kubatura w zakresie około 10,5–17 m³, ładowność, szerokość między nadkolami, dostępne napędy FWD/RWD/AWD oraz zakres DMC od 3,5 do 5,5 t.
 
 Dopiero takie zestawienie pozwala rzetelnie ocenić, czy w danym zastosowaniu lepszy będzie Sprinter, Crafter, Transit czy Ducato. Bez aktualnych danych katalogowych i cenników nie ma podstaw, by przesądzać o przewadze któregoś modelu w zakresie cen, serwisu czy konfiguracji.

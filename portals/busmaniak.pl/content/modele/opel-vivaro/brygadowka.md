@@ -52,7 +52,7 @@ W praktyce konfiguracja brygadowa dotyczy przede wszystkim długości **M** i **
 - **Rozstaw osi XL** – 3275 mm, z dłuższym zwisem tylnym
 - **Szerokość między nadkolami** – ok. 1258 mm
 
-W wersjach załogowych przestrzeń ładunkowa za drugim rzędem jest wyraźnie mniejsza niż w klasycznym furgonie. Dla vanów tej klasy to najczęściej ok. **3,2–4,0 m3**, a długość podłogi za drugim rzędem wynosi zwykle ok. **1,4–2,0 m**, zależnie od długości nadwozia.
+W wersjach załogowych przestrzeń ładunkowa za drugim rzędem jest wyraźnie mniejsza niż w klasycznym furgonie. Dla vanów tej klasy to najczęściej ok. **3,2–4,0 m³**, a długość podłogi za drugim rzędem wynosi zwykle ok. **1,4–2,0 m**, zależnie od długości nadwozia.
 
 Istotne są też same otwory załadunkowe. W praktyce warsztatowej i remontowej orientacyjne znaczenie mają:
 - **szerokość drzwi bocznych** – ok. 935 mm

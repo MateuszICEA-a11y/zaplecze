@@ -71,8 +71,8 @@ Poniższe dane dotyczą fabrycznych wersji furgonu Renault Trafic III. Artykuł 
 
 | Wersja | Długość | Rozstaw osi | Wysokość pojazdu | Dł. ładowni | Wys. ładowni | Poj. ładowni | Palety |
 |--------|---------|-------------|------------------|-------------|--------------|--------------|--------|
-| L1H1   | 5080 mm | 3098 mm     | ok. 1971 mm      | ok. 2537 mm | ok. 1387 mm  | 5,8 m3       | 2      |
-| L2H1   | 5480 mm | 3498 mm     | ok. 1971 mm      | ok. 2937 mm | ok. 1387 mm  | 6,7 m3       | 3      |
+| L1H1   | 5080 mm | 3098 mm     | ok. 1971 mm      | ok. 2537 mm | ok. 1387 mm  | 5,8 m³       | 2      |
+| L2H1   | 5480 mm | 3498 mm     | ok. 1971 mm      | ok. 2937 mm | ok. 1387 mm  | 6,7 m³       | 3      |
 
 Szerokość bez lusterek: 1956 mm.  
 Szerokość z lusterkami: 2283 mm.
@@ -84,8 +84,8 @@ Poza samymi wymiarami nadwozia liczą się parametry homologacyjne i to, jak aut
 | Parametr | Renault Trafic III |
 |----------|--------------------|
 | DMC | 2800–3070 kg |
-| Objętość ładowni L1H1 | 5,8 m3 |
-| Objętość ładowni L2H1 | 6,7 m3 |
+| Objętość ładowni L1H1 | 5,8 m³ |
+| Objętość ładowni L2H1 | 6,7 m³ |
 | Długość przestrzeni ładunkowej L1 | ok. 2537 mm |
 | Długość przestrzeni ładunkowej L2 | ok. 2937 mm |
 | Szerokość maksymalna ładowni | ok. 1662 mm |
@@ -185,9 +185,9 @@ Wersje fabryczne w Polsce najczęściej spotkasz jako: **Furgon, Equipe/Crew Van
 
 | Wersja | Miejsca | Pojemność / charakter | Uwagi |
 |--------|---------|------------------------|-------|
-| Furgon L1H1 | 3 miejsca | 5,8 m3, 2 palety | podstawowa wersja robocza |
-| Furgon L2H1 | 3 miejsca | 6,7 m3, 3 palety | najpraktyczniejsza dla wielu firm |
-| Dubelkabina | 5–6 miejsc | zwykle ok. 3,2–4,0 m3 | ładownia krótsza niż w furgonie |
+| Furgon L1H1 | 3 miejsca | 5,8 m³, 2 palety | podstawowa wersja robocza |
+| Furgon L2H1 | 3 miejsca | 6,7 m³, 3 palety | najpraktyczniejsza dla wielu firm |
+| Dubelkabina | 5–6 miejsc | zwykle ok. 3,2–4,0 m³ | ładownia krótsza niż w furgonie |
 | Combi / Passenger | 8–9 miejsc | przewóz osób | długości L1 i L2 |
 | SpaceClass | 8–9 miejsc | bogatsze wyposażenie | bardziej komfortowy charakter |
 | Campervan | zwykle baza L1H1 lub L2H1 | zabudowa turystyczna | najczęściej dach podnoszony i konwersja zewnętrzna |
@@ -286,12 +286,12 @@ Przed zakupem używanego Trafica warto sprawdzić korekty wtrysków, stan DPF i 
 
 | Model | Długość | Objętość ładowni | Długość ładowni | Szerokość między nadkolami | Ładowność | Holowanie |
 |-------|---------|------------------|-----------------|----------------------------|-----------|-----------|
-| Renault Trafic L2H1 | 5480 mm | 6,7 m3 | ok. 2937 mm | ok. 1268 mm | do ok. 1250 kg | do 2500 kg |
-| Ford Transit Custom L2H1 | ok. 5340 mm | do 6,8 m3 | ok. 2920 mm | ok. 1390 mm | ok. 1100–1350 kg | do 2800 kg |
-| VW Transporter T6.1 LWB | ok. 5304 mm | do 6,7 m3 | ok. 2975 mm | ok. 1244 mm | ok. 1000–1300 kg | do 2500 kg |
-| Mercedes Vito Long | ok. 5140 mm | do 6,0 m3 | ok. 2831 mm | ok. 1270 mm | ok. 900–1300 kg | do 2500 kg |
-| Opel Vivaro B L2H1 | ok. 5398 mm | 6,0 m3 | ok. 2937 mm | ok. 1268 mm | zwykle ok. 1000–1200 kg | do ok. 2000 kg |
-| Nissan NV300 / Primastar L2H1 | ok. 5399 mm | 6,0 m3 | ok. 2937 mm | ok. 1268 mm | ok. 1050–1200 kg | do 2000 kg |
+| Renault Trafic L2H1 | 5480 mm | 6,7 m³ | ok. 2937 mm | ok. 1268 mm | do ok. 1250 kg | do 2500 kg |
+| Ford Transit Custom L2H1 | ok. 5340 mm | do 6,8 m³ | ok. 2920 mm | ok. 1390 mm | ok. 1100–1350 kg | do 2800 kg |
+| VW Transporter T6.1 LWB | ok. 5304 mm | do 6,7 m³ | ok. 2975 mm | ok. 1244 mm | ok. 1000–1300 kg | do 2500 kg |
+| Mercedes Vito Long | ok. 5140 mm | do 6,0 m³ | ok. 2831 mm | ok. 1270 mm | ok. 900–1300 kg | do 2500 kg |
+| Opel Vivaro B L2H1 | ok. 5398 mm | 6,0 m³ | ok. 2937 mm | ok. 1268 mm | zwykle ok. 1000–1200 kg | do ok. 2000 kg |
+| Nissan NV300 / Primastar L2H1 | ok. 5399 mm | 6,0 m³ | ok. 2937 mm | ok. 1268 mm | ok. 1050–1200 kg | do 2000 kg |
 
 Na tle konkurencji Trafic wypada bardzo sensownie pod względem długości ładowni i pojemności paki. Transit Custom potrafi wygrać holowaniem, Transporter trzyma wartość, a Vito celuje bardziej w komfort i wizerunek.
 
