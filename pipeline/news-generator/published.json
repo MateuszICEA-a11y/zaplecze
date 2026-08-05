@@ -1,13 +1,5 @@
 [
   {
-    "title": "Toyota pokazała dużego kampera. Celuje w rywali pokroju Grand Californii",
-    "date": "2026-05-01",
-    "slug": "toyota-pokazala-duzego-kampera-celuje-w-rywali-pokroju-grand-californii",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Kamper w firmie z ulgą do 150 tys. zł. Fiskus otwiera drzwi dla mobilnego biura",
     "date": "2026-05-02",
     "slug": "kamper-w-firmie-z-ulga-do-150-tys-zl-fiskus-otwiera-drzwi-dla-mobilnego-biura",
@@ -716,6 +708,14 @@
     "date": "2026-08-04",
     "slug": "diesel-powyzej-8-zl-za-litr-od-3-sierpnia-tankowanie-do-pelna-tylko-dla",
     "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Kamper z kontrabandą na granicy. Tysiące paczek papierosów i nielegalny czynnik chłodniczy",
+    "date": "2026-08-05",
+    "slug": "kamper-z-kontrabanda-na-granicy-tysiace-paczek-papierosow-i-nielegalny-czynnik",
+    "section": "kampery",
     "format": "short",
     "source": "rss"
   }
