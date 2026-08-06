@@ -29,3 +29,16 @@ Searches YouTube API for matching videos (PL first, EN fallback). Adds only when
 - No bold+colon in lists. Use: **Term** – description.
 - FAQ in frontmatter, not in article body.
 - Every article goes through Sonnet humanization subagent.
+
+## Lastmod (BusManiak.pl)
+
+After any editorial pass over `portals/busmaniak.pl/content/`, run before committing:
+
+```
+python3 pipeline/stamp-lastmod.py
+```
+
+It stamps `lastmod` from each file's last commit date. Do not rely on Hugo's
+`enableGitInfo` alone — Cloudflare Pages builds from a shallow clone, so `:git`
+there resolves to the build date for every page. The dates feed "Ostatnia
+aktualizacja", sitemap `<lastmod>` and schema.org `dateModified`.
