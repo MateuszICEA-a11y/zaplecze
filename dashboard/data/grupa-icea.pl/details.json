@@ -1,6 +1,6 @@
 {
  "date": "2026-08-06",
- "collected_at": "2026-08-06T05:32:58Z",
+ "collected_at": "2026-08-06T07:19:10Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -52379,7 +52379,7 @@
     {
      "domain": "fanimani.pl",
      "domain_rating": 75.0,
-     "links": 51678,
+     "links": 51674,
      "first_seen": "2022-05-20"
     },
     {
@@ -180409,13 +180409,13 @@
        "position": null
       },
       {
-       "query": "czy w grafikach do reklam meta powino byc logo marki ?",
+       "query": "no trailing slash co to znaczy",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "icei marketing",
+       "query": "czy w grafikach do reklam meta powino byc logo marki ?",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -180427,7 +180427,7 @@
        "position": null
       },
       {
-       "query": "no trailing slash co to znaczy",
+       "query": "icei marketing",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -180469,13 +180469,13 @@
        "position": null
       },
       {
-       "query": "suplement cassanovum reklama",
+       "query": "d grafiky od filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "d grafiky od filetype:pdf",
+       "query": "suplement cassanovum reklama",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -180487,73 +180487,7 @@
        "position": null
       },
       {
-       "query": "b połączenia filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "co to jest cta",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "goshopy",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "ads również wyświetlają filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "bezgrafik grafika filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "agencja marketingowa kontakt",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "firma zajmująca się pozyskiwaniem leadów warszawa",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#wideo#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "ads do maksymalizacji filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "pomoc przy sklepie internetowym koszt",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "agencja marketingowa poznań",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#wideo#N##N#zakupy#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia#N##N#wyniki wyszukiwania#N##N#grafika",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -180571,7 +180505,49 @@
        "position": null
       },
       {
-       "query": "firma zajmująca się pozyskiwaniem leadów katowice",
+       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#wideo#N##N#zakupy#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia#N##N#wyniki wyszukiwania#N##N#grafika",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "pomoc przy sklepie internetowym koszt",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "b połączenia filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "ads również wyświetlają filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "bezgrafik grafika filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "agencja marketingowa poznań",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#wideo#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "goshopy",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -180589,6 +180565,12 @@
        "position": null
       },
       {
+       "query": "firma zajmująca się pozyskiwaniem leadów warszawa",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "+google.c3om bing.com",
        "clicks": 0,
        "impressions": 1,
@@ -180596,6 +180578,24 @@
       },
       {
        "query": "cta pozycja",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "agencja marketingowa kontakt",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "ads do maksymalizacji filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "firma zajmująca się pozyskiwaniem leadów katowice",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -180661,25 +180661,25 @@
        "position": null
       },
       {
-       "query": "jak spradzic dostep do leadó facebook business",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "co to jest win64/agent.kfb",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "dla grafików info o meta ads fb ads",
+       "query": "jak spradzic dostep do leadó facebook business",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
        "query": "banery meta ads graficzne co to",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "dla grafików info o meta ads fb ads",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -180703,7 +180703,7 @@
        "position": null
       },
       {
-       "query": "icea seo",
+       "query": "jak przygotowywać grafiki na kampanie meta",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -180715,13 +180715,7 @@
        "position": null
       },
       {
-       "query": "jak przygotowywać grafiki na kampanie meta",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "reklama meta ads poziom wymiar",
+       "query": "icea seo",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -180739,13 +180733,13 @@
        "position": null
       },
       {
-       "query": "storny z pseudo wirusami",
+       "query": "reklama meta ads poziom wymiar",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "mapowanie linków co to, po co, kidy",
+       "query": "storny z pseudo wirusami",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -180757,7 +180751,19 @@
        "position": null
       },
       {
+       "query": "mapowanie linków co to, po co, kidy",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "analiza googla",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "no trailing slash co to znaczy",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -180769,19 +180775,13 @@
        "position": null
       },
       {
-       "query": "icei marketing",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "ice group poland seo company",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "no trailing slash co to znaczy",
+       "query": "icei marketing",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -180877,13 +180877,13 @@
        "position": null
       },
       {
-       "query": "ads czy filetype:pdf",
+       "query": "jak w meta business zapraszać do obserowaania",
        "clicks": 0,
        "impressions": 3,
        "position": null
       },
       {
-       "query": "jak w meta business zapraszać do obserowaania",
+       "query": "ads czy filetype:pdf",
        "clicks": 0,
        "impressions": 3,
        "position": null
@@ -180907,25 +180907,19 @@
        "position": null
       },
       {
-       "query": "google seach console",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "formaty grafik do kampanii meta",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "ads nam się filetype:pdf",
+       "query": "google seach console",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "fanpage facepage filetype:pdf",
+       "query": "ads nam się filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -180938,6 +180932,12 @@
       },
       {
        "query": "https://www.grupa-icea.pl/?gad_source=2&gclid=cjwkcajwtdi_bhaceiwa97y8bnziuhmqnjqgzxzfxfpwp_8e0htrrg5ts19hovhxlbezgt3liqdtjrocfusqavd_bwe",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "fanpage facepage filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -180973,13 +180973,13 @@
        "position": null
       },
       {
-       "query": "darmowe strony chrome",
+       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#witryny produktów#N##N#krótkie filmy#N##N#wideo#N##N#więcej#N##N#narzędzia",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#witryny produktów#N##N#krótkie filmy#N##N#wideo#N##N#więcej#N##N#narzędzia",
+       "query": "darmowe strony chrome",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -180997,57 +180997,15 @@
        "position": null
       },
       {
-       "query": "suplement cassanovum reklama",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "d grafiky od filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "meta business jak zaprosić do obserwowania",
+       "query": "suplement cassanovum reklama",
        "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "format rozmiar filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czy warto wybierać filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "facebooku pridať do filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "agencja udosell",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "brief pod kampanię mms dla acatom. zrób na jego podsatwie targetowanie pod ich inną inwestycję https://acatom.pl/mieszkania-gliwice/?sm-media=tour&sm-screen-type=unitsearch",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "google page rank test",
-       "clicks": 0,
-       "impressions": 1,
+       "impressions": 2,
        "position": null
       },
       {
@@ -181063,31 +181021,19 @@
        "position": null
       },
       {
+       "query": "brief pod kampanię mms dla acatom. zrób na jego podsatwie targetowanie pod ich inną inwestycję https://acatom.pl/mieszkania-gliwice/?sm-media=tour&sm-screen-type=unitsearch",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "jak manipuluja nami wyszukiwarki google",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "format wideo filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "agencia icea",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "dzięki intuicyjnemu interfejsowi filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "iseeca poznan",
+       "query": "format rozmiar filetype:pdf",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -181105,7 +181051,55 @@
        "position": null
       },
       {
-       "query": "uzyskaj informacje na temat rozpoczęcia mojej własnej marki youtube 2",
+       "query": "agencja udosell",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "dzięki intuicyjnemu interfejsowi filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "iseeca poznan",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "google page rank test",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "meta business jak zaprosić do obserwowania",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "format wideo filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "agencia icea",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "facebooku pridať do filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "czy warto wybierać filetype:pdf",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -181117,37 +181111,13 @@
        "position": null
       },
       {
+       "query": "uzyskaj informacje na temat rozpoczęcia mojej własnej marki youtube 2",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "chcesz promować filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "meta ads reels specyfikacja",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "501 418 204",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "google search console sprawdzanie url",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "dostosuj strony filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czy zdjęcia filetype:pdf",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -181159,31 +181129,7 @@
        "position": null
       },
       {
-       "query": "ads ustawianie filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "do kogo należy przegladarka yahoo",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "format png rozmiar filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "ads jak filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "uzyskaj wgląd w promowanie marki!",
+       "query": "dostosuj strony filetype:pdf",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -181195,7 +181141,61 @@
        "position": null
       },
       {
+       "query": "format png rozmiar filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "uzyskaj wgląd w promowanie marki!",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "ads ustawianie filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "google search console sprawdzanie url",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "do kogo należy przegladarka yahoo",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "dostęp – konta filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "501 418 204",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "meta ads reels specyfikacja",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "ads jak filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "czy zdjęcia filetype:pdf",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -181207,61 +181207,13 @@
        "position": null
       },
       {
-       "query": "\"url (http://domena.pl)\" \"opis ma\"",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jaki ctr jest dobry",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "nieprawidłowa odpowiedź serwera.",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "brakuje grafiki filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "lvetsil bert co to znaczy",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "aktualizowano sty wyświetlenia filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "analysis data dostępu filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "coto  jest leaweb za strona internetowa",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "center miejsce filetype:pdf",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "jak dsc dsotep do fejbokkakomus",
+       "query": "nieprawidłowa odpowiedź serwera.",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -181285,13 +181237,97 @@
        "position": null
       },
       {
+       "query": "jaki ctr jest dobry",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "analysis data dostępu filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "coto  jest leaweb za strona internetowa",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "aktualizowano sty wyświetlenia filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "brakuje grafiki filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "lvetsil bert co to znaczy",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak dsc dsotep do fejbokkakomus",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "\"url (http://domena.pl)\" \"opis ma\"",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "analytics do zbierania filetype:pdf",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
+       "query": "spingować",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "demand die grafik filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "g.co/sc w",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "ads meta ads filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "icea s.a. digital presences",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "ads reels unterstützt filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "brzmi jakoś meta filetype:pdf",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -181321,91 +181357,7 @@
        "position": null
       },
       {
-       "query": "spingować",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "demand die grafik filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "ads reels unterstützt filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "brzmi jakoś meta filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "icea s.a. digital presences",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "ads meta ads filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "b połączenia filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "co to jest cta",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "agencja marketingowa kontakt",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "firma zajmująca się pozyskiwaniem leadów warszawa",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#wideo#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "ads do maksymalizacji filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "pomoc przy sklepie internetowym koszt",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "agencja marketingowa poznań",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#wideo#N##N#zakupy#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia#N##N#wyniki wyszukiwania#N##N#grafika",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -181423,7 +181375,31 @@
        "position": null
       },
       {
-       "query": "firma zajmująca się pozyskiwaniem leadów katowice",
+       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#wideo#N##N#zakupy#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia#N##N#wyniki wyszukiwania#N##N#grafika",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "pomoc przy sklepie internetowym koszt",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "b połączenia filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "agencja marketingowa poznań",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#wideo#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -181441,6 +181417,12 @@
        "position": null
       },
       {
+       "query": "firma zajmująca się pozyskiwaniem leadów warszawa",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "+google.c3om bing.com",
        "clicks": 0,
        "impressions": 1,
@@ -181448,6 +181430,24 @@
       },
       {
        "query": "cta pozycja",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "agencja marketingowa kontakt",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "ads do maksymalizacji filetype:pdf",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "firma zajmująca się pozyskiwaniem leadów katowice",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -181561,13 +181561,13 @@
        "position": null
       },
       {
-       "query": "icea juliusza słowackiego 55 / 1 60-521 poznań",
+       "query": "eye tracking definicja",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "eye tracking definicja",
+       "query": "icea juliusza słowackiego 55 / 1 60-521 poznań",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -181579,13 +181579,13 @@
        "position": null
       },
       {
-       "query": "icea pl",
+       "query": "icea spolka akcyjna",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "icea spolka akcyjna",
+       "query": "icea pl",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -181603,25 +181603,25 @@
        "position": null
       },
       {
-       "query": "nadanie dostępu do profiuly busieness",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "chrome skalowanie strony ipad",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "icea poznan",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
+       "query": "nadanie dostępu do profiuly busieness",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "grupa icea.pl",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "chrome skalowanie strony ipad",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -181639,25 +181639,25 @@
        "position": null
       },
       {
-       "query": "jak spradzic dostep do leadó facebook business",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "co to jest win64/agent.kfb",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "dla grafików info o meta ads fb ads",
+       "query": "jak spradzic dostep do leadó facebook business",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
        "query": "banery meta ads graficzne co to",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "dla grafików info o meta ads fb ads",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -181687,19 +181687,7 @@
        "position": null
       },
       {
-       "query": "magdalena von bastian-brzezińska, sem customer experience manager w icea",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "najlepsze aplikacje w shoper",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "gdzie w internecie mogę znaleźć kopię mojej strony www",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -181711,13 +181699,13 @@
        "position": null
       },
       {
-       "query": "pagitacja stron",
+       "query": "magdalena von bastian-brzezińska, sem customer experience manager w icea",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "stwórz kompletną i realną strategię dla strony https://ekalkulator.eu , której celem powinno być przychód miesięczny ze strony w wysokości 3000 pln miesięcznie w horyzoncie czasowym sześciu miesięcy. strategia powinna poruszać kwestię rozbudowy i optymalizacji portalu, jego pozycjonowania i promowania",
+       "query": "gdzie w internecie mogę znaleźć kopię mojej strony www",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -181729,25 +181717,19 @@
        "position": null
       },
       {
+       "query": "stwórz kompletną i realną strategię dla strony https://ekalkulator.eu , której celem powinno być przychód miesięczny ze strony w wysokości 3000 pln miesięcznie w horyzoncie czasowym sześciu miesięcy. strategia powinna poruszać kwestię rozbudowy i optymalizacji portalu, jego pozycjonowania i promowania",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "pagitacja stron",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "jakie rozmiary stosować do ustawiania reklam w meta ads",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak dostosować wygląd strony do wyświetlacza telefonu",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "icea spółka z ograniczoną odpowiedzialnością, poznań, 301902014, 0000394000",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak zmienic nazwe linku url",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -181759,19 +181741,31 @@
        "position": null
       },
       {
+       "query": "jak dostosować wygląd strony do wyświetlacza telefonu",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak zmienic nazwe linku url",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "meta ads logo grafika",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "icea s.a. ul. szyperska 14 61-754 poznań",
+       "query": "icea spółka z ograniczoną odpowiedzialnością, poznań, 301902014, 0000394000",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "emoji description schema seo",
+       "query": "icea s.a. ul. szyperska 14 61-754 poznań",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -181784,6 +181778,24 @@
       },
       {
        "query": "obszary bezpieczne gdzie nie mogą pojawiać się teksty grafiki meta 1080x1350",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "emoji description schema seo",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "reklamy grafiki meta inspo",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "zmienianie linków w nazwy stron",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -181813,13 +181825,7 @@
        "position": null
       },
       {
-       "query": "reklamy grafiki meta inspo",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "zmienianie linków w nazwy stron",
+       "query": "jakich rozmiar uzywa sie na stronie aby dobrze sie skalowalo na telefon",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -181831,13 +181837,7 @@
        "position": null
       },
       {
-       "query": "jakich rozmiar uzywa sie na stronie aby dobrze sie skalowalo na telefon",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "icea seo",
+       "query": "jak przygotowywać grafiki na kampanie meta",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -181849,13 +181849,7 @@
        "position": null
       },
       {
-       "query": "jak przygotowywać grafiki na kampanie meta",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "reklama meta ads poziom wymiar",
+       "query": "icea seo",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -181873,13 +181867,13 @@
        "position": null
       },
       {
-       "query": "storny z pseudo wirusami",
+       "query": "reklama meta ads poziom wymiar",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "mapowanie linków co to, po co, kidy",
+       "query": "storny z pseudo wirusami",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -181891,7 +181885,19 @@
        "position": null
       },
       {
+       "query": "mapowanie linków co to, po co, kidy",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "analiza googla",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "no trailing slash co to znaczy",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -181903,19 +181909,13 @@
        "position": null
       },
       {
-       "query": "icei marketing",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "ice group poland seo company",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "no trailing slash co to znaczy",
+       "query": "icei marketing",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -182077,13 +182077,13 @@
        "position": null
       },
       {
-       "query": "icea polen",
+       "query": "meta biznes settings",
        "clicks": 0,
        "impressions": 4,
        "position": null
       },
       {
-       "query": "meta biznes settings",
+       "query": "icea polen",
        "clicks": 0,
        "impressions": 4,
        "position": null
@@ -182137,13 +182137,13 @@
        "position": null
       },
       {
-       "query": "wp ads display wymiary",
+       "query": "nazwa kanału jaka",
        "clicks": 0,
        "impressions": 3,
        "position": null
       },
       {
-       "query": "nazwa kanału jaka",
+       "query": "wp ads display wymiary",
        "clicks": 0,
        "impressions": 3,
        "position": null
@@ -182155,25 +182155,25 @@
        "position": null
       },
       {
-       "query": "grafiki do filetype:pdf",
-       "clicks": 0,
-       "impressions": 3,
-       "position": null
-      },
-      {
        "query": "metawyszukiwarki",
        "clicks": 0,
        "impressions": 3,
        "position": null
       },
       {
-       "query": "nowy link",
+       "query": "grafiki do filetype:pdf",
        "clicks": 0,
        "impressions": 3,
        "position": null
       },
       {
        "query": "pozycjonowanie stron dla firm",
+       "clicks": 0,
+       "impressions": 3,
+       "position": null
+      },
+      {
+       "query": "nowy link",
        "clicks": 0,
        "impressions": 3,
        "position": null
@@ -182203,19 +182203,7 @@
        "position": null
       },
       {
-       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#wideo#N##N#krótkie filmy#N##N#wiadomości#N##N#produkty#N##N#więcej#N##N#narzędzia",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "tryb ai#N#wszystko#N#wiadomości#N#grafika#N#wideo",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "\"warto wiedzie%c4%87\" \"strony w katalogu\" \"dodaj serwis\" \"dodaj artyku%c5%82\" zaloguj thirty",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182228,6 +182216,18 @@
       },
       {
        "query": "wayback m,achiene",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#wideo#N##N#krótkie filmy#N##N#wiadomości#N##N#produkty#N##N#więcej#N##N#narzędzia",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "\"warto wiedzie%c4%87\" \"strony w katalogu\" \"dodaj serwis\" \"dodaj artyku%c5%82\" zaloguj thirty",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182275,19 +182275,7 @@
        "position": null
       },
       {
-       "query": "darmowe obrazy filetype:pdf",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "google czy yahoo",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "opinie o wyszukiwarce bing",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182299,25 +182287,25 @@
        "position": null
       },
       {
-       "query": "wady i zalety badań jakościowych",
+       "query": "opinie o wyszukiwarce bing",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "zespol obslugi klienta,",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "grafikę z filetype:pdf",
+       "query": "darmowe obrazy filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
        "query": "jak sprawdzić ranking www",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "grafikę z filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182347,19 +182335,13 @@
        "position": null
       },
       {
-       "query": "pikseli do filetype:pdf",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "jaki jest najdłusza nazwa youtubera",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "kampanii może się filetype:pdf",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "zespol obslugi klienta,",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182371,7 +182353,31 @@
        "position": null
       },
       {
+       "query": "pikseli do filetype:pdf",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "wady i zalety badań jakościowych",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "jaki jest najdłusza nazwa youtubera",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "uzyskaj informacje na temat rozpoczęcia mojej własnej marki youtube o",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "uzyskaj informacje na temat promowania marki!",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182389,19 +182395,13 @@
        "position": null
       },
       {
-       "query": "uzyskaj informacje na temat promowania marki!",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "uzyskaj informacje na temat rozpoczęcia mojej własnej marki youtube 2",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "że ​​grafika do filetype:pdf",
+       "query": "środku zdjęcia stock filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182419,19 +182419,19 @@
        "position": null
       },
       {
-       "query": "kod strony skrót",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "środku zdjęcia stock filetype:pdf",
+       "query": "że ​​grafika do filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
        "query": "icea planer",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "kod strony skrót",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182449,12 +182449,6 @@
        "position": null
       },
       {
-       "query": "facebook fanpage filetype:pdf",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "dodawanie obiektów filetype:pdf",
        "clicks": 0,
        "impressions": 2,
@@ -182462,6 +182456,12 @@
       },
       {
        "query": "jpg pobierz tak filetype:pdf",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "facebook fanpage filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182479,25 +182479,19 @@
        "position": null
       },
       {
-       "query": "google seach console",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "formaty grafik do kampanii meta",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "ads nam się filetype:pdf",
+       "query": "google seach console",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "fanpage facepage filetype:pdf",
+       "query": "ads nam się filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182510,6 +182504,12 @@
       },
       {
        "query": "https://www.grupa-icea.pl/?gad_source=2&gclid=cjwkcajwtdi_bhaceiwa97y8bnziuhmqnjqgzxzfxfpwp_8e0htrrg5ts19hovhxlbezgt3liqdtjrocfusqavd_bwe",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "fanpage facepage filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182545,13 +182545,13 @@
        "position": null
       },
       {
-       "query": "darmowe strony chrome",
+       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#witryny produktów#N##N#krótkie filmy#N##N#wideo#N##N#więcej#N##N#narzędzia",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#witryny produktów#N##N#krótkie filmy#N##N#wideo#N##N#więcej#N##N#narzędzia",
+       "query": "darmowe strony chrome",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182569,13 +182569,13 @@
        "position": null
       },
       {
-       "query": "suplement cassanovum reklama",
+       "query": "d grafiky od filetype:pdf",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "d grafiky od filetype:pdf",
+       "query": "suplement cassanovum reklama",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -182587,25 +182587,31 @@
        "position": null
       },
       {
-       "query": "jak indeksować strony programmatic seo w google?",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "google analitycs 4",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "co oznacza ropo",
+       "query": "analiza ilosciowa a jakosciowa",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "analiza ilosciowa a jakosciowa",
+       "query": "ctrhhhh",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "hak uruchomia ai w google",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "co oznacza ropo",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -182618,6 +182624,12 @@
       },
       {
        "query": "co oznacza boton cta",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak indeksować strony programmatic seo w google?",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -182641,19 +182653,7 @@
        "position": null
       },
       {
-       "query": "ctrhhhh",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "oferuje przejrzystą grafikę filetype:pdf",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "hak uruchomia ai w google",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -182875,12 +182875,6 @@
        "position": null
       },
       {
-       "query": "icea spółka akcyjna (nip: 7811993323) kontakt",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "jak dopasować ekran do róznych urządzeń tworząc strone",
        "clicks": 1,
        "impressions": 2,
@@ -182893,7 +182887,7 @@
        "position": null
       },
       {
-       "query": "michał kuchczyński icea",
+       "query": "icea spółka akcyjna (nip: 7811993323) kontakt",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -182905,13 +182899,13 @@
        "position": null
       },
       {
-       "query": "icea firma marketigowa",
+       "query": "michał kuchczyński icea",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "focus garden migracja na magento",
+       "query": "icea firma marketigowa",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -182923,19 +182917,13 @@
        "position": null
       },
       {
+       "query": "focus garden migracja na magento",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "czy icea jest msciwa seo",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "jakub piechowiak icea",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "klient jego potrzeby",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -182953,7 +182941,13 @@
        "position": null
       },
       {
-       "query": "słownik icea",
+       "query": "jakub piechowiak icea",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "klient jego potrzeby",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -182965,7 +182959,7 @@
        "position": null
       },
       {
-       "query": "icea rekrutacja",
+       "query": "słownik icea",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -182977,19 +182971,25 @@
        "position": null
       },
       {
+       "query": "icea rekrutacja",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "wymiary grafik meta ads",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "icea juliusza słowackiego 55 / 1 60-521 poznań",
+       "query": "eye tracking definicja",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "eye tracking definicja",
+       "query": "icea juliusza słowackiego 55 / 1 60-521 poznań",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -183019,25 +183019,25 @@
        "position": null
       },
       {
-       "query": "nadanie dostępu do profiuly busieness",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "chrome skalowanie strony ipad",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "icea poznan",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
+       "query": "nadanie dostępu do profiuly busieness",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "grupa icea.pl",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "chrome skalowanie strony ipad",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -183055,25 +183055,25 @@
        "position": null
       },
       {
-       "query": "jak spradzic dostep do leadó facebook business",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "co to jest win64/agent.kfb",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "dla grafików info o meta ads fb ads",
+       "query": "jak spradzic dostep do leadó facebook business",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
        "query": "banery meta ads graficzne co to",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "dla grafików info o meta ads fb ads",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -183103,25 +183103,13 @@
        "position": null
       },
       {
-       "query": "jakie moduly sa w shoper",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "mobile dopasowanie treści do ekranu",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "porównanie badań jakościowych i ilościowych prezi",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "dynamiczna vs statyczna strona www",
+       "query": "jakie moduly sa w shoper",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183139,13 +183127,19 @@
        "position": null
       },
       {
-       "query": "icea marketing sensoryczny",
+       "query": "dynamiczna vs statyczna strona www",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "wayback archive",
+       "query": "porównanie badań jakościowych i ilościowych prezi",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "formaty meta ads wymiary kwadrat oziom i pion",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183157,7 +183151,13 @@
        "position": null
       },
       {
-       "query": "formaty meta ads wymiary kwadrat oziom i pion",
+       "query": "wayback archive",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "icea marketing sensoryczny",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183181,13 +183181,13 @@
        "position": null
       },
       {
-       "query": "damowa zamiana na własny link własnej strony internetowej",
+       "query": "co to są badania fokusowe",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "co to są badania fokusowe",
+       "query": "damowa zamiana na własny link własnej strony internetowej",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183205,24 +183205,6 @@
        "position": null
       },
       {
-       "query": "kampania wymiary meta",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "rozmiary reklam do kampani meta",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "agencje reklamowe zajmują się ustaleniem cen za wyprodukowanie reklamy. prawda czy fałsz",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "zmienianie linku na inny",
        "clicks": 1,
        "impressions": 1,
@@ -183235,13 +183217,25 @@
        "position": null
       },
       {
-       "query": "jak dodać komuś dostęp do meta business",
+       "query": "agencje reklamowe zajmują się ustaleniem cen za wyprodukowanie reklamy. prawda czy fałsz",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "meta reklamy na fb wymiary margines",
+       "query": "rozmiary reklam do kampani meta",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "kampania wymiary meta",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak dodać komuś dostęp do meta business",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183253,7 +183247,19 @@
        "position": null
       },
       {
+       "query": "meta reklamy na fb wymiary margines",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "obraz nie miesci sie na ekranie telefonu hak dostosowac widok strony w edge",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "optymalizacj strony do telefonow",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183271,12 +183277,6 @@
        "position": null
       },
       {
-       "query": "optymalizacj strony do telefonow",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "specyfikacja meta ig materialy",
        "clicks": 1,
        "impressions": 1,
@@ -183284,18 +183284,6 @@
       },
       {
        "query": "duzy ekran shoper panel",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak nadać dostęp komuś do konta meta business",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "1,91:1 jaki to wymiar do meta ads",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183313,13 +183301,19 @@
        "position": null
       },
       {
-       "query": "pozycjonowanie produktu dla instytucji takich jak szpitale czy apteki",
+       "query": "jak nadać dostęp komuś do konta meta business",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "magdalena von bastian-brzezińska, sem customer experience manager w icea",
+       "query": "1,91:1 jaki to wymiar do meta ads",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "pozycjonowanie produktu dla instytucji takich jak szpitale czy apteki",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183331,25 +183325,19 @@
        "position": null
       },
       {
-       "query": "gdzie w internecie mogę znaleźć kopię mojej strony www",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "czy da sie zmienic nazwe url?",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "pagitacja stron",
+       "query": "magdalena von bastian-brzezińska, sem customer experience manager w icea",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "stwórz kompletną i realną strategię dla strony https://ekalkulator.eu , której celem powinno być przychód miesięczny ze strony w wysokości 3000 pln miesięcznie w horyzoncie czasowym sześciu miesięcy. strategia powinna poruszać kwestię rozbudowy i optymalizacji portalu, jego pozycjonowania i promowania",
+       "query": "gdzie w internecie mogę znaleźć kopię mojej strony www",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183361,25 +183349,19 @@
        "position": null
       },
       {
+       "query": "stwórz kompletną i realną strategię dla strony https://ekalkulator.eu , której celem powinno być przychód miesięczny ze strony w wysokości 3000 pln miesięcznie w horyzoncie czasowym sześciu miesięcy. strategia powinna poruszać kwestię rozbudowy i optymalizacji portalu, jego pozycjonowania i promowania",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "pagitacja stron",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "jakie rozmiary stosować do ustawiania reklam w meta ads",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak dostosować wygląd strony do wyświetlacza telefonu",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "icea spółka z ograniczoną odpowiedzialnością, poznań, 301902014, 0000394000",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak zmienic nazwe linku url",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183391,19 +183373,31 @@
        "position": null
       },
       {
+       "query": "jak dostosować wygląd strony do wyświetlacza telefonu",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak zmienic nazwe linku url",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "meta ads logo grafika",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "icea s.a. ul. szyperska 14 61-754 poznań",
+       "query": "icea spółka z ograniczoną odpowiedzialnością, poznań, 301902014, 0000394000",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "emoji description schema seo",
+       "query": "icea s.a. ul. szyperska 14 61-754 poznań",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183416,6 +183410,24 @@
       },
       {
        "query": "obszary bezpieczne gdzie nie mogą pojawiać się teksty grafiki meta 1080x1350",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "emoji description schema seo",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "reklamy grafiki meta inspo",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "zmienianie linków w nazwy stron",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183445,13 +183457,7 @@
        "position": null
       },
       {
-       "query": "reklamy grafiki meta inspo",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "zmienianie linków w nazwy stron",
+       "query": "jakich rozmiar uzywa sie na stronie aby dobrze sie skalowalo na telefon",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183463,25 +183469,13 @@
        "position": null
       },
       {
-       "query": "jakich rozmiar uzywa sie na stronie aby dobrze sie skalowalo na telefon",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "co oznacza onsite na stronie i offcite",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "jak przygotowywać grafiki na kampanie meta",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "reklama meta ads poziom wymiar",
+       "query": "co oznacza onsite na stronie i offcite",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183499,13 +183493,13 @@
        "position": null
       },
       {
-       "query": "storny z pseudo wirusami",
+       "query": "reklama meta ads poziom wymiar",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "mapowanie linków co to, po co, kidy",
+       "query": "storny z pseudo wirusami",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183517,7 +183511,19 @@
        "position": null
       },
       {
+       "query": "mapowanie linków co to, po co, kidy",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "analiza googla",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "no trailing slash co to znaczy",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -183529,19 +183535,13 @@
        "position": null
       },
       {
-       "query": "icei marketing",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "ice group poland seo company",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "no trailing slash co to znaczy",
+       "query": "icei marketing",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -184279,19 +184279,7 @@
        "position": null
       },
       {
-       "query": "paweł sędziak icea",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "ctr a srednia zocyja jakaie zlaeznosci",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "co lepiej wdrożyć doładowywanie artykułów na stronie czy paginację?",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184303,19 +184291,31 @@
        "position": null
       },
       {
+       "query": "paweł sędziak icea",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "co lepiej wdrożyć doładowywanie artykułów na stronie czy paginację?",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "icea sp. z o.o.",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "google analitycs 4",
+       "query": "jak zmienic url",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "jak zmienic url",
+       "query": "google analitycs 4",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184333,6 +184333,12 @@
        "position": null
       },
       {
+       "query": "jaki moze byc styl komunikacji w reklamie",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "icea prime kontakt",
        "clicks": 1,
        "impressions": 2,
@@ -184340,12 +184346,6 @@
       },
       {
        "query": "czym się różni google od binga",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "jaki moze byc styl komunikacji w reklamie",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184399,13 +184399,13 @@
        "position": null
       },
       {
-       "query": "https://hiszkola tanca potockiegot.app/pl/soulmate/welcome?utm_source=google&utm_medium=cpc&utm_campaign_id=23292784219&utm_adgroup_id=195830610624&utm_ad_id=785153952874&utm_target_id=&utm_campaign=soulmate_display_ww_pl&utm_adgroup=astrology+website+and+app+visitors&utm_term=&partner=wm&gad_source=5&gad_campaignid=23292784219&gclid=eaiaiqobchmiote9t5yokqmvzeurbr22hxuseaeyasaaegivk_d_bwe",
+       "query": "struktura udziałów icea group",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "struktura udziałów icea group",
+       "query": "https://hiszkola tanca potockiegot.app/pl/soulmate/welcome?utm_source=google&utm_medium=cpc&utm_campaign_id=23292784219&utm_adgroup_id=195830610624&utm_ad_id=785153952874&utm_target_id=&utm_campaign=soulmate_display_ww_pl&utm_adgroup=astrology+website+and+app+visitors&utm_term=&partner=wm&gad_source=5&gad_campaignid=23292784219&gclid=eaiaiqobchmiote9t5yokqmvzeurbr22hxuseaeyasaaegivk_d_bwe",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184423,7 +184423,7 @@
        "position": null
       },
       {
-       "query": "icea sp zoo",
+       "query": "tomasz czechowski seo",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184435,7 +184435,7 @@
        "position": null
       },
       {
-       "query": "tomasz czechowski seo",
+       "query": "icea sp zoo",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184471,12 +184471,6 @@
        "position": null
       },
       {
-       "query": "icea spółka akcyjna (nip: 7811993323) kontakt",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "jak dopasować ekran do róznych urządzeń tworząc strone",
        "clicks": 1,
        "impressions": 2,
@@ -184489,7 +184483,7 @@
        "position": null
       },
       {
-       "query": "michał kuchczyński icea",
+       "query": "icea spółka akcyjna (nip: 7811993323) kontakt",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184501,13 +184495,13 @@
        "position": null
       },
       {
-       "query": "icea firma marketigowa",
+       "query": "michał kuchczyński icea",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "focus garden migracja na magento",
+       "query": "icea firma marketigowa",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184519,19 +184513,13 @@
        "position": null
       },
       {
+       "query": "focus garden migracja na magento",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "czy icea jest msciwa seo",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "jakub piechowiak icea",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "klient jego potrzeby",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184549,7 +184537,13 @@
        "position": null
       },
       {
-       "query": "słownik icea",
+       "query": "jakub piechowiak icea",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "klient jego potrzeby",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184561,7 +184555,7 @@
        "position": null
       },
       {
-       "query": "icea rekrutacja",
+       "query": "słownik icea",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184573,19 +184567,25 @@
        "position": null
       },
       {
+       "query": "icea rekrutacja",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "wymiary grafik meta ads",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "icea juliusza słowackiego 55 / 1 60-521 poznań",
+       "query": "eye tracking definicja",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "eye tracking definicja",
+       "query": "icea juliusza słowackiego 55 / 1 60-521 poznań",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184621,13 +184621,13 @@
        "position": null
       },
       {
-       "query": "chrome skalowanie strony ipad",
+       "query": "grupa icea.pl",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "grupa icea.pl",
+       "query": "chrome skalowanie strony ipad",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184645,25 +184645,25 @@
        "position": null
       },
       {
-       "query": "jak spradzic dostep do leadó facebook business",
-       "clicks": 1,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "co to jest win64/agent.kfb",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "dla grafików info o meta ads fb ads",
+       "query": "jak spradzic dostep do leadó facebook business",
        "clicks": 1,
        "impressions": 2,
        "position": null
       },
       {
        "query": "banery meta ads graficzne co to",
+       "clicks": 1,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "dla grafików info o meta ads fb ads",
        "clicks": 1,
        "impressions": 2,
        "position": null
@@ -184687,7 +184687,7 @@
        "position": null
       },
       {
-       "query": "bing a google róznice",
+       "query": "średni or i ctr dla branży deco",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -184699,13 +184699,7 @@
        "position": null
       },
       {
-       "query": "średni or i ctr dla branży deco",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "icea polland",
+       "query": "bing a google róznice",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -184717,13 +184711,13 @@
        "position": null
       },
       {
-       "query": "jak w kodzie źródłowym znależć linki",
+       "query": "icea polland",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "id google ads",
+       "query": "jak w kodzie źródłowym znależć linki",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -184741,25 +184735,19 @@
        "position": null
       },
       {
-       "query": "czy paginuje się puste strony",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "pulpit profesjonalny facebook statystyki",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "inboaud outbank co to",
+       "query": "id google ads",
        "clicks": 1,
        "impressions": 1,
        "position": null
       },
       {
        "query": "analiza cltv",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "czy paginuje się puste strony",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -184772,6 +184760,18 @@
       },
       {
        "query": "jak zachęcić klienta do zakupu",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "pulpit profesjonalny facebook statystyki",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "inboaud outbank co to",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -184807,6 +184807,12 @@
        "position": null
       },
       {
+       "query": "iant=40059289272414&stkn=d1d5d6688d66&msclkid=876b62aeaf3d17e7393f0a1edf6376a2&utm_source=bing&utm_medium=cpc&utm_campaign=pmax_dach%20%7c%20damen-bekleidung%20%26%20accessoires&utm_term=2324779899828062&utm_content=damen-mode%20-%20nur%20feed",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "libra ibuk błąd 403",
        "clicks": 1,
        "impressions": 1,
@@ -184825,12 +184831,6 @@
        "position": null
       },
       {
-       "query": "iant=40059289272414&stkn=d1d5d6688d66&msclkid=876b62aeaf3d17e7393f0a1edf6376a2&utm_source=bing&utm_medium=cpc&utm_campaign=pmax_dach%20%7c%20damen-bekleidung%20%26%20accessoires&utm_term=2324779899828062&utm_content=damen-mode%20-%20nur%20feed",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "atrybuty title i alt",
        "clicks": 1,
        "impressions": 1,
@@ -184838,12 +184838,6 @@
       },
       {
        "query": "shoper  modul scroler co to",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "skala rag",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -184861,25 +184855,7 @@
        "position": null
       },
       {
-       "query": "paginowana pusta strona",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "co to znaczy że reklama pojawia sie okresowo",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak sprawdzić na stronie internetowej czy ma kod",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak na fb zczytać statystyki innego konta za dany rok",
+       "query": "skala rag",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -184891,7 +184867,31 @@
        "position": null
       },
       {
+       "query": "jak sprawdzić na stronie internetowej czy ma kod",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "jak dopasować wielkość strony do wyświetlenia na telefonie",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak na fb zczytać statystyki innego konta za dany rok",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "paginowana pusta strona",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "co to znaczy że reklama pojawia sie okresowo",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -184909,6 +184909,12 @@
        "position": null
       },
       {
+       "query": "skrót do kodu strony",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "jak sprawdzić źródło strony i po czym poznać",
        "clicks": 1,
        "impressions": 1,
@@ -184916,30 +184922,6 @@
       },
       {
        "query": "icea sa zarzad",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "skrót do kodu strony",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "wymagania co klinet oczekuje w swoim domu",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "wycena domen",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "strona internetowa kompatybilna z telefonem",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -184957,7 +184939,25 @@
        "position": null
       },
       {
+       "query": "wycena domen",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "zrozumienie pisemnego kodu strony",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "wymagania co klinet oczekuje w swoim domu",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "strona internetowa kompatybilna z telefonem",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -184970,24 +184970,6 @@
       },
       {
        "query": "jak dostosowac wirtualna polske do ogladania na telefonie",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "twoja wlasna agencja marketingowa",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "co to jest geo tag na zdjęciu",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "403.7",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -185011,6 +184993,24 @@
        "position": null
       },
       {
+       "query": "twoja wlasna agencja marketingowa",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "403.7",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "co to jest geo tag na zdjęciu",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "pls 2,5 sekundy wskaźnik szybkości ładowania strony www",
        "clicks": 1,
        "impressions": 1,
@@ -185023,19 +185023,19 @@
        "position": null
       },
       {
-       "query": "onsite vs offsite marketing",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "transport error: 403 error: forbidden speed bg",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "cena przygotowania kampanii reklamowej na mieisąc w agencji przykładowa cena",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "403 się pojawił! zpe",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "onsite vs offsite marketing",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -185047,7 +185047,13 @@
        "position": null
       },
       {
-       "query": "403 się pojawił! zpe",
+       "query": "transport error: 403 error: forbidden speed bg",
+       "clicks": 1,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "cicbait nie uwierzysz",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -185060,12 +185066,6 @@
       },
       {
        "query": "marginesy meta 1440",
-       "clicks": 1,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "cicbait nie uwierzysz",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -185129,25 +185129,25 @@
      "position": null
     },
     {
-     "query": "jak spradzic dostep do leadó facebook business",
-     "clicks": 1,
-     "impressions": 2,
-     "position": null
-    },
-    {
      "query": "co to jest win64/agent.kfb",
      "clicks": 1,
      "impressions": 2,
      "position": null
     },
     {
-     "query": "dla grafików info o meta ads fb ads",
+     "query": "jak spradzic dostep do leadó facebook business",
      "clicks": 1,
      "impressions": 2,
      "position": null
     },
     {
      "query": "banery meta ads graficzne co to",
+     "clicks": 1,
+     "impressions": 2,
+     "position": null
+    },
+    {
+     "query": "dla grafików info o meta ads fb ads",
      "clicks": 1,
      "impressions": 2,
      "position": null
@@ -185171,7 +185171,7 @@
      "position": null
     },
     {
-     "query": "icea seo",
+     "query": "jak przygotowywać grafiki na kampanie meta",
      "clicks": 1,
      "impressions": 1,
      "position": null
@@ -185183,13 +185183,7 @@
      "position": null
     },
     {
-     "query": "jak przygotowywać grafiki na kampanie meta",
-     "clicks": 1,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "reklama meta ads poziom wymiar",
+     "query": "icea seo",
      "clicks": 1,
      "impressions": 1,
      "position": null
@@ -185207,13 +185201,13 @@
      "position": null
     },
     {
-     "query": "storny z pseudo wirusami",
+     "query": "reklama meta ads poziom wymiar",
      "clicks": 1,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "mapowanie linków co to, po co, kidy",
+     "query": "storny z pseudo wirusami",
      "clicks": 1,
      "impressions": 1,
      "position": null
@@ -185225,7 +185219,19 @@
      "position": null
     },
     {
+     "query": "mapowanie linków co to, po co, kidy",
+     "clicks": 1,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "analiza googla",
+     "clicks": 1,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "no trailing slash co to znaczy",
      "clicks": 1,
      "impressions": 1,
      "position": null
@@ -185237,19 +185243,13 @@
      "position": null
     },
     {
-     "query": "icei marketing",
-     "clicks": 1,
-     "impressions": 1,
-     "position": null
-    },
-    {
      "query": "ice group poland seo company",
      "clicks": 1,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "no trailing slash co to znaczy",
+     "query": "icei marketing",
      "clicks": 1,
      "impressions": 1,
      "position": null
@@ -185345,13 +185345,13 @@
      "position": null
     },
     {
-     "query": "ads czy filetype:pdf",
+     "query": "jak w meta business zapraszać do obserowaania",
      "clicks": 0,
      "impressions": 3,
      "position": null
     },
     {
-     "query": "jak w meta business zapraszać do obserowaania",
+     "query": "ads czy filetype:pdf",
      "clicks": 0,
      "impressions": 3,
      "position": null
@@ -185375,25 +185375,19 @@
      "position": null
     },
     {
-     "query": "google seach console",
-     "clicks": 0,
-     "impressions": 2,
-     "position": null
-    },
-    {
      "query": "formaty grafik do kampanii meta",
      "clicks": 0,
      "impressions": 2,
      "position": null
     },
     {
-     "query": "ads nam się filetype:pdf",
+     "query": "google seach console",
      "clicks": 0,
      "impressions": 2,
      "position": null
     },
     {
-     "query": "fanpage facepage filetype:pdf",
+     "query": "ads nam się filetype:pdf",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -185406,6 +185400,12 @@
     },
     {
      "query": "https://www.grupa-icea.pl/?gad_source=2&gclid=cjwkcajwtdi_bhaceiwa97y8bnziuhmqnjqgzxzfxfpwp_8e0htrrg5ts19hovhxlbezgt3liqdtjrocfusqavd_bwe",
+     "clicks": 0,
+     "impressions": 2,
+     "position": null
+    },
+    {
+     "query": "fanpage facepage filetype:pdf",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -185441,13 +185441,13 @@
      "position": null
     },
     {
-     "query": "darmowe strony chrome",
+     "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#witryny produktów#N##N#krótkie filmy#N##N#wideo#N##N#więcej#N##N#narzędzia",
      "clicks": 0,
      "impressions": 2,
      "position": null
     },
     {
-     "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#witryny produktów#N##N#krótkie filmy#N##N#wideo#N##N#więcej#N##N#narzędzia",
+     "query": "darmowe strony chrome",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -185465,57 +185465,15 @@
      "position": null
     },
     {
-     "query": "suplement cassanovum reklama",
-     "clicks": 0,
-     "impressions": 2,
-     "position": null
-    },
-    {
      "query": "d grafiky od filetype:pdf",
      "clicks": 0,
      "impressions": 2,
      "position": null
     },
     {
-     "query": "meta business jak zaprosić do obserwowania",
+     "query": "suplement cassanovum reklama",
      "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "format rozmiar filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "czy warto wybierać filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "facebooku pridať do filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "agencja udosell",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "brief pod kampanię mms dla acatom. zrób na jego podsatwie targetowanie pod ich inną inwestycję https://acatom.pl/mieszkania-gliwice/?sm-media=tour&sm-screen-type=unitsearch",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "google page rank test",
-     "clicks": 0,
-     "impressions": 1,
+     "impressions": 2,
      "position": null
     },
     {
@@ -185531,31 +185489,19 @@
      "position": null
     },
     {
+     "query": "brief pod kampanię mms dla acatom. zrób na jego podsatwie targetowanie pod ich inną inwestycję https://acatom.pl/mieszkania-gliwice/?sm-media=tour&sm-screen-type=unitsearch",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "jak manipuluja nami wyszukiwarki google",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "format wideo filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "agencia icea",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "dzięki intuicyjnemu interfejsowi filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "iseeca poznan",
+     "query": "format rozmiar filetype:pdf",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -185573,7 +185519,55 @@
      "position": null
     },
     {
-     "query": "uzyskaj informacje na temat rozpoczęcia mojej własnej marki youtube 2",
+     "query": "agencja udosell",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "dzięki intuicyjnemu interfejsowi filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "iseeca poznan",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "google page rank test",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "meta business jak zaprosić do obserwowania",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "format wideo filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "agencia icea",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "facebooku pridať do filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "czy warto wybierać filetype:pdf",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -185585,37 +185579,13 @@
      "position": null
     },
     {
+     "query": "uzyskaj informacje na temat rozpoczęcia mojej własnej marki youtube 2",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "chcesz promować filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "meta ads reels specyfikacja",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "501 418 204",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "google search console sprawdzanie url",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "dostosuj strony filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "czy zdjęcia filetype:pdf",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -185627,31 +185597,7 @@
      "position": null
     },
     {
-     "query": "ads ustawianie filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "do kogo należy przegladarka yahoo",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "format png rozmiar filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "ads jak filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "uzyskaj wgląd w promowanie marki!",
+     "query": "dostosuj strony filetype:pdf",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -185663,7 +185609,61 @@
      "position": null
     },
     {
+     "query": "format png rozmiar filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "uzyskaj wgląd w promowanie marki!",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "ads ustawianie filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "google search console sprawdzanie url",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "do kogo należy przegladarka yahoo",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "dostęp – konta filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "501 418 204",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "meta ads reels specyfikacja",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "ads jak filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "czy zdjęcia filetype:pdf",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -185675,61 +185675,13 @@
      "position": null
     },
     {
-     "query": "\"url (http://domena.pl)\" \"opis ma\"",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jaki ctr jest dobry",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "nieprawidłowa odpowiedź serwera.",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "brakuje grafiki filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "lvetsil bert co to znaczy",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "aktualizowano sty wyświetlenia filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "analysis data dostępu filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "coto  jest leaweb za strona internetowa",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
      "query": "center miejsce filetype:pdf",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "jak dsc dsotep do fejbokkakomus",
+     "query": "nieprawidłowa odpowiedź serwera.",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -185753,13 +185705,97 @@
      "position": null
     },
     {
+     "query": "jaki ctr jest dobry",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "analysis data dostępu filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "coto  jest leaweb za strona internetowa",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "aktualizowano sty wyświetlenia filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "brakuje grafiki filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "lvetsil bert co to znaczy",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jak dsc dsotep do fejbokkakomus",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "\"url (http://domena.pl)\" \"opis ma\"",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "analytics do zbierania filetype:pdf",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
+     "query": "spingować",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "demand die grafik filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "g.co/sc w",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "ads meta ads filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "icea s.a. digital presences",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "ads reels unterstützt filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "brzmi jakoś meta filetype:pdf",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -185789,91 +185825,7 @@
      "position": null
     },
     {
-     "query": "spingować",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "demand die grafik filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "ads reels unterstützt filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "brzmi jakoś meta filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "icea s.a. digital presences",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "ads meta ads filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "b połączenia filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
      "query": "co to jest cta",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "agencja marketingowa kontakt",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "firma zajmująca się pozyskiwaniem leadów warszawa",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#wideo#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "ads do maksymalizacji filetype:pdf",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "pomoc przy sklepie internetowym koszt",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "agencja marketingowa poznań",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#wideo#N##N#zakupy#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia#N##N#wyniki wyszukiwania#N##N#grafika",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -185891,7 +185843,31 @@
      "position": null
     },
     {
-     "query": "firma zajmująca się pozyskiwaniem leadów katowice",
+     "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#wideo#N##N#zakupy#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia#N##N#wyniki wyszukiwania#N##N#grafika",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "pomoc przy sklepie internetowym koszt",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "b połączenia filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "agencja marketingowa poznań",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "tryb ai#N##N#wszystko#N##N#grafika#N##N#produkty#N##N#wideo#N##N#krótkie filmy#N##N#wiadomości#N##N#więcej#N##N#narzędzia",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -185909,6 +185885,12 @@
      "position": null
     },
     {
+     "query": "firma zajmująca się pozyskiwaniem leadów warszawa",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "+google.c3om bing.com",
      "clicks": 0,
      "impressions": 1,
@@ -185916,6 +185898,24 @@
     },
     {
      "query": "cta pozycja",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "agencja marketingowa kontakt",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "ads do maksymalizacji filetype:pdf",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "firma zajmująca się pozyskiwaniem leadów katowice",
      "clicks": 0,
      "impressions": 1,
      "position": null

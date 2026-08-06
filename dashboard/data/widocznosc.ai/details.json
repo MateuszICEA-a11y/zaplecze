@@ -1,6 +1,6 @@
 {
  "date": "2026-08-06",
- "collected_at": "2026-08-06T05:32:58Z",
+ "collected_at": "2026-08-06T07:19:10Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -13977,25 +13977,61 @@
        "position": null
       },
       {
-       "query": "copilot jaki agent jest dostepny jesli wyczerpalem swoj miesieczny plan",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "ms copilot model",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "gemini (model językowy)",
+       "query": "claude czy chatgpt do pisania pracy licencjackiej",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "copilot jaki agent jest dostepny jesli wyczerpalem swoj miesieczny plan",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "czy copilot ma gemy albo skille",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "geo czyli ai visibility kiedy powstało",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "ile zużywają poszczególne modele claude",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "microsoft copiolot to jaki model",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
        "query": "jaki model ma gemini?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "gemini jest od google a claude jest?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "gemini (model językowy)",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -14014,42 +14050,6 @@
       },
       {
        "query": "3. co oznacza iterowanie promptu? usuwanie kontekstu z rozmowy losowe zmienianie pytań wielokrotne poprawianie i doprecyzowywanie promptu trenowanie nowego modelu ai",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "geo czyli ai visibility kiedy powstało",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "gemini jest od google a claude jest?",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "ile zużywają poszczególne modele claude",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "microsoft copiolot to jaki model",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "claude czy chatgpt do pisania pracy licencjackiej",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czy copilot ma gemy albo skille",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -14089,25 +14089,61 @@
      "position": null
     },
     {
-     "query": "copilot jaki agent jest dostepny jesli wyczerpalem swoj miesieczny plan",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
      "query": "ms copilot model",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "gemini (model językowy)",
+     "query": "claude czy chatgpt do pisania pracy licencjackiej",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "copilot jaki agent jest dostepny jesli wyczerpalem swoj miesieczny plan",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "czy copilot ma gemy albo skille",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "geo czyli ai visibility kiedy powstało",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "ile zużywają poszczególne modele claude",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "microsoft copiolot to jaki model",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
      "query": "jaki model ma gemini?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "gemini jest od google a claude jest?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "gemini (model językowy)",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -14126,42 +14162,6 @@
     },
     {
      "query": "3. co oznacza iterowanie promptu? usuwanie kontekstu z rozmowy losowe zmienianie pytań wielokrotne poprawianie i doprecyzowywanie promptu trenowanie nowego modelu ai",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "geo czyli ai visibility kiedy powstało",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "gemini jest od google a claude jest?",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "ile zużywają poszczególne modele claude",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "microsoft copiolot to jaki model",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "claude czy chatgpt do pisania pracy licencjackiej",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "czy copilot ma gemy albo skille",
      "clicks": 0,
      "impressions": 1,
      "position": null
