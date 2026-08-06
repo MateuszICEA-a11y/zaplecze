@@ -17,6 +17,7 @@ STEPS = [
     "keywords_competitors",
     "brief",
     "rewrite",
+    "coverage",
     "expert",
     "sources",
     "internal_links",
@@ -25,6 +26,7 @@ STEPS = [
 
 OPTIONAL_STEPS = {
     "rewrite": "gaps",
+    "coverage": "gaps",
     "expert": "expert",
     "sources": "sources",
     "internal_links": "internal_links",

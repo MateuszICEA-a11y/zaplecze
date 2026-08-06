@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import apply  # noqa: E402
 import extract  # noqa: E402
 import llm  # noqa: E402
+import matching  # noqa: E402
 import research  # noqa: E402
 import sections as sec  # noqa: E402
 import wp  # noqa: E402
@@ -66,6 +67,10 @@ EXPERTS = [
 ]
 MAX_NEW_SECTIONS = 3
 MAX_INTERNAL_LINKS = 5
+# Domykanie pokrycia fraz: ile razy wolno odesłać tekst do poprawki. Jeden
+# przebieg zwykle wystarcza; drugi łapie frazy, które model wplótł niegramatycznie
+# albo przymiotnikiem („w branży fotowoltaicznej" zamiast „na fotowoltaikę").
+COVERAGE_ROUNDS = 2
 
 
 class Pipeline:
@@ -322,6 +327,7 @@ class Pipeline:
             senuto=context.get("senuto") or [],
             gsc=context.get("gsc") or [],
             competitor_keywords=(context.get("keywords_gap") or context.get("keywords_competitors") or [])[:40],
+            editor_gap=self._editor_gap() or "brak – analiza SERP nie była jeszcze uruchomiona w edytorze",
             ai_overview=(context.get("serp") or {}).get("ai_overview") or "—",
             people_also_ask=(context.get("serp") or {}).get("people_also_ask") or [],
             related_searches=(context.get("serp") or {}).get("related_searches") or [],
@@ -429,6 +435,159 @@ class Pipeline:
             payload["fallback_from"] = result["fallback_from"]
         return {"payload": payload, "model": result["model"], "prompt_version": version,
                 "cost": result["usage"]}
+
+    # --- pokrycie fraz ---
+
+    def _editor_gap(self):
+        """Frazy z panelu „Frazy do pokrycia" w edytorze (SERP-gap z Workera).
+
+        Idą z `client_payload.gap` → env GAP_JSON. To po nich edytor liczy ocenę
+        pokrycia, więc pipeline musi celować dokładnie w nie – wcześniej model
+        dostawał tylko własną listę z briefu i najłatwiejsze frazy („gdzie szukać
+        klientów na fotowoltaikę") przechodziły przez cały przejazd nietknięte.
+        """
+        if self.fixtures is not None and "gap" in self.fixtures:
+            data = self.fixtures.get("gap")
+        else:
+            raw = os.environ.get("GAP_JSON", "").strip()
+            if not raw or raw == "null":
+                return []
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError:
+                return []
+        rows = (data or {}).get("keywords") if isinstance(data, dict) else data
+        return [row for row in (rows or []) if isinstance(row, dict) and (row.get("keyword") or "").strip()]
+
+    def _coverage_targets(self) -> list[dict]:
+        """Frazy, po których oceniamy propozycję: lista z edytora + wytyczne.
+
+        Frazy odrzucone przez brief (`keywords_rejected`) zostają w wyniku, ale
+        z powodem – „nie da się jej użyć" to informacja dla redaktora, a nie
+        cichy brak.
+        """
+        brief = self.context.get("brief") or {}
+        where = {}
+        for row in brief.get("keywords_to_cover") or []:
+            if isinstance(row, dict) and (row.get("keyword") or "").strip():
+                where[normalize_phrase(row["keyword"])] = row
+        rejected = {
+            normalize_phrase(row.get("keyword") or ""): (row.get("why") or "").strip()
+            for row in brief.get("keywords_rejected") or []
+            if isinstance(row, dict) and (row.get("keyword") or "").strip()
+        }
+        out, seen = [], set()
+        for row in [*self._editor_gap(), *(brief.get("keywords_to_cover") or [])]:
+            keyword = (row.get("keyword") or "").strip()
+            key = normalize_phrase(keyword)
+            if not key or key in seen:
+                continue
+            seen.add(key)
+            hint = where.get(key) or {}
+            out.append({
+                "keyword": keyword,
+                "searches": row.get("searches") or row.get("volume"),
+                "where": (hint.get("where") or "").strip(),
+                "rejected": rejected.get(key) or "",
+            })
+        return out
+
+    def _coverage_text(self) -> str:
+        """Tekst propozycji tak, jak zobaczy go edytor: nagłówki i treść sekcji.
+
+        Nagłówek liczy się tak samo jak akapit, więc musi wejść do porównania –
+        inaczej fraza wpleciona w H2 wychodziłaby jako niepokryta.
+        """
+        titles = {item["slot"]: item.get("title") or "" for item in self.context["snapshot"]}
+        titles.update({
+            slot: (row.get("title") or titles.get(slot) or "")
+            for slot, row in (self.context.get("proposals") or {}).items()
+        })
+        parts = []
+        for slot, text in self._section_texts().items():
+            parts.append(titles.get(slot, ""))
+            parts.append(extract.strip_html(text))
+        return "\n".join(part for part in parts if part)
+
+    def step_coverage(self):
+        """Bramka jakości: propozycja nie wychodzi z pipeline'u z frazami, które
+        dało się wpleść jednym zdaniem, a nie zostały wplecione.
+
+        Bez tego przejazd potrafił podnieść ocenę treści o kilka punktów i uznać
+        robotę za zrobioną, zostawiając najprostsze frazy z listy nietknięte.
+        """
+        targets = self._coverage_targets()
+        pending = [row for row in targets if not row["rejected"]]
+        if not pending:
+            return {"payload": {"targets": len(targets), "note": "brak fraz do sprawdzenia"}}
+
+        text = self._coverage_text()
+        before = matching.coverage(text, [row["keyword"] for row in pending])
+        rounds, skipped, cost = [], {row["keyword"]: row["rejected"] for row in targets if row["rejected"]}, None
+        result = None
+
+        for attempt in range(1, COVERAGE_ROUNDS + 1):
+            missing = [row for row in pending
+                       if row["keyword"] in before["missing"] and row["keyword"] not in skipped]
+            if not missing:
+                break
+            titles = {item["slot"]: item.get("title") or "" for item in self.context["snapshot"]}
+            titles.update({slot: (row.get("title") or titles.get(slot) or "")
+                           for slot, row in (self.context.get("proposals") or {}).items()})
+            result, version = self._ask(
+                "coverage", self.model_writer, max_tokens=24000,
+                missing=[{"keyword": row["keyword"], "searches": row["searches"], "where": row["where"]}
+                         for row in missing],
+                sections=[{"slot": slot, "title": titles.get(slot, ""), "text": text_html}
+                          for slot, text_html in self._section_texts().items() if text_html],
+            )
+            cost = result["usage"]
+            texts = self._section_texts()
+            headings = {}
+            for row in (result["data"].get("sections") or []):
+                try:
+                    slot = int(row.get("slot") or 0)
+                except (TypeError, ValueError):
+                    continue
+                if slot in texts and (row.get("text") or "").strip():
+                    texts[slot] = row["text"]
+                    if (row.get("title") or "").strip():
+                        headings[slot] = row["title"].strip()
+            self._store_section_texts(texts)
+            # Fraza wpleciona w nagłówek liczy się tak samo jak w akapicie, więc
+            # nowy H2 musi trafić do propozycji – także gdy treść sekcji została
+            # bez zmian i `_store_section_texts` jej nie zapisało.
+            proposals = self.context.setdefault("proposals", {})
+            for slot, heading in headings.items():
+                if heading != titles.get(slot, ""):
+                    proposals[slot] = {**proposals.get(slot, {}), "title": heading,
+                                       "text": proposals.get(slot, {}).get("text") or texts.get(slot, "")}
+            for row in (result["data"].get("skipped") or []):
+                if isinstance(row, dict) and (row.get("keyword") or "").strip():
+                    skipped[row["keyword"].strip()] = (row.get("why") or "bez podanego powodu").strip()
+            after = matching.coverage(self._coverage_text(), [row["keyword"] for row in pending])
+            rounds.append({
+                "round": attempt,
+                "asked": [row["keyword"] for row in missing],
+                "gained": [word for word in after["covered"] if word in before["missing"]],
+                "prompt_version": version,
+                "model": result["model"],
+            })
+            before = after
+
+        payload = {
+            "targets": [row["keyword"] for row in targets],
+            "covered": before["covered"],
+            "variants": before["variants"],
+            "missing": [word for word in before["missing"] if word not in skipped],
+            "skipped": [{"keyword": word, "why": why} for word, why in skipped.items()],
+            "ratio": round(before["ratio"], 3),
+            "rounds": rounds,
+        }
+        step = {"payload": payload}
+        if result is not None:
+            step.update({"model": result["model"], "cost": cost})
+        return step
 
     def _current_text(self, slot: int) -> str:
         """Treść sekcji po dotychczasowych krokach – kolejne ulepszenia pracują
@@ -599,6 +758,7 @@ class Pipeline:
             ("keywords_competitors", self.step_keywords_competitors, None),
             ("brief", self.step_brief, None),
             ("rewrite", self.step_rewrite, "gaps"),
+            ("coverage", self.step_coverage, "gaps"),
             ("expert", self.step_expert, "expert"),
             ("sources", self.step_sources, "sources"),
             ("internal_links", self.step_internal_links, "internal_links"),

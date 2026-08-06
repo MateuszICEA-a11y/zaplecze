@@ -806,3 +806,93 @@ class TestCallJsonUcieta(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestCoverageGate(unittest.TestCase):
+    """Bramka pokrycia fraz: propozycja wraca do poprawki, dopóki frazy z panelu
+    edytora nie padną w treści albo model nie uzasadni, dlaczego się nie da."""
+
+    GAP = {"keywords": [
+        {"keyword": "leady fotowoltaika", "searches": 140, "status": "missing"},
+        {"keyword": "gdzie szukać klientów na fotowoltaikę", "searches": 10, "status": "missing"},
+        {"keyword": "audyt techniczny sklepu", "searches": 30, "status": "missing"},
+    ]}
+    BRIEF = {
+        "keywords_to_cover": [{"keyword": "gdzie szukać klientów na fotowoltaikę", "where": "sekcja 2"}],
+        "keywords_rejected": [{"keyword": "audyt techniczny sklepu", "why": "inna usługa niż temat wpisu"}],
+    }
+    SNAPSHOT = [
+        {"slot": 1, "title": "Rynek fotowoltaiki", "text": "<p>Branża rośnie.</p>"},
+        {"slot": 2, "title": "Skąd brać zapytania", "text": "<p>Najlepiej z wyszukiwarki.</p>"},
+    ]
+
+    def _pipeline(self):
+        import run as run_module
+
+        args = type("Args", (), {
+            "job": "t", "dry_run": True, "improvements": ["gaps"], "research_file": "",
+            "model_research": "", "model_writer": "",
+        })()
+        pipeline = run_module.Pipeline(args)
+        pipeline.fixtures = {"gap": self.GAP}
+        pipeline.context = {"brief": self.BRIEF, "snapshot": self.SNAPSHOT,
+                            "free_slots": [3], "proposals": {}}
+        return pipeline
+
+    def test_lista_celow_laczy_edytor_z_briefem_i_zna_odrzucone(self):
+        targets = self._pipeline()._coverage_targets()
+        self.assertEqual([row["keyword"] for row in targets],
+                         [row["keyword"] for row in self.GAP["keywords"]])
+        self.assertEqual(targets[1]["where"], "sekcja 2")
+        self.assertEqual(targets[2]["rejected"], "inna usługa niż temat wpisu")
+
+    def test_brakujaca_fraza_wraca_do_modelu_i_konczy_jako_pokryta(self):
+        pipeline = self._pipeline()
+        asked = []
+
+        def fake_ask(prompt_name, model, **values):
+            asked.append(values["missing"])
+            return ({
+                "data": {"sections": [{
+                    "slot": 2, "title": "Gdzie szukać klientów na fotowoltaikę",
+                    "text": "<p>Leady na fotowoltaikę biorą się z wyszukiwarki.</p>",
+                }]},
+                "model": "test/model", "usage": {"tokens_in": 1, "tokens_out": 1},
+            }, "1.0.0")
+
+        with mock.patch.object(pipeline, "_ask", side_effect=fake_ask):
+            payload = pipeline.step_coverage()["payload"]
+
+        # Jedna runda wystarczyła – druga nie została uruchomiona.
+        self.assertEqual(len(asked), 1)
+        self.assertEqual({row["keyword"] for row in asked[0]},
+                         {"leady fotowoltaika", "gdzie szukać klientów na fotowoltaikę"})
+        self.assertEqual(payload["missing"], [])
+        self.assertEqual(payload["ratio"], 1.0)
+        # Fraza z nagłówka liczy się jak z akapitu – nowy H2 trafia do propozycji.
+        self.assertEqual(pipeline.context["proposals"][2]["title"],
+                         "Gdzie szukać klientów na fotowoltaikę")
+        self.assertEqual(payload["skipped"],
+                         [{"keyword": "audyt techniczny sklepu", "why": "inna usługa niż temat wpisu"}])
+
+    def test_fraza_odrzucona_przez_model_nie_wraca_w_drugiej_rundzie(self):
+        pipeline = self._pipeline()
+        rounds = []
+
+        def fake_ask(prompt_name, model, **values):
+            rounds.append([row["keyword"] for row in values["missing"]])
+            return ({
+                "data": {"sections": [], "skipped": [
+                    {"keyword": "leady fotowoltaika", "why": "wpis nie sprzedaje leadów"},
+                ]},
+                "model": "test/model", "usage": {"tokens_in": 1, "tokens_out": 1},
+            }, "1.0.0")
+
+        with mock.patch.object(pipeline, "_ask", side_effect=fake_ask):
+            payload = pipeline.step_coverage()["payload"]
+
+        self.assertEqual(len(rounds), 2)  # druga runda pyta już tylko o resztę
+        self.assertNotIn("leady fotowoltaika", rounds[1])
+        self.assertEqual(payload["missing"], ["gdzie szukać klientów na fotowoltaikę"])
+        self.assertIn({"keyword": "leady fotowoltaika", "why": "wpis nie sprzedaje leadów"},
+                      payload["skipped"])

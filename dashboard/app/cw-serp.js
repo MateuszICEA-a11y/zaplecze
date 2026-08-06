@@ -360,6 +360,32 @@ export async function runStep(env, domain, postId, state, fetchImpl = fetch) {
   return analysis;
 }
 
+/**
+ * Frazy do pokrycia z zapisanej analizy SERP – to samo, co edytor pokazuje
+ * w panelu „Frazy do pokrycia".
+ *
+ * Idą do pipeline'u w `client_payload`, bo bez nich model przepisujący widzi
+ * wyłącznie własną listę z briefu i pisze pod inne frazy, niż ocenia edytor.
+ * Efekt był taki, że przejazd podnosił ocenę o kilka punktów i zostawiał
+ * najłatwiejsze frazy nietknięte.
+ */
+export async function gapSummary(env, domain, postId, limit = 12) {
+  const snapshot = await readSnapshot(env, domain, postId);
+  if (snapshot?.status !== 'done') return null;
+  const rows = (snapshot.analysis?.gap ?? [])
+    .filter((row) => row.status !== 'covered' && (row.keyword || '').trim())
+    .slice(0, limit)
+    .map((row) => ({
+      keyword: row.keyword,
+      searches: row.searches ?? null,
+      status: row.status,
+      our_position: row.our_position ?? null,
+      rival_position: row.rival_position ?? null,
+    }));
+  if (!rows.length) return null;
+  return { keywords: rows, generated_at: snapshot.analysis?.generated_at ?? null };
+}
+
 /** Wykonanie kroku z zapisem błędu – wywoływane zawsze przez ctx.waitUntil. */
 async function stepSafely(env, domain, postId, state, fetchImpl) {
   try {

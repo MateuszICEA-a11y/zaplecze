@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import {
   buildGap,
   competitorKeywords,
+  gapSummary,
   handleSerpGap,
   hostOf,
   isHomepage,
@@ -484,4 +485,37 @@ test('handleSerpGap: wznawia zaczętą analizę zamiast zaczynać od zera', asyn
   // Etap SERP jest już zrobiony – wznowienie idzie prosto do fraz w Senuto.
   assert.equal(calls.filter((url) => url.includes('serpdata')).length, 0);
   assert.equal(environment.CW_DB.state.row.status, 'done');
+});
+
+test('gapSummary: do pipeline\'u idą tylko frazy niepokryte, w kolejności z panelu', async () => {
+  const analysis = {
+    generated_at: '2026-08-06T09:00:00.000Z',
+    gap: [
+      { keyword: 'leady fotowoltaika', searches: 140, status: 'missing', our_position: null, rival_position: 2 },
+      { keyword: 'pozycjonowanie', searches: 900, status: 'covered', our_position: 4, rival_position: 1 },
+      { keyword: 'ciepłe leady fotowoltaika', searches: 20, status: 'weak', our_position: 18, rival_position: 5 },
+    ],
+  };
+  const environment = env();
+  environment.CW_DB = fakeDb({
+    payload: JSON.stringify(analysis), status: 'done', error: null,
+    created_at: '2026-08-06T09:00:00.000Z',
+  });
+
+  const summary = await gapSummary(environment, 'grupa-icea.pl', 20811);
+  assert.deepEqual(summary.keywords.map((row) => row.keyword),
+    ['leady fotowoltaika', 'ciepłe leady fotowoltaika']);
+  assert.equal(summary.keywords[1].status, 'weak');
+  assert.equal(summary.generated_at, analysis.generated_at);
+});
+
+test('gapSummary: brak analizy albo same frazy pokryte = null, nie pusta lista', async () => {
+  assert.equal(await gapSummary(env(), 'grupa-icea.pl', 20811), null);
+
+  const environment = env();
+  environment.CW_DB = fakeDb({
+    payload: JSON.stringify({ gap: [{ keyword: 'a', status: 'covered' }] }),
+    status: 'done', error: null, created_at: '2026-08-06T09:00:00.000Z',
+  });
+  assert.equal(await gapSummary(environment, 'grupa-icea.pl', 20811), null);
 });

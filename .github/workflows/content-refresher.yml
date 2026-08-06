@@ -74,6 +74,10 @@ jobs:
           # Fakty z analizy treści konkurencji (edytor, Jina Reader) – przez env,
           # nie argument CLI: w treści faktów bywają cudzysłowy i znaki shella.
           RIVALS_JSON: ${{ toJSON(github.event.client_payload.rivals) }}
+          # Frazy do pokrycia z panelu edytora (SERP-gap). Pipeline sprawdza po
+          # nich propozycję przed oddaniem – to ta sama lista, po której edytor
+          # liczy ocenę treści.
+          GAP_JSON: ${{ toJSON(github.event.client_payload.gap) }}
           # Ekstrakcja treści konkurencji przez Jina Reader (fallback: trafilatura).
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: |
