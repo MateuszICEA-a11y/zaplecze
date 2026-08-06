@@ -1,6 +1,6 @@
 {
  "date": "2026-08-06",
- "collected_at": "2026-08-06T07:19:10Z",
+ "collected_at": "2026-08-06T11:55:06Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -13939,6 +13939,11 @@
      "date": "2026-08-03",
      "clicks": 0,
      "impressions": 5
+    },
+    {
+     "date": "2026-08-04",
+     "clicks": 0,
+     "impressions": 7
     }
    ],
    "queries_windows": {
@@ -13959,12 +13964,6 @@
        "position": null
       },
       {
-       "query": "3. co oznacza iterowanie promptu? usuwanie kontekstu z rozmowy losowe zmienianie pytań wielokrotne pop5. co oznacza nadanie ai „roli” w prompcie? dodanie uprawnień administratora wskazanie perspektywy, z jakiej model ma odpowiadać wyłączenie ograniczeń modelu określenie poziomu dostępu użytkownikarawianie i doprecyzowywanie promptu trenowanie nowego modelu ai",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "iterowanie promptu",
        "clicks": 0,
        "impressions": 2,
@@ -13977,55 +13976,13 @@
        "position": null
       },
       {
-       "query": "ms copilot model",
+       "query": "3. co oznacza iterowanie promptu? usuwanie kontekstu z rozmowy losowe zmienianie pytań wielokrotne pop5. co oznacza nadanie ai „roli” w prompcie? dodanie uprawnień administratora wskazanie perspektywy, z jakiej model ma odpowiadać wyłączenie ograniczeń modelu określenie poziomu dostępu użytkownikarawianie i doprecyzowywanie promptu trenowanie nowego modelu ai",
        "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "claude czy chatgpt do pisania pracy licencjackiej",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "copilot jaki agent jest dostepny jesli wyczerpalem swoj miesieczny plan",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czy copilot ma gemy albo skille",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "geo czyli ai visibility kiedy powstało",
-       "clicks": 0,
-       "impressions": 1,
+       "impressions": 2,
        "position": null
       },
       {
        "query": "ile zużywają poszczególne modele claude",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "microsoft copiolot to jaki model",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jaki model ma gemini?",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "gemini jest od google a claude jest?",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -14043,13 +14000,61 @@
        "position": null
       },
       {
-       "query": "jakie są modele językowe ai",
+       "query": "copilot jaki agent jest dostepny jesli wyczerpalem swoj miesieczny plan",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "gemini jest od google a claude jest?",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
        "query": "3. co oznacza iterowanie promptu? usuwanie kontekstu z rozmowy losowe zmienianie pytań wielokrotne poprawianie i doprecyzowywanie promptu trenowanie nowego modelu ai",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "claude czy chatgpt do pisania pracy licencjackiej",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "czy copilot ma gemy albo skille",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jakie są modele językowe ai",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "ms copilot model",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "geo czyli ai visibility kiedy powstało",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jaki model ma gemini?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "microsoft copiolot to jaki model",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -14071,12 +14076,6 @@
      "position": null
     },
     {
-     "query": "3. co oznacza iterowanie promptu? usuwanie kontekstu z rozmowy losowe zmienianie pytań wielokrotne pop5. co oznacza nadanie ai „roli” w prompcie? dodanie uprawnień administratora wskazanie perspektywy, z jakiej model ma odpowiadać wyłączenie ograniczeń modelu określenie poziomu dostępu użytkownikarawianie i doprecyzowywanie promptu trenowanie nowego modelu ai",
-     "clicks": 0,
-     "impressions": 2,
-     "position": null
-    },
-    {
      "query": "iterowanie promptu",
      "clicks": 0,
      "impressions": 2,
@@ -14089,55 +14088,13 @@
      "position": null
     },
     {
-     "query": "ms copilot model",
+     "query": "3. co oznacza iterowanie promptu? usuwanie kontekstu z rozmowy losowe zmienianie pytań wielokrotne pop5. co oznacza nadanie ai „roli” w prompcie? dodanie uprawnień administratora wskazanie perspektywy, z jakiej model ma odpowiadać wyłączenie ograniczeń modelu określenie poziomu dostępu użytkownikarawianie i doprecyzowywanie promptu trenowanie nowego modelu ai",
      "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "claude czy chatgpt do pisania pracy licencjackiej",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "copilot jaki agent jest dostepny jesli wyczerpalem swoj miesieczny plan",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "czy copilot ma gemy albo skille",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "geo czyli ai visibility kiedy powstało",
-     "clicks": 0,
-     "impressions": 1,
+     "impressions": 2,
      "position": null
     },
     {
      "query": "ile zużywają poszczególne modele claude",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "microsoft copiolot to jaki model",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jaki model ma gemini?",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "gemini jest od google a claude jest?",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -14155,13 +14112,61 @@
      "position": null
     },
     {
-     "query": "jakie są modele językowe ai",
+     "query": "copilot jaki agent jest dostepny jesli wyczerpalem swoj miesieczny plan",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "gemini jest od google a claude jest?",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
      "query": "3. co oznacza iterowanie promptu? usuwanie kontekstu z rozmowy losowe zmienianie pytań wielokrotne poprawianie i doprecyzowywanie promptu trenowanie nowego modelu ai",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "claude czy chatgpt do pisania pracy licencjackiej",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "czy copilot ma gemy albo skille",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jakie są modele językowe ai",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "ms copilot model",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "geo czyli ai visibility kiedy powstało",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jaki model ma gemini?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "microsoft copiolot to jaki model",
      "clicks": 0,
      "impressions": 1,
      "position": null
