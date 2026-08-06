@@ -49,7 +49,7 @@
         {{ end }}
         <div class="article-hero__meta-item">
           <span class="material-symbols-outlined">update</span>
-          <span>Ostatnia aktualizacja: {{ with .Params.lastmod }}{{ .Format "01.2006" }}{{ else }}{{ .Date.Format "01.2006" }}{{ end }}</span>
+          <span>Ostatnia aktualizacja: {{ .Lastmod.Format "01.2006" }}</span>
         </div>
       </div>
     </div>

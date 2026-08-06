@@ -6,6 +6,17 @@ themesDir = "../../shared"
 
 summaryLength = 30
 
+# Data ostatniej modyfikacji brana z historii gita, nie z ręcznego pola we
+# frontmatterze – to ono zamroziło „Ostatnia aktualizacja" na 03.2026 mimo
+# późniejszych przejazdów redakcyjnych. Kolejność ma znaczenie: `:git` musi być
+# przed `lastmod`, bo inaczej 133 pliki z marcowym wpisem dalej wygrywałyby
+# z faktyczną datą commitu. Zasila też <lastmod> w sitemapie i dateModified
+# w schema.org.
+enableGitInfo = true
+
+[frontmatter]
+  lastmod = [":git", "lastmod", ":fileModTime", ":default"]
+
 [pagination]
   pagerSize = 12
 enableRobotsTXT = true
