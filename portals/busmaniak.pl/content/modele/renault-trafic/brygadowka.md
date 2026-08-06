@@ -1,7 +1,7 @@
 ---
 title: "Renault Trafic brygadówka – wymiary, konfiguracja, ładowność"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Renault Trafic brygadówka (Combi) – konfiguracja 5-6 osób + paka, wymiary, ładowność, silniki dCi, homologacja N1."
 draft: false
 author: "marek-kowalczyk"

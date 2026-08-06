@@ -1,6 +1,7 @@
 ---
 title: "Kampery na sprzedaż – gdzie kupić kampera"
 date: 2026-03-23
+lastmod: 2026-08-03
 description: "Kampery na sprzedaż w Polsce – portale ogłoszeniowe, salony dealerskie, import z Niemiec i targi kamperowe. Gdzie kupić i na co uważać."
 draft: false
 author: "anna-wozniak"

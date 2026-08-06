@@ -1,7 +1,7 @@
 ---
 title: "Ładowność busów i vanów – tabela porównawcza"
 date: 2026-03-23
-lastmod: 2026-03-26
+lastmod: 2026-08-04
 description: "Kompletna tabela ładowności busów dostawczych – DMC, masa własna, ładowność i objętość ładunkowa. Porównanie wszystkich modeli na polskim rynku."
 draft: false
 author: "marek-kowalczyk"

@@ -1,6 +1,7 @@
 ---
 title: Tragiczny wypadek z udziałem ciężarówki i busa dostawczego pod Puławami
 date: 2026-05-20
+lastmod: 2026-08-04
 description: Pod Puławami doszło do tragicznego zderzenia ciężarówki z busem dostawczym. Jedna osoba zginęła, a służby wyjaśniają okoliczności wypadku.
 draft: false
 author: redakcja-busmaniak

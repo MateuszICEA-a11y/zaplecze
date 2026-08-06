@@ -1,7 +1,7 @@
 ---
 title: "Opel Combo Life – osobowy van rodzinny, dane techniczne i opinie"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Opel Combo Life – osobowa wersja Combo z 5 lub 7 miejscami. Dane techniczne, wymiary, wyposażenie i porównanie z Citroënem Berlingo III."
 draft: false
 author: "marek-kowalczyk"

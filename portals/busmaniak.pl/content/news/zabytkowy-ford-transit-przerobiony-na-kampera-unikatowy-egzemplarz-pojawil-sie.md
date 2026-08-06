@@ -1,6 +1,7 @@
 ---
 title: Zabytkowy Ford Transit przerobiony na kampera. Unikatowy egzemplarz pojawił się w Polsce
 date: 2026-06-24
+lastmod: 2026-08-04
 description: Klasyczny Ford Transit został zamieniony w kampera. To rzadki, prawdopodobnie jedyny taki egzemplarz zarejestrowany w Polsce.
 draft: false
 author: redakcja-busmaniak

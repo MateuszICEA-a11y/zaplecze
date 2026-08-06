@@ -1,6 +1,7 @@
 ---
 title: "Ford Transit Connect Long – wymiary, paka, dane techniczne"
 date: 2026-03-26
+lastmod: 2026-08-03
 description: "Ford Transit Connect Long (L2) – wymiary, przestrzeń ładunkowa 3,6 m³, dane techniczne, silniki przed liftingiem i po liftingu, porównanie z wersją Short i z konkurencją."
 draft: false
 author: "marek-kowalczyk"

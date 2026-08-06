@@ -1,7 +1,7 @@
 ---
 title: "Busy i vany z napędem 4x4 – przegląd modeli"
 date: 2026-03-24
-lastmod: 2026-03-26
+lastmod: 2026-08-04
 description: "Przegląd busów i vanów z napędem 4x4 – Mercedes Sprinter 4x4, VW Transporter 4Motion, Ford Transit AWD i Iveco Daily 4x4. Porównanie systemów napędowych, cen i zastosowań."
 main_keyword: "bus 4x4"
 author: "marek-kowalczyk"

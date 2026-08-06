@@ -1,6 +1,7 @@
 ---
 title: "DMC pojazdu – jak odczytać dopuszczalną masę całkowitą z dowodu rejestracyjnego"
 date: 2026-03-28
+lastmod: 2026-08-03
 description: "Gdzie w dowodzie rejestracyjnym jest DMC? Wyjaśniamy pola F.1, F.2, F.3 i G oraz jak obliczyć ładowność busa dostawczego."
 draft: false
 author: "marek-kowalczyk"

@@ -1,6 +1,7 @@
 ---
 title: "Przepisy i prawo jazdy – kompletny przewodnik dla kierowców busów i kamperów"
 date: 2026-03-28
+lastmod: 2026-08-03
 description: "Przepisy drogowe dla kierowców busów i kamperów – kategorie prawa jazdy, DMC, winiety w Europie, homologacja kampera, rejestracja, ubezpieczenie OC i kary za przeciążenie. Aktualne regulacje 2026."
 draft: false
 author: "marek-kowalczyk"

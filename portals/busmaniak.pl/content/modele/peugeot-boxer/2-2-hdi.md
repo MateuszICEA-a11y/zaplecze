@@ -1,6 +1,7 @@
 ---
 title: "Peugeot Boxer 2.2 HDi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
+lastmod: 2026-08-04
 description: "Peugeot Boxer 2.2 HDi – dane techniczne, spalanie, opinie, typowe usterki i koszty serwisu z rozróżnieniem wersji 2.2 według roczników."
 draft: false
 author: "marek-kowalczyk"

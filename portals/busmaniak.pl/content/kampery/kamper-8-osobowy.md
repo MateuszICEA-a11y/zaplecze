@@ -1,6 +1,7 @@
 ---
 title: "Kamper 8-osobowy – modele dla dużych grup"
 date: 2026-03-23
+lastmod: 2026-08-03
 description: "Kamper 8-osobowy – duże alkowe i busowe przeróbki dla dużych rodzin i grup. Homologacja, prawo jazdy C1, modele i ceny w 2026 roku."
 draft: false
 author: "anna-wozniak"

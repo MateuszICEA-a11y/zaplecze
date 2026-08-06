@@ -1,6 +1,7 @@
 ---
 title: 'Szczecin: po awanturze podpalił kamper. 23-latek usłyszał zarzut usiłowania zabójstwa'
 date: 2026-07-11
+lastmod: 2026-08-04
 description: W Szczecinie 23-latek miał podpalić kamper, w którym znajdowała się kobieta. Prokuratura postawiła mu zarzut usiłowania zabójstwa.
 draft: false
 author: redakcja-busmaniak

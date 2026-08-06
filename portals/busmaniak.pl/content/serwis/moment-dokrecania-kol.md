@@ -1,6 +1,7 @@
 ---
 title: "Moment dokręcania kół w busie – tabela wartości Nm"
 date: 2026-03-28
+lastmod: 2026-08-04
 description: "Tabela momentów dokręcania kół dla busów dostawczych – Ducato, Sprinter, Transit, Daily, Crafter, Master, Trafic i Transit Custom."
 draft: false
 author: "marek-kowalczyk"

@@ -1,6 +1,7 @@
 ---
 title: "DMC – co to jest dopuszczalna masa całkowita pojazdu"
 date: 2026-03-28
+lastmod: 2026-08-03
 description: "DMC co to? Dopuszczalna masa całkowita to limit masy pojazdu z ładunkiem. Sprawdź, jak ją odczytać, obliczyć ładowność i uniknąć mandatu."
 draft: false
 author: "marek-kowalczyk"

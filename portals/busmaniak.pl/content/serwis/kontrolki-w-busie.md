@@ -1,7 +1,7 @@
 ---
 title: "Kontrolki w busie i vanie – co oznaczają i jak reagować"
 date: 2026-03-23
-lastmod: 2026-03-28
+lastmod: 2026-08-04
 description: "Kompletna lista kontrolek w busie – kolory (czerwone, żółte, zielone), znaczenie symboli i schemat reakcji. Kontrolki specyficzne dla busów dostawczych i kamperów."
 draft: false
 author: "marek-kowalczyk"

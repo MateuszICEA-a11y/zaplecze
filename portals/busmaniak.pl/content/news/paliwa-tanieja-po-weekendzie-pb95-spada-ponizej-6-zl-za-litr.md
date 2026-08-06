@@ -1,6 +1,7 @@
 ---
 title: Paliwa tanieją po weekendzie. Pb95 spada poniżej 6 zł za litr
 date: 2026-06-01
+lastmod: 2026-08-04
 description: Po weekendzie kierowcy znów widzą niższe ceny na stacjach. Benzyna Pb95 schodzi poniżej 6 zł za litr, a tanieje też diesel.
 draft: false
 author: redakcja-busmaniak

@@ -1,6 +1,7 @@
 ---
 title: Paliwo chwilowo tańsze po zawieszeniu broni w Iranie. Rynek wciąż pozostaje nerwowy
 date: 2026-04-09
+lastmod: 2026-08-04
 description: Po informacji o zawieszeniu broni w Iranie ceny paliw wyhamowały. Kierowcy i firmy transportowe pytają, jak długo potrwa ta ulga.
 draft: false
 author: redakcja-busmaniak

@@ -1,6 +1,7 @@
 ---
 title: "Opel Vivaro – dane techniczne, wersje, silniki"
 date: 2026-03-25
+lastmod: 2026-08-03
 description: "Opel Vivaro – dane techniczne, wymiary Standard i Long, silniki CDTi i 2.0 D, Vivaro-e elektryczny, typowe usterki i ceny nowych i używanych."
 draft: false
 author: "marek-kowalczyk"

@@ -1,6 +1,7 @@
 ---
 title: Mercedes VLE wjeżdża do Polski. Ceny od 398 200 zł
 date: 2026-04-29
+lastmod: 2026-08-04
 description: Nowy Mercedes VLE debiutuje w Polsce. Cena bazowa startuje od 398 200 zł, a model trafia do segmentu premium dla rodzin i turystyki.
 draft: false
 author: redakcja-busmaniak

@@ -1,6 +1,7 @@
 ---
 title: "Mercedes Citan – kompaktowy dostawczak premium"
 date: 2026-03-26
+lastmod: 2026-08-03
 description: "Mercedes Citan (W420) – kompaktowy van na bazie Renault Kangoo III. Silniki 1.5 dCi i 1.3 TCe, wersja eCitan elektryczna, dane techniczne i ceny."
 draft: false
 author: "marek-kowalczyk"

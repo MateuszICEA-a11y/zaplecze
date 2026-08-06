@@ -1,6 +1,7 @@
 ---
 title: Koniec programu CPN. Tanie paliwo ma zniknąć, a kierowcy i firmy odczują to przy dystrybutorach
 date: 2026-06-14
+lastmod: 2026-08-04
 description: Zapowiedź wygaszenia programu CPN może oznaczać wyższe ceny paliw i większe koszty dla kierowców oraz firm z flotami.
 draft: false
 author: redakcja-busmaniak

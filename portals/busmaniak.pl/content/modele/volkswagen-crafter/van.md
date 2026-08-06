@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Crafter Van – pojemność, ładowność, konfiguracje"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Volkswagen Crafter II Van – wymiary 9–18 m³, ładowność do 1700 kg. Konfiguracje L3/L4 × H2/H3, silniki 2.0 TDI i opcje napędowe FWD/RWD."
 draft: false
 author: "marek-kowalczyk"

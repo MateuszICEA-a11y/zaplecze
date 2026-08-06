@@ -1,6 +1,7 @@
 ---
 title: "Volkswagen Amarok – dane techniczne, wersje, silniki"
 date: 2026-03-25
+lastmod: 2026-08-03
 description: "Volkswagen Amarok – dane techniczne, wymiary, silniki 2.0 TDI i 3.0 V6 TDI, wersje PanAmericana i Aventura, platforma Ford Ranger T6, typowe usterki i ceny."
 draft: false
 author: "marek-kowalczyk"

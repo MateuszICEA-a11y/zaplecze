@@ -1,7 +1,7 @@
 ---
 title: "Citroën Berlingo Long – wymiary, bagażnik, porównanie z M"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Citroën Berlingo Long – wydłużona wersja Berlingo. Wymiary, pojemność bagażnika, porównanie z wersją M i zastosowania jako auto rodzinne."
 draft: false
 author: "marek-kowalczyk"

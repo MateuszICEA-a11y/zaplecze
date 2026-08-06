@@ -1,6 +1,7 @@
 ---
 title: "Fiat Scudo osobowy – Panorama, 9 miejsc, dane techniczne"
 date: 2026-03-26
+lastmod: 2026-08-03
 description: "Fiat Scudo w wersji osobowej Panorama – 5, 8 i 9 miejsc, wymiary, silniki diesla i E-Scudo, porównanie z Vito Tourer i bliźniaczymi vanami Stellantis, ceny."
 draft: false
 author: "marek-kowalczyk"

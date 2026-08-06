@@ -1,6 +1,7 @@
 ---
 title: Tragiczny wypadek w Peru. Bus spadł w półkilometrową przepaść, są ofiary
 date: 2026-07-17
+lastmod: 2026-08-04
 description: W Peru doszło do tragicznego wypadku. Bus runął w głęboką przepaść, a w katastrofie zginęło wiele osób.
 draft: false
 author: redakcja-busmaniak

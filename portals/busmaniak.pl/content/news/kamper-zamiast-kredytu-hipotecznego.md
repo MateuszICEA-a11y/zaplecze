@@ -1,6 +1,7 @@
 ---
 title: Kamper zamiast kredytu hipotecznego? Coraz więcej Polaków rozważa życie na kółkach
 date: 2026-04-08
+lastmod: 2026-08-04
 description: Rosnące ceny mieszkań i większa mobilność sprawiają, że część Polaków patrzy na kampera jak na alternatywę dla kredytu.
 draft: false
 author: redakcja-busmaniak

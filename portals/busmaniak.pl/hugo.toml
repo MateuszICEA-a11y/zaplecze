@@ -6,16 +6,20 @@ themesDir = "../../shared"
 
 summaryLength = 30
 
-# Data ostatniej modyfikacji brana z historii gita, nie z ręcznego pola we
-# frontmatterze – to ono zamroziło „Ostatnia aktualizacja" na 03.2026 mimo
-# późniejszych przejazdów redakcyjnych. Kolejność ma znaczenie: `:git` musi być
-# przed `lastmod`, bo inaczej 133 pliki z marcowym wpisem dalej wygrywałyby
-# z faktyczną datą commitu. Zasila też <lastmod> w sitemapie i dateModified
-# w schema.org.
+# Data ostatniej modyfikacji zasila „Ostatnia aktualizacja", <lastmod>
+# w sitemapie i dateModified w schema.org.
+#
+# `lastmod` (frontmatter) MUSI być przed `:git`: Cloudflare Pages klonuje repo
+# płytko, więc enableGitInfo widzi tam jeden commit i nadałby wszystkim stronom
+# datę builda (sprawdzone na prodzie – 439 stron z identyczną datą). Daty
+# wpisuje do plików `pipeline/stamp-lastmod.py` na podstawie historii gita;
+# uruchom go po każdym przejeździe redakcyjnym, przed commitem.
+#
+# `:git` zostaje jako fallback dla plików bez wpisanego lastmod.
 enableGitInfo = true
 
 [frontmatter]
-  lastmod = [":git", "lastmod", ":fileModTime", ":default"]
+  lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
 
 [pagination]
   pagerSize = 12

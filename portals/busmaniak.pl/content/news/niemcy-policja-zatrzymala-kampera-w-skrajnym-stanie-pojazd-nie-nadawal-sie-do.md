@@ -1,6 +1,7 @@
 ---
 title: 'Niemcy: policja zatrzymała kampera w skrajnym stanie. Pojazd nie nadawał się do dalszej jazdy'
 date: 2026-07-16
+lastmod: 2026-08-04
 description: Niemiecka policja zatrzymała kampera w fatalnym stanie technicznym. Funkcjonariusze natychmiast wycofali pojazd z ruchu.
 draft: false
 author: redakcja-busmaniak

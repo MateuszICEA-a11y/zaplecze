@@ -1,6 +1,7 @@
 ---
 title: Przewrócony samochód dostawczy na DK94. Utrudnienia przy wjeździe do Brzeska
 date: 2026-04-21
+lastmod: 2026-08-04
 description: Na DK94 przy wjeździe do Brzeska przewrócił się samochód dostawczy. Kierowcy muszą liczyć się z utrudnieniami w ruchu.
 draft: false
 author: redakcja-busmaniak

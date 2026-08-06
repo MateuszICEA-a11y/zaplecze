@@ -1,6 +1,7 @@
 ---
 title: Boom na kampery w Polsce trwa. Wakacje na kołach mają też mniej instagramową stronę
 date: 2026-07-02
+lastmod: 2026-08-04
 description: Polacy coraz chętniej wybierają kampery, ale podróż na kołach to nie tylko wolność i piękne kadry. Sprawdzamy kulisy tego trendu.
 draft: false
 author: redakcja-busmaniak

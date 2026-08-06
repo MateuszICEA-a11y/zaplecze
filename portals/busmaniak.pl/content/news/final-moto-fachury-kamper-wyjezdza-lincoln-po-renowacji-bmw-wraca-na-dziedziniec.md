@@ -1,6 +1,7 @@
 ---
 title: Finał „Moto Fachury”. Kamper wyjeżdża, Lincoln po renowacji, BMW wraca na dziedziniec
 date: 2026-05-16
+lastmod: 2026-08-04
 description: W finałowym odcinku „Moto Fachury” gotowy kamper opuszcza warsztat, Lincoln odzyskuje blask, a BMW wraca na dziedziniec.
 draft: false
 author: redakcja-busmaniak

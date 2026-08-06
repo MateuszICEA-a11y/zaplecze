@@ -1,6 +1,7 @@
 ---
 title: "Wynajem camper vana – alternatywa dla dużego kampera"
 date: 2026-03-28
+lastmod: 2026-08-04
 description: "Wynajem camper vana w Polsce – ceny 2026, popularne modele (VW California, Pössl, Randger), zalety kompaktowego kampera i porównanie z dużymi pojazdami kempingowymi."
 draft: false
 author: "marek-kowalczyk"

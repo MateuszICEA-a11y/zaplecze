@@ -1,6 +1,7 @@
 ---
 title: Góra kory w Iveco Daily. ITD zatrzymała bus przeładowany niemal czterokrotnie
 date: 2026-04-03
+lastmod: 2026-08-04
 description: Inspektorzy ITD zatrzymali Iveco Daily z ładunkiem kory. Bus był przeładowany niemal czterokrotnie względem dopuszczalnej masy.
 draft: false
 author: redakcja-busmaniak

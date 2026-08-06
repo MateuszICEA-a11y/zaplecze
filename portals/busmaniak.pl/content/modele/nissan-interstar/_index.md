@@ -1,6 +1,7 @@
 ---
 title: "Nissan Interstar – następca NV400 na platformie Mastera"
 date: 2026-03-23
+lastmod: 2026-08-04
 description: "Nissan Interstar – dane techniczne, silniki 2.0 dCi i e-Interstar, wersje nadwoziowe, ceny i porównanie z Renault Masterem oraz konkurencją."
 draft: false
 author: "marek-kowalczyk"

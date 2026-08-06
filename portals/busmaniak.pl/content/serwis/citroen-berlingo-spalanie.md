@@ -1,7 +1,7 @@
 ---
 title: "Citroën Berlingo spalanie – tabela według silnika i wersji"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-04
 description: "Realne spalanie Citroëna Berlingo – 1.6 HDI, 1.5 BlueHDI, 1.2 PureTech, 1.6 VTi i ë-Berlingo. Tabela: trasa, miasto, mieszane."
 draft: false
 author: "tomek-zielinski"

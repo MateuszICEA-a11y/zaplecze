@@ -1,7 +1,7 @@
 ---
 title: "Renault Trafic dCi – dane techniczne, spalanie, usterki"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-04
 description: "Renault Trafic dCi – kompletne dane techniczne silników 1.6 i 2.0 Blue dCi, orientacyjne spalanie, typowe usterki i koszty serwisu."
 draft: false
 author: "marek-kowalczyk"

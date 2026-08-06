@@ -1,6 +1,7 @@
 ---
 title: "Instalacja elektryczna w kamperze"
 date: 2026-03-23
+lastmod: 2026-08-03
 description: "Instalacja elektryczna w kamperze – schemat, komponenty i montaż krok po kroku."
 draft: false
 image: "/images/instalacja-elektryczna-kamper-hero.webp"

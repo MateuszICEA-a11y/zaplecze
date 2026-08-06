@@ -1,6 +1,7 @@
 ---
 title: Toyota Sienta z zestawem VANLIFE ROOMKIT – miejski minivan zmienia się w mini-kampera
 date: 2026-05-09
+lastmod: 2026-08-04
 description: Toyota Sienta otrzymała zestaw VANLIFE ROOMKIT, który zamienia miejski minivan w mini-dom z łóżkiem o długości niemal 2 metrów.
 draft: false
 author: redakcja-busmaniak

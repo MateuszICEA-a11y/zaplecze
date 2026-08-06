@@ -1,6 +1,7 @@
 ---
 title: Zderzenie na S61 pod Łomżą. Bus uderzył w tył hondy
 date: 2026-04-14
+lastmod: 2026-08-04
 description: Na trasie S61 pod Łomżą doszło do zderzenia busa z hondą. Służby pracowały na miejscu, a kierowcy musieli liczyć się z utrudnieniami.
 draft: false
 author: redakcja-busmaniak

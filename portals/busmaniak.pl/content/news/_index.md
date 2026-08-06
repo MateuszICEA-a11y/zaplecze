@@ -6,4 +6,5 @@ h1: "News – najświeższe wiadomości"
 outputs:
   - HTML
   - RSS
+lastmod: 2026-04-06
 ---

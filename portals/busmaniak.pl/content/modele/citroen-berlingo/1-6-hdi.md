@@ -1,7 +1,7 @@
 ---
 title: "Citroën Berlingo 1.6 HDI – dane techniczne, spalanie, opinie"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Silnik 1.6 HDI w Citroënie Berlingo – dane techniczne, realne spalanie, typowe usterki DPF i turbo, opinie użytkowników i koszty serwisu."
 draft: false
 author: "marek-kowalczyk"

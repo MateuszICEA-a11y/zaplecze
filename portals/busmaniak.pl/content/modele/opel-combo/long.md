@@ -1,7 +1,7 @@
 ---
 title: "Opel Combo Long (XL) – wymiary, ładowność, dane techniczne"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Opel Combo E w wersji Long (XL) – długość 4753 mm, przestrzeń ładunkowa ok. 4,4 m³, ładowność do 1000 kg. Dane techniczne i porównanie z wersją Short."
 draft: false
 author: "marek-kowalczyk"

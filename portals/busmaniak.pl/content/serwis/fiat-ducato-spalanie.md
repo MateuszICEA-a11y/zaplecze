@@ -1,6 +1,7 @@
 ---
 title: "Fiat Ducato spalanie – zużycie paliwa per silnik i wersja"
 date: 2026-03-24
+lastmod: 2026-08-04
 description: "Średnie spalanie Fiata Ducato – 2.3 MultiJet, 3.0, 2.2, 2.8 JTD. Miasto, trasa, mieszane. Porady dotyczące oszczędzania."
 draft: false
 author: "tomek-zielinski"

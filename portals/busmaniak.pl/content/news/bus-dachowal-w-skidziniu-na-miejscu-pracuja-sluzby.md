@@ -1,6 +1,7 @@
 ---
 title: Bus dachował w Skidziniu. Na miejscu pracują służby
 date: 2026-06-25
+lastmod: 2026-08-04
 description: W Skidziniu doszło do dachowania busa. Na miejscu interweniują służby, a okoliczni kierowcy muszą liczyć się z utrudnieniami.
 draft: false
 author: redakcja-busmaniak

@@ -1,6 +1,7 @@
 ---
 title: Katastrofa autobusu z udziałem kampera. Sześć osób nie żyje, 34 zostały ranne
 date: 2026-08-03
+lastmod: 2026-08-04
 description: Tragiczny wypadek autobusu i kampera. Zginęło 6 osób, 34 zostały ranne. Służby wyjaśniają okoliczności katastrofy.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: "Citroën Berlingo tuning – chiptuning, zawieszenie, modyfikacje"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Tuning Citroëna Berlingo – chiptuning 1.6 HDI (stage 1), modyfikacje zawieszenia, optyki LED, wnętrza i przeróbka Vana na osobowy."
 draft: false
 author: "tomek-zielinski"

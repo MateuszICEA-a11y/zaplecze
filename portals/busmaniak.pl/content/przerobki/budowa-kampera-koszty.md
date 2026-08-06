@@ -1,6 +1,7 @@
 ---
 title: "Budowa kampera – koszty, etapy, materiały"
 date: 2026-03-23
+lastmod: 2026-08-03
 description: "Ile kosztuje budowa kampera – szczegółowy kosztorys, etapy prac i potrzebne materiały."
 draft: false
 image: "/images/budowa-kampera-koszty-hero.webp"

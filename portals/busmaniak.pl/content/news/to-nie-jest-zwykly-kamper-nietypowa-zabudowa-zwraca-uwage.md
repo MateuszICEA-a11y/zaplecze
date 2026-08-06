@@ -1,6 +1,7 @@
 ---
 title: To nie jest zwykły kamper. Nietypowa zabudowa zwraca uwagę
 date: 2026-06-02
+lastmod: 2026-08-04
 description: Nietypowy kamper pokazany na wideo udowadnia, że mobilny dom może wyglądać i działać inaczej niż klasyczne zabudowy.
 draft: false
 author: redakcja-busmaniak

@@ -1,6 +1,7 @@
 ---
 title: "Opel Vivaro dostawczy – furgon, ładowność, wersje"
 date: 2026-03-25
+lastmod: 2026-08-03
 description: "Opel Vivaro dostawczy – przegląd wersji furgon, ładowność, przestrzeń ładunkowa i dane techniczne."
 draft: false
 author: "marek-kowalczyk"

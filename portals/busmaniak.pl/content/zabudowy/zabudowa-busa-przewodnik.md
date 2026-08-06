@@ -3,7 +3,7 @@ title: "Zabudowa busa – kompletny przewodnik 2026"
 aliases:
   - /zabudowy/przewodnik/
 date: 2026-03-23
-lastmod: 2026-03-27
+lastmod: 2026-08-04
 description: "Zabudowa busa – rodzaje zabudów, materiały, producenci, koszty i etapy realizacji. Kompletny przewodnik po zabudowach busów dostawczych w 2026 roku."
 draft: false
 author: "tomasz-zielinski"

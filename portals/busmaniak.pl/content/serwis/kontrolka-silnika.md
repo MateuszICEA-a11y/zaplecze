@@ -1,6 +1,7 @@
 ---
 title: "Kontrolka silnika – co oznacza i czy można jechać"
 date: 2026-03-28
+lastmod: 2026-08-04
 description: "Kontrolka silnika w busie – żółta vs czerwona, najczęstsze przyczyny zapalenia, różnice względem check engine i postępowanie krok po kroku."
 draft: false
 author: "marek-kowalczyk"

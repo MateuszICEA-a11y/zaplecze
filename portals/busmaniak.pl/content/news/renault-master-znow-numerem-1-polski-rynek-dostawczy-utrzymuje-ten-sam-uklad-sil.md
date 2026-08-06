@@ -1,6 +1,7 @@
 ---
 title: Renault Master znów numerem 1. Polski rynek dostawczy utrzymuje ten sam układ sił
 date: 2026-05-13
+lastmod: 2026-08-04
 description: Renault Master czwarty miesiąc z rzędu prowadzi w Polsce. Sprawdzamy, co stoi za jego dominacją i jak wygląda rynek aut dostawczych.
 draft: false
 author: redakcja-busmaniak

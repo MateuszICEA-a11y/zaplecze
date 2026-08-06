@@ -1,7 +1,7 @@
 ---
 title: "Peugeot Boxer Osobowy – minibus, mikrobus, dane techniczne"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Peugeot Boxer w wersji osobowej – minibus do 9 miejsc, mikrobus szkolny. Dane techniczne, wymagania homologacyjne i porównanie z Ducato Combi."
 draft: false
 author: "marek-kowalczyk"

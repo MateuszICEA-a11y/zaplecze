@@ -1,7 +1,7 @@
 ---
 title: "Renault Trafic spalanie – realne zużycie paliwa"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-04
 description: "Realne spalanie Renault Trafic – ile pali 1.6 dCi, 2.0 dCi, 1.9 dCi i 2.5 dCi? Tabela spalania dla wszystkich silników."
 draft: false
 author: "marek-kowalczyk"

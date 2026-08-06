@@ -1,6 +1,7 @@
 ---
 title: Drożeje paliwo, rosną koszty. Kto naprawdę traci najwięcej?
 date: 2026-07-30
+lastmod: 2026-08-04
 description: Wysokie ceny paliw najmocniej uderzają w firmy jeżdżące codziennie. Sprawdzamy, kto traci najwięcej i dlaczego.
 draft: false
 author: redakcja-busmaniak

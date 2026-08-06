@@ -1,6 +1,7 @@
 ---
 title: Ceny paliw znów rosną. Droższy diesel uderzy w busy, vany i kampery
 date: 2026-07-18
+lastmod: 2026-08-04
 description: Nagły wzrost cen paliw w Polsce podnosi koszty eksploatacji busów, vanów i kamperów. Rząd nie zapowiada dziś szerokich osłon.
 draft: false
 author: redakcja-busmaniak

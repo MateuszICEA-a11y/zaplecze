@@ -1,6 +1,7 @@
 ---
 title: "Fiat Ducato plandeka – wymiary, ładowność, zastosowania"
 date: 2026-03-25
+lastmod: 2026-08-03
 description: "Fiat Ducato z plandeką – wymiary zabudów 8- i 10-paletowych, ładowność rzeczywista, spalanie oraz ceny egzemplarzy nowych i używanych."
 draft: false
 author: "marek-kowalczyk"

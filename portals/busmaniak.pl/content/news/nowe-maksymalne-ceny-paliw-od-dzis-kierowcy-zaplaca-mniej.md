@@ -1,6 +1,7 @@
 ---
 title: Nowe maksymalne ceny paliw od dziś. Kierowcy zapłacą mniej?
 date: 2026-04-17
+lastmod: 2026-08-04
 description: Od 17 kwietnia obowiązują nowe maksymalne ceny paliw. Sprawdzamy, ile kosztują benzyna, diesel i LPG oraz co to oznacza dla kierowców.
 draft: false
 author: redakcja-busmaniak

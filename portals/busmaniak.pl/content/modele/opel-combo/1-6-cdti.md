@@ -1,6 +1,7 @@
 ---
 title: "Opel Combo 1.6 CDTi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
+lastmod: 2026-08-03
 description: "Opel Combo D z silnikiem 1.6 CDTi – praktyczne dane o wersjach nadwoziowych, spalaniu, typowych problemach osprzętu i kosztach serwisu."
 draft: false
 author: "marek-kowalczyk"

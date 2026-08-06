@@ -1,6 +1,7 @@
 ---
 title: Dethleffs Trend I 7027 – nowy kamper z myślą o podróżach we dwoje
 date: 2026-07-28
+lastmod: 2026-08-04
 description: Dethleffs pokazał model Trend I 7027 – zintegrowany kamper dla dwojga, stawiający na komfort, przestrzeń i funkcjonalny układ wnętrza.
 draft: false
 author: redakcja-busmaniak

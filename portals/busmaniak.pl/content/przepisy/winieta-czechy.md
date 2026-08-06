@@ -1,6 +1,7 @@
 ---
 title: "Winieta Czechy 2026 – ceny, gdzie kupić, kary"
 date: 2026-03-28
+lastmod: 2026-08-03
 description: "Winieta w Czechach na 2026 rok – aktualne ceny e-winiety, punkty sprzedaży online i stacjonarne oraz kary za brak ważnej winiety."
 draft: false
 author: "marek-kowalczyk"

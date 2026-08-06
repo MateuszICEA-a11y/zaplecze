@@ -1,7 +1,7 @@
 ---
 title: "Mercedes Sprinter – dane techniczne, silniki, wymiary"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Mercedes Sprinter III (W907/910) – pełne dane techniczne, wymiary, silniki OM654 i OM651, wersje nadwoziowe, porównanie z Transit i Daily."
 draft: false
 author: "marek-kowalczyk"

@@ -1,6 +1,7 @@
 ---
 title: Stellantis Pro One pokazuje Smart Compact Van – nowy kierunek dla miejskich dostaw
 date: 2026-07-14
+lastmod: 2026-08-04
 description: Smart Compact Van od Stellantis Pro One ma być nową odpowiedzią na potrzeby miejskiej logistyki oraz segmentu kompaktowych aut dostawczych.
 draft: false
 author: redakcja-busmaniak

@@ -1,6 +1,7 @@
 ---
 title: "Mercedes eSprinter – elektryczny Sprinter"
 date: 2026-03-26
+lastmod: 2026-08-04
 description: "Mercedes eSprinter – elektryczna wersja Sprintera z baterią 56 lub 113 kWh, zasięgiem do 440 km WLTP i ładowaniem DC 115 kW. Dane techniczne, ceny i porównanie."
 draft: false
 author: "marek-kowalczyk"

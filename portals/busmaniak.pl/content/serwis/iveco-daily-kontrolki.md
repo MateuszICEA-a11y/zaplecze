@@ -1,6 +1,7 @@
 ---
 title: "Kontrolki Iveco Daily – znaczenie symboli i diagnostyka"
 date: 2026-03-28
+lastmod: 2026-08-04
 description: "Kontrolki na desce rozdzielczej Iveco Daily V i VI – lista symboli, specyficzne wskaźniki (retarder, pneumatyka, ESP), najczęstsze problemy i reset serwisowy."
 draft: false
 author: "marek-kowalczyk"

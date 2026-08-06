@@ -1,6 +1,7 @@
 ---
 title: "Kalkulator zabudowy busa – oszacuj koszt przeróbki"
 date: 2026-03-28
+lastmod: 2026-08-03
 description: "Kalkulator kosztów zabudowy busa – oszacuj budżet na zabudowę serwisową, warsztatową, kamperową lub izotermiczną krok po kroku."
 draft: false
 author: "tomasz-zielinski"

@@ -1,6 +1,7 @@
 ---
 title: "Opel Vivaro spalanie – zużycie paliwa według silników"
 date: 2026-03-25
+lastmod: 2026-08-03
 description: "Opel Vivaro spalanie – dane WLTP i rzeczywiste zużycie paliwa dla silników 1.5 D, 2.0 D i 1.6 CDTi."
 draft: false
 author: "marek-kowalczyk"

@@ -1,6 +1,7 @@
 ---
 title: "Czujnik położenia wału korbowego – objawy awarii w busie"
 date: 2026-03-28
+lastmod: 2026-08-04
 description: "Czujnik położenia wału korbowego (CKP) w busie – objawy uszkodzenia, diagnostyka, kody P0335/P0336, koszt wymiany w Ducato, Sprinterze i Transicie."
 draft: false
 author: "marek-kowalczyk"

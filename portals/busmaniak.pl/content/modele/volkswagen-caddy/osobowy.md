@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Caddy osobowy – wersje, wyposażenie, ceny"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Volkswagen Caddy osobowy – wersje wyposażenia, wymiary, silniki TDI i TSI oraz porównanie z konkurencją."
 draft: false
 author: "marek-kowalczyk"

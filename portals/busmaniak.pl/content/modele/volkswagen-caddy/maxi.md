@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Caddy Maxi – wymiary, bagażnik, porównanie"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Volkswagen Caddy Maxi – wydłużona wersja Caddy. Wymiary, bagażnik 1720 l w konfiguracji 5-osobowej, wersja 7-osobowa, silniki TDI/TSI i porównanie z Berlingo XL."
 draft: false
 author: "marek-kowalczyk"

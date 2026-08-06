@@ -1,7 +1,7 @@
 ---
 title: "Renault Master – dane techniczne, wersje nadwoziowe, silniki"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-04
 description: "Kompletny przewodnik po Renault Master III – dane techniczne, wymiary L1H1–L4H3, silniki 2.3 dCi, wersje nadwoziowe, spalanie i typowe usterki."
 draft: false
 author: "marek-kowalczyk"

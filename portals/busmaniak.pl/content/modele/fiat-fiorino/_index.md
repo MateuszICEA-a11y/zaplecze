@@ -1,6 +1,7 @@
 ---
 title: "Fiat Fiorino – dane techniczne, wersje, silniki"
 date: 2026-03-25
+lastmod: 2026-08-04
 description: "Fiat Fiorino – dane techniczne, wymiary paki, silniki 1.3 Multijet i 1.4 benzyna, wersje Cargo i Qubo, typowe usterki oraz ceny używanych egzemplarzy."
 draft: false
 author: "marek-kowalczyk"

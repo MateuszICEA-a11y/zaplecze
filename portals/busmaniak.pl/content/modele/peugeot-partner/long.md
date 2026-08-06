@@ -1,7 +1,7 @@
 ---
 title: "Peugeot Partner Long (L2) – wymiary, ładowność, dane techniczne"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Peugeot Partner III w wersji Long (L2, 4753 mm) – przestrzeń 4,4 m³. Wymiary, silniki i porównanie z wersją Short."
 draft: false
 author: "marek-kowalczyk"

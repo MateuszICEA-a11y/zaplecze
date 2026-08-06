@@ -1,6 +1,7 @@
 ---
 title: Ogłoszono maksymalne ceny detaliczne paliw na 25-27 kwietnia 2026 r.
 date: 2026-04-27
+lastmod: 2026-08-04
 description: Opublikowano maksymalne ceny detaliczne paliw obowiązujące od 25 do 27 kwietnia 2026 r. Sprawdzamy, co oznaczają dla kierowców.
 draft: false
 author: redakcja-busmaniak

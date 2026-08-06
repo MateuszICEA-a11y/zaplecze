@@ -1,6 +1,7 @@
 ---
 title: "Opel Vivaro-e – elektryczny dostawczak, zasięg, ładowanie"
 date: 2026-03-25
+lastmod: 2026-08-03
 description: "Opel Vivaro-e – dane techniczne: bateria 50 i 75 kWh, zasięg WLTP, moc ładowania DC 100 kW i koszty eksploatacji."
 draft: false
 author: "marek-kowalczyk"

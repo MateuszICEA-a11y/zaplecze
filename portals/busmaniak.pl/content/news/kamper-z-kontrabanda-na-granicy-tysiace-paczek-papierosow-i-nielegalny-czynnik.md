@@ -1,6 +1,7 @@
 ---
 title: Kamper z kontrabandą na granicy. Tysiące paczek papierosów i nielegalny czynnik chłodniczy
 date: 2026-08-05
+lastmod: 2026-08-05
 description: Na przejściu w Malhowicach służby przechwyciły kamper z niemal 2 tys. paczek papierosów bez akcyzy. Na posesji kierowcy znaleziono kolejne 300.
 draft: false
 author: redakcja-busmaniak

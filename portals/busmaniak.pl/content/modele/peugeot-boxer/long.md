@@ -1,7 +1,7 @@
 ---
 title: "Peugeot Boxer Long (L3/L4) – wymiary, zastosowania, ładowność"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Peugeot Boxer w wersjach Long L3 i L4 – pojemność 15–17 m³, ładowność do 1735 kg. Dla kogo warto wybrać długą wersję i jakie są konsekwencje eksploatacyjne."
 draft: false
 author: "marek-kowalczyk"

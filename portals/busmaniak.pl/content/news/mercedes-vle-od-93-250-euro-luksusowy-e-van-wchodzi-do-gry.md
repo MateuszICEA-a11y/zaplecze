@@ -1,6 +1,7 @@
 ---
 title: Mercedes VLE od 93 250 euro. Luksusowy e-van wchodzi do gry
 date: 2026-04-16
+lastmod: 2026-08-04
 description: Mercedes ujawnił cenę modelu VLE. Luksusowy elektryczny van startuje od 93 250 euro i celuje w segment premium.
 draft: false
 author: redakcja-busmaniak

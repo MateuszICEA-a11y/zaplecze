@@ -1,6 +1,7 @@
 ---
 title: "Winiety Słowacja 2026 – e-winieta, jak kupić"
 date: 2026-03-28
+lastmod: 2026-08-03
 description: "E-winieta na Słowacji w 2026 roku – aktualne ceny, jak kupić online na eznamka.sk, drogi objęte winietą i kary za brak."
 draft: false
 author: "marek-kowalczyk"

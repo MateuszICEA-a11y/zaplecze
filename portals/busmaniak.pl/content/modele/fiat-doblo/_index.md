@@ -2,7 +2,7 @@
 title: "Fiat Doblò dane techniczne – wszystkie generacje i silniki"
 h1: "Fiat Doblò – dane techniczne, wersje, silniki"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Fiat Doblò dane techniczne – kompaktowy van w trzech generacjach. Silniki, wymiary, wersje Cargo i Panorama. Praktyczny przegląd dla kupujących i użytkowników."
 draft: false
 author: "marek-kowalczyk"

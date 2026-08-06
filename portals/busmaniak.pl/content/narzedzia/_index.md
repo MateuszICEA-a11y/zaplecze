@@ -6,6 +6,7 @@ image: "/images/narzedzia-hub-hero.webp"
 image_alt: "Narzędzia online BusManiak.pl – kalkulatory i porównywarki dla właścicieli busów"
 h1: "Narzędzia i kalkulatory BusManiak.pl"
 lead: "Cztery darmowe narzędzia, które pomogą Ci podjąć lepszą decyzję – od sprawdzenia, czy zmieścisz się w DMC, po oszacowanie kosztów zabudowy kampera. Wybierz kalkulator i policz w kilka sekund."
+lastmod: 2026-08-03
 ---
 ## Kalkulator DMC – sprawdź ładowność busa
 

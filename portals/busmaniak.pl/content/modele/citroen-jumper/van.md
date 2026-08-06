@@ -1,7 +1,7 @@
 ---
 title: "Citroën Jumper Van – wymiary, ładowność, wersje L1–L4"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Citroën Jumper Van w wersjach L1–L4 – pojemność 8–17 m³, szerokość między nadkolami 1422 mm i porównanie z Peugeot Boxer oraz Fiat Ducato."
 draft: false
 author: "marek-kowalczyk"

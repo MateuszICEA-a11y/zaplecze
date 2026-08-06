@@ -1,7 +1,7 @@
 ---
 title: "VW Crafter 2.0 TDI – dane techniczne, spalanie, usterki"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Silnik 2.0 TDI w VW Crafter II – wersje 102, 122, 140 i 177 KM. Dane techniczne, rzeczywiste spalanie, trwałość i typowe usterki. Skrzynie biegów i porady serwisowe."
 draft: false
 author: "marek-kowalczyk"

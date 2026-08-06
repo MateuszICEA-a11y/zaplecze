@@ -1,7 +1,7 @@
 ---
 title: "Toyota Proace Verso osobowy – konfiguracje, wyposażenie"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Toyota Proace Verso to duży van osobowy w liniach Shuttle, Family i VIP. 5–9 miejsc, ceny od 175 000 zł. Sprawdź konfiguracje i porównanie z Multivanem."
 draft: false
 author: "marek-kowalczyk"

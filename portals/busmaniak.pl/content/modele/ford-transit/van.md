@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit Van – wymiary, ładowność, wersje"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Ford Transit Van w wersji furgon – wymiary od L1H1 do L4H3, pojemność ładunkowa do 15,1 m³, ładowność w wybranych wersjach heavy-duty do 2300 kg i silniki 2.0 EcoBlue. Dane techniczne i konfiguracje."
 draft: false
 author: "marek-kowalczyk"

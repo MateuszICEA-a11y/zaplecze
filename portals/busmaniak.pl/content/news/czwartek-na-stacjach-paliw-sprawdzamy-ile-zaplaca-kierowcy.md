@@ -1,6 +1,7 @@
 ---
 title: Czwartek na stacjach paliw. Sprawdzamy, ile zapłacą kierowcy
 date: 2026-05-21
+lastmod: 2026-08-04
 description: Nowe ceny paliw na czwartek. Sprawdzamy, ile kierowcy zapłacą za benzynę, diesla i LPG na polskich stacjach.
 draft: false
 author: redakcja-busmaniak

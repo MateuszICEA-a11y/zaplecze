@@ -1,6 +1,7 @@
 ---
 title: Jakie limity prędkości ma kamper? Kluczowa jest masa i rodzaj pojazdu
 date: 2026-07-07
+lastmod: 2026-08-04
 description: Limity prędkości dla kamperów zależą od DMC i homologacji. Sprawdzamy, kiedy obowiązują zasady jak dla auta osobowego.
 draft: false
 author: redakcja-busmaniak

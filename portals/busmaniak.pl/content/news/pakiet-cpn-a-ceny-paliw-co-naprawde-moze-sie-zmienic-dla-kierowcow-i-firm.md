@@ -1,6 +1,7 @@
 ---
 title: Pakiet CPN a ceny paliw – co naprawdę może się zmienić dla kierowców i firm
 date: 2026-04-15
+lastmod: 2026-08-04
 description: Minister wyjaśnia założenia pakietu CPN regulującego ceny paliw. Sprawdzamy, co może oznaczać dla kierowców, busów i flot.
 draft: false
 author: redakcja-busmaniak

@@ -1,6 +1,7 @@
 ---
 title: Dacia Duster Pickup 2026 z LPG trafiła do sprzedaży we Francji. Jest też wersja kamperowa
 date: 2026-05-22
+lastmod: 2026-08-04
 description: Nowa Dacia Duster Pickup 2026 4×4 z LPG weszła do sprzedaży we Francji. W ofercie pojawiła się także nietypowa odmiana kamperowa.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: "Zabudowa izotermiczna busa – transport chłodniczy"
 date: 2026-03-23
-lastmod: 2026-03-27
+lastmod: 2026-08-04
 description: "Zabudowa izotermiczna busa – normy ATP, materiały izolacyjne, agregaty chłodnicze, ładowność, koszty zabudowy i homologacja transportu chłodniczego."
 draft: false
 author: "tomasz-zielinski"

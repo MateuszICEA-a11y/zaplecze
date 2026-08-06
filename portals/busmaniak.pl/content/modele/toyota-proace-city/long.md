@@ -1,7 +1,7 @@
 ---
 title: "Toyota Proace City Long – wymiary, pojemność"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Toyota Proace City Long ma 4753 mm długości, ładownię 3,9 m³ i należy do rodziny vanów Stellantis/Toyota. Sprawdź wymiary, pojemność i porównanie z wersją Short."
 draft: false
 author: "marek-kowalczyk"

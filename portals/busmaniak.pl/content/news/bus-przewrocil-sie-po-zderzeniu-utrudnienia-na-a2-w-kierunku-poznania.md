@@ -1,6 +1,7 @@
 ---
 title: Bus przewrócił się po zderzeniu. Utrudnienia na A2 w kierunku Poznania
 date: 2026-07-15
+lastmod: 2026-08-04
 description: Po zderzeniu na A2 w kierunku Poznania przewrócił się bus. Kierowcy muszą liczyć się z utrudnieniami i spowolnieniem ruchu.
 draft: false
 author: redakcja-busmaniak

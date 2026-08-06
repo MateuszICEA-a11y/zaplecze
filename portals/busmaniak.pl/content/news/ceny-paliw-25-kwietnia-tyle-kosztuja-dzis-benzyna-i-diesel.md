@@ -1,6 +1,7 @@
 ---
 title: Ceny paliw 25 kwietnia – tyle kosztują dziś benzyna i diesel
 date: 2026-04-26
+lastmod: 2026-08-04
 description: Sprawdzamy ceny paliw z 25 kwietnia 2026. Zobacz, ile trzeba zapłacić za litr benzyny, oleju napędowego i autogazu.
 draft: false
 author: redakcja-busmaniak

@@ -1,6 +1,7 @@
 ---
 title: "Homologacja kampera – jak zalegalizować przeróbkę busa w 2026 roku"
 date: 2026-03-28
+lastmod: 2026-08-03
 description: "Homologacja kampera to procedura zmiany przeznaczenia busa na pojazd specjalny kempingowy. Sprawdź wymagania techniczne, procedurę krok po kroku, koszty i najczęstsze błędy."
 draft: false
 author: "marek-kowalczyk"

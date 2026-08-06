@@ -1,6 +1,7 @@
 ---
 title: Braki paliwa lotniczego w Europie. Polska może odegrać ważną rolę w kryzysie dostaw
 date: 2026-04-18
+lastmod: 2026-08-04
 description: Napięcia na rynku paliwa lotniczego w Europie rosną, a Polska może stać się istotnym ogniwem w zabezpieczeniu dostaw.
 draft: false
 author: redakcja-busmaniak

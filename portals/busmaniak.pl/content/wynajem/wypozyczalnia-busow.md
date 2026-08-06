@@ -1,6 +1,7 @@
 ---
 title: "Wypożyczalnia busów – dostawcze i osobowe na 2026"
 date: 2026-03-28
+lastmod: 2026-08-04
 draft: false
 author: "marek-kowalczyk"
 description: "Wypożyczalnie busów dostawczych i osobowych w Polsce – przegląd firm, ceny wynajmu na 2026, wymagania i ubezpieczenie."

@@ -1,7 +1,7 @@
 ---
 title: "Peugeot Boxer – dane techniczne, wersje, silniki BlueHDi"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Peugeot Boxer III (od 2006, facelifting 2014 i 2020) – bliźniak Fiata Ducato i Citroëna Jumpera na platformie Sevel Sud. Silniki 2.2 BlueHDi 120–165 KM. Wersje i pojemności 8–17 m³."
 draft: false
 author: "marek-kowalczyk"

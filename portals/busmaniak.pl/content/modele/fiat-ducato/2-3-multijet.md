@@ -1,6 +1,7 @@
 ---
 title: "Fiat Ducato 2.3 MultiJet – dane techniczne, spalanie, opinie"
 date: 2026-03-25
+lastmod: 2026-08-03
 description: "Silnik 2.3 MultiJet w Fiacie Ducato – dane techniczne, spalanie, typowe usterki i opinie. Przegląd wersji od 120 do 180 KM."
 draft: false
 author: "marek-kowalczyk"

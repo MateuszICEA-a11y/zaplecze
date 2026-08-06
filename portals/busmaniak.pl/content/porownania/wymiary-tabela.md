@@ -1,7 +1,7 @@
 ---
 title: "Wymiary busów i vanów – tabela porównawcza"
 date: 2026-03-23
-lastmod: 2026-03-26
+lastmod: 2026-08-04
 description: "Kompletna tabela wymiarów busów i vanów – długość, szerokość, wysokość i rozstaw osi. Duże busy, średnie i małe vany w jednym zestawieniu."
 draft: false
 author: "marek-kowalczyk"

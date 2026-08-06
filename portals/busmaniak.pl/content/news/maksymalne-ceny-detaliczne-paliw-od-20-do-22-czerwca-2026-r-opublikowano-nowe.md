@@ -1,6 +1,7 @@
 ---
 title: Maksymalne ceny detaliczne paliw od 20 do 22 czerwca 2026 r. – opublikowano nowe stawki
 date: 2026-06-21
+lastmod: 2026-08-04
 description: Opublikowano maksymalne ceny detaliczne paliw obowiązujące od 20 do 22 czerwca 2026 r. Sprawdzamy, co oznaczają dla kierowców.
 draft: false
 author: redakcja-busmaniak

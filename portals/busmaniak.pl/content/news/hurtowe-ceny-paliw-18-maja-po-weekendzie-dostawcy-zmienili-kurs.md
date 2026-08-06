@@ -1,6 +1,7 @@
 ---
 title: Hurtowe ceny paliw 18 maja. Po weekendzie dostawcy zmienili kurs
 date: 2026-05-18
+lastmod: 2026-08-04
 description: Nowe hurtowe ceny paliw po weekendzie zaskoczyły rynek. Sprawdzamy, co oznaczają decyzje dostawców dla firm i kierowców busów.
 draft: false
 author: redakcja-busmaniak

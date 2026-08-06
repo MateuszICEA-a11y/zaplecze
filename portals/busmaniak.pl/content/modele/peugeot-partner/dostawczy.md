@@ -1,7 +1,7 @@
 ---
 title: "Peugeot Partner Dostawczy – ładowność, wymiary, wersje cargo"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Peugeot Partner III w konfiguracji dostawczej Van N1 – ładowność do 1000 kg, przestrzeń 3,3–4,4 m³, silniki BlueHDi i PureTech. Dla kogo i co wybrać."
 draft: false
 author: "marek-kowalczyk"

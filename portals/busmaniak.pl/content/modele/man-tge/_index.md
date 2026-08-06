@@ -1,6 +1,7 @@
 ---
 title: "MAN TGE – bliźniak Craftera z ciężarowym rodowodem"
 date: 2026-03-23
+lastmod: 2026-08-03
 description: "MAN TGE – dane techniczne, silniki 2.0 TDI, wersje nadwoziowe L2–L5, ceny i porównanie z VW Crafterem. Sprawdź, czym różni się od bliźniaka."
 draft: false
 author: "marek-kowalczyk"

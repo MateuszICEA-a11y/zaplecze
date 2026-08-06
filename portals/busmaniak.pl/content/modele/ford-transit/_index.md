@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit – dane techniczne, silniki, wymiary"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Ford Transit VII i VIII – pełne dane techniczne, wymiary L1-L4 H1-H3, silniki EcoBlue 2.0, typowe usterki i porównanie z konkurencją."
 draft: false
 author: "marek-kowalczyk"

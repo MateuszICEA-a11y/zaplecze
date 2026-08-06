@@ -1,6 +1,7 @@
 ---
 title: Niższy VAT i akcyza na paliwa zostają. Rząd przedłużył tarczę dla kierowców i firm
 date: 2026-04-28
+lastmod: 2026-08-04
 description: Rząd przedłużył niższy VAT i akcyzę na paliwa. Sprawdzamy, co to oznacza dla kierowców, busów i firm transportowych.
 draft: false
 author: redakcja-busmaniak

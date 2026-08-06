@@ -1,6 +1,7 @@
 ---
 title: Warsaw Caravaning Festival 2026 już w maju. Kampery i vanlife wracają na Służewiec
 date: 2026-04-25
+lastmod: 2026-08-04
 description: Warsaw Caravaning Festival 2026 odbędzie się w maju na Służewcu. W programie kampery, vanlife, strefy wystawców i podróżnicza atmosfera.
 draft: false
 author: redakcja-busmaniak

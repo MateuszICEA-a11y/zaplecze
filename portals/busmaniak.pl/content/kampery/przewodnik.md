@@ -1,6 +1,7 @@
 ---
 title: "Kampery – rodzaje, ceny i przewodnik kupującego 2026"
 date: 2026-03-27
+lastmod: 2026-08-03
 description: "Kompletny przewodnik po kamperach – rodzaje (camper van, półintegra, alkowa, integra), ceny nowych i używanych, bazy podwoziowe i porady zakupowe. Dane rynkowe 2024–2026."
 draft: false
 author: "marek-kowalczyk"

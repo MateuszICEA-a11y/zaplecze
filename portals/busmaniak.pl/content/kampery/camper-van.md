@@ -1,6 +1,7 @@
 ---
 title: "Camper van – czym różni się od klasycznego kampera"
 date: 2026-03-23
+lastmod: 2026-08-03
 description: "Camper van a klasyczny kamper – różnice, popularne modele (VW California, Mercedes Marco Polo, Ford Nugget), ceny, zalety i wady camper vanów."
 draft: false
 author: "anna-wozniak"

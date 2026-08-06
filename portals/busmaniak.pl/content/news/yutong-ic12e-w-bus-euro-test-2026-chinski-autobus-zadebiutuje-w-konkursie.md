@@ -1,6 +1,7 @@
 ---
 title: Yutong IC12E w Bus Euro Test 2026. Chiński autobus zadebiutuje w konkursie
 date: 2026-06-05
+lastmod: 2026-08-04
 description: Yutong IC12E dołącza do stawki Bus Euro Test 2026. To pierwszy chiński autobus klasy II w tegorocznym konkursie.
 draft: false
 author: redakcja-busmaniak

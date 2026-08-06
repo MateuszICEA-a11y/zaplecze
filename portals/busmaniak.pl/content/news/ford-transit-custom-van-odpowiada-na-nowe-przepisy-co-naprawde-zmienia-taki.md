@@ -1,6 +1,7 @@
 ---
 title: Ford Transit Custom Van odpowiada na nowe przepisy. Co naprawdę zmienia taki wariant?
 date: 2026-07-31
+lastmod: 2026-08-04
 description: Ford Transit Custom Van wpisuje się w nowe realia przepisów i wymagań flot. Sprawdzamy, co zmienia ten wariant w praktyce.
 draft: false
 author: redakcja-busmaniak

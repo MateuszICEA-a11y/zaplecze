@@ -1,7 +1,7 @@
 ---
 title: "Peugeot Partner 1.6 HDi – dane techniczne, spalanie, opinie"
 date: 2026-03-24
-lastmod: 2026-03-26
+lastmod: 2026-08-03
 description: "Silnik 1.6 HDi (DV6) w Peugeocie Partner II – wersje 75, 90 i 92 KM. Dane techniczne, rzeczywiste spalanie, typowe usterki, koszty serwisu i opinie kierowców."
 draft: false
 author: "marek-kowalczyk"

@@ -1,6 +1,7 @@
 ---
 title: "DMC przyczepy – jak dobrać przyczepę do busa i nie przekroczyć limitów"
 date: 2026-03-28
+lastmod: 2026-08-03
 description: "DMC przyczepy to kluczowy parametr przy holowaniu. Sprawdź, jak obliczyć masę zespołu pojazdów, jakie limity obowiązują i co grozi za przekroczenie DMC."
 draft: false
 author: "marek-kowalczyk"

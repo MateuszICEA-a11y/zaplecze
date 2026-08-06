@@ -1,6 +1,7 @@
 ---
 title: "Maxus Deliver 9 – dane techniczne, ceny, opinie"
 date: 2026-03-25
+lastmod: 2026-08-04
 description: "Maxus Deliver 9 – dane techniczne, wymiary L2–L4, silnik 2.0 diesel i e-Deliver 9, ładowność do 1500 kg, ceny od 96 tys. zł netto oraz opinie użytkowników."
 draft: false
 author: "marek-kowalczyk"

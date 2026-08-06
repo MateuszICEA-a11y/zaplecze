@@ -1,7 +1,7 @@
 ---
 title: "Peugeot Partner Tepee i Rifter – osobowy van, historia i dane techniczne"
 date: 2026-03-24
-lastmod: 2026-03-24
+lastmod: 2026-08-03
 description: "Peugeot Partner Tepee (do 2018) i jego następnik Rifter – osobowe wersje Partnera. Dane techniczne, różnice między generacjami i wskazówki, co wybrać na rynku wtórnym."
 draft: false
 author: "marek-kowalczyk"

@@ -1,6 +1,7 @@
 ---
 title: "Opel Combo CDTi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
+lastmod: 2026-08-03
 description: "Silniki CDTi w Oplu Combo C i D – dane techniczne 1.3 CDTi, 1.7 CDTi i 1.6 CDTi, spalanie, typowe usterki i koszty serwisu."
 draft: false
 author: "marek-kowalczyk"
