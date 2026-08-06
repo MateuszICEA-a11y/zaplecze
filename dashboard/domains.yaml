@@ -120,7 +120,9 @@ global:
       - ALERT_WEBHOOK_URL
     # webhook_urls: [] # tylko dla publicznych URL-i bez sekretu w adresie
     sms_min: 20
-    openrouter_min_usd: 20
+    # Podniesione z 20 $ po zejściu na minus 2026-08-06: przy spalaniu rzędu
+    # 100 $/dobę próg 20 $ dawał ostrzeżenie na kilka godzin przed zerem.
+    openrouter_min_usd: 40
     # Token Senuto rotuje się ręcznie w panelu – mail dzień przed wygaśnięciem
     # (i każdego kolejnego dnia, dopóki nie zostanie podmieniony).
     senuto_days_left_min: 1
