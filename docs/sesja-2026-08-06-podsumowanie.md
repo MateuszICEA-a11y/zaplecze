@@ -1,11 +1,12 @@
-# Sesja 2026-08-06 – alerty kredytowe dashboardu + lastmod BusManiak
+# Sesja 2026-08-06 – alerty kredytowe dashboardu + lastmod BusManiak + odblokowanie zapisu CW do WP
 
 ## Co zrobiono
 
-Dwa niezależne wątki, oba zgłoszone jako „działa nie tak, jak powinno":
+Trzy wątki, dwa pierwsze zgłoszone jako „działa nie tak, jak powinno":
 
 1. Saldo OpenRouter spadło poniżej progu, ale mail alertowy nie przyszedł.
 2. „Ostatnia aktualizacja" na BusManiak.pl stała na 03.2026 mimo późniejszych przejazdów redakcyjnych.
+3. Weryfikacja, czy zdjęto bloker uwierzytelniania REST z 04.08 (zapis Content Watchera do WordPressa).
 
 ## Wdrożenia
 
@@ -119,6 +120,34 @@ Zapisane w `CLAUDE.md`, żeby kolejne sesje to widziały.
 ### Świadomy koszt decyzji
 
 Wybrany wariant (daty z historii gita) oznacza, że sierpniowe commity techniczne – konwersja WebP, embedy YouTube, podmiana obrazków – podbiły daty prawie wszystkiego: 422 z 439 stron ma teraz sierpień. Ryzyko było zgłoszone przed wdrożeniem i zaakceptowane. Jeśli któraś kategoria zmian ma się nie liczyć jako aktualizacja, da się cofnąć wybrane strony do wcześniejszej daty.
+
+---
+
+## Wątek 3: bloker `Authorization` zdjęty – zapis CW do WordPressa
+
+Sprawdzenie stanu blokera opisanego 04.08: Apache u seohost nie przekazywał nagłówka `Authorization` do PHP, przez co hasło aplikacji użytkownika `redaktor` nie działało. Dev dostał do wgrania dopisek do `.htaccess` (`RewriteCond %{HTTP:Authorization}` → `E=HTTP_AUTHORIZATION`).
+
+### Wynik sondy
+
+| Test | Wynik |
+|---|---|
+| `GET /wp-json/wp/v2/users/me/`, poprawne hasło | 200, `id: 41`, slug `redaktor` |
+| To samo, celowo błędne hasło | 401 `rest_not_logged_in` |
+
+Rozróżnienie dobrego i złego hasła jest dowodem, że nagłówek dociera – wcześniej oba przypadki dawały identyczne 401 i to był właśnie objaw. **Poprawka wgrana, bloker zdjęty.** AIOS (podejrzany nr 2 z 04.08) nie przeszkadza.
+
+### Uprawnienia i ACF
+
+- rola `editor`, capabilities: `edit_posts`, `edit_published_posts`, `edit_others_posts`, `edit_pages`, `edit_published_pages`, `publish_posts`, `delete_posts` – komplet pod flow szkic → akcept → skasowanie szkicu
+- `GET /wp/v2/posts/5767/?context=edit&acf_format=light` zwraca `acf` z 67 polami (wypełnione `page_title_h2_1..5`, `page_text_1..5`) – `show_in_rest` do odczytu włączone
+
+### Nowa gotcha: apex 301 zjada Basic Auth
+
+`grupa-icea.pl` przekierowuje 301 na `www.grupa-icea.pl`. Przy przekierowaniu na inny host dane logowania wypadają z żądania, więc strzał w apex kończy się fałszywym 401. Worker jest skonfigurowany poprawnie – `CW_DOMAINS = "grupa-icea.pl=https://www.grupa-icea.pl"` (`dashboard/app/wrangler.toml:39`) – ale ręczne sondy trzeba kierować na `www`.
+
+### Otwarte
+
+**Zapisywalność pól ACF przez POST niesprawdzona.** Odczyt tego nie przesądza: przy nieedytowalnym `show_in_rest` WordPress ignoruje `acf` w POST po cichu, bez błędu. Wychodzi to dopiero przy realnym zapisie, a każdy taki test tworzy obiekt na produkcji – dlatego E2E poczeka na wpis wskazany przez Mateusza, zamiast lecieć na losowym (proponowany 5767 „Błąd 403" odrzucony). Przy przejeździe: zatrzymanie po utworzeniu szkicu, podgląd, dopiero potem akcept na oryginale.
 
 ---
 
