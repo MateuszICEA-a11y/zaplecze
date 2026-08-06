@@ -379,6 +379,12 @@ test('createJob: client_payload zawiera models, title i author', async (t) => {
   assert.equal(payload.title, 'Tytuł');
   assert.equal(payload.author, 'Mateusz Wiśniewski');
   assert.deepEqual(payload.models, { research: 'perplexity/sonar-pro', writer: 'anthropic/claude-sonnet-5' });
+  // GitHub przyjmuje w client_payload najwyżej 10 właściwości najwyższego
+  // poziomu – jedenasta kończy się 422 i zadaniem „failed" przed startem
+  // runnera. Dlatego wyniki researchu jadą spakowane w jedno pole.
+  assert.ok(Object.keys(payload).length <= 10,
+    `client_payload ma ${Object.keys(payload).length} pól – limit GitHuba to 10`);
+  assert.deepEqual(Object.keys(payload.research), ['rivals', 'gap']);
 });
 
 test('createJob: force=1 omija cooldown, bez force wpis jest blokowany', async (t) => {

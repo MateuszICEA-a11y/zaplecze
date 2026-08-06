@@ -338,13 +338,18 @@ async function dispatchWorkflow(env, job) {
         author: job.author || '',
         improvements: job.improvements,
         models: job.models ?? null,
-        // Fakty z analizy treści konkurencji (Jina) – najmocniejszy, już
-        // opłacony sygnał luk; brief dostaje je zamiast zgadywać z nagłówków.
-        rivals: await rivalsSummary(env, job.domain, job.post_id).catch(() => null),
-        // Frazy z panelu „Frazy do pokrycia" – ta sama lista, po której edytor
-        // liczy ocenę treści. Bez niej pipeline pisze pod frazy z briefu,
-        // a użytkownik ocenia wynik po frazach z SERP-gapu.
-        gap: await gapSummary(env, job.domain, job.post_id).catch(() => null),
+        // Wyniki researchu z edytora idą JEDNYM polem, bo `client_payload`
+        // przyjmuje najwyżej 10 właściwości najwyższego poziomu – jedenasta
+        // wywala dispatch błędem 422 i zadanie ginie przed startem runnera.
+        research: {
+          // Fakty z analizy treści konkurencji (Jina) – najmocniejszy, już
+          // opłacony sygnał luk; brief dostaje je zamiast zgadywać z nagłówków.
+          rivals: await rivalsSummary(env, job.domain, job.post_id).catch(() => null),
+          // Frazy z panelu „Frazy do pokrycia" – ta sama lista, po której edytor
+          // liczy ocenę treści. Bez niej pipeline pisze pod frazy z briefu,
+          // a użytkownik ocenia wynik po frazach z SERP-gapu.
+          gap: await gapSummary(env, job.domain, job.post_id).catch(() => null),
+        },
       },
     }),
   });
