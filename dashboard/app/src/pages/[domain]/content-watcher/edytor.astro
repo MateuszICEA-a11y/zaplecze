@@ -329,6 +329,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     wp_draft_id?: number | null; wp_draft_url?: string | null; applied_at?: string | null;
   };
 
+  // Sloty FAQ zaczynają się nad tą wartością (101+) – lustro FAQ_SLOT_BASE
+  // z config.py i cw-api.js.
+  const FAQ_SLOT_BASE = 100;
+
   // Lustro config.py (STEPS + OPTIONAL_STEPS) – przy zmianie kolejności kroków
   // pipeline'u zaktualizuj oba miejsca.
   const STEP_ORDER = ['fetch', 'keywords_own', 'serp', 'competitors', 'keywords_competitors',
@@ -589,15 +593,19 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   }
 
   /** Sekcja dokumentu: nagłówek + treść + (po pipelinie) narzędzia i tryby. */
-  function docSection(slot: number, title: string, html: string | null) {
+  function docSection(slot: number, title: string, html: string | null, kind: 'section' | 'faq' = 'section') {
+    const faq = kind === 'faq';
     const section = document.createElement('section');
-    section.className = 'ed-doc-section';
+    section.className = faq ? 'ed-doc-section ed-doc-faq' : 'ed-doc-section';
     section.dataset.slot = String(slot);
+    section.dataset.kind = kind;
     const head = document.createElement('div');
     head.className = 'ed-sec-head';
-    const heading = document.createElement('h2');
-    heading.dataset.block = 'h2';
-    heading.textContent = title || `Sekcja ${slot}`;
+    // Pytanie FAQ to na stronie H3 pod wspólnym H2 bloku – renderujemy tak samo,
+    // żeby liczba nagłówków w ocenie treści zgadzała się z tym, co widzi Google.
+    const heading = document.createElement(faq ? 'h3' : 'h2');
+    heading.dataset.block = faq ? 'h3' : 'h2';
+    heading.textContent = title || (faq ? `Pytanie ${slot - 100}` : `Sekcja ${slot}`);
     head.append(heading);
 
     // Szkic z poprzedniej sesji ma pierwszeństwo przed treścią z WordPressa –
@@ -743,7 +751,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const words = (text.match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu) ?? []).length;
     const headings = snapshot.querySelectorAll('h2, h3, h4').length;
     const paragraphs = snapshot.querySelectorAll('p').length;
-    const sections = doc.querySelectorAll('.ed-doc-section:not(.ed-doc-intro)').length;
+    const sections = doc.querySelectorAll('.ed-doc-section:not(.ed-doc-intro):not(.ed-doc-faq)').length;
+    const faq = doc.querySelectorAll('.ed-doc-section.ed-doc-faq').length;
 
     const stat = (value: string, label: string) => {
       const node = document.createElement('div');
@@ -761,6 +770,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       stat(pl.format(paragraphs), 'akapitów'),
       stat(pl.format(sections), 'sekcji'),
     ];
+    if (faq) nodes.push(stat(pl.format(faq), 'pytań FAQ'));
     if (job?.sections?.length) {
       const decided = job.sections.filter((section) => section.decision).length;
       nodes.push(stat(`${pl.format(decided)}/${pl.format(job.sections.length)}`, 'ocenionych propozycji'));
@@ -909,7 +919,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
      jest edytowalny i zapisywany do zadania, więc jego HTML musi zostać
      nietknięty. Gdy przeglądarka API nie zna, po prostu nie ma podświetleń. */
 
-  const HIGHLIGHT_SCOPE = '.ed-doc-body, .ed-sec-head h1, .ed-sec-head h2, .ed-diff';
+  const HIGHLIGHT_SCOPE = '.ed-doc-body, .ed-sec-head h1, .ed-sec-head h2, .ed-sec-head h3, .ed-diff';
 
   /** Węzły tekstowe elementu jako jeden ciąg + mapa pozycji na węzły. */
   function textMap(root: Element) {
@@ -1227,9 +1237,30 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         + 'na podstawie wyników optymalizacji.';
       blocks.push(note);
     }
+    // Blok FAQ spod artykułu – osobna grupa pól ACF renderowana na stronie jako
+    // schema.org/FAQPage. Do 2026-08-06 w ogóle go nie widzieliśmy: dokument
+    // urywał się na ostatniej sekcji, a pytania i odpowiedzi (zwykle 200–400
+    // słów) nie wchodziły ani do oceny treści, ani do materiału dla modelu.
+    if (content?.faq?.items?.length) {
+      const head = document.createElement('div');
+      head.className = 'ed-faq-head';
+      const heading = document.createElement('h2');
+      heading.dataset.block = 'h2';
+      heading.textContent = content.faq.title || 'FAQ';
+      const note = document.createElement('span');
+      note.textContent = content.faq.schema
+        ? 'blok FAQ · mikrodane FAQPage'
+        : 'blok FAQ · bez mikrodanych';
+      head.append(heading, note);
+      blocks.push(head);
+      blocks.push(...content.faq.items.map((row: any) =>
+        docSection(row.slot, row.title, row.text, 'faq')));
+    }
+
     host.replaceChildren(...blocks);
+    const faqCount = content?.faq?.items?.length ?? 0;
     $('[data-ed-doc-meta]')!.textContent = content?.sections?.length
-      ? `${content.sections.length} sekcji · pełna treść z WordPressa`
+      ? `${content.sections.length} sekcji${faqCount ? ` + ${faqCount} pytań FAQ` : ''} · pełna treść z WordPressa`
       : 'treść z WordPressa';
     renderDocStats();
     renderScore();
@@ -1840,15 +1871,17 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     for (const section of current.sections) {
       let node = bySlot.get(section.slot);
       if (!node) {
-        // Nowa sekcja (wolny slot) – wstawiamy w porządku slotów.
-        node = docSection(section.slot, section.title_after ?? '', null);
+        // Nowa sekcja albo nowe pytanie FAQ (wolny slot) – wstawiamy w porządku
+        // slotów. Sloty FAQ są wyższe niż sekcyjne, więc pytanie trafia na koniec.
+        node = docSection(section.slot, section.title_after ?? '', null,
+          section.slot > FAQ_SLOT_BASE ? 'faq' : 'section');
         const after = [...bySlot.entries()].filter(([slot]) => slot > section.slot).sort((a, b) => a[0] - b[0])[0];
         host.insertBefore(node, after?.[1] ?? null);
         bySlot.set(section.slot, node);
       }
       node.classList.add(section.operation === 'insert' ? 'is-new' : 'is-changed');
 
-      const heading = node.querySelector('h2');
+      const heading = node.querySelector('h2, h3');
       // Nagłówek węzła pokazuje NOWEGO lokatora slotu (po renumeracji węzeł może
       // dostać treść przesuniętą z innego miejsca), a „is-retitled" tylko realną
       // zmianę tytułu – nowa sekcja nie ma „poprzednio".
@@ -1984,6 +2017,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       const keep = !on || node.classList.contains('is-changed') || node.classList.contains('is-new');
       node.hidden = !keep;
     });
+    // Nagłówek bloku FAQ nie jest sekcją, więc filtr sam go nie ruszy –
+    // zostawiony nad pustym miejscem wyglądał jak zgubione pytania.
+    const faqHead = document.querySelector<HTMLElement>('.ed-faq-head');
+    if (faqHead) {
+      faqHead.hidden = on && ![...document.querySelectorAll<HTMLElement>('.ed-doc-section.ed-doc-faq')]
+        .some((node) => !node.hidden);
+    }
   }
 
   /* ---------- porada eksperta (etap finalny) ---------- */
@@ -2070,9 +2110,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const expert = activeExpert(current);
     if (!expert) return;
     const host = $('[data-ed-doc]')!;
+    // Bez wskazanego slotu cytat idzie na koniec TREŚCI, nie do bloku FAQ –
+    // odpowiedź FAQ ma zostać zwięzła i samodzielna (cytuje ją wyszukiwarka).
+    const contentSections = [...host.querySelectorAll('.ed-doc-section:not(.ed-doc-faq):not(.ed-doc-intro)')];
     const target = expert.slot
-      ? host.querySelector(`.ed-doc-section[data-slot="${expert.slot}"]`)
-      : host.querySelector('.ed-doc-section:last-child');
+      ? host.querySelector(`.ed-doc-section[data-slot="${expert.slot}"]:not(.ed-doc-faq)`)
+      : contentSections.at(-1);
     if (!target) return;
     const block = document.createElement('div');
     block.className = 'prose ed-doc-expert';
@@ -3195,6 +3238,15 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-doc-section { position: relative; padding: 26px 28px 30px 76px;
     border-bottom: 1px solid var(--hairline-soft); }
   .ed-doc-section:last-child { border-bottom: none; }
+  /* Blok FAQ: wspólny nagłówek grupy i węższe wcięcie pytań – na stronie to
+     osobna część pod artykułem, a nie kolejne sekcje treści. */
+  .ed-faq-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline;
+    padding: 26px 28px 0 76px; border-top: 1px solid var(--hairline); }
+  .ed-faq-head h2 { margin: 0; font: 600 1.35rem var(--font-display); color: var(--ink); }
+  .ed-faq-head span { font-size: .72rem; color: var(--ink-faint); }
+  .ed-doc-section.ed-doc-faq { padding-top: 18px; padding-bottom: 20px; }
+  .ed-doc-section.ed-doc-faq > .ed-sec-head h3 { margin: 0; font: 600 1.02rem var(--font-display);
+    color: var(--ink); line-height: 1.3; }
   .ed-sec-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin: 0 0 14px; }
   .ed-doc-section h1, .ed-doc-section > .ed-sec-head h2 { margin: 0; font-family: var(--font-display);
     color: var(--ink); line-height: 1.25; }

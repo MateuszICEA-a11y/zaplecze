@@ -15,6 +15,7 @@ from unittest import mock
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import extract  # noqa: E402
+import matching  # noqa: E402
 import llm  # noqa: E402
 import research  # noqa: E402
 import sections as sec  # noqa: E402
@@ -896,3 +897,202 @@ class TestCoverageGate(unittest.TestCase):
         self.assertEqual(payload["missing"], ["gdzie szukać klientów na fotowoltaikę"])
         self.assertIn({"keyword": "leady fotowoltaika", "why": "wpis nie sprzedaje leadów"},
                       payload["skipped"])
+
+
+class TestFaq(unittest.TestCase):
+    """FAQ jako pseudo-sekcje: własna przestrzeń slotów (101+), własne pola ACF,
+    poza renumeracją sekcji i poza przypisami/linkowaniem."""
+
+    ACF_FAQ = {
+        **ACF,
+        "page_faq_title": "FAQ o błędzie 403",
+        "page_faq_question_1": "Czym jest błąd 403?",
+        "page_faq_answer_1": "<p>To odmowa dostępu do zasobu.</p>",
+        "page_faq_question_2": "",
+        "page_faq_answer_2": "",
+    }
+
+    def test_snapshot_ma_faq_pod_wlasnymi_slotami(self):
+        rows = {item["slot"]: item for item in sec.snapshot(self.ACF_FAQ)}
+        self.assertEqual([slot for slot in rows if slot > 100], [101])
+        faq = rows[101]
+        self.assertEqual(faq["kind"], "faq")
+        self.assertEqual(faq["title_field"], "page_faq_question_1")
+        self.assertEqual(faq["text_field"], "page_faq_answer_1")
+        self.assertEqual(rows[1]["kind"], "section")
+
+    def test_wolne_sloty_faq_nie_mieszaja_sie_z_sekcjami(self):
+        self.assertEqual(sec.free_faq_slots(self.ACF_FAQ)[:2], [102, 103])
+        self.assertNotIn(101, sec.free_slots(self.ACF_FAQ))
+        self.assertTrue(sec.is_faq(101) and sec.is_faq(118))
+        self.assertFalse(sec.is_faq(100) or sec.is_faq(119) or sec.is_faq(30))
+
+    def test_renumeracja_nie_rusza_faq(self):
+        """Nowa sekcja przesuwa sekcje treści; pytanie FAQ zostaje w swoim slocie."""
+        snapshot = sec.snapshot(self.ACF_FAQ)
+        proposals = {
+            3: {"title": "Nowa sekcja", "text": "<p>nowa</p>", "after_slot": 1},
+            101: {"title": "Co oznacza błąd 403?", "text": "<p>Odmowa dostępu.</p>"},
+        }
+        out, moves, inserted = sec.renumber(snapshot, proposals)
+        self.assertIn(101, out)
+        self.assertEqual(out[101]["title"], "Co oznacza błąd 403?")
+        self.assertNotIn(101, moves.values())
+        self.assertNotIn(101, inserted)
+
+    def test_wiersze_diffa_maja_pola_faq_a_nie_page_text(self):
+        snapshot = sec.snapshot(self.ACF_FAQ)
+        proposals = {
+            101: {"title": "Co oznacza błąd 403?", "text": "<p>Serwer odmawia dostępu.</p>"},
+            102: {"title": "Jak naprawić 403?", "text": "<p>Sprawdź uprawnienia.</p>"},
+        }
+        rows = {row["slot"]: row for row in sec.build_sections(snapshot, proposals)}
+        self.assertEqual(rows[101]["text_field"], "page_faq_answer_1")
+        self.assertEqual(rows[101]["operation"], "update")
+        self.assertEqual(rows[102]["title_field"], "page_faq_question_2")
+        self.assertEqual(rows[102]["operation"], "insert")
+        self.assertEqual(rows[101]["kind"], "faq")
+
+    def test_konflikt_liczony_z_pola_faq(self):
+        snapshot = sec.snapshot(self.ACF_FAQ)
+        rows = sec.build_sections(snapshot, {101: {"title": "Co to 403?", "text": "<p>Nowa odpowiedź.</p>"}})
+        self.assertEqual(sec.detect_conflicts(rows, self.ACF_FAQ), [])
+        # Redakcja zmieniła odpowiedź w CMS-ie po snapshocie.
+        changed = {**self.ACF_FAQ, "page_faq_answer_1": "<p>Zupełnie inna treść.</p>"}
+        self.assertEqual(sec.detect_conflicts(rows, changed), [{"slot": 101, "reason": "changed_in_cms"}])
+
+
+class TestFaqWPipeline(unittest.TestCase):
+    """FAQ w kontekście przejazdu: liczy się do pokrycia fraz, ale nie dostaje
+    przypisów ani linków wewnętrznych."""
+
+    def _pipeline(self):
+        import run as run_module
+
+        args = type("Args", (), {
+            "job": "t", "dry_run": True, "improvements": [], "research_file": "",
+            "model_research": "", "model_writer": "",
+        })()
+        pipeline = run_module.Pipeline(args)
+        pipeline.context = {
+            "snapshot": [
+                {"slot": 1, "kind": "section", "title": "Leady", "text": "<p>Treść sekcji.</p>"},
+                {"slot": 101, "kind": "faq", "title": "Skąd brać leady na fotowoltaikę?",
+                 "text": "<p>Z wyszukiwarki.</p>"},
+            ],
+            "proposals": {}, "free_slots": [2], "free_faq_slots": [102],
+        }
+        return pipeline
+
+    def test_faq_liczy_sie_do_pokrycia_fraz(self):
+        text = self._pipeline()._coverage_text()
+        self.assertIn("Skąd brać leady na fotowoltaikę?", text)
+        self.assertTrue(matching.has_phrase(text, "leady fotowoltaika"))
+
+    def test_przypisy_i_linki_omijaja_faq(self):
+        pipeline = self._pipeline()
+        self.assertEqual(sorted(pipeline._section_texts()), [1, 101])
+        self.assertEqual(sorted(pipeline._section_texts(faq=False)), [1])
+
+    def test_zlaczona_tresc_oznacza_faq_pytaniem(self):
+        merged = self._pipeline()._merged_content()
+        self.assertIn("[FAQ: Skąd brać leady na fotowoltaikę?]", merged)
+        self.assertIn("[sekcja 1]", merged)
+
+
+class TestExpertDobor(unittest.TestCase):
+    """Cytat trafia do realnej osoby z zespołu, dobranej do tematu i nigdy
+    do autora wpisu."""
+
+    def _pipeline(self, author):
+        import run as run_module
+
+        args = type("Args", (), {
+            "job": "t", "dry_run": True, "improvements": [], "research_file": "",
+            "model_research": "", "model_writer": "", "author": author,
+        })()
+        return run_module.Pipeline(args)
+
+    def test_autor_wypada_z_kandydatow(self):
+        import config
+        names = [row["name"] for row in self._pipeline("Magdalena Antoń")._expert_candidates()]
+        self.assertNotIn("Magdalena Antoń", names)
+        self.assertEqual(len(names), len(config.EXPERTS) - 1)
+
+    def test_autor_spoza_zespolu_zostawia_pelna_liste(self):
+        import config
+        names = [row["name"] for row in self._pipeline("Jan Kowalski")._expert_candidates()]
+        self.assertEqual(len(names), len(config.EXPERTS))
+
+    def test_ekspert_spoza_listy_zostaje_podmieniony(self):
+        """Model bywa kreatywny – nazwisko spoza zespołu nie może wejść do treści."""
+        pipeline = self._pipeline("Magdalena Antoń")
+        pipeline.context = {"title": "Pozycjonowanie", "snapshot": [
+            {"slot": 1, "kind": "section", "title": "A", "text": "<p>Tekst sekcji.</p>"}], "proposals": {}}
+
+        def fake_ask(prompt_name, model, **values):
+            return ({"data": {"slot": 1, "expert": "Anna Nowak", "role": "dyrektor",
+                              "quote": "Z praktyki wiem, że liczy się konsekwencja."},
+                     "model": "test/model", "usage": {"tokens_in": 1, "tokens_out": 1}}, "1.1.0")
+
+        with mock.patch.object(pipeline, "_ask", side_effect=fake_ask):
+            payload = pipeline.step_expert()["payload"]
+
+        self.assertIn(payload["expert"], [row["name"] for row in pipeline._expert_candidates()])
+        self.assertEqual(payload["expert_replaced"], "Anna Nowak")
+        # Stanowisko pochodzi z naszej listy, nie z odpowiedzi modelu.
+        self.assertNotEqual(payload["role"], "dyrektor")
+        self.assertIn(f'{payload["expert"]}, {payload["role"]}', pipeline.context["proposals"][1]["text"])
+
+
+class TestKolektorFaq(unittest.TestCase):
+    """FAQ liczy się do treści w katalogu, ale zmiana metody liczenia nie może
+    udawać, że redakcja ruszyła wpis."""
+
+    POST = {
+        "id": 20811,
+        "content": {"rendered": "<p>Lead.</p>"},
+        "acf": {
+            "page_title_h2_1": "Na czym polega", "page_text_1": "<p>Treść sekcji.</p>",
+            "page_faq_question_1": "Ile trwa pozycjonowanie?",
+            "page_faq_answer_1": "<p>Od kilku do kilkunastu miesięcy.</p>",
+        },
+    }
+
+    def test_faq_wchodzi_do_tresci_i_liczby_naglowkow(self):
+        from sources.wordpress import _body
+
+        body, headings, mode = _body(self.POST, [])
+        self.assertEqual(mode, "acf")
+        self.assertIn("Ile trwa pozycjonowanie?", body)
+        self.assertEqual(headings, 2)  # H2 sekcji + H3 pytania
+
+    def test_wpis_bez_faq_liczy_sie_jak_dotad(self):
+        from sources.wordpress import _body
+
+        post = {**self.POST, "acf": {k: v for k, v in self.POST["acf"].items() if "faq" not in k}}
+        body, headings, _ = _body(post, [])
+        self.assertEqual(headings, 1)
+        self.assertNotIn("<h3>", body)
+
+    def test_zmiana_metody_liczenia_nie_zeruje_wieku_wpisu(self):
+        """Hash policzony bez FAQ różni się od nowego – to nasza zmiana, nie
+        edycja redakcji. Data zmiany treści (bramka w scoringu) ma zostać."""
+        from sources.wordpress import BODY_VERSION, change_state
+
+        stary = {"content_hash": "aaa", "content_changed_at": "2022-11-18", "body_version": 1}
+        self.assertEqual(change_state(stary, "bbb", "2026-01-01", "2026-08-06"),
+                         ("2022-11-18", True))
+
+        # Ta sama metoda, inny hash – redakcja naprawdę ruszyła treść.
+        biezacy = {**stary, "body_version": BODY_VERSION, "hash_baseline": False}
+        self.assertEqual(change_state(biezacy, "bbb", "2026-01-01", "2026-08-06"),
+                         ("2026-08-06", False))
+
+        # Hash bez zmian – stan zostaje nietknięty.
+        self.assertEqual(change_state(biezacy, "aaa", "2026-01-01", "2026-08-06"),
+                         ("2022-11-18", False))
+
+        # Wpis widziany pierwszy raz – data z `modified`, oznaczona jako baseline.
+        self.assertEqual(change_state(None, "aaa", "2026-01-01", "2026-08-06"),
+                         ("2026-01-01", True))

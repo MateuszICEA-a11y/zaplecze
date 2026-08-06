@@ -106,6 +106,25 @@ def _sections(acf: dict) -> list[tuple[str, str]]:
     return out
 
 
+ACF_FAQ_SLOTS = 18
+# Wersja sposobu składania treści. Podbicie oznacza, że hash zmienił się przez
+# NAS (inny zakres treści), a nie przez redakcję – bez tego dołożenie FAQ
+# oznaczyłoby każdy wpis z FAQ jako „zmieniony dziś" i wyzerowało jego wiek,
+# który jest bramką w scoringu pilności.
+BODY_VERSION = 2
+
+
+def _faq(acf: dict) -> list[tuple[str, str]]:
+    """Wypełnione pary (pytanie, odpowiedź) z bloku FAQ (ACF, od 2026-08-06 w REST)."""
+    out = []
+    for i in range(1, ACF_FAQ_SLOTS + 1):
+        question = (acf.get(f"page_faq_question_{i}") or "").strip()
+        answer = (acf.get(f"page_faq_answer_{i}") or "").strip()
+        if question or answer:
+            out.append((question, answer))
+    return out
+
+
 def _body(post: dict, custom_fields: list[str]) -> tuple[str, int, str]:
     """(HTML pełnej treści, liczba H2 z ACF, tryb odczytu).
 
@@ -116,17 +135,25 @@ def _body(post: dict, custom_fields: list[str]) -> tuple[str, int, str]:
     """
     acf = post.get("acf") if isinstance(post.get("acf"), dict) else {}
     lead = ((post.get("content") or {}).get("rendered") or "").strip()
+    # Blok FAQ to realna treść strony (schema.org/FAQPage) – bez niego licznik
+    # słów i nagłówków pokazywał mniej, niż widzi czytelnik i wyszukiwarka.
+    faq = _faq(acf)
+    faq_html = "\n".join(f"<h3>{question}</h3>\n{answer}" for question, answer in faq)
+    faq_headings = sum(1 for question, _ in faq if question)
+    tail = f"\n{faq_html}" if faq_html else ""
+
     sections = _sections(acf)
     if sections:
         body = "\n".join(f"<h2>{title}</h2>\n{text}" for title, text in sections)
-        return f"{lead}\n{body}", sum(1 for title, _ in sections if title), "acf"
+        return (f"{lead}\n{body}{tail}",
+                sum(1 for title, _ in sections if title) + faq_headings, "acf")
     no_section = (acf.get("page_content_no_section") or "").strip()
     if no_section:
-        return f"{lead}\n{no_section}", 0, "no_section"
+        return f"{lead}\n{no_section}{tail}", faq_headings, "no_section"
     custom = "\n".join(part for part in ((acf.get(field) or "").strip() for field in custom_fields) if part)
     if custom:
-        return f"{lead}\n{custom}", 0, "fields"
-    return lead, 0, "content"
+        return f"{lead}\n{custom}{tail}", faq_headings, "fields"
+    return f"{lead}{tail}", faq_headings, "content"
 
 
 def _normalize(text: str) -> str:
@@ -183,6 +210,28 @@ def _previous_items(domain_id: str) -> dict[str, dict]:
     return {str(item.get("id")): item for item in items if item.get("id") is not None}
 
 
+def change_state(prior: dict | None, body_hash: str, modified: str, today: str) -> tuple[str, bool]:
+    """(data ostatniej realnej zmiany treści, czy to tylko punkt odniesienia).
+
+    Wiek treści jest bramką w scoringu pilności, więc data nie może skakać przez
+    nasze zmiany. Trzy przypadki:
+    - hash bez zmian → zostaje to, co wiedzieliśmy,
+    - hash inny, ale policzony STARĄ metodą (`body_version`) → to zmiana zakresu
+      treści po naszej stronie, nie edycja redakcji: data zostaje, wpis dostaje
+      nowy punkt odniesienia,
+    - hash inny przy tej samej metodzie → redakcja faktycznie ruszyła wpis.
+    Wpis widziany pierwszy raz bierze `modified` i jest oznaczony jako baseline,
+    bo nie wiemy, kiedy treść naprawdę się zmieniła.
+    """
+    if not prior:
+        return modified, True
+    if prior.get("content_hash") == body_hash:
+        return prior.get("content_changed_at") or modified, bool(prior.get("hash_baseline"))
+    if int(prior.get("body_version") or 1) != BODY_VERSION:
+        return prior.get("content_changed_at") or modified, True
+    return today, False
+
+
 def fetch(cfg: dict, env: dict) -> dict:
     base = (cfg.get("base_url") or "").rstrip("/")
     if not base:
@@ -205,17 +254,7 @@ def fetch(cfg: dict, env: dict) -> dict:
             published = _iso_date(post.get("date"))
             modified = _iso_date(post.get("modified"))
             yoast = post.get("yoast_head_json") or {}
-            prior = previous.get(str(post.get("id")))
-            if prior and prior.get("content_hash") == body_hash:
-                changed_at = prior.get("content_changed_at") or modified
-                baseline = bool(prior.get("hash_baseline"))
-            elif prior:
-                changed_at, baseline = today, False
-            else:
-                # Pierwsze spotkanie wpisu – nie wiemy, kiedy treść naprawdę się
-                # zmieniła, więc bierzemy `modified` i oznaczamy to jako punkt
-                # odniesienia, żeby nie udawać pewności.
-                changed_at, baseline = modified, True
+            changed_at, baseline = change_state(previous.get(str(post.get("id"))), body_hash, modified, today)
             slugs = [categories.get(cid) for cid in (post.get("categories") or [])]
             slugs = [slug for slug in slugs if slug]
             items.append({
@@ -232,6 +271,7 @@ def fetch(cfg: dict, env: dict) -> dict:
                 "content_changed_at": changed_at,
                 "hash_baseline": baseline,
                 "content_hash": body_hash,
+                "body_version": BODY_VERSION,
                 "content_mode": mode,
                 "word_count": _words(text),
                 "headings": headings or len(_HEADING_RE.findall(body)),

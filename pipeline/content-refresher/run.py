@@ -31,6 +31,7 @@ from client import CallbackError, client_from_env  # noqa: E402
 from config import (  # noqa: E402
     COMPETITOR_LIMIT,
     EDITORIAL_RULES,
+    EXPERTS,
     MODEL_RESEARCH,
     MODEL_WRITER,
     PIPELINE_VERSION,
@@ -59,13 +60,8 @@ def normalize_phrase(phrase: str) -> str:
     return " ".join(sorted(words))
 
 
-EXPERTS = [
-    "Mateusz Wiśniewski – ekspert SEO i AI Search",
-    "Magdalena Antoń – specjalistka ds. treści",
-    "Karolina Goćkowska – specjalistka SEO",
-    "Dorota Prokopiak – specjalistka ds. marketingu",
-]
 MAX_NEW_SECTIONS = 3
+MAX_NEW_FAQ = 3
 MAX_INTERNAL_LINKS = 5
 # Domykanie pokrycia fraz: ile razy wolno odesłać tekst do poprawki. Jeden
 # przebieg zwykle wystarcza; drugi łapie frazy, które model wplótł niegramatycznie
@@ -143,6 +139,7 @@ class Pipeline:
             "content": content,
             "snapshot": sec.snapshot(acf),
             "free_slots": sec.free_slots(acf),
+            "free_faq_slots": sec.free_faq_slots(acf),
             "title": (post.get("title") or {}).get("rendered") or self.args.title,
             "url": post.get("link") or self.args.url,
         }
@@ -150,7 +147,8 @@ class Pipeline:
             "title": self.context["title"],
             "mode": content["mode"],
             "words": len(content["text"].split()),
-            "sections": len(self.context["snapshot"]),
+            "sections": sum(1 for item in self.context["snapshot"] if item.get("kind", "section") == "section"),
+            "faq": sum(1 for item in self.context["snapshot"] if item.get("kind") == "faq"),
             "free_slots": self.context["free_slots"][:5],
             "hash": content["hash"],
         }}
@@ -394,7 +392,14 @@ class Pipeline:
         context = self.context
         payload_sections = [
             {"slot": item["slot"], "title": item["title"], "text": item["text"]}
-            for item in context["snapshot"]
+            for item in context["snapshot"] if item.get("kind", "section") == "section"
+        ]
+        # FAQ idzie osobną listą: to pary pytanie/odpowiedź spod artykułu,
+        # renderowane jako schema.org/FAQPage. Wrzucone między sekcje model
+        # traktował jak zwykłe H2 i próbował je rozbudowywać w akapity.
+        faq_rows = [
+            {"slot": item["slot"], "question": item["title"], "answer": item["text"]}
+            for item in context["snapshot"] if item.get("kind") == "faq"
         ]
         tasks = self._structure_tasks()
         result, version = self._ask(
@@ -405,13 +410,25 @@ class Pipeline:
             brief=context.get("brief") or {},
             structure_tasks=tasks or "brak – kieruj się wytycznymi z analizy",
             sections=payload_sections,
+            faq=faq_rows or "brak – ten wpis nie ma bloku FAQ",
             free_slots=context["free_slots"][:MAX_NEW_SECTIONS],
+            free_faq_slots=context.get("free_faq_slots", [])[:MAX_NEW_FAQ],
         )
         snapshot_slots = {item["slot"] for item in context["snapshot"]}
+        allowed_faq = set(context.get("free_faq_slots", [])[:MAX_NEW_FAQ]) | {
+            item["slot"] for item in context["snapshot"] if item.get("kind") == "faq"
+        }
         proposals = {}
         for row in (result["data"].get("sections") or []):
             slot = int(row.get("slot") or 0)
-            if not (1 <= slot <= 30 and (row.get("text") or "").strip()):
+            if not (row.get("text") or "").strip():
+                continue
+            if sec.is_faq(slot):
+                # Nowe pytanie tylko w wolnej parze pól – slot spoza puli
+                # nadpisałby cudzy wpis w CMS-ie.
+                if slot not in allowed_faq:
+                    continue
+            elif not 1 <= slot <= 30:
                 continue
             proposals[slot] = {"title": row.get("title"), "text": row.get("text")}
             if slot not in snapshot_slots:
@@ -425,7 +442,8 @@ class Pipeline:
                     proposals[slot]["after_slot"] = after
         self.context["proposals"] = proposals
         payload = {
-            "changed_slots": sorted(proposals),
+            "changed_slots": sorted(slot for slot in proposals if not sec.is_faq(slot)),
+            "changed_faq": sorted(slot for slot in proposals if sec.is_faq(slot)),
             "notes": [
                 row.get("change") for row in (result["data"].get("sections") or []) if row.get("change")
             ],
@@ -492,17 +510,22 @@ class Pipeline:
             })
         return out
 
+    def _titles(self) -> dict[int, str]:
+        """Nagłówki bloków po dotychczasowych krokach – dla sekcji H2, dla FAQ pytanie."""
+        titles = {item["slot"]: item.get("title") or "" for item in self.context["snapshot"]}
+        titles.update({
+            slot: (row.get("title") or titles.get(slot) or "")
+            for slot, row in (self.context.get("proposals") or {}).items()
+        })
+        return titles
+
     def _coverage_text(self) -> str:
         """Tekst propozycji tak, jak zobaczy go edytor: nagłówki i treść sekcji.
 
         Nagłówek liczy się tak samo jak akapit, więc musi wejść do porównania –
         inaczej fraza wpleciona w H2 wychodziłaby jako niepokryta.
         """
-        titles = {item["slot"]: item.get("title") or "" for item in self.context["snapshot"]}
-        titles.update({
-            slot: (row.get("title") or titles.get(slot) or "")
-            for slot, row in (self.context.get("proposals") or {}).items()
-        })
+        titles = self._titles()
         parts = []
         for slot, text in self._section_texts().items():
             parts.append(titles.get(slot, ""))
@@ -531,14 +554,13 @@ class Pipeline:
                        if row["keyword"] in before["missing"] and row["keyword"] not in skipped]
             if not missing:
                 break
-            titles = {item["slot"]: item.get("title") or "" for item in self.context["snapshot"]}
-            titles.update({slot: (row.get("title") or titles.get(slot) or "")
-                           for slot, row in (self.context.get("proposals") or {}).items()})
+            titles = self._titles()
             result, version = self._ask(
                 "coverage", self.model_writer, max_tokens=24000,
                 missing=[{"keyword": row["keyword"], "searches": row["searches"], "where": row["where"]}
                          for row in missing],
-                sections=[{"slot": slot, "title": titles.get(slot, ""), "text": text_html}
+                sections=[{"slot": slot, "kind": "faq" if sec.is_faq(slot) else "sekcja",
+                           "title": titles.get(slot, ""), "text": text_html}
                           for slot, text_html in self._section_texts().items() if text_html],
             )
             cost = result["usage"]
@@ -600,10 +622,16 @@ class Pipeline:
                 return item["text"]
         return ""
 
-    def _section_texts(self) -> dict[int, str]:
-        """Aktualna treść wszystkich sekcji (po dotychczasowych krokach)."""
+    def _section_texts(self, *, faq: bool = True) -> dict[int, str]:
+        """Aktualna treść bloków (po dotychczasowych krokach).
+
+        `faq=False` zostawia same sekcje treści – przypisy i linkowanie
+        wewnętrzne nie mają czego szukać w odpowiedziach FAQ, które mają być
+        krótkie i samodzielne (idą do schema.org/FAQPage).
+        """
         slots = {item["slot"] for item in self.context["snapshot"]} | set(self.context.get("proposals") or {})
-        return {slot: self._current_text(slot) for slot in sorted(slots)}
+        return {slot: self._current_text(slot) for slot in sorted(slots)
+                if faq or not sec.is_faq(slot)}
 
     def _store_section_texts(self, texts: dict[int, str]) -> None:
         """Zapisuje zmienione sekcje jako propozycje – tylko te, które faktycznie
@@ -635,32 +663,63 @@ class Pipeline:
 
     def _merged_content(self) -> str:
         parts = []
+        titles = self._titles()
         slots = {item["slot"] for item in self.context["snapshot"]} | set(self.context.get("proposals") or {})
         for slot in sorted(slots):
             text = self._current_text(slot)
             if text:
-                parts.append(f"[sekcja {slot}]\n{extract.strip_html(text)}")
+                # FAQ oznaczamy pytaniem, nie numerem sekcji – model ma widzieć,
+                # że to gotowa para pytanie/odpowiedź, a nie akapit do rozbudowy.
+                label = f"[FAQ: {titles.get(slot, '')}]" if sec.is_faq(slot) else f"[sekcja {slot}]"
+                parts.append(f"{label}\n{extract.strip_html(text)}")
         merged = "\n\n".join(parts)
         # Flaga do payloadów kroków pracujących na złączonej treści: przy uciętym
         # tekście końcowe sekcje nie dostaną przypisów ani linków.
         self.context["merged_truncated"] = len(merged) > MAX_PROMPT_CONTENT
         return merged[:MAX_PROMPT_CONTENT]
 
+    def _expert_candidates(self) -> list[dict]:
+        """Eksperci, którym wolno przypisać cytat w tym wpisie.
+
+        Autor wpisu odpada – cytowanie samego siebie to reguła redakcyjna,
+        nie preferencja. Porównanie po nazwisku i bez wielkości liter, bo
+        autor z katalogu bywa zapisany z tytułem albo inaczej sformatowany.
+        """
+        author = (self.args.author or "").strip().lower()
+        out = [row for row in EXPERTS if not author or row["name"].lower() not in author
+               and author not in row["name"].lower()]
+        # Autor spoza zespołu nie może wyczyścić całej listy – wtedy zostaje komplet.
+        return out or list(EXPERTS)
+
     def step_expert(self):
+        candidates = self._expert_candidates()
         result, version = self._ask(
             "expert", self.model_writer,
             title=self.context["title"],
             content=self._merged_content(),
             author=self.args.author or "nieznany",
-            experts=[name for name in EXPERTS if not self.args.author or not name.startswith(self.args.author)],
+            experts=[{"name": row["name"], "role": row["role"], "obszar": row["topics"]}
+                     for row in candidates],
         )
         data = result["data"]
         quote = (data.get("quote") or "").strip()
         slot = int(data.get("slot") or 0)
+
+        # Osobę i stanowisko bierzemy z NASZEJ listy, nie z odpowiedzi modelu:
+        # cytat podpisany zmyślonym nazwiskiem albo autorem wpisu jest gorszy
+        # niż brak cytatu. Model wybiera tylko, KTÓRY z kandydatów pasuje.
+        picked = (data.get("expert") or "").strip().lower()
+        chosen = next((row for row in candidates if row["name"].lower() in picked
+                       or picked in row["name"].lower()), None)
+        if chosen is None:
+            chosen = candidates[0]
+            data["expert_replaced"] = data.get("expert") or "(brak)"
+        data["expert"], data["role"] = chosen["name"], chosen["role"]
+
         if quote and 1 <= slot <= 30:
             block = (
                 f'<blockquote class="expert"><p>{quote}</p>'
-                f'<footer>{data.get("expert", "")}{", " + data["role"] if data.get("role") else ""}</footer>'
+                f'<footer>{data["expert"]}, {data["role"]}</footer>'
                 f"</blockquote>"
             )
             proposals = self.context.setdefault("proposals", {})
@@ -683,13 +742,14 @@ class Pipeline:
         data = result["data"]
         # Propozycje wstawiamy w treść – lista adresów obok artykułu nie ma
         # wartości, dopóki ktoś nie przepisze jej ręcznie do CMS-a.
-        texts = self._section_texts()
+        texts = self._section_texts(faq=False)
         # Wpis po wcześniejszym przejeździe ma już sekcję „Źródła" – nową listę
         # wstawiamy w jej slot (nadpisanie), inaczej każdy przejazd dokładałby
         # kolejną bibliografię na końcu artykułu.
         existing_sources = next(
             (item["slot"] for item in self.context["snapshot"]
-             if item["title"].strip().lower() in ("źródła", "zrodla", "bibliografia")),
+             if item.get("kind", "section") == "section"
+             and item["title"].strip().lower() in ("źródła", "zrodla", "bibliografia")),
             None,
         )
         sources_slot = existing_sources or self._take_free_slot()
@@ -728,7 +788,7 @@ class Pipeline:
             catalog=listing,
             max_links=str(MAX_INTERNAL_LINKS),
         )
-        texts, report = apply.apply_internal_links(self._section_texts(), result["data"].get("links") or [])
+        texts, report = apply.apply_internal_links(self._section_texts(faq=False), result["data"].get("links") or [])
         self._store_section_texts(texts)
         self.context["internal_links"] = result["data"]
         return {"payload": {

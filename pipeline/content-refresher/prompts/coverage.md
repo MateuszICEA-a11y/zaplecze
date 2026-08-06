@@ -19,6 +19,8 @@ Uwaga na przymiotniki: „fotowoltaiczny" NIE pokrywa frazy z rzeczownikiem „f
 
 ## Sekcje artykułu (stan po przepisaniu)
 
+`kind: faq` to para pytanie–odpowiedź z bloku FAQ pod artykułem (`title` = pytanie). Odpowiedź FAQ ma zostać zwięzła – dwa, trzy zdania – więc frazę wplataj tam tylko wtedy, gdy mieści się w naturalnym zdaniu odpowiedzi. Domyślnie celuj w sekcje treści.
+
 {{ sections }}
 
 ## Zadanie

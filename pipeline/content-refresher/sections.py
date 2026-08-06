@@ -10,7 +10,8 @@ import re
 import sys
 from pathlib import Path
 
-from config import ACF_SLOTS, SLOT_TEXT, SLOT_TITLE
+from config import (ACF_SLOTS, FAQ_ANSWER, FAQ_QUESTION, FAQ_SLOT_BASE, FAQ_SLOTS,
+                    SLOT_TEXT, SLOT_TITLE)
 
 # Maper ACF ma jedną implementację – tę z collectora.
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "dashboard" / "collector"))
@@ -30,11 +31,49 @@ def free_slots(acf: dict) -> list[int]:
     return [n for n in range(1, ACF_SLOTS + 1) if n not in taken]
 
 
-def snapshot(acf: dict) -> list[dict]:
-    """Stan wyjściowy sekcji – trafia do `job_sections.*_before`."""
+def is_faq(slot: int) -> bool:
+    """Czy numer slotu należy do przestrzeni FAQ (101–118)."""
+    return FAQ_SLOT_BASE < slot <= FAQ_SLOT_BASE + FAQ_SLOTS
+
+
+def faq_index(slot: int) -> int:
+    """Numer pary pól ACF dla slotu FAQ – `page_faq_question_N`."""
+    return slot - FAQ_SLOT_BASE
+
+
+def occupied_faq(acf: dict) -> list[int]:
+    """Sloty FAQ, w których stoi pytanie albo odpowiedź."""
     return [
+        FAQ_SLOT_BASE + n for n in range(1, FAQ_SLOTS + 1)
+        if (acf.get(FAQ_QUESTION.format(n=n)) or "").strip() or (acf.get(FAQ_ANSWER.format(n=n)) or "").strip()
+    ]
+
+
+def free_faq_slots(acf: dict) -> list[int]:
+    """Puste pary FAQ – tam wchodzą nowe pytania."""
+    taken = set(occupied_faq(acf))
+    return [FAQ_SLOT_BASE + n for n in range(1, FAQ_SLOTS + 1) if FAQ_SLOT_BASE + n not in taken]
+
+
+def fields_for(slot: int) -> tuple[str, str]:
+    """Para pól ACF dla slotu – sekcja albo FAQ, zależnie od przestrzeni numeru."""
+    if is_faq(slot):
+        n = faq_index(slot)
+        return FAQ_QUESTION.format(n=n), FAQ_ANSWER.format(n=n)
+    return SLOT_TITLE.format(n=slot), SLOT_TEXT.format(n=slot)
+
+
+def snapshot(acf: dict) -> list[dict]:
+    """Stan wyjściowy sekcji i FAQ – trafia do `job_sections.*_before`.
+
+    FAQ jedzie jako pseudo-sekcje ze slotami 101+: pytanie w miejscu nagłówka,
+    odpowiedź w miejscu treści. Dzięki temu diff, decyzje redaktora i zapis do
+    WordPressa (po NAZWACH pól, nie po numerach) działają bez osobnej ścieżki.
+    """
+    rows = [
         {
             "slot": n,
+            "kind": "section",
             "title_field": SLOT_TITLE.format(n=n),
             "text_field": SLOT_TEXT.format(n=n),
             "title": (acf.get(SLOT_TITLE.format(n=n)) or "").strip(),
@@ -43,6 +82,18 @@ def snapshot(acf: dict) -> list[dict]:
         }
         for n in occupied_slots(acf)
     ]
+    for slot in occupied_faq(acf):
+        n = faq_index(slot)
+        rows.append({
+            "slot": slot,
+            "kind": "faq",
+            "title_field": FAQ_QUESTION.format(n=n),
+            "text_field": FAQ_ANSWER.format(n=n),
+            "title": (acf.get(FAQ_QUESTION.format(n=n)) or "").strip(),
+            "text": (acf.get(FAQ_ANSWER.format(n=n)) or "").strip(),
+            "hash": content_hash(acf.get(FAQ_ANSWER.format(n=n)) or ""),
+        })
+    return rows
 
 
 def _tokens(text: str) -> list[str]:
@@ -102,6 +153,11 @@ def renumber(before: list[dict], proposals: dict[int, dict],
     na koniec (stare zachowanie). Gdy przesunięciom zabrakłoby slotów (>30),
     zwraca wejście bez zmian – lepszy stary układ niż utrata sekcji.
     """
+    # FAQ ma własną przestrzeń numerów i stałe miejsce na stronie – renumeracja
+    # dotyczy wyłącznie sekcji treści, inaczej pytanie wjechałoby w slot sekcji.
+    faq = {slot: proposal for slot, proposal in proposals.items() if is_faq(slot)}
+    proposals = {slot: proposal for slot, proposal in proposals.items() if not is_faq(slot)}
+    before = [item for item in before if not is_faq(item["slot"])]
     occupied = [item["slot"] for item in before]
     occupied_set = set(occupied)
     inserts = {slot: proposal for slot, proposal in proposals.items() if slot not in occupied_set}
@@ -128,7 +184,8 @@ def renumber(before: list[dict], proposals: dict[int, dict],
     for kind, slot in order:
         target = slot if kind == "old" and slot >= next_free else next_free
         if target > ACF_SLOTS:
-            return proposals, {}, {slot for slot in proposals if slot not in {i["slot"] for i in before}}
+            return ({**proposals, **faq}, {},
+                    {slot for slot in proposals if slot not in {i["slot"] for i in before}})
         next_free = target + 1
         proposal = proposals.get(slot)
         if kind == "new":
@@ -143,6 +200,7 @@ def renumber(before: list[dict], proposals: dict[int, dict],
             }
         elif proposal:
             out[slot] = {k: v for k, v in proposal.items() if k != "after_slot"}
+    out.update(faq)
     return out, moves, inserted
 
 
@@ -186,10 +244,12 @@ def build_sections(before: list[dict], proposals: dict[int, dict],
                 and strip_html(text_after) == strip_html(text_before) and title_after == title_before:
             continue
         opcodes = diff_tokens(text_before, text_after)
+        title_field, text_field = fields_for(slot)
         rows.append({
             "slot": slot,
-            "title_field": SLOT_TITLE.format(n=slot),
-            "text_field": SLOT_TEXT.format(n=slot),
+            "kind": "faq" if is_faq(slot) else "section",
+            "title_field": title_field,
+            "text_field": text_field,
             "operation": "insert" if is_insert else ("move" if moved_from else "update"),
             "moved_from": moved_from,
             "title_before": title_before,
@@ -212,14 +272,15 @@ def detect_conflicts(sections: list[dict], current_acf: dict) -> list[dict]:
     conflicts = []
     for section in sections:
         slot = section["slot"]
-        current = (current_acf.get(SLOT_TEXT.format(n=slot)) or "").strip()
+        title_field, text_field = fields_for(slot)
+        current = (current_acf.get(text_field) or "").strip()
         operation = section.get("operation")
         # Insert/move bez hasha celuje w wolny slot – ma być nadal wolny.
         # Insert/move z hashem (renumeracja) nadpisuje znaną treść – ma się
         # zgadzać z tym, co znaliśmy w chwili snapshotu.
         if operation in ("insert", "move"):
             if not section.get("text_hash_before"):
-                if current or (current_acf.get(SLOT_TITLE.format(n=slot)) or "").strip():
+                if current or (current_acf.get(title_field) or "").strip():
                     conflicts.append({"slot": slot, "reason": "slot_taken"})
             elif content_hash(current) != section["text_hash_before"]:
                 conflicts.append({"slot": slot, "reason": "changed_in_cms"})

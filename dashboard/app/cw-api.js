@@ -363,6 +363,11 @@ async function dispatchWorkflow(env, job) {
 /* ---------- treść wpisu (proxy WP REST) ---------- */
 
 const ACF_SLOTS = 30; // lustro config.py (ACF_SLOTS) – szablon ma 30 par pól
+// FAQ: osobna grupa pól ACF renderowana jako schema.org/FAQPage. Sloty z własnej
+// przestrzeni (101+), żeby diff, decyzje i zapis szły tą samą ścieżką co sekcje.
+// Lustro config.py (FAQ_SLOTS, FAQ_SLOT_BASE).
+const FAQ_SLOTS = 18;
+const FAQ_SLOT_BASE = 100;
 const MAX_WP_BYTES = 2 * 1024 * 1024; // jak FETCH_MAX_BYTES w pipeline
 const CONTENT_CACHE_S = 60;
 
@@ -392,6 +397,35 @@ export function mapAcfSections(acf) {
     }
   }
   return { sections, free_slots: free };
+}
+
+/** Pary pytanie–odpowiedź z bloku FAQ jako pseudo-sekcje ze slotami 101+. */
+export function mapAcfFaq(acf) {
+  const items = [];
+  const free = [];
+  for (let n = 1; n <= FAQ_SLOTS; n++) {
+    const slot = FAQ_SLOT_BASE + n;
+    const question = String(acf?.[`page_faq_question_${n}`] ?? '').trim();
+    const answer = String(acf?.[`page_faq_answer_${n}`] ?? '').trim();
+    if (question || answer) {
+      items.push({
+        slot,
+        title_field: `page_faq_question_${n}`,
+        text_field: `page_faq_answer_${n}`,
+        title: question,
+        text: answer,
+      });
+    } else {
+      free.push(slot);
+    }
+  }
+  return {
+    items,
+    free_slots: free,
+    title: String(acf?.page_faq_title ?? '').trim(),
+    // „tak" = blok wystawia mikrodane FAQPage; bez tego pytania są zwykłą treścią.
+    schema: String(acf?.page_faq_schema ?? '').trim().toLowerCase() === 'tak',
+  };
 }
 
 export async function fetchPostContent(request, env, domain, postType, postId, fetchImpl = fetch) {
@@ -440,6 +474,7 @@ export async function fetchPostContent(request, env, domain, postType, postId, f
 
   const acf = post?.acf && typeof post.acf === 'object' ? post.acf : {};
   const { sections, free_slots: freeSlots } = mapAcfSections(acf);
+  const faq = mapAcfFaq(acf);
   // Wpisy bez sekcji ACF trzymają całość w `content` albo w
   // `page_content_no_section` – edytor i tak ma pokazać pełną treść.
   const lead = String(post?.content?.rendered ?? '').trim();
@@ -452,6 +487,7 @@ export async function fetchPostContent(request, env, domain, postType, postId, f
     no_section: sections.length ? '' : noSection,
     sections,
     free_slots: freeSlots,
+    faq,
   });
   response.headers.set('Cache-Control', `private, max-age=${CONTENT_CACHE_S}`);
   if (cache) {

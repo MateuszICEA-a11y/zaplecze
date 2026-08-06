@@ -78,6 +78,35 @@ ACF_SLOTS = 30
 SLOT_TITLE = "page_title_h2_{n}"
 SLOT_TEXT = "page_text_{n}"
 
+# --- FAQ ---
+# FAQ to osobna grupa pól ACF (wystawiona w REST 2026-08-06): nagłówek bloku
+# plus 18 par pytanie/odpowiedź. Traktujemy je jak sekcje, żeby diff, decyzje
+# w edytorze i zapis do WordPressa jechały tą samą ścieżką – dlatego dostają
+# numery slotów z własnej przestrzeni, przesunięte o FAQ_SLOT_BASE. Zapis
+# odbywa się po NAZWACH pól, więc offset nigdzie nie ląduje w CMS-ie.
+FAQ_SLOTS = 18
+FAQ_SLOT_BASE = 100
+FAQ_QUESTION = "page_faq_question_{n}"
+FAQ_ANSWER = "page_faq_answer_{n}"
+FAQ_TITLE = "page_faq_title"
+
+# --- eksperci ICEA cytowani w treści ---
+# Cytat MUSI trafić do realnej osoby z zespołu i nigdy do autora wpisu (to byłoby
+# cytowanie samego siebie – reguła redakcyjna). Dlatego rola nie pochodzi od
+# modelu, tylko stąd: model wybiera osobę, my podstawiamy jej stanowisko.
+# `topics` opisuje obszar wprost wynikający ze stanowiska – po nim dobieramy
+# eksperta do tematu wpisu, zamiast zostawiać wybór przypadkowi.
+EXPERTS = [
+    {"name": "Mateusz Wiśniewski", "role": "ekspert SEO i AI Search",
+     "topics": "SEO techniczne, widoczność w wyszukiwarkach AI, strategia SEO"},
+    {"name": "Magdalena Antoń", "role": "specjalistka ds. treści",
+     "topics": "content marketing, redakcja i optymalizacja treści"},
+    {"name": "Karolina Goćkowska", "role": "specjalistka SEO",
+     "topics": "pozycjonowanie stron i sklepów, optymalizacja on-page, SEO lokalne"},
+    {"name": "Dorota Prokopiak", "role": "specjalistka ds. marketingu",
+     "topics": "marketing internetowy, kampanie płatne, pozyskiwanie klientów"},
+]
+
 # Reguły redakcyjne wspólne dla wszystkich promptów piszących.
 EDITORIAL_RULES = """Zasady redakcyjne, których musisz przestrzegać:
 - Półpauza (–), nigdy myślnik em (—).

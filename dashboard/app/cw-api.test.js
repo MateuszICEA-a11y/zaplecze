@@ -334,6 +334,42 @@ test('content: wstęp z pola content i pełna treść wpisu bez sekcji ACF', asy
   assert.equal(singleData.no_section, '<p>Całość wpisu.</p>');
 });
 
+test('content: FAQ wraca jako pseudo-sekcje ze slotami 101+ i wolnymi parami', async () => {
+  const response = await fetchPostContent(null, CONTENT_ENV, 'grupa-icea.pl', 'posts', 20811,
+    async () => new Response(JSON.stringify({
+      id: 20811,
+      title: { rendered: 'Pozycjonowanie w branży fotowoltaicznej' },
+      content: { rendered: '<p>Lead.</p>' },
+      acf: {
+        page_title_h2_1: 'Na czym polega', page_text_1: '<p>Treść.</p>',
+        page_faq_title: 'FAQ dotyczące pozycjonowania',
+        page_faq_schema: 'tak',
+        page_faq_question_1: 'Jakie są zalety?', page_faq_answer_1: '<p>Wiele korzyści.</p>',
+        page_faq_question_2: 'Od czego zacząć?', page_faq_answer_2: '<p>Od badań rynku.</p>',
+      },
+    }), { status: 200 }));
+  const data = await response.json();
+  assert.equal(data.faq.title, 'FAQ dotyczące pozycjonowania');
+  assert.equal(data.faq.schema, true);
+  assert.deepEqual(data.faq.items.map((row) => row.slot), [101, 102]);
+  assert.equal(data.faq.items[0].text_field, 'page_faq_answer_1');
+  assert.deepEqual(data.faq.free_slots.slice(0, 2), [103, 104]);
+  // Sloty FAQ nie mieszają się z wolnymi slotami sekcji.
+  assert.ok(data.free_slots.every((slot) => slot <= 30));
+});
+
+test('content: wpis bez FAQ oddaje pusty blok, nie null', async () => {
+  const response = await fetchPostContent(null, CONTENT_ENV, 'grupa-icea.pl', 'posts', 5767,
+    async () => new Response(JSON.stringify({
+      id: 5767, title: { rendered: 'Bez FAQ' }, content: { rendered: '' },
+      acf: { page_title_h2_1: 'A', page_text_1: '<p>a</p>' },
+    }), { status: 200 }));
+  const data = await response.json();
+  assert.deepEqual(data.faq.items, []);
+  assert.equal(data.faq.schema, false);
+  assert.equal(data.faq.free_slots.length, 18);
+});
+
 test('content: błąd WP i za duża odpowiedź dają 502, 404 przechodzi', async () => {
   const err = await fetchPostContent(null, CONTENT_ENV, 'grupa-icea.pl', 'posts', 1,
     async () => new Response('awaria', { status: 500 }));
