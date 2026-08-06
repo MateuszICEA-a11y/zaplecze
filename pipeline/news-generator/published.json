@@ -1,13 +1,5 @@
 [
   {
-    "title": "Kamper w firmie z ulgą do 150 tys. zł. Fiskus otwiera drzwi dla mobilnego biura",
-    "date": "2026-05-02",
-    "slug": "kamper-w-firmie-z-ulga-do-150-tys-zl-fiskus-otwiera-drzwi-dla-mobilnego-biura",
-    "section": "kampery",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Kamper w kosztach firmy? Odliczenie może sięgnąć nawet 150 tys. zł",
     "date": "2026-05-03",
     "slug": "kamper-w-kosztach-firmy-odliczenie-moze-siegnac-nawet-150-tys-zl",
@@ -716,6 +708,14 @@
     "date": "2026-08-05",
     "slug": "kamper-z-kontrabanda-na-granicy-tysiace-paczek-papierosow-i-nielegalny-czynnik",
     "section": "kampery",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "MZK Toruń testuje nowego Solarisa Urbino Electric na linii 40",
+    "date": "2026-08-06",
+    "slug": "mzk-torun-testuje-nowego-solarisa-urbino-electric-na-linii-40",
+    "section": "news",
     "format": "short",
     "source": "rss"
   }
