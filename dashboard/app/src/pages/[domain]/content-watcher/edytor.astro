@@ -332,9 +332,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   // Lustro config.py (STEPS + OPTIONAL_STEPS) – przy zmianie kolejności kroków
   // pipeline'u zaktualizuj oba miejsca.
   const STEP_ORDER = ['fetch', 'keywords_own', 'serp', 'competitors', 'keywords_competitors',
-    'brief', 'rewrite', 'expert', 'sources', 'internal_links', 'diff'];
+    'brief', 'rewrite', 'coverage', 'expert', 'sources', 'internal_links', 'diff'];
   const OPTIONAL_STEP: Record<string, string> = {
-    rewrite: 'gaps', expert: 'expert', sources: 'sources', internal_links: 'internal_links',
+    rewrite: 'gaps', coverage: 'gaps', expert: 'expert', sources: 'sources',
+    internal_links: 'internal_links',
   };
   const STEP_LABELS: Record<string, string> = {
     fetch: 'Pobranie treści',
@@ -344,6 +345,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     keywords_competitors: 'Frazy konkurencji',
     brief: 'Wytyczne',
     rewrite: 'Redagowanie sekcji',
+    coverage: 'Domknięcie fraz',
     expert: 'Porada eksperta',
     sources: 'Źródła',
     internal_links: 'Linki wewnętrzne',
@@ -821,6 +823,21 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     return out;
   }
 
+  /* Wymiany spółgłoskowe na końcu rdzenia: „fotowoltaika" → „w fotowoltaice",
+     „droga" → „na drodze". Bez tego naturalny miejscownik nie liczył się jako
+     pokrycie i model dostawał sprzeczny sygnał: napisał poprawnie po polsku,
+     a panel pokazywał brak frazy. Lustro `soft()` w pipeline/matching.py. */
+  const SOFT_ENDINGS: [string, string][] = [['dz', 'g'], ['sz', 'ch'], ['c', 'k']];
+
+  function soft(word: string) {
+    for (const [ending, base] of SOFT_ENDINGS) {
+      if (word.endsWith(ending) && word.length - ending.length + base.length >= STEM_MIN) {
+        return word.slice(0, -ending.length) + base;
+      }
+    }
+    return word;
+  }
+
   const FOLD: Record<string, string> = { ą: 'a', ć: 'c', ę: 'e', ł: 'l', ń: 'n', ó: 'o', ś: 's', ź: 'z', ż: 'z' };
 
   /** Uproszczenie tekstu ZNAK W ZNAK – pozycje muszą zostać te same, inaczej
@@ -841,7 +858,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   function tokens(text: string) {
     const out: { stem: string; start: number; end: number }[] = [];
     for (const match of fold(text).matchAll(/[a-z0-9]+/g)) {
-      out.push({ stem: stem(match[0]), start: match.index!, end: match.index! + match[0].length });
+      out.push({ stem: soft(stem(match[0])), start: match.index!, end: match.index! + match[0].length });
     }
     return out;
   }
@@ -964,6 +981,46 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     }
     if (known.length) CSS.highlights.set('cw-keyword', new Highlight(...known));
     if (fresh.length) CSS.highlights.set('cw-keyword-new', new Highlight(...fresh));
+  }
+
+  /** Pierwszy zakres tekstu z tą frazą w dokumencie – od miejsca, w którym
+      stoi widok, żeby kolejne kliknięcia szły po następnych wystąpieniach. */
+  function keywordRanges(keyword: string) {
+    const doc = $('[data-ed-doc]');
+    if (!doc) return [];
+    const out: Range[] = [];
+    for (const scope of doc.querySelectorAll<HTMLElement>(HIGHLIGHT_SCOPE)) {
+      const { text, parts } = textMap(scope);
+      if (!text.trim()) continue;
+      for (const hit of findPhrase(text, keyword)) {
+        const range = rangeFor(parts, hit.start, hit.end);
+        if (range) out.push(range);
+      }
+    }
+    return out;
+  }
+
+  let focusTimer = 0;
+  const focusCursor = new Map<string, number>();
+
+  /** Przewinięcie do wystąpienia frazy w treści – kliknięcie w pozycję listy.
+      Kolejne kliknięcia tej samej frazy idą do następnych wystąpień, bo przy
+      frazie użytej kilka razy skok wciąż w to samo miejsce niczego nie mówi. */
+  function focusKeyword(keyword: string) {
+    const ranges = keywordRanges(keyword);
+    if (!ranges.length) return false;
+    const index = (focusCursor.get(keyword) ?? -1) + 1;
+    const range = ranges[index % ranges.length];
+    focusCursor.set(keyword, index);
+
+    const anchor = range.startContainer.parentElement;
+    anchor?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (typeof Highlight !== 'undefined' && CSS?.highlights) {
+      CSS.highlights.set('cw-keyword-focus', new Highlight(range));
+      window.clearTimeout(focusTimer);
+      focusTimer = window.setTimeout(() => CSS.highlights.delete('cw-keyword-focus'), 2600);
+    }
+    return true;
   }
 
   /** Skąd wzięła się fraza na liście – dymek przy opisie po prawej. */
@@ -1107,8 +1164,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       mark.className = 'ed-kw-mark';
       // Znacznik mówi o TEKŚCIE (czy fraza w nim pada), opis po prawej –
       // o WYNIKACH w Google. „✓ · nie mamy" nie jest sprzecznością: fraza
-      // jest w treści, ale wpis nie jest na nią widoczny.
-      mark.textContent = used ? '✓' : '+';
+      // jest w treści, ale wpis nie jest na nią widoczny. Brak to czerwony
+      // minus, nie plus: plus czytało się jak „dodaj", a to jest stan braku.
+      mark.textContent = used ? '✓' : '−';
       mark.title = used ? 'fraza występuje w treści wpisu' : 'brakuje jej w treści wpisu';
       const name = document.createElement('span');
       name.className = 'ed-kw-name';
@@ -1127,6 +1185,21 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       meta.textContent = [row.searches ? `${pl.format(row.searches)}/mies.` : null, row.note]
         .filter(Boolean).join(' · ');
       item.append(mark, name, meta);
+      // Fraza obecna w tekście jest łączem do swojego miejsca w dokumencie –
+      // inaczej trzeba jej szukać wzrokiem po podświetleniach.
+      if (used) {
+        item.classList.add('jump');
+        item.tabIndex = 0;
+        item.setAttribute('role', 'button');
+        item.title = 'przejdź do tej frazy w treści';
+        item.addEventListener('click', () => focusKeyword(row.keyword));
+        item.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            focusKeyword(row.keyword);
+          }
+        });
+      }
       return item;
     }));
     highlightKeywords();
@@ -1482,6 +1555,21 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     if (rewrite?.headings_missed?.length) {
       add('Pominięte zalecenia nagłówków', list(rewrite.headings_missed.map((row: any) =>
         `sekcja ${row.slot}: ${row.current || '(nowa)'} → ${row.recommended}`)));
+    }
+
+    // Bramka pokrycia: co pipeline domknął sam, a czego świadomie nie wplótł.
+    // Fraza bez pokrycia i bez powodu to błąd przejazdu, nie decyzja redakcyjna.
+    const coverage = current.steps.find((step) => step.step === 'coverage')?.payload;
+    if (coverage?.rounds?.length) {
+      const gained = coverage.rounds.flatMap((round: any) => round.gained ?? []);
+      if (gained.length) add('Frazy domknięte po sprawdzeniu', list(gained));
+    }
+    if (coverage?.skipped?.length) {
+      add('Frazy świadomie pominięte', list(coverage.skipped.map((row: any) =>
+        `${row.keyword} – ${row.why}`)));
+    }
+    if (coverage?.missing?.length) {
+      add('Frazy, których nie udało się wpleść', list(coverage.missing));
     }
   }
 
@@ -3012,6 +3100,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     background: color-mix(in srgb, var(--status-ok) 32%, transparent);
     color: var(--ink);
   }
+  /* Wystąpienie, do którego przeskoczyliśmy klikając frazę na liście –
+     mocniejsze niż stałe podświetlenie, gaśnie samo po chwili. */
+  ::highlight(cw-keyword-focus) {
+    background: color-mix(in srgb, var(--accent-blue) 55%, transparent);
+    color: var(--ink);
+  }
 
   /* Astro scope'uje też nazwy @keyframes, więc animacja używana w tym bloku
      musi mieć własną definicję globalną. */
@@ -3214,7 +3308,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     align-items: baseline; font-size: .77rem; color: var(--ink-muted); }
   .ed-score-kwlist li.used .ed-kw-mark { color: var(--status-ok); }
   .ed-score-kwlist li.used .ed-kw-name { color: var(--ink); }
-  .ed-kw-mark { color: var(--ink-faint); font-weight: 700; }
+  .ed-score-kwlist li.jump { cursor: pointer; border-radius: 2px; }
+  .ed-score-kwlist li.jump:hover, .ed-score-kwlist li.jump:focus-visible {
+    background: var(--bg-surface-2); outline: none; }
+  .ed-score-kwlist li.jump:hover .ed-kw-name { text-decoration: underline; }
+  /* Brak frazy w treści – czerwony minus, żeby odróżniał się od zielonego ✓
+     jednym rzutem oka, nie samym kształtem. */
+  .ed-kw-mark { color: var(--status-err-fg); font-weight: 700; }
   .ed-kw-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .ed-kw-meta { color: var(--ink-faint); font-size: .68rem; font-variant-numeric: tabular-nums; }
 
