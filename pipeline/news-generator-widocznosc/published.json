@@ -479,5 +479,12 @@
     "slug": "jeff-dean-odchodzi-z-google-do-nowego-startupu-ai",
     "source": "rss",
     "source_name": "TechCrunch AI"
+  },
+  {
+    "title": "WordPress 7.0.3 łata 12 podatności, w tym groźny XSS",
+    "date": "2026-08-07",
+    "slug": "wordpress-703-lata-12-podatnosci-w-tym-grozny-xss",
+    "source": "rss",
+    "source_name": "Search Engine Journal"
   }
 ]
