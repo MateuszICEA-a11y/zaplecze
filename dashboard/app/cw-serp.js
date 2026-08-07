@@ -28,7 +28,11 @@
  */
 
 export const SERP_CACHE_HOURS = 24 * 7; // powtórka w tygodniu to ten sam SERP
-export const COMPETITORS_LIMIT = 3;
+// Lustro COMPETITOR_LIMIT z pipeline (config.py) – obie ścieżki muszą patrzeć
+// na ten sam kawałek czołówki. Przy trzech adresach edytor pokazywał zero fraz
+// tam, gdzie pipeline widział dziewięć: Senuto zna frazy podstrony dopiero od
+// czwartego wyniku, więc lista obowiązkowa szła do briefu pusta.
+export const COMPETITORS_LIMIT = 5;
 export const KEYWORDS_LIMIT = 100; // twardy limit strony w API Senuto
 export const KEYWORDS_PAGES = 3; // dalej niż 300 fraz na adres nie ma po co iść
 // Frazy konkurentów: pokazujemy garść najtrafniejszych, nie całą pulę. Dalej

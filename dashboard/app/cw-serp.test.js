@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 import {
   buildGap,
+  COMPETITORS_LIMIT,
   competitorKeywords,
   gapSummary,
   handleSerpGap,
@@ -147,24 +148,25 @@ test('serpCompetitors: jeden adres na domenę, nasza pozycja osobno', async () =
   const fetchImpl = async () =>
     new Response(JSON.stringify(serpResponse(['a.pl', 'a.pl', 'grupa-icea.pl', 'b.pl', 'c.pl', 'd.pl'])), { status: 200 });
   const { competitors, ours } = await serpCompetitors('błąd 403', 'grupa-icea.pl', env(), fetchImpl);
-  assert.deepEqual(competitors.map((row) => row.host), ['a.pl', 'b.pl', 'c.pl']);
+  // Powtórzona domena liczy się raz, nasz adres nie wchodzi na listę rywali.
+  assert.deepEqual(competitors.map((row) => row.host), ['a.pl', 'b.pl', 'c.pl', 'd.pl']);
   assert.equal(ours.host, 'grupa-icea.pl');
   assert.equal(ours.position, 3);
 });
 
 test('serpCompetitors: nas poza wynikami = ours null, komplet konkurentów', async () => {
   const fetchImpl = async () =>
-    new Response(JSON.stringify(serpResponse(['a.pl', 'b.pl', 'c.pl', 'd.pl'])), { status: 200 });
+    new Response(JSON.stringify(serpResponse(['a.pl', 'b.pl', 'c.pl', 'd.pl', 'e.pl', 'f.pl'])), { status: 200 });
   const { competitors, ours } = await serpCompetitors('x', 'grupa-icea.pl', env(), fetchImpl);
-  assert.equal(competitors.length, 3);
+  assert.equal(competitors.length, COMPETITORS_LIMIT);
   assert.equal(ours, null);
 });
 
 test('serpCompetitors: nasz adres dalej niż konkurenci nadal wraca', async () => {
   const fetchImpl = async () =>
-    new Response(JSON.stringify(serpResponse(['a.pl', 'b.pl', 'c.pl', 'd.pl', 'e.pl', 'grupa-icea.pl'])), { status: 200 });
+    new Response(JSON.stringify(serpResponse(['a.pl', 'b.pl', 'c.pl', 'd.pl', 'e.pl', 'f.pl', 'grupa-icea.pl'])), { status: 200 });
   const { ours } = await serpCompetitors('x', 'grupa-icea.pl', env(), fetchImpl);
-  assert.equal(ours.position, 6);
+  assert.equal(ours.position, 7);
 });
 
 test('serpCompetitors: błąd HTTP niesie status w komunikacie', async () => {
