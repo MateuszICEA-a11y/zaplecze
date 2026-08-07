@@ -1,13 +1,5 @@
 [
   {
-    "title": "Kamper w kosztach firmy? Odliczenie może sięgnąć nawet 150 tys. zł",
-    "date": "2026-05-03",
-    "slug": "kamper-w-kosztach-firmy-odliczenie-moze-siegnac-nawet-150-tys-zl",
-    "section": "kampery",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Elektryczny bus stanął na trasie do Morskiego Oka. Mimo awarii resort zamawia 16 kolejnych pojazdów",
     "date": "2026-05-04",
     "slug": "elektryczny-bus-stanal-na-trasie-do-morskiego-oka-mimo-awarii-resort-zamawia-16",
@@ -715,6 +707,14 @@
     "title": "MZK Toruń testuje nowego Solarisa Urbino Electric na linii 40",
     "date": "2026-08-06",
     "slug": "mzk-torun-testuje-nowego-solarisa-urbino-electric-na-linii-40",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Wypadek busa w Łagowie. Nie żyje pasażer, droga zablokowana",
+    "date": "2026-08-07",
+    "slug": "wypadek-busa-w-lagowie-nie-zyje-pasazer-droga-zablokowana",
     "section": "news",
     "format": "short",
     "source": "rss"
