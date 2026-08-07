@@ -54,7 +54,10 @@ test('acfFieldPayload: wdrożenie pisze wyłącznie zatwierdzone sekcje', () => 
 test('acfFieldPayload: cytat eksperta ląduje na końcu wskazanej sekcji', () => {
   const expert = JSON.stringify({ status: 'done', quote: 'Cytat.', expert: 'Jan Nowak', role: 'Head of SEO', slot: 1 });
   const { fields } = acfFieldPayload({ expert }, [section(1, { decision: 'accepted' })]);
-  assert.match(fields.page_text_1, /<p>po 1<\/p>\n<blockquote class="expert"><p>Cytat\.<\/p><footer>Jan Nowak, Head of SEO<\/footer><\/blockquote>/);
+  // Wygląd cytatu idzie w `style` – przechodzi przez sanityzację nietknięty.
+  assert.match(fields.page_text_1, /<p>po 1<\/p>\n<blockquote class="expert" style="[^"]*background:#f0f1ff/);
+  assert.match(fields.page_text_1, /<p style="[^"]*">Cytat\.<\/p>/);
+  assert.match(fields.page_text_1, /<span style="[^"]*">Jan Nowak<\/span>, Head of SEO<\/footer>/);
   // Ekspert odrzucony albo w toku nie wchodzi do treści.
   const rejected = JSON.stringify({ status: 'rejected', quote: 'Cytat.', slot: 1 });
   assert.equal(acfFieldPayload({ expert: rejected }, [section(1, { decision: 'accepted' })]).fields.page_text_1, '<p>po 1</p>');

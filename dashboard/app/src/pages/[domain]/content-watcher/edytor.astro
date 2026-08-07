@@ -1646,8 +1646,28 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   }
 
   /** Ten sam format bloku co step_expert w run.py i cw-expert.js. */
-  function expertBlockquote(expert: any) {
-    return `<blockquote class="expert"><p>${expert.quote}</p><footer>${expert.expert ?? ''}${expert.role ? `, ${expert.role}` : ''}</footer></blockquote>`;
+  /* Wygląd cytatu na stronie niosą style inline – do CSS motywu WordPressa nie
+     mamy dostępu. Świadomy duplikat: EXPERT_STYLE w cw-wp.js; kopiowanie ręczne
+     i zapis Workera muszą dawać ten sam HTML. W samym edytorze renderujemy
+     wersję bez stylów (sanitizer i tak zdejmuje atrybuty, a blok ma tu własny,
+     ciemny styl) – docelowy wygląd widać dopiero w szkicu WordPressa. */
+  const EXPERT_STYLE = {
+    quote: 'margin:28px 0;padding:20px 24px 18px;border-left:3px solid #5768ff;'
+      + 'background:#f0f1ff;border-radius:0 3px 3px 0',
+    label: 'display:block;margin-bottom:10px;color:#5768ff;font-size:12px;'
+      + 'font-weight:700;letter-spacing:.08em;text-transform:uppercase',
+    text: 'margin:0 0 12px;color:#000623;font-size:17px;line-height:1.65',
+    footer: 'color:#6e7181;font-size:14px;font-style:normal',
+    name: 'color:#000623;font-weight:600',
+  };
+
+  function expertBlockquote(expert: any, styled = false) {
+    const s = (key: keyof typeof EXPERT_STYLE) => (styled ? ` style="${EXPERT_STYLE[key]}"` : '');
+    const role = expert.role ? `, ${expert.role}` : '';
+    return `<blockquote class="expert"${s('quote')}>`
+      + `<span${s('label')}>Zdaniem eksperta</span>`
+      + `<p${s('text')}>${expert.quote}</p>`
+      + `<footer${s('footer')}><span${s('name')}>${expert.expert ?? ''}</span>${role}</footer></blockquote>`;
   }
 
   function activeExpert(current: Job | null) {
@@ -1659,7 +1679,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   function sectionCopyText(section: Section) {
     const expert = activeExpert(job);
     const base = section.text_after ?? '';
-    return expert && expert.slot === section.slot ? `${base}\n${expertBlockquote(expert)}` : base;
+    return expert && expert.slot === section.slot ? `${base}\n${expertBlockquote(expert, true)}` : base;
   }
 
   function renderSectionBody(host: HTMLElement, section: Section, mode: string, onDirty?: () => void) {
@@ -2090,7 +2110,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         expert.model || null,
       ].filter(Boolean).join(' · ');
       actions.append(quote, meta,
-        button('kopiuj cytat', async () => { await navigator.clipboard.writeText(expertBlockquote(expert)); }),
+        button('kopiuj cytat', async () => { await navigator.clipboard.writeText(expertBlockquote(expert, true)); }),
         button('wygeneruj ponownie', () => callExpert('POST')),
         button('odrzuć', () => callExpert('PATCH', { rejected: true })));
       return;

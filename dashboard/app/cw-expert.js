@@ -102,8 +102,28 @@ export function extractJson(text) {
 
 /** Format identyczny z step_expert w run.py – „kopiuj treść" w edytorze
     dokleja dokładnie taki sam blok. */
+/* Wygląd niesiony w `style`, bo do CSS motywu WordPressa nie mamy dostępu:
+   konto `redaktor` ma rolę editor, a arkusz motywu wymaga FTP albo admina.
+   Kolory z palety serwisu: #000623 (--main-color), #5768ff (--second-color),
+   #f0f1ff (--selected-color). Świadomy duplikat: EXPERT_STYLE w edytorze
+   (edytor.astro) – „kopiuj cytat” i zapis do WP dają ten sam HTML. */
+export const EXPERT_STYLE = {
+  quote: 'margin:28px 0;padding:20px 24px 18px;border-left:3px solid #5768ff;'
+    + 'background:#f0f1ff;border-radius:0 3px 3px 0',
+  label: 'display:block;margin-bottom:10px;color:#5768ff;font-size:12px;'
+    + 'font-weight:700;letter-spacing:.08em;text-transform:uppercase',
+  text: 'margin:0 0 12px;color:#000623;font-size:17px;line-height:1.65',
+  footer: 'color:#6e7181;font-size:14px;font-style:normal',
+  name: 'color:#000623;font-weight:600',
+};
+
 export function expertBlockquote({ quote, expert, role }) {
-  return `<blockquote class="expert"><p>${quote}</p><footer>${expert ?? ''}${role ? `, ${role}` : ''}</footer></blockquote>`;
+  return `<blockquote class="expert" style="${EXPERT_STYLE.quote}">`
+    + `<span style="${EXPERT_STYLE.label}">Zdaniem eksperta</span>`
+    + `<p style="${EXPERT_STYLE.text}">${quote}</p>`
+    + `<footer style="${EXPERT_STYLE.footer}">`
+    + `<span style="${EXPERT_STYLE.name}">${expert ?? ''}</span>${role ? `, ${role}` : ''}`
+    + '</footer></blockquote>';
 }
 
 /**

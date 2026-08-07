@@ -193,11 +193,25 @@ export const MAX_SECTION_BYTES = 64 * 1024;
 const SANITIZE_ALLOWED = new Set(['p', 'br', 'ul', 'ol', 'li', 'strong', 'b', 'em', 'i', 'a',
   'h2', 'h3', 'h4', 'blockquote', 'footer', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span']);
 
+// Cytat eksperta niesie wygląd w atrybucie `style` – do CSS motywu WordPressa
+// nie mamy dostępu. Przepuszczamy tylko deklaracje bez funkcji CSS: brak
+// nawiasów wyklucza `url(...)` i `expression(...)`, czyli jedyne miejsca,
+// w których w stylu dałoby się przemycić zasób albo kod.
+const STYLE_TAGS = new Set(['blockquote', 'p', 'footer', 'span']);
+const STYLE_SAFE = /^[a-z0-9 .,:;%#\/-]+$/i;
+
+const safeStyle = (tag, attrs) => {
+  if (!STYLE_TAGS.has(tag)) return '';
+  const match = /style\s*=\s*"([^"]*)"|style\s*=\s*'([^']*)'/i.exec(attrs ?? '');
+  const value = match?.[1] ?? match?.[2] ?? '';
+  return value && STYLE_SAFE.test(value) ? ` style="${value}"` : '';
+};
+
 /** Defense-in-depth dla ręcznych poprawek: frontend renderuje wyłącznie przez
     własną sanityzację DOM-ową, ale to, co ląduje w D1, też nie może przenosić
     skryptów. Worker nie ma DOMParsera, więc czyszczenie jest regexowe:
     tagi spoza whitelisty znikają (treść zostaje), atrybuty są zdejmowane
-    poza https-owym href i class="expert" na blockquote. */
+    poza https-owym href, class="expert" na blockquote i bezpiecznym `style`. */
 export function sanitizeSectionHtml(html) {
   let out = String(html ?? '');
   out = out.replace(/<(script|style|iframe|object|embed|form)\b[\s\S]*?(<\/\1\s*>|$)/gi, '');
@@ -209,10 +223,11 @@ export function sanitizeSectionHtml(html) {
       const href = /href\s*=\s*["']?(https?:\/\/[^"'\s>]+)/i.exec(attrs)?.[1];
       return href ? `<a href="${href}" target="_blank" rel="noopener nofollow">` : '<a>';
     }
+    const style = safeStyle(tag, attrs);
     if (tag === 'blockquote' && /class\s*=\s*["']?[^"'>]*\bexpert\b/i.test(attrs)) {
-      return '<blockquote class="expert">';
+      return `<blockquote class="expert"${style}>`;
     }
-    return `<${tag}>`;
+    return `<${tag}${style}>`;
   });
   return out;
 }

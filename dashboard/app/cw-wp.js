@@ -10,6 +10,7 @@
  */
 
 import { checkMutationOrigin, contentDomains, sanitizeSectionHtml } from './cw-api.js';
+import { expertBlockquote } from './cw-expert.js';
 
 const json = (value, status = 200) =>
   new Response(JSON.stringify(value), {
@@ -95,10 +96,8 @@ const parse = (value, fallback) => {
 function expertHtml(job) {
   const expert = parse(job.expert, null);
   if (expert?.status !== 'done' || !expert?.quote) return null;
-  const footer = `${expert.expert ?? ''}${expert.role ? `, ${expert.role}` : ''}`;
-  // Ten sam format co expertBlockquote w edytorze – „kopiuj cytat" i zapis
-  // do WP mają dawać identyczny HTML.
-  return { slot: expert.slot ?? null, html: `<blockquote class="expert"><p>${expert.quote}</p><footer>${footer}</footer></blockquote>` };
+  // Jedno źródło HTML cytatu: cw-expert.js (to samo, co „kopiuj cytat”).
+  return { slot: expert.slot ?? null, html: expertBlockquote(expert) };
 }
 
 /**

@@ -479,6 +479,23 @@ test('sanitizeSectionHtml: zdejmuje skrypty, atrybuty i tagi spoza whitelisty', 
   assert.match(clean, /<blockquote class="expert">/);
 });
 
+test('sanitizeSectionHtml: styl cytatu przechodzi, funkcje CSS i obce tagi nie', () => {
+  const clean = sanitizeSectionHtml(
+    '<blockquote class="expert" style="background:#f0f1ff;padding:20px 24px">'
+    + '<span style="color:#5768ff">Zdaniem eksperta</span>'
+    + '<p style="margin:0 0 12px">Q</p></blockquote>'
+    + '<p style="background:url(https://zle.pl/x.png)">z funkcją</p>'
+    + '<td style="color:#fff">obcy tag dla stylu</td>',
+  );
+  assert.match(clean, /<blockquote class="expert" style="background:#f0f1ff;padding:20px 24px">/);
+  assert.match(clean, /<span style="color:#5768ff">/);
+  assert.match(clean, /<p style="margin:0 0 12px">/);
+  // url() to jedyna droga do wciągnięcia zasobu z zewnątrz – nawias przepada.
+  assert.match(clean, /<p>z funkcją<\/p>/);
+  // Styl dopuszczamy tylko tam, gdzie niesie go cytat.
+  assert.match(clean, /<td>obcy tag dla stylu<\/td>/);
+});
+
 test('sections PATCH: text_after sanityzowany serwerowo, limit rozmiaru', async () => {
   const writes = [];
   const db = fakeDb({
@@ -617,10 +634,14 @@ test('expert: prompt wyklucza autora, blockquote w formacie pipeline', () => {
   const prompt = buildExpertPrompt({ title: 'T', content: 'treść', author: 'Mateusz Wiśniewski' });
   assert.match(prompt, /nie wolno/);
   assert.doesNotMatch(prompt.split('Wybierz inną osobę')[1], /Mateusz Wiśniewski/);
-  assert.equal(
-    expertBlockquote({ quote: 'Q', expert: 'E', role: 'R' }),
-    '<blockquote class="expert"><p>Q</p><footer>E, R</footer></blockquote>',
-  );
+  // Wygląd niesiony inline – motywu WordPressa nie mamy jak ostylować.
+  const quote = expertBlockquote({ quote: 'Q', expert: 'E', role: 'R' });
+  assert.match(quote, /^<blockquote class="expert" style="[^"]*border-left:3px solid #5768ff/);
+  assert.match(quote, /<span style="[^"]*">Zdaniem eksperta<\/span>/);
+  assert.match(quote, /<p style="[^"]*">Q<\/p>/);
+  assert.match(quote, /<footer style="[^"]*"><span style="[^"]*">E<\/span>, R<\/footer>/);
+  // To, co generujemy, musi przejść przez sanityzację bez utraty wyglądu.
+  assert.equal(sanitizeSectionHtml(quote), quote);
 });
 
 /* ---------- routing ---------- */
