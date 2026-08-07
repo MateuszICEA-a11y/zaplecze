@@ -12,6 +12,12 @@
  * stan w `serp_snapshots` (klucz „rivals:<domena>:<post_id>"), klient odpytuje
  * dalej – ten sam wzorzec co analiza SERP-gap.
  *
+ * Krok idzie w obrębie żądania, nie przez ctx.waitUntil: praca w tle po
+ * zwróceniu odpowiedzi jest ucinana po ~30 s, a wypis faktów modelem
+ * rozumującym trwa i 50 s – etap „facts" nigdy się nie zapisywał i analiza
+ * stała w „running" w nieskończoność. Czekanie na fetch nie zużywa CPU, więc
+ * długie żądanie Workerowi nie przeszkadza.
+ *
  * Sekrety: JINA_API_KEY (odczyt stron), OPENROUTER_API_KEY (wypis faktów).
  */
 
@@ -22,6 +28,12 @@ const RIVALS_LIMIT = 5;
 const MAX_MARKDOWN_CHARS = 18_000; // tyle wchodzi do promptu z jednej strony
 const CACHE_HOURS = 24 * 7;
 const TIMEOUT_MS = 60_000;
+// Wypis faktów to ~50 tys. znaków promptu; model rozumujący (grok, sonnet)
+// odpowiada nawet po minucie, więc odczyt strony i model mają osobne limity.
+const MODEL_TIMEOUT_MS = 180_000;
+// Ile trzymamy „krok w toku". Klient odpytuje co 3 s, a krok trwa dłużej –
+// bez tej blokady każde odpytanie startowało kolejny płatny przejazd modelu.
+const LEASE_MS = 200_000;
 
 // Wycinamy to, czego nie da się pomylić z treścią artykułu. Celowo bez
 // selektorów w rodzaju `[class*="content"]` czy `[class*="post"]` – trafiają
@@ -175,7 +187,7 @@ export async function extractFacts(env, ours, rivals, model, fetchImpl = fetch) 
       max_tokens: 4000,
       ...(model.startsWith('perplexity/') ? {} : { response_format: { type: 'json_object' } }),
     }),
-    signal: AbortSignal.timeout(TIMEOUT_MS),
+    signal: AbortSignal.timeout(MODEL_TIMEOUT_MS),
   });
   if (!response.ok) {
     const detail = await response.text().catch(() => '');
@@ -430,6 +442,14 @@ export async function handleRivals(request, env, domain, postId, ctx, fetchImpl 
     return json({ status: 'done', analysis: publicView(snapshot.payload), from_cache: true });
   }
 
+  // Krok w toku – odpowiadamy stanem, zamiast puszczać drugi taki sam.
+  const busySince = Date.parse(snapshot?.payload?.busy_since ?? '');
+  if (!force && snapshot?.status === 'running' && Number.isFinite(busySince)
+    && Date.now() - busySince < LEASE_MS) {
+    const stage = snapshot.payload?.stage ?? null;
+    return json({ status: 'running', stage, stage_label: STAGE_LABEL[stage] ?? null }, 202);
+  }
+
   const model = typeof body.model === 'string' && /^[a-z0-9-]+\/[a-z0-9.:_-]{1,60}$/i.test(body.model)
     ? body.model
     : 'anthropic/claude-sonnet-5';
@@ -438,21 +458,20 @@ export async function handleRivals(request, env, domain, postId, ctx, fetchImpl 
   const resumable = !force && snapshot?.status === 'running' && snapshot.payload?.stage
     && isFresh(snapshot.created_at, 0.25);
   const state = resumable
-    ? snapshot.payload
+    ? { ...snapshot.payload, busy_since: undefined }
     : { our_url: ourUrl, queue: rivalUrls, rivals: [], ours: null, model, stage: 'ours' };
-  if (!resumable) await writeSnapshot(env, domain, postId, { status: 'running', payload: state });
 
-  const work = stepSafely(env, domain, postId, state, fetchImpl);
-  if (ctx?.waitUntil) {
-    ctx.waitUntil(work);
-    return json({ status: 'running', stage: state.stage, stage_label: STAGE_LABEL[state.stage] ?? null }, 202);
+  // Znacznik „pracuję" gasi równoległe kroki z kolejnych odpytań klienta.
+  await writeSnapshot(env, domain, postId, {
+    status: 'running',
+    payload: { ...state, busy_since: nowIso() },
+  });
+  const next = await stepSafely(env, domain, postId, state, fetchImpl);
+  if (!next) {
+    const failed = await readSnapshot(env, domain, postId);
+    return json({ status: 'error', analysis: null, error: failed?.error ?? null }, 502);
   }
-  // Bez kontekstu Workera (testy) przechodzimy wszystkie kroki od razu.
-  let current = await work;
-  while (current && current.stage !== 'done') {
-    current = await stepSafely(env, domain, postId, current, fetchImpl);
-  }
-  return current?.stage === 'done'
-    ? json({ status: 'done', analysis: publicView(current) })
-    : json({ status: 'error', analysis: null }, 502);
+  return next.stage === 'done'
+    ? json({ status: 'done', analysis: publicView(next) })
+    : json({ status: 'running', stage: next.stage, stage_label: STAGE_LABEL[next.stage] ?? null }, 202);
 }

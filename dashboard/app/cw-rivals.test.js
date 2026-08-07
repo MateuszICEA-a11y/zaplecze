@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { buildFactsPrompt, markdownHeadings, median, proseWords, publicView, readPage, rivalsSummary, runRivalsStep } from './cw-rivals.js';
+import { buildFactsPrompt, handleRivals, markdownHeadings, median, proseWords, publicView, readPage, rivalsSummary, runRivalsStep } from './cw-rivals.js';
 
 const NAV_NOISE = `[](https://example.pl/)
 
@@ -117,6 +117,57 @@ test('runRivalsStep: strona nie do odczytania nie zatrzymuje analizy', async () 
   state = await runRivalsStep(env, 'my.pl', 1, state, reader);
   assert.equal(state.stage, 'done');
   assert.deepEqual(state.facts, []);
+});
+
+/** Baza z jednym wierszem snapshotu, zapamiętująca ostatni zapis. */
+const dbWith = (row) => {
+  const store = { row, writes: [] };
+  store.db = {
+    prepare(sql) { this.sql = sql; return this; },
+    bind(...args) { this.args = args; return this; },
+    async run() { store.writes.push(this.args); return { meta: { changes: 1 } }; },
+    async first() { return store.row; },
+  };
+  return store;
+};
+
+const rivalsPost = (body) => new Request('https://dash/api/cw/rivals/my.pl/1', {
+  method: 'POST',
+  body: JSON.stringify(body),
+});
+
+test('handleRivals: krok idzie w żądaniu, nie w tle – klient dostaje etap', async () => {
+  const store = dbWith(null);
+  const env = { CW_DB: store.db, JINA_API_KEY: 'k', OPENROUTER_API_KEY: 'o' };
+  const reader = async () => new Response(JSON.stringify({ data: { title: 't', content: NAV_NOISE } }), { status: 200 });
+  const ctx = { waitUntil: () => assert.fail('krok nie może iść przez waitUntil – Worker go ucina') };
+
+  const response = await handleRivals(
+    rivalsPost({ our_url: 'https://my.pl/a/', rivals: ['https://rywal.pl/1/'] }),
+    env, 'my.pl', 1, ctx, reader,
+  );
+  assert.equal(response.status, 202);
+  const data = await response.json();
+  // Nasza strona przeczytana w tym samym żądaniu, kolejka czeka na następne.
+  assert.equal(data.status, 'running');
+  assert.equal(data.stage, 'rivals');
+});
+
+test('handleRivals: krok w toku nie startuje drugiego przejazdu', async () => {
+  const store = dbWith({
+    status: 'running',
+    created_at: new Date().toISOString(),
+    payload: JSON.stringify({ stage: 'facts', busy_since: new Date().toISOString(), queue: [], rivals: [], ours: {} }),
+  });
+  const env = { CW_DB: store.db, JINA_API_KEY: 'k', OPENROUTER_API_KEY: 'o' };
+  const response = await handleRivals(
+    rivalsPost({ our_url: 'https://my.pl/a/', rivals: ['https://rywal.pl/1/'] }),
+    env, 'my.pl', 1, null,
+    async () => assert.fail('odpytanie w trakcie kroku nie może wołać Jiny ani modelu'),
+  );
+  assert.equal(response.status, 202);
+  assert.equal((await response.json()).stage, 'facts');
+  assert.equal(store.writes.length, 0, 'blokada nie zapisuje stanu');
 });
 
 test('rivalsSummary: skrót gotowej analizy dla pipeline\'u, null bez wyników', async () => {
