@@ -12,7 +12,7 @@
  * (`X-CW-Timestamp` + `X-CW-Signature`, sekret `CW_CALLBACK_SECRET`).
  */
 
-import { generateExpertQuote } from './cw-expert.js';
+import { generateExpertQuote, wpAuthors } from './cw-expert.js';
 import { handleRivals, rivalsSummary } from './cw-rivals.js';
 import { gapSummary, handleSerpGap } from './cw-serp.js';
 import { handleUsage } from './cw-usage.js';
@@ -230,6 +230,32 @@ export function sanitizeSectionHtml(html) {
     return `<${tag}${style}>`;
   });
   return out;
+}
+
+/**
+ * GET /api/cw/authors/:domain – autorzy portalu do wyboru w polu „ekspert".
+ * Lista pochodzi z WordPressa (nie ze stałej w kodzie), więc nowa osoba
+ * w redakcji pojawia się w edytorze bez wdrożenia. Cache 10 minut – skład
+ * zespołu zmienia się rzadziej niż odświeżenia strony.
+ */
+export async function handleAuthors(request, env, domain, { fetchImpl = fetch } = {}) {
+  const base = contentDomains(env).get(domain.toLowerCase());
+  if (!base) return json({ error: 'Edytor nie obsługuje tej domeny.' }, 404);
+  const cacheKey = new Request(`https://cw-authors.internal/${domain}`);
+  const cache = typeof caches !== 'undefined' ? caches.default : null;
+  const cached = await cache?.match(cacheKey);
+  if (cached) return cached;
+  let authors;
+  try {
+    authors = await wpAuthors(base, fetchImpl);
+  } catch (error) {
+    return json({ error: error instanceof Error ? error.message : 'Nie udało się pobrać autorów.' }, 502);
+  }
+  const response = new Response(JSON.stringify({ authors }), {
+    headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'max-age=600' },
+  });
+  if (cache) await cache.put(cacheKey, response.clone());
+  return response;
 }
 
 /* ---------- ochrona przed CSRF ---------- */
@@ -683,6 +709,29 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
     return json({ error: 'Wypowiedź ekspercka będzie dostępna po zakończeniu analizy.' }, 409);
   }
 
+  // Wskazana osoba musi stać w liście autorów portalu – nazwisko z żądania
+  // ląduje w treści wpisu, więc nie może być dowolnym tekstem z przeglądarki.
+  let person = null;
+  const body = await request.json().catch(() => null);
+  const wanted = typeof body?.expert === 'string' ? body.expert.trim() : '';
+  if (wanted) {
+    const base = contentDomains(env).get(String(job.domain).toLowerCase());
+    if (!base) return json({ error: 'Edytor nie obsługuje tej domeny.' }, 400);
+    let authors;
+    try {
+      authors = await wpAuthors(base, fetchImpl ?? fetch);
+    } catch (error) {
+      return json({ error: error instanceof Error ? error.message : 'Nie udało się pobrać autorów.' }, 502);
+    }
+    const match = authors.find((row) => row.name === wanted);
+    if (!match) return json({ error: 'Ta osoba nie jest autorem w tym portalu.' }, 400);
+    if (job.author && match.name === job.author) {
+      return json({ error: 'To autor tego wpisu – cytat musi podpisać ktoś inny.', code: 'self_cite' }, 400);
+    }
+    const role = typeof body?.role === 'string' ? body.role.trim().slice(0, 120) : '';
+    person = { name: match.name, role: role || match.role || '' };
+  }
+
   // Blokada podwójnego kliknięcia: warunkowy UPDATE przechodzi tylko, gdy
   // ekspert nie jest właśnie generowany (json_extract – JSON1 jest w D1).
   const lock = await db(env)
@@ -699,7 +748,7 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
     .bind(id)
     .all();
 
-  const result = await generateExpertQuote(env, job, sections.results ?? [], fetchImpl ? { fetchImpl } : {});
+  const result = await generateExpertQuote(env, job, sections.results ?? [], { ...(fetchImpl ? { fetchImpl } : {}), person });
   const record = result.ok
     ? { status: 'done', ...result.data, model: result.model, cost: result.cost, created_at: nowIso() }
     : { status: 'failed', error: result.error, created_at: nowIso() };
@@ -924,6 +973,12 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
     if (request.method !== 'GET') return json({ error: 'Dozwolona metoda: GET.' }, 405);
     const [, domain, postType, postId] = contentMatch;
     return fetchPostContent(request, env, domain, postType, Number.parseInt(postId, 10));
+  }
+
+  const authorsMatch = url.pathname.match(/^\/api\/cw\/authors\/([a-z0-9.-]{1,253})\/?$/i);
+  if (authorsMatch) {
+    if (request.method !== 'GET') return json({ error: 'Dozwolona metoda: GET.' }, 405);
+    return handleAuthors(request, env, authorsMatch[1]);
   }
 
   if (url.pathname === '/api/cw/usage') return handleUsage(request, env);

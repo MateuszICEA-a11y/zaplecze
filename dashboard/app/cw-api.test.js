@@ -15,7 +15,7 @@ import {
   DEFAULT_MODELS,
   SIGNATURE_WINDOW_S,
 } from './cw-api.js';
-import { buildExpertPrompt, expertBlockquote } from './cw-expert.js';
+import { buildExpertPrompt, expertBlockquote, isPersonName, wpAuthors } from './cw-expert.js';
 
 const SECRET = 'testowy-sekret-callbacku';
 
@@ -642,6 +642,40 @@ test('expert: prompt wyklucza autora, blockquote w formacie pipeline', () => {
   assert.match(quote, /<footer style="[^"]*"><span style="[^"]*">E<\/span>, R<\/footer>/);
   // To, co generujemy, musi przejść przez sanityzację bez utraty wyglądu.
   assert.equal(sanitizeSectionHtml(quote), quote);
+});
+
+test('wpAuthors: konta firmowe odpadają, znane role dopisane', async () => {
+  const fetchImpl = async () => new Response(JSON.stringify([
+    { id: 1, name: 'ICEA', slug: 'icea' },
+    { id: 16, name: 'Globkurier.pl', slug: 'globkurier-pl' },
+    { id: 11, name: 'Karolina Goćkowska', slug: 'karolina-gockowska' },
+    { id: 32, name: 'Jan Bochen', slug: 'jan-bochen' },
+  ]), { status: 200 });
+  const authors = await wpAuthors('https://www.grupa-icea.pl', fetchImpl);
+  assert.deepEqual(authors.map((row) => row.name), ['Jan Bochen', 'Karolina Goćkowska']);
+  // Stanowisko znamy tylko dla części zespołu – reszta zostaje pusta.
+  assert.equal(authors.find((row) => row.name === 'Karolina Goćkowska').role, 'specjalistka SEO');
+  assert.equal(authors.find((row) => row.name === 'Jan Bochen').role, '');
+});
+
+test('isPersonName: imię i nazwisko tak, marka nie', () => {
+  assert.equal(isPersonName('Magdalena Antoń'), true);
+  assert.equal(isPersonName('Klara Anna Witkowska'), true);
+  assert.equal(isPersonName('Globkurier.pl'), false);
+  assert.equal(isPersonName('ICEA'), false);
+  assert.equal(isPersonName('sellify'), false);
+});
+
+test('buildExpertPrompt: wskazana osoba zastępuje wybór modelu', () => {
+  const forced = buildExpertPrompt({
+    title: 'T', content: 'treść', author: 'Mateusz Wiśniewski',
+    person: { name: 'Jan Bochen', role: 'specjalista SEO' },
+  });
+  assert.match(forced, /podpisujemy imieniem i nazwiskiem: \*\*Jan Bochen\*\* \(specjalista SEO\)/);
+  // Lista podpowiedzi znika – model ma nie proponować nikogo innego.
+  assert.doesNotMatch(forced, /Wybierz inną osobę z listy/);
+  // Bez wskazania zostaje dotychczasowe zachowanie.
+  assert.match(buildExpertPrompt({ title: 'T', content: 'c', author: '' }), /Wybierz inną osobę z listy/);
 });
 
 /* ---------- routing ---------- */

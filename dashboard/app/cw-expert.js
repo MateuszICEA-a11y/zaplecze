@@ -21,6 +21,49 @@ export const EXPERTS = [
   'Dorota Prokopiak – specjalistka ds. marketingu',
 ];
 
+/* Stanowiska osób, o których wiemy – WordPress ich nie niesie (pole `description`
+   ma wypełnione pięć kont na trzydzieści siedem, a strona autora podaje samo
+   „Autor w serwisie ICEA"). Dla reszty rola zostaje pusta i redaktor wpisuje ją
+   w edytorze. */
+export const KNOWN_ROLES = Object.fromEntries(
+  EXPERTS.map((row) => {
+    const [name, role] = row.split(' – ');
+    return [name.trim(), (role ?? '').trim()];
+  }),
+);
+
+// Konta serwisowe i partnerskie w liście autorów WordPressa („ICEA",
+// „Globkurier.pl", „Responso"). Cytat podpisujemy człowiekiem, więc bierzemy
+// tylko konta wyglądające na imię i nazwisko.
+const PERSON_NAME = /^[A-ZĄĆĘŁŃÓŚŹŻ][\p{L}.'-]+(?:\s+[A-ZĄĆĘŁŃÓŚŹŻ][\p{L}.'-]+){1,2}$/u;
+
+export const isPersonName = (name) => PERSON_NAME.test(String(name ?? '').trim());
+
+/**
+ * Autorzy portalu do wyboru w edytorze. Źródłem jest WordPress, nie lista
+ * w kodzie – redakcja przychodzi i odchodzi, a `EXPERTS` zostawało w tyle.
+ * Enumeracja po `?author=` jest zablokowana przez AIOS, więc liczby wpisów
+ * nie podajemy; kolejność alfabetyczna.
+ */
+export async function wpAuthors(base, fetchImpl = fetch) {
+  const url = `${String(base).replace(/\/$/, '')}/wp-json/wp/v2/users/?per_page=100&_fields=id,name,slug,description`;
+  const response = await fetchImpl(url, {
+    headers: { Accept: 'application/json', 'User-Agent': 'content-refresher' },
+    signal: AbortSignal.timeout(20_000),
+  });
+  if (!response.ok) throw new Error(`WordPress nie oddał listy autorów (HTTP ${response.status}).`);
+  const rows = await response.json();
+  if (!Array.isArray(rows)) throw new Error('WordPress nie oddał listy autorów.');
+  return rows
+    .map((row) => ({
+      name: String(row?.name ?? '').trim(),
+      slug: String(row?.slug ?? '').trim(),
+      role: KNOWN_ROLES[String(row?.name ?? '').trim()] ?? '',
+    }))
+    .filter((row) => isPersonName(row.name))
+    .sort((a, b) => a.name.localeCompare(b.name, 'pl'));
+}
+
 const EDITORIAL_RULES = `Zasady redakcyjne, których musisz przestrzegać:
 - Półpauza (–), nigdy myślnik em (—).
 - Przed listą stawiaj dwukropek, nie półpauzę.
@@ -48,8 +91,15 @@ export function mergedContent(sections) {
   return parts.join('\n\n').slice(0, MAX_CONTENT_CHARS);
 }
 
-export function buildExpertPrompt({ title, content, author, experts = EXPERTS }) {
+export function buildExpertPrompt({ title, content, author, experts = EXPERTS, person = null }) {
   const allowed = experts.filter((name) => !author || !name.startsWith(author));
+  // Redaktor wskazał osobę w edytorze – model jej nie zmienia, dobiera tylko
+  // treść i miejsce. Rola bywa pusta (WordPress stanowisk nie trzyma).
+  const chosen = person?.name
+    ? `## Ekspert
+
+Cytat podpisujemy imieniem i nazwiskiem: **${person.name}**${person.role ? ` (${person.role})` : ''}. W polu „expert" zwróć dokładnie to imię i nazwisko${person.role ? `, w polu „role" – dokładnie to stanowisko` : ', a pole „role" zostaw puste'}. Nie proponuj innej osoby.`
+    : null;
   return `Piszesz komentarz eksperta ICEA do gotowego artykułu. To ma być realna wartość dodana: obserwacja z praktyki, której nie ma w tekście – nie streszczenie tego, co już napisano.
 
 ## Artykuł po optymalizacji
@@ -58,9 +108,9 @@ Tytuł: ${title}
 
 ${content}
 
-## Ekspert
+${chosen ?? `## Ekspert
 
-Cytat przypisujemy osobie z zespołu ICEA. Autor tego wpisu to: ${author || 'nieznany'} – **nie wolno** przypisać cytatu autorowi, bo byłoby to cytowanie samego siebie. Wybierz inną osobę z listy: ${JSON.stringify(allowed, null, 1)}.
+Cytat przypisujemy osobie z zespołu ICEA. Autor tego wpisu to: ${author || 'nieznany'} – **nie wolno** przypisać cytatu autorowi, bo byłoby to cytowanie samego siebie. Wybierz inną osobę z listy: ${JSON.stringify(allowed, null, 1)}.`}
 
 ## Zadanie
 
@@ -130,7 +180,7 @@ export function expertBlockquote({ quote, expert, role }) {
  * Jedno wywołanie OpenRoutera. Zwraca {ok, data:{slot, expert, role, quote,
  * placement}, model, cost} albo {ok:false, error}.
  */
-export async function generateExpertQuote(env, job, sections, { fetchImpl = fetch } = {}) {
+export async function generateExpertQuote(env, job, sections, { fetchImpl = fetch, person = null } = {}) {
   const apiKey = (env.OPENROUTER_API_KEY || '').trim();
   if (!apiKey) return { ok: false, error: 'Brak sekretu OPENROUTER_API_KEY w Workerze.' };
 
@@ -139,7 +189,7 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
 
   const models = typeof job.models === 'string' ? JSON.parse(job.models || 'null') : job.models;
   const model = models?.writer || 'anthropic/claude-sonnet-5';
-  const prompt = buildExpertPrompt({ title: job.title, content, author: job.author ?? '' });
+  const prompt = buildExpertPrompt({ title: job.title, content, author: job.author ?? '', person });
 
   let response;
   try {
@@ -180,8 +230,9 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
     ok: true,
     data: {
       slot: Number.isFinite(slot) && slot >= 1 && slot <= 30 ? slot : null,
-      expert: String(data.expert).slice(0, 120),
-      role: data.role ? String(data.role).slice(0, 120) : '',
+      // Wybór redaktora jest wiążący – model bywa uparty i podpisuje po swojemu.
+      expert: person?.name ?? String(data.expert).slice(0, 120),
+      role: person ? (person.role ?? '') : (data.role ? String(data.role).slice(0, 120) : ''),
       quote: String(data.quote).slice(0, 2000),
       placement: data.placement ? String(data.placement).slice(0, 500) : '',
     },
