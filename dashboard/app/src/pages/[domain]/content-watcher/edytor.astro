@@ -2126,6 +2126,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   /* ---------- zapis do WordPressa (szkic + wdrożenie) ---------- */
 
   let wpBusy = false;
+  /* Komunikat przy przyciskach WP. Pasek dokumentu bywa daleko od panelu
+     błędów u góry strony, więc odpowiedź na klik musi stanąć obok klikniętego
+     przycisku – inaczej odmowa WordPressa wygląda jak „nic się nie stało". */
+  let wpMessage: { text: string; error: boolean } | null = null;
 
   function renderWpActions(current: Job | null) {
     const wrap = $('[data-ed-wp]');
@@ -2140,23 +2144,30 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const applied = Boolean(current?.applied_at);
     draftButton.disabled = wpBusy || applied;
     applyButton.disabled = wpBusy || applied;
-    draftButton.textContent = current?.wp_draft_id ? 'odśwież szkic w WP' : 'szkic w WordPressie';
+    draftButton.textContent = wpBusy ? 'zapisuję w WP…'
+      : current?.wp_draft_id ? 'odśwież szkic w WP' : 'szkic w WordPressie';
     preview.hidden = !current?.wp_draft_url;
     if (current?.wp_draft_url) preview.href = current.wp_draft_url;
-    note.hidden = !applied;
-    if (applied) note.textContent = `wdrożono ${fmtDate(current!.applied_at!.slice(0, 10))}`;
+    const text = wpMessage?.text ?? (applied ? `wdrożono ${fmtDate(current!.applied_at!.slice(0, 10))}` : '');
+    note.textContent = text;
+    note.hidden = !text;
+    note.classList.toggle('is-error', Boolean(wpMessage?.error));
   }
 
   async function wpDraft() {
     if (!job || wpBusy) return;
     wpBusy = true;
+    wpMessage = null;
     renderWpActions(job);
     try {
       const data = await api(`/api/cw/jobs/${job.id}/wp-draft`, { method: 'POST' });
       job.wp_draft_id = data.draft_id;
       job.wp_draft_url = data.preview_url;
+      wpMessage = { text: 'szkic zapisany', error: false };
     } catch (error) {
-      showError(error instanceof Error ? error.message : 'Nie udało się zapisać szkicu.');
+      const message = error instanceof Error ? error.message : 'Nie udało się zapisać szkicu.';
+      wpMessage = { text: message, error: true };
+      showError(message);
     } finally {
       wpBusy = false;
       renderWpActions(job);
@@ -2167,6 +2178,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     if (!job || wpBusy) return;
     if (!force && !window.confirm('Podmienić treść opublikowanego wpisu na wersję z edytora i skasować szkic?')) return;
     wpBusy = true;
+    wpMessage = null;
     renderWpActions(job);
     try {
       const data = await api(`/api/cw/jobs/${job.id}/wp-apply${force ? '?force=1' : ''}`, { method: 'POST' });
@@ -2183,7 +2195,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         await wpApply(true);
         return;
       }
-      showError(error instanceof Error ? error.message : 'Nie udało się wdrożyć zmian.');
+      const message = error instanceof Error ? error.message : 'Nie udało się wdrożyć zmian.';
+      wpMessage = { text: message, error: true };
+      showError(message);
     } finally {
       wpBusy = false;
       renderWpActions(job);
@@ -3430,7 +3444,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-wp .ed-wp-apply:hover:not(:disabled) { background: var(--accent-blue); color: #fff; }
   .ed-wp a { color: var(--accent-blue); font-size: .72rem; text-decoration: none; }
   .ed-wp a:hover { text-decoration: underline; }
-  .ed-wp .ed-wp-note { color: var(--ink-faint); font-size: .72rem; }
+  .ed-wp .ed-wp-note { color: var(--ink-faint); font-size: .72rem; max-width: 32ch; }
+  .ed-wp .ed-wp-note.is-error { color: var(--status-err-fg); }
 
   /* ----- podgląd całości ----- */
   .ed-preview-open { padding: 4px 11px; border: 1px solid var(--hairline); border-radius: 2px;
