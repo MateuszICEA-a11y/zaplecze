@@ -1,13 +1,5 @@
 [
   {
-    "title": "Elektryczny bus stanął na trasie do Morskiego Oka. Mimo awarii resort zamawia 16 kolejnych pojazdów",
-    "date": "2026-05-04",
-    "slug": "elektryczny-bus-stanal-na-trasie-do-morskiego-oka-mimo-awarii-resort-zamawia-16",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Maksymalne ceny paliw na wtorek 5 maja. Tyle zapłacą kierowcy",
     "date": "2026-05-05",
     "slug": "maksymalne-ceny-paliw-na-wtorek-5-maja-tyle-zaplaca-kierowcy",
@@ -715,6 +707,14 @@
     "title": "Wypadek busa w Łagowie. Nie żyje pasażer, droga zablokowana",
     "date": "2026-08-07",
     "slug": "wypadek-busa-w-lagowie-nie-zyje-pasazer-droga-zablokowana",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Ceny paliw w przyszłym tygodniu. Kierowcy mogą liczyć na wyraźne obniżki",
+    "date": "2026-08-08",
+    "slug": "ceny-paliw-w-przyszlym-tygodniu-kierowcy-moga-liczyc-na-wyrazne-obnizki",
     "section": "news",
     "format": "short",
     "source": "rss"
