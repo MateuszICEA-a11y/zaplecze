@@ -1,13 +1,5 @@
 [
   {
-    "title": "Maksymalne ceny paliw na wtorek 5 maja. Tyle zapłacą kierowcy",
-    "date": "2026-05-05",
-    "slug": "maksymalne-ceny-paliw-na-wtorek-5-maja-tyle-zaplaca-kierowcy",
-    "section": "modele",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Kamper Volkswagena z rocznika 2025 przeceniony o 100 tys. zł przed wakacjami",
     "date": "2026-05-06",
     "slug": "kamper-volkswagena-z-rocznika-2025-przeceniony-o-100-tys-zl-przed-wakacjami",
@@ -716,6 +708,14 @@
     "date": "2026-08-08",
     "slug": "ceny-paliw-w-przyszlym-tygodniu-kierowcy-moga-liczyc-na-wyrazne-obnizki",
     "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Wypadek pod Kraśnikiem: bus Mercedes na boku, 10 osób rannych",
+    "date": "2026-08-09",
+    "slug": "wypadek-pod-krasnikiem-bus-mercedes-na-boku-10-osob-rannych",
+    "section": "porownania",
     "format": "short",
     "source": "rss"
   }
