@@ -1,13 +1,5 @@
 [
   {
-    "title": "Kamper Volkswagena z rocznika 2025 przeceniony o 100 tys. zł przed wakacjami",
-    "date": "2026-05-06",
-    "slug": "kamper-volkswagena-z-rocznika-2025-przeceniony-o-100-tys-zl-przed-wakacjami",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Toyota Proace Max Tanuki – największy kampervan w gamie Toyota Professional",
     "date": "2026-05-07",
     "slug": "toyota-proace-max-tanuki-najwiekszy-kampervan-w-gamie-toyota-professional",
@@ -716,6 +708,14 @@
     "date": "2026-08-09",
     "slug": "wypadek-pod-krasnikiem-bus-mercedes-na-boku-10-osob-rannych",
     "section": "porownania",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Paliwa zaczynają tanieć. Na stacjach spadki nawet o 20 groszy",
+    "date": "2026-08-10",
+    "slug": "paliwa-zaczynaja-taniec-na-stacjach-spadki-nawet-o-20-groszy",
+    "section": "news",
     "format": "short",
     "source": "rss"
   }
