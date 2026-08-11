@@ -1,13 +1,5 @@
 [
   {
-    "title": "Toyota Proace Max Tanuki – największy kampervan w gamie Toyota Professional",
-    "date": "2026-05-07",
-    "slug": "toyota-proace-max-tanuki-najwiekszy-kampervan-w-gamie-toyota-professional",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Tankowanie ma być tańsze. Rząd obniżył ceny maksymalne paliw",
     "date": "2026-05-08",
     "slug": "tankowanie-ma-byc-tansze-rzad-obnizyl-ceny-maksymalne-paliw",
@@ -716,6 +708,14 @@
     "date": "2026-08-10",
     "slug": "paliwa-zaczynaja-taniec-na-stacjach-spadki-nawet-o-20-groszy",
     "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Straż Graniczna odzyskała kamper skradziony w Danii",
+    "date": "2026-08-11",
+    "slug": "straz-graniczna-odzyskala-kamper-skradziony-w-danii",
+    "section": "kampery",
     "format": "short",
     "source": "rss"
   }
