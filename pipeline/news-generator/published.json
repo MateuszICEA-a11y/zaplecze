@@ -1,13 +1,5 @@
 [
   {
-    "title": "Tankowanie ma być tańsze. Rząd obniżył ceny maksymalne paliw",
-    "date": "2026-05-08",
-    "slug": "tankowanie-ma-byc-tansze-rzad-obnizyl-ceny-maksymalne-paliw",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Toyota Sienta z zestawem VANLIFE ROOMKIT – miejski minivan zmienia się w mini-kampera",
     "date": "2026-05-09",
     "slug": "toyota-sienta-z-zestawem-vanlife-roomkit-miejski-minivan-zmienia-sie-w-mini",
@@ -716,6 +708,14 @@
     "date": "2026-08-11",
     "slug": "straz-graniczna-odzyskala-kamper-skradziony-w-danii",
     "section": "kampery",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Ford Transit City: kompaktowy elektryczny dostawczak z ładownością 1270 kg",
+    "date": "2026-08-13",
+    "slug": "ford-transit-city-kompaktowy-elektryczny-dostawczak-z-ladownoscia-1270-kg",
+    "section": "modele",
     "format": "short",
     "source": "rss"
   }
