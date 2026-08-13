@@ -38,7 +38,11 @@ jobs:
 
       - name: Run collector
         env:
+          # Fallback – świeży token Senuto przychodzi z dashboardu (KV,
+          # wklejany na /system/), pobierany podpisem CW_CALLBACK_SECRET.
           SENUTO_API_KEY: ${{ secrets.SENUTO_API_KEY }}
+          DASHBOARD_URL: ${{ secrets.DASHBOARD_URL }}
+          CW_CALLBACK_SECRET: ${{ secrets.CW_CALLBACK_SECRET }}
           # Tylko do alertu o końcówce pakietu (saldo /v1/api-key/balance).
           SERPDATA_API_KEY: ${{ secrets.SERPDATA_API_KEY }}
           AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}

@@ -54,7 +54,7 @@ pnpm --filter dashboard build    # → dashboard/app/dist
 ## Konfiguracja jednorazowa (kroki manualne)
 
 1. **GitHub Secrets** (repo → Settings → Secrets and variables → Actions):
-   - `SENUTO_API_KEY` – JWT z Senuto (⚠️ rotacja ~31 dni; wygasły token = banner „token wygasł" na dashboardzie, cron się nie wywala)
+   - `SENUTO_API_KEY` – JWT z Senuto, tylko fallback (⚠️ rotacja ~31 dni: świeży token wkleja się w kafelku „Senuto · token" na `/system/` – Worker trzyma go w KV `DASHBOARD_IMPORTS`, a collector i pipeline pobierają GET-em `/api/senuto-token` podpisanym `CW_CALLBACK_SECRET`; wygasły token = banner „token wygasł" na dashboardzie, cron się nie wywala)
    - `SMSAPI_TOKEN` – ten sam co w Cloudflare Pages widocznosc.ai
    - `AHREFS_API_KEY` – klucz API v3 (linki: backlinki, referring domains, Domain Rating)
    - `OPENROUTER_PROJECT_KEY` – klucz OpenRouter zdefiniowany dla projektu (np. ten z CF Pages widocznosc.ai); `GET /api/v1/key` zwraca jego zużycie

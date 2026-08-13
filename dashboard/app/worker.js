@@ -1,5 +1,6 @@
 import { parseBingAiCsv } from './bing-import.js';
-import { routeContentWatcher } from './cw-api.js';
+import { routeContentWatcher, verifySignature } from './cw-api.js';
+import { getSenutoToken, jwtExpiry, saveSenutoToken } from './senuto-token.js';
 
 /**
  * Worker dashboardu: cała aplikacja za Basic Auth (dashboard zawiera dane
@@ -88,6 +89,23 @@ export default {
     const beforeAuth = await routeContentWatcher(request, env, { beforeAuth: true });
     if (beforeAuth) return beforeAuth;
 
+    const url = new URL(request.url);
+
+    // Odbiór tokenu Senuto przez collector/pipeline – też przed bramką hasła,
+    // uwierzytelniony tym samym podpisem HMAC co callbacki CW (body puste).
+    if (url.pathname === '/api/senuto-token' && request.method === 'GET') {
+      const verdict = await verifySignature({
+        secret: (env.CW_CALLBACK_SECRET || '').trim(),
+        timestamp: request.headers.get('X-CW-Timestamp'),
+        signature: request.headers.get('X-CW-Signature'),
+        body: '',
+      });
+      if (!verdict.ok) return json({ error: `Podpis odrzucony (${verdict.reason}).` }, 401);
+      const token = await getSenutoToken(env);
+      if (!token) return json({ error: 'Brak tokenu Senuto (KV i sekret puste).' }, 404);
+      return json({ token, expires_at: jwtExpiry(token)?.toISOString() ?? null });
+    }
+
     const expected = (env.DASH_PASSWORD || '').trim();
     if (!expected) {
       return new Response(
@@ -97,7 +115,25 @@ export default {
     }
     const given = passwordFromHeader(request.headers.get('Authorization'));
     if (given !== expected) return unauthorized();
-    const url = new URL(request.url);
+
+    // Zapis tokenu wklejonego na /system/ (za bramką hasła).
+    if (url.pathname === '/api/senuto-token' && request.method === 'POST') {
+      let body = {};
+      try {
+        body = await request.json();
+      } catch {
+        return json({ error: 'Prześlij JSON z polem „token".' }, 400);
+      }
+      const saved = await saveSenutoToken(env, body.token);
+      return saved.ok ? json(saved.record) : json({ error: saved.error }, 400);
+    }
+
+    // API dostaje env z tokenem Senuto rozstrzygniętym raz: KV → sekret Workera.
+    if (url.pathname.startsWith('/api/')) {
+      const senutoToken = await getSenutoToken(env);
+      if (senutoToken) env = { ...env, SENUTO_API_KEY: senutoToken };
+    }
+
     // `ctx` niesie waitUntil – analiza SERP kończy się po odesłaniu odpowiedzi.
     const contentWatcher = await routeContentWatcher(request, env, { ctx });
     if (contentWatcher) return contentWatcher;

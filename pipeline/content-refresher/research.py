@@ -50,8 +50,46 @@ def _request(url: str, headers: dict, data: bytes | None = None, timeout: int = 
         return json.loads(response.read().decode("utf-8"))
 
 
+_SENUTO_RESOLVED = False
+
+
+def ensure_senuto_token() -> str:
+    """Token Senuto z dashboardu (KV, wklejany na /system/) zamiast sekretu repo.
+
+    Jednorazowo na proces: GET /api/senuto-token podpisany HMAC jak callbacki
+    (sekret CW_CALLBACK_SECRET); świeży token nadpisuje SENUTO_API_KEY w env.
+    Best-effort – błąd sieci zostawia token z env (fallback z GitHub Secrets).
+
+    Lustro: dashboard/collector/senuto_token.py::resolve_senuto_token.
+    """
+    global _SENUTO_RESOLVED
+    if not _SENUTO_RESOLVED:
+        _SENUTO_RESOLVED = True
+        import hashlib
+        import hmac
+        secret = os.environ.get("CW_CALLBACK_SECRET", "").strip()
+        base = os.environ.get("DASHBOARD_URL", "").strip().rstrip("/")
+        if secret and base:
+            timestamp = str(int(time.time()))
+            signature = hmac.new(secret.encode(), f"{timestamp}.".encode(), hashlib.sha256).hexdigest()
+            request = urllib.request.Request(f"{base}/api/senuto-token", headers={
+                "X-CW-Timestamp": timestamp,
+                "X-CW-Signature": signature,
+                "User-Agent": USER_AGENT,
+            })
+            try:
+                with urllib.request.urlopen(request, timeout=20) as response:
+                    payload = json.loads(response.read().decode("utf-8"))
+                token = (payload.get("token") or "").strip()
+                if token:
+                    os.environ["SENUTO_API_KEY"] = token
+            except Exception as err:  # noqa: BLE001
+                print(f"[research] token Senuto z dashboardu niedostępny ({err}) – używam env")
+    return os.environ.get("SENUTO_API_KEY", "").strip()
+
+
 def _senuto_token() -> str:
-    token = os.environ.get("SENUTO_API_KEY", "").strip()
+    token = ensure_senuto_token()
     if not token:
         raise ResearchError("brak SENUTO_API_KEY")
     return token
@@ -130,7 +168,7 @@ def url_keywords(url: str, country_id: int = SENUTO_POSITIONS_COUNTRY_ID,
     `fetch_mode: url` działa też dla cudzych adresów. API nie umie sortować
     ani filtrować po pozycji, więc porządkujemy u siebie po pobraniu stron.
     """
-    token = os.environ.get("SENUTO_API_KEY", "").strip()
+    token = ensure_senuto_token()
     target = (url or "").strip()
     target = re.sub(r"^https?://", "", target)
     if not token or not target:
@@ -308,7 +346,7 @@ def senuto_positions(domain: str, url: str, country_id: int = 200) -> list[dict]
     Best-effort: wygasły token (JWT ~31 dni) albo brak danych nie może zatrzymać
     całego zadania – research ma wtedy o jedno źródło mniej.
     """
-    token = os.environ.get("SENUTO_API_KEY", "").strip()
+    token = ensure_senuto_token()
     if not token:
         return []
     path = urllib.parse.urlparse(url).path.rstrip("/")

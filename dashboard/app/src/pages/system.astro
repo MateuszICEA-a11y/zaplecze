@@ -267,8 +267,13 @@ const pipelineRows = PIPELINE.map((definition) => {
         </div>
         <div class="balance-sub">
           <span data-senuto-expiry>klucz JWT ważny ~31 dni</span>
-          <span>ręczna rotacja w Senuto</span>
+          <span>rotacja: wklej token poniżej</span>
         </div>
+        <form class="token-form" data-senuto-form>
+          <input type="text" name="token" placeholder="wklej nowy token JWT z Senuto" autocomplete="off" spellcheck="false" required />
+          <button type="submit">Zapisz</button>
+        </form>
+        <p class="token-form-msg" data-senuto-msg hidden></p>
       </article>
 
       <article class="balance-card" data-usage-serpdata hidden>
@@ -409,9 +414,11 @@ const pipelineRows = PIPELINE.map((definition) => {
     }
 
     const senuto = data.senuto ?? {};
+    // Kafelek pokazujemy zawsze, gdy Worker odpowiada – formularz wklejenia
+    // tokenu musi być dostępny także wtedy, gdy tokenu w ogóle nie ma.
+    const senutoCard = document.querySelector<HTMLElement>('[data-usage-senuto]');
+    if (senutoCard) senutoCard.hidden = false;
     if (senuto.configured) {
-      const card = document.querySelector<HTMLElement>('[data-usage-senuto]');
-      if (card) card.hidden = false;
       const days = senuto.days_left;
       setValue(
         document.querySelector('[data-senuto-days]'),
@@ -461,6 +468,38 @@ const pipelineRows = PIPELINE.map((definition) => {
       }
     }
   })();
+
+  /* Rotacja tokenu Senuto: wklejenie w kafelku → POST /api/senuto-token (KV).
+     Collector i pipeline pobierają go z Workera, więc to jedyny krok rotacji. */
+  const tokenForm = document.querySelector<HTMLFormElement>('[data-senuto-form]');
+  tokenForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const input = tokenForm.querySelector<HTMLInputElement>('input[name="token"]');
+    const button = tokenForm.querySelector<HTMLButtonElement>('button');
+    const msg = document.querySelector<HTMLElement>('[data-senuto-msg]');
+    const show = (text: string, state: 'ok' | 'err') => {
+      if (!msg) return;
+      msg.hidden = false;
+      msg.textContent = text;
+      msg.dataset.state = state;
+    };
+    if (!input?.value.trim()) return;
+    if (button) button.disabled = true;
+    try {
+      const response = await fetch('/api/senuto-token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: input.value }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.error ?? `HTTP ${response.status}`);
+      show(`Zapisano – token ważny do ${new Date(data.expires_at).toLocaleDateString('pl-PL')}. Odświeżam…`, 'ok');
+      setTimeout(() => location.reload(), 1400);
+    } catch (error) {
+      show(error instanceof Error ? error.message : 'Nie udało się zapisać tokenu.', 'err');
+      if (button) button.disabled = false;
+    }
+  });
 </script>
 
 <style>
@@ -502,6 +541,14 @@ const pipelineRows = PIPELINE.map((definition) => {
   .balance-track.is-unmeasured > i { width: 100%; opacity: .16; background: repeating-linear-gradient(90deg, var(--ink-faint) 0 8px, transparent 8px 14px); }
   .balance-sub { display: flex; justify-content: space-between; gap: 10px; font-size: .78rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
   .balance-sub b { color: var(--ink-muted); }
+  .token-form { display: flex; gap: 8px; margin-top: 12px; }
+  .token-form input { flex: 1; min-width: 0; background: var(--bg-surface-1); border: 1px solid var(--hairline); border-radius: 2px; color: var(--ink); font: inherit; font-size: .78rem; padding: 7px 10px; }
+  .token-form input:focus { outline: none; border-color: var(--accent-blue); }
+  .token-form button { background: var(--accent-blue-soft); border: 1px solid var(--accent-blue); border-radius: 2px; color: var(--ink); font: inherit; font-size: .78rem; font-weight: 600; padding: 7px 14px; cursor: pointer; white-space: nowrap; }
+  .token-form button:disabled { opacity: .5; cursor: default; }
+  .token-form-msg { font-size: .76rem; margin: 8px 0 0; }
+  .token-form-msg[data-state='ok'] { color: var(--status-ok, var(--accent-blue)); }
+  .token-form-msg[data-state='err'] { color: var(--status-err, #e5484d); }
 
   .alert-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
   .alert-card { border: 1px solid var(--hairline); border-radius: 2px; padding: 16px 18px; background: var(--bg-surface-1); min-width: 0; }

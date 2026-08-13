@@ -14,17 +14,9 @@ const json = (data, status = 200) =>
     headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
   });
 
-/** Termin ważności JWT bez weryfikacji podpisu – interesuje nas samo `exp`. */
-export function jwtExpiry(token) {
-  const parts = String(token ?? '').split('.');
-  if (parts.length !== 3) return null;
-  try {
-    const payload = JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')));
-    return typeof payload.exp === 'number' ? new Date(payload.exp * 1000) : null;
-  } catch {
-    return null;
-  }
-}
+import { jwtExpiry } from './senuto-token.js';
+
+export { jwtExpiry };
 
 export function senutoStatus(token, now = Date.now()) {
   const expiresAt = jwtExpiry(token);

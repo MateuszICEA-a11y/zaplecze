@@ -19,6 +19,7 @@ from pathlib import Path
 
 import yaml
 
+from senuto_token import resolve_senuto_token
 from sources import DOMAIN_SOURCES, GLOBAL_SOURCES, SourceError
 
 DASHBOARD_DIR = Path(__file__).resolve().parent.parent
@@ -193,6 +194,7 @@ ONCE_DAILY_SOURCES = ("clarity",)
 
 def main() -> int:
     load_local_env()
+    resolve_senuto_token()
     config = yaml.safe_load(CONFIG_PATH.read_text())
     now = datetime.now(timezone.utc)
     stamp = {"date": now.strftime("%Y-%m-%d"),

@@ -16,6 +16,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from senuto_token import resolve_senuto_token  # noqa: E402
 from sources._http import request_json  # noqa: E402
 from sources.gsc import _access_token, DATA_LAG_DAYS  # noqa: E402
 
@@ -178,6 +179,7 @@ def merge(domain_id: str, per_source: dict[str, dict[str, dict]]) -> tuple[int, 
 
 
 def main() -> None:
+    resolve_senuto_token()
     config = yaml.safe_load((ROOT / "domains.yaml").read_text())
     env = os.environ
     today = datetime.now(timezone.utc).date()
