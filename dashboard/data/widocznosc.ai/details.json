@@ -1,6 +1,6 @@
 {
  "date": "2026-08-13",
- "collected_at": "2026-08-13T06:00:30Z",
+ "collected_at": "2026-08-13T19:01:30Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -14810,23 +14810,83 @@
    "ref_domains_source": "ahrefs"
   },
   "clarity": {
-   "dead_clicks": "0",
+   "dead_clicks": "1",
    "rage_clicks": "0",
-   "quickback_clicks": "3",
+   "quickback_clicks": "6",
    "script_errors": "0",
    "url": [
     {
-     "name": "https://widocznosc.ai/geo/microsoft-clarity-topic-insights/",
-     "sessions": 4,
-     "users": 3
+     "name": "https://widocznosc.ai/",
+     "sessions": 14,
+     "users": 13
     },
     {
-     "name": "https://widocznosc.ai/",
-     "sessions": 3,
+     "name": "https://widocznosc.ai/geo/microsoft-clarity-topic-insights/",
+     "sessions": 9,
      "users": 9
     },
     {
-     "name": "https://widocznosc.ai/news/",
+     "name": "https://widocznosc.ai/narzedzia/",
+     "sessions": 5,
+     "users": 5
+    },
+    {
+     "name": "https://widocznosc.ai/kontakt/",
+     "sessions": 4,
+     "users": 4
+    },
+    {
+     "name": "https://widocznosc.ai/geo/microsoft-clarity-topic-insights/?trk=public_post_comment-text",
+     "sessions": 4,
+     "users": 4
+    },
+    {
+     "name": "https://widocznosc.ai/o-nas/",
+     "sessions": 4,
+     "users": 4
+    },
+    {
+     "name": "https://widocznosc.ai/autor/mateusz-wisniewski/",
+     "sessions": 4,
+     "users": 4
+    },
+    {
+     "name": "https://widocznosc.ai/geo/microsoft-clarity-topic-insights/#jak-czyta%C4%87-cztery-wymiary-raportu",
+     "sessions": 3,
+     "users": 3
+    },
+    {
+     "name": "https://widocznosc.ai/geo/microsoft-clarity-topic-insights/#krok-po-kroku--jak-uruchomi%C4%87-pierwszy-raport",
+     "sessions": 2,
+     "users": 2
+    },
+    {
+     "name": "https://widocznosc.ai/narzedzia/brand-check/",
+     "sessions": 2,
+     "users": 2
+    },
+    {
+     "name": "https://widocznosc.ai/pozycjonowanie-ai/",
+     "sessions": 2,
+     "users": 2
+    },
+    {
+     "name": "https://widocznosc.ai/kontakt/?type=full-report",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "name": "https://widocznosc.ai/modele-llm/chatgpt-vs-claude/",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "name": "https://widocznosc.ai/autor/tomasz-czechowski/",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "name": "https://widocznosc.ai/polityka-prywatnosci/",
      "sessions": 1,
      "users": 1
     },
@@ -14836,53 +14896,58 @@
      "users": 1
     },
     {
-     "name": "https://widocznosc.ai/news/snap-i-linkedin-zaostrzaja-walke-z-ai-slopem/",
+     "name": "https://widocznosc.ai/kontakt/?type=konsultacja",
      "sessions": 1,
      "users": 1
     },
     {
-     "name": "https://widocznosc.ai/modele-llm/copilot/",
-     "sessions": 0,
+     "name": "https://widocznosc.ai/pozycjonowanie-ai/chatgpt/",
+     "sessions": 1,
      "users": 1
     }
    ],
    "referrer": [
     {
-     "name": "Wejście bezpośrednie",
-     "sessions": 3,
-     "users": 9
+     "name": "www.linkedin.com",
+     "sessions": 23,
+     "users": 23
     },
     {
-     "name": "com.linkedin.android",
-     "sessions": 2,
-     "users": 2
+     "name": "Wejście bezpośrednie",
+     "sessions": 13,
+     "users": 12
     },
     {
      "name": "google",
+     "sessions": 8,
+     "users": 8
+    },
+    {
+     "name": "widocznosc.ai",
+     "sessions": 6,
+     "users": 6
+    },
+    {
+     "name": "block.opendns.com",
      "sessions": 1,
      "users": 1
     },
     {
-     "name": "www.linkedin.com",
+     "name": "com.linkedin.android",
      "sessions": 1,
-     "users": 1
-    },
-    {
-     "name": "bing",
-     "sessions": 0,
      "users": 1
     }
    ],
    "device": [
     {
+     "name": "PC",
+     "sessions": 48,
+     "users": 44
+    },
+    {
      "name": "Mobile",
      "sessions": 4,
      "users": 7
-    },
-    {
-     "name": "PC",
-     "sessions": 3,
-     "users": 6
     }
    ]
   },
@@ -15044,15 +15109,7 @@
      "requests": 3
     },
     {
-     "path": "/ai-w-biznesie/ai-w-obsludze-klienta/",
-     "requests": 2
-    },
-    {
-     "path": "/pozycjonowanie-ai/",
-     "requests": 2
-    },
-    {
-     "path": "/geo/schema-org-dane-strukturalne/",
+     "path": "/@fs/etc/passwd",
      "requests": 2
     },
     {
@@ -15060,7 +15117,15 @@
      "requests": 2
     },
     {
-     "path": "/@fs/etc/passwd",
+     "path": "/ai-w-biznesie/ai-w-obsludze-klienta/",
+     "requests": 2
+    },
+    {
+     "path": "/geo/schema-org-dane-strukturalne/",
+     "requests": 2
+    },
+    {
+     "path": "/pozycjonowanie-ai/",
      "requests": 2
     },
     {
@@ -15076,19 +15141,19 @@
      "requests": 1
     },
     {
+     "path": "/.kube/config",
+     "requests": 1
+    },
+    {
+     "path": "/@fs/.env.local",
+     "requests": 1
+    },
+    {
      "path": "/src/.env",
      "requests": 1
     },
     {
      "path": "/ai-w-biznesie/ai-w-marketingu/",
-     "requests": 1
-    },
-    {
-     "path": "/blog/3/",
-     "requests": 1
-    },
-    {
-     "path": "/.kube/config",
      "requests": 1
     }
    ]
@@ -15219,25 +15284,13 @@
        "position": null
       },
       {
-       "query": "inżynieria promptowania",
+       "query": "definicja agenta ai",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "wlasciciel copilot jak sie skontaktowac",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "2026: zajmuję się wdrażaniem ai i microsoft copilot w organizacjach.",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jaki lllm uzywa google gemini",
+       "query": "czy gemini kupic claude",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -15249,13 +15302,43 @@
        "position": null
       },
       {
-       "query": "definicja agenta ai",
+       "query": "inżynieria promptowania",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "2026: zajmuję się wdrażaniem ai i microsoft copilot w organizacjach.",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "wlasciciel copilot jak sie skontaktowac",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
        "query": "jaki model kryje się pod automatyczny w copilot",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "dla claude (najlepsza jakość, wyższy koszt) provider: anthropic model: claude-sonnet-4-20250514 api_key: sk-ant-",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "claude od jakiej firmy",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jaki lllm uzywa google gemini",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -15268,24 +15351,6 @@
       },
       {
        "query": "co to są modele językowe ai",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "dla claude (najlepsza jakość, wyższy koszt) provider: anthropic model: claude-sonnet-4-20250514 api_key: sk-ant-",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czy gemini kupic claude",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "claude od jakiej firmy",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -15307,25 +15372,13 @@
      "position": null
     },
     {
-     "query": "inżynieria promptowania",
+     "query": "definicja agenta ai",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "wlasciciel copilot jak sie skontaktowac",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "2026: zajmuję się wdrażaniem ai i microsoft copilot w organizacjach.",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jaki lllm uzywa google gemini",
+     "query": "czy gemini kupic claude",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -15337,13 +15390,43 @@
      "position": null
     },
     {
-     "query": "definicja agenta ai",
+     "query": "inżynieria promptowania",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "2026: zajmuję się wdrażaniem ai i microsoft copilot w organizacjach.",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "wlasciciel copilot jak sie skontaktowac",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
      "query": "jaki model kryje się pod automatyczny w copilot",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "dla claude (najlepsza jakość, wyższy koszt) provider: anthropic model: claude-sonnet-4-20250514 api_key: sk-ant-",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "claude od jakiej firmy",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jaki lllm uzywa google gemini",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -15356,24 +15439,6 @@
     },
     {
      "query": "co to są modele językowe ai",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "dla claude (najlepsza jakość, wyższy koszt) provider: anthropic model: claude-sonnet-4-20250514 api_key: sk-ant-",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "czy gemini kupic claude",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "claude od jakiej firmy",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -15390,21 +15455,10 @@
      "channel": "Organic Search",
      "sessions": 1,
      "users": 1,
-     "pageviews": 1
-    },
-    {
-     "channel": "Unassigned",
-     "sessions": 1,
-     "users": 1,
-     "pageviews": 2
+     "pageviews": 4
     }
    ],
    "sources": [
-    {
-     "source": "(not set)",
-     "sessions": 1,
-     "users": 1
-    },
     {
      "source": "google",
      "sessions": 1,
@@ -15414,7 +15468,7 @@
    "pages": [
     {
      "path": "/",
-     "pageviews": 1,
+     "pageviews": 2,
      "users": 1
     },
     {
@@ -15436,10 +15490,10 @@
     "rows": [
      {
       "path": "/",
-      "sessions": 26,
-      "engagement_rate": 57.69,
-      "avg_engagement_s": 86.8,
-      "pages_per_session": 4.08
+      "sessions": 25,
+      "engagement_rate": 60.0,
+      "avg_engagement_s": 89.6,
+      "pages_per_session": 4.12
      },
      {
       "path": "(not set)",
@@ -15468,6 +15522,13 @@
       "engagement_rate": 50.0,
       "avg_engagement_s": 8.0,
       "pages_per_session": 1.0
+     },
+     {
+      "path": "/autor/tomasz-czechowski",
+      "sessions": 1,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 27.0,
+      "pages_per_session": 4.0
      },
      {
       "path": "/blog",
@@ -16325,12 +16386,12 @@
      "active_users": 1,
      "new_users": 1,
      "returning_users": 0,
-     "pageviews": 3,
-     "engagement_rate": 0.0,
-     "avg_engagement_s": 18.0,
-     "engaged_sessions": 0,
-     "engaged_per_user": 0.0,
-     "pages_per_session": 3.0,
+     "pageviews": 4,
+     "engagement_rate": 100.0,
+     "avg_engagement_s": 27.0,
+     "engaged_sessions": 1,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 4.0,
      "organic_sessions": 1
     }
    ],
@@ -16399,11 +16460,6 @@
      "month": "202608",
      "channel": "Direct",
      "sessions": 4
-    },
-    {
-     "month": "202608",
-     "channel": "Unassigned",
-     "sessions": 1
     }
    ]
   },
