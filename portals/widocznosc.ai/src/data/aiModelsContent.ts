@@ -6,17 +6,40 @@
  * i publicznej dokumentacji każdego modelu (data odcięcia wiedzy, RAG, cytowania).
  */
 
+export type FunnelStage = {
+  stage: string;
+  label: string;
+  desc: string;
+  examples: string[];
+  onPage: string[];
+};
+
+export type PromptCheck = {
+  intro: string;
+  prompt: string;
+  positive: string[];
+  warning: string[];
+  critical: string[];
+  toolCta: string;
+};
+
 export type ModelContent = {
   heroSubtitle: string;
+  metaTitle?: string;
   metaDescription: string;
   howItWorks: { title: string; desc: string }[];
   optimization: { title: string; desc: string }[];
   signals: string[];
   faq: { q: string; a: string }[];
+  /** Sekcje deep-dive – renderowane tylko, gdy model je definiuje. */
+  funnel?: FunnelStage[];
+  promptCheck?: PromptCheck;
+  seoVsGeo?: { label: string; seo: string; geo: string }[];
 };
 
 export const MODEL_CONTENT: Record<string, ModelContent> = {
   chatgpt: {
+    metaTitle: 'Pozycjonowanie w ChatGPT – jak zbudować widoczność marki w AI',
     heroSubtitle:
       'OpenAI ChatGPT z&nbsp;trybem ChatGPT Search – najczęściej używany asystent AI w&nbsp;Polsce, obsługujący ponad 250 milionów użytkowników tygodniowo. Cytuje ze statycznych danych treningowych oraz przez mechanizm RAG oparty na indeksie Bing w&nbsp;czasie rzeczywistym. Widoczność w&nbsp;obu ścieżkach wymaga osobnych działań optymalizacyjnych.',
     metaDescription:
@@ -81,6 +104,124 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       {
         q: 'Jak mierzycie efekty pozycjonowania w&nbsp;ChatGPT?',
         a: 'Kluczowy wskaźnik to Share of Model (SoM) – procentowy udział wzmianek marki w&nbsp;odpowiedziach dla zdefiniowanego zestawu zapytań testowych. Mierzymy też Citation Rate (udział linków URL w&nbsp;przypisach) oraz ruch od agenta OAI-SearchBot w&nbsp;logach serwera. Klient otrzymuje co miesiąc raport z&nbsp;rekomendacjami kolejnych kroków.',
+      },
+      {
+        q: 'Czy mogę samodzielnie sprawdzić widoczność marki w&nbsp;ChatGPT?',
+        a: 'Tak – na tej stronie znajdziesz gotowy prompt testowy wraz z&nbsp;instrukcją interpretacji wyniku. Szybszą drogą jest nasze bezpłatne narzędzie <a href="/narzedzia/brand-check/">Widoczność marki w&nbsp;AI</a>, które w&nbsp;jednym przebiegu odpytuje ChatGPT, Claude, Gemini i&nbsp;Perplexity, wykrywa halucynacje i&nbsp;pokazuje konkurentów polecanych zamiast Ciebie.',
+      },
+      {
+        q: 'Czym pozycjonowanie w&nbsp;ChatGPT (GEO) różni się od klasycznego SEO?',
+        a: 'Cel klasycznego SEO to pozycja URL-a w&nbsp;rankingu; cel GEO to bycie źródłem lub wzmianką w&nbsp;wygenerowanej odpowiedzi. SEO mierzy pozycje i&nbsp;CTR, GEO – udział marki w&nbsp;odpowiedziach (Share of Model) i&nbsp;cytowania. Oba podejścia się uzupełniają: bez zaindeksowanej, szybkiej strony nie wejdziesz do puli źródeł ChatGPT Search, ale sama pozycja w&nbsp;top&nbsp;10 nie gwarantuje cytowania. Pełne porównanie znajdziesz w&nbsp;tabeli SEO vs GEO powyżej.',
+      },
+      {
+        q: 'Czy warto blokować GPTBot w&nbsp;robots.txt?',
+        a: 'To decyzja strategiczna. GPTBot zbiera dane treningowe – jego zablokowanie nie usuwa marki z&nbsp;ChatGPT Search (za to odpowiada OAI-SearchBot), ale ogranicza obecność w&nbsp;przyszłych wersjach bazy wiedzy modelu. Dla większości firm nastawionych na widoczność rekomendujemy dopuszczenie obu botów. Konfigurację sprawdzisz w&nbsp;minutę naszym narzędziem <a href="/narzedzia/ai-bots-check/">Dostęp botów AI</a>.',
+      },
+      {
+        q: 'Ile kosztuje pozycjonowanie w&nbsp;ChatGPT?',
+        a: 'Zakres prac zależy od punktu startowego: inaczej wygląda projekt dla marki, którą ChatGPT już zna, a&nbsp;inaczej dla domeny bez żadnych cytowań. Dlatego zaczynamy od bezpłatnego audytu widoczności, który pokazuje lukę wobec konkurencji i&nbsp;pozwala wycenić realny nakład pracy – bez zgadywania i&nbsp;bez sztywnych pakietów.',
+      },
+    ],
+    funnel: [
+      {
+        stage: 'TOFU',
+        label: 'Zapytania edukacyjne – początek decyzji',
+        desc: 'Użytkownik dopiero rozpoznaje problem i&nbsp;prosi ChatGPT o&nbsp;wyjaśnienia. Marka, która jest cytowana na tym etapie, buduje status eksperta i&nbsp;wraca w&nbsp;dalszych odpowiedziach.',
+        examples: [
+          '„czym jest pozycjonowanie w&nbsp;AI i&nbsp;jak działa”',
+          '„jak sprawdzić, czy moja strona jest widoczna dla ChatGPT”',
+          '„co to jest GEO i&nbsp;czym różni się od SEO”',
+        ],
+        onPage: [
+          'Przewodniki i&nbsp;definicje z&nbsp;odpowiedzią w&nbsp;pierwszych 50-100 słowach sekcji',
+          'Sekcje FAQ pokrywające realne pytania użytkowników',
+          'Profil autora z&nbsp;dorobkiem (Schema.org Person + sameAs)',
+        ],
+      },
+      {
+        stage: 'MOFU',
+        label: 'Zapytania porównawcze – rozważanie opcji',
+        desc: 'Użytkownik porównuje rozwiązania i&nbsp;prosi o&nbsp;zestawienia. ChatGPT najchętniej cytuje tu strony porównawcze – według badań format „X&nbsp;vs&nbsp;Y” i&nbsp;rankingi są cytowane wyraźnie częściej niż ogólne artykuły.',
+        examples: [
+          '„najlepsze narzędzia do monitorowania widoczności marki w&nbsp;AI”',
+          '„ChatGPT vs Google – gdzie klienci szukają usług”',
+          '„porównanie agencji SEO specjalizujących się w&nbsp;AI”',
+        ],
+        onPage: [
+          'Strony porównawcze z&nbsp;tabelami i&nbsp;twardymi danymi (nie opiniami)',
+          'Rankingi i&nbsp;zestawienia aktualizowane z&nbsp;widoczną datą',
+          'Dane liczbowe z&nbsp;podanym źródłem przy każdej tezie',
+        ],
+      },
+      {
+        stage: 'BOFU',
+        label: 'Zapytania decyzyjne – gotowość do wyboru',
+        desc: 'Użytkownik pyta wprost o&nbsp;polecenia: „kogo wybrać”, „ile to kosztuje”. To najcenniejsze odpowiedzi – ChatGPT wymienia w&nbsp;nich konkretne marki, często bez linku, dlatego liczy się spójność danych o&nbsp;firmie w&nbsp;całej sieci.',
+        examples: [
+          '„jaką firmę do pozycjonowania w&nbsp;ChatGPT polecasz w&nbsp;Polsce”',
+          '„ile kosztuje pozycjonowanie marki w&nbsp;AI”',
+          '„która agencja GEO ma najlepsze opinie”',
+        ],
+        onPage: [
+          'Strona oferty z&nbsp;jasnym zakresem usług i&nbsp;procesem współpracy',
+          'Opinie i&nbsp;case studies z&nbsp;mierzalnymi wynikami',
+          'Spójne dane firmy (nazwa, adres, NIP) w&nbsp;Schema.org i&nbsp;katalogach',
+        ],
+      },
+    ],
+    promptCheck: {
+      intro:
+        'Zanim zamówisz audyt, wykonaj prosty test ręczny. Wklej poniższy prompt do ChatGPT (najlepiej w&nbsp;trybie z&nbsp;wyszukiwaniem), podstawiając swoją branżę i&nbsp;rynek. Zadaj go w&nbsp;nowej, czystej konwersacji – historia czatu zaburza wynik.',
+      prompt:
+        'Szukam sprawdzonych firm z kategorii [TWOJA BRANŻA] działających na rynku [POLSKA / MIASTO]. Wymień 5 konkretnych marek, które warto rozważyć, i przy każdej podaj: czym się wyróżnia, dla kogo jest najlepsza i skąd pochodzą informacje (podaj źródła). Na końcu napisz, co wiesz o firmie [TWOJA MARKA] i czy poleciłbyś ją w tej kategorii.',
+      positive: [
+        'Marka pojawia się w&nbsp;pierwszej piątce bez dopytywania',
+        'Opis oferty jest zgodny ze stanem faktycznym',
+        'W&nbsp;przypisach pojawia się Twoja domena, nie tylko katalogi',
+      ],
+      warning: [
+        'Marka pojawia się dopiero po dopytaniu wprost',
+        'Opis jest ogólnikowy lub przestarzały (stara oferta, stary adres)',
+        'Model cytuje o&nbsp;Tobie wyłącznie źródła zewnętrzne (katalogi, portale)',
+      ],
+      critical: [
+        'Model nie zna marki albo myli ją z&nbsp;inną firmą',
+        'Wymienia konkurentów, a&nbsp;o&nbsp;Tobie milczy nawet po dopytaniu',
+        'Podaje nieprawdziwe fakty (halucynacje) – błędne usługi, lokalizacje, ceny',
+      ],
+      toolCta:
+        'Test ręczny obejmuje jeden model i&nbsp;jedną próbę – wynik potrafi się różnić między sesjami. Nasze bezpłatne narzędzie odpytuje równolegle ChatGPT, Claude, Gemini i&nbsp;Perplexity, wykrywa halucynacje i&nbsp;wskazuje konkurentów polecanych zamiast Ciebie.',
+    },
+    seoVsGeo: [
+      {
+        label: 'Cel działań',
+        seo: 'Pozycja URL-a w&nbsp;top&nbsp;10 wyników',
+        geo: 'Wzmianka lub cytowanie marki w&nbsp;odpowiedzi',
+      },
+      {
+        label: 'Jednostka wyniku',
+        seo: 'Ranking stron (10 niebieskich linków)',
+        geo: 'Jedna syntetyczna odpowiedź z&nbsp;1-10 przypisami',
+      },
+      {
+        label: 'Kluczowe sygnały',
+        seo: 'Linki, treść, Core Web Vitals, intencja',
+        geo: 'Gęstość faktów, struktura fragmentów, wzmianki marki, szybkość TTFB',
+      },
+      {
+        label: 'Pomiar efektów',
+        seo: 'Pozycje, ruch organiczny, CTR (GSC)',
+        geo: 'Share of Model, Citation Rate, ruch z&nbsp;agentów AI w&nbsp;logach',
+      },
+      {
+        label: 'Czas pierwszych efektów',
+        seo: 'Zwykle 3-6 miesięcy',
+        geo: 'ChatGPT Search: dni-tygodnie; dane treningowe: 6-18 miesięcy',
+      },
+      {
+        label: 'Relacja',
+        seo: 'Fundament – bez indeksacji nie ma puli źródeł',
+        geo: 'Nadbudowa – decyduje, czy model wybierze właśnie Ciebie',
       },
     ],
   },

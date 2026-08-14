@@ -70,6 +70,22 @@ const comparisonRows = [
 
 const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : model.slug;
 
+// Dynamiczna numeracja sekcji – deep-dive (funnel/promptCheck/seoVsGeo) występuje
+// tylko dla modeli, które definiują te dane, więc indeksy liczymy z realnej listy.
+const sectionIds = [
+  'jak-dziala',
+  'przyklad-cytowania',
+  'optymalizacja',
+  ...(content.funnel ? ['prompty'] : []),
+  ...(content.promptCheck ? ['test'] : []),
+  ...(content.seoVsGeo ? ['seo-vs-geo'] : []),
+  'sygnaly',
+  'faq',
+  'pozostale-modele',
+];
+const sectionIndex = (id: string) =>
+  `P/${String(sectionIds.indexOf(id) + 1).padStart(2, '0')}`;
+
 // Schema – Service (per model) + FAQPage + BreadcrumbList.
 // FAQPage od 08.2023 nie generuje rich results poza gov/healthcare, ale
 // LLM-y nadal używają jej do wyboru cytatów; zostaje.
@@ -97,7 +113,7 @@ const modelServiceSchema = buildGraph(
 ---
 
 <Layout
-  title={`Pozycjonowanie w ${model.name} – widocznosc.ai`}
+  title={content.metaTitle ?? `Pozycjonowanie w ${model.name} – widocznosc.ai`}
   description={content.metaDescription}
 >
   <Navbar />
@@ -166,6 +182,9 @@ const modelServiceSchema = buildGraph(
     <div class="content-container service-toc-inner">
       <a href="#jak-dziala">Jak działa</a>
       <a href="#optymalizacja">Optymalizacja</a>
+      {content.funnel && <a href="#prompty">Prompty</a>}
+      {content.promptCheck && <a href="#test">Test widoczności</a>}
+      {content.seoVsGeo && <a href="#seo-vs-geo">SEO vs GEO</a>}
       <a href="#sygnaly">Sygnały</a>
       <a href="#faq">FAQ</a>
       <a href="#pozostale-modele">Pozostałe modele</a>
@@ -178,7 +197,7 @@ const modelServiceSchema = buildGraph(
       <div class="service-section-head">
         <div>
           <div class="head-meta">
-            <span class="section-index">P/01</span>
+            <span class="section-index">{sectionIndex('jak-dziala')}</span>
             <span class="eyebrow">Jak działa</span>
           </div>
           <h2 id="how-title" class="service-section-title display-xl mt-2 mb-6">
@@ -218,7 +237,7 @@ const modelServiceSchema = buildGraph(
       <div class="citation-grid">
         <div>
           <div class="head-meta">
-            <span class="section-index">P/02</span>
+            <span class="section-index">{sectionIndex('przyklad-cytowania')}</span>
             <span class="eyebrow">Przykład cytowania</span>
           </div>
           <h2 id="citation-title" class="display-xl">
@@ -412,7 +431,7 @@ const modelServiceSchema = buildGraph(
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
         <div class="lg:col-span-5">
           <div class="head-meta">
-            <span class="section-index">P/03</span>
+            <span class="section-index">{sectionIndex('optymalizacja')}</span>
             <span class="eyebrow">Optymalizacja</span>
           </div>
           <h2 id="opt-title" class="service-section-title display-xl mt-2">
@@ -449,13 +468,164 @@ const modelServiceSchema = buildGraph(
     </div>
   </section>
 
+  {
+    content.funnel && (
+      <section id="prompty" class="relative w-full" aria-labelledby="funnel-title">
+        <div class="content-container py-16 lg:py-20">
+          <div class="service-section-head">
+            <div>
+              <div class="head-meta">
+                <span class="section-index">{sectionIndex('prompty')}</span>
+                <span class="eyebrow">Lejek zapytań</span>
+              </div>
+              <h2 id="funnel-title" class="service-section-title display-xl mt-2 mb-6">
+                Jakie zapytania wybrać pod pozycjonowanie w&nbsp;{model.name}
+              </h2>
+            </div>
+            <p>
+              Użytkownicy pytają {model.name} inaczej na każdym etapie decyzji. Strategia GEO
+              zaczyna się od doboru zapytań do etapu lejka – realne zapytania pomocnicze modelu
+              podejrzysz naszym narzędziem{' '}
+              <a href="/narzedzia/fanout/">Analiza zapytań AI</a>, a&nbsp;podstawy działania modelu
+              opisaliśmy w&nbsp;<a href="/modele-llm/chatgpt/">kompletnym przewodniku po ChatGPT</a>.
+            </p>
+          </div>
+
+          <div class="funnel-grid">
+            {content.funnel.map((stage) => (
+              <article class={`funnel-card funnel-card--${stage.stage.toLowerCase()}`}>
+                <div class="funnel-stage">{stage.stage}</div>
+                <h3 class="funnel-label">{stage.label}</h3>
+                <p class="funnel-desc" set:html={stage.desc} />
+                <div class="funnel-list-head">Przykładowe zapytania</div>
+                <ul class="funnel-list">
+                  {stage.examples.map((ex) => (
+                    <li set:html={ex} />
+                  ))}
+                </ul>
+                <div class="funnel-list-head">Co musi być na stronie</div>
+                <ul class="funnel-list funnel-list--onpage">
+                  {stage.onPage.map((item) => (
+                    <li set:html={item} />
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    content.promptCheck && (
+      <section id="test" class="prompt-check" aria-labelledby="test-title">
+        <div class="content-container py-16 lg:py-20">
+          <div class="service-section-head">
+            <div>
+              <div class="head-meta">
+                <span class="section-index">{sectionIndex('test')}</span>
+                <span class="eyebrow">Samodzielny test</span>
+              </div>
+              <h2 id="test-title" class="service-section-title display-xl mt-2 mb-6">
+                Sprawdź widoczność swojej marki w&nbsp;{model.name}
+              </h2>
+            </div>
+            <p set:html={content.promptCheck.intro} />
+          </div>
+
+          <div class="prompt-box" aria-label="Gotowy prompt testowy">
+            <div class="prompt-box-head">Prompt do skopiowania</div>
+            <pre class="prompt-box-body"><code>{content.promptCheck.prompt}</code></pre>
+          </div>
+
+          <div class="verdict-grid">
+            <div class="verdict-card verdict-card--positive">
+              <h3>Sygnały pozytywne</h3>
+              <ul>
+                {content.promptCheck.positive.map((item) => (
+                  <li set:html={item} />
+                ))}
+              </ul>
+            </div>
+            <div class="verdict-card verdict-card--warning">
+              <h3>Sygnały ostrzegawcze</h3>
+              <ul>
+                {content.promptCheck.warning.map((item) => (
+                  <li set:html={item} />
+                ))}
+              </ul>
+            </div>
+            <div class="verdict-card verdict-card--critical">
+              <h3>Sygnały krytyczne</h3>
+              <ul>
+                {content.promptCheck.critical.map((item) => (
+                  <li set:html={item} />
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="prompt-tool-cta">
+            <p set:html={content.promptCheck.toolCta} />
+            <a class="btn-primary" href="/narzedzia/brand-check/">
+              Sprawdź markę w&nbsp;4 modelach · bezpłatnie
+            </a>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    content.seoVsGeo && (
+      <section id="seo-vs-geo" class="relative w-full" aria-labelledby="seovsgeo-title">
+        <div class="content-container py-16 lg:py-20">
+          <div class="service-section-head">
+            <div>
+              <div class="head-meta">
+                <span class="section-index">{sectionIndex('seo-vs-geo')}</span>
+                <span class="eyebrow">SEO vs GEO</span>
+              </div>
+              <h2 id="seovsgeo-title" class="service-section-title display-xl mt-2 mb-6">
+                Pozycjonowanie w&nbsp;{model.name} (GEO) a&nbsp;klasyczne SEO
+              </h2>
+            </div>
+            <p>
+              GEO nie zastępuje SEO – buduje na nim. Bez zaindeksowanej, szybkiej strony nie
+              wejdziesz do puli źródeł, ale dopiero struktura treści i&nbsp;sygnały marki decydują,
+              czy model zacytuje właśnie Ciebie.
+            </p>
+          </div>
+
+          <div class="seo-geo-table" role="table" aria-label="Porównanie SEO i GEO">
+            <div class="seo-geo-row seo-geo-row--head" role="row">
+              <div role="columnheader">Obszar</div>
+              <div role="columnheader">Klasyczne SEO</div>
+              <div role="columnheader">GEO ({model.name})</div>
+            </div>
+            {content.seoVsGeo.map((row) => (
+              <div class="seo-geo-row" role="row">
+                <div class="seo-geo-label" role="cell">
+                  {row.label}
+                </div>
+                <div role="cell" data-col="SEO" set:html={row.seo} />
+                <div role="cell" data-col="GEO" set:html={row.geo} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   <!-- Sygnały rankingowe -->
   <section id="sygnaly" class="relative w-full" aria-labelledby="signals-title">
     <div class="content-container py-16 lg:py-20">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
         <div class="lg:col-span-5">
           <div class="head-meta">
-            <span class="section-index">P/04</span>
+            <span class="section-index">{sectionIndex('sygnaly')}</span>
             <span class="eyebrow">Sygnały rankingowe</span>
           </div>
           <h2 id="signals-title" class="service-section-title display-xl mt-2">
@@ -496,7 +666,7 @@ const modelServiceSchema = buildGraph(
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
         <div class="lg:col-span-5">
           <div class="head-meta">
-            <span class="section-index">P/05</span>
+            <span class="section-index">{sectionIndex('faq')}</span>
             <span class="eyebrow">FAQ</span>
           </div>
           <h2 id="faq-title" class="service-section-title display-xl mt-2">
@@ -533,7 +703,7 @@ const modelServiceSchema = buildGraph(
       <div class="mb-10 flex items-end justify-between gap-6">
         <div>
           <div class="head-meta">
-            <span class="section-index">P/06</span>
+            <span class="section-index">{sectionIndex('pozostale-modele')}</span>
             <span class="eyebrow">Pozostałe modele</span>
           </div>
           <h2 id="other-title" class="service-section-title display-xl mt-2">
@@ -1624,6 +1794,302 @@ const modelServiceSchema = buildGraph(
 
   .service-section-title {
     text-wrap: balance;
+  }
+
+  /* Lejek zapytań (TOFU/MOFU/BOFU) */
+  .funnel-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .funnel-card {
+    --funnel-accent: var(--accent-blue);
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: 15px;
+    background:
+      radial-gradient(
+        circle at 12% 0%,
+        color-mix(in srgb, var(--funnel-accent) 12%, transparent) 0%,
+        transparent 34%
+      ),
+      var(--bg-surface-1);
+  }
+
+  .funnel-card--mofu {
+    --funnel-accent: #fbbf24;
+  }
+
+  .funnel-card--bofu {
+    --funnel-accent: #4ade80;
+  }
+
+  :global(:root[data-theme='light']) .funnel-card--mofu {
+    --funnel-accent: #d97706;
+  }
+
+  :global(:root[data-theme='light']) .funnel-card--bofu {
+    --funnel-accent: #16a34a;
+  }
+
+  .funnel-stage {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--r-pill);
+    background: color-mix(in srgb, var(--funnel-accent) 14%, transparent);
+    color: var(--funnel-accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .funnel-label {
+    margin: 0.9rem 0 0.6rem;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    color: var(--ink);
+  }
+
+  .funnel-desc {
+    margin: 0 0 1.1rem;
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .funnel-list-head {
+    margin: 0.35rem 0 0.5rem;
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .funnel-list {
+    display: grid;
+    gap: 0.45rem;
+    margin: 0 0 1rem;
+    padding-left: 1.1rem;
+    color: var(--ink-muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .funnel-list--onpage {
+    margin-bottom: 0;
+  }
+
+  /* Samodzielny test – prompt + interpretacja */
+  .prompt-check {
+    background: var(--bg-canvas);
+    border-top: 1px solid var(--hairline-soft);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .prompt-box {
+    overflow: hidden;
+    border: 1px solid var(--hairline-soft);
+    border-radius: 15px;
+    background: var(--bg-surface-1);
+  }
+
+  .prompt-box-head {
+    padding: 0.75rem 1.15rem;
+    border-bottom: 1px solid var(--hairline-soft);
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .prompt-box-body {
+    margin: 0;
+    padding: 1.15rem 1.25rem;
+    overflow-x: auto;
+    color: var(--ink);
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    white-space: pre-wrap;
+  }
+
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .verdict-card {
+    --verdict-accent: #4ade80;
+    padding: 1.5rem;
+    border: 1px solid color-mix(in srgb, var(--verdict-accent) 26%, var(--hairline-soft));
+    border-radius: 15px;
+    background:
+      radial-gradient(
+        circle at 12% 0%,
+        color-mix(in srgb, var(--verdict-accent) 10%, transparent) 0%,
+        transparent 38%
+      ),
+      var(--bg-surface-1);
+  }
+
+  .verdict-card--warning {
+    --verdict-accent: #fbbf24;
+  }
+
+  .verdict-card--critical {
+    --verdict-accent: #ef4444;
+  }
+
+  :global(:root[data-theme='light']) .verdict-card--positive {
+    --verdict-accent: #16a34a;
+  }
+
+  :global(:root[data-theme='light']) .verdict-card--warning {
+    --verdict-accent: #d97706;
+  }
+
+  :global(:root[data-theme='light']) .verdict-card--critical {
+    --verdict-accent: #dc2626;
+  }
+
+  .verdict-card h3 {
+    margin: 0 0 0.75rem;
+    color: var(--verdict-accent);
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+
+  .verdict-card ul {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--ink-muted);
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .prompt-tool-cta {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid color-mix(in srgb, var(--accent-blue) 30%, var(--hairline-soft));
+    border-radius: 15px;
+    background: color-mix(in srgb, var(--accent-blue) 8%, var(--bg-surface-1));
+  }
+
+  .prompt-tool-cta p {
+    margin: 0;
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .prompt-tool-cta .btn-primary {
+    justify-self: start;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Tabela SEO vs GEO */
+  .seo-geo-table {
+    overflow: hidden;
+    border: 1px solid var(--hairline-soft);
+    border-radius: 15px;
+    background: var(--bg-canvas);
+  }
+
+  .seo-geo-row {
+    display: grid;
+    grid-template-columns: minmax(9rem, 0.7fr) 1fr 1fr;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .seo-geo-row--head {
+    border-top: 0;
+    background: color-mix(in srgb, var(--bg-surface-1) 74%, var(--bg-canvas));
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .seo-geo-row > div {
+    padding: 0.95rem 1.05rem;
+    border-left: 1px solid var(--hairline-soft);
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .seo-geo-row > div:first-child {
+    border-left: 0;
+  }
+
+  .seo-geo-label {
+    color: var(--ink);
+    font-weight: 650;
+  }
+
+  .seo-geo-row:not(.seo-geo-row--head) > div:last-child {
+    background: color-mix(in srgb, var(--accent-blue) 7%, transparent);
+    color: var(--ink);
+  }
+
+  @media (min-width: 980px) {
+    .funnel-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .verdict-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .prompt-tool-cta {
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .seo-geo-row {
+      grid-template-columns: 1fr;
+    }
+
+    .seo-geo-row--head {
+      display: none;
+    }
+
+    .seo-geo-row > div {
+      border-left: 0;
+    }
+
+    .seo-geo-row > div[data-col]::before {
+      content: attr(data-col) ' · ';
+      color: var(--ink-faint);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .seo-geo-row:not(.seo-geo-row--head) > div:first-child {
+      padding-bottom: 0.3rem;
+      background: color-mix(in srgb, var(--bg-surface-1) 78%, var(--bg-canvas));
+    }
   }
 
   @media (min-width: 980px) {

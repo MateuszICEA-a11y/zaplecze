@@ -1048,6 +1048,28 @@ const brandCheckSchema = buildGraph(
 
     const submit = form.querySelector('button[type="submit"]');
 
+    // Prefill z query stringa – quick-check na podstronach /pozycjonowanie-ai/
+    // linkuje tu z ?domain= (i opcjonalnie ?brand=).
+    const params = new URLSearchParams(window.location.search);
+    const prefillDomain = (params.get('domain') || '').trim().slice(0, 200);
+    const prefillBrand = (params.get('brand') || '').trim().slice(0, 80);
+    const domainInput = document.getElementById('domain-input') as HTMLInputElement | null;
+    const brandInput = document.getElementById('brand-input') as HTMLInputElement | null;
+    if (prefillDomain && domainInput && !domainInput.value) {
+      domainInput.value = prefillDomain;
+      if (brandInput && !brandInput.value) {
+        if (prefillBrand) {
+          brandInput.value = prefillBrand;
+        } else {
+          // Sensowny default: nazwa marki z pierwszego członu domeny (bez www i TLD).
+          const host = prefillDomain.replace(/^https?:\/\//i, '').replace(/^www\./i, '');
+          const label = host.split('/')[0].split('.')[0];
+          if (label) brandInput.value = label.charAt(0).toUpperCase() + label.slice(1);
+        }
+      }
+      brandInput?.focus();
+    }
+
     let pendingBrand: { brand: string; domain: string; category: string; market: string } | null =
       null;
 
