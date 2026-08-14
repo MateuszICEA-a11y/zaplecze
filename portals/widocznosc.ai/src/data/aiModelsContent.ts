@@ -39,15 +39,15 @@ export type ModelContent = {
 
 export const MODEL_CONTENT: Record<string, ModelContent> = {
   chatgpt: {
-    metaTitle: 'Pozycjonowanie w ChatGPT – jak zbudować widoczność marki w AI',
+    metaTitle: 'Pozycjonowanie w ChatGPT [2026] – widoczność marki w AI',
     heroSubtitle:
-      'OpenAI ChatGPT z&nbsp;trybem ChatGPT Search – najczęściej używany asystent AI w&nbsp;Polsce, obsługujący ponad 250 milionów użytkowników tygodniowo. Cytuje ze statycznych danych treningowych oraz przez mechanizm RAG oparty na indeksie Bing w&nbsp;czasie rzeczywistym. Widoczność w&nbsp;obu ścieżkach wymaga osobnych działań optymalizacyjnych.',
+      'OpenAI ChatGPT z&nbsp;trybem ChatGPT Search – najczęściej używany asystent AI w&nbsp;Polsce, z&nbsp;setkami milionów aktywnych użytkowników tygodniowo (<a href="https://pl.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener">Wikipedia</a>). Cytuje ze statycznych danych treningowych oraz przez mechanizm RAG oparty na indeksie Bing w&nbsp;czasie rzeczywistym. Widoczność w&nbsp;obu ścieżkach wymaga osobnych działań optymalizacyjnych.',
     metaDescription:
       'Pozycjonowanie marki w ChatGPT i ChatGPT Search. Audyt cytowań, optymalizacja treści pod odpowiedzi AI i wyszukiwanie w czasie rzeczywistym. Mierzymy udział marki w odpowiedziach OpenAI.',
     howItWorks: [
       {
         title: 'Dwoista architektura wiedzy',
-        desc: 'ChatGPT działa w&nbsp;dwóch ścieżkach. Tryb standardowy opiera się na statycznych wagach treningowych (wiedza do określonej daty aktualizacji bazy) – marka musi istnieć w&nbsp;źródłach skanowanych przez Common Crawl i&nbsp;własne crawlery OpenAI. ChatGPT Search pobiera aktualne źródła w&nbsp;czasie rzeczywistym przez mechanizm RAG.',
+        desc: 'ChatGPT działa w&nbsp;dwóch ścieżkach. Tryb standardowy opiera się na statycznych wagach treningowych (wiedza do określonej daty aktualizacji bazy) – marka musi istnieć w&nbsp;źródłach skanowanych przez Common Crawl i&nbsp;<a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener">własne crawlery OpenAI</a>. ChatGPT Search pobiera aktualne źródła w&nbsp;czasie rzeczywistym przez mechanizm RAG.',
       },
       {
         title: 'Mechanizm RAG i zaawansowane wnioskowanie',
@@ -111,7 +111,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         q: 'Czym pozycjonowanie w&nbsp;ChatGPT (GEO) różni się od klasycznego SEO?',
-        a: 'Cel klasycznego SEO to pozycja URL-a w&nbsp;rankingu; cel GEO to bycie źródłem lub wzmianką w&nbsp;wygenerowanej odpowiedzi. SEO mierzy pozycje i&nbsp;CTR, GEO – udział marki w&nbsp;odpowiedziach (Share of Model) i&nbsp;cytowania. Oba podejścia się uzupełniają: bez zaindeksowanej, szybkiej strony nie wejdziesz do puli źródeł ChatGPT Search, ale sama pozycja w&nbsp;top&nbsp;10 nie gwarantuje cytowania. Pełne porównanie znajdziesz w&nbsp;tabeli SEO vs GEO powyżej.',
+        a: 'Cel klasycznego SEO to pozycja URL-a w&nbsp;rankingu; cel <a href="https://en.wikipedia.org/wiki/Generative_engine_optimization" target="_blank" rel="noopener">GEO (Generative Engine Optimization)</a> to bycie źródłem lub wzmianką w&nbsp;wygenerowanej odpowiedzi. SEO mierzy pozycje i&nbsp;CTR, GEO – udział marki w&nbsp;odpowiedziach (Share of Model) i&nbsp;cytowania. Oba podejścia się uzupełniają: bez zaindeksowanej, szybkiej strony nie wejdziesz do puli źródeł ChatGPT Search, ale sama pozycja w&nbsp;top&nbsp;10 nie gwarantuje cytowania – analogiczne zasady dla funkcji AI w&nbsp;wyszukiwarce opisuje też <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">oficjalna dokumentacja Google</a>. Pełne porównanie znajdziesz w&nbsp;tabeli SEO vs GEO powyżej.',
       },
       {
         q: 'Czy warto blokować GPTBot w&nbsp;robots.txt?',

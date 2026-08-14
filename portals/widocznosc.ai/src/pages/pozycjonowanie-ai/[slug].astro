@@ -6,13 +6,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 import CTABand from '../../components/CTABand.astro';
 import { AI_MODELS } from '../../data/aiModels';
 import { MODEL_CONTENT } from '../../data/aiModelsContent';
-import {
-  buildGraph,
-  faqPageNode,
-  serviceNode,
-  breadcrumbNode,
-  SITE_URL,
-} from '../../lib/schema';
+import { buildGraph, faqPageNode, serviceNode, breadcrumbNode, SITE_URL } from '../../lib/schema';
 
 export const getStaticPaths = () =>
   AI_MODELS.map((model) => ({
@@ -83,8 +77,7 @@ const sectionIds = [
   'faq',
   'pozostale-modele',
 ];
-const sectionIndex = (id: string) =>
-  `P/${String(sectionIds.indexOf(id) + 1).padStart(2, '0')}`;
+const sectionIndex = (id: string) => `P/${String(sectionIds.indexOf(id) + 1).padStart(2, '0')}`;
 
 // Schema – Service (per model) + FAQPage + BreadcrumbList.
 // FAQPage od 08.2023 nie generuje rich results poza gov/healthcare, ale
@@ -108,7 +101,7 @@ const modelServiceSchema = buildGraph(
     { name: 'Strona główna', path: '/' },
     { name: 'Pozycjonowanie AI', path: '/pozycjonowanie-ai/' },
     { name: model.name, path: model.href },
-  ]),
+  ])
 );
 ---
 
@@ -214,9 +207,7 @@ const modelServiceSchema = buildGraph(
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {
           content.howItWorks.map((item, i) => (
-            <div
-              class="service-feature-card flex flex-col rounded-[15px] p-8 lg:p-10"
-            >
+            <div class="service-feature-card flex flex-col rounded-[15px] p-8 lg:p-10">
               <div class="display-md text-ink-muted mb-4 leading-none">0{i + 1}</div>
               <h3
                 class="mb-3 text-xl font-medium"
@@ -244,44 +235,82 @@ const modelServiceSchema = buildGraph(
             Jak wygląda wynik, o który walczysz w {model.name}
           </h2>
         </div>
-        <div class="citation-mock" aria-label="Przykładowa odpowiedź modelu AI">
+        <div
+          class:list={['citation-mock', model.slug === 'chatgpt' && 'citation-mock--window']}
+          aria-label="Przykładowa odpowiedź modelu AI"
+        >
           {
             model.slug === 'chatgpt' ? (
-              <>
-                <div class="citation-user">Poleć mi dentystę w Poznaniu</div>
-                <div class="citation-answer citation-answer--chatgpt">
-                  <p>
-                    Sprawdzę aktualne opcje w Poznaniu i zawężę je praktycznie: dobre opinie,
-                    zakres usług, lokalizacja oraz sensowność dla zwykłej wizyty/konsultacji.
-                  </p>
-                  <span class="citation-thinking">Myślał przez 7s</span>
-                  <p>
-                    Najbardziej sensowny pierwszy wybór w Poznaniu dałbym:
-                  </p>
-                  <div class="citation-redacted-recommendation">
-                    <div class="citation-redacted-line">
-                      <span class="citation-redacted-name">Zanonimizowana klinika stomatologiczna</span>
-                      <span class="citation-redacted-tag">nazwa i adres ukryte</span>
-                    </div>
-                    <p>
-                      Dobra opcja na zwykłe leczenie, przegląd, higienizację i stomatologię
-                      zachowawczą. Placówka ma bardzo dużo opinii przy usługach podstawowych, więc
-                      jest spory materiał do weryfikacji jakości, a nie kilka przypadkowych ocen.
+              <div class="chatgpt-window" aria-label="Symulacja rozmowy w aplikacji ChatGPT">
+                <div class="chatgpt-titlebar">
+                  <span class="chatgpt-model">
+                    ChatGPT{' '}
+                    <span class="chatgpt-model-caret" aria-hidden="true">
+                      ⌄
+                    </span>
+                  </span>
+                  <span class="chatgpt-titlebar-actions" aria-hidden="true">
+                    <span class="chatgpt-icon-dot" />
+                    <span class="chatgpt-icon-dot" />
+                    <span class="chatgpt-icon-dot" />
+                  </span>
+                </div>
+                <div class="chatgpt-thread">
+                  <div class="chatgpt-msg chatgpt-msg--user cg-reveal" style="--d: 0ms">
+                    Poleć mi dentystę w Poznaniu
+                  </div>
+                  <div class="chatgpt-search-chip cg-reveal" style="--d: 350ms">
+                    <span class="chatgpt-search-spinner" aria-hidden="true" />
+                    Przeszukano internet · 6 stron
+                  </div>
+                  <div class="chatgpt-msg chatgpt-msg--assistant">
+                    <p class="cg-reveal" style="--d: 700ms">
+                      Sprawdzę aktualne opcje w Poznaniu i zawężę je praktycznie: dobre opinie,
+                      zakres usług, lokalizacja oraz sensowność dla zwykłej wizyty.
                     </p>
+                    <p class="cg-reveal" style="--d: 1050ms">
+                      Najbardziej sensowny pierwszy wybór w Poznaniu dałbym:
+                    </p>
+                    <div class="chatgpt-reco cg-reveal" style="--d: 1400ms">
+                      <div class="chatgpt-reco-head">
+                        <span class="chatgpt-reco-name">
+                          <span class="citation-redacted-inline chatgpt-redacted" />
+                          <span class="chatgpt-reco-badge">nazwa kliniki ukryta</span>
+                        </span>
+                        <span class="chatgpt-reco-rating">4,9 ★ (612 opinii)</span>
+                      </div>
+                      <p>
+                        Dobra opcja na zwykłe leczenie, przegląd i higienizację. Placówka ma bardzo
+                        dużo opinii przy usługach podstawowych, więc jest spory materiał do
+                        weryfikacji jakości, a nie kilka przypadkowych ocen.
+                      </p>
+                      <span class="chatgpt-caret" aria-hidden="true" />
+                    </div>
+                    <div class="chatgpt-sources cg-reveal" style="--d: 1750ms">
+                      <span class="chatgpt-sources-label">Źródła</span>
+                      <span class="chatgpt-source-chip">znanylekarz.pl</span>
+                      <span class="chatgpt-source-chip">Mapy Google</span>
+                      <span class="chatgpt-source-chip">strona kliniki</span>
+                    </div>
                   </div>
                 </div>
-                <div class="citation-source">Dane polecanej kliniki zanonimizowane</div>
-              </>
+                <div class="chatgpt-inputbar" aria-hidden="true">
+                  <span>Zapytaj o cokolwiek…</span>
+                  <span class="chatgpt-inputbar-send">↑</span>
+                </div>
+              </div>
             ) : model.slug === 'claude' ? (
               <>
-                <div class="citation-user">znajdź mi dobry sklep z butami do biegania we Wrocławiu</div>
+                <div class="citation-user">
+                  znajdź mi dobry sklep z butami do biegania we Wrocławiu
+                </div>
                 <div class="citation-answer citation-answer--claude">
                   <span class="citation-tools">Used 2 tools</span>
                   <div class="citation-local-pack">
                     <div class="citation-map" aria-hidden="true">
-                      <span class="citation-road citation-road--a"></span>
-                      <span class="citation-road citation-road--b"></span>
-                      <span class="citation-road citation-road--c"></span>
+                      <span class="citation-road citation-road--a" />
+                      <span class="citation-road citation-road--b" />
+                      <span class="citation-road citation-road--c" />
                       <span class="citation-map-label citation-map-label--top">KOZANÓW</span>
                       <span class="citation-map-label citation-map-label--mid">GĄDÓW MAŁY</span>
                       <span class="citation-map-label citation-map-label--low">MUCHOBÓR</span>
@@ -293,17 +322,21 @@ const modelServiceSchema = buildGraph(
                       <h3>Sklepy z butami do biegania - Wrocław</h3>
                       <button type="button">Copy</button>
                       <div class="citation-place-card">
-                        <span class="citation-place-thumb"></span>
+                        <span class="citation-place-thumb" />
                         <div>
-                          <strong><span class="citation-place-name-redacted">Sklep sportowy 1</span></strong>
+                          <strong>
+                            <span class="citation-place-name-redacted">Sklep sportowy 1</span>
+                          </strong>
                           <p>4.7 ★ (694) · sklep sportowy</p>
                           <p>Najlepszy wybór - specjalistyczny sklep...</p>
                         </div>
                       </div>
                       <div class="citation-place-card">
-                        <span class="citation-place-thumb citation-place-thumb--blue"></span>
+                        <span class="citation-place-thumb citation-place-thumb--blue" />
                         <div>
-                          <strong><span class="citation-place-name-redacted">Sklep sportowy 2</span></strong>
+                          <strong>
+                            <span class="citation-place-name-redacted">Sklep sportowy 2</span>
+                          </strong>
                           <p>4.5 ★ (3700) · sporting goods</p>
                           <p>Szeroki wybór, konkurencyjne ceny...</p>
                         </div>
@@ -329,8 +362,8 @@ const modelServiceSchema = buildGraph(
                         <span class="citation-restaurant-name">Restauracja 1</span>
                         <ul>
                           <li>
-                            <strong>Klimat:</strong> wyjątkowe miejsce w centrum miasta, z przytulnym
-                            wnętrzem i elegancką atmosferą.
+                            <strong>Klimat:</strong> wyjątkowe miejsce w centrum miasta, z
+                            przytulnym wnętrzem i elegancką atmosferą.
                           </li>
                           <li>
                             <strong>Kuchnia:</strong> polskie i regionalne tradycje połączone z
@@ -342,8 +375,8 @@ const modelServiceSchema = buildGraph(
                         <span class="citation-restaurant-name">Restauracja 2</span>
                         <ul>
                           <li>
-                            <strong>Klimat:</strong> przestronny, bardzo przytulny lokal poza ścisłym
-                            centrum, często wybierany również na rodzinne obiady.
+                            <strong>Klimat:</strong> przestronny, bardzo przytulny lokal poza
+                            ścisłym centrum, często wybierany również na rodzinne obiady.
                           </li>
                           <li>
                             <strong>Kuchnia:</strong> comfort food w tradycyjnym wydaniu, klasyczne
@@ -354,7 +387,9 @@ const modelServiceSchema = buildGraph(
                     </ul>
                   </div>
                 </div>
-                <div class="citation-source">Nazwy i adresy polecanych restauracji zanonimizowane</div>
+                <div class="citation-source">
+                  Nazwy i adresy polecanych restauracji zanonimizowane
+                </div>
               </>
             ) : model.slug === 'perplexity' ? (
               <>
@@ -371,7 +406,9 @@ const modelServiceSchema = buildGraph(
                   <div class="citation-perplexity-section">
                     <h3>Co warto sprawdzić</h3>
                     <ul class="citation-perplexity-list">
-                      <li>Czy obsługuje Twoją formę działalności: JDG, spółka, pełna księgowość.</li>
+                      <li>
+                        Czy obsługuje Twoją formę działalności: JDG, spółka, pełna księgowość.
+                      </li>
                       <li>Czy ma kontakt mailowy, telefoniczny i szybkie odpowiedzi online.</li>
                       <li>
                         Czy oferuje konsultację przed startem, żeby ustalić zakres i cenę.
@@ -399,8 +436,8 @@ const modelServiceSchema = buildGraph(
                     <span class="citation-redacted-inline">sklep 2</span>,
                     <span class="citation-redacted-inline">sklep 3</span>,
                     <span class="citation-redacted-inline">sklep 4</span> i
-                    <span class="citation-redacted-inline">sklep 5</span> to najpewniejsze kierunki -
-                    różnią się stylem i budżetem, więc łatwo dobrać coś pod swój gust.
+                    <span class="citation-redacted-inline">sklep 5</span> to najpewniejsze kierunki
+                    - różnią się stylem i budżetem, więc łatwo dobrać coś pod swój gust.
                   </p>
                 </div>
                 <div class="citation-source">Nazwy polecanych sklepów zanonimizowane</div>
@@ -411,8 +448,8 @@ const modelServiceSchema = buildGraph(
                   Jakie agencje SEO specjalizują się w pozycjonowaniu pod AI w Polsce?
                 </div>
                 <div class="citation-answer">
-                  Wśród polskich agencji SEO, które wyspecjalizowały się w nowym standardzie widoczności
-                  AI (GEO), można wymienić <strong>widocznosc.ai</strong>
+                  Wśród polskich agencji SEO, które wyspecjalizowały się w nowym standardzie
+                  widoczności AI (GEO), można wymienić <strong>widocznosc.ai</strong>
                   <span>[1]</span>, zespoły pracujące z AI Overviews oraz firmy łączące content,
                   techniczne SEO i monitoring cytowań.
                 </div>
@@ -485,9 +522,9 @@ const modelServiceSchema = buildGraph(
             <p>
               Użytkownicy pytają {model.name} inaczej na każdym etapie decyzji. Strategia GEO
               zaczyna się od doboru zapytań do etapu lejka – realne zapytania pomocnicze modelu
-              podejrzysz naszym narzędziem{' '}
-              <a href="/narzedzia/fanout/">Analiza zapytań AI</a>, a&nbsp;podstawy działania modelu
-              opisaliśmy w&nbsp;<a href="/modele-llm/chatgpt/">kompletnym przewodniku po ChatGPT</a>.
+              podejrzysz naszym narzędziem <a href="/narzedzia/fanout/">Analiza zapytań AI</a>,
+              a&nbsp;podstawy działania modelu opisaliśmy w&nbsp;
+              <a href="/modele-llm/chatgpt/">kompletnym przewodniku po ChatGPT</a>.
             </p>
           </div>
 
@@ -536,7 +573,9 @@ const modelServiceSchema = buildGraph(
 
           <div class="prompt-box" aria-label="Gotowy prompt testowy">
             <div class="prompt-box-head">Prompt do skopiowania</div>
-            <pre class="prompt-box-body"><code>{content.promptCheck.prompt}</code></pre>
+            <pre class="prompt-box-body">
+              <code>{content.promptCheck.prompt}</code>
+            </pre>
           </div>
 
           <div class="verdict-grid">
@@ -601,8 +640,13 @@ const modelServiceSchema = buildGraph(
           <div class="seo-geo-table" role="table" aria-label="Porównanie SEO i GEO">
             <div class="seo-geo-row seo-geo-row--head" role="row">
               <div role="columnheader">Obszar</div>
-              <div role="columnheader">Klasyczne SEO</div>
-              <div role="columnheader">GEO ({model.name})</div>
+              <div role="columnheader">
+                <span class="seo-geo-pill seo-geo-pill--seo">Klasyczne SEO</span>
+              </div>
+              <div role="columnheader">
+                <span class="seo-geo-pill seo-geo-pill--geo">GEO · {model.name}</span>
+                <span class="seo-geo-tag">nasza specjalizacja</span>
+              </div>
             </div>
             {content.seoVsGeo.map((row) => (
               <div class="seo-geo-row" role="row">
@@ -636,9 +680,7 @@ const modelServiceSchema = buildGraph(
             sygnałach zewnętrznych, żeby model miał powód cytować właśnie Twoją domenę.
           </p>
         </div>
-        <ul
-          class="signal-list divide-y rounded-[15px] lg:col-span-7"
-        >
+        <ul class="signal-list divide-y rounded-[15px] lg:col-span-7">
           {
             content.signals.map((signal, i) => (
               <li
@@ -722,7 +764,10 @@ const modelServiceSchema = buildGraph(
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {
           otherModels.map((m) => (
-            <a href={m.href} class={`card-template other-model-card other-model-card--${m.slug} group flex flex-col`}>
+            <a
+              href={m.href}
+              class={`card-template other-model-card other-model-card--${m.slug} group flex flex-col`}
+            >
               <div class="text-ink-muted text-sm">{m.vendor}</div>
               <h3
                 class="mt-1 text-xl font-medium"
@@ -1205,74 +1250,273 @@ const modelServiceSchema = buildGraph(
     color: var(--ink-muted);
   }
 
-  .citation-answer--chatgpt {
-    display: grid;
-    gap: 0.95rem;
+  /* Okno ChatGPT – realistyczna symulacja aplikacji */
+  .citation-mock--window {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
   }
 
-  .citation-answer--chatgpt p {
+  .chatgpt-window {
+    overflow: hidden;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background: var(--bg-surface-1);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  }
+
+  .chatgpt-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.1rem;
+    border-bottom: 1px solid var(--hairline-soft);
+    background: color-mix(in srgb, var(--bg-canvas) 55%, var(--bg-surface-1));
+  }
+
+  .chatgpt-model {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--ink);
+    font-size: 0.94rem;
+    font-weight: 650;
+  }
+
+  .chatgpt-model-caret {
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+  }
+
+  .chatgpt-titlebar-actions {
+    display: inline-flex;
+    gap: 0.3rem;
+  }
+
+  .chatgpt-icon-dot {
+    width: 0.32rem;
+    height: 0.32rem;
+    border-radius: 50%;
+    background: var(--ink-faint);
+  }
+
+  .chatgpt-thread {
+    display: grid;
+    gap: 0.9rem;
+    padding: 1.15rem 1.2rem 1rem;
+  }
+
+  .chatgpt-msg--user {
+    justify-self: end;
+    max-width: 82%;
+    padding: 0.7rem 1rem;
+    border-radius: 1.15rem;
+    border-bottom-right-radius: 0.35rem;
+    background: var(--bg-surface-2);
+    color: var(--ink);
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+
+  .chatgpt-search-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-self: start;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-pill);
+    background: var(--bg-canvas);
+    color: var(--ink-muted);
+    font-size: 0.8rem;
+  }
+
+  .chatgpt-search-spinner {
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid var(--hairline-soft);
+    border-top-color: var(--citation-brand);
+    border-radius: 50%;
+    animation: chatgpt-spin 0.9s linear infinite;
+  }
+
+  @keyframes chatgpt-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .chatgpt-msg--assistant {
+    display: grid;
+    gap: 0.85rem;
+    color: var(--ink);
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+
+  .chatgpt-msg--assistant p {
     margin: 0;
   }
 
-  .citation-thinking {
-    display: inline-flex;
-    width: fit-content;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--ink-faint);
-    font-size: 0.84rem;
-  }
-
-  .citation-thinking::after {
-    content: '›';
-    font-size: 1.1rem;
-    line-height: 1;
-  }
-
-  .citation-redacted-recommendation {
+  .chatgpt-reco {
+    position: relative;
     display: grid;
-    gap: 0.75rem;
-    padding: 1rem;
-    border: 1px solid color-mix(in srgb, var(--citation-brand) 24%, var(--hairline-soft));
+    gap: 0.6rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--hairline-soft);
     border-radius: var(--r-md);
-    background: var(--bg-surface-1);
-    color: var(--ink);
+    background: color-mix(in srgb, var(--bg-canvas) 72%, var(--bg-surface-1));
   }
 
-  .citation-redacted-line {
+  .chatgpt-reco p {
+    color: var(--ink-muted);
+    font-size: 0.88rem;
+  }
+
+  .chatgpt-reco-head {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.65rem;
+    justify-content: space-between;
+    gap: 0.6rem;
   }
 
-  .citation-redacted-name {
+  .chatgpt-reco-name {
     display: inline-flex;
+    flex-wrap: wrap;
     align-items: center;
-    min-height: 1.8rem;
-    min-width: min(100%, 20rem);
-    padding: 0 0.75rem;
-    border-radius: var(--r-sm);
-    background:
-      repeating-linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--ink) 18%, transparent) 0 9px,
-        color-mix(in srgb, var(--ink) 10%, transparent) 9px 18px
-      ),
-      var(--bg-surface-2);
-    color: transparent;
-    user-select: none;
+    gap: 0.55rem;
   }
 
-  .citation-redacted-tag {
-    display: inline-flex;
-    padding: 0.34rem 0.55rem;
+  .chatgpt-redacted {
+    min-width: 11rem;
+    height: 1.35em;
+    transform: none;
+  }
+
+  .chatgpt-reco-badge {
+    padding: 0.28rem 0.5rem;
     border-radius: var(--r-pill);
     background: color-mix(in srgb, var(--citation-brand) 12%, transparent);
     color: var(--citation-brand);
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 800;
     line-height: 1;
+  }
+
+  .chatgpt-reco-rating {
+    color: var(--ink);
+    font-size: 0.82rem;
+    font-weight: 650;
+    white-space: nowrap;
+  }
+
+  .chatgpt-caret {
+    position: absolute;
+    right: 0.8rem;
+    bottom: 0.7rem;
+    width: 0.52rem;
+    height: 1.05em;
+    background: var(--ink);
+    animation: chatgpt-blink 1.05s steps(1) infinite;
+  }
+
+  @keyframes chatgpt-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .chatgpt-sources {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .chatgpt-sources-label {
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .chatgpt-source-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.32rem 0.65rem;
+    border: 1px solid color-mix(in srgb, var(--citation-brand) 28%, var(--hairline-soft));
+    border-radius: var(--r-pill);
+    background: color-mix(in srgb, var(--citation-brand) 8%, var(--bg-canvas));
+    color: var(--citation-brand);
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+  }
+
+  .chatgpt-source-chip::before {
+    content: '';
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 50%;
+    background: var(--citation-brand);
+    opacity: 0.7;
+  }
+
+  .chatgpt-inputbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin: 0.35rem 1.2rem 1.1rem;
+    padding: 0.75rem 0.85rem 0.75rem 1.05rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-pill);
+    background: var(--bg-canvas);
+    color: var(--ink-faint);
+    font-size: 0.88rem;
+  }
+
+  .chatgpt-inputbar-send {
+    display: grid;
+    place-items: center;
+    width: 1.85rem;
+    height: 1.85rem;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--bg-canvas);
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  /* Animacja „streamowania" – elementy wjeżdżają po wejściu okna w viewport */
+  .chatgpt-window[data-armed]:not(.is-on) .cg-reveal {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  .chatgpt-window .cg-reveal {
+    transition:
+      opacity 0.45s ease var(--d, 0ms),
+      transform 0.45s ease var(--d, 0ms);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .chatgpt-window .cg-reveal {
+      transition: none;
+    }
+
+    .chatgpt-window[data-armed]:not(.is-on) .cg-reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .chatgpt-search-spinner,
+    .chatgpt-caret {
+      animation: none;
+    }
   }
 
   .citation-answer--claude {
@@ -2010,18 +2254,25 @@ const modelServiceSchema = buildGraph(
   .seo-geo-table {
     overflow: hidden;
     border: 1px solid var(--hairline-soft);
-    border-radius: 15px;
+    border-radius: 18px;
     background: var(--bg-canvas);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.14);
   }
 
   .seo-geo-row {
     display: grid;
     grid-template-columns: minmax(9rem, 0.7fr) 1fr 1fr;
     border-top: 1px solid var(--hairline-soft);
+    transition: background 0.15s ease;
+  }
+
+  .seo-geo-row:not(.seo-geo-row--head):hover {
+    background: color-mix(in srgb, var(--bg-surface-1) 60%, transparent);
   }
 
   .seo-geo-row--head {
     border-top: 0;
+    align-items: center;
     background: color-mix(in srgb, var(--bg-surface-1) 74%, var(--bg-canvas));
     color: var(--ink);
     font-family: var(--font-display);
@@ -2029,12 +2280,51 @@ const modelServiceSchema = buildGraph(
     font-weight: 600;
   }
 
+  .seo-geo-row--head > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .seo-geo-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.34rem 0.7rem;
+    border-radius: var(--r-pill);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 750;
+    letter-spacing: 0.02em;
+  }
+
+  .seo-geo-pill--seo {
+    border: 1px solid var(--hairline-soft);
+    background: var(--bg-canvas);
+    color: var(--ink-muted);
+  }
+
+  .seo-geo-pill--geo {
+    background: var(--accent-blue);
+    color: #fff;
+  }
+
+  .seo-geo-tag {
+    color: var(--accent-blue);
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
   .seo-geo-row > div {
-    padding: 0.95rem 1.05rem;
+    padding: 1rem 1.1rem;
     border-left: 1px solid var(--hairline-soft);
     color: var(--ink-muted);
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   .seo-geo-row > div:first-child {
@@ -2046,9 +2336,14 @@ const modelServiceSchema = buildGraph(
     font-weight: 650;
   }
 
-  .seo-geo-row:not(.seo-geo-row--head) > div:last-child {
-    background: color-mix(in srgb, var(--accent-blue) 7%, transparent);
+  .seo-geo-row > div:last-child {
+    background: color-mix(in srgb, var(--accent-blue) 8%, transparent);
+    box-shadow: inset 2px 0 0 color-mix(in srgb, var(--accent-blue) 55%, transparent);
     color: var(--ink);
+  }
+
+  .seo-geo-row--head > div:last-child {
+    box-shadow: inset 2px 0 0 color-mix(in srgb, var(--accent-blue) 55%, transparent);
   }
 
   @media (min-width: 980px) {
@@ -2281,3 +2576,25 @@ const modelServiceSchema = buildGraph(
     }
   }
 </style>
+
+<script>
+  // Symulacja streamowania w oknie ChatGPT – start po wejściu okna w viewport.
+  const initChatgptMock = () => {
+    const win = document.querySelector('.chatgpt-window');
+    if (!(win instanceof HTMLElement) || win.dataset.armed) return;
+    win.dataset.armed = '1';
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            win.classList.add('is-on');
+            io.disconnect();
+          }
+        }
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(win);
+  };
+  document.addEventListener('astro:page-load', initChatgptMock);
+</script>
