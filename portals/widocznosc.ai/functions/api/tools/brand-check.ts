@@ -750,7 +750,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     })
   );
 
-  await gate.commit();
+  // Nie zliczamy limitu, gdy padły wszystkie 4 modele – user nie dostał żadnego wyniku.
+  if (modelResponses.some((m) => m.status === 'ok')) {
+    await gate.commit();
+  }
   return jsonResponse(aggregate(brand, domain, category, market, profile, modelResponses));
 };
 
