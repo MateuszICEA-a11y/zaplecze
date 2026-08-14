@@ -19,7 +19,7 @@ const urlCheckSchema = buildGraph(
     { name: 'Strona główna', path: '/' },
     { name: 'Narzędzia', path: '/narzedzia/' },
     { name: 'Ocena cytowalności strony', path: '/narzedzia/url-check/' },
-  ]),
+  ])
 );
 ---
 
@@ -75,8 +75,8 @@ const urlCheckSchema = buildGraph(
           </button>
         </form>
         <p class="check-note mx-auto mt-3 max-w-2xl text-center text-sm">
-          Pobieramy jedynie publiczny kod strony, analizujemy sygnały techniczne i używamy modelu
-          AI wyłącznie do oceny semantycznej. Nie zapisujemy Twoich treści ani wyników.
+          Pobieramy jedynie publiczny kod strony, analizujemy sygnały techniczne i używamy modelu AI
+          wyłącznie do oceny semantycznej. Nie zapisujemy Twoich treści ani wyników.
         </p>
 
         <!-- Results placeholder -->
@@ -129,10 +129,11 @@ const urlCheckSchema = buildGraph(
           <p class="methodology-text">
             Nasz system pobiera publiczny kod HTML strony, oczyszcza go ze zbędnych skryptów
             technicznych i wyciąga główną treść. Algorytm matematycznie oblicza sześć mierzalnych
-            czynników: wdrożenie Schema, datę aktualizacji, obecność FAQ, gęstość faktów,
-            modułowość oraz strukturę nagłówków. Następnie, model sztucznej inteligencji
-            (<strong>Gemini Flash Lite</strong>) ocenia elementy wymagające zrozumienia kontekstu:
-            umiejscowienie odpowiedzi na początku tekstu oraz jakość użytych porównań.
+            czynników: wdrożenie Schema, datę aktualizacji, obecność FAQ, gęstość faktów, modułowość
+            oraz strukturę nagłówków. Następnie, model sztucznej inteligencji (<strong
+              >Gemini Flash Lite</strong
+            >) ocenia elementy wymagające zrozumienia kontekstu: umiejscowienie odpowiedzi na
+            początku tekstu oraz jakość użytych porównań.
           </p>
           <p class="methodology-text">
             Wagi poszczególnych czynników oparliśmy na twardych danych: recenzowanym badaniu
@@ -898,12 +899,6 @@ const urlCheckSchema = buildGraph(
     actionItems: ActionItem[];
   };
 
-  const form = document.getElementById('check-form') as HTMLFormElement;
-  const input = document.getElementById('url-input') as HTMLInputElement;
-  const submitBtn = form.querySelector('.check-submit') as HTMLButtonElement;
-  const resultsEl = document.getElementById('results') as HTMLElement;
-  const overviewEl = document.getElementById('default-overview') as HTMLElement;
-
   function escapeHtml(s: string): string {
     return s.replace(/[&<>"']/g, (ch) => {
       const map: Record<string, string> = {
@@ -1053,70 +1048,90 @@ const urlCheckSchema = buildGraph(
     void _currentRunUrlCheck?.(challengeId);
   });
 
-  let pendingUrl: string | null = null;
+  // Referencje DOM i listener submit muszą być odtwarzane po każdej podmianie DOM
+  // przez ClientRouter – stąd initUrlCheck zamiast kodu na poziomie modułu.
+  function initUrlCheck() {
+    const form = document.getElementById('check-form') as HTMLFormElement | null;
+    const input = document.getElementById('url-input') as HTMLInputElement | null;
+    const submitBtn = form?.querySelector('.check-submit') as HTMLButtonElement | null;
+    const resultsEl = document.getElementById('results') as HTMLElement | null;
+    const overviewEl = document.getElementById('default-overview') as HTMLElement | null;
+    if (!form || !input || !submitBtn || !resultsEl || !overviewEl) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const url = input.value.trim();
-    if (!url) { input.focus(); return; }
-    // Bramka: nie liczymy, dopóki user nie zostawi danych i nie potwierdzi numeru.
-    pendingUrl = url;
-    document.dispatchEvent(new CustomEvent('lead:gate:show', { detail: { tool: 'url-check', query: url } }));
-  });
+    let pendingUrl: string | null = null;
 
-  async function runUrlCheck(challengeId: string) {
-    if (!pendingUrl) return;
-    const url = pendingUrl;
-    submitBtn.setAttribute('aria-busy', 'true');
-    submitBtn.disabled = true;
-    resultsEl.classList.remove('hidden');
-    resultsEl.innerHTML =
-      '<div class="results-card" style="text-align:center; color: var(--ink-muted);">Pobieramy stronę, liczymy sygnały techniczne i analizujemy semantykę – 10–20 sekund…</div>';
-    // Bramka jest pod #results – przewiń do wyniku, by user widział loading i rezultat/błąd.
-    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    let result: unknown = null;
-    try {
-      const res = await fetch('/api/tools/url-check', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url }),
-      });
-      if (!res.ok) {
-        const errBody = await res.json().catch(() => ({ error: `HTTP ${res.status}` }));
-        resultsEl.innerHTML = `
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const url = input.value.trim();
+      if (!url) {
+        input.focus();
+        return;
+      }
+      // Bramka: nie liczymy, dopóki user nie zostawi danych i nie potwierdzi numeru.
+      pendingUrl = url;
+      document.dispatchEvent(
+        new CustomEvent('lead:gate:show', { detail: { tool: 'url-check', query: url } })
+      );
+    });
+
+    async function runUrlCheck(challengeId: string) {
+      if (!pendingUrl) return;
+      const url = pendingUrl;
+      submitBtn.setAttribute('aria-busy', 'true');
+      submitBtn.disabled = true;
+      resultsEl.classList.remove('hidden');
+      resultsEl.innerHTML =
+        '<div class="results-card" style="text-align:center; color: var(--ink-muted);">Pobieramy stronę, liczymy sygnały techniczne i analizujemy semantykę – 10–20 sekund…</div>';
+      // Bramka jest pod #results – przewiń do wyniku, by user widział loading i rezultat/błąd.
+      resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      let result: unknown = null;
+      try {
+        const res = await fetch('/api/tools/url-check', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url }),
+        });
+        if (!res.ok) {
+          const errBody = await res.json().catch(() => ({ error: `HTTP ${res.status}` }));
+          resultsEl.innerHTML = `
           <div class="results-error">
             <h3 class="results-error-title">Nie udało się sprawdzić URL</h3>
             <p class="results-error-desc">${escapeHtml(errBody.error || `HTTP ${res.status}`)}</p>
           </div>
         `;
-      } else {
-        const data = (await res.json()) as CheckResponse;
-        result = data;
-        resultsEl.innerHTML = renderResults(data);
-        overviewEl.classList.add('hidden');
-        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    } catch (err) {
-      resultsEl.innerHTML = `
+        } else {
+          const data = (await res.json()) as CheckResponse;
+          result = data;
+          resultsEl.innerHTML = renderResults(data);
+          overviewEl.classList.add('hidden');
+          resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } catch (err) {
+        resultsEl.innerHTML = `
         <div class="results-error">
           <h3 class="results-error-title">Błąd połączenia</h3>
           <p class="results-error-desc">${escapeHtml((err as Error).message || 'Spróbuj ponownie za chwilę.')}</p>
         </div>
       `;
-    } finally {
-      submitBtn.setAttribute('aria-busy', 'false');
-      submitBtn.disabled = false;
+      } finally {
+        submitBtn.setAttribute('aria-busy', 'false');
+        submitBtn.disabled = false;
+      }
+      // Rejestracja leada + kopia mailem (result=null gdy liczenie padło – ICEA i tak dostaje lead).
+      try {
+        await fetch('/api/tools/send-report', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ tool: 'url-check', challengeId, query: url, result }),
+        });
+      } catch {
+        /* best-effort */
+      }
     }
-    // Rejestracja leada + kopia mailem (result=null gdy liczenie padło – ICEA i tak dostaje lead).
-    try {
-      await fetch('/api/tools/send-report', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tool: 'url-check', challengeId, query: url, result }),
-      });
-    } catch { /* best-effort */ }
+
+    // Aktualizacja referencji – listener na poziomie modułu wywoła tę instancję.
+    _currentRunUrlCheck = runUrlCheck;
   }
 
-  // Aktualizacja referencji – listener na poziomie modułu wywoła tę instancję.
-  _currentRunUrlCheck = runUrlCheck;
+  document.addEventListener('astro:page-load', initUrlCheck);
 </script>

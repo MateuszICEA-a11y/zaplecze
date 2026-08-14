@@ -28,7 +28,7 @@ const aiBotsSchema = buildGraph(
     { name: 'Strona główna', path: '/' },
     { name: 'Narzędzia', path: '/narzedzia/' },
     { name: 'Dostęp botów AI', path: '/narzedzia/ai-bots-check/' },
-  ]),
+  ])
 );
 ---
 
@@ -55,10 +55,9 @@ const aiBotsSchema = buildGraph(
             Czy <span class="tool-hero-accent">boty AI</span> mają dostęp do Twojej strony?
           </h1>
           <p class="tool-hero-copy">
-            Sprawdzamy Twój plik <code class="font-mono text-sm">robots.txt</code> pod kątem 13
-            najważniejszych robotów skanujących sztucznej inteligencji (m.in. GPTBot, ClaudeBot,
-            PerplexityBot, Google-Extended, CCBot). Odbierz wynik w&nbsp;5 sekund, bez konieczności
-            logowania.
+            Sprawdzamy Twój plik <code class="font-mono text-sm">robots.txt</code> pod kątem 13 najważniejszych
+            robotów skanujących sztucznej inteligencji (m.in. GPTBot, ClaudeBot, PerplexityBot, Google-Extended,
+            CCBot). Odbierz wynik w&nbsp;5 sekund, bez konieczności logowania.
           </p>
         </header>
 
@@ -85,8 +84,8 @@ const aiBotsSchema = buildGraph(
           </button>
         </form>
         <p class="check-note mx-auto mt-3 max-w-2xl text-center text-sm">
-          Pobieramy jedynie publicznie dostępny plik <code class="font-mono">robots.txt</code> – nie
-          wykonujemy żadnych zmian na Twojej stronie i nie zapisujemy Twoich danych.
+          Pobieramy jedynie publicznie dostępny plik <code class="font-mono">robots.txt</code> – nie wykonujemy
+          żadnych zmian na Twojej stronie i nie zapisujemy Twoich danych.
         </p>
 
         <!-- Results placeholder -->
@@ -105,8 +104,8 @@ const aiBotsSchema = buildGraph(
       <div class="content-container">
         <h2 class="display-xl tool-overview-title">13 botów AI w 4 kategoriach funkcjonalnych</h2>
         <p class="text-ink tool-overview-copy mt-6 max-w-3xl text-lg leading-relaxed">
-          Każdy z robotów AI ma własny identyfikator sieciowy (tzw. <code
-            class="font-mono text-sm">User-agent</code
+          Każdy z robotów AI ma własny identyfikator sieciowy (tzw. <code class="font-mono text-sm"
+            >User-agent</code
           >) i zupełnie inaczej wpływa na widoczność Twojej marki. Roboty wyszukiwawcze decydują o
           tym, czy AI zacytuje Cię w swoich odpowiedziach, natomiast roboty treningowe pobierają
           Twoje teksty, by uczyć na nich swoje modele.
@@ -848,7 +847,9 @@ const aiBotsSchema = buildGraph(
 
         const data = (await response.json()) as CheckResponse;
         resultsEl.innerHTML = renderResults(data);
-        document.dispatchEvent(new CustomEvent('tool:result', { detail: { query: value, result: data } }));
+        document.dispatchEvent(
+          new CustomEvent('tool:result', { detail: { query: value, result: data } })
+        );
         resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } catch (err) {
         const msg = err instanceof Error ? err.message : 'Błąd sieci';
@@ -860,7 +861,7 @@ const aiBotsSchema = buildGraph(
     });
   };
 
+  // ClientRouter jest w Layout, więc astro:page-load odpala się też przy pierwszym wejściu –
+  // dodatkowe ścieżki (readyState/DOMContentLoaded) dublowały listenery submit.
   document.addEventListener('astro:page-load', initForm);
-  if (document.readyState !== 'loading') initForm();
-  else document.addEventListener('DOMContentLoaded', initForm);
 </script>

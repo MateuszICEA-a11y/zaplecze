@@ -25,7 +25,7 @@ const brandCheckSchema = buildGraph(
     { name: 'Strona główna', path: '/' },
     { name: 'Narzędzia', path: '/narzedzia/' },
     { name: 'Widoczność marki w AI', path: '/narzedzia/brand-check/' },
-  ]),
+  ])
 );
 ---
 
@@ -388,7 +388,12 @@ const brandCheckSchema = buildGraph(
   }
 
   :global(.brand-loading-title) {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif !important;
     font-size: 33px !important;
     line-height: 1.16 !important;
     font-weight: 700;
@@ -599,7 +604,12 @@ const brandCheckSchema = buildGraph(
   }
 
   :global(.brand-score-title) {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif !important;
     font-size: 24px !important;
     font-weight: 700;
     line-height: 1.2 !important;
@@ -661,7 +671,12 @@ const brandCheckSchema = buildGraph(
   }
 
   :global(.brand-panel-title) {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif !important;
     font-size: 24px !important;
     line-height: 1.2 !important;
     font-weight: 700;
@@ -1033,7 +1048,8 @@ const brandCheckSchema = buildGraph(
 
     const submit = form.querySelector('button[type="submit"]');
 
-    let pendingBrand: { brand: string; domain: string; category: string; market: string } | null = null;
+    let pendingBrand: { brand: string; domain: string; category: string; market: string } | null =
+      null;
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -1044,11 +1060,19 @@ const brandCheckSchema = buildGraph(
         category: String(data.get('category') || '').trim(),
         market: String(data.get('market') || '').trim() || 'Polska',
       };
-      if (!payload.brand) { renderError('Podaj nazwę marki.'); return; }
-      if (!payload.domain) { renderError('Podaj domenę marki – bez niej nie sprawdzimy cytowań Twojej strony.'); return; }
+      if (!payload.brand) {
+        renderError('Podaj nazwę marki.');
+        return;
+      }
+      if (!payload.domain) {
+        renderError('Podaj domenę marki – bez niej nie sprawdzimy cytowań Twojej strony.');
+        return;
+      }
       // Bramka: nie liczymy, dopóki user nie zostawi danych i nie potwierdzi numeru.
       pendingBrand = payload;
-      document.dispatchEvent(new CustomEvent('lead:gate:show', { detail: { tool: 'brand-check', query: payload.brand } }));
+      document.dispatchEvent(
+        new CustomEvent('lead:gate:show', { detail: { tool: 'brand-check', query: payload.brand } })
+      );
     });
 
     async function runBrandCheck(challengeId: string) {
@@ -1091,7 +1115,9 @@ const brandCheckSchema = buildGraph(
             result,
           }),
         });
-      } catch { /* best-effort */ }
+      } catch {
+        /* best-effort */
+      }
     }
 
     // Aktualizacja referencji – listener na poziomie modułu wywoła tę instancję.
@@ -1418,6 +1444,7 @@ const brandCheckSchema = buildGraph(
     }
   };
 
+  // ClientRouter jest w Layout, więc astro:page-load odpala się też przy pierwszym wejściu –
+  // druga ścieżka (readyState) dublowała listenery submit.
   document.addEventListener('astro:page-load', initBrandCheck);
-  if (document.readyState !== 'loading') initBrandCheck();
 </script>
