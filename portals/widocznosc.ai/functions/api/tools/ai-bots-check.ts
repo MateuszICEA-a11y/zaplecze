@@ -13,6 +13,13 @@
 import { AI_BOTS, CATEGORY_LABELS, type BotCategory } from '../../_lib/ai-bots';
 import { checkBotAccess } from '../../_lib/robots-parser';
 import { logEvent } from '../../_lib/lead-log';
+import { normalizeUrl } from '../../_lib/url-host';
+import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
+
+type Env = {
+  AI_BOTS_DAILY_LIMIT?: string;
+  FANOUT_RL?: KVNamespace;
+};
 
 type CheckRequest = {
   url?: string;
@@ -59,6 +66,10 @@ type CheckResponse = {
 const FETCH_USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36';
 
+const DEFAULT_LIMIT = 20;
+const FETCH_TIMEOUT_MS = 10_000;
+const MAX_ROBOTS_BYTES = 512 * 1024;
+
 /**
  * Normalizuje wejście usera (URL lub gołą domenę) do hosta i ścieżki.
  * Akceptuje: "icea.pl", "https://icea.pl", "https://www.icea.pl/blog".
@@ -66,16 +77,12 @@ const FETCH_USER_AGENT =
 function normalizeInput(
   input: string
 ): { host: string; checkedPath: string; robotsUrl: string } | null {
-  const trimmed = input.trim();
-  if (!trimmed) return null;
-
-  let urlString = trimmed;
-  if (!/^https?:\/\//.test(urlString)) {
-    urlString = `https://${urlString}`;
-  }
+  // normalizeUrl = walidacja + SSRF-blocklist (localhost, IP prywatne, IPv6) – wspólna z url-check.
+  const normalizedUrl = normalizeUrl(input);
+  if (!normalizedUrl) return null;
 
   try {
-    const url = new URL(urlString);
+    const url = new URL(normalizedUrl);
     // Strip leading www. by default? Nie – robots.txt jest per-host.
     // Zostawiamy host taki jaki jest, bo robots.txt może się różnić.
     return {
@@ -94,16 +101,23 @@ async function fetchRobotsTxt(robotsUrl: string): Promise<{
   status: number;
   cloudflareBlocked: boolean;
 }> {
-  const response = await fetch(robotsUrl, {
-    headers: {
-      'User-Agent': FETCH_USER_AGENT,
-      Accept: 'text/plain, */*;q=0.8',
-    },
-    redirect: 'follow',
-    // Timeout: CF Workers domyślnie 30s subrequest
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort('robots-timeout'), FETCH_TIMEOUT_MS);
+  let response: Response;
+  try {
+    response = await fetch(robotsUrl, {
+      headers: {
+        'User-Agent': FETCH_USER_AGENT,
+        Accept: 'text/plain, */*;q=0.8',
+      },
+      redirect: 'follow',
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timeout);
+  }
 
-  const text = await response.text();
+  const text = await readBodyCapped(response, MAX_ROBOTS_BYTES);
   const finalUrl = response.url || robotsUrl;
 
   // Cloudflare challenge / blok: HTML response z signaturami CF
@@ -120,6 +134,30 @@ async function fetchRobotsTxt(robotsUrl: string): Promise<{
     status: response.status,
     cloudflareBlocked,
   };
+}
+
+/** Czyta body strumieniowo z twardym limitem bajtów – nadmiar jest ucinany, nie buforowany. */
+async function readBodyCapped(response: Response, maxBytes: number): Promise<string> {
+  if (!response.body) return '';
+  const reader = response.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let received = 0;
+  while (received < maxBytes) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    received += value.byteLength;
+    chunks.push(value);
+  }
+  await reader.cancel().catch(() => {});
+  const merged = new Uint8Array(Math.min(received, maxBytes));
+  let offset = 0;
+  for (const chunk of chunks) {
+    const slice = chunk.subarray(0, Math.min(chunk.byteLength, merged.byteLength - offset));
+    merged.set(slice, offset);
+    offset += slice.byteLength;
+    if (offset >= merged.byteLength) break;
+  }
+  return new TextDecoder('utf-8', { fatal: false }).decode(merged);
 }
 
 function buildActionItems(bots: BotResult[]): ActionItem[] {
@@ -154,7 +192,7 @@ function buildActionItems(bots: BotResult[]): ActionItem[] {
   if (items.length === 0) {
     items.push({
       priority: 'P2',
-      title: 'Wszystkie 13 botów AI ma dostęp – poprawnie skonfigurowane',
+      title: `Wszystkie ${bots.length} botów AI ma dostęp – poprawnie skonfigurowane`,
       description:
         'Analiza robots.txt dla sprawdzanej ścieżki nie wykazała blokad. Zweryfikuj osobno WAF/CDN, jeśli strona używa dodatkowej ochrony ruchu botów.',
     });
@@ -178,7 +216,7 @@ function buildBotsWithAccess(allowed: boolean): BotResult[] {
   }));
 }
 
-export const onRequestPost: PagesFunction = async (context) => {
+export const onRequestPost: PagesFunction<Env> = async (context) => {
   let body: CheckRequest;
   try {
     body = await context.request.json<CheckRequest>();
@@ -192,28 +230,49 @@ export const onRequestPost: PagesFunction = async (context) => {
   }
   const { host: domain, checkedPath, robotsUrl } = normalized;
 
+  // Rate-limit per IP – to samo KV i semantyka co fanout/url-check.
+  const kv = context.env.FANOUT_RL;
+  const ip = context.request.headers.get('CF-Connecting-IP') || 'unknown';
+  const now = new Date();
+  const limit = resolveLimit(context.env.AI_BOTS_DAILY_LIMIT, DEFAULT_LIMIT);
+  const gate = await checkToolLimit(kv, 'ai-bots-check', ip, limit, now);
+  if (!gate.allowed) {
+    return jsonError(429, `Wykorzystałeś dzienny limit (${limit} sprawdzeń). Reset o północy.`);
+  }
+
   // Log użycia narzędzia (dashboard zaplecza) – best-effort.
   context.waitUntil(
-    logEvent((context.env as { FANOUT_RL?: KVNamespace }).FANOUT_RL, 'usage', 'ai-bots-check', {
+    logEvent(kv, 'usage', 'ai-bots-check', {
       url: `${domain}${checkedPath}`,
       domain,
     }),
   );
 
-  const fetchedAt = new Date().toISOString();
+  const fetchedAt = now.toISOString();
   let robotsResult: Awaited<ReturnType<typeof fetchRobotsTxt>>;
 
   try {
     robotsResult = await fetchRobotsTxt(robotsUrl);
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown fetch error';
-    return jsonError(502, `Nie udało się pobrać robots.txt: ${message}`);
+    const aborted =
+      (error instanceof DOMException && error.name === 'AbortError') ||
+      (error instanceof Error && /abort|timeout|timed out/i.test(error.message));
+    return jsonError(
+      502,
+      aborted
+        ? 'Serwer nie odpowiedział w 10 sekund. Spróbuj ponownie.'
+        : 'Nie udało się pobrać robots.txt. Sprawdź, czy domena istnieje i odpowiada.'
+    );
   }
+
+  // Zliczenie limitu dopiero po udanym pobraniu – raport (także no-robots itd.) to sukces narzędzia.
+  await gate.commit();
 
   const { text: robotsText, finalUrl, status, cloudflareBlocked } = robotsResult;
 
   // Cloudflare challenge → robots.txt jest zablokowany przez WAF
   if (cloudflareBlocked) {
+    const blockedBots = buildBotsWithAccess(false);
     const response: CheckResponse = {
       domain,
       checkedPath,
@@ -221,19 +280,13 @@ export const onRequestPost: PagesFunction = async (context) => {
       fetchedAt,
       status: 'cloudflare-blocked',
       statusCode: status,
-      summary: { allowed: 0, blocked: 13, criticalBlocked: 6, total: 13 },
-      bots: AI_BOTS.map((bot) => ({
-        name: bot.name,
-        userAgent: bot.userAgent,
-        owner: bot.owner,
-        category: bot.category,
-        categoryLabel: CATEGORY_LABELS[bot.category],
-        purpose: bot.purpose,
-        impact: bot.impact,
-        critical: bot.critical ?? false,
-        allowed: false,
-        matchedUserAgent: null,
-      })),
+      summary: {
+        allowed: 0,
+        blocked: blockedBots.length,
+        criticalBlocked: blockedBots.filter((b) => b.critical).length,
+        total: blockedBots.length,
+      },
+      bots: blockedBots,
       actionItems: [
         {
           priority: 'P0',
@@ -261,7 +314,7 @@ export const onRequestPost: PagesFunction = async (context) => {
       fetchedAt,
       status: 'no-robots',
       statusCode: status,
-      summary: { allowed: 13, blocked: 0, criticalBlocked: 0, total: 13 },
+      summary: { allowed: allBots.length, blocked: 0, criticalBlocked: 0, total: allBots.length },
       bots: allBots,
       actionItems: [
         {
