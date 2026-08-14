@@ -764,7 +764,6 @@ export const onRequestGet: PagesFunction = async () => {
 function jsonHeaders(): HeadersInit {
   return {
     'Content-Type': 'application/json; charset=utf-8',
-    'Access-Control-Allow-Origin': '*',
     'Cache-Control': 'no-store',
   };
 }
