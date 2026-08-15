@@ -1133,6 +1133,36 @@ const modelServiceSchema = buildGraph(
     margin-top: 1.4rem;
   }
 
+  /* Linki w treści (część wstrzykiwana przez set:html – stąd :global) */
+  .service-hero-subtitle :global(a),
+  .service-section-head p a,
+  .service-section-head p :global(a),
+  .service-section-copy :global(a),
+  .service-feature-card :global(a),
+  .service-task-card :global(a),
+  .faq-row :global(a) {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--model-accent, var(--accent-blue)) 60%, transparent);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    transition:
+      color 0.15s ease,
+      text-decoration-color 0.15s ease;
+  }
+
+  .service-hero-subtitle :global(a:hover),
+  .service-section-head p a:hover,
+  .service-section-head p :global(a:hover),
+  .service-section-copy :global(a:hover),
+  .service-feature-card :global(a:hover),
+  .service-task-card :global(a:hover),
+  .faq-row :global(a:hover) {
+    color: var(--model-accent, var(--accent-blue));
+    text-decoration-color: var(--model-accent, var(--accent-blue));
+  }
+
   .optimization-copy {
     margin-bottom: 2rem;
   }
