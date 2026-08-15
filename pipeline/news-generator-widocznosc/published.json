@@ -535,5 +535,12 @@
     "slug": "mico-znika-z-glosu-copilota",
     "source": "rss",
     "source_name": "The Verge AI"
+  },
+  {
+    "title": "Anthropic szykuje API do wykrywania tekstów Claude’a",
+    "date": "2026-08-15",
+    "slug": "anthropic-szykuje-api-do-wykrywania-tekstow-claudea",
+    "source": "rss",
+    "source_name": "The Decoder"
   }
 ]
