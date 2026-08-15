@@ -148,7 +148,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
           '„porównanie agencji SEO specjalizujących się w&nbsp;AI”',
         ],
         onPage: [
-          'Strony porównawcze z&nbsp;tabelami i&nbsp;twardymi danymi (nie opiniami)',
+          'Strony porównawcze z&nbsp;tabelami i&nbsp;konkretnymi danymi (nie opiniami)',
           'Rankingi i&nbsp;zestawienia aktualizowane z&nbsp;widoczną datą',
           'Dane liczbowe z&nbsp;podanym źródłem przy każdej tezie',
         ],
@@ -171,7 +171,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
     ],
     promptCheck: {
       intro:
-        'Zanim zamówisz audyt, wykonaj prosty test ręczny. Wklej poniższy prompt do ChatGPT (najlepiej w&nbsp;trybie z&nbsp;wyszukiwaniem), podstawiając swoją branżę i&nbsp;rynek. Zadaj go w&nbsp;nowej, czystej konwersacji – historia czatu zaburza wynik.',
+        'Zanim zamówisz audyt, przeprowadź prosty test manualny. Wklej poniższy prompt do ChatGPT (najlepiej w&nbsp;trybie z&nbsp;wyszukiwaniem), podstawiając swoją branżę i&nbsp;rynek. Zadaj go w&nbsp;nowej, czystej konwersacji – historia czatu zaburza wynik.',
       prompt:
         'Szukam sprawdzonych firm z kategorii [TWOJA BRANŻA] działających na rynku [POLSKA / MIASTO]. Wymień 5 konkretnych marek, które warto rozważyć, i przy każdej podaj: czym się wyróżnia, dla kogo jest najlepsza i skąd pochodzą informacje (podaj źródła). Na końcu napisz, co wiesz o firmie [TWOJA MARKA] i czy poleciłbyś ją w tej kategorii.',
       positive: [
@@ -190,7 +190,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
         'Podaje nieprawdziwe fakty (halucynacje) – błędne usługi, lokalizacje, ceny',
       ],
       toolCta:
-        'Test ręczny obejmuje jeden model i&nbsp;jedną próbę – wynik potrafi się różnić między sesjami. Nasze bezpłatne narzędzie odpytuje równolegle ChatGPT, Claude\'a, Gemini i&nbsp;Perplexity, wykrywa halucynacje i&nbsp;wskazuje konkurentów polecanych zamiast Ciebie.',
+        'Test manualny obejmuje jeden model i&nbsp;jedną próbę – wynik potrafi się różnić między sesjami. Nasze bezpłatne narzędzie odpytuje równolegle ChatGPT, Claude\'a, Gemini i&nbsp;Perplexity, wykrywa halucynacje i&nbsp;wskazuje konkurentów polecanych zamiast Ciebie.',
     },
     seoVsGeo: [
       {
@@ -270,7 +270,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
     signals: [
       'Wysoka pozycja w&nbsp;Brave Search (86,7% korelacji z&nbsp;cytowaniami Claude)',
       'Głębokość treści – merytoryczne artykuły powyżej 3000 słów',
-      'Brak języka sprzedażowego – twarde dane i&nbsp;cytaty ekspertów zamiast haseł marketingowych',
+      'Brak języka sprzedażowego – konkretne dane i&nbsp;cytaty ekspertów zamiast haseł marketingowych',
       'Czas pierwszego renderowania (FCP) poniżej 0,4 sekundy',
       'Ustrukturyzowane dane Schema.org (Person, DefinedTerm, HowTo)',
       'Zezwolenie (allow) dla <code>Claude-SearchBot</code>, IndexNow oraz aktualna data modyfikacji (<code>updatedAt</code>)',

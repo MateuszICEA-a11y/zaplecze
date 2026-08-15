@@ -573,10 +573,41 @@ const modelServiceSchema = buildGraph(
           </div>
 
           <div class="prompt-box" aria-label="Gotowy prompt testowy">
-            <div class="prompt-box-head">Prompt do skopiowania</div>
-            <pre class="prompt-box-body">
-              <code>{content.promptCheck.prompt}</code>
-            </pre>
+            <div class="prompt-box-head">
+              <span>Prompt do skopiowania</span>
+              <div class="prompt-box-actions">
+                <button type="button" class="prompt-copy-btn" data-copy-prompt>
+                  <svg
+                    aria-hidden="true"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="9" y="9" width="13" height="13" rx="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                  <span data-copy-label>Kopiuj</span>
+                </button>
+                {
+                  model.slug === 'chatgpt' && (
+                    <a
+                      class="prompt-open-link"
+                      href={`https://chatgpt.com/?q=${encodeURIComponent(content.promptCheck.prompt)}`}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Otwórz w&nbsp;ChatGPT ↗
+                    </a>
+                  )
+                }
+              </div>
+            </div>
+            <pre class="prompt-box-body"><code data-prompt-text>{content.promptCheck.prompt}</code></pre>
           </div>
 
           <div class="verdict-grid">
@@ -2151,10 +2182,24 @@ const modelServiceSchema = buildGraph(
     display: grid;
     gap: 0.45rem;
     margin: 0 0 1rem;
-    padding-left: 1.1rem;
+    padding-left: 0;
     color: var(--ink-muted);
     font-size: 0.88rem;
     line-height: 1.5;
+    list-style: none;
+  }
+
+  .funnel-list li {
+    position: relative;
+    padding-left: 1.1rem;
+  }
+
+  .funnel-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--model-accent, var(--accent-blue));
+    font-weight: 700;
   }
 
   .funnel-list--onpage {
@@ -2176,13 +2221,56 @@ const modelServiceSchema = buildGraph(
   }
 
   .prompt-box-head {
-    padding: 0.75rem 1.15rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.6rem 1.15rem;
     border-bottom: 1px solid var(--hairline-soft);
     color: var(--ink-faint);
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+  }
+
+  .prompt-box-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .prompt-copy-btn,
+  .prompt-open-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  .prompt-copy-btn:hover,
+  .prompt-open-link:hover {
+    color: var(--model-accent, var(--accent-blue));
+    border-color: var(--model-accent, var(--accent-blue));
+  }
+
+  .prompt-copy-btn.is-copied {
+    color: #4ade80;
+    border-color: #4ade80;
   }
 
   .prompt-box-body {
@@ -2292,7 +2380,7 @@ const modelServiceSchema = buildGraph(
 
   .seo-geo-row {
     display: grid;
-    grid-template-columns: minmax(9rem, 0.7fr) 1fr 1fr;
+    grid-template-columns: minmax(8rem, 0.5fr) 1fr 1.1fr;
     border-top: 1px solid var(--hairline-soft);
     transition: background 0.15s ease;
   }
@@ -2303,19 +2391,25 @@ const modelServiceSchema = buildGraph(
 
   .seo-geo-row--head {
     border-top: 0;
-    align-items: center;
+    align-items: stretch;
     background: color-mix(in srgb, var(--bg-surface-1) 74%, var(--bg-canvas));
-    color: var(--ink);
-    font-family: var(--font-display);
-    font-size: 0.92rem;
-    font-weight: 600;
   }
 
-  .seo-geo-row--head > div:last-child {
+  .seo-geo-row--head > div {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.5rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .seo-geo-row--head > div:first-child {
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .seo-geo-pill {
@@ -2368,12 +2462,14 @@ const modelServiceSchema = buildGraph(
   }
 
   .seo-geo-row > div:last-child {
+    border-left: 0;
     background: color-mix(in srgb, var(--accent-blue) 8%, transparent);
     box-shadow: inset 2px 0 0 color-mix(in srgb, var(--accent-blue) 55%, transparent);
     color: var(--ink);
   }
 
   .seo-geo-row--head > div:last-child {
+    border-left: 0;
     box-shadow: inset 2px 0 0 color-mix(in srgb, var(--accent-blue) 55%, transparent);
   }
 
@@ -2628,4 +2724,27 @@ const modelServiceSchema = buildGraph(
     io.observe(win);
   };
   document.addEventListener('astro:page-load', initChatgptMock);
+
+  // Kopiowanie promptu testowego do schowka.
+  const initPromptCopy = () => {
+    const btn = document.querySelector('[data-copy-prompt]');
+    const code = document.querySelector('[data-prompt-text]');
+    if (!(btn instanceof HTMLButtonElement) || !code || btn.dataset.armed) return;
+    btn.dataset.armed = '1';
+    const label = btn.querySelector('[data-copy-label]');
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(code.textContent?.trim() ?? '');
+        btn.classList.add('is-copied');
+        if (label) label.textContent = 'Skopiowano';
+        setTimeout(() => {
+          btn.classList.remove('is-copied');
+          if (label) label.textContent = 'Kopiuj';
+        }, 2000);
+      } catch {
+        if (label) label.textContent = 'Błąd kopiowania';
+      }
+    });
+  };
+  document.addEventListener('astro:page-load', initPromptCopy);
 </script>
