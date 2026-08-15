@@ -71,13 +71,13 @@ export const AI_MODELS: AIModel[] = [
   },
   {
     slug: 'bing-copilot',
-    name: 'Bing Copilot',
+    name: 'Microsoft Copilot',
     vendor: 'Microsoft',
     href: '/pozycjonowanie-ai/bing-copilot/',
     keyword: 'pozycjonowanie w bing copilot',
     keywordVolume: 20,
     shortDesc:
-      'Połączenie modelu GPT-4 z indeksem Bing. Mniejszy udział w rynku, ale model jest domyślnie wbudowany w przeglądarkę Edge i system Windows.',
+      'Połączenie modeli rodziny GPT-5 z indeksem Bing. Mniejszy udział w rynku, ale asystent jest domyślnie wbudowany w przeglądarkę Edge i system Windows.',
     symbol: '∴',
   },
 ];

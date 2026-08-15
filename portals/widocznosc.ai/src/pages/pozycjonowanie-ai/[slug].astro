@@ -32,7 +32,7 @@ const comparisonModels = [
   { key: 'claude', label: 'Claude' },
   { key: 'gemini', label: 'Gemini' },
   { key: 'perplexity', label: 'Perplexity' },
-  { key: 'bingCopilot', label: 'Bing Copilot' },
+  { key: 'bingCopilot', label: 'Microsoft Copilot' },
 ] as const;
 
 const comparisonRows = [
@@ -521,7 +521,7 @@ const modelServiceSchema = buildGraph(
             </div>
             <p>
               Użytkownicy pytają {model.name} inaczej na każdym etapie decyzji. Strategia GEO
-              zaczyna się od doboru zapytań do etapu lejka – realne zapytania pomocnicze modelu
+              zaczyna się od doboru zapytań do etapu ścieżki zakupowej – realne zapytania pomocnicze modelu
               podejrzysz naszym narzędziem <a href="/narzedzia/fanout/">Analiza zapytań AI</a>,
               a&nbsp;podstawy działania modelu opisaliśmy w&nbsp;
               <a href="/modele-llm/chatgpt/">kompletnym przewodniku po ChatGPT</a>.

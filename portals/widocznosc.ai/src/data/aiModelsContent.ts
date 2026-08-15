@@ -41,17 +41,17 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
   chatgpt: {
     metaTitle: 'Pozycjonowanie w ChatGPT [2026] – widoczność marki w AI',
     heroSubtitle:
-      'OpenAI ChatGPT z&nbsp;trybem ChatGPT Search – najczęściej używany asystent AI w&nbsp;Polsce, z&nbsp;setkami milionów aktywnych użytkowników tygodniowo (<a href="https://pl.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener">Wikipedia</a>). Cytuje ze statycznych danych treningowych oraz przez mechanizm RAG oparty na indeksie Bing w&nbsp;czasie rzeczywistym. Widoczność w&nbsp;obu ścieżkach wymaga osobnych działań optymalizacyjnych.',
+      'OpenAI ChatGPT z&nbsp;trybem ChatGPT Search – najczęściej używany asystent AI w&nbsp;Polsce, z&nbsp;setkami milionów aktywnych użytkowników tygodniowo (<a href="https://pl.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener">Wikipedia</a>). Cytuje informacje ze statycznych danych treningowych oraz przez mechanizm RAG oparty na indeksie Bing w&nbsp;czasie rzeczywistym. Widoczność w&nbsp;obu ścieżkach wymaga osobnych działań optymalizacyjnych.',
     metaDescription:
       'Pozycjonowanie marki w ChatGPT i ChatGPT Search. Audyt cytowań, optymalizacja treści pod odpowiedzi AI i wyszukiwanie w czasie rzeczywistym. Mierzymy udział marki w odpowiedziach OpenAI.',
     howItWorks: [
       {
-        title: 'Dwoista architektura wiedzy',
-        desc: 'ChatGPT działa w&nbsp;dwóch ścieżkach. Tryb standardowy opiera się na statycznych wagach treningowych (wiedza do określonej daty aktualizacji bazy) – marka musi istnieć w&nbsp;źródłach skanowanych przez Common Crawl i&nbsp;<a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener">własne crawlery OpenAI</a>. ChatGPT Search pobiera aktualne źródła w&nbsp;czasie rzeczywistym przez mechanizm RAG.',
+        title: 'Podwójna architektura wiedzy',
+        desc: 'ChatGPT działa w&nbsp;dwóch ścieżkach. Tryb standardowy opiera się na statycznych danych treningowych – wiedzy ograniczonej tzw. datą odcięcia (<em>knowledge cutoff</em>) – marka musi istnieć w&nbsp;źródłach skanowanych przez Common Crawl i&nbsp;<a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener">własne crawlery OpenAI</a>. ChatGPT Search pobiera aktualne źródła w&nbsp;czasie rzeczywistym przez mechanizm RAG.',
       },
       {
         title: 'Mechanizm RAG i zaawansowane wnioskowanie',
-        desc: 'W&nbsp;ChatGPT Search zaawansowane modele rozbijają zapytanie na kilka pomocniczych zapytań do wyszukiwarki Bing, pobierają równolegle od 3 do 10 stron i&nbsp;dzielą je na krótkie, zwięzłe fragmenty. Strony, które nie odpowiadają w&nbsp;ciągu 2 sekund, są automatycznie pomijane – szybkość ładowania jest bezwzględnym czynnikiem eliminacyjnym.',
+        desc: 'W&nbsp;ChatGPT Search zaawansowane modele rozbijają zapytanie na kilka pomocniczych zapytań do wyszukiwarki Bing, pobierają równolegle od 3 do 10 stron i&nbsp;dzielą je na krótkie, zwięzłe fragmenty (tzw. <em>chunks</em>). Strony, które nie odpowiadają w&nbsp;ciągu 2 sekund, są z&nbsp;reguły pomijane – czas do pierwszego bajtu (TTFB) i&nbsp;szybkość ładowania to krytyczne czynniki eliminacyjne.',
       },
       {
         title: 'Selekcja źródeł – algorytm RRF',
@@ -59,7 +59,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         title: 'Custom GPT i RAG w niszach B2B',
-        desc: 'Tysiące Custom GPT-ów buduje własne bazy wiedzy z&nbsp;plików i&nbsp;stron. Twoje materiały mogą tam trafić jako źródło referencyjne dla zapytań branżowych. To trudny do zmierzenia tradycyjnymi metodami, ale niezwykle kaloryczny kanał ekspozycji marki w&nbsp;segmentach B2B – mierzymy go pośrednio przez monitoring wzmianek.',
+        desc: 'Tysiące Custom GPT-ów buduje własne bazy wiedzy z&nbsp;plików i&nbsp;stron. Twoje materiały mogą tam trafić jako źródło referencyjne dla zapytań branżowych. To kanał trudny do zmierzenia tradycyjnymi metodami, ale bardzo wartościowy dla budowania widoczności marki w&nbsp;segmentach B2B – mierzymy go pośrednio przez monitoring wzmianek.',
       },
     ],
     optimization: [
@@ -82,7 +82,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
     ],
     signals: [
       'Pozycja top 5 w&nbsp;Bing Search (wejście do puli stron branych pod uwagę)',
-      'Czas odpowiedzi serwera (TTFB) i ładowania poniżej 2 sekund (próg eliminacyjny AI)',
+      'Czas odpowiedzi serwera (TTFB) i ładowania poniżej 2 sekund (praktyczny próg eliminacyjny)',
       'Wysoka gęstość faktograficzna w&nbsp;pierwszych 200 słowach',
       'Schema.org Article + Person z&nbsp;potwierdzonym profilem eksperta',
       'Dopuszczenie OAI-SearchBot w&nbsp;robots.txt oraz opcjonalny, uporządkowany plik llms.txt',
@@ -107,7 +107,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         q: 'Czy mogę samodzielnie sprawdzić widoczność marki w&nbsp;ChatGPT?',
-        a: 'Tak – na tej stronie znajdziesz gotowy prompt testowy wraz z&nbsp;instrukcją interpretacji wyniku. Szybszą drogą jest nasze bezpłatne narzędzie <a href="/narzedzia/brand-check/">Widoczność marki w&nbsp;AI</a>, które w&nbsp;jednym przebiegu odpytuje ChatGPT, Claude, Gemini i&nbsp;Perplexity, wykrywa halucynacje i&nbsp;pokazuje konkurentów polecanych zamiast Ciebie.',
+        a: 'Tak – na tej stronie znajdziesz gotowy prompt testowy wraz z&nbsp;instrukcją interpretacji wyniku. Szybszą drogą jest nasze bezpłatne narzędzie <a href="/narzedzia/brand-check/">Widoczność marki w&nbsp;AI</a>, które w&nbsp;jednym przebiegu odpytuje ChatGPT, Claude\'a, Gemini i&nbsp;Perplexity, wykrywa halucynacje i&nbsp;pokazuje konkurentów polecanych zamiast Ciebie.',
       },
       {
         q: 'Czym pozycjonowanie w&nbsp;ChatGPT (GEO) różni się od klasycznego SEO?',
@@ -190,7 +190,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
         'Podaje nieprawdziwe fakty (halucynacje) – błędne usługi, lokalizacje, ceny',
       ],
       toolCta:
-        'Test ręczny obejmuje jeden model i&nbsp;jedną próbę – wynik potrafi się różnić między sesjami. Nasze bezpłatne narzędzie odpytuje równolegle ChatGPT, Claude, Gemini i&nbsp;Perplexity, wykrywa halucynacje i&nbsp;wskazuje konkurentów polecanych zamiast Ciebie.',
+        'Test ręczny obejmuje jeden model i&nbsp;jedną próbę – wynik potrafi się różnić między sesjami. Nasze bezpłatne narzędzie odpytuje równolegle ChatGPT, Claude\'a, Gemini i&nbsp;Perplexity, wykrywa halucynacje i&nbsp;wskazuje konkurentów polecanych zamiast Ciebie.',
     },
     seoVsGeo: [
       {
@@ -425,6 +425,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
   },
 
   'bing-copilot': {
+    metaTitle: 'Pozycjonowanie w Bing Copilot (Microsoft Copilot) – widoczność marki w AI',
     heroSubtitle:
       'Microsoft Copilot wbudowany w&nbsp;przeglądarkę Edge, Windows 11 i&nbsp;pakiet Microsoft 365 – domyślny asystent dla setek milionów użytkowników biznesowych. Korzysta z&nbsp;indeksu wyszukiwarki Bing oraz modeli z&nbsp;rodziny GPT-5, dobierając szybszy lub głębszy tryb odpowiedzi do złożoności pytania. W&nbsp;Bing Webmaster Tools Microsoft udostępnił panel AI Performance, który pokazuje, jak często Copilot i&nbsp;generatywne odpowiedzi Binga cytują Twoją stronę.',
     metaDescription:
