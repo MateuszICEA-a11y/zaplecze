@@ -669,26 +669,38 @@ const modelServiceSchema = buildGraph(
             </p>
           </div>
 
-          <div class="seo-geo-table" role="table" aria-label="Porównanie SEO i GEO">
-            <div class="seo-geo-row seo-geo-row--head" role="row">
-              <div role="columnheader">Obszar</div>
-              <div role="columnheader">
+          <div class="seo-geo" aria-label="Porównanie SEO i GEO">
+            <div class="seo-geo-legend">
+              <span />
+              <span>
                 <span class="seo-geo-pill seo-geo-pill--seo">Klasyczne SEO</span>
-              </div>
-              <div role="columnheader">
+              </span>
+              <span />
+              <span>
                 <span class="seo-geo-pill seo-geo-pill--geo">GEO · {model.name}</span>
                 <span class="seo-geo-tag">nasza specjalizacja</span>
-              </div>
+              </span>
             </div>
-            {content.seoVsGeo.map((row) => (
-              <div class="seo-geo-row" role="row">
-                <div class="seo-geo-label" role="cell">
-                  {row.label}
-                </div>
-                <div role="cell" data-col="SEO" set:html={row.seo} />
-                <div role="cell" data-col="GEO" set:html={row.geo} />
-              </div>
-            ))}
+            <ul class="seo-geo-rows">
+              {content.seoVsGeo.map((row) => (
+                <li class="seo-geo-item">
+                  <div class="seo-geo-area">{row.label}</div>
+                  <div class="seo-geo-cell seo-geo-cell--seo">
+                    <span class="seo-geo-cell-tag seo-geo-cell-tag--seo" aria-hidden="true">
+                      SEO
+                    </span>
+                    <span set:html={row.seo} />
+                  </div>
+                  <div class="seo-geo-arrow" aria-hidden="true">→</div>
+                  <div class="seo-geo-cell seo-geo-cell--geo">
+                    <span class="seo-geo-cell-tag seo-geo-cell-tag--geo" aria-hidden="true">
+                      GEO
+                    </span>
+                    <span set:html={row.geo} />
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -2370,46 +2382,9 @@ const modelServiceSchema = buildGraph(
   }
 
   /* Tabela SEO vs GEO */
-  .seo-geo-table {
-    overflow: hidden;
-    border: 1px solid var(--hairline-soft);
-    border-radius: 18px;
-    background: var(--bg-canvas);
-    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.14);
-  }
-
-  .seo-geo-row {
-    display: grid;
-    grid-template-columns: minmax(8rem, 0.5fr) 1fr 1.1fr;
-    border-top: 1px solid var(--hairline-soft);
-    transition: background 0.15s ease;
-  }
-
-  .seo-geo-row:not(.seo-geo-row--head):hover {
-    background: color-mix(in srgb, var(--bg-surface-1) 60%, transparent);
-  }
-
-  .seo-geo-row--head {
-    border-top: 0;
-    align-items: stretch;
-    background: color-mix(in srgb, var(--bg-surface-1) 74%, var(--bg-canvas));
-  }
-
-  .seo-geo-row--head > div {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
-    padding-top: 0.85rem;
-    padding-bottom: 0.85rem;
-  }
-
-  .seo-geo-row--head > div:first-child {
-    color: var(--ink-faint);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  /* SEO vs GEO – lista transformacji: [obszar] [SEO] → [GEO] */
+  .seo-geo-legend {
+    display: none;
   }
 
   .seo-geo-pill {
@@ -2444,33 +2419,124 @@ const modelServiceSchema = buildGraph(
     text-transform: uppercase;
   }
 
-  .seo-geo-row > div {
-    padding: 1rem 1.1rem;
-    border-left: 1px solid var(--hairline-soft);
-    color: var(--ink-muted);
-    font-size: 0.9rem;
+  .seo-geo-rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .seo-geo-item {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .seo-geo-rows > .seo-geo-item:first-child {
+    border-top: 0;
+  }
+
+  .seo-geo-area {
+    color: var(--ink-faint);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .seo-geo-cell {
+    font-size: 0.92rem;
     line-height: 1.55;
   }
 
-  .seo-geo-row > div:first-child {
-    border-left: 0;
+  .seo-geo-cell--seo {
+    color: var(--ink-muted);
   }
 
-  .seo-geo-label {
+  .seo-geo-cell--geo {
     color: var(--ink);
-    font-weight: 650;
+    font-weight: 500;
   }
 
-  .seo-geo-row > div:last-child {
-    border-left: 0;
-    background: color-mix(in srgb, var(--accent-blue) 8%, transparent);
-    box-shadow: inset 2px 0 0 color-mix(in srgb, var(--accent-blue) 55%, transparent);
-    color: var(--ink);
+  .seo-geo-cell-tag {
+    display: inline-block;
+    margin-right: 0.5rem;
+    padding: 0.08rem 0.45rem;
+    border-radius: 999px;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    vertical-align: 0.1em;
   }
 
-  .seo-geo-row--head > div:last-child {
-    border-left: 0;
-    box-shadow: inset 2px 0 0 color-mix(in srgb, var(--accent-blue) 55%, transparent);
+  .seo-geo-cell-tag--seo {
+    border: 1px solid var(--hairline-soft);
+    color: var(--ink-faint);
+  }
+
+  .seo-geo-cell-tag--geo {
+    background: color-mix(in srgb, var(--accent-blue) 14%, transparent);
+    color: var(--accent-blue);
+  }
+
+  .seo-geo-arrow {
+    display: none;
+  }
+
+  @media (min-width: 860px) {
+    .seo-geo-legend {
+      display: grid;
+      grid-template-columns: minmax(8.5rem, 0.42fr) 1fr 3rem 1.1fr;
+      column-gap: 1.25rem;
+      align-items: center;
+      padding-bottom: 0.9rem;
+    }
+
+    .seo-geo-legend > span:last-child {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+
+    .seo-geo-item {
+      grid-template-columns: minmax(8.5rem, 0.42fr) 1fr 3rem 1.1fr;
+      column-gap: 1.25rem;
+      align-items: start;
+      padding: 1.05rem 0;
+    }
+
+    .seo-geo-area {
+      padding-top: 0.25rem;
+    }
+
+    .seo-geo-cell-tag {
+      display: none;
+    }
+
+    .seo-geo-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 0.1rem;
+      color: var(--accent-blue);
+      font-weight: 700;
+      transition: transform 0.18s ease;
+    }
+
+    .seo-geo-item:hover .seo-geo-arrow {
+      transform: translateX(4px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .seo-geo-arrow {
+      transition: none;
+    }
+
+    .seo-geo-item:hover .seo-geo-arrow {
+      transform: none;
+    }
   }
 
   @media (min-width: 980px) {
@@ -2484,33 +2550,6 @@ const modelServiceSchema = buildGraph(
 
     .prompt-tool-cta {
       grid-template-columns: 1fr auto;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .seo-geo-row {
-      grid-template-columns: 1fr;
-    }
-
-    .seo-geo-row--head {
-      display: none;
-    }
-
-    .seo-geo-row > div {
-      border-left: 0;
-    }
-
-    .seo-geo-row > div[data-col]::before {
-      content: attr(data-col) ' · ';
-      color: var(--ink-faint);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-    }
-
-    .seo-geo-row:not(.seo-geo-row--head) > div:first-child {
-      padding-bottom: 0.3rem;
-      background: color-mix(in srgb, var(--bg-surface-1) 78%, var(--bg-canvas));
     }
   }
 
