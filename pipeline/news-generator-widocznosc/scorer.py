@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 from dataclasses import dataclass
 from datetime import datetime, timezone, timedelta
@@ -11,6 +12,8 @@ from difflib import SequenceMatcher
 from openai import OpenAI
 
 from collector import Signal
+
+log = logging.getLogger("news-generator")
 
 
 # Cluster ID → Hugo section mapping
@@ -197,9 +200,12 @@ def llm_judge_and_format(
             {
                 "role": "system",
                 "content": (
-                    "Jesteś redaktorem polskiego portalu BusManiak.pl o busach, vanach, kamperach "
-                    "i motoryzacji dostawczej. Twoim zadaniem jest wybrać najciekawszy temat dnia "
-                    "dla czytelników portalu."
+                    "Jesteś redaktorem polskiego portalu widocznosc.ai o modelach językowych "
+                    "i wyszukiwarkach AI (ChatGPT, Gemini, Claude, Grok, Perplexity, AI Overviews). "
+                    "Twoim zadaniem jest wybrać najważniejszy temat dnia dla czytelników śledzących "
+                    "rozwój AI. REGUŁA PIERWSZEŃSTWA: premiera lub istotna aktualizacja dużego modelu "
+                    "(GPT, Gemini, Claude, Grok, Llama, Mistral, DeepSeek) ZAWSZE wygrywa z ciekawostkami, "
+                    "zmianami w interfejsach i tematami pobocznymi."
                 ),
             },
             {
@@ -254,6 +260,9 @@ def select_topic(
     top_candidates = sorted_signals[:5]
     if not top_candidates:
         return None
+
+    for i, c in enumerate(top_candidates):
+        log.info("Top-5 candidate %d: [%s] %s", i + 1, c.source, c.title[:110])
 
     chosen_idx, format_type = llm_judge_and_format(
         top_candidates,

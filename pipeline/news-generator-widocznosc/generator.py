@@ -71,8 +71,18 @@ def generate_article(
     max_completion_tokens: int = 2000,
     format_config: dict | None = None,
 ) -> str:
-    """Generate a news article using GPT-5.4."""
-    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    """Generate a news article.
+
+    Model w formacie provider/slug (np. google/gemini-3.7-flash:online)
+    kierowany jest przez OpenRouter; pozostałe wprost do OpenAI.
+    """
+    if "/" in model:
+        client = OpenAI(
+            api_key=os.environ["OPENROUTER_API_KEY"],
+            base_url="https://openrouter.ai/api/v1",
+        )
+    else:
+        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
     if topic.format_type == "analysis":
         max_completion_tokens = format_config.get("max_tokens_analysis", 4000) if format_config else 4000

@@ -10,6 +10,15 @@ feeds:
   - url: "https://deepmind.google/blog/rss.xml"
     category: "llm"
     name: "Google DeepMind"
+  # Premiery produktowe Gemini idą na The Keyword (blog.google), nie na blog DeepMind:
+  - url: "https://blog.google/products-and-platforms/products/gemini/rss/"
+    category: "llm"
+    name: "Google – Gemini"
+  - url: "https://blog.google/innovation-and-ai/technology/ai/rss/"
+    category: "llm"
+    name: "Google – AI"
+  # xAI (Grok): brak RSS, sitemap za Cloudflare (403) – premiery Groka łapiemy
+  # przez The Decoder / The Verge / VentureBeat + regułę priorytetu sędziego.
   - url: "https://venturebeat.com/category/ai/feed/"
     category: "llm"
     name: "VentureBeat AI"

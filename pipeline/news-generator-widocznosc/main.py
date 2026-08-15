@@ -124,11 +124,12 @@ def run() -> None:
     log.info("Found %d related articles for '%s'", len(related), topic.signal.title[:50])
 
     # 7. Generate article
-    log.info("Generating article via %s...", llm_cfg.get("model", "gpt-5.4"))
+    writer_model = llm_cfg.get("model_writer", llm_cfg.get("model", "gpt-5.4"))
+    log.info("Generating article via %s...", writer_model)
     raw_output = generate_article(
         topic=topic,
         related_articles=related,
-        model=llm_cfg.get("model", "gpt-5.4"),
+        model=writer_model,
         temperature=llm_cfg.get("temperature_writer", 0.7),
         max_completion_tokens=llm_cfg.get("max_tokens_short", 2000),
         format_config=fmt_cfg,

@@ -31,6 +31,8 @@ trends:
 
 llm:
   model: "gpt-5.4"
+  # Writer przez OpenRouter z web searchem (sufiks :online); sędzia zostaje na gpt-5.4.
+  model_writer: "google/gemini-3.7-flash:online"
   temperature_judge: 0.3
   temperature_writer: 0.7
   max_tokens_judge: 500
