@@ -542,5 +542,19 @@
     "slug": "anthropic-szykuje-api-do-wykrywania-tekstow-claudea",
     "source": "rss",
     "source_name": "The Decoder"
+  },
+  {
+    "title": "xAI wydaje Grok 4.6 – nacisk na długo działających agentów",
+    "date": "2026-08-13",
+    "slug": "xai-wydaje-grok-4-6",
+    "source": "manual",
+    "source_name": "xAI"
+  },
+  {
+    "title": "Google prezentuje Gemini 3.7 Flash – tańszy model do zadań agentowych",
+    "date": "2026-08-14",
+    "slug": "google-prezentuje-gemini-3-7-flash",
+    "source": "manual",
+    "source_name": "Google"
   }
 ]
