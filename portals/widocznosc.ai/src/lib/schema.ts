@@ -47,7 +47,7 @@ export const organizationNode = () => ({
   },
   image: `${SITE_URL}/og-image.png`,
   description:
-    'Pozycjonowanie marek w wyszukiwarkach AI: ChatGPT, Claude, Gemini, Perplexity, Bing Copilot. Audyty widoczności, content i doradztwo Generative Engine Optimization (GEO).',
+    'Pozycjonowanie marek w wyszukiwarkach AI: ChatGPT, Claude, Gemini, Perplexity, Microsoft Copilot. Audyty widoczności, content i doradztwo Generative Engine Optimization (GEO).',
   slogan: 'Widoczność marek w erze AI Search',
   foundingDate: '2026',
   knowsAbout: [
@@ -60,7 +60,7 @@ export const organizationNode = () => ({
     'Perplexity',
     'Google AI Overviews',
     'Claude',
-    'Bing Copilot',
+    'Microsoft Copilot',
     'Retrieval Augmented Generation',
     'Prompt Engineering',
   ],

@@ -42,7 +42,7 @@ Kluczowe pojęcia, których będziesz używać w każdej rozmowie o LLM-ach:
 
 - **Okno kontekstowe** – maksymalna ilość tekstu, którą model przetwarza w jednej sesji. Wyraża się ją w tokenach (1 token ≈ 0,75 słowa angielskiego). Modele z oknem 1 000 000 tokenów mogą przetworzyć kilka książek naraz.
 - **Wnioskowanie** (z ang. *reasoning*) – zdolność modelu do wieloetapowego rozwiązywania problemów. Obejmuje stawianie hipotez, weryfikację spójności i cofanie się przy błędnym kroku.
-- **RAG** (Retrieval-Augmented Generation, generowanie wspomagane wyszukiwaniem) – architektura, w której model w chwili zapytania dynamicznie pobiera fragmenty z internetu lub bazy wiedzy i dopiero na ich podstawie generuje odpowiedź. Stosuje się ją w Perplexity, Bing Copilot i Google AI Overviews.
+- **RAG** (Retrieval-Augmented Generation, generowanie wspomagane wyszukiwaniem) – architektura, w której model w chwili zapytania dynamicznie pobiera fragmenty z internetu lub bazy wiedzy i dopiero na ich podstawie generuje odpowiedź. Stosuje się ją w Perplexity, Microsoft Copilot i Google AI Overviews.
 - **Temperatura modelu** – parametr sterujący losowością generowania. Niska temperatura oznacza bardziej przewidywalne, precyzyjne odpowiedzi, a wysoka – bardziej kreatywne i zmienne.
 - **Zanurzenia wektorowe** (reprezentacje wektorowe, ang. *embeddings*) – numeryczne reprezentacje tekstu, które model tworzy wewnętrznie. Pozwalają mierzyć semantyczne podobieństwo między fragmentami.
 

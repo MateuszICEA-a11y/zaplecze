@@ -480,7 +480,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
         a: 'Opieramy się na trzech filarach: (1) technika – Bing Webmaster Tools, IndexNow, szybkie ładowanie stron, plik robots.txt z&nbsp;dopuszczeniem Bingbota; (2) struktura treści – zwięzłe odpowiedzi pod nagłówkami, precyzyjne dane zamiast ogólników; (3) autorytet marki – Bing Places, spójne dane teleadresowe, wzmianki w&nbsp;zewnętrznych źródłach B2B. Zaczynamy od audytu w&nbsp;panelu AI Performance, który pokazuje bieżące cytowania Twojej domeny.',
       },
       {
-        q: 'Czy Bing Copilot ma znaczenie w&nbsp;Polsce?',
+        q: 'Czy Microsoft Copilot ma znaczenie w&nbsp;Polsce?',
         a: 'Udział Copilota w&nbsp;rynku jest mniejszy niż ChatGPT, ale w&nbsp;środowisku biznesowym (Windows + Microsoft 365) to domyślny asystent wielu organizacji. Firmy z&nbsp;branży IT, finansowej, prawnej i&nbsp;produkcyjnej mają ogromną ekspozycję na Copilota. Audyt pokaże realny udział tego asystenta w&nbsp;zapytaniach z&nbsp;Twojej niszy.',
       },
       {

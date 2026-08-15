@@ -157,7 +157,7 @@ Warto spojrzeć na Copilot Studio w szerszym kontekście. To odpowiedź Microsof
 
 W tym miejscu pojawia się wymiar, który interesuje specjalistów od widoczności w erze sztucznej inteligencji. Wariant Copilota w wyszukiwarce Bing – czyli darmowa edycja publiczna, dostępna bez licencji – jest silnikiem RAG (Retrieval-Augmented Generation, czyli generowania wspomaganego wyszukiwaniem) zbudowanym na danych Bing Search. Gdy użytkownik zadaje pytanie w przeglądarce Edge lub na stronie bing.com, model pobiera fragmenty stron i syntetyzuje odpowiedź.
 
-**Dla marek oznacza to, że widoczność w narzędziu Bing Copilot zależy od tych samych czynników, co widoczność w Google AI Overviews.** Kluczowa jest gęstość faktograficzna treści, struktura semantyczna i dostępność strony dla botów AI. Strony blokowane w pliku `robots.txt` dla bota `Bingbot` nie zostaną w żadnych okolicznościach zacytowane przez Copilota.
+**Dla marek oznacza to, że widoczność w narzędziu Microsoft Copilot zależy od tych samych czynników, co widoczność w Google AI Overviews.** Kluczowa jest gęstość faktograficzna treści, struktura semantyczna i dostępność strony dla botów AI. Strony blokowane w pliku `robots.txt` dla bota `Bingbot` nie zostaną w żadnych okolicznościach zacytowane przez Copilota.
 
 Szczegółowe zasady optymalizacji pod ten silnik opisuje nasz artykuł o [Bing Copilocie](/pozycjonowanie-ai/bing-copilot/). Szerszy kontekst – jak działają mechanizmy cytowania we wszystkich silnikach AI – znajdziesz w [przewodniku po GEO](/geo/przewodnik/).
 
