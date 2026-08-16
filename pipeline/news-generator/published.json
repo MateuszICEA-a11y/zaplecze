@@ -1,13 +1,5 @@
 [
   {
-    "title": "Toyota Sienta z zestawem VANLIFE ROOMKIT – miejski minivan zmienia się w mini-kampera",
-    "date": "2026-05-09",
-    "slug": "toyota-sienta-z-zestawem-vanlife-roomkit-miejski-minivan-zmienia-sie-w-mini",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "E-TOLL w sezonie wyjazdowym 2026 – co musi wiedzieć właściciel kampera, przyczepy i auta elektrycznego",
     "date": "2026-05-10",
     "slug": "e-toll-w-sezonie-wyjazdowym-2026-co-musi-wiedziec-wlasciciel-kampera-przyczepy",
@@ -716,6 +708,14 @@
     "date": "2026-08-13",
     "slug": "ford-transit-city-kompaktowy-elektryczny-dostawczak-z-ladownoscia-1270-kg",
     "section": "modele",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Renault na LAT.BUS 2026: Master w roli busa pasażerskiego",
+    "date": "2026-08-16",
+    "slug": "renault-na-latbus-2026-master-w-roli-busa-pasazerskiego",
+    "section": "news",
     "format": "short",
     "source": "rss"
   }
