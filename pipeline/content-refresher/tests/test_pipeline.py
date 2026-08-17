@@ -523,6 +523,58 @@ class TestRewriteNaglowki(unittest.TestCase):
         self.assertEqual([row["slot"] for row in payload["headings_missed"]], [3])
 
 
+class TestKotwicaNowychSekcji(unittest.TestCase):
+    """Nowa sekcja ma stanąć przy sąsiedzie tematycznym, nie za zakończeniem."""
+
+    BRIEF = {"structure": [
+        {"action": "add", "slot": 7, "after_slot": 3, "heading": "Jak zamieniać ruch w leady?"},
+        {"action": "add", "slot": 8, "after_slot": 99, "heading": "Kotwica poza zakresem"},
+    ]}
+    SNAPSHOT = [
+        {"slot": 1, "title": "Czym jest SEO", "text": "<p>a</p>"},
+        {"slot": 3, "title": "Jak prowadzić SEO", "text": "<p>b</p>"},
+        {"slot": 6, "title": "Samodzielnie czy z agencją", "text": "<p>c</p>"},
+    ]
+
+    def _pipeline(self):
+        import run as run_module
+
+        args = type("Args", (), {
+            "job": "t", "dry_run": True, "improvements": [], "research_file": "",
+            "model_research": "", "model_writer": "",
+        })()
+        pipeline = run_module.Pipeline(args)
+        pipeline.context = {"brief": self.BRIEF, "snapshot": self.SNAPSHOT, "free_slots": [7, 8]}
+        return pipeline
+
+    def test_kotwica_z_briefu_trafia_do_zadan(self):
+        tasks = {task["slot"]: task for task in self._pipeline()._structure_tasks()}
+        self.assertEqual(tasks[7]["after_slot"], 3)
+        # Slot spoza szablonu nie jest kotwicą.
+        self.assertNotIn("after_slot", tasks[8])
+
+    def test_brak_kotwicy_od_modelu_uzupelnia_brief(self):
+        pipeline = self._pipeline()
+        answer = {"data": {"sections": [
+            # Model podał treść, ale kotwicy nie – bez uzupełnienia sekcja
+            # wylądowałaby na końcu artykułu.
+            {"slot": 7, "title": "Jak zamieniać ruch w leady?", "text": "<p>nowa</p>"},
+        ]}, "model": "m", "usage": {"tokens_in": 1, "tokens_out": 1}}
+        with mock.patch.object(pipeline, "_ask", return_value=(answer, "1.9.0")):
+            payload = pipeline.step_rewrite()["payload"]
+        self.assertEqual(pipeline.context["proposals"][7]["after_slot"], 3)
+        self.assertEqual(payload["anchors"], {"7": 3})
+
+    def test_kotwica_modelu_ma_pierwszenstwo(self):
+        pipeline = self._pipeline()
+        answer = {"data": {"sections": [
+            {"slot": 7, "after_slot": 1, "title": "Jak zamieniać ruch w leady?", "text": "<p>nowa</p>"},
+        ]}, "model": "m", "usage": {"tokens_in": 1, "tokens_out": 1}}
+        with mock.patch.object(pipeline, "_ask", return_value=(answer, "1.9.0")):
+            pipeline.step_rewrite()
+        self.assertEqual(pipeline.context["proposals"][7]["after_slot"], 1)
+
+
 class TestNormalizacjaFraz(unittest.TestCase):
     """Warianty fleksyjne tej samej frazy nie są lukami."""
 

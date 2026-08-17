@@ -1629,6 +1629,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     // Zalecenia nagłówków, których rewrite nie wykonał – lepiej pokazać je
     // redaktorowi, niż udawać, że generyczne H2 zostały z rozmysłem.
     const rewrite = current.steps.find((step) => step.step === 'rewrite')?.payload;
+    // Gdzie stanęły nowe sekcje – „doklejone na końcu" wychodziło wcześniej
+    // dopiero przy czytaniu gotowego wpisu.
+    if (rewrite?.anchors && Object.keys(rewrite.anchors).length) {
+      const titles = new Map((current.sections ?? []).map((row) =>
+        [row.slot, row.title_after || row.title_before || `sekcja ${row.slot}`]));
+      add('Miejsce nowych sekcji', list(Object.entries(rewrite.anchors).map(([slot, after]) =>
+        `${titles.get(Number(slot)) ?? `sekcja ${slot}`} → po: ${titles.get(Number(after)) ?? `sekcja ${after}`}`)));
+    }
     if (rewrite?.headings_missed?.length) {
       add('Pominięte zalecenia nagłówków', list(rewrite.headings_missed.map((row: any) =>
         `sekcja ${row.slot}: ${row.current || '(nowa)'} → ${row.recommended}`)));

@@ -29,6 +29,7 @@ import wp  # noqa: E402
 from budget import Budget, BudgetExceeded  # noqa: E402
 from client import CallbackError, client_from_env  # noqa: E402
 from config import (  # noqa: E402
+    ACF_SLOTS,
     COMPETITOR_LIMIT,
     EDITORIAL_RULES,
     EXPERTS,
@@ -413,12 +414,21 @@ class Pipeline:
                 continue
             if action not in ("rewrite", "add") or not 1 <= slot <= 30:
                 continue
-            tasks.append({
+            try:
+                after = int(row.get("after_slot") or 0)
+            except (TypeError, ValueError):
+                after = 0
+            task = {
                 "action": action,
                 "slot": slot,
                 "heading": str(row.get("heading") or "").strip(),
                 "note": str(row.get("note") or "").strip(),
-            })
+            }
+            # Kotwica pozycji nowej sekcji. Bez niej rewrite dopisywał wszystko
+            # za ostatnią sekcją – nowe wątki lądowały po treści zamykającej.
+            if action == "add" and 1 <= after <= ACF_SLOTS:
+                task["after_slot"] = after
+            tasks.append(task)
         return tasks
 
     @staticmethod
@@ -467,6 +477,8 @@ class Pipeline:
             free_faq_slots=context.get("free_faq_slots", [])[:MAX_NEW_FAQ],
         )
         snapshot_slots = {item["slot"] for item in context["snapshot"]}
+        anchors_from_brief = {task["slot"]: task["after_slot"] for task in tasks
+                              if task.get("after_slot")}
         allowed_faq = set(context.get("free_faq_slots", [])[:MAX_NEW_FAQ]) | {
             item["slot"] for item in context["snapshot"] if item.get("kind") == "faq"
         }
@@ -490,12 +502,21 @@ class Pipeline:
                     after = int(row.get("after_slot") or 0)
                 except (TypeError, ValueError):
                     after = 0
+                # Model bywa oszczędny w kotwicach, a wtedy sekcja domyślnie
+                # ląduje na końcu artykułu. Brief wskazał sąsiada tematycznego –
+                # bierzemy go, zamiast dopisywać nowy wątek za zakończeniem.
+                if after not in snapshot_slots:
+                    after = anchors_from_brief.get(slot, 0)
                 if after in snapshot_slots:
                     proposals[slot]["after_slot"] = after
         self.context["proposals"] = proposals
         payload = {
             "changed_slots": sorted(slot for slot in proposals if not sec.is_faq(slot)),
             "changed_faq": sorted(slot for slot in proposals if sec.is_faq(slot)),
+            # Gdzie stanęły nowe sekcje – bez tego „doklejone na końcu" wychodziło
+            # dopiero przy czytaniu gotowego wpisu.
+            "anchors": {str(slot): row["after_slot"] for slot, row in sorted(proposals.items())
+                        if row.get("after_slot")},
             "notes": [
                 row.get("change") for row in (result["data"].get("sections") or []) if row.get("change")
             ],
