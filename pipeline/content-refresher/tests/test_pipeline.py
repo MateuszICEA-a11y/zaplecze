@@ -938,6 +938,46 @@ class TestCoverageGate(unittest.TestCase):
         self.assertEqual(pipeline._free_faq_for_coverage(), [])
 
 
+class TestSerpSameDomeny(unittest.TestCase):
+    """SERP potrafi oddać adresy obcięte do domen. Strony główne odrzucamy
+    świadomie, ale przejazd nie może wtedy wyglądać na udany."""
+
+    def _pipeline(self):
+        import run as run_module
+
+        args = type("Args", (), {
+            "job": "t", "dry_run": True, "improvements": ["gaps"], "research_file": "",
+            "model_research": "", "model_writer": "", "domain": "grupa-icea.pl",
+        })()
+        pipeline = run_module.Pipeline(args)
+        pipeline.fixtures = None
+        pipeline.context = {"competitors": [{"url": "https://www.proformat.pl/"},
+                                            {"url": "https://delante.pl/"}]}
+        return pipeline
+
+    def test_same_strony_glowne_daja_ostrzezenie(self):
+        import research
+        import run as run_module
+
+        pipeline = self._pipeline()
+        with mock.patch.object(research, "competitor_keywords",
+                               return_value={"keywords": [], "urls": []}), \
+             mock.patch.object(pipeline.budget, "add_senuto"):
+            payload = pipeline.step_keywords_competitors()["payload"]
+        self.assertIn("strony główne", payload["warning"])
+
+    def test_przy_normalnych_adresach_ostrzezenia_nie_ma(self):
+        import research
+
+        pipeline = self._pipeline()
+        rows = [{"keyword": "leady fotowoltaika", "position": 3}]
+        with mock.patch.object(research, "competitor_keywords",
+                               return_value={"keywords": rows, "urls": ["https://delante.pl/a/"]}), \
+             mock.patch.object(pipeline.budget, "add_senuto"):
+            payload = pipeline.step_keywords_competitors()["payload"]
+        self.assertNotIn("warning", payload)
+
+
 class TestFaq(unittest.TestCase):
     """FAQ jako pseudo-sekcje: własna przestrzeń slotów (101+), własne pola ACF,
     poza renumeracją sekcji i poza przypisami/linkowaniem."""

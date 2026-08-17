@@ -1622,6 +1622,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         `sekcja ${row.slot}: ${row.current || '(nowa)'} → ${row.recommended}`)));
     }
 
+    // Ostrzeżenia kroków researchu – przejazd kończy się jako „done" nawet
+    // wtedy, gdy warstwa fraz wypadła (SERP oddał same strony główne). Bez tego
+    // wpisu wyglądałby na w pełni udany.
+    for (const step of current.steps) {
+      if (step.payload?.warning) add('Uwaga z przebiegu', list([step.payload.warning]));
+    }
+
     // Bramka pokrycia: co pipeline domknął sam, a czego świadomie nie wplótł.
     // Fraza bez pokrycia i bez powodu to błąd przejazdu, nie decyzja redakcyjna.
     const coverage = current.steps.find((step) => step.step === 'coverage')?.payload;

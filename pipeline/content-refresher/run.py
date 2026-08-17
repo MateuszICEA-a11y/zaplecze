@@ -326,11 +326,22 @@ class Pipeline:
         self.context["keywords_gap"] = [
             row for row in keywords if normalize_phrase(row.get("keyword")) not in own
         ]
-        return {"payload": {
+        payload = {
             "urls": result["urls"],
             "keywords": keywords[:30],
             "gap": len(self.context["keywords_gap"]),
-        }, "cost": {"senuto_requests": 1}}
+        }
+        # SERP potrafi oddać adresy obcięte do domen (sonda 2026-08-17). Strony
+        # główne odrzucamy świadomie – wsypywały do briefu frazy brandowe – ale
+        # bez tej notki przejazd kończył się jako udany, tyle że BEZ fraz:
+        # pusty brief → bramka pokrycia „brak fraz do sprawdzenia".
+        if urls and not result["urls"]:
+            payload["warning"] = (
+                "SERP oddał wyłącznie strony główne konkurentów – frazy konkurencji "
+                "pominięte, brief i bramka pokrycia zostały bez fraz. Warto powtórzyć przejazd."
+            )
+            print(f"::warning::{payload['warning']}")
+        return {"payload": payload, "cost": {"senuto_requests": 1}}
 
     def _rivals_facts(self):
         """Fakty z analizy treści konkurencji (edytor, Jina Reader).
