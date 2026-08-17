@@ -102,6 +102,28 @@ CREATE TABLE IF NOT EXISTS job_style (
   PRIMARY KEY (job_id, slot)
 );
 
+-- Infografiki generowane do sekcji (migracja 0010). Stan zlecenia musi być
+-- trwały: kie.ai oddaje obraz po 30–180 s, czyli po końcu żądania Workera.
+CREATE TABLE IF NOT EXISTS job_images (
+  job_id      TEXT NOT NULL REFERENCES jobs (id) ON DELETE CASCADE,
+  slot        INTEGER NOT NULL,
+  status      TEXT NOT NULL DEFAULT 'brief',  -- brief | generating | ready | inserted | failed
+  brief       TEXT,      -- opis zawartości grafiki (bez stałej stylu marki)
+  alt         TEXT,
+  caption     TEXT,
+  task_id     TEXT,
+  image_url   TEXT,      -- adres z kie.ai (tymczasowy!)
+  media_id    INTEGER,   -- ID w bibliotece mediów WordPressa
+  media_url   TEXT,
+  figure_html TEXT,      -- blok wstawiony do sekcji (do zdjęcia przy „usuń”)
+  credits     TEXT,
+  error       TEXT,
+  created_at  TEXT NOT NULL,
+  updated_at  TEXT NOT NULL,
+
+  PRIMARY KEY (job_id, slot)
+);
+
 -- Zużyte podpisy callbacków – ochrona przed replayem w oknie ważności.
 CREATE TABLE IF NOT EXISTS callback_nonces (
   signature  TEXT PRIMARY KEY,

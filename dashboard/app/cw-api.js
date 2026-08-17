@@ -13,6 +13,7 @@
  */
 
 import { expertPhoto, generateExpertQuote, wpAuthors } from './cw-expert.js';
+import { handleInfographic } from './cw-infographic.js';
 import { handleRivals, rivalsSummary } from './cw-rivals.js';
 import { gapSummary, handleSerpGap } from './cw-serp.js';
 import { runStylePass, saveStyleRows, STYLE_PROMPT_VERSION, styleDocument } from './cw-style.js';
@@ -193,6 +194,8 @@ export const MAX_SECTION_BYTES = 64 * 1024;
 // Ta sama whitelista co sanitizeInto w edytor.astro (komentarz krzyżowy).
 const SANITIZE_ALLOWED = new Set(['p', 'br', 'ul', 'ol', 'li', 'strong', 'b', 'em', 'i', 'a',
   'h2', 'h3', 'h4', 'blockquote', 'footer', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span',
+  // `figure`/`figcaption` niosą infografikę wstawioną do sekcji (cw-infographic.js).
+  'figure', 'figcaption',
   // `div` niesie układ karty eksperta (awatar obok treści) – akapit w środku
   // `span` byłby niepoprawnym HTML-em i przeglądarka rozbiłaby układ.
   // `img` to zdjęcie eksperta z konta WordPressa (adres i tak zawężamy do https).
@@ -202,7 +205,7 @@ const SANITIZE_ALLOWED = new Set(['p', 'br', 'ul', 'ol', 'li', 'strong', 'b', 'e
 // nie mamy dostępu. Przepuszczamy tylko deklaracje bez funkcji CSS: brak
 // nawiasów wyklucza `url(...)` i `expression(...)`, czyli jedyne miejsca,
 // w których w stylu dałoby się przemycić zasób albo kod.
-const STYLE_TAGS = new Set(['blockquote', 'p', 'footer', 'span', 'div', 'img']);
+const STYLE_TAGS = new Set(['blockquote', 'p', 'footer', 'span', 'div', 'img', 'figure', 'figcaption']);
 const STYLE_SAFE = /^[a-z0-9 .,:;%#\/-]+$/i;
 
 const safeStyle = (tag, attrs) => {
@@ -624,6 +627,11 @@ async function readJob(env, id) {
     .prepare('SELECT slot, title_field, text_field, operation, moved_from, title_before, title_after, text_before, text_after, text_hash_before, diff, accepted, decision, edited FROM job_sections WHERE job_id = ? ORDER BY slot')
     .bind(id)
     .all();
+  // Infografiki per sekcja: stan zlecenia u kie.ai i adres w bibliotece mediów.
+  const images = await db(env)
+    .prepare('SELECT slot, status, brief, alt, caption, image_url, media_id, media_url, credits, error, updated_at FROM job_images WHERE job_id = ? ORDER BY slot')
+    .bind(id)
+    .all();
   // Propozycje przejazdu redaktorskiego – druga warstwa nad sekcjami. Diff
   // liczy przeglądarka (ma oba brzmienia), Worker oddaje same teksty i uwagi.
   const styleRows = await db(env)
@@ -646,6 +654,7 @@ async function readJob(env, id) {
     models: parse(job.models, null),
     expert: parse(job.expert, null),
     style: parse(job.style, null),
+    images: images.results ?? [],
     style_sections: (styleRows.results ?? []).map((row) => ({
       ...row,
       issues: parse(row.issues, []),
@@ -1215,10 +1224,10 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
   }
 
   const jobMatch = url.pathname.match(
-    /^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(?:\/(cancel|expert|wp-draft|wp-apply|sections\/(\d{1,3})|style\/(\d{1,3})|style))?\/?$/i,
+    /^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(?:\/(cancel|expert|wp-draft|wp-apply|sections\/(\d{1,3})|style\/(\d{1,3})|style|infographic\/(\d{1,3})))?\/?$/i,
   );
   if (jobMatch) {
-    const [, id, action, slot, styleSlot] = jobMatch;
+    const [, id, action, slot, styleSlot, imageSlot] = jobMatch;
     if (action === 'cancel') {
       if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
       return cancelJob(request, env, id);
@@ -1235,6 +1244,12 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
     if (styleSlot) {
       if (request.method !== 'PATCH') return json({ error: 'Dozwolona metoda: PATCH.' }, 405);
       return patchStyleSection(request, env, id, Number.parseInt(styleSlot, 10));
+    }
+    if (imageSlot) {
+      if (request.method !== 'GET' && request.method !== 'POST') {
+        return json({ error: 'Dozwolone metody: GET, POST.' }, 405);
+      }
+      return handleInfographic(request, env, id, Number.parseInt(imageSlot, 10));
     }
     if (action?.toLowerCase() === 'style') {
       if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);

@@ -372,7 +372,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     id: string; status: string; error: string | null; cost: any; created_at: string;
     improvements: string[]; models: { research: string; writer: string } | null;
     expert: any; steps: Step[]; sections: Section[]; run_url?: string | null;
-    style?: any; style_sections?: StyleRow[];
+    style?: any; style_sections?: StyleRow[]; images?: any[];
     wp_draft_id?: number | null; wp_draft_url?: string | null; applied_at?: string | null;
   };
 
@@ -449,7 +449,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     'H2', 'H3', 'H4', 'BLOCKQUOTE', 'FOOTER', 'TABLE', 'THEAD', 'TBODY', 'TR', 'TH', 'TD', 'SPAN',
     // Układ karty eksperta (DIV) i zdjęcie z konta WordPressa (IMG) – lustro
     // whitelisty w cw-api.js.
-    'DIV', 'IMG']);
+    'DIV', 'IMG',
+    // Infografika wstawiona do sekcji (cw-infographic.js) – lustro whitelisty
+    // sanitizeSectionHtml w cw-api.js.
+    'FIGURE', 'FIGCAPTION']);
   const DROP_TAGS = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'OBJECT', 'EMBED', 'FORM', 'LINK', 'META']);
 
   /* Widgety szablonu wklejone w treść („Zobacz również", boksy powiązanych
@@ -576,7 +579,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       Czytelnik od razu widzi strukturę, a nie samą ścianę tekstu. */
   const BLOCK_LABEL: Record<string, string> = {
     H1: 'h1', H2: 'h2', H3: 'h3', H4: 'h4', P: 'p', UL: 'ul', OL: 'ol',
-    BLOCKQUOTE: 'cyt', TABLE: 'tab',
+    BLOCKQUOTE: 'cyt', TABLE: 'tab', FIGURE: 'graf',
   };
   function markBlocks(host: HTMLElement) {
     for (const child of [...host.children]) {
@@ -731,7 +734,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       copy.textContent = 'skopiowano';
       setTimeout(() => (copy.textContent = 'kopiuj treść'), 1500);
     });
-    tools.append(spacer, save, drop, edit, copy);
+    tools.append(spacer, save, drop, edit, infographicButton(slot), copy);
 
     section.append(head, tools, body);
     return section;
@@ -1970,7 +1973,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       save.addEventListener('click', () => onSave(save));
       tools.append(save);
     }
-    tools.append(copyButton('kopiuj nagłówek', () => section.title_after ?? ''),
+    tools.append(infographicButton(section.slot),
+      copyButton('kopiuj nagłówek', () => section.title_after ?? ''),
       copyButton('kopiuj treść', () => sectionCopyText(section)));
     return tools;
   }
@@ -2681,6 +2685,234 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     }
   }
 
+  /* ---------- infografika do sekcji ----------
+     Cztery kroki po stronie Workera (opis → zlecenie → obraz → wstawienie),
+     bo kie.ai oddaje obraz po 30–180 s, czyli po końcu żądania. Tutaj: panel
+     w sekcji, który pokazuje stan i prowadzi przez te kroki. */
+
+  type ImageRow = {
+    slot: number; status: string; brief: string | null; alt: string | null;
+    caption: string | null; image_url: string | null; media_id: number | null;
+    media_url: string | null; credits: string | null; error: string | null;
+  };
+
+  const imageRows = new Map<number, ImageRow>();
+  const imageBusy = new Set<number>();
+  const imagePollTimers = new Map<number, number>();
+
+  const canIllustrate = () => job?.status === 'done';
+
+  function imageHost(slot: number, create = false) {
+    const section = $(`[data-ed-doc] .ed-doc-section[data-slot="${slot}"]`);
+    if (!section) return null;
+    let host = section.querySelector<HTMLElement>('.ed-img');
+    if (!host && create) {
+      host = document.createElement('div');
+      host.className = 'ed-img';
+      const tools = section.querySelector('.ed-sec-tools');
+      if (tools) tools.after(host);
+      else section.append(host);
+    }
+    return host;
+  }
+
+  async function imageCall(slot: number, body: any) {
+    if (imageBusy.has(slot)) return;
+    imageBusy.add(slot);
+    renderImagePanel(slot);
+    try {
+      const data = await api(`/api/cw/jobs/${job!.id}/infographic/${slot}`, {
+        method: 'POST',
+        body: JSON.stringify(body),
+      });
+      imageBusy.delete(slot);
+      if (data.image) imageRows.set(slot, data.image);
+      else imageRows.delete(slot);
+      // Wstawienie i usunięcie zmieniają treść sekcji w bazie – dokument musi
+      // zobaczyć nowy stan, inaczej obrazek pojawiłby się dopiero po F5.
+      if (body.step === 'insert' || body.step === 'drop') {
+        const fresh = await api(`/api/cw/jobs/${job!.id}`);
+        render(fresh.job);
+        return;
+      }
+      renderImagePanel(slot);
+      if (imageRows.get(slot)?.status === 'generating') scheduleImagePoll(slot);
+    } catch (error) {
+      imageBusy.delete(slot);
+      const row = imageRows.get(slot);
+      if (row) row.error = error instanceof Error ? error.message : 'Nie udało się wykonać kroku.';
+      renderImagePanel(slot, error instanceof Error ? error.message : 'Nie udało się wykonać kroku.');
+    }
+  }
+
+  /** Odpytywanie kie.ai przez Workera – obraz liczy się do trzech minut. */
+  function scheduleImagePoll(slot: number, attempt = 0) {
+    window.clearTimeout(imagePollTimers.get(slot));
+    if (attempt > 30) return;
+    imagePollTimers.set(slot, window.setTimeout(async () => {
+      if (document.hidden) return scheduleImagePoll(slot, attempt);
+      try {
+        const data = await api(`/api/cw/jobs/${job!.id}/infographic/${slot}`);
+        if (data.image) imageRows.set(slot, data.image);
+        renderImagePanel(slot);
+        if (data.image?.status === 'generating') scheduleImagePoll(slot, attempt + 1);
+      } catch {
+        scheduleImagePoll(slot, attempt + 1);
+      }
+    }, 8000));
+  }
+
+  function renderImagePanel(slot: number, error: string | null = null) {
+    const host = imageHost(slot, true);
+    if (!host) return;
+    host.replaceChildren();
+    const row = imageRows.get(slot);
+
+    const head = document.createElement('div');
+    head.className = 'ed-img-head';
+    const label = document.createElement('span');
+    label.className = 'ed-img-label';
+    label.textContent = 'infografika';
+    head.append(label);
+    const spacer = document.createElement('span');
+    spacer.className = 'ed-sec-spacer';
+    head.append(spacer);
+
+    const button = (text: string, onClick: () => void, className = '') => {
+      const node = document.createElement('button');
+      node.type = 'button';
+      node.className = `ed-style-btn ${className}`.trim();
+      node.textContent = text;
+      node.addEventListener('click', onClick);
+      return node;
+    };
+    const close = button('zwiń', () => host.remove());
+
+    if (imageBusy.has(slot)) {
+      const wait = document.createElement('span');
+      wait.className = 'ed-expert-wait';
+      wait.textContent = 'pracuję…';
+      head.append(wait);
+      host.append(head);
+      return;
+    }
+
+    if (!row) {
+      head.append(button('zaproponuj opis grafiki', () => imageCall(slot, { step: 'brief' }), 'ok'), close);
+      const note = document.createElement('p');
+      note.className = 'ed-style-note';
+      note.textContent = 'Model przeczyta tę sekcję i zaproponuje treść grafiki. '
+        + 'Styl (paleta ICEA, format 16:9, polskie etykiety) jest stały i nie podlega edycji.';
+      host.append(head, note);
+      return;
+    }
+
+    if (row.status === 'inserted') {
+      head.append(button('usuń z sekcji', () => imageCall(slot, { step: 'drop' })), close);
+      const note = document.createElement('p');
+      note.className = 'ed-style-note';
+      note.textContent = `Grafika stoi na końcu sekcji i jest w bibliotece mediów (ID ${row.media_id ?? '?'}). `
+        + 'Usunięcie zdejmuje ją z treści, plik w bibliotece zostaje.';
+      host.append(head, note);
+      return;
+    }
+
+    if (row.status === 'generating') {
+      const wait = document.createElement('span');
+      wait.className = 'ed-expert-wait';
+      wait.textContent = 'obraz się generuje… (do trzech minut)';
+      head.append(wait, close);
+      host.append(head);
+      scheduleImagePoll(slot);
+      return;
+    }
+
+    if (row.status === 'ready' && row.image_url) {
+      head.append(
+        button('wstaw do sekcji', () => imageCall(slot, { step: 'insert' }), 'ok'),
+        button('generuj ponownie', () => imageCall(slot, {
+          step: 'generate', brief: row.brief, alt: row.alt, caption: row.caption,
+        })),
+        close,
+      );
+      const preview = document.createElement('img');
+      preview.className = 'ed-img-preview';
+      preview.src = row.image_url;
+      preview.alt = row.alt ?? '';
+      preview.loading = 'lazy';
+      const note = document.createElement('p');
+      note.className = 'ed-style-note';
+      note.textContent = [
+        row.caption ? `Podpis: ${row.caption}` : null,
+        row.credits ? `kredyty kie.ai: ${row.credits}` : null,
+        'Adres z kie.ai jest tymczasowy – „wstaw do sekcji" wgrywa plik do biblioteki mediów.',
+      ].filter(Boolean).join(' · ');
+      host.append(head, preview, note);
+      return;
+    }
+
+    // status 'brief' albo 'failed' – opis do edycji i przycisk generowania.
+    head.append(close);
+    const form = document.createElement('div');
+    form.className = 'ed-img-form';
+    const brief = document.createElement('textarea');
+    brief.className = 'ed-img-brief';
+    brief.rows = 6;
+    brief.value = row.brief ?? '';
+    brief.spellcheck = false;
+    const alt = document.createElement('input');
+    alt.type = 'text';
+    alt.placeholder = 'tekst alternatywny (alt)';
+    alt.maxLength = 300;
+    alt.value = row.alt ?? '';
+    const caption = document.createElement('input');
+    caption.type = 'text';
+    caption.placeholder = 'podpis pod grafiką';
+    caption.maxLength = 300;
+    caption.value = row.caption ?? '';
+    const run = button('wygeneruj obraz', () => imageCall(slot, {
+      step: 'generate', brief: brief.value, alt: alt.value, caption: caption.value,
+    }), 'ok');
+    form.append(brief, alt, caption, run);
+
+    const note = document.createElement('p');
+    note.className = 'ed-style-note';
+    note.textContent = 'Opis po angielsku, etykiety na grafice po polsku – model graficzny '
+      + 'psuje napisy dłuższe niż cztery słowa.';
+    host.append(head, form, note);
+    if (error || row.error) {
+      const err = document.createElement('p');
+      err.className = 'ed-error';
+      err.textContent = error ?? row.error ?? '';
+      host.append(err);
+    }
+  }
+
+  /** Przycisk otwierający panel – w sekcjach z propozycją i bez niej. */
+  function infographicButton(slot: number) {
+    const node = document.createElement('button');
+    node.type = 'button';
+    node.className = 'ed-img-open';
+    node.textContent = 'infografika';
+    node.title = 'Wygeneruj infografikę do tej sekcji';
+    node.hidden = !canIllustrate();
+    node.addEventListener('click', () => {
+      const host = imageHost(slot);
+      if (host) host.remove();
+      else renderImagePanel(slot);
+    });
+    return node;
+  }
+
+  function applyImagesToDoc(current: Job) {
+    imageRows.clear();
+    for (const row of (current.images ?? []) as ImageRow[]) imageRows.set(row.slot, row);
+    document.querySelectorAll('.ed-img').forEach((node) => node.remove());
+    document.querySelectorAll<HTMLButtonElement>('.ed-img-open')
+      .forEach((node) => { node.hidden = !canIllustrate(); });
+    for (const slot of imageRows.keys()) renderImagePanel(slot);
+  }
+
   /* ---------- zapis do WordPressa (szkic + wdrożenie) ---------- */
 
   let wpBusy = false;
@@ -2776,6 +3008,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     applyExpertToDoc(current);
     renderStyle(current);
     applyStyleToDoc(current);
+    applyImagesToDoc(current);
     renderWpActions(current);
     const running = ['queued', 'dispatching', 'running'].includes(current.status);
     $<HTMLButtonElement>('[data-ed-run]')?.toggleAttribute('disabled', running);
@@ -4208,6 +4441,32 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-style-prop summary { font-size: .74rem; color: var(--ink-faint); cursor: pointer; }
   .ed-style-prop summary:hover { color: var(--ink-muted); }
   .ed-style-prop .ed-diff { margin-top: 8px; font-size: .92rem; }
+
+  /* ----- infografika ----- */
+  .ed-img-open { padding: 4px 11px; border: 1px solid var(--hairline); border-radius: 2px;
+    background: transparent; color: var(--ink-muted); font-size: .72rem; cursor: pointer; }
+  .ed-img-open:hover { color: var(--ink); border-color: var(--accent-blue); }
+  .ed-img { margin: 0 0 16px; padding: 12px 14px; border: 1px solid var(--hairline);
+    border-left: 3px solid var(--accent-orange, var(--accent-blue)); border-radius: 2px;
+    background: var(--bg-surface-2); }
+  .ed-img-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .ed-img-label { font: 600 .72rem var(--font-display); color: var(--ink-muted);
+    letter-spacing: .06em; text-transform: uppercase; }
+  .ed-img-form { display: flex; flex-direction: column; gap: 8px; margin: 10px 0 6px; }
+  .ed-img-brief, .ed-img-form input { padding: 8px 10px; border: 1px solid var(--hairline);
+    border-radius: 2px; background: var(--bg-surface); color: var(--ink);
+    font: inherit; font-size: .82rem; }
+  .ed-img-brief { min-height: 110px; resize: vertical; line-height: 1.6; }
+  .ed-img-brief:focus, .ed-img-form input:focus { outline: none; border-color: var(--accent-blue); }
+  .ed-img-form .ed-style-btn { align-self: flex-start; }
+  .ed-img-preview { display: block; width: 100%; max-width: 720px; height: auto; margin: 10px 0 6px;
+    border: 1px solid var(--hairline); border-radius: 4px; }
+  /* Grafika wstawiona do treści: sanitizer zdejmuje style inline (docelowy
+     wygląd widać w szkicu WordPressa), więc rozmiar pilnujemy tutaj. */
+  .ed-doc-body figure, .ed-diff figure { margin: 20px 0; }
+  .ed-doc-body figure img { display: block; width: 100%; max-width: 640px; height: auto;
+    border-radius: 4px; }
+  .ed-doc-body figcaption { margin-top: 8px; font-size: .78rem; color: var(--ink-faint); }
 
   /* Na wąskim ekranie rynienka nie ma prawa zjadać połowy szerokości tekstu:
      etykiety bloków znikają, a decyzje przechodzą nad sekcję. */

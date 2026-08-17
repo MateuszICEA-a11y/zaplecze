@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "test": "node --test bing-import.test.js cw-api.test.js cw-rivals.test.js cw-serp.test.js cw-style.test.js cw-usage.test.js cw-wp.test.js senuto-token.test.js",
+    "test": "node --test bing-import.test.js cw-api.test.js cw-infographic.test.js cw-rivals.test.js cw-serp.test.js cw-style.test.js cw-usage.test.js cw-wp.test.js senuto-token.test.js",
     "preview": "astro preview",
     "astro": "astro"
   },

@@ -29,7 +29,18 @@ id = "12edc86d8d794f37a0a32ac6e8413d2b"
 #                        „Contents: Read and write" (repository_dispatch
 #                        uruchamiający pipeline) oraz „Actions: Read and write"
 #                        (anulowanie trwającego przebiegu z panelu),
-#   GH_REPO            – "właściciel/repo".
+#   GH_REPO            – "właściciel/repo",
+#   OPENROUTER_API_KEY – porada eksperta, przejazd redaktorski, opis infografiki,
+#   KIE_API_KEY        – kie.ai/gpt-image-2 (generowanie infografik),
+#   WP_APP_USER / WP_APP_PASSWORD – hasło aplikacji WordPressa: zapis treści
+#                        i wgranie obrazu do biblioteki mediów (wymaga prawa
+#                        upload_files na koncie).
+#
+# Zmienne opcjonalne (nadpisania modeli, format provider/slug):
+#   CW_STYLE_MODEL – model przejazdu „styl i fleksja" (domyślnie
+#                    google/gemini-3.7-flash:online – wariant `:online` daje
+#                    web search do weryfikacji faktów),
+#   CW_BRIEF_MODEL – model opisu infografiki (domyślnie model pisania zadania).
 [vars]
 # Repozytorium, do którego Worker wysyła repository_dispatch uruchamiający
 # pipeline. Sam token (GH_DISPATCH_TOKEN) jest sekretem, nazwa repo nie musi być.
