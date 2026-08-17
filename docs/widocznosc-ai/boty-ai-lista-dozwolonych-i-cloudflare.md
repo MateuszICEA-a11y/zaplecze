@@ -1,27 +1,27 @@
 # Boty AI: kogo nie blokować, skąd wziąć adresy IP i jak to sprawdzić w Cloudflare
 
-Stan na 2026-08-17. Wszystkie listy IP i tokeny pochodzą z dokumentacji producentów –
-odnośniki w sekcji „Źródła adresów IP".
+Stan na 17.08.2026 r. Wszystkie listy IP i tokeny pochodzą z dokumentacji producentów –
+odnośniki znajdują się w sekcji „Źródła adresów IP”.
 
-## 1. Dwie różne decyzje, nie jedna
+## 1. Dwie różne decyzje, a nie jedna
 
-Blokowanie botów AI to nie jeden przełącznik, tylko dwie osobne decyzje:
+Blokowanie botów AI to nie jeden przełącznik, ale dwie osobne decyzje:
 
 - **Czy chcesz być cytowany w odpowiedziach AI?** Wtedy boty wyszukiwawcze i on-demand
-  muszą wejść. Ich zablokowanie to bezpośrednia utrata widoczności – dziś, nie kiedyś.
-- **Czy zgadzasz się na trening modeli na Twoich treściach?** To decyzja biznesowa
-  i licencyjna. Blokada jest legalna i sensowna dla wydawców, ale ma koszt: model,
+  muszą mieć dostęp. Ich zablokowanie to bezpośrednia utrata widoczności – dziś, nie kiedyś.
+- **Czy zgadzasz się na trenowanie modeli na Twoich treściach?** To decyzja biznesowa
+  i licencyjna. Blokada jest legalna i sensowna dla wydawców, ale niesie za sobą koszt: model,
   który nigdy nie widział Twojej marki, nie przywoła jej z pamięci.
 
-Rozjazd bierze się stąd, że jeden dostawca ma kilka botów o różnych rolach. Blokada
+Rozbieżność wynika z faktu, że jeden dostawca ma kilka botów o różnych rolach. Blokada
 `GPTBot` nie usuwa Cię z ChatGPT Search – od tego jest `OAI-SearchBot`. I odwrotnie:
-zablokowanie `OAI-SearchBot` wycina Cię z cytowań, a treningu i tak nie powstrzyma,
-bo dane mogą trafić do modelu przez Common Crawl.
+zablokowanie bota `OAI-SearchBot` pozbawia Cię cytowań, a treningu i tak nie powstrzyma,
+ponieważ dane mogą trafić do modelu przez Common Crawl.
 
 ## 2. Lista botów, których nie należy blokować
 
-Jeśli celem jest widoczność w wyszukiwaniu AI, te tokeny muszą mieć dostęp. Kolumna
-„token" to dokładnie ten ciąg, który dopasowuje `robots.txt` (bez rozróżniania
+Jeśli celem jest widoczność w wyszukiwaniu AI, poniższe tokeny muszą mieć dostęp. Kolumna
+„token” to dokładnie ten ciąg, który dopasowuje reguła w `robots.txt` (bez rozróżniania
 wielkości liter).
 
 ### Warstwa krytyczna – bez nich nie ma cytowań
@@ -33,30 +33,31 @@ wielkości liter).
 | `Claude-SearchBot` | Anthropic | Indeks wyszukiwania w Claude. |
 | `Claude-User` | Anthropic | Pobranie na żądanie w odpowiedzi na pytanie użytkownika. |
 | `PerplexityBot` | Perplexity | Indeks Perplexity. |
-| `Perplexity-User` | Perplexity | Pobranie na żądanie (deep research). |
-| `Googlebot` | Google | Podstawa AI Overviews i groundingu Gemini. Blokada = zniknięcie z Google w całości. |
+| `Perplexity-User` | Perplexity | Pobranie na żądanie (deep research / głębokie wyszukiwanie). |
+| `Googlebot` | Google | Podstawa AI Overviews i zakotwiczenia (groundingu) modelu Gemini. Blokada = całkowite zniknięcie z Google. |
 | `bingbot` | Microsoft | Indeks Bing, z którego korzysta Microsoft Copilot. |
-| `Applebot` | Apple | Indeks Siri i Spotlight; osobny od `Applebot-Extended`. |
+| `Applebot` | Apple | Indeks Siri i Spotlight; niezależny od `Applebot-Extended`. |
 
 ### Warstwa treningowa – blokuj świadomie, nie odruchowo
 
-| Token | Właściciel | Co realnie kontroluje |
+| Token | Właściciel | Co w praktyce kontroluje |
 |---|---|---|
-| `GPTBot` | OpenAI | Zbieranie treści pod trening modeli GPT. |
-| `ClaudeBot` | Anthropic | Zbieranie treści pod trening modeli Claude. |
-| `Google-Extended` | Google | **Nie jest crawlerem.** To wyłącznie przełącznik w `robots.txt`, którym mówisz, czy Google może użyć już pobranej treści do treningu i groundingu Gemini. Pobiera zawsze `Googlebot`. Dlatego `Google-Extended` nie ma i nie będzie miał własnej listy IP. |
-| `CCBot` | Common Crawl | Otwarte archiwum, z którego korzysta większość twórców modeli. Blokada CCBot odcina Cię naraz od wielu dostawców, także tych, o których nie słyszałeś. |
-| `Applebot-Extended` | Apple | Analogicznie do `Google-Extended` – kontrola użycia treści w Apple Intelligence, nie osobny crawler. |
+| `GPTBot` | OpenAI | Zbieranie treści na potrzeby treningu modeli GPT. |
+| `ClaudeBot` | Anthropic | Zbieranie treści na potrzeby treningu modeli Claude. |
+| `Google-Extended` | Google | **Nie jest crawlerem.** To wyłącznie przełącznik w `robots.txt`, którym deklarujesz, czy Google może użyć już pobranej treści do treningu i zakotwiczenia Gemini. Treści pobiera zawsze `Googlebot`. Dlatego `Google-Extended` nie ma i nie będzie miał własnej listy IP. |
+| `CCBot` | Common Crawl | Otwarte archiwum, z którego korzysta większość twórców modeli. Blokada bota CCBot odcina Cię naraz od wielu dostawców, także tych, o których nie słyszałeś. |
+| `Applebot-Extended` | Apple | Analogicznie do `Google-Extended` – kontrola użycia treści w Apple Intelligence, a nie osobny crawler. |
 
-### Reszta stawki
+### Pozostałe boty
 
 `GoogleOther`, `Google-NotebookLM`, `OAI-AdsBot`, `meta-externalagent` (Meta AI),
-`Amazonbot`. Nisza, ale każdy z nich to osobny token – blokada „wszystkiego, co
-wygląda na AI" jedną regułą WAF zbiera je hurtem razem z warstwą krytyczną.
+`Amazonbot`. To nisza, ale każdy z nich to osobny token – blokada „wszystkiego, co
+wygląda na AI” jedną regułą WAF blokuje je masowo razem z warstwą krytyczną.
 
 ### Minimalny `robots.txt`
 
-Wpuszczenie warstwy krytycznej przy zablokowanym treningu wygląda tak:
+Odblokowanie dostępu dla warstwy krytycznej przy jednoczesnym zablokowaniu treningu
+wygląda tak:
 
 ```
 User-agent: OAI-SearchBot
@@ -75,21 +76,21 @@ Disallow: /
 Sitemap: https://twoja-domena.pl/sitemap.xml
 ```
 
-Brak reguły dla danego bota oznacza dostęp – `Allow: /` jest tu deklaracją intencji
-dla człowieka czytającego plik, nie technicznym wymogiem.
+Brak reguły dla danego bota oznacza dostęp – `Allow: /` jest tutaj deklaracją intencji
+dla człowieka czytającego plik, a nie technicznym wymogiem.
 
 ## 3. Źródła adresów IP
 
-**Adresy się zmieniają** – i właśnie dlatego producenci publikują je jako JSON pod
-stałym adresem, a nie jako statyczną listę w dokumentacji. Stały jest URL, nie
-zawartość. Poniżej stan pobrany 2026-08-17:
+**Adresy ulegają zmianom** – i właśnie dlatego producenci publikują je jako pliki JSON pod
+stałym adresem URL, a nie jako statyczną listę w dokumentacji. Stały jest URL, nie
+zawartość. Poniżej stan pobrany 17.08.2026 r.:
 
 | Bot / grupa | URL listy | Prefiksów | Data listy |
 |---|---|---|---|
 | GPTBot | `https://openai.com/gptbot.json` | 21 | 2025-10-30 |
 | OAI-SearchBot | `https://openai.com/searchbot.json` | 35 | 2026-01-02 |
 | OAI-AdsBot | `https://openai.com/adsbot.json` | 2 | 2026-05-12 |
-| ChatGPT-User | `https://openai.com/chatgpt-user.json` | – | endpoint zwraca dziś HTTP 400 (zgłaszane na forum OpenAI) |
+| ChatGPT-User | `https://openai.com/chatgpt-user.json` | – | punkt końcowy (endpoint) zwraca obecnie błąd HTTP 400 (zgłaszane na forum OpenAI) |
 | ClaudeBot, Claude-User, Claude-SearchBot (wspólna) | `https://claude.com/crawling/bots.json` | 23 | 2026-08-13 |
 | Googlebot | `https://developers.google.com/search/apis/ipranges/googlebot.json` | 315 | 2026-08-14 |
 | Google – crawlery specjalne | `https://developers.google.com/search/apis/ipranges/special-crawlers.json` | 270 | 2026-08-14 |
@@ -98,19 +99,21 @@ zawartość. Poniżej stan pobrany 2026-08-17:
 | Perplexity-User | `https://www.perplexity.ai/perplexity-user.json` | 4 | 2025-10-17 |
 | Applebot | `https://search.developer.apple.com/applebot.json` | 33 | 2026-07-31 |
 | bingbot | `https://www.bing.com/toolbox/bingbot.json` | 28 | 2024-01-03 |
-| CCBot | brak oficjalnej listy | – | chodzi z adresów AWS, weryfikacja po IP niewykonalna |
+| CCBot | brak oficjalnej listy | – | korzysta z adresów AWS, weryfikacja po IP jest niewykonalna |
 
-Wszystkie pliki mają ten sam kształt: `creationTime` + tablica `prefixes` z polami
+Wszystkie pliki mają tę samą strukturę: `creationTime` + tablica `prefixes` z polami
 `ipv4Prefix` / `ipv6Prefix`.
 
-Co z tego wynika praktycznie:
+Co z tego wynika w praktyce:
 
-- **Perplexity używa pojedynczych adresów `/32`** – 12 hostów łącznie. Najbardziej
-  kruche z całej stawki; jedna zmiana infrastruktury i Twoja allowlista jest martwa.
+- **Perplexity używa pojedynczych adresów `/32`** – łącznie 12 hostów. Są one najbardziej
+  podatne na zmiany z całego zestawienia; jedna modyfikacja infrastruktury i Twoja lista
+  dozwolonych adresów staje się bezużyteczna.
 - **Google ma prawie 1100 prefiksów w trzech plikach** i podmienia je co kilka dni.
-  Ręczne przepisanie tego do WAF-a nie ma sensu.
+  Ręczne przepisywanie tego do zapory WAF mija się z celem.
 - **Anthropic wprost odradza blokowanie po IP**: zablokowanie adresów utrudnia im
-  odczyt Twojego `robots.txt`, więc opt-out może przestać działać.
+  odczyt Twojego pliku `robots.txt`, przez co wstrzymanie indeksowania (opt-out) może
+  przestać działać.
 
 ### Odświeżanie list
 
@@ -129,103 +132,109 @@ for u in \
 done
 ```
 
-### Lepsza metoda niż allowlista IP
+### Lepsza metoda niż lista dozwolonych adresów IP
 
-Google, Bing i Apple pozwalają zweryfikować bota **odwrotnym DNS-em**: rDNS adresu
-musi rozwiązać się do domeny producenta (`googlebot.com`, `google.com`,
-`googleusercontent.com`, `search.msn.com`, `applebot.apple.com`), a następnie
-forward DNS tej nazwy musi wrócić do tego samego adresu. To działa bez utrzymywania
-listy.
+Google, Bing i Apple pozwalają zweryfikować bota za pomocą odwrotnego DNS (rDNS): rDNS
+adresu musi wskazywać na domenę producenta (`googlebot.com`, `google.com`,
+`googleusercontent.com`, `search.msn.com`, `applebot.apple.com`), a następnie zwykłe
+zapytanie DNS (forward DNS) dla tej nazwy musi zwracać ten sam adres IP. To rozwiązanie
+działa bez konieczności utrzymywania listy.
 
-W praktyce jednak **na Cloudflare nie musisz robić żadnej z tych rzeczy** – CF sam
-weryfikuje znane boty i wystawia je jako kategorię „verified bots". Listy IP są
-potrzebne dopiero wtedy, gdy filtrujesz ruch na poziomie serwera albo innego CDN-a.
+W praktyce jednak w Cloudflare nie musisz robić żadnej z tych rzeczy – CF sam weryfikuje
+znane boty i oznacza je jako kategorię „verified bots”. Listy IP są potrzebne dopiero
+wtedy, gdy filtrujesz ruch na poziomie serwera lub innej sieci CDN.
 
 ## 4. Jak to sprawdzić w panelu Cloudflare
 
-Poniższa ścieżka odpowiada na pytanie „czy mój serwer wpuszcza boty AI" twardymi
-danymi – w odróżnieniu od sondy z zewnątrz, która podszywa się pod User-Agent i
-może dać zarówno fałszywy alarm, jak i fałszywy spokój.
+Poniższa ścieżka odpowiada na pytanie „czy mój serwer wpuszcza boty AI” na podstawie
+twardych danych – w odróżnieniu od sondy z zewnątrz, która podszywa się pod User-Agent i
+może wywołać zarówno fałszywy alarm, jak i dać złudne poczucie bezpieczeństwa.
 
-### Krok 1 – AI Crawl Control (źródło rozstrzygające)
+### Krok 1 – AI Crawl Control (decydujące źródło)
 
-Wybierz domenę w panelu, następnie **AI Crawl Control** w lewej nawigacji. Zakładki:
+Wybierz domenę w panelu, a następnie **AI Crawl Control** w lewej nawigacji. Zakładki:
 
 - **Overview** – migawka aktywności botów AI.
-- **Crawlers** – tabela crawlerów, które pukają do Twoich treści, wraz z tym, jak
-  wchodzą w interakcję ze stronami. Tu widzisz per bot, czy żądania w ogóle
-  docierają i jaką dostają decyzję.
+- **Crawlers** – tabela crawlerów, które próbują uzyskać dostęp do Twoich treści, wraz
+  z informacją o tym, jak wchodzą w interakcję ze stronami. Dla każdego bota możesz tu
+  sprawdzić, czy żądania w ogóle docierają i jaką decyzję otrzymują.
 - **Metrics** – wykresy i analityka ruchu botów w czasie.
-- **Robots.txt** – jak boty AI faktycznie traktują Twój `robots.txt`.
+- **Robots.txt** – jak boty AI faktycznie traktują Twój plik `robots.txt`.
 
-Jeśli w **Crawlers** widzisz żądania danego bota z akcją „block", masz odpowiedź:
-blokada jest realna, nie jest artefaktem sondy. Jeśli bot w ogóle się nie pojawia,
-sprawdź zakres dat – brak wpisów przy świeżej stronie znaczy tylko, że nikt jeszcze
-nie przyszedł.
+Jeśli w zakładce **Crawlers** widzisz żądania danego bota z akcją „block”, masz odpowiedź:
+blokada jest realna, a nie jest jedynie artefaktem sondy. Jeśli bot w ogóle się nie
+pojawia, sprawdź zakres dat – brak wpisów przy świeżej stronie oznacza tylko tyle, że nikt
+jej jeszcze nie odwiedził.
 
-AI Crawl Control działa na wszystkich planach i nie wymaga włączania.
+Narzędzie AI Crawl Control działa we wszystkich planach i nie wymaga ręcznego włączania.
 
-### Krok 2 – przełącznik „Block AI Scrapers and Crawlers"
+### Krok 2 – przełącznik „Block AI Scrapers and Crawlers”
 
-To najczęstsza przyczyna nieświadomej blokady: jeden przełącznik, włączony kiedyś
-„na wszelki wypadek", wycina całą warstwę krytyczną.
+To najczęstsza przyczyna nieświadomej blokady: jeden przełącznik, aktywowany kiedyś
+„na wszelki wypadek”, odcina całą warstwę krytyczną.
 
-Panel → **Security** → **Bots**, potem odnośnik konfiguracji obsługi ruchu botów
+Panel → **Security** → **Bots**, następnie odnośnik konfiguracji obsługi ruchu botów
 przez proxy w prawym górnym rogu → karta **Block AI Scrapers and Crawlers** →
 przełącznik.
 
-W tym samym miejscu sprawdź **Bot Fight Mode** / **Super Bot Fight Mode**. Bot
-Fight Mode rzuca challenge w każdy ruch uznany za zautomatyzowany, a nie tylko w
-boty AI – to on najczęściej odpowiada za 403 dla podszywającego się User-Agenta.
+W tym samym miejscu sprawdź **Bot Fight Mode** / **Super Bot Fight Mode**. Bot Fight Mode
+wymaga weryfikacji (wyświetla wyzwanie/challenge) dla każdego ruchu uznanego za
+zautomatyzowany, a nie tylko dla botów AI – to on najczęściej odpowiada za błąd 403 dla
+podszywającego się User-Agenta.
 
 ### Krok 3 – reguły własne WAF
 
-Panel → **Security** → **WAF** → **Custom rules**. Przejrzyj reguły pod kątem
-wyrażeń odwołujących się do:
+Panel → **Security** → **WAF** → **Custom rules**. Przejrzyj reguły pod kątem wyrażeń
+odwołujących się do:
 
-- `cf.verified_bot_category` – celowanie w kategorię zweryfikowanych botów,
-  w tym „AI Crawler",
-- `http.user_agent contains "bot"` – klasyk, który zbiera hurtem wszystko,
+- `cf.verified_bot_category` – filtrowanie po kategorii zweryfikowanych botów,
+  w tym „AI Crawler”,
+- `http.user_agent contains "bot"` – klasyk, który blokuje masowo wszystko, co ma
+  w nazwie „bot”,
 - `cf.bot_management.score` z niskim progiem,
-- blokad krajowych, jeśli boty wychodzą z regionu, który odcinasz.
+- blokad krajowych, jeśli boty łączą się z regionu, który odcinasz.
 
-Reguła z akcją *Block* lub *Managed Challenge* trafiająca w którykolwiek token z
-sekcji 2 to problem – challenge jest dla bota równoznaczny z blokadą, bo żaden
-crawler nie rozwiąże JS-owego wyzwania.
+Reguła z akcją *Block* lub *Managed Challenge* obejmująca którykolwiek token z sekcji 2 to
+problem – wyzwanie (challenge) jest dla bota równoznaczne z blokadą, ponieważ żaden
+crawler nie rozwiąże testu opartego na JavaScript.
 
 ### Krok 4 – Analytics → Events, dowód na konkretnym żądaniu
 
 Panel → **Analytics** → zakładka **Events**. Dostępne filtry to m.in. **Action**,
 **Host**, **Country**, **ASN**, **IP**, **User Agents** i **Paths**.
 
-Ustaw filtr `User Agents` *contains* `GPTBot` (potem kolejno: `ClaudeBot`,
+Ustaw filtr `User Agents` *contains* `GPTBot` (następnie kolejno: `ClaudeBot`,
 `PerplexityBot`, `OAI-SearchBot`). Interesuje Cię kolumna akcji:
 
 - brak wyników – nic nie było blokowane w tym oknie czasowym,
-- *Block* / *Managed Challenge* – masz nazwę reguły, która to zrobiła; klik
-  w zdarzenie pokazuje, czy to reguła własna, managed rule czy Bot Fight Mode.
+- *Block* / *Managed Challenge* – masz nazwę reguły, która zablokowała ruch; kliknięcie
+  w zdarzenie pokazuje, czy to reguła własna, reguła zarządzana (managed rule) czy Bot
+  Fight Mode.
 
-To krok, który zamienia „coś blokuje boty" w „blokuje je reguła X, wyłączam ją tu".
+To krok, który pozwala przejść od stwierdzenia „coś blokuje boty” do „blokuje je reguła X,
+którą mogę tutaj wyłączyć”.
 
 ### Krok 5 – Cloudflare Pages i inne wyjątki
 
-Jeżeli strona stoi na Cloudflare Pages, ustawienia bezpieczeństwa mogą siedzieć
-zarówno na strefie domeny, jak i na projekcie Pages. Sprawdź obie warstwy, zanim
-uznasz konfigurację za czystą.
+Jeżeli strona jest hostowana na Cloudflare Pages, ustawienia bezpieczeństwa mogą znajdować
+się zarówno w strefie domeny, jak i w samym projekcie Pages. Sprawdź obie warstwy, zanim
+uznasz konfigurację za wolną od blokad.
 
-Podobnie z zarządzanym `robots.txt` – Cloudflare potrafi serwować własne dyrektywy
-dla botów AI. Wtedy plik, który widzisz w repozytorium, nie jest tym, który dostaje
-crawler. Rozstrzyga to zakładka **Robots.txt** w AI Crawl Control.
+Podobnie wygląda kwestia zarządzanego pliku `robots.txt` – Cloudflare potrafi serwować
+własne dyrektywy dla botów AI. W takiej sytuacji plik, który widzisz w repozytorium, nie
+jest tym, który faktycznie otrzymuje crawler. Rozstrzyga to zakładka **Robots.txt**
+w AI Crawl Control.
 
 ## 5. Kolejność działań przy diagnozie
 
-1. Narzędzie [Dostęp botów AI](https://widocznosc.ai/narzedzia/ai-bots-check/) –
-   pokazuje warstwę deklaracji (`robots.txt`) i warstwę serwera (WAF, `X-Robots-Tag`,
-   meta robots, sonda po User-Agencie). Daje kierunek.
-2. AI Crawl Control → **Crawlers** – potwierdzenie na prawdziwym ruchu.
+1. Narzędzie [Dostęp botów AI](https://widocznosc.ai/narzedzia/ai-bots-check/) – pokazuje
+   warstwę deklaracji (`robots.txt`) i warstwę serwera (WAF, `X-Robots-Tag`, meta robots,
+   sonda po User-Agencie). Daje ogólny ogląd sytuacji.
+2. AI Crawl Control → **Crawlers** – potwierdzenie w rzeczywistym ruchu.
 3. Analytics → **Events** z filtrem po User Agent – wskazanie konkretnej reguły.
-4. Wyłączenie reguły albo dopisanie wyjątku dla warstwy krytycznej z sekcji 2.
-5. Ponowne sprawdzenie po 24 h – crawlery wracają w swoim tempie, nie na żądanie.
+4. Wyłączenie reguły lub dopisanie wyjątku dla warstwy krytycznej z sekcji 2.
+5. Ponowne sprawdzenie po 24 godzinach – crawlery wracają w swoim tempie, a nie na
+   żądanie.
 
 ## Źródła adresów IP
 

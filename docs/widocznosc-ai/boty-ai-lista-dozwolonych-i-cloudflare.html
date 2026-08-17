@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lista dozwolonych botów AI – widocznosc.ai</title>
+    <meta
+      name="description"
+      content="Które boty AI muszą mieć dostęp do strony, skąd pobrać aktualne zakresy IP producentów i jak zweryfikować blokady w panelu Cloudflare."
+    />
+    <meta name="robots" content="noindex" />
+    <style>
+      /* ——— Reset ——— */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+      }
+      body,
+      h1,
+      h2,
+      h3,
+      p,
+      figure,
+      blockquote,
+      dl,
+      dd,
+      ul,
+      ol,
+      pre {
+        margin: 0;
+      }
+      ul[class],
+      ol[class] {
+        list-style: none;
+        padding: 0;
+      }
+      img,
+      svg {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* ——— Tokeny: kompletna paleta jasna na gołym :root ——— */
+      :root {
+        --ground: #f4f5f7;
+        --surface: #ffffff;
+        --surface-sunken: #eceef2;
+        --ink: #171b22;
+        --ink-muted: #5b6572;
+        --ink-faint: #838d9b;
+        --hairline: #dee2e8;
+        --hairline-strong: #c6ccd6;
+        --accent: #a85f10;
+        --accent-soft: rgba(168, 95, 16, 0.1);
+        --allow: #1c6b46;
+        --allow-soft: rgba(28, 107, 70, 0.11);
+        --block: #a52a1f;
+        --block-soft: rgba(165, 42, 31, 0.1);
+        --code-ground: #eef0f4;
+
+        --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', 'IBM Plex Mono', Menlo, Consolas,
+          monospace;
+        --font-body: Charter, 'Bitstream Charter', 'Iowan Old Style', 'Source Serif Pro', Georgia,
+          serif;
+
+        --measure: 68ch;
+        --col: 1080px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme='light']) {
+          --ground: #11141a;
+          --surface: #181c23;
+          --surface-sunken: #1e232b;
+          --ink: #e6e9ee;
+          --ink-muted: #9aa4b2;
+          --ink-faint: #6f7987;
+          --hairline: #272d37;
+          --hairline-strong: #38404c;
+          --accent: #e79a3f;
+          --accent-soft: rgba(231, 154, 63, 0.14);
+          --allow: #57c78d;
+          --allow-soft: rgba(87, 199, 141, 0.13);
+          --block: #f2705f;
+          --block-soft: rgba(242, 112, 95, 0.13);
+          --code-ground: #14181e;
+        }
+      }
+
+      :root[data-theme='dark'] {
+        --ground: #11141a;
+        --surface: #181c23;
+        --surface-sunken: #1e232b;
+        --ink: #e6e9ee;
+        --ink-muted: #9aa4b2;
+        --ink-faint: #6f7987;
+        --hairline: #272d37;
+        --hairline-strong: #38404c;
+        --accent: #e79a3f;
+        --accent-soft: rgba(231, 154, 63, 0.14);
+        --allow: #57c78d;
+        --allow-soft: rgba(87, 199, 141, 0.13);
+        --block: #f2705f;
+        --block-soft: rgba(242, 112, 95, 0.13);
+        --code-ground: #14181e;
+      }
+
+      /* ——— Baza ——— */
+      body {
+        background: var(--ground);
+        color: var(--ink);
+        font-family: var(--font-body);
+        font-size: 17px;
+        line-height: 1.62;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .wrap {
+        max-width: var(--col);
+        margin: 0 auto;
+        padding: 0 24px 96px;
+      }
+
+      p,
+      li {
+        max-width: var(--measure);
+      }
+
+      a {
+        color: var(--ink);
+        text-decoration-color: var(--accent);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+      a:hover {
+        color: var(--accent);
+      }
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
+
+      code {
+        font-family: var(--font-mono);
+        font-size: 0.86em;
+        background: var(--code-ground);
+        border: 1px solid var(--hairline);
+        border-radius: 3px;
+        padding: 0.1em 0.34em;
+        overflow-wrap: anywhere;
+      }
+
+      /* ——— Nagłówek strony ——— */
+      header.masthead {
+        border-bottom: 2px solid var(--ink);
+        padding: 56px 0 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .kicker {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      h1 {
+        font-family: var(--font-mono);
+        font-size: clamp(30px, 4.6vw, 48px);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        font-weight: 600;
+        text-wrap: balance;
+        max-width: 20ch;
+      }
+
+      .standfirst {
+        font-size: 19px;
+        color: var(--ink-muted);
+        max-width: 60ch;
+      }
+
+      .meta-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 26px;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--ink-faint);
+      }
+
+      /* ——— Sekcje ——— */
+      section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 64px;
+      }
+
+      .sec-head {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        border-bottom: 1px solid var(--hairline-strong);
+        padding-bottom: 10px;
+      }
+
+      .sec-num {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+      }
+
+      h2 {
+        font-family: var(--font-mono);
+        font-size: clamp(19px, 2.4vw, 24px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        text-wrap: balance;
+      }
+
+      h3 {
+        font-family: var(--font-mono);
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: -0.005em;
+        margin-top: 12px;
+      }
+
+      /* ——— Tabele ——— */
+      .table-scroll {
+        overflow-x: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 6px;
+        background: var(--surface);
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      th {
+        text-align: left;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        font-weight: 500;
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--hairline-strong);
+        white-space: nowrap;
+      }
+
+      td {
+        padding: 13px 16px;
+        border-bottom: 1px solid var(--hairline);
+        vertical-align: top;
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      td.token {
+        white-space: nowrap;
+      }
+
+      td.token code {
+        background: var(--accent-soft);
+        border-color: transparent;
+        color: var(--ink);
+        font-size: 13px;
+      }
+
+      td.num {
+        font-family: var(--font-mono);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+        font-size: 13px;
+      }
+
+      td.url code {
+        font-size: 12px;
+      }
+
+      /* ——— Pigułki stanu ——— */
+      .pill {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 3px 9px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      .pill.allow {
+        background: var(--allow-soft);
+        color: var(--allow);
+      }
+      .pill.block {
+        background: var(--block-soft);
+        color: var(--block);
+      }
+      .pill.neutral {
+        background: var(--surface-sunken);
+        color: var(--ink-muted);
+      }
+
+      /* ——— Uwagi ——— */
+      .note {
+        background: var(--surface);
+        border: 1px solid var(--hairline);
+        border-left: 3px solid var(--accent);
+        border-radius: 0 6px 6px 0;
+        padding: 16px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .note-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .note p {
+        max-width: 62ch;
+        font-size: 16px;
+      }
+
+      /* ——— Kod ——— */
+      pre {
+        background: var(--code-ground);
+        border: 1px solid var(--hairline);
+        border-radius: 6px;
+        padding: 18px 20px;
+        overflow-x: auto;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        line-height: 1.65;
+        color: var(--ink);
+      }
+      pre code {
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: inherit;
+      }
+
+      /* ——— Listy ——— */
+      ul,
+      ol {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 22px;
+      }
+      li::marker {
+        color: var(--ink-faint);
+      }
+      ol li::marker {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--accent);
+      }
+
+      /* ——— Kroki panelu ——— */
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .step {
+        background: var(--surface);
+        border: 1px solid var(--hairline);
+        border-radius: 6px;
+        padding: 18px 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .step-path {
+        font-family: var(--font-mono);
+        font-size: 12.5px;
+        color: var(--ink-muted);
+        background: var(--surface-sunken);
+        border-radius: 4px;
+        padding: 8px 12px;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .step-path b {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      footer {
+        margin-top: 72px;
+        padding-top: 22px;
+        border-top: 1px solid var(--hairline-strong);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--ink-muted);
+      }
+      footer a {
+        color: var(--ink-muted);
+      }
+
+      @media (max-width: 640px) {
+        body {
+          font-size: 16px;
+        }
+        .wrap {
+          padding: 0 18px 64px;
+        }
+        header.masthead {
+          padding-top: 40px;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          color: #000;
+          font-size: 11pt;
+        }
+        section {
+          page-break-inside: avoid;
+          padding-top: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="masthead">
+        <span class="kicker">widocznosc.ai · dokumentacja techniczna</span>
+        <h1>Lista dozwolonych botów AI</h1>
+        <p class="standfirst">
+          Kogo nie należy blokować, jeśli zależy Ci na cytowaniach w ChatGPT, Claude, Gemini
+          i Perplexity – skąd wziąć aktualne adresy IP i jak zweryfikować konfigurację w panelu
+          Cloudflare.
+        </p>
+        <div class="meta-strip">
+          <span>Stan na 17.08.2026 r.</span>
+          <span>Źródła: dokumentacja producentów</span>
+          <span>ICEA / widocznosc.ai</span>
+        </div>
+      </header>
+
+      <section>
+        <div class="sec-head">
+          <span class="sec-num">1</span>
+          <h2>Dwie różne decyzje, a nie jedna</h2>
+        </div>
+        <p>Blokowanie botów AI to nie jeden przełącznik, ale dwie osobne decyzje.</p>
+        <ul>
+          <li>
+            <strong>Czy chcesz być cytowany w odpowiedziach AI?</strong> Wtedy boty wyszukiwawcze
+            i on-demand muszą mieć dostęp. Ich zablokowanie to bezpośrednia utrata widoczności –
+            dziś, nie kiedyś.
+          </li>
+          <li>
+            <strong>Czy zgadzasz się na trenowanie modeli na Twoich treściach?</strong> To decyzja
+            biznesowa i licencyjna. Blokada jest legalna i sensowna dla wydawców, ale niesie za
+            sobą koszt: model, który nigdy nie widział Twojej marki, nie przywoła jej z pamięci.
+          </li>
+        </ul>
+        <p>
+          Rozbieżność wynika z faktu, że jeden dostawca ma kilka botów o różnych rolach. Blokada
+          <code>GPTBot</code> nie usuwa Cię z ChatGPT Search – od tego jest
+          <code>OAI-SearchBot</code>. I odwrotnie: zablokowanie bota <code>OAI-SearchBot</code>
+          pozbawia Cię cytowań, a treningu i tak nie powstrzyma, ponieważ dane mogą trafić do
+          modelu przez Common Crawl.
+        </p>
+      </section>
+
+      <section>
+        <div class="sec-head">
+          <span class="sec-num">2</span>
+          <h2>Lista botów, których nie należy blokować</h2>
+        </div>
+        <p>
+          Jeśli celem jest widoczność w wyszukiwaniu AI, poniższe tokeny muszą mieć dostęp.
+          Kolumna „token” to dokładnie ten ciąg, który dopasowuje reguła w
+          <code>robots.txt</code> – bez rozróżniania wielkości liter.
+        </p>
+
+        <h3>Warstwa krytyczna – bez nich nie ma cytowań</h3>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Właściciel</th>
+                <th>Rola</th>
+                <th>Decyzja</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="token"><code>OAI-SearchBot</code></td>
+                <td>OpenAI</td>
+                <td>Indeks dla wyszukiwarki w ChatGPT. To on decyduje o cytowaniu.</td>
+                <td><span class="pill allow">wpuść</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>ChatGPT-User</code></td>
+                <td>OpenAI</td>
+                <td>
+                  Pobranie na żądanie, gdy użytkownik poda link lub ChatGPT sięga po stronę
+                  w trakcie rozmowy.
+                </td>
+                <td><span class="pill allow">wpuść</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>Claude-SearchBot</code></td>
+                <td>Anthropic</td>
+                <td>Indeks wyszukiwania w Claude.</td>
+                <td><span class="pill allow">wpuść</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>Claude-User</code></td>
+                <td>Anthropic</td>
+                <td>Pobranie na żądanie w odpowiedzi na pytanie użytkownika.</td>
+                <td><span class="pill allow">wpuść</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>PerplexityBot</code></td>
+                <td>Perplexity</td>
+                <td>Indeks Perplexity.</td>
+                <td><span class="pill allow">wpuść</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>Perplexity-User</code></td>
+                <td>Perplexity</td>
+                <td>Pobranie na żądanie (deep research / głębokie wyszukiwanie).</td>
+                <td><span class="pill allow">wpuść</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>Googlebot</code></td>
+                <td>Google</td>
+                <td>
+                  Podstawa AI Overviews i zakotwiczenia (groundingu) modelu Gemini. Blokada =
+                  całkowite zniknięcie z Google.
+                </td>
+                <td><span class="pill allow">wpuść</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>bingbot</code></td>
+                <td>Microsoft</td>
+                <td>Indeks Bing, z którego korzysta Microsoft Copilot.</td>
+                <td><span class="pill allow">wpuść</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>Applebot</code></td>
+                <td>Apple</td>
+                <td>Indeks Siri i Spotlight; niezależny od <code>Applebot-Extended</code>.</td>
+                <td><span class="pill allow">wpuść</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Warstwa treningowa – blokuj świadomie, nie odruchowo</h3>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Właściciel</th>
+                <th>Co w praktyce kontroluje</th>
+                <th>Decyzja</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="token"><code>GPTBot</code></td>
+                <td>OpenAI</td>
+                <td>Zbieranie treści na potrzeby treningu modeli GPT.</td>
+                <td><span class="pill neutral">wybór</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>ClaudeBot</code></td>
+                <td>Anthropic</td>
+                <td>Zbieranie treści na potrzeby treningu modeli Claude.</td>
+                <td><span class="pill neutral">wybór</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>Google-Extended</code></td>
+                <td>Google</td>
+                <td>
+                  <strong>Nie jest crawlerem.</strong> To wyłącznie przełącznik w
+                  <code>robots.txt</code>, którym deklarujesz, czy Google może użyć już pobranej
+                  treści do treningu i zakotwiczenia Gemini. Treści pobiera zawsze
+                  <code>Googlebot</code>. Dlatego <code>Google-Extended</code> nie ma i nie będzie
+                  miał własnej listy IP.
+                </td>
+                <td><span class="pill neutral">wybór</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>CCBot</code></td>
+                <td>Common Crawl</td>
+                <td>
+                  Otwarte archiwum, z którego korzysta większość twórców modeli. Blokada bota
+                  CCBot odcina Cię naraz od wielu dostawców, także tych, o których nie słyszałeś.
+                </td>
+                <td><span class="pill neutral">wybór</span></td>
+              </tr>
+              <tr>
+                <td class="token"><code>Applebot-Extended</code></td>
+                <td>Apple</td>
+                <td>
+                  Analogicznie do <code>Google-Extended</code> – kontrola użycia treści w Apple
+                  Intelligence, a nie osobny crawler.
+                </td>
+                <td><span class="pill neutral">wybór</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Pozostałe boty</h3>
+        <p>
+          <code>GoogleOther</code>, <code>Google-NotebookLM</code>, <code>OAI-AdsBot</code>,
+          <code>meta-externalagent</code> (Meta AI), <code>Amazonbot</code>. To nisza, ale każdy
+          z nich to osobny token – blokada „wszystkiego, co wygląda na AI” jedną regułą WAF
+          blokuje je masowo razem z warstwą krytyczną.
+        </p>
+
+        <h3>Minimalny robots.txt</h3>
+        <p>
+          Odblokowanie dostępu dla warstwy krytycznej przy jednoczesnym zablokowaniu treningu
+          wygląda tak:
+        </p>
+        <pre><code>User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+Disallow: /
+
+Sitemap: https://twoja-domena.pl/sitemap.xml</code></pre>
+        <p>
+          Brak reguły dla danego bota oznacza dostęp – <code>Allow: /</code> jest tutaj
+          deklaracją intencji dla człowieka czytającego plik, a nie technicznym wymogiem.
+        </p>
+      </section>
+
+      <section>
+        <div class="sec-head">
+          <span class="sec-num">3</span>
+          <h2>Źródła adresów IP</h2>
+        </div>
+        <p>
+          <strong>Adresy ulegają zmianom</strong> – i właśnie dlatego producenci publikują je jako
+          pliki JSON pod stałym adresem URL, a nie jako statyczną listę w dokumentacji. Stały jest
+          URL, nie zawartość. Poniżej stan pobrany 17.08.2026 r.
+        </p>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Bot / grupa</th>
+                <th>URL listy</th>
+                <th>Prefiksów</th>
+                <th>Data listy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="token">GPTBot</td>
+                <td class="url"><code>https://openai.com/gptbot.json</code></td>
+                <td class="num">21</td>
+                <td class="num">2025-10-30</td>
+              </tr>
+              <tr>
+                <td class="token">OAI-SearchBot</td>
+                <td class="url"><code>https://openai.com/searchbot.json</code></td>
+                <td class="num">35</td>
+                <td class="num">2026-01-02</td>
+              </tr>
+              <tr>
+                <td class="token">OAI-AdsBot</td>
+                <td class="url"><code>https://openai.com/adsbot.json</code></td>
+                <td class="num">2</td>
+                <td class="num">2026-05-12</td>
+              </tr>
+              <tr>
+                <td class="token">ChatGPT-User</td>
+                <td class="url"><code>https://openai.com/chatgpt-user.json</code></td>
+                <td class="num">–</td>
+                <td>
+                  punkt końcowy (endpoint) zwraca obecnie błąd HTTP 400 (zgłaszane na forum
+                  OpenAI)
+                </td>
+              </tr>
+              <tr>
+                <td class="token">ClaudeBot, Claude-User, Claude-SearchBot (wspólna)</td>
+                <td class="url"><code>https://claude.com/crawling/bots.json</code></td>
+                <td class="num">23</td>
+                <td class="num">2026-08-13</td>
+              </tr>
+              <tr>
+                <td class="token">Googlebot</td>
+                <td class="url">
+                  <code>https://developers.google.com/search/apis/ipranges/googlebot.json</code>
+                </td>
+                <td class="num">315</td>
+                <td class="num">2026-08-14</td>
+              </tr>
+              <tr>
+                <td class="token">Google – crawlery specjalne</td>
+                <td class="url">
+                  <code
+                    >https://developers.google.com/search/apis/ipranges/special-crawlers.json</code
+                  >
+                </td>
+                <td class="num">270</td>
+                <td class="num">2026-08-14</td>
+              </tr>
+              <tr>
+                <td class="token">Google – pobrania na żądanie użytkownika</td>
+                <td class="url">
+                  <code
+                    >https://developers.google.com/search/apis/ipranges/user-triggered-fetchers-google.json</code
+                  >
+                </td>
+                <td class="num">494</td>
+                <td class="num">2026-08-14</td>
+              </tr>
+              <tr>
+                <td class="token">PerplexityBot</td>
+                <td class="url"><code>https://www.perplexity.ai/perplexitybot.json</code></td>
+                <td class="num">8</td>
+                <td class="num">2025-02-07</td>
+              </tr>
+              <tr>
+                <td class="token">Perplexity-User</td>
+                <td class="url"><code>https://www.perplexity.ai/perplexity-user.json</code></td>
+                <td class="num">4</td>
+                <td class="num">2025-10-17</td>
+              </tr>
+              <tr>
+                <td class="token">Applebot</td>
+                <td class="url"><code>https://search.developer.apple.com/applebot.json</code></td>
+                <td class="num">33</td>
+                <td class="num">2026-07-31</td>
+              </tr>
+              <tr>
+                <td class="token">bingbot</td>
+                <td class="url"><code>https://www.bing.com/toolbox/bingbot.json</code></td>
+                <td class="num">28</td>
+                <td class="num">2024-01-03</td>
+              </tr>
+              <tr>
+                <td class="token">CCBot</td>
+                <td>brak oficjalnej listy</td>
+                <td class="num">–</td>
+                <td>korzysta z adresów AWS, weryfikacja po IP jest niewykonalna</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Wszystkie pliki mają tę samą strukturę: <code>creationTime</code> plus tablica
+          <code>prefixes</code> z polami <code>ipv4Prefix</code> / <code>ipv6Prefix</code>.
+        </p>
+
+        <div class="note">
+          <span class="note-label">Co z tego wynika w praktyce</span>
+          <p>
+            <strong>Perplexity używa pojedynczych adresów /32</strong> – łącznie 12 hostów. Są one
+            najbardziej podatne na zmiany z całego zestawienia; jedna modyfikacja infrastruktury
+            i Twoja lista dozwolonych adresów staje się bezużyteczna.
+          </p>
+          <p>
+            <strong>Google ma prawie 1100 prefiksów w trzech plikach</strong> i podmienia je co
+            kilka dni. Ręczne przepisywanie tego do zapory WAF mija się z celem.
+          </p>
+          <p>
+            <strong>Anthropic wprost odradza blokowanie po IP</strong>: zablokowanie adresów
+            utrudnia im odczyt Twojego pliku <code>robots.txt</code>, przez co wstrzymanie
+            indeksowania (opt-out) może przestać działać.
+          </p>
+        </div>
+
+        <h3>Odświeżanie list</h3>
+        <pre><code>for u in \
+  https://openai.com/gptbot.json \
+  https://openai.com/searchbot.json \
+  https://claude.com/crawling/bots.json \
+  https://developers.google.com/search/apis/ipranges/googlebot.json \
+  https://www.perplexity.ai/perplexitybot.json \
+  https://search.developer.apple.com/applebot.json \
+  https://www.bing.com/toolbox/bingbot.json ; do
+  echo "== $u"
+  curl -sL -A 'Mozilla/5.0' "$u" \
+    | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["creationTime"], len(d["prefixes"]), "prefiksów")'
+done</code></pre>
+
+        <h3>Lepsza metoda niż lista dozwolonych adresów IP</h3>
+        <p>
+          Google, Bing i Apple pozwalają zweryfikować bota za pomocą odwrotnego DNS (rDNS): rDNS
+          adresu musi wskazywać na domenę producenta (<code>googlebot.com</code>,
+          <code>google.com</code>, <code>googleusercontent.com</code>, <code>search.msn.com</code>,
+          <code>applebot.apple.com</code>), a następnie zwykłe zapytanie DNS (forward DNS) dla tej
+          nazwy musi zwracać ten sam adres IP. To rozwiązanie działa bez konieczności utrzymywania
+          listy.
+        </p>
+        <p>
+          W praktyce jednak w Cloudflare nie musisz robić żadnej z tych rzeczy – CF sam weryfikuje
+          znane boty i oznacza je jako kategorię „verified bots”. Listy IP są potrzebne dopiero
+          wtedy, gdy filtrujesz ruch na poziomie serwera lub innej sieci CDN.
+        </p>
+      </section>
+
+      <section>
+        <div class="sec-head">
+          <span class="sec-num">4</span>
+          <h2>Jak to sprawdzić w panelu Cloudflare</h2>
+        </div>
+        <p>
+          Poniższa ścieżka odpowiada na pytanie „czy mój serwer wpuszcza boty AI” na podstawie
+          twardych danych – w odróżnieniu od sondy z zewnątrz, która podszywa się pod User-Agent
+          i może wywołać zarówno fałszywy alarm, jak i dać złudne poczucie bezpieczeństwa.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <h3>Krok 1 – AI Crawl Control (decydujące źródło)</h3>
+            <div class="step-path">
+              wybierz domenę w panelu → <b>AI Crawl Control</b> (lewa nawigacja)
+            </div>
+            <ul>
+              <li><strong>Overview</strong> – migawka aktywności botów AI.</li>
+              <li>
+                <strong>Crawlers</strong> – tabela crawlerów, które próbują uzyskać dostęp do
+                Twoich treści, wraz z informacją o tym, jak wchodzą w interakcję ze stronami. Dla
+                każdego bota możesz tu sprawdzić, czy żądania w ogóle docierają i jaką decyzję
+                otrzymują.
+              </li>
+              <li><strong>Metrics</strong> – wykresy i analityka ruchu botów w czasie.</li>
+              <li>
+                <strong>Robots.txt</strong> – jak boty AI faktycznie traktują Twój plik
+                <code>robots.txt</code>.
+              </li>
+            </ul>
+            <p>
+              Jeśli w zakładce Crawlers widzisz żądania danego bota z akcją „block”, masz
+              odpowiedź: blokada jest realna, a nie jest jedynie artefaktem sondy. Jeśli bot
+              w ogóle się nie pojawia, sprawdź zakres dat – brak wpisów przy świeżej stronie
+              oznacza tylko tyle, że nikt jej jeszcze nie odwiedził.
+            </p>
+            <p>
+              Narzędzie AI Crawl Control działa we wszystkich planach i nie wymaga ręcznego
+              włączania.
+            </p>
+          </div>
+
+          <div class="step">
+            <h3>Krok 2 – przełącznik „Block AI Scrapers and Crawlers”</h3>
+            <div class="step-path">
+              <b>Security</b> → <b>Bots</b> → konfiguracja obsługi ruchu botów przez proxy
+              (odnośnik w prawym górnym rogu) → karta <b>Block AI Scrapers and Crawlers</b>
+            </div>
+            <p>
+              To najczęstsza przyczyna nieświadomej blokady: jeden przełącznik, aktywowany kiedyś
+              „na wszelki wypadek”, odcina całą warstwę krytyczną.
+            </p>
+            <p>
+              W tym samym miejscu sprawdź <strong>Bot Fight Mode</strong> /
+              <strong>Super Bot Fight Mode</strong>. Bot Fight Mode wymaga weryfikacji (wyświetla
+              wyzwanie/challenge) dla każdego ruchu uznanego za zautomatyzowany, a nie tylko dla
+              botów AI – to on najczęściej odpowiada za błąd 403 dla podszywającego się
+              User-Agenta.
+            </p>
+          </div>
+
+          <div class="step">
+            <h3>Krok 3 – reguły własne WAF</h3>
+            <div class="step-path"><b>Security</b> → <b>WAF</b> → <b>Custom rules</b></div>
+            <p>Przejrzyj reguły pod kątem wyrażeń odwołujących się do:</p>
+            <ul>
+              <li>
+                <code>cf.verified_bot_category</code> – filtrowanie po kategorii zweryfikowanych
+                botów, w tym „AI Crawler”,
+              </li>
+              <li>
+                <code>http.user_agent contains "bot"</code> – klasyk, który blokuje masowo
+                wszystko, co ma w nazwie „bot”,
+              </li>
+              <li><code>cf.bot_management.score</code> z niskim progiem,</li>
+              <li>blokad krajowych, jeśli boty łączą się z regionu, który odcinasz.</li>
+            </ul>
+            <p>
+              Reguła z akcją <em>Block</em> lub <em>Managed Challenge</em> obejmująca którykolwiek
+              token z sekcji 2 to problem – wyzwanie (challenge) jest dla bota równoznaczne
+              z blokadą, ponieważ żaden crawler nie rozwiąże testu opartego na JavaScript.
+            </p>
+          </div>
+
+          <div class="step">
+            <h3>Krok 4 – Analytics → Events, dowód na konkretnym żądaniu</h3>
+            <div class="step-path"><b>Analytics</b> → zakładka <b>Events</b></div>
+            <p>
+              Dostępne filtry to m.in. <strong>Action</strong>, <strong>Host</strong>,
+              <strong>Country</strong>, <strong>ASN</strong>, <strong>IP</strong>,
+              <strong>User Agents</strong> i <strong>Paths</strong>.
+            </p>
+            <p>
+              Ustaw filtr <code>User Agents</code> <em>contains</em> <code>GPTBot</code>
+              (następnie kolejno: <code>ClaudeBot</code>, <code>PerplexityBot</code>,
+              <code>OAI-SearchBot</code>). Interesuje Cię kolumna akcji:
+            </p>
+            <ul>
+              <li>brak wyników – nic nie było blokowane w tym oknie czasowym,</li>
+              <li>
+                <em>Block</em> / <em>Managed Challenge</em> – masz nazwę reguły, która zablokowała
+                ruch; kliknięcie w zdarzenie pokazuje, czy to reguła własna, reguła zarządzana
+                (managed rule) czy Bot Fight Mode.
+              </li>
+            </ul>
+            <p>
+              To krok, który pozwala przejść od stwierdzenia „coś blokuje boty” do „blokuje je
+              reguła X, którą mogę tutaj wyłączyć”.
+            </p>
+          </div>
+
+          <div class="step">
+            <h3>Krok 5 – Cloudflare Pages i inne wyjątki</h3>
+            <p>
+              Jeżeli strona jest hostowana na Cloudflare Pages, ustawienia bezpieczeństwa mogą
+              znajdować się zarówno w strefie domeny, jak i w samym projekcie Pages. Sprawdź obie
+              warstwy, zanim uznasz konfigurację za wolną od blokad.
+            </p>
+            <p>
+              Podobnie wygląda kwestia zarządzanego pliku <code>robots.txt</code> – Cloudflare
+              potrafi serwować własne dyrektywy dla botów AI. W takiej sytuacji plik, który
+              widzisz w repozytorium, nie jest tym, który faktycznie otrzymuje crawler. Rozstrzyga
+              to zakładka <strong>Robots.txt</strong> w AI Crawl Control.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-head">
+          <span class="sec-num">5</span>
+          <h2>Kolejność działań przy diagnozie</h2>
+        </div>
+        <ol>
+          <li>
+            Narzędzie
+            <a href="https://widocznosc.ai/narzedzia/ai-bots-check/" target="_blank" rel="noopener"
+              >Dostęp botów AI</a
+            >
+            – pokazuje warstwę deklaracji (<code>robots.txt</code>) i warstwę serwera (WAF,
+            <code>X-Robots-Tag</code>, meta robots, sonda po User-Agencie). Daje ogólny ogląd
+            sytuacji.
+          </li>
+          <li>AI Crawl Control → <strong>Crawlers</strong> – potwierdzenie w rzeczywistym ruchu.</li>
+          <li>
+            Analytics → <strong>Events</strong> z filtrem po User Agent – wskazanie konkretnej
+            reguły.
+          </li>
+          <li>Wyłączenie reguły lub dopisanie wyjątku dla warstwy krytycznej z sekcji 2.</li>
+          <li>
+            Ponowne sprawdzenie po 24 godzinach – crawlery wracają w swoim tempie, a nie na
+            żądanie.
+          </li>
+        </ol>
+      </section>
+
+      <footer>
+        <p>
+          Źródła:
+          <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener"
+            >dokumentacja botów OpenAI</a
+          >,
+          <a
+            href="https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+            target="_blank"
+            rel="noopener"
+            >artykuł Anthropic o crawlerach</a
+          >,
+          <a
+            href="https://developers.google.com/search/apis/ipranges/googlebot.json"
+            target="_blank"
+            rel="noopener"
+            >zakresy IP Google</a
+          >,
+          <a href="https://developers.cloudflare.com/ai-crawl-control/" target="_blank" rel="noopener"
+            >Cloudflare AI Crawl Control</a
+          >,
+          <a
+            href="https://developers.cloudflare.com/waf/analytics/security-events/"
+            target="_blank"
+            rel="noopener"
+            >Cloudflare Security Events</a
+          >.
+        </p>
+        <p>
+          Liczby prefiksów i daty list pobrane 17.08.2026 r. – przed użyciem odśwież skryptem
+          z sekcji 3.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
