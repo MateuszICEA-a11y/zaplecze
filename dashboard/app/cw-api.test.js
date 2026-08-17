@@ -16,7 +16,7 @@ import {
   isKnownSlot,
   SIGNATURE_WINDOW_S,
 } from './cw-api.js';
-import { avatarUrl, buildExpertPrompt, expertBlockquote, isPersonName, wpAuthors } from './cw-expert.js';
+import { avatarUrl, buildExpertPrompt, expertBlockquote, hasResearch, isPersonName, researchBlock, wpAuthors } from './cw-expert.js';
 
 const SECRET = 'testowy-sekret-callbacku';
 
@@ -578,6 +578,12 @@ const doneJob = {
   models: '{"research":"perplexity/sonar-pro","writer":"anthropic/claude-sonnet-5"}', expert: null,
 };
 
+/* Prompt eksperta 2.0.0 buduje cytat z materiału przebiegu, więc bez briefu,
+   SERP-gapu i konkurentów etap w ogóle nie rusza (kod `no_research`). */
+const briefStep = {
+  "step = 'brief'": { payload: JSON.stringify({ gaps: [{ topic: 'kody odpowiedzi', why: 'konkurencja opisuje 401 i 403 osobno' }] }) },
+};
+
 test('expert: wymaga zadania w stanie done', async () => {
   const db = fakeDb({ 'SELECT * FROM jobs WHERE id': { ...doneJob, status: 'running' } });
   const response = await routeContentWatcher(expertRequest(), { CW_DB: db });
@@ -587,6 +593,7 @@ test('expert: wymaga zadania w stanie done', async () => {
 test('expert: równoległe generowanie odrzucone (guard w D1)', async () => {
   const db = fakeDb({
     'SELECT * FROM jobs WHERE id': doneJob,
+    ...briefStep,
     "json_extract(expert, '$.status') != 'running'": 0, // warunkowy UPDATE nie przeszedł
   });
   const response = await routeContentWatcher(expertRequest(), { CW_DB: db });
@@ -598,6 +605,7 @@ test('expert: wynik zapisany do jobs.expert z modelem i kosztem', async (t) => {
   const updates = [];
   const db = fakeDb({
     'SELECT * FROM jobs WHERE id': doneJob,
+    ...briefStep,
     'FROM job_sections': [{ slot: 2, title_after: 'Jak naprawić', text_after: '<p>Sprawdź uprawnienia.</p>' }],
     'UPDATE jobs SET expert = ?': (args) => { updates.push(args[0]); return 1; },
   });
@@ -624,6 +632,7 @@ test('expert: brak klucza OpenRoutera daje czytelny błąd, stan failed', async 
   const updates = [];
   const db = fakeDb({
     'SELECT * FROM jobs WHERE id': doneJob,
+    ...briefStep,
     'FROM job_sections': [{ slot: 1, text_after: '<p>Treść.</p>' }],
     'UPDATE jobs SET expert = ?': (args) => { updates.push(args[0]); return 1; },
   });
@@ -942,4 +951,84 @@ test('routing: nowa trasa stylu nie zjadła tras sekcji ani eksperta', async () 
   // Samo zadanie – GET czyta stan.
   const read = new Request('https://dash.example/api/cw/jobs/job-abcdef12');
   assert.equal((await routeContentWatcher(read, env)).status, 200);
+});
+
+/* ---------- ekspert 2.0.0: cytat z materiału przebiegu ---------- */
+
+test('expert: bez materiału z przebiegu etap nie rusza (i nic nie kosztuje)', async () => {
+  let called = false;
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async () => { called = true; return new Response('{}'); };
+  const db = fakeDb({ 'SELECT * FROM jobs WHERE id': doneJob });  // brak briefu, SERP-u, konkurentów
+  const response = await routeContentWatcher(expertRequest(), { CW_DB: db, OPENROUTER_API_KEY: 'k' });
+  globalThis.fetch = realFetch;
+
+  assert.equal(response.status, 409);
+  const body = await response.json();
+  assert.equal(body.code, 'no_research');
+  assert.match(body.error, /Sprawdź SERP/);
+  assert.equal(called, false, 'nie płacimy za cytat, który i tak byłby zmyślony');
+  // Stan `running` też nie może zostać zapisany – inaczej przycisk zostałby zablokowany.
+  assert.equal(db.calls.some((call) => call.sql.includes('UPDATE jobs SET expert')), false);
+});
+
+test('expert: odmowa modelu (skip) to czytelny komunikat, nie „błąd modelu"', async (t) => {
+  const db = fakeDb({
+    'SELECT * FROM jobs WHERE id': doneJob,
+    ...briefStep,
+    'FROM job_sections': [{ slot: 2, text_after: '<p>Treść.</p>' }],
+    'UPDATE jobs SET expert = ?': 1,
+  });
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify({
+    choices: [{ message: { content: '{"skip":true,"reason":"materiał nie mówi nic o tej sekcji"}' } }],
+  }), { status: 200 });
+  t.after(() => { globalThis.fetch = realFetch; });
+
+  const response = await routeContentWatcher(expertRequest(), { CW_DB: db, OPENROUTER_API_KEY: 'k' });
+  assert.equal(response.status, 502);
+  const body = await response.json();
+  assert.equal(body.code, 'no_basis');
+  assert.match(body.error, /materiał nie mówi nic o tej sekcji/);
+});
+
+test('expert: prompt niesie materiał przebiegu i granicę roli', () => {
+  const research = {
+    gap: { keywords: [{ keyword: 'pozycjonowanie fotowoltaiki', searches: 320, our_position: null, rival_position: 3 }] },
+    rivals: { facts: ['konkurent podaje koszt instalacji 6 kWp'], median_words: 2400, our_words: 1100, topics: [] },
+    brief: { gaps: [{ topic: 'dofinansowania', why: 'brak sekcji, konkurencja ma' }], factual_risks: ['stawki VAT z 2023'] },
+  };
+  const prompt = buildExpertPrompt({ title: 'Pozycjonowanie branży fotowoltaicznej', content: 'treść', author: '', research });
+
+  // Materiał, na którym ma stanąć cytat.
+  assert.match(prompt, /pozycjonowanie fotowoltaiki/);
+  assert.match(prompt, /320 wyszukiwań/);
+  assert.match(prompt, /konkurent podaje koszt instalacji 6 kWp/);
+  assert.match(prompt, /Mediana czołówki: 2400 słów/);
+  assert.match(prompt, /dofinansowania – brak sekcji/);
+  assert.match(prompt, /stawki VAT z 2023/);
+
+  // Granica roli – to ona nie pozwala specjaliście SEO wejść klientowi na dach.
+  assert.match(prompt, /NIE WOLNO Ci przypisywać sobie czynności klienta/);
+  assert.match(prompt, /byłem na dachu/);
+  // Wymuszenie podstawy i wyjście awaryjne zamiast konfabulacji.
+  assert.match(prompt, /"basis"/);
+  assert.match(prompt, /"skip": true/);
+  assert.match(prompt, /Cisza jest lepsza niż zmyślona anegdota/);
+});
+
+test('expert: pusty materiał daje w prompcie jawne polecenie odmowy', () => {
+  const prompt = buildExpertPrompt({ title: 'T', content: 'treść', author: '', research: null });
+  assert.match(prompt, /brak materiału z przebiegu/);
+});
+
+test('expert: researchBlock pomija sekcje, których nie ma', () => {
+  assert.equal(researchBlock(null), '');
+  assert.equal(researchBlock({ gap: null, rivals: null, brief: null }), '');
+  assert.equal(hasResearch({ brief: { gaps: [{ topic: 'a', why: 'b' }] } }), true);
+  // Sam brief bez luk to nie materiał – nie ma z czego zbudować obserwacji.
+  assert.equal(hasResearch({ brief: { summary: 'coś tam' } }), false);
+  const onlyRivals = researchBlock({ rivals: { facts: ['fakt'], median_words: null, our_words: null } });
+  assert.match(onlyRivals, /Konkrety/);
+  assert.doesNotMatch(onlyRivals, /Objętość/);
 });

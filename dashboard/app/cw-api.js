@@ -12,7 +12,7 @@
  * (`X-CW-Timestamp` + `X-CW-Signature`, sekret `CW_CALLBACK_SECRET`).
  */
 
-import { expertPhoto, generateExpertQuote, wpAuthors } from './cw-expert.js';
+import { expertPhoto, generateExpertQuote, hasResearch, wpAuthors } from './cw-expert.js';
 import { handleInfographic } from './cw-infographic.js';
 import { handleRivals, rivalsSummary } from './cw-rivals.js';
 import { gapSummary, handleSerpGap } from './cw-serp.js';
@@ -779,6 +779,33 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
     };
   }
 
+  // Materiał, na którym stoi komentarz: research, który edytor już opłacił.
+  // Prompt 2.0.0 buduje cytat z tych danych – bez nich model zaczynał zmyślać
+  // doświadczenie, więc brak materiału zatrzymuje etap, zanim cokolwiek
+  // zapłacimy.
+  const briefStep = await db(env)
+    .prepare("SELECT payload FROM job_steps WHERE job_id = ? AND step = 'brief'")
+    .bind(id)
+    .first();
+  const research = {
+    gap: await gapSummary(env, job.domain, job.post_id).catch(() => null),
+    rivals: await rivalsSummary(env, job.domain, job.post_id).catch(() => null),
+    brief: (() => {
+      try {
+        return briefStep?.payload ? JSON.parse(briefStep.payload) : null;
+      } catch {
+        return null;
+      }
+    })(),
+  };
+  if (!hasResearch(research)) {
+    return json({
+      error: 'Komentarz ekspercki powstaje z materiału tego przebiegu, a materiału nie ma. '
+        + 'Uruchom „Sprawdź SERP" i „Pobierz treści konkurentów", wtedy cytat będzie miał się o co oprzeć.',
+      code: 'no_research',
+    }, 409);
+  }
+
   // Blokada podwójnego kliknięcia: warunkowy UPDATE przechodzi tylko, gdy
   // ekspert nie jest właśnie generowany (json_extract – JSON1 jest w D1).
   const lock = await db(env)
@@ -795,7 +822,9 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
     .bind(id)
     .all();
 
-  const result = await generateExpertQuote(env, job, sections.results ?? [], { ...(fetchImpl ? { fetchImpl } : {}), person });
+  const result = await generateExpertQuote(env, job, sections.results ?? [], {
+    ...(fetchImpl ? { fetchImpl } : {}), person, research,
+  });
   const record = result.ok
     ? { status: 'done', ...result.data, model: result.model, cost: result.cost, created_at: nowIso() }
     : { status: 'failed', error: result.error, created_at: nowIso() };
@@ -804,7 +833,7 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
     .bind(JSON.stringify(record), nowIso(), id)
     .run();
   await audit(env, 'expert.generate', id, result.ok ? { expert: record.expert, slot: record.slot } : { error: record.error });
-  if (!result.ok) return json({ error: result.error, expert: record }, 502);
+  if (!result.ok) return json({ error: result.error, code: result.code ?? null, expert: record }, 502);
   return json({ expert: record });
 }
 

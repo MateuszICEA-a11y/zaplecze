@@ -1,18 +1,29 @@
 /**
  * Porada eksperta – finalny etap Content Watchera, wykonywany z Workera.
  *
- * Krok expert nie potrzebuje researchu (SERP/Senuto) – tylko scalonej treści,
- * którą Worker ma już w D1 (job_sections). Dlatego generujemy cytat
- * bezpośrednio przez OpenRouter (sekret OPENROUTER_API_KEY w Workerze),
- * w sekundy, zamiast ponownie odpalać cały pipeline w GitHub Actions.
+ * Krok expert nie odpala własnego researchu – korzysta z tego, który edytor już
+ * opłacił (SERP-gap, treść konkurentów, brief) i z treści scalonej w D1.
+ * Dlatego generujemy cytat bezpośrednio przez OpenRouter (sekret
+ * OPENROUTER_API_KEY w Workerze), w sekundy, zamiast ponownie odpalać cały
+ * pipeline w GitHub Actions.
  *
  * Świadome duplikaty (komentarze krzyżowe w bliźniaczych plikach):
  * - lista EXPERTS: pipeline/content-refresher/run.py
- * - prompt: pipeline/content-refresher/prompts/expert.md (wersja niżej)
  * - reguły redakcyjne: pipeline/content-refresher/config.py (EDITORIAL_RULES)
+ *
+ * ROZJAZD ŚWIADOMY od 2026-08-17 (prompt 2.0.0): tutejszy prompt buduje cytat
+ * z MATERIAŁU PRZEBIEGU (SERP-gap, treść konkurentów, brief), a nie z samego
+ * artykułu. Wersja w pipeline/content-refresher/prompts/expert.md została na
+ * 1.x i nadal pisze z treści wpisu – nie synchronizuj ich bezmyślnie.
+ *
+ * Powód zmiany: prompt 1.x kazał modelowi podać „obserwację z praktyki, której
+ * nie ma w tekście", dając mu wyłącznie ten tekst. Z takiego zadania są dwa
+ * wyjścia i model korzystał z obu: przepisywał artykuł (ogólnik) albo dopisywał
+ * sobie doświadczenie (Head of SEO opowiadający o trasach montażowych
+ * i wchodzeniu na dach u klienta fotowoltaicznego).
  */
 
-export const EXPERT_PROMPT_VERSION = '1.0.0';
+export const EXPERT_PROMPT_VERSION = '2.0.0';
 
 export const EXPERTS = [
   'Mateusz Wiśniewski – ekspert SEO i AI Search',
@@ -127,7 +138,66 @@ export function mergedContent(sections) {
   return parts.join('\n\n').slice(0, MAX_CONTENT_CHARS);
 }
 
-export function buildExpertPrompt({ title, content, author, experts = EXPERTS, person = null }) {
+/* ---------- materiał przebiegu ----------
+   Źródłem komentarza jest research, który edytor już opłacił: pozycje i frazy
+   z SERP-gapu, konkrety wyciągnięte z tekstów konkurencji (Jina) i wytyczne
+   z briefu. Bez tego model nie ma z czego zbudować obserwacji i zaczyna
+   zmyślać doświadczenie. */
+
+const bullets = (rows) => rows.filter(Boolean).map((row) => `- ${row}`).join('\n');
+
+export function researchBlock(research) {
+  const parts = [];
+
+  const keywords = research?.gap?.keywords ?? [];
+  if (keywords.length) {
+    parts.push(`### Frazy, na których przegrywamy\n${bullets(keywords.slice(0, 10).map((row) => {
+      const where = [
+        row.our_position ? `my ${row.our_position}` : 'nas nie ma w czołówce',
+        row.rival_position ? `konkurencja ${row.rival_position}` : null,
+      ].filter(Boolean).join(', ');
+      return `„${row.keyword}"${row.searches ? ` – ${row.searches} wyszukiwań/mies.` : ''} (${where})`;
+    }))}`);
+  }
+
+  const rivals = research?.rivals;
+  if (rivals?.facts?.length) {
+    parts.push(`### Konkrety, które mają konkurenci, a my nie\n${bullets(rivals.facts.slice(0, 12).map((row) =>
+      (typeof row === 'string' ? row : [row?.fact, row?.source].filter(Boolean).join(' – '))))}`);
+  }
+  if (rivals?.median_words && rivals?.our_words) {
+    parts.push(`### Objętość\nMediana czołówki: ${rivals.median_words} słów. Nasz tekst: ${rivals.our_words} słów.`);
+  }
+  if (rivals?.topics?.length) {
+    parts.push(`### Wątki obecne u konkurencji\n${bullets(rivals.topics.slice(0, 10).map(String))}`);
+  }
+
+  const brief = research?.brief;
+  if (brief?.gaps?.length) {
+    parts.push(`### Luki wskazane w analizie\n${bullets(brief.gaps.slice(0, 10).map((row) =>
+      (typeof row === 'string' ? row : [row?.topic, row?.why].filter(Boolean).join(' – '))))}`);
+  }
+  if (brief?.factual_risks?.length) {
+    parts.push(`### Twierdzenia do weryfikacji\n${bullets(brief.factual_risks.slice(0, 8).map(String))}`);
+  }
+
+  return parts.join('\n\n');
+}
+
+export const hasResearch = (research) => Boolean(researchBlock(research));
+
+/* Granica roli. Bez niej model przejmuje perspektywę branży z artykułu:
+   na tekście o fotowoltaice specjalista SEO zaczynał mówić o wchodzeniu na dach
+   i o tym, które powiaty zostają w ofercie – czyli o pracy klienta, nie swojej. */
+const ROLE_RULES = `## Kim jesteś
+
+Jesteś specjalistą agencji SEO iCEA. Artykuł opisuje pozycjonowanie dla pewnej branży – ta branża należy do KLIENTA, nie do Ciebie.
+
+- Wolno Ci mówić o swojej pracy: analizie wyników wyszukiwania, architekturze serwisu, treści, frazach, danych z narzędzi, o tym, co widziałeś w projektach dla takich klientów.
+- NIE WOLNO Ci przypisywać sobie czynności klienta: montażu, dojazdów do zleceń, produkcji, obsługi serwisowej, decyzji o tym, gdzie firma sprzedaje. Nie mów „byłem na dachu", „dokładam trasę montażową", „potwierdzam, że powiat zostaje w ofercie".
+- O działaniach klienta pisz z zewnątrz: „u klientów widzę, że…", „firmy w tej branży zwykle…", a nie w pierwszej osobie.`;
+
+export function buildExpertPrompt({ title, content, author, experts = EXPERTS, person = null, research = null }) {
   const allowed = experts.filter((name) => !author || !name.startsWith(author));
   // Redaktor wskazał osobę w edytorze – model jej nie zmienia, dobiera tylko
   // treść i miejsce. Rola bywa pusta (WordPress stanowisk nie trzyma).
@@ -136,9 +206,15 @@ export function buildExpertPrompt({ title, content, author, experts = EXPERTS, p
 
 Cytat podpisujemy imieniem i nazwiskiem: **${person.name}**${person.role ? ` (${person.role})` : ''}. W polu „expert" zwróć dokładnie to imię i nazwisko${person.role ? `, w polu „role" – dokładnie to stanowisko` : ', a pole „role" zostaw puste'}. Nie proponuj innej osoby.`
     : null;
-  return `Piszesz komentarz eksperta ICEA do gotowego artykułu. To ma być realna wartość dodana: obserwacja z praktyki, której nie ma w tekście – nie streszczenie tego, co już napisano.
+  return `Piszesz komentarz eksperta iCEA do gotowego artykułu. Komentarz ma stać na MATERIALE Z TEGO PRZEBIEGU – na danych z wyszukiwarki i z tekstów konkurencji, które masz niżej. Nie wymyślaj wspomnień z projektów; wszystko, co powiesz, ma dać się wskazać palcem w tym materiale.
 
-## Artykuł po optymalizacji
+${ROLE_RULES}
+
+## Materiał z przebiegu – to jest źródło komentarza
+
+${researchBlock(research) || '(brak – w takim razie zwróć {"skip": true, "reason": "brak materiału z przebiegu"})'}
+
+## Artykuł po optymalizacji (kontekst – żeby nie powtórzyć tego, co już stoi w tekście)
 
 Tytuł: ${title}
 
@@ -157,13 +233,21 @@ Zwróć wyłącznie JSON:
   "expert": "imię i nazwisko",
   "role": "stanowisko",
   "quote": "dwa–cztery zdania komentarza w pierwszej osobie",
-  "placement": "po której sekcji komentarz ma stanąć i dlaczego"
+  "placement": "po której sekcji komentarz ma stanąć i dlaczego",
+  "basis": "która pozycja z materiału przebiegu jest podstawą komentarza – przepisz ją"
 }
 
+Jeśli materiał z przebiegu jest pusty albo nie da się na nim zbudować sensownego komentarza, zwróć zamiast tego:
+
+{ "skip": true, "reason": "czego zabrakło" }
+
+Cisza jest lepsza niż zmyślona anegdota – nie nadrabiaj braku danych wspomnieniem z projektu.
+
 Zasady:
-- Komentarz ma wnosić konkret z praktyki: obserwację z projektów, typowy błąd, warunek brzegowy.
+- Punktem wyjścia jest JEDNA konkretna pozycja z materiału: przegrywana fraza, konkret konkurencji, luka z analizy albo różnica objętości. Wpisz ją do pola „basis".
+- Komentarz ma dopowiadać, co z tej pozycji wynika dla czytelnika – jaki błąd stoi za taką różnicą, na co uważać, od czego zacząć. To ma być interpretacja danych, nie ich odczytanie na głos.
 - Bez ogólników w rodzaju „warto zadbać o jakość treści".
-- Bez obietnic wyników i bez liczb, których nie da się potwierdzić.
+- Bez obietnic wyników. Liczby wolno przytaczać wyłącznie te z materiału przebiegu – żadnych własnych.
 - Ton: rzeczowy, pierwsza osoba, język mówiony, ale poprawny.
 
 ${EDITORIAL_RULES}`;
@@ -242,7 +326,7 @@ export function expertBlockquote({ quote, expert, role, photo }) {
  * Jedno wywołanie OpenRoutera. Zwraca {ok, data:{slot, expert, role, quote,
  * placement}, model, cost} albo {ok:false, error}.
  */
-export async function generateExpertQuote(env, job, sections, { fetchImpl = fetch, person = null } = {}) {
+export async function generateExpertQuote(env, job, sections, { fetchImpl = fetch, person = null, research = null } = {}) {
   const apiKey = (env.OPENROUTER_API_KEY || '').trim();
   if (!apiKey) return { ok: false, error: 'Brak sekretu OPENROUTER_API_KEY w Workerze.' };
 
@@ -251,7 +335,7 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
 
   const models = typeof job.models === 'string' ? JSON.parse(job.models || 'null') : job.models;
   const model = models?.writer || 'anthropic/claude-sonnet-5';
-  const prompt = buildExpertPrompt({ title: job.title, content, author: job.author ?? '', person });
+  const prompt = buildExpertPrompt({ title: job.title, content, author: job.author ?? '', person, research });
 
   let response;
   try {
@@ -284,6 +368,16 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
   const payload = await response.json().catch(() => null);
   const text = payload?.choices?.[0]?.message?.content ?? '';
   const data = extractJson(text);
+  // Świadoma odmowa: materiał przebiegu nie wystarczył. To NIE jest awaria –
+  // cisza jest lepsza niż zmyślona anegdota, więc komunikat mówi, czego dosypać.
+  if (data?.skip) {
+    return {
+      ok: false,
+      code: 'no_basis',
+      error: `Za mało materiału na komentarz ekspercki: ${String(data.reason ?? 'model nie wskazał powodu')}. `
+        + 'Uruchom analizę SERP i „Co mają konkurenci", wtedy cytat będzie miał się o co oprzeć.',
+    };
+  }
   if (!data?.quote || !data?.expert) {
     return { ok: false, error: 'Model nie zwrócił poprawnego cytatu.' };
   }
@@ -297,6 +391,9 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
       role: person ? (person.role ?? '') : (data.role ? String(data.role).slice(0, 120) : ''),
       quote: String(data.quote).slice(0, 2000),
       placement: data.placement ? String(data.placement).slice(0, 500) : '',
+      // Na czym stoi cytat – redaktor ma to sprawdzić w panelu SERP/konkurentów,
+      // zanim podpisze wypowiedź nazwiskiem realnej osoby.
+      basis: data.basis ? String(data.basis).slice(0, 500) : '',
       photo: person?.photo ?? '',
     },
     model: payload?.model ?? model,

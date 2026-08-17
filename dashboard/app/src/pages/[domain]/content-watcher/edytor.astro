@@ -185,7 +185,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       <div class="ed-expert" data-ed-expert hidden>
         <div class="ed-expert-head">
           <span class="ed-expert-label">Etap końcowy · wypowiedź ekspercka</span>
-          <span class="ed-expert-note">cytat osoby z ICEA (innej niż autor), wybrany model pisania</span>
+          <span class="ed-expert-note">
+            komentarz budowany z materiału przebiegu (SERP, konkurenci, brief) – wymaga tych analiz
+          </span>
         </div>
         <!-- Kogo podpisujemy: lista autorów portalu prosto z WordPressa. Rola
              idzie z osobnej listy, bo WP stanowisk nie trzyma – dla znanych osób
@@ -2404,7 +2406,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         expert.placement || null,
         expert.model || null,
       ].filter(Boolean).join(' · ');
-      actions.append(quote, meta,
+      // Na czym stoi cytat: pozycja z materiału przebiegu, którą wskazał model.
+      // Bez tego nie da się sprawdzić, czy wypowiedź nazwiskiem realnej osoby
+      // opiera się na danych, czy na wymyślonym wspomnieniu z projektu.
+      const basis = document.createElement('small');
+      basis.className = 'ed-expert-meta ed-expert-basis';
+      basis.hidden = !expert.basis;
+      if (expert.basis) basis.textContent = `podstawa: ${expert.basis}`;
+      actions.append(quote, meta, basis,
         button('kopiuj cytat', async () => { await navigator.clipboard.writeText(expertBlockquote(expert, true)); }),
         button('wygeneruj ponownie', () => callExpert('POST', expertChoice())),
         button('odrzuć', () => callExpert('PATCH', { rejected: true })));
@@ -4373,6 +4382,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-expert-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
   .ed-expert-preview { flex-basis: 100%; }
   .ed-expert-meta { flex-basis: 100%; font-size: .7rem; color: var(--ink-faint); }
+  .ed-expert-basis { color: var(--ink-muted); font-style: italic; }
+  .ed-expert-basis[hidden] { display: none; }
   .ed-expert-wait { font-size: .78rem; color: var(--ink-muted); }
   .ed-expert-wait::before { content: ''; display: inline-block; width: 10px; height: 10px;
     margin-right: 8px; border: 2px solid var(--hairline); border-top-color: var(--accent-blue);
