@@ -898,6 +898,45 @@ class TestCoverageGate(unittest.TestCase):
         self.assertIn({"keyword": "leady fotowoltaika", "why": "wpis nie sprzedaje leadów"},
                       payload["skipped"])
 
+    def test_fraza_bez_miejsca_w_tresci_wchodzi_jako_nowe_pytanie_faq(self):
+        pipeline = self._pipeline()
+        pipeline.context["free_faq_slots"] = [104, 105]
+        seen = []
+
+        def fake_ask(prompt_name, model, **values):
+            seen.append(values["free_faq_slots"])
+            return ({
+                "data": {"sections": [
+                    {"slot": 104, "title": "Gdzie szukać klientów na fotowoltaikę?",
+                     "text": "<p>Leady na fotowoltaikę biorą się z wyszukiwarki.</p>"},
+                    # Slot spoza puli wolnych par nie może nadpisać cudzego wpisu.
+                    {"slot": 120, "title": "Nie wolno", "text": "<p>…</p>"},
+                ]},
+                "model": "test/model", "usage": {"tokens_in": 1, "tokens_out": 1},
+            }, "1.1.0")
+
+        with mock.patch.object(pipeline, "_ask", side_effect=fake_ask):
+            payload = pipeline.step_coverage()["payload"]
+
+        proposals = pipeline.context["proposals"]
+        self.assertEqual(proposals[104]["title"], "Gdzie szukać klientów na fotowoltaikę?")
+        self.assertNotIn(120, proposals)
+        self.assertEqual(seen[0], [104, 105])
+        # Pytanie FAQ liczy się do pokrycia tak samo jak akapit.
+        self.assertNotIn("gdzie szukać klientów na fotowoltaikę", payload["missing"])
+        self.assertEqual(payload["rounds"][0]["new_faq"], [104])
+
+    def test_budzet_nowych_faq_jest_wspolny_z_krokiem_rewrite(self):
+        pipeline = self._pipeline()
+        pipeline.context["free_faq_slots"] = [103, 104, 105, 106]
+        # Rewrite dopisał już trzy pytania – limit MAX_NEW_FAQ wyczerpany.
+        pipeline.context["proposals"] = {
+            103: {"title": "P1", "text": "<p>…</p>"},
+            104: {"title": "P2", "text": "<p>…</p>"},
+            105: {"title": "P3", "text": "<p>…</p>"},
+        }
+        self.assertEqual(pipeline._free_faq_for_coverage(), [])
+
 
 class TestFaq(unittest.TestCase):
     """FAQ jako pseudo-sekcje: własna przestrzeń slotów (101+), własne pola ACF,

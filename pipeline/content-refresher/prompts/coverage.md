@@ -1,4 +1,4 @@
-<!-- version: 1.0.0 -->
+<!-- version: 1.1.0 -->
 Jesteś redaktorem prowadzącym. Artykuł jest już przepisany – twoim jedynym zadaniem jest domknąć frazy, które miały w nim paść, a nie padły.
 
 ## Frazy, których brakuje
@@ -23,13 +23,18 @@ Uwaga na przymiotniki: „fotowoltaiczny" NIE pokrywa frazy z rzeczownikiem „f
 
 {{ sections }}
 
+## Wolne sloty na nowe pytania FAQ
+
+{{ free_faq_slots }}
+
 ## Zadanie
 
-Wpleć brakujące frazy w istniejącą treść. Zwróć wyłącznie JSON:
+Wpleć brakujące frazy w istniejącą treść, a te, dla których nie ma w niej miejsca, zamień w nowe pytania FAQ. Zwróć wyłącznie JSON:
 
 {
   "sections": [
-    {"slot": 3, "title": "Nagłówek H2", "text": "<p>Pełna treść sekcji po zmianie…</p>", "change": "wpleciono: fraza X, fraza Y"}
+    {"slot": 3, "title": "Nagłówek H2", "text": "<p>Pełna treść sekcji po zmianie…</p>", "change": "wpleciono: fraza X, fraza Y"},
+    {"slot": 104, "title": "Gdzie szukać klientów na fotowoltaikę?", "text": "<p>Odpowiedź w dwóch, trzech zdaniach…</p>", "change": "nowe FAQ – fraza „gdzie szukać klientów na fotowoltaikę”"}
   ],
   "skipped": [
     {"keyword": "fraza", "why": "dlaczego nie da się jej użyć w tym tekście"}
@@ -42,7 +47,15 @@ Zasady twarde:
 - **Każdy link `<a href="…">` musi zostać** z niezmienionym adresem.
 - Fraza ma wejść w poprawnej polszczyźnie, odmieniona, z przyimkiem – nigdy jako surowy zapis z wyszukiwarki.
 - Najlepsze miejsce na frazę to nagłówek H2 sekcji, która i tak o tym mówi – jeśli pasuje, przepisz nagłówek zamiast doklejać zdanie.
-- Nie dopisuj akapitów „o niczym" tylko po to, żeby fraza padła. Jeśli fraza nie ma w tym artykule sensownego miejsca, wpisz ją do `skipped` z powodem – lista braków z uzasadnieniem jest lepsza niż zdanie, którego nikt by nie napisał.
+- Nie dopisuj akapitów „o niczym" tylko po to, żeby fraza padła. Fraza, która nie ma sensownego miejsca w istniejących akapitach, idzie do FAQ (zasady niżej), a dopiero gdy i tam nie pasuje – do `skipped` z powodem.
 - Nie wprowadzaj twierdzeń, których nie ma w tekście ani w wytycznych. Fraza to sposób nazwania czegoś, co artykuł już mówi.
+
+Nowe pytania FAQ:
+- Fraza to zapytanie, które ktoś wpisał w wyszukiwarkę – blok FAQ jest na nie miejscem naturalnym, także wtedy, gdy w treści artykułu zabrakło dla niej akapitu.
+- Nowe pytanie zwracasz w tablicy `sections` pod numerem z listy wolnych slotów: `title` to PYTANIE, `text` to odpowiedź w HTML. Slotu spoza tej listy nie używaj. Jeśli lista jest pusta, nowych pytań nie dodajesz.
+- **Pytanie ma zawierać frazę w naturalnej odmianie**, tak jak sformułowałby je człowiek: „gdzie szukać klientów na fotowoltaikę" → „Gdzie szukać klientów na fotowoltaikę?". Nigdy nie przepisuj surowego zapisu z wyszukiwarki („Leady fotowoltaika – gdzie szukać?" to błąd).
+- Jedno pytanie = jedna fraza. Nie upychaj kilku fraz w jedno pytanie i nie dubluj pytania, które już w FAQ stoi.
+- Odpowiedź: dwa, trzy zdania, konkret od pierwszego słowa, bez linków, list i przypisów. Ma opierać się na tym, co artykuł już mówi – FAQ nie jest miejscem na nowe twierdzenia.
+- Nie zamieniaj w pytania fraz, które dało się wpleść w treść. FAQ to wyjście awaryjne, nie skrót.
 
 {{ editorial_rules }}

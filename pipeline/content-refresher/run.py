@@ -532,6 +532,23 @@ class Pipeline:
             parts.append(extract.strip_html(text))
         return "\n".join(part for part in parts if part)
 
+    def _free_faq_for_coverage(self) -> list[int]:
+        """Wolne pary FAQ, w których krok coverage może zadać nowe pytanie.
+
+        Budżet nowych pytań (`MAX_NEW_FAQ`) jest wspólny z krokiem rewrite –
+        inaczej blok FAQ puchłby o listę fraz zamiast o pytania, które ktoś
+        naprawdę zadaje.
+        """
+        taken = {item["slot"] for item in self.context["snapshot"]}
+        proposals = self.context.get("proposals") or {}
+        added = sum(1 for slot in proposals if sec.is_faq(slot) and slot not in taken)
+        budget = MAX_NEW_FAQ - added
+        if budget <= 0:
+            return []
+        free = [slot for slot in (self.context.get("free_faq_slots") or [])
+                if slot not in taken and slot not in proposals]
+        return free[:budget]
+
     def step_coverage(self):
         """Bramka jakości: propozycja nie wychodzi z pipeline'u z frazami, które
         dało się wpleść jednym zdaniem, a nie zostały wplecione.
@@ -555,6 +572,7 @@ class Pipeline:
             if not missing:
                 break
             titles = self._titles()
+            free_faq = self._free_faq_for_coverage()
             result, version = self._ask(
                 "coverage", self.model_writer, max_tokens=24000,
                 missing=[{"keyword": row["keyword"], "searches": row["searches"], "where": row["where"]}
@@ -562,10 +580,11 @@ class Pipeline:
                 sections=[{"slot": slot, "kind": "faq" if sec.is_faq(slot) else "sekcja",
                            "title": titles.get(slot, ""), "text": text_html}
                           for slot, text_html in self._section_texts().items() if text_html],
+                free_faq_slots=free_faq or "brak – wszystkie pary FAQ są zajęte",
             )
             cost = result["usage"]
             texts = self._section_texts()
-            headings = {}
+            headings, new_faq = {}, {}
             for row in (result["data"].get("sections") or []):
                 try:
                     slot = int(row.get("slot") or 0)
@@ -575,7 +594,15 @@ class Pipeline:
                     texts[slot] = row["text"]
                     if (row.get("title") or "").strip():
                         headings[slot] = row["title"].strip()
+                elif slot in free_faq and (row.get("text") or "").strip() and (row.get("title") or "").strip():
+                    # Fraza, która nie mieści się w żadnym akapicie, dostaje własne
+                    # pytanie FAQ zamiast wylądować w `skipped`. Slot musi być
+                    # z puli wolnych par – cudzy wpis w CMS-ie nadpisany nie będzie.
+                    new_faq[slot] = {"title": row["title"].strip(), "text": row["text"]}
+                    free_faq = [free for free in free_faq if free != slot]
             self._store_section_texts(texts)
+            if new_faq:
+                self.context.setdefault("proposals", {}).update(new_faq)
             # Fraza wpleciona w nagłówek liczy się tak samo jak w akapicie, więc
             # nowy H2 musi trafić do propozycji – także gdy treść sekcji została
             # bez zmian i `_store_section_texts` jej nie zapisało.
@@ -592,6 +619,7 @@ class Pipeline:
                 "round": attempt,
                 "asked": [row["keyword"] for row in missing],
                 "gained": [word for word in after["covered"] if word in before["missing"]],
+                "new_faq": sorted(new_faq),
                 "prompt_version": version,
                 "model": result["model"],
             })
