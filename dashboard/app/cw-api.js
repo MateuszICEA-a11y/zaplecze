@@ -15,8 +15,9 @@
 import { expertPhoto, generateExpertQuote, wpAuthors } from './cw-expert.js';
 import { handleRivals, rivalsSummary } from './cw-rivals.js';
 import { gapSummary, handleSerpGap } from './cw-serp.js';
+import { runStylePass, saveStyleRows, STYLE_PROMPT_VERSION, styleDocument } from './cw-style.js';
 import { handleUsage } from './cw-usage.js';
-import { handleWpApply, handleWpDraft, wpAuth } from './cw-wp.js';
+import { ACF_FIELD, contentHash, handleWpApply, handleWpDraft, wpAuth } from './cw-wp.js';
 
 export const COOLDOWN_DAYS = 30; // ten sam wpis nie wraca do kolejki częściej
 export const MAX_ACTIVE_PER_DOMAIN = 3;
@@ -623,6 +624,12 @@ async function readJob(env, id) {
     .prepare('SELECT slot, title_field, text_field, operation, moved_from, title_before, title_after, text_before, text_after, text_hash_before, diff, accepted, decision, edited FROM job_sections WHERE job_id = ? ORDER BY slot')
     .bind(id)
     .all();
+  // Propozycje przejazdu redaktorskiego – druga warstwa nad sekcjami. Diff
+  // liczy przeglądarka (ma oba brzmienia), Worker oddaje same teksty i uwagi.
+  const styleRows = await db(env)
+    .prepare('SELECT slot, title_before, title_after, text_before, text_after, issues, warnings, decision, applied_at FROM job_style WHERE job_id = ? ORDER BY slot')
+    .bind(id)
+    .all();
   const parse = (value, fallback) => {
     try {
       return value ? JSON.parse(value) : fallback;
@@ -638,6 +645,13 @@ async function readJob(env, id) {
     improvements: parse(job.improvements, []),
     models: parse(job.models, null),
     expert: parse(job.expert, null),
+    style: parse(job.style, null),
+    style_sections: (styleRows.results ?? []).map((row) => ({
+      ...row,
+      issues: parse(row.issues, []),
+      warnings: parse(row.warnings, []),
+      decision: row.decision ?? null,
+    })),
     cost: parse(job.cost, {}),
     steps: (steps.results ?? []).map((step) => ({ ...step, payload: parse(step.payload, null), cost: parse(step.cost, null) })),
     sections: (sections.results ?? []).map((section) => ({
@@ -805,6 +819,162 @@ async function rejectExpert(request, env, id) {
   if ((result.meta?.changes ?? 0) === 0) return json({ error: 'Nie ma cytatu do odrzucenia.' }, 404);
   await audit(env, 'expert.reject', id, null);
   return json({ ok: true });
+}
+
+/* ---------- styl i fleksja (przejazd redaktorski, Worker → OpenRouter) ---------- */
+
+/** POST /api/cw/jobs/:id/style – jedno wywołanie modelu na cały wpis.
+    Liczone z aktualnego stanu dokumentu (propozycje pipeline'u + sekcje, których
+    nie ruszał), więc nowy przejazd zastępuje poprzednie propozycje stylu. */
+async function runStyle(request, env, id, { fetchImpl } = {}) {
+  if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
+  const job = await db(env).prepare('SELECT * FROM jobs WHERE id = ?').bind(id).first();
+  if (!job) return json({ error: 'Nie ma takiego zadania.' }, 404);
+  if (job.status !== 'done') {
+    return json({ error: 'Przejazd redaktorski będzie dostępny po zakończeniu analizy.' }, 409);
+  }
+
+  // Blokada podwójnego kliknięcia – jak przy ekspercie (json_extract z JSON1).
+  const lock = await db(env)
+    .prepare(
+      `UPDATE jobs SET style = ?, updated_at = ? WHERE id = ?
+         AND (style IS NULL OR json_extract(style, '$.status') != 'running')`,
+    )
+    .bind(JSON.stringify({ status: 'running', started_at: nowIso() }), nowIso(), id)
+    .run();
+  if ((lock.meta?.changes ?? 0) === 0) return json({ error: 'Przejazd redaktorski właśnie trwa.' }, 409);
+
+  const fail = async (message, status = 502) => {
+    const record = { status: 'failed', error: message, created_at: nowIso() };
+    await db(env)
+      .prepare('UPDATE jobs SET style = ?, updated_at = ? WHERE id = ?')
+      .bind(JSON.stringify(record), nowIso(), id)
+      .run();
+    await audit(env, 'style.run', id, { error: message });
+    return json({ error: message, style: record }, status);
+  };
+
+  const sections = await db(env)
+    .prepare('SELECT slot, title_field, text_field, title_after, text_after, decision FROM job_sections WHERE job_id = ? ORDER BY slot')
+    .bind(id)
+    .all();
+
+  const doc = await styleDocument(env, job, sections.results ?? [], fetchImpl ?? fetch);
+  if (doc.error) return fail(doc.error, doc.status ?? 502);
+
+  const result = await runStylePass(env, job, doc.rows, { ...(fetchImpl ? { fetchImpl } : {}) });
+  if (!result.ok) return fail(result.error);
+
+  await saveStyleRows(env, id, result.data.sections);
+  const record = {
+    status: 'done',
+    model: result.model,
+    cost: result.cost,
+    prompt_version: STYLE_PROMPT_VERSION,
+    // Lista uwag per sekcja siedzi w job_style; tu zostaje to, co dotyczy
+    // całego wpisu: weryfikacja faktów i propozycje uzupełnień.
+    facts: result.data.facts,
+    additions: result.data.additions,
+    changed: result.data.sections.length,
+    sections_total: doc.rows.length,
+    created_at: nowIso(),
+  };
+  await db(env)
+    .prepare('UPDATE jobs SET style = ?, updated_at = ? WHERE id = ?')
+    .bind(JSON.stringify(record), nowIso(), id)
+    .run();
+  await audit(env, 'style.run', id, { changed: record.changed, model: record.model });
+  return json({ job: await readJob(env, id) });
+}
+
+/** PATCH /api/cw/jobs/:id/style/:slot – decyzja o poprawce stylistycznej.
+    Akceptacja przenosi tekst do job_sections.text_after (stamtąd bierze go
+    podgląd i zapis do WordPressa), cofnięcie przywraca stan sprzed przejazdu. */
+async function patchStyleSection(request, env, id, slot) {
+  if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'Przekazano nieprawidłowe dane (błąd formatu lub zbyt duży rozmiar).' }, 400);
+  }
+  const decision = body?.decision ?? null;
+  if (decision !== null && decision !== 'accepted' && decision !== 'rejected') {
+    return json({ error: 'Pole „decision" przyjmuje: accepted, rejected albo null.' }, 400);
+  }
+
+  const row = await db(env)
+    .prepare('SELECT * FROM job_style WHERE job_id = ? AND slot = ?')
+    .bind(id, slot)
+    .first();
+  if (!row) return json({ error: 'Nie ma takiej poprawki stylistycznej.' }, 404);
+
+  let createdSection = row.created_section === 1;
+
+  if (decision === 'accepted' && row.decision !== 'accepted') {
+    const existing = await db(env)
+      .prepare('SELECT slot FROM job_sections WHERE job_id = ? AND slot = ?')
+      .bind(id, slot)
+      .first();
+    if (existing) {
+      await db(env)
+        .prepare(
+          `UPDATE job_sections
+              SET text_after = ?, title_after = COALESCE(?, title_after), edited = 1
+            WHERE job_id = ? AND slot = ?`,
+        )
+        .bind(row.text_after, row.title_after, id, slot)
+        .run();
+      createdSection = false;
+    } else {
+      // Sekcja, której pipeline nie ruszał: zakładamy jej wiersz, żeby poprawka
+      // szła tą samą ścieżką co propozycje (podgląd, „kopiuj", zapis do WP).
+      // Bramka konfliktu w cw-wp.js porównuje hash treści z chwili przejazdu.
+      if (!ACF_FIELD.test(row.title_field ?? '') || !ACF_FIELD.test(row.text_field ?? '')) {
+        return json({ error: 'Ta sekcja nie ma pól ACF – poprawki nie da się zapisać.' }, 409);
+      }
+      const hash = await contentHash(row.text_before ?? '');
+      await db(env)
+        .prepare(
+          `INSERT INTO job_sections
+             (job_id, slot, title_field, text_field, operation, title_before, title_after,
+              text_before, text_after, text_hash_before, accepted, accepted_at, decision, edited)
+           VALUES (?, ?, ?, ?, 'update', ?, ?, ?, ?, ?, 1, ?, 'accepted', 1)`,
+        )
+        .bind(
+          id, slot, row.title_field, row.text_field,
+          row.title_before ?? '', row.title_after ?? row.title_before ?? '',
+          row.text_before ?? '', row.text_after, hash, nowIso(),
+        )
+        .run();
+      createdSection = true;
+    }
+  }
+
+  // Cofnięcie zatwierdzonej poprawki: albo kasujemy wiersz, który powstał przy
+  // akceptacji, albo przywracamy brzmienie sprzed przejazdu.
+  if (decision !== 'accepted' && row.decision === 'accepted') {
+    if (row.created_section === 1) {
+      await db(env).prepare('DELETE FROM job_sections WHERE job_id = ? AND slot = ?').bind(id, slot).run();
+    } else {
+      await db(env)
+        .prepare(
+          `UPDATE job_sections
+              SET text_after = ?, title_after = COALESCE(?, title_after)
+            WHERE job_id = ? AND slot = ?`,
+        )
+        .bind(row.text_before, row.title_after ? row.title_before : null, id, slot)
+        .run();
+    }
+    createdSection = false;
+  }
+
+  await db(env)
+    .prepare('UPDATE job_style SET decision = ?, created_section = ?, applied_at = ? WHERE job_id = ? AND slot = ?')
+    .bind(decision, createdSection ? 1 : 0, decision === 'accepted' ? nowIso() : null, id, slot)
+    .run();
+  await audit(env, 'style.decide', id, { slot, decision });
+  return json({ ok: true, decision, job: await readJob(env, id) });
 }
 
 async function cancelJob(request, env, id) {
@@ -1044,9 +1214,11 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
     return handleSerpGap(request, env, domain.toLowerCase(), Number.parseInt(postId, 10), ctx);
   }
 
-  const jobMatch = url.pathname.match(/^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(\/(cancel|expert|wp-draft|wp-apply|sections\/(\d{1,3})))?\/?$/i);
+  const jobMatch = url.pathname.match(
+    /^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(?:\/(cancel|expert|wp-draft|wp-apply|sections\/(\d{1,3})|style\/(\d{1,3})|style))?\/?$/i,
+  );
   if (jobMatch) {
-    const [, id, , action, slot] = jobMatch;
+    const [, id, action, slot, styleSlot] = jobMatch;
     if (action === 'cancel') {
       if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
       return cancelJob(request, env, id);
@@ -1059,6 +1231,14 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
       if (request.method === 'POST') return generateExpert(request, env, id);
       if (request.method === 'PATCH') return rejectExpert(request, env, id);
       return json({ error: 'Dozwolone metody: POST, PATCH.' }, 405);
+    }
+    if (styleSlot) {
+      if (request.method !== 'PATCH') return json({ error: 'Dozwolona metoda: PATCH.' }, 405);
+      return patchStyleSection(request, env, id, Number.parseInt(styleSlot, 10));
+    }
+    if (action?.toLowerCase() === 'style') {
+      if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
+      return runStyle(request, env, id);
     }
     if (slot) {
       if (request.method !== 'PATCH') return json({ error: 'Dozwolona metoda: PATCH.' }, 405);

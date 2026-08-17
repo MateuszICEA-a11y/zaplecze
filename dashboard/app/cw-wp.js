@@ -45,7 +45,10 @@ export async function contentHash(text) {
 
 /* ---------- WP REST ---------- */
 
-const ACF_FIELD = /^[a-z0-9_]{1,64}$/;
+/** Nazwa pola ACF – tylko takie wpuszczamy do zapisu. Eksportowana, bo etap
+    redaktorski zakłada wiersze sekcji dla slotów spoza propozycji pipeline'u
+    i musi walidować pola tą samą regułą. */
+export const ACF_FIELD = /^[a-z0-9_]{1,64}$/;
 export const DRAFT_TITLE_PREFIX = '[Szkic CW] ';
 
 export function wpAuth(env) {
@@ -55,7 +58,11 @@ export function wpAuth(env) {
   return `Basic ${btoa(`${user}:${password}`)}`;
 }
 
-async function wpFetch(env, url, { method = 'GET', body = null } = {}, fetchImpl = fetch) {
+/** Jedno wywołanie WP REST z uwierzytelnieniem hasłem aplikacji. Eksportowane,
+    bo z tej samej ścieżki korzystają etap redaktorski (cw-style.js) i wgranie
+    infografiki do biblioteki mediów (cw-infographic.js) – nagłówki (WAF/UA),
+    limit czasu i tolerancja odpowiedzi nie-JSON mają być w jednym miejscu. */
+export async function wpFetch(env, url, { method = 'GET', body = null } = {}, fetchImpl = fetch) {
   const response = await fetchImpl(url, {
     method,
     redirect: 'follow',
@@ -79,7 +86,7 @@ async function wpFetch(env, url, { method = 'GET', body = null } = {}, fetchImpl
   return { status: response.status, ok: response.ok, data };
 }
 
-const postUrl = (base, postType, postId = null) =>
+export const postUrl = (base, postType, postId = null) =>
   // Końcowy ukośnik jest obowiązkowy – bez niego WP robi 301 (gotcha z wp.py).
   `${base.replace(/\/$/, '')}/wp-json/wp/v2/${postType}/${postId ? `${postId}/` : ''}`;
 

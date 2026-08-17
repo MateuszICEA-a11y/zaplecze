@@ -209,6 +209,21 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         <p class="ed-error" data-ed-expert-error hidden></p>
       </div>
 
+      <!-- Etap końcowy: przejazd redaktorski. Jedno wywołanie modelu na CAŁY
+           wpis – prompt wymaga spójności terminologii, więc sekcja po sekcji
+           tę regułę wyłącza. Wynik to propozycja per sekcja, nie podmiana. -->
+      <div class="ed-expert ed-style" data-ed-style hidden>
+        <div class="ed-expert-head">
+          <span class="ed-expert-label">Etap końcowy · styl i fleksja</span>
+          <span class="ed-expert-note" data-ed-style-note>
+            kalki, żargon, odmiana nazw własnych i weryfikacja faktów w sieci
+          </span>
+        </div>
+        <div class="ed-expert-actions" data-ed-style-actions></div>
+        <div class="ed-style-report" data-ed-style-report hidden></div>
+        <p class="ed-error" data-ed-style-error hidden></p>
+      </div>
+
       <!-- Oś przebiegu: co poszło, co idzie teraz, co czeka. Kolumna ma stałą
            szerokość – rozciągnięta na całą stronę lista była nieczytelna. -->
       <div class="ed-timeline-wrap" data-ed-steps-details hidden>
@@ -340,10 +355,24 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   };
   type Step = { step: string; status: string; payload: any; cost: any; model: string | null;
     error: string | null; started_at?: string | null; finished_at?: string | null };
+  /** Propozycja przejazdu redaktorskiego dla jednej sekcji (tabela job_style).
+      Diff liczymy tutaj – Worker oddaje oba brzmienia, nie opcode'y. */
+  type StyleRow = {
+    slot: number;
+    title_before: string | null;
+    title_after: string | null;
+    text_before: string | null;
+    text_after: string | null;
+    issues: string[];
+    warnings: { kind: string; label: string }[];
+    decision: 'accepted' | 'rejected' | null;
+    applied_at?: string | null;
+  };
   type Job = {
     id: string; status: string; error: string | null; cost: any; created_at: string;
     improvements: string[]; models: { research: string; writer: string } | null;
     expert: any; steps: Step[]; sections: Section[]; run_url?: string | null;
+    style?: any; style_sections?: StyleRow[];
     wp_draft_id?: number | null; wp_draft_url?: string | null; applied_at?: string | null;
   };
 
@@ -1690,10 +1719,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
   /** Diff renderowany wyłącznie przez textContent – w treści siedzą fragmenty
       obcych stron i HTML z modelu, traktujemy je jak dane, nie markup. */
-  function renderInlineDiff(section: Section) {
+  function renderOpcodes(opcodes: { op: string; before: string; after: string }[]) {
     const wrap = document.createElement('div');
     wrap.className = 'ed-diff';
-    for (const op of section.diff?.opcodes ?? []) {
+    for (const op of opcodes) {
       if (op.op === 'equal') {
         const span = document.createElement('span');
         span.textContent = op.before;
@@ -1712,6 +1741,71 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       }
     }
     return wrap;
+  }
+
+  function renderInlineDiff(section: Section) {
+    return renderOpcodes(section.diff?.opcodes ?? []);
+  }
+
+  /** Diff słowny liczony w przeglądarce – pipeline dostarcza opcode'y z difflib,
+      ale przejazd redaktorski wraca z Workera jako dwa brzmienia tekstu.
+      Porównujemy prozę (bez znaczników): korekta stylu zmienia słowa, nie HTML,
+      a diff po tagach byłby nieczytelny. */
+  const DIFF_TOKEN_LIMIT = 3000;
+
+  function diffTokens(html: string | null) {
+    const doc = new DOMParser().parseFromString(html ?? '', 'text/html');
+    const text = (doc.body.textContent ?? '').replace(/\s+/g, ' ').trim();
+    // Zachowujemy spacje przy słowach, żeby scalony tekst czytał się normalnie.
+    return text ? text.split(/(?<=\s)/) : [];
+  }
+
+  function wordDiff(before: string | null, after: string | null) {
+    const a = diffTokens(before);
+    const b = diffTokens(after);
+    if (!a.length && !b.length) return [];
+    // Przy monstrualnej sekcji rezygnujemy z LCS (macierz rośnie kwadratowo)
+    // i pokazujemy oba brzmienia jako jedną zmianę – bez cichego przycinania.
+    if (a.length > DIFF_TOKEN_LIMIT || b.length > DIFF_TOKEN_LIMIT) {
+      return [{ op: 'replace', before: a.join(''), after: b.join('') }];
+    }
+
+    // Najdłuższy wspólny podciąg – tabela długości, potem odczyt wstecz.
+    const width = b.length + 1;
+    const table = new Int32Array((a.length + 1) * width);
+    for (let i = a.length - 1; i >= 0; i--) {
+      for (let j = b.length - 1; j >= 0; j--) {
+        table[i * width + j] = a[i] === b[j]
+          ? table[(i + 1) * width + j + 1] + 1
+          : Math.max(table[(i + 1) * width + j], table[i * width + j + 1]);
+      }
+    }
+
+    const opcodes: { op: string; before: string; after: string }[] = [];
+    const push = (op: string, before: string, after: string) => {
+      const last = opcodes.at(-1);
+      if (last && last.op === op) {
+        last.before += before;
+        last.after += after;
+      } else opcodes.push({ op, before, after });
+    };
+    let i = 0;
+    let j = 0;
+    while (i < a.length && j < b.length) {
+      if (a[i] === b[j]) {
+        push('equal', a[i], b[j]);
+        i++; j++;
+      } else if (table[(i + 1) * width + j] >= table[i * width + j + 1]) {
+        push('delete', a[i], '');
+        i++;
+      } else {
+        push('insert', '', b[j]);
+        j++;
+      }
+    }
+    while (i < a.length) { push('delete', a[i], ''); i++; }
+    while (j < b.length) { push('insert', '', b[j]); j++; }
+    return opcodes;
   }
 
   /** Ten sam format bloku co step_expert w run.py i cw-expert.js. */
@@ -1838,7 +1932,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     seg.className = 'ed-view-seg';
     const modes: [string, string][] = section.operation === 'insert'
       ? [['after', 'podgląd']]
-      : [['diff', 'zmiany'], ['after', 'wersja po'], ['before', 'oryginał']];
+      : (section.diff?.opcodes?.length
+        ? [['diff', 'zmiany'], ['after', 'wersja po'], ['before', 'oryginał']]
+        : [['after', 'wersja po'], ['before', 'oryginał']]);
     for (const [mode, label] of modes) {
       const button = document.createElement('button');
       button.type = 'button';
@@ -2032,8 +2128,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       node.prepend(sectionGutter(section, current.id, paintDecision));
       node.querySelector('.ed-sec-tags')?.remove();
       node.querySelector('.ed-sec-head')?.append(sectionTags(section));
+      // Sekcja bez opcode'ów (wstawka pipeline'u albo wiersz założony przy
+      // akceptacji korekty stylu) nie ma czego pokazać w trybie „zmiany".
+      const hasDiff = Boolean(section.diff?.opcodes?.length);
       const mode = sectionMode.get(section.slot)
-        ?? (section.operation === 'insert' || changeRatio(section) > 0.5 ? 'after' : 'diff');
+        ?? (section.operation === 'insert' || !hasDiff || changeRatio(section) > 0.5 ? 'after' : 'diff');
       sectionMode.set(section.slot, mode);
       const onDirty = () => {
         const save = node!.querySelector<HTMLButtonElement>('[data-save]');
@@ -2336,6 +2435,252 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     target.append(block);
   }
 
+  /* ---------- styl i fleksja (przejazd redaktorski) ----------
+     Jedno wywołanie modelu na cały wpis, wynik jako propozycja per sekcja.
+     Świadome odejście od czwartego trybu widoku („zmiany / wersja po /
+     oryginał / styl"): propozycja stylu przychodzi też dla sekcji, których
+     pipeline nie ruszał, a te nie mają w ogóle przełącznika trybów. Blok
+     wpięty w sekcję działa w obu przypadkach tak samo. */
+
+  let styleBusy = false;
+
+  const styleRows = (current: Job | null) => current?.style_sections ?? [];
+
+  async function callStyle(path: string, options: RequestInit) {
+    if (!job || styleBusy) return;
+    styleBusy = true;
+    $('[data-ed-style-error]')!.hidden = true;
+    renderStyle(job);
+    try {
+      const data = await api(path, options);
+      styleBusy = false;
+      if (data.job) render(data.job);
+    } catch (error) {
+      styleBusy = false;
+      renderStyle(job!);
+      const node = $('[data-ed-style-error]')!;
+      node.textContent = error instanceof Error ? error.message : 'Nie udało się wykonać przejazdu.';
+      node.hidden = false;
+    }
+  }
+
+  async function decideStyle(slot: number, decision: 'accepted' | 'rejected' | null) {
+    // Po zatwierdzeniu korekty sekcja pokazuje docelowy tekst: diff pipeline'u
+    // liczony jest względem oryginału i o poprawce redaktorskiej nie wie.
+    if (decision === 'accepted') sectionMode.set(slot, 'after');
+    await callStyle(`/api/cw/jobs/${job!.id}/style/${slot}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ decision }),
+    });
+  }
+
+  function renderStyle(current: Job) {
+    const card = $('[data-ed-style]')!;
+    card.hidden = current.status !== 'done';
+    if (card.hidden) return;
+    const actions = $('[data-ed-style-actions]')!;
+    actions.replaceChildren();
+    const report = $('[data-ed-style-report]')!;
+    report.replaceChildren();
+    report.hidden = true;
+
+    const button = (label: string, onClick: () => void, primary = false) => {
+      const node = document.createElement('button');
+      node.type = 'button';
+      node.className = primary ? 'ed-expert-run' : 'ed-expert-secondary';
+      node.textContent = label;
+      node.addEventListener('click', onClick);
+      return node;
+    };
+
+    if (styleBusy || current.style?.status === 'running') {
+      const wait = document.createElement('span');
+      wait.className = 'ed-expert-wait';
+      wait.textContent = 'przejazd redaktorski… (weryfikacja faktów w sieci, do dwóch minut)';
+      actions.append(wait);
+      return;
+    }
+
+    const style = current.style;
+    if (style?.status === 'done') {
+      const rows = styleRows(current);
+      const decided = rows.filter((row) => row.decision).length;
+      const meta = document.createElement('small');
+      meta.className = 'ed-expert-meta';
+      meta.textContent = [
+        rows.length
+          ? `${pl.format(rows.length)} ${rows.length === 1 ? 'sekcja z korektą' : 'sekcji z korektą'} na ${pl.format(style.sections_total ?? rows.length)}`
+          : 'model nie miał zastrzeżeń do żadnej sekcji',
+        rows.length ? `${pl.format(decided)} ocenionych` : null,
+        style.model || null,
+      ].filter(Boolean).join(' · ');
+      actions.append(meta, button('przejedź ponownie', () => runStylePass()));
+      renderStyleReport(report, style, rows);
+      return;
+    }
+    if (style?.status === 'failed' && style?.error) {
+      const err = document.createElement('span');
+      err.className = 'ed-expert-meta';
+      err.textContent = style.error;
+      actions.append(err);
+    }
+    actions.append(button(style ? 'spróbuj ponownie' : 'Popraw styl i fleksję',
+      () => runStylePass(), true));
+  }
+
+  const runStylePass = () => callStyle(`/api/cw/jobs/${job!.id}/style`, { method: 'POST' });
+
+  /** Raport przejazdu: weryfikacja faktów i propozycje uzupełnień. Poprawki
+      językowe stoją przy sekcjach, tu zostaje to, co dotyczy całego wpisu. */
+  function renderStyleReport(host: HTMLElement, style: any, rows: StyleRow[]) {
+    const facts = Array.isArray(style.facts) ? style.facts : [];
+    const additions = Array.isArray(style.additions) ? style.additions : [];
+    if (!facts.length && !additions.length && !rows.length) return;
+    host.hidden = false;
+
+    if (facts.length) {
+      const head = document.createElement('h4');
+      head.textContent = 'Fakty do sprawdzenia';
+      const list = document.createElement('ul');
+      list.className = 'ed-style-facts';
+      for (const fact of facts) {
+        const item = document.createElement('li');
+        const status = document.createElement('span');
+        status.className = `ed-sec-tag ${fact.status === 'potwierdzone' ? 'ok' : 'warn'}`;
+        status.textContent = fact.status;
+        const claim = document.createElement('b');
+        claim.textContent = fact.claim;
+        item.append(status, ' ', claim);
+        if (fact.note) {
+          const note = document.createElement('span');
+          note.className = 'ed-style-note';
+          note.textContent = ` – ${fact.note}`;
+          item.append(note);
+        }
+        if (fact.slot) {
+          const jump = document.createElement('a');
+          jump.href = `#sekcja-${fact.slot}`;
+          jump.className = 'ed-style-jump';
+          jump.textContent = `sekcja ${fact.slot}`;
+          jump.addEventListener('click', (event) => {
+            event.preventDefault();
+            document.querySelector(`.ed-doc-section[data-slot="${fact.slot}"]`)
+              ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          });
+          item.append(' ', jump);
+        }
+        list.append(item);
+      }
+      host.append(head, list);
+    }
+
+    if (additions.length) {
+      const head = document.createElement('h4');
+      head.textContent = 'Proponowane uzupełnienia';
+      const note = document.createElement('p');
+      note.className = 'ed-style-note';
+      note.textContent = 'Model ich nie wstawił do treści – decyzja i redakcja są po Twojej stronie.';
+      const list = document.createElement('ul');
+      list.className = 'ed-style-facts';
+      for (const row of additions) {
+        const item = document.createElement('li');
+        item.textContent = row.slot ? `[sekcja ${row.slot}] ${row.fact}` : row.fact;
+        if (!row.certain) {
+          const tag = document.createElement('span');
+          tag.className = 'ed-sec-tag warn';
+          tag.textContent = 'do weryfikacji';
+          item.append(' ', tag);
+        }
+        list.append(item);
+      }
+      host.append(head, note, list);
+    }
+  }
+
+  /** Propozycja korekty wpięta w sekcję dokumentu: uwagi, diff słowny i decyzja. */
+  function styleBlock(row: StyleRow) {
+    const wrap = document.createElement('div');
+    wrap.className = 'ed-style-prop';
+    wrap.dataset.decision = row.decision ?? '';
+
+    const head = document.createElement('div');
+    head.className = 'ed-style-prop-head';
+    const label = document.createElement('span');
+    label.className = 'ed-style-prop-label';
+    label.textContent = row.decision === 'accepted'
+      ? 'korekta redaktorska · zastosowana'
+      : (row.decision === 'rejected' ? 'korekta redaktorska · odrzucona' : 'korekta redaktorska');
+    head.append(label);
+    for (const warning of row.warnings ?? []) {
+      const tag = document.createElement('span');
+      tag.className = 'ed-sec-tag warn';
+      tag.textContent = warning.label;
+      head.append(tag);
+    }
+    const spacer = document.createElement('span');
+    spacer.className = 'ed-sec-spacer';
+    head.append(spacer);
+
+    const action = (label: string, decision: 'accepted' | 'rejected' | null, className: string) => {
+      const node = document.createElement('button');
+      node.type = 'button';
+      node.className = `ed-style-btn ${className}`;
+      node.textContent = label;
+      node.addEventListener('click', () => decideStyle(row.slot, decision));
+      return node;
+    };
+    if (row.decision === 'accepted') head.append(action('cofnij', null, 'undo'));
+    else if (row.decision === 'rejected') head.append(action('przywróć propozycję', null, 'undo'));
+    else head.append(action('✓ zastosuj', 'accepted', 'ok'), action('✕ odrzuć', 'rejected', 'no'));
+    wrap.append(head);
+
+    if (row.title_after && row.title_after !== row.title_before) {
+      const title = document.createElement('p');
+      title.className = 'ed-style-titlediff';
+      const del = document.createElement('del');
+      del.textContent = row.title_before ?? '';
+      const ins = document.createElement('ins');
+      ins.textContent = row.title_after;
+      title.append('nagłówek: ', del, ' ', ins);
+      wrap.append(title);
+    }
+
+    if (row.issues?.length) {
+      const list = document.createElement('ul');
+      list.className = 'ed-style-issues';
+      for (const issue of row.issues) {
+        const item = document.createElement('li');
+        item.textContent = issue;
+        list.append(item);
+      }
+      wrap.append(list);
+    }
+
+    // Zatwierdzona korekta jest już treścią sekcji – diff zostaje zwinięty,
+    // żeby dokument nie zamienił się w ścianę przekreśleń.
+    const details = document.createElement('details');
+    details.open = !row.decision;
+    const summary = document.createElement('summary');
+    summary.textContent = 'co się zmienia w treści';
+    details.append(summary, renderOpcodes(wordDiff(row.text_before, row.text_after)));
+    wrap.append(details);
+    return wrap;
+  }
+
+  function applyStyleToDoc(current: Job) {
+    document.querySelectorAll('.ed-style-prop').forEach((node) => node.remove());
+    const host = $('[data-ed-doc]');
+    if (!host) return;
+    for (const row of styleRows(current)) {
+      const node = host.querySelector(`.ed-doc-section[data-slot="${row.slot}"]`);
+      if (!node) continue;
+      const body = node.querySelector('.ed-sec-body, .ed-doc-body');
+      const block = styleBlock(row);
+      if (body) node.insertBefore(block, body);
+      else node.append(block);
+    }
+  }
+
   /* ---------- zapis do WordPressa (szkic + wdrożenie) ---------- */
 
   let wpBusy = false;
@@ -2429,6 +2774,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     applyJobToDoc(current);
     renderExpert(current);
     applyExpertToDoc(current);
+    renderStyle(current);
+    applyStyleToDoc(current);
     renderWpActions(current);
     const running = ['queued', 'dispatching', 'running'].includes(current.status);
     $<HTMLButtonElement>('[data-ed-run]')?.toggleAttribute('disabled', running);
@@ -3827,6 +4174,40 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     border-radius: 2px; box-decoration-break: clone; }
   .ed-diff del { text-decoration: line-through; text-decoration-thickness: 1px;
     color: var(--ink-faint); background: transparent; opacity: .75; }
+
+  /* ----- styl i fleksja ----- */
+  .ed-style-report { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--hairline-soft); }
+  .ed-style-report h4 { margin: 10px 0 6px; font: 600 .78rem var(--font-display); color: var(--ink);
+    letter-spacing: .03em; }
+  .ed-style-facts { margin: 0; padding-left: 18px; font-size: .78rem; line-height: 1.7;
+    color: var(--ink-muted); }
+  .ed-style-facts li { margin-bottom: 5px; }
+  .ed-style-facts b { color: var(--ink); font-weight: 600; }
+  .ed-style-note { font-size: .74rem; color: var(--ink-faint); }
+  .ed-style-jump { margin-left: 4px; font-size: .72rem; color: var(--accent-blue); }
+
+  /* Propozycja korekty stoi w sekcji nad treścią – to komentarz redakcyjny
+     do tekstu, więc dostaje własną ramkę, a nie wygląd bloku treści. */
+  .ed-style-prop { margin: 0 0 16px; padding: 12px 14px; border: 1px solid var(--hairline);
+    border-left: 3px solid var(--accent-blue); border-radius: 2px; background: var(--bg-surface-2); }
+  .ed-style-prop[data-decision="accepted"] { border-left-color: var(--status-ok); }
+  .ed-style-prop[data-decision="rejected"] { border-left-color: var(--hairline); opacity: .6; }
+  .ed-style-prop-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    margin-bottom: 8px; }
+  .ed-style-prop-label { font: 600 .72rem var(--font-display); color: var(--ink-muted);
+    letter-spacing: .06em; text-transform: uppercase; }
+  .ed-style-btn { padding: 4px 11px; border: 1px solid var(--hairline); border-radius: 2px;
+    background: transparent; color: var(--ink-muted); font-size: .72rem; cursor: pointer; }
+  .ed-style-btn.ok:hover { color: var(--status-ok); border-color: var(--status-ok); }
+  .ed-style-btn.no:hover, .ed-style-btn.undo:hover { color: var(--ink); border-color: var(--accent-blue); }
+  .ed-style-issues { margin: 0 0 8px; padding-left: 18px; font-size: .76rem; line-height: 1.65;
+    color: var(--ink-muted); }
+  .ed-style-titlediff { margin: 0 0 8px; font-size: .8rem; color: var(--ink-muted); }
+  .ed-style-titlediff del { color: var(--ink-faint); opacity: .75; }
+  .ed-style-titlediff ins { text-decoration: none; color: var(--ink); font-weight: 600; }
+  .ed-style-prop summary { font-size: .74rem; color: var(--ink-faint); cursor: pointer; }
+  .ed-style-prop summary:hover { color: var(--ink-muted); }
+  .ed-style-prop .ed-diff { margin-top: 8px; font-size: .92rem; }
 
   /* Na wąskim ekranie rynienka nie ma prawa zjadać połowy szerokości tekstu:
      etykiety bloków znikają, a decyzje przechodzą nad sekcję. */

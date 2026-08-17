@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS jobs (
   improvements      TEXT NOT NULL DEFAULT '[]',  -- JSON: wybrany pakiet ulepszeń
   models            TEXT,                        -- JSON: {research, writer} – nadpisanie defaultów pipeline'u
   expert            TEXT,                        -- JSON: {status, quote, expert, role, slot, model, cost} – etap finalny z Workera
+  style             TEXT,                        -- JSON: {status, model, cost, issues, facts, additions} – przejazd redaktorski (migracja 0009)
   snapshot_hash     TEXT,                        -- hash treści z chwili startu
   run_id            TEXT,                        -- GitHub Actions run id
   run_attempt       INTEGER,
@@ -74,6 +75,29 @@ CREATE TABLE IF NOT EXISTS job_sections (
   accepted         INTEGER NOT NULL DEFAULT 0,
   accepted_at      TEXT,
   edited           INTEGER NOT NULL DEFAULT 0,  -- text_after poprawiony ręcznie w edytorze
+
+  PRIMARY KEY (job_id, slot)
+);
+
+-- Propozycje przejazdu redaktorskiego („styl i fleksja”, migracja 0009).
+-- Osobna tabela, bo to druga warstwa nad propozycjami pipeline'u: diff liczony
+-- jest względem stanu, który redaktor widział, a akceptacja przenosi tekst
+-- do job_sections.text_after.
+CREATE TABLE IF NOT EXISTS job_style (
+  job_id           TEXT NOT NULL REFERENCES jobs (id) ON DELETE CASCADE,
+  slot             INTEGER NOT NULL,
+  title_field      TEXT,
+  text_field       TEXT,
+  title_before     TEXT,
+  title_after      TEXT,   -- NULL = model nie ruszał nagłówka
+  text_before      TEXT,
+  text_after       TEXT,
+  issues           TEXT,   -- JSON: lista poprawek tej sekcji
+  warnings         TEXT,   -- JSON: ostrzeżenia straży (liczby, linki, struktura)
+  decision         TEXT,   -- NULL | accepted | rejected
+  created_section  INTEGER NOT NULL DEFAULT 0,
+  applied_at       TEXT,
+  created_at       TEXT NOT NULL,
 
   PRIMARY KEY (job_id, slot)
 );

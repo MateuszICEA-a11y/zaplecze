@@ -788,3 +788,158 @@ test('routing: brak bindingu D1 daje czytelny 503, nie wyjątek', async () => {
   const response = await routeContentWatcher(new Request('https://dash.example/api/cw/jobs'), {});
   assert.equal(response.status, 503);
 });
+
+/* ---------- styl i fleksja (przejazd redaktorski) ---------- */
+
+const styleRequest = (path, body = null) =>
+  new Request(`https://dash.example/api/cw/jobs/job-abcdef12${path}`, {
+    method: body === null ? 'POST' : 'PATCH',
+    headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json' },
+    ...(body === null ? {} : { body: JSON.stringify(body) }),
+  });
+
+test('style POST: dostępny dopiero po zakończonej analizie', async () => {
+  const db = fakeDb({ 'SELECT * FROM jobs': { ...runningJob } });
+  const response = await routeContentWatcher(styleRequest('/style'), { CW_DB: db });
+  assert.equal(response.status, 409);
+  assert.match((await response.json()).error, /po zakończeniu analizy/);
+});
+
+test('style POST: drugi klik nie odpala drugiego przejazdu', async () => {
+  const db = fakeDb({
+    'SELECT * FROM jobs': { id: 'job-abcdef12', status: 'done' },
+    // Warunkowy UPDATE nie łapie wiersza = przejazd już trwa.
+    'UPDATE jobs SET style = ?': 0,
+  });
+  const response = await routeContentWatcher(styleRequest('/style'), { CW_DB: db });
+  assert.equal(response.status, 409);
+  assert.match((await response.json()).error, /właśnie trwa/);
+});
+
+test('style POST: bez nagłówka dashboardu to 403; GET to 405', async () => {
+  const env = { CW_DB: fakeDb({ 'SELECT * FROM jobs': { id: 'job-abcdef12', status: 'done' } }) };
+  const bare = new Request('https://dash.example/api/cw/jobs/job-abcdef12/style', { method: 'POST' });
+  assert.equal((await routeContentWatcher(bare, env)).status, 403);
+  const get = new Request('https://dash.example/api/cw/jobs/job-abcdef12/style');
+  assert.equal((await routeContentWatcher(get, env)).status, 405);
+});
+
+const STYLE_ROW = {
+  job_id: 'job-abcdef12',
+  slot: 4,
+  title_field: 'page_title_h2_4',
+  text_field: 'page_text_4',
+  title_before: 'Jak to działa',
+  title_after: null,
+  text_before: '<p>Ta sekcja ma dostarczać wartość.</p>',
+  text_after: '<p>Ta sekcja ma dawać realną wartość.</p>',
+  decision: null,
+  created_section: 0,
+};
+
+test('style PATCH: akceptacja zakłada wiersz sekcji dla slotu spoza pipeline\'u', async () => {
+  const inserts = [];
+  const updates = [];
+  const db = fakeDb({
+    'SELECT * FROM job_style': { ...STYLE_ROW },
+    'SELECT slot FROM job_sections': null, // pipeline tej sekcji nie ruszał
+    'INSERT INTO job_sections': (args) => { inserts.push(args); return 1; },
+    'UPDATE job_style SET decision = ?': (args) => { updates.push(args); return 1; },
+    'SELECT * FROM jobs': { id: 'job-abcdef12', status: 'done' },
+  });
+  const response = await routeContentWatcher(styleRequest('/style/4', { decision: 'accepted' }), { CW_DB: db });
+  assert.equal(response.status, 200);
+  assert.equal(inserts.length, 1);
+  // Kolejność wiązań: job_id, slot, title_field, text_field, title_before,
+  // title_after, text_before, text_after, hash…
+  assert.equal(inserts[0][3], 'page_text_4');
+  assert.equal(inserts[0][7], STYLE_ROW.text_after);
+  assert.equal(typeof inserts[0][8], 'string'); // hash treści dla bramki konfliktu
+  // created_section = 1, żeby cofnięcie wiedziało, że wiersz ma zniknąć.
+  assert.equal(updates[0][1], 1);
+});
+
+test('style PATCH: akceptacja na istniejącej sekcji tylko podmienia tekst', async () => {
+  const inserts = [];
+  const patched = [];
+  const db = fakeDb({
+    'SELECT * FROM job_style': { ...STYLE_ROW },
+    'SELECT slot FROM job_sections': { slot: 4 },
+    'INSERT INTO job_sections': (args) => { inserts.push(args); return 1; },
+    'SET text_after = ?, title_after = COALESCE': (args) => { patched.push(args); return 1; },
+    'UPDATE job_style SET decision = ?': 1,
+    'SELECT * FROM jobs': { id: 'job-abcdef12', status: 'done' },
+  });
+  const response = await routeContentWatcher(styleRequest('/style/4', { decision: 'accepted' }), { CW_DB: db });
+  assert.equal(response.status, 200);
+  assert.equal(inserts.length, 0, 'wiersz już istnieje – nie zakładamy drugiego');
+  assert.equal(patched[0][0], STYLE_ROW.text_after);
+  assert.equal(patched[0][1], null, 'model nie ruszał nagłówka, więc COALESCE go zostawia');
+});
+
+test('style PATCH: cofnięcie kasuje wiersz założony przy akceptacji', async () => {
+  const deletes = [];
+  const db = fakeDb({
+    'SELECT * FROM job_style': { ...STYLE_ROW, decision: 'accepted', created_section: 1 },
+    'DELETE FROM job_sections': (args) => { deletes.push(args); return 1; },
+    'UPDATE job_style SET decision = ?': 1,
+    'SELECT * FROM jobs': { id: 'job-abcdef12', status: 'done' },
+  });
+  const response = await routeContentWatcher(styleRequest('/style/4', { decision: null }), { CW_DB: db });
+  assert.equal(response.status, 200);
+  assert.deepEqual(deletes[0], ['job-abcdef12', 4]);
+});
+
+test('style PATCH: cofnięcie na sekcji pipeline\'u przywraca brzmienie sprzed przejazdu', async () => {
+  const restored = [];
+  const db = fakeDb({
+    'SELECT * FROM job_style': { ...STYLE_ROW, decision: 'accepted', created_section: 0, title_after: 'Nowy nagłówek' },
+    'SET text_after = ?, title_after = COALESCE': (args) => { restored.push(args); return 1; },
+    'UPDATE job_style SET decision = ?': 1,
+    'SELECT * FROM jobs': { id: 'job-abcdef12', status: 'done' },
+  });
+  const response = await routeContentWatcher(styleRequest('/style/4', { decision: 'rejected' }), { CW_DB: db });
+  assert.equal(response.status, 200);
+  assert.equal(restored[0][0], STYLE_ROW.text_before);
+  assert.equal(restored[0][1], STYLE_ROW.title_before);
+});
+
+test('style PATCH: nieznana poprawka to 404, zła decyzja to 400', async () => {
+  const brak = await routeContentWatcher(
+    styleRequest('/style/4', { decision: 'accepted' }),
+    { CW_DB: fakeDb({ 'SELECT * FROM job_style': null }) },
+  );
+  assert.equal(brak.status, 404);
+
+  const zla = await routeContentWatcher(
+    styleRequest('/style/4', { decision: 'moze-pozniej' }),
+    { CW_DB: fakeDb({ 'SELECT * FROM job_style': { ...STYLE_ROW } }) },
+  );
+  assert.equal(zla.status, 400);
+});
+
+test('style PATCH: sekcja bez pól ACF nie da się zapisać', async () => {
+  const db = fakeDb({
+    'SELECT * FROM job_style': { ...STYLE_ROW, title_field: '', text_field: '' },
+    'SELECT slot FROM job_sections': null,
+    'SELECT * FROM jobs': { id: 'job-abcdef12', status: 'done' },
+  });
+  const response = await routeContentWatcher(styleRequest('/style/4', { decision: 'accepted' }), { CW_DB: db });
+  assert.equal(response.status, 409);
+  assert.match((await response.json()).error, /pól ACF/);
+});
+
+test('routing: nowa trasa stylu nie zjadła tras sekcji ani eksperta', async () => {
+  const db = fakeDb({ 'SELECT * FROM jobs': { id: 'job-abcdef12', status: 'queued' } });
+  const env = { CW_DB: db };
+  // sections/:slot dalej wymaga PATCH-a, expert – POST/PATCH, cancel – POST.
+  const sections = new Request('https://dash.example/api/cw/jobs/job-abcdef12/sections/3');
+  assert.equal((await routeContentWatcher(sections, env)).status, 405);
+  const expert = new Request('https://dash.example/api/cw/jobs/job-abcdef12/expert', { method: 'DELETE' });
+  assert.equal((await routeContentWatcher(expert, env)).status, 405);
+  const cancel = new Request('https://dash.example/api/cw/jobs/job-abcdef12/cancel');
+  assert.equal((await routeContentWatcher(cancel, env)).status, 405);
+  // Samo zadanie – GET czyta stan.
+  const read = new Request('https://dash.example/api/cw/jobs/job-abcdef12');
+  assert.equal((await routeContentWatcher(read, env)).status, 200);
+});
