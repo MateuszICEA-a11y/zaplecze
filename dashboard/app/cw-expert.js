@@ -45,10 +45,16 @@ export const isPersonName = (name) => PERSON_NAME.test(String(name ?? '').trim()
  * Enumeracja po `?author=` jest zablokowana przez AIOS, więc liczby wpisów
  * nie podajemy; kolejność alfabetyczna.
  */
-export async function wpAuthors(base, fetchImpl = fetch) {
-  const url = `${String(base).replace(/\/$/, '')}/wp-json/wp/v2/users/?per_page=100&_fields=id,name,slug,description`;
+export async function wpAuthors(base, fetchImpl = fetch, auth = '') {
+  const url = `${String(base).replace(/\/$/, '')}/wp-json/wp/v2/users/?per_page=100&_fields=id,name,slug,description,avatar_urls`;
   const response = await fetchImpl(url, {
-    headers: { Accept: 'application/json', 'User-Agent': 'content-refresher' },
+    headers: {
+      Accept: 'application/json',
+      'User-Agent': 'content-refresher',
+      // Bez uwierzytelnienia AIOS odbija listę użytkowników (HTTP 403) i pole
+      // „ekspert" zostawało puste – hasło aplikacji Worker i tak już ma.
+      ...(auth ? { Authorization: auth } : {}),
+    },
     signal: AbortSignal.timeout(20_000),
   });
   if (!response.ok) throw new Error(`WordPress nie oddał listy autorów (HTTP ${response.status}).`);
@@ -59,9 +65,39 @@ export async function wpAuthors(base, fetchImpl = fetch) {
       name: String(row?.name ?? '').trim(),
       slug: String(row?.slug ?? '').trim(),
       role: KNOWN_ROLES[String(row?.name ?? '').trim()] ?? '',
+      avatar: avatarUrl((row?.avatar_urls ?? {})['96'] ?? ''),
     }))
     .filter((row) => isPersonName(row.name))
     .sort((a, b) => a.name.localeCompare(b.name, 'pl'));
+}
+
+/** Adres awatara w rozmiarze pod kartę cytatu. Gravatarowi każemy oddać 404
+    zamiast zastępczej ikonki – inaczej nie da się odróżnić realnego zdjęcia
+    od domyślnego szarego ludzika. */
+export function avatarUrl(raw) {
+  const url = String(raw ?? '').trim();
+  if (!/^https:\/\//i.test(url)) return '';
+  const base = url.split('?')[0];
+  return /(^|\.)gravatar\.com$/i.test(new URL(base).hostname)
+    ? `${base}?s=112&d=404`
+    : url;
+}
+
+/** Zdjęcie eksperta, jeśli konto WordPressa je ma. Dziś żadne nie ma, więc
+    kartę podpisuje kółko z inicjałami – ale gdy ktoś wgra avatar, wjedzie
+    do cytatu bez zmiany w kodzie. */
+export async function expertPhoto(url, fetchImpl = fetch) {
+  if (!url) return '';
+  try {
+    const response = await fetchImpl(url, {
+      method: 'HEAD',
+      headers: { 'User-Agent': 'content-refresher' },
+      signal: AbortSignal.timeout(8_000),
+    });
+    return response.ok ? url : '';
+  } catch {
+    return ''; // zdjęcie jest ozdobą, nie warunkiem wygenerowania cytatu
+  }
 }
 
 const EDITORIAL_RULES = `Zasady redakcyjne, których musisz przestrzegać:
@@ -158,22 +194,48 @@ export function extractJson(text) {
    #f0f1ff (--selected-color). Świadomy duplikat: EXPERT_STYLE w edytorze
    (edytor.astro) – „kopiuj cytat” i zapis do WP dają ten sam HTML. */
 export const EXPERT_STYLE = {
-  quote: 'margin:28px 0;padding:20px 24px 18px;border-left:3px solid #5768ff;'
-    + 'background:#f0f1ff;border-radius:0 3px 3px 0',
+  quote: 'margin:28px 0;padding:24px 28px;background:#eef0ff;border:1px solid #dfe2fb;'
+    + 'border-left:4px solid #5768ff;border-radius:12px;box-shadow:0 1px 2px #00062314',
+  row: 'display:flex;gap:18px;align-items:flex-start',
+  avatar: 'flex:0 0 56px;width:56px;height:56px;border-radius:50%;background:#5768ff;'
+    + 'color:#ffffff;font-size:18px;font-weight:700;display:flex;align-items:center;'
+    + 'justify-content:center',
+  photo: 'flex:0 0 56px;width:56px;height:56px;border-radius:50%;object-fit:cover',
+  body: 'flex:1 1 auto;min-width:0',
   label: 'display:block;margin-bottom:10px;color:#5768ff;font-size:12px;'
     + 'font-weight:700;letter-spacing:.08em;text-transform:uppercase',
-  text: 'margin:0 0 12px;color:#000623;font-size:17px;line-height:1.65',
-  footer: 'color:#6e7181;font-size:14px;font-style:normal',
+  text: 'margin:0 0 14px;color:#000623;font-size:17px;line-height:1.7;font-style:italic',
+  // Motyw stylizuje `blockquote footer` ciemnym tłem – bez jawnego zerowania
+  // podpis wychodził jako czarny pasek, a nazwisko znikało w tym tle.
+  footer: 'margin:0;padding:0;border:0;background:transparent;color:#6e7181;'
+    + 'font-size:14px;font-style:normal',
   name: 'color:#000623;font-weight:600',
 };
 
-export function expertBlockquote({ quote, expert, role }) {
+/** Inicjały do awatara – zdjęć autorów nie mamy (żadne z 37 kont nie ma
+    Gravatara), więc kółko dostaje dwie pierwsze litery imienia i nazwiska. */
+export function expertInitials(name) {
+  const words = String(name ?? '').trim().split(/\s+/).filter(Boolean);
+  return words.slice(0, 2).map((word) => word[0].toUpperCase()).join('');
+}
+
+export function expertBlockquote({ quote, expert, role, photo }) {
+  const name = String(expert ?? '').trim();
+  const initials = expertInitials(name);
+  const sign = [name, [role, 'ICEA'].filter(Boolean).join(', ')].filter(Boolean);
+  const face = photo
+    ? `<img src="${photo}" alt="${name}" style="${EXPERT_STYLE.photo}" />`
+    : (initials ? `<div style="${EXPERT_STYLE.avatar}">${initials}</div>` : '');
   return `<blockquote class="expert" style="${EXPERT_STYLE.quote}">`
+    + `<div style="${EXPERT_STYLE.row}">`
+    + face
+    + `<div style="${EXPERT_STYLE.body}">`
     + `<span style="${EXPERT_STYLE.label}">Zdaniem eksperta</span>`
     + `<p style="${EXPERT_STYLE.text}">${quote}</p>`
     + `<footer style="${EXPERT_STYLE.footer}">`
-    + `<span style="${EXPERT_STYLE.name}">${expert ?? ''}</span>${role ? `, ${role}` : ''}`
-    + '</footer></blockquote>';
+    + (name ? `<span style="${EXPERT_STYLE.name}">${name}</span>` : '')
+    + (sign.length > 1 ? ` · ${sign[1]}` : '')
+    + '</footer></div></div></blockquote>';
 }
 
 /**
@@ -235,6 +297,7 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
       role: person ? (person.role ?? '') : (data.role ? String(data.role).slice(0, 120) : ''),
       quote: String(data.quote).slice(0, 2000),
       placement: data.placement ? String(data.placement).slice(0, 500) : '',
+      photo: person?.photo ?? '',
     },
     model: payload?.model ?? model,
     cost: {

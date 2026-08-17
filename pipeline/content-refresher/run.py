@@ -68,6 +68,47 @@ MAX_INTERNAL_LINKS = 5
 # albo przymiotnikiem („w branży fotowoltaicznej" zamiast „na fotowoltaikę").
 COVERAGE_ROUNDS = 2
 
+# Wygląd karty cytatu niesiony w atrybutach `style` – do CSS motywu WordPressa
+# nie mamy dostępu. Świadomy duplikat: EXPERT_STYLE w dashboard/app/cw-expert.js
+# i w edytorze (edytor.astro). Trzy ścieżki (pipeline, Worker, „kopiuj cytat")
+# muszą dawać ten sam HTML.
+EXPERT_STYLE = {
+    "quote": "margin:28px 0;padding:24px 28px;background:#eef0ff;border:1px solid #dfe2fb;"
+             "border-left:4px solid #5768ff;border-radius:12px;box-shadow:0 1px 2px #00062314",
+    "row": "display:flex;gap:18px;align-items:flex-start",
+    "avatar": "flex:0 0 56px;width:56px;height:56px;border-radius:50%;background:#5768ff;"
+              "color:#ffffff;font-size:18px;font-weight:700;display:flex;align-items:center;"
+              "justify-content:center",
+    "body": "flex:1 1 auto;min-width:0",
+    "label": "display:block;margin-bottom:10px;color:#5768ff;font-size:12px;"
+             "font-weight:700;letter-spacing:.08em;text-transform:uppercase",
+    "text": "margin:0 0 14px;color:#000623;font-size:17px;line-height:1.7;font-style:italic",
+    # Motyw stylizuje `blockquote footer` ciemnym tłem – bez jawnego zerowania
+    # podpis wychodzi czarnym paskiem, w którym ginie nazwisko.
+    "footer": "margin:0;padding:0;border:0;background:transparent;color:#6e7181;"
+              "font-size:14px;font-style:normal",
+    "name": "color:#000623;font-weight:600",
+}
+
+
+def expert_blockquote(quote: str, expert: str, role: str) -> str:
+    """Karta cytatu eksperta – awatar z inicjałów, cytat kursywą, podpis."""
+    name = (expert or "").strip()
+    initials = "".join(word[0].upper() for word in name.split()[:2])
+    sign = ", ".join(part for part in [(role or "").strip(), "ICEA"] if part)
+    face = (f'<div style="{EXPERT_STYLE["avatar"]}">{initials}</div>' if initials else "")
+    return (
+        f'<blockquote class="expert" style="{EXPERT_STYLE["quote"]}">'
+        f'<div style="{EXPERT_STYLE["row"]}">{face}'
+        f'<div style="{EXPERT_STYLE["body"]}">'
+        f'<span style="{EXPERT_STYLE["label"]}">Zdaniem eksperta</span>'
+        f'<p style="{EXPERT_STYLE["text"]}">{quote}</p>'
+        f'<footer style="{EXPERT_STYLE["footer"]}">'
+        + (f'<span style="{EXPERT_STYLE["name"]}">{name}</span>' if name else "")
+        + (f" · {sign}" if name and sign else sign)
+        + "</footer></div></div></blockquote>"
+    )
+
 
 class Pipeline:
     def __init__(self, args):
@@ -745,11 +786,7 @@ class Pipeline:
         data["expert"], data["role"] = chosen["name"], chosen["role"]
 
         if quote and 1 <= slot <= 30:
-            block = (
-                f'<blockquote class="expert"><p>{quote}</p>'
-                f'<footer>{data["expert"]}, {data["role"]}</footer>'
-                f"</blockquote>"
-            )
+            block = expert_blockquote(quote, data["expert"], data["role"])
             proposals = self.context.setdefault("proposals", {})
             base = self._current_text(slot)
             # Cytat po pierwszym akapicie sekcji, nie na doczepkę na końcu –

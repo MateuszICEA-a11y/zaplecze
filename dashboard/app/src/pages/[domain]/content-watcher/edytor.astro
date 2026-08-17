@@ -417,7 +417,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
      przechodzi przez tę funkcję. Niedozwolone tagi są rozpakowywane
      (dzieci zostają), script/style/iframe znikają w całości. */
   const ALLOWED_TAGS = new Set(['P', 'BR', 'UL', 'OL', 'LI', 'STRONG', 'B', 'EM', 'I', 'A',
-    'H2', 'H3', 'H4', 'BLOCKQUOTE', 'FOOTER', 'TABLE', 'THEAD', 'TBODY', 'TR', 'TH', 'TD', 'SPAN']);
+    'H2', 'H3', 'H4', 'BLOCKQUOTE', 'FOOTER', 'TABLE', 'THEAD', 'TBODY', 'TR', 'TH', 'TD', 'SPAN',
+    // Układ karty eksperta (DIV) i zdjęcie z konta WordPressa (IMG) – lustro
+    // whitelisty w cw-api.js.
+    'DIV', 'IMG']);
   const DROP_TAGS = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'OBJECT', 'EMBED', 'FORM', 'LINK', 'META']);
 
   /* Widgety szablonu wklejone w treść („Zobacz również", boksy powiązanych
@@ -442,8 +445,21 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         if (!ALLOWED_TAGS.has(child.tagName)) { child.replaceWith(...child.childNodes); continue; }
         const href = child.tagName === 'A' ? child.getAttribute('href') ?? '' : '';
         const expertQuote = child.tagName === 'BLOCKQUOTE' && child.classList.contains('expert');
+        const src = child.tagName === 'IMG' ? child.getAttribute('src') ?? '' : '';
+        const alt = child.tagName === 'IMG' ? child.getAttribute('alt') ?? '' : '';
         for (const attr of [...child.attributes]) child.removeAttribute(attr.name);
         if (expertQuote) child.className = 'expert';
+        if (child.tagName === 'IMG') {
+          // Zdjęcie eksperta: adres zostaje, ale tylko https – reszta atrybutów
+          // (w tym `onerror`) już zdjęta wyżej.
+          if (/^https:\/\//i.test(src)) {
+            child.setAttribute('src', src);
+            child.setAttribute('alt', alt);
+          } else {
+            child.remove();
+            continue;
+          }
+        }
         if (child.tagName === 'A') {
           if (/^https?:\/\//i.test(href)) {
             child.setAttribute('href', href);
@@ -1670,22 +1686,39 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
      wersję bez stylów (sanitizer i tak zdejmuje atrybuty, a blok ma tu własny,
      ciemny styl) – docelowy wygląd widać dopiero w szkicu WordPressa. */
   const EXPERT_STYLE = {
-    quote: 'margin:28px 0;padding:20px 24px 18px;border-left:3px solid #5768ff;'
-      + 'background:#f0f1ff;border-radius:0 3px 3px 0',
+    quote: 'margin:28px 0;padding:24px 28px;background:#eef0ff;border:1px solid #dfe2fb;'
+      + 'border-left:4px solid #5768ff;border-radius:12px;box-shadow:0 1px 2px #00062314',
+    row: 'display:flex;gap:18px;align-items:flex-start',
+    avatar: 'flex:0 0 56px;width:56px;height:56px;border-radius:50%;background:#5768ff;'
+      + 'color:#ffffff;font-size:18px;font-weight:700;display:flex;align-items:center;'
+      + 'justify-content:center',
+    photo: 'flex:0 0 56px;width:56px;height:56px;border-radius:50%;object-fit:cover',
+    body: 'flex:1 1 auto;min-width:0',
     label: 'display:block;margin-bottom:10px;color:#5768ff;font-size:12px;'
       + 'font-weight:700;letter-spacing:.08em;text-transform:uppercase',
-    text: 'margin:0 0 12px;color:#000623;font-size:17px;line-height:1.65',
-    footer: 'color:#6e7181;font-size:14px;font-style:normal',
+    text: 'margin:0 0 14px;color:#000623;font-size:17px;line-height:1.7;font-style:italic',
+    footer: 'margin:0;padding:0;border:0;background:transparent;color:#6e7181;'
+      + 'font-size:14px;font-style:normal',
     name: 'color:#000623;font-weight:600',
   };
 
   function expertBlockquote(expert: any, styled = false) {
     const s = (key: keyof typeof EXPERT_STYLE) => (styled ? ` style="${EXPERT_STYLE[key]}"` : '');
-    const role = expert.role ? `, ${expert.role}` : '';
+    const name = String(expert.expert ?? '').trim();
+    const initials = name.split(/\s+/).filter(Boolean).slice(0, 2)
+      .map((word: string) => word[0].toUpperCase()).join('');
+    const sign = [expert.role, 'ICEA'].filter(Boolean).join(', ');
+    const face = expert.photo
+      ? `<img src="${expert.photo}" alt="${name}"${s('photo')} />`
+      : (initials ? `<div${s('avatar')}>${initials}</div>` : '');
     return `<blockquote class="expert"${s('quote')}>`
+      + `<div${s('row')}>${face}<div${s('body')}>`
       + `<span${s('label')}>Zdaniem eksperta</span>`
       + `<p${s('text')}>${expert.quote}</p>`
-      + `<footer${s('footer')}><span${s('name')}>${expert.expert ?? ''}</span>${role}</footer></blockquote>`;
+      + `<footer${s('footer')}>`
+      + (name ? `<span${s('name')}>${name}</span>` : '')
+      + (name && sign ? ` · ${sign}` : sign)
+      + '</footer></div></div></blockquote>';
   }
 
   function activeExpert(current: Job | null) {

@@ -15,7 +15,7 @@ import {
   DEFAULT_MODELS,
   SIGNATURE_WINDOW_S,
 } from './cw-api.js';
-import { buildExpertPrompt, expertBlockquote, isPersonName, wpAuthors } from './cw-expert.js';
+import { avatarUrl, buildExpertPrompt, expertBlockquote, isPersonName, wpAuthors } from './cw-expert.js';
 
 const SECRET = 'testowy-sekret-callbacku';
 
@@ -475,7 +475,8 @@ test('sanitizeSectionHtml: zdejmuje skrypty, atrybuty i tagi spoza whitelisty', 
   assert.match(clean, /<a href="https:\/\/x\.pl\/a" target="_blank" rel="noopener nofollow">link<\/a>/);
   assert.match(clean, /<a>zły<\/a>/);
   assert.match(clean, /<em>kursywa<\/em>/);
-  assert.equal(clean.includes('<div'), false);
+  // `div` niesie układ karty eksperta – zostaje, ale bez atrybutów.
+  assert.match(clean, /<div><em>kursywa<\/em><\/div>/);
   assert.match(clean, /<blockquote class="expert">/);
 });
 
@@ -635,11 +636,15 @@ test('expert: prompt wyklucza autora, blockquote w formacie pipeline', () => {
   assert.match(prompt, /nie wolno/);
   assert.doesNotMatch(prompt.split('Wybierz inną osobę')[1], /Mateusz Wiśniewski/);
   // Wygląd niesiony inline – motywu WordPressa nie mamy jak ostylować.
-  const quote = expertBlockquote({ quote: 'Q', expert: 'E', role: 'R' });
-  assert.match(quote, /^<blockquote class="expert" style="[^"]*border-left:3px solid #5768ff/);
+  const quote = expertBlockquote({ quote: 'Q', expert: 'Jan Bochen', role: 'specjalista SEO' });
+  assert.match(quote, /^<blockquote class="expert" style="[^"]*border-left:4px solid #5768ff/);
   assert.match(quote, /<span style="[^"]*">Zdaniem eksperta<\/span>/);
-  assert.match(quote, /<p style="[^"]*">Q<\/p>/);
-  assert.match(quote, /<footer style="[^"]*"><span style="[^"]*">E<\/span>, R<\/footer>/);
+  assert.match(quote, /<p style="[^"]*font-style:italic">Q<\/p>/);
+  // Awatar z inicjałów – zdjęć w WordPressie nie ma.
+  assert.match(quote, /<div style="[^"]*border-radius:50%[^"]*">JB<\/div>/);
+  assert.match(quote, /<span style="[^"]*">Jan Bochen<\/span> · specjalista SEO, ICEA<\/footer>/);
+  // Podpis nie może dziedziczyć ciemnego tła `blockquote footer` z motywu.
+  assert.match(quote, /<footer style="[^"]*background:transparent/);
   // To, co generujemy, musi przejść przez sanityzację bez utraty wyglądu.
   assert.equal(sanitizeSectionHtml(quote), quote);
 });
@@ -656,6 +661,49 @@ test('wpAuthors: konta firmowe odpadają, znane role dopisane', async () => {
   // Stanowisko znamy tylko dla części zespołu – reszta zostaje pusta.
   assert.equal(authors.find((row) => row.name === 'Karolina Goćkowska').role, 'specjalistka SEO');
   assert.equal(authors.find((row) => row.name === 'Jan Bochen').role, '');
+});
+
+test('sanitizeSectionHtml: zdjęcie eksperta tylko po https', () => {
+  const clean = sanitizeSectionHtml(
+    '<img src="https://secure.gravatar.com/avatar/abc" alt="Jan Bochen" style="width:56px" onerror="x">'
+    + '<img src="http://zle.pl/a.png" alt="http">'
+    + '<img src="data:image/svg+xml;base64,AAA" alt="data">',
+  );
+  assert.match(clean, /<img src="https:\/\/secure\.gravatar\.com\/avatar\/abc" alt="Jan Bochen" style="width:56px" \/>/);
+  assert.equal(clean.includes('onerror'), false);
+  assert.equal(clean.includes('zle.pl'), false);
+  assert.equal(clean.includes('data:image'), false);
+});
+
+test('expertBlockquote: zdjęcie zastępuje inicjały, gdy konto WP je ma', () => {
+  const quote = expertBlockquote({
+    quote: 'Q', expert: 'Jan Bochen', role: 'specjalista SEO',
+    photo: 'https://secure.gravatar.com/avatar/abc?s=112&d=404',
+  });
+  assert.match(quote, /<img src="https:\/\/secure\.gravatar\.com\/avatar\/abc\?s=112&d=404" alt="Jan Bochen"/);
+  assert.equal(quote.includes('>JB<'), false);
+});
+
+test('avatarUrl: Gravatar ma oddać 404 zamiast zastępczej ikonki', () => {
+  assert.equal(avatarUrl('https://secure.gravatar.com/avatar/abc?s=96&d=mm&r=g'),
+    'https://secure.gravatar.com/avatar/abc?s=112&d=404');
+  // Avatar z własnego hostingu zostaje bez zmian, tam domyślnej ikonki nie ma.
+  assert.equal(avatarUrl('https://www.grupa-icea.pl/foto/jan.jpg'), 'https://www.grupa-icea.pl/foto/jan.jpg');
+  assert.equal(avatarUrl('http://nie-https.pl/a.png'), '');
+});
+
+test('wpAuthors: lista idzie z hasłem aplikacji – anonim dostaje 403 od AIOS', async () => {
+  let seen = null;
+  const fetchImpl = async (url, options) => {
+    seen = options?.headers?.Authorization ?? null;
+    return new Response(JSON.stringify([
+      { id: 11, name: 'Karolina Goćkowska', slug: 'karolina-gockowska',
+        avatar_urls: { 96: 'https://secure.gravatar.com/avatar/abc?s=96&d=mm' } },
+    ]), { status: 200 });
+  };
+  const authors = await wpAuthors('https://www.grupa-icea.pl', fetchImpl, 'Basic xyz');
+  assert.equal(seen, 'Basic xyz');
+  assert.equal(authors[0].avatar, 'https://secure.gravatar.com/avatar/abc?s=112&d=404');
 });
 
 test('isPersonName: imię i nazwisko tak, marka nie', () => {

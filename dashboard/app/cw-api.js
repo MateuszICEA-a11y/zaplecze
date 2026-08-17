@@ -12,11 +12,11 @@
  * (`X-CW-Timestamp` + `X-CW-Signature`, sekret `CW_CALLBACK_SECRET`).
  */
 
-import { generateExpertQuote, wpAuthors } from './cw-expert.js';
+import { expertPhoto, generateExpertQuote, wpAuthors } from './cw-expert.js';
 import { handleRivals, rivalsSummary } from './cw-rivals.js';
 import { gapSummary, handleSerpGap } from './cw-serp.js';
 import { handleUsage } from './cw-usage.js';
-import { handleWpApply, handleWpDraft } from './cw-wp.js';
+import { handleWpApply, handleWpDraft, wpAuth } from './cw-wp.js';
 
 export const COOLDOWN_DAYS = 30; // ten sam wpis nie wraca do kolejki częściej
 export const MAX_ACTIVE_PER_DOMAIN = 3;
@@ -191,13 +191,17 @@ export const MAX_SECTION_BYTES = 64 * 1024;
 
 // Ta sama whitelista co sanitizeInto w edytor.astro (komentarz krzyżowy).
 const SANITIZE_ALLOWED = new Set(['p', 'br', 'ul', 'ol', 'li', 'strong', 'b', 'em', 'i', 'a',
-  'h2', 'h3', 'h4', 'blockquote', 'footer', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span']);
+  'h2', 'h3', 'h4', 'blockquote', 'footer', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span',
+  // `div` niesie układ karty eksperta (awatar obok treści) – akapit w środku
+  // `span` byłby niepoprawnym HTML-em i przeglądarka rozbiłaby układ.
+  // `img` to zdjęcie eksperta z konta WordPressa (adres i tak zawężamy do https).
+  'div', 'img']);
 
 // Cytat eksperta niesie wygląd w atrybucie `style` – do CSS motywu WordPressa
 // nie mamy dostępu. Przepuszczamy tylko deklaracje bez funkcji CSS: brak
 // nawiasów wyklucza `url(...)` i `expression(...)`, czyli jedyne miejsca,
 // w których w stylu dałoby się przemycić zasób albo kod.
-const STYLE_TAGS = new Set(['blockquote', 'p', 'footer', 'span']);
+const STYLE_TAGS = new Set(['blockquote', 'p', 'footer', 'span', 'div', 'img']);
 const STYLE_SAFE = /^[a-z0-9 .,:;%#\/-]+$/i;
 
 const safeStyle = (tag, attrs) => {
@@ -223,6 +227,14 @@ export function sanitizeSectionHtml(html) {
       const href = /href\s*=\s*["']?(https?:\/\/[^"'\s>]+)/i.exec(attrs)?.[1];
       return href ? `<a href="${href}" target="_blank" rel="noopener nofollow">` : '<a>';
     }
+    if (tag === 'img') {
+      // Zdjęcie eksperta: tylko https, tylko `src`/`alt`/`style` – żadnych
+      // atrybutów zdarzeń ani adresów `data:`.
+      const src = /src\s*=\s*["']?(https:\/\/[^"'\s>]+)/i.exec(attrs)?.[1];
+      if (!src) return '';
+      const alt = /alt\s*=\s*"([^"<>]*)"/i.exec(attrs)?.[1] ?? '';
+      return `<img src="${src}" alt="${alt}"${safeStyle(tag, attrs)} />`;
+    }
     const style = safeStyle(tag, attrs);
     if (tag === 'blockquote' && /class\s*=\s*["']?[^"'>]*\bexpert\b/i.test(attrs)) {
       return `<blockquote class="expert"${style}>`;
@@ -247,7 +259,7 @@ export async function handleAuthors(request, env, domain, { fetchImpl = fetch } 
   if (cached) return cached;
   let authors;
   try {
-    authors = await wpAuthors(base, fetchImpl);
+    authors = await wpAuthors(base, fetchImpl, wpAuth(env) ?? '');
   } catch (error) {
     return json({ error: error instanceof Error ? error.message : 'Nie udało się pobrać autorów.' }, 502);
   }
@@ -719,7 +731,7 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
     if (!base) return json({ error: 'Edytor nie obsługuje tej domeny.' }, 400);
     let authors;
     try {
-      authors = await wpAuthors(base, fetchImpl ?? fetch);
+      authors = await wpAuthors(base, fetchImpl ?? fetch, wpAuth(env) ?? '');
     } catch (error) {
       return json({ error: error instanceof Error ? error.message : 'Nie udało się pobrać autorów.' }, 502);
     }
@@ -729,7 +741,13 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
       return json({ error: 'To autor tego wpisu – cytat musi podpisać ktoś inny.', code: 'self_cite' }, 400);
     }
     const role = typeof body?.role === 'string' ? body.role.trim().slice(0, 120) : '';
-    person = { name: match.name, role: role || match.role || '' };
+    person = {
+      name: match.name,
+      role: role || match.role || '',
+      // Zdjęcie sprawdzamy przy każdym cytacie: dziś żadne konto go nie ma,
+      // ale wgrany później avatar wjedzie do kartki bez zmiany w kodzie.
+      photo: await expertPhoto(match.avatar, fetchImpl ?? fetch),
+    };
   }
 
   // Blokada podwójnego kliknięcia: warunkowy UPDATE przechodzi tylko, gdy

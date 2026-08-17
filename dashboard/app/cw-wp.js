@@ -48,7 +48,7 @@ export async function contentHash(text) {
 const ACF_FIELD = /^[a-z0-9_]{1,64}$/;
 export const DRAFT_TITLE_PREFIX = '[Szkic CW] ';
 
-function wpAuth(env) {
+export function wpAuth(env) {
   const user = String(env.WP_APP_USER ?? '').trim();
   const password = String(env.WP_APP_PASSWORD ?? '').trim();
   if (!user || !password) return null;

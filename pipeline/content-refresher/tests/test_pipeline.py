@@ -1081,7 +1081,10 @@ class TestExpertDobor(unittest.TestCase):
         self.assertEqual(payload["expert_replaced"], "Anna Nowak")
         # Stanowisko pochodzi z naszej listy, nie z odpowiedzi modelu.
         self.assertNotEqual(payload["role"], "dyrektor")
-        self.assertIn(f'{payload["expert"]}, {payload["role"]}', pipeline.context["proposals"][1]["text"])
+        block = pipeline.context["proposals"][1]["text"]
+        self.assertIn(f'{payload["expert"]}</span> · {payload["role"]}, ICEA', block)
+        # Podpis nie może wejść w ciemne tło `blockquote footer` z motywu.
+        self.assertIn("background:transparent", block)
 
 
 class TestKolektorFaq(unittest.TestCase):
