@@ -421,6 +421,12 @@ const ACF_SLOTS = 30; // lustro config.py (ACF_SLOTS) – szablon ma 30 par pól
 // Lustro config.py (FAQ_SLOTS, FAQ_SLOT_BASE).
 const FAQ_SLOTS = 18;
 const FAQ_SLOT_BASE = 100;
+/** Slot sekcji (1..30) albo pary FAQ (101..118) – lustro sections.py. */
+export const isKnownSlot = (slot) =>
+  Number.isFinite(slot)
+  && ((slot >= 1 && slot <= ACF_SLOTS)
+    || (slot > FAQ_SLOT_BASE && slot <= FAQ_SLOT_BASE + FAQ_SLOTS));
+
 const MAX_WP_BYTES = 2 * 1024 * 1024; // jak FETCH_MAX_BYTES w pipeline
 const CONTENT_CACHE_S = 60;
 
@@ -921,7 +927,9 @@ async function handleCallback(request, env) {
 
   for (const section of cb.sections ?? []) {
     const slot = Number.parseInt(section?.slot, 10);
-    if (!Number.isFinite(slot) || slot < 1 || slot > 30) continue;
+    // FAQ ma własną przestrzeń slotów (101+) – zakres `1..30` cicho gubił
+    // przepisane pytania: pipeline je zmieniał, a do edytora nie docierały.
+    if (!isKnownSlot(slot)) continue;
     statements.push(
       db(env)
         .prepare(
@@ -933,8 +941,12 @@ async function handleCallback(request, env) {
         )
         .bind(
           cb.job_id, slot,
-          section.title_field ?? `page_title_h2_${slot}`,
-          section.text_field ?? `page_text_${slot}`,
+          // Nazwy pól niesie pipeline; fallback musi znać obie przestrzenie,
+          // bo FAQ siedzi w page_faq_*, nie w page_title_h2_*.
+          section.title_field ?? (slot > FAQ_SLOT_BASE
+            ? `page_faq_question_${slot - FAQ_SLOT_BASE}` : `page_title_h2_${slot}`),
+          section.text_field ?? (slot > FAQ_SLOT_BASE
+            ? `page_faq_answer_${slot - FAQ_SLOT_BASE}` : `page_text_${slot}`),
           ['insert', 'move'].includes(section.operation) ? section.operation : 'update',
           section.title_before ?? null, section.title_after ?? null,
           section.text_before ?? null, section.text_after ?? null,
@@ -1032,7 +1044,7 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
     return handleSerpGap(request, env, domain.toLowerCase(), Number.parseInt(postId, 10), ctx);
   }
 
-  const jobMatch = url.pathname.match(/^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(\/(cancel|expert|wp-draft|wp-apply|sections\/(\d{1,2})))?\/?$/i);
+  const jobMatch = url.pathname.match(/^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(\/(cancel|expert|wp-draft|wp-apply|sections\/(\d{1,3})))?\/?$/i);
   if (jobMatch) {
     const [, id, , action, slot] = jobMatch;
     if (action === 'cancel') {

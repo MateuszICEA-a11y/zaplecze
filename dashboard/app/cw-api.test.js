@@ -13,6 +13,7 @@ import {
   fetchPostContent,
   sanitizeSectionHtml,
   DEFAULT_MODELS,
+  isKnownSlot,
   SIGNATURE_WINDOW_S,
 } from './cw-api.js';
 import { avatarUrl, buildExpertPrompt, expertBlockquote, isPersonName, wpAuthors } from './cw-expert.js';
@@ -259,14 +260,27 @@ test('callback: poprawny zapisuje krok i sekcje', async () => {
     step: { name: 'serp', status: 'done', cost: { serp_requests: 1 } },
     sections: [
       { slot: 3, text_before: 'stara treść', text_after: 'nowa treść', diff: [['equal', 0, 1]] },
+      // FAQ ma własną przestrzeń slotów – musi przejść tak samo jak sekcja.
+      { slot: 101, title_after: 'Gdzie szukać klientów na fotowoltaikę?', text_after: '<p>Odpowiedź.</p>' },
       { slot: 99, text_after: 'poza zakresem slotów' },
+      { slot: 119, text_after: 'poza przestrzenią FAQ' },
     ],
   });
   const response = await routeContentWatcher(request, { CW_DB: db, CW_CALLBACK_SECRET: SECRET }, { beforeAuth: true });
   assert.equal(response.status, 200);
   const batch = db.calls.find((call) => call.op === 'batch');
-  // jobs + job_steps + jedna sekcja (slot 99 odrzucony)
-  assert.equal(batch.size, 3);
+  // jobs + job_steps + sekcja 3 + FAQ 101 (sloty 99 i 119 odrzucone)
+  assert.equal(batch.size, 4);
+});
+
+test('isKnownSlot: sekcje 1..30 i pary FAQ 101..118', () => {
+  assert.equal(isKnownSlot(1), true);
+  assert.equal(isKnownSlot(30), true);
+  assert.equal(isKnownSlot(31), false);
+  assert.equal(isKnownSlot(100), false);
+  assert.equal(isKnownSlot(101), true);
+  assert.equal(isKnownSlot(118), true);
+  assert.equal(isKnownSlot(119), false);
 });
 
 /* ---------- proxy treści wpisu ---------- */
