@@ -188,7 +188,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           <span class="ed-expert-note">cytat osoby z ICEA (innej niż autor), wybrany model pisania</span>
         </div>
         <!-- Kogo podpisujemy: lista autorów portalu prosto z WordPressa. Rola
-             bywa pusta (WP jej nie trzyma) – wtedy redaktor wpisuje ją sam. -->
+             idzie z osobnej listy, bo WP stanowisk nie trzyma – dla znanych osób
+             podstawia się sama, dla reszty redaktor wybiera ją tutaj. -->
         <div class="ed-expert-who">
           <label>
             <span>Ekspert</span>
@@ -198,8 +199,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           </label>
           <label>
             <span>Stanowisko</span>
-            <input type="text" data-ed-expert-role placeholder="np. specjalistka SEO" maxlength="120" />
+            <select data-ed-expert-role-select>
+              <option value="">bez stanowiska</option>
+            </select>
           </label>
+          <input type="text" data-ed-expert-role placeholder="np. specjalistka SEO" maxlength="120" hidden />
         </div>
         <div class="ed-expert-actions" data-ed-expert-actions></div>
         <p class="ed-error" data-ed-expert-error hidden></p>
@@ -2065,12 +2069,34 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   let expertBusy = false;
   let authors: Array<{ name: string; role: string }> = [];
 
+  /* Stanowiska do wyboru. WordPress ich nie niesie, a wpisywanie z ręki przy
+     każdym cytacie kończyło się literówką w podpisie. Formy męskie i żeńskie
+     osobno – podpis ma się zgadzać z osobą. Lista jest świadomie krótka;
+     czego brakuje, redaktor doda przez „inne”. */
+  const ROLE_OPTIONS = [
+    'specjalista SEO',
+    'specjalistka SEO',
+    'ekspert SEO i AI Search',
+    'ekspertka SEO i AI Search',
+    'specjalista ds. treści',
+    'specjalistka ds. treści',
+    'specjalista ds. marketingu',
+    'specjalistka ds. marketingu',
+    'content manager',
+    'content managerka',
+    'head of SEO',
+    'account manager',
+    'account managerka',
+  ];
+  const ROLE_OTHER = '__other__';
+
   /* Autorzy portalu do wyboru. Lista idzie z WordPressa przez Workera (cache
      10 minut), więc nowa osoba w redakcji nie wymaga wdrożenia. Autora wpisu
      pomijamy – cytowanie samego siebie to reguła redakcyjna, nie kaprys UI. */
   async function loadAuthors() {
     const select = $<HTMLSelectElement>('[data-ed-expert-who]');
     if (!select) return;
+    fillRoles();
     try {
       const data = await api(`/api/cw/authors/${domain}`);
       authors = (data.authors ?? []).filter((row: any) => row.name !== entry.author);
@@ -2084,15 +2110,58 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       select.append(option);
     }
     select.addEventListener('change', () => {
-      const role = authors.find((row) => row.name === select.value)?.role ?? '';
-      $<HTMLInputElement>('[data-ed-expert-role]')!.value = role;
+      setRole(authors.find((row) => row.name === select.value)?.role ?? '');
     });
+  }
+
+  /** Wypełnia listę stanowisk i spina ją z polem tekstowym dla „inne”. */
+  function fillRoles() {
+    const select = $<HTMLSelectElement>('[data-ed-expert-role-select]');
+    const input = $<HTMLInputElement>('[data-ed-expert-role]');
+    if (!select || !input) return;
+    for (const role of ROLE_OPTIONS) {
+      const option = document.createElement('option');
+      option.value = role;
+      option.textContent = role;
+      select.append(option);
+    }
+    const other = document.createElement('option');
+    other.value = ROLE_OTHER;
+    other.textContent = 'inne (wpisz…)';
+    select.append(other);
+    select.addEventListener('change', () => {
+      const custom = select.value === ROLE_OTHER;
+      input.hidden = !custom;
+      if (custom) input.focus();
+      else input.value = '';
+    });
+  }
+
+  /** Rola z WordPressa/wyboru autora: trafia w opcję listy, a nietypowe
+      brzmienie ląduje w polu „inne” zamiast przepaść. */
+  function setRole(role: string) {
+    const select = $<HTMLSelectElement>('[data-ed-expert-role-select]');
+    const input = $<HTMLInputElement>('[data-ed-expert-role]');
+    if (!select || !input) return;
+    if (role && !ROLE_OPTIONS.includes(role)) {
+      select.value = ROLE_OTHER;
+      input.hidden = false;
+      input.value = role;
+      return;
+    }
+    select.value = role;
+    input.hidden = true;
+    input.value = '';
   }
 
   function expertChoice() {
     const name = $<HTMLSelectElement>('[data-ed-expert-who]')?.value.trim() ?? '';
     if (!name) return undefined;
-    return { expert: name, role: $<HTMLInputElement>('[data-ed-expert-role]')?.value.trim() || undefined };
+    const picked = $<HTMLSelectElement>('[data-ed-expert-role-select]')?.value ?? '';
+    const role = picked === ROLE_OTHER
+      ? ($<HTMLInputElement>('[data-ed-expert-role]')?.value.trim() ?? '')
+      : picked;
+    return { expert: name, role: role || undefined };
   }
 
   async function callExpert(method: string, body?: any) {
@@ -3641,6 +3710,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     background: var(--bg-surface-2); color: var(--ink); font: inherit; font-size: .78rem; }
   .ed-expert-who select { max-width: 280px; }
   .ed-expert-who input { width: 190px; }
+  .ed-expert-who input[hidden] { display: none; }
   .ed-expert-who select:focus, .ed-expert-who input:focus { outline: none; border-color: var(--accent-blue); }
   .ed-expert-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
   .ed-expert-preview { flex-basis: 100%; }
