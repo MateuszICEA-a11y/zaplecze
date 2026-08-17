@@ -757,10 +757,22 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       tekst z podglądu, a przy widoku różnic – wersja, która wejdzie na stronę. */
   function docSnapshot() {
     const box = document.createElement('div');
-    for (const node of $('[data-ed-doc]')!.querySelectorAll<HTMLElement>('.ed-doc-section')) {
-      const title = node.querySelector('.ed-sec-head h1, .ed-sec-head h2')?.textContent ?? '';
+    for (const node of $('[data-ed-doc]')!.querySelectorAll<HTMLElement>('.ed-doc-section, .ed-faq-head')) {
+      // Nagłówek bloku FAQ to nie sekcja, a bez niego podgląd całości gubił
+      // granicę między artykułem a pytaniami.
+      if (node.classList.contains('ed-faq-head')) {
+        const faqHeading = document.createElement('h2');
+        faqHeading.textContent = node.querySelector('h2')?.textContent ?? 'FAQ';
+        box.append(faqHeading);
+        continue;
+      }
+      const isFaq = node.classList.contains('ed-doc-faq');
+      // Pytanie FAQ siedzi w H3 – szukanie samych H2 zostawiało w podglądzie
+      // odpowiedzi bez pytań, przez co blok FAQ wyglądał na nieobecny.
+      const title = node.querySelector('.ed-sec-head h1, .ed-sec-head h2, .ed-sec-head h3')?.textContent ?? '';
       if (title) {
-        const heading = document.createElement(node.classList.contains('ed-doc-intro') ? 'h1' : 'h2');
+        const level = node.classList.contains('ed-doc-intro') ? 'h1' : (isFaq ? 'h3' : 'h2');
+        const heading = document.createElement(level);
         heading.textContent = title;
         box.append(heading);
       }
@@ -1915,7 +1927,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       wrap.append(node);
     };
     const stats = section.diff?.stats;
-    if (section.operation === 'insert') tag('nowa sekcja', 'new');
+    // Nazywamy rzecz po imieniu: w bloku FAQ dochodzi pytanie, nie sekcja.
+    if (section.operation === 'insert') {
+      tag(section.slot > FAQ_SLOT_BASE ? 'nowe pytanie FAQ' : 'nowa sekcja', 'new');
+    }
     else if (section.operation === 'move') {
       // Renumeracja układu: treść przyszła z innego slotu. Diff liczony jest
       // względem źródła, więc statystyki pokazujemy tylko przy realnej zmianie.
@@ -1949,12 +1964,19 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     for (const section of current.sections) {
       let node = bySlot.get(section.slot);
       if (!node) {
-        // Nowa sekcja albo nowe pytanie FAQ (wolny slot) – wstawiamy w porządku
-        // slotów. Sloty FAQ są wyższe niż sekcyjne, więc pytanie trafia na koniec.
-        node = docSection(section.slot, section.title_after ?? '', null,
-          section.slot > FAQ_SLOT_BASE ? 'faq' : 'section');
-        const after = [...bySlot.entries()].filter(([slot]) => slot > section.slot).sort((a, b) => a[0] - b[0])[0];
-        host.insertBefore(node, after?.[1] ?? null);
+        // Nowa sekcja albo nowe pytanie FAQ (wolny slot). Kotwicy szukamy
+        // WYŁĄCZNIE w tej samej przestrzeni slotów: dla sekcji poprzednio
+        // pierwszym „wyższym" węzłem bywało pytanie FAQ, więc nowa sekcja
+        // lądowała pod nagłówkiem bloku FAQ – w dokumencie wyglądało to jak
+        // drugie, rozbite FAQ w środku artykułu.
+        const isFaq = section.slot > FAQ_SLOT_BASE;
+        node = docSection(section.slot, section.title_after ?? '', null, isFaq ? 'faq' : 'section');
+        const after = [...bySlot.entries()]
+          .filter(([slot]) => slot > section.slot && (slot > FAQ_SLOT_BASE) === isFaq)
+          .sort((a, b) => a[0] - b[0])[0];
+        // Sekcja bez następnika staje przed blokiem FAQ, nie za nim – FAQ na
+        // stronie stoi pod całym artykułem.
+        host.insertBefore(node, after?.[1] ?? (isFaq ? null : host.querySelector('.ed-faq-head')));
         bySlot.set(section.slot, node);
       }
       node.classList.add(section.operation === 'insert' ? 'is-new' : 'is-changed');
