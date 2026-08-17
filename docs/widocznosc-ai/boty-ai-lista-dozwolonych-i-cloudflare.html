@@ -581,6 +581,12 @@
           </table>
         </div>
 
+        <p>
+          Uwaga na <code>Claude-User</code>: Cloudflare klasyfikuje go jako <em>AI Crawler</em>,
+          więc zbiorcze blokowanie botów treningowych wycina go razem z nimi – szczegóły
+          w sekcji 4.
+        </p>
+
         <h3>Warstwa treningowa – blokuj świadomie, nie odruchowo</h3>
         <div class="table-scroll">
           <table>
@@ -845,130 +851,171 @@ done</code></pre>
       <section>
         <div class="sec-head">
           <span class="sec-num">4</span>
-          <h2>Jak to sprawdzić w panelu Cloudflare</h2>
+          <h2>Mapa panelu Cloudflare</h2>
         </div>
         <p>
-          Poniższa ścieżka odpowiada na pytanie „czy mój serwer wpuszcza boty AI” na podstawie
-          twardych danych – w odróżnieniu od sondy z zewnątrz, która podszywa się pod User-Agent
-          i może wywołać zarówno fałszywy alarm, jak i dać złudne poczucie bezpieczeństwa.
+          Cloudflare przebudował panel w kwietniu 2026 r. i sterowanie botami AI rozpadło się na
+          dwie niezależne gałęzie w lewej nawigacji domeny: <strong>AI Crawl Control</strong>
+          (decyzje dla pojedynczych botów) oraz <strong>Security</strong> (reguły ogólne, w tym
+          WAF). Jeśli widzisz starszy układ, w prawym górnym rogu dowolnej strony w sekcji
+          Security znajdziesz przycisk „Try new dashboard”.
         </p>
 
         <div class="steps">
           <div class="step">
-            <h3>Krok 1 – AI Crawl Control (decydujące źródło)</h3>
+            <h3>Gałąź 1: AI Crawl Control – decyzje dla pojedynczych botów</h3>
             <div class="step-path">
-              wybierz domenę w panelu → <b>AI Crawl Control</b> (lewa nawigacja)
-            </div>
-            <ul>
-              <li><strong>Overview</strong> – migawka aktywności botów AI.</li>
-              <li>
-                <strong>Crawlers</strong> – tabela crawlerów, które próbują uzyskać dostęp do
-                Twoich treści, wraz z informacją o tym, jak wchodzą w interakcję ze stronami. Dla
-                każdego bota możesz tu sprawdzić, czy żądania w ogóle docierają i jaką decyzję
-                otrzymują.
-              </li>
-              <li><strong>Metrics</strong> – wykresy i analityka ruchu botów w czasie.</li>
-              <li>
-                <strong>Robots.txt</strong> – jak boty AI faktycznie traktują Twój plik
-                <code>robots.txt</code>.
-              </li>
-            </ul>
-            <p>
-              Jeśli w zakładce Crawlers widzisz żądania danego bota z akcją „block”, masz
-              odpowiedź: blokada jest realna, a nie jest jedynie artefaktem sondy. Jeśli bot
-              w ogóle się nie pojawia, sprawdź zakres dat – brak wpisów przy świeżej stronie
-              oznacza tylko tyle, że nikt jej jeszcze nie odwiedził.
-            </p>
-            <p>
-              Narzędzie AI Crawl Control działa we wszystkich planach i nie wymaga ręcznego
-              włączania.
-            </p>
-          </div>
-
-          <div class="step">
-            <h3>Krok 2 – przełącznik „Block AI Scrapers and Crawlers”</h3>
-            <div class="step-path">
-              <b>Security</b> → <b>Bots</b> → konfiguracja obsługi ruchu botów przez proxy
-              (odnośnik w prawym górnym rogu) → karta <b>Block AI Scrapers and Crawlers</b>
+              domena → <b>AI Crawl Control</b> → Overview · Metrics · <b>Security</b> ·
+              Optimization · Signals
             </div>
             <p>
-              To najczęstsza przyczyna nieświadomej blokady: jeden przełącznik, aktywowany kiedyś
-              „na wszelki wypadek”, odcina całą warstwę krytyczną.
-            </p>
-            <p>
-              W tym samym miejscu sprawdź <strong>Bot Fight Mode</strong> /
-              <strong>Super Bot Fight Mode</strong>. Bot Fight Mode wymaga weryfikacji (wyświetla
-              wyzwanie/challenge) dla każdego ruchu uznanego za zautomatyzowany, a nie tylko dla
-              botów AI – to on najczęściej odpowiada za błąd 403 dla podszywającego się
-              User-Agenta.
-            </p>
-          </div>
-
-          <div class="step">
-            <h3>Krok 3 – reguły własne WAF</h3>
-            <div class="step-path"><b>Security</b> → <b>WAF</b> → <b>Custom rules</b></div>
-            <p>Przejrzyj reguły pod kątem wyrażeń odwołujących się do:</p>
-            <ul>
-              <li>
-                <code>cf.verified_bot_category</code> – filtrowanie po kategorii zweryfikowanych
-                botów, w tym „AI Crawler”,
-              </li>
-              <li>
-                <code>http.user_agent contains "bot"</code> – klasyk, który blokuje masowo
-                wszystko, co ma w nazwie „bot”,
-              </li>
-              <li><code>cf.bot_management.score</code> z niskim progiem,</li>
-              <li>blokad krajowych, jeśli boty łączą się z regionu, który odcinasz.</li>
-            </ul>
-            <p>
-              Reguła z akcją <em>Block</em> lub <em>Managed Challenge</em> obejmująca którykolwiek
-              token z sekcji 2 to problem – wyzwanie (challenge) jest dla bota równoznaczne
-              z blokadą, ponieważ żaden crawler nie rozwiąże testu opartego na JavaScript.
-            </p>
-          </div>
-
-          <div class="step">
-            <h3>Krok 4 – Analytics → Events, dowód na konkretnym żądaniu</h3>
-            <div class="step-path"><b>Analytics</b> → zakładka <b>Events</b></div>
-            <p>
-              Dostępne filtry to m.in. <strong>Action</strong>, <strong>Host</strong>,
-              <strong>Country</strong>, <strong>ASN</strong>, <strong>IP</strong>,
-              <strong>User Agents</strong> i <strong>Paths</strong>.
-            </p>
-            <p>
-              Ustaw filtr <code>User Agents</code> <em>contains</em> <code>GPTBot</code>
-              (następnie kolejno: <code>ClaudeBot</code>, <code>PerplexityBot</code>,
-              <code>OAI-SearchBot</code>). Interesuje Cię kolumna akcji:
+              Cała praca odbywa się w zakładce <strong>Security</strong>. Znajdziesz tam tabelę
+              wszystkich znanych Cloudflare crawlerów z kolumnami:
             </p>
             <ul>
-              <li>brak wyników – nic nie było blokowane w tym oknie czasowym,</li>
+              <li><strong>Crawler</strong> – nazwa bota i właściciel.</li>
               <li>
-                <em>Block</em> / <em>Managed Challenge</em> – masz nazwę reguły, która zablokowała
-                ruch; kliknięcie w zdarzenie pokazuje, czy to reguła własna, reguła zarządzana
-                (managed rule) czy Bot Fight Mode.
+                <strong>Category</strong> – klasyfikacja Cloudflare: <em>Search Engine Crawler</em>,
+                <em>AI Crawler</em>, <em>AI Search</em>, <em>AI Assistant</em>, <em>Archiver</em>.
               </li>
+              <li><strong>Bytes Transferred</strong> – ile danych bot faktycznie pobrał.</li>
+              <li>
+                <strong>Requests</strong> – rozbicie na <em>Allowed</em> i <em>Unsuccessful</em>.
+              </li>
+              <li><strong>Block Crawler</strong> – przełącznik blokady dla tego konkretnego bota.</li>
             </ul>
             <p>
-              To krok, który pozwala przejść od stwierdzenia „coś blokuje boty” do „blokuje je
-              reguła X, którą mogę tutaj wyłączyć”.
+              Nad tabelą są filtry (<em>Select crawler</em>, <em>Select operator</em>,
+              <em>Add filter</em>), wybór zakresu czasu oraz pole <strong>Show inactive
+              crawlers</strong> – bez jego zaznaczenia zobaczysz wyłącznie boty, które w danym
+              okresie próbowały wejść. Karta <strong>Configure Response</strong> ustawia kod
+              odpowiedzi i komunikat pokazywany zablokowanym crawlerom.
+            </p>
+            <p>
+              To jest decydujące źródło informacji: przełącznik <strong>Block Crawler</strong>
+              w pozycji włączonej oznacza blokadę wprowadzoną w Twojej konfiguracji, a nie domysł
+              na podstawie testu z zewnątrz.
             </p>
           </div>
 
           <div class="step">
-            <h3>Krok 5 – Cloudflare Pages i inne wyjątki</h3>
+            <h3>Jak czytać kolumnę Requests</h3>
             <p>
-              Jeżeli strona jest hostowana na Cloudflare Pages, ustawienia bezpieczeństwa mogą
-              znajdować się zarówno w strefie domeny, jak i w samym projekcie Pages. Sprawdź obie
-              warstwy, zanim uznasz konfigurację za wolną od blokad.
+              Wartość <em>Unsuccessful</em> nie musi oznaczać zadziałania blokady dla danego bota.
+              Wpadają tam również żądania odrzucone przez ogólną ochronę przed podszywaniem się –
+              na przykład testy narzędzi zewnętrznych, które ustawiają sobie User-Agent bota.
+              Jeśli przełącznik <strong>Block Crawler</strong> jest wyłączony, a mimo to widzisz
+              niezerowe <em>Unsuccessful</em>, sprawdź Bot Fight Mode, zanim uznasz, że blokujesz
+              tego bota.
+            </p>
+          </div>
+
+          <div class="step">
+            <h3>Gałąź 2: Security – reguły ogólne i WAF</h3>
+            <p>
+              WAF nie jest już osobną pozycją w menu. To najczęstsza przyczyna bezskutecznego
+              szukania – funkcje zapory rozeszły się na dwie strony w sekcji
+              <strong>Security</strong>.
+            </p>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Czego szukasz</th>
+                    <th>Gdzie to jest teraz</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Reguły własne WAF (custom rules)</td>
+                    <td>Security → <strong>Security rules</strong> → <em>Create rule</em> → <em>Custom rules</em></td>
+                  </tr>
+                  <tr>
+                    <td>Rate limiting (ograniczanie liczby żądań)</td>
+                    <td>Security → <strong>Security rules</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Reguły zarządzane: Cloudflare Managed Ruleset, OWASP</td>
+                    <td>Security → <strong>Settings</strong> → kategoria <em>Web application exploits</em></td>
+                  </tr>
+                  <tr>
+                    <td>Bot Fight Mode / Super Bot Fight Mode</td>
+                    <td>Security → <strong>Settings</strong> → kategoria <em>Bot traffic</em></td>
+                  </tr>
+                  <tr>
+                    <td>Block AI Bots, AI Labyrinth, zarządzany <code>robots.txt</code></td>
+                    <td>Security → <strong>Settings</strong> → kategoria <em>Bot traffic</em></td>
+                  </tr>
+                  <tr>
+                    <td>Zdarzenia bezpieczeństwa (dawne Security Events)</td>
+                    <td>Security → <strong>Analytics</strong> → zakładka <em>Events</em></td>
+                  </tr>
+                  <tr>
+                    <td>Ochrona przed DDoS</td>
+                    <td>Security → <strong>Settings</strong> → kategoria <em>DDoS attacks</em></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Strona <strong>Settings</strong> grupuje ustawienia w pięć kategorii według rodzaju
+              zagrożenia: <em>Web application exploits</em>, <em>DDoS attacks</em>,
+              <em>Bot traffic</em>, <em>API abuse</em>, <em>Client-side abuse</em>. Dla botów AI
+              liczy się wyłącznie <strong>Bot traffic</strong>.
+            </p>
+          </div>
+
+          <div class="step">
+            <h3>Co daje plan Free</h3>
+            <p>
+              Wbrew pozorom na darmowym planie masz komplet narzędzi potrzebnych do tej diagnozy:
+              AI Crawl Control z przełącznikami dla pojedynczych botów, <strong>Block AI
+              bots</strong>, <strong>AI Labyrinth</strong>, zarządzany <code>robots.txt</code> oraz
+              <strong>Bot Fight Mode</strong>. Poza zasięgiem pozostają Super Bot Fight Mode, Bot
+              Management i reguły zarządzane WAF – czyli rzeczy, które w tej sprawie i tak nie są
+              potrzebne.
             </p>
             <p>
-              Podobnie wygląda kwestia zarządzanego pliku <code>robots.txt</code> – Cloudflare
-              potrafi serwować własne dyrektywy dla botów AI. W takiej sytuacji plik, który
-              widzisz w repozytorium, nie jest tym, który faktycznie otrzymuje crawler. Rozstrzyga
-              to zakładka <strong>Robots.txt</strong> w AI Crawl Control.
+              Jedno zastrzeżenie do Bot Fight Mode: działa on na całym ruchu domeny i nie da się go
+              zawęzić do wybranych ścieżek. Wysyła kosztowne obliczeniowo wyzwanie każdemu żądaniu
+              uznanemu za zautomatyzowane – a crawler nie wykona kodu JavaScript, więc wyzwanie
+              jest dla niego równoznaczne z blokadą.
             </p>
           </div>
         </div>
+
+        <div class="note">
+          <span class="note-label">Pułapka: kategorie Cloudflare ≠ role u producenta</span>
+          <p>
+            Domyślne blokowanie botów AI działa na kategorii <em>AI Crawler</em> i zostawia
+            w spokoju <em>AI Search</em> oraz <em>AI Assistant</em>. Podział jest sensowny, ale
+            przypisanie pojedynczych botów bywa mylące.
+          </p>
+          <p>
+            Najważniejszy przypadek: <strong><code>Claude-User</code> figuruje jako <em>AI
+            Crawler</em></strong>, mimo że według dokumentacji Anthropic jest botem pobierającym
+            stronę na żądanie użytkownika – jego odpowiednikiem po stronie OpenAI jest
+            <code>ChatGPT-User</code>, którego Cloudflare zalicza do <em>AI Assistant</em>. Skutek
+            jest taki, że blokada „wszystkich botów treningowych” wycina również odczyt strony
+            w trakcie rozmowy z Claude, choć ChatGPT w tej samej sytuacji stronę przeczyta.
+          </p>
+          <p>
+            Wniosek: po włączeniu zbiorczej blokady przejdź tabelę wiersz po wierszu i porównaj ją
+            z listą z sekcji 2, zamiast ufać kategoriom.
+          </p>
+        </div>
+
+        <h3>Cloudflare Pages i inne wyjątki</h3>
+        <p>
+          Jeżeli strona jest hostowana na Cloudflare Pages, ustawienia bezpieczeństwa mogą
+          znajdować się zarówno w strefie domeny, jak i w samym projekcie Pages. Sprawdź obie
+          warstwy, zanim uznasz konfigurację za wolną od blokad.
+        </p>
+        <p>
+          Podobnie wygląda kwestia zarządzanego pliku <code>robots.txt</code> – Cloudflare potrafi
+          serwować własne dyrektywy dla botów AI. W takiej sytuacji plik, który widzisz
+          w repozytorium, nie jest tym, który faktycznie otrzymuje crawler.
+        </p>
       </section>
 
       <section>
@@ -986,15 +1033,28 @@ done</code></pre>
             <code>X-Robots-Tag</code>, meta robots, sonda po User-Agencie). Daje ogólny ogląd
             sytuacji.
           </li>
-          <li>AI Crawl Control → <strong>Crawlers</strong> – potwierdzenie w rzeczywistym ruchu.</li>
           <li>
-            Analytics → <strong>Events</strong> z filtrem po User Agent – wskazanie konkretnej
-            reguły.
+            <strong>AI Crawl Control → Security</strong> – przejrzyj kolumnę <em>Block Crawler</em>
+            i porównaj ją z listą z sekcji 2. To rozstrzyga, które blokady są Twoją decyzją.
           </li>
-          <li>Wyłączenie reguły lub dopisanie wyjątku dla warstwy krytycznej z sekcji 2.</li>
+          <li>
+            <strong>Security → Analytics → Events</strong> z filtrem <code>User Agents</code>
+            <em>contains</em> <code>GPTBot</code> (następnie <code>ClaudeBot</code>,
+            <code>PerplexityBot</code>, <code>OAI-SearchBot</code>). Dostępne filtry to m.in.
+            <em>Action</em>, <em>Host</em>, <em>Country</em>, <em>ASN</em>, <em>IP</em>,
+            <em>User Agents</em> i <em>Paths</em>. Akcja <em>Block</em> lub
+            <em>Managed Challenge</em> wskazuje regułę, która odrzuciła ruch; kliknięcie
+            w zdarzenie pokazuje, czy to reguła własna, reguła zarządzana, czy Bot Fight Mode.
+          </li>
+          <li>
+            <strong>Security → Security rules</strong> – jeśli winna jest reguła własna, tutaj ją
+            poprawisz. <strong>Security → Settings → Bot traffic</strong> – jeśli winny jest Bot
+            Fight Mode albo zbiorcze Block AI Bots.
+          </li>
           <li>
             Ponowne sprawdzenie po 24 godzinach – crawlery wracają w swoim tempie, a nie na
-            żądanie.
+            żądanie. Postęp śledź w kolumnie <em>Requests</em> w AI Crawl Control: rosnące
+            <em>Allowed</em> oznacza, że boty wróciły.
           </li>
         </ol>
       </section>
