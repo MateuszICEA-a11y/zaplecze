@@ -1,17 +1,28 @@
 /**
- * AI Bots Check – sprawdza, które z 13 botów AI mają dostęp do strony
- * na podstawie robots.txt.
+ * AI Bots Check – sprawdza, które z 13 botów AI mają dostęp do strony.
+ *
+ * Dwie warstwy, bo robots.txt jest tylko deklaracją:
+ *   1. robots.txt – parsowanie dyrektyw dla każdego bota,
+ *   2. sama strona – X-Robots-Tag, meta robots, wykrycie CDN oraz sonda
+ *      porównawcza „przeglądarka vs User-Agent bota" (functions/_lib/ai-bots-probe.ts).
  *
  * Endpoint: POST /api/tools/ai-bots-check
  * Body: { url: "domena.pl" } | { url: "https://domena.pl" }
  *
- * Response: pełna mapa 13 botów + summary + action items.
+ * Response: pełna mapa 13 botów + summary + action items + warstwa `page`.
  *
  * Pages Function – deployowane razem z Astro przez Cloudflare Pages.
  */
 
 import { AI_BOTS, CATEGORY_LABELS, type BotCategory } from '../../_lib/ai-bots';
 import { checkBotAccess } from '../../_lib/robots-parser';
+import {
+  analyzePageAccess,
+  buildPageActionItems,
+  PROBE_DISCLAIMER,
+  type PageAnalysis,
+  type ProbeVerdict,
+} from '../../_lib/ai-bots-probe';
 import { logEvent } from '../../_lib/lead-log';
 import { normalizeUrl } from '../../_lib/url-host';
 import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
@@ -36,6 +47,8 @@ type BotResult = {
   critical: boolean;
   allowed: boolean;
   matchedUserAgent: string | null;
+  /** Wynik sondy HTTP dla tego bota – tylko dla podzbioru z PROBE_BOTS. */
+  probe?: { verdict: ProbeVerdict; status: number | null; note: string };
 };
 
 type ActionItem = {
@@ -59,6 +72,20 @@ type CheckResponse = {
   };
   bots: BotResult[];
   actionItems: ActionItem[];
+  /** Warstwa poza robots.txt: WAF/CDN, X-Robots-Tag, meta robots. */
+  page?: PageLayer;
+};
+
+type PageLayer = {
+  pageUrl: string;
+  finalUrl: string;
+  status: number | null;
+  edge: { cloudflare: boolean; server: string | null; signals: string[] } | null;
+  directives: Array<{ source: 'header' | 'meta'; agent: string; tokens: string[] }>;
+  directiveSummary: PageAnalysis['directiveSummary'];
+  probes: PageAnalysis['probes'];
+  disclaimer: string;
+  error?: string;
 };
 
 // User-Agent imitujący prawdziwą przeglądarkę – większość WAF nie blokuje
@@ -76,7 +103,7 @@ const MAX_ROBOTS_BYTES = 512 * 1024;
  */
 function normalizeInput(
   input: string
-): { host: string; checkedPath: string; robotsUrl: string } | null {
+): { host: string; checkedPath: string; robotsUrl: string; pageUrl: string } | null {
   // normalizeUrl = walidacja + SSRF-blocklist (localhost, IP prywatne, IPv6) – wspólna z url-check.
   const normalizedUrl = normalizeUrl(input);
   if (!normalizedUrl) return null;
@@ -89,6 +116,7 @@ function normalizeInput(
       host: url.host,
       checkedPath: `${url.pathname || '/'}${url.search || ''}`,
       robotsUrl: `${url.protocol}//${url.host}/robots.txt`,
+      pageUrl: url.toString(),
     };
   } catch {
     return null;
@@ -194,11 +222,53 @@ function buildActionItems(bots: BotResult[]): ActionItem[] {
       priority: 'P2',
       title: `Wszystkie ${bots.length} botów AI ma dostęp – poprawnie skonfigurowane`,
       description:
-        'Analiza robots.txt dla sprawdzanej ścieżki nie wykazała blokad. Zweryfikuj osobno WAF/CDN, jeśli strona używa dodatkowej ochrony ruchu botów.',
+        'Analiza robots.txt dla sprawdzanej ścieżki nie wykazała blokad. Warstwę serwera (WAF/CDN, X-Robots-Tag, meta robots) opisują osobne punkty poniżej.',
     });
   }
 
   return items;
+}
+
+/** Przycina analizę strony do kształtu wysyłanego klientowi. */
+function toPageLayer(analysis: PageAnalysis): PageLayer {
+  return {
+    pageUrl: analysis.pageUrl,
+    finalUrl: analysis.finalUrl,
+    status: analysis.status,
+    edge: analysis.edge,
+    directives: analysis.directives.map((d) => ({
+      source: d.source,
+      agent: d.agent,
+      tokens: d.tokens,
+    })),
+    directiveSummary: analysis.directiveSummary,
+    probes: analysis.probes,
+    disclaimer: PROBE_DISCLAIMER,
+    error: analysis.error,
+  };
+}
+
+/**
+ * Dokleja warstwę serwerową do raportu robots.txt i zwraca odpowiedź HTTP.
+ * Wyniki sondy trafiają też na wiersze botów, żeby w tabeli było widać
+ * rozjazd „robots.txt pozwala, ale serwer odrzuca".
+ */
+function finalize(response: CheckResponse, analysis: PageAnalysis): Response {
+  const byName = new Map(analysis.probes.map((p) => [p.name, p]));
+  for (const bot of response.bots) {
+    const probe = byName.get(bot.name);
+    if (probe) {
+      bot.probe = { verdict: probe.verdict, status: probe.status, note: probe.note };
+    }
+  }
+
+  response.page = toPageLayer(analysis);
+  response.actionItems = [...response.actionItems, ...buildPageActionItems(analysis)];
+
+  return new Response(JSON.stringify(response), {
+    status: 200,
+    headers: jsonHeaders(),
+  });
 }
 
 function buildBotsWithAccess(allowed: boolean): BotResult[] {
@@ -228,7 +298,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   if (!normalized) {
     return jsonError(400, 'Podaj poprawny URL lub domenę (np. icea.pl)');
   }
-  const { host: domain, checkedPath, robotsUrl } = normalized;
+  const { host: domain, checkedPath, robotsUrl, pageUrl } = normalized;
 
   // Rate-limit per IP – to samo KV i semantyka co fanout/url-check.
   const kv = context.env.FANOUT_RL;
@@ -245,15 +315,41 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     logEvent(kv, 'usage', 'ai-bots-check', {
       url: `${domain}${checkedPath}`,
       domain,
-    }),
+    })
   );
 
   const fetchedAt = now.toISOString();
   let robotsResult: Awaited<ReturnType<typeof fetchRobotsTxt>>;
 
+  // Równolegle, bo to dwie niezależne warstwy: deklaracja (robots.txt)
+  // i realny dostęp (WAF + nagłówki strony). Szeregowo suma timeoutów
+  // zbliżyłaby się do limitu żądania w Pages Functions.
+  const pageAnalysisPromise = analyzePageAccess(pageUrl).catch(
+    (error): PageAnalysis => ({
+      pageUrl,
+      finalUrl: pageUrl,
+      status: null,
+      edge: null,
+      directives: [],
+      directiveSummary: {
+        noindex: false,
+        nofollow: false,
+        noai: false,
+        noimageai: false,
+        noarchive: false,
+        nosnippet: false,
+      },
+      probes: [],
+      baselineChallenge: false,
+      error: error instanceof Error ? error.message : 'nieznany błąd sondy',
+    })
+  );
+
   try {
     robotsResult = await fetchRobotsTxt(robotsUrl);
   } catch (error) {
+    // Sonda i tak leci – zbieramy ją, żeby nie zostawić wiszącego promise'a.
+    context.waitUntil(pageAnalysisPromise);
     const aborted =
       (error instanceof DOMException && error.name === 'AbortError') ||
       (error instanceof Error && /abort|timeout|timed out/i.test(error.message));
@@ -268,6 +364,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // Zliczenie limitu dopiero po udanym pobraniu – raport (także no-robots itd.) to sukces narzędzia.
   await gate.commit();
 
+  const pageAnalysis = await pageAnalysisPromise;
   const { text: robotsText, finalUrl, status, cloudflareBlocked } = robotsResult;
 
   // Cloudflare challenge → robots.txt jest zablokowany przez WAF
@@ -296,10 +393,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         },
       ],
     };
-    return new Response(JSON.stringify(response), {
-      status: 200,
-      headers: jsonHeaders(),
-    });
+    return finalize(response, pageAnalysis);
   }
 
   // 404/410 = brak robots.txt; zgodnie z konwencją crawler nie ma zakazu.
@@ -324,10 +418,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         },
       ],
     };
-    return new Response(JSON.stringify(response), {
-      status: 200,
-      headers: jsonHeaders(),
-    });
+    return finalize(response, pageAnalysis);
   }
 
   // Inne błędy nie są brakiem robots.txt. Nie wolno ich raportować jako pełny dostęp.
@@ -354,10 +445,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         },
       ],
     };
-    return new Response(JSON.stringify(response), {
-      status: 200,
-      headers: jsonHeaders(),
-    });
+    return finalize(response, pageAnalysis);
   }
 
   // Sprawdzamy każdy bot przez parser robots.txt
@@ -399,10 +487,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     actionItems: buildActionItems(bots),
   };
 
-  return new Response(JSON.stringify(response), {
-    status: 200,
-    headers: jsonHeaders(),
-  });
+  return finalize(response, pageAnalysis);
 };
 
 // Disable GET / preflight – zwracamy 405
