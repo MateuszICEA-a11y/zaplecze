@@ -1656,6 +1656,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       const gained = coverage.rounds.flatMap((round: any) => round.gained ?? []);
       if (gained.length) add('Frazy domknięte po sprawdzeniu', list(gained));
     }
+    // Fraza bez miejsca w akapitach kończy jako pytanie FAQ – to też domknięcie,
+    // tyle że w innym bloku strony.
+    const askedFaq = (coverage?.rounds ?? []).flatMap((round: any) => round.new_faq ?? []);
+    if (askedFaq.length) {
+      const titles = new Map((current.sections ?? []).map((row) => [row.slot, row.title_after || '']));
+      add('Frazy domknięte pytaniem FAQ', list(askedFaq.map((slot: number) =>
+        titles.get(slot) || `nowe pytanie ${slot - 100}`)));
+    }
     if (coverage?.skipped?.length) {
       add('Frazy świadomie pominięte', list(coverage.skipped.map((row: any) =>
         `${row.keyword} – ${row.why}`)));

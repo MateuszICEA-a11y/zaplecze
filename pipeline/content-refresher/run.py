@@ -698,6 +698,20 @@ class Pipeline:
             })
             before = after
 
+        # Ostatnia deska ratunku: fraza, która przeszła wszystkie rundy bez
+        # pokrycia i bez powodu, dostaje własne pytanie FAQ. W rundach coverage
+        # model tej ścieżki nie wybierał – miał wyjście „nie robię nic", bo
+        # zajmował się głównie wplataniem w akapity.
+        faq_round = self._coverage_faq_round(
+            [word for word in before["missing"] if word not in skipped],
+            pending, skipped,
+        )
+        if faq_round:
+            before = matching.coverage(self._coverage_text(), [row["keyword"] for row in pending])
+            rounds.append(faq_round)
+            if faq_round.get("cost"):
+                cost = faq_round.pop("cost")
+
         payload = {
             "targets": [row["keyword"] for row in targets],
             "covered": before["covered"],
@@ -711,6 +725,50 @@ class Pipeline:
         if result is not None:
             step.update({"model": result["model"], "cost": cost})
         return step
+
+    def _coverage_faq_round(self, missing: list[str], pending: list[dict], skipped: dict):
+        """Frazy bez miejsca w treści → pytania FAQ. Jedno zapytanie, na koniec.
+
+        Osobny prompt, bo w rundach coverage zadanie „wpleć w akapit" wypychało
+        FAQ na margines: model wolał nie zrobić nic, niż zadać pytanie.
+        """
+        free_faq = self._free_faq_for_coverage()
+        if not missing or not free_faq:
+            return None
+        searches = {row["keyword"]: row.get("searches") for row in pending}
+        titles = self._titles()
+        result, version = self._ask(
+            "coverage_faq", self.model_writer, max_tokens=4000,
+            missing=[{"keyword": word, "searches": searches.get(word)} for word in missing],
+            faq=[titles.get(slot, "") for slot in sorted(self._section_texts())
+                 if sec.is_faq(slot)] or "brak – ten wpis nie ma jeszcze pytań",
+            free_faq_slots=free_faq,
+            content=self._coverage_text()[:MAX_PROMPT_CONTENT],
+        )
+        added = {}
+        for row in (result["data"].get("faq") or []):
+            try:
+                slot = int(row.get("slot") or 0)
+            except (TypeError, ValueError):
+                continue
+            question, answer = (row.get("question") or "").strip(), (row.get("answer") or "").strip()
+            if slot not in free_faq or not question or not answer:
+                continue
+            added[slot] = {"title": question, "text": answer}
+            free_faq = [free for free in free_faq if free != slot]
+        if added:
+            self.context.setdefault("proposals", {}).update(added)
+        for row in (result["data"].get("skipped") or []):
+            if isinstance(row, dict) and (row.get("keyword") or "").strip():
+                skipped[row["keyword"].strip()] = (row.get("why") or "bez podanego powodu").strip()
+        return {
+            "round": "faq",
+            "asked": missing,
+            "new_faq": sorted(added),
+            "prompt_version": version,
+            "model": result["model"],
+            "cost": result["usage"],
+        }
 
     def _current_text(self, slot: int) -> str:
         """Treść sekcji po dotychczasowych krokach – kolejne ulepszenia pracują

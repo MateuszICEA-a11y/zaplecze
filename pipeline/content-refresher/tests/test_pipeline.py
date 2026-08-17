@@ -978,6 +978,49 @@ class TestCoverageGate(unittest.TestCase):
         self.assertNotIn("gdzie szukać klientów na fotowoltaikę", payload["missing"])
         self.assertEqual(payload["rounds"][0]["new_faq"], [104])
 
+    def test_fraza_bez_pokrycia_dostaje_pytanie_w_rundzie_faq(self):
+        pipeline = self._pipeline()
+        pipeline.context["free_faq_slots"] = [104, 105]
+        prompts = []
+
+        def fake_ask(prompt_name, model, **values):
+            prompts.append(prompt_name)
+            if prompt_name == "coverage":
+                # Model nic nie wskórał: ani wplecenia, ani powodu pominięcia.
+                return ({"data": {"sections": [], "skipped": []},
+                         "model": "test/model", "usage": {"tokens_in": 1, "tokens_out": 1}}, "1.1.0")
+            return ({"data": {"faq": [
+                {"slot": 104, "question": "Gdzie szukać klientów na fotowoltaikę?",
+                 "answer": "<p>Leady fotowoltaika biorą się z wyszukiwarki.</p>"},
+                {"slot": 199, "question": "Slot spoza puli", "answer": "<p>…</p>"},
+            ]}, "model": "test/model", "usage": {"tokens_in": 1, "tokens_out": 1}}, "1.0.0")
+
+        with mock.patch.object(pipeline, "_ask", side_effect=fake_ask):
+            payload = pipeline.step_coverage()["payload"]
+
+        self.assertEqual(prompts[-1], "coverage_faq")
+        proposals = pipeline.context["proposals"]
+        self.assertEqual(proposals[104]["title"], "Gdzie szukać klientów na fotowoltaikę?")
+        self.assertNotIn(199, proposals)
+        self.assertEqual(payload["rounds"][-1]["round"], "faq")
+        self.assertEqual(payload["rounds"][-1]["new_faq"], [104])
+        # Pytanie liczy się do pokrycia jak treść sekcji.
+        self.assertNotIn("gdzie szukać klientów na fotowoltaikę", payload["missing"])
+
+    def test_bez_wolnych_slotow_rundy_faq_nie_ma(self):
+        pipeline = self._pipeline()
+        pipeline.context["free_faq_slots"] = []
+        prompts = []
+
+        def fake_ask(prompt_name, model, **values):
+            prompts.append(prompt_name)
+            return ({"data": {"sections": [], "skipped": []},
+                     "model": "test/model", "usage": {"tokens_in": 1, "tokens_out": 1}}, "1.1.0")
+
+        with mock.patch.object(pipeline, "_ask", side_effect=fake_ask):
+            pipeline.step_coverage()
+        self.assertNotIn("coverage_faq", prompts)
+
     def test_budzet_nowych_faq_jest_wspolny_z_krokiem_rewrite(self):
         pipeline = self._pipeline()
         pipeline.context["free_faq_slots"] = [103, 104, 105, 106]
