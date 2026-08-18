@@ -1,13 +1,5 @@
 [
   {
-    "title": "E-TOLL w sezonie wyjazdowym 2026 – co musi wiedzieć właściciel kampera, przyczepy i auta elektrycznego",
-    "date": "2026-05-10",
-    "slug": "e-toll-w-sezonie-wyjazdowym-2026-co-musi-wiedziec-wlasciciel-kampera-przyczepy",
-    "section": "kampery",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Pakiet „Ceny Paliwa Niżej” pod znakiem zapytania. Minister wskazuje, co dalej",
     "date": "2026-05-11",
     "slug": "pakiet-ceny-paliwa-nizej-pod-znakiem-zapytania-minister-wskazuje-co-dalej",
@@ -717,6 +709,14 @@
     "slug": "renault-na-latbus-2026-master-w-roli-busa-pasazerskiego",
     "section": "news",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Rząd obniża VAT na paliwa. Pakiet „Ceny Paliw Niżej” wraca na stacje",
+    "date": "2026-08-18",
+    "slug": "rzad-obniza-vat-na-paliwa-pakiet-ceny-paliw-nizej-wraca-na-stacje",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
