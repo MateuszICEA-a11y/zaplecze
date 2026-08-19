@@ -335,7 +335,7 @@ async function audit(env, action, jobId, detail) {
 }
 
 /** Sekcja w brzmieniu, które redaktor ma przed sobą (propozycja albo CMS). */
-async function sectionForSlot(env, job, slot, fetchImpl) {
+export async function sectionForSlot(env, job, slot, fetchImpl) {
   const sections = await db(env)
     .prepare('SELECT slot, title_field, text_field, title_after, text_after, decision FROM job_sections WHERE job_id = ? ORDER BY slot')
     .bind(job.id)
@@ -343,7 +343,8 @@ async function sectionForSlot(env, job, slot, fetchImpl) {
   const doc = await styleDocument(env, job, sections.results ?? [], fetchImpl);
   if (doc.error) return doc;
   const row = doc.rows.find((item) => item.slot === slot);
-  return row ? { row } : { error: 'W tej sekcji nie ma treści do zilustrowania.', status: 404 };
+  // Komunikat neutralny – z tej funkcji korzysta też CTA (cw-cta.js).
+  return row ? { row } : { error: 'W tej sekcji nie ma treści.', status: 404 };
 }
 
 /**
@@ -496,7 +497,7 @@ export async function handleInfographic(request, env, id, slot, { fetchImpl = fe
 
 /** Wpisanie treści sekcji – z założeniem wiersza, jeśli pipeline jej nie ruszał
     (ta sama ścieżka co akceptacja korekty stylu w cw-api.js). */
-async function ensureSectionText(env, jobId, slot, row, text) {
+export async function ensureSectionText(env, jobId, slot, row, text) {
   const existing = await db(env)
     .prepare('SELECT slot FROM job_sections WHERE job_id = ? AND slot = ?')
     .bind(jobId, slot)

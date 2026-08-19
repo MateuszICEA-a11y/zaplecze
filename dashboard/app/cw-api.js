@@ -16,6 +16,7 @@ import { expertPhoto, generateExpertQuote, hasResearch, wpAuthors } from './cw-e
 import { handleInfographic } from './cw-infographic.js';
 import { handleRivals, rivalsSummary } from './cw-rivals.js';
 import { gapSummary, handleSerpGap } from './cw-serp.js';
+import { handleCta } from './cw-cta.js';
 import { runStylePass, saveStyleRows, STYLE_PROMPT_VERSION, styleDocument, styleGuard, weaveAddition } from './cw-style.js';
 import { handleUsage } from './cw-usage.js';
 import { ACF_FIELD, contentHash, handleWpApply, handleWpDraft, wpAuth } from './cw-wp.js';
@@ -1378,10 +1379,14 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
   }
 
   const jobMatch = url.pathname.match(
-    /^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(?:\/(cancel|expert|wp-draft|wp-apply|sections\/(\d{1,3})|style\/addition|style\/(\d{1,3})|style|infographic\/(\d{1,3})))?\/?$/i,
+    /^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(?:\/(cancel|expert|wp-draft|wp-apply|sections\/(\d{1,3})|style\/addition|style\/(\d{1,3})|style|infographic\/(\d{1,3})|cta\/(\d{1,3})))?\/?$/i,
   );
   if (jobMatch) {
-    const [, id, action, slot, styleSlot, imageSlot] = jobMatch;
+    const [, id, action, slot, styleSlot, imageSlot, ctaSlot] = jobMatch;
+    if (ctaSlot) {
+      if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
+      return handleCta(request, env, id, Number.parseInt(ctaSlot, 10));
+    }
     if (action === 'cancel') {
       if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
       return cancelJob(request, env, id);
