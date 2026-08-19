@@ -16,7 +16,7 @@ import {
   isKnownSlot,
   SIGNATURE_WINDOW_S,
 } from './cw-api.js';
-import { avatarUrl, buildExpertPrompt, expertBlockquote, hasResearch, isPersonName, researchBlock, wpAuthors } from './cw-expert.js';
+import { avatarUrl, buildExpertPrompt, expertBlockquote, generateExpertQuote, hasResearch, isPersonName, researchBlock, wpAuthors } from './cw-expert.js';
 
 const SECRET = 'testowy-sekret-callbacku';
 
@@ -873,7 +873,8 @@ test('style PATCH: akceptacja na istniejącej sekcji tylko podmienia tekst', asy
   const patched = [];
   const db = fakeDb({
     'SELECT * FROM job_style': { ...STYLE_ROW },
-    'SELECT slot FROM job_sections': { slot: 4 },
+    // Bramka świeżości: aktualny tekst sekcji musi być tym z chwili przejazdu.
+    'SELECT slot, text_after FROM job_sections': { slot: 4, text_after: STYLE_ROW.text_before },
     'INSERT INTO job_sections': (args) => { inserts.push(args); return 1; },
     'SET text_after = ?, title_after = COALESCE': (args) => { patched.push(args); return 1; },
     'UPDATE job_style SET decision = ?': 1,
@@ -1031,4 +1032,69 @@ test('expert: researchBlock pomija sekcje, których nie ma', () => {
   const onlyRivals = researchBlock({ rivals: { facts: ['fakt'], median_words: null, our_words: null } });
   assert.match(onlyRivals, /Konkrety/);
   assert.doesNotMatch(onlyRivals, /Objętość/);
+});
+
+/* ---------- ekspert 3.0.0: tryb wskazanej sekcji ---------- */
+
+test('expert: tryb wskazanej sekcji – prompt bez wyboru miejsca, z żelazną zasadą', () => {
+  const research = { brief: { gaps: [{ topic: 'kody odpowiedzi', why: 'konkurencja opisuje osobno' }] } };
+  const section = { slot: 4, title: 'Techniczne SEO', text: 'Sekcja o technikaliach.' };
+  const prompt = buildExpertPrompt({ title: 'T', content: 'Sekcja o technikaliach.', author: '', research, section });
+  assert.match(prompt, /Sekcja, pod którą stanie cytat/);
+  assert.match(prompt, /Nagłówek sekcji: Techniczne SEO/);
+  assert.doesNotMatch(prompt, /"placement"/);
+  assert.doesNotMatch(prompt, /"slot"/);
+  assert.match(prompt, /"basis"/);
+  assert.match(prompt, /ŻELAZNA ZASADA/);
+  assert.match(prompt, /mnożnik mocy kWp w SERP/);
+  // Granica roli zostaje – to ona trzyma model z dala od wcielania się w klienta.
+  assert.match(prompt, /NIE WOLNO Ci przypisywać sobie czynności klienta/);
+});
+
+test('expert: bez wskazania sekcji prompt dalej prosi o slot i placement', () => {
+  const prompt = buildExpertPrompt({ title: 'T', content: 'treść', author: '' });
+  assert.match(prompt, /"slot"/);
+  assert.match(prompt, /"placement"/);
+});
+
+test('expert: wskazana sekcja wymusza slot niezależnie od modelu', async () => {
+  const fetchImpl = async () => new Response(JSON.stringify({
+    model: 'x-ai/grok-4.6',
+    usage: { prompt_tokens: 1, completion_tokens: 2 },
+    choices: [{ message: { content: '{"expert":"Karolina Goćkowska","role":"specjalistka SEO","quote":"Q","basis":"fraza"}' } }],
+  }), { status: 200 });
+  const result = await generateExpertQuote({ OPENROUTER_API_KEY: 'k' }, { title: 'T', author: '' }, [], {
+    fetchImpl,
+    research: { brief: { gaps: [{ topic: 'a', why: 'b' }] } },
+    section: { slot: 4, title: 'Techniczne SEO', text: '<p>Treść sekcji.</p>' },
+  });
+  assert.equal(result.ok, true);
+  assert.equal(result.data.slot, 4);
+  assert.equal(result.data.placement, '');
+  assert.equal(result.data.basis, 'fraza');
+});
+
+/* ---------- bramka świeżości przy akceptacji stylu ---------- */
+
+test('styl: akceptacja odbita, gdy treść sekcji zmieniła się po przejeździe', async () => {
+  const db = fakeDb({
+    'SELECT * FROM job_style WHERE job_id = ? AND slot = ?': {
+      job_id: 'job-abcdef12', slot: 5, decision: null, created_section: 0,
+      title_field: 'page_title_h2_5', text_field: 'page_text_5',
+      text_before: '<p>Stan z przejazdu.</p>', text_after: '<p>Korekta.</p>',
+    },
+    'SELECT slot, text_after FROM job_sections': {
+      slot: 5, text_after: '<p>Stan z przejazdu.</p>\n<figure><img src="https://x/y.png" alt="" /></figure>',
+    },
+  });
+  const request = new Request('https://dash.example/api/cw/jobs/job-abcdef12/style/5', {
+    method: 'PATCH',
+    headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ decision: 'accepted' }),
+  });
+  const response = await routeContentWatcher(request, { CW_DB: db });
+  assert.equal(response.status, 409);
+  const payload = await response.json();
+  assert.equal(payload.code, 'stale_style');
+  assert.match(payload.error, /zmieniła się po przejeździe/);
 });

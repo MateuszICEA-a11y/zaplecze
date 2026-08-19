@@ -813,6 +813,27 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
     }, 409);
   }
 
+  // Miejsce cytatu wskazane w edytorze: model dostaje wtedy TYLKO tę sekcję
+  // (mniej kontekstu branży klienta = mniejsza pokusa wcielania się w nią),
+  // a slot nie podlega wyborowi modelu. Treść bierzemy przez styleDocument –
+  // aktualny stan z WordPressa scalony z propozycjami przebiegu.
+  let section = null;
+  const wantedSlot = Number.parseInt(body?.slot, 10);
+  if (Number.isInteger(wantedSlot) && wantedSlot >= 1) {
+    if (wantedSlot > 100) {
+      return json({ error: 'Cytat nie wchodzi do bloku FAQ – wybierz sekcję treści.' }, 400);
+    }
+    const rowsForDoc = await db(env)
+      .prepare('SELECT slot, title_field, text_field, title_after, text_after, decision FROM job_sections WHERE job_id = ? ORDER BY slot')
+      .bind(id)
+      .all();
+    const doc = await styleDocument(env, job, rowsForDoc.results ?? [], fetchImpl ?? fetch);
+    if (doc.error) return json({ error: doc.error }, doc.status ?? 502);
+    const row = doc.rows.find((item) => item.slot === wantedSlot);
+    if (!row) return json({ error: 'Wybrana sekcja nie ma treści we wpisie.' }, 409);
+    section = { slot: wantedSlot, title: row.title, text: row.text };
+  }
+
   // Blokada podwójnego kliknięcia: warunkowy UPDATE przechodzi tylko, gdy
   // ekspert nie jest właśnie generowany (json_extract – JSON1 jest w D1).
   // Blokada starsza niż okno staleCutoff jest martwa – invocation zabity
@@ -833,7 +854,7 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
     .all();
 
   const result = await generateExpertQuote(env, job, sections.results ?? [], {
-    ...(fetchImpl ? { fetchImpl } : {}), person, research,
+    ...(fetchImpl ? { fetchImpl } : {}), person, research, section,
   });
   const record = result.ok
     ? { status: 'done', ...result.data, model: result.model, cost: result.cost, created_at: nowIso() }
@@ -963,10 +984,20 @@ async function patchStyleSection(request, env, id, slot) {
 
   if (decision === 'accepted' && row.decision !== 'accepted') {
     const existing = await db(env)
-      .prepare('SELECT slot FROM job_sections WHERE job_id = ? AND slot = ?')
+      .prepare('SELECT slot, text_after FROM job_sections WHERE job_id = ? AND slot = ?')
       .bind(id, slot)
       .first();
     if (existing) {
+      // Bramka świeżości: treść sekcji mogła się zmienić po przejeździe (np.
+      // wstawiona infografika) – nadpisanie jej starszą propozycją po cichu
+      // wycięłoby te zmiany (tak 2026-08-19 zniknęła infografika z sekcji).
+      if ((existing.text_after ?? '') !== (row.text_before ?? '')) {
+        return json({
+          error: 'Treść sekcji zmieniła się po przejeździe redaktorskim (np. wstawiona infografika) – '
+            + 'uruchom „Popraw styl i fleksję" ponownie, żeby korekta liczyła się z aktualnego tekstu.',
+          code: 'stale_style',
+        }, 409);
+      }
       await db(env)
         .prepare(
           `UPDATE job_sections

@@ -25,9 +25,15 @@
  * 2.1.0 (2026-08-19): dokręcony ton i kąt GEO/AI z promptu redakcji – cytat ma
  * wnosić nową perspektywę (wskazówka/prognoza/ostrzeżenie), nie streszczać;
  * 40–80 słów. Model kroku: Grok 4.6, temperatura 0.6.
+ *
+ * 3.0.0 (2026-08-19): persona Head of SEO + „żelazna zasada" (zakaz sklejania
+ * żargonu branży klienta z SEO – cytat na artykule o fotowoltaice brzmiał jak
+ * wypowiedź elektryka) i tryb wskazanej sekcji: redaktor wybiera miejsce cytatu
+ * w edytorze, model dostaje wtedy TYLKO tę sekcję (mniej kontekstu branży
+ * klienta = mniejsza pokusa wcielania się w nią), a slot nie podlega wyborowi.
  */
 
-export const EXPERT_PROMPT_VERSION = '2.1.0';
+export const EXPERT_PROMPT_VERSION = '3.0.0';
 
 export const EXPERTS = [
   'Mateusz Wiśniewski – ekspert SEO i AI Search',
@@ -197,14 +203,43 @@ export const hasResearch = (research) => Boolean(researchBlock(research));
    i o tym, które powiaty zostają w ofercie – czyli o pracy klienta, nie swojej. */
 const ROLE_RULES = `## Kim jesteś
 
-Jesteś specjalistą agencji SEO iCEA. Artykuł opisuje pozycjonowanie dla pewnej branży – ta branża należy do KLIENTA, nie do Ciebie.
+Jesteś doświadczonym Head of SEO agencji iCEA i strategiem GEO (Generative Engine Optimization). Artykuł opisuje pozycjonowanie dla pewnej branży – ta branża należy do KLIENTA, nie do Ciebie.
 
 - Wolno Ci mówić o swojej pracy: analizie wyników wyszukiwania, architekturze serwisu, treści, frazach, danych z narzędzi, o tym, co widziałeś w projektach dla takich klientów.
 - NIE WOLNO Ci przypisywać sobie czynności klienta: montażu, dojazdów do zleceń, produkcji, obsługi serwisowej, decyzji o tym, gdzie firma sprzedaje. Nie mów „byłem na dachu", „dokładam trasę montażową", „potwierdzam, że powiat zostaje w ofercie".
 - O działaniach klienta pisz z zewnątrz: „u klientów widzę, że…", „firmy w tej branży zwykle…", a nie w pierwszej osobie.`;
 
-export function buildExpertPrompt({ title, content, author, experts = EXPERTS, person = null, research = null }) {
+export function buildExpertPrompt({ title, content, author, experts = EXPERTS, person = null, research = null, section = null }) {
   const allowed = experts.filter((name) => !author || !name.startsWith(author));
+  // Tryb wskazanej sekcji: kontekstem jest wyłącznie sekcja, pod którą cytat
+  // stanie – model nie wybiera miejsca i nie widzi reszty artykułu.
+  const contextBlock = section
+    ? `## Sekcja, pod którą stanie cytat (kontekst – cytat ma z niej naturalnie wynikać i nie powtarzać jej treści)
+
+Tytuł wpisu: ${title}
+Nagłówek sekcji: ${section.title || '(bez nagłówka)'}
+
+${content}`
+    : `## Artykuł po optymalizacji (kontekst – żeby nie powtórzyć tego, co już stoi w tekście)
+
+Tytuł: ${title}
+
+${content}`;
+  const shape = section
+    ? `{
+  "expert": "imię i nazwisko",
+  "role": "stanowisko",
+  "quote": "dwa–trzy mocne zdania komentarza w pierwszej osobie",
+  "basis": "która pozycja z materiału przebiegu jest podstawą komentarza – przepisz ją"
+}`
+    : `{
+  "slot": 5,
+  "expert": "imię i nazwisko",
+  "role": "stanowisko",
+  "quote": "dwa–trzy mocne zdania komentarza w pierwszej osobie",
+  "placement": "po której sekcji komentarz ma stanąć i dlaczego",
+  "basis": "która pozycja z materiału przebiegu jest podstawą komentarza – przepisz ją"
+}`;
   // Redaktor wskazał osobę w edytorze – model jej nie zmienia, dobiera tylko
   // treść i miejsce. Rola bywa pusta (WordPress stanowisk nie trzyma).
   const chosen = person?.name
@@ -220,11 +255,7 @@ ${ROLE_RULES}
 
 ${researchBlock(research) || '(brak – w takim razie zwróć {"skip": true, "reason": "brak materiału z przebiegu"})'}
 
-## Artykuł po optymalizacji (kontekst – żeby nie powtórzyć tego, co już stoi w tekście)
-
-Tytuł: ${title}
-
-${content}
+${contextBlock}
 
 ${chosen ?? `## Ekspert
 
@@ -234,14 +265,7 @@ Cytat przypisujemy osobie z zespołu ICEA. Autor tego wpisu to: ${author || 'nie
 
 Zwróć wyłącznie JSON:
 
-{
-  "slot": 5,
-  "expert": "imię i nazwisko",
-  "role": "stanowisko",
-  "quote": "dwa–cztery mocne zdania komentarza (ok. 40–80 słów) w pierwszej osobie",
-  "placement": "po której sekcji komentarz ma stanąć i dlaczego",
-  "basis": "która pozycja z materiału przebiegu jest podstawą komentarza – przepisz ją"
-}
+${shape}
 
 Jeśli materiał z przebiegu jest pusty albo nie da się na nim zbudować sensownego komentarza, zwróć zamiast tego:
 
@@ -250,12 +274,13 @@ Jeśli materiał z przebiegu jest pusty albo nie da się na nim zbudować sensow
 Cisza jest lepsza niż zmyślona anegdota – nie nadrabiaj braku danych wspomnieniem z projektu.
 
 Zasady:
-- Punktem wyjścia jest JEDNA konkretna pozycja z materiału: przegrywana fraza, konkret konkurencji, luka z analizy albo różnica objętości. Wpisz ją do pola „basis".
-- Nie streszczaj artykułu ani materiału – wnieś nową perspektywę: praktyczną wskazówkę, prognozę albo ostrzeżenie, które wynika z tej pozycji. To ma być interpretacja danych, nie ich odczytanie na głos.
-- Jeśli temat i materiał dają naturalny pomost, połącz wątek z widocznością w erze AI: AI Overviews, wyszukiwarki oparte na LLM (ChatGPT Search, Perplexity), Topical Authority, intencja użytkownika (Search Intent), zero-click searches. Nie doklejaj tego na siłę – lepszy celny komentarz czysto SEO niż wymuszona wstawka o AI.
-- Bez banałów w rodzaju „SEO jest ważne" czy „warto zadbać o jakość treści".
-- Bez obietnic wyników. Liczby wolno przytaczać wyłącznie te z materiału przebiegu – żadnych własnych.
-- Ton: profesjonalny, autorytatywny, ale przystępny – brzmisz jak praktyk, który na co dzień analizuje dane i algorytmy. Pierwsza osoba, język mówiony, ale poprawny.
+- Zidentyfikuj branżę i główny wątek tekstu – cytat ma naturalnie z niego wynikać i pasować do niego biznesowo, ale wypowiadasz się jako Head of SEO, nigdy jako przedstawiciel branży klienta.
+- Punktem wyjścia jest JEDNA konkretna pozycja z materiału przebiegu: przegrywana fraza, konkret konkurencji, luka z analizy albo różnica objętości. Wpisz ją do pola „basis".
+- Nie streszczaj tekstu – wnieś nową perspektywę: pokaż, co z tej pozycji wynika dla czytelnika i – jeśli materiał daje pokrycie – jak era AI (AI Overviews, ChatGPT Search, zero-click searches, E-E-A-T, zmiana intencji użytkownika) zmienia zasady gry w tym konkretnym temacie. Nie doklejaj wątku AI na siłę.
+- ŻELAZNA ZASADA (zero halucynacji): nie wymyślaj wskaźników, wzorów ani pojęć sklejających żargon branży klienta z SEO – nic w stylu „mnożnik mocy kWp w SERP". Używaj wyłącznie prawdziwych, rynkowych mechanizmów biznesowych: konwersja, leady, jakość treści, intencja użytkownika.
+- Bez banałów w rodzaju „SEO jest ważne" czy „warto zadbać o jakość treści". Bez obietnic wyników. Liczby wolno przytaczać wyłącznie te z materiału przebiegu – żadnych własnych.
+- Ton: profesjonalny, autorytatywny, zwięzły – praktyk biznesu, któremu zależy na jakości i zyskach klienta, nie na „pustym" ruchu. Pierwsza osoba.
+- Długość: dwa–trzy mocne zdania.
 
 ${EDITORIAL_RULES}`;
 }
@@ -333,11 +358,14 @@ export function expertBlockquote({ quote, expert, role, photo }) {
  * Jedno wywołanie OpenRoutera. Zwraca {ok, data:{slot, expert, role, quote,
  * placement}, model, cost} albo {ok:false, error}.
  */
-export async function generateExpertQuote(env, job, sections, { fetchImpl = fetch, person = null, research = null } = {}) {
+export async function generateExpertQuote(env, job, sections, { fetchImpl = fetch, person = null, research = null, section = null } = {}) {
   const apiKey = (env.OPENROUTER_API_KEY || '').trim();
   if (!apiKey) return { ok: false, error: 'Brak sekretu OPENROUTER_API_KEY w Workerze.' };
 
-  const content = mergedContent(sections);
+  // Wskazana sekcja = jedyny kontekst treściowy; bez wskazania – cały wpis.
+  const content = section
+    ? stripHtml(section.text).slice(0, MAX_CONTENT_CHARS)
+    : mergedContent(sections);
   if (!content) return { ok: false, error: 'Zadanie nie ma treści sekcji do skomentowania.' };
 
   const models = typeof job.models === 'string' ? JSON.parse(job.models || 'null') : job.models;
@@ -345,7 +373,7 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
   // z joba dotyczy przepisywania sekcji i zostaje przy Sonnecie – nie dziedziczymy
   // go tutaj, bo maskowałby tę zmianę w każdym zadaniu z ustawionym writerem.
   const model = models?.expert || 'x-ai/grok-4.6';
-  const prompt = buildExpertPrompt({ title: job.title, content, author: job.author ?? '', person, research });
+  const prompt = buildExpertPrompt({ title: job.title, content, author: job.author ?? '', person, research, section });
 
   let response;
   try {
@@ -395,12 +423,13 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
   return {
     ok: true,
     data: {
-      slot: Number.isFinite(slot) && slot >= 1 && slot <= 30 ? slot : null,
+      // Miejsce wskazane w edytorze jest wiążące – model go nie wybiera.
+      slot: section ? section.slot : (Number.isFinite(slot) && slot >= 1 && slot <= 30 ? slot : null),
       // Wybór redaktora jest wiążący – model bywa uparty i podpisuje po swojemu.
       expert: person?.name ?? String(data.expert).slice(0, 120),
       role: person ? (person.role ?? '') : (data.role ? String(data.role).slice(0, 120) : ''),
       quote: String(data.quote).slice(0, 2000),
-      placement: data.placement ? String(data.placement).slice(0, 500) : '',
+      placement: section ? '' : (data.placement ? String(data.placement).slice(0, 500) : ''),
       // Na czym stoi cytat – redaktor ma to sprawdzić w panelu SERP/konkurentów,
       // zanim podpisze wypowiedź nazwiskiem realnej osoby.
       basis: data.basis ? String(data.basis).slice(0, 500) : '',

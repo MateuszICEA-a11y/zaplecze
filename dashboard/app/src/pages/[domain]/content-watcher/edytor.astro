@@ -206,6 +206,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
             </select>
           </label>
           <input type="text" data-ed-expert-role placeholder="np. specjalistka SEO" maxlength="120" hidden />
+          <label>
+            <span>Miejsce cytatu</span>
+            <select data-ed-expert-slot>
+              <option value="">koniec artykułu – model dobiera</option>
+            </select>
+          </label>
         </div>
         <div class="ed-expert-actions" data-ed-expert-actions></div>
         <p class="ed-error" data-ed-expert-error hidden></p>
@@ -2366,12 +2372,40 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
   function expertChoice() {
     const name = $<HTMLSelectElement>('[data-ed-expert-who]')?.value.trim() ?? '';
-    if (!name) return undefined;
+    const slotRaw = $<HTMLSelectElement>('[data-ed-expert-slot]')?.value ?? '';
+    const slot = slotRaw ? Number(slotRaw) : undefined;
+    if (!name) return slot ? { slot } : undefined;
     const picked = $<HTMLSelectElement>('[data-ed-expert-role-select]')?.value ?? '';
     const role = picked === ROLE_OTHER
       ? ($<HTMLInputElement>('[data-ed-expert-role]')?.value.trim() ?? '')
       : picked;
-    return { expert: name, role: role || undefined };
+    return { expert: name, role: role || undefined, slot };
+  }
+
+  /** Lista sekcji do wyboru miejsca cytatu – tytuły zamiast numerów slotów.
+      Odświeżana przy każdym renderze eksperta (dokument bywa przebudowany). */
+  function fillExpertSlots() {
+    const select = $<HTMLSelectElement>('[data-ed-expert-slot]');
+    if (!select) return;
+    const prev = select.value;
+    select.replaceChildren();
+    const auto = document.createElement('option');
+    auto.value = '';
+    auto.textContent = 'koniec artykułu – model dobiera';
+    select.append(auto);
+    for (const node of document.querySelectorAll<HTMLElement>(
+      '[data-ed-doc] .ed-doc-section:not(.ed-doc-faq):not(.ed-doc-intro)',
+    )) {
+      if (isSourcesNode(node)) continue;
+      const slot = Number(node.dataset.slot);
+      const title = node.querySelector('.ed-sec-head h2')?.textContent?.trim();
+      if (!slot || !title) continue;
+      const option = document.createElement('option');
+      option.value = String(slot);
+      option.textContent = `pod: ${title}`;
+      select.append(option);
+    }
+    if (prev && [...select.options].some((option) => option.value === prev)) select.value = prev;
   }
 
   async function callExpert(method: string, body?: any) {
@@ -2410,6 +2444,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const card = $('[data-ed-expert]')!;
     card.hidden = current.status !== 'done';
     if (card.hidden) return;
+    fillExpertSlots();
     const actions = $('[data-ed-expert-actions]')!;
     actions.replaceChildren();
 
