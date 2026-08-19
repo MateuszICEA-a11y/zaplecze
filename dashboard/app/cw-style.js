@@ -149,6 +149,84 @@ Zasady odpowiedzi:
 - Nie zmieniaj sensu zdań, które są poprawne merytorycznie.`;
 }
 
+/* ---------- wplecenie uzupełnienia ----------
+   „Proponowane uzupełnienia" z przejazdu wracają jako osobne wywołanie modelu:
+   jedna sekcja + jeden fakt. Wynik NIE nadpisuje treści – ląduje w job_style
+   jako propozycja z diffem i decyzją ✓/✕, tą samą ścieżką co korekty stylu.
+   Bez :online – fakt jest już zweryfikowany w przejeździe, web search tylko
+   podbiłby koszt (patrz gotcha grok/:online w pamięci projektu). */
+
+export function buildAdditionPrompt({ title, row, fact }) {
+  return `Jesteś polskim redaktorem. Dostajesz jedną sekcję artykułu i JEDEN fakt, który masz wpleść w jej treść.
+
+## Sekcja „${row.title || '(bez nagłówka)'}" z artykułu „${title}"
+
+${row.text}
+
+## Fakt do wplecenia
+
+${fact}
+
+## Zadanie
+
+Zwróć WYŁĄCZNIE JSON: { "text": "<p>pełna treść sekcji z wplecionym faktem</p>" }
+
+Zasady:
+- Wpleć fakt jednym–dwoma zdaniami w miejscu, gdzie pasuje logicznie do wywodu; resztę treści zostaw 1:1.
+- Zachowaj znaczniki HTML – te same tagi, w tej samej kolejności, z tymi samymi adresami w <a href>. Nie usuwaj akapitów, list ani linków.
+- Nie dopisuj niczego poza tym faktem, nie zmieniaj istniejących liczb ani nazw.
+- Półpauza (–), nigdy myślnik em (—). Polska interpunkcja i pełne znaki diakrytyczne.`;
+}
+
+/** Jedno wywołanie modelu: sekcja + fakt → pełna treść sekcji po wpleceniu. */
+export async function weaveAddition(env, job, row, fact, { fetchImpl = fetch } = {}) {
+  const apiKey = (env.OPENROUTER_API_KEY || '').trim();
+  if (!apiKey) return { ok: false, error: 'Brak sekretu OPENROUTER_API_KEY w Workerze.' };
+
+  const model = ((env.CW_STYLE_MODEL || '').trim() || STYLE_MODEL).replace(':online', '');
+  let response;
+  try {
+    response = await fetchImpl('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': 'https://zaplecze-dashboard.m-wisniewski.workers.dev',
+        'X-Title': 'Content Watcher - uzupelnienie sekcji',
+      },
+      body: JSON.stringify({
+        model,
+        messages: [{ role: 'user', content: buildAdditionPrompt({ title: job.title, row, fact }) }],
+        temperature: 0.3,
+        max_tokens: 8000,
+        response_format: { type: 'json_object' },
+      }),
+      signal: AbortSignal.timeout(TIMEOUT_MS),
+    });
+  } catch (err) {
+    return { ok: false, error: `Brak odpowiedzi od OpenRouter: ${err instanceof Error ? err.message : err}` };
+  }
+  if (!response.ok) {
+    const detail = await response.text().catch(() => '');
+    console.error('cw addition openrouter', response.status, detail.slice(0, 300));
+    return { ok: false, error: `Błąd usługi OpenRouter: ${response.status}.` };
+  }
+  const payload = await response.json().catch(() => null);
+  const data = extractJson(payload?.choices?.[0]?.message?.content ?? '');
+  const text = sanitizeSectionHtml(String(data?.text ?? '').trim());
+  if (!stripTags(text)) return { ok: false, error: 'Model nie zwrócił treści sekcji.' };
+  if (text === row.text) return { ok: false, error: 'Model oddał sekcję bez zmian – fakt nie został wpleciony.' };
+  return {
+    ok: true,
+    text,
+    model: payload?.model ?? model,
+    cost: {
+      tokens_in: payload?.usage?.prompt_tokens ?? 0,
+      tokens_out: payload?.usage?.completion_tokens ?? 0,
+    },
+  };
+}
+
 /* ---------- straż zmian ----------
    Model wolno poprawia fakty (redaktor ma diff i decyzję ✓/✕), ale zmiana
    liczby albo zniknięcie linku nie może przejść niezauważona – to najdroższe

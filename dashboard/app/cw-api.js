@@ -16,7 +16,7 @@ import { expertPhoto, generateExpertQuote, hasResearch, wpAuthors } from './cw-e
 import { handleInfographic } from './cw-infographic.js';
 import { handleRivals, rivalsSummary } from './cw-rivals.js';
 import { gapSummary, handleSerpGap } from './cw-serp.js';
-import { runStylePass, saveStyleRows, STYLE_PROMPT_VERSION, styleDocument } from './cw-style.js';
+import { runStylePass, saveStyleRows, STYLE_PROMPT_VERSION, styleDocument, styleGuard, weaveAddition } from './cw-style.js';
 import { handleUsage } from './cw-usage.js';
 import { ACF_FIELD, contentHash, handleWpApply, handleWpDraft, wpAuth } from './cw-wp.js';
 
@@ -1015,6 +1015,88 @@ async function patchStyleSection(request, env, id, slot) {
   return json({ ok: true, decision, job: await readJob(env, id) });
 }
 
+/** POST /api/cw/jobs/:id/style/addition – wplecenie „proponowanego uzupełnienia"
+    w sekcję. Model dostaje aktualny stan sekcji i jeden fakt; wynik ląduje
+    w job_style jako propozycja z diffem i decyzją ✓/✕ – nic nie zapisuje się
+    do treści bez akceptacji redaktora. */
+async function insertStyleAddition(request, env, id, { fetchImpl } = {}) {
+  if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'Przekazano nieprawidłowe dane (błąd formatu lub zbyt duży rozmiar).' }, 400);
+  }
+  const index = Number.parseInt(body?.index, 10);
+  if (!Number.isInteger(index) || index < 0) {
+    return json({ error: 'Pole „index" musi wskazywać uzupełnienie z listy.' }, 400);
+  }
+
+  const job = await db(env).prepare('SELECT * FROM jobs WHERE id = ?').bind(id).first();
+  if (!job) return json({ error: 'Nie ma takiego zadania.' }, 404);
+  const style = typeof job.style === 'string' ? JSON.parse(job.style || 'null') : job.style;
+  if (style?.status !== 'done') {
+    return json({ error: 'Najpierw wykonaj przejazd redaktorski – uzupełnienia pochodzą z jego raportu.' }, 409);
+  }
+  const addition = (style.additions ?? [])[index];
+  if (!addition?.fact) return json({ error: 'Nie ma takiego uzupełnienia.' }, 404);
+  if (!addition.slot) {
+    return json({ error: 'To uzupełnienie nie wskazuje sekcji – wpleć je ręcznie.' }, 409);
+  }
+  if (addition.inserted) return json({ error: 'To uzupełnienie już ma propozycję przy sekcji.' }, 409);
+
+  // Nieoceniona korekta stylu tej sekcji blokuje wplecenie – dwie propozycje
+  // do jednego slotu nadpisałyby się nawzajem po cichu.
+  const pending = await db(env)
+    .prepare('SELECT decision FROM job_style WHERE job_id = ? AND slot = ?')
+    .bind(id, addition.slot)
+    .first();
+  if (pending && pending.decision === null) {
+    return json({ error: 'Ta sekcja ma nieocenioną korektę redaktorską – najpierw ją zastosuj albo odrzuć.' }, 409);
+  }
+
+  const sections = await db(env)
+    .prepare('SELECT slot, title_field, text_field, title_after, text_after, decision FROM job_sections WHERE job_id = ? ORDER BY slot')
+    .bind(id)
+    .all();
+  const doc = await styleDocument(env, job, sections.results ?? [], fetchImpl ?? fetch);
+  if (doc.error) return json({ error: doc.error }, doc.status ?? 502);
+  const row = doc.rows.find((item) => item.slot === addition.slot);
+  if (!row) return json({ error: `Sekcja ${addition.slot} nie istnieje w treści wpisu.` }, 409);
+
+  const result = await weaveAddition(env, job, row, addition.fact, fetchImpl ? { fetchImpl } : {});
+  if (!result.ok) return json({ error: result.error }, 502);
+
+  // Zastępujemy ewentualny OCENIONY wiersz stylu tego slotu: jego skutek (jeśli
+  // był zaakceptowany) siedzi już w job_sections, więc text_before poniżej
+  // niesie stan z korektą, a odrzucenie propozycji przywraca dokładnie ten stan.
+  await db(env).prepare('DELETE FROM job_style WHERE job_id = ? AND slot = ?').bind(id, addition.slot).run();
+  await db(env)
+    .prepare(
+      `INSERT INTO job_style
+         (job_id, slot, title_field, text_field, title_before, title_after,
+          text_before, text_after, issues, warnings, decision, created_section, created_at)
+       VALUES (?, ?, ?, ?, ?, NULL, ?, ?, ?, ?, NULL, 0, ?)`,
+    )
+    .bind(
+      id, addition.slot, row.title_field ?? '', row.text_field ?? '',
+      row.title ?? '', row.text ?? '', result.text,
+      JSON.stringify([`uzupełnienie: ${addition.fact}`]),
+      JSON.stringify(styleGuard(row.text, result.text)),
+      nowIso(),
+    )
+    .run();
+
+  const additions = [...(style.additions ?? [])];
+  additions[index] = { ...addition, inserted: true };
+  await db(env)
+    .prepare('UPDATE jobs SET style = ?, updated_at = ? WHERE id = ?')
+    .bind(JSON.stringify({ ...style, additions }), nowIso(), id)
+    .run();
+  await audit(env, 'style.addition', id, { slot: addition.slot, index, model: result.model });
+  return json({ job: await readJob(env, id) });
+}
+
 async function cancelJob(request, env, id) {
   if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
   const job = await db(env).prepare('SELECT id, status, run_id FROM jobs WHERE id = ?').bind(id).first();
@@ -1253,7 +1335,7 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
   }
 
   const jobMatch = url.pathname.match(
-    /^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(?:\/(cancel|expert|wp-draft|wp-apply|sections\/(\d{1,3})|style\/(\d{1,3})|style|infographic\/(\d{1,3})))?\/?$/i,
+    /^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(?:\/(cancel|expert|wp-draft|wp-apply|sections\/(\d{1,3})|style\/addition|style\/(\d{1,3})|style|infographic\/(\d{1,3})))?\/?$/i,
   );
   if (jobMatch) {
     const [, id, action, slot, styleSlot, imageSlot] = jobMatch;
@@ -1269,6 +1351,10 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
       if (request.method === 'POST') return generateExpert(request, env, id);
       if (request.method === 'PATCH') return rejectExpert(request, env, id);
       return json({ error: 'Dozwolone metody: POST, PATCH.' }, 405);
+    }
+    if (action?.toLowerCase() === 'style/addition') {
+      if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
+      return insertStyleAddition(request, env, id);
     }
     if (styleSlot) {
       if (request.method !== 'PATCH') return json({ error: 'Dozwolona metoda: PATCH.' }, 405);

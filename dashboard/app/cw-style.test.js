@@ -2,12 +2,14 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
+  buildAdditionPrompt,
   buildStylePrompt,
   runStylePass,
   STYLE_MODEL,
   styleDocument,
   styleGuard,
   STYLE_MAX_CHARS,
+  weaveAddition,
 } from './cw-style.js';
 
 const ENV = {
@@ -213,4 +215,49 @@ test('przejazd: błąd HTTP OpenRoutera nie wycieka szczegółami', async () => 
   const result = await runStylePass(ENV, JOB, ROWS, { fetchImpl });
   assert.equal(result.ok, false);
   assert.match(result.error, /429/);
+});
+
+/* ---------- wplecenie uzupełnienia ---------- */
+
+test('uzupełnienie: prompt niesie sekcję, fakt i zakaz dopisywania', () => {
+  const prompt = buildAdditionPrompt({
+    title: JOB.title,
+    row: ROWS[0],
+    fact: 'Schema.org LocalBusiness ułatwia robotom odczyt oferty.',
+  });
+  assert.match(prompt, /Sekcja „Wstęp" z artykułu „Jak AI cytuje marki"/);
+  assert.match(prompt, /dostarczać wartość klientom/);
+  assert.match(prompt, /Schema\.org LocalBusiness/);
+  assert.match(prompt, /Nie dopisuj niczego poza tym faktem/);
+  assert.match(prompt, /"text"/);
+});
+
+test('uzupełnienie: wplata fakt i oddaje pełną sekcję', async () => {
+  const woven = '<p>Ta sekcja ma dostarczać wartość klientom. Warto wdrożyć dane Schema.org.</p>';
+  const result = await weaveAddition(ENV, JOB, ROWS[0], 'dane Schema.org', {
+    fetchImpl: openrouter({ text: woven }),
+  });
+  assert.equal(result.ok, true);
+  assert.equal(result.text, woven);
+  assert.equal(result.cost.tokens_out, 20);
+});
+
+test('uzupełnienie: model bez :online, sekcja bez zmian to błąd', async () => {
+  let calledModel = '';
+  const fetchImpl = async (_url, init) => {
+    calledModel = JSON.parse(init.body).model;
+    return openrouter({ text: ROWS[0].text })();
+  };
+  const result = await weaveAddition(ENV, JOB, ROWS[0], 'fakt', { fetchImpl });
+  assert.equal(calledModel.includes(':online'), false);
+  assert.equal(result.ok, false);
+  assert.match(result.error, /bez zmian/);
+});
+
+test('uzupełnienie: pusta lub wycięta odpowiedź nie przechodzi', async () => {
+  const result = await weaveAddition(ENV, JOB, ROWS[0], 'fakt', {
+    fetchImpl: openrouter({ text: '<script>x()</script>' }),
+  });
+  assert.equal(result.ok, false);
+  assert.match(result.error, /nie zwrócił treści/);
 });

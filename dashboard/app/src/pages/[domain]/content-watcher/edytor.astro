@@ -790,8 +790,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       liczyło podwójnie (wersja przed i po naraz). Dlatego metryki idą z kopii:
       tekst z podglądu, a przy widoku różnic – wersja, która wejdzie na stronę. */
   // Sekcja „Źródła" w slotach ACF stoi przed blokiem FAQ (kolejność slotów),
-  // ale w dokumencie do wdrożenia bibliografia ma zamykać całość – za FAQ.
+  // ale w dokumencie bibliografia ma zamykać całość – za FAQ. Regułę stosuje
+  // i edytor (renderDoc/applyJobToDoc), i podgląd całości (docSnapshot).
   const SOURCES_TITLE = /^(źródła|zrodla|bibliografia)$/i;
+  const isSourcesTitle = (title: string | null | undefined) => SOURCES_TITLE.test((title ?? '').trim());
+  const isSourcesNode = (node: Element) =>
+    isSourcesTitle(node.querySelector('.ed-sec-head h2, .ed-sec-head h3')?.textContent);
 
   function docSnapshot() {
     const box = document.createElement('div');
@@ -1308,8 +1312,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const blocks: HTMLElement[] = [];
     if (content?.title || content?.lead || entry?.title) blocks.push(docIntro());
 
+    // „Źródła" odkładamy na koniec dokumentu – za blok FAQ (patrz SOURCES_TITLE).
+    const sourcesRows = (content?.sections ?? []).filter((section) => isSourcesTitle(section.title));
     if (content?.sections?.length) {
-      blocks.push(...content.sections.map((section) => docSection(section.slot, section.title, section.text)));
+      blocks.push(...content.sections
+        .filter((section) => !isSourcesTitle(section.title))
+        .map((section) => docSection(section.slot, section.title, section.text)));
     } else if (content?.no_section) {
       // Wpis bez sekcji ACF – cała treść stoi w jednym polu.
       const single = document.createElement('section');
@@ -1343,6 +1351,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       blocks.push(...content.faq.items.map((row: any) =>
         docSection(row.slot, row.title, row.text, 'faq')));
     }
+    blocks.push(...sourcesRows.map((section) => docSection(section.slot, section.title, section.text)));
 
     host.replaceChildren(...blocks);
     const faqCount = content?.faq?.items?.length ?? 0;
@@ -2096,12 +2105,23 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         // drugie, rozbite FAQ w środku artykułu.
         const isFaq = section.slot > FAQ_SLOT_BASE;
         node = docSection(section.slot, section.title_after ?? '', null, isFaq ? 'faq' : 'section');
+        // Nowa sekcja „Źródła" zamyka dokument – staje za blokiem FAQ.
+        if (!isFaq && isSourcesTitle(section.title_after)) {
+          host.append(node);
+          bySlot.set(section.slot, node);
+          continue;
+        }
+        const sourcesNode = [...host.querySelectorAll<HTMLElement>('.ed-doc-section:not(.ed-doc-faq)')]
+          .find(isSourcesNode) ?? null;
         const after = [...bySlot.entries()]
-          .filter(([slot]) => slot > section.slot && (slot > FAQ_SLOT_BASE) === isFaq)
+          // „Źródła" stoją w DOM-ie na końcu, poza kolejnością slotów – jako
+          // następnik wciągnęłyby zwykłą sekcję za blok FAQ.
+          .filter(([slot, el]) => slot > section.slot && (slot > FAQ_SLOT_BASE) === isFaq && el !== sourcesNode)
           .sort((a, b) => a[0] - b[0])[0];
-        // Sekcja bez następnika staje przed blokiem FAQ, nie za nim – FAQ na
-        // stronie stoi pod całym artykułem.
-        host.insertBefore(node, after?.[1] ?? (isFaq ? null : host.querySelector('.ed-faq-head')));
+        // Sekcja bez następnika staje przed blokiem FAQ (FAQ na stronie stoi
+        // pod artykułem), pytanie FAQ – przed sekcją Źródeł, jeśli ta zamyka dokument.
+        host.insertBefore(node, after?.[1]
+          ?? (isFaq ? sourcesNode : (host.querySelector('.ed-faq-head') ?? sourcesNode)));
         bySlot.set(section.slot, node);
       }
       node.classList.add(section.operation === 'insert' ? 'is-new' : 'is-changed');
@@ -2444,7 +2464,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const host = $('[data-ed-doc]')!;
     // Bez wskazanego slotu cytat idzie na koniec TREŚCI, nie do bloku FAQ –
     // odpowiedź FAQ ma zostać zwięzła i samodzielna (cytuje ją wyszukiwarka).
-    const contentSections = [...host.querySelectorAll('.ed-doc-section:not(.ed-doc-faq):not(.ed-doc-intro)')];
+    // Bez sekcji Źródeł – cytat na końcu TREŚCI nie może wylądować w bibliografii.
+    const contentSections = [...host.querySelectorAll('.ed-doc-section:not(.ed-doc-faq):not(.ed-doc-intro)')]
+      .filter((node) => !isSourcesNode(node));
     const target = expert.slot
       ? host.querySelector(`.ed-doc-section[data-slot="${expert.slot}"]:not(.ed-doc-faq)`)
       : contentSections.at(-1);
@@ -2550,6 +2572,22 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
   const runStylePass = () => callStyle(`/api/cw/jobs/${job!.id}/style`, { method: 'POST' });
 
+  /** Odnośnik do sekcji w dokumencie – z jej tytułem, bo sekcje w edytorze
+      nie są numerowane i „sekcja 4" nic redaktorowi nie mówi. */
+  function slotJump(slot: number) {
+    const section = document.querySelector(`.ed-doc-section[data-slot="${slot}"]`);
+    const title = section?.querySelector('.ed-sec-head h2, .ed-sec-head h3')?.textContent?.trim();
+    const jump = document.createElement('a');
+    jump.href = `#sekcja-${slot}`;
+    jump.className = 'ed-style-jump';
+    jump.textContent = `→ ${title || `sekcja ${slot}`}`;
+    jump.addEventListener('click', (event) => {
+      event.preventDefault();
+      section?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    return jump;
+  }
+
   /** Raport przejazdu: weryfikacja faktów i propozycje uzupełnień. Poprawki
       językowe stoją przy sekcjach, tu zostaje to, co dotyczy całego wpisu. */
   function renderStyleReport(host: HTMLElement, style: any, rows: StyleRow[]) {
@@ -2577,18 +2615,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           note.textContent = ` – ${fact.note}`;
           item.append(note);
         }
-        if (fact.slot) {
-          const jump = document.createElement('a');
-          jump.href = `#sekcja-${fact.slot}`;
-          jump.className = 'ed-style-jump';
-          jump.textContent = `sekcja ${fact.slot}`;
-          jump.addEventListener('click', (event) => {
-            event.preventDefault();
-            document.querySelector(`.ed-doc-section[data-slot="${fact.slot}"]`)
-              ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          });
-          item.append(' ', jump);
-        }
+        if (fact.slot) item.append(' ', slotJump(fact.slot));
         list.append(item);
       }
       host.append(head, list);
@@ -2599,17 +2626,35 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       head.textContent = 'Proponowane uzupełnienia';
       const note = document.createElement('p');
       note.className = 'ed-style-note';
-      note.textContent = 'Model ich nie wstawił do treści – decyzja i redakcja są po Twojej stronie.';
+      note.textContent = 'Model nie wstawia ich sam – „wstaw do sekcji" tworzy propozycję z diffem do oceny przy sekcji.';
       const list = document.createElement('ul');
       list.className = 'ed-style-facts';
-      for (const row of additions) {
+      for (const [index, row] of additions.entries()) {
         const item = document.createElement('li');
-        item.textContent = row.slot ? `[sekcja ${row.slot}] ${row.fact}` : row.fact;
+        item.textContent = row.fact;
         if (!row.certain) {
           const tag = document.createElement('span');
           tag.className = 'ed-sec-tag warn';
           tag.textContent = 'do weryfikacji';
           item.append(' ', tag);
+        }
+        if (row.slot) item.append(' ', slotJump(row.slot));
+        if (row.inserted) {
+          const tag = document.createElement('span');
+          tag.className = 'ed-sec-tag ok';
+          tag.textContent = 'wstawione – oceń przy sekcji';
+          item.append(' ', tag);
+        } else if (row.slot) {
+          const insert = document.createElement('button');
+          insert.type = 'button';
+          insert.className = 'ed-style-btn ok';
+          insert.textContent = 'wstaw do sekcji';
+          insert.title = 'Model wplecie ten fakt w treść sekcji – zmiana czeka na Twoje ✓';
+          insert.addEventListener('click', () => callStyle(
+            `/api/cw/jobs/${job!.id}/style/addition`,
+            { method: 'POST', body: JSON.stringify({ index }) },
+          ));
+          item.append(' ', insert);
         }
         list.append(item);
       }
