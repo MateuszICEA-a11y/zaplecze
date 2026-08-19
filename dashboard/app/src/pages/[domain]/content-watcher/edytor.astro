@@ -3047,13 +3047,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
      tą samą ścieżką co infografika. Obecność wynika z samej treści: kotwica
      #cw-cta w adresie przycisku przeżywa obie sanityzacje. */
 
-  const CTA_MARKERS = ['mailto:biuro@grupa-icea.pl', 'kontakt/#cw-cta']; // bieżący + wersja 1.0.0
+  const CTA_MARKERS = ['kontakt/#cw-cta', 'mailto:biuro@grupa-icea.pl']; // bieżący + epizod 1.1.0
   /* Świadomy duplikat szablonu z cw-cta.js (ctaHtml) – podgląd w panelu ma
      wyglądać jak blok na stronie, a sanitizeInto zdejmuje style inline. */
   const CTA_PREVIEW = '<div style="margin:28px 0;padding:26px 28px;background:#000623;border-radius:12px">'
     + '<p style="margin:0 0 6px;color:#ffffff;font-size:19px;font-weight:700;line-height:1.4">Chcesz, żeby klienci znajdowali Twoją firmę w Google i w wyszukiwarkach AI?</p>'
     + '<p style="margin:0 0 18px;color:#c7cbe0;font-size:15px;line-height:1.6">Przeanalizujemy Twoją stronę i pokażemy, co blokuje jej widoczność. Konsultacja jest bezpłatna i niezobowiązująca.</p>'
-    + '<a href="mailto:biuro@grupa-icea.pl"><span style="display:inline-block;padding:12px 26px;background:#5768ff;color:#ffffff;border-radius:8px;font-weight:700;font-size:15px">Umów bezpłatną konsultację</span></a>'
+    + '<a href="https://www.grupa-icea.pl/kontakt/#cw-cta"><span style="display:inline-block;padding:12px 26px;background:#5768ff;color:#ffffff;border-radius:8px;font-weight:700;font-size:15px">Umów bezpłatną konsultację</span></a>'
     + '</div>';
 
   const ctaBusy = new Set<number>();
@@ -3147,7 +3147,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       preview.innerHTML = CTA_PREVIEW;
       const note = document.createElement('p');
       note.className = 'ed-style-note';
-      note.textContent = 'Gotowa wstawka – ten sam blok na każdej stronie, przycisk otwiera maila do biuro@grupa-icea.pl.';
+      note.textContent = 'Gotowa wstawka – ten sam blok na każdej stronie, przycisk prowadzi na /kontakt/.';
       host.append(head, preview, note);
     }
     if (error) {

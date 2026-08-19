@@ -19,13 +19,15 @@ import { checkMutationOrigin, sanitizeSectionHtml } from './cw-api.js';
 import { ensureSectionText, sectionForSlot } from './cw-infographic.js';
 import { ACF_FIELD } from './cw-wp.js';
 
-export const CTA_VERSION = '1.1.0';
+export const CTA_VERSION = '1.2.0';
 
 /** Znacznik obecności CTA w treści sekcji – przeżywa sanityzację.
-    Od 1.1.0 przycisk kieruje na maila (decyzja 2026-08-19), nie na /kontakt/. */
-export const CTA_MARKER = 'mailto:biuro@grupa-icea.pl';
-/** Znacznik bloków wstawionych wersją 1.0.0 – żeby dało się je zdjąć panelem. */
-export const CTA_MARKER_LEGACY = 'kontakt/#cw-cta';
+    Kotwica zamiast utm_* celowo: parametry utm na linku wewnętrznym ucinałyby
+    sesję GA4. Przycisk kieruje na /kontakt/ (decyzja 2026-08-19; krótki epizod
+    1.1.0 z mailto cofnięty tego samego dnia). */
+export const CTA_MARKER = 'kontakt/#cw-cta';
+/** Znacznik bloków wstawionych wersją 1.1.0 (mailto) – żeby dało się je zdjąć. */
+export const CTA_MARKER_LEGACY = 'mailto:biuro@grupa-icea.pl';
 
 const CTA_STYLE = {
   box: 'margin:28px 0;padding:26px 28px;background:#000623;border-radius:12px',
@@ -41,7 +43,7 @@ export function ctaHtml() {
   return `<div style="${CTA_STYLE.box}">`
     + `<p style="${CTA_STYLE.head}">Chcesz, żeby klienci znajdowali Twoją firmę w Google i w wyszukiwarkach AI?</p>`
     + `<p style="${CTA_STYLE.text}">Przeanalizujemy Twoją stronę i pokażemy, co blokuje jej widoczność. Konsultacja jest bezpłatna i niezobowiązująca.</p>`
-    + `<a href="${CTA_MARKER}"><span style="${CTA_STYLE.button}">Umów bezpłatną konsultację</span></a>`
+    + `<a href="https://www.grupa-icea.pl/${CTA_MARKER}"><span style="${CTA_STYLE.button}">Umów bezpłatną konsultację</span></a>`
     + '</div>';
 }
 
