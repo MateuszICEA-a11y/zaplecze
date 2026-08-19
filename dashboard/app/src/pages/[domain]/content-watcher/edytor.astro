@@ -789,8 +789,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       liczenie wprost z ekranu gubiło jej nagłówki, akapity i linki, a słowa
       liczyło podwójnie (wersja przed i po naraz). Dlatego metryki idą z kopii:
       tekst z podglądu, a przy widoku różnic – wersja, która wejdzie na stronę. */
+  // Sekcja „Źródła" w slotach ACF stoi przed blokiem FAQ (kolejność slotów),
+  // ale w dokumencie do wdrożenia bibliografia ma zamykać całość – za FAQ.
+  const SOURCES_TITLE = /^(źródła|zrodla|bibliografia)$/i;
+
   function docSnapshot() {
     const box = document.createElement('div');
+    const tail = document.createElement('div');
     for (const node of $('[data-ed-doc]')!.querySelectorAll<HTMLElement>('.ed-doc-section, .ed-faq-head')) {
       // Nagłówek bloku FAQ to nie sekcja, a bez niego podgląd całości gubił
       // granicę między artykułem a pytaniami.
@@ -804,20 +809,22 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       // Pytanie FAQ siedzi w H3 – szukanie samych H2 zostawiało w podglądzie
       // odpowiedzi bez pytań, przez co blok FAQ wyglądał na nieobecny.
       const title = node.querySelector('.ed-sec-head h1, .ed-sec-head h2, .ed-sec-head h3')?.textContent ?? '';
+      const target = !isFaq && SOURCES_TITLE.test(title.trim()) ? tail : box;
       if (title) {
         const level = node.classList.contains('ed-doc-intro') ? 'h1' : (isFaq ? 'h3' : 'h2');
         const heading = document.createElement(level);
         heading.textContent = title;
-        box.append(heading);
+        target.append(heading);
       }
       const body = node.querySelector('.ed-doc-body');
-      if (body) { box.append(body.cloneNode(true)); continue; }
+      if (body) { target.append(body.cloneNode(true)); continue; }
       const section = job?.sections?.find((row) => row.slot === Number(node.dataset.slot));
       if (!section) continue;
       // Odrzucona propozycja = na stronie zostaje dotychczasowy tekst.
       const html = section.decision === 'rejected' ? section.text_before : section.text_after;
-      box.append(docProse(html ?? section.text_before ?? ''));
+      target.append(docProse(html ?? section.text_before ?? ''));
     }
+    box.append(...tail.childNodes);
     return box;
   }
 
@@ -3746,9 +3753,17 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   function previewSnapshot() {
     const box = docSnapshot();
     box.querySelectorAll('*').forEach((node) => {
-      const href = node.tagName === 'A' ? node.getAttribute('href') : null;
+      const keep = new Map<string, string>();
+      const held = node.tagName === 'A' ? ['href']
+        // Bez src obraz znikał z podglądu i z eksportu .doc – wstawiona
+        // infografika (i zdjęcie eksperta) wyglądały na nieobecne.
+        : node.tagName === 'IMG' ? ['src', 'alt'] : [];
+      for (const name of held) {
+        const value = node.getAttribute(name);
+        if (value) keep.set(name, value);
+      }
       [...node.attributes].forEach((attr) => node.removeAttribute(attr.name));
-      if (href) node.setAttribute('href', href);
+      keep.forEach((value, name) => node.setAttribute(name, value));
     });
     return box;
   }
