@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spec: blok „Źródła" za FAQ (ACF, grupa-icea.pl)</title>
+<style>
+  :root { --ink:#1a1c2b; --muted:#6e7181; --accent:#5768ff; --bg:#f7f8fc; --card:#ffffff; --line:#e3e5f0; }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:40px 20px; background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; }
+  h1 { font-size:1.7rem; line-height:1.3; margin:0 0 4px; }
+  .meta { color:var(--muted); font-size:.88rem; margin-bottom:28px; }
+  h2 { font-size:1.15rem; margin:34px 0 10px; padding-bottom:6px; border-bottom:2px solid var(--accent); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:22px 26px; margin:14px 0; }
+  code, pre { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size:.86em; }
+  code { background:#eef0ff; padding:1px 6px; border-radius:4px; }
+  pre { background:#0d1024; color:#dfe3ff; padding:16px 18px; border-radius:8px; overflow-x:auto; line-height:1.55; }
+  pre code { background:none; padding:0; color:inherit; }
+  table { border-collapse: collapse; width:100%; margin:10px 0; font-size:.92rem; }
+  th, td { text-align:left; padding:8px 12px; border:1px solid var(--line); vertical-align:top; }
+  th { background:#eef0ff; font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; }
+  ul { padding-left:22px; }
+  li { margin:4px 0; }
+  .why { color:var(--muted); font-size:.9rem; }
+  .ok { color:#1b7f4d; font-weight:600; }
+  .warn { background:#fff7e6; border:1px solid #f0d9a8; border-radius:8px; padding:12px 16px; font-size:.92rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Blok „Źródła" renderowany ZA blokiem FAQ</h1>
+  <p class="meta">grupa-icea.pl · motyw knight-theme · ACF · 2026-08-19 · zamawiający: Mateusz Wiśniewski (SEO/R&amp;D) · dotyczy wpisów blogowych i podstron ofertowych budowanych na polach <code>page_text_*</code></p>
+
+  <h2>1. Problem</h2>
+  <div class="card">
+    <p>Do wpisów optymalizowanych przez nasz pipeline (Content Watcher) dodajemy na końcu treści sekcję
+    <strong>„Źródła"</strong> – listę odnośników nofollow do materiałów, na których stoi artykuł.
+    Dziś ta sekcja trafia do zwykłego slotu treści (<code>page_title_h2_N</code> + <code>page_text_N</code>),
+    a szablon motywu renderuje blok FAQ (pola <code>page_faq_*</code>) <strong>pod wszystkimi sekcjami treści</strong>.</p>
+    <p>Efekt na stronie: <em>…treść → Źródła → FAQ</em>. Bibliografia wisi w środku strony, a FAQ „spycha"
+    ją wizualnie do treści. Docelowo ma być: <em>…treść → FAQ → Źródła</em> – bibliografia jako ostatni
+    element artykułu, przed boksem autora.</p>
+    <p class="why">Po naszej stronie nie da się tego obejść: nie istnieje slot ACF renderowany za FAQ,
+    a kolejność bloków dyktuje szablon motywu.</p>
+  </div>
+
+  <h2>2. Rozwiązanie – co ma powstać</h2>
+  <div class="card">
+    <p>Dwa elementy: <strong>(a)</strong> nowa grupa pól ACF na źródła, <strong>(b)</strong> render tej grupy
+    w szablonie wpisu bezpośrednio <strong>za blokiem FAQ</strong>.</p>
+
+    <h3 style="font-size:1rem; margin:18px 0 6px;">(a) Pola ACF</h3>
+    <table>
+      <tr><th>Nazwa pola (field name)</th><th>Typ</th><th>Uwagi</th></tr>
+      <tr>
+        <td><code>page_sources_title</code></td>
+        <td>Text</td>
+        <td>Nagłówek bloku. Wartość domyślna: <strong>Źródła</strong>. Puste = użyj domyślnej.</td>
+      </tr>
+      <tr>
+        <td><code>page_sources_text</code></td>
+        <td>WYSIWYG (albo Textarea z zachowaniem HTML)</td>
+        <td>Treść bloku – HTML z listą <code>&lt;ul&gt;&lt;li&gt;&lt;a&gt;</code>. Pole ma przyjmować i oddawać
+        surowy HTML bez przepuszczania przez <code>wpautop</code>/filtrowanie zjadające atrybuty
+        <code>rel</code> w linkach.</td>
+      </tr>
+    </table>
+    <ul>
+      <li>Lokalizacja: te same typy treści, na których działają obecne pola <code>page_text_*</code>
+        (wpisy blogowe + podstrony ofertowe).</li>
+      <li><strong>Dostęp przez REST API jest warunkiem koniecznym</strong> – pola muszą być czytelne
+        i zapisywalne przez <code>WP REST + ACF</code> dokładnie tak, jak obecne
+        <code>page_text_N</code> / <code>page_faq_*</code>: <br>
+        <code>GET /wp-json/wp/v2/posts/{id}?acf_format=standard&amp;_fields=id,acf</code> ma zwracać oba pola,<br>
+        <code>POST /wp-json/wp/v2/posts/{id}</code> z <code>{"acf": {"page_sources_text": "…"}}</code>
+        (hasło aplikacji, rola editor) ma je zapisywać.</li>
+      <li>Bez pól per-link (repeater) – celowo jedno pole HTML: nasz automat składa listę sam,
+        a repeater przez REST to zbędna komplikacja.</li>
+    </ul>
+
+    <h3 style="font-size:1rem; margin:18px 0 6px;">(b) Render w szablonie</h3>
+    <p>Miejsce: szablon pojedynczego wpisu/podstrony, <strong>bezpośrednio za blokiem FAQ,
+    przed boksem autora</strong> (a gdy wpis nie ma FAQ – za ostatnią sekcją treści, w tym samym miejscu,
+    w którym dziś kończy się artykuł).</p>
+    <pre><code>&lt;?php
+$sources_text = get_field('page_sources_text');
+if ($sources_text) :
+  $sources_title = get_field('page_sources_title') ?: 'Źródła';
+?&gt;
+&lt;section class="post-sources"&gt;
+  &lt;h2&gt;&lt;?php echo esc_html($sources_title); ?&gt;&lt;/h2&gt;
+  &lt;?php echo $sources_text; /* HTML z zaufanego pola – lista linków nofollow */ ?&gt;
+&lt;/section&gt;
+&lt;?php endif; ?&gt;</code></pre>
+    <ul>
+      <li>Typografia identyczna z sekcjami treści (ten sam styl H2 i list) – blok ma wyglądać
+        jak dotychczasowa sekcja „Źródła", tylko stać w innym miejscu.</li>
+      <li><strong>Render warunkowy</strong>: puste pole = blok w ogóle nie istnieje w HTML
+        (żadnych pustych sekcji/nagłówków).</li>
+      <li>Linki w treści przychodzą już z atrybutami
+        <code>rel="noopener nofollow" target="_blank"</code> – szablon ma ich nie nadpisywać.</li>
+      <li>Blok NIE wchodzi do spisu treści (jeśli motyw generuje TOC z nagłówków H2, wykluczyć
+        <code>.post-sources h2</code>).</li>
+      <li>Bez dodatkowej schemy – to zwykła treść (FAQPage z bloku FAQ zostaje bez zmian).</li>
+    </ul>
+  </div>
+
+  <h2>3. Czego NIE zmieniamy</h2>
+  <div class="card">
+    <ul>
+      <li>Istniejące pola <code>page_title_h2_N</code>/<code>page_text_N</code>, blok FAQ
+        (<code>page_faq_*</code>) i ich kolejność renderowania – bez zmian.</li>
+      <li>Istniejące wpisy – dopóki nowe pola są puste, strona wygląda dokładnie jak dziś.
+        Migrację treści (przeniesienie „Źródeł" ze slotu tekstowego do nowego pola) robimy
+        po naszej stronie, wpis po wpisie, przez REST.</li>
+    </ul>
+  </div>
+
+  <h2>4. Kryteria odbioru</h2>
+  <div class="card">
+    <ul>
+      <li><span class="ok">✓</span> <code>GET …?acf_format=standard&amp;_fields=id,acf</code> zwraca
+        <code>page_sources_title</code> i <code>page_sources_text</code> (puste stringi, gdy nieustawione).</li>
+      <li><span class="ok">✓</span> <code>POST</code> z <code>{"acf":{"page_sources_text":"&lt;ul&gt;&lt;li&gt;&lt;a href=\"https://example.com\" rel=\"noopener nofollow\" target=\"_blank\"&gt;Tytuł&lt;/a&gt; – opis&lt;/li&gt;&lt;/ul&gt;"}}</code>
+        (hasło aplikacji konta <code>redaktor</code>) zapisuje pole, a HTML wraca w GET <strong>niezmieniony</strong>
+        (w szczególności <code>rel="nofollow"</code> nie znika).</li>
+      <li><span class="ok">✓</span> Na wpisie z FAQ i wypełnionymi źródłami kolejność na stronie:
+        sekcje treści → FAQ → <strong>Źródła</strong> → boks autora.</li>
+      <li><span class="ok">✓</span> Na wpisie bez FAQ blok Źródeł stoi za ostatnią sekcją treści.</li>
+      <li><span class="ok">✓</span> Wpis z pustym polem renderuje się bajt w bajt jak przed wdrożeniem.</li>
+      <li><span class="ok">✓</span> Działa i na wpisach blogowych, i na podstronach ofertowych.</li>
+      <li><span class="ok">✓</span> Nagłówek „Źródła" nie pojawia się w spisie treści.</li>
+    </ul>
+  </div>
+
+  <h2>5. Kontekst dla wdrażającego</h2>
+  <div class="card">
+    <p class="why">Treść pola będzie zapisywana automatycznie przez nasz Worker (Cloudflare) tym samym
+    mechanizmem, którym dziś zapisujemy sekcje i FAQ – dlatego zachowanie REST-a jest ważniejsze niż
+    wygoda edycji w kokpicie. Po wdrożeniu przełączymy zapis „Źródeł" na nowe pole i stopniowo
+    przeniesiemy istniejące sekcje bibliografii. Pytania: Mateusz Wiśniewski
+    (m.wisniewski@grupa-icea.pl).</p>
+  </div>
+
+  <div class="warn"><strong>Uwaga na AIOS</strong> (All In One Security): zapis idzie z zewnętrznego IP
+  (Cloudflare Worker) hasłem aplikacji – nowe pola nie mogą podlegać dodatkowym regułom blokującym
+  REST, którymi AIOS potrafi objąć nowe endpointy/pola. Obecne pola działają – nowe mają działać
+  identycznie.</div>
+</main>
+</body>
+</html>
