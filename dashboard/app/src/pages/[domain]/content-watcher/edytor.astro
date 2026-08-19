@@ -836,12 +836,21 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         target.append(heading);
       }
       const body = node.querySelector('.ed-doc-body');
-      if (body) { target.append(body.cloneNode(true)); continue; }
+      // Cytat eksperta stoi w sekcji OBOK treści (.ed-doc-expert, dokłada go
+      // applyExpertToDoc) – bez jawnego zabrania podgląd całości i eksport
+      // gubiły zaakceptowaną wypowiedź.
+      const expertNode = node.querySelector('.ed-doc-expert');
+      if (body) {
+        target.append(body.cloneNode(true));
+        if (expertNode) target.append(expertNode.cloneNode(true));
+        continue;
+      }
       const section = job?.sections?.find((row) => row.slot === Number(node.dataset.slot));
       if (!section) continue;
       // Odrzucona propozycja = na stronie zostaje dotychczasowy tekst.
       const html = section.decision === 'rejected' ? section.text_before : section.text_after;
       target.append(docProse(html ?? section.text_before ?? ''));
+      if (expertNode) target.append(expertNode.cloneNode(true));
     }
     box.append(...tail.childNodes);
     return box;
