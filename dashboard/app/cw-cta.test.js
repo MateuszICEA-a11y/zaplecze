@@ -7,11 +7,22 @@ import { CTA_MARKER, ctaHtml, handleCta, hasCta, stripCta } from './cw-cta.js';
 test('cta: szablon przeżywa sanityzację ze stylami i znacznikiem', () => {
   const clean = sanitizeSectionHtml(ctaHtml());
   assert.match(clean, /<div style="[^"]*background:#000623/);
-  assert.match(clean, /<a href="https:\/\/www\.grupa-icea\.pl\/kontakt\/#cw-cta"/);
+  // Link mailowy: bez target/rel (nowa karta na mailto nie ma sensu).
+  assert.match(clean, /<a href="mailto:biuro@grupa-icea\.pl">/);
   assert.match(clean, /<span style="[^"]*background:#5768ff[^"]*">Umów bezpłatną konsultację<\/span>/);
   assert.equal(hasCta(clean), true);
   // Sanityzacja drugi raz nie zmienia bloku – insert zapisuje formę stabilną.
   assert.equal(sanitizeSectionHtml(clean), clean);
+});
+
+test('cta: bloki z wersji 1.0.0 (link na /kontakt/) dają się wykryć i zdjąć', () => {
+  const legacy = '<div style="margin:28px 0"><p>CTA</p>'
+    + '<a href="https://www.grupa-icea.pl/kontakt/#cw-cta"><span>Umów</span></a></div>';
+  const text = `<p>Treść.</p>\n${legacy}`;
+  assert.equal(hasCta(text), true);
+  const stripped = stripCta(text);
+  assert.equal(hasCta(stripped), false);
+  assert.match(stripped, /Treść\./);
 });
 
 test('cta: stripCta zdejmuje blok i zostawia resztę treści', () => {
@@ -38,7 +49,7 @@ test('cta: handler odrzuca FAQ i nieznany krok', async () => {
   assert.match((await faq.json()).error, /FAQ/);
 });
 
-test('cta: znacznik nie jest utm-em (nie psuje sesji GA4)', () => {
-  assert.match(CTA_MARKER, /#cw-cta$/);
+test('cta: znacznik to mailto, bez utm-ów (nie psuje sesji GA4)', () => {
+  assert.match(CTA_MARKER, /^mailto:/);
   assert.doesNotMatch(ctaHtml(), /utm_/);
 });

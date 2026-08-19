@@ -510,10 +510,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           }
         }
         if (child.tagName === 'A') {
+          // `mailto:` niesie przycisk CTA – lustro sanitizeSectionHtml w cw-api.js.
           if (/^https?:\/\//i.test(href)) {
             child.setAttribute('href', href);
             child.setAttribute('target', '_blank');
             child.setAttribute('rel', 'noopener nofollow');
+          } else if (/^mailto:/i.test(href)) {
+            child.setAttribute('href', href);
           } else {
             child.replaceWith(...child.childNodes);
           }
@@ -804,9 +807,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       liczenie wprost z ekranu gubiło jej nagłówki, akapity i linki, a słowa
       liczyło podwójnie (wersja przed i po naraz). Dlatego metryki idą z kopii:
       tekst z podglądu, a przy widoku różnic – wersja, która wejdzie na stronę. */
-  // Sekcja „Źródła" w slotach ACF stoi przed blokiem FAQ (kolejność slotów),
-  // ale w dokumencie bibliografia ma zamykać całość – za FAQ. Regułę stosuje
-  // i edytor (renderDoc/applyJobToDoc), i podgląd całości (docSnapshot).
+  // Sekcja „Źródła". Na STRONIE stoi przed blokiem FAQ – motyw renderuje FAQ
+  // zawsze pod wszystkimi sekcjami treści i tego nie przeskoczymy (rola editor,
+  // brak dostępu do szablonu). Edytor i podgląd pokazują więc ten sam układ;
+  // rozpoznanie służy tylko do trzymania cytatu eksperta i CTA z dala od
+  // bibliografii. Próba pokazywania Źródeł za FAQ (2026-08-19) cofnięta –
+  // podgląd obiecywał układ, którego nie dało się opublikować.
   const SOURCES_TITLE = /^(źródła|zrodla|bibliografia)$/i;
   const isSourcesTitle = (title: string | null | undefined) => SOURCES_TITLE.test((title ?? '').trim());
   const isSourcesNode = (node: Element) =>
@@ -814,7 +820,6 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
   function docSnapshot() {
     const box = document.createElement('div');
-    const tail = document.createElement('div');
     for (const node of $('[data-ed-doc]')!.querySelectorAll<HTMLElement>('.ed-doc-section, .ed-faq-head')) {
       // Nagłówek bloku FAQ to nie sekcja, a bez niego podgląd całości gubił
       // granicę między artykułem a pytaniami.
@@ -828,12 +833,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       // Pytanie FAQ siedzi w H3 – szukanie samych H2 zostawiało w podglądzie
       // odpowiedzi bez pytań, przez co blok FAQ wyglądał na nieobecny.
       const title = node.querySelector('.ed-sec-head h1, .ed-sec-head h2, .ed-sec-head h3')?.textContent ?? '';
-      const target = !isFaq && SOURCES_TITLE.test(title.trim()) ? tail : box;
       if (title) {
         const level = node.classList.contains('ed-doc-intro') ? 'h1' : (isFaq ? 'h3' : 'h2');
         const heading = document.createElement(level);
         heading.textContent = title;
-        target.append(heading);
+        box.append(heading);
       }
       const body = node.querySelector('.ed-doc-body');
       // Cytat eksperta stoi w sekcji OBOK treści (.ed-doc-expert, dokłada go
@@ -841,18 +845,17 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       // gubiły zaakceptowaną wypowiedź.
       const expertNode = node.querySelector('.ed-doc-expert');
       if (body) {
-        target.append(body.cloneNode(true));
-        if (expertNode) target.append(expertNode.cloneNode(true));
+        box.append(body.cloneNode(true));
+        if (expertNode) box.append(expertNode.cloneNode(true));
         continue;
       }
       const section = job?.sections?.find((row) => row.slot === Number(node.dataset.slot));
       if (!section) continue;
       // Odrzucona propozycja = na stronie zostaje dotychczasowy tekst.
       const html = section.decision === 'rejected' ? section.text_before : section.text_after;
-      target.append(docProse(html ?? section.text_before ?? ''));
-      if (expertNode) target.append(expertNode.cloneNode(true));
+      box.append(docProse(html ?? section.text_before ?? ''));
+      if (expertNode) box.append(expertNode.cloneNode(true));
     }
-    box.append(...tail.childNodes);
     return box;
   }
 
@@ -1336,12 +1339,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const blocks: HTMLElement[] = [];
     if (content?.title || content?.lead || entry?.title) blocks.push(docIntro());
 
-    // „Źródła" odkładamy na koniec dokumentu – za blok FAQ (patrz SOURCES_TITLE).
-    const sourcesRows = (content?.sections ?? []).filter((section) => isSourcesTitle(section.title));
     if (content?.sections?.length) {
-      blocks.push(...content.sections
-        .filter((section) => !isSourcesTitle(section.title))
-        .map((section) => docSection(section.slot, section.title, section.text)));
+      blocks.push(...content.sections.map((section) => docSection(section.slot, section.title, section.text)));
     } else if (content?.no_section) {
       // Wpis bez sekcji ACF – cała treść stoi w jednym polu.
       const single = document.createElement('section');
@@ -1375,7 +1374,6 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       blocks.push(...content.faq.items.map((row: any) =>
         docSection(row.slot, row.title, row.text, 'faq')));
     }
-    blocks.push(...sourcesRows.map((section) => docSection(section.slot, section.title, section.text)));
 
     host.replaceChildren(...blocks);
     const faqCount = content?.faq?.items?.length ?? 0;
@@ -2129,23 +2127,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         // drugie, rozbite FAQ w środku artykułu.
         const isFaq = section.slot > FAQ_SLOT_BASE;
         node = docSection(section.slot, section.title_after ?? '', null, isFaq ? 'faq' : 'section');
-        // Nowa sekcja „Źródła" zamyka dokument – staje za blokiem FAQ.
-        if (!isFaq && isSourcesTitle(section.title_after)) {
-          host.append(node);
-          bySlot.set(section.slot, node);
-          continue;
-        }
-        const sourcesNode = [...host.querySelectorAll<HTMLElement>('.ed-doc-section:not(.ed-doc-faq)')]
-          .find(isSourcesNode) ?? null;
         const after = [...bySlot.entries()]
-          // „Źródła" stoją w DOM-ie na końcu, poza kolejnością slotów – jako
-          // następnik wciągnęłyby zwykłą sekcję za blok FAQ.
-          .filter(([slot, el]) => slot > section.slot && (slot > FAQ_SLOT_BASE) === isFaq && el !== sourcesNode)
+          .filter(([slot]) => slot > section.slot && (slot > FAQ_SLOT_BASE) === isFaq)
           .sort((a, b) => a[0] - b[0])[0];
-        // Sekcja bez następnika staje przed blokiem FAQ (FAQ na stronie stoi
-        // pod artykułem), pytanie FAQ – przed sekcją Źródeł, jeśli ta zamyka dokument.
-        host.insertBefore(node, after?.[1]
-          ?? (isFaq ? sourcesNode : (host.querySelector('.ed-faq-head') ?? sourcesNode)));
+        // Sekcja bez następnika staje przed blokiem FAQ, nie za nim – FAQ na
+        // stronie stoi pod całym artykułem.
+        host.insertBefore(node, after?.[1] ?? (isFaq ? null : host.querySelector('.ed-faq-head')));
         bySlot.set(section.slot, node);
       }
       node.classList.add(section.operation === 'insert' ? 'is-new' : 'is-changed');
@@ -3060,20 +3047,20 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
      tą samą ścieżką co infografika. Obecność wynika z samej treści: kotwica
      #cw-cta w adresie przycisku przeżywa obie sanityzacje. */
 
-  const CTA_MARKER = 'kontakt/#cw-cta';
+  const CTA_MARKERS = ['mailto:biuro@grupa-icea.pl', 'kontakt/#cw-cta']; // bieżący + wersja 1.0.0
   /* Świadomy duplikat szablonu z cw-cta.js (ctaHtml) – podgląd w panelu ma
      wyglądać jak blok na stronie, a sanitizeInto zdejmuje style inline. */
   const CTA_PREVIEW = '<div style="margin:28px 0;padding:26px 28px;background:#000623;border-radius:12px">'
     + '<p style="margin:0 0 6px;color:#ffffff;font-size:19px;font-weight:700;line-height:1.4">Chcesz, żeby klienci znajdowali Twoją firmę w Google i w wyszukiwarkach AI?</p>'
     + '<p style="margin:0 0 18px;color:#c7cbe0;font-size:15px;line-height:1.6">Przeanalizujemy Twoją stronę i pokażemy, co blokuje jej widoczność. Konsultacja jest bezpłatna i niezobowiązująca.</p>'
-    + '<a href="https://www.grupa-icea.pl/kontakt/#cw-cta"><span style="display:inline-block;padding:12px 26px;background:#5768ff;color:#ffffff;border-radius:8px;font-weight:700;font-size:15px">Umów bezpłatną konsultację</span></a>'
+    + '<a href="mailto:biuro@grupa-icea.pl"><span style="display:inline-block;padding:12px 26px;background:#5768ff;color:#ffffff;border-radius:8px;font-weight:700;font-size:15px">Umów bezpłatną konsultację</span></a>'
     + '</div>';
 
   const ctaBusy = new Set<number>();
 
   function sectionHasCta(slot: number) {
     const body = $(`[data-ed-doc] .ed-doc-section[data-slot="${slot}"] .ed-doc-body`);
-    return Boolean(body?.innerHTML.includes(CTA_MARKER));
+    return Boolean(body && CTA_MARKERS.some((marker) => body.innerHTML.includes(marker)));
   }
 
   function ctaHost(slot: number, create = false) {
@@ -3160,7 +3147,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       preview.innerHTML = CTA_PREVIEW;
       const note = document.createElement('p');
       note.className = 'ed-style-note';
-      note.textContent = 'Gotowa wstawka – ten sam blok na każdej stronie, link prowadzi na /kontakt/.';
+      note.textContent = 'Gotowa wstawka – ten sam blok na każdej stronie, przycisk otwiera maila do biuro@grupa-icea.pl.';
       host.append(head, preview, note);
     }
     if (error) {

@@ -19,10 +19,13 @@ import { checkMutationOrigin, sanitizeSectionHtml } from './cw-api.js';
 import { ensureSectionText, sectionForSlot } from './cw-infographic.js';
 import { ACF_FIELD } from './cw-wp.js';
 
-export const CTA_VERSION = '1.0.0';
+export const CTA_VERSION = '1.1.0';
 
-/** Znacznik obecności CTA w treści sekcji – przeżywa sanityzację. */
-export const CTA_MARKER = 'kontakt/#cw-cta';
+/** Znacznik obecności CTA w treści sekcji – przeżywa sanityzację.
+    Od 1.1.0 przycisk kieruje na maila (decyzja 2026-08-19), nie na /kontakt/. */
+export const CTA_MARKER = 'mailto:biuro@grupa-icea.pl';
+/** Znacznik bloków wstawionych wersją 1.0.0 – żeby dało się je zdjąć panelem. */
+export const CTA_MARKER_LEGACY = 'kontakt/#cw-cta';
 
 const CTA_STYLE = {
   box: 'margin:28px 0;padding:26px 28px;background:#000623;border-radius:12px',
@@ -33,29 +36,35 @@ const CTA_STYLE = {
 };
 
 /* Link stylowany przez wewnętrzny <span> – sanityzacja nie przepuszcza `style`
-   na <a> i dokłada mu rel="nofollow", co przy CTA na własny /kontakt/ jest
-   bez znaczenia dla konwersji. */
+   na <a>. */
 export function ctaHtml() {
   return `<div style="${CTA_STYLE.box}">`
     + `<p style="${CTA_STYLE.head}">Chcesz, żeby klienci znajdowali Twoją firmę w Google i w wyszukiwarkach AI?</p>`
     + `<p style="${CTA_STYLE.text}">Przeanalizujemy Twoją stronę i pokażemy, co blokuje jej widoczność. Konsultacja jest bezpłatna i niezobowiązująca.</p>`
-    + `<a href="https://www.grupa-icea.pl/${CTA_MARKER}"><span style="${CTA_STYLE.button}">Umów bezpłatną konsultację</span></a>`
+    + `<a href="${CTA_MARKER}"><span style="${CTA_STYLE.button}">Umów bezpłatną konsultację</span></a>`
     + '</div>';
 }
 
-/** Usuwa blok CTA z treści – po znaczniku, nie po dosłownym szablonie, żeby
-    zmiana stylistyki w przyszłej wersji nie zostawiała starych bloków na
-    zawsze. Szablon nie zagnieżdża <div>, więc dopasowanie do pierwszego
-    </div> za znacznikiem jest bezpieczne. */
+const escapeRegex = (value) => value.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&');
+
+/** Usuwa blok CTA z treści – po znaczniku (bieżącym albo z wersji 1.0.0), nie
+    po dosłownym szablonie, żeby zmiana stylistyki nie zostawiała starych
+    bloków na zawsze. Szablon nie zagnieżdża <div>, więc dopasowanie do
+    pierwszego </div> za znacznikiem jest bezpieczne. */
 export function stripCta(text) {
-  const pattern = new RegExp(
-    String.raw`\n?<div[^>]*>(?:(?!<\/div>)[\s\S])*?${CTA_MARKER.replace('/', '\\/')}(?:(?!<\/div>)[\s\S])*?<\/div>`,
-    'g',
-  );
-  return String(text ?? '').replace(pattern, '');
+  let out = String(text ?? '');
+  for (const marker of [CTA_MARKER, CTA_MARKER_LEGACY]) {
+    const pattern = new RegExp(
+      String.raw`\n?<div[^>]*>(?:(?!<\/div>)[\s\S])*?${escapeRegex(marker)}(?:(?!<\/div>)[\s\S])*?<\/div>`,
+      'g',
+    );
+    out = out.replace(pattern, '');
+  }
+  return out;
 }
 
-export const hasCta = (text) => String(text ?? '').includes(CTA_MARKER);
+export const hasCta = (text) =>
+  String(text ?? '').includes(CTA_MARKER) || String(text ?? '').includes(CTA_MARKER_LEGACY);
 
 const json = (value, status = 200) =>
   new Response(JSON.stringify(value), {

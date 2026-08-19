@@ -236,8 +236,13 @@ export function sanitizeSectionHtml(html) {
     if (!SANITIZE_ALLOWED.has(tag)) return '';
     if (match.startsWith('</')) return `</${tag}>`;
     if (tag === 'a') {
-      const href = /href\s*=\s*["']?(https?:\/\/[^"'\s>]+)/i.exec(attrs)?.[1];
-      return href ? `<a href="${href}" target="_blank" rel="noopener nofollow">` : '<a>';
+      // `mailto:` niesie przycisk CTA (cw-cta.js) – bez target/rel, bo nowa
+      // karta na linku mailowym nie ma sensu.
+      const href = /href\s*=\s*["']?((?:https?:\/\/|mailto:)[^"'\s>]+)/i.exec(attrs)?.[1];
+      if (!href) return '<a>';
+      return /^mailto:/i.test(href)
+        ? `<a href="${href}">`
+        : `<a href="${href}" target="_blank" rel="noopener nofollow">`;
     }
     if (tag === 'img') {
       // Zdjęcie eksperta: tylko https, tylko `src`/`alt`/`style` – żadnych
