@@ -2398,6 +2398,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     }
   }
 
+  /** Blokada „running" bez żywego wywołania za sobą – Worker zabity w trakcie
+      (np. zerwane połączenie) nie zdejmie jej sam. Backend po tym samym oknie
+      pozwala przejąć etap, więc pokazujemy ponowną próbę zamiast wiecznego
+      spinnera. */
+  const RUNNING_STALE_MS = 3 * 60_000;
+  const staleRunning = (state: any) => state?.status === 'running'
+    && (!state.started_at || Date.now() - Date.parse(state.started_at) > RUNNING_STALE_MS);
+
   function renderExpert(current: Job) {
     const card = $('[data-ed-expert]')!;
     card.hidden = current.status !== 'done';
@@ -2414,12 +2422,18 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       return node;
     };
 
-    if (expertBusy || current.expert?.status === 'running') {
+    if (expertBusy || (current.expert?.status === 'running' && !staleRunning(current.expert))) {
       const wait = document.createElement('span');
       wait.className = 'ed-expert-wait';
-      wait.textContent = 'generowanie cytatu…';
+      wait.textContent = 'generowanie cytatu… (model rozumujący, do dwóch minut)';
       actions.append(wait);
       return;
+    }
+    if (staleRunning(current.expert)) {
+      const note = document.createElement('span');
+      note.className = 'ed-expert-meta';
+      note.textContent = 'poprzednia próba została przerwana i nie zwróciła cytatu';
+      actions.append(note);
     }
     const expert = activeExpert(current);
     if (expert) {
@@ -2535,12 +2549,18 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       return node;
     };
 
-    if (styleBusy || current.style?.status === 'running') {
+    if (styleBusy || (current.style?.status === 'running' && !staleRunning(current.style))) {
       const wait = document.createElement('span');
       wait.className = 'ed-expert-wait';
       wait.textContent = 'przejazd redaktorski… (weryfikacja faktów w sieci, do dwóch minut)';
       actions.append(wait);
       return;
+    }
+    if (staleRunning(current.style)) {
+      const note = document.createElement('span');
+      note.className = 'ed-expert-meta';
+      note.textContent = 'poprzedni przejazd został przerwany – spróbuj ponownie';
+      actions.append(note);
     }
 
     const style = current.style;

@@ -69,6 +69,13 @@ const json = (value, status = 200) =>
   });
 
 const nowIso = () => new Date().toISOString();
+
+/** Granica żywotności blokady „running" etapów ekspert/styl. Timeout wywołania
+    modelu to 120 s – blokada starsza niż 3 minuty na pewno nie ma już żywego
+    wywołania za sobą (Worker zabity w trakcie nie zdejmie jej sam). Porównanie
+    leksykograficzne ISO-8601 działa w SQLite wprost. */
+const RUNNING_STALE_MS = 3 * 60_000;
+const staleCutoff = () => new Date(Date.now() - RUNNING_STALE_MS).toISOString();
 const plusMinutes = (minutes) => new Date(Date.now() + minutes * 60_000).toISOString();
 
 /* ---------- podpis callbacku ---------- */
@@ -808,12 +815,15 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
 
   // Blokada podwójnego kliknięcia: warunkowy UPDATE przechodzi tylko, gdy
   // ekspert nie jest właśnie generowany (json_extract – JSON1 jest w D1).
+  // Blokada starsza niż okno staleCutoff jest martwa – invocation zabity
+  // w trakcie (np. zerwane połączenie przeglądarki) nie zdejmie jej sam.
   const lock = await db(env)
     .prepare(
       `UPDATE jobs SET expert = ?, updated_at = ? WHERE id = ?
-         AND (expert IS NULL OR json_extract(expert, '$.status') != 'running')`,
+         AND (expert IS NULL OR json_extract(expert, '$.status') != 'running'
+              OR coalesce(json_extract(expert, '$.started_at'), '') < ?)`,
     )
-    .bind(JSON.stringify({ status: 'running', started_at: nowIso() }), nowIso(), id)
+    .bind(JSON.stringify({ status: 'running', started_at: nowIso() }), nowIso(), id, staleCutoff())
     .run();
   if ((lock.meta?.changes ?? 0) === 0) return json({ error: 'Cytat jest właśnie generowany.' }, 409);
 
@@ -872,13 +882,15 @@ async function runStyle(request, env, id, { fetchImpl } = {}) {
     return json({ error: 'Przejazd redaktorski będzie dostępny po zakończeniu analizy.' }, 409);
   }
 
-  // Blokada podwójnego kliknięcia – jak przy ekspercie (json_extract z JSON1).
+  // Blokada podwójnego kliknięcia – jak przy ekspercie (json_extract z JSON1),
+  // z tym samym odwieszaniem martwej blokady po oknie staleCutoff.
   const lock = await db(env)
     .prepare(
       `UPDATE jobs SET style = ?, updated_at = ? WHERE id = ?
-         AND (style IS NULL OR json_extract(style, '$.status') != 'running')`,
+         AND (style IS NULL OR json_extract(style, '$.status') != 'running'
+              OR coalesce(json_extract(style, '$.started_at'), '') < ?)`,
     )
-    .bind(JSON.stringify({ status: 'running', started_at: nowIso() }), nowIso(), id)
+    .bind(JSON.stringify({ status: 'running', started_at: nowIso() }), nowIso(), id, staleCutoff())
     .run();
   if ((lock.meta?.changes ?? 0) === 0) return json({ error: 'Przejazd redaktorski właśnie trwa.' }, 409);
 

@@ -125,7 +125,9 @@ const EDITORIAL_RULES = `Zasady redakcyjne, których musisz przestrzegać:
 - Nie zmieniaj sensu zdań, które są poprawne merytorycznie.`;
 
 const MAX_CONTENT_CHARS = 24_000;
-const TIMEOUT_MS = 60_000;
+// 120 s, nie 60: Grok 4.6 to model rozumujący i przy dłuższym artykule potrafi
+// liczyć ponad minutę – krótszy limit ubijał generowanie tuż przed odpowiedzią.
+const TIMEOUT_MS = 120_000;
 
 const stripHtml = (html) =>
   String(html ?? '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
