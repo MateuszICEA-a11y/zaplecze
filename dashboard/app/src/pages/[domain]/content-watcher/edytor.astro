@@ -2501,7 +2501,15 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       err.textContent = current.expert.error;
       actions.append(err);
     }
-    actions.append(button(current.expert ? 'spróbuj ponownie' : 'Dodaj poradę eksperta',
+    // Po odrzuceniu „spróbuj ponownie" brzmiało jak obsługa błędu i przycisk
+    // generowania robił się niewidzialny – nazywamy rzecz po imieniu.
+    if (current.expert?.status === 'rejected') {
+      const note = document.createElement('span');
+      note.className = 'ed-expert-meta';
+      note.textContent = 'poprzedni cytat odrzucony – wybierz miejsce i wygeneruj nowy';
+      actions.append(note);
+    }
+    actions.append(button(current.expert ? 'wygeneruj nowy cytat' : 'Dodaj poradę eksperta',
       () => callExpert('POST', expertChoice()), true));
   }
 
