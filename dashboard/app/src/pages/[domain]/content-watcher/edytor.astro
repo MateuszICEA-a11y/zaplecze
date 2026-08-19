@@ -463,6 +463,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     'FIGURE', 'FIGCAPTION']);
   const DROP_TAGS = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'OBJECT', 'EMBED', 'FORM', 'LINK', 'META']);
 
+  /* Lustro STYLE_TAGS/STYLE_SAFE z cw-api.js: wygląd kart (ekspert, CTA,
+     infografika) jedzie w atrybucie `style`, bo CSS motywu WordPressa nie
+     ruszymy. Bez przepuszczenia stylu edytor i podgląd pokazywały te bloki
+     jako goły tekst zlany z treścią. Brak nawiasów wyklucza url(). */
+  const STYLE_TAGS = new Set(['BLOCKQUOTE', 'P', 'FOOTER', 'SPAN', 'DIV', 'IMG', 'FIGURE', 'FIGCAPTION']);
+  const STYLE_SAFE = /^[a-z0-9 .,:;%#\/-]+$/i;
+
   /* Widgety szablonu wklejone w treść („Zobacz również", boksy powiązanych
      wpisów). Na stronie to element poboczny obok tekstu, w edytorze wchodziły
      w środek akapitu i psuły zarówno odbiór, jak i liczenie słów. */
@@ -487,8 +494,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         const expertQuote = child.tagName === 'BLOCKQUOTE' && child.classList.contains('expert');
         const src = child.tagName === 'IMG' ? child.getAttribute('src') ?? '' : '';
         const alt = child.tagName === 'IMG' ? child.getAttribute('alt') ?? '' : '';
+        const style = STYLE_TAGS.has(child.tagName) ? child.getAttribute('style') ?? '' : '';
         for (const attr of [...child.attributes]) child.removeAttribute(attr.name);
         if (expertQuote) child.className = 'expert';
+        if (style && STYLE_SAFE.test(style)) child.setAttribute('style', style);
         if (child.tagName === 'IMG') {
           // Zdjęcie eksperta: adres zostaje, ale tylko https – reszta atrybutów
           // (w tym `onerror`) już zdjęta wyżej.
@@ -3994,10 +4003,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const box = docSnapshot();
     box.querySelectorAll('*').forEach((node) => {
       const keep = new Map<string, string>();
-      const held = node.tagName === 'A' ? ['href']
+      // `style` zostaje wszędzie: karty (ekspert, CTA) i infografika niosą
+      // wygląd inline – bez niego podgląd i eksport do Docs pokazują goły
+      // tekst. Wartości są już po sanityzacji (STYLE_SAFE w sanitizeInto).
+      const held = node.tagName === 'A' ? ['href', 'style']
         // Bez src obraz znikał z podglądu i z eksportu .doc – wstawiona
         // infografika (i zdjęcie eksperta) wyglądały na nieobecne.
-        : node.tagName === 'IMG' ? ['src', 'alt'] : [];
+        : node.tagName === 'IMG' ? ['src', 'alt', 'style'] : ['style'];
       for (const name of held) {
         const value = node.getAttribute(name);
         if (value) keep.set(name, value);
