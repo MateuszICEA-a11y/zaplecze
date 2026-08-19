@@ -1,13 +1,5 @@
 [
   {
-    "title": "Pakiet „Ceny Paliwa Niżej” pod znakiem zapytania. Minister wskazuje, co dalej",
-    "date": "2026-05-11",
-    "slug": "pakiet-ceny-paliwa-nizej-pod-znakiem-zapytania-minister-wskazuje-co-dalej",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Wpadł na granicy kradzionym kamperem. Pojazd był wart ponad 200 tys. zł",
     "date": "2026-05-12",
     "slug": "wpadl-na-granicy-kradzionym-kamperem-pojazd-byl-wart-ponad-200-tys-zl",
@@ -717,6 +709,14 @@
     "slug": "rzad-obniza-vat-na-paliwa-pakiet-ceny-paliw-nizej-wraca-na-stacje",
     "section": "news",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Ceny paliw w dół. Ile zapłacisz za ON i benzynę?",
+    "date": "2026-08-19",
+    "slug": "ceny-paliw-w-dol-ile-zaplacisz-za-on-i-benzyne",
+    "section": "news",
+    "format": "short",
     "source": "rss"
   }
 ]
