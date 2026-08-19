@@ -21,9 +21,13 @@
  * wyjścia i model korzystał z obu: przepisywał artykuł (ogólnik) albo dopisywał
  * sobie doświadczenie (Head of SEO opowiadający o trasach montażowych
  * i wchodzeniu na dach u klienta fotowoltaicznego).
+ *
+ * 2.1.0 (2026-08-19): dokręcony ton i kąt GEO/AI z promptu redakcji – cytat ma
+ * wnosić nową perspektywę (wskazówka/prognoza/ostrzeżenie), nie streszczać;
+ * 40–80 słów. Model kroku: Grok 4.6, temperatura 0.6.
  */
 
-export const EXPERT_PROMPT_VERSION = '2.0.0';
+export const EXPERT_PROMPT_VERSION = '2.1.0';
 
 export const EXPERTS = [
   'Mateusz Wiśniewski – ekspert SEO i AI Search',
@@ -206,7 +210,7 @@ export function buildExpertPrompt({ title, content, author, experts = EXPERTS, p
 
 Cytat podpisujemy imieniem i nazwiskiem: **${person.name}**${person.role ? ` (${person.role})` : ''}. W polu „expert" zwróć dokładnie to imię i nazwisko${person.role ? `, w polu „role" – dokładnie to stanowisko` : ', a pole „role" zostaw puste'}. Nie proponuj innej osoby.`
     : null;
-  return `Piszesz komentarz eksperta iCEA do gotowego artykułu. Komentarz ma stać na MATERIALE Z TEGO PRZEBIEGU – na danych z wyszukiwarki i z tekstów konkurencji, które masz niżej. Nie wymyślaj wspomnień z projektów; wszystko, co powiesz, ma dać się wskazać palcem w tym materiale.
+  return `Jesteś doświadczonym ekspertem ds. SEO i optymalizacji pod widoczność w AI (GEO – Generative Engine Optimization). Piszesz komentarz ekspercki iCEA do gotowego artykułu – cytat ma rozszerzać i uwiarygadniać treść, nie streszczać jej. Komentarz ma stać na MATERIALE Z TEGO PRZEBIEGU – na danych z wyszukiwarki i z tekstów konkurencji, które masz niżej. Nie wymyślaj wspomnień z projektów; wszystko, co powiesz, ma dać się wskazać palcem w tym materiale.
 
 ${ROLE_RULES}
 
@@ -232,7 +236,7 @@ Zwróć wyłącznie JSON:
   "slot": 5,
   "expert": "imię i nazwisko",
   "role": "stanowisko",
-  "quote": "dwa–cztery zdania komentarza w pierwszej osobie",
+  "quote": "dwa–cztery mocne zdania komentarza (ok. 40–80 słów) w pierwszej osobie",
   "placement": "po której sekcji komentarz ma stanąć i dlaczego",
   "basis": "która pozycja z materiału przebiegu jest podstawą komentarza – przepisz ją"
 }
@@ -245,10 +249,11 @@ Cisza jest lepsza niż zmyślona anegdota – nie nadrabiaj braku danych wspomni
 
 Zasady:
 - Punktem wyjścia jest JEDNA konkretna pozycja z materiału: przegrywana fraza, konkret konkurencji, luka z analizy albo różnica objętości. Wpisz ją do pola „basis".
-- Komentarz ma dopowiadać, co z tej pozycji wynika dla czytelnika – jaki błąd stoi za taką różnicą, na co uważać, od czego zacząć. To ma być interpretacja danych, nie ich odczytanie na głos.
-- Bez ogólników w rodzaju „warto zadbać o jakość treści".
+- Nie streszczaj artykułu ani materiału – wnieś nową perspektywę: praktyczną wskazówkę, prognozę albo ostrzeżenie, które wynika z tej pozycji. To ma być interpretacja danych, nie ich odczytanie na głos.
+- Jeśli temat i materiał dają naturalny pomost, połącz wątek z widocznością w erze AI: AI Overviews, wyszukiwarki oparte na LLM (ChatGPT Search, Perplexity), Topical Authority, intencja użytkownika (Search Intent), zero-click searches. Nie doklejaj tego na siłę – lepszy celny komentarz czysto SEO niż wymuszona wstawka o AI.
+- Bez banałów w rodzaju „SEO jest ważne" czy „warto zadbać o jakość treści".
 - Bez obietnic wyników. Liczby wolno przytaczać wyłącznie te z materiału przebiegu – żadnych własnych.
-- Ton: rzeczowy, pierwsza osoba, język mówiony, ale poprawny.
+- Ton: profesjonalny, autorytatywny, ale przystępny – brzmisz jak praktyk, który na co dzień analizuje dane i algorytmy. Pierwsza osoba, język mówiony, ale poprawny.
 
 ${EDITORIAL_RULES}`;
 }
@@ -334,7 +339,10 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
   if (!content) return { ok: false, error: 'Zadanie nie ma treści sekcji do skomentowania.' };
 
   const models = typeof job.models === 'string' ? JSON.parse(job.models || 'null') : job.models;
-  const model = models?.writer || 'anthropic/claude-sonnet-5';
+  // Krok eksperta ma własny model (decyzja 2026-08-19): Grok 4.6. `models.writer`
+  // z joba dotyczy przepisywania sekcji i zostaje przy Sonnecie – nie dziedziczymy
+  // go tutaj, bo maskowałby tę zmianę w każdym zadaniu z ustawionym writerem.
+  const model = models?.expert || 'x-ai/grok-4.6';
   const prompt = buildExpertPrompt({ title: job.title, content, author: job.author ?? '', person, research });
 
   let response;
@@ -350,7 +358,7 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
       body: JSON.stringify({
         model,
         messages: [{ role: 'user', content: prompt }],
-        temperature: 0.4,
+        temperature: 0.6,
         max_tokens: 2000,
         // Modele Perplexity nie obsługują response_format (jak w llm.py).
         ...(model.startsWith('perplexity/') ? {} : { response_format: { type: 'json_object' } }),
