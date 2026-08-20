@@ -120,14 +120,20 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
     </span>
   </figcaption>
   {hasData && (
-    <div class="series-legend rlegend" aria-label="Legenda wykresu">
+    <div class="series-legend rlegend" aria-label="Legenda wykresu" data-chart-legend>
       {series.map((item, index) => {
         const color = item.color ?? `--series-${(index % 3) + 1}`;
         const dashed = (item.dash ?? (index === 0 ? [] : index === 1 ? [6, 4] : [2, 4])).length > 0;
         return (
-          <span style={`color:var(${color})`}>
+          <button
+            type="button"
+            style={`color:var(${color})`}
+            data-series={index}
+            aria-pressed="false"
+            title={series.length > 1 ? `Pokaż tylko: ${item.label}` : undefined}
+          >
             <i class:list={{ dashed }}></i>{item.label}
-          </span>
+          </button>
         );
       })}
     </div>
@@ -201,9 +207,13 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
           (cfg.unit ? ` ${cfg.unit}` : '');
 
     let plot: uPlot | null = null;
+    /* Tryb „solo” z legendy: indeks jedynej widocznej serii albo null (wszystkie).
+       Seria solo ląduje na lewej osi z własną skalą, druga oś znika. */
+    let solo: number | null = null;
 
     const render = () => {
       plot?.destroy();
+      const twoAxes = cfg.secondaryAxis && solo === null;
       const ink = cssVar('--ink-faint') || cssVar('--ink-muted');
       const grid = cssVar('--hairline');
       const colors = [cssVar('--series-1'), cssVar('--series-2'), cssVar('--series-3')];
@@ -235,7 +245,7 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
         ...(cfg.invert
           ? { y: { dir: -1 as const } }
           : { y: { range: (_u: uPlot, min: number, max: number) => [0, max] as [number, number] } }),
-        ...(cfg.secondaryAxis ? { b: {} } : {}),
+        ...(twoAxes ? { b: {} } : {}),
       };
       plot = new uPlot(
         {
@@ -253,14 +263,15 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
             },
             ...cfg.series.map((s, i) => {
               const color = s.color ? cssVar(s.color) : colors[i % colors.length]!;
-              const fill = s.fill ?? (cfg.series.length === 1 && i === 0);
+              const fill = solo === i || (s.fill ?? (cfg.series.length === 1 && i === 0));
               return {
                 label: s.label,
+                show: solo === null || solo === i,
                 stroke: color,
                 fill: fill ? areaFill(color) : undefined,
                 width: 2.4,
                 dash: s.dash ?? DASHES[i % DASHES.length],
-                scale: cfg.secondaryAxis && i === 1 ? 'b' : 'y',
+                scale: twoAxes && i === 1 ? 'b' : 'y',
                 points: { show: showPoints, size: 6, stroke: color, fill: color },
                 value: (_u: uPlot, v: number | null) => fmt(v),
                 spanGaps: true,
@@ -275,7 +286,7 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
               }) },
             { ...yAxis, size: 56, values: (_u: uPlot, ticks: number[]) =>
               ticks.map((t) => t.toLocaleString('pl-PL', { maximumFractionDigits: cfg.precision })) },
-            ...(cfg.secondaryAxis
+            ...(twoAxes
               ? [{
                   ...axis,
                   scale: 'b',
@@ -320,6 +331,28 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
       render();
       applyRange();
     };
+
+    /* Legenda jako przełącznik: klik = tylko ta seria (własna oś), ponowny
+       klik = wszystkie serie z powrotem. */
+    const legend = figure?.querySelector<HTMLElement>('[data-chart-legend]');
+    if (legend && cfg.series.length > 1) {
+      const syncLegend = () => {
+        legend.querySelectorAll<HTMLButtonElement>('button[data-series]').forEach((b) => {
+          const i = Number(b.dataset.series);
+          b.classList.toggle('off', solo !== null && solo !== i);
+          b.setAttribute('aria-pressed', String(solo === i));
+          b.title = solo === i ? 'Pokaż wszystkie serie' : `Pokaż tylko: ${cfg.series[i]?.label ?? ''}`;
+        });
+      };
+      legend.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest('button[data-series]') as HTMLButtonElement | null;
+        if (!btn) return;
+        const i = Number(btn.dataset.series);
+        solo = solo === i ? null : i;
+        syncLegend();
+        renderWithRange();
+      });
+    }
 
     if (rangeSeg) {
       const active = rangeSeg.querySelector<HTMLButtonElement>('button.active');
@@ -456,10 +489,39 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
     color: var(--ink-muted);
     flex-wrap: wrap;
   }
-  .series-legend span {
+  .series-legend button {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    background: none;
+    border: 0;
+    padding: 2px 4px;
+    margin: 0 -4px;
+    border-radius: 3px;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+  }
+  .series-legend button:hover {
+    background: color-mix(in srgb, currentColor 10%, transparent);
+  }
+  .series-legend button:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 1px;
+  }
+  .series-legend button:only-child {
+    cursor: default;
+    pointer-events: none;
+  }
+  .series-legend button.off {
+    opacity: 0.38;
+  }
+  .series-legend button.off i {
+    background: var(--ink-faint);
+  }
+  .series-legend button[aria-pressed='true'] {
+    font-weight: 600;
   }
   .series-legend i {
     width: 13px;
