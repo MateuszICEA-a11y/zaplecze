@@ -180,58 +180,6 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         </div>
       </div>
 
-      <!-- Etap finalny: porada eksperta – dostępna po zakończeniu pipeline'u,
-           generowana z Workera przez OpenRouter (sekundy, nie minuty). -->
-      <div class="ed-expert" data-ed-expert hidden>
-        <div class="ed-expert-head">
-          <span class="ed-expert-label">Etap końcowy · wypowiedź ekspercka</span>
-          <span class="ed-expert-note">
-            komentarz budowany z materiału przebiegu (SERP, konkurenci, brief) – wymaga tych analiz
-          </span>
-        </div>
-        <!-- Kogo podpisujemy: lista autorów portalu prosto z WordPressa. Rola
-             idzie z osobnej listy, bo WP stanowisk nie trzyma – dla znanych osób
-             podstawia się sama, dla reszty redaktor wybiera ją tutaj. -->
-        <div class="ed-expert-who">
-          <label>
-            <span>Ekspert</span>
-            <select data-ed-expert-who>
-              <option value="">dobierz automatycznie</option>
-            </select>
-          </label>
-          <label>
-            <span>Stanowisko</span>
-            <select data-ed-expert-role-select>
-              <option value="">bez stanowiska</option>
-            </select>
-          </label>
-          <input type="text" data-ed-expert-role placeholder="np. specjalistka SEO" maxlength="120" hidden />
-          <label>
-            <span>Miejsce cytatu</span>
-            <select data-ed-expert-slot>
-              <option value="">koniec artykułu – model dobiera</option>
-            </select>
-          </label>
-        </div>
-        <div class="ed-expert-actions" data-ed-expert-actions></div>
-        <p class="ed-error" data-ed-expert-error hidden></p>
-      </div>
-
-      <!-- Etap końcowy: przejazd redaktorski. Jedno wywołanie modelu na CAŁY
-           wpis – prompt wymaga spójności terminologii, więc sekcja po sekcji
-           tę regułę wyłącza. Wynik to propozycja per sekcja, nie podmiana. -->
-      <div class="ed-expert ed-style" data-ed-style hidden>
-        <div class="ed-expert-head">
-          <span class="ed-expert-label">Etap końcowy · styl i fleksja</span>
-          <span class="ed-expert-note" data-ed-style-note>
-            kalki, żargon, odmiana nazw własnych i weryfikacja faktów w sieci
-          </span>
-        </div>
-        <div class="ed-expert-actions" data-ed-style-actions></div>
-        <div class="ed-style-report" data-ed-style-report hidden></div>
-        <p class="ed-error" data-ed-style-error hidden></p>
-      </div>
-
       <!-- Oś przebiegu: co poszło, co idzie teraz, co czeka. Kolumna ma stałą
            szerokość – rozciągnięta na całą stronę lista była nieczytelna. -->
       <div class="ed-timeline-wrap" data-ed-steps-details hidden>
@@ -278,6 +226,82 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         </p>
       </div>
     </div>
+
+    <!-- Etapy końcowe i publikacja w kolumnie bocznej: przy szerokim ekranie
+         są pod ręką przez cały czas czytania dokumentu, a nie w belce
+         pipeline'u nad nim. Ukryte do czasu zakończenia przebiegu. -->
+    <div class="ed-side-tools">
+    <!-- Etap finalny: porada eksperta – dostępna po zakończeniu pipeline'u,
+         generowana z Workera przez OpenRouter (sekundy, nie minuty). -->
+    <div class="ed-expert" data-ed-expert hidden>
+      <div class="ed-expert-head">
+        <span class="ed-expert-label">Etap końcowy · wypowiedź ekspercka</span>
+        <span class="ed-expert-note">
+          komentarz budowany z materiału przebiegu (SERP, konkurenci, brief) – wymaga tych analiz
+        </span>
+      </div>
+      <!-- Kogo podpisujemy: lista autorów portalu prosto z WordPressa. Rola
+           idzie z osobnej listy, bo WP stanowisk nie trzyma – dla znanych osób
+           podstawia się sama, dla reszty redaktor wybiera ją tutaj. -->
+      <div class="ed-expert-who">
+        <label>
+          <span>Ekspert</span>
+          <select data-ed-expert-who>
+            <option value="">dobierz automatycznie</option>
+          </select>
+        </label>
+        <label>
+          <span>Stanowisko</span>
+          <select data-ed-expert-role-select>
+            <option value="">bez stanowiska</option>
+          </select>
+        </label>
+        <input type="text" data-ed-expert-role placeholder="np. specjalistka SEO" maxlength="120" hidden />
+        <label>
+          <span>Miejsce cytatu</span>
+          <select data-ed-expert-slot>
+            <option value="">koniec artykułu – model dobiera</option>
+          </select>
+        </label>
+      </div>
+      <div class="ed-expert-actions" data-ed-expert-actions></div>
+      <p class="ed-error" data-ed-expert-error hidden></p>
+    </div>
+
+    <!-- Etap końcowy: przejazd redaktorski. Jedno wywołanie modelu na CAŁY
+         wpis – prompt wymaga spójności terminologii, więc sekcja po sekcji
+         tę regułę wyłącza. Wynik to propozycja per sekcja, nie podmiana. -->
+    <div class="ed-expert ed-style" data-ed-style hidden>
+      <div class="ed-expert-head">
+        <span class="ed-expert-label">Etap końcowy · styl i fleksja</span>
+        <span class="ed-expert-note" data-ed-style-note>
+          kalki, żargon, odmiana nazw własnych i weryfikacja faktów w sieci
+        </span>
+      </div>
+      <div class="ed-expert-actions" data-ed-style-actions></div>
+      <div class="ed-style-report" data-ed-style-report hidden></div>
+      <p class="ed-error" data-ed-style-error hidden></p>
+    </div>
+
+
+    <!-- Zapis do WordPressa jako karta: :has() chowa ją razem z modułem,
+         gdy przebieg jeszcze nie dał treści do publikacji. -->
+    <div class="ed-expert ed-wp-card">
+      <div class="ed-expert-head">
+        <span class="ed-expert-label">Publikacja · WordPress</span>
+        <span class="ed-expert-note">szkic do podglądu na szablonie strony; wdrożenie podmienia treść oryginału</span>
+      </div>
+      <!-- Zapis do WordPressa: szkic (osobny wpis draft) do podglądu na
+           szablonie strony; wdrożenie podmienia treść oryginału i kasuje
+           szkic. Hasło aplikacji zna wyłącznie Worker. -->
+      <div class="ed-wp" data-ed-wp hidden>
+        <button type="button" data-ed-wp-draft>szkic w WordPressie</button>
+        <a data-ed-wp-preview href="#" target="_blank" rel="noopener" hidden>otwórz szkic ↗</a>
+        <button type="button" class="ed-wp-apply" data-ed-wp-apply>wdróż na stronie</button>
+        <span class="ed-wp-note" data-ed-wp-note hidden></span>
+      </div>
+    </div>
+    </div>
     </aside>
 
     <div class="ed-docwrap">
@@ -296,15 +320,6 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           <span data-ed-decide-count></span>
           <button type="button" data-ed-accept-all>zatwierdź wszystkie</button>
           <button type="button" data-ed-copy-all>kopiuj zatwierdzone</button>
-        </div>
-        <!-- Zapis do WordPressa: szkic (osobny wpis draft) do podglądu na
-             szablonie strony; wdrożenie podmienia treść oryginału i kasuje
-             szkic. Hasło aplikacji zna wyłącznie Worker. -->
-        <div class="ed-wp" data-ed-wp hidden>
-          <button type="button" data-ed-wp-draft>szkic w WordPressie</button>
-          <a data-ed-wp-preview href="#" target="_blank" rel="noopener" hidden>otwórz szkic ↗</a>
-          <button type="button" class="ed-wp-apply" data-ed-wp-apply>wdróż na stronie</button>
-          <span class="ed-wp-note" data-ed-wp-note hidden></span>
         </div>
         <label class="ed-only-changed" data-ed-only-changed-wrap hidden>
           <input type="checkbox" data-ed-only-changed />
@@ -4302,6 +4317,21 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     .ed-side .ed-score-keywords { border-left: 0; padding-left: 0; margin-top: 4px;
       border-top: 1px solid var(--hairline-soft); padding-top: 14px; }
   }
+
+  /* ----- moduły w kolumnie bocznej: ekspert, styl, publikacja ----- */
+  .ed-side-tools .ed-expert { margin-top: 14px; }
+  .ed-side-tools .ed-expert-head { flex-direction: column; gap: 2px; }
+  .ed-side-tools .ed-expert-who { flex-direction: column; gap: 8px; }
+  .ed-side-tools .ed-expert-who label { display: grid; gap: 4px; }
+  .ed-side-tools .ed-expert-who select, .ed-side-tools .ed-expert-who input { width: 100%; max-width: none; }
+  .ed-side-tools .ed-expert-who input[hidden] { display: none; }
+  .ed-wp-card:has(> .ed-wp[hidden]) { display: none; }
+  .ed-side-tools .ed-wp { display: flex; }
+  .ed-side-tools .ed-wp .ed-wp-note { max-width: none; flex-basis: 100%; }
+  /* Podgląd cytatu w 400 px kolumnie: mniejsza czcionka (style cytatu są inline,
+     bo motyw WP ich nie ostyluje – stąd nadpisanie przez !important). */
+  .ed-side-tools .ed-expert-preview { font-size: .82rem; }
+  .ed-side-tools .ed-expert-preview * { font-size: inherit !important; line-height: 1.55 !important; }
 
   /* ----- zwijanie sekcji analitycznych -----
      Po zakończonym przebiegu SERP i treści konkurencji zrobiły swoje –
