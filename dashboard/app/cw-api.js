@@ -520,7 +520,7 @@ export async function fetchPostContent(request, env, domain, postType, postId, f
   // Końcowy ukośnik po ID jest obowiązkowy (WP robi 301) – jak w wp.py.
   // `content` to na blogu ICEA sam wstęp przed pierwszym H2 (reszta siedzi
   // w ACF) – bez niego dokument w edytorze zaczynałby się od nagłówka.
-  const wpUrl = `${base.replace(/\/$/, '')}/wp-json/wp/v2/${postType}/${postId}/?acf_format=standard&_fields=id,link,title,content,acf`;
+  const wpUrl = `${base.replace(/\/$/, '')}/wp-json/wp/v2/${postType}/${postId}/?acf_format=standard&_fields=id,link,title,content,acf,author`;
   let upstream;
   try {
     upstream = await fetchImpl(wpUrl, {
@@ -559,6 +559,8 @@ export async function fetchPostContent(request, env, domain, postType, postId, f
     post_id: post?.id ?? postId,
     title: post?.title?.rendered ?? '',
     url: post?.link ?? '',
+    // Id autora z WP – edytor zaznacza go na liście i pozwala podmienić.
+    author_id: Number.isInteger(post?.author) ? post.author : null,
     lead,
     no_section: sections.length ? '' : noSection,
     sections,

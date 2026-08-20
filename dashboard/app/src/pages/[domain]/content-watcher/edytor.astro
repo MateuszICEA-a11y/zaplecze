@@ -295,6 +295,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
            szablonie strony; wdrożenie podmienia treść oryginału i kasuje
            szkic. Hasło aplikacji zna wyłącznie Worker. -->
       <div class="ed-wp" data-ed-wp hidden>
+        <!-- Autor wpisu: zaciągnięty z WP, do podmiany z listy redakcji.
+             Idzie razem ze szkicem i wdrożeniem (pole `author` w REST). -->
+        <label class="ed-wp-author">
+          <span>Autor wpisu</span>
+          <select data-ed-wp-author>
+            <option value="">bez zmian</option>
+          </select>
+        </label>
         <button type="button" data-ed-wp-draft>szkic w WordPressie</button>
         <a data-ed-wp-preview href="#" target="_blank" rel="noopener" hidden>otwórz szkic ↗</a>
         <button type="button" class="ed-wp-apply" data-ed-wp-apply>wdróż na stronie</button>
@@ -547,6 +555,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   let entry: any = null;
   let content: {
     title?: string;
+    author_id?: number | null;
     lead?: string;
     no_section?: string;
     sections: { slot: number; title: string; text: string }[];
@@ -602,6 +611,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       return;
     }
     renderDoc();
+    // Lista autorów mogła przyjść przed treścią – dopiero teraz znamy author_id.
+    fillWpAuthors();
     // Zadanie mogło wczytać się szybciej niż treść – nakładamy jego stan
     // (propozycje + cytat eksperta) na świeżo zbudowany dokument.
     if (job) {
@@ -2304,6 +2315,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
   let expertBusy = false;
   let authors: Array<{ name: string; role: string }> = [];
+  /* Pełna lista z id (także autor wpisu) – do podmiany autora w karcie WP. */
+  let wpAuthorList: Array<{ id: number | null; name: string; role: string }> = [];
 
   /* Stanowiska do wyboru. WordPress ich nie niesie, a wpisywanie z ręki przy
      każdym cytacie kończyło się literówką w podpisie. Formy męskie i żeńskie
@@ -2335,6 +2348,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     fillRoles();
     try {
       const data = await api(`/api/cw/authors/${domain}`);
+      wpAuthorList = (data.authors ?? []).filter((row: any) => Number.isInteger(row.id));
+      fillWpAuthors();
       authors = (data.authors ?? []).filter((row: any) => row.name !== entry.author);
     } catch {
       return; // brak listy = zostaje „dobierz automatycznie"
@@ -3220,13 +3235,40 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     note.classList.toggle('is-error', Boolean(wpMessage?.error));
   }
 
+  /* Select autora: bieżący autor z WP zaznaczony; wybór innej osoby jedzie
+     jako author_id ze szkicem i wdrożeniem. Ten sam autor = bez pola. */
+  function fillWpAuthors() {
+    const select = $<HTMLSelectElement>('[data-ed-wp-author]');
+    if (!select) return;
+    const currentId = content?.author_id ?? null;
+    select.replaceChildren();
+    if (!wpAuthorList.some((row) => row.id === currentId)) {
+      const option = document.createElement('option');
+      option.value = '';
+      option.textContent = entry.author ? `${entry.author} (bez zmian)` : 'bez zmian';
+      select.append(option);
+    }
+    for (const row of wpAuthorList) {
+      const option = document.createElement('option');
+      option.value = String(row.id);
+      option.textContent = row.role ? `${row.name} – ${row.role}` : row.name;
+      if (row.id === currentId) option.selected = true;
+      select.append(option);
+    }
+  }
+  function wpAuthorBody() {
+    const raw = $<HTMLSelectElement>('[data-ed-wp-author]')?.value ?? '';
+    const picked = raw ? Number(raw) : null;
+    return picked && picked !== (content?.author_id ?? null) ? { author_id: picked } : {};
+  }
+
   async function wpDraft() {
     if (!job || wpBusy) return;
     wpBusy = true;
     wpMessage = null;
     renderWpActions(job);
     try {
-      const data = await api(`/api/cw/jobs/${job.id}/wp-draft`, { method: 'POST' });
+      const data = await api(`/api/cw/jobs/${job.id}/wp-draft`, { method: 'POST', body: JSON.stringify(wpAuthorBody()) });
       job.wp_draft_id = data.draft_id;
       job.wp_draft_url = data.preview_url;
       wpMessage = { text: 'szkic zapisany', error: false };
@@ -3247,7 +3289,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     wpMessage = null;
     renderWpActions(job);
     try {
-      const data = await api(`/api/cw/jobs/${job.id}/wp-apply${force ? '?force=1' : ''}`, { method: 'POST' });
+      const authorBody = wpAuthorBody();
+      const data = await api(`/api/cw/jobs/${job.id}/wp-apply${force ? '?force=1' : ''}`, { method: 'POST', body: JSON.stringify(authorBody) });
+      // Po wdrożeniu WP ma już nowego autora – nagłówek i select idą za tym.
+      if (authorBody.author_id && content) {
+        content.author_id = authorBody.author_id;
+        const who = wpAuthorList.find((row) => row.id === authorBody.author_id);
+        if (who) $('[data-ed-author]')!.textContent = who.name;
+      }
       job.applied_at = data.applied_at;
       job.wp_draft_id = null;
       job.wp_draft_url = null;
@@ -4328,6 +4377,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-wp-card:has(> .ed-wp[hidden]) { display: none; }
   .ed-side-tools .ed-wp { display: flex; }
   .ed-side-tools .ed-wp .ed-wp-note { max-width: none; flex-basis: 100%; }
+  .ed-wp-author { display: grid; gap: 4px; flex-basis: 100%; font-size: .78rem; color: var(--ink-muted); }
+  .ed-wp-author select { width: 100%; padding: 4px 8px; border: 1px solid var(--hairline); border-radius: 2px;
+    background: var(--bg-surface-1); color: var(--ink); font-size: .8rem; }
+  .ed-wp-author select:focus { outline: none; border-color: var(--accent-blue); }
   /* Podgląd cytatu w 400 px kolumnie: mniejsza czcionka (style cytatu są inline,
      bo motyw WP ich nie ostyluje – stąd nadpisanie przez !important). */
   .ed-side-tools .ed-expert-preview { font-size: .82rem; }

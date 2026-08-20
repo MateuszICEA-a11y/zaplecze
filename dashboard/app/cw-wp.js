@@ -176,10 +176,24 @@ async function loadJobContext(env, id) {
   return { job, base, sections: sections.results ?? [] };
 }
 
+/** Opcjonalny `author_id` z ciała żądania – podmiana autora wpisu (id
+    użytkownika WP z listy /api/cw/authors). Brak/śmieci = bez zmiany autora. */
+export async function requestedAuthorId(request) {
+  let body = null;
+  try {
+    body = await request.clone().json();
+  } catch {
+    return null;
+  }
+  const id = body?.author_id;
+  return Number.isInteger(id) && id > 0 ? id : null;
+}
+
 /** POST /api/cw/jobs/:id/wp-draft – szkic podglądowy (utworzenie albo aktualizacja). */
 export async function handleWpDraft(request, env, id, { fetchImpl = fetch } = {}) {
   if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
   if (!wpAuth(env)) return json({ error: 'Brak sekretów WP_APP_USER / WP_APP_PASSWORD w Workerze.' }, 503);
+  const authorId = await requestedAuthorId(request);
 
   const ctx = await loadJobContext(env, id);
   if (ctx.error) return ctx.error;
@@ -205,6 +219,7 @@ export async function handleWpDraft(request, env, id, { fetchImpl = fetch } = {}
     title: `${DRAFT_TITLE_PREFIX}${original.data?.title?.raw ?? job.title}`,
     content: original.data?.content?.raw ?? '',
     acf: { ...scalarAcf(original.data?.acf), ...fields },
+    ...(authorId ? { author: authorId } : {}),
   };
 
   // Ponowny zapis aktualizuje istniejący szkic; skasowany ręcznie w CMS-ie
@@ -227,7 +242,7 @@ export async function handleWpDraft(request, env, id, { fetchImpl = fetch } = {}
     .prepare('UPDATE jobs SET wp_draft_id = ?, wp_draft_url = ?, updated_at = ? WHERE id = ?')
     .bind(saved.data.id, previewUrl, nowIso(), id)
     .run();
-  await audit(env, 'wp.draft', id, { draft_id: saved.data.id, slots });
+  await audit(env, 'wp.draft', id, { draft_id: saved.data.id, slots, author_id: authorId ?? undefined });
 
   return json({ draft_id: saved.data.id, preview_url: previewUrl, updated: Boolean(job.wp_draft_id && job.wp_draft_id === saved.data.id), slots });
 }
@@ -243,6 +258,7 @@ export async function handleWpApply(request, env, id, { fetchImpl = fetch } = {}
   if (ctx.error) return ctx.error;
   const { job, base, sections } = ctx;
   const force = new URL(request.url).searchParams.get('force') === '1';
+  const authorId = await requestedAuthorId(request);
 
   if (job.applied_at && !force) {
     return json({ error: `Zmiany zostały już wdrożone ${job.applied_at.slice(0, 10)}.`, code: 'already_applied' }, 409);
@@ -289,7 +305,12 @@ export async function handleWpApply(request, env, id, { fetchImpl = fetch } = {}
     }, 409);
   }
 
-  const saved = await wpFetch(env, postUrl(base, job.post_type, job.post_id), { method: 'POST', body: { acf: fields } }, fetchImpl);
+  const saved = await wpFetch(
+    env,
+    postUrl(base, job.post_type, job.post_id),
+    { method: 'POST', body: { acf: fields, ...(authorId ? { author: authorId } : {}) } },
+    fetchImpl,
+  );
   if (!saved.ok) {
     return json({ error: `WordPress odrzucił zapis zmian (HTTP ${saved.status}).`, code: wpErrorCode(saved) }, 502);
   }
@@ -307,7 +328,7 @@ export async function handleWpApply(request, env, id, { fetchImpl = fetch } = {}
     .prepare('UPDATE jobs SET applied_at = ?, wp_draft_id = NULL, wp_draft_url = NULL, updated_at = ? WHERE id = ?')
     .bind(appliedAt, appliedAt, id)
     .run();
-  await audit(env, 'wp.apply', id, { slots, forced: force || undefined, draft_deleted: draftDeleted });
+  await audit(env, 'wp.apply', id, { slots, forced: force || undefined, draft_deleted: draftDeleted, author_id: authorId ?? undefined });
 
   return json({ ok: true, applied_at: appliedAt, slots, draft_deleted: draftDeleted });
 }

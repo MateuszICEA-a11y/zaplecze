@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { acfFieldPayload, contentHash, handleWpApply, handleWpDraft, scalarAcf, DRAFT_TITLE_PREFIX } from './cw-wp.js';
+import { acfFieldPayload, contentHash, handleWpApply, handleWpDraft, requestedAuthorId, scalarAcf, DRAFT_TITLE_PREFIX } from './cw-wp.js';
 
 /* ---------- hash ---------- */
 
@@ -255,4 +255,13 @@ test('wp-apply: ponowne wdrożenie wymaga force', async () => {
   const response = await handleWpApply(post('/api/cw/jobs/job-123456/wp-apply'), env(db), 'job-123456');
   assert.equal(response.status, 409);
   assert.equal((await response.json()).code, 'already_applied');
+});
+
+test('requestedAuthorId: liczba całkowita > 0 z body, inaczej null', async () => {
+  const withBody = (body) => new Request('https://dash.example/x', { method: 'POST', body, headers: { 'Content-Type': 'application/json' } });
+  assert.equal(await requestedAuthorId(withBody(JSON.stringify({ author_id: 7 }))), 7);
+  assert.equal(await requestedAuthorId(withBody(JSON.stringify({ author_id: '7' }))), null);
+  assert.equal(await requestedAuthorId(withBody(JSON.stringify({ author_id: 0 }))), null);
+  assert.equal(await requestedAuthorId(withBody(JSON.stringify({}))), null);
+  assert.equal(await requestedAuthorId(post('/api/cw/jobs/job-123456/wp-draft')), null);
 });

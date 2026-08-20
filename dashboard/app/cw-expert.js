@@ -83,6 +83,8 @@ export async function wpAuthors(base, fetchImpl = fetch, auth = '') {
   if (!Array.isArray(rows)) throw new Error('WordPress nie oddał listy autorów.');
   return rows
     .map((row) => ({
+      // id potrzebne do podmiany autora wpisu przy szkicu/wdrożeniu.
+      id: Number.isInteger(row?.id) ? row.id : null,
       name: String(row?.name ?? '').trim(),
       slug: String(row?.slug ?? '').trim(),
       role: KNOWN_ROLES[String(row?.name ?? '').trim()] ?? '',
