@@ -181,7 +181,9 @@ const deltaPill = (cur: number | null, prev: number | null, kind: 'pct' | 'pp' |
     const pct = Math.round(((cur - prev) / prev) * 100);
     return { cls: pct > 0 ? 'up' : pct < 0 ? 'down' : 'flat', text: `${pct > 0 ? '+' : ''}${fmtInt(pct)}%` };
   }
-  const d = Math.round((cur - prev) * 10) / 10 || 0; // `|| 0` zbija ujemne zero („-0 p.p.”)
+  // „+ 0” zbija ujemne zero (-0 p.p.); zapis bez `||` po dzieleniu, bo kompilator
+  // Astro bierze „/ 10 || 0; …” w frontmatterze za literał regexa i wywala build.
+  const d = Math.round((cur - prev) * 10) / 10 + 0;
   const sign = d > 0 ? '+' : '';
   if (kind === 'pp') return { cls: d > 0 ? 'up' : d < 0 ? 'down' : 'flat', text: `${sign}${fmtNum(d, 1)} p.p.` };
   return { cls: d < 0 ? 'up' : d > 0 ? 'down' : 'flat', text: `${sign}${fmtNum(d, 1)}` };
