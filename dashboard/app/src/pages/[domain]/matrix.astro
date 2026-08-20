@@ -91,9 +91,13 @@ for (const r of joined) {
 // Progi: segment z ≥2 stronami = własny wiersz; reszta → „pozostałe".
 const segRows: { segment: string; rows: JoinedRow[] }[] = [];
 const leftovers: JoinedRow[] = [];
+const leftoverKeys = new Set<string>();
 for (const [seg, rs] of segGroups) {
   if (seg === 'strona główna' || rs.length >= 2) segRows.push({ segment: seg, rows: rs });
-  else leftovers.push(...rs);
+  else {
+    leftovers.push(...rs);
+    leftoverKeys.add(seg);
+  }
 }
 if (leftovers.length) segRows.push({ segment: 'pozostałe', rows: leftovers });
 
@@ -135,6 +139,58 @@ const segments = segRows
 // Priorytety optymalizacji: strony tracące kliknięcia wg porównań GSC
 // (3 mies. vs poprzednie 3 mies. i vs rok temu), największe straty najpierw.
 const compare = details.sources.gsc?.compare;
+
+// Porównanie per segment (przełącznik na kafelkach): collector agreguje pełną
+// listę stron GSC po pierwszym poziomie ścieżki (klucz jak `segmentOf`);
+// „pozostałe" = suma segmentów jednostronicowych, „strona główna" = „/".
+type CmpMode = 'qoq' | 'yoy';
+type SegCmp = {
+  clicks: number; prev_clicks: number;
+  impressions: number; prev_impressions: number;
+  position: number | null; prev_position: number | null;
+  ctr: number | null; prev_ctr: number | null;
+};
+const segmentCompare = (mode: CmpMode, segment: string): SegCmp | null => {
+  const src = compare?.[mode]?.segments;
+  if (!src) return null;
+  const keys = segment === 'strona główna' ? ['/'] : segment === 'pozostałe' ? [...leftoverKeys] : [segment];
+  const parts = src.filter((s) => keys.includes(s.key));
+  if (!parts.length) return { clicks: 0, prev_clicks: 0, impressions: 0, prev_impressions: 0, position: null, prev_position: null, ctr: null, prev_ctr: null };
+  const sum = (f: (s: (typeof parts)[number]) => number) => parts.reduce((a, s) => a + f(s), 0);
+  const clicks = sum((s) => s.clicks);
+  const prev_clicks = sum((s) => s.prev_clicks);
+  const impressions = sum((s) => s.impressions);
+  const prev_impressions = sum((s) => s.prev_impressions);
+  const posW = sum((s) => (s.position ?? 0) * s.impressions);
+  const prevPosW = sum((s) => (s.prev_position ?? 0) * s.prev_impressions);
+  return {
+    clicks, prev_clicks, impressions, prev_impressions,
+    position: impressions ? Math.round((posW / impressions) * 10) / 10 : null,
+    prev_position: prev_impressions ? Math.round((prevPosW / prev_impressions) * 10) / 10 : null,
+    ctr: impressions ? Math.round((clicks / impressions) * 10000) / 100 : null,
+    prev_ctr: prev_impressions ? Math.round((prev_clicks / prev_impressions) * 10000) / 100 : null,
+  };
+};
+const cmpModes = (['qoq', 'yoy'] as const).filter((m) => compare?.[m]?.segments?.length);
+// Delta do pigułki: procent dla liczników, punkty proc. dla CTR, pozycje dla pozycji
+// (`lowerBetter` odwraca kolor – spadek pozycji liczbowo = awans).
+const deltaPill = (cur: number | null, prev: number | null, kind: 'pct' | 'pp' | 'pos') => {
+  if (cur === null || prev === null) return { cls: 'flat', text: '–' };
+  if (kind === 'pct') {
+    if (prev === 0) return cur === 0 ? { cls: 'flat', text: '0%' } : { cls: 'up', text: 'nowe' };
+    const pct = Math.round(((cur - prev) / prev) * 100);
+    return { cls: pct > 0 ? 'up' : pct < 0 ? 'down' : 'flat', text: `${pct > 0 ? '+' : ''}${fmtInt(pct)}%` };
+  }
+  const d = Math.round((cur - prev) * 10) / 10 || 0; // `|| 0` zbija ujemne zero („-0 p.p.”)
+  const sign = d > 0 ? '+' : '';
+  if (kind === 'pp') return { cls: d > 0 ? 'up' : d < 0 ? 'down' : 'flat', text: `${sign}${fmtNum(d, 1)} p.p.` };
+  return { cls: d < 0 ? 'up' : d > 0 ? 'down' : 'flat', text: `${sign}${fmtNum(d, 1)}` };
+};
+const cmpLabel = (mode: CmpMode) =>
+  compare?.[mode]
+    ? `${fmtDateRange(compare.cur.start, compare.cur.end)} vs ${fmtDateRange(compare[mode]!.prev.start, compare[mode]!.prev.end)}`
+    : '';
+
 const declining = (mode: 'qoq' | 'yoy') =>
   (compare?.[mode]?.pages ?? [])
     .map((p) => ({
@@ -239,8 +295,21 @@ const indexingError = (indexing?.error ?? 'źródło chwilowo niedostępne').rep
     segments.length > 1 && (
       <>
         <div class="section-head" style="margin-bottom:10px;">
-          <h2>Segmenty serwisu</h2>
-          <span class="section-meta">agregacja po pierwszym poziomie ścieżki</span>
+          <div class="section-title-with-meta">
+            <h2>Segmenty serwisu</h2>
+            <span class="section-meta" data-segcmp-meta>agregacja po pierwszym poziomie ścieżki · GSC 30 dni</span>
+          </div>
+          {cmpModes.length > 0 && (
+            <div class="seg" data-segcmp-seg>
+              <button type="button" class="active" data-mode="now" data-meta="agregacja po pierwszym poziomie ścieżki · GSC 30 dni">30 dni</button>
+              {cmpModes.includes('qoq') && (
+                <button type="button" data-mode="qoq" data-meta={`GSC: ${cmpLabel('qoq')}`}>vs 3 mies.</button>
+              )}
+              {cmpModes.includes('yoy') && (
+                <button type="button" data-mode="yoy" data-meta={`GSC: ${cmpLabel('yoy')}`}>vs rok</button>
+              )}
+            </div>
+          )}
         </div>
         <div class="seg-grid">
           {segments.map((s) => (
@@ -256,7 +325,7 @@ const indexingError = (indexing?.error ?? 'źródło chwilowo niedostępne').rep
                 w indeksie {fmtInt(s.indexed)}/{fmtInt(s.pages)}
                 {s.indexed < s.pages && ` · poza: ${fmtInt(s.pages - s.indexed)}`}
               </div>
-              <div class="mgrid">
+              <div class="mgrid" data-segcmp-view="now">
                 <div class="mm">
                   <span class="l"><i class="src gsc" />Wyświetlenia</span>
                   <div class="v">{fmtInt(s.impressions)}</div>
@@ -274,6 +343,28 @@ const indexingError = (indexing?.error ?? 'źródło chwilowo niedostępne').rep
                   <div class="v">{fmtInt(s.senuto_top10)}</div>
                 </div>
               </div>
+              {cmpModes.map((mode) => {
+                const c = segmentCompare(mode, s.segment)!;
+                const cells = [
+                  { label: 'Wyświetlenia', value: fmtInt(c.impressions), pill: deltaPill(c.impressions, c.prev_impressions, 'pct') },
+                  { label: 'Kliknięcia', value: fmtInt(c.clicks), pill: deltaPill(c.clicks, c.prev_clicks, 'pct') },
+                  { label: 'Pozycja', value: c.position === null ? '–' : fmtNum(c.position, 1), pill: deltaPill(c.position, c.prev_position, 'pos') },
+                  { label: 'CTR', value: fmtPct(c.ctr), pill: deltaPill(c.ctr, c.prev_ctr, 'pp') },
+                ];
+                return (
+                  <div class="mgrid" data-segcmp-view={mode} hidden>
+                    {cells.map((cell) => (
+                      <div class="mm">
+                        <span class="l"><i class="src gsc" />{cell.label}</span>
+                        <div class="v">
+                          {cell.value}
+                          <span class:list={['sd', cell.pill.cls]}>{cell.pill.text}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
             </div>
           ))}
         </div>
@@ -508,6 +599,19 @@ const indexingError = (indexing?.error ?? 'źródło chwilowo niedostępne').rep
             }
           }
 
+          document.querySelector('[data-segcmp-seg]')?.addEventListener('click', (e) => {
+            const btn = (e.target as HTMLElement).closest('button[data-mode]') as HTMLButtonElement | null;
+            if (!btn) return;
+            document
+              .querySelectorAll('[data-segcmp-seg] button')
+              .forEach((b) => b.classList.toggle('active', b === btn));
+            document.querySelectorAll<HTMLElement>('[data-segcmp-view]').forEach((view) => {
+              view.hidden = view.dataset.segcmpView !== btn.dataset.mode;
+            });
+            const meta = document.querySelector<HTMLElement>('[data-segcmp-meta]');
+            if (meta && btn.dataset.meta) meta.textContent = btn.dataset.meta;
+          });
+
           document.querySelector('[data-prio-seg]')?.addEventListener('click', (e) => {
             const btn = (e.target as HTMLElement).closest('button[data-mode]') as HTMLButtonElement | null;
             if (!btn) return;
@@ -525,6 +629,30 @@ const indexingError = (indexing?.error ?? 'źródło chwilowo niedostępne').rep
 </Layout>
 
 <style>
+  /* Pigułka delty na kafelku segmentu (tryb porównania). */
+  .seg-card .mm .v .sd {
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: 2px;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: var(--bg-surface-3);
+    color: var(--ink-faint);
+  }
+  .seg-card .mm .v .sd.up {
+    color: var(--status-ok);
+    background: color-mix(in srgb, var(--status-ok) 13%, transparent);
+  }
+  .seg-card .mm .v .sd.down {
+    color: var(--status-err-fg);
+    background: var(--status-err-bg);
+  }
+  .seg-card .mgrid[hidden] {
+    display: none;
+  }
   .matrix-note {
     margin: 16px 0 4px;
     padding: 10px 14px;

@@ -185,10 +185,18 @@ export interface GscCompareRow {
   prev_position: number | null;
 }
 
+/** Porównanie okres-do-okresu zagregowane po segmencie serwisu („/blog/”, „/”). */
+export interface GscCompareSegment extends GscCompareRow {
+  pages: number;
+  prev_pages: number;
+}
+
 export interface GscComparePeriod {
   prev: { start: string; end: string };
   queries: GscCompareRow[];
   pages: GscCompareRow[];
+  /** Z pełnej listy stron (nie top 300) – kafelki segmentów w Matrix. */
+  segments?: GscCompareSegment[];
 }
 
 export interface GscCompare {

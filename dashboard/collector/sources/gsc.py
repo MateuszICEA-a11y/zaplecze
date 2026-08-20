@@ -5,6 +5,7 @@ Konto serwisowe musi być dodane jako użytkownik usługi w GSC (Pełny/Ogranicz
 Dane GSC mają ~2-3 dni opóźnienia – pobieramy pełny dzień sprzed DATA_LAG_DAYS.
 """
 import json
+import re
 import urllib.parse
 from datetime import datetime, timedelta, timezone
 
@@ -25,6 +26,7 @@ DETAILS_WINDOWS = [("7d", 7), ("30d", 30), ("3m", 90), ("6m", 180),
 COMPARE_WINDOW_DAYS = 90   # okno porównań qoq/yoy (plansza „Co spadło")
 COMPARE_ROW_LIMIT = 250
 COMPARE_KEEP_ROWS = 300    # ile złączonych wierszy per lista trzymamy w details
+COMPARE_PAGE_LIMIT = 5000  # strony ciągniemy w całości – z nich liczymy segmenty
 HISTORY_DAYS = 14          # dzienna historia fraz (sparkline w rozwijanym wierszu)
 HISTORY_QUERIES = 300      # ile fraz trzymamy w query_history (top po wyświetleniach)
 
@@ -73,6 +75,60 @@ def _join_compare(cur_rows: list[dict], prev_rows: list[dict]) -> list[dict]:
         })
     joined.sort(key=lambda r: max(r["impressions"], r["prev_impressions"]), reverse=True)
     return joined[:COMPARE_KEEP_ROWS]
+
+
+def _segment_key(url: str) -> str:
+    """Pierwszy poziom ścieżki („/blog/”), strona główna = „/”.
+
+    Lustro `segmentOf` z matrix.astro – frontend łączy po tym kluczu.
+    """
+    path = re.sub(r"^https?://[^/]+", "", url) or "/"
+    path = path.split("?", 1)[0].split("#", 1)[0]
+    parts = [p for p in path.split("/") if p]
+    return f"/{parts[0]}/" if parts else "/"
+
+
+def _segment_compare(cur_rows: list[dict], prev_rows: list[dict]) -> list[dict]:
+    """Agregacja porównania po segmentach serwisu (kafelki Matrix).
+
+    Liczy się z PEŁNEJ listy stron (COMPARE_PAGE_LIMIT), nie z top 300 –
+    ogon adresów bywa większością w segmentach typu /slownik/. Pozycja ważona
+    wyświetleniami, `pages` = adresy z ≥1 wyświetleniem w danym oknie.
+    """
+    agg: dict[str, dict] = {}
+
+    def bucket(key: str) -> dict:
+        return agg.setdefault(key, {
+            "key": key,
+            "pages": 0, "prev_pages": 0,
+            "clicks": 0, "prev_clicks": 0,
+            "impressions": 0, "prev_impressions": 0,
+            "_pos_w": 0.0, "_prev_pos_w": 0.0,
+        })
+
+    for r in cur_rows:
+        b = bucket(_segment_key(r["key"]))
+        b["pages"] += 1
+        b["clicks"] += r["clicks"]
+        b["impressions"] += r["impressions"]
+        if isinstance(r.get("position"), (int, float)):
+            b["_pos_w"] += r["position"] * r["impressions"]
+    for r in prev_rows:
+        b = bucket(_segment_key(r["key"]))
+        b["prev_pages"] += 1
+        b["prev_clicks"] += r["clicks"]
+        b["prev_impressions"] += r["impressions"]
+        if isinstance(r.get("position"), (int, float)):
+            b["_prev_pos_w"] += r["position"] * r["impressions"]
+
+    out = []
+    for b in agg.values():
+        pos_w, prev_pos_w = b.pop("_pos_w"), b.pop("_prev_pos_w")
+        b["position"] = round(pos_w / b["impressions"], 1) if b["impressions"] else None
+        b["prev_position"] = round(prev_pos_w / b["prev_impressions"], 1) if b["prev_impressions"] else None
+        out.append(b)
+    out.sort(key=lambda b: max(b["impressions"], b["prev_impressions"]), reverse=True)
+    return out
 
 
 def _access_token(sa_json: str) -> str:
@@ -199,7 +255,8 @@ def fetch(cfg: dict, env: dict) -> dict:
             "startDate": start.strftime("%Y-%m-%d"),
             "endDate": stop.strftime("%Y-%m-%d"),
             "dimensions": [dimension],
-            "rowLimit": COMPARE_ROW_LIMIT,
+            # Strony w całości (segmenty), frazy przycięte – jest ich dziesiątki tysięcy.
+            "rowLimit": COMPARE_PAGE_LIMIT if dimension == "page" else COMPARE_ROW_LIMIT,
         })
         return _rows_to_details(resp.get("rows") or [])
 
@@ -215,7 +272,10 @@ def fetch(cfg: dict, env: dict) -> dict:
                 block = compare.setdefault(mode, {
                     "prev": {"start": start.strftime("%Y-%m-%d"), "end": stop.strftime("%Y-%m-%d")},
                 })
-                block[key] = _join_compare(cur_rows, compare_rows(start, stop, dimension))
+                prev_rows = compare_rows(start, stop, dimension)
+                block[key] = _join_compare(cur_rows, prev_rows)
+                if dimension == "page":
+                    block["segments"] = _segment_compare(cur_rows, prev_rows)
         details["compare"] = compare
     except SourceError:
         pass  # porównania są opcjonalne – frontend chowa planszę, gdy ich brak
