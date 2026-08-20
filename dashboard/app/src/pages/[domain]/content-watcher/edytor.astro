@@ -4315,6 +4315,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
   .ed-doc { border: 1px solid var(--hairline); border-radius: 2px; background: var(--bg-surface-1); }
   .ed-doc-loading, .ed-doc-error { margin: 0; padding: 18px 22px; color: var(--ink-faint); font-size: .85rem; }
+  /* Jedna miara dla całej sekcji: nagłówek, pasek narzędzi, ramka linków,
+     propozycje stylu i cytat eksperta trzymają tę samą szerokość co tekst –
+     na ultrawide pasek na 2000 px nad łamem 74ch wyglądał jak dwa różne
+     dokumenty. Rynna decyzji (✓/✕) jest absolutna, więc jej to nie dotyczy.
+     Miara w rem, nie ch: ch liczy się od czcionki elementu, więc pasek
+     narzędzi (.72rem) wychodziłby węższy niż tekst (1rem). 49rem ≈ 78ch. */
+  .ed-doc-section { --ed-measure: 49rem; }
+  .ed-doc-section > :not(.ed-decide) { max-width: var(--ed-measure); }
   .ed-doc-section { position: relative; padding: 26px 28px 30px 76px;
     border-bottom: 1px solid var(--hairline-soft); }
   .ed-doc-section:last-child { border-bottom: none; }
@@ -4390,7 +4398,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-view-seg button.active { background: var(--accent-blue-soft); color: var(--ink); border-color: var(--accent-blue); }
 
   /* Czytelna miara i rytm tekstu – dokument, nie zrzut danych. */
-  .ed-doc-body { max-width: 74ch; font-size: 1rem; line-height: 1.75; color: var(--ink-muted); }
+  .ed-doc-body { max-width: var(--ed-measure, 74ch); font-size: 1rem; line-height: 1.75; color: var(--ink-muted); }
   .ed-doc-body > * + * { margin-top: 1em; }
   .ed-doc-body h2, .ed-doc-body h3 { color: var(--ink); font-family: var(--font-display); line-height: 1.3; }
   .ed-doc-body h2 { font-size: 1.15rem; margin-top: 1.6em; }
@@ -4675,7 +4683,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   /* Diff słowo po słowie – plaintext (textContent), w łamie dokumentu.
      Dopisane na zielono, usunięte przekreślone i wyciszone: jedno spojrzenie
      wystarcza, żeby zobaczyć, co model zrobił z akapitem. */
-  .ed-diff { max-width: 74ch; white-space: pre-wrap; line-height: 1.75; font-size: 1rem;
+  .ed-diff { max-width: var(--ed-measure, 74ch); white-space: pre-wrap; line-height: 1.75; font-size: 1rem;
     color: var(--ink-muted); }
   .ed-diff ins { text-decoration: none; color: var(--ink);
     background: color-mix(in srgb, var(--status-ok) 22%, transparent);
