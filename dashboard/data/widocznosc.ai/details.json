@@ -1,6 +1,6 @@
 {
  "date": "2026-08-20",
- "collected_at": "2026-08-20T05:06:11Z",
+ "collected_at": "2026-08-20T07:26:38Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -13742,6 +13742,173 @@
        "position": 1,
        "prev_position": null
       }
+     ],
+     "segments": [
+      {
+       "key": "/",
+       "pages": 1,
+       "prev_pages": 0,
+       "clicks": 13,
+       "prev_clicks": 0,
+       "impressions": 3111,
+       "prev_impressions": 0,
+       "position": 7.0,
+       "prev_position": null
+      },
+      {
+       "key": "/pozycjonowanie-ai/",
+       "pages": 5,
+       "prev_pages": 0,
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 1158,
+       "prev_impressions": 0,
+       "position": 50.2,
+       "prev_position": null
+      },
+      {
+       "key": "/modele-llm/",
+       "pages": 12,
+       "prev_pages": 0,
+       "clicks": 7,
+       "prev_clicks": 0,
+       "impressions": 703,
+       "prev_impressions": 0,
+       "position": 28.7,
+       "prev_position": null
+      },
+      {
+       "key": "/news/",
+       "pages": 63,
+       "prev_pages": 0,
+       "clicks": 9,
+       "prev_clicks": 0,
+       "impressions": 474,
+       "prev_impressions": 0,
+       "position": 13.2,
+       "prev_position": null
+      },
+      {
+       "key": "/narzedzia/",
+       "pages": 4,
+       "prev_pages": 0,
+       "clicks": 4,
+       "prev_clicks": 0,
+       "impressions": 235,
+       "prev_impressions": 0,
+       "position": 26.8,
+       "prev_position": null
+      },
+      {
+       "key": "/agenci-ai/",
+       "pages": 3,
+       "prev_pages": 0,
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 169,
+       "prev_impressions": 0,
+       "position": 57.1,
+       "prev_position": null
+      },
+      {
+       "key": "/autor/",
+       "pages": 3,
+       "prev_pages": 0,
+       "clicks": 3,
+       "prev_clicks": 0,
+       "impressions": 168,
+       "prev_impressions": 0,
+       "position": 15.4,
+       "prev_position": null
+      },
+      {
+       "key": "/geo/",
+       "pages": 15,
+       "prev_pages": 0,
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 155,
+       "prev_impressions": 0,
+       "position": 42.4,
+       "prev_position": null
+      },
+      {
+       "key": "/ai-w-biznesie/",
+       "pages": 10,
+       "prev_pages": 0,
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 151,
+       "prev_impressions": 0,
+       "position": 56.4,
+       "prev_position": null
+      },
+      {
+       "key": "/blog/",
+       "pages": 4,
+       "prev_pages": 0,
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 80,
+       "prev_impressions": 0,
+       "position": 3.7,
+       "prev_position": null
+      },
+      {
+       "key": "/rag/",
+       "pages": 3,
+       "prev_pages": 0,
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 50,
+       "prev_impressions": 0,
+       "position": 5.9,
+       "prev_position": null
+      },
+      {
+       "key": "/prompty/",
+       "pages": 2,
+       "prev_pages": 0,
+       "clicks": 2,
+       "prev_clicks": 0,
+       "impressions": 49,
+       "prev_impressions": 0,
+       "position": 4.3,
+       "prev_position": null
+      },
+      {
+       "key": "/o-nas/",
+       "pages": 1,
+       "prev_pages": 0,
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 34,
+       "prev_impressions": 0,
+       "position": 23.9,
+       "prev_position": null
+      },
+      {
+       "key": "/polityka-prywatnosci/",
+       "pages": 1,
+       "prev_pages": 0,
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 23,
+       "prev_impressions": 0,
+       "position": 6.3,
+       "prev_position": null
+      },
+      {
+       "key": "/kontakt/",
+       "pages": 1,
+       "prev_pages": 0,
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 16,
+       "prev_impressions": 0,
+       "position": 4.1,
+       "prev_position": null
+      }
      ]
     },
     "yoy": {
@@ -15903,6 +16070,173 @@
        "position": 1,
        "prev_position": null
       }
+     ],
+     "segments": [
+      {
+       "key": "/",
+       "pages": 1,
+       "prev_pages": 0,
+       "clicks": 13,
+       "prev_clicks": 0,
+       "impressions": 3111,
+       "prev_impressions": 0,
+       "position": 7.0,
+       "prev_position": null
+      },
+      {
+       "key": "/pozycjonowanie-ai/",
+       "pages": 5,
+       "prev_pages": 0,
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 1158,
+       "prev_impressions": 0,
+       "position": 50.2,
+       "prev_position": null
+      },
+      {
+       "key": "/modele-llm/",
+       "pages": 12,
+       "prev_pages": 0,
+       "clicks": 7,
+       "prev_clicks": 0,
+       "impressions": 703,
+       "prev_impressions": 0,
+       "position": 28.7,
+       "prev_position": null
+      },
+      {
+       "key": "/news/",
+       "pages": 63,
+       "prev_pages": 0,
+       "clicks": 9,
+       "prev_clicks": 0,
+       "impressions": 474,
+       "prev_impressions": 0,
+       "position": 13.2,
+       "prev_position": null
+      },
+      {
+       "key": "/narzedzia/",
+       "pages": 4,
+       "prev_pages": 0,
+       "clicks": 4,
+       "prev_clicks": 0,
+       "impressions": 235,
+       "prev_impressions": 0,
+       "position": 26.8,
+       "prev_position": null
+      },
+      {
+       "key": "/agenci-ai/",
+       "pages": 3,
+       "prev_pages": 0,
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 169,
+       "prev_impressions": 0,
+       "position": 57.1,
+       "prev_position": null
+      },
+      {
+       "key": "/autor/",
+       "pages": 3,
+       "prev_pages": 0,
+       "clicks": 3,
+       "prev_clicks": 0,
+       "impressions": 168,
+       "prev_impressions": 0,
+       "position": 15.4,
+       "prev_position": null
+      },
+      {
+       "key": "/geo/",
+       "pages": 15,
+       "prev_pages": 0,
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 155,
+       "prev_impressions": 0,
+       "position": 42.4,
+       "prev_position": null
+      },
+      {
+       "key": "/ai-w-biznesie/",
+       "pages": 10,
+       "prev_pages": 0,
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 151,
+       "prev_impressions": 0,
+       "position": 56.4,
+       "prev_position": null
+      },
+      {
+       "key": "/blog/",
+       "pages": 4,
+       "prev_pages": 0,
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 80,
+       "prev_impressions": 0,
+       "position": 3.7,
+       "prev_position": null
+      },
+      {
+       "key": "/rag/",
+       "pages": 3,
+       "prev_pages": 0,
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 50,
+       "prev_impressions": 0,
+       "position": 5.9,
+       "prev_position": null
+      },
+      {
+       "key": "/prompty/",
+       "pages": 2,
+       "prev_pages": 0,
+       "clicks": 2,
+       "prev_clicks": 0,
+       "impressions": 49,
+       "prev_impressions": 0,
+       "position": 4.3,
+       "prev_position": null
+      },
+      {
+       "key": "/o-nas/",
+       "pages": 1,
+       "prev_pages": 0,
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 34,
+       "prev_impressions": 0,
+       "position": 23.9,
+       "prev_position": null
+      },
+      {
+       "key": "/polityka-prywatnosci/",
+       "pages": 1,
+       "prev_pages": 0,
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 23,
+       "prev_impressions": 0,
+       "position": 6.3,
+       "prev_position": null
+      },
+      {
+       "key": "/kontakt/",
+       "pages": 1,
+       "prev_pages": 0,
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 16,
+       "prev_impressions": 0,
+       "position": 4.1,
+       "prev_position": null
+      }
      ]
     }
    }
@@ -16497,7 +16831,7 @@
        "position": null
       },
       {
-       "query": "jakie są modele gemini",
+       "query": "gemini model językowy",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -16509,7 +16843,7 @@
        "position": null
       },
       {
-       "query": "gemini model językowy",
+       "query": "jakie są modele gemini",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -16521,25 +16855,13 @@
        "position": null
       },
       {
-       "query": "copilot zasłania część odpowiedzi",
+       "query": "wektorowa baza danych po angielsku rag",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "gemini czy claude",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czy copilot to narzedzie ai, jakie jeszcze",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czy chatgpt moze wyliczc twoje klucze dsotepu co to znacyz",
+       "query": "jakie sa dostepne modele anthropic obecnie",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -16581,19 +16903,31 @@
        "position": null
       },
       {
+       "query": "czy copilot to narzedzie ai, jakie jeszcze",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "copilot zasłania część odpowiedzi",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "gemini czy claude",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "z poziomu jakich platform oprócz gcp mozna podłączyć się do llm gemini. chodzi o połączenie z miesięcznym limitem tokenów",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "wektorowa baza danych po angielsku rag",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jakie sa dostepne modele anthropic obecnie",
+       "query": "czy chatgpt moze wyliczc twoje klucze dsotepu co to znacyz",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -16621,7 +16955,7 @@
      "position": null
     },
     {
-     "query": "jakie są modele gemini",
+     "query": "gemini model językowy",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -16633,7 +16967,7 @@
      "position": null
     },
     {
-     "query": "gemini model językowy",
+     "query": "jakie są modele gemini",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -16645,25 +16979,13 @@
      "position": null
     },
     {
-     "query": "copilot zasłania część odpowiedzi",
+     "query": "wektorowa baza danych po angielsku rag",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "gemini czy claude",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "czy copilot to narzedzie ai, jakie jeszcze",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "czy chatgpt moze wyliczc twoje klucze dsotepu co to znacyz",
+     "query": "jakie sa dostepne modele anthropic obecnie",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -16705,19 +17027,31 @@
      "position": null
     },
     {
+     "query": "czy copilot to narzedzie ai, jakie jeszcze",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "copilot zasłania część odpowiedzi",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "gemini czy claude",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "z poziomu jakich platform oprócz gcp mozna podłączyć się do llm gemini. chodzi o połączenie z miesięcznym limitem tokenów",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "wektorowa baza danych po angielsku rag",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jakie sa dostepne modele anthropic obecnie",
+     "query": "czy chatgpt moze wyliczc twoje klucze dsotepu co to znacyz",
      "clicks": 0,
      "impressions": 1,
      "position": null
