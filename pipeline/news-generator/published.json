@@ -1,13 +1,5 @@
 [
   {
-    "title": "Renault Master znów numerem 1. Polski rynek dostawczy utrzymuje ten sam układ sił",
-    "date": "2026-05-13",
-    "slug": "renault-master-znow-numerem-1-polski-rynek-dostawczy-utrzymuje-ten-sam-uklad-sil",
-    "section": "modele",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Jakub Tolak i Zofia Samsel pokazali kampera, który stał się pełnoprawnym domem",
     "date": "2026-05-14",
     "slug": "jakub-tolak-i-zofia-samsel-pokazali-kampera-ktory-stal-sie-pelnoprawnym-domem",
@@ -715,6 +707,14 @@
     "title": "Ceny Paliwa Niżej wracają bez obniżki akcyzy. Przewoźnicy nie zaoszczędzą",
     "date": "2026-08-21",
     "slug": "ceny-paliwa-nizej-wracaja-bez-obnizki-akcyzy-przewoznicy-nie-zaoszczedza",
+    "section": "news",
+    "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Tańsze paliwo w Polsce inspiruje Niemców. Padła propozycja obniżki podatku",
+    "date": "2026-08-22",
+    "slug": "tansze-paliwo-w-polsce-inspiruje-niemcow-padla-propozycja-obnizki-podatku",
     "section": "news",
     "format": "analysis",
     "source": "rss"
