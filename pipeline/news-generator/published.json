@@ -1,13 +1,5 @@
 [
   {
-    "title": "Jakub Tolak i Zofia Samsel pokazali kampera, który stał się pełnoprawnym domem",
-    "date": "2026-05-14",
-    "slug": "jakub-tolak-i-zofia-samsel-pokazali-kampera-ktory-stal-sie-pelnoprawnym-domem",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Finał „Moto Fachury”. Kamper wyjeżdża, Lincoln po renowacji, BMW wraca na dziedziniec",
     "date": "2026-05-16",
     "slug": "final-moto-fachury-kamper-wyjezdza-lincoln-po-renowacji-bmw-wraca-na-dziedziniec",
@@ -717,6 +709,14 @@
     "slug": "tansze-paliwo-w-polsce-inspiruje-niemcow-padla-propozycja-obnizki-podatku",
     "section": "news",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Ceny paliw w weekend 22–24 sierpnia. Nowe maksima na stacjach",
+    "date": "2026-08-24",
+    "slug": "ceny-paliw-w-weekend-2224-sierpnia-nowe-maksima-na-stacjach",
+    "section": "news",
+    "format": "short",
     "source": "rss"
   }
 ]
