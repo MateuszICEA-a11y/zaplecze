@@ -1,13 +1,5 @@
 [
   {
-    "title": "Finał „Moto Fachury”. Kamper wyjeżdża, Lincoln po renowacji, BMW wraca na dziedziniec",
-    "date": "2026-05-16",
-    "slug": "final-moto-fachury-kamper-wyjezdza-lincoln-po-renowacji-bmw-wraca-na-dziedziniec",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Wietnam otwiera trasę ekspresową Chi Thanh – Van Phong",
     "date": "2026-05-17",
     "slug": "wietnam-otwiera-trase-ekspresowa-chi-thanh-van-phong",
@@ -715,6 +707,14 @@
     "title": "Ceny paliw w weekend 22–24 sierpnia. Nowe maksima na stacjach",
     "date": "2026-08-24",
     "slug": "ceny-paliw-w-weekend-2224-sierpnia-nowe-maksima-na-stacjach",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Czerniewice: śmiertelny wypadek na S8. Bus zderzył się z ciężarówkami",
+    "date": "2026-08-25",
+    "slug": "czerniewice-smiertelny-wypadek-na-s8-bus-zderzyl-sie-z-ciezarowkami",
     "section": "news",
     "format": "short",
     "source": "rss"
