@@ -1,13 +1,5 @@
 [
   {
-    "title": "Wietnam otwiera trasę ekspresową Chi Thanh – Van Phong",
-    "date": "2026-05-17",
-    "slug": "wietnam-otwiera-trase-ekspresowa-chi-thanh-van-phong",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Hurtowe ceny paliw 18 maja. Po weekendzie dostawcy zmienili kurs",
     "date": "2026-05-18",
     "slug": "hurtowe-ceny-paliw-18-maja-po-weekendzie-dostawcy-zmienili-kurs",
@@ -716,6 +708,14 @@
     "date": "2026-08-25",
     "slug": "czerniewice-smiertelny-wypadek-na-s8-bus-zderzyl-sie-z-ciezarowkami",
     "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Volkswagen ID. California Cruise i dmuchana kuchnia – przyszłość serii na Caravan Salon 2026",
+    "date": "2026-08-26",
+    "slug": "volkswagen-id-california-cruise-i-dmuchana-kuchnia-przyszlosc-serii-na-caravan",
+    "section": "kampery",
     "format": "short",
     "source": "rss"
   }
