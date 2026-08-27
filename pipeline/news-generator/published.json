@@ -1,13 +1,5 @@
 [
   {
-    "title": "Hurtowe ceny paliw 18 maja. Po weekendzie dostawcy zmienili kurs",
-    "date": "2026-05-18",
-    "slug": "hurtowe-ceny-paliw-18-maja-po-weekendzie-dostawcy-zmienili-kurs",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Toruń: bus zderzył się z tramwajem. Torowisko było zablokowane, wyznaczono objazdy",
     "date": "2026-05-19",
     "slug": "torun-bus-zderzyl-sie-z-tramwajem-torowisko-bylo-zablokowane-wyznaczono-objazdy",
@@ -717,6 +709,14 @@
     "slug": "volkswagen-id-california-cruise-i-dmuchana-kuchnia-przyszlosc-serii-na-caravan",
     "section": "kampery",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Ciężki kamper jak ciężarówka. Ministerstwo nie planuje ulgi w e-TOLL",
+    "date": "2026-08-27",
+    "slug": "ciezki-kamper-jak-ciezarowka-ministerstwo-nie-planuje-ulgi-w-e-toll",
+    "section": "kampery",
+    "format": "analysis",
     "source": "rss"
   }
 ]
