@@ -3,6 +3,7 @@ title: 'ChatGPT i ekosystem OpenAI – kompletny przewodnik'
 subtitle: 'Zrozum, jak działa ChatGPT i cały ekosystem OpenAI, żeby świadomie używać go w pracy'
 description: 'Czym jest ChatGPT, jak działa architektura GPT, co potrafi ekosystem OpenAI i jak używać go efektywnie – kompletny przewodnik po modelu i platformie.'
 date: 2026-05-20
+updated: 2026-08-28
 image: ../../../assets/images/blog-modele-llm-chatgpt.webp
 icon: '<path d="M12 2a5 5 0 0 1 5 5c0 1.4-.6 2.7-1.5 3.6A5 5 0 0 1 17 15v1h-2v-1a3 3 0 0 0-6 0v1H7v-1a5 5 0 0 1 1.5-3.4A5 5 0 0 1 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="2"/>'
 author:
@@ -25,8 +26,9 @@ faq:
   - q: 'Jaka jest data odcięcia modelu?'
     a: >-
       Data odcięcia różni się między wersjami z rodziny GPT-5. GPT-5.4 ma datę odcięcia danych
-      treningowych ustawioną na sierpień 2025 roku, a flagowy GPT-5.5 (wydany w kwietniu 2026)
-      na grudzień 2025 roku. Oznacza to, że „z pamięci" model nie zna wydarzeń późniejszych.
+      treningowych ustawioną na sierpień 2025 roku, GPT-5.5 (kwiecień 2026) na grudzień 2025
+      roku, a aktualna rodzina GPT-5.6 (Sol, Terra, Luna – premiera 9 lipca 2026) na
+      16 lutego 2026 roku. Oznacza to, że „z pamięci" model nie zna wydarzeń późniejszych.
       Przy włączonym wyszukiwaniu to ograniczenie nie ma znaczenia dla bieżących informacji,
       ale model nadal może prezentować starsze dane jako aktualne.
   - q: 'Czy rozmowy z ChatGPT są używane do trenowania modelu?'
@@ -39,7 +41,7 @@ faq:
       informacje o przetwarzaniu danych.
   - q: 'Jak ChatGPT wypada w porównaniu do Claude?'
     a: >-
-      Oba modele są silne w różnych obszarach. ChatGPT (GPT-5.5) ma szerszy ekosystem integracji
+      Oba modele są silne w różnych obszarach. ChatGPT (GPT-5.6 Sol) ma szerszy ekosystem integracji
       i silniejsze możliwości generowania kodu. Claude ma dłuższe okno kontekstowe w wersjach
       bazowych i preferuje bardziej powściągliwy, precyzyjny styl odpowiedzi. Szczegółowe
       zestawienie znajdziesz w artykule o <a href="/modele-llm/claude/">Claude</a>, który opisuje
@@ -53,7 +55,7 @@ OpenAI to laboratorium badań nad sztuczną inteligencją założone w 2015 roku
 
 Uporządkujmy te pojęcia na samym wstępie:
 
-- **GPT** – seria modeli językowych (GPT-3, GPT-4, a obecnie rodzina GPT-5); sam model to „silnik", który przetwarza tekst
+- **GPT** – seria modeli językowych (GPT-3, GPT-4, a obecnie rodzina GPT-5; od lipca 2026 flagowa generacja to GPT-5.6 w trzech wariantach: Sol, Terra i Luna); sam model to „silnik", który przetwarza tekst
 - **ChatGPT** – produkt konsumencki, interfejs czatu dostępny pod adresem chat.openai.com, napędzany aktualnym modelem GPT
 - **OpenAI API** – programistyczny dostęp do modeli GPT, GPT Image i innych, używany przez deweloperów do budowy własnych aplikacji
 - **GPT Image** – model do generowania obrazów z opisu tekstowego, wbudowany w ChatGPT (zastąpił DALL-E pod koniec 2025 roku)
@@ -89,18 +91,18 @@ Efekt? Model nie tylko przewiduje prawdopodobny tekst, ale robi to w sposób, kt
 
 ## Plany i możliwości – co oferuje każda wersja
 
-ChatGPT jest dostępny w kilku planach subskrypcyjnych. Zestawienie kluczowych różnic i limitów (stan na maj 2026) ułatwia wybór odpowiedniej wersji:
+ChatGPT jest dostępny w kilku planach subskrypcyjnych. Zestawienie kluczowych różnic i limitów (stan na sierpień 2026) ułatwia wybór odpowiedniej wersji:
 
 | Plan | Cena | Dostęp do modeli | Kluczowe funkcje |
 |---|---|---|---|
-| Free | 0 USD/mies. | GPT-5.5 Instant (z limitem) | Czat, podstawowe generowanie obrazów, tryb głosowy; w niektórych krajach z reklamami |
-| Go | 8 USD/mies. | GPT-5.5 Instant | Plan dla codziennych użytkowników, wyższe limity niż Free |
-| Plus | 20 USD/mies. | GPT-5.5, GPT-5.5 Thinking, GPT Image | Wyższe limity, Deep Research, Codex, priorytet w godzinach szczytu |
+| Free | 0 USD/mies. | GPT-5.6 Luna (z limitem) | Czat, podstawowe generowanie obrazów, tryb głosowy; w niektórych krajach z reklamami |
+| Go | 8 USD/mies. | GPT-5.6 Luna | Plan dla codziennych użytkowników, wyższe limity niż Free |
+| Plus | 20 USD/mies. | GPT-5.6 Sol (w tym tryb rozumowania), GPT Image | Wyższe limity, Deep Research, Codex, priorytet w godzinach szczytu |
 | Business | 25 USD/os./mies. | Jak Plus + priorytet dostępu | Przestrzeń zespołowa, izolacja danych od trenowania |
-| Pro | 100–200 USD/mies. | GPT-5.5 Pro, Codex, brak limitów | Okno kontekstowe do 1 mln tokenów, rozszerzone limity Deep Research |
+| Pro | 100–200 USD/mies. | GPT-5.6 Sol Pro, Codex, brak limitów | Okno kontekstowe do 1 mln tokenów, rozszerzone limity Deep Research |
 | Enterprise | Negocjowane | Jak Pro + opcje prywatne | SOC 2 Type II, SSO, niestandardowe retencje danych, wyższy limit kontekstu |
 
-**Plan Free wystarczy do testowania i zadań sporadycznych.** Do regularnej pracy – szczególnie gdy liczy się jakość i brak ograniczeń w dostępie do asystentów AI (tzw. copilotów) – Plus pozostaje standardowym wyborem. Daje dostęp do flagowego GPT-5.5, wydanego 23 kwietnia 2026 roku. Plany Pro (warianty 100 i 200 USD) celują w zaawansowanych profesjonalistów i programistów. Rozszerzają okno kontekstowe do miliona tokenów i odblokowują GPT-5.5 Pro z najwyższym budżetem wnioskowania.
+**Plan Free wystarczy do testowania i zadań sporadycznych.** Do regularnej pracy – szczególnie gdy liczy się jakość i brak ograniczeń w dostępie do asystentów AI (tzw. copilotów) – Plus pozostaje standardowym wyborem. Daje dostęp do flagowego GPT-5.6 Sol – rodzina GPT-5.6 trafiła do ogólnej dostępności 9 lipca 2026 roku, po ograniczonym podglądzie od 26 czerwca. Plany Pro (warianty 100 i 200 USD) celują w zaawansowanych profesjonalistów i programistów. Rozszerzają okno kontekstowe do miliona tokenów i odblokowują GPT-5.6 Sol Pro z najwyższym budżetem wnioskowania.
 
 ## Do czego używać ChatGPT – zastosowania w praktyce
 

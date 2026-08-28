@@ -3,6 +3,7 @@ title: 'Claude vs ChatGPT do programowania'
 subtitle: 'Który model wybierze doświadczony developer – i kiedy ta odpowiedź nie jest oczywista'
 description: 'Claude vs ChatGPT do programowania: SWE-bench, Claude Code vs Codex, ceny API, agentowe przepływy pracy. Techniczne porównanie dla developerów z konkretnymi werdyktami.'
 date: 2026-05-10
+updated: 2026-08-28
 image: ../../../assets/images/blog-modele-llm-claude-vs-chatgpt-programowanie.webp
 icon: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="12" y1="2" x2="12" y2="22" opacity="0.4"/>'
 author:
@@ -60,7 +61,7 @@ Jeśli chcesz głębiej zrozumieć, jak agentowe narzędzia do kodowania wpisuj�
 
 ## Tabela porównawcza – modele, narzędzia, ceny, benchmarki
 
-Zestawienie najważniejszych parametrów obu ekosystemów na maj 2026 roku ułatwia podjęcie decyzji. Ceny API podane są dla wejścia i wyjścia w przeliczeniu na milion tokenów.
+Zestawienie najważniejszych parametrów obu ekosystemów na maj 2026 roku (dla GPT-5.5; uwagi o GPT-5.6 pod tabelą) ułatwia podjęcie decyzji. Ceny API podane są dla wejścia i wyjścia w przeliczeniu na milion tokenów.
 
 | Parametr | Claude (Anthropic) | ChatGPT / Codex (OpenAI) |
 |---|---|---|
@@ -85,7 +86,7 @@ Benchmarki to mierzalny punkt wyjścia. W codziennej pracy programistów powtarz
 
 **Claude wyróżnia się w złożonych refaktoryzacjach, gdzie konieczne jest śledzenie zależności przez wiele plików jednocześnie.** Milionowe okno kontekstowe to nie tylko marketing. Model potrafi wczytać całe repozytorium średniej wielkości (do ~700 tys. tokenów kodu), przeanalizować historię zmian i zaproponować refaktoryzację spójną z istniejącymi wzorcami. Warto jednak zaznaczyć, że w 2026 roku OpenAI nadrobiło te zaległości. GPT-5.5 również dysponuje oknem powyżej miliona tokenów (w przeciwieństwie do starszego GPT-4o, który bywał zmuszony do wycinania kontekstu lub korzystania ze strategii streszczania, przez co traciło się szczegóły).
 
-Z kolei ChatGPT i GPT-5.5 pokazują przewagę przy generowaniu kodu szablonowego (boilerplate) i pracy z mniej popularnymi frameworkami. Ekosystem OpenAI jest rozleglejszy, a model widywał więcej różnorodnego kodu w danych treningowych. Jeśli piszesz szybki skrypt w niszowej bibliotece, Codex często proponuje działający prototyp już w pierwszej iteracji.
+Od lipca 2026 flagowcem OpenAI jest GPT-5.6 Sol (5/30 USD za 1M tokenów, okno 1,05 mln), który w agentowym benchmarku Terminal-Bench 2.1 osiąga 88,8% (91,9% w trybie Ultra) – powyższa tabela odzwierciedla stan z maja 2026. Z kolei ChatGPT i GPT-5.6 pokazują przewagę przy generowaniu kodu szablonowego (boilerplate) i pracy z mniej popularnymi frameworkami. Ekosystem OpenAI jest rozleglejszy, a model widywał więcej różnorodnego kodu w danych treningowych. Jeśli piszesz szybki skrypt w niszowej bibliotece, Codex często proponuje działający prototyp już w pierwszej iteracji.
 
 Przy pracy w językach innych niż angielski różnica jest mniejsza, ale wciąż widoczna. Modele OpenAI radzą sobie lepiej z generowaniem komentarzy i dokumentacji po polsku. Dla samego kodu (logika, algorytmy, architektura) język naturalny nie ma oczywiście żadnego znaczenia.
 

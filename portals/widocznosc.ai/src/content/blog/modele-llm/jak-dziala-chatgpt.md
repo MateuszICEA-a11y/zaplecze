@@ -3,6 +3,7 @@ title: 'Jak działa ChatGPT? Od tokenu do odpowiedzi – wyjaśnienie krok po kr
 subtitle: 'Co naprawdę dzieje się między wpisaniem pytania a wygenerowaną odpowiedzią – tokeny, mechanizm uwagi, RLHF, wyszukiwanie i pamięć'
 description: 'Jak działa ChatGPT? Wyjaśniamy krok po kroku: tokenizacja, embeddingi, transformer i mechanizm uwagi, przewidywanie kolejnego tokenu, trening RLHF, tryb rozumowania, wyszukiwanie w sieci i skąd biorą się halucynacje.'
 date: 2026-08-28
+updated: 2026-08-28
 image: ../../../assets/images/blog-modele-llm-jak-dziala-chatgpt.webp
 icon: '<path d="M4 12a8 8 0 0 1 8-8h1a7 7 0 0 1 7 7v1a8 8 0 0 1-8 8H8l-4 3z"/><path d="M8 11h8M8 14h5"/>'
 author:
@@ -76,7 +77,7 @@ Rozróżnienie ma praktyczne skutki. Ten sam model GPT jest dostępny przez API 
 - **Jak model nauczył się odpowiadać jak asystent** – pre-training, fine-tuning, RLHF
 - **Jak działa produkt wokół modelu** – okno kontekstu, pamięć, wyszukiwanie, narzędzia, tryb rozumowania
 
-Przejdziemy przez wszystkie trzy warstwy po kolei. Aktualnie flagowym modelem OpenAI jest GPT-5.6 (następca GPT-5.5 z kwietnia 2026 roku); warianty modeli w ChatGPT (Instant, Thinking, Pro) różnią się głównie ilością obliczeń, jaką model może poświęcić na jedną odpowiedź – do tego wrócimy. Przegląd całego ekosystemu OpenAI, planów i cen znajdziesz w osobnym artykule o [ChatGPT i ekosystemie OpenAI](/modele-llm/chatgpt/).
+Przejdziemy przez wszystkie trzy warstwy po kolei. Aktualnie flagową generacją OpenAI jest GPT-5.6, ogólnie dostępna od 9 lipca 2026 roku (po ograniczonym podglądzie od 26 czerwca) w trzech wariantach: Sol (flagowy), Terra (zbalansowany) i Luna (najszybszy i najtańszy). Wszystkie mają okno kontekstu 1,05 mln tokenów, do 128 tys. tokenów wyjścia i datę odcięcia wiedzy 16 lutego 2026. Różnią się rozmiarem i ilością obliczeń, jaką mogą poświęcić na jedną odpowiedź – do tego wrócimy. Przegląd całego ekosystemu OpenAI, planów i cen znajdziesz w osobnym artykule o [ChatGPT i ekosystemie OpenAI](/modele-llm/chatgpt/).
 
 ## Krok 1: tokenizacja – model nie widzi słów
 
@@ -173,7 +174,7 @@ Od 2024 roku modele OpenAI (seria o1, a potem tryby Thinking w GPT-5) dostały d
 
 Mechanicznie to nadal przewidywanie kolejnego tokenu. Różnica polega na tym, że model został wytrenowany metodą uczenia ze wzmocnieniem, by ten proces „myślenia na głos” prowadził do poprawnych odpowiedzi w zadaniach z weryfikowalnym wynikiem – matematyce, programowaniu, logice. Nagrodę dostawał nie za ładne brzmienie, lecz za poprawny wynik końcowy. W efekcie nauczył się strategii, które ludzie znają jako „sprawdź dwa razy”, „zacznij od prostszego przypadku” czy „wróć, jeśli utknąłeś”.
 
-Warianty GPT-5.6 różnią się przede wszystkim budżetem na to rozumowanie. Instant odpowiada niemal natychmiast i praktycznie nie rozumuje. Thinking poświęca sekundy lub minuty. Pro może pracować wielokrotnie dłużej, uruchamiając równolegle kilka ścieżek i wybierając najlepszą. To tzw. skalowanie w czasie inferencji (test-time compute) – zamiast trenować większy model, pozwala się mniejszemu dłużej „myśleć”. W zwykłych pytaniach różnica jest mała; w wieloetapowych analizach, debugowaniu kodu czy zadaniach z liczbami – ogromna.
+W GPT-5.6 budżet na to rozumowanie jest regulowany. Niski poziom odpowiada niemal natychmiast i praktycznie nie rozumuje – tak działa Luna w planie Free. Tryb „max” poświęca sekundy lub minuty. Tryb „ultra” (w ChatGPT: Sol Pro) może pracować wielokrotnie dłużej, uruchamiając równolegle kilka ścieżek i wybierając najlepszą – to on odpowiada za wynik 91,9% Sola w Terminal-Bench 2.1 wobec 88,8% w trybie podstawowym. To tzw. skalowanie w czasie inferencji (test-time compute) – zamiast trenować większy model, pozwala się mniejszemu dłużej „myśleć”. W zwykłych pytaniach różnica jest mała; w wieloetapowych analizach, debugowaniu kodu czy zadaniach z liczbami – ogromna.
 
 ## Wyszukiwanie w sieci – jak ChatGPT znajduje aktualne informacje
 

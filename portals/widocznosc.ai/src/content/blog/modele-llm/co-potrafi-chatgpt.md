@@ -3,6 +3,7 @@ title: 'Co potrafi ChatGPT – przegląd funkcji dla początkujących'
 subtitle: 'Poznaj konkretne zastosowania ChatGPT, które od razu możesz wdrożyć w pracy i codziennych zadaniach'
 description: 'ChatGPT potrafi pisać, analizować, tłumaczyć i kodować. Sprawdź przegląd głównych funkcji dla początkujących z przykładami zastosowań.'
 date: 2026-05-01
+updated: 2026-08-28
 image: ../../../assets/images/blog-modele-llm-co-potrafi-chatgpt.webp
 icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 9h8M8 12h5M8 15h6"/>'
 author:
@@ -77,11 +78,11 @@ OpenAI oferuje kilka poziomów dostępu, a różnice są kluczowe w codziennej p
 
 | Plan | Koszt/miesiąc | Dostęp do modeli | Kluczowe cechy i limity |
 |---|---|---|---|
-| Free | 0 USD | GPT-5.5 Instant (z limitami) | Podstawowy dostęp, limity liczby wiadomości |
-| Go | 8 USD | GPT-5.5 Instant (wyższe limity) | Dla codziennych użytkowników, w niektórych krajach zawiera reklamy |
-| Plus | 20 USD | GPT-5.5 | Zaawansowane funkcje (Deep Research, Codex), wyższe limity |
-| Business | 25 USD/stanowisko | GPT-5.5 z priorytetem dostępu | Przestrzeń zespołowa, dane nie służą do trenowania modeli |
-| Pro | 100–200 USD | GPT-5.5 Pro, Codex, brak limitów | Najwyższa wydajność dla zaawansowanych profesjonalistów i programistów |
+| Free | 0 USD | GPT-5.6 Luna (z limitami) | Podstawowy dostęp, limity liczby wiadomości |
+| Go | 8 USD | GPT-5.6 Luna (wyższe limity) | Dla codziennych użytkowników, w niektórych krajach zawiera reklamy |
+| Plus | 20 USD | GPT-5.6 Sol | Zaawansowane funkcje (Deep Research, Codex), wyższe limity |
+| Business | 25 USD/stanowisko | GPT-5.6 Sol z priorytetem dostępu | Przestrzeń zespołowa, dane nie służą do trenowania modeli |
+| Pro | 100–200 USD | GPT-5.6 Sol Pro, Codex, brak limitów | Najwyższa wydajność dla zaawansowanych profesjonalistów i programistów |
 
 **Dla większości użytkowników plan Plus zwraca się, jeśli ChatGPT oszczędza im co najmniej godzinę pracy tygodniowo.** Plan Free wystarcza do poznania możliwości narzędzia. Do regularnej pracy to jednak za mało.
 

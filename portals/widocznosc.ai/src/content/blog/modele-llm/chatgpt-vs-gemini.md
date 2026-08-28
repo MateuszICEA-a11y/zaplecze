@@ -3,6 +3,7 @@ title: 'ChatGPT vs Gemini – porównanie funkcji i cen'
 subtitle: 'Sprawdź, który model pasuje do Twojego ekosystemu i sposobu pracy, zanim zapłacisz abonament'
 description: 'ChatGPT vs Gemini 2026: porównanie funkcji, planów, cen i zastosowań. Tabela, werdykt i praktyczne wskazówki dla zespołów Google i OpenAI.'
 date: 2026-05-13
+updated: 2026-08-28
 image: ../../../assets/images/blog-modele-llm-chatgpt-vs-gemini.webp
 icon: '<path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 6v12M17 6v12"/>'
 author:
@@ -21,7 +22,7 @@ ChatGPT i Gemini to dziś dwa najpopularniejsze interfejsy konwersacyjne oparte 
 
 OpenAI i Google od 2023 roku przyspieszyły tempo aktualizacji do niemal kwartalnego rytmu. Każda generacja drastycznie poszerza możliwości. Przy porównaniu liczy się więc nie tylko nazwa modelu, ale i konkretna data.
 
-**ChatGPT w planie Plus (20 USD/mies.) daje dziś dostęp do GPT-5.5 – flagowego modelu wydanego 23 kwietnia 2026 roku.** Plan Pro za 100 USD/mies., uruchomiony 9 kwietnia 2026 roku, stanowi bezpośrednią konkurencję dla planu Claude Max. Z kolei wariant Pro za 200 USD/mies. dodaje okno kontekstowe o wielkości 1 miliona tokenów i aż 250 sesji Deep Research miesięcznie. Plan Free pozostaje bezpłatny, choć dostęp do GPT-5.5 jest w nim mocno limitowany. Warto też wspomnieć o tanim pakiecie Go za 8 USD/mies.
+**ChatGPT w planie Plus (20 USD/mies.) daje dziś dostęp do GPT-5.6 Sol – flagowego modelu z rodziny GPT-5.6, dostępnej ogólnie od 9 lipca 2026 roku (zastąpiła GPT-5.5 z kwietnia).** Plan Pro za 100 USD/mies., uruchomiony 9 kwietnia 2026 roku, stanowi bezpośrednią konkurencję dla planu Claude Max. Z kolei wariant Pro za 200 USD/mies. dodaje okno kontekstowe o wielkości 1 miliona tokenów i aż 250 sesji Deep Research miesięcznie. Plan Free pozostaje bezpłatny, choć dostaje się w nim lżejszy wariant GPT-5.6 Luna z limitami. Warto też wspomnieć o tanim pakiecie Go za 8 USD/mies.
 
 Po stronie Google obraz jest nieco bardziej skomplikowany. Model Gemini 3.1 Pro – z oknem kontekstowym 1 miliona tokenów i natywnym przetwarzaniem tekstu, obrazów, audio i wideo w jednym prompcie – jest dostępny w planie AI Pro (wcześniej Gemini Advanced / Google One AI Premium) za 19,99 USD/mies. Google ogłosiło również plan AI Ultra (od 100 USD/mies.), który odblokowuje m.in. asystenta Gemini Spark. Najniższy płatny próg to AI Plus za 7,99 USD/mies. Zapewnia on dostęp do mniejszych, lżejszych modeli (np. Gemini 3.5 Flash) i 200 GB przestrzeni w Google Drive.
 
@@ -31,7 +32,7 @@ Na konferencji I/O 2026 (maj 2026) zapowiedziano nową generację modeli Gemini 
 
 Okno kontekstowe decyduje o jednym. Określa, jak dużo materiału możesz wrzucić do zapytania bez dzielenia go na części.
 
-- **GPT-5.5 (Plus)** – ok. 128 000 tokenów (standard); plan Pro (200 USD) rozszerza je do 1 mln tokenów
+- **GPT-5.6 Sol (Plus)** – ok. 128 000 tokenów (standard); plan Pro (200 USD) rozszerza je do 1 mln tokenów (model technicznie obsługuje 1,05 mln)
 - **Gemini 3.1 Pro** – 1 milion tokenów w planie AI Pro
 - **Gemini 3.5 Flash** – dostępny w nowych wdrożeniach agentowych, świetnie radzi sobie z długimi kontekstami przy bardzo niskim koszcie za token
 
@@ -100,7 +101,7 @@ Poniżej znajdziesz zestawienie kluczowych parametrów dla obu platform. Dane od
 | **Plan podstawowy płatny** | Plus – 20 USD/mies. | AI Pro – 19,99 USD/mies. |
 | **Tani plan wejściowy** | Go – 8 USD/mies. | AI Plus – 7,99 USD/mies. |
 | **Plan zaawansowany** | Pro – 100–200 USD/mies. | AI Ultra – od 100 USD/mies. |
-| **Flagowy model (maj 2026)** | GPT-5.5 | Gemini 3.1 Pro / Gemini 3.5 Flash |
+| **Flagowy model (sierpień 2026)** | GPT-5.6 Sol | Gemini 3.1 Pro / Gemini 3.5 Flash |
 | **Okno kontekstowe (Plus/Pro)** | 128 tys. tokenów (Plus); 1 mln (Pro 200 USD) | 1 mln tokenów (AI Pro i wyżej) |
 | **Multimodalność** | Tekst + obraz; wideo przez Sorę | Tekst + obraz + audio + wideo (natywnie) |
 | **Generowanie wideo** | Brak (Sora zamknięta w kwietniu 2026) | Veo 3.1 Lite (od planu AI Pro) |
@@ -116,11 +117,11 @@ Poniżej znajdziesz zestawienie kluczowych parametrów dla obu platform. Dane od
 
 [Przetwarzanie języka naturalnego](https://pl.wikipedia.org/wiki/Przetwarzanie_j%C4%99zyka_naturalnego) (NLP – *Natural Language Processing*) to wspólny fundament obu modeli. Mimo to każdy z nich wypracował zupełnie inne mocne strony w praktycznych zastosowaniach.
 
-GPT-5.5 i modele z serii o3/o4 od OpenAI dominują w benchmarkach matematycznych oraz kodowaniu sekwencyjnym. To zadania, w których wieloetapowe wnioskowanie krok po kroku jest absolutnie kluczowe. Modele te są również niezmiennie oceniane wyżej w zadaniach kreatywnych – generowaniu wariantów tekstów, strukturyzowaniu argumentacji czy pracy z briefami.
+GPT-5.6 Sol i wcześniejsze modele rozumujące OpenAI dominują w benchmarkach matematycznych oraz kodowaniu sekwencyjnym. To zadania, w których wieloetapowe wnioskowanie krok po kroku jest absolutnie kluczowe. Modele te są również niezmiennie oceniane wyżej w zadaniach kreatywnych – generowaniu wariantów tekstów, strukturyzowaniu argumentacji czy pracy z briefami.
 
 Gemini 3.1 Pro z kolei mocno wyróżnia się w zadaniach długokontekstowych. Błyszczy tam, gdzie analiza wymaga utrzymania uwagi przez milion tokenów bez „zapominania” wcześniejszych fragmentów dokumentu. Natywne przetwarzanie wideo i audio oznacza, że możesz wrzucić nagranie spotkania, transkrypcję rozmowy z klientem lub film instruktażowy, a model wygeneruje streszczenie bez konwersji formatu. **W niezależnych testach długiego kontekstu Gemini 3.1 Pro bezbłędnie odnajdywał szczegóły z milionowego okna.**
 
-Istnieje tu prosta, praktyczna reguła. Jeśli Twoja praca to głównie pisanie, programowanie i analityka tekstowa – GPT-5.5 będzie bezpieczniejszym wyborem. Jeśli jednak regularnie pracujesz z dużymi dokumentami, nagraniami lub potrzebujesz modelu zintegrowanego z Google Workspace, to Gemini 3.1 Pro wykona to zadanie szybciej i bez dodatkowej konfiguracji.
+Istnieje tu prosta, praktyczna reguła. Jeśli Twoja praca to głównie pisanie, programowanie i analityka tekstowa – GPT-5.6 będzie bezpieczniejszym wyborem. Jeśli jednak regularnie pracujesz z dużymi dokumentami, nagraniami lub potrzebujesz modelu zintegrowanego z Google Workspace, to Gemini 3.1 Pro wykona to zadanie szybciej i bez dodatkowej konfiguracji.
 
 ## Werdykt dla poszczególnych scenariuszy – kto powinien wybrać co
 
@@ -128,7 +129,7 @@ Nie ma jednego „lepszego” modelu. Ostateczny wybór zawsze zależy od kontek
 
 Wybierz ChatGPT Plus w następujących sytuacjach.
 
-- **Zajmujesz się kreatywnym pisaniem i copywritingiem** – GPT-5.5 generuje lepsze warianty i trafniej interpretuje brief
+- **Zajmujesz się kreatywnym pisaniem i copywritingiem** – GPT-5.6 generuje lepsze warianty i trafniej interpretuje brief
 - **Programujesz** – szczególnie w językach takich jak Python, JavaScript czy SQL. Ekosystem OpenAI API jest najczęściej wybierany przez deweloperów
 - **Pracujesz w środowisku Microsoft 365 i Teams** – integracja przez Copilot działa tu od razu, bez zaawansowanej konfiguracji
 - **Korzystasz z niestandardowych GPTs** – biblioteka specjalistycznych asystentów OpenAI jest niezwykle bogata

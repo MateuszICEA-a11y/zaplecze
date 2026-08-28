@@ -3,6 +3,7 @@ title: 'DeepSeek – kompletny przewodnik po chińskim modelu open source'
 subtitle: 'Poznaj model, który dorównał zachodnim gigantom przy ułamku ich kosztów – i dowiedz się, co jego architektura open source oznacza dla widoczności Twojej marki i bezpieczeństwa danych'
 description: 'DeepSeek – czym jest chiński model AI od High-Flyer, jak działa architektura MoE, modele V4 Pro i Flash, licencja MIT, cennik API oraz kwestie bezpieczeństwa danych i cenzury.'
 date: 2026-07-04
+updated: 2026-08-28
 image: ../../../assets/images/blog-modele-llm-deepseek.webp
 icon: '<path d="M3 7l9 4 9-4-9-4-9 4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/>'
 author:
@@ -101,7 +102,7 @@ To właśnie cena jest głównym argumentem DeepSeeka. Firma konsekwentnie schod
 | deepseek-v4-flash | 0,14 USD | 0,28 USD |
 | deepseek-v4-pro | 0,435 USD | 0,87 USD |
 
-Dla porównania: flagowy GPT-5.5 kosztuje ok. 5 USD za milion tokenów wejściowych. Oznacza to, że **V4-Flash jest w warstwie wejściowej kilkudziesięciokrotnie tańszy** od zachodniego flagowca, a V4-Pro – kilkunastokrotnie. Do tego dochodzi agresywny rabat za trafienie w pamięć podręczną (cache hit), który przy powtarzalnych promptach dodatkowo obniża rachunek. Dla firm budujących własne aplikacje AI, w których liczą się miliony zapytań miesięcznie, ta różnica przekłada się wprost na model biznesowy.
+Dla porównania: flagowy GPT-5.6 Sol kosztuje 5 USD za milion tokenów wejściowych. Oznacza to, że **V4-Flash jest w warstwie wejściowej kilkudziesięciokrotnie tańszy** od zachodniego flagowca, a V4-Pro – kilkunastokrotnie. Do tego dochodzi agresywny rabat za trafienie w pamięć podręczną (cache hit), który przy powtarzalnych promptach dodatkowo obniża rachunek. Dla firm budujących własne aplikacje AI, w których liczą się miliony zapytań miesięcznie, ta różnica przekłada się wprost na model biznesowy.
 
 ## Licencja MIT i modele open source – co to realnie daje firmom
 

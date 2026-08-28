@@ -3,6 +3,7 @@ title: 'Bezpieczeństwo danych w pracy z LLM'
 subtitle: 'Jak chronić dane firmowe, gdy korzystasz z ChatGPT, Claude i podobnych narzędzi'
 description: 'Shadow AI, wycieki danych, retencja promptów, umowy DPA i wybór między chmurą a wdrożeniem lokalnym – kompletny przewodnik bezpieczeństwa LLM dla firm.'
 date: 2026-05-18
+updated: 2026-08-28
 image: ../../../assets/images/blog-ai-w-biznesie-bezpieczenstwo-danych-llm.webp
 icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>'
 author:
@@ -115,7 +116,7 @@ Porównanie najważniejszych wymiarów:
 
 - **Suwerenność danych** – modele lokalne (np. Llama 3, Mistral, Qwen) przetwarzają dane wyłącznie w infrastrukturze firmy, a żaden prompt nie opuszcza sieci wewnętrznej.
 - **Koszt tokenów** – uruchomienie modelu z otwartymi wagami (open-weight) lokalnie może być nawet 18-krotnie tańsze per milion tokenów niż API komercyjne przy dużej skali.
-- **Jakość modelu** – modele open-source nadal ustępują flagowcom pokroju GPT-5.5 czy Claude Opus 4.8 w zadaniach wymagających złożonego wnioskowania (luka maleje, ale wciąż istnieje).
+- **Jakość modelu** – modele open-source nadal ustępują flagowcom pokroju GPT-5.6 Sol czy Claude Opus 4.8 w zadaniach wymagających złożonego wnioskowania (luka maleje, ale wciąż istnieje).
 - **Infrastruktura** – wdrożenie on-premise wymaga znaczących nakładów, takich jak serwery GPU (np. NVIDIA A100 lub H100), MLOps i zarządzanie aktualizacjami modeli.
 - **Zgodność z przepisami (compliance)** – rozwiązanie on-premise naturalnie spełnia wymogi art. 25 RODO (privacy by design), a zgodność z RODO obejmuje tu przede wszystkim lokalizację przetwarzania i dostęp do danych.
 

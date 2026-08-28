@@ -3,6 +3,7 @@ title: 'Prompt engineering – kompletny przewodnik'
 subtitle: 'Naucz się pisać prompty, które dają przewidywalne, powtarzalne wyniki – od podstaw po zaawansowane techniki wnioskowania.'
 description: 'Kompletny przewodnik po prompt engineeringu: techniki zero-shot, few-shot, Chain-of-Thought, strukturyzacja, bezpieczeństwo i praktyczne przykłady dla marketerów i SEO.'
 date: 2026-05-22
+updated: 2026-08-28
 image: ../../../assets/images/blog-prompty-przewodnik.webp
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:
@@ -271,7 +272,7 @@ Zestawienie kluczowych różnic między popularnymi modelami:
 
 | Model | Mocna strona | Zachowanie domyślne | Kluczowa wskazówka |
 |---|---|---|---|
-| GPT-5 / GPT-5.5 | Instrukcje złożone, formatowanie | Bezpośredni, zorientowany na zadanie | Definiuj osobowość i styl wprost |
+| GPT-5 / GPT-5.6 | Instrukcje złożone, formatowanie | Bezpośredni, zorientowany na zadanie | Definiuj osobowość i styl wprost |
 | Claude Sonnet/Opus | Długie dokumenty, wnioskowanie | Ostrożny, zadaje pytania przy niejednoznaczności | Podawaj kontekst celu, nie tylko treści |
 | Gemini 3.1 Pro | Dane multimodalne, kod | Analityczny, struktura Markdown | Dane kontekstowe umieszczaj przed instrukcją |
 | Llama 4 (open source) | Koszt, prywatność danych | Wymaga precyzyjnych szablonów | Few-shot obowiązkowy dla niestandardowych formatów |
