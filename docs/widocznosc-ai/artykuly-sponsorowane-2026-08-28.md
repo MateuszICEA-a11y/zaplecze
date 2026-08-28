@@ -138,7 +138,7 @@ Pełny, techniczny opis tego procesu – od tokenizacji, przez embeddingi i mech
 
 ### Modele rozumujące i narzędzia
 
-Nowsze modele rozumujące (takie jak seria o1 od OpenAI), zanim odpowiedzą, generują ukryty łańcuch myślenia (Chain of Thought) – rozkładają problem na kroki, sprawdzają założenia, poprawiają własne błędy. To wciąż przewidywanie tokenów, ale zoptymalizowane pod kątem poprawnych wyników w matematyce, kodowaniu i zadaniach wieloetapowych. Z kolei wszystko, co wygląda na „robienie” czegoś – obliczenia, analiza pliku Excela, generowanie wykresu – to wywołanie zewnętrznego narzędzia (Advanced Data Analysis). Model pisze kod w Pythonie, aplikacja go uruchamia, a wynik wraca do okna kontekstowego. Jeśli zależy Ci na wiarygodnej liczbie, poproś model, żeby napisał skrypt i ją policzył, a nie zgadywał.
+Modele rozumujące OpenAI – od serii o1 z 2024 roku po tryby rozumowania w aktualnym GPT-5.6 – zanim odpowiedzą, generują ukryty łańcuch myślenia (Chain of Thought) – rozkładają problem na kroki, sprawdzają założenia, poprawiają własne błędy. To wciąż przewidywanie tokenów, ale zoptymalizowane pod kątem poprawnych wyników w matematyce, kodowaniu i zadaniach wieloetapowych. Z kolei wszystko, co wygląda na „robienie” czegoś – obliczenia, analiza pliku Excela, generowanie wykresu – to wywołanie zewnętrznego narzędzia, np. wbudowanego interpretera kodu. Model pisze kod w Pythonie, aplikacja go uruchamia, a wynik wraca do okna kontekstowego. Jeśli zależy Ci na wiarygodnej liczbie, poproś model, żeby napisał skrypt i ją policzył, a nie zgadywał.
 
 ### Co z tego wynika w praktyce
 
