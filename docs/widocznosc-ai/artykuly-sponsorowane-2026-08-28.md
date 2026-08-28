@@ -55,9 +55,6 @@ Jeśli chcesz zobaczyć, jak takie podejście wygląda w praktyce – od audytu 
 
 Nie warto upychać na stronie fraz typu „ChatGPT poleca” ani generować setek stron pod każde możliwe pytanie. Model premiuje spójność: strony, które pojawiają się przy różnych wariantach tego samego zapytania, i domeny, których fakty zgadzają się z innymi źródłami. Nie warto też blokować botów AI „na wszelki wypadek” – z ChatGPT nie da się zniknąć selektywnie; można tylko zniknąć z odpowiedzi, w których jest konkurencja.
 
-### Podsumowanie
-
-Pozycjonowanie strony w ChatGPT nie wymaga porzucenia SEO – korzysta z jego fundamentów, ale mierzy inny wynik. Zacznij od trzech rzeczy, które da się zrobić w tydzień: indeksacja w Bingu, odblokowanie botów OpenAI i przepisanie wstępów kluczowych podstron tak, żeby zawierały konkretne, cytowalne fakty. Potem mierz. To, czy ChatGPT wymienia Twoją markę, jest dziś tak samo sprawdzalne, jak pozycja w Google.
 
 ---
 
