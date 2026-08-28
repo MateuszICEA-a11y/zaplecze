@@ -14,47 +14,47 @@ Link w kodzie HTML (do wklejenia w edytorze): `<a href="URL">anchor</a>` – bez
 
 ## 1. Jak pozycjonować stronę w ChatGPT? Praktyczny przewodnik na 2026 rok
 
-**Lead:** Coraz więcej osób zamiast wpisywać pytanie w Google, zadaje je ChatGPT. Odpowiedź dostają od razu, z kilkoma polecanymi markami i linkami do źródeł. Jeśli Twojej firmy w tej odpowiedzi nie ma – klient trafia do konkurencji, zanim w ogóle otworzy wyszukiwarkę. Dobra wiadomość: na to, kogo ChatGPT wymienia i cytuje, da się wpływać. Oto, jak to działa i od czego zacząć.
+**Lead:** Coraz więcej osób zamiast wpisywać pytanie w Google, zadaje je ChatGPT-owi. Odpowiedź dostają od razu, z kilkoma polecanymi markami i linkami do źródeł. Jeśli Twojej firmy w tej odpowiedzi nie ma – klient trafia do konkurencji, zanim w ogóle otworzy wyszukiwarkę. Dobra wiadomość: na to, kogo ChatGPT wymienia i cytuje, da się wpływać. Oto, jak to działa i od czego zacząć.
 
 ### Dlaczego ChatGPT stał się kanałem pozyskiwania klientów
 
-ChatGPT ma setki milionów aktywnych użytkowników tygodniowo i od końca 2024 roku potrafi przeszukiwać internet w czasie rzeczywistym. Użytkownicy pytają go o to samo, o co wcześniej pytali Google: „jaka firma zrobi mi stronę w Poznaniu”, „które CRM dla małej firmy”, „gdzie kupić dobre okna”. Różnica polega na tym, że zamiast dziesięciu niebieskich linków dostają jedną odpowiedź – a w niej dwie, trzy marki. Bycie jedną z nich to nowa definicja pierwszej strony wyników.
+ChatGPT ma setki milionów aktywnych użytkowników tygodniowo i dzięki funkcji ChatGPT Search od końca 2024 roku potrafi natywnie przeszukiwać internet w czasie rzeczywistym. Użytkownicy pytają go o to samo, o co wcześniej pytali Google: „jaka firma zrobi mi stronę w Poznaniu”, „który system CRM dla małej firmy”, „gdzie kupić dobre okna”. Różnica polega na tym, że zamiast tradycyjnej listy dziesięciu niebieskich linków dostają jedną odpowiedź – a w niej dwie, trzy marki. Bycie jedną z nich to nowa definicja pierwszej strony wyników.
 
 ### Jak ChatGPT wybiera, kogo wymienić
 
 Zanim zaczniesz optymalizować, warto zrozumieć, że ChatGPT działa na dwóch niezależnych ścieżkach:
 
-1. **Wiedza z treningu.** Model „zna” marki, które były opisywane w źródłach użytych do jego wytrenowania: w mediach, katalogach branżowych, Wikipedii, na forach. Ta wiedza jest zamrożona w momencie zakończenia treningu i odświeża się dopiero z kolejną wersją modelu, czyli co kilka–kilkanaście miesięcy.
-2. **Wyszukiwanie w sieci (ChatGPT Search).** Gdy pytanie wymaga aktualnych danych, model wysyła zapytania do indeksu Bing, pobiera kilka–kilkanaście stron, wycina z nich krótkie fragmenty i na ich podstawie buduje odpowiedź z przypisami. Tu efekty widać w dniach, nie w miesiącach.
+1. **Dane treningowe.** Model „zna” marki, które były opisywane w źródłach użytych do jego wytrenowania: w mediach, katalogach branżowych, Wikipedii, na forach. Wiedza ta jest ograniczona przez datę odcięcia wiedzy i odświeża się dopiero podczas fine-tuningu lub z kolejną, dużą wersją modelu, czyli co kilka–kilkanaście miesięcy.
+
+2. **Wyszukiwanie w sieci (ChatGPT Search).** Gdy zapytanie wymaga aktualnych danych, model wysyła zapytania do wyszukiwarki, pobiera snippety i wykorzystując generowanie wspomagane wyszukiwaniem (RAG), buduje odpowiedź zawierającą cytowania w odpowiedziach AI. Tutaj efekty widać w dniach, a nie w miesiącach.
 
 Większość firm nie ma szans na pierwszą ścieżkę w krótkim czasie. Druga jest dostępna dla każdego, kto ma dobrze przygotowaną stronę.
 
 ### Siedem kroków, które realnie zwiększają szansę na cytowanie
 
-**1. Upewnij się, że jesteś w Bingu.** ChatGPT Search korzysta z indeksu Bing, nie Google. Załóż konto w Bing Webmaster Tools, prześlij mapę witryny i sprawdź, czy kluczowe podstrony są zaindeksowane. Wiele polskich firm, które są wysoko w Google, w Bingu w ogóle nie istnieje.
+**1. Upewnij się, że jesteś w Bingu.** ChatGPT Search korzysta m.in. z indeksu Bing oraz własnych umów z wydawcami, a nie z Google. Załóż konto w Bing Webmaster Tools, prześlij mapę witryny i sprawdź, czy kluczowe podstrony są zaindeksowane. Wiele polskich firm, które zajmują wysokie pozycje w Google, w Bingu w ogóle nie istnieje.
 
-**2. Nie blokuj botów OpenAI.** W pliku robots.txt sprawdź, czy nie zablokowałeś agentów `OAI-SearchBot` (odpowiada za wyszukiwanie) i `GPTBot` (zbiera dane do treningu). Część wtyczek bezpieczeństwa i CDN-ów blokuje je domyślnie. Zablokowany OAI-SearchBot oznacza, że Twoja strona nigdy nie zostanie pobrana do odpowiedzi.
+**2. Nie blokuj botów OpenAI.** W pliku robots.txt sprawdź, czy nie zablokowałeś agentów `OAI-SearchBot` (odpowiada za wyszukiwanie w czasie rzeczywistym) i `GPTBot` (zbiera dane treningowe). Część wtyczek bezpieczeństwa i CDN-ów blokuje je domyślnie. Zablokowany OAI-SearchBot oznacza, że Twoja strona nigdy nie zostanie pobrana do odpowiedzi.
 
-**3. Przyspiesz stronę.** Podczas budowania odpowiedzi system pobiera strony równolegle i te, które nie odpowiedzą w ciągu około dwóch sekund, po prostu pomija. Czas do pierwszego bajtu (TTFB) i szybkość ładowania są tu warunkiem wejścia, nie bonusem.
+**3. Przyspiesz stronę.** Podczas budowania odpowiedzi system odpytuje serwery równolegle i te, które nie odpowiedzą w ciągu około dwóch sekund, po prostu pomija. Czas do pierwszego bajtu (TTFB) i szybkość ładowania są tu wymogiem koniecznym, a nie bonusem.
 
-**4. Pisz fragmenty, które da się zacytować.** Model nie cytuje całych stron, tylko krótkie wycinki. Akapit, który zawiera konkretną liczbę, datę, definicję lub jednoznaczne stwierdzenie, ma szansę trafić do odpowiedzi. Akapit w stylu „jesteśmy liderem z pasją do jakości” – nie ma żadnej. Najważniejsze fakty umieść w pierwszych 150–200 słowach każdej podstrony.
+**4. Twórz snippety, które łatwo zacytować.** Model nie analizuje całych stron w oknie kontekstowym, tylko ich krótkie wycinki. Akapit, który zawiera konkretną liczbę, datę, definicję lub jednoznaczne stwierdzenie, ma szansę trafić do odpowiedzi. Akapit wypełniony marketingową nowomową w stylu „jesteśmy liderem z pasją do jakości” – nie ma żadnej. Najważniejsze fakty umieść w pierwszych 150–200 słowach każdej podstrony.
 
-**5. Twórz treści porównawcze i odpowiadające na pytania.** Strony typu „X vs Y”, „najlepsze narzędzia do…”, „ile kosztuje…” oraz sekcje FAQ z realnymi pytaniami klientów są cytowane wyraźnie częściej niż ogólne artykuły blogowe. To dokładnie te formaty, w których użytkownik prosi ChatGPT o rekomendację.
+**5. Twórz treści porównawcze i odpowiadające na problemy.** Strony typu „X vs Y”, „najlepsze narzędzia do…”, „ile kosztuje…” oraz sekcje FAQ z realnymi pytaniami klientów są cytowane wyraźnie częściej niż ogólne artykuły blogowe. To dokładnie te formaty, w których użytkownik prosi ChatGPT o rekomendację.
 
-**6. Zadbaj o dane strukturalne i autora.** Schema.org typu Organization, Article, FAQPage i Person z linkami do profili eksperta (sameAs) ułatwiają modelowi zrozumienie, kto stoi za treścią i czego dotyczy. To element budowania wiarygodności marki jako encji, a nie tylko zbioru słów kluczowych.
+**6. Zadbaj o dane strukturalne i autora.** Znaczniki Schema.org typu Organization, Article, FAQPage i Person z linkami do profili eksperta (sameAs) ułatwiają modelowi zrozumienie, kto stoi za treścią i czego dotyczy. To element budowania wiarygodności marki jako podmiotu (encji), a nie tylko zbioru słów kluczowych.
 
-**7. Zbieraj wzmianki poza własną stroną.** Opisy firmy w katalogach branżowych, artykuły w mediach, opinie, profile w serwisach porównawczych – to źródła, z których model uczy się, że Twoja marka istnieje i czym się zajmuje. Ta praca procentuje przy kolejnej wersji modelu.
+**7. Pozyskuj wzmianki marki.** Opisy firmy w katalogach branżowych, artykuły w mediach, opinie, profile w serwisach porównawczych – to źródła, z których model uczy się, że Twoja marka istnieje i czym się zajmuje. Ta praca procentuje podczas aktualizacji danych treningowych.
 
 ### Jak sprawdzić, czy to działa
 
-Jeden test w oknie czatu nic nie mówi – generowanie odpowiedzi jest losowe i to samo pytanie zadane dwa razy da dwa różne wyniki. Potrzebny jest powtarzalny pomiar: lista 20–50 pytań, które zadają Twoi klienci, regularne odpytywanie modelu i liczenie, w jakim odsetku odpowiedzi pojawia się Twoja marka i Twoje adresy URL. Tak mierzy się udział marki w odpowiedziach (tzw. Share of Model) i wskaźnik cytowań.
+Jeden test w oknie czatu nic nie mówi – modele językowe są niedeterministyczne i to samo pytanie zadane dwa razy da dwa różne wyniki. Potrzebny jest powtarzalny pomiar: lista 20–50 pytań, które zadają Twoi klienci, regularne odpytywanie modelu i liczenie, w jakim odsetku odpowiedzi pojawia się Twoja marka i Twoje adresy URL. Tak mierzy się udział marki w odpowiedziach (tzw. Share of Model) i cytowania w odpowiedziach AI.
 
-Jeśli chcesz zobaczyć, jak takie podejście wygląda w praktyce – od audytu cytowań, przez optymalizację treści pod tryb wyszukiwania, po miesięczny monitoring – szczegółową metodologię opisuje serwis widocznosc.ai na stronie poświęconej temu, czym jest <a href="https://widocznosc.ai/pozycjonowanie-ai/chatgpt/">pozycjonowanie w ChatGPT</a>. Znajdziesz tam również gotowy prompt do samodzielnego przetestowania swojej marki i listę sygnałów, które system OpenAI bierze pod uwagę przy wyborze źródeł.
+Jeśli chcesz zobaczyć, jak takie podejście wygląda w praktyce – od audytu cytowań, przez optymalizację treści pod generowanie wspomagane wyszukiwaniem, po miesięczny monitoring – szczegółową metodologię opisuje serwis widocznosc.ai na stronie poświęconej temu, czym jest <a href="https://widocznosc.ai/pozycjonowanie-ai/chatgpt/">pozycjonowanie w ChatGPT</a>. Znajdziesz tam również gotowy prompt do samodzielnego przetestowania swojej marki i listę sygnałów, które system OpenAI bierze pod uwagę przy wyborze źródeł.
 
 ### Czego nie robić
 
-Nie warto upychać na stronie fraz typu „ChatGPT poleca” ani generować setek stron pod każde możliwe pytanie. Model premiuje spójność: strony, które pojawiają się przy różnych wariantach tego samego zapytania, i domeny, których fakty zgadzają się z innymi źródłami. Nie warto też blokować botów AI „na wszelki wypadek” – z ChatGPT nie da się zniknąć selektywnie; można tylko zniknąć z odpowiedzi, w których jest konkurencja.
-
+Nie warto upychać na stronie fraz typu „ChatGPT poleca” ani generować setek stron pod każde możliwe pytanie. Model premiuje spójność: strony, które pojawiają się przy różnych wariantach tego samego zapytania, i domeny, których fakty zgadzają się z innymi źródłami. Nie warto też blokować botów AI „na wszelki wypadek” – z ChatGPT-a nie da się zniknąć selektywnie; można tylko zniknąć z odpowiedzi, w których pojawia się Twoja konkurencja.
 
 ---
 
