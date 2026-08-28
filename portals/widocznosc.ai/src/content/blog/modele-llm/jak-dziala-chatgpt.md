@@ -76,7 +76,7 @@ Rozróżnienie ma praktyczne skutki. Ten sam model GPT jest dostępny przez API 
 - **Jak model nauczył się odpowiadać jak asystent** – pre-training, fine-tuning, RLHF
 - **Jak działa produkt wokół modelu** – okno kontekstu, pamięć, wyszukiwanie, narzędzia, tryb rozumowania
 
-Przejdziemy przez wszystkie trzy warstwy po kolei. Aktualnie flagowym modelem w ChatGPT jest GPT-5.5, wydany 23 kwietnia 2026 roku; jego warianty (Instant, Thinking, Pro) różnią się głównie ilością obliczeń, jaką model może poświęcić na jedną odpowiedź – do tego wrócimy. Przegląd całego ekosystemu OpenAI, planów i cen znajdziesz w osobnym artykule o [ChatGPT i ekosystemie OpenAI](/modele-llm/chatgpt/).
+Przejdziemy przez wszystkie trzy warstwy po kolei. Aktualnie flagowym modelem OpenAI jest GPT-5.6 (następca GPT-5.5 z kwietnia 2026 roku); warianty modeli w ChatGPT (Instant, Thinking, Pro) różnią się głównie ilością obliczeń, jaką model może poświęcić na jedną odpowiedź – do tego wrócimy. Przegląd całego ekosystemu OpenAI, planów i cen znajdziesz w osobnym artykule o [ChatGPT i ekosystemie OpenAI](/modele-llm/chatgpt/).
 
 ## Krok 1: tokenizacja – model nie widzi słów
 
@@ -112,7 +112,7 @@ Trzy cechy tej architektury wyjaśniają większość zachowań ChatGPT:
 
 - **Równoległość** – wszystkie tokeny wejścia są przetwarzane jednocześnie, dlatego trening na tysiącach procesorów graficznych był w ogóle możliwy i dlatego model „czyta” 100 stron w sekundę
 - **Kontekst jest wszystkim** – model nie ma innego źródła informacji o bieżącej rozmowie niż to, co jest w oknie kontekstu; jeśli czegoś tam nie ma, dla modelu to nie istnieje
-- **Koszt rośnie z długością** – uwaga porównuje każdy token z każdym, więc bardzo długie rozmowy są droższe i wolniejsze, a modele mają twardy limit kontekstu (w GPT-5.5 w planie Pro – do miliona tokenów, w tańszych planach mniej)
+- **Koszt rośnie z długością** – uwaga porównuje każdy token z każdym, więc bardzo długie rozmowy są droższe i wolniejsze, a modele mają twardy limit kontekstu (w planie Pro – do miliona tokenów, w tańszych planach mniej)
 
 ## Krok 4: przewidywanie kolejnego tokenu – i dlaczego odpowiedzi są losowe
 
@@ -173,7 +173,7 @@ Od 2024 roku modele OpenAI (seria o1, a potem tryby Thinking w GPT-5) dostały d
 
 Mechanicznie to nadal przewidywanie kolejnego tokenu. Różnica polega na tym, że model został wytrenowany metodą uczenia ze wzmocnieniem, by ten proces „myślenia na głos” prowadził do poprawnych odpowiedzi w zadaniach z weryfikowalnym wynikiem – matematyce, programowaniu, logice. Nagrodę dostawał nie za ładne brzmienie, lecz za poprawny wynik końcowy. W efekcie nauczył się strategii, które ludzie znają jako „sprawdź dwa razy”, „zacznij od prostszego przypadku” czy „wróć, jeśli utknąłeś”.
 
-Warianty GPT-5.5 różnią się przede wszystkim budżetem na to rozumowanie. Instant odpowiada niemal natychmiast i praktycznie nie rozumuje. Thinking poświęca sekundy lub minuty. Pro może pracować wielokrotnie dłużej, uruchamiając równolegle kilka ścieżek i wybierając najlepszą. To tzw. skalowanie w czasie inferencji (test-time compute) – zamiast trenować większy model, pozwala się mniejszemu dłużej „myśleć”. W zwykłych pytaniach różnica jest mała; w wieloetapowych analizach, debugowaniu kodu czy zadaniach z liczbami – ogromna.
+Warianty GPT-5.6 różnią się przede wszystkim budżetem na to rozumowanie. Instant odpowiada niemal natychmiast i praktycznie nie rozumuje. Thinking poświęca sekundy lub minuty. Pro może pracować wielokrotnie dłużej, uruchamiając równolegle kilka ścieżek i wybierając najlepszą. To tzw. skalowanie w czasie inferencji (test-time compute) – zamiast trenować większy model, pozwala się mniejszemu dłużej „myśleć”. W zwykłych pytaniach różnica jest mała; w wieloetapowych analizach, debugowaniu kodu czy zadaniach z liczbami – ogromna.
 
 ## Wyszukiwanie w sieci – jak ChatGPT znajduje aktualne informacje
 
