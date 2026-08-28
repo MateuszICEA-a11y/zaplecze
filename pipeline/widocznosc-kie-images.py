@@ -995,6 +995,32 @@ SPECS = [
             "caption: 'DANE STRUKTURALNE = TREŚĆ ZROZUMIAŁA DLA AI'."
         ),
     },
+    # ── modele-llm / jak-dziala-chatgpt ─────────────────────────────
+    {
+        "slug": "blog-modele-llm-jak-dziala-chatgpt",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of how a language model generates text: "
+            "a stream of small glowing geometric tokens flowing from the left "
+            "into a layered translucent cube (the transformer), inside the cube "
+            "faint interconnected attention lines, and on the right a single "
+            "sky-blue token emerging – the predicted next word. Faint "
+            "probability bars fading in the background."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-jak-dziala-chatgpt",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Jak działa ChatGPT'. A "
+            "horizontal five-step flow, left to right, each step a rounded "
+            "card with a white Polish label and a tiny icon: '1. Tokenizacja', "
+            "'2. Embeddingi', '3. Mechanizm uwagi', '4. Przewidywanie tokenu', "
+            "'5. Odpowiedź'. Below the flow a thin second row with two "
+            "sky-blue chips: 'Pre-training' and 'RLHF'. Bottom caption: "
+            "'MODEL NIE SZUKA ODPOWIEDZI – PRZEWIDUJE KOLEJNY TOKEN'."
+        ),
+    },
 ]
 
 
