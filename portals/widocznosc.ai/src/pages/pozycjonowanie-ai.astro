@@ -94,7 +94,7 @@ const decisionRows = [
 const siteUrl = 'https://widocznosc.ai';
 const pageUrl = `${siteUrl}/pozycjonowanie-ai/`;
 const pageDescription =
-  'Pozycjonowanie marki w wyszukiwarkach AI: ChatGPT, Claude, Gemini, Perplexity, Microsoft Copilot. Audyt widoczności, optymalizacja treści, monitoring cytowań, strategia GEO.';
+  'Pozycjonowanie pod LLM – widoczność marki w ChatGPT, Claude, Gemini, Perplexity i Microsoft Copilot. Audyt cytowań, optymalizacja treści pod modele językowe, monitoring, strategia GEO.';
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -103,7 +103,7 @@ const serviceSchema = {
       '@type': 'WebPage',
       '@id': `${pageUrl}#webpage`,
       url: pageUrl,
-      name: 'Pozycjonowanie AI',
+      name: 'Pozycjonowanie pod LLM – pozycjonowanie AI',
       description: pageDescription,
       isPartOf: {
         '@type': 'WebSite',
@@ -170,7 +170,7 @@ const serviceSchema = {
 ---
 
 <Layout
-  title="Pozycjonowanie AI – widoczność marki w ChatGPT, Gemini, Perplexity"
+  title="Pozycjonowanie pod LLM – widoczność marki w ChatGPT, Gemini, Perplexity"
   description={pageDescription}
 >
   <Navbar />
@@ -181,10 +181,11 @@ const serviceSchema = {
       <div class="pillar-hero-inner">
         <span class="eyebrow pillar-hero-eyebrow">Usługi · Generative Engine Optimization</span>
         <h1 class="display-xxl pillar-hero-title">
-          Pozycjonowanie w&nbsp;<span class="accent">AI</span>
+          Pozycjonowanie pod&nbsp;<span class="accent">LLM</span>
         </h1>
         <p class="pillar-hero-lead">
-          Zbuduj widoczność swojej marki w ChatGPT, Claude, Gemini, Perplexity i Microsoft Copilot. W
+          Pozycjonowanie AI to budowanie widoczności marki w ChatGPT, Claude, Gemini, Perplexity i
+          Microsoft Copilot – tam, gdzie odpowiedzi generują duże modele językowe. W
           nowym standardzie wyszukiwania nie walczymy o pozycje w rankingu – walczymy o bycie
           cytowanym źródłem. Ponieważ każdy model AI wymaga innego podejścia, wybierz konkretny
           silnik poniżej lub zacznij od kompleksowego audytu wszystkich pięciu.
@@ -213,13 +214,86 @@ const serviceSchema = {
     </div>
   </section>
 
+
+  <!-- Definicja – pozycjonowanie pod LLM -->
+  <section class="pillar-section" aria-labelledby="llm-title">
+    <div class="content-container">
+      <header class="section-head">
+        <div class="head-left">
+          <div class="head-meta">
+            <span class="section-index">P/01</span>
+            <span class="eyebrow">Definicja</span>
+          </div>
+          <h2 id="llm-title" class="display-xl">Czym jest pozycjonowanie pod LLM?</h2>
+        </div>
+        <div class="head-right">
+          <p class="subhead">
+            Pozycjonowanie pod LLM (ang. LLM SEO, GEO – Generative Engine Optimization) to zestaw
+            działań, dzięki którym duże modele językowe wymieniają, polecają i cytują Twoją markę,
+            gdy użytkownik pyta o produkty, usługi lub rozwiązania z Twojej kategorii.
+          </p>
+        </div>
+      </header>
+
+      <div class="llm-grid">
+        <div class="llm-copy">
+          <p>
+            Model językowy nie ma rankingu stron. Odpowiedź buduje z dwóch źródeł: z wiedzy
+            zamrożonej w wagach podczas treningu oraz z fragmentów stron pobranych w czasie
+            rzeczywistym przez wyszukiwanie (ChatGPT Search, Gemini z indeksem Google, Perplexity,
+            Copilot z Bingiem). <strong>Pozycjonowanie pod LLM działa więc na obu ścieżkach
+            naraz:</strong> długofalowo – przez obecność marki w źródłach, które trafiają do korpusów
+            treningowych; krótkofalowo – przez treści, które da się wyciąć jako samodzielny,
+            faktograficzny fragment i zacytować w odpowiedzi z przypisem.
+          </p>
+          <p>
+            W praktyce oznacza to inne priorytety niż w klasycznym SEO. Zamiast pozycji URL-a
+            liczy się udział marki w odpowiedziach (Share of Model), liczba cytowań i to, czy model
+            opisuje firmę zgodnie z prawdą. Zamiast profilu linków – wzmianki w wiarygodnych
+            źródłach i spójność danych o firmie w sieci. Zamiast nasycenia frazami – gęstość
+            faktów, liczb i jednoznacznych stwierdzeń w pierwszych akapitach, dane strukturalne
+            Schema.org i dostęp dla botów AI w robots.txt.
+          </p>
+          <p>
+            Pozycjonowanie pod LLM nie zastępuje SEO – korzysta z jego fundamentów (indeksacja,
+            szybkość, autorytet domeny), ale mierzy inny wynik: czy w rozmowie z AI Twoja marka
+            pojawia się jako odpowiedź. Jak to działa po stronie modelu, tłumaczymy w artykule
+            <a href="/modele-llm/jak-dziala-chatgpt/">jak działa ChatGPT</a>, a definicję
+            dyscypliny rozwija <a href="/geo/przewodnik/">przewodnik po GEO</a>.
+          </p>
+        </div>
+        <aside class="llm-aside" aria-label="Pozycjonowanie pod LLM w liczbach i zadaniach">
+          <div class="llm-aside-block">
+            <span class="eyebrow">SEO vs. LLM</span>
+            <dl class="llm-compare">
+              <div><dt>Cel</dt><dd>pozycja URL-a → wzmianka lub cytowanie w odpowiedzi</dd></div>
+              <div><dt>Metryka</dt><dd>pozycja i CTR → Share of Model, Citation Rate</dd></div>
+              <div><dt>Jednostka</dt><dd>strona → fragment (chunk) i encja (marka)</dd></div>
+              <div><dt>Czas efektu</dt><dd>tygodnie → dni (wyszukiwanie) lub miesiące (trening)</dd></div>
+            </dl>
+          </div>
+          <div class="llm-aside-block">
+            <span class="eyebrow">Na co wpływamy</span>
+            <ul class="llm-list">
+              <li>Cytowalność treści – fakty, liczby, definicje w pierwszych 200 słowach</li>
+              <li>Encja marki – spójne dane, Schema.org Organization + Person + sameAs</li>
+              <li>Dostęp botów – GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended</li>
+              <li>Wzmianki – obecność w mediach, katalogach i źródłach cytowanych przez modele</li>
+              <li>Pomiar – powtarzalne testy promptów i monitoring udziału w odpowiedziach</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
   <!-- 5 modeli AI – grid z linkami do podstron -->
   <section class="pillar-section" aria-labelledby="models-title">
     <div class="content-container">
       <header class="section-head">
         <div class="head-left">
           <div class="head-meta">
-            <span class="section-index">P/01</span>
+            <span class="section-index">P/02</span>
             <span class="eyebrow">5 modeli</span>
           </div>
           <h2 id="models-title" class="display-xl">
@@ -274,7 +348,7 @@ const serviceSchema = {
       <header class="section-head">
         <div class="head-left">
           <div class="head-meta">
-            <span class="section-index">P/02</span>
+            <span class="section-index">P/03</span>
             <span class="eyebrow">Metodologia</span>
           </div>
           <h2 id="method-title" class="display-xl">Cztery filary współpracy</h2>
@@ -320,7 +394,7 @@ const serviceSchema = {
       <header class="section-head">
         <div class="head-left">
           <div class="head-meta">
-            <span class="section-index">P/03</span>
+            <span class="section-index">P/04</span>
             <span class="eyebrow">Decyzja</span>
           </div>
           <h2 id="decision-title" class="display-xl">Który model ma największy sens biznesowo?</h2>
@@ -382,6 +456,112 @@ const serviceSchema = {
 </Layout>
 
 <style>
+
+  .llm-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  .llm-copy p {
+    color: var(--ink-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 1.1em;
+  }
+
+  .llm-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .llm-copy strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .llm-copy a {
+    color: var(--accent-blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .llm-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .llm-aside-block {
+    border: 1px solid var(--hairline-soft);
+    border-radius: 24px;
+    padding: 24px;
+    background: var(--bg-surface-1);
+  }
+
+  .llm-aside-block .eyebrow {
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .llm-compare {
+    margin: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .llm-compare div {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 12px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .llm-compare dt {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .llm-compare dd {
+    margin: 0;
+    color: var(--ink-muted);
+  }
+
+  .llm-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .llm-list li {
+    position: relative;
+    padding-left: 18px;
+  }
+
+  .llm-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent-blue);
+  }
+
+  @media (max-width: 900px) {
+    .llm-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+
   .pillar-hero {
     position: relative;
     overflow: hidden;
