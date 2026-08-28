@@ -14,7 +14,7 @@ Link w kodzie HTML (do wklejenia w edytorze): `<a href="URL">anchor</a>` – bez
 
 ## 1. Jak pozycjonować stronę w ChatGPT? Praktyczny przewodnik na 2026 rok
 
-**Lead:** Coraz więcej osób zamiast wpisywać pytanie w Google, zadaje je ChatGPT-owi. Odpowiedź dostają od razu, z kilkoma polecanymi markami i linkami do źródeł. Jeśli Twojej firmy w tej odpowiedzi nie ma – klient trafia do konkurencji, zanim w ogóle otworzy wyszukiwarkę. Dobra wiadomość: na to, kogo ChatGPT wymienia i cytuje, da się wpływać. Oto, jak to działa i od czego zacząć.
+**Lead:** Coraz więcej osób zamiast wpisywać pytanie w Google, zadaje je w ChatGPT. Odpowiedź dostają od razu, z kilkoma polecanymi markami i linkami do źródeł. Jeśli Twojej firmy w tej odpowiedzi nie ma – klient trafia do konkurencji, zanim w ogóle otworzy wyszukiwarkę. Dobra wiadomość: na to, kogo ChatGPT wymienia i cytuje, da się wpływać. Oto, jak to działa i od czego zacząć.
 
 ### Dlaczego ChatGPT stał się kanałem pozyskiwania klientów
 
@@ -54,7 +54,7 @@ Jeśli chcesz zobaczyć, jak takie podejście wygląda w praktyce – od audytu 
 
 ### Czego nie robić
 
-Nie warto upychać na stronie fraz typu „ChatGPT poleca” ani generować setek stron pod każde możliwe pytanie. Model premiuje spójność: strony, które pojawiają się przy różnych wariantach tego samego zapytania, i domeny, których fakty zgadzają się z innymi źródłami. Nie warto też blokować botów AI „na wszelki wypadek” – z ChatGPT-a nie da się zniknąć selektywnie; można tylko zniknąć z odpowiedzi, w których pojawia się Twoja konkurencja.
+Nie warto upychać na stronie fraz typu „ChatGPT poleca” ani generować setek stron pod każde możliwe pytanie. Model premiuje spójność: strony, które pojawiają się przy różnych wariantach tego samego zapytania, i domeny, których fakty zgadzają się z innymi źródłami. Nie warto też blokować botów AI „na wszelki wypadek” – z ChatGPT nie da się zniknąć selektywnie; można tylko zniknąć z odpowiedzi, w których pojawia się Twoja konkurencja.
 
 ---
 
