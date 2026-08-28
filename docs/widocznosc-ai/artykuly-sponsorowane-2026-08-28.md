@@ -58,51 +58,49 @@ Nie warto upychać na stronie fraz typu „ChatGPT poleca” ani generować sete
 
 ---
 
-## 2. Pozycjonowanie pod LLM – czym jest i dlaczego SEO już nie wystarcza
+## 2. Pozycjonowanie pod LLM-y – czym jest i dlaczego SEO już nie wystarcza
 
-**Lead:** Przez dwadzieścia lat widoczność w internecie oznaczała jedno: pozycję w Google. Od dwóch lat rośnie druga warstwa – odpowiedzi generowane przez duże modele językowe w ChatGPT, Gemini, Perplexity, Claude czy Copilocie. Użytkownik dostaje gotową rekomendację, a nie listę linków. Pozycjonowanie pod LLM to dyscyplina, która odpowiada na pytanie: jak sprawić, żeby w tej rekomendacji była Twoja marka.
+**Lead:** Przez dwadzieścia lat widoczność w internecie oznaczała jedno: pozycję w Google. Od dwóch lat rośnie druga warstwa – odpowiedzi generowane przez duże modele językowe w ChatGPT, Gemini, Perplexity, modelu Claude czy Copilocie. Użytkownik otrzymuje gotową odpowiedź, a nie listę linków. Optymalizacja pod LLM-y, znana w branży jako GEO (Generative Engine Optimization), to dyscyplina, która odpowiada na pytanie: jak sprawić, żeby w tej odpowiedzi znalazła się Twoja marka.
 
 ### Co się zmieniło w sposobie szukania informacji
 
-Google od 2024 roku pokazuje AI Overviews nad wynikami, ChatGPT ma wbudowane wyszukiwanie, Perplexity od początku odpowiada z przypisami, a Gemini jest zintegrowany z Androidem i Chrome. W każdym z tych miejsc użytkownik zadaje pytanie językiem naturalnym – „które biuro rachunkowe w Krakowie obsługuje spółki z o.o.” – i dostaje odpowiedź z dwiema lub trzema nazwami. Klasyczna pozycja w rankingu przestaje być jedyną walutą. Nowa waluta to bycie wymienionym.
+Google od 2024 roku wyświetla AI Overviews nad wynikami, ChatGPT ma wbudowane wyszukiwanie, Perplexity od początku odpowiada z przypisami, a Gemini jest zintegrowane z systemem Android i przeglądarką Chrome. W każdym z tych miejsc użytkownik zadaje pytanie językiem naturalnym – „które biuro rachunkowe w Krakowie obsługuje spółki z o.o.” – i otrzymuje odpowiedź z dwiema lub trzema nazwami. Klasyczna pozycja w rankingu przestaje być jedyną walutą. Nową walutą jest wzmianka o marce (wystąpienie encji).
 
-### LLM nie ma rankingu – ma wagi i kontekst
+### LLM-y nie mają rankingu – mają wagi i kontekst
 
-Żeby zrozumieć, na czym polega pozycjonowanie pod LLM, trzeba wiedzieć, skąd model bierze odpowiedź. Są dwa źródła:
+Żeby zrozumieć, na czym polega pozycjonowanie pod LLM-y, trzeba wiedzieć, skąd model czerpie informacje. Odpowiadają za to dwa mechanizmy:
+- **Wagi modelu (dane treningowe)** – wiedza wyuczona z ogromnego korpusu tekstów (strony, książki, media, fora). Jeśli o marce pisano w źródłach, które trafiły do treningu, model ją „zna” bez żadnego wyszukiwania. Ta wiedza jest ograniczona przez datę odcięcia wiedzy (knowledge cutoff) i odświeża się dopiero podczas douczania (fine-tuningu) lub premiery nowej wersji modelu.
+- **Kontekst z wyszukiwania (RAG)** – gdy pytanie wymaga aktualnych informacji, model wykorzystuje generowanie wspomagane wyszukiwaniem (RAG). Sięga do indeksu wyszukiwarki (Bing dla ChatGPT i Copilota, Google dla Gemini, własny indeks wspierany zewnętrznymi API dla Perplexity), analizuje treść stron i pobiera z nich fragmenty (snippety). Do odpowiedzi trafiają wyselekcjonowane informacje, a nie całe witryny.
 
-- **Wagi modelu** – wiedza wyuczona z ogromnego korpusu tekstów (strony, książki, media, fora). Jeśli o marce pisano w źródłach, które trafiły do treningu, model ją „zna” bez żadnego wyszukiwania. Ta wiedza odświeża się tylko z nową wersją modelu.
-- **Kontekst z wyszukiwania** – gdy pytanie wymaga aktualnych informacji, model sięga do indeksu wyszukiwarki (Bing dla ChatGPT i Copilota, Google dla Gemini, własny indeks Perplexity), pobiera kilka stron i wycina z nich krótkie fragmenty. Do odpowiedzi trafiają fragmenty, nie całe strony.
+Z tego wynika najważniejsza różnica w stosunku do klasycznego SEO: jednostką, o którą walczysz, nie jest URL, lecz fragment tekstu i encja (marka), którą model kojarzy z daną kategorią.
 
-Z tego wynika najważniejsza różnica wobec SEO: jednostką, o którą walczysz, nie jest URL, tylko fragment tekstu i encja (marka), którą model kojarzy z daną kategorią.
-
-### Na czym polega pozycjonowanie pod LLM w praktyce
+### Na czym polega pozycjonowanie pod LLM-y w praktyce
 
 Dobrze prowadzony projekt obejmuje cztery obszary:
 
-**Audyt widoczności.** Zestaw pytań, które zadają Twoi klienci, odpytywany w kilku modelach wielokrotnie (bo generowanie jest losowe). Wynik: w jakim odsetku odpowiedzi pojawia się Twoja marka, kto pojawia się zamiast Ciebie i czy model opisuje Cię zgodnie z prawdą. Halucynacje o własnej firmie – błędne ceny, nieistniejące usługi, stary adres – to częstszy problem, niż się wydaje.
+**Audyt widoczności.** Zestaw pytań, które zadają Twoi klienci, odpytywany w kilku modelach wielokrotnie (ponieważ generowanie odpowiedzi jest niedeterministyczne). Wynik: w jakim odsetku odpowiedzi pojawia się Twoja marka, kto pojawia się zamiast Ciebie i czy model opisuje Cię zgodnie z prawdą. Halucynacje na temat własnej firmy – błędne ceny, nieistniejące usługi, stary adres – to znacznie częstszy problem, niż się wydaje.
 
-**Optymalizacja treści pod modele językowe.** Nie chodzi o słowa kluczowe, ale o gęstość faktów: liczby, daty, definicje i jednoznaczne stwierdzenia w pierwszych akapitach; sekcje FAQ z prawdziwymi pytaniami; strony porównawcze; dane strukturalne Schema.org, które opisują organizację, autora i treść. Tekst ma być łatwy do wycięcia i zacytowania bez kontekstu.
+**Optymalizacja treści pod modele językowe.** Nie chodzi o upychanie słów kluczowych, ale o nasycenie faktami: liczby, daty, definicje i jednoznaczne stwierdzenia w pierwszych akapitach; sekcje FAQ z prawdziwymi pytaniami; tabele porównawcze; dane strukturalne Schema.org, które precyzyjnie opisują organizację, autora i treść. Tekst ma być łatwy do przetworzenia przez parsery i zacytowania bez utraty kontekstu.
 
-**Dostęp i infrastruktura.** Boty AI (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended) muszą mieć wstęp na stronę, a strona musi odpowiadać szybko – systemy wyszukujące pomijają adresy, które ładują się dłużej niż około dwie sekundy. Do tego indeksacja w Bingu, o której większość polskich firm zapomina.
+**Dostęp i infrastruktura.** Crawlery AI muszą mieć wstęp na stronę. Należy jednak rozróżnić boty zbierające dane treningowe (GPTBot, ClaudeBot, Google-Extended) od botów wyszukujących w czasie rzeczywistym (OAI-SearchBot, PerplexityBot). Co ważne, AI Overviews od Google korzysta ze standardowego Googlebota. Strona musi odpowiadać błyskawicznie – systemy RAG mają rygorystyczne limity czasu odpowiedzi (często poniżej dwóch sekund). Do tego dochodzi indeksacja w Bingu, o której większość polskich firm wciąż zapomina.
 
-**Budowanie encji poza własną stroną.** Wzmianki w mediach branżowych, katalogach, serwisach z opiniami, Wikipedii i na forach to materiał, z którego modele uczą się, że marka istnieje. To najwolniejszy, ale najtrwalszy element – działa na przyszłe wersje modeli.
+**Budowanie encji poza własną stroną.** Wzmianki w mediach branżowych, katalogach, serwisach z opiniami, Wikipedii i na forach to materiał, z którego modele uczą się, że marka w ogóle istnieje. To najwolniejszy, ale najtrwalszy element – zasila dane treningowe przyszłych wersji LLM-ów.
 
-Kompleksowe podejście do tych czterech obszarów, wraz z podziałem na poszczególne silniki – ChatGPT, Claude, Gemini, Perplexity i Microsoft Copilot – opisuje serwis widocznosc.ai, który definiuje <a href="https://widocznosc.ai/pozycjonowanie-ai/">pozycjonowanie pod LLM</a> jako usługę mierzalną tak samo jak klasyczne SEO: z audytem, planem i monitoringiem udziału marki w odpowiedziach.
+Kompleksowe podejście do tych czterech obszarów, wraz z podziałem na poszczególne silniki – ChatGPT, model Claude, Gemini, Perplexity i Microsoft Copilot – opisuje serwis widocznosc.ai, który definiuje <a href="https://widocznosc.ai/pozycjonowanie-ai/">pozycjonowanie pod LLM</a> jako usługę mierzalną tak samo jak klasyczne SEO: z audytem, planem i monitoringiem udziału marki w odpowiedziach.
 
 ### Jak mierzyć efekty
 
-W SEO mierzysz pozycje, ruch i CTR. W pozycjonowaniu pod LLM mierzysz:
+W SEO mierzysz pozycje, ruch i CTR. W pozycjonowaniu pod LLM-y mierzysz:
+- **Share of Model (udział w odpowiedziach)** – odsetek odpowiedzi na zdefiniowany zestaw pytań, w których marka jest wymieniona,
+- **Citation Rate (wskaźnik cytowań)** – odsetek odpowiedzi, w których pojawia się aktywny link do Twojej domeny,
+- **Poprawność opisu** – czy model podaje prawdziwe informacje o ofercie, cenach i lokalizacji,
+- **Ruch od crawlerów AI i z asystentów** – wejścia botów (np. OAI-SearchBot) w logach serwera oraz wizyty z referrerów takich jak chatgpt.com, perplexity.ai czy gemini.google.com w analityce.
 
-- **Share of Model** – odsetek odpowiedzi na zdefiniowany zestaw pytań, w których marka jest wymieniona
-- **Citation Rate** – odsetek odpowiedzi, w których pojawia się link do Twojej domeny
-- **Poprawność opisu** – czy model podaje prawdziwe informacje o ofercie, cenach, lokalizacji
-- **Ruch od botów i z asystentów** – wejścia OAI-SearchBota w logach serwera oraz wizyty z referrerów chatgpt.com, perplexity.ai, gemini.google.com w analityce
+Pomiar musi być powtarzalny: te same pytania, ta sama częstotliwość, kilka próbek na pytanie. Jednorazowe sprawdzenie w oknie czatu to anegdota, a nie dane.
 
-Pomiar musi być powtarzalny: te same pytania, ta sama częstotliwość, kilka próbek na pytanie. Jednorazowe sprawdzenie w oknie czatu to anegdota, nie dane.
+### SEO i LLM-y – uzupełnienie, nie zamiana
 
-### SEO i LLM – uzupełnienie, nie zamiana
-
-Pozycjonowanie pod LLM nie działa bez fundamentów SEO. Strona musi być zaindeksowana, szybka i mieć autorytet, żeby w ogóle trafić do puli źródeł, z której model wybiera fragmenty. Różnica polega na tym, co robisz dalej: zamiast optymalizować pod ranking, optymalizujesz pod cytowalność i pod spójny obraz marki w wielu źródłach. Firmy, które zaczną teraz, budują przewagę, której nie da się nadrobić w miesiąc – bo część tej pracy trafia do wag modeli dopiero przy ich kolejnej wersji.
+Optymalizacja pod LLM-y nie istnieje bez fundamentów SEO. Strona musi być zaindeksowana, szybka i posiadać autorytet, żeby w ogóle trafić do puli źródeł, z której systemy RAG pobierają informacje. Różnica polega na tym, co robisz dalej: zamiast optymalizować wyłącznie pod ranking, optymalizujesz pod cytowalność i spójny obraz marki w wielu źródłach. Firmy, które zaczną teraz, zbudują przewagę, której nie da się nadrobić w miesiąc – ponieważ część tej pracy trafia do danych treningowych i wpływa na wagi modeli dopiero po ich aktualizacji.
 
 ---
 
