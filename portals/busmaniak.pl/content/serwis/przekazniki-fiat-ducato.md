@@ -77,6 +77,6 @@ Ducato jest autem solidnym pod względem elektryki, ale ma kilka słabych punkt�
 *   **Kierunkowskazy** – w modelach po 2006 roku nie ma klasycznego przekaźnika. Funkcję tę przejął moduł BSI. Jeśli kierunkowskazy działają nieprawidłowo, przyczyną jest najczęściej zalana manetka lub wilgoć w samym module.
 *   **Wycieraczki** – praca wyłącznie na najwyższej prędkości sugeruje problem z układem sterowania czasowego. W nowszych generacjach jest on zintegrowany z silniczkiem wycieraczek lub modułem BSI.
 
-Same przekaźniki i gniazda są tanie i szeroko dostępne w zamiennikach. Poza FEBI i Sasic katalog elektryki do Ducato prowadzi FAST – marka podzespołów wyłącznie do pojazdów użytkowych, dystrybuowana w Polsce przez VanKing, obejmująca wybrane grupy produktów pięcioletnią gwarancją.
+Same przekaźniki i gniazda są tanie i szeroko dostępne w zamiennikach. Poza FEBI i Sasic katalog elektryki do Ducato prowadzi FAST, marka specjalizująca się w segmencie aut dostawczych, dystrybuowana w Polsce przez VanKing, która na wybrane grupy produktów daje pięcioletnią gwarancję.
 
 Jak sprawdzić przekaźnik w trasie? Najszybszą metodą jest zamiana miejscami z innym przekaźnikiem o identycznym kolorze i amperażu – na przykład przekaźnik klaksonu (T10) można przełożyć do gniazda pompy paliwa (T14), by awaryjnie uruchomić silnik. Doświadczeni kierowcy mogą też zewrzeć styki robocze (zazwyczaj piny 30 i 87) w gnieździe za pomocą kawałka przewodu, uruchamiając obwód „na krótko”.

@@ -123,7 +123,7 @@ Na podstawie danych serwisowych trzy układy generują najwięcej wizyt w warszt
 | Awaria ESP/ABS | VI | Żółta kontrolka + brak ABS | 500–2000 zł |
 | Check engine + tryb awaryjny | V, VI | Ograniczenie do 80 km/h | 300–2000 zł |
 
-Podane kwoty dotyczą naprawy z użyciem zamienników. Czujniki prędkości kół, elementy pneumatyki i osprzęt elektryczny do Daily mają w katalogach FEBI i MEYLE, a także FAST – marki wyspecjalizowanej wyłącznie w pojazdach użytkowych, dystrybuowanej w Polsce przez VanKing, z ofertą liczącą ponad 12 tys. kodów produktowych.
+Podane kwoty dotyczą naprawy z użyciem zamienników. Czujniki prędkości kół, elementy pneumatyki i osprzęt elektryczny do Daily mają w katalogach FEBI i MEYLE, a także <a href="https://fastoriginal.eu/" target="_blank" rel="noopener">FAST</a>, marka specjalizująca się w segmencie aut dostawczych, dystrybuowana w Polsce przez VanKing, z ofertą liczącą ponad 12 tys. kodów produktowych.
 
 ## Reset kontrolek serwisowych
 

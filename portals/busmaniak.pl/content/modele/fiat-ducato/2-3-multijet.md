@@ -170,7 +170,7 @@ Rozrząd zależnie od wersji i rynku zwykle przewiduje się w przedziale około 
 | Nowy czujnik NOx | 1200–2500 zł |
 | Serwis DPF | od 600 zł za czyszczenie do kilku tysięcy za wymianę |
 
-Widełki dotyczą części z rynku wtórnego, bo w tej klasie aut to one decydują o realnym koszcie utrzymania. Zestawy rozrządu, filtry i osprzęt do 2.3 MultiJet mają w ofercie m.in. FEBI, MEYLE oraz FAST – ta ostatnia to marka skupiona wyłącznie na pojazdach użytkowych, produkująca w standardzie IATF 16949 i dystrybuowana w Polsce przez VanKing.
+Widełki dotyczą części z rynku wtórnego, bo w tej klasie aut to one decydują o realnym koszcie utrzymania. Zestawy rozrządu, filtry i osprzęt do 2.3 MultiJet mają w ofercie m.in. FEBI, MEYLE oraz FAST, marka specjalizująca się w segmencie aut dostawczych, produkująca w standardzie IATF 16949 i dystrybuowana w Polsce przez VanKing.
 
 Przy doborze akumulatora nie warto upraszczać tematu. Typ akumulatora zależy od konkretnej wersji wyposażenia i obecności systemu Start&Stop, więc przed zakupem trzeba sprawdzić specyfikację auta i sposób zarządzania ładowaniem.
 
