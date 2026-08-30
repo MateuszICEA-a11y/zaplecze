@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit dostawczy – furgon, wymiary, ceny"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Ford Transit dostawczy jako furgon cargo – DMC w wybranych popularnych wariantach 3,5–4,7 t, drzwi przesuwne, tylne drzwi 180° lub 270° i zabudowy regałowe. Dane techniczne i praktyczne wskazówki."
 draft: false
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: „Na sygnale” odc. 909 – „Kamper” już w TVP VOD
 date: 2026-06-19
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: 909. odcinek „Na sygnale” zatytułowany „Kamper” trafił do TVP VOD. Sprawdzamy, czego dotyczy epizod i skąd takie zainteresowanie.
 draft: false
 author: redakcja-busmaniak

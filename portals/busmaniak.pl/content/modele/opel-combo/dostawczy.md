@@ -1,7 +1,7 @@
 ---
 title: "Opel Combo Dostawczy – ładowność, wymiary przestrzeni, dane techniczne"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Opel Combo E jako dostawczy van N1 – ładowność do 1000 kg, przestrzeń do 4,4 m³, silniki 1.2 Turbo i 1.5 Diesel. Dla kogo się sprawdza i na co zwrócić uwagę."
 draft: false
 author: "marek-kowalczyk"

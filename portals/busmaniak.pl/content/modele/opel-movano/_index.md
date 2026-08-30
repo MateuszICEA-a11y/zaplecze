@@ -1,7 +1,7 @@
 ---
 title: "Opel Movano – dane techniczne, wersje, silniki"
 date: 2026-03-25
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Opel Movano – dane techniczne, wymiary L1–L4, silniki 2.3 CDTI i 2.5 CDTI, wersje nadwoziowe, Movano-e, typowe usterki oraz ceny nowych i używanych."
 draft: false
 author: "marek-kowalczyk"

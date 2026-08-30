@@ -1,7 +1,7 @@
 ---
 title: "Zabudowa busa na narzędzia – systemy i regały"
 date: 2026-03-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Zabudowa busa na narzędzia – przegląd systemów regałowych Sortimo, Würth, Bott i Store Van. Materiały, konfiguracje, ceny i porady montażowe."
 draft: false
 author: "tomasz-zielinski"

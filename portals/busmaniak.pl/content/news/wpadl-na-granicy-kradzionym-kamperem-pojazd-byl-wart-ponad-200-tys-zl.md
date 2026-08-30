@@ -1,7 +1,7 @@
 ---
 title: Wpadł na granicy kradzionym kamperem. Pojazd był wart ponad 200 tys. zł
 date: 2026-05-12
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Na granicy zatrzymano kierowcę kampera wartego ponad 200 tys. zł. Pojazd figurował jako skradziony za granicą.
 draft: false
 author: redakcja-busmaniak

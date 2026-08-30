@@ -1,6 +1,7 @@
 ---
 title: Wypadek busa w Łagowie. Nie żyje pasażer, droga zablokowana
 date: 2026-08-07
+lastmod: 2026-08-07
 description: Bus zderzył się z ciężarówką na DK74 w Łagowie. Zginął 67-letni pasażer, dwie osoby trafiły do szpitala. Droga pozostaje zablokowana.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: "Opel Combo e-Combo – elektryczny van, zasięg i ładowanie"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Opel e-Combo – elektryczny van z silnikiem 136 KM i akumulatorem 50 kWh. Zasięg WLTP do 280 km, ładowanie do 100 kW DC. Sprawdzamy parametry, ładowność i koszty użytkowania."
 draft: false
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: "Ile kosztuje zabudowa busa – cennik 2026"
 date: 2026-03-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Ile kosztuje zabudowa busa – cennik 2026. Ceny zabudów serwisowych, warsztatowych, izotermicznych, do spania i na narzędzia. DIY vs profesjonalna."
 draft: false
 author: "tomasz-zielinski"

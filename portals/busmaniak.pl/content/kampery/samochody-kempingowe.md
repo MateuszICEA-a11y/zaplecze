@@ -1,7 +1,7 @@
 ---
 title: "Samochody kempingowe – rodzaje, ceny, porady"
 date: 2026-03-23
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Samochody kempingowe – kompletny przewodnik po rodzajach kamperów, camper vanów i przyczep kempingowych. Ceny, zalety i wady każdego typu w 2026 roku."
 draft: false
 author: "anna-wozniak"

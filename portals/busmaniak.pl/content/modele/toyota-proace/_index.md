@@ -1,7 +1,7 @@
 ---
 title: "Toyota Proace – dane techniczne, wymiary, silniki"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Toyota Proace II – pełne dane techniczne, wymiary Medium i Long, silniki 1.5 i 2.0 D-4D, porównanie z Trafic i Expert."
 draft: false
 author: "marek-kowalczyk"

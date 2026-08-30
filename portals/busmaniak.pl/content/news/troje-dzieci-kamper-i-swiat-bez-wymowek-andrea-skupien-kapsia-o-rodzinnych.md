@@ -1,7 +1,7 @@
 ---
 title: Troje dzieci, kamper i świat bez wymówek – Andrea Skupień-Kapsia o rodzinnych podróżach
 date: 2026-07-19
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Andrea Skupień-Kapsia pokazuje, że podróże kamperem z trójką dzieci są możliwe bez wielkich wymówek i zbędnego idealizowania.
 draft: false
 author: redakcja-busmaniak

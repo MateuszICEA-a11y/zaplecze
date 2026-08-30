@@ -1,7 +1,7 @@
 ---
 title: "Prawo jazdy kategorii B – jakim busem możesz jeździć w 2026 roku"
 date: 2026-03-28
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Prawo jazdy kategorii B uprawnia do prowadzenia busów do 3,5 t DMC i do 9 osób. Sprawdź listę modeli, zasady holowania przyczepy i kiedy potrzebujesz wyższej kategorii."
 draft: false
 author: "marek-kowalczyk"

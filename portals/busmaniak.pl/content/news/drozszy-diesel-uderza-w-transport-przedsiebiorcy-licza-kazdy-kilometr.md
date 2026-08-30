@@ -1,7 +1,7 @@
 ---
 title: Droższy diesel uderza w transport. Przedsiębiorcy liczą każdy kilometr
 date: 2026-05-27
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Rosnące ceny oleju napędowego zwiększają presję na firmy transportowe, kurierskie i usługowe. Najmocniej odczuwają to floty busów.
 draft: false
 author: redakcja-busmaniak

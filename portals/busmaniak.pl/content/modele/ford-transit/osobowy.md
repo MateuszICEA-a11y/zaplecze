@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit osobowy – Tourneo, miejsca, ceny"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Ford Transit osobowy w wersjach Tourneo Custom i osobowych odmianach pełnowymiarowego Transita – do 9 miejsc, różne długości nadwozia i napędy zależne od modelu."
 draft: false
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: "Serwis i eksploatacja busa – kompletny poradnik"
 date: 2026-03-28
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Serwis busa od A do Z – kontrolki, rozrząd, bezpieczniki, płyny eksploatacyjne, opony, przegląd techniczny i filtr DPF. Praktyczny poradnik dla właścicieli Ducato, Sprintera i innych busów."
 draft: false
 author: "marek-kowalczyk"

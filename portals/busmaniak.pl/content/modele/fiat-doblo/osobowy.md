@@ -1,7 +1,7 @@
 ---
 title: "Fiat Doblò osobowy (Panorama) – dane techniczne i ile miejsc"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Fiat Doblò osobowy w wersji Panorama – liczba miejsc, wymiary, silniki i wyposażenie. Porównanie z wersją Cargo i wersją Maxi."
 draft: false
 author: "marek-kowalczyk"

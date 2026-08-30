@@ -1,7 +1,7 @@
 ---
 title: Diesel powyżej 8 zł za litr. Od 3 sierpnia tankowanie do pełna tylko dla nielicznych
 date: 2026-08-04
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Po wygaśnięciu programu CPN diesel i Pb98 kosztują ponad 8 zł/l. Prognozy cen paliw na 3–9 sierpnia 2026 i wpływ na kierowców busów.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: Akcja WITD w Szczecinie. Najcięższy bus ważył prawie 9 ton
 date: 2026-07-06
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Kontrola WITD w Szczecinie ujawniła skrajnie przeładowane busy. Rekordzista ważył blisko 9 ton, choć powinien ważyć znacznie mniej.
 draft: false
 author: redakcja-busmaniak

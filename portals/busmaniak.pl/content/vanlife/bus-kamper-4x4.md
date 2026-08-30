@@ -1,7 +1,7 @@
 ---
 title: "Bus kamper 4x4 – terenowe kampery do offroadu"
 date: 2026-03-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Kamper 4x4 – przegląd modeli z napędem na cztery koła (Sprinter, Daily, Crafter 4Motion), koszty przeróbki, fabryczne kampery 4x4 i najlepsze trasy offroad."
 draft: false
 author: "marek-kowalczyk"

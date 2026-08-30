@@ -1,7 +1,7 @@
 ---
 title: "Renault Trafic dostawczy – wymiary, ładowność, ceny"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Renault Trafic dostawczy – sprawdzone dane o wymiarach, ładowności i cenach furgonu w wersjach L1H1 i L2H1."
 draft: false
 author: "marek-kowalczyk"

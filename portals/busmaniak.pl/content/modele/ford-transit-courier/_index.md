@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit Courier – generacje, wersje, dane techniczne"
 date: 2026-04-07
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Ford Transit Courier od A do Z: historia obu generacji, silniki EcoBoost i EcoBlue, wymiary, ceny nowych i używanych, typowe usterki i porównanie z konkurencją."
 draft: false
 author: "marek-kowalczyk"

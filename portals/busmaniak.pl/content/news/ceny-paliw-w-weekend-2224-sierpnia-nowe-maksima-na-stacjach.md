@@ -1,6 +1,7 @@
 ---
 title: Ceny paliw w weekend 22–24 sierpnia. Nowe maksima na stacjach
 date: 2026-08-24
+lastmod: 2026-08-24
 description: Od soboty do poniedziałku obowiązują wyższe maksymalne ceny Pb95, Pb98 i diesla. Sprawdzamy, ile zapłacimy za tankowanie.
 draft: false
 author: redakcja-busmaniak

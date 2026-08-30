@@ -1,6 +1,7 @@
 ---
 title: Paliwa zaczynają tanieć. Na stacjach spadki nawet o 20 groszy
 date: 2026-08-10
+lastmod: 2026-08-10
 description: Po tygodniach podwyżek litr benzyny i diesla potaniał na części stacji o ok. 20 gr. Analitycy mówią o możliwych dalszych obniżkach.
 draft: false
 author: redakcja-busmaniak

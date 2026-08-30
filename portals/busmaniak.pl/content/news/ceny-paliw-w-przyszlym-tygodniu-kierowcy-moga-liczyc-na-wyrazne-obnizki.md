@@ -1,6 +1,7 @@
 ---
 title: Ceny paliw w przyszłym tygodniu. Kierowcy mogą liczyć na wyraźne obniżki
 date: 2026-08-08
+lastmod: 2026-08-08
 description: W tygodniu 10–16 sierpnia benzyna Pb95 ma spaść nawet do 7,21 zł/l. Diesel szansa na powrót poniżej 8 zł. Prognozy i hurtowe spadki.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: "Renault Master 2.3 dCi – silnik M9T, moc, spalanie, trwałość"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Renault Master 2.3 dCi – kompletny przewodnik po silniku M9T. Warianty mocy 100–180 KM, spalanie, trwałość, typowe usterki i koszty serwisu."
 draft: false
 author: "marek-kowalczyk"

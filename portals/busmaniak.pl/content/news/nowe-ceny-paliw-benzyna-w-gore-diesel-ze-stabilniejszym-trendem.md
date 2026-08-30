@@ -1,7 +1,7 @@
 ---
 title: Nowe ceny paliw. Benzyna w górę, diesel ze stabilniejszym trendem
 date: 2026-04-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Na stacjach widać podwyżki cen benzyny. Kierowcy aut dostawczych i busów nadal szczególnie uważnie patrzą też na notowania diesla.
 draft: false
 author: redakcja-busmaniak

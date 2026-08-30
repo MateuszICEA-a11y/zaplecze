@@ -1,7 +1,7 @@
 ---
 title: "Wynajem busów i kamperów – kompletny poradnik"
 date: 2026-03-28
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Wynajem kampera i busa w Polsce – ceny na sezon 2026, porównanie wypożyczalni, umowa, kaucja i praktyczne porady. Kompletny poradnik dla wynajmujących po raz pierwszy."
 draft: false
 author: "marek-kowalczyk"

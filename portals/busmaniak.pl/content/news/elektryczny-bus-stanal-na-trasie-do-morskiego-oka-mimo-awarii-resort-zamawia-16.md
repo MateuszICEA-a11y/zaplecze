@@ -1,7 +1,7 @@
 ---
 title: Elektryczny bus stanął na trasie do Morskiego Oka. Mimo awarii resort zamawia 16 kolejnych pojazdów
 date: 2026-05-04
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Awaria elektrycznego busa nad Morskim Okiem nie zatrzymała projektu. Ministerstwo planuje zakup 16 kolejnych pojazdów.
 draft: false
 author: redakcja-busmaniak

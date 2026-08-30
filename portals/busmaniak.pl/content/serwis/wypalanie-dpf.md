@@ -1,7 +1,7 @@
 ---
 title: "Wypalanie DPF w busie – kiedy i jak regenerować filtr cząstek stałych"
 date: 2026-03-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Wypalanie DPF w busie – regeneracja pasywna, aktywna i wymuszona. Objawy zapchania filtra, koszty czyszczenia i legalność usunięcia DPF w Polsce."
 draft: false
 author: "marek-kowalczyk"

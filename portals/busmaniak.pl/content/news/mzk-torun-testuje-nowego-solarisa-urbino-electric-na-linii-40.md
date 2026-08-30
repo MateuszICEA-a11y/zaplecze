@@ -1,6 +1,7 @@
 ---
 title: MZK Toruń testuje nowego Solarisa Urbino Electric na linii 40
 date: 2026-08-06
+lastmod: 2026-08-06
 description: MZK Toruń testuje najnowszy Solaris Urbino Electric na linii 40. Autobus ma baterie do 800 kWh, miejsce dla 113 osób i systemy GSR2.
 draft: false
 author: redakcja-busmaniak

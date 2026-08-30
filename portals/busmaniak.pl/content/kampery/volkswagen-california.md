@@ -1,7 +1,7 @@
 ---
 title: "VW California – fabryczny camper van"
 date: 2026-03-23
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Volkswagen California – szczegółowy opis wersji Beach, Coast, Ocean i Grand California. Ceny 320–480 tys. zł, DMC, wyposażenie, silniki i porady zakupowe."
 draft: false
 author: "anna-wozniak"

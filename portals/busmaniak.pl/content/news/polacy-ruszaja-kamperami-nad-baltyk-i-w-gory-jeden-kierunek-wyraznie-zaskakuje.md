@@ -1,7 +1,7 @@
 ---
 title: Polacy ruszają kamperami nad Bałtyk i w góry. Jeden kierunek wyraźnie zaskakuje
 date: 2026-04-19
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Kamperowy sezon nabiera rozpędu. Polacy stawiają na Bałtyk i góry, ale w tegorocznych planach mocno wyróżnia się też mniej oczywisty kierunek.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: "AdBlue w busach – co to jest, ile kosztuje, jak uzupełniać"
 date: 2026-03-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "AdBlue w busach dostawczych – czym jest roztwór mocznika, ile kosztuje, jak uzupełnić i co oznacza kontrolka AdBlue."
 draft: false
 author: "marek-kowalczyk"

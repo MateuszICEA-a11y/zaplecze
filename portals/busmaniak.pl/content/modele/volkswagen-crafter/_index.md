@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Crafter – dane techniczne, wersje, silniki"
 date: 2026-03-25
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Volkswagen Crafter – dane techniczne, wymiary L3–L4, silniki 2.0 TDI 102–177 KM, napęd FWD/RWD/AWD, bliźniak MAN TGE, typowe usterki i ceny."
 draft: false
 author: "marek-kowalczyk"

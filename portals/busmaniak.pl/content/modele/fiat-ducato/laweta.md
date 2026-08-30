@@ -1,7 +1,7 @@
 ---
 title: "Fiat Ducato laweta – autolaweta na bazie Ducato"
 date: 2026-03-25
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Fiat Ducato jako autolaweta – zabudowy, DMC, wymagania prawne, ceny platform aluminiowych i stalowych."
 draft: false
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: "Fiat Doblò JTD – dane techniczne, spalanie i usterki"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Fiat Doblò JTD z generacji I – silnik 1.9 JTD 100 KM. Dane techniczne, spalanie, typowe usterki i trwałość. Przewodnik dla kupujących starsze Doblò."
 draft: false
 author: "marek-kowalczyk"

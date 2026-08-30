@@ -1,7 +1,7 @@
 ---
 title: "Nissan NV300 – generacje, wersje, dane techniczne"
 date: 2026-04-04
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Nissan NV300 – kompletny przewodnik: historia, silniki 1.6 i 2.0 dCi, wymiary, usterki, ceny i porównanie z Renault Trafic."
 draft: false
 author: "marek-kowalczyk"

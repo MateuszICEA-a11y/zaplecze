@@ -1,7 +1,7 @@
 ---
 title: "Citroën Jumpy – bliźniak ProAce i Expert"
 date: 2026-03-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Citroën Jumpy III (od 2016) to ten sam samochód co Toyota ProAce i Peugeot Expert – platforma EMP2, silniki 1.5/2.0 D-4D. Dane techniczne, wymiary, różnice."
 draft: false
 author: "marek-kowalczyk"

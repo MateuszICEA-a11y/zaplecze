@@ -1,7 +1,7 @@
 ---
 title: Program CPN wygasł. Sprawdzamy, ile dziś kosztuje tankowanie
 date: 2026-07-01
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Rządowy program CPN dobiegł końca. Sprawdzamy, jak wyglądają dziś ceny paliw i co to oznacza dla kierowców busów.
 draft: false
 author: redakcja-busmaniak

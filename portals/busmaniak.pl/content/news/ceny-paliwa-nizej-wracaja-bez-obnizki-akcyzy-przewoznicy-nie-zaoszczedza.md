@@ -1,6 +1,7 @@
 ---
 title: Ceny Paliwa Niżej wracają bez obniżki akcyzy. Przewoźnicy nie zaoszczędzą
 date: 2026-08-21
+lastmod: 2026-08-21
 description: Program Ceny Paliwa Niżej wraca bez obniżki akcyzy. Dla firm transportowych spadek ceny brutto nie oznacza realnych oszczędności na paliwie.
 draft: false
 author: redakcja-busmaniak

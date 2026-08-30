@@ -1,7 +1,7 @@
 ---
 title: "Peugeot Boxer Van – wymiary, ładowność, konfiguracje"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Peugeot Boxer Van w wersjach L1–L4 i H1–H3 – pojemność 8–17 m³, ładowność do 1735 kg. Wymiary przestrzeni ładunkowej, silniki i typowe zastosowania."
 draft: false
 author: "marek-kowalczyk"

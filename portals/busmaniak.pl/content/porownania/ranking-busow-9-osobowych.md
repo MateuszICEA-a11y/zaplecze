@@ -3,7 +3,7 @@ title: "Busy 9-osobowe – ranking modeli i porównanie 2026"
 aliases:
   - /modele/busy-9-osobowe/
 date: 2026-03-26
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Ranking busów 9-osobowych na 2026 rok – porównanie wymiarów, silników, spalania i cen. Ford Transit Custom, VW Transporter, Mercedes Vito i inne."
 draft: false
 author: "marek-kowalczyk"

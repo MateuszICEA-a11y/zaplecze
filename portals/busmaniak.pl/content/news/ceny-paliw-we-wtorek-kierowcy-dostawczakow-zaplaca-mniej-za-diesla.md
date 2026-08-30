@@ -1,7 +1,7 @@
 ---
 title: Ceny paliw we wtorek – kierowcy dostawczaków zapłacą mniej za diesla
 date: 2026-04-07
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Wtorkowe ceny paliw przynoszą lekkie zmiany na stacjach. Najważniejsza wiadomość dla kierowców busów i vanów dotyczy oleju napędowego.
 draft: false
 author: redakcja-busmaniak

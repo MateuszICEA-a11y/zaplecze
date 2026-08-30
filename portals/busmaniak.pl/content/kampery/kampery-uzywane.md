@@ -1,7 +1,7 @@
 ---
 title: "Kampery używane – na co uważać przy zakupie"
 date: 2026-03-23
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Poradnik zakupu używanego kampera – gdzie szukać, co sprawdzić, ile kosztuje w zależności od rocznika i typu. Import a Polska, homologacja, typowe pułapki."
 draft: false
 author: "marek-kowalczyk"

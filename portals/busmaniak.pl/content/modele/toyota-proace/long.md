@@ -1,7 +1,7 @@
 ---
 title: "Toyota Proace Long – wymiary, pojemność, porównanie"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Toyota Proace Long ma 5309 mm długości, ładownię 6,1 m³ i zmieści do 3 europalet. Sprawdź wymiary, ładowność i porównanie z wersją Medium."
 draft: false
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: Ile zapłacisz za paliwo w poniedziałek? Nowe ceny Pb95 i diesla
 date: 2026-06-08
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Nowy tydzień przynosi aktualizację cen paliw. Sprawdzamy, ile kierowcy zapłacą za benzynę Pb95 i olej napędowy.
 draft: false
 author: redakcja-busmaniak

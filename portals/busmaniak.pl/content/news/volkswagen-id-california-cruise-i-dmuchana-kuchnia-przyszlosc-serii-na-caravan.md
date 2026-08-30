@@ -1,6 +1,7 @@
 ---
 title: Volkswagen ID. California Cruise i dmuchana kuchnia – przyszłość serii na Caravan Salon 2026
 date: 2026-08-26
+lastmod: 2026-08-26
 description: VW pokazał na Caravan Salon 2026 koncepcyjnego ID. California Cruise na bazie ID. Buzza oraz ultralekkie, nadmuchiwane moduły kempingowe Stuff Bubble.
 draft: false
 author: redakcja-busmaniak

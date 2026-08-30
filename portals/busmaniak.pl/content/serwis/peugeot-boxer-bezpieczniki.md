@@ -1,7 +1,7 @@
 ---
 title: "Bezpieczniki Peugeot Boxer – schemat, lokalizacja, wymiana"
 date: 2026-03-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Schemat bezpieczników Peugeot Boxer III – lokalizacja skrzynek, tabele amperaży, najczęstsze awarie elektryczne i wymiana krok po kroku."
 draft: false
 author: "marek-kowalczyk"

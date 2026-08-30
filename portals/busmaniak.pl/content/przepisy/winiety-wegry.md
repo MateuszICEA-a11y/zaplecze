@@ -1,7 +1,7 @@
 ---
 title: "Winiety Węgry 2026 – e-winieta, ceny, kontrole"
 date: 2026-03-28
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "E-winieta na Węgrzech w 2026 roku – aktualne ceny e-matrica, jak kupić online, system kontroli i kary za brak winiety."
 draft: false
 author: "marek-kowalczyk"

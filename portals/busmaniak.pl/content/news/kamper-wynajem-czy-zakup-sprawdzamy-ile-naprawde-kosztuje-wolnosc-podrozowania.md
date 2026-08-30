@@ -1,7 +1,7 @@
 ---
 title: Kamper – wynajem czy zakup? Sprawdzamy, ile naprawdę kosztuje wolność podróżowania
 date: 2026-05-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Kamper daje swobodę podróży, ale ta wygoda kosztuje. Sprawdzamy, kiedy bardziej opłaca się wynajem, a kiedy zakup własnego auta.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: "Kamper 5-osobowy – modele dla rodzin"
 date: 2026-03-23
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Kamper 5-osobowy – najlepsze modele alkowe i półintegrały z homologacją na 5 osób. Porównanie układów łóżek, ceny nowych i używanych w 2026 roku."
 draft: false
 author: "anna-wozniak"

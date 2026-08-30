@@ -1,7 +1,7 @@
 ---
 title: "Renault Trafic – dane techniczne, silniki, wymiary"
 date: 2026-03-24
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Renault Trafic III – pełne dane techniczne, wymiary L1/L2 H1, silniki 1.6 dCi i 2.0 dCi, typowe usterki i porównanie z Vivaro i Transporterem."
 draft: false
 author: "marek-kowalczyk"

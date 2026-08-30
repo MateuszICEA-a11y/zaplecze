@@ -1,7 +1,7 @@
 ---
 title: "Najlepszy bus na kampera – ranking modeli do przeróbki"
 date: 2026-03-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Który bus jest najlepszy na kampera? Ranking 7 modeli do przeróbki – Mercedes Sprinter, Fiat Ducato, Ford Transit, VW Crafter, Renault Master, Citroën Jumper i Iveco Daily. Porównanie wymiarów, silników i kosztów."
 main_keyword: "najlepszy bus na kampera"
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: "Izolacja busa – materiały i techniki"
 date: 2026-03-23
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Izolacja termiczna i akustyczna busa – najlepsze materiały i techniki montażu."
 draft: false
 image: "/images/izolacja-busa-hero.webp"

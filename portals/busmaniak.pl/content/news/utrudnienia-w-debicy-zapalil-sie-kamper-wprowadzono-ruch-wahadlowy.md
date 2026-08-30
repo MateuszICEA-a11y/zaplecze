@@ -1,7 +1,7 @@
 ---
 title: Utrudnienia w Dębicy. Zapalił się kamper, wprowadzono ruch wahadłowy
 date: 2026-08-01
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: W Dębicy doszło do pożaru kampera. Na miejscu pracowały służby, a kierowcy musieli liczyć się z ruchem wahadłowym.
 draft: false
 author: redakcja-busmaniak

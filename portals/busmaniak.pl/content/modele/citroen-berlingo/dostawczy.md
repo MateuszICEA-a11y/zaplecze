@@ -1,7 +1,7 @@
 ---
 title: "Citroën Berlingo dostawczy – wymiary, ładowność, homologacja N1"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Citroën Berlingo dostawczy – warianty furgon M i XL, wymiary przestrzeni ładunkowej, ładowność, silniki 1.5 BlueHDi i korzyści homologacji N1 dla firm."
 draft: false
 author: "marek-kowalczyk"

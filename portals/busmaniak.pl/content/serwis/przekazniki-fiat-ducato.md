@@ -1,7 +1,7 @@
 ---
 title: "Przekaźniki Fiat Ducato – schemat, lokalizacja, opis"
 date: 2026-03-24
-lastmod: 2026-08-04
+lastmod: 2026-08-30
 description: "Schemat przekaźników Fiat Ducato – lokalizacja, opis funkcji, typowe awarie. Przekaźnik pompy paliwa, wycieraczek, świateł."
 draft: false
 author: "tomek-zielinski"

@@ -1,7 +1,7 @@
 ---
 title: "Ranking kamperów 2026 – najlepsze kampervany i samochody kempingowe"
 date: 2026-03-26
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Ranking kamperów na 2026 rok – porównanie VW California, Mercedes Marco Polo, Ford Nugget, Adria Twin i innych. Ceny, miejsca do spania, typy dachów."
 draft: false
 author: "marek-kowalczyk"

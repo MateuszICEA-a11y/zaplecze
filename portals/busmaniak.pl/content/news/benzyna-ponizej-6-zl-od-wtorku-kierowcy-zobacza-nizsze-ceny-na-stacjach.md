@@ -1,7 +1,7 @@
 ---
 title: Benzyna poniżej 6 zł. Od wtorku kierowcy zobaczą niższe ceny na stacjach
 date: 2026-06-15
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Po spadkach na rynku ropy ceny paliw znów idą w dół. Benzyna 95 ma miejscami kosztować mniej niż 6 zł za litr.
 draft: false
 author: redakcja-busmaniak

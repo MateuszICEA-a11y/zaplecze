@@ -1,7 +1,7 @@
 ---
 title: Kryzys paliw po blokadzie Ormuz – co oznaczał dla Polski i transportu dostawczego?
 date: 2026-06-06
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Blokada cieśniny Ormuz wywołała globalny kryzys paliw. Sprawdzamy, jak poradziła sobie Polska i co to oznacza dla transportu.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: Toyota mocniej stawia na caravaning. Nowy kamper ma być domem na kołach
 date: 2026-06-22
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Toyota pokazuje, że chce mocniej zaistnieć w caravaningu. Nowy kamper ma oferować warunki do długich podróży i życia w trasie.
 draft: false
 author: redakcja-busmaniak

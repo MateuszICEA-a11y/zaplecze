@@ -1,7 +1,7 @@
 ---
 title: "Anna Woźniak"
 date: 2026-03-20
-lastmod: 2026-04-02
+lastmod: 2026-08-06
 type: "authors"
 role: "Dziennikarka motoryzacyjna i kamperowiczka"
 bio: "Dziennikarka specjalizująca się w tematyce vanów, kamperów i vanlife. Przez 8 lat pisała dla branżowych magazynów o pojazdach użytkowych i elektromobilności. Przejechała busem ponad 50 000 km po Polsce i Europie, testując różne modele i przeróbki kamperowe. Na BusManiak.pl pisze o kamperach, przeróbkach busów i podróżach vanlife. Wierzy, że każdy bus ma potencjał na kampera."

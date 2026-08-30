@@ -1,7 +1,7 @@
 ---
 title: "Iveco Daily kontener – wymiary, izoterma"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Iveco Daily kontener i izoterma – DMC najczęściej 3,5–7,2 t zależnie od generacji i rynku, izolacja 40–80 mm, agregat zależny lub niezależny. Sprawdź wymiary i koszty zabudowy."
 draft: false
 author: "marek-kowalczyk"

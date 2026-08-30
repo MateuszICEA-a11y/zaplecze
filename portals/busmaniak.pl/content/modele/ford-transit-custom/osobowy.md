@@ -1,7 +1,7 @@
 ---
 title: "Ford Tourneo Custom – osobowy van, dane techniczne, wersje"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Ford Tourneo Custom – osobowa wersja Transit Custom do 9 miejsc. Dane techniczne gen I i gen II, silniki EcoBlue i PHEV, wyposażenie i porównanie z VW Multivan."
 draft: false
 author: "marek-kowalczyk"

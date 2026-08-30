@@ -1,7 +1,7 @@
 ---
 title: "Zabudowa busa do spania – proste rozwiązania"
 date: 2026-03-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Zabudowa busa do spania – łóżko składane, platforma, materac, wymiary i budżet od 500 zł. Proste rozwiązania na weekendowe wypady."
 draft: false
 author: "tomasz-zielinski"

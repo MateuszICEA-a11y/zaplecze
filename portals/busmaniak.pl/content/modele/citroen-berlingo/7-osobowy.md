@@ -1,7 +1,7 @@
 ---
 title: "Citroën Berlingo 7-osobowy – trzeci rząd siedzeń, wymiary"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Citroën Berlingo 7-osobowy – konfiguracja 2+3+2, wymiary, przestrzeń na nogi w trzecim rzędzie, silniki i porównanie z konkurencją."
 draft: false
 author: "marek-kowalczyk"

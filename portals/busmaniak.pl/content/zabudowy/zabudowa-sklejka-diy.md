@@ -1,7 +1,7 @@
 ---
 title: "Zabudowa busa sklejką – DIY krok po kroku"
 date: 2026-03-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Zabudowa busa sklejką – poradnik DIY krok po kroku. Sklejka wodoodporna vs laminowana, grubości, narzędzia, koszty materiałów i najczęstsze błędy."
 draft: false
 author: "tomasz-zielinski"

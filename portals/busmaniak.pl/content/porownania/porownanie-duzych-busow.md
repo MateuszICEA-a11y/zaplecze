@@ -1,7 +1,7 @@
 ---
 title: "Ducato vs Sprinter vs Daily vs Transit – porównanie dużych busów"
 date: 2026-03-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Porównanie czterech największych busów dostawczych – Fiat Ducato, Mercedes Sprinter, Iveco Daily i Ford Transit. Wymiary, silniki, spalanie, koszty eksploatacji i werdykt."
 draft: false
 author: "marek-kowalczyk"

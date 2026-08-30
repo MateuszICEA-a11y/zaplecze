@@ -1,7 +1,7 @@
 ---
 title: Rząd wygasza pakiet CPN. Co to oznacza dla cen paliw i kosztów flot?
 date: 2026-06-16
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Wygaszanie pakietu CPN może przełożyć się na wyższe ceny paliw. Sprawdzamy, co to oznacza dla kierowców, firm i flot dostawczych.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: "Budowa kampera od zera – kompletny poradnik"
 date: 2026-03-23
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Kompletny poradnik budowy kampera krok po kroku – od wyboru busa po rejestrację."
 draft: false
 image: "/images/budowa-kampera-krok-po-kroku-hero.webp"

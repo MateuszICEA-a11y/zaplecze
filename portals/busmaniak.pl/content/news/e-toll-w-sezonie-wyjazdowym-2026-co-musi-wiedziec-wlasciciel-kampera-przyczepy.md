@@ -1,7 +1,7 @@
 ---
 title: E-TOLL w sezonie wyjazdowym 2026 – co musi wiedzieć właściciel kampera, przyczepy i auta elektrycznego
 date: 2026-05-10
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: E-TOLL przed wakacjami 2026. Sprawdzamy, kiedy system obejmuje kampera, przyczepę i samochód elektryczny oraz gdzie łatwo o błąd.
 draft: false
 author: redakcja-busmaniak

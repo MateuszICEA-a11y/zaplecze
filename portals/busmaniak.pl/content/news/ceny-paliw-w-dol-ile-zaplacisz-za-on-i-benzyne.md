@@ -1,6 +1,7 @@
 ---
 title: Ceny paliw w dół. Ile zapłacisz za ON i benzynę?
 date: 2026-08-19
+lastmod: 2026-08-19
 description: Od poniedziałku znów działają ceny maksymalne paliw i niższy VAT. Sprawdź limity na benzynę 95, 98 i olej napędowy.
 draft: false
 author: redakcja-busmaniak

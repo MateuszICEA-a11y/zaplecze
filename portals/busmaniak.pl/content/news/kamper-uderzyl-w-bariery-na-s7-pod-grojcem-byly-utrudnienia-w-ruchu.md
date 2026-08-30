@@ -1,7 +1,7 @@
 ---
 title: Kamper uderzył w bariery na S7 pod Grójcem. Były utrudnienia w ruchu
 date: 2026-07-20
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Na trasie S7 w miejscowości Szczęsna koło Grójca kamper wjechał w bariery. Zdarzenie spowodowało utrudnienia w ruchu.
 draft: false
 author: redakcja-busmaniak

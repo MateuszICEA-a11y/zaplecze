@@ -1,7 +1,7 @@
 ---
 title: "Ford Ranger spalanie – realne zużycie paliwa według silnika"
 date: 2026-03-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Realne spalanie Forda Rangera – 2.0 EcoBlue 170 KM, Bi-Turbo 205 KM i 3.0 V6. Tabela miasto/trasa/mieszane, porównanie z Hiluxem i Amarokiem."
 draft: false
 author: "marek-kowalczyk"

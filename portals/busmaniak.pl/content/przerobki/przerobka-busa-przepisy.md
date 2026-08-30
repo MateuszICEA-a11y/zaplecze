@@ -1,7 +1,7 @@
 ---
 title: "Przeróbka busa na kampera – przepisy i zmiany konstrukcyjne"
 date: 2026-03-23
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Przepisy dotyczące przeróbki busa na kampera – wymagania prawne i proces zmiany konstrukcyjnej."
 draft: false
 image: "/images/przerobka-busa-przepisy-hero.webp"

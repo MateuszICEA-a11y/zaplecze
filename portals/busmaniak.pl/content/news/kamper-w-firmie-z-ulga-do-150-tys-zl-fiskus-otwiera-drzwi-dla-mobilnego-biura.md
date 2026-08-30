@@ -1,7 +1,7 @@
 ---
 title: Kamper w firmie z ulgą do 150 tys. zł. Fiskus otwiera drzwi dla mobilnego biura
 date: 2026-05-02
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Zakup kampera do firmy może dać odliczenie nawet do 150 tys. zł. Sprawdzamy, kto skorzysta i gdzie są najważniejsze ograniczenia.
 draft: false
 author: redakcja-busmaniak

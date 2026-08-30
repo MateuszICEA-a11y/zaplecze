@@ -1,7 +1,7 @@
 ---
 title: "Vanlife koszty – ile kosztuje życie w busie miesięcznie"
 date: 2026-03-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Realne koszty vanlife'u w Polsce – paliwo, jedzenie, kempingi, ubezpieczenie, internet. Porównanie budżetu minimalnego i komfortowego z kosztami wynajmu mieszkania."
 draft: false
 author: "marek-kowalczyk"

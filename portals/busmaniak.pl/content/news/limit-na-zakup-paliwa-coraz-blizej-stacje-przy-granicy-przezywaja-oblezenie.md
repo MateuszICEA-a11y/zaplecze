@@ -1,7 +1,7 @@
 ---
 title: Limit na zakup paliwa coraz bliżej. Stacje przy granicy przeżywają oblężenie
 date: 2026-04-06
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Rosnąca liczba zagranicznych kierowców tankujących do pełna może skończyć się wprowadzeniem limitów sprzedaży paliwa na wybranych stacjach.
 draft: false
 author: redakcja-busmaniak

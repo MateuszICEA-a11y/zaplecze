@@ -1,7 +1,7 @@
 ---
 title: "Mercedes Marco Polo – luksusowy camper van"
 date: 2026-03-23
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Mercedes Marco Polo – luksusowy camper van na bazie klasy V. Porównanie z VW California, wyposażenie, ceny nowych i używanych w 2026 roku."
 draft: false
 author: "anna-wozniak"

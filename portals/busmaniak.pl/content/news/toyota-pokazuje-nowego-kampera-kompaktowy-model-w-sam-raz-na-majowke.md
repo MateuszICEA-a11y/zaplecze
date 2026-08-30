@@ -1,7 +1,7 @@
 ---
 title: Toyota pokazuje nowego kampera. Kompaktowy model w sam raz na majówkę
 date: 2026-04-30
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Toyota zaprezentowała nowego kompaktowego kampera. To turystyczna propozycja dla osób szukających zwinnego auta na krótkie wyjazdy.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: "Peugeot Boxer HDI – silniki, dane techniczne, usterki"
 date: 2026-03-25
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Silniki HDI w Peugeocie Boxerze – warianty stosowane w kolejnych latach produkcji, dane techniczne, spalanie, typowe usterki i porównanie z Ducato oraz Jumperem."
 draft: false
 author: "marek-kowalczyk"

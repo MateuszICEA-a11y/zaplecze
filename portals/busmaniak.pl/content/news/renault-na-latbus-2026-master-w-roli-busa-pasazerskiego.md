@@ -1,6 +1,7 @@
 ---
 title: 'Renault na LAT.BUS 2026: Master w roli busa pasażerskiego'
 date: 2026-08-16
+lastmod: 2026-08-16
 description: Renault zaprezentował na targach LAT.BUS 2026 dwie pasażerskie konwersje Mastera Vitré. Marka wzmacnia pozycję w brazylijskim transporcie osób.
 draft: false
 author: redakcja-busmaniak

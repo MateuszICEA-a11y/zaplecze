@@ -1,6 +1,7 @@
 ---
 title: Tańsze paliwo w Polsce inspiruje Niemców. Padła propozycja obniżki podatku
 date: 2026-08-22
+lastmod: 2026-08-22
 description: Polska obniżka VAT na paliwa wywołała dyskusję w Niemczech. Politycy spierają się o ulgi dla kierowców i gospodarstw domowych.
 draft: false
 author: redakcja-busmaniak

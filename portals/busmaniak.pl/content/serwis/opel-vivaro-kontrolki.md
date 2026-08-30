@@ -1,7 +1,7 @@
 ---
 title: "Kontrolki Opel Vivaro – znaczenie symboli i diagnostyka"
 date: 2026-03-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Kontrolki na desce rozdzielczej Opla Vivaro A, B i C – lista symboli, kolory, najczęstsze przyczyny zapalenia i reset serwisowy."
 draft: false
 author: "marek-kowalczyk"

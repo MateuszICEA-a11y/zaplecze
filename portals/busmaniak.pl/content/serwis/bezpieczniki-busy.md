@@ -1,7 +1,7 @@
 ---
 title: "Bezpieczniki w busie – rodzaje, lokalizacja i typowe awarie"
 date: 2026-03-24
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Bezpieczniki w busie – rodzaje (mini, standard, maxi), lokalizacja skrzynek w Ducato, Sprinterze i Transicie. Jak sprawdzić i wymienić bezpiecznik, najczęstsze awarie elektryczne."
 draft: false
 author: "marek-kowalczyk"

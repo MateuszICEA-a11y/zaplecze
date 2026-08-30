@@ -1,7 +1,7 @@
 ---
 title: "O nas – BusManiak.pl"
 date: 2026-03-20
-lastmod: 2026-04-02
+lastmod: 2026-08-06
 description: "BusManiak.pl to niezależny portal poświęcony busom dostawczym, kamperom i vanom. Tworzymy kompleksową bazę wiedzy – od danych technicznych po poradniki przeróbek."
 type: "page"
 hide_meta: true

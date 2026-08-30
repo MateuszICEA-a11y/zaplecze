@@ -1,6 +1,7 @@
 ---
 title: 'Czerniewice: śmiertelny wypadek na S8. Bus zderzył się z ciężarówkami'
 date: 2026-08-25
+lastmod: 2026-08-25
 description: Na S8 koło Czerniewic bus zderzył się z dwiema ciężarówkami. Zginęły dwie osoby. Jezdnia w kierunku Wrocławia była całkowicie zablokowana.
 draft: false
 author: redakcja-busmaniak

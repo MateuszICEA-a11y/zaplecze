@@ -1,7 +1,7 @@
 ---
 title: "Fiat Ducato rozrząd – co ile wymiana, koszty, objawy zużycia"
 date: 2026-03-24
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Wymiana rozrządu w Fiacie Ducato 2.3 MultiJet – interwały, koszty, objawy zużycia i typowe błędy warsztatów."
 draft: false
 author: "tomek-zielinski"

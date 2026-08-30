@@ -1,7 +1,7 @@
 ---
 title: "Ford Ranger XL – dane techniczne, wyposażenie, ceny"
 date: 2026-03-26
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Ford Ranger XL – bazowa wersja wyposażenia, dane techniczne, wymiary, silnik 2.0 EcoBlue, porównanie z XLT i Wildtrak, ceny nowych i używanych."
 draft: false
 author: "marek-kowalczyk"

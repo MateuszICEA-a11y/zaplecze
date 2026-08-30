@@ -1,7 +1,7 @@
 ---
 title: "Fiat Ducato 3.0 MultiJet – dane techniczne, spalanie, opinie"
 date: 2026-03-25
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Silnik 3.0 MultiJet Iveco F1CE w Fiacie Ducato – dane techniczne, realne spalanie, typowe usterki i opinie. Porównanie wersji 157 i 177 KM."
 draft: false
 author: "marek-kowalczyk"

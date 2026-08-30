@@ -1,7 +1,7 @@
 ---
 title: Bus zawisł na barierkach przy drodze wojewódzkiej 443
 date: 2026-07-03
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Groźnie wyglądające zdarzenie na DW443. Bus po kolizji zawisł na barierkach, a służby zabezpieczały miejsce i usuwały pojazd.
 draft: false
 author: redakcja-busmaniak

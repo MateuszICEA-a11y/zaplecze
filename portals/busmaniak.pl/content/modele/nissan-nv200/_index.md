@@ -1,7 +1,7 @@
 ---
 title: "Nissan NV200 – dane techniczne, wersje, silniki"
 date: 2026-03-25
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Nissan NV200 – dane techniczne, wymiary paki, silniki 1.5 dCi i 1.6 benzyna, wersja Evalia 7-osobowa, e-NV200 elektryczny, typowe usterki i ceny."
 draft: false
 author: "marek-kowalczyk"

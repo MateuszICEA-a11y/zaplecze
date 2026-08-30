@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit Kombi – miejsca, wymiary, ceny"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Ford Transit Kombi – wersja osobowo-towarowa na 6 do 15 miejsc, homologacja M1 lub M2, wymiary i ceny. Wszystko, co musisz wiedzieć przed zakupem."
 draft: false
 author: "marek-kowalczyk"

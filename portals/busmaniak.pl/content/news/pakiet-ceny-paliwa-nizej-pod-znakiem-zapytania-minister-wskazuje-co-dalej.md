@@ -1,7 +1,7 @@
 ---
 title: Pakiet „Ceny Paliwa Niżej” pod znakiem zapytania. Minister wskazuje, co dalej
 date: 2026-05-11
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Minister odniósł się do przyszłości pakietu „Ceny Paliwa Niżej”. Sprawdzamy, co to może oznaczać dla kierowców i firm transportowych.
 draft: false
 author: redakcja-busmaniak

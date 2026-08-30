@@ -1,6 +1,7 @@
 ---
 title: Rząd obniża VAT na paliwa. Pakiet „Ceny Paliw Niżej” wraca na stacje
 date: 2026-08-18
+lastmod: 2026-08-18
 description: Od 17 do 31 sierpnia VAT na paliwa spada do 8 proc. Obowiązują też ceny maksymalne Pb95 i diesla. Co to oznacza dla kierowców busów i vanów?
 draft: false
 author: redakcja-busmaniak

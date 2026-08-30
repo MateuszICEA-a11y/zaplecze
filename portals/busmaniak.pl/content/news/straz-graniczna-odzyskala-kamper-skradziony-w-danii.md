@@ -1,6 +1,7 @@
 ---
 title: Straż Graniczna odzyskała kamper skradziony w Danii
 date: 2026-08-11
+lastmod: 2026-08-11
 description: Funkcjonariusze SG odzyskali kamper skradziony w Danii. Pojazd zatrzymano przy granicy polsko-litewskiej, kierowcę zatrzymano.
 draft: false
 author: redakcja-busmaniak

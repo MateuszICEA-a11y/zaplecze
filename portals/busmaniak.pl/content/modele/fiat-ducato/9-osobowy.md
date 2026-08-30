@@ -1,7 +1,7 @@
 ---
 title: "Fiat Ducato 9-osobowy – wersja pasażerska, prawo jazdy, ceny"
 date: 2026-03-25
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Fiat Ducato w wersji 9-osobowej – wymagane prawo jazdy, wymiary wewnętrzne, wyposażenie Combi i Panorama, ceny nowych i używanych."
 draft: false
 author: "marek-kowalczyk"

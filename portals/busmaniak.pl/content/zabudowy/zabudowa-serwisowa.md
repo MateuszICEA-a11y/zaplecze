@@ -1,7 +1,7 @@
 ---
 title: "Zabudowa serwisowa busa – dla ekip serwisowych"
 date: 2026-03-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Zabudowa serwisowa busa – systemy regałowe, organizacja narzędzi, materiały, producenci i koszty zabudów dla ekip serwisowych i technicznych."
 draft: false
 author: "tomasz-zielinski"

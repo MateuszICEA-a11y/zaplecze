@@ -1,6 +1,7 @@
 ---
 title: 'Ford Transit City: kompaktowy elektryczny dostawczak z ładownością 1270 kg'
 date: 2026-08-13
+lastmod: 2026-08-13
 description: Ford Transit City debiutuje w Europie. Elektryczny van od 35 990 euro, ładowność do 1270 kg, zasięg miejski do 381 km i koszty utrzymania niższe o 40%.
 draft: false
 author: redakcja-busmaniak

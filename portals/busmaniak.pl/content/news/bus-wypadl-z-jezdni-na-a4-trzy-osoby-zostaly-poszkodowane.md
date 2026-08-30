@@ -1,7 +1,7 @@
 ---
 title: Bus wypadł z jezdni na A4. Trzy osoby zostały poszkodowane
 date: 2026-07-24
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Groźny poranek na autostradzie A4. Bus wypadł z jezdni, a w zdarzeniu ucierpiały trzy osoby.
 draft: false
 author: redakcja-busmaniak

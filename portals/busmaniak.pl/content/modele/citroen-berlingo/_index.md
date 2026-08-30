@@ -1,7 +1,7 @@
 ---
 title: "Citroën Berlingo – generacje, wersje, dane techniczne"
 date: 2026-03-25
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Kompletny przewodnik po Citroënie Berlingo – historia 3 generacji, dane techniczne, wymiary M i XL, silniki HDI i PureTech, wersje nadwoziowe i typowe usterki."
 draft: false
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: "Fiat Doblò Maxi – wymiary, ładowność i dane techniczne"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Fiat Doblò Maxi – długa wersja z wydłużonym rozstawem osi. Wymiary, ładowność, silniki i różnice wobec krótkiej wersji. Dane dla gen II i III."
 draft: false
 author: "marek-kowalczyk"

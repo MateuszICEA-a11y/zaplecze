@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Transporter – dane techniczne, generacje T1–T7"
 date: 2026-03-25
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Volkswagen Transporter – historia generacji T1–T7, dane techniczne T6.1, silniki 2.0 TDI, wersje Caravelle, Multivan i California, typowe usterki i ceny."
 draft: false
 author: "marek-kowalczyk"

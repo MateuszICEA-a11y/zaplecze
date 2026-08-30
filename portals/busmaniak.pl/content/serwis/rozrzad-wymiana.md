@@ -1,7 +1,7 @@
 ---
 title: "Wymiana rozrządu w busie – interwały, koszty, objawy zużycia"
 date: 2026-03-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Wymiana rozrządu w busie dostawczym – co ile wymieniać pasek i łańcuch rozrządu w Ducato, Sprinterze i Transicie, koszty 2026 i objawy zużycia."
 draft: false
 author: "marek-kowalczyk"

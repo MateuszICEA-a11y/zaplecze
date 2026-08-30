@@ -1,7 +1,7 @@
 ---
 title: Kamper spłonął na posesji w Boszkowie. Wstępnie wskazano zwarcie instalacji fotowoltaicznej
 date: 2026-06-29
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Pożar kampera w Boszkowie miał najprawdopodobniej związek ze zwarciem instalacji fotowoltaicznej. Pojazd spłonął na prywatnej posesji.
 draft: false
 author: redakcja-busmaniak

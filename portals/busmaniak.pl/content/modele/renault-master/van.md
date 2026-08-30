@@ -1,7 +1,7 @@
 ---
 title: "Renault Master Van – wymiary, ładowność, dane techniczne"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Renault Master Van – szczegółowe wymiary przestrzeni ładunkowej, ładowność, silniki i porównanie wersji L2H2 oraz L3H2 na tle gamy Master III."
 draft: false
 author: "marek-kowalczyk"

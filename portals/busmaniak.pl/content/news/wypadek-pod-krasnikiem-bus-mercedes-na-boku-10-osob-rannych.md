@@ -1,6 +1,7 @@
 ---
 title: 'Wypadek pod Kraśnikiem: bus Mercedes na boku, 10 osób rannych'
 date: 2026-08-09
+lastmod: 2026-08-09
 description: W Rudniku-Kolonii bus rejsowy zderzył się ze Skodą i przewrócił na bok. 10 osób trafiło do szpitala. Policja wskazuje na nieustąpienie pierwszeństwa.
 draft: false
 author: redakcja-busmaniak

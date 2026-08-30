@@ -1,7 +1,7 @@
 ---
 title: "Fiat Ducato doka – podwójna kabina z platformą"
 date: 2026-03-25
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Fiat Ducato doka – podwójna kabina z otwartą platformą ładunkową, wymiary podwozia, orientacyjne wymiary zabudowy, ładowność i zastosowania."
 draft: false
 author: "marek-kowalczyk"

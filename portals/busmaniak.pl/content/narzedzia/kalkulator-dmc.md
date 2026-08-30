@@ -1,7 +1,7 @@
 ---
 title: "Kalkulator DMC – oblicz, czy mieścisz się w 3,5 t"
 date: 2026-03-23
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Kalkulator DMC online – wybierz model busa, wpisz ładunek i sprawdź, czy mieścisz się w dopuszczalnej masie całkowitej 3,5 t. Dane dla 20+ modeli."
 draft: false
 author: "tomasz-zielinski"

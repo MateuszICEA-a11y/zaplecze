@@ -1,7 +1,7 @@
 ---
 title: "Busy przerobione na kampera – realizacje z kosztorysami"
 date: 2026-03-23
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Trzy kompletne realizacje przeróbek busów na kampery – Ducato, Sprinter i Transit. Kosztorysy, specyfikacje zabudowy i porównanie projektów."
 draft: false
 image: "/images/busy-przerobione-galeria-hero.webp"

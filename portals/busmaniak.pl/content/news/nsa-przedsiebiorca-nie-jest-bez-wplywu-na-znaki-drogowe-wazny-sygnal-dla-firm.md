@@ -1,7 +1,7 @@
 ---
 title: 'NSA: przedsiębiorca nie jest bez wpływu na znaki drogowe. Ważny sygnał dla firm transportowych'
 date: 2026-05-25
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Wyrok NSA pokazuje, że przedsiębiorca może mieć interes prawny w sprawach organizacji ruchu i ustawienia znaków drogowych.
 draft: false
 author: redakcja-busmaniak

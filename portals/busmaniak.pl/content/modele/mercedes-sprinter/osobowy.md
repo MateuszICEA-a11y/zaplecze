@@ -1,7 +1,7 @@
 ---
 title: "Mercedes Sprinter osobowy – Tourer, miejsca, ceny"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Mercedes Sprinter osobowy (Tourer) – fabryczne linie BASE, PRO i SELECT, liczba miejsc, napędy oraz różnice między wersją fabryczną a zabudową pasażerską."
 draft: false
 author: "marek-kowalczyk"

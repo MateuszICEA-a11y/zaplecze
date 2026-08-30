@@ -1,7 +1,7 @@
 ---
 title: Renault Trafic Wavecamper – kamper z polskim rodowodem wchodzi na rynek
 date: 2026-04-13
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Renault Trafic Wavecamper to fabrycznie przygotowany kampervan z zabudową o polskich korzeniach i praktycznym układem do podróżowania.
 draft: false
 author: redakcja-busmaniak

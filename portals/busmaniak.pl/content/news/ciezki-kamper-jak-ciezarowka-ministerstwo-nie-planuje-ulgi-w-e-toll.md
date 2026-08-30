@@ -1,6 +1,7 @@
 ---
 title: Ciężki kamper jak ciężarówka. Ministerstwo nie planuje ulgi w e-TOLL
 date: 2026-08-27
+lastmod: 2026-08-27
 description: Resort infrastruktury nie zwolni kamperów powyżej 3,5 t z e-TOLL. Ulga obejmie tylko przyczepy kempingowe za osobówkami od 21 września 2026.
 draft: false
 author: redakcja-busmaniak

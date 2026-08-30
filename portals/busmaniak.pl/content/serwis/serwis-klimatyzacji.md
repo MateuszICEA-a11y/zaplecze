@@ -1,7 +1,7 @@
 ---
 title: "Serwis klimatyzacji w busie – napełnianie, odgrzybianie, koszty 2026"
 date: 2026-03-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Serwis klimatyzacji w busie i kamperze – jak często napełniać, ile kosztuje odgrzybianie, wymiana filtra kabinowego i różnice między czynnikiem R134a a R1234yf."
 draft: false
 author: "marek-kowalczyk"

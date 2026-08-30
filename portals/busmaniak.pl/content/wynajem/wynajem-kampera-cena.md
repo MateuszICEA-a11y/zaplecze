@@ -1,7 +1,7 @@
 ---
 title: "Wynajem kampera – cennik na sezon 2026"
 date: 2026-03-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Cennik wynajmu kampera na sezon 2026 – ceny za dobę dla camper vanów, półintegri i alkow, koszty ukryte, porównanie wypożyczalni i kalkulacja kamper vs hotel."
 draft: false
 author: "marek-kowalczyk"

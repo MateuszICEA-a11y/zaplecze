@@ -1,7 +1,7 @@
 ---
 title: "Opel Vivaro Long – wymiary, ładowność i dane techniczne"
 date: 2026-03-25
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Opel Vivaro Long – wymiary, ładowność i dane techniczne wersji Long generacji C produkowanej od 2019 roku."
 draft: false
 author: "marek-kowalczyk"

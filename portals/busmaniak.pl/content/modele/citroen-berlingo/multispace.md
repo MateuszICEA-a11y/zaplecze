@@ -1,7 +1,7 @@
 ---
 title: "Citroën Berlingo Multispace – wersja osobowa, wymiary, opinie"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Citroën Berlingo Multispace – osobowa wersja Berlingo II generacji. Wymiary, silniki 1.6 HDI, wyposażenie XTR, wersja 7-osobowa i porównanie z konkurencją."
 draft: false
 author: "marek-kowalczyk"

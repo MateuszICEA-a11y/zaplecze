@@ -1,7 +1,7 @@
 ---
 title: "Opel Vivaro blaszak – wymiary paki, ładowność, ceny"
 date: 2026-03-26
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Opel Vivaro w wersji furgon (blaszak) – wymiary paki, ładowność, silniki i ceny generacji A, B oraz C."
 draft: false
 author: "marek-kowalczyk"

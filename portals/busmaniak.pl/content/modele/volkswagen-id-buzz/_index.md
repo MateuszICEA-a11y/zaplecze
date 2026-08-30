@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen ID. Buzz – elektryczny Bulli"
 date: 2026-03-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Volkswagen ID. Buzz – elektryczny następca kultowego Bulli na platformie MEB. Silnik 204–339 KM, bateria 77–85 kWh, zasięg do 461 km WLTP."
 draft: false
 author: "marek-kowalczyk"

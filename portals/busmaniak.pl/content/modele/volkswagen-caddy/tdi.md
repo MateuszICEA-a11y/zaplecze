@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Caddy TDI – dane techniczne, spalanie, opinie"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Silniki TDI w Volkswagenie Caddy – dane techniczne 1.6 TDI i 2.0 TDI, realne spalanie, typowe usterki DSG, EGR i DPF oraz koszty serwisu."
 draft: false
 author: "marek-kowalczyk"

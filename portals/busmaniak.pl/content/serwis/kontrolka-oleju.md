@@ -1,7 +1,7 @@
 ---
 title: "Kontrolka oleju w busie – co oznacza i co robić"
 date: 2026-03-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Kontrolka oleju w busie – różnica między czerwoną a żółtą, przyczyny zapalenia, jaki olej dolać i jak zresetować po wymianie."
 draft: false
 author: "marek-kowalczyk"

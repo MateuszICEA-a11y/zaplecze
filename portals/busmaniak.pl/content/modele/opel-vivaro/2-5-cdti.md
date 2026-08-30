@@ -1,7 +1,7 @@
 ---
 title: "Opel Vivaro 2.5 CDTi – dane techniczne, spalanie"
 date: 2026-03-26
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Silnik 2.5 CDTi (G9U) w Oplu Vivaro A – warianty 135 i 146 KM, spalanie, typowe usterki i koszty serwisu."
 draft: false
 author: "marek-kowalczyk"

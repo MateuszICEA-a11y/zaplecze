@@ -1,7 +1,7 @@
 ---
 title: "Vivaro vs Trafic vs ProAce vs Expert – porównanie średnich vanów"
 date: 2026-03-26
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Porównanie średnich vanów – Opel Vivaro, Renault Trafic, Toyota ProAce i Peugeot Expert. Wymiary, silniki, spalanie, koszty i werdykt."
 draft: false
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit Custom – dane techniczne, wersje, silniki"
 date: 2026-03-25
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Ford Transit Custom – dane techniczne, wymiary L1 i L2, silniki 2.0 EcoBlue 105–185 KM, gen II z mild hybrid i E-Transit Custom, typowe usterki i ceny."
 draft: false
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: "Iveco Daily plandeka – wymiary, ładowność"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Iveco Daily plandeka – załadunek z 3 stron, pojemność do 20+ m³, DMC 3,5–7,2 t. Sprawdź wymiary i to, które konfiguracje mają sens."
 draft: false
 author: "marek-kowalczyk"

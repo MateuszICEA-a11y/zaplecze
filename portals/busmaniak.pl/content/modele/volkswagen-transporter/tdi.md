@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Transporter TDI – dane techniczne, spalanie, opinie"
 date: 2026-03-26
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Silniki TDI w Volkswagenie Transporterze T4, T5 i T6.1 – dane techniczne, spalanie, typowe usterki według generacji i koszty serwisu. Który TDI wybrać?"
 draft: false
 author: "marek-kowalczyk"

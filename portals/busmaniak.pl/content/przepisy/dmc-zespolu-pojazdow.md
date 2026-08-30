@@ -1,7 +1,7 @@
 ---
 title: "DMC zespołu pojazdów – bus z przyczepą na polskich drogach"
 date: 2026-03-28
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "DMC zespołu pojazdów to suma mas busa i przyczepy wpisana w dowodzie rejestracyjnym. Sprawdź, jak ją obliczyć, jakie prawo jazdy potrzebujesz i ile wynoszą kary za przekroczenie."
 draft: false
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: "Iveco Daily laweta – DMC, wymiary, homologacja"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Iveco Daily laweta – sprawdź DMC do 7,2 t mieszczące się w limicie kat. C1 do 7,5 t, wymiary platformy, rodzaje najazdów i kwestie homologacji."
 draft: false
 author: "marek-kowalczyk"

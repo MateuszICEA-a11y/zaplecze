@@ -1,7 +1,7 @@
 ---
 title: "Berlingo vs Kangoo vs Partner vs Doblò – porównanie małych vanów"
 date: 2026-03-26
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Porównanie małych vanów dostawczych – Citroën Berlingo, Renault Kangoo, Peugeot Partner i Fiat Doblò. Wymiary, silniki, spalanie i koszty eksploatacji."
 draft: false
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: "Dane techniczne busów – kompletna tabela porównawcza"
 date: 2026-03-23
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Kompletna tabela danych technicznych busów dostawczych – silniki, moc, moment obrotowy, skrzynie biegów i normy emisji. Wszystkie modele w jednym zestawieniu."
 draft: false
 author: "marek-kowalczyk"

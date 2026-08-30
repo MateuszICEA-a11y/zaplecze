@@ -1,7 +1,7 @@
 ---
 title: "Mercedes Sprinter Van – wymiary, ładowność, ceny"
 date: 2026-03-24
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Mercedes Sprinter Van – przewodnik po wymiarach, DMC, napędach i silnikach. Oficjalne warianty rozstawu osi, praktyka załadunku i najważniejsze dane techniczne."
 draft: false
 author: "marek-kowalczyk"

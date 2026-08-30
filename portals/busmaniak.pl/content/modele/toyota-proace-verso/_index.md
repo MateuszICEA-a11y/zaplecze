@@ -1,7 +1,7 @@
 ---
 title: "Toyota Proace Verso – dane techniczne, wersje, ceny"
 date: 2026-03-24
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Toyota Proace Verso – osobowa wersja Proace do 9 miejsc. Wymiary Medium i Long, silniki 2.0 D-4D, wersja elektryczna, porównanie z Multivanem i SpaceClass."
 draft: false
 author: "marek-kowalczyk"

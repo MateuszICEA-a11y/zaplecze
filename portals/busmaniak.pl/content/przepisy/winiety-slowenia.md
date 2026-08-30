@@ -1,7 +1,7 @@
 ---
 title: "Winiety Słowenia 2026 – zasady i ceny"
 date: 2026-03-28
-lastmod: 2026-08-03
+lastmod: 2026-08-06
 description: "Winieta w Słowenii 2026 – ceny e-winiet, kategorie pojazdów, jak kupić online i kary za brak. Praktyczny przewodnik dla kierowców busów."
 draft: false
 author: "marek-kowalczyk"

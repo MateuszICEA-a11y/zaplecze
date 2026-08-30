@@ -1,7 +1,7 @@
 ---
 title: "Bezpieczniki Iveco Daily – schemat, lokalizacja, wymiana"
 date: 2026-03-28
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: "Schemat bezpieczników Iveco Daily V i VI – lokalizacja skrzynek (deska, komora silnika, akumulator), tabele amperaży i instrukcja wymiany."
 draft: false
 author: "marek-kowalczyk"

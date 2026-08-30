@@ -1,7 +1,7 @@
 ---
 title: Rodzinne kombi z polskiej fabryki wciąż ma przewagę nad SUV-ami. Chodzi o jeden praktyczny detal
 date: 2026-07-13
-lastmod: 2026-08-04
+lastmod: 2026-08-06
 description: Auto z polskiej fabryki nadal wygrywa z SUV-ami praktycznością. Kluczowe okazują się pojemność i funkcjonalność bagażnika.
 draft: false
 author: redakcja-busmaniak
