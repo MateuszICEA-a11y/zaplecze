@@ -64,6 +64,9 @@
   .step:first-of-type { border-top:0; }
   .step .no { font-size:30px; font-weight:500; color:var(--blue); line-height:1; }
   .step .meta { font-size:13px; color:var(--soft); }
+  a { color:var(--blue); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px; }
+  a:hover { text-decoration-thickness:2px; }
+  table a { word-break:break-word; }
   .step .meta em { display:block; font-style:normal; color:var(--midnight); font-weight:500; }
   .step p { margin:4px 0 0; font-size:15px; }
   ul.plain { padding-left:20px; }
@@ -121,10 +124,10 @@
   <p class="lead">Ruch to szacunek Ahrefs dla strony BusManiaka. Kolumna „fakt w treści” pokazuje, co dokładnie modele mogą wyciągnąć razem z nazwą marki.</p>
   <table>
     <tr><th>Strona na busmaniak.pl</th><th class="num">Ruch / mies.</th><th>Forma</th><th>Fakt w treści</th><th>Miejsce w artykule</th></tr>
-    <tr><td>/serwis/czujnik-polozenia-walu/</td><td class="num">–</td><td><span class="tag ok">wzmianka + odnośnik</span></td><td>marka podzespołów wyłącznie do pojazdów użytkowych</td><td>akapit o współpracy czujników CKP i CMP</td></tr>
-    <tr><td>/serwis/iveco-daily-kontrolki/</td><td class="num">116</td><td><span class="tag no">sama wzmianka</span></td><td>ponad 12 tys. kodów produktowych</td><td>pod tabelą najczęstszych problemów</td></tr>
-    <tr><td>/serwis/przekazniki-fiat-ducato/</td><td class="num">89</td><td><span class="tag no">sama wzmianka</span></td><td>5 lat gwarancji na wybrane grupy produktów</td><td>na końcu listy typowych awarii</td></tr>
-    <tr><td>/modele/fiat-ducato/2-3-multijet/</td><td class="num">128</td><td><span class="tag no">sama wzmianka</span></td><td>produkcja w standardzie IATF 16949</td><td>pod cennikiem przeglądów</td></tr>
+    <tr><td><a href="https://busmaniak.pl/serwis/czujnik-polozenia-walu/" target="_blank" rel="noopener">/serwis/czujnik-polozenia-walu/</a></td><td class="num">–</td><td><span class="tag ok">wzmianka + odnośnik</span></td><td>marka podzespołów wyłącznie do pojazdów użytkowych</td><td>akapit o współpracy czujników CKP i CMP</td></tr>
+    <tr><td><a href="https://busmaniak.pl/serwis/iveco-daily-kontrolki/" target="_blank" rel="noopener">/serwis/iveco-daily-kontrolki/</a></td><td class="num">116</td><td><span class="tag no">sama wzmianka</span></td><td>ponad 12 tys. kodów produktowych</td><td>pod tabelą najczęstszych problemów</td></tr>
+    <tr><td><a href="https://busmaniak.pl/serwis/przekazniki-fiat-ducato/" target="_blank" rel="noopener">/serwis/przekazniki-fiat-ducato/</a></td><td class="num">89</td><td><span class="tag no">sama wzmianka</span></td><td>5 lat gwarancji na wybrane grupy produktów</td><td>na końcu listy typowych awarii</td></tr>
+    <tr><td><a href="https://busmaniak.pl/modele/fiat-ducato/2-3-multijet/" target="_blank" rel="noopener">/modele/fiat-ducato/2-3-multijet/</a></td><td class="num">128</td><td><span class="tag no">sama wzmianka</span></td><td>produkcja w standardzie IATF 16949</td><td>pod cennikiem przeglądów</td></tr>
     <tr class="sum"><td>Razem</td><td class="num">4 strony</td><td colspan="3">1 odnośnik, 3 wzmianki bez linku</td></tr>
   </table>
 
@@ -170,7 +173,7 @@
     <tr><th>Zasada ze strategii</th><th>Limit</th><th>Stan po wdrożeniu</th><th>Jak to wygląda w treści</th></tr>
     <tr class="sub" ><td colspan="4">Objętość i forma</td></tr>
     <tr><td>Wzmianki komercyjne na artykuł</td><td>1</td><td><span class="tag ok">spełnione</span></td><td>po jednym wystąpieniu nazwy marki i nazwy dystrybutora na stronę</td></tr>
-    <tr><td>Odnośniki wychodzące do FAST łącznie</td><td>2</td><td><span class="tag ok">1 wykorzystany</span></td><td>przypis do artykułu technicznego o czujniku wałka rozrządu</td></tr>
+    <tr><td>Odnośniki wychodzące do FAST łącznie</td><td>2</td><td><span class="tag ok">1 wykorzystany</span></td><td>przypis do <a href="https://fastoriginal.eu/czujniki-polozenia-walka-rozrzadu-rola-w-synchronizacji-zaplonu-wtrysku/" target="_blank" rel="noopener">artykułu technicznego o czujniku wałka rozrządu</a></td></tr>
     <tr><td>Odnośniki do sklepu, B2B i katalogu</td><td>0</td><td><span class="tag ok">spełnione</span></td><td>VanKing występuje wyłącznie jako nazwa w treści</td></tr>
     <tr><td>Marki wymienione obok FAST</td><td>min. 2</td><td><span class="tag ok">spełnione</span></td><td>FEBI i MEYLE lub FEBI i Sasic w każdym akapicie</td></tr>
     <tr class="sub"><td colspan="4">Gdzie marka wejść nie może</td></tr>
@@ -210,9 +213,9 @@
 <script>
 function pobierzMd(){
   const t=(el)=>el.textContent.replace(/\s+/g,' ').trim();
-  const inline=(el)=>{let o='';el.childNodes.forEach(n=>{if(n.nodeType===3)o+=n.textContent.replace(/\s+/g,' ');else if(n.tagName==='B'||n.tagName==='STRONG')o+='**'+inline(n).trim()+'**';else if(n.tagName==='CODE')o+='`'+t(n)+'`';else if(n.tagName==='BR')o+='\n';else o+=inline(n);});return o;};
+  const inline=(el)=>{let o='';el.childNodes.forEach(n=>{if(n.nodeType===3)o+=n.textContent.replace(/\s+/g,' ');else if(n.tagName==='B'||n.tagName==='STRONG')o+='**'+inline(n).trim()+'**';else if(n.tagName==='CODE')o+='`'+t(n)+'`';else if(n.tagName==='A')o+='['+inline(n).trim()+']('+n.getAttribute('href')+')';else if(n.tagName==='BR')o+='\n';else o+=inline(n);});return o;};
   const table=(tb)=>{const rows=[...tb.querySelectorAll('tr')];let out=[];rows.forEach((r,i)=>{const cells=[...r.children];const isHead=cells[0].tagName==='TH';if(cells.length===1&&cells[0].colSpan>1){out.push('| **'+t(cells[0])+'** |'+' |'.repeat(0));return;}
-    out.push('| '+cells.map(c=>t(c).replace(/\|/g,'\\|')).join(' | ')+' |');if(isHead)out.push('|'+cells.map(()=>' --- ').join('|')+'|');});return out.join('\n');};
+    out.push('| '+cells.map(c=>{const a=c.querySelector('a');const txt=t(c).replace(/\|/g,'\\|');return a?'['+txt+']('+a.getAttribute('href')+')':txt;}).join(' | ')+' |');if(isHead)out.push('|'+cells.map(()=>' --- ').join('|')+'|');});return out.join('\n');};
   const lsp=(box)=>{let o=[];box.querySelectorAll('.sec').forEach(sec=>{o.push('### '+t(sec.querySelector('h4')).replace(/NOWA SEKCJA/,'(nowa sekcja)'));const h=sec.querySelector('.hint');if(h)o.push('_'+t(h)+'_');
     sec.querySelectorAll('.f').forEach(f=>{const l=f.querySelector('label');const v=f.querySelector('.in,.ta,.sel,.tg');if(!l||!v)return;const lab=t(l).replace(/\*/,'').replace(/NOWE/,'(nowe)').trim();let val=t(v).replace(/⌄$/,'').trim();if(v.classList.contains('empty'))val='— ('+val+')';o.push('- **'+lab+'**: '+val);});
     sec.querySelectorAll('.sl').forEach(sl=>o.push('- **'+t(sl.querySelector('b'))+'** ('+t(sl.querySelector('small'))+'): '+t(sl.querySelector('.val'))));
