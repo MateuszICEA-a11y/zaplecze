@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BusManiak → FAST: wpięcia priorytetu 1</title>
+<style>
+  @font-face { font-family: "Roobert"; font-weight: 400; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Regular.otf"); }
+  @font-face { font-family: "Roobert"; font-weight: 500; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Medium.otf"); }
+  :root { --midnight:#000623; --blue:#5768ff; --orange:#f6704c; --off:#f9f9f9; --soft:rgba(0,6,35,.66); --line:rgba(0,6,35,.14); --blue-soft:rgba(87,104,255,.10); }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--midnight); background:var(--off); font-family:"Roobert",Arial,sans-serif; font-size:16px; line-height:1.5; }
+  h1,h2,h3,h4 { font-weight:500; margin:0 0 .4em; line-height:1.15; }
+  h1 { font-size:clamp(36px,5vw,56px); line-height:1.1; }
+  h2 { font-size:clamp(28px,3.4vw,40px); }
+  h3 { font-size:22px; }
+  h4 { font-size:17px; margin-bottom:.2em; }
+  p, li { color:var(--midnight); }
+  .wrap { width:min(calc(100% - 48px),1280px); margin-inline:auto; }
+  .narrow { max-width:760px; }
+  .bar { position:sticky; top:0; z-index:10; background:rgba(249,249,249,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+  .bar-in { display:flex; align-items:center; gap:24px; min-height:64px; }
+  .bar strong { font-weight:500; }
+  .bar .sp { flex:1; }
+  .btn { min-height:40px; padding:8px 14px; border:1px solid var(--midnight); border-radius:3px; background:transparent; color:var(--midnight); font:inherit; cursor:pointer; }
+  .logo { display:block; height:28px; width:auto; color:var(--off); margin-bottom:28px; }
+  .bar .logo { height:20px; margin:0; color:var(--midnight); }
+  .hero { background:var(--midnight); color:var(--off); padding:72px 0 56px; }
+  .hero p { color:rgba(249,249,249,.72); max-width:900px; }
+  .hero .lbl { color:var(--blue); font-weight:500; margin-bottom:14px; }
+  .hero h1 { max-width:1100px; }
+  .hero .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:40px; border:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div { padding:18px 20px; border-left:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div:first-child { border-left:0; }
+  .hero .kpis b { display:block; font-size:34px; font-weight:500; line-height:1.1; color:var(--off); }
+  .hero .kpis span { font-size:13px; color:rgba(249,249,249,.72); }
+  section.sec { padding:56px 0; border-top:1px solid var(--line); }
+  .lead { font-size:18px; color:var(--soft); }
+  .summary { background:#fff; border:1px solid var(--line); padding:28px; }
+  .summary ol { margin:0; padding-left:20px; }
+  .summary li { margin:8px 0; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin:12px 0 28px; background:#fff; }
+  th { background:var(--midnight); color:var(--off); text-align:left; padding:10px 12px; font-weight:400; font-size:12px; }
+  td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  td.num, th.num { text-align:right; white-space:nowrap; }
+  tr.sum td { font-weight:500; border-top:2px solid var(--midnight); }
+  tr.sub td { background:var(--blue-soft); font-weight:500; }
+  .tag { display:inline-block; padding:1px 8px; border:1px solid var(--midnight); border-radius:3px; font-size:12px; white-space:nowrap; }
+  .tag.ok { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:500; }
+  .tag.no { background:var(--midnight); color:var(--off); }
+  .tag.kb { border-color:var(--blue); background:var(--blue-soft); color:var(--midnight); }
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); margin:20px 0; }
+  .card { padding:22px; border-left:1px solid var(--line); background:#fff; }
+  .card:first-child { border-left:0; }
+  .card p { font-size:14px; color:var(--soft); margin:6px 0 0; }
+  .card .n { display:block; font-size:30px; font-weight:500; color:var(--blue); line-height:1.1; margin-bottom:6px; }
+  .card.dark { background:var(--midnight); color:var(--off); }
+  .card.dark h4, .card.dark p { color:var(--off); }
+  .card.dark p { opacity:.75; }
+  .callout { border-left:4px solid var(--orange); background:#fff; padding:16px 20px; margin:20px 0; }
+  .callout b { font-weight:500; }
+  .callout.blue { border-left-color:var(--blue); }
+  .step { display:grid; grid-template-columns:56px minmax(0,1fr) 220px; gap:20px; padding:20px 0; border-top:1px solid var(--line); }
+  .step:first-of-type { border-top:0; }
+  .step .no { font-size:30px; font-weight:500; color:var(--blue); line-height:1; }
+  .step .meta { font-size:13px; color:var(--soft); }
+  .step .meta em { display:block; font-style:normal; color:var(--midnight); font-weight:500; }
+  .step p { margin:4px 0 0; font-size:15px; }
+  ul.plain { padding-left:20px; }
+  .sm { font-size:13px; color:var(--soft); }
+  code { padding:1px 5px; background:var(--blue-soft); font-family:ui-monospace,Consolas,monospace; font-size:.9em; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+  @media (max-width:1000px) { .hero .kpis, .cards, .two { grid-template-columns:1fr; } .card { border-left:0; border-top:1px solid var(--line); } .hero .kpis div { border-left:0; border-top:1px solid rgba(249,249,249,.18); } .step { grid-template-columns:44px 1fr; } .step .meta { grid-column:2; } }
+
+
+  @media print { .bar { display:none; } body { background:#fff; } table, .step, .callout { break-inside:avoid; } }
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap bar-in"><strong>BusManiak → FAST: wpięcia priorytetu 1</strong><span class="sm">stan 30.08.2026 · wdrożone na produkcji</span><span class="sp"></span><button class="btn" onclick="pobierzMd()">Pobierz .md</button><button class="btn" onclick="print()">Drukuj / PDF</button></div></div>
+
+<header class="hero"><div class="wrap">
+  <svg class="logo" role="img" aria-label="iCEA" height="34" viewBox="0 0 186 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1437_16974)">
+<path d="M0 0.350281H10.1556V39.9221H0V0.350281Z" fill="currentColor"/>
+<path d="M0 0.332703H10.3132V10.3132H0V0.332703Z" fill="currentColor"/>
+<path d="M60.02 15.2941C60.0224 14.7134 59.9095 14.0459 59.6885 13.5089C59.4666 12.9525 59.1277 12.4502 58.6948 12.0363C58.2259 11.597 57.6761 11.2531 57.0759 11.024C56.3653 10.7539 55.6096 10.6227 54.8496 10.6375H32.5857C31.8231 10.6321 31.0669 10.7759 30.3594 11.0608C29.6719 11.3233 29.0457 11.7244 28.5194 12.239C27.988 12.7588 27.5736 13.3864 27.3048 14.0795C27.0215 14.8005 26.878 15.5687 26.8816 16.3434V23.8709C26.8762 24.6338 27.02 25.3907 27.3048 26.0983C27.5715 26.7926 27.9862 27.4206 28.5194 27.9389C29.0457 28.4534 29.6719 28.8542 30.3594 29.1166C31.0669 29.4015 31.8231 29.5453 32.5857 29.5399H54.8496C55.5218 29.5343 56.1859 29.3902 56.8 29.1166C57.4068 28.8701 57.9667 28.5214 58.4558 28.0858C58.919 27.6414 59.2988 27.1181 59.578 26.5401C59.8646 25.9686 60.0161 25.3388 60.02 24.6995H70.3977V25.8036C70.3931 27.5456 70.0748 29.2725 69.4588 30.9019C68.8633 32.5559 67.9852 34.0941 66.8642 35.448C65.7437 36.7864 64.3681 37.8877 62.8168 38.6874C61.2029 39.5223 59.4083 39.9462 57.5916 39.9208H28.851C27.2077 39.9324 25.5793 39.6067 24.0669 38.9637C21.0933 37.7309 18.731 35.3674 17.4985 32.3929C16.8558 30.88 16.5301 29.2511 16.5417 27.6073V12.6623C16.5245 11.0061 16.8503 9.36398 17.4985 7.83985C18.1286 6.38862 19.0199 5.06614 20.1291 3.93813C21.2638 2.82016 22.6001 1.92724 24.0669 1.30628C25.5793 0.663348 27.2077 0.33757 28.851 0.349158H57.5916C59.4083 0.323811 61.2029 0.747248 62.8168 1.58218C64.3633 2.38137 65.7379 3.47558 66.8642 4.80313C67.9841 6.12368 68.8626 7.63134 69.4588 9.2571C70.0709 10.83 70.3894 12.5023 70.3977 14.1901V15.2941L60.02 15.2941Z" fill="currentColor"/>
+<path d="M181.349 39.8294H169.444L165.322 33.0743H137.116L133.049 39.8294H121.071L144.53 0.257751H157.889L181.349 39.8294ZM150.51 10.6382L143.15 22.6754H159.416L151.946 10.6382H150.51Z" fill="currentColor"/>
+<path d="M113.178 29.6704H77.8135V39.8302H113.178V29.6704Z" fill="currentColor"/>
+<path d="M119.029 15.092H77.8135V24.7364H119.029V15.092Z" fill="currentColor"/>
+<path d="M129.774 0.240967H77.8135V10.4008H129.774V0.240967Z" fill="currentColor"/>
+<path d="M176.914 0V1.49095H173.859V5.66902H172.369V1.49095H169.443V0H176.914Z" fill="currentColor"/>
+<path d="M185.69 0V5.66902H184.218V2.28226L181.716 5.66902L179.231 2.30068V5.66902H177.741V0H179.471L181.771 3.09244L184.071 0H185.69Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_1437_16974">
+<rect width="185.69" height="40" fill="currentColor"/>
+</clipPath>
+</defs>
+</svg>
+  <p class="lbl">BusManiak.pl · Raport z wdrożenia · Opublikowane</p>
+  <h1>Marka FAST weszła na cztery strony BusManiaka jako nośnik faktu, a nie jako reklama</h1>
+  <p>Pierwsza paczka ze strategii z 29.08.2026 jest na produkcji. Marka pojawia się w akapitach, które modele językowe i tak cytują – z konkretnym atrybutem, zawsze obok innych producentów i tylko raz w artykule. Z dwóch odnośników przewidzianych w całym planie wykorzystaliśmy jeden, w roli przypisu do materiału technicznego.</p>
+  <div class="kpis">
+    <div><b>4</b><span>strony z wpięciem</span></div>
+    <div><b>1 z 2</b><span>wykorzystanych odnośników</span></div>
+    <div><b>0</b><span>linków do katalogu i oferty</span></div>
+    <div><b>2 721</b><span>cytowań BusManiaka – punkt odniesienia</span></div>
+  </div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <h2>Co zostało opublikowane</h2>
+  <div class="summary"><ol>
+    <li><b>Cztery wpięcia priorytetu 1 są na żywo.</b> Strony przebudowały się na Cloudflare Pages, treść jest widoczna pod adresami produkcyjnymi, znaczniki podglądu zdjęte.</li>
+    <li><b>Każda wzmianka niesie inny fakt.</b> Specjalizacja w pojazdach użytkowych, ponad 12 tys. kodów, pięcioletnia gwarancja na wybrane grupy produktów, standard IATF 16949 – nazwa marki bez liczby nie trafiłaby do odpowiedzi modelu.</li>
+    <li><b>FAST nigdzie nie występuje sam.</b> W każdym akapicie towarzyszą mu FEBI, MEYLE albo Sasic, bo wymienienie jednej marki w roli jedynej jest czytelnym sygnałem reklamy.</li>
+    <li><b>VanKing wchodzi przy marce, nie zamiast niej.</b> Wzorzec „FAST, marka dystrybuowana w Polsce przez VanKing” niesie obie encje w jednej wzmiance i w naturalnej relacji producent–dystrybutor.</li>
+  </ol></div>
+
+  <p class="lead">Ruch to szacunek Ahrefs dla strony BusManiaka. Kolumna „fakt w treści” pokazuje, co dokładnie modele mogą wyciągnąć razem z nazwą marki.</p>
+  <table>
+    <tr><th>Strona na busmaniak.pl</th><th class="num">Ruch / mies.</th><th>Forma</th><th>Fakt w treści</th><th>Miejsce w artykule</th></tr>
+    <tr><td>/serwis/czujnik-polozenia-walu/</td><td class="num">–</td><td><span class="tag ok">wzmianka + odnośnik</span></td><td>marka podzespołów wyłącznie do pojazdów użytkowych</td><td>akapit o współpracy czujników CKP i CMP</td></tr>
+    <tr><td>/serwis/iveco-daily-kontrolki/</td><td class="num">116</td><td><span class="tag no">sama wzmianka</span></td><td>ponad 12 tys. kodów produktowych</td><td>pod tabelą najczęstszych problemów</td></tr>
+    <tr><td>/serwis/przekazniki-fiat-ducato/</td><td class="num">89</td><td><span class="tag no">sama wzmianka</span></td><td>5 lat gwarancji na wybrane grupy produktów</td><td>na końcu listy typowych awarii</td></tr>
+    <tr><td>/modele/fiat-ducato/2-3-multijet/</td><td class="num">128</td><td><span class="tag no">sama wzmianka</span></td><td>produkcja w standardzie IATF 16949</td><td>pod cennikiem przeglądów</td></tr>
+    <tr class="sum"><td>Razem</td><td class="num">4 strony</td><td colspan="3">1 odnośnik, 3 wzmianki bez linku</td></tr>
+  </table>
+
+  <div class="cards">
+    <div class="card"><span class="n">1 / artykuł</span><h4>Limit wzmianek utrzymany</h4><p>Na żadnej ze stron nazwa marki nie pada dwa razy. Sprawdzone w wygenerowanym HTML-u, nie tylko w źródle.</p></div>
+    <div class="card"><span class="n">nofollow</span><h4>Odnośnik bez wyjątku</h4><p>Motyw BusManiaka sam dokleja linkom zewnętrznym <code>rel="nofollow noopener"</code>, więc przypis do FAST wygląda dokładnie jak istniejące linki do Wikipedii.</p></div>
+    <div class="card dark"><span class="n">8 z 12</span><h4>Wpięć wciąż przed nami</h4><p>Priorytet 2 to pięć stron modelowych i serwisowych, priorytet 3 – trzy nowe artykuły, w tym zestawienie producentów z drugim odnośnikiem.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Dlaczego wzmianki, a nie odnośniki</h2>
+  <div class="two">
+    <div>
+      <p class="lead">Punktem wyjścia była odwrócona zależność w danych: domena z ogromnym profilem linkowym nie rankuje, a domena praktycznie bez linków zbiera cytowania i ruch.</p>
+      <p>fastoriginal.eu ma 512 domen odsyłających i blisko 74 tys. odnośników, a przy tym 61 fraz i 42 cytowania w wyszukiwarkach AI. Dołożenie do tego jeszcze jednego linku z portalu, który sam ma sześć domen odsyłających, nie zmieni nic mierzalnego – a kosztowałoby jedyne, co w tym układzie realnie działa.</p>
+      <p>BusManiak zbiera 2 721 cytowań z 270 stron, bo modele traktują go jako źródło bezstronne: dziś nie ma w jego treści ani jednego linku komercyjnego, tylko Wikipedia i serwisy informacyjne. Ta czystość jest aktywem, które da się wydać tylko raz.</p>
+      <p>Dźwignią jest więc co-cytowanie encji. Gdy model buduje odpowiedź na pytanie o części do Iveco Daily, sięga po cytowane fragmenty – i jeśli nazwa marki występuje w nich razem z konkretnym atrybutem, trafia do odpowiedzi wraz ze źródłem. Odnośnik nie jest do tego potrzebny.</p>
+      <div class="callout blue"><b>Warunek:</b> celem jest rozpoznawalność marki FAST, nie ruch do sklepu ani do B2B VanKinga. Cytowanie dotyczy nazwy i faktu, nie adresu – zadziała niezależnie od tego, jak wyglądają serwisy klienta.</div>
+      <div class="callout"><b>Ryzyko:</b> gdyby BusManiak stał się źródłem linków do domeny klienta, wzorzec byłby czytelny jako schemat zaplecza i portal straciłby wiarygodność, na której opiera się cała operacja. Dlatego dziesięć z dwunastu wpięć idzie bez odnośnika – to nie kompromis, tylko warunek działania.</div>
+    </div>
+    <div>
+      <table>
+        <tr><th>Wskaźnik</th><th class="num">fastoriginal.eu</th><th class="num">busmaniak.pl</th></tr>
+        <tr><td>Cytowania w wyszukiwarkach AI</td><td class="num">42</td><td class="num">2 721</td></tr>
+        <tr><td>Cytowane strony</td><td class="num">18</td><td class="num">270</td></tr>
+        <tr><td>Frazy organiczne (PL)</td><td class="num">61</td><td class="num">600</td></tr>
+        <tr><td>Frazy w TOP 3</td><td class="num">17</td><td class="num">167</td></tr>
+        <tr><td>Ruch organiczny / mies.</td><td class="num">275</td><td class="num">3 079</td></tr>
+        <tr><td>Domeny odsyłające (live)</td><td class="num">512</td><td class="num">6</td></tr>
+        <tr><td>Odnośniki (live)</td><td class="num">73 858</td><td class="num">6</td></tr>
+        <tr class="sum"><td>Cytowania AI na 1 domenę odsyłającą</td><td class="num">0,08</td><td class="num">453</td></tr>
+      </table>
+      <p class="sm">Dane Ahrefs, stan na 29.08.2026. Ostatni wiersz jest wskaźnikiem pomocniczym – pokazuje, że cytowalność w AI nie idzie w parze z profilem linkowym.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Zasady, które ograniczyły treść</h2>
+  <p class="lead">Każdy limit ze strategii został sprawdzony na wygenerowanych stronach, nie tylko na plikach źródłowych.</p>
+  <table>
+    <tr><th>Zasada ze strategii</th><th>Limit</th><th>Stan po wdrożeniu</th><th>Jak to wygląda w treści</th></tr>
+    <tr class="sub" ><td colspan="4">Objętość i forma</td></tr>
+    <tr><td>Wzmianki komercyjne na artykuł</td><td>1</td><td><span class="tag ok">spełnione</span></td><td>po jednym wystąpieniu nazwy marki i nazwy dystrybutora na stronę</td></tr>
+    <tr><td>Odnośniki wychodzące do FAST łącznie</td><td>2</td><td><span class="tag ok">1 wykorzystany</span></td><td>przypis do artykułu technicznego o czujniku wałka rozrządu</td></tr>
+    <tr><td>Odnośniki do sklepu, B2B i katalogu</td><td>0</td><td><span class="tag ok">spełnione</span></td><td>VanKing występuje wyłącznie jako nazwa w treści</td></tr>
+    <tr><td>Marki wymienione obok FAST</td><td>min. 2</td><td><span class="tag ok">spełnione</span></td><td>FEBI i MEYLE lub FEBI i Sasic w każdym akapicie</td></tr>
+    <tr class="sub"><td colspan="4">Gdzie marka wejść nie może</td></tr>
+    <tr><td>Artykuły newsowe</td><td>wykluczone</td><td><span class="tag ok">spełnione</span></td><td>żadne z wpięć nie dotyka treści newsowych</td></tr>
+    <tr><td>Podsumowania i zdania oceniające</td><td>wykluczone</td><td><span class="tag ok">spełnione</span></td><td>zero sformułowań typu „warto postawić na sprawdzone części”</td></tr>
+    <tr><td>Strony modelowe rdzeniowe</td><td>tylko wzmianka</td><td><span class="tag ok">spełnione</span></td><td>Ducato 2.3 MultiJet bez odnośnika, w sekcji o kosztach eksploatacji</td></tr>
+  </table>
+
+  <h3 style="margin-top:40px">Fakty, których świadomie nie użyliśmy</h3>
+  <p class="lead">Wzmianka bez liczby nie trafi do odpowiedzi modelu, ale wzmianka z liczbą błędną uderzy w wiarygodność portalu. Komunikacja marki jest pod tym względem niespójna, więc część danych została odrzucona.</p>
+  <table>
+    <tr><th>Fakt</th><th>Decyzja</th><th>Powód</th></tr>
+    <tr><td>Kraj pochodzenia marki</td><td><span class="tag no">pominięte</span></td><td>katalogi branżowe opisują FAST jako markę włoską, dystrybutor – jako markę własną, fabryki działają w sześciu krajach</td></tr>
+    <tr><td>19 tys. indeksów</td><td><span class="tag no">pominięte</span></td><td>strona główna podaje 19 000, stopka 12 000, sekcja o marce „ponad 12 tys.” – w treści użyliśmy najniższej z tych liczb</td></tr>
+    <tr><td>Reklamacje na poziomie 0,07%</td><td><span class="tag no">pominięte</span></td><td>dane za 2021 rok, bez źródła zewnętrznego</td></tr>
+    <tr><td>Gwarancja 5 lat</td><td><span class="tag kb">→ przeformułowane</span></td><td>obowiązuje na wybrane grupy produktów, nie na cały asortyment – i tak zostało zapisane</td></tr>
+    <tr><td>Ponad 70% pokrycia pojazdów tej klasy</td><td><span class="tag no">pominięte</span></td><td>dotyczy pokrycia zastosowań, nie udziału rynkowego; zbyt łatwe do przekręcenia w skrócie</td></tr>
+  </table>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Co dalej</h2>
+  <div class="step"><div class="no">1</div><div><h4>Potwierdzenie dwóch liczb u VanKinga</h4><p>Aktualna liczba indeksów FAST i dokładny zakres gwarancji. To jedyny punkt styku z klientem w całym planie – w opublikowanych tekstach użyliśmy wariantów bezpiecznych, ale kolejne wpięcia zyskałyby na precyzji.</p></div><div class="meta"><em>Mateusz</em>do 10.09.2026</div></div>
+  <div class="step"><div class="no">2</div><div><h4>Pięć wpięć priorytetu 2</h4><p>Bezpieczniki Daily, kontrolki Ducato, rozrząd Ducato, strony modelowe Forda Transita i Renault Master. Wszystkie jako sama wzmianka, w tempie 3–4 nowych wpięć miesięcznie.</p></div><div class="meta"><em>redakcja BusManiak</em>wrzesień–październik 2026</div></div>
+  <div class="step"><div class="no">3</div><div><h4>Trzy nowe strony</h4><p>Zamienniki a części oryginalne, przewodnik po producentach części do busów oraz tabela typowych usterek z podzespołami. Format tabelaryczny, bo to on generuje u BusManiaka najwięcej cytowań. Tu wchodzi drugi i ostatni odnośnik – w zestawieniu, w którym każdy producent dostaje link do swojej strony.</p></div><div class="meta"><em>redakcja BusManiak</em>październik 2026</div></div>
+  <div class="step"><div class="no">4</div><div><h4>Pomiar i odczyt kontrolny</h4><p>Stały zestaw promptów odpytywany co miesiąc w ChatGPT, Perplexity i Copilocie. Liczymy wystąpienia „FAST Original” oraz „VanKing”, bo samo „FAST” jest w polskim internecie niemierzalne.</p></div><div class="meta"><em>Mateusz</em>listopad 2026</div></div>
+
+  <div class="callout"><b>Miernik ochronny:</b> spadek cytowań BusManiaka poniżej 2 400 oznacza, że komercjalizacja poszła za daleko – wtedy wstrzymujemy kolejne wpięcia i wycofujemy się z odnośników.</div>
+
+  <h3 style="margin-top:40px">Do rozstrzygnięcia w kolejnym etapie</h3>
+  <ul class="plain">
+    <li><b>Kolejność publikacji trzech nowych stron</b> – zestawienie producentów niesie drugi odnośnik, więc warto je wypuścić dopiero po odczycie z wpięć priorytetu 2.</li>
+    <li><b>Zakres pomiaru</b> – czy monitorujemy wyłącznie prompty o częściach, czy także zapytania o konkretne usterki, na które BusManiak już rankuje.</li>
+    <li><b>Serwisy klienta</b> – w tym planie ich nie ruszamy, ale 15 unikalnych stron polskiej wersji i kanibalizacja dwóch ścieżek dla Daily pozostają realnym ograniczeniem po stronie fastoriginal.eu.</li>
+  </ul>
+</div></section>
+<script>
+function pobierzMd(){
+  const t=(el)=>el.textContent.replace(/\s+/g,' ').trim();
+  const inline=(el)=>{let o='';el.childNodes.forEach(n=>{if(n.nodeType===3)o+=n.textContent.replace(/\s+/g,' ');else if(n.tagName==='B'||n.tagName==='STRONG')o+='**'+inline(n).trim()+'**';else if(n.tagName==='CODE')o+='`'+t(n)+'`';else if(n.tagName==='BR')o+='\n';else o+=inline(n);});return o;};
+  const table=(tb)=>{const rows=[...tb.querySelectorAll('tr')];let out=[];rows.forEach((r,i)=>{const cells=[...r.children];const isHead=cells[0].tagName==='TH';if(cells.length===1&&cells[0].colSpan>1){out.push('| **'+t(cells[0])+'** |'+' |'.repeat(0));return;}
+    out.push('| '+cells.map(c=>t(c).replace(/\|/g,'\\|')).join(' | ')+' |');if(isHead)out.push('|'+cells.map(()=>' --- ').join('|')+'|');});return out.join('\n');};
+  const lsp=(box)=>{let o=[];box.querySelectorAll('.sec').forEach(sec=>{o.push('### '+t(sec.querySelector('h4')).replace(/NOWA SEKCJA/,'(nowa sekcja)'));const h=sec.querySelector('.hint');if(h)o.push('_'+t(h)+'_');
+    sec.querySelectorAll('.f').forEach(f=>{const l=f.querySelector('label');const v=f.querySelector('.in,.ta,.sel,.tg');if(!l||!v)return;const lab=t(l).replace(/\*/,'').replace(/NOWE/,'(nowe)').trim();let val=t(v).replace(/⌄$/,'').trim();if(v.classList.contains('empty'))val='— ('+val+')';o.push('- **'+lab+'**: '+val);});
+    sec.querySelectorAll('.sl').forEach(sl=>o.push('- **'+t(sl.querySelector('b'))+'** ('+t(sl.querySelector('small'))+'): '+t(sl.querySelector('.val'))));
+    const cond=sec.querySelector('.cond');if(cond){o.push('- **'+t(cond.querySelector('.ph')).replace(/NOWE/,'(nowe)')+'**');cond.querySelectorAll('.tg').forEach(g=>o.push('  - '+(g.classList.contains('on')?'[x] ':'[ ] ')+t(g)));}
+    o.push('');});return o.join('\n');};
+  let md=[];
+  md.push('# '+t(document.querySelector('h1')));md.push('');md.push('_'+t(document.querySelector('.hero .lbl'))+' · '+t(document.querySelector('.bar .sm'))+'_');md.push('');
+  document.querySelectorAll('.hero p:not(.lbl)').forEach(p=>{md.push(inline(p).trim());md.push('');});
+  document.querySelectorAll('.hero .kpis div').forEach(d=>md.push('- **'+t(d.querySelector('b'))+'** '+t(d.querySelector('span'))));md.push('');
+  document.querySelectorAll('section.sec').forEach(sec=>{
+    [...sec.querySelector('.wrap').children].forEach(walk);
+    function walk(el){
+      if(el.tagName==='H2'){md.push('## '+t(el));md.push('');}
+      else if(el.tagName==='H3'){md.push('### '+t(el));md.push('');}
+      else if(el.tagName==='P'){md.push(inline(el).trim());md.push('');}
+      else if(el.tagName==='TABLE'){md.push(table(el));md.push('');}
+      else if(el.tagName==='OL'||el.tagName==='UL'){[...el.children].forEach((li,i)=>md.push((el.tagName==='OL'?(i+1)+'. ':'- ')+inline(li).trim()));md.push('');}
+      else if(el.classList.contains('callout')){md.push('> '+inline(el).trim().replace(/\n/g,'\n> '));md.push('');}
+      else if(el.classList.contains('cards')){el.querySelectorAll('.card').forEach(c=>{const n=c.querySelector('.n');md.push('- **'+(n?t(n)+' – ':'')+t(c.querySelector('h4'))+'**: '+t(c.querySelector('p')));});md.push('');}
+      else if(el.classList.contains('step')){const no=t(el.querySelector('.no'));const h=t(el.querySelector('h4'));const p=el.querySelector('p');const meta=el.querySelector('.meta');md.push(no+'. **'+h+'** – '+(p?inline(p).trim():'')+(meta?' _('+t(meta.querySelector('em'))+'; '+t(meta).replace(t(meta.querySelector('em')),'').trim()+')_':''));md.push('');}
+      else if(el.classList.contains('lsp')){md.push(lsp(el));}
+      else if(el.classList.contains('summary')||el.classList.contains('two')||el.tagName==='DIV'){[...el.children].forEach(walk);}
+    }
+  });
+  const blob=new Blob([md.join('\n').replace(/\n{3,}/g,'\n\n')],{type:'text/markdown;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(document.title||'dokument').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').toLowerCase()+'.md';a.click();URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>
