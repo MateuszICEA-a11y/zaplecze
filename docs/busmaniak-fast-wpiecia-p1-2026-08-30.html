@@ -102,11 +102,11 @@
 </defs>
 </svg>
   <p class="lbl">BusManiak.pl · Raport z wdrożenia · Opublikowane</p>
-  <h1>Marka FAST weszła na trzy strony BusManiaka jako nośnik faktu, bez ani jednego odnośnika</h1>
-  <p>Pierwsza paczka ze strategii z 29.08.2026 jest na produkcji. Marka pojawia się w akapitach, które modele językowe i tak cytują – z konkretnym atrybutem, zawsze obok innych producentów i tylko raz w artykule. Czwarte wpięcie, jedyne z odnośnikiem, zostało wycofane po przeglądzie redakcyjnym: przypis prowadził do materiału o czujniku wałka rozrządu, a strona dotyczy czujnika wału korbowego. Pula dwóch odnośników przewidzianych w planie pozostaje nietknięta.</p>
+  <h1>Marka FAST weszła na trzy strony BusManiaka jako nośnik faktu, z jednym odnośnikiem follow</h1>
+  <p>Pierwsza paczka ze strategii z 29.08.2026 jest na produkcji. Marka pojawia się w akapitach, które modele językowe i tak cytują – z konkretnym atrybutem, zawsze obok innych producentów i tylko raz w artykule. Czwarte wpięcie zostało wycofane po przeglądzie redakcyjnym: przypis prowadził do materiału o czujniku wałka rozrządu, a strona dotyczy czujnika wału korbowego. Odnośnik do strony marki stoi za to przy wzmiance na stronie o kontrolkach Daily – jako link follow, wbrew pierwotnemu założeniu strategii.</p>
   <div class="kpis">
     <div><b>3</b><span>strony z wpięciem</span></div>
-    <div><b>0 z 2</b><span>wykorzystanych odnośników</span></div>
+    <div><b>1 z 2</b><span>wykorzystanych odnośników</span></div>
     <div><b>0</b><span>linków do katalogu i oferty</span></div>
     <div><b>2 721</b><span>cytowań BusManiaka – punkt odniesienia</span></div>
   </div>
@@ -125,18 +125,18 @@
   <table>
     <tr><th>Strona na busmaniak.pl</th><th class="num">Ruch / mies.</th><th>Forma</th><th>Fakt w treści</th><th>Miejsce w artykule</th></tr>
     <tr><td><a href="https://busmaniak.pl/serwis/czujnik-polozenia-walu/" target="_blank" rel="noopener">/serwis/czujnik-polozenia-walu/</a></td><td class="num">–</td><td><span class="tag no">wycofane</span></td><td>–</td><td>wpięcie usunięte, strona wróciła do stanu sprzed paczki</td></tr>
-    <tr><td><a href="https://busmaniak.pl/serwis/iveco-daily-kontrolki/" target="_blank" rel="noopener">/serwis/iveco-daily-kontrolki/</a></td><td class="num">116</td><td><span class="tag no">sama wzmianka</span></td><td>ponad 12 tys. kodów produktowych</td><td>pod tabelą najczęstszych problemów</td></tr>
+    <tr><td><a href="https://busmaniak.pl/serwis/iveco-daily-kontrolki/" target="_blank" rel="noopener">/serwis/iveco-daily-kontrolki/</a></td><td class="num">116</td><td><span class="tag ok">wzmianka + odnośnik follow</span></td><td>ponad 12 tys. kodów produktowych</td><td>pod tabelą najczęstszych problemów</td></tr>
     <tr><td><a href="https://busmaniak.pl/serwis/przekazniki-fiat-ducato/" target="_blank" rel="noopener">/serwis/przekazniki-fiat-ducato/</a></td><td class="num">89</td><td><span class="tag no">sama wzmianka</span></td><td>5 lat gwarancji na wybrane grupy produktów</td><td>na końcu listy typowych awarii</td></tr>
     <tr><td><a href="https://busmaniak.pl/modele/fiat-ducato/2-3-multijet/" target="_blank" rel="noopener">/modele/fiat-ducato/2-3-multijet/</a></td><td class="num">128</td><td><span class="tag no">sama wzmianka</span></td><td>produkcja w standardzie IATF 16949</td><td>pod cennikiem przeglądów</td></tr>
-    <tr class="sum"><td>Razem</td><td class="num">3 strony</td><td colspan="3">3 wzmianki, zero odnośników</td></tr>
+    <tr class="sum"><td>Razem</td><td class="num">3 strony</td><td colspan="3">3 wzmianki, 1 odnośnik follow do strony marki</td></tr>
   </table>
 
   <div class="cards">
     <div class="card"><span class="n">1 / artykuł</span><h4>Limit wzmianek utrzymany</h4><p>Na żadnej ze stron nazwa marki nie pada dwa razy. Sprawdzone w wygenerowanym HTML-u, nie tylko w źródle.</p></div>
-    <div class="card"><span class="n">2 z 2</span><h4>Pula odnośników nietknięta</h4><p>Przypis do artykułu FAST wycofany – dotyczył innego podzespołu niż strona, na której stał. Oba linki z planu są nadal do wykorzystania.</p></div>
+    <div class="card"><span class="n">follow</span><h4>Odnośnik wbrew założeniu strategii</h4><p>Render hook motywu dokleja linkom zewnętrznym <code>rel="nofollow noopener"</code>. Odnośnik do fastoriginal.eu wstawiony surowym HTML-em, żeby ominąć hook – decyzja Mateusza z 30.08, zapisana tu, bo zmienia założenie „linki są bez znaczenia”.</p></div>
     <div class="card dark"><span class="n">9 z 12</span><h4>Wpięć wciąż przed nami</h4><p>Priorytet 2 to pięć stron modelowych i serwisowych, priorytet 3 – trzy nowe artykuły, w tym zestawienie producentów z odnośnikiem. Wraca też czujnik wału, ale bez przypisu.</p></div>
   </div>
-  <div class="callout"><b>Wycofane po przeglądzie:</b> na stronie o czujniku wału korbowego przypis prowadził do artykułu FAST o czujniku wałka rozrządu – innym podzespole. Zdanie było przy tym zbudowane błędnie („publikuje FAST – markę podzespołów…”). Wpięcie usunięto w całości zamiast poprawiać, bo odnośnik nie wnosił czytelnikowi nic, czego nie ma już w treści strony.</div>
+  <div class="callout"><b>Poprawione po przeglądzie:</b> wpięcie na stronie o czujniku wału korbowego usunięto w całości – przypis prowadził do artykułu FAST o czujniku wałka rozrządu, czyli innym podzespole. W pozostałych trzech zdaniach poprawiono składnię: po myślniku wchodził dopełniacz („a także FAST – marki wyspecjalizowanej…”) zamiast apozycji w mianowniku. Obowiązujący wzorzec to „FAST, marka specjalizująca się w segmencie aut dostawczych, dystrybuowana w Polsce przez VanKing”.</div>
 </div></section>
 
 <section class="sec"><div class="wrap">
@@ -174,7 +174,7 @@
     <tr><th>Zasada ze strategii</th><th>Limit</th><th>Stan po wdrożeniu</th><th>Jak to wygląda w treści</th></tr>
     <tr class="sub" ><td colspan="4">Objętość i forma</td></tr>
     <tr><td>Wzmianki komercyjne na artykuł</td><td>1</td><td><span class="tag ok">spełnione</span></td><td>po jednym wystąpieniu nazwy marki i nazwy dystrybutora na stronę</td></tr>
-    <tr><td>Odnośniki wychodzące do FAST łącznie</td><td>2</td><td><span class="tag ok">0 wykorzystanych</span></td><td>przypis do <a href="https://fastoriginal.eu/czujniki-polozenia-walka-rozrzadu-rola-w-synchronizacji-zaplonu-wtrysku/" target="_blank" rel="noopener">artykułu technicznego FAST</a> wycofany – dotyczy czujnika wałka rozrządu, a strona opisuje czujnik wału korbowego</td></tr>
+    <tr><td>Odnośniki wychodzące do FAST łącznie</td><td>2</td><td><span class="tag ok">1 wykorzystany</span></td><td>nazwa marki przy wzmiance o kontrolkach Daily prowadzi do <a href="https://fastoriginal.eu/" target="_blank" rel="noopener">strony marki</a>, link follow. Wcześniejszy przypis do artykułu o czujniku wałka rozrządu wycofany – dotyczył innego podzespołu niż strona</td></tr>
     <tr><td>Odnośniki do sklepu, B2B i katalogu</td><td>0</td><td><span class="tag ok">spełnione</span></td><td>VanKing występuje wyłącznie jako nazwa w treści</td></tr>
     <tr><td>Marki wymienione obok FAST</td><td>min. 2</td><td><span class="tag ok">spełnione</span></td><td>FEBI i MEYLE lub FEBI i Sasic w każdym akapicie</td></tr>
     <tr class="sub"><td colspan="4">Gdzie marka wejść nie może</td></tr>
@@ -199,7 +199,7 @@
   <h2>Co dalej</h2>
   <div class="step"><div class="no">1</div><div><h4>Potwierdzenie dwóch liczb u VanKinga</h4><p>Aktualna liczba indeksów FAST i dokładny zakres gwarancji. To jedyny punkt styku z klientem w całym planie – w opublikowanych tekstach użyliśmy wariantów bezpiecznych, ale kolejne wpięcia zyskałyby na precyzji.</p></div><div class="meta"><em>Mateusz</em>do 10.09.2026</div></div>
   <div class="step"><div class="no">2</div><div><h4>Pięć wpięć priorytetu 2</h4><p>Bezpieczniki Daily, kontrolki Ducato, rozrząd Ducato, strony modelowe Forda Transita i Renault Master. Wszystkie jako sama wzmianka, w tempie 3–4 nowych wpięć miesięcznie.</p></div><div class="meta"><em>redakcja BusManiak</em>wrzesień–październik 2026</div></div>
-  <div class="step"><div class="no">3</div><div><h4>Trzy nowe strony</h4><p>Zamienniki a części oryginalne, przewodnik po producentach części do busów oraz tabela typowych usterek z podzespołami. Format tabelaryczny, bo to on generuje u BusManiaka najwięcej cytowań. Tu wchodzi odnośnik – w zestawieniu, w którym każdy producent dostaje link do swojej strony. Po wycofaniu przypisu z czujnika wału pula wynosi znów dwa linki.</p></div><div class="meta"><em>redakcja BusManiak</em>październik 2026</div></div>
+  <div class="step"><div class="no">3</div><div><h4>Trzy nowe strony</h4><p>Zamienniki a części oryginalne, przewodnik po producentach części do busów oraz tabela typowych usterek z podzespołami. Format tabelaryczny, bo to on generuje u BusManiaka najwięcej cytowań. Tu wchodzi drugi i ostatni odnośnik – w zestawieniu, w którym każdy producent dostaje link do swojej strony.</p></div><div class="meta"><em>redakcja BusManiak</em>październik 2026</div></div>
   <div class="step"><div class="no">4</div><div><h4>Pomiar i odczyt kontrolny</h4><p>Stały zestaw promptów odpytywany co miesiąc w ChatGPT, Perplexity i Copilocie. Liczymy wystąpienia „FAST Original” oraz „VanKing”, bo samo „FAST” jest w polskim internecie niemierzalne.</p></div><div class="meta"><em>Mateusz</em>listopad 2026</div></div>
 
   <div class="callout"><b>Miernik ochronny:</b> spadek cytowań BusManiaka poniżej 2 400 oznacza, że komercjalizacja poszła za daleko – wtedy wstrzymujemy kolejne wpięcia i wycofujemy się z odnośników.</div>
@@ -208,6 +208,7 @@
   <ul class="plain">
     <li><b>Kolejność publikacji trzech nowych stron</b> – zestawienie producentów niesie drugi odnośnik, więc warto je wypuścić dopiero po odczycie z wpięć priorytetu 2.</li>
     <li><b>Powrót do strony o czujniku wału korbowego</b> – wzmianka bez odnośnika jest tam nadal uzasadniona, bo czujnik jest częścią eksploatacyjną; wymaga tylko napisania od nowa, obok FEBI.</li>
+    <li><b>Czy pozostałe dwie wzmianki też dostają odnośnik</b> – dziś linkuje wyłącznie strona o kontrolkach Daily. Przy trzech linkach z jednego portalu wzorzec robi się widoczny, więc to decyzja do podjęcia świadomie, nie przy okazji.</li>
     <li><b>Zakres pomiaru</b> – czy monitorujemy wyłącznie prompty o częściach, czy także zapytania o konkretne usterki, na które BusManiak już rankuje.</li>
     <li><b>Serwisy klienta</b> – w tym planie ich nie ruszamy, ale 15 unikalnych stron polskiej wersji i kanibalizacja dwóch ścieżek dla Daily pozostają realnym ograniczeniem po stronie fastoriginal.eu.</li>
   </ul>
