@@ -138,6 +138,22 @@ const timingNotes = [
   },
 ] as const;
 
+const proofKpis = [
+  { value: '2 296', label: 'cytowań w odpowiedziach AI', detail: 'na sześciu platformach generatywnych' },
+  { value: '213', label: 'cytowanych podstron', detail: 'ruch nie opiera się na jednym tekście' },
+  { value: '~480', label: 'pobrań dziennie przez ChatGPT', detail: '3 340 żądań ChatGPT-User w 7 dni' },
+  { value: '4,5', label: 'miesiąca od startu', detail: 'od pierwszej indeksacji do tych wyników' },
+] as const;
+
+const proofPlatforms = [
+  { platform: 'ChatGPT', citations: '716', pages: '213' },
+  { platform: 'Microsoft Copilot', citations: '526', pages: '160' },
+  { platform: 'Perplexity', citations: '510', pages: '139' },
+  { platform: 'Google AI Mode', citations: '260', pages: '108' },
+  { platform: 'Google AI Overviews', citations: '249', pages: '103' },
+  { platform: 'Gemini', citations: '35', pages: '23' },
+] as const;
+
 const faqItems = [
   {
     q: 'Jak pozycjonować stronę w AI?',
@@ -165,7 +181,7 @@ const faqItems = [
   },
   {
     q: 'Ile kosztuje pozycjonowanie AI?',
-    a: 'Wycena zależy od liczby monitorowanych modeli i zapytań, stanu wyjściowego strony oraz tego, ile treści trzeba przebudować. Punktem wyjścia jest audyt widoczności – daje liczbę, od której zaczynamy, i listę prac uszeregowaną według kosztu do efektu. Zakres i budżet ustalamy dopiero na jego podstawie, bo bez pomiaru każda oferta jest zgadywaniem.',
+    a: 'Nie publikujemy cennika – wycena jest indywidualna i ustalamy ją po rozmowie. Zakres zależy od liczby monitorowanych modeli i zapytań, stanu wyjściowego strony oraz tego, ile treści trzeba przebudować. Punktem wyjścia jest audyt widoczności: daje liczbę, od której zaczynamy, i listę prac uszeregowaną według kosztu do efektu. Budżet ustalamy dopiero na jego podstawie, bo bez pomiaru każda oferta jest zgadywaniem.',
   },
 ] as const;
 
@@ -300,6 +316,7 @@ const serviceSchema = {
       <a href="#modele">5 modeli</a>
       <a href="#metodologia">Zakres prac</a>
       <a href="#proces">Przebieg wdrożenia</a>
+      <a href="#dowod">Efekty</a>
       <a href="#decyzja">Od czego zacząć</a>
       <a href="#faq">FAQ</a>
     </div>
@@ -529,12 +546,94 @@ const serviceSchema = {
     </div>
   </section>
 
-  <section id="decyzja" class="pillar-section" aria-labelledby="decision-title">
+  <section id="dowod" class="pillar-section" aria-labelledby="proof-title">
     <div class="content-container">
       <header class="section-head">
         <div class="head-left">
           <div class="head-meta">
             <span class="section-index">P/05</span>
+            <span class="eyebrow">Efekty</span>
+          </div>
+          <h2 id="proof-title" class="display-xl">Jak wygląda to w liczbach na realnym projekcie</h2>
+        </div>
+        <div class="head-right">
+          <p class="subhead">
+            Portal contentowy z branży motoryzacyjnej, zbudowany przez nasz zespół od zera i
+            prowadzony według opisanego wyżej procesu. Nazwy domeny nie podajemy na życzenie
+            klienta – wszystkie liczby pochodzą z narzędzi zewnętrznych i dotyczą pierwszych
+            czterech i pół miesiąca od uruchomienia.
+          </p>
+        </div>
+      </header>
+
+      <dl class="proof-kpi-grid">
+        {
+          proofKpis.map((kpi) => (
+            <div class="proof-kpi">
+              <dd class="proof-kpi-value">{kpi.value}</dd>
+              <dt class="proof-kpi-label">{kpi.label}</dt>
+              <p class="proof-kpi-detail">{kpi.detail}</p>
+            </div>
+          ))
+        }
+      </dl>
+
+      <div class="proof-split">
+        <div
+          class="proof-table"
+          role="table"
+          aria-label="Cytowania portalu w odpowiedziach platform AI"
+        >
+          <div class="proof-row proof-head" role="row">
+            <div role="columnheader">Platforma</div>
+            <div role="columnheader">Cytowania</div>
+            <div role="columnheader">Cytowane podstrony</div>
+          </div>
+          {
+            proofPlatforms.map((row) => (
+              <div class="proof-row" role="row">
+                <div class="proof-platform" role="cell">
+                  <span class="proof-platform-dot" aria-hidden="true" />
+                  <span>{row.platform}</span>
+                </div>
+                <div role="cell" data-label="Cytowania">
+                  {row.citations}
+                </div>
+                <div role="cell" data-label="Cytowane podstrony">
+                  {row.pages}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <aside class="proof-note" aria-label="Jak czytać te liczby">
+          <span class="eyebrow">Jak to czytać</span>
+          <p>
+            Cytowanie to link do serwisu w wygenerowanej odpowiedzi danej platformy dla
+            monitorowanych zapytań. Rozkład potwierdza regułę z tej strony: najwięcej cytowań
+            przynoszą silniki oparte na wyszukiwaniu na żywo, a nie na samej wiedzy z treningu.
+          </p>
+          <p>
+            Osobny sygnał to <strong>ChatGPT-User</strong> – agent uruchamiany wyłącznie wtedy, gdy
+            model pobiera stronę na potrzeby konkretnej rozmowy. 3 340 takich żądań w tygodniu
+            oznacza, że treści serwisu realnie trafiają do odpowiedzi, a nie tylko do indeksu.
+          </p>
+          <p class="proof-source">
+            Źródła: Ahrefs Brand Radar i Cloudflare Analytics, stan na 18–19.08.2026. Widoczność w
+            Google w tym samym okresie: 9 338 pkt Senuto i 1 844 frazy w Top 10.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="decyzja" class="pillar-section" aria-labelledby="decision-title">
+    <div class="content-container">
+      <header class="section-head">
+        <div class="head-left">
+          <div class="head-meta">
+            <span class="section-index">P/06</span>
             <span class="eyebrow">Decyzja</span>
           </div>
           <h2 id="decision-title" class="display-xl">Który model ma największy sens biznesowo?</h2>
@@ -586,7 +685,7 @@ const serviceSchema = {
       <header class="section-head">
         <div class="head-left">
           <div class="head-meta">
-            <span class="section-index">P/06</span>
+            <span class="section-index">P/07</span>
             <span class="eyebrow">FAQ</span>
           </div>
           <h2 id="faq-title" class="display-xl">Najczęstsze pytania o pozycjonowanie AI</h2>
@@ -1426,6 +1525,192 @@ const serviceSchema = {
 
     .timing-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  /* --- Efekty / dowód --- */
+  .proof-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0 0 24px;
+  }
+
+  .proof-kpi {
+    border: 1px solid var(--hairline-soft);
+    border-radius: 24px;
+    padding: 24px;
+    background: var(--bg-surface-1);
+  }
+
+  .proof-kpi-value {
+    color: var(--ink);
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.4vw, 2.7rem);
+    letter-spacing: -2px;
+    line-height: 1;
+    margin: 0 0 12px;
+  }
+
+  .proof-kpi-label {
+    color: var(--ink);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .proof-kpi-detail {
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 6px 0 0;
+  }
+
+  .proof-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .proof-table {
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--bg-surface-1) 72%, transparent), transparent 68%),
+      var(--bg-canvas);
+    box-shadow: var(--shadow-l2);
+    overflow: hidden;
+  }
+
+  .proof-row {
+    display: grid;
+    grid-template-columns: minmax(160px, 1.3fr) minmax(90px, 0.7fr) minmax(120px, 0.9fr);
+  }
+
+  .proof-row + .proof-row {
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .proof-row:not(.proof-head) {
+    background: color-mix(in srgb, var(--bg-surface-1) 54%, transparent);
+  }
+
+  .proof-row > div {
+    color: var(--ink-muted);
+    font-size: 15px;
+    letter-spacing: -0.012em;
+    line-height: 1.45;
+    padding: 16px 22px;
+  }
+
+  .proof-row > div + div {
+    border-left: 1px solid var(--hairline-soft);
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .proof-head {
+    background: color-mix(in srgb, var(--bg-surface-2) 62%, var(--bg-canvas));
+  }
+
+  .proof-head > div {
+    color: var(--ink-faint);
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.045em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .proof-platform {
+    align-items: center;
+    color: var(--ink) !important;
+    display: flex;
+    font-weight: 500;
+    gap: 10px;
+  }
+
+  .proof-platform-dot {
+    background: var(--accent-blue);
+    border-radius: 50%;
+    flex: 0 0 auto;
+    height: 7px;
+    width: 7px;
+  }
+
+  .proof-note {
+    border: 1px solid var(--hairline-soft);
+    border-radius: 24px;
+    padding: 24px;
+    background: var(--bg-surface-1);
+  }
+
+  .proof-note .eyebrow {
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .proof-note p {
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin: 0 0 1em;
+  }
+
+  .proof-note strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .proof-source {
+    color: var(--ink-faint) !important;
+    font-size: 0.82rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  @media (max-width: 1024px) {
+    .proof-kpi-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .proof-split {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .proof-kpi-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .proof-head {
+      display: none;
+    }
+
+    .proof-row {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .proof-row .proof-platform {
+      grid-column: 1 / -1;
+      border-bottom: 1px solid var(--hairline-soft);
+    }
+
+    .proof-row > div + div {
+      border-left: none;
+    }
+
+    .proof-row > div:not(.proof-platform)::before {
+      color: var(--ink-faint);
+      content: attr(data-label);
+      display: block;
+      font-family: ui-monospace, 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+      text-transform: uppercase;
     }
   }
 </style>
