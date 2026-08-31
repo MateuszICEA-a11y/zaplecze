@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import ScrollUpButton from '../components/ScrollUpButton.astro';
 import CTABand from '../components/CTABand.astro';
 import { AI_MODELS } from '../data/aiModels';
+import { faqPageNode } from '../lib/schema';
 
 const services = [
   {
@@ -91,6 +92,83 @@ const decisionRows = [
   },
 ] as const;
 
+const processSteps = [
+  {
+    phase: 'Tydzień 1–2',
+    title: 'Audyt i punkt zerowy',
+    desc: 'Odpytujemy pięć modeli powtarzalnym zestawem promptów z Twojej kategorii i liczymy, w jakim odsetku odpowiedzi pada nazwa Twojej marki. Sprawdzamy też, czy modele opisują firmę zgodnie z prawdą i kto jest polecany zamiast Ciebie. Wynik to liczba, do której wracamy w każdym kolejnym pomiarze.',
+  },
+  {
+    phase: 'Tydzień 2–3',
+    title: 'Dostęp dla botów i encja marki',
+    desc: 'Odblokowanie GPTBota, OAI-SearchBota, ClaudeBota, PerplexityBota i Google-Extended w robots.txt oraz na firewallu, wdrożenie Schema.org Organization i Person z sameAs, uspójnienie danych o firmie w sieci. Bez tego kroku reszta prac nie ma jak zadziałać.',
+  },
+  {
+    phase: 'Tydzień 3–6',
+    title: 'Przebudowa treści pod cytowalność',
+    desc: 'Fakty, liczby i jednoznaczne definicje w pierwszych akapitach, akapity domykane tak, by dało się je wyciąć jako samodzielny cytat, tabele porównawcze i sekcje FAQ. Zaczynamy od stron, które już mają widoczność w Google i Bing – tam efekt przychodzi najszybciej.',
+  },
+  {
+    phase: 'Miesiąc 2–3',
+    title: 'Wzmianki poza własną domeną',
+    desc: 'Modele cytują to, co powtarza się w wielu źródłach. Planujemy obecność w mediach branżowych, katalogach, zestawieniach i materiałach eksperckich – to jedyny kanał, który wpływa na wiedzę zamrożoną w wagach modelu, a nie tylko na wyszukiwanie.',
+  },
+  {
+    phase: 'Od miesiąca 2, stale',
+    title: 'Monitoring i korekta kursu',
+    desc: 'Cotygodniowe pomiary 50–200 zapytań, alerty o ruchach konkurencji i panel z historią widoczności. Co miesiąc porównujemy udział marki w odpowiedziach z punktem zerowym i przenosimy budżet tam, gdzie cytowania rosną najszybciej.',
+  },
+] as const;
+
+const timingNotes = [
+  {
+    label: 'Wyszukiwanie na żywo',
+    value: 'dni',
+    desc: 'ChatGPT Search, Perplexity i Copilot pobierają treść w momencie zapytania – poprawiona strona może zostać zacytowana w ciągu kilku dni od zaindeksowania.',
+  },
+  {
+    label: 'Wiedza z treningu',
+    value: 'miesiące',
+    desc: 'Wzmianki w źródłach zewnętrznych działają dopiero, gdy trafią do kolejnej wersji modelu. To inwestycja liczona w kwartałach, nie tygodniach.',
+  },
+  {
+    label: 'Pierwszy wiarygodny pomiar',
+    value: '4–6 tygodni',
+    desc: 'Wcześniejsze odczyty są zbyt zaszumione – generowanie odpowiedzi jest losowe, więc trend widać dopiero po kilku seriach pomiarów.',
+  },
+] as const;
+
+const faqItems = [
+  {
+    q: 'Jak pozycjonować stronę w AI?',
+    a: 'Pozycjonowanie w AI opiera się na trzech grupach działań. Po pierwsze, dostęp: modele muszą móc pobrać stronę, więc GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot i Google-Extended nie mogą być blokowane. Po drugie, cytowalność: treść musi zawierać fakty, liczby i definicje w pierwszych akapitach oraz dać się wyciąć jako samodzielny fragment. Po trzecie, encja: spójne dane o firmie, Schema.org i wzmianki w źródłach zewnętrznych, z których modele budują wiedzę o marce.',
+  },
+  {
+    q: 'Czym pozycjonowanie AI różni się od klasycznego SEO?',
+    a: 'Klasyczne SEO walczy o pozycję adresu URL w rankingu, pozycjonowanie AI – o wzmiankę lub cytowanie w wygenerowanej odpowiedzi. Jednostką nie jest strona, tylko fragment treści i encja marki. Metryką nie jest pozycja i CTR, tylko udział marki w odpowiedziach (Share of Model) i liczba cytowań. Pozycjonowanie AI nie zastępuje SEO – korzysta z jego fundamentów, czyli indeksacji, szybkości i autorytetu domeny.',
+  },
+  {
+    q: 'Ile trwa, zanim marka zacznie pojawiać się w odpowiedziach AI?',
+    a: 'To zależy od kanału. W trybie z wyszukiwaniem na żywo poprawiona strona może zostać zacytowana w ciągu kilku dni od zaindeksowania w Bing lub Google. Wiedza zamrożona w wagach modelu aktualizuje się dopiero przy kolejnej wersji modelu, więc efekt wzmianek zewnętrznych liczy się w miesiącach. Pierwszy wiarygodny pomiar trendu robimy po 4–6 tygodniach, bo generowanie odpowiedzi jest losowe i pojedynczy odczyt niczego nie dowodzi.',
+  },
+  {
+    q: 'Czy widoczność w AI da się w ogóle zmierzyć?',
+    a: 'Tak, ale nie pojedynczym pytaniem w czacie. Model losuje kolejne tokeny, więc dwa przebiegi tego samego promptu dają różne odpowiedzi. Pomiar polega na powtarzalnym odpytywaniu stałego zestawu zapytań w wielu seriach i liczeniu, w jakim odsetku odpowiedzi pada nazwa marki oraz jak często strona jest cytowana jako źródło. Punkt startowy sprawdzisz sam w narzędziu Widoczność marki w AI, które odpytuje cztery silniki naraz.',
+  },
+  {
+    q: 'Od którego modelu zacząć?',
+    a: 'Od tego, w którym Twoi klienci już zadają pytania. ChatGPT ma najszerszy zasięg i sprawdza się przy zapytaniach poradnikowych i rekomendacyjnych, Perplexity przy branżach wymagających jawnych źródeł (finanse, medycyna, prawo), Gemini przy markach z mocnym SEO w Google, Copilot w segmencie korporacyjnym z pakietem Microsoft 365. Monitoring warto od razu ustawić na wszystkie pięć, żeby porównać koszt treści z realną szansą na cytowanie.',
+  },
+  {
+    q: 'Czy trzeba mieć dobre SEO, żeby AI cytowało markę?',
+    a: 'W trybie z wyszukiwaniem – praktycznie tak, bo modele sięgają po strony z indeksów Bing i Google. Strona niezaindeksowana albo ładująca się zbyt wolno zwykle nie trafia do zestawu pobranych źródeł. Wiedza z treningu działa inaczej: tu liczą się wzmianki w mediach, katalogach i encyklopediach, więc marka może być wymieniana przez model nawet bez wysokich pozycji w Google.',
+  },
+  {
+    q: 'Ile kosztuje pozycjonowanie AI?',
+    a: 'Wycena zależy od liczby monitorowanych modeli i zapytań, stanu wyjściowego strony oraz tego, ile treści trzeba przebudować. Punktem wyjścia jest audyt widoczności – daje liczbę, od której zaczynamy, i listę prac uszeregowaną według kosztu do efektu. Zakres i budżet ustalamy dopiero na jego podstawie, bo bez pomiaru każda oferta jest zgadywaniem.',
+  },
+] as const;
+
 const siteUrl = 'https://widocznosc.ai';
 const pageUrl = `${siteUrl}/pozycjonowanie-ai/`;
 const pageDescription =
@@ -165,6 +243,7 @@ const serviceSchema = {
         })),
       },
     },
+    faqPageNode([...faqItems], pageUrl),
   ],
 };
 ---
@@ -215,8 +294,19 @@ const serviceSchema = {
   </section>
 
 
+  <nav class="service-toc" aria-label="Spis treści strony">
+    <div class="content-container service-toc-inner">
+      <a href="#definicja">Czym jest</a>
+      <a href="#modele">5 modeli</a>
+      <a href="#metodologia">Zakres prac</a>
+      <a href="#proces">Przebieg wdrożenia</a>
+      <a href="#decyzja">Od czego zacząć</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </nav>
+
   <!-- Definicja – pozycjonowanie pod LLM -->
-  <section class="pillar-section" aria-labelledby="llm-title">
+  <section id="definicja" class="pillar-section" aria-labelledby="llm-title">
     <div class="content-container">
       <header class="section-head">
         <div class="head-left">
@@ -288,7 +378,7 @@ const serviceSchema = {
   </section>
 
   <!-- 5 modeli AI – grid z linkami do podstron -->
-  <section class="pillar-section" aria-labelledby="models-title">
+  <section id="modele" class="pillar-section" aria-labelledby="models-title">
     <div class="content-container">
       <header class="section-head">
         <div class="head-left">
@@ -343,7 +433,7 @@ const serviceSchema = {
   </section>
 
   <!-- Metodologia – 4 services condensed -->
-  <section class="pillar-section" aria-labelledby="method-title">
+  <section id="metodologia" class="pillar-section" aria-labelledby="method-title">
     <div class="content-container">
       <header class="section-head">
         <div class="head-left">
@@ -389,12 +479,62 @@ const serviceSchema = {
     </div>
   </section>
 
-  <section class="pillar-section" aria-labelledby="decision-title">
+  <section id="proces" class="pillar-section" aria-labelledby="process-title">
     <div class="content-container">
       <header class="section-head">
         <div class="head-left">
           <div class="head-meta">
             <span class="section-index">P/04</span>
+            <span class="eyebrow">Przebieg</span>
+          </div>
+          <h2 id="process-title" class="display-xl">Jak wygląda wdrożenie krok po kroku</h2>
+        </div>
+        <div class="head-right">
+          <p class="subhead">
+            Cztery filary opisują, co robimy. Poniżej kolejność, w jakiej to robimy, i moment, w
+            którym widać pierwsze efekty. Harmonogram dotyczy typowego projektu – przy dużych
+            serwisach etap treści rozkłada się na dłużej.
+          </p>
+        </div>
+      </header>
+
+      <ol class="process-list">
+        {
+          processSteps.map((step, i) => (
+            <li class="process-step">
+              <div class="process-step-meta">
+                <span class="process-step-num">0{i + 1}</span>
+                <span class="process-step-phase">{step.phase}</span>
+              </div>
+              <div class="process-step-body">
+                <h3 class="process-step-title">{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="timing-grid">
+        {
+          timingNotes.map((note) => (
+            <div class="timing-card">
+              <span class="eyebrow">{note.label}</span>
+              <strong class="timing-value">{note.value}</strong>
+              <p>{note.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="decyzja" class="pillar-section" aria-labelledby="decision-title">
+    <div class="content-container">
+      <header class="section-head">
+        <div class="head-left">
+          <div class="head-meta">
+            <span class="section-index">P/05</span>
             <span class="eyebrow">Decyzja</span>
           </div>
           <h2 id="decision-title" class="display-xl">Który model ma największy sens biznesowo?</h2>
@@ -435,6 +575,42 @@ const serviceSchema = {
                 {row.roi}
               </div>
             </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="pillar-section" aria-labelledby="faq-title">
+    <div class="content-container">
+      <header class="section-head">
+        <div class="head-left">
+          <div class="head-meta">
+            <span class="section-index">P/06</span>
+            <span class="eyebrow">FAQ</span>
+          </div>
+          <h2 id="faq-title" class="display-xl">Najczęstsze pytania o pozycjonowanie AI</h2>
+        </div>
+        <div class="head-right">
+          <p class="subhead">
+            Te odpowiedzi są jednocześnie treścią dla czytelnika i materiałem dla wyszukiwarek AI,
+            dlatego strona publikuje je również jako dane strukturalne FAQPage.
+          </p>
+        </div>
+      </header>
+
+      <div class="faq-stack">
+        {
+          faqItems.map((item) => (
+            <details class="faq-row group">
+              <summary class="faq-summary">
+                <span class="faq-question">{item.q}</span>
+                <span class="faq-plus" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+              <p class="faq-answer">{item.a}</p>
+            </details>
           ))
         }
       </div>
@@ -1030,6 +1206,226 @@ const serviceSchema = {
 
     .decision-model span:last-child {
       padding: 6px 10px;
+    }
+  }
+
+  /* --- Spis treści (spójny z podstronami modeli) --- */
+  .service-toc {
+    position: sticky;
+    top: 64px;
+    z-index: 20;
+    border-bottom: 1px solid var(--hairline-soft);
+    background: color-mix(in srgb, var(--bg-canvas) 86%, transparent);
+    backdrop-filter: blur(16px);
+  }
+
+  .service-toc-inner {
+    display: flex;
+    gap: 0.55rem;
+    overflow-x: auto;
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .service-toc a {
+    flex: 0 0 auto;
+    color: var(--ink-muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .service-toc a:hover {
+    color: var(--ink);
+  }
+
+  /* --- Przebieg wdrożenia --- */
+  .process-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 40px;
+    padding: 28px 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .process-step:last-child {
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .process-step-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  .process-step-num {
+    color: var(--accent-blue);
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .process-step-phase {
+    color: var(--ink-faint);
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .process-step-title {
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    margin: 0 0 0.5em;
+  }
+
+  .process-step-body p {
+    color: var(--ink-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .timing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .timing-card {
+    border: 1px solid var(--hairline-soft);
+    border-radius: 24px;
+    padding: 24px;
+    background: var(--bg-surface-1);
+  }
+
+  .timing-card .eyebrow {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .timing-value {
+    color: var(--ink);
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .timing-card p {
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* --- FAQ --- */
+  .faq-stack {
+    display: grid;
+    gap: 12px;
+    max-width: 900px;
+  }
+
+  .faq-stack .faq-row {
+    --card-accent: var(--accent-blue);
+    border: 1px solid var(--hairline-soft);
+    background:
+      radial-gradient(
+        circle at 12% 0%,
+        color-mix(in srgb, var(--card-accent) 12%, transparent) 0%,
+        transparent 34%
+      ),
+      var(--bg-surface-1);
+  }
+
+  .faq-stack .faq-row:nth-child(2) {
+    --card-accent: #4ade80;
+  }
+
+  .faq-stack .faq-row:nth-child(3) {
+    --card-accent: #fbbf24;
+  }
+
+  .faq-stack .faq-row:nth-child(4) {
+    --card-accent: #a78bfa;
+  }
+
+  :global(:root[data-theme='light']) .faq-stack .faq-row:nth-child(2) {
+    --card-accent: #16a34a;
+  }
+
+  :global(:root[data-theme='light']) .faq-stack .faq-row:nth-child(3) {
+    --card-accent: #d97706;
+  }
+
+  :global(:root[data-theme='light']) .faq-stack .faq-row:nth-child(4) {
+    --card-accent: #7c3aed;
+  }
+
+  .faq-summary {
+    align-items: flex-start;
+    cursor: pointer;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question {
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+  }
+
+  .faq-plus {
+    color: var(--ink-muted);
+    flex: 0 0 auto;
+    font-size: 1.35rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-row[open] .faq-plus {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin: 1rem 0 0;
+    max-width: 68ch;
+  }
+
+  @media (max-width: 900px) {
+    .process-step {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .timing-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
