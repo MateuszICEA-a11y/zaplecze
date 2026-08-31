@@ -147,7 +147,7 @@ AI Act to nie tylko kary za naruszenia. To także ramy prawne, które wymuszają
 
 Polska przygotowuje przepisy wdrażające AI Act za pośrednictwem Ministerstwa Cyfryzacji. W toku konsultacji 110 podmiotów zgłosiło ponad 2000 uwag. Rynek oczekuje powołania niezależnej Komisji Rozwoju i Bezpieczeństwa Sztucznej Inteligencji jako głównego organu kontrolnego. Śledzenie tego procesu jest kluczowe, jeśli budujesz systemy w kategorii wysokiego ryzyka.
 
-Jeśli budujesz lub optymalizujesz content marketing z elementami AI, warto równolegle zadbać o widoczność marki w odpowiedziach modeli językowych (LLM). Szczegółową metodologię opisuje [przewodnik po pozycjonowaniu w AI (AIO)](/pozycjonowanie-ai/). To naturalne rozszerzenie każdej strategii biznesowej.
+Jeśli budujesz lub optymalizujesz content marketing z elementami AI, warto równolegle zadbać o widoczność marki w odpowiedziach modeli językowych (LLM). Zakres prac i metodykę opisuje strona [pozycjonowania w AI (AIO)](/pozycjonowanie-ai/). To naturalne rozszerzenie każdej strategii biznesowej.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
