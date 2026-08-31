@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BusManiak.pl – trzy nowe strony i zamknięcie priorytetu 1</title>
+<style>
+  @font-face { font-family: "Roobert"; font-weight: 400; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Regular.otf"); }
+  @font-face { font-family: "Roobert"; font-weight: 500; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Medium.otf"); }
+  :root { --midnight:#000623; --blue:#5768ff; --orange:#f6704c; --off:#f9f9f9; --soft:rgba(0,6,35,.66); --line:rgba(0,6,35,.14); --blue-soft:rgba(87,104,255,.10); }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--midnight); background:var(--off); font-family:"Roobert",Arial,sans-serif; font-size:16px; line-height:1.5; }
+  h1,h2,h3,h4 { font-weight:500; margin:0 0 .4em; line-height:1.15; }
+  h1 { font-size:clamp(36px,5vw,56px); line-height:1.1; }
+  h2 { font-size:clamp(28px,3.4vw,40px); }
+  h3 { font-size:22px; }
+  h4 { font-size:17px; margin-bottom:.2em; }
+  p, li { color:var(--midnight); }
+  .wrap { width:min(calc(100% - 48px),1280px); margin-inline:auto; }
+  .narrow { max-width:760px; }
+  .bar { position:sticky; top:0; z-index:10; background:rgba(249,249,249,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+  .bar-in { display:flex; align-items:center; gap:24px; min-height:64px; }
+  .bar strong { font-weight:500; }
+  .bar .sp { flex:1; }
+  .btn { min-height:40px; padding:8px 14px; border:1px solid var(--midnight); border-radius:3px; background:transparent; color:var(--midnight); font:inherit; cursor:pointer; }
+  .logo { display:block; height:28px; width:auto; color:var(--off); margin-bottom:28px; }
+  .bar .logo { height:20px; margin:0; color:var(--midnight); }
+  .hero { background:var(--midnight); color:var(--off); padding:72px 0 56px; }
+  .hero p { color:rgba(249,249,249,.72); max-width:900px; }
+  .hero .lbl { color:var(--blue); font-weight:500; margin-bottom:14px; }
+  .hero h1 { max-width:1100px; }
+  .hero .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:40px; border:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div { padding:18px 20px; border-left:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div:first-child { border-left:0; }
+  .hero .kpis b { display:block; font-size:34px; font-weight:500; line-height:1.1; color:var(--off); }
+  .hero .kpis span { font-size:13px; color:rgba(249,249,249,.72); }
+  section.sec { padding:56px 0; border-top:1px solid var(--line); }
+  .lead { font-size:18px; color:var(--soft); }
+  .summary { background:#fff; border:1px solid var(--line); padding:28px; }
+  .summary ol { margin:0; padding-left:20px; }
+  .summary li { margin:8px 0; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin:12px 0 28px; background:#fff; }
+  th { background:var(--midnight); color:var(--off); text-align:left; padding:10px 12px; font-weight:400; font-size:12px; }
+  td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  td.num, th.num { text-align:right; white-space:nowrap; }
+  tr.sum td { font-weight:500; border-top:2px solid var(--midnight); }
+  tr.sub td { background:var(--blue-soft); font-weight:500; }
+  .tag { display:inline-block; padding:1px 8px; border:1px solid var(--midnight); border-radius:3px; font-size:12px; white-space:nowrap; }
+  .tag.ok { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:500; }
+  .tag.no { background:var(--midnight); color:var(--off); }
+  .tag.kb { border-color:var(--blue); background:var(--blue-soft); color:var(--midnight); }
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); margin:20px 0; }
+  .card { padding:22px; border-left:1px solid var(--line); background:#fff; }
+  .card:first-child { border-left:0; }
+  .card p { font-size:14px; color:var(--soft); margin:6px 0 0; }
+  .card .n { display:block; font-size:30px; font-weight:500; color:var(--blue); line-height:1.1; margin-bottom:6px; }
+  .card.dark { background:var(--midnight); color:var(--off); }
+  .card.dark h4, .card.dark p { color:var(--off); }
+  .card.dark p { opacity:.75; }
+  .callout { border-left:4px solid var(--orange); background:#fff; padding:16px 20px; margin:20px 0; }
+  .callout b { font-weight:500; }
+  .callout.blue { border-left-color:var(--blue); }
+  .step { display:grid; grid-template-columns:56px minmax(0,1fr) 220px; gap:20px; padding:20px 0; border-top:1px solid var(--line); }
+  .step:first-of-type { border-top:0; }
+  .step .no { font-size:30px; font-weight:500; color:var(--blue); line-height:1; }
+  .step .meta { font-size:13px; color:var(--soft); }
+  .step .meta em { display:block; font-style:normal; color:var(--midnight); font-weight:500; }
+  .step p { margin:4px 0 0; font-size:15px; }
+  ul.plain { padding-left:20px; }
+  .sm { font-size:13px; color:var(--soft); }
+  code { padding:1px 5px; background:var(--blue-soft); font-family:ui-monospace,Consolas,monospace; font-size:.9em; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+  @media (max-width:1000px) { .hero .kpis, .cards, .two { grid-template-columns:1fr; } .card { border-left:0; border-top:1px solid var(--line); } .hero .kpis div { border-left:0; border-top:1px solid rgba(249,249,249,.18); } .step { grid-template-columns:44px 1fr; } .step .meta { grid-column:2; } }
+
+
+  @media print { .bar { display:none; } body { background:#fff; } table, .step, .callout { break-inside:avoid; } }
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap bar-in"><strong>BusManiak.pl · marka FAST</strong><span class="sm">stan 31.08.2026 · wszystko na produkcji</span><span class="sp"></span><button class="btn" onclick="pobierzMd()">Pobierz .md</button><button class="btn" onclick="print()">Drukuj / PDF</button></div></div>
+
+<header class="hero"><div class="wrap">
+  <svg class="logo" role="img" aria-label="iCEA" height="34" viewBox="0 0 186 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1437_16974)">
+<path d="M0 0.350281H10.1556V39.9221H0V0.350281Z" fill="currentColor"/>
+<path d="M0 0.332703H10.3132V10.3132H0V0.332703Z" fill="currentColor"/>
+<path d="M60.02 15.2941C60.0224 14.7134 59.9095 14.0459 59.6885 13.5089C59.4666 12.9525 59.1277 12.4502 58.6948 12.0363C58.2259 11.597 57.6761 11.2531 57.0759 11.024C56.3653 10.7539 55.6096 10.6227 54.8496 10.6375H32.5857C31.8231 10.6321 31.0669 10.7759 30.3594 11.0608C29.6719 11.3233 29.0457 11.7244 28.5194 12.239C27.988 12.7588 27.5736 13.3864 27.3048 14.0795C27.0215 14.8005 26.878 15.5687 26.8816 16.3434V23.8709C26.8762 24.6338 27.02 25.3907 27.3048 26.0983C27.5715 26.7926 27.9862 27.4206 28.5194 27.9389C29.0457 28.4534 29.6719 28.8542 30.3594 29.1166C31.0669 29.4015 31.8231 29.5453 32.5857 29.5399H54.8496C55.5218 29.5343 56.1859 29.3902 56.8 29.1166C57.4068 28.8701 57.9667 28.5214 58.4558 28.0858C58.919 27.6414 59.2988 27.1181 59.578 26.5401C59.8646 25.9686 60.0161 25.3388 60.02 24.6995H70.3977V25.8036C70.3931 27.5456 70.0748 29.2725 69.4588 30.9019C68.8633 32.5559 67.9852 34.0941 66.8642 35.448C65.7437 36.7864 64.3681 37.8877 62.8168 38.6874C61.2029 39.5223 59.4083 39.9462 57.5916 39.9208H28.851C27.2077 39.9324 25.5793 39.6067 24.0669 38.9637C21.0933 37.7309 18.731 35.3674 17.4985 32.3929C16.8558 30.88 16.5301 29.2511 16.5417 27.6073V12.6623C16.5245 11.0061 16.8503 9.36398 17.4985 7.83985C18.1286 6.38862 19.0199 5.06614 20.1291 3.93813C21.2638 2.82016 22.6001 1.92724 24.0669 1.30628C25.5793 0.663348 27.2077 0.33757 28.851 0.349158H57.5916C59.4083 0.323811 61.2029 0.747248 62.8168 1.58218C64.3633 2.38137 65.7379 3.47558 66.8642 4.80313C67.9841 6.12368 68.8626 7.63134 69.4588 9.2571C70.0709 10.83 70.3894 12.5023 70.3977 14.1901V15.2941L60.02 15.2941Z" fill="currentColor"/>
+<path d="M181.349 39.8294H169.444L165.322 33.0743H137.116L133.049 39.8294H121.071L144.53 0.257751H157.889L181.349 39.8294ZM150.51 10.6382L143.15 22.6754H159.416L151.946 10.6382H150.51Z" fill="currentColor"/>
+<path d="M113.178 29.6704H77.8135V39.8302H113.178V29.6704Z" fill="currentColor"/>
+<path d="M119.029 15.092H77.8135V24.7364H119.029V15.092Z" fill="currentColor"/>
+<path d="M129.774 0.240967H77.8135V10.4008H129.774V0.240967Z" fill="currentColor"/>
+<path d="M176.914 0V1.49095H173.859V5.66902H172.369V1.49095H169.443V0H176.914Z" fill="currentColor"/>
+<path d="M185.69 0V5.66902H184.218V2.28226L181.716 5.66902L179.231 2.30068V5.66902H177.741V0H179.471L181.771 3.09244L184.071 0H185.69Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_1437_16974">
+<rect width="185.69" height="40" fill="currentColor"/>
+</clipPath>
+</defs>
+</svg>
+  <p class="lbl">Zaplecze contentowe · Raport z sesji · Wdrożone</p>
+  <h1>Priorytet 1 zamknięty w całości, pula dwóch odnośników wyczerpana</h1>
+  <p>Powstały trzy nowe strony w sekcji serwisowej BusManiaka, wszystkie oparte na tabelach, bo to one generują u tego portalu najwięcej cytowań w wyszukiwarkach AI. Drugi i ostatni odnośnik ze strategii wszedł w zestawieniu producentów części. Dołożyliśmy też pierwszą paczkę priorytetu 2 – trzy wzmianki bez odnośnika.</p>
+  <div class="kpis">
+    <div><b>3</b><span>nowe strony na produkcji</span></div>
+    <div><b>6</b><span>wzmianek o marce w tej sesji</span></div>
+    <div><b>2 / 2</b><span>odnośniki wykorzystane</span></div>
+    <div><b>0</b><span>zdań oceniających markę</span></div>
+  </div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <h2>Co zostało zrobione</h2>
+  <div class="summary"><ol>
+    <li><b>Trzy nowe strony zamykają priorytet 1.</b> Zamienniki a części oryginalne, tabela typowych usterek oraz przewodnik po producentach części. Wszystkie w sekcji <code>/serwis/</code>, każda w formacie tabelarycznym.</li>
+    <li><b>Drugi odnośnik wszedł w zestawieniu producentów.</b> Nazwa FAST prowadzi do fastoriginal.eu linkiem follow. Limit dwóch odnośników z całej strategii jest tym samym wyczerpany – kolejne wpięcia idą wyłącznie jako wzmianka.</li>
+    <li><b>Zestaw priorytetu 2 został zmieniony.</b> Trzy zaplanowane strony dublowały konteksty priorytetu 1 na tych samych modelach i podzespołach. Zamiast nich wzmianki trafiły na Forda Transita, Renault Mastera i stronę o serwisie klimatyzacji.</li>
+    <li><b>Pokrycie katalogowe sprawdzane przed każdym wpięciem.</b> To wniosek z wycofanego wpięcia o czujniku wału. Osuszacz i parownik klimatyzacji wypadły z treści, bo obecności tych pozycji w katalogu marki nie dało się potwierdzić.</li>
+    <li><b>Klaster jest treścią pod cytowania, nie pod ruch.</b> Frazy porównawcze mają w Polsce 0–30 wyszukań miesięcznie. Realny popyt siedzi w zapytaniach objawowych i kosztowych, i pod nie zbudowana jest strona o usterkach.</li>
+  </ol></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Trzy nowe strony</h2>
+  <p class="lead">Każda strona ma osobny commit i jest już widoczna pod swoim adresem. Kolumna z odnośnikiem pokazuje, czy strona zużyła pozycję z puli dwóch linków wychodzących.</p>
+  <table>
+    <tr><th>Adres i temat</th><th>Co zawiera</th><th>Wzmianka o marce</th><th>Odnośnik</th></tr>
+    <tr>
+      <td><code>/serwis/zamienniki-czy-oryginaly/</code><br><span class="sm">Zamienniki czy oryginały – co się opłaca w busie</span></td>
+      <td>Tabela klas jakości O, Q, P, PJ, PC i PT stosowanych w kosztorysach Audatex i Eurotax; widełki cenowe dla siedmiu podzespołów; numery zamienne dla filtra OE 2995655</td>
+      <td>obok FEBI Bilstein i MEYLE</td>
+      <td><span class="tag no">bez linku</span></td>
+    </tr>
+    <tr>
+      <td><code>/serwis/typowe-usterki-busow/</code><br><span class="sm">Typowe usterki busów – od objawu do podzespołu</span></td>
+      <td>Tabela czternastu objawów z przypisanym podzespołem i pierwszym krokiem diagnostycznym; koszty napraw ze stawkami robocizny; przebiegi awarii dla Ducato, Daily i Sprintera</td>
+      <td>obok FEBI Bilstein i MEYLE</td>
+      <td><span class="tag no">bez linku</span></td>
+    </tr>
+    <tr>
+      <td><code>/serwis/producenci-czesci-do-busow/</code><br><span class="sm">Producenci części do busów – kto co robi i do kogo należy</span></td>
+      <td>Tabela dziewiętnastu marek z grupami kapitałowymi i specjalizacjami; podział marek według układów pojazdu; norma IATF 16949</td>
+      <td>w tabeli i w akapicie o rynku wtórnym</td>
+      <td><span class="tag ok">follow, drugi z dwóch</span></td>
+    </tr>
+  </table>
+  <div class="cards">
+    <div class="card"><span class="n">14</span><h4>Objawów w tabeli usterek</h4><p>Od klekotu dwumasy przy odpalaniu po wycie pompy wspomagania. Każdy objaw ma przypisany podzespół i pierwszy krok diagnostyczny.</p></div>
+    <div class="card"><span class="n">19</span><h4>Marek w zestawieniu producentów</h4><p>Z przypisaną grupą kapitałową i informacją, czy marka dostarcza na pierwszy montaż. TRW i Sachs należą do ZF, Filtron i Mann-Filter do MANN+HUMMEL.</p></div>
+    <div class="card dark"><span class="n">6</span><h4>Klas jakości części</h4><p>O, Q, P oraz warianty PJ, PC i PT. Klasa wpływa wprost na kwotę w kosztorysie ubezpieczyciela, co da się wykorzystać przy szkodzie z OC.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Priorytet 2 – pierwsza paczka trzech wzmianek</h2>
+  <div class="two">
+    <div>
+      <p class="lead">Raport z 30 sierpnia wskazywał bezpieczniki Daily, kontrolki Ducato i rozrząd Ducato. Wszystkie trzy okazały się kolidować z wpięciami priorytetu 1 – ta sama marka trafiłaby przy tym samym podzespole tego samego modelu, na sąsiedniej stronie.</p>
+      <div class="callout"><b>Ryzyko, które to zdjęło:</b> zagęszczenie marki wokół dwóch modeli i jednego układu jest łatwe do odczytania jako schemat zaplecza. To dokładnie ten wzorzec, przed którym ostrzega strategia.</div>
+      <div class="callout blue"><b>Decyzja Mateusza:</b> rozproszyć wpięcia po innych modelach i układach. Zamiast Daily i Ducato weszły Ford Transit, Renault Master i serwis klimatyzacji.</div>
+    </div>
+    <div>
+      <table>
+        <tr><th>Strona</th><th>Kontekst wzmianki</th><th>Marki obok</th></tr>
+        <tr><td><code>/modele/ford-transit/</code></td><td>zawieszenie i hamulce</td><td>FEBI, MEYLE</td></tr>
+        <tr><td><code>/modele/renault-master/</code></td><td>zawieszenie przednie</td><td>Sasic, MEYLE</td></tr>
+        <tr><td><code>/serwis/serwis-klimatyzacji/</code></td><td>objawy awarii sprężarki</td><td>Valeo, Denso</td></tr>
+      </table>
+      <p class="sm">Żadna z trzech wzmianek nie zawiera odnośnika. Każda niesie jeden fakt o marce i występuje dokładnie raz na stronie.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Czego świadomie nie użyliśmy</h2>
+  <p class="lead">Dane sprawdzane były w drugim przebiegu, osobno od pisania. Poniżej pozycje, które wypadły z treści mimo że pojawiły się w materiale źródłowym.</p>
+  <table>
+    <tr><th>Fakt lub teza</th><th>Decyzja</th><th>Powód</th></tr>
+    <tr><td>Purflux jako dostawca pierwszego montażu do grupy Stellantis</td><td><span class="tag no">odrzucone</span></td><td>niepotwierdzone; marka została wyłącznie w tabeli numerów zamiennych, gdzie jej numer katalogowy jest sprawdzalny</td></tr>
+    <tr><td>Teza, że wersje 3,0 t i 3,5 t zawsze mają inne hamulce</td><td><span class="tag kb">→ przeformułowane</span></td><td>o rozmiarze tarcz decyduje odmiana Light albo Maxi, nie samo DMC; w treści są konkretne wymiary 280×28 i 300×32 mm</td></tr>
+    <tr><td>Ceny napraw dla ośmiu z dwunastu pozycji</td><td><span class="tag no">odrzucone</span></td><td>brak potwierdzenia; strona mówi wprost, że dla pozostałych pozycji koszt zależy od modelu, zamiast podawać zmyślone widełki</td></tr>
+    <tr><td>Typowe usterki Forda Transita 2.2 TDCi i Renault Mastera 2.3 dCi</td><td><span class="tag no">odrzucone</span></td><td>brak powtarzalnych przebiegów w źródłach; sekcja modelowa objęła tylko Ducato, Daily i Sprintera</td></tr>
+    <tr><td>Osuszacz i parownik klimatyzacji w katalogu marki</td><td><span class="tag no">odrzucone</span></td><td>niepotwierdzone; wzmianka wymienia wyłącznie sprężarkę, skraplacz i przewody</td></tr>
+    <tr><td>Opinie przypisane użytkownikom i mechanikom</td><td><span class="tag no">odrzucone</span></td><td>model dopisał je sam, bez źródła; zastąpione faktami katalogowymi</td></tr>
+    <tr><td>Zdanie o zachowaniu balansu między trwałością a ceną przy wyborze dostawcy</td><td><span class="tag no">odrzucone</span></td><td>zdanie oceniające przy wzmiance o marce, wykluczone przez strategię</td></tr>
+  </table>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Co pokazał research fraz</h2>
+  <div class="two">
+    <div>
+      <p class="lead">Klaster porównawczy praktycznie nie ma wolumenu w polskim Google. Zapytania, na które ludzie faktycznie szukają, dotyczą objawów i kosztów konkretnej naprawy – i to one wyznaczyły strukturę strony o usterkach.</p>
+      <p>Wyszukiwarka na frazę o częściach oryginalnych i zamiennikach zwraca w Polsce wyłącznie serwisy odszkodowawcze i ubezpieczeniowe. Pod kątem busów tego tematu nie pisze nikt, więc trzy nowe strony wchodzą w niezajęte miejsce.</p>
+      <div class="callout blue"><b>Wniosek:</b> te strony mierzymy cytowaniami w wyszukiwarkach AI, nie ruchem organicznym. Miernik ochronny pozostaje bez zmian – spadek cytowań BusManiaka poniżej 2 400 oznacza wstrzymanie kolejnych wpięć.</div>
+    </div>
+    <div>
+      <table>
+        <tr><th>Fraza</th><th class="num">Wyszukań miesięcznie</th></tr>
+        <tr class="sub"><td colspan="2">Zapytania objawowe i kosztowe</td></tr>
+        <tr><td>wymiana sprzęgła koszt</td><td class="num">6 600</td></tr>
+        <tr><td>sonda lambda objawy</td><td class="num">2 400</td></tr>
+        <tr><td>dwumasa objawy</td><td class="num">1 600</td></tr>
+        <tr><td>zapchany DPF objawy</td><td class="num">880</td></tr>
+        <tr><td>regeneracja turbiny cena</td><td class="num">880</td></tr>
+        <tr><td>czujnik położenia wału objawy</td><td class="num">880</td></tr>
+        <tr class="sub"><td colspan="2">Zapytania porównawcze i o marki</td></tr>
+        <tr><td>producenci części samochodowych</td><td class="num">320</td></tr>
+        <tr><td>FEBI Bilstein opinie</td><td class="num">320</td></tr>
+        <tr><td>części do busów</td><td class="num">110</td></tr>
+        <tr><td>części oryginalne czy zamienniki</td><td class="num">0</td></tr>
+        <tr><td>typowe usterki busów</td><td class="num">0</td></tr>
+      </table>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Plan</h2>
+  <div class="step"><div class="no">1</div><div><h4>Druga paczka priorytetu 2 – dwie wzmianki</h4><p>Zostały dwie pozycje z puli pięciu. Konteksty trzeba dobrać poza Ducato i Daily albo zmienić kąt na inną kategorię katalogu niż wykorzystana wcześniej. Wszystkie wpięcia bez odnośnika.</p></div><div class="meta"><em>redakcja BusManiak</em>wrzesień 2026</div></div>
+  <div class="step"><div class="no">2</div><div><h4>Pomiar i odczyt kontrolny</h4><p>Stały zestaw promptów odpytywany co miesiąc w ChatGPT, Perplexity i Copilocie. Liczymy wystąpienia nazw FAST Original oraz VanKing, bo samo słowo FAST jest w polskim internecie niemierzalne.</p></div><div class="meta"><em>Mateusz</em>listopad 2026</div></div>
+  <div class="step"><div class="no">3</div><div><h4>Sprawdzenie, czy nowe strony są cytowane</h4><p>Trzy nowe adresy warto odpytać osobno – tabele klas jakości i objawów to najbardziej cytowalny materiał, jaki na tym portalu do tej pory powstał. Odczyt po indeksacji, nie wcześniej niż miesiąc od publikacji.</p></div><div class="meta"><em>Mateusz</em>październik 2026</div></div>
+  <h3 style="margin-top:40px">Do rozstrzygnięcia w kolejnym etapie</h3>
+  <ul class="plain">
+    <li><b>Konteksty dla dwóch ostatnich wpięć priorytetu 2</b> – bezpieczniki Daily, kontrolki Ducato i rozrząd Ducato pozostają wolne, ale każde wymaga zmiany kąta, żeby nie powtórzyć wpięcia z priorytetu 1 na tym samym podzespole.</li>
+    <li><b>Linkowanie pozostałych producentów w zestawieniu</b> – dziś linkowana jest wyłącznie jedna marka, pozostałe osiemnaście występuje jako same nazwy. Gdyby wracać do tematu, adresy wszystkich osiemnastu są sprawdzone i działają.</li>
+    <li><b>Powrót do strony o czujniku wału korbowego</b> – wzmianka bez odnośnika jest tam nadal uzasadniona, bo czujnik jest częścią eksploatacyjną. Wymaga napisania od nowa, obok dwóch innych marek.</li>
+    <li><b>Serwisy klienta</b> – piętnaście unikalnych stron polskiej wersji i kanibalizacja dwóch ścieżek dla Daily pozostają ograniczeniem po stronie fastoriginal.eu. W tym planie ich nie ruszamy.</li>
+  </ul>
+</div></section>
+<script>
+function pobierzMd(){
+  const t=(el)=>el.textContent.replace(/\s+/g,' ').trim();
+  const inline=(el)=>{let o='';el.childNodes.forEach(n=>{if(n.nodeType===3)o+=n.textContent.replace(/\s+/g,' ');else if(n.tagName==='B'||n.tagName==='STRONG')o+='**'+inline(n).trim()+'**';else if(n.tagName==='CODE')o+='`'+t(n)+'`';else if(n.tagName==='BR')o+='\n';else o+=inline(n);});return o;};
+  const table=(tb)=>{const rows=[...tb.querySelectorAll('tr')];let out=[];rows.forEach((r,i)=>{const cells=[...r.children];const isHead=cells[0].tagName==='TH';if(cells.length===1&&cells[0].colSpan>1){out.push('| **'+t(cells[0])+'** |'+' |'.repeat(0));return;}
+    out.push('| '+cells.map(c=>t(c).replace(/\|/g,'\\|')).join(' | ')+' |');if(isHead)out.push('|'+cells.map(()=>' --- ').join('|')+'|');});return out.join('\n');};
+  const lsp=(box)=>{let o=[];box.querySelectorAll('.sec').forEach(sec=>{o.push('### '+t(sec.querySelector('h4')).replace(/NOWA SEKCJA/,'(nowa sekcja)'));const h=sec.querySelector('.hint');if(h)o.push('_'+t(h)+'_');
+    sec.querySelectorAll('.f').forEach(f=>{const l=f.querySelector('label');const v=f.querySelector('.in,.ta,.sel,.tg');if(!l||!v)return;const lab=t(l).replace(/\*/,'').replace(/NOWE/,'(nowe)').trim();let val=t(v).replace(/⌄$/,'').trim();if(v.classList.contains('empty'))val='— ('+val+')';o.push('- **'+lab+'**: '+val);});
+    sec.querySelectorAll('.sl').forEach(sl=>o.push('- **'+t(sl.querySelector('b'))+'** ('+t(sl.querySelector('small'))+'): '+t(sl.querySelector('.val'))));
+    const cond=sec.querySelector('.cond');if(cond){o.push('- **'+t(cond.querySelector('.ph')).replace(/NOWE/,'(nowe)')+'**');cond.querySelectorAll('.tg').forEach(g=>o.push('  - '+(g.classList.contains('on')?'[x] ':'[ ] ')+t(g)));}
+    o.push('');});return o.join('\n');};
+  let md=[];
+  md.push('# '+t(document.querySelector('h1')));md.push('');md.push('_'+t(document.querySelector('.hero .lbl'))+' · '+t(document.querySelector('.bar .sm'))+'_');md.push('');
+  document.querySelectorAll('.hero p:not(.lbl)').forEach(p=>{md.push(inline(p).trim());md.push('');});
+  document.querySelectorAll('.hero .kpis div').forEach(d=>md.push('- **'+t(d.querySelector('b'))+'** '+t(d.querySelector('span'))));md.push('');
+  document.querySelectorAll('section.sec').forEach(sec=>{
+    [...sec.querySelector('.wrap').children].forEach(walk);
+    function walk(el){
+      if(el.tagName==='H2'){md.push('## '+t(el));md.push('');}
+      else if(el.tagName==='H3'){md.push('### '+t(el));md.push('');}
+      else if(el.tagName==='P'){md.push(inline(el).trim());md.push('');}
+      else if(el.tagName==='TABLE'){md.push(table(el));md.push('');}
+      else if(el.tagName==='OL'||el.tagName==='UL'){[...el.children].forEach((li,i)=>md.push((el.tagName==='OL'?(i+1)+'. ':'- ')+inline(li).trim()));md.push('');}
+      else if(el.classList.contains('callout')){md.push('> '+inline(el).trim().replace(/\n/g,'\n> '));md.push('');}
+      else if(el.classList.contains('cards')){el.querySelectorAll('.card').forEach(c=>{const n=c.querySelector('.n');md.push('- **'+(n?t(n)+' – ':'')+t(c.querySelector('h4'))+'**: '+t(c.querySelector('p')));});md.push('');}
+      else if(el.classList.contains('step')){const no=t(el.querySelector('.no'));const h=t(el.querySelector('h4'));const p=el.querySelector('p');const meta=el.querySelector('.meta');md.push(no+'. **'+h+'** – '+(p?inline(p).trim():'')+(meta?' _('+t(meta.querySelector('em'))+'; '+t(meta).replace(t(meta.querySelector('em')),'').trim()+')_':''));md.push('');}
+      else if(el.classList.contains('lsp')){md.push(lsp(el));}
+      else if(el.classList.contains('summary')||el.classList.contains('two')||el.tagName==='DIV'){[...el.children].forEach(walk);}
+    }
+  });
+  const blob=new Blob([md.join('\n').replace(/\n{3,}/g,'\n\n')],{type:'text/markdown;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(document.title||'dokument').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').toLowerCase()+'.md';a.click();URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>
