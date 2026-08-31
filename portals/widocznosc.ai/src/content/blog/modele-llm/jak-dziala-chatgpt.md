@@ -208,7 +208,7 @@ Tak działają wszystkie „superzdolności” ChatGPT:
 
 - **Interpreter kodu** – model pisze skrypt w Pythonie, aplikacja uruchamia go w izolowanym środowisku, a wynik (liczby, wykres, plik) wraca do okna kontekstowego; dlatego obliczenia z interpretera są wiarygodne, a „z głowy” – nie
 - **Analiza plików** – wgrany PDF lub arkusz jest zamieniany na tekst (w razie potrzeby z rozpoznawaniem obrazu) i wkładany do okna kontekstowego w całości lub we fragmentach
-- **Generowanie obrazów** – model przekazuje opis do osobnego modelu obrazowego (GPT Image) i dostaje z powrotem gotowy plik
+- **Generowanie obrazów** – model przekazuje opis do osobnego modelu generującego obrazy (GPT Image) i dostaje z powrotem gotowy plik
 - **Wyszukiwanie** – opisane wyżej, technicznie także zwykłe wywołanie narzędzia
 - **Agenci i przeglądanie** – w trybach agentowych model wywołuje przeglądarkę, klika i czyta strony w pętli, aż wykona zadanie
 
