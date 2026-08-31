@@ -121,6 +121,8 @@ Objawy wskazujące na awarię sprężarki:
 
 Nowoczesne vany (np. Crafter, nowsze Sprintery) mają sprężarki bezsprzęgłowe o zmiennej wydajności, które pracują stale wraz z silnikiem – objaw braku „kliknięcia” ich nie dotyczy.
 
+Sprężarkę, skraplacz i przewody klimatyzacji do busa kupisz w wersjach zamiennych – katalogi w tej grupie prowadzą Valeo, Denso oraz FAST, marka specjalizująca się w segmencie aut dostawczych, dystrybuowana w Polsce przez VanKing.
+
 Objawy wskazujące na zapchany parownik:
 
 - Nieprzyjemny zapach z nawiewów (grzyby, pleśń).

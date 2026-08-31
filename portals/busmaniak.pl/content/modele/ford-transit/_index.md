@@ -272,6 +272,8 @@ Dostawczak pracujący z ładunkiem zużywa podwozie szybciej niż osobówka. To 
 - elementy zawieszenia i hamulców zużywają się szybciej w autach pracujących stale z dużym obciążeniem
 - przy oględzinach warto sprawdzić zużycie tarcz, stan zacisków i ewentualne stuki na nierównościach
 
+Wahacze, sworznie i łączniki stabilizatora do Transita znajdziesz w katalogach FEBI, MEYLE oraz FAST, marki specjalizującej się w segmencie aut dostawczych, dystrybuowanej w Polsce przez VanKing.
+
 ### Korozja i nadwozie
 
 Starsze roczniki, szczególnie intensywnie eksploatowane zimą, potrafią korodować wyraźnie szybciej, niż wynikałoby to z wieku.

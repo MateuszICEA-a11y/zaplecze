@@ -188,6 +188,8 @@ W silniku M9T warto kontrolować stan układu po ok. **200 tys. km**, zwłaszcza
 
 Przy dużym obciążeniu szybciej zużywają się elementy przedniego zawieszenia. Wahacz to zwykle **350–700 zł/szt.**, sworzeń **100–250 zł**, łącznik stabilizatora **80–180 zł**, a amortyzator **350–600 zł/szt.**
 
+Podane kwoty dotyczą zamienników. Sprężyny, tuleje i elementy stabilizatora do Mastera mają w ofercie Sasic i MEYLE, a także FAST, marka specjalizująca się w segmencie aut dostawczych, produkująca w standardzie IATF 16949 i dystrybuowana w Polsce przez VanKing.
+
 ### Sprzęgło i dwumasa
 
 W mocniejszych wersjach oraz autach jeżdżących z ciężkim ładunkiem trzeba liczyć się z kosztami wymiany kompletu. Zestaw sprzęgła z dwumasą to zwykle **2500–4500 zł**.
