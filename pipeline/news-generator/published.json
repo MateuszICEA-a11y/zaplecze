@@ -1,13 +1,5 @@
 [
   {
-    "title": "Toruń: bus zderzył się z tramwajem. Torowisko było zablokowane, wyznaczono objazdy",
-    "date": "2026-05-19",
-    "slug": "torun-bus-zderzyl-sie-z-tramwajem-torowisko-bylo-zablokowane-wyznaczono-objazdy",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Tragiczny wypadek z udziałem ciężarówki i busa dostawczego pod Puławami",
     "date": "2026-05-20",
     "slug": "tragiczny-wypadek-z-udzialem-ciezarowki-i-busa-dostawczego-pod-pulawami",
@@ -716,6 +708,14 @@
     "date": "2026-08-27",
     "slug": "ciezki-kamper-jak-ciezarowka-ministerstwo-nie-planuje-ulgi-w-e-toll",
     "section": "kampery",
+    "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Koniec CPN 31 sierpnia. Ceny diesla i benzyny mocno w górę od września",
+    "date": "2026-08-31",
+    "slug": "koniec-cpn-31-sierpnia-ceny-diesla-i-benzyny-mocno-w-gore-od-wrzesnia",
+    "section": "news",
     "format": "analysis",
     "source": "rss"
   }
