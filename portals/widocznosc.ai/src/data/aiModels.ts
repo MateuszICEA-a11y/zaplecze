@@ -33,7 +33,7 @@ export const AI_MODELS: AIModel[] = [
     keyword: 'pozycjonowanie w chatgpt',
     keywordVolume: 140,
     shortDesc:
-      'Najpopularniejszy asystent w Polsce. Wykorzystuje wyszukiwanie ChatGPT Search z dostępem do sieci, łącząc dane treningowe i pobieranie informacji na żywo (RAG).',
+      'Najpopularniejszy asystent w Polsce. Wykorzystuje funkcję ChatGPT Search z dostępem do sieci, łącząc dane treningowe i generowanie wspomagane wyszukiwaniem (RAG).',
     symbol: '◐',
   },
   {
@@ -55,7 +55,7 @@ export const AI_MODELS: AIModel[] = [
     keyword: 'pozycjonowanie w gemini',
     keywordVolume: 50,
     shortDesc:
-      'Integracja z wyszukiwarką Google, Podsumowaniami AI (AI Overviews) i usługami Workspace. Cytowania bezpośrednio z indeksu Google.',
+      'Integracja z wyszukiwarką Google, AI Overviews i usługami Workspace. Cytowania bezpośrednio z indeksu Google.',
     symbol: '⊡',
   },
   {
@@ -77,7 +77,7 @@ export const AI_MODELS: AIModel[] = [
     keyword: 'pozycjonowanie w bing copilot',
     keywordVolume: 20,
     shortDesc:
-      'Połączenie modeli rodziny GPT-5 z indeksem Bing. Mniejszy udział w rynku, ale asystent jest domyślnie wbudowany w przeglądarkę Edge i system Windows.',
+      'Połączenie modeli rodziny GPT-5 z indeksem Binga. Mniejszy udział w rynku, ale asystent jest domyślnie wbudowany w przeglądarkę Edge i system Windows. Silnik ten priorytetyzuje strony zoptymalizowane pod Bing Webmaster Tools.',
     symbol: '∴',
   },
 ];

@@ -29,7 +29,7 @@ const services = [
   {
     id: 'strategia',
     title: 'Strategia GEO na 12 miesięcy',
-    desc: 'Tworzymy kompleksowy plan widoczności na cały rok: mapę fraz, kalendarz publikacji treści, plan dystrybucji oraz strategię pozyskiwania wzmianek o Twojej firmie.',
+    desc: 'Tworzymy kompleksowy plan widoczności na cały rok: mapę fraz, kalendarz publikacji treści, plan dystrybucji oraz strategię pozyskiwania wzmianek marki.',
     variant: 'blue',
   },
 ] as const;
@@ -106,35 +106,35 @@ const processSteps = [
   {
     phase: 'Tydzień 3–6',
     title: 'Przebudowa treści pod cytowalność',
-    desc: 'Fakty, liczby i jednoznaczne definicje w pierwszych akapitach, akapity domykane tak, by dało się je wyciąć jako samodzielny cytat, tabele porównawcze i sekcje FAQ. Zaczynamy od stron, które już mają widoczność w Google i Bing – tam efekt przychodzi najszybciej.',
+    desc: 'Fakty, liczby i jednoznaczne definicje w pierwszych akapitach, akapity domykane tak, by dało się je wyciąć jako samodzielny cytat, tabele porównawcze i sekcje FAQ. Zaczynamy od stron, które już mają widoczność w Google i Bingu – tam efekt przychodzi najszybciej.',
   },
   {
     phase: 'Miesiąc 2–3',
-    title: 'Wzmianki poza własną domeną',
-    desc: 'Modele cytują to, co powtarza się w wielu źródłach. Planujemy obecność w mediach branżowych, katalogach, zestawieniach i materiałach eksperckich – to jedyny kanał, który wpływa na wiedzę zamrożoną w wagach modelu, a nie tylko na wyszukiwanie.',
+    title: 'Wzmianki marki poza własną domeną',
+    desc: 'Modele cytują to, co powtarza się w wielu źródłach. Planujemy obecność w mediach branżowych, katalogach, zestawieniach i materiałach eksperckich – to jedyny kanał, który wpływa na dane treningowe modelu, a nie tylko na generowanie wspomagane wyszukiwaniem (RAG).',
   },
   {
     phase: 'Od miesiąca 2, stale',
     title: 'Monitoring i korekta kursu',
-    desc: 'Cotygodniowe pomiary 50–200 zapytań, alerty o ruchach konkurencji i panel z historią widoczności. Co miesiąc porównujemy udział marki w odpowiedziach z punktem zerowym i przenosimy budżet tam, gdzie cytowania rosną najszybciej.',
+    desc: 'Cotygodniowe pomiary 50–200 zapytań, alerty o ruchach konkurencji i panel z historią widoczności. Co miesiąc porównujemy udział marki w odpowiedziach z punktem zerowym i przenosimy budżet tam, gdzie cytowania w odpowiedziach AI rosną najszybciej.',
   },
 ] as const;
 
 const timingNotes = [
   {
-    label: 'Wyszukiwanie na żywo',
+    label: 'Generowanie wspomagane wyszukiwaniem',
     value: 'dni',
-    desc: 'ChatGPT Search, Perplexity i Copilot pobierają treść w momencie zapytania – poprawiona strona może zostać zacytowana w ciągu kilku dni od zaindeksowania.',
+    desc: 'ChatGPT Search, Perplexity i Copilot pobierają treść w momencie zapytania – poprawiona strona może zostać zacytowana w odpowiedziach AI w ciągu kilku dni od zaindeksowania.',
   },
   {
-    label: 'Wiedza z treningu',
+    label: 'Dane treningowe',
     value: 'miesiące',
-    desc: 'Wzmianki w źródłach zewnętrznych działają dopiero, gdy trafią do kolejnej wersji modelu. To inwestycja liczona w kwartałach, nie tygodniach.',
+    desc: 'Wzmianki marki w źródłach zewnętrznych działają dopiero, gdy trafią do korpusu treningowego kolejnej wersji modelu. To inwestycja liczona w kwartałach, nie tygodniach.',
   },
   {
     label: 'Pierwszy wiarygodny pomiar',
     value: '4–6 tygodni',
-    desc: 'Wcześniejsze odczyty są zbyt zaszumione – generowanie odpowiedzi jest losowe, więc trend widać dopiero po kilku seriach pomiarów.',
+    desc: 'Wcześniejsze odczyty są zbyt zaszumione – generowanie odpowiedzi jest niedeterministyczne, więc trend widać dopiero po kilku seriach pomiarów.',
   },
 ] as const;
 
@@ -157,19 +157,19 @@ const proofPlatforms = [
 const faqItems = [
   {
     q: 'Jak pozycjonować stronę w AI?',
-    a: 'Pozycjonowanie w AI opiera się na trzech grupach działań. Po pierwsze, dostęp: modele muszą móc pobrać stronę, więc GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot i Google-Extended nie mogą być blokowane. Po drugie, cytowalność: treść musi zawierać fakty, liczby i definicje w pierwszych akapitach oraz dać się wyciąć jako samodzielny fragment. Po trzecie, encja: spójne dane o firmie, Schema.org i wzmianki w źródłach zewnętrznych, z których modele budują wiedzę o marce.',
+    a: 'Pozycjonowanie w AI opiera się na trzech grupach działań. Po pierwsze, dostęp: modele muszą móc pobrać stronę, więc GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot i Google-Extended nie mogą być blokowane. Po drugie, cytowalność: treść musi zawierać fakty, liczby i definicje w pierwszych akapitach oraz dać się wyciąć jako samodzielny fragment. Po trzecie, encja: spójne dane o firmie, Schema.org i wzmianki marki w źródłach zewnętrznych, z których modele budują wiedzę o marce.',
   },
   {
     q: 'Czym pozycjonowanie AI różni się od klasycznego SEO?',
-    a: 'Klasyczne SEO walczy o pozycję adresu URL w rankingu, pozycjonowanie AI – o wzmiankę lub cytowanie w wygenerowanej odpowiedzi. Jednostką nie jest strona, tylko fragment treści i encja marki. Metryką nie jest pozycja i CTR, tylko udział marki w odpowiedziach (Share of Model) i liczba cytowań. Pozycjonowanie AI nie zastępuje SEO – korzysta z jego fundamentów, czyli indeksacji, szybkości i autorytetu domeny.',
+    a: 'Klasyczne SEO walczy o pozycję adresu URL w rankingu, pozycjonowanie AI – o wzmiankę marki lub cytowanie w odpowiedziach AI. Jednostką nie jest strona, tylko fragment treści i encja marki. Metryką nie jest pozycja i CTR, tylko udział marki w odpowiedziach (Share of Model) i liczba cytowań. Pozycjonowanie AI nie zastępuje SEO – korzysta z jego fundamentów, czyli indeksacji, szybkości i autorytetu domeny.',
   },
   {
     q: 'Ile trwa, zanim marka zacznie pojawiać się w odpowiedziach AI?',
-    a: 'To zależy od kanału. W trybie z wyszukiwaniem na żywo poprawiona strona może zostać zacytowana w ciągu kilku dni od zaindeksowania w Bing lub Google. Wiedza zamrożona w wagach modelu aktualizuje się dopiero przy kolejnej wersji modelu, więc efekt wzmianek zewnętrznych liczy się w miesiącach. Pierwszy wiarygodny pomiar trendu robimy po 4–6 tygodniach, bo generowanie odpowiedzi jest losowe i pojedynczy odczyt niczego nie dowodzi.',
+    a: 'To zależy od kanału. W trybie generowania wspomaganego wyszukiwaniem (RAG) poprawiona strona może zostać zacytowana w ciągu kilku dni od zaindeksowania w Bingu lub Google. Dane treningowe modelu aktualizują się dopiero przy jego kolejnej wersji, więc efekt wzmianek marki w źródłach zewnętrznych liczy się w miesiącach. Pierwszy wiarygodny pomiar trendu robimy po 4–6 tygodniach, bo generowanie odpowiedzi jest niedeterministyczne i pojedynczy odczyt niczego nie dowodzi.',
   },
   {
     q: 'Czy widoczność w AI da się w ogóle zmierzyć?',
-    a: 'Tak, ale nie pojedynczym pytaniem w czacie. Model losuje kolejne tokeny, więc dwa przebiegi tego samego promptu dają różne odpowiedzi. Pomiar polega na powtarzalnym odpytywaniu stałego zestawu zapytań w wielu seriach i liczeniu, w jakim odsetku odpowiedzi pada nazwa marki oraz jak często strona jest cytowana jako źródło. Punkt startowy sprawdzisz sam w narzędziu Widoczność marki w AI, które odpytuje cztery silniki naraz.',
+    a: 'Tak, ale nie pojedynczym pytaniem w czacie. Model generuje kolejne tokeny niedeterministycznie, więc dwa przebiegi tego samego promptu dają różne odpowiedzi. Pomiar polega na powtarzalnym odpytywaniu stałego zestawu zapytań w wielu seriach i liczeniu, w jakim odsetku odpowiedzi pada nazwa marki oraz jak często strona jest cytowana jako źródło. Punkt startowy sprawdzisz sam w narzędziu Widoczność marki w AI, które odpytuje cztery silniki naraz.',
   },
   {
     q: 'Od którego modelu zacząć?',
@@ -177,7 +177,7 @@ const faqItems = [
   },
   {
     q: 'Czy trzeba mieć dobre SEO, żeby AI cytowało markę?',
-    a: 'W trybie z wyszukiwaniem – praktycznie tak, bo modele sięgają po strony z indeksów Bing i Google. Strona niezaindeksowana albo ładująca się zbyt wolno zwykle nie trafia do zestawu pobranych źródeł. Wiedza z treningu działa inaczej: tu liczą się wzmianki w mediach, katalogach i encyklopediach, więc marka może być wymieniana przez model nawet bez wysokich pozycji w Google.',
+    a: 'W trybie generowania wspomaganego wyszukiwaniem (RAG) – praktycznie tak, bo modele sięgają po strony z indeksów Binga i Google (w przypadku Google AI Mode kluczowe jest szerokie pokrycie semantyczne, tzw. <em>semantic completeness</em>, ze względu na wykorzystywaną przez Google technikę <em>query fan out</em>). Strona niezaindeksowana albo ładująca się zbyt wolno zwykle nie trafia do zestawu pobranych źródeł. Dane treningowe działają inaczej: tu liczą się wzmianki marki w mediach, katalogach i encyklopediach, więc marka może być wymieniana przez model nawet bez wysokich pozycji w Google.',
   },
   {
     q: 'Ile kosztuje pozycjonowanie AI?',
@@ -279,8 +279,8 @@ const serviceSchema = {
           Pozycjonowanie pod&nbsp;<span class="accent">LLM</span>
         </h1>
         <p class="pillar-hero-lead">
-          Pozycjonowanie AI to budowanie widoczności marki w ChatGPT, Claude, Gemini, Perplexity i
-          Microsoft Copilot – tam, gdzie odpowiedzi generują duże modele językowe. W
+          Pozycjonowanie AI to budowanie widoczności marki w ChatGPT, Claude'zie, Gemini, Perplexity
+          i Microsoft Copilocie – tam, gdzie odpowiedzi generują duże modele językowe (LLM-y). W
           nowym standardzie wyszukiwania nie walczymy o pozycje w rankingu – walczymy o bycie
           cytowanym źródłem. Ponieważ każdy model AI wymaga innego podejścia, wybierz konkretny
           silnik poniżej lub zacznij od kompleksowego audytu wszystkich pięciu.
@@ -345,10 +345,10 @@ const serviceSchema = {
       <div class="llm-grid">
         <div class="llm-copy">
           <p>
-            Model językowy nie ma rankingu stron. Odpowiedź buduje z dwóch źródeł: z wiedzy
-            zamrożonej w wagach podczas treningu oraz z fragmentów stron pobranych w czasie
-            rzeczywistym przez wyszukiwanie (ChatGPT Search, Gemini z indeksem Google, Perplexity,
-            Copilot z Bingiem). <strong>Pozycjonowanie pod LLM działa więc na obu ścieżkach
+            Model językowy nie ma rankingu stron. Odpowiedź buduje z dwóch źródeł: z danych
+            treningowych zamrożonych w wagach modelu oraz z fragmentów stron pobranych w czasie
+            rzeczywistym przez generowanie wspomagane wyszukiwaniem (RAG – np. ChatGPT Search,
+            Gemini z indeksem Google, Perplexity, Copilot z indeksem Binga). <strong>Pozycjonowanie pod LLM działa więc na obu ścieżkach
             naraz:</strong> długofalowo – przez obecność marki w źródłach, które trafiają do korpusów
             treningowych; krótkofalowo – przez treści, które da się wyciąć jako samodzielny,
             faktograficzny fragment i zacytować w odpowiedzi z przypisem.
@@ -356,7 +356,7 @@ const serviceSchema = {
           <p>
             W praktyce oznacza to inne priorytety niż w klasycznym SEO. Zamiast pozycji URL-a
             liczy się udział marki w odpowiedziach (Share of Model), liczba cytowań i to, czy model
-            opisuje firmę zgodnie z prawdą. Zamiast profilu linków – wzmianki w wiarygodnych
+            opisuje firmę zgodnie z prawdą. Zamiast profilu linków – wzmianki marki w wiarygodnych
             źródłach i spójność danych o firmie w sieci. Zamiast nasycenia frazami – gęstość
             faktów, liczb i jednoznacznych stwierdzeń w pierwszych akapitach, dane strukturalne
             Schema.org i dostęp dla botów AI w robots.txt.
@@ -373,10 +373,10 @@ const serviceSchema = {
           <div class="llm-aside-block">
             <span class="eyebrow">SEO vs. LLM</span>
             <dl class="llm-compare">
-              <div><dt>Cel</dt><dd>pozycja URL-a → wzmianka lub cytowanie w odpowiedzi</dd></div>
+              <div><dt>Cel</dt><dd>pozycja URL-a → wzmianka marki lub cytowanie w odpowiedziach AI</dd></div>
               <div><dt>Metryka</dt><dd>pozycja i CTR → Share of Model, Citation Rate</dd></div>
               <div><dt>Jednostka</dt><dd>strona → fragment (chunk) i encja (marka)</dd></div>
-              <div><dt>Czas efektu</dt><dd>tygodnie → dni (wyszukiwanie) lub miesiące (trening)</dd></div>
+              <div><dt>Czas efektu</dt><dd>tygodnie → dni (RAG) lub miesiące (dane treningowe)</dd></div>
             </dl>
           </div>
           <div class="llm-aside-block">
@@ -385,7 +385,7 @@ const serviceSchema = {
               <li>Cytowalność treści – fakty, liczby, definicje w pierwszych 200 słowach</li>
               <li>Encja marki – spójne dane, Schema.org Organization + Person + sameAs</li>
               <li>Dostęp botów – GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended</li>
-              <li>Wzmianki – obecność w mediach, katalogach i źródłach cytowanych przez modele</li>
+              <li>Wzmianki marki – obecność w mediach, katalogach i źródłach cytowanych przez modele</li>
               <li>Pomiar – powtarzalne testy promptów i monitoring udziału w odpowiedziach</li>
             </ul>
           </div>
@@ -410,8 +410,8 @@ const serviceSchema = {
         <div class="head-right">
           <p class="subhead">
             Każdy model AI inaczej buduje swoje odpowiedzi: ChatGPT łączy dane treningowe z
-            wyszukiwaniem na żywo, Gemini cytuje bezpośrednio z indeksu Google, a Perplexity stawia
-            na maksymalną transparentność źródeł. Optymalizacja pod tylko jeden model to dziś za
+            generowaniem wspomaganym wyszukiwaniem (RAG), Gemini cytuje bezpośrednio z indeksu
+            Google, a Perplexity stawia na maksymalną transparentność źródeł. Optymalizacja pod tylko jeden model to dziś za
             mało.
           </p>
         </div>
@@ -612,10 +612,11 @@ const serviceSchema = {
           <p>
             Cytowanie to link do serwisu w wygenerowanej odpowiedzi danej platformy dla
             monitorowanych zapytań. Rozkład potwierdza regułę z tej strony: najwięcej cytowań
-            przynoszą silniki oparte na wyszukiwaniu na żywo, a nie na samej wiedzy z treningu.
+            w odpowiedziach AI przynoszą silniki oparte na generowaniu wspomaganym wyszukiwaniem
+            (RAG), a nie wyłącznie na danych treningowych.
           </p>
           <p>
-            Osobny sygnał to <strong>ChatGPT-User</strong> – agent uruchamiany wyłącznie wtedy, gdy
+            Osobny sygnał to <strong>ChatGPT-User</strong> – crawler uruchamiany wyłącznie wtedy, gdy
             model pobiera stronę na potrzeby konkretnej rozmowy. 3 340 takich żądań w tygodniu
             oznacza, że treści serwisu realnie trafiają do odpowiedzi, a nie tylko do indeksu.
           </p>
@@ -708,7 +709,7 @@ const serviceSchema = {
                   +
                 </span>
               </summary>
-              <p class="faq-answer">{item.a}</p>
+              <p class="faq-answer" set:html={item.a} />
             </details>
           ))
         }
@@ -719,7 +720,7 @@ const serviceSchema = {
   <CTABand
     eyebrow="Decyzja"
     title="Nie wiesz, od którego modelu zacząć?"
-    subtitle="Skorzystaj z bezpłatnej, 30-minutowej konsultacji. Wskażemy, o co użytkownicy AI najczęściej pytają w Twojej branży, i podpowiemy, który silnik najszybciej wygeneruje dla Ciebie zwrot z inwestycji (ROI)."
+    subtitle="Skorzystaj z bezpłatnej, 30-minutowej konsultacji. Wskażemy, o co użytkownicy AI najczęściej pytają w Twojej branży, i podpowiemy, który silnik najszybciej przyniesie Ci zwrot z inwestycji (ROI)."
     primaryLabel="Zamów audyt AI"
     primaryHref="/kontakt/?type=audyt-ai"
     ghostLabel="Bezpłatna konsultacja"
