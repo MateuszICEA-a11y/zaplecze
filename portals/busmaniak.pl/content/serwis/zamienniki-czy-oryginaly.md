@@ -87,7 +87,7 @@ Pytanie, czy wybrać części oryginalne czy zamienniki, rozstrzyga się osobno 
 
 Zamienniki sprawdzają się w filtrach powietrza i kabinowych, elementach zawieszenia takich jak tuleje wahaczy, a także poduszkach silnika czy elementach osprzętu nadwozia (np. lusterkach). Nawet w tak wymagających operacjach jak [wymiana rozrządu w busie](/serwis/rozrzad-wymiana/) markowe zestawy od niezależnych producentów oferują trwałość zbliżoną do części montowanych w fabryce.
 
-### Marki, które dostarczają na pierwszy montaż i na rynek wtórny
+### Marki, które dostarczają części na pierwszy montaż i na rynek wtórny
 
 Rynek dzieli się na dostawców zaopatrujących fabryki (np. Bosch, Brembo, SKF, Sachs/ZF, Valeo, Hella, Mahle, TRW) oraz firmy budujące ofertę stricte pod segment napraw pogwarancyjnych. Przykładowo, w segmencie aut dostawczych grupy Fiat, Iveco i Stellantis (dawniej PSA) obok marek FEBI Bilstein i MEYLE działa też FAST, marka specjalizująca się w częściach do lekkich pojazdów użytkowych.
 
