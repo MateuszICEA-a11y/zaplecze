@@ -10,12 +10,18 @@ nadpisuje (data commitu pliku się nie zmienia).
 Commity samego przejazdu (temat zawiera „lastmod”) są pomijane – inaczej
 każdy kolejny przejazd uznawałby poprzedni za „ostatnią zmianę” wszystkich
 stron. Commit z wynikiem skryptu musi więc mieć „lastmod” w temacie.
+
+Bezpiecznik: zwykły przejazd dotyka pojedynczych stron. Gdy zmian byłoby więcej
+niż MAX_WRITES, skrypt nic nie zapisuje i wypisuje listę – świadomy masowy
+przejazd (np. po korekcie setek wpisów) uruchamia się z `--force`.
+`--dry-run` tylko pokazuje, co by się zmieniło.
 """
 import subprocess
 import sys
 from pathlib import Path
 
 CONTENT = Path("portals/busmaniak.pl/content")
+MAX_WRITES = 25
 
 
 SKIP_SUBJECT = "lastmod"
@@ -33,7 +39,7 @@ def git_date(path: Path) -> str | None:
     return None
 
 
-def stamp(path: Path) -> str:
+def stamp(path: Path, write: bool = True) -> str:
     date = git_date(path)
     if not date:
         return "skip-nogit"
@@ -62,7 +68,8 @@ def stamp(path: Path) -> str:
         pos = next((i for i, l in enumerate(lines) if l.startswith("date:")), len(lines) - 1)
         lines.insert(pos + 1, f"lastmod: {date}")
 
-    path.write_text("---\n" + "\n".join(lines) + body, encoding="utf-8")
+    if write:
+        path.write_text("---\n" + "\n".join(lines) + body, encoding="utf-8")
     return "written"
 
 
@@ -70,8 +77,27 @@ def main() -> int:
     if not CONTENT.is_dir():
         print(f"brak {CONTENT} – uruchom z katalogu repo", file=sys.stderr)
         return 1
+    force = "--force" in sys.argv
+    dry_run = "--dry-run" in sys.argv
+
+    paths = sorted(CONTENT.rglob("*.md"))
+    planned = [p for p in paths if stamp(p, write=False) == "written"]
+
+    if dry_run or (len(planned) > MAX_WRITES and not force):
+        for p in planned:
+            print(f"  {p}")
+        if dry_run:
+            print(f"dry-run: do zmiany {len(planned)}")
+            return 0
+        print(
+            f"STOP: {len(planned)} plików do zmiany (próg {MAX_WRITES}). "
+            "Sprawdź listę – jeśli to zamierzone, uruchom z --force.",
+            file=sys.stderr,
+        )
+        return 2
+
     tally: dict[str, int] = {}
-    for path in sorted(CONTENT.rglob("*.md")):
+    for path in paths:
         result = stamp(path)
         tally[result] = tally.get(result, 0) + 1
     for key in sorted(tally):

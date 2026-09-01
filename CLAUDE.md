@@ -46,3 +46,7 @@ aktualizacja", sitemap `<lastmod>` and schema.org `dateModified`.
 Commit the stamped files separately, with `lastmod` in the commit subject – the
 script skips such commits when reading history, otherwise the next run would
 treat the previous stamping pass as "last change" of every page.
+
+Safety threshold: if a run would change more than 25 files it stops and lists
+them (exit 2). Use `--dry-run` to preview; `--force` only for an intended mass
+pass (e.g. after a repo-wide editorial correction).
