@@ -1,7 +1,7 @@
 ---
 title: Ceny paliw 30 maja 2026 – ile kosztują benzyna i diesel?
 date: 2026-05-31
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Sprawdzamy ceny paliw z 30 maja 2026. Zobacz, ile trzeba zapłacić za litr benzyny, oleju napędowego i autogazu.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit brygadówka – konfiguracja, ładowność"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Ford Transit brygadówka (Double Cab) – 5–6 miejsc i przestrzeń ładunkowa w jednym pojeździe. Homologacja N1, przegroda, zastosowania serwisowe."
 draft: false
 author: "marek-kowalczyk"

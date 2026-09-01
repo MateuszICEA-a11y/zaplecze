@@ -1,7 +1,7 @@
 ---
 title: Paliwo na Wielkanoc 2026 – nowe prognozy cen na stacjach
 date: 2026-04-04
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Pojawiły się nowe prognozy cen paliw na Wielkanoc 2026. Widać zmianę względem piątkowych szacunków.
 draft: false
 author: redakcja-busmaniak

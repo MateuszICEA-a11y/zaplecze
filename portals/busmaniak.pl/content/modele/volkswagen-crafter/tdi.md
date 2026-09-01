@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Crafter TDI – dane techniczne, spalanie, opinie"
 date: 2026-03-26
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Silnik 2.0 TDI w Volkswagenie Crafter II – warianty 102–177 KM, spalanie, typowe usterki, koszty serwisu. Porównanie z silnikami Sprintera i Ducato."
 draft: false
 author: "marek-kowalczyk"

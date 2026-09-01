@@ -1,7 +1,7 @@
 ---
 title: "Iveco Daily chłodnia – zabudowa, agregat, normy"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Iveco Daily chłodnia – zabudowa izoterma, agregat, normy ATP, DMC 3,5–7,2 t i praktyczne zasady doboru konfiguracji."
 draft: false
 author: "marek-kowalczyk"

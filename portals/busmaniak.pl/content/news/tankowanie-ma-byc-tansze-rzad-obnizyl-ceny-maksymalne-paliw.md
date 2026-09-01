@@ -1,7 +1,7 @@
 ---
 title: Tankowanie ma być tańsze. Rząd obniżył ceny maksymalne paliw
 date: 2026-05-08
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Rząd obniżył ceny maksymalne paliw. To może oznaczać niższe stawki na stacjach i mniejsze koszty dla kierowców.
 draft: false
 author: redakcja-busmaniak

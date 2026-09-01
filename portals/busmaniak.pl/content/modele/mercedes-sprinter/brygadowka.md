@@ -1,7 +1,7 @@
 ---
 title: "Mercedes Sprinter brygadówka – miejsca, ładowność"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Mercedes Sprinter brygadówka – 5–7 miejsc i paka ładunkowa. DMC 3,0–5,5 t. Zastosowania w energetyce, telekomunikacji i serwisie."
 draft: false
 author: "marek-kowalczyk"

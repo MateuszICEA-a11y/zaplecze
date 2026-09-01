@@ -1,7 +1,7 @@
 ---
 title: "Opel Vivaro osobowy – Combi i Life, miejsca, dane techniczne"
 date: 2026-03-25
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Opel Vivaro osobowy – wersje Combi i osobowa odmiana generacji C, liczba miejsc, wymiary, silniki i różnice między generacjami."
 draft: false
 author: "marek-kowalczyk"

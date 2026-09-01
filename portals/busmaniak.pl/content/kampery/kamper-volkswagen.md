@@ -1,7 +1,7 @@
 ---
 title: "Kamper Volkswagen – California, Grand California"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Kampery Volkswagena – VW California T6.1/T7, Grand California 600 i 680. Porównanie wersji, ceny, wyposażenie i różnice między modelami."
 draft: false
 author: "anna-wozniak"

@@ -1,7 +1,7 @@
 ---
 title: "Toyota Proace City – dane techniczne, wymiary, silniki"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Toyota Proace City – kompaktowy dostawczak na platformie PSA. Wymiary, silniki 1.2 i 1.5, wersja elektryczna, porównanie z Berlingo i Kangoo."
 draft: false
 author: "marek-kowalczyk"

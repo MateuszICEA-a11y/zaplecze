@@ -1,7 +1,7 @@
 ---
 title: "Ciśnienie w oponach busa – tabela wartości dla popularnych modeli"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Tabela ciśnień w oponach busów – zalecane wartości bar dla Ducato, Sprintera, Transita i Daily. Jak mierzyć, gdzie znaleźć naklejkę i dlaczego ciśnienie w busie jest ważniejsze niż w osobówce."
 draft: false
 author: "marek-kowalczyk"

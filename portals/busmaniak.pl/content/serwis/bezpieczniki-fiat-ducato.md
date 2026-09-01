@@ -1,7 +1,7 @@
 ---
 title: "Bezpieczniki Fiat Ducato – schemat, opis, lokalizacja"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Schemat bezpieczników Fiat Ducato – lokalizacja skrzynek, opis funkcji, amperaże. Generacja II i III."
 draft: false
 author: "tomek-zielinski"

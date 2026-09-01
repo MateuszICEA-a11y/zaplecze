@@ -1,7 +1,7 @@
 ---
 title: "Peugeot Partner – dane techniczne, wersje, silniki"
 date: 2026-03-25
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Peugeot Partner – dane techniczne, wymiary Short i Long, silniki 1.5 BlueHDi i 1.2 PureTech, e-Partner elektryczny, typowe usterki i ceny nowych i używanych."
 draft: false
 author: "marek-kowalczyk"

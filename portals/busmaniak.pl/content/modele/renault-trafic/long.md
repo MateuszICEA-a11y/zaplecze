@@ -1,7 +1,7 @@
 ---
 title: "Renault Trafic Long – wymiary, pojemność, porównanie z L1"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Renault Trafic Long (L2) w generacji Trafic III – wymiary, pojemność przestrzeni ładunkowej, porównanie z L1 i praktyczne różnice w użytkowaniu."
 draft: false
 author: "marek-kowalczyk"

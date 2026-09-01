@@ -1,7 +1,7 @@
 ---
 title: "Toyota Proace osobowy – Verso, miejsca, ceny"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Toyota Proace osobowy to Proace Verso – do 9 miejsc, w gamie występowały diesle 1.5 i 2.0 oraz wersje elektryczne. Sprawdź dane i różnice wersji."
 draft: false
 author: "marek-kowalczyk"

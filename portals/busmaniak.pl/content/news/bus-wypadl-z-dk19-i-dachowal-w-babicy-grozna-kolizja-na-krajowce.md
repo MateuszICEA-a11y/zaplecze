@@ -1,7 +1,7 @@
 ---
 title: Bus wypadł z DK19 i dachował w Babicy. Groźna kolizja na krajówce
 date: 2026-06-11
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Groźna kolizja na DK19 w Babicy. Bus wypadł z drogi i przewrócił się na dach, powodując utrudnienia w ruchu.
 draft: false
 author: redakcja-busmaniak

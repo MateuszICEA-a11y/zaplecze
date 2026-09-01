@@ -1,7 +1,7 @@
 ---
 title: "Ile kosztuje kamper? Ceny nowych i używanych w 2026"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Aktualne ceny kamperów nowych i używanych w 2026 roku – campervany, półintegry, alkowy i integry. Koszty utrzymania, porównanie z wynajmem i hotelem."
 draft: false
 author: "anna-wozniak"

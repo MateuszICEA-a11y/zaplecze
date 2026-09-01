@@ -1,7 +1,7 @@
 ---
 title: "Wynajem kampera – poradnik dla początkujących 2026"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Kompletny poradnik wynajmu kampera – co sprawdzić przed wyjazdem, jakie dokumenty przygotować, jak odebrać i zwrócić pojazd bez dodatkowych opłat. Praktyczne wskazówki na sezon 2026."
 draft: false
 author: "marek-kowalczyk"

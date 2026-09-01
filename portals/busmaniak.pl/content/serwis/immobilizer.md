@@ -1,7 +1,7 @@
 ---
 title: "Immobilizer w busie – awaria, objawy, programowanie"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Immobilizer w busie – jak działa, objawy awarii, programowanie i dorabianie kluczyka. Ducato, Sprinter, Transit – koszty naprawy i diagnostyka."
 draft: false
 author: "marek-kowalczyk"

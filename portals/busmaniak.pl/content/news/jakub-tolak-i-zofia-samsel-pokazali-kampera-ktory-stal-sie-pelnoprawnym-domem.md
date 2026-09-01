@@ -1,7 +1,7 @@
 ---
 title: Jakub Tolak i Zofia Samsel pokazali kampera, który stał się pełnoprawnym domem
 date: 2026-05-14
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Jakub Tolak i Zofia Samsel pokazali wnętrze kampera urządzonego jak dom – z wyrazistymi detalami i charakterystyczną zebrą.
 draft: false
 author: redakcja-busmaniak

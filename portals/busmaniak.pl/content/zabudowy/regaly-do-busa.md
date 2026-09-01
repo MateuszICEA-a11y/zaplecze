@@ -1,7 +1,7 @@
 ---
 title: "Regały do busa – systemy zabudowy modułowej"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Regały do busa – porównanie systemów modułowych, producenci, materiały, ceny i montaż. Aluminiowe, stalowe i drewniane regały do busów dostawczych."
 draft: false
 author: "tomasz-zielinski"

@@ -1,7 +1,7 @@
 ---
 title: Maksymalne ceny paliw na wtorek 5 maja. Tyle zapłacą kierowcy
 date: 2026-05-05
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Nowe maksymalne ceny paliw na wtorek 5 maja. Sprawdzamy, ile za benzynę, diesla i autogaz mogą zapłacić kierowcy.
 draft: false
 author: redakcja-busmaniak

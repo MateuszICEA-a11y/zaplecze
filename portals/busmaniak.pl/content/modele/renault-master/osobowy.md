@@ -1,7 +1,7 @@
 ---
 title: "Renault Master osobowy – wersja Combi i Bus, dane techniczne"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Renault Master osobowy – wersja Combi (Bus) z miejscami dla pasażerów, wymiary, ładowność, silniki i zastosowania transportowe."
 draft: false
 author: "marek-kowalczyk"

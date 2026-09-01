@@ -1,7 +1,7 @@
 ---
 title: "Renault Trafic osobowy – wersje, miejsca, ceny"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Renault Trafic osobowy – Passenger do 9 miejsc i SpaceClass w bardziej reprezentacyjnych konfiguracjach. Wymiary, silniki, praktyczne różnice i porównanie z konkurencją."
 draft: false
 author: "marek-kowalczyk"

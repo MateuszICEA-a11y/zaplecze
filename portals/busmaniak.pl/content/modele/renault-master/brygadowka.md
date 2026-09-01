@@ -1,7 +1,7 @@
 ---
 title: "Renault Master brygadówka – podwójna kabina, ładowność, zastosowania"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Renault Master brygadówka – wersja z podwójną kabiną dla ekip budowlanych. Wymiary, ładowność, dobór silnika i praktyczne różnice względem Combi."
 draft: false
 author: "marek-kowalczyk"

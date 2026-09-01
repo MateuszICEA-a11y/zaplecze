@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Crafter Osobowy – Grand California, minibus, Kombi"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Volkswagen Crafter w wersji osobowej – Kombi do 9 miejsc, minibus szkolny i baza pod Grand California. Dane techniczne, wymagania homologacyjne i porównanie ze Sprinterem."
 draft: false
 author: "marek-kowalczyk"

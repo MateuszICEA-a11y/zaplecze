@@ -1,6 +1,7 @@
 ---
 title: "Producenci części do busów – marki, grupy kapitałowe, specjalizacje"
 date: 2026-08-31
+lastmod: 2026-09-01
 description: "Zestawienie 20 marek części do busów: do jakiej grupy kapitałowej należą, w czym się specjalizują i które dostarczają na pierwszy montaż."
 draft: false
 author: "marek-kowalczyk"

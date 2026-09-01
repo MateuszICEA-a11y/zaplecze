@@ -1,7 +1,7 @@
 ---
 title: "Hyundai Staria – futurystyczny van z Korei"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Hyundai Staria – dane techniczne, silnik 2.2 CRDi, wersje 9- i 11-osobowe, Staria Load, ceny w Polsce i porównanie z konkurencją."
 draft: false
 author: "marek-kowalczyk"

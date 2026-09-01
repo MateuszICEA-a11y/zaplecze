@@ -1,7 +1,7 @@
 ---
 title: 20 mln zł kary za obchodzenie sankcji na Rosję. Dostawczy korytarz przez Białoruś pod lupą
 date: 2026-05-30
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Polskie służby ujawniły mechanizm obchodzenia sankcji na Rosję z użyciem dostawczego korytarza przez Białoruś. Kara sięga 20 mln zł.
 draft: false
 author: redakcja-busmaniak

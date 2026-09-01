@@ -1,7 +1,7 @@
 ---
 title: Polski VW Grand California w nowej odsłonie. Kamper z Wrześni rusza na światowe rynki
 date: 2026-05-23
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Volkswagen Grand California produkowany w Polsce zyskał nową odsłonę i umacnia swoją pozycję na rynkach eksportowych.
 draft: false
 author: redakcja-busmaniak

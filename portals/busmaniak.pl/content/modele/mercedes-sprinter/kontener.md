@@ -1,7 +1,7 @@
 ---
 title: "Mercedes Sprinter kontener – zabudowy, wymiary"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Mercedes Sprinter kontener – podwozie z zabudową kontenerową, izolacja, chłodnia ATP. DMC 3,0–5,5 t. Zastosowania w logistyce i gastronomii."
 draft: false
 author: "marek-kowalczyk"

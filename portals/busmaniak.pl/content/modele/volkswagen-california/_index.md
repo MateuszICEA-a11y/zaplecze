@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen California – fabryczny kamper"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Volkswagen California – jedyny fabryczny kamper van od VW. Wersje Ocean, Coast, Beach, Grand California 600/680. Silniki, wymiary, ceny."
 draft: false
 author: "marek-kowalczyk"

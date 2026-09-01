@@ -1,7 +1,7 @@
 ---
 title: "Mini kamper – najlepsze modele dla 2 osób"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Mini kamper dla dwojga – kompaktowe kampervany na bazie VW Caddy, Citroena Berlingo i Dacii Jogger. Ceny, przeróbki DIY i porównanie modeli."
 draft: false
 author: "anna-wozniak"

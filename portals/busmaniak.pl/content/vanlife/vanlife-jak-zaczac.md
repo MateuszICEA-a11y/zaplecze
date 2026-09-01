@@ -1,7 +1,7 @@
 ---
 title: "Vanlife w Polsce – jak zacząć życie w busie krok po kroku"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Jak zacząć vanlife w Polsce – wybór busa, przeróbka vs wynajem, rejestracja kampera, meldunek, praca zdalna, legalne parkowanie i społeczność vanlife. Kompletny poradnik."
 draft: false
 author: "marek-kowalczyk"

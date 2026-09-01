@@ -1,7 +1,7 @@
 ---
 title: "Przeróbka busa na kampera – kompletny poradnik"
 date: 2026-03-27
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Jak przerobić busa na kampera krok po kroku – etapy budowy, koszty, homologacja, popularne bazy pod kamper van. Poradnik DIY i zlecenie przeróbki w warsztacie."
 draft: false
 image: "/images/przerobka-busa-na-kampera-hero.webp"

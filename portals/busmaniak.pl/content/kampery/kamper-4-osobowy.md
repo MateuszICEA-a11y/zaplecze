@@ -1,7 +1,7 @@
 ---
 title: "Kamper 4-osobowy – który model wybrać"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Kamper 4-osobowy – najlepsze modele dla rodziny, porównanie camper vanów i alkow, układ łóżek, ceny nowych i używanych."
 draft: false
 author: "anna-wozniak"

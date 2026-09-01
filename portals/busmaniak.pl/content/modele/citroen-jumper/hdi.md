@@ -1,7 +1,7 @@
 ---
 title: "Citroën Jumper HDi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Silniki HDi i BlueHDi w Citroënie Jumperze – dane techniczne, warianty mocy, spalanie, typowe usterki i koszty serwisu."
 draft: false
 author: "marek-kowalczyk"

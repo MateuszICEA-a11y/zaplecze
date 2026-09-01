@@ -1,7 +1,7 @@
 ---
 title: "Zabudowa warsztatowa busa – mobilny warsztat"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Zabudowa warsztatowa busa – jak stworzyć mobilny warsztat na kółkach. Blaty robocze, generatory prądu, sprężarki, systemy zabudów i koszty."
 draft: false
 author: "tomasz-zielinski"

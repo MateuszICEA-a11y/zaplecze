@@ -1,7 +1,7 @@
 ---
 title: Ukraińcy tankują za półdarmo? Sprawdzamy, skąd biorą się te wyliczenia
 date: 2026-07-23
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Czy kierowcy z Ukrainy faktycznie tankują za półdarmo? Analizujemy ceny paliw, kursy walut, podatki i realne koszty po obu stronach granicy.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: Toyota pokazała dużego kampera. Celuje w rywali pokroju Grand Californii
 date: 2026-05-01
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Toyota wchodzi do segmentu dużych kamperów. Nowy model ma konkurować z Volkswagenem Grand California i innymi pełnowymiarowymi zabudowami.
 draft: false
 author: redakcja-busmaniak

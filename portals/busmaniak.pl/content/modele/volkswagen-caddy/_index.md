@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Caddy – generacje, wersje, dane techniczne"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Kompletny przewodnik po Volkswagenie Caddy – 5 generacji, dane techniczne, wymiary, silniki TDI i TSI, wersje nadwoziowe i typowe usterki."
 draft: false
 author: "marek-kowalczyk"

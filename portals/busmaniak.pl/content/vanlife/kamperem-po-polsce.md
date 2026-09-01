@@ -1,7 +1,7 @@
 ---
 title: "Kamperem po Polsce – najlepsze trasy i miejsca 2026"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Kamperem po Polsce – 5 sprawdzonych tras z kilometrażem i planami dniowymi. Mazury, Bieszczady, Wybrzeże, Kaszuby, Tatry. Kempingi, dziki postój, aplikacje i koszty."
 draft: false
 author: "marek-kowalczyk"

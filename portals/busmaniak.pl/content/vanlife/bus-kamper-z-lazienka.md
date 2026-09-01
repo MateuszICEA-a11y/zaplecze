@@ -1,7 +1,7 @@
 ---
 title: "Bus kamper z łazienką – czy to możliwe i jak to zrobić"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Łazienka w busie kamperze – toaleta kasetowa, prysznic, instalacja wodna. Rodzaje rozwiązań, koszty budowy, wymagania homologacyjne i porównanie w popularnych bazach."
 draft: false
 author: "marek-kowalczyk"

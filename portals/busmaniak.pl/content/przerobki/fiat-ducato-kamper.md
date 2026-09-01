@@ -3,7 +3,7 @@ title: "Fiat Ducato kamper – dlaczego jest numerem jeden pod przeróbkę"
 aliases:
   - /przerobki/zabudowa-kampera-projekt/
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Fiat Ducato to najpopularniejsza baza pod przeróbkę kamperową w Polsce. Dlaczego? Wymiary, dostępność części, projekty i koszty."
 draft: false
 author: "tomek-zielinski"

@@ -1,7 +1,7 @@
 ---
 title: "Przegląd techniczny busa – co sprawdzają, koszt, terminy 2026"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Przegląd techniczny busa dostawczego i kampera – co sprawdza diagnosta, ile kosztuje badanie techniczne w 2026 roku, terminy i najczęstsze przyczyny negatywnego wyniku."
 draft: false
 author: "marek-kowalczyk"

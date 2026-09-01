@@ -1,7 +1,7 @@
 ---
 title: Bus wjechał pod pociąg relacji Czersk – Bydgoszcz. Groźny wypadek na przejeździe
 date: 2026-07-08
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Groźny wypadek na przejeździe kolejowym. Bus zderzył się z pociągiem relacji Czersk – Bydgoszcz.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: Ceny paliw w Polsce – gdzie tankować najtaniej? Nowe dane z regionów
 date: 2026-07-09
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Nowe dane pokazują, w których regionach Polski kierowcy płacą najmniej za paliwo, a gdzie ceny są wyraźnie wyższe.
 draft: false
 author: redakcja-busmaniak

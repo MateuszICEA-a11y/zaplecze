@@ -1,7 +1,7 @@
 ---
 title: Koniec limitu cen paliw na stacjach. Dla kierowców busów to może oznaczać wyższe koszty
 date: 2026-06-07
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Kończy się limit cen paliw na stacjach w Polsce. Sprawdzamy, co to oznacza dla użytkowników busów, vanów i kamperów.
 draft: false
 author: redakcja-busmaniak

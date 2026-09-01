@@ -1,7 +1,7 @@
 ---
 title: "Iveco Daily – dane techniczne, silniki, wymiary"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Iveco Daily VI i VII – dane techniczne, wymiary furgonu i podwozia, silniki 2.3 i 3.0, DMC 3.5-7.2t, typowe usterki."
 draft: false
 author: "marek-kowalczyk"

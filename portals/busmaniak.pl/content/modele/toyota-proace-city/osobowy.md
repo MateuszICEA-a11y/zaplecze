@@ -1,7 +1,7 @@
 ---
 title: "Toyota Proace City Verso – wersja osobowa, miejsca, ceny"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Toyota Proace City Verso to osobowa odmiana małego vana z gamy K9 – w wersjach Medium i Long, z 5 lub 7 miejscami zależnie od nadwozia i konfiguracji. Sprawdź, czym różni się od Berlingo."
 draft: false
 author: "marek-kowalczyk"

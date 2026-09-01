@@ -1,7 +1,7 @@
 ---
 title: "Toyota Proace Verso Long – wymiary, miejsca, ceny"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Toyota Proace Verso Long ma 5309 mm długości i może oferować do 9 miejsc. Sprawdzamy wymiary, układ wnętrza oraz najważniejsze informacje o wersji Long."
 draft: false
 author: "marek-kowalczyk"

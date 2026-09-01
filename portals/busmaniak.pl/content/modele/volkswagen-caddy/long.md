@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Caddy Long – wymiary, porównanie z Maxi"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Volkswagen Caddy Long – wydłużona wersja V generacji. Wymiary, bagażnik, porównanie z Caddy Maxi i zastosowania."
 draft: false
 author: "marek-kowalczyk"

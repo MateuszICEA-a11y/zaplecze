@@ -1,7 +1,7 @@
 ---
 title: Orlen podniósł hurtowe ceny paliw. Na stacjach wciąż bez gwałtownych zmian
 date: 2026-06-12
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Orlen podniósł hurtowe ceny paliw, ale kierowcy na stacjach nadal nie widzą dużych podwyżek. Sprawdzamy, co to oznacza dla firm.
 draft: false
 author: redakcja-busmaniak

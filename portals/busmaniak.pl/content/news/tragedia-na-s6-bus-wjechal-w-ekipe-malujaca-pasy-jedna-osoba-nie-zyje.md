@@ -1,7 +1,7 @@
 ---
 title: Tragedia na S6. Bus wjechał w ekipę malującą pasy, jedna osoba nie żyje
 date: 2026-04-24
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Na trasie S6 bus najechał na pracowników malujących oznakowanie. Jedna osoba zginęła, a służby wyjaśniają okoliczności wypadku.
 draft: false
 author: redakcja-busmaniak

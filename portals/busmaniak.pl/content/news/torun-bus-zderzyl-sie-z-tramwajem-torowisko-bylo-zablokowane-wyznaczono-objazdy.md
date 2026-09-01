@@ -1,7 +1,7 @@
 ---
 title: 'Toruń: bus zderzył się z tramwajem. Torowisko było zablokowane, wyznaczono objazdy'
 date: 2026-05-19
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: W Toruniu doszło do zderzenia busa z tramwajem. Torowisko zostało zablokowane, a w rejonie zdarzenia wprowadzono objazdy.
 draft: false
 author: redakcja-busmaniak

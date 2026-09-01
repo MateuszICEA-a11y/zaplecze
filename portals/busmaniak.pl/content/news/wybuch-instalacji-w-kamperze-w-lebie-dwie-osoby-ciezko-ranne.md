@@ -1,7 +1,7 @@
 ---
 title: Wybuch instalacji w kamperze w Łebie. Dwie osoby ciężko ranne
 date: 2026-04-20
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: W Łebie doszło do wybuchu instalacji w kamperze. Dwoje turystów zostało ciężko rannych i trafiło do szpitala.
 draft: false
 author: redakcja-busmaniak

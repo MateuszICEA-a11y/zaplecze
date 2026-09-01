@@ -1,7 +1,7 @@
 ---
 title: "Kampery samoróbki – projekty DIY camper vanów"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Kampery samoróbki – najlepsze projekty DIY camper vanów, porady i inspiracje."
 draft: false
 image: "/images/kampery-samorobki-hero.webp"

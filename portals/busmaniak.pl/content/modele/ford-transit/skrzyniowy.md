@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit skrzyniowy – podwozie, zabudowy"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Ford Transit skrzyniowy (chassis cab) – podwozie pod zabudowy: skrzynia, plandeka, kontener, wywrotka. DMC do 4700 kg, rozstawy osi L2–L4, różne układy napędowe w zależności od wersji."
 draft: false
 author: "marek-kowalczyk"

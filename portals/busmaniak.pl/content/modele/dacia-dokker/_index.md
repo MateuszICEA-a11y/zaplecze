@@ -1,7 +1,7 @@
 ---
 title: "Dacia Dokker – dane techniczne, wersje, silniki"
 date: 2026-03-25
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Dacia Dokker (2012–2021) – dane techniczne wszystkich silników, wymiary, ładowność Vana, wersje Stepway i kombi. Typowe usterki z przebiegami i ceny używanych."
 draft: false
 author: "marek-kowalczyk"

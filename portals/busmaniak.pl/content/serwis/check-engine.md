@@ -1,7 +1,7 @@
 ---
 title: "Check engine w busie – przyczyny, diagnostyka, co robić"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Kontrolka check engine w busie – najczęstsze przyczyny, kody błędów OBD2, diagnostyka krok po kroku i koszty napraw w Ducato, Sprinterze i Transicie."
 draft: false
 author: "marek-kowalczyk"

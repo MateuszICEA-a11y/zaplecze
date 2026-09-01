@@ -1,7 +1,7 @@
 ---
 title: "Prawo jazdy na busa – kategorie i wymagania w 2026 roku"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Prawo jazdy na busa zależy od DMC i liczby miejsc. Sprawdź, która kategoria (B, C1, C, D) jest Ci potrzebna, ile kosztuje kurs i jakie zmiany wchodzą w 2026 roku."
 draft: false
 author: "marek-kowalczyk"

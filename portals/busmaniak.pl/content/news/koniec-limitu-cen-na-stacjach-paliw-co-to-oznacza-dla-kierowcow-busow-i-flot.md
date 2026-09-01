@@ -1,7 +1,7 @@
 ---
 title: Koniec limitu cen na stacjach paliw. Co to oznacza dla kierowców busów i flot
 date: 2026-06-20
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: W całej Polsce znika limit cen paliw na stacjach. Sprawdzamy, od kiedy kierowcy zapłacą więcej i co to oznacza dla flot.
 draft: false
 author: redakcja-busmaniak

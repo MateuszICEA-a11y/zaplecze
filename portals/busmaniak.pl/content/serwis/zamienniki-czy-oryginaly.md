@@ -1,6 +1,7 @@
 ---
 title: "Zamienniki czy części oryginalne do busa – klasy O, Q i P"
 date: 2026-08-31
+lastmod: 2026-08-31
 description: "Klasy jakości części O, Q, P i PJ, ceny oryginałów i zamienników do busa, przepisy o gwarancji oraz sposób na dobranie części po numerze OE."
 draft: false
 author: "marek-kowalczyk"

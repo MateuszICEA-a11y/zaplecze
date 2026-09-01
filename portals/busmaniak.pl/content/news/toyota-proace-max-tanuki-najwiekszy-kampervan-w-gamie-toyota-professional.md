@@ -1,7 +1,7 @@
 ---
 title: Toyota Proace Max Tanuki – największy kampervan w gamie Toyota Professional
 date: 2026-05-07
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Toyota Professional poszerza ofertę o Proace Max Tanuki – największego kampervana w gamie, przygotowanego z myślą o turystyce.
 draft: false
 author: redakcja-busmaniak

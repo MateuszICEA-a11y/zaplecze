@@ -1,7 +1,7 @@
 ---
 title: 'Wierzbica: bus wjechał do rowu na DK61. Jedna osoba trafiła do szpitala'
 date: 2026-06-27
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Na DK61 w rejonie Wierzbicy bus wjechał do rowu. W zdarzeniu ucierpiała jedna osoba, która została przewieziona do szpitala.
 draft: false
 author: redakcja-busmaniak

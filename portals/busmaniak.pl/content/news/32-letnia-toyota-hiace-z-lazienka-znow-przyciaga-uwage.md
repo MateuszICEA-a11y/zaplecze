@@ -1,7 +1,7 @@
 ---
 title: 32-letnia Toyota Hiace z łazienką znów przyciąga uwagę
 date: 2026-06-23
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Stara Toyota Hiace ponownie budzi sensację. Powód jest nietypowy – w 32-letnim vanie udało się zmieścić pełnoprawną łazienkę.
 draft: false
 author: redakcja-busmaniak

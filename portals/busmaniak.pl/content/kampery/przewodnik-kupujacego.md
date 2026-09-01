@@ -1,7 +1,7 @@
 ---
 title: "Kamper – kompletny przewodnik kupującego 2026"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Kompletny przewodnik po zakupie kampera w 2026 roku – rodzaje, na co zwrócić uwagę, koszty eksploatacji, rejestracja i ubezpieczenie samochodu kempingowego."
 draft: false
 author: "anna-wozniak"

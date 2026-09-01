@@ -1,7 +1,7 @@
 ---
 title: "Opel Vivaro wymiary – długość, szerokość, przestrzeń ładunkowa"
 date: 2026-03-25
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Opel Vivaro wymiary – kompletne zestawienie długości, szerokości, wysokości i wymiarów przestrzeni ładunkowej Standard i Long."
 draft: false
 author: "marek-kowalczyk"

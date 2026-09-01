@@ -1,7 +1,7 @@
 ---
 title: Leapmotor T03 Van – miejski elektryk dla małych firm
 date: 2026-04-10
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Leapmotor T03 Van to elektryczny mikrodostawczak oparty na miejskim aucie. Ma być prostą propozycją dla małych firm i do dostaw lokalnych.
 draft: false
 author: redakcja-busmaniak

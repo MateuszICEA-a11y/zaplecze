@@ -1,7 +1,7 @@
 ---
 title: "Opel Combo – dane techniczne, wersje, silniki"
 date: 2026-03-25
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Opel Combo – dane techniczne, wymiary Short i Long, silniki 1.5 BlueHDi i 1.2 PureTech, Combo Life 7-osobowy, e-Combo, typowe usterki i ceny."
 draft: false
 author: "marek-kowalczyk"

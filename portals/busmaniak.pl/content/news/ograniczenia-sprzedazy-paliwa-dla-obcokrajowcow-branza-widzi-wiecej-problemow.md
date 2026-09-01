@@ -1,7 +1,7 @@
 ---
 title: Ograniczenia sprzedaży paliwa dla obcokrajowców? Branża widzi więcej problemów niż korzyści
 date: 2026-04-12
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Pomysł ograniczenia tankowania dla obcokrajowców budzi kontrowersje. Eksperci wskazują, że kierowcy dostawczaków szybko znajdą obejścia.
 draft: false
 author: redakcja-busmaniak

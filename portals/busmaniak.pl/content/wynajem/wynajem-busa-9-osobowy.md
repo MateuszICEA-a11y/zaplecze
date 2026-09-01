@@ -1,7 +1,7 @@
 ---
 title: "Wynajem busa 9-osobowego – oferty i ceny 2026"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 draft: false
 author: "marek-kowalczyk"
 description: "Wynajem busa 9-osobowego w Polsce – ceny na 2026, popularne modele, wypożyczalnie i wymagania dotyczące kierowcy."

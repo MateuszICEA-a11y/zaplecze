@@ -1,6 +1,7 @@
 ---
 title: Koniec CPN 31 sierpnia. Ceny diesla i benzyny mocno w górę od września
 date: 2026-08-31
+lastmod: 2026-08-31
 description: 31 sierpnia wygasa pakiet CPN. Od 1 września diesel powyżej 8 zł/l, benzyna 95 ponad 7 zł. Eskalacja na Bliskim Wschodzie winduje ropę.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: "Olej silnikowy do busa – jaki wybrać, co ile wymieniać"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Jaki olej silnikowy do busa? Klasy lepkości 5W-30 vs 0W-30, normy producentów Fiat 9.55535-S1, MB 229.52, Ford WSS-M2C950-A – tabela doboru i interwały wymiany."
 draft: false
 author: "marek-kowalczyk"

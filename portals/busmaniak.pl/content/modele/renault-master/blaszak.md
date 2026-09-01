@@ -1,7 +1,7 @@
 ---
 title: "Renault Master blaszak – co to jest i które wersje obejmuje?"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Renault Master blaszak – potoczne określenie furgonu. Dowiedz się, które wersje L2H2 i L3H2 nazywa się blaszakiem i jak wybrać odpowiednią konfigurację."
 draft: false
 author: "marek-kowalczyk"

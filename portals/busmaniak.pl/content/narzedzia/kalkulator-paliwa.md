@@ -2,7 +2,7 @@
 title: "Kalkulator paliwa – oblicz koszt trasy busem"
 h1: "Kalkulator kosztów paliwa dla busów"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Kalkulator kosztów paliwa – oblicz, ile zapłacisz za paliwo na zaplanowanej trasie busem. Wybierz model, podaj dystans i cenę paliwa."
 lead: "Sprawdź, ile kosztuje Cię paliwo na konkretnej trasie. Wybierz swój model busa, wpisz dystans i aktualną cenę diesla – kalkulator policzy zużycie paliwa, koszt całkowity i stawkę za kilometr."
 main_keyword: "kalkulator paliwa bus"

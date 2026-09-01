@@ -1,7 +1,7 @@
 ---
 title: "Fiat Ducato kontener – zabudowa kontenerowa, wymiary"
 date: 2026-03-25
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Fiat Ducato z zabudową kontenerową – wymiary kontenera, ładowność, rodzaje zabudów i najważniejsze kwestie przy zakupie."
 draft: false
 author: "marek-kowalczyk"

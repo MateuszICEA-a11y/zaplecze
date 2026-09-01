@@ -1,7 +1,7 @@
 ---
 title: Skradziony w Czechach bus odzyskany w Polsce. Akcja policjantów z Kudowy-Zdroju
 date: 2026-06-26
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Policjanci z Kudowy-Zdroju odzyskali w Polsce busa skradzionego w Czechach. Auto wróci do właściciela po transgranicznej akcji.
 draft: false
 author: redakcja-busmaniak

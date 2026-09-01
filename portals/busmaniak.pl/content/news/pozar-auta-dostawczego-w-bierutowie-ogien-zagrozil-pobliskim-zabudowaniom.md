@@ -1,7 +1,7 @@
 ---
 title: Pożar auta dostawczego w Bierutowie. Ogień zagroził pobliskim zabudowaniom
 date: 2026-06-13
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: W Bierutowie spłonął samochód dostawczy. Strażacy walczyli z ogniem, który zagrażał pobliskim zabudowaniom.
 draft: false
 author: redakcja-busmaniak

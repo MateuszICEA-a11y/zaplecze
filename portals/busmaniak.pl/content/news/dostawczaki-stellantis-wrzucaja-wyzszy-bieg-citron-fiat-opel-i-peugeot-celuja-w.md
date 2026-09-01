@@ -1,7 +1,7 @@
 ---
 title: Dostawczaki Stellantis wrzucają wyższy bieg. Citroën, Fiat, Opel i Peugeot celują w firmy
 date: 2026-07-10
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Citroën, Fiat, Opel i Peugeot wzmacniają ofensywę w segmencie aut dostawczych. Sprawdzamy, co to oznacza dla firm i rynku.
 draft: false
 author: redakcja-busmaniak

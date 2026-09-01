@@ -1,5 +1,5 @@
 ---
 title: "Wynajem"
 description: "Wynajem kampera i busa w Polsce – ceny na sezon 2026, porównanie wypożyczalni, umowa, kaucja i praktyczne porady. Kompletny poradnik dla wynajmujących po raz pierwszy."
-lastmod: 2026-08-06
+lastmod: 2026-04-01
 ---

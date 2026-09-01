@@ -1,7 +1,7 @@
 ---
 title: "Spalanie busów – porównanie zużycia paliwa popularnych modeli"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Spalanie busów dostawczych – tabela zużycia paliwa Ducato, Sprintera, Transita, Daily, Mastera i Craftera w mieście, na trasie i w cyklu mieszanym."
 draft: false
 author: "marek-kowalczyk"

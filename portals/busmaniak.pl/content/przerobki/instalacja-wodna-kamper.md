@@ -1,7 +1,7 @@
 ---
 title: "Instalacja wodna w kamperze – zbiorniki, pompy"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Instalacja wodna w kamperze – dobór zbiorników, pomp i montaż systemu wodnego."
 draft: false
 image: "/images/instalacja-wodna-kamper-hero.webp"

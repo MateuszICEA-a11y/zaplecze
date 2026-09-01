@@ -1,7 +1,7 @@
 ---
 title: "Iveco Daily Maxi – największy van na kat. B"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Iveco Daily Maxi – do 19,6 m³ w wybranych konfiguracjach i możliwość przewozu 6 europalet w wersji homologowanej na 3,5 t. To jedna z największych pojemności w segmencie aut dostawczych na kat. B."
 draft: false
 author: "marek-kowalczyk"

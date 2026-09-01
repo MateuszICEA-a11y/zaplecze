@@ -1,7 +1,7 @@
 ---
 title: Kamper w kosztach firmy? Odliczenie może sięgnąć nawet 150 tys. zł
 date: 2026-05-03
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Zakup kampera może dać firmie odliczenie nawet do 150 tys. zł. Sprawdzamy, kiedy to możliwe i gdzie pojawiają się podatkowe ograniczenia.
 draft: false
 author: redakcja-busmaniak

@@ -1,7 +1,7 @@
 ---
 title: 'Tomczyk: program „Ceny Paliwa Niżej” będzie realizowany. Co to może oznaczać dla kierowców i firm'
 date: 2026-07-27
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Zapowiedź realizacji programu „Ceny Paliwa Niżej” wraca do debaty. Sprawdzamy, co to może oznaczać dla kierowców, busów i firm.
 draft: false
 author: redakcja-busmaniak

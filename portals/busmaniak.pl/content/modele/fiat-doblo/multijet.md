@@ -1,7 +1,7 @@
 ---
 title: "Fiat Doblò MultiJet – silniki, dane techniczne i usterki"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Fiat Doblò MultiJet – przegląd silników diesla MultiJet w gen. II: 1.3, 1.6 i 2.0. Dane techniczne, spalanie, typowe problemy i koszty serwisu."
 draft: false
 author: "marek-kowalczyk"

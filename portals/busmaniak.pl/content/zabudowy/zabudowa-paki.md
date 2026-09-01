@@ -1,7 +1,7 @@
 ---
 title: "Zabudowa paki busa – ochrona ładunku"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Zabudowa paki busa – wykładziny podłogowe, listwy ochronne, siatki, uchwyty i systemy zabezpieczenia ładunku. Materiały, montaż i koszty w 2026."
 draft: false
 author: "tomasz-zielinski"

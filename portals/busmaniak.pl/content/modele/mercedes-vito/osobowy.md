@@ -1,7 +1,7 @@
 ---
 title: "Mercedes Vito osobowy – Tourer, dane techniczne, ceny"
 date: 2026-03-25
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Mercedes Vito Tourer (W447) – wersje Compact/Long/Extra-Long, silniki 2.0 CDI 102–190 KM, różne układy napędu, 7–9 miejsc i przegląd najważniejszych informacji."
 draft: false
 author: "marek-kowalczyk"

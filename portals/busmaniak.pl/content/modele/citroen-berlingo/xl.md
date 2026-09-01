@@ -1,7 +1,7 @@
 ---
 title: "Citroën Berlingo XL – wymiary, bagażnik, porównanie z M"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Citroën Berlingo XL – wydłużona wersja III generacji. Wymiary, bagażnik, przestrzeń ładunkowa Van, silniki i porównanie z wersją M."
 draft: false
 author: "marek-kowalczyk"

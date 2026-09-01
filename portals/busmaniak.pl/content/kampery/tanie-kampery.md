@@ -1,7 +1,7 @@
 ---
 title: "Tanie kampery – jak kupić kampera za małe pieniądze"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Tanie kampery – przeróbka DIY od 20 tys. zł, używane od 30 tys. zł i najtańsze nowe modele. Poradnik kupującego z tabelą cen."
 draft: false
 author: "anna-wozniak"

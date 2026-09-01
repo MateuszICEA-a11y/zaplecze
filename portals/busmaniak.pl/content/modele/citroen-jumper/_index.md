@@ -1,7 +1,7 @@
 ---
 title: "Citroën Jumper – bliźniak Ducato i Boxera, dane techniczne"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Citroën Jumper III (od 2006) – bliźniak Fiata Ducato III i Peugeota Boxera na platformie Sevel Sud. Silniki 2.2 BlueHDi 120–165 KM. Elektryczny ë-Jumper z baterią 37/75 kWh."
 draft: false
 author: "marek-kowalczyk"

@@ -1,7 +1,7 @@
 ---
 title: "Spalanie busów i vanów – porównanie modeli i silników"
 date: 2026-03-26
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: "Porównanie spalania busów dostawczych i vanów – realne zużycie paliwa Ducato, Sprintera, Transita, Vivaro, Trafic, Berlingo i innych. Dane WLTP i rzeczywiste."
 draft: false
 author: "marek-kowalczyk"

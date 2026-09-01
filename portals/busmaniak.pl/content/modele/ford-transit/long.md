@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit Long – wymiary L3 i L4"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Ford Transit Long w wersjach L3 i L4/Jumbo – wymiary, pojemność ładunkowa do 15,1 m³, liczba europalet, napędy i zastosowania transportowe."
 draft: false
 author: "marek-kowalczyk"

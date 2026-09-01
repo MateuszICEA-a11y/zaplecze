@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Amarok TDI – dane techniczne, spalanie, opinie"
 date: 2026-03-26
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Silniki TDI w Volkswagenie Amaroku – dane techniczne, spalanie, typowe usterki i koszty serwisu w generacjach I oraz II."
 draft: false
 author: "marek-kowalczyk"

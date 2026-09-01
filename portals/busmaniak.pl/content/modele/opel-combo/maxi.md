@@ -1,7 +1,7 @@
 ---
 title: "Opel Combo Maxi (XL) – wymiary, ładowność, dane techniczne"
 date: 2026-03-26
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Opel Combo D Maxi oraz nowsze Combo Cargo XL i Combo Life XL – wymiary, przestrzeń ładunkowa, silniki i różnice względem krótszej wersji."
 draft: false
 author: "marek-kowalczyk"

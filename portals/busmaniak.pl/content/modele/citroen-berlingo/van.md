@@ -1,7 +1,7 @@
 ---
 title: "Citroën Berlingo Van – wersja dostawcza, wymiary paki, ładowność"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Citroën Berlingo Van – wersja dostawcza z homologacją N1. Wymiary paki M i XL, ładowność, silniki i porównanie z konkurencją."
 draft: false
 author: "marek-kowalczyk"

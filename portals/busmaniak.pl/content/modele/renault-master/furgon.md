@@ -1,7 +1,7 @@
 ---
 title: "Renault Master furgon – wymiary, ładowność, wersje L1–L4"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Renault Master furgon – dane techniczne wersji L1H1 do L4H3, pojemność ładunkowa, ładowność i praktyczne różnice między generacjami."
 draft: false
 author: "marek-kowalczyk"

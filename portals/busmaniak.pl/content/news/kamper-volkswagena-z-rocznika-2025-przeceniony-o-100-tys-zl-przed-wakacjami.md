@@ -1,7 +1,7 @@
 ---
 title: Kamper Volkswagena z rocznika 2025 przeceniony o 100 tys. zł przed wakacjami
 date: 2026-05-06
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Nowy kamper Volkswagena z 2025 roku otrzymał znaczną obniżkę ceny. To bogato wyposażony model z łazienką i częścią jadalną.
 draft: false
 author: redakcja-busmaniak

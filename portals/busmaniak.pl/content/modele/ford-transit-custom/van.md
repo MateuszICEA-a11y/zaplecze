@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit Custom Van II – wymiary, ładowność, konfiguracje"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Ford Transit Custom Van II w wersjach L1 i L2 – przestrzeń 6,0–6,8 m³, wymiary ładowni, wejście załadunkowe i podstawowe różnice konfiguracji nadwozia."
 draft: false
 author: "marek-kowalczyk"

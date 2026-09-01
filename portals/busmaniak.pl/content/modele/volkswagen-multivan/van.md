@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Multivan Van – wymiary, dane techniczne, ceny"
 date: 2026-03-26
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Volkswagen Multivan T7 – wymiary, przestrzeń bagażowa, silniki benzynowe, dieslowe i eHybrid, porównanie z Transporterem oraz uwagi praktyczne."
 draft: false
 author: "marek-kowalczyk"

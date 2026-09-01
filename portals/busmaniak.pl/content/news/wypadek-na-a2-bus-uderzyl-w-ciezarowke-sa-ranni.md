@@ -1,7 +1,7 @@
 ---
 title: Wypadek na A2. Bus uderzył w ciężarówkę, są ranni
 date: 2026-06-10
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Na autostradzie A2 doszło do zderzenia busa z ciężarówką. Kilka osób zostało rannych, a na trasie wystąpiły utrudnienia.
 draft: false
 author: redakcja-busmaniak

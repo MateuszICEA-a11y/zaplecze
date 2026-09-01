@@ -1,7 +1,7 @@
 ---
 title: "Bus przerobiony na kamper – projekty i inspiracje"
 date: 2026-03-23
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Sprawdzone projekty busów przerobionych na kampery – układy wnętrza, opisy zabudowy i realne koszty."
 draft: false
 image: "/images/bus-przerobiony-na-kamper-hero.webp"

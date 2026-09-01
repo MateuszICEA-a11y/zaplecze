@@ -1,7 +1,7 @@
 ---
 title: "Renault Master plandeka – wymiary, ładowność, zabudowy"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Renault Master plandeka – wersja ze skrzynią otwartą przykrytą plandeką. Ładowność, dostępne warianty podwozia i zastosowania w transporcie towarów ponadgabarytowych."
 draft: false
 author: "marek-kowalczyk"

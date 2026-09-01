@@ -1,7 +1,7 @@
 ---
 title: Ceny paliw na czwartek i piątek – tyle zapłacimy na stacjach
 date: 2026-06-04
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Sprawdzamy obowiązujące ceny paliw na czwartek i piątek. Znamy aktualne stawki za benzynę, diesla i autogaz.
 draft: false
 author: redakcja-busmaniak

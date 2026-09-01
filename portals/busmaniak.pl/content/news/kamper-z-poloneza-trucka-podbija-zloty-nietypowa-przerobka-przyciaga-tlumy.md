@@ -1,7 +1,7 @@
 ---
 title: Kamper z Poloneza Trucka podbija zloty. Nietypowa przeróbka przyciąga tłumy
 date: 2026-05-29
-lastmod: 2026-08-06
+lastmod: 2026-08-04
 description: Polonez Truck przerobiony na kampera stał się sensacją zlotów. To nietypowy projekt, który pokazuje kreatywność polskich konstruktorów.
 draft: false
 author: redakcja-busmaniak

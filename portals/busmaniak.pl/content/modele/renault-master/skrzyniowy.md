@@ -1,7 +1,7 @@
 ---
 title: "Renault Master skrzyniowy – podwozie, zabudowy, dane techniczne"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Renault Master skrzyniowy – wersja z otwartą skrzynią lub plandeką na podwoziu. Ładowność, warianty pod zabudowę, typowe zabudowy i zastosowania."
 draft: false
 author: "marek-kowalczyk"

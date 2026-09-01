@@ -1,7 +1,7 @@
 ---
 title: "Citroën ë-Berlingo – elektryczny van, zasięg, dane techniczne"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Citroën ë-Berlingo – elektryczna wersja Berlingo. Silnik 136 KM, bateria 50 kWh, zasięg do 280 km WLTP, ładowanie DC do 100 kW."
 draft: false
 author: "marek-kowalczyk"

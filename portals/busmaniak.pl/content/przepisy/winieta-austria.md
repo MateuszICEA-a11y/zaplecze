@@ -1,7 +1,7 @@
 ---
 title: "Winieta Austria 2026 – aktualne ceny i zasady"
 date: 2026-03-28
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Winieta w Austrii na 2026 rok – ceny winiet cyfrowych i naklejanych, odcinki specjalne z tunelami oraz system GO-Maut dla busów powyżej 3,5 t."
 draft: false
 author: "marek-kowalczyk"

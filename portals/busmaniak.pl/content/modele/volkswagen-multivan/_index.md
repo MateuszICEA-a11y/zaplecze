@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Multivan – generacje, dane techniczne, ceny"
 date: 2026-03-25
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Volkswagen Multivan T4–T7 – historia generacji, dane techniczne, silniki TSI/TDI/eHybrid, wymiary, wyposażenie Family/Style i ceny nowych oraz używanych."
 draft: false
 author: "marek-kowalczyk"

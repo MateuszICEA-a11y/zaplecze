@@ -1,7 +1,7 @@
 ---
 title: "Iveco Daily brygadówka – konfiguracja, miejsca"
 date: 2026-03-24
-lastmod: 2026-08-06
+lastmod: 2026-08-03
 description: "Iveco Daily brygadówka – 5–7 miejsc + paka, przegroda, DMC 3,5–5,0 t. Sprawdź konfiguracje dla ekip budowlanych i energetyków."
 draft: false
 author: "marek-kowalczyk"
