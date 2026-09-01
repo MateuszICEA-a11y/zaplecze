@@ -1,11 +1,5 @@
 [
   {
-    "title": "Internet coraz bardziej pod maszyny",
-    "date": "2026-05-29",
-    "slug": "internet-coraz-bardziej-pod-maszyny",
-    "source": "rss"
-  },
-  {
     "title": "Gdy firmy przesadzają z AI",
     "date": "2026-05-30",
     "slug": "gdy-firmy-przesadzaja-z-ai",
@@ -626,5 +620,12 @@
     "slug": "claude-i-claude-code-diametralnie-roznia-sie-w-przeszukiwaniu-sieci",
     "source": "rss",
     "source_name": "Search Engine Journal"
+  },
+  {
+    "title": "ChatGPT i Reddit pod najsurowszymi unijnymi regułami bezpieczeństwa",
+    "date": "2026-09-01",
+    "slug": "chatgpt-i-reddit-pod-najsurowszymi-unijnymi-regulami-bezpieczenstwa",
+    "source": "rss",
+    "source_name": "Ars Technica AI"
   }
 ]
