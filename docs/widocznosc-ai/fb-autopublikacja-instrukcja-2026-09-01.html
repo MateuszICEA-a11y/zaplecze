@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>widocznosc.ai – autopublikacja na Facebooku: co pozyskać</title>
+<style>
+  @font-face { font-family: "Roobert"; font-weight: 400; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Regular.otf"); }
+  @font-face { font-family: "Roobert"; font-weight: 500; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Medium.otf"); }
+  :root { --midnight:#000623; --blue:#5768ff; --orange:#f6704c; --off:#f9f9f9; --soft:rgba(0,6,35,.66); --line:rgba(0,6,35,.14); --blue-soft:rgba(87,104,255,.10); }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--midnight); background:var(--off); font-family:"Roobert",Arial,sans-serif; font-size:16px; line-height:1.5; }
+  h1,h2,h3,h4 { font-weight:500; margin:0 0 .4em; line-height:1.15; }
+  h1 { font-size:clamp(36px,5vw,56px); line-height:1.1; }
+  h2 { font-size:clamp(28px,3.4vw,40px); }
+  h3 { font-size:22px; }
+  h4 { font-size:17px; margin-bottom:.2em; }
+  p, li { color:var(--midnight); }
+  .wrap { width:min(calc(100% - 48px),1280px); margin-inline:auto; }
+  .narrow { max-width:760px; }
+  .bar { position:sticky; top:0; z-index:10; background:rgba(249,249,249,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+  .bar-in { display:flex; align-items:center; gap:24px; min-height:64px; }
+  .bar strong { font-weight:500; }
+  .bar .sp { flex:1; }
+  .btn { min-height:40px; padding:8px 14px; border:1px solid var(--midnight); border-radius:3px; background:transparent; color:var(--midnight); font:inherit; cursor:pointer; }
+  .logo { display:block; height:28px; width:auto; color:var(--off); margin-bottom:28px; }
+  .bar .logo { height:20px; margin:0; color:var(--midnight); }
+  .hero { background:var(--midnight); color:var(--off); padding:72px 0 56px; }
+  .hero p { color:rgba(249,249,249,.72); max-width:900px; }
+  .hero .lbl { color:var(--blue); font-weight:500; margin-bottom:14px; }
+  .hero h1 { max-width:1100px; }
+  .hero .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:40px; border:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div { padding:18px 20px; border-left:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div:first-child { border-left:0; }
+  .hero .kpis b { display:block; font-size:34px; font-weight:500; line-height:1.1; color:var(--off); }
+  .hero .kpis span { font-size:13px; color:rgba(249,249,249,.72); }
+  section.sec { padding:56px 0; border-top:1px solid var(--line); }
+  .lead { font-size:18px; color:var(--soft); }
+  .summary { background:#fff; border:1px solid var(--line); padding:28px; }
+  .summary ol { margin:0; padding-left:20px; }
+  .summary li { margin:8px 0; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin:12px 0 28px; background:#fff; }
+  th { background:var(--midnight); color:var(--off); text-align:left; padding:10px 12px; font-weight:400; font-size:12px; }
+  td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  td.num, th.num { text-align:right; white-space:nowrap; }
+  tr.sum td { font-weight:500; border-top:2px solid var(--midnight); }
+  tr.sub td { background:var(--blue-soft); font-weight:500; }
+  .tag { display:inline-block; padding:1px 8px; border:1px solid var(--midnight); border-radius:3px; font-size:12px; white-space:nowrap; }
+  .tag.ok { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:500; }
+  .tag.no { background:var(--midnight); color:var(--off); }
+  .tag.kb { border-color:var(--blue); background:var(--blue-soft); color:var(--midnight); }
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); margin:20px 0; }
+  .card { padding:22px; border-left:1px solid var(--line); background:#fff; }
+  .card:first-child { border-left:0; }
+  .card p { font-size:14px; color:var(--soft); margin:6px 0 0; }
+  .card .n { display:block; font-size:30px; font-weight:500; color:var(--blue); line-height:1.1; margin-bottom:6px; }
+  .card.dark { background:var(--midnight); color:var(--off); }
+  .card.dark h4, .card.dark p { color:var(--off); }
+  .card.dark p { opacity:.75; }
+  .callout { border-left:4px solid var(--orange); background:#fff; padding:16px 20px; margin:20px 0; }
+  .callout b { font-weight:500; }
+  .callout.blue { border-left-color:var(--blue); }
+  .step { display:grid; grid-template-columns:56px minmax(0,1fr) 220px; gap:20px; padding:20px 0; border-top:1px solid var(--line); }
+  .step:first-of-type { border-top:0; }
+  .step .no { font-size:30px; font-weight:500; color:var(--blue); line-height:1; }
+  .step .meta { font-size:13px; color:var(--soft); }
+  .step .meta em { display:block; font-style:normal; color:var(--midnight); font-weight:500; }
+  .step p { margin:4px 0 0; font-size:15px; }
+  ul.plain { padding-left:20px; }
+  .sm { font-size:13px; color:var(--soft); }
+  code { padding:1px 5px; background:var(--blue-soft); font-family:ui-monospace,Consolas,monospace; font-size:.9em; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+  @media (max-width:1000px) { .hero .kpis, .cards, .two { grid-template-columns:1fr; } .card { border-left:0; border-top:1px solid var(--line); } .hero .kpis div { border-left:0; border-top:1px solid rgba(249,249,249,.18); } .step { grid-template-columns:44px 1fr; } .step .meta { grid-column:2; } }
+
+
+  @media print { .bar { display:none; } body { background:#fff; } table, .step, .callout { break-inside:avoid; } }
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap bar-in"><strong>Autopublikacja FB – widocznosc.ai</strong><span class="sm">stan 01.09.2026 · instrukcja pozyskania dostępów</span><span class="sp"></span><button class="btn" onclick="pobierzMd()">Pobierz .md</button><button class="btn" onclick="print()">Drukuj / PDF</button></div></div>
+
+<header class="hero"><div class="wrap">
+  <svg class="logo" role="img" aria-label="iCEA" height="34" viewBox="0 0 186 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1437_16974)">
+<path d="M0 0.350281H10.1556V39.9221H0V0.350281Z" fill="currentColor"/>
+<path d="M0 0.332703H10.3132V10.3132H0V0.332703Z" fill="currentColor"/>
+<path d="M60.02 15.2941C60.0224 14.7134 59.9095 14.0459 59.6885 13.5089C59.4666 12.9525 59.1277 12.4502 58.6948 12.0363C58.2259 11.597 57.6761 11.2531 57.0759 11.024C56.3653 10.7539 55.6096 10.6227 54.8496 10.6375H32.5857C31.8231 10.6321 31.0669 10.7759 30.3594 11.0608C29.6719 11.3233 29.0457 11.7244 28.5194 12.239C27.988 12.7588 27.5736 13.3864 27.3048 14.0795C27.0215 14.8005 26.878 15.5687 26.8816 16.3434V23.8709C26.8762 24.6338 27.02 25.3907 27.3048 26.0983C27.5715 26.7926 27.9862 27.4206 28.5194 27.9389C29.0457 28.4534 29.6719 28.8542 30.3594 29.1166C31.0669 29.4015 31.8231 29.5453 32.5857 29.5399H54.8496C55.5218 29.5343 56.1859 29.3902 56.8 29.1166C57.4068 28.8701 57.9667 28.5214 58.4558 28.0858C58.919 27.6414 59.2988 27.1181 59.578 26.5401C59.8646 25.9686 60.0161 25.3388 60.02 24.6995H70.3977V25.8036C70.3931 27.5456 70.0748 29.2725 69.4588 30.9019C68.8633 32.5559 67.9852 34.0941 66.8642 35.448C65.7437 36.7864 64.3681 37.8877 62.8168 38.6874C61.2029 39.5223 59.4083 39.9462 57.5916 39.9208H28.851C27.2077 39.9324 25.5793 39.6067 24.0669 38.9637C21.0933 37.7309 18.731 35.3674 17.4985 32.3929C16.8558 30.88 16.5301 29.2511 16.5417 27.6073V12.6623C16.5245 11.0061 16.8503 9.36398 17.4985 7.83985C18.1286 6.38862 19.0199 5.06614 20.1291 3.93813C21.2638 2.82016 22.6001 1.92724 24.0669 1.30628C25.5793 0.663348 27.2077 0.33757 28.851 0.349158H57.5916C59.4083 0.323811 61.2029 0.747248 62.8168 1.58218C64.3633 2.38137 65.7379 3.47558 66.8642 4.80313C67.9841 6.12368 68.8626 7.63134 69.4588 9.2571C70.0709 10.83 70.3894 12.5023 70.3977 14.1901V15.2941L60.02 15.2941Z" fill="currentColor"/>
+<path d="M181.349 39.8294H169.444L165.322 33.0743H137.116L133.049 39.8294H121.071L144.53 0.257751H157.889L181.349 39.8294ZM150.51 10.6382L143.15 22.6754H159.416L151.946 10.6382H150.51Z" fill="currentColor"/>
+<path d="M113.178 29.6704H77.8135V39.8302H113.178V29.6704Z" fill="currentColor"/>
+<path d="M119.029 15.092H77.8135V24.7364H119.029V15.092Z" fill="currentColor"/>
+<path d="M129.774 0.240967H77.8135V10.4008H129.774V0.240967Z" fill="currentColor"/>
+<path d="M176.914 0V1.49095H173.859V5.66902H172.369V1.49095H169.443V0H176.914Z" fill="currentColor"/>
+<path d="M185.69 0V5.66902H184.218V2.28226L181.716 5.66902L179.231 2.30068V5.66902H177.741V0H179.471L181.771 3.09244L184.071 0H185.69Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_1437_16974">
+<rect width="185.69" height="40" fill="currentColor"/>
+</clipPath>
+</defs>
+</svg>
+  <p class="lbl">widocznosc.ai · Dystrybucja treści · Instrukcja</p>
+  <h1>Do uruchomienia automatu potrzebne są dwie wartości: ID dedykowanej strony widocznosc.ai i token, który nie wygasa</h1>
+  <p>Automat jest gotowy w repozytorium (ten sam mechanizm, który od kwietnia publikuje wpisy BusManiak.pl). Codziennie od poniedziałku do piątku o 11:00 wybiera losowy wpis z bloga widocznosc.ai, generuje opis i publikuje link na stronie. Blokuje go tylko brak dostępu do strony na Facebooku – ten dokument opisuje, co i w jakiej kolejności pozyskać.</p>
+  <div class="kpis">
+    <div><b>2</b><span>wartości do przekazania (ID strony, token)</span></div>
+    <div><b>3</b><span>uprawnienia w aplikacji Meta</span></div>
+    <div><b>50</b><span>wpisów bloga w puli automatu</span></div>
+    <div><b>~40 min</b><span>pracy administratora, koszt 0 zł</span></div>
+  </div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <h2>Co trzeba mieć na końcu</h2>
+  <div class="summary"><ol>
+    <li><b>Dedykowana strona widocznosc.ai na Facebooku</b>, podpięta do portfolio firmowego ICEA (Meta Business Portfolio), z rolą administratora dla osoby, która zakłada dostępy.</li>
+    <li><b>Aplikacja w Meta for Developers</b> typu „Firma”, przypisana do tego samego portfolio. Może zostać w trybie deweloperskim – publikacja na własnej stronie nie wymaga App Review.</li>
+    <li><b>Użytkownik systemowy</b> w Business Portfolio z dostępem do strony i wygenerowanym tokenem bez daty wygaśnięcia. To jedyny wariant tokena, który nie wymaga odnawiania co 60 dni.</li>
+    <li><b>Dwie wartości wpisane do GitHub Secrets</b> repozytorium <code>zaplecze</code>: <code>FB_WIDOCZNOSC_PAGE_ID</code> oraz <code>FB_WIDOCZNOSC_ACCESS_TOKEN</code>. Klucz do modelu językowego (<code>OPENROUTER_KEY</code>) już tam jest, wspólny z BusManiakiem.</li>
+  </ol></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Lista rzeczy do pozyskania</h2>
+  <p class="lead">Kolumna „Gdzie” wskazuje panel Meta, w którym wartość powstaje lub jest widoczna; kolumna „Do czego” – jak używa jej automat.</p>
+  <table>
+    <tr><th>Element</th><th>Gdzie powstaje lub gdzie go znaleźć</th><th>Do czego jest potrzebny</th><th>Kto</th></tr>
+    <tr class="sub"><td colspan="4">Strona na Facebooku</td></tr>
+    <tr><td>Strona „widocznosc.ai”</td><td>facebook.com/pages/create → kategoria „Strona internetowa i blog” lub „Firma medialna/informacyjna”; nazwa użytkownika <code>@widocznosc.ai</code> (jeśli wolna) – bez tego link będzie z ciągiem cyfr</td><td>Miejsce publikacji. Nazwa i awatar pokazują się przy każdym poście automatu</td><td>Mateusz</td></tr>
+    <tr><td>Przypięcie strony do portfolio ICEA</td><td>business.facebook.com/settings → Konta → Strony → Dodaj → „Dodaj stronę” (strona, którą już administrujesz)</td><td>Bez tego użytkownik systemowy nie dostanie do niej dostępu</td><td>administrator portfolio ICEA</td></tr>
+    <tr><td><b>ID strony</b></td><td>Ustawienia strony → „Przejrzystość strony” → „ID strony”; alternatywnie Business Settings → Konta → Strony (ID pod nazwą)</td><td>Sekret <code>FB_WIDOCZNOSC_PAGE_ID</code>. Ciąg 15–16 cyfr</td><td>Mateusz</td></tr>
+    <tr class="sub"><td colspan="4">Aplikacja Meta for Developers</td></tr>
+    <tr><td>Aplikacja „widocznosc.ai Auto-Poster”</td><td>developers.facebook.com → Moje aplikacje → Utwórz aplikację → przypadek użycia „Inne” → typ „Firma” → portfolio ICEA</td><td>Token musi być wystawiony w kontekście jakiejś aplikacji. Może być też istniejąca aplikacja BusManiaka, jeśli jest w tym samym portfolio</td><td>Mateusz</td></tr>
+    <tr><td>ID aplikacji i klucz tajny aplikacji</td><td>Panel aplikacji → Ustawienia aplikacji → Podstawowe</td><td>Tylko do weryfikacji tokena (<code>debug_token</code>) – automat ich nie używa</td><td>Mateusz</td></tr>
+    <tr class="sub"><td colspan="4">Użytkownik systemowy i token</td></tr>
+    <tr><td>Użytkownik systemowy „widocznosc-autoposter”</td><td>Business Settings → Użytkownicy → Użytkownicy systemowi → Dodaj; rola „Administrator”</td><td>Konto techniczne, niezależne od osób – token nie ginie, gdy ktoś odejdzie z firmy</td><td>administrator portfolio ICEA</td></tr>
+    <tr><td>Przypisanie zasobów użytkownikowi systemowemu</td><td>Ten sam ekran → Przypisz zasoby → Strony → „widocznosc.ai” → „Pełna kontrola”; oraz Aplikacje → „widocznosc.ai Auto-Poster” → „Zarządzaj aplikacją”</td><td>Bez pełnej kontroli nad stroną Graph API odrzuci publikację (błąd 200)</td><td>administrator portfolio ICEA</td></tr>
+    <tr><td><b>Token użytkownika systemowego</b></td><td>Ten sam ekran → Wygeneruj token → wybierz aplikację → ważność „Nigdy” → uprawnienia: <code>pages_manage_posts</code>, <code>pages_read_engagement</code>, <code>pages_show_list</code></td><td>Sekret <code>FB_WIDOCZNOSC_ACCESS_TOKEN</code>. Meta pokazuje go raz – skopiować od razu</td><td>administrator portfolio ICEA</td></tr>
+  </table>
+  <div class="cards">
+    <div class="card"><span class="n">pages_manage_posts</span><h4>Publikacja</h4><p>Jedyne uprawnienie, które faktycznie tworzy post. Bez niego API zwraca błąd 200 „requires pages_manage_posts”.</p></div>
+    <div class="card"><span class="n">pages_read_engagement</span><h4>Odczyt strony</h4><p>Wymagane razem z powyższym do wywołań na <code>/{page-id}/feed</code>. Nie daje dostępu do wiadomości ani danych osób.</p></div>
+    <div class="card dark"><span class="n">pages_show_list</span><h4>Lista stron</h4><p>Pozwala sprawdzić w <code>/me/accounts</code>, czy token widzi stronę. Przydatne przy weryfikacji, nieużywane przez automat.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Weryfikacja tokena przed przekazaniem</h2>
+  <div class="two">
+    <div>
+      <p class="lead">Dwa wywołania z terminala potwierdzają, że token jest właściwy, widzi stronę i nie wygasa. Wykonuje je osoba, która ma token w ręku – wynik nie zawiera nic wrażliwego i można go wkleić do wątku.</p>
+      <div class="callout blue"><b>Warunek:</b> w odpowiedzi <code>debug_token</code> pole <code>expires_at</code> ma być <code>0</code>, a <code>type</code> – <code>USER</code> z <code>is_valid: true</code>. Wartość inna niż 0 oznacza token tymczasowy z Graph API Explorer – automat przestanie działać po 60 dniach.</div>
+      <div class="callout"><b>Uwaga:</b> tokena nie wysyłamy mailem ani na czacie. Trafia bezpośrednio do GitHub Secrets; jeśli musi przejść przez ręce dwóch osób, użyć wiadomości znikającej i po wpisaniu do sekretów wygenerować nowy (stary unieważnić w panelu użytkownika systemowego).</div>
+    </div>
+    <div>
+      <table>
+        <tr><th>Sprawdzenie</th><th>Wywołanie i oczekiwany wynik</th></tr>
+        <tr><td>Token widzi stronę</td><td><code>curl "https://graph.facebook.com/v22.0/me/accounts?access_token=TOKEN"</code><br>W odpowiedzi wpis z <code>name: "widocznosc.ai"</code> i <code>id</code> równym ID strony; w <code>tasks</code> m.in. <code>CREATE_CONTENT</code></td></tr>
+        <tr><td>Token nie wygasa</td><td><code>curl "https://graph.facebook.com/v22.0/debug_token?input_token=TOKEN&amp;access_token=APP_ID|APP_SECRET"</code><br><code>expires_at: 0</code>, <code>is_valid: true</code>, w <code>scopes</code> trzy uprawnienia z listy</td></tr>
+        <tr><td>Publikacja testowa</td><td>Nie robić ręcznie przez curl – pierwszy post wykona automat uruchomiony ręcznie z GitHuba (krok 6 planu), żeby sprawdzić cały łańcuch</td></tr>
+      </table>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Plan</h2>
+  <div class="step"><div class="no">1</div><div><h4>Założyć stronę widocznosc.ai</h4><p>Nazwa, nazwa użytkownika, kategoria, awatar (znak widocznosc.ai), okładka, opis z linkiem do https://widocznosc.ai/. Strona może na razie zostać nieopublikowana publicznie – automat i tak potrzebuje jej ID.</p></div><div class="meta"><em>Mateusz</em>przed krokiem 2</div></div>
+  <div class="step"><div class="no">2</div><div><h4>Podpiąć stronę do portfolio ICEA</h4><p>Business Settings → Konta → Strony → Dodaj. Osoba dodająca musi być administratorem zarówno strony, jak i portfolio.</p></div><div class="meta"><em>administrator portfolio ICEA</em>po kroku 1</div></div>
+  <div class="step"><div class="no">3</div><div><h4>Utworzyć aplikację typu „Firma”</h4><p>W tym samym portfolio. Zapisać ID aplikacji i klucz tajny (do weryfikacji tokena). Tryb deweloperski zostaje.</p></div><div class="meta"><em>Mateusz</em>po kroku 2</div></div>
+  <div class="step"><div class="no">4</div><div><h4>Użytkownik systemowy z dostępem do strony i aplikacji</h4><p>Dodać użytkownika, przypisać stronę z pełną kontrolą i aplikację, wygenerować token bez wygaśnięcia z trzema uprawnieniami. Skopiować token od razu – ekran nie pokaże go ponownie.</p></div><div class="meta"><em>administrator portfolio ICEA</em>po kroku 3</div></div>
+  <div class="step"><div class="no">5</div><div><h4>Zweryfikować token i wpisać sekrety</h4><p>Dwa wywołania z sekcji wyżej, potem GitHub → repozytorium <code>zaplecze</code> → Settings → Secrets and variables → Actions → New repository secret: <code>FB_WIDOCZNOSC_PAGE_ID</code>, <code>FB_WIDOCZNOSC_ACCESS_TOKEN</code>.</p></div><div class="meta"><em>Mateusz</em>po kroku 4</div></div>
+  <div class="step"><div class="no">6</div><div><h4>Pierwszy przejazd ręczny</h4><p>GitHub → Actions → „Facebook Auto-Poster (widocznosc.ai)” → Run workflow. Sprawdzić post na stronie i wpis w <code>pipeline/fb-poster/posted-widocznosc.json</code>. Od następnego dnia roboczego automat rusza sam o 11:00.</p></div><div class="meta"><em>Mateusz</em>po kroku 5</div></div>
+  <h3 style="margin-top:40px">Do rozstrzygnięcia w kolejnym etapie</h3>
+  <ul class="plain">
+    <li><b>Newsy w puli automatu</b> – dziś publikuje tylko wpisy bloga (50). Codzienne newsy z widocznosc.ai/news/ można dołożyć osobnym harmonogramem, jeśli strona ma mieć więcej niż jeden post dziennie.</li>
+    <li><b>Częstotliwość</b> – ustawione pon–pt 11:00. Zmiana to jedna linia w <code>.github/workflows/fb-poster-widocznosc.yml</code>.</li>
+    <li><b>Instagram i LinkedIn</b> – token użytkownika systemowego z tego samego portfolio obsłuży też konto Instagram firmowe (wymaga dodatkowo <code>instagram_content_publish</code>); LinkedIn to osobne API i osobna zgoda.</li>
+  </ul>
+</div></section>
+<script>
+function pobierzMd(){
+  const t=(el)=>el.textContent.replace(/\s+/g,' ').trim();
+  const inline=(el)=>{let o='';el.childNodes.forEach(n=>{if(n.nodeType===3)o+=n.textContent.replace(/\s+/g,' ');else if(n.tagName==='B'||n.tagName==='STRONG')o+='**'+inline(n).trim()+'**';else if(n.tagName==='CODE')o+='`'+t(n)+'`';else if(n.tagName==='BR')o+='\n';else o+=inline(n);});return o;};
+  const table=(tb)=>{const rows=[...tb.querySelectorAll('tr')];let out=[];rows.forEach((r,i)=>{const cells=[...r.children];const isHead=cells[0].tagName==='TH';if(cells.length===1&&cells[0].colSpan>1){out.push('| **'+t(cells[0])+'** |'+' |'.repeat(0));return;}
+    out.push('| '+cells.map(c=>t(c).replace(/\|/g,'\\|')).join(' | ')+' |');if(isHead)out.push('|'+cells.map(()=>' --- ').join('|')+'|');});return out.join('\n');};
+  const lsp=(box)=>{let o=[];box.querySelectorAll('.sec').forEach(sec=>{o.push('### '+t(sec.querySelector('h4')).replace(/NOWA SEKCJA/,'(nowa sekcja)'));const h=sec.querySelector('.hint');if(h)o.push('_'+t(h)+'_');
+    sec.querySelectorAll('.f').forEach(f=>{const l=f.querySelector('label');const v=f.querySelector('.in,.ta,.sel,.tg');if(!l||!v)return;const lab=t(l).replace(/\*/,'').replace(/NOWE/,'(nowe)').trim();let val=t(v).replace(/⌄$/,'').trim();if(v.classList.contains('empty'))val='— ('+val+')';o.push('- **'+lab+'**: '+val);});
+    sec.querySelectorAll('.sl').forEach(sl=>o.push('- **'+t(sl.querySelector('b'))+'** ('+t(sl.querySelector('small'))+'): '+t(sl.querySelector('.val'))));
+    const cond=sec.querySelector('.cond');if(cond){o.push('- **'+t(cond.querySelector('.ph')).replace(/NOWE/,'(nowe)')+'**');cond.querySelectorAll('.tg').forEach(g=>o.push('  - '+(g.classList.contains('on')?'[x] ':'[ ] ')+t(g)));}
+    o.push('');});return o.join('\n');};
+  let md=[];
+  md.push('# '+t(document.querySelector('h1')));md.push('');md.push('_'+t(document.querySelector('.hero .lbl'))+' · '+t(document.querySelector('.bar .sm'))+'_');md.push('');
+  document.querySelectorAll('.hero p:not(.lbl)').forEach(p=>{md.push(inline(p).trim());md.push('');});
+  document.querySelectorAll('.hero .kpis div').forEach(d=>md.push('- **'+t(d.querySelector('b'))+'** '+t(d.querySelector('span'))));md.push('');
+  document.querySelectorAll('section.sec').forEach(sec=>{
+    [...sec.querySelector('.wrap').children].forEach(walk);
+    function walk(el){
+      if(el.tagName==='H2'){md.push('## '+t(el));md.push('');}
+      else if(el.tagName==='H3'){md.push('### '+t(el));md.push('');}
+      else if(el.tagName==='P'){md.push(inline(el).trim());md.push('');}
+      else if(el.tagName==='TABLE'){md.push(table(el));md.push('');}
+      else if(el.tagName==='OL'||el.tagName==='UL'){[...el.children].forEach((li,i)=>md.push((el.tagName==='OL'?(i+1)+'. ':'- ')+inline(li).trim()));md.push('');}
+      else if(el.classList.contains('callout')){md.push('> '+inline(el).trim().replace(/\n/g,'\n> '));md.push('');}
+      else if(el.classList.contains('cards')){el.querySelectorAll('.card').forEach(c=>{const n=c.querySelector('.n');md.push('- **'+(n?t(n)+' – ':'')+t(c.querySelector('h4'))+'**: '+t(c.querySelector('p')));});md.push('');}
+      else if(el.classList.contains('step')){const no=t(el.querySelector('.no'));const h=t(el.querySelector('h4'));const p=el.querySelector('p');const meta=el.querySelector('.meta');md.push(no+'. **'+h+'** – '+(p?inline(p).trim():'')+(meta?' _('+t(meta.querySelector('em'))+'; '+t(meta).replace(t(meta.querySelector('em')),'').trim()+')_':''));md.push('');}
+      else if(el.classList.contains('lsp')){md.push(lsp(el));}
+      else if(el.classList.contains('summary')||el.classList.contains('two')||el.tagName==='DIV'){[...el.children].forEach(walk);}
+    }
+  });
+  const blob=new Blob([md.join('\n').replace(/\n{3,}/g,'\n\n')],{type:'text/markdown;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(document.title||'dokument').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').toLowerCase()+'.md';a.click();URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>
