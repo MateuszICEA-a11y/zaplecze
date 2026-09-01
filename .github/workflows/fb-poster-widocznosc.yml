@@ -1,0 +1,36 @@
+name: Facebook Auto-Poster (widocznosc.ai)
+on:
+  schedule:
+    - cron: '0 9 * * 1-5'  # 11:00 PL (UTC+2) / 10:00 PL (UTC+1 winter), pon–pt (B2B)
+  workflow_dispatch:  # manual fallback
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Post to Facebook
+        run: python pipeline/fb-poster/post_to_fb.py --site widocznosc
+        env:
+          OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
+          FB_WIDOCZNOSC_PAGE_ID: ${{ secrets.FB_WIDOCZNOSC_PAGE_ID }}
+          FB_WIDOCZNOSC_ACCESS_TOKEN: ${{ secrets.FB_WIDOCZNOSC_ACCESS_TOKEN }}
+
+      - name: Commit posted-widocznosc.json tracking
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pipeline/fb-poster/posted-widocznosc.json
+          git diff --cached --quiet || git commit -m "chore: update fb-poster tracking (widocznosc)"
+          git pull --rebase
+          git push

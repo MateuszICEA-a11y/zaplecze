@@ -20,7 +20,7 @@ jobs:
           python-version: '3.12'
 
       - name: Post to Facebook
-        run: python pipeline/fb-poster/post_to_fb.py
+        run: python pipeline/fb-poster/post_to_fb.py --site busmaniak
         env:
           OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}

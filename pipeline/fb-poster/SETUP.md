@@ -89,3 +89,26 @@ python3 pipeline/fb-poster/post_to_fb.py --dry-run
 ```
 
 This will pick an article and generate the description without actually posting to Facebook.
+
+## 8. widocznosc.ai (second portal)
+
+The same script serves both portals – `--site` selects the configuration
+(`SITES` dict at the top of `post_to_fb.py`):
+
+| | busmaniak (default) | widocznosc |
+|---|---|---|
+| Content | `portals/busmaniak.pl/content/**/*.md` (Hugo) | `portals/widocznosc.ai/src/content/blog/**/*.md` (Astro; news excluded) |
+| URL | `/<section>/<slug>/` | `/<pillar>/<slug>/` |
+| Summary field | `lead` | `description` (+ `subtitle`, `tags`) |
+| Tracking | `posted.json` | `posted-widocznosc.json` |
+| Secrets | `FB_PAGE_ID`, `FB_ACCESS_TOKEN` | `FB_WIDOCZNOSC_PAGE_ID`, `FB_WIDOCZNOSC_ACCESS_TOKEN` |
+| Workflow | `.github/workflows/fb-poster.yml` (daily 10:00 PL) | `.github/workflows/fb-poster-widocznosc.yml` (Mon–Fri 11:00 PL) |
+
+Token generation is identical to sections 1–5 above – just pick the Page that
+should publish widocznosc.ai posts (ICEA company Page or a dedicated one) and
+store its ID and Page Access Token under the `FB_WIDOCZNOSC_*` secrets.
+`OPENROUTER_KEY` is shared.
+
+```bash
+python3 pipeline/fb-poster/post_to_fb.py --site widocznosc --dry-run
+```
