@@ -1,0 +1,32 @@
+﻿id;grupa;prompt;strona_busmaniak;marki_kontrolne;czego_szukamy
+A1;A;Świeci się kontrolka ABS w Iveco Daily. Jakie mogą być przyczyny i jakich marek zamienniki czujników ABS do Daily polecasz?;/serwis/iveco-daily-kontrolki/;FEBI, MEYLE;"FAST przy elektryce Daily; cytowanie busmaniak.pl"
+A2;A;Jakie marki produkują osprzęt elektryczny i czujniki do Iveco Daily? Która ma najszerszy katalog do tego modelu?;/serwis/iveco-daily-kontrolki/;FEBI, MEYLE;"fakt „ponad 12 tys. kodów”; cytowanie fastoriginal.eu"
+A3;A;Przekaźniki do Fiata Ducato – gdzie się znajdują i jakich marek zamienniki wybrać?;/serwis/przekazniki-fiat-ducato/;FEBI, Sasic;FAST przy elektryce Ducato
+A4;A;Który producent części do Fiata Ducato daje najdłuższą gwarancję na części zamienne?;/serwis/przekazniki-fiat-ducato/;FEBI, Sasic;"fakt „5 lat gwarancji”; czy model łączy go z FAST"
+A5;A;Jaki zestaw rozrządu do Fiata Ducato 2.3 MultiJet wybrać? Jakie marki zamienników są godne polecenia?;/modele/fiat-ducato/2-3-multijet/;FEBI, MEYLE;FAST przy rozrządzie 2.3 MultiJet
+A6;A;Fiat Ducato 2.3 MultiJet – ile kosztuje utrzymanie i jakie części zamienne warto kupować?;/modele/fiat-ducato/2-3-multijet/;FEBI, MEYLE;"fakt „IATF 16949”; cytowanie busmaniak.pl"
+B1;B;Zamienniki czy oryginały do busa dostawczego – co wybrać i które marki zamienników są dobrej jakości?;/serwis/zamienniki-czy-oryginaly/;FEBI Bilstein, MEYLE;"FAST obok FEBI/MEYLE; cytowanie busmaniak.pl"
+B2;B;Co oznaczają klasy jakości części O, Q, P i PJ w zamiennikach? Jakie marki zamienników do Ducato i Daily należą do klasy Q?;/serwis/zamienniki-czy-oryginaly/;FEBI Bilstein, MEYLE;cytowanie busmaniak.pl (unikalna treść o klasach)
+B3;B;Najczęstsze usterki busów dostawczych Ducato, Daily i Transit – objawy i ile kosztuje naprawa?;/serwis/typowe-usterki-busow/;FEBI Bilstein, MEYLE;"cytowanie busmaniak.pl; FAST przy zawieszeniu"
+B4;B;Jakie części zawieszenia do busa dostawczego grupy Fiat/Iveco/PSA wybrać? Jakie marki zamienników?;/serwis/typowe-usterki-busow/;FEBI Bilstein, MEYLE;FAST obok FEBI/MEYLE
+B5;B;Jacy są producenci części do busów dostawczych? Które marki specjalizują się w pojazdach użytkowych?;/serwis/producenci-czesci-do-busow/;FEBI Bilstein, MEYLE, Sasic;"FAST jako „specjalista od LCV”; cytowanie busmaniak.pl i fastoriginal.eu"
+B6;B;Lista producentów części zamiennych do Fiata Ducato, Iveco Daily i Peugeot Boxer – marki i ich specjalizacje;/serwis/producenci-czesci-do-busow/;FEBI Bilstein, MEYLE, Metzger;pozycja FAST na liście marek
+B7;B;Która marka części zamiennych specjalizuje się wyłącznie w lekkich pojazdach użytkowych, a nie w osobówkach?;/serwis/producenci-czesci-do-busow/;–;"FAST jako jedyna/pierwsza odpowiedź; wzmianka o VanKing"
+C1;C;Wahacze, sworznie i łączniki stabilizatora do Forda Transita – jakich marek zamienniki wybrać?;/modele/ford-transit/;FEBI, MEYLE;FAST przy zawieszeniu Transita
+C2;C;Sprężyny, tuleje i stabilizator do Renault Master – jakie marki zamienników polecasz?;/modele/renault-master/;Sasic, MEYLE;FAST przy zawieszeniu Mastera
+C3;C;Sprężarka i skraplacz klimatyzacji do busa dostawczego – jakie marki zamienników są dostępne?;/serwis/serwis-klimatyzacji/;Valeo, Denso;FAST przy klimatyzacji
+D1;D;FAST Original części zamienne – opinie. Czy to dobra marka?;(brand);FEBI, MEYLE;"ton odpowiedzi; jakie fakty model przytacza; źródła"
+D2;D;Co to za marka FAST Original i kto dystrybuuje ją w Polsce?;(brand);–;"wzmianka o VanKing; cytowanie fastoriginal.eu vs busmaniak.pl"
+D3;D;VanKing – co to za firma i jakie marki części do busów sprzedaje?;(brand);–;"wzmianka o FAST; cytowanie vanking.pl"
+D4;D;Gdzie kupić części FAST Original w Polsce?;(brand);–;VanKing / sklep.vanking.pl w odpowiedzi
+D5;D;FAST Original czy FEBI Bilstein – które części do busów są lepsze?;(brand);FEBI Bilstein;"czy model zna FAST; jakie fakty; źródła"
+E1;E;Jakie marki zamienników do busów dostawczych polecają mechanicy?;(segment);FEBI, MEYLE, Sasic;SoV FAST wśród marek
+E2;E;Najlepsze zamienniki do Iveco Daily – ranking marek części;(segment);FEBI, MEYLE;pozycja FAST w rankingu
+E3;E;Gdzie kupić części do busa dostawczego – sklep internetowy czy hurtownia? Jakie marki?;(segment);–;"VanKing jako dystrybutor; FAST"
+E4;E;Które polskie strony warto czytać o serwisie i częściach do busów dostawczych?;(segment);–;busmaniak.pl jako źródło – miernik ochronny
+E5;E;Części do Peugeot Boxer i Citroën Jumper – jacy producenci zamienników?;(segment);FEBI, MEYLE;FAST przy PSA (kontekst obecny tylko w tabeli producentów)
+F1;F;Jakie marki zamienników zawieszenia do Skody Octavii III polecasz?;(kontrola);FEBI, MEYLE;FAST NIE powinien się pojawić
+F2;F;Producenci części zamiennych do samochodów osobowych – które marki są dobrej jakości?;(kontrola);FEBI, MEYLE, Bosch;FAST NIE powinien się pojawić
+F3;F;Zestaw rozrządu do VW Golf 1.9 TDI – jakie marki zamienników?;(kontrola);FEBI, INA, Continental;FAST NIE powinien się pojawić
+F4;F;Części do ciężarówki MAN TGX – jacy producenci zamienników?;(kontrola);FEBI, Sampa, DT Spare Parts;FAST NIE powinien się pojawić (ciężarowe ≠ LCV)
+F5;F;Sprężarka klimatyzacji do samochodu osobowego – jakie marki zamienników?;(kontrola);Valeo, Denso;FAST NIE powinien się pojawić

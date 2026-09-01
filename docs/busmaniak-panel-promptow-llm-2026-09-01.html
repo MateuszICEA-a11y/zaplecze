@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel promptów – widoczność FAST i VanKing w LLM – 2026-09-01</title>
+<style>
+  @font-face { font-family: "Roobert"; font-weight: 400; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Regular.otf"); }
+  @font-face { font-family: "Roobert"; font-weight: 500; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Medium.otf"); }
+  :root { --midnight:#000623; --blue:#5768ff; --orange:#f6704c; --off:#f9f9f9; --soft:rgba(0,6,35,.66); --line:rgba(0,6,35,.14); --blue-soft:rgba(87,104,255,.10); }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--midnight); background:var(--off); font-family:"Roobert",Arial,sans-serif; font-size:16px; line-height:1.5; }
+  h1,h2,h3,h4 { font-weight:500; margin:0 0 .4em; line-height:1.15; }
+  h1 { font-size:clamp(36px,5vw,56px); line-height:1.1; }
+  h2 { font-size:clamp(28px,3.4vw,40px); }
+  h3 { font-size:22px; }
+  h4 { font-size:17px; margin-bottom:.2em; }
+  p, li { color:var(--midnight); }
+  .wrap { width:min(calc(100% - 48px),1280px); margin-inline:auto; }
+  .narrow { max-width:760px; }
+  .bar { position:sticky; top:0; z-index:10; background:rgba(249,249,249,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+  .bar-in { display:flex; align-items:center; gap:24px; min-height:64px; }
+  .bar strong { font-weight:500; }
+  .bar .sp { flex:1; }
+  .btn { min-height:40px; padding:8px 14px; border:1px solid var(--midnight); border-radius:3px; background:transparent; color:var(--midnight); font:inherit; cursor:pointer; }
+  .logo { display:block; height:28px; width:auto; color:var(--off); margin-bottom:28px; }
+  .bar .logo { height:20px; margin:0; color:var(--midnight); }
+  .hero { background:var(--midnight); color:var(--off); padding:72px 0 56px; }
+  .hero p { color:rgba(249,249,249,.72); max-width:900px; }
+  .hero .lbl { color:var(--blue); font-weight:500; margin-bottom:14px; }
+  .hero h1 { max-width:1100px; }
+  .hero .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:40px; border:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div { padding:18px 20px; border-left:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div:first-child { border-left:0; }
+  .hero .kpis b { display:block; font-size:34px; font-weight:500; line-height:1.1; color:var(--off); }
+  .hero .kpis span { font-size:13px; color:rgba(249,249,249,.72); }
+  section.sec { padding:56px 0; border-top:1px solid var(--line); }
+  .lead { font-size:18px; color:var(--soft); }
+  .summary { background:#fff; border:1px solid var(--line); padding:28px; }
+  .summary ol { margin:0; padding-left:20px; }
+  .summary li { margin:8px 0; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin:12px 0 28px; background:#fff; }
+  th { background:var(--midnight); color:var(--off); text-align:left; padding:10px 12px; font-weight:400; font-size:12px; }
+  td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  td.num, th.num { text-align:right; white-space:nowrap; }
+  tr.sum td { font-weight:500; border-top:2px solid var(--midnight); }
+  tr.sub td { background:var(--blue-soft); font-weight:500; }
+  .tag { display:inline-block; padding:1px 8px; border:1px solid var(--midnight); border-radius:3px; font-size:12px; white-space:nowrap; }
+  .tag.ok { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:500; }
+  .tag.no { background:var(--midnight); color:var(--off); }
+  .tag.kb { border-color:var(--blue); background:var(--blue-soft); color:var(--midnight); }
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); margin:20px 0; }
+  .card { padding:22px; border-left:1px solid var(--line); background:#fff; }
+  .card:first-child { border-left:0; }
+  .card p { font-size:14px; color:var(--soft); margin:6px 0 0; }
+  .card .n { display:block; font-size:30px; font-weight:500; color:var(--blue); line-height:1.1; margin-bottom:6px; }
+  .card.dark { background:var(--midnight); color:var(--off); }
+  .card.dark h4, .card.dark p { color:var(--off); }
+  .card.dark p { opacity:.75; }
+  .callout { border-left:4px solid var(--orange); background:#fff; padding:16px 20px; margin:20px 0; }
+  .callout b { font-weight:500; }
+  .callout.blue { border-left-color:var(--blue); }
+  .step { display:grid; grid-template-columns:56px minmax(0,1fr) 220px; gap:20px; padding:20px 0; border-top:1px solid var(--line); }
+  .step:first-of-type { border-top:0; }
+  .step .no { font-size:30px; font-weight:500; color:var(--blue); line-height:1; }
+  .step .meta { font-size:13px; color:var(--soft); }
+  .step .meta em { display:block; font-style:normal; color:var(--midnight); font-weight:500; }
+  .step p { margin:4px 0 0; font-size:15px; }
+  ul.plain { padding-left:20px; }
+  .sm { font-size:13px; color:var(--soft); }
+  code { padding:1px 5px; background:var(--blue-soft); font-family:ui-monospace,Consolas,monospace; font-size:.9em; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+  @media (max-width:1000px) { .hero .kpis, .cards, .two { grid-template-columns:1fr; } .card { border-left:0; border-top:1px solid var(--line); } .hero .kpis div { border-left:0; border-top:1px solid rgba(249,249,249,.18); } .step { grid-template-columns:44px 1fr; } .step .meta { grid-column:2; } }
+
+
+  @media print { .bar { display:none; } body { background:#fff; } table, .step, .callout { break-inside:avoid; } }
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap bar-in"><strong>Panel promptów – widoczność FAST / VanKing w LLM</strong><span class="sm">stan 01.09.2026 · BusManiak.pl</span><span class="sp"></span><button class="btn" onclick="pobierzMd()">Pobierz .md</button><button class="btn" onclick="print()">Drukuj / PDF</button></div></div>
+
+<header class="hero"><div class="wrap">
+
+  <svg class="logo" role="img" aria-label="iCEA" height="34" viewBox="0 0 186 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1437_16974)">
+<path d="M0 0.350281H10.1556V39.9221H0V0.350281Z" fill="currentColor"/>
+<path d="M0 0.332703H10.3132V10.3132H0V0.332703Z" fill="currentColor"/>
+<path d="M60.02 15.2941C60.0224 14.7134 59.9095 14.0459 59.6885 13.5089C59.4666 12.9525 59.1277 12.4502 58.6948 12.0363C58.2259 11.597 57.6761 11.2531 57.0759 11.024C56.3653 10.7539 55.6096 10.6227 54.8496 10.6375H32.5857C31.8231 10.6321 31.0669 10.7759 30.3594 11.0608C29.6719 11.3233 29.0457 11.7244 28.5194 12.239C27.988 12.7588 27.5736 13.3864 27.3048 14.0795C27.0215 14.8005 26.878 15.5687 26.8816 16.3434V23.8709C26.8762 24.6338 27.02 25.3907 27.3048 26.0983C27.5715 26.7926 27.9862 27.4206 28.5194 27.9389C29.0457 28.4534 29.6719 28.8542 30.3594 29.1166C31.0669 29.4015 31.8231 29.5453 32.5857 29.5399H54.8496C55.5218 29.5343 56.1859 29.3902 56.8 29.1166C57.4068 28.8701 57.9667 28.5214 58.4558 28.0858C58.919 27.6414 59.2988 27.1181 59.578 26.5401C59.8646 25.9686 60.0161 25.3388 60.02 24.6995H70.3977V25.8036C70.3931 27.5456 70.0748 29.2725 69.4588 30.9019C68.8633 32.5559 67.9852 34.0941 66.8642 35.448C65.7437 36.7864 64.3681 37.8877 62.8168 38.6874C61.2029 39.5223 59.4083 39.9462 57.5916 39.9208H28.851C27.2077 39.9324 25.5793 39.6067 24.0669 38.9637C21.0933 37.7309 18.731 35.3674 17.4985 32.3929C16.8558 30.88 16.5301 29.2511 16.5417 27.6073V12.6623C16.5245 11.0061 16.8503 9.36398 17.4985 7.83985C18.1286 6.38862 19.0199 5.06614 20.1291 3.93813C21.2638 2.82016 22.6001 1.92724 24.0669 1.30628C25.5793 0.663348 27.2077 0.33757 28.851 0.349158H57.5916C59.4083 0.323811 61.2029 0.747248 62.8168 1.58218C64.3633 2.38137 65.7379 3.47558 66.8642 4.80313C67.9841 6.12368 68.8626 7.63134 69.4588 9.2571C70.0709 10.83 70.3894 12.5023 70.3977 14.1901V15.2941L60.02 15.2941Z" fill="currentColor"/>
+<path d="M181.349 39.8294H169.444L165.322 33.0743H137.116L133.049 39.8294H121.071L144.53 0.257751H157.889L181.349 39.8294ZM150.51 10.6382L143.15 22.6754H159.416L151.946 10.6382H150.51Z" fill="currentColor"/>
+<path d="M113.178 29.6704H77.8135V39.8302H113.178V29.6704Z" fill="currentColor"/>
+<path d="M119.029 15.092H77.8135V24.7364H119.029V15.092Z" fill="currentColor"/>
+<path d="M129.774 0.240967H77.8135V10.4008H129.774V0.240967Z" fill="currentColor"/>
+<path d="M176.914 0V1.49095H173.859V5.66902H172.369V1.49095H169.443V0H176.914Z" fill="currentColor"/>
+<path d="M185.69 0V5.66902H184.218V2.28226L181.716 5.66902L179.231 2.30068V5.66902H177.741V0H179.471L181.771 3.09244L184.071 0H185.69Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_1437_16974">
+<rect width="185.69" height="40" fill="currentColor"/>
+</clipPath>
+</defs>
+</svg>
+  <p class="lbl">BusManiak.pl · FAST / VanKing · panel pomiarowy</p>
+  <h1>Mierzymy, czy po wpięciach z 30–31.08 modele zaczynają wymieniać FAST przy częściach do busów i powoływać się na busmaniak.pl</h1>
+  <p>Ahrefs Brand Radar daje liczby hurtowe (stan 29.08: fastoriginal.eu 42 cytowania, vanking.pl 7, busmaniak.pl 2 721, FEBI 571, MEYLE 654), ale nie widzi kontekstu. Ten panel uzupełnia go o odczyt w konkretnych pytaniach: 31 promptów, 5 silników, każdy prompt powtarzany, baseline w pierwszym tygodniu września, potem co dwa tygodnie do listopada.</p>
+  <div class="kpis">
+    <div><b>31</b><span>promptów w panelu, w tym 5 kontrolnych</span></div>
+    <div><b>5</b><span>silników: ChatGPT, AI Mode, Perplexity, Gemini, Copilot</span></div>
+    <div><b>3</b><span>powtórzenia każdego promptu w jednej fali</span></div>
+    <div><b>465</b><span>odpowiedzi do zalogowania na falę</span></div>
+  </div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <h2>Zasady pomiaru</h2>
+  <div class="summary"><ol>
+    <li><b>Baseline teraz.</b> Strony weszły na produkcję 30–31.08, indeksacja i odświeżenie indeksów AI trwa dni–tygodnie. Falę 0 trzeba zrobić do 5.09, inaczej nie będzie punktu odniesienia.</li>
+    <li><b>Każdy prompt 3 razy, każde powtórzenie w nowej sesji.</b> Odpowiedzi są niedeterministyczne – liczymy odsetek odpowiedzi ze wzmianką, nie „czy padło”. Nowy czat, bez historii, bez zalogowanego profilu z personalizacją, lokalizacja Polska, język polski.</li>
+    <li><b>Liczymy markę FAST tylko w kontekście części.</b> W panelu odpowiedź czyta człowiek, więc samo „FAST” obok FEBI/MEYLE się liczy. W Brand Radar liczymy wyłącznie „FAST Original” – słowo „fast” samo w sobie jest niemierzalne.</li>
+    <li><b>FEBI, MEYLE i Sasic to grupa kontrolna.</b> W treści FAST zawsze stoi obok nich. Jeśli w kolejnych falach rośnie tylko FAST – to efekt wpięć. Jeśli rosną wszystkie – zmienił się model lub indeks, nie nasza treść.</li>
+    <li><b>Grupa F ma wychodzić na zero.</b> FAST nie ma oferty do osobówek ani ciężarówek. Wzmianka tam oznacza halucynację i unieważnia wzrost w pozostałych grupach.</li>
+    <li><b>Miernik ochronny bez zmian.</b> Cytowania busmaniak.pl w Brand Radar poniżej 2 400 = wstrzymujemy kolejne wpięcia. Prompt E4 mierzy to samo od strony odpowiedzi.</li>
+  </ol></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Panel promptów</h2>
+  <p class="lead">Kolumna „strona” wskazuje, z którego wpięcia prompt wynika – grupy D, E i F nie mają strony, bo mierzą przenikanie marki poza konkretną treść. Prompty zadajemy dosłownie, bez parafraz między falami.</p>
+  <table>
+    <tr><th>Id</th><th>Treść promptu (zadawać dosłownie)</th><th>Strona BusManiak.pl, z której wynika</th><th>Marki kontrolne w tym kontekście</th><th>Co odczytujemy w odpowiedzi</th></tr>
+    <tr class="sub"><td colspan="5">A – wpięcia priorytetu 1 (30.08) – Trzy strony z pierwszej paczki: kontrolki Daily (z odnośnikiem follow), przekaźniki Ducato, silnik 2.3 MultiJet.</td></tr><tr><td>A1</td><td>Świeci się kontrolka ABS w Iveco Daily. Jakie mogą być przyczyny i jakich marek zamienniki czujników ABS do Daily polecasz?</td><td><code>/serwis/iveco-daily-kontrolki/</code></td><td>FEBI, MEYLE</td><td>FAST przy elektryce Daily; cytowanie busmaniak.pl</td></tr><tr><td>A2</td><td>Jakie marki produkują osprzęt elektryczny i czujniki do Iveco Daily? Która ma najszerszy katalog do tego modelu?</td><td><code>/serwis/iveco-daily-kontrolki/</code></td><td>FEBI, MEYLE</td><td>fakt „ponad 12 tys. kodów”; cytowanie fastoriginal.eu</td></tr><tr><td>A3</td><td>Przekaźniki do Fiata Ducato – gdzie się znajdują i jakich marek zamienniki wybrać?</td><td><code>/serwis/przekazniki-fiat-ducato/</code></td><td>FEBI, Sasic</td><td>FAST przy elektryce Ducato</td></tr><tr><td>A4</td><td>Który producent części do Fiata Ducato daje najdłuższą gwarancję na części zamienne?</td><td><code>/serwis/przekazniki-fiat-ducato/</code></td><td>FEBI, Sasic</td><td>fakt „5 lat gwarancji”; czy model łączy go z FAST</td></tr><tr><td>A5</td><td>Jaki zestaw rozrządu do Fiata Ducato 2.3 MultiJet wybrać? Jakie marki zamienników są godne polecenia?</td><td><code>/modele/fiat-ducato/2-3-multijet/</code></td><td>FEBI, MEYLE</td><td>FAST przy rozrządzie 2.3 MultiJet</td></tr><tr><td>A6</td><td>Fiat Ducato 2.3 MultiJet – ile kosztuje utrzymanie i jakie części zamienne warto kupować?</td><td><code>/modele/fiat-ducato/2-3-multijet/</code></td><td>FEBI, MEYLE</td><td>fakt „IATF 16949”; cytowanie busmaniak.pl</td></tr><tr class="sub"><td colspan="5">B – trzy nowe strony (31.08) – Zamienniki czy oryginały, typowe usterki, producenci części (drugi odnośnik follow). Tu spodziewamy się największego efektu – strony pisane od zera pod cytowanie.</td></tr><tr><td>B1</td><td>Zamienniki czy oryginały do busa dostawczego – co wybrać i które marki zamienników są dobrej jakości?</td><td><code>/serwis/zamienniki-czy-oryginaly/</code></td><td>FEBI Bilstein, MEYLE</td><td>FAST obok FEBI/MEYLE; cytowanie busmaniak.pl</td></tr><tr><td>B2</td><td>Co oznaczają klasy jakości części O, Q, P i PJ w zamiennikach? Jakie marki zamienników do Ducato i Daily należą do klasy Q?</td><td><code>/serwis/zamienniki-czy-oryginaly/</code></td><td>FEBI Bilstein, MEYLE</td><td>cytowanie busmaniak.pl (unikalna treść o klasach)</td></tr><tr><td>B3</td><td>Najczęstsze usterki busów dostawczych Ducato, Daily i Transit – objawy i ile kosztuje naprawa?</td><td><code>/serwis/typowe-usterki-busow/</code></td><td>FEBI Bilstein, MEYLE</td><td>cytowanie busmaniak.pl; FAST przy zawieszeniu</td></tr><tr><td>B4</td><td>Jakie części zawieszenia do busa dostawczego grupy Fiat/Iveco/PSA wybrać? Jakie marki zamienników?</td><td><code>/serwis/typowe-usterki-busow/</code></td><td>FEBI Bilstein, MEYLE</td><td>FAST obok FEBI/MEYLE</td></tr><tr><td>B5</td><td>Jacy są producenci części do busów dostawczych? Które marki specjalizują się w pojazdach użytkowych?</td><td><code>/serwis/producenci-czesci-do-busow/</code></td><td>FEBI Bilstein, MEYLE, Sasic</td><td>FAST jako „specjalista od LCV”; cytowanie busmaniak.pl i fastoriginal.eu</td></tr><tr><td>B6</td><td>Lista producentów części zamiennych do Fiata Ducato, Iveco Daily i Peugeot Boxer – marki i ich specjalizacje</td><td><code>/serwis/producenci-czesci-do-busow/</code></td><td>FEBI Bilstein, MEYLE, Metzger</td><td>pozycja FAST na liście marek</td></tr><tr><td>B7</td><td>Która marka części zamiennych specjalizuje się wyłącznie w lekkich pojazdach użytkowych, a nie w osobówkach?</td><td><code>/serwis/producenci-czesci-do-busow/</code></td><td>–</td><td>FAST jako jedyna/pierwsza odpowiedź; wzmianka o VanKing</td></tr><tr class="sub"><td colspan="5">C – wpięcia priorytetu 2 (31.08) – Transit, Master, klimatyzacja – wzmianki bez odnośnika, w innych kontekstach model × podzespół niż w A.</td></tr><tr><td>C1</td><td>Wahacze, sworznie i łączniki stabilizatora do Forda Transita – jakich marek zamienniki wybrać?</td><td><code>/modele/ford-transit/</code></td><td>FEBI, MEYLE</td><td>FAST przy zawieszeniu Transita</td></tr><tr><td>C2</td><td>Sprężyny, tuleje i stabilizator do Renault Master – jakie marki zamienników polecasz?</td><td><code>/modele/renault-master/</code></td><td>Sasic, MEYLE</td><td>FAST przy zawieszeniu Mastera</td></tr><tr><td>C3</td><td>Sprężarka i skraplacz klimatyzacji do busa dostawczego – jakie marki zamienników są dostępne?</td><td><code>/serwis/serwis-klimatyzacji/</code></td><td>Valeo, Denso</td><td>FAST przy klimatyzacji</td></tr><tr class="sub"><td colspan="5">D – prompty brandowe – Pytania wprost o FAST Original i VanKing. Mierzą, czy model w ogóle zna markę i skąd bierze fakty.</td></tr><tr><td>D1</td><td>FAST Original części zamienne – opinie. Czy to dobra marka?</td><td>(brand)</td><td>FEBI, MEYLE</td><td>ton odpowiedzi; jakie fakty model przytacza; źródła</td></tr><tr><td>D2</td><td>Co to za marka FAST Original i kto dystrybuuje ją w Polsce?</td><td>(brand)</td><td>–</td><td>wzmianka o VanKing; cytowanie fastoriginal.eu vs busmaniak.pl</td></tr><tr><td>D3</td><td>VanKing – co to za firma i jakie marki części do busów sprzedaje?</td><td>(brand)</td><td>–</td><td>wzmianka o FAST; cytowanie vanking.pl</td></tr><tr><td>D4</td><td>Gdzie kupić części FAST Original w Polsce?</td><td>(brand)</td><td>–</td><td>VanKing / sklep.vanking.pl w odpowiedzi</td></tr><tr><td>D5</td><td>FAST Original czy FEBI Bilstein – które części do busów są lepsze?</td><td>(brand)</td><td>FEBI Bilstein</td><td>czy model zna FAST; jakie fakty; źródła</td></tr><tr class="sub"><td colspan="5">E – intencje segmentu – Pytania o busy bez wskazania podzespołu ze stron. Mierzą przenikanie marki poza konkretne wpięcia i udział busmaniaka jako źródła.</td></tr><tr><td>E1</td><td>Jakie marki zamienników do busów dostawczych polecają mechanicy?</td><td>(segment)</td><td>FEBI, MEYLE, Sasic</td><td>SoV FAST wśród marek</td></tr><tr><td>E2</td><td>Najlepsze zamienniki do Iveco Daily – ranking marek części</td><td>(segment)</td><td>FEBI, MEYLE</td><td>pozycja FAST w rankingu</td></tr><tr><td>E3</td><td>Gdzie kupić części do busa dostawczego – sklep internetowy czy hurtownia? Jakie marki?</td><td>(segment)</td><td>–</td><td>VanKing jako dystrybutor; FAST</td></tr><tr><td>E4</td><td>Które polskie strony warto czytać o serwisie i częściach do busów dostawczych?</td><td>(segment)</td><td>–</td><td>busmaniak.pl jako źródło – miernik ochronny</td></tr><tr><td>E5</td><td>Części do Peugeot Boxer i Citroën Jumper – jacy producenci zamienników?</td><td>(segment)</td><td>FEBI, MEYLE</td><td>FAST przy PSA (kontekst obecny tylko w tabeli producentów)</td></tr><tr class="sub"><td colspan="5">F – prompty kontrolne – Osobówki i ciężarowe – tam FAST nie ma oferty. Jeśli tu zacznie się pojawiać, wzrost w A–E jest szumem lub halucynacją, nie efektem treści.</td></tr><tr><td>F1</td><td>Jakie marki zamienników zawieszenia do Skody Octavii III polecasz?</td><td>(kontrola)</td><td>FEBI, MEYLE</td><td>FAST NIE powinien się pojawić</td></tr><tr><td>F2</td><td>Producenci części zamiennych do samochodów osobowych – które marki są dobrej jakości?</td><td>(kontrola)</td><td>FEBI, MEYLE, Bosch</td><td>FAST NIE powinien się pojawić</td></tr><tr><td>F3</td><td>Zestaw rozrządu do VW Golf 1.9 TDI – jakie marki zamienników?</td><td>(kontrola)</td><td>FEBI, INA, Continental</td><td>FAST NIE powinien się pojawić</td></tr><tr><td>F4</td><td>Części do ciężarówki MAN TGX – jacy producenci zamienników?</td><td>(kontrola)</td><td>FEBI, Sampa, DT Spare Parts</td><td>FAST NIE powinien się pojawić (ciężarowe ≠ LCV)</td></tr><tr><td>F5</td><td>Sprężarka klimatyzacji do samochodu osobowego – jakie marki zamienników?</td><td>(kontrola)</td><td>Valeo, Denso</td><td>FAST NIE powinien się pojawić</td></tr>
+  </table>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Silniki i co logujemy</h2>
+  <div class="two">
+    <div>
+      <p class="lead">Pięć silników, każdy w trybie domyślnym z dostępem do sieci. Copilot jest w zestawie, bo to jedyny odczyt indeksu Binga, a Brand Radar go nie pokrywa.</p>
+      <table><tr><th>Silnik</th><th>Konfiguracja</th></tr><tr><td><b>ChatGPT</b></td><td>GPT-5.x z włączonym wyszukiwaniem, konto bez historii lub czat tymczasowy</td></tr><tr><td><b>Google AI Mode</b></td><td>google.com/ai, lokalizacja PL, język PL; przy pytaniach z grupy E dodatkowo AI Overviews w klasycznym SERP</td></tr><tr><td><b>Perplexity</b></td><td>tryb domyślny (nie Pro/Research), bez zalogowania lub nowy wątek</td></tr><tr><td><b>Gemini</b></td><td>aplikacja gemini.google.com, nowy czat na każde powtórzenie</td></tr><tr><td><b>Copilot</b></td><td>copilot.microsoft.com, tryb domyślny – ważny dla Binga jako indeksu</td></tr></table>
+      <div class="callout blue"><b>Plik do logowania:</b> <code>busmaniak-panel-promptow-llm-2026-09-01-log-szablon.csv</code> – jeden wiersz na jedną odpowiedź (prompt × silnik × powtórzenie). Przykładowy wiersz w środku do usunięcia.</div>
+    </div>
+    <div>
+      <p class="lead">Per odpowiedź zapisujemy 0/1 dla każdej marki i każdego źródła, a przy FAST dodatkowo pozycję na liście marek i fakt, który model przytoczył.</p>
+      <table>
+        <tr><th>Pole w logu</th><th>Jak liczyć</th></tr>
+        <tr><td><code>fast_wzmianka</code></td><td>1, gdy FAST / FAST Original pada jako marka części</td></tr>
+        <tr><td><code>fast_pozycja_wsrod_marek</code></td><td>kolejność wymienienia (1 = pierwsza marka); puste, gdy brak</td></tr>
+        <tr><td><code>vanking_wzmianka</code></td><td>1, gdy pada VanKing w dowolnej formie</td></tr>
+        <tr><td><code>febi / meyle / sasic</code></td><td>0/1 – grupa kontrolna</td></tr>
+        <tr><td><code>cyt_busmaniak</code></td><td>1, gdy busmaniak.pl jest w źródłach lub linkach odpowiedzi</td></tr>
+        <tr><td><code>cyt_fastoriginal / cyt_vanking</code></td><td>j.w. dla fastoriginal.eu i vanking.pl</td></tr>
+        <tr><td><code>fakt_o_fast</code></td><td>gwarancja / IATF / 12tys / LCV / brak – który fakt z wpięć model powtórzył</td></tr>
+        <tr><td><code>inne_zrodla_cytowane</code></td><td>domeny po średniku – kto zabiera nam cytowania</td></tr>
+      </table>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Wskaźniki, które porównujemy między falami</h2>
+  <div class="cards">
+    <div class="card"><span class="n">SoV FAST</span><h4>Udział głosu w grupie marek</h4><p>Wzmianki FAST podzielone przez sumę wzmianek FAST + FEBI + MEYLE + Sasic, liczone osobno dla grup A–C i E oraz per silnik. To główny wskaźnik efektu.</p></div>
+    <div class="card"><span class="n">% cyt. busmaniak</span><h4>Odsetek odpowiedzi z busmaniak.pl w źródłach</h4><p>Liczony na grupach A–C i E. Mówi, czy nowe strony w ogóle są brane jako źródło – warunek konieczny, żeby marka przeszła dalej.</p></div>
+    <div class="card dark"><span class="n">% faktu</span><h4>Odsetek wzmianek FAST z faktem z wpięć</h4><p>Gwarancja 5 lat, IATF 16949, ponad 12 tys. kodów, specjalizacja LCV. Jeśli model powtarza nasze fakty, źródłem jest busmaniak, nawet gdy go nie cytuje wprost.</p></div>
+  </div>
+  <div class="callout"><b>Czego nie mierzymy:</b> ruchu referral z AI na vanking.pl i fastoriginal.eu. Nie mamy dostępu do ich analityki, a polska wersja fastoriginal.eu ma 15 unikalnych stron i kanibalizację adresów, więc wynik byłby zaszumiony problemami niezależnymi od wpięć.</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Harmonogram</h2>
+  <div class="step"><div class="no">0</div><div><h4>Baseline</h4><p>Pełny panel na 5 silnikach, 3 powtórzenia. Równolegle zrzut Brand Radar dla fastoriginal.eu, vanking.pl, busmaniak.pl, febi.com, meyle.com.</p></div><div class="meta"><em>kolega (AI Search)</em>do 05.09.2026</div></div>
+  <div class="step"><div class="no">1</div><div><h4>Fale co dwa tygodnie</h4><p>Te same prompty, ta sama konfiguracja. Po każdej fali krótki odczyt: SoV FAST per grupa, % cytowań busmaniaka, lista domen, które zabierają cytowania.</p></div><div class="meta"><em>kolega (AI Search)</em>19.09 · 03.10 · 17.10 · 31.10</div></div>
+  <div class="step"><div class="no">2</div><div><h4>Odczyt trzech nowych stron</h4><p>Osobne zestawienie grupy B: czy strony pisane od zera pod cytowanie zachowują się inaczej niż wzmianki dopisane do istniejących treści (A, C).</p></div><div class="meta"><em>Mateusz</em>październik 2026</div></div>
+  <div class="step"><div class="no">3</div><div><h4>Pomiar końcowy i decyzja o kolejnych wpięciach</h4><p>Zestawienie fal 0–4 z Brand Radar. Na tej podstawie decyzja, czy dwa pozostałe wpięcia z puli (bezpieczniki Daily, kontrolki Ducato, rozrząd Ducato – jedno z trzech odpada) idą w listopadzie.</p></div><div class="meta"><em>Mateusz</em>listopad 2026</div></div>
+</div></section>
+
+<script>
+function pobierzMd(){
+  const t=(el)=>el.textContent.replace(/\s+/g,' ').trim();
+  const inline=(el)=>{let o='';el.childNodes.forEach(n=>{if(n.nodeType===3)o+=n.textContent.replace(/\s+/g,' ');else if(n.tagName==='B'||n.tagName==='STRONG')o+='**'+inline(n).trim()+'**';else if(n.tagName==='CODE')o+='`'+t(n)+'`';else if(n.tagName==='BR')o+='\n';else o+=inline(n);});return o;};
+  const table=(tb)=>{const rows=[...tb.querySelectorAll('tr')];let out=[];rows.forEach((r,i)=>{const cells=[...r.children];const isHead=cells[0].tagName==='TH';if(cells.length===1&&cells[0].colSpan>1){out.push('| **'+t(cells[0])+'** |'+' |'.repeat(0));return;}
+    out.push('| '+cells.map(c=>t(c).replace(/\|/g,'\\|')).join(' | ')+' |');if(isHead)out.push('|'+cells.map(()=>' --- ').join('|')+'|');});return out.join('\n');};
+  const lsp=(box)=>{let o=[];box.querySelectorAll('.sec').forEach(sec=>{o.push('### '+t(sec.querySelector('h4')).replace(/NOWA SEKCJA/,'(nowa sekcja)'));const h=sec.querySelector('.hint');if(h)o.push('_'+t(h)+'_');
+    sec.querySelectorAll('.f').forEach(f=>{const l=f.querySelector('label');const v=f.querySelector('.in,.ta,.sel,.tg');if(!l||!v)return;const lab=t(l).replace(/\*/,'').replace(/NOWE/,'(nowe)').trim();let val=t(v).replace(/⌄$/,'').trim();if(v.classList.contains('empty'))val='— ('+val+')';o.push('- **'+lab+'**: '+val);});
+    sec.querySelectorAll('.sl').forEach(sl=>o.push('- **'+t(sl.querySelector('b'))+'** ('+t(sl.querySelector('small'))+'): '+t(sl.querySelector('.val'))));
+    const cond=sec.querySelector('.cond');if(cond){o.push('- **'+t(cond.querySelector('.ph')).replace(/NOWE/,'(nowe)')+'**');cond.querySelectorAll('.tg').forEach(g=>o.push('  - '+(g.classList.contains('on')?'[x] ':'[ ] ')+t(g)));}
+    o.push('');});return o.join('\n');};
+  let md=[];
+  md.push('# '+t(document.querySelector('h1')));md.push('');md.push('_'+t(document.querySelector('.hero .lbl'))+' · '+t(document.querySelector('.bar .sm'))+'_');md.push('');
+  document.querySelectorAll('.hero p:not(.lbl)').forEach(p=>{md.push(inline(p).trim());md.push('');});
+  document.querySelectorAll('.hero .kpis div').forEach(d=>md.push('- **'+t(d.querySelector('b'))+'** '+t(d.querySelector('span'))));md.push('');
+  document.querySelectorAll('section.sec').forEach(sec=>{
+    [...sec.querySelector('.wrap').children].forEach(walk);
+    function walk(el){
+      if(el.tagName==='H2'){md.push('## '+t(el));md.push('');}
+      else if(el.tagName==='H3'){md.push('### '+t(el));md.push('');}
+      else if(el.tagName==='P'){md.push(inline(el).trim());md.push('');}
+      else if(el.tagName==='TABLE'){md.push(table(el));md.push('');}
+      else if(el.tagName==='OL'||el.tagName==='UL'){[...el.children].forEach((li,i)=>md.push((el.tagName==='OL'?(i+1)+'. ':'- ')+inline(li).trim()));md.push('');}
+      else if(el.classList.contains('callout')){md.push('> '+inline(el).trim().replace(/\n/g,'\n> '));md.push('');}
+      else if(el.classList.contains('cards')){el.querySelectorAll('.card').forEach(c=>{const n=c.querySelector('.n');md.push('- **'+(n?t(n)+' – ':'')+t(c.querySelector('h4'))+'**: '+t(c.querySelector('p')));});md.push('');}
+      else if(el.classList.contains('step')){const no=t(el.querySelector('.no'));const h=t(el.querySelector('h4'));const p=el.querySelector('p');const meta=el.querySelector('.meta');md.push(no+'. **'+h+'** – '+(p?inline(p).trim():'')+(meta?' _('+t(meta.querySelector('em'))+'; '+t(meta).replace(t(meta.querySelector('em')),'').trim()+')_':''));md.push('');}
+      else if(el.classList.contains('lsp')){md.push(lsp(el));}
+      else if(el.classList.contains('summary')||el.classList.contains('two')||el.tagName==='DIV'){[...el.children].forEach(walk);}
+    }
+  });
+  const blob=new Blob([md.join('\n').replace(/\n{3,}/g,'\n\n')],{type:'text/markdown;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(document.title||'dokument').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').toLowerCase()+'.md';a.click();URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>
