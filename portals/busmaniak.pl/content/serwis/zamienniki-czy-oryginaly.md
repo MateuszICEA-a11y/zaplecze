@@ -1,7 +1,6 @@
 ---
 title: "Zamienniki czy części oryginalne do busa – klasy O, Q i P"
 date: 2026-08-31
-lastmod: 2026-08-31
 description: "Klasy jakości części O, Q, P i PJ, ceny oryginałów i zamienników do busa, przepisy o gwarancji oraz sposób na dobranie części po numerze OE."
 draft: false
 author: "marek-kowalczyk"
@@ -13,19 +12,18 @@ image_alt: "Części zamienne i oryginalne do busa na stole warsztatowym"
 lead: "W busie o przebiegu 300–500 tys. km opłaca się mieszać klasy części: zamiennik klasy Q lub P do elementów eksploatacyjnych, oryginał tam, gdzie w grę wchodzi elektronika silnika i układy bezpieczeństwa. Poniżej znajdziesz tabelę klas jakości, widełki cenowe dla siedmiu podzespołów oraz procedurę dobierania zamiennika po numerze OE."
 faq:
   - question: "Czy montaż zamiennika unieważnia gwarancję na busa?"
-    answer: "Nie. Rozporządzenie Komisji (UE) nr 461/2010, obowiązujące od 1 czerwca 2010 roku i przedłużone do 31 maja 2028 roku, zabrania producentowi uzależniania gwarancji od serwisu wyłącznie w ASO ani od części z własnym logo. Warunkiem jest część porównywalnej jakości i naprawa wykonana zgodnie z dokumentacją techniczną producenta."
-    
+    answer: "Nie. Rozporządzenie Komisji (UE) nr 461/2010, obowiązujące od 1 czerwca 2010 roku i przedłużone do 31 maja 2028 roku, zabrania producentowi uzależnienia gwarancji od serwisowania pojazdu wyłącznie w ASO lub od stosowania części z własnym logo. Warunkiem jest część porównywalnej jakości i naprawa wykonana zgodnie z dokumentacją techniczną producenta."
   - question: "Jak sprawdzić, czy część jest oryginalna?"
     answer: "Odczytaj numer OE ze zużytej części albo znajdź go w katalogu po numerze VIN, a potem porównaj z numerem na opakowaniu. Część klasy O ma logo marki pojazdu i numer katalogowy producenta auta, część klasy Q pochodzi od dostawcy pierwszego montażu i ma jego własny numer z odsyłaczem do numeru OE."
   - question: "Które części do busa lepiej kupić w oryginale?"
     answer: "Czujniki ciśnienia doładowania, przepływomierze, wtryskiwacze kodowane do sterownika oraz elementy układów ABS, ESP i poduszek powietrznych. Tańszy zamiennik potrafi mieć inną charakterystykę pracy, przez co sterownik zgłasza błędy, a oszczędność znika przy kolejnej wizycie w warsztacie."
   - question: "Ile można zaoszczędzić na zamiennikach w busie?"
-    answer: "Dobry zamiennik kosztuje zwykle 40–60% ceny części z ASO. Przy filtrze oleju to różnica rzędu kilkunastu złotych, przy sprzęgle lub turbosprężarce – nawet kilku tysięcy. Przy rocznym przebiegu 60 tys. km różnica na jednym aucie idzie w tysiące złotych rocznie."
+    answer: "Dobry zamiennik kosztuje zwykle 40–60% ceny części z ASO. Przy filtrze oleju to różnica rzędu kilkunastu złotych, przy sprzęgle lub turbosprężarce – nawet kilku tysięcy. Przy rocznym przebiegu 60 tys. km przekłada się to na oszczędności rzędu kilku tysięcy złotych rocznie."
   - question: "Co oznaczają klasy O, Q i P w kosztorysie ubezpieczyciela?"
     answer: "O to część w opakowaniu producenta pojazdu, Q to ta sama część od dostawcy pierwszego montażu bez logo marki auta, a P to zamiennik porównywalnej jakości. Oznaczenia PJ, PC i PT opisują części klasy P polecane przez dystrybutora lub certyfikowane przez Centro Zaragoza albo Thatcham. Klasa wpływa bezpośrednio na kwotę w kosztorysie Audatex i Eurotax."
 sources:
   - "Wikipedia – Automotive aftermarket"
-  - "Rozporządzenie Komisji (UE) nr 461/2010 z 27 maja 2010 r."
+  - "Rozporządzenie Komisji (UE) nr 461/2010 z 27 maja 2010 r. oraz przedłużające je Rozporządzenie (UE) 2023/822"
   - "Fiat Professional – katalog techniczny Ducato"
   - "Katalogi zamienników Filtron, Mann-Filter, Bosch, Mahle, UFI"
 ---
@@ -46,7 +44,7 @@ Wybierając podzespoły w hurtowniach motoryzacyjnych, spotkasz się z ustandary
 
 ### Oryginał (O) i część bez logo producenta (Q)
 
-Często zdarza się, że oryginalne części zamienne różnią się od zamienników klasy Q wyłącznie nadrukiem na obudowie i rodzajem kartonu. Przykładowo, filtr oleju do Ducato pakowany w opakowanie sygnowane logiem Fiata i ten sam produkt w pudełku dostawcy (na przykład UFI, dostawcy modułów olejowych do Ducato) to zazwyczaj ta sama część z tej samej linii produkcyjnej. Wybierając klasę Q, otrzymujesz standard pierwszego montażu w znacznie niższej cenie.
+Często zdarza się, że oryginalne części zamienne różnią się od zamienników klasy Q wyłącznie nadrukiem na obudowie i rodzajem kartonu. Przykładowo, filtr oleju do Ducato pakowany w opakowanie opatrzone logo Fiata i ten sam produkt w pudełku dostawcy (na przykład UFI, dostawcy modułów olejowych do Ducato) to zazwyczaj ta sama część z tej samej linii produkcyjnej. Wybierając klasę Q, otrzymujesz standard pierwszego montażu w znacznie niższej cenie.
 
 ### Zamienniki porównywalnej jakości (P, PJ, PC, PT)
 
@@ -54,7 +52,7 @@ Klasy jakości części samochodowych z grupy P opierają się głównie na dekl
 
 ## Ile kosztuje zamiennik, a ile oryginał w busie
 
-Różnice cenowe między podzespołami z ASO a ofertą niezależnych dystrybutorów są najbardziej odczuwalne w przypadku dużych dostawczaków, takich jak Iveco Daily, Mercedes Sprinter czy Ford Transit. Poniższe zestawienie prezentuje orientacyjne widełki rynkowe z 2026 roku, pokazując realną skalę potencjalnych oszczędności.
+Różnice cenowe między podzespołami z ASO a ofertą niezależnych dystrybutorów są najbardziej odczuwalne w przypadku dużych aut dostawczych, takich jak Iveco Daily, Mercedes Sprinter czy Ford Transit. Poniższe zestawienie prezentuje orientacyjne widełki rynkowe detalicznych cen brutto z 2026 roku, pokazując realną skalę potencjalnych oszczędności (ostateczna cena zależy od rabatów wypracowanych przez warsztat w hurtowni).
 
 | Podzespół | Oryginał (ASO) | Dobry zamiennik | Oszczędność |
 |-----------|----------------|-----------------|-------------|
@@ -72,11 +70,11 @@ Ta sama pozycja w kosztorysie ubezpieczyciela ma inną wartość zależnie od te
 
 ### Części eksploatacyjne
 
-Przy intensywnym użytkowaniu, gdzie roczne przebiegi sięgają 60 tys. km, a [wymiana oleju silnikowego](/serwis/olej-silnikowy/) odbywa się co kilka miesięcy, oszczędności na filtrach i klockach szybko się sumują. Flota korzystająca z dobrych zamienników części samochodowych potrafi zaoszczędzić na tym rocznie kilka tysięcy złotych na jednym aucie.
+Przy intensywnym użytkowaniu, gdzie roczne przebiegi sięgają 60 tys. km, a [wymiana oleju silnikowego](/serwis/olej-silnikowy/) odbywa się co kilka miesięcy, oszczędności na filtrach i klockach szybko się sumują. Dzięki zastosowaniu dobrych zamienników można zaoszczędzić kilka tysięcy złotych rocznie na jednym pojeździe.
 
 ### Podzespoły drogie i rzadko wymieniane
 
-W przypadku sprzęgła, turbosprężarki czy alternatora sprawa jest bardziej złożona, gdyż postój busa firmowego generuje wymierne straty finansowe. Nowe części z ASO są bardzo drogie, więc trzecią drogą staje się regeneracja w specjalistycznym warsztacie lub zakup podzespołów oznaczanych jako części OEM. Regeneracja turbosprężarki kosztuje zwykle ułamek ceny nowej części z ASO, a przy zapchanym układzie wydechowym tańsza od wymiany bywa też [regeneracja filtra cząstek stałych](/serwis/wypalanie-dpf/).
+W przypadku sprzęgła, turbosprężarki czy alternatora sprawa jest bardziej złożona, gdyż postój busa firmowego generuje wymierne straty finansowe. Nowe części z ASO są bardzo drogie, więc trzecią drogą staje się profesjonalna regeneracja w specjalistycznym warsztacie lub zakup podzespołów regenerowanych fabrycznie (w ramach tzw. programu wymiany). Regeneracja turbosprężarki kosztuje zwykle ułamek ceny nowej części z ASO, a przy zapchanym układzie wydechowym tańsza od wymiany bywa też [regeneracja filtra cząstek stałych](/serwis/wypalanie-dpf/).
 
 ![Części zamienne i oryginalne do busa na stole warsztatowym](/images/zamienniki-czy-oryginaly-hero.webp)
 
@@ -86,11 +84,11 @@ Pytanie, czy wybrać części oryginalne czy zamienniki, rozstrzyga się osobno 
 
 ### Części, przy których różnica jest kosmetyczna
 
-Zamienniki sprawdzają się w filtrach powietrza i kabinowych, elementach zawieszenia takich jak tuleje wahaczy, a także poduszkach silnika czy elementach osprzętu nadwozia (np. lusterek). Nawet w tak wymagających operacjach jak [wymiana rozrządu w busie](/serwis/rozrzad-wymiana/) markowe zestawy od niezależnych producentów oferują trwałość zbliżoną do części montowanych w fabryce.
+Zamienniki sprawdzają się w filtrach powietrza i kabinowych, elementach zawieszenia takich jak tuleje wahaczy, a także poduszkach silnika czy elementach osprzętu nadwozia (np. lusterkach). Nawet w tak wymagających operacjach jak [wymiana rozrządu w busie](/serwis/rozrzad-wymiana/) markowe zestawy od niezależnych producentów oferują trwałość zbliżoną do części montowanych w fabryce.
 
 ### Marki, które dostarczają na pierwszy montaż i na rynek wtórny
 
-Rynek dzieli się na dostawców zaopatrujących fabryki (np. Bosch, Brembo, SKF, Sachs/ZF, Valeo, Hella, Mahle, TRW) oraz firmy budujące ofertę stricte pod segment napraw pogwarancyjnych. Przykładowo, w segmencie busów grupy Fiat, Iveco i PSA obok marek FEBI Bilstein i MEYLE działa też FAST, marka specjalizująca się w częściach do lekkich pojazdów użytkowych.
+Rynek dzieli się na dostawców zaopatrujących fabryki (np. Bosch, Brembo, SKF, Sachs/ZF, Valeo, Hella, Mahle, TRW) oraz firmy budujące ofertę stricte pod segment napraw pogwarancyjnych. Przykładowo, w segmencie aut dostawczych grupy Fiat, Iveco i Stellantis (dawniej PSA) obok marek FEBI Bilstein i MEYLE działa też FAST, marka specjalizująca się w częściach do lekkich pojazdów użytkowych.
 
 ## Kiedy lepiej zostać przy oryginale
 
@@ -102,7 +100,7 @@ Czujniki ciśnienia doładowania, przepływomierze czy wtryskiwacze kodowane bez
 
 ### Gwarancja fabryczna i naprawa z OC sprawcy
 
-Niezależny [rynek części zamiennych](https://en.wikipedia.org/wiki/Automotive_aftermarket) w Unii Europejskiej opiera się na rozporządzeniu Komisji (UE) nr 461/2010 z 27 maja 2010 roku, obowiązującym od 1 czerwca 2010 roku i przedłużonym do 31 maja 2028 roku. Producent pojazdu nie może uzależnić gwarancji od serwisowania wyłącznie w ASO ani od części z własnym logo, o ile zamiennik jest częścią porównywalnej jakości, a naprawę wykonano zgodnie z dokumentacją techniczną. Gwarancję tracisz dopiero wtedy, gdy warsztat odstąpił od procedury producenta – nie za sam fakt zamontowania zamiennika. Ma to znaczenie, gdy [przegląd techniczny busa](/serwis/przeglad-techniczny/) wykaże konieczność wymiany droższych podzespołów w nowszym aucie.
+Niezależny [rynek części zamiennych](https://en.wikipedia.org/wiki/Automotive_aftermarket) w Unii Europejskiej opiera się na rozporządzeniu Komisji (UE) nr 461/2010 z 27 maja 2010 roku, obowiązującym od 1 czerwca 2010 roku i przedłużonym do 31 maja 2028 roku. Producent pojazdu nie może uzależnić gwarancji od serwisowania wyłącznie w ASO ani od stosowania części z własnym logo, o ile zamiennik jest częścią porównywalnej jakości, a naprawę wykonano zgodnie z dokumentacją techniczną. Gwarancję tracisz dopiero wtedy, gdy warsztat odstąpił od procedury producenta – nie za sam fakt zamontowania zamiennika. Ma to znaczenie, gdy [przegląd okresowy busa](/serwis/przeglad-techniczny/) wykaże konieczność wymiany droższych podzespołów w nowszym aucie. Z kolei przy likwidacji szkody z OC sprawcy ubezpieczyciel nie może bezpodstawnie narzucić użycia najtańszych zamienników (klasy P), jeśli pojazd był dotychczas naprawiany na częściach oryginalnych (O lub Q).
 
 {{% expert name="Kowalczyk" %}}
 W busach zarobkowych najlepiej sprawdza się strategia 70/30. Większość elementów eksploatacyjnych bierzemy z wysokiej półki zamienników (Q), ale przy elementach sterowania silnikiem i układach bezpieczeństwa zawsze montujemy oryginały, by uniknąć problemów z diagnostyką i przestojów.
@@ -114,7 +112,7 @@ Precyzyjna identyfikacja podzespołów pozwala uniknąć pomyłek przy zakupach 
 
 ### Numer katalogowy OE i numer VIN
 
-Najbezpieczniejszą metodą jest odczytanie numeru OE bezpośrednio ze zużytej części lub znalezienie go w katalogu po numerze VIN pojazdu. Następnie w wyszukiwarkach hurtowni sprawdza się numer katalogowy części zamiennej poprzez odsyłacz "numer OE porównawczy". Przykładowo, filtr oleju do silników 3.0 JTD/HPi (Iveco Daily, Fiat Ducato) posiada numer OE 2995655. Po wpisaniu tego numeru w wyszukiwarkę hurtowni pokażą się pasujące części zamienne Fiat Ducato u kilkunastu producentów.
+Najbezpieczniejszą metodą jest odczytanie numeru OE bezpośrednio ze zużytej części lub znalezienie go w katalogu po numerze VIN pojazdu. Następnie w wyszukiwarkach hurtowni sprawdza się numer katalogowy części zamiennej poprzez odsyłacz "numer OE porównawczy". Przykładowo, filtr oleju do silników 3.0 JTD/HPi (konstrukcja Iveco F1C stosowana w modelach Iveco Daily i Fiat Ducato) posiada numer OE 2995655. Po wpisaniu tego numeru w wyszukiwarkę hurtowni pokażą się pasujące części zamienne u kilkunastu producentów.
 
 | Producent | Numer zamiennika dla OE 2995655 |
 |-----------|--------------------------------|
@@ -132,6 +130,6 @@ Wiedząc, jak sprawdzić numer katalogowy części, minimalizujesz ryzyko otrzym
 Przed zakupem zweryfikuj kilka parametrów:
 - **Rocznik i wersja nadwozia** – modele po liftingu mogą mieć zmienione mocowania reflektorów lub zderzaków.
 - **Oznaczenie silnika** – ta sama pojemność nie oznacza tego samego osprzętu.
-- **Wersja podwozia, nie samo DMC** – w Ducato tarcze przednie 280×28 mm obejmują wersje od 3,0 do 3,5 t w odmianie Light, natomiast Maxi 3,5 t i 4,25 t dostaje tarcze 300×32 mm.
+- **Wersja podwozia, nie samo DMC** – w Ducato tarcze przednie 280×28 mm obejmują wersje od 3,0 do 3,5 t w odmianie Light (koła 15 cali), natomiast Maxi (koła 16 cali) o DMC 3,5 t i 4,25 t dostaje tarcze 300×32 mm.
 - **Strona montażu** – zawsze upewnij się, czy kupujesz część lewą (strona kierowcy), czy prawą.
 - **Czujnik zużycia klocków** – niektóre wersje zamienników są go pozbawione, co wywoła błąd na desce rozdzielczej.
