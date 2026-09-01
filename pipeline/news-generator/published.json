@@ -1,13 +1,5 @@
 [
   {
-    "title": "Tragiczny wypadek z udziałem ciężarówki i busa dostawczego pod Puławami",
-    "date": "2026-05-20",
-    "slug": "tragiczny-wypadek-z-udzialem-ciezarowki-i-busa-dostawczego-pod-pulawami",
-    "section": "modele",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Czwartek na stacjach paliw. Sprawdzamy, ile zapłacą kierowcy",
     "date": "2026-05-21",
     "slug": "czwartek-na-stacjach-paliw-sprawdzamy-ile-zaplaca-kierowcy",
@@ -716,6 +708,14 @@
     "date": "2026-08-31",
     "slug": "koniec-cpn-31-sierpnia-ceny-diesla-i-benzyny-mocno-w-gore-od-wrzesnia",
     "section": "news",
+    "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Elektryczny kamper na platformie EVOLVE – bez podwozia dostawczaka",
+    "date": "2026-09-01",
+    "slug": "elektryczny-kamper-na-platformie-evolve-bez-podwozia-dostawczaka",
+    "section": "kampery",
     "format": "analysis",
     "source": "rss"
   }
