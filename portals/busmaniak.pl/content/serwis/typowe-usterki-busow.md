@@ -1,6 +1,7 @@
 ---
 title: "Typowe usterki busów – objawy, podzespoły i koszty napraw"
 date: 2026-08-31
+lastmod: 2026-09-01
 description: "Tabela objaw-podzespół dla 14 typowych awarii busa, widełki kosztów napraw i przebiegi, przy których psują się Ducato, Daily i Sprinter."
 draft: false
 author: "marek-kowalczyk"
