@@ -6,6 +6,10 @@ trafić do samych plików – wtedy build jest odporny na głębokość klonu.
 
 Uruchamiać z katalogu repo. Idempotentny: przy braku zmian w treści nic nie
 nadpisuje (data commitu pliku się nie zmienia).
+
+Commity samego przejazdu (temat zawiera „lastmod”) są pomijane – inaczej
+każdy kolejny przejazd uznawałby poprzedni za „ostatnią zmianę” wszystkich
+stron. Commit z wynikiem skryptu musi więc mieć „lastmod” w temacie.
 """
 import subprocess
 import sys
@@ -14,12 +18,19 @@ from pathlib import Path
 CONTENT = Path("portals/busmaniak.pl/content")
 
 
+SKIP_SUBJECT = "lastmod"
+
+
 def git_date(path: Path) -> str | None:
     out = subprocess.run(
-        ["git", "log", "-1", "--format=%cs", "--", str(path)],
+        ["git", "log", "--format=%cs%x09%s", "--", str(path)],
         capture_output=True, text=True, check=True,
-    ).stdout.strip()
-    return out or None
+    ).stdout
+    for line in out.splitlines():
+        date, _, subject = line.partition("\t")
+        if SKIP_SUBJECT not in subject.lower():
+            return date
+    return None
 
 
 def stamp(path: Path) -> str:

@@ -42,3 +42,7 @@ It stamps `lastmod` from each file's last commit date. Do not rely on Hugo's
 `enableGitInfo` alone — Cloudflare Pages builds from a shallow clone, so `:git`
 there resolves to the build date for every page. The dates feed "Ostatnia
 aktualizacja", sitemap `<lastmod>` and schema.org `dateModified`.
+
+Commit the stamped files separately, with `lastmod` in the commit subject – the
+script skips such commits when reading history, otherwise the next run would
+treat the previous stamping pass as "last change" of every page.
