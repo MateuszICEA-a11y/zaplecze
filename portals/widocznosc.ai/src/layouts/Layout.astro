@@ -16,7 +16,8 @@ interface Props {
   ogType?: 'website' | 'article';
   articleMeta?: {
     publishedTime: string;
-    author: string;
+    /** Absolutny URL strony autora (/autor/<slug>/); nazwisko jest pomijane */
+    author?: string;
     tags: string[];
   };
   noindex?: boolean;
@@ -167,7 +168,8 @@ const baseGraph = buildGraph(organizationNode(), websiteNode());
     <meta property="og:site_name" content="widocznosc.ai" />
     <meta property="og:locale" content="pl_PL" />
     {articleMeta && <meta property="article:published_time" content={articleMeta.publishedTime} />}
-    {articleMeta && <meta property="article:author" content={articleMeta.author} />}
+    {/* OG wymaga URL profilu, nie nazwiska – FB odrzuca scrape przy gołym stringu */}
+    {articleMeta?.author?.startsWith('http') && <meta property="article:author" content={articleMeta.author} />}
     {articleMeta?.tags.map((tag) => <meta property="article:tag" content={tag} />)}
 
     <!-- Twitter -->

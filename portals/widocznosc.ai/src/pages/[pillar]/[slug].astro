@@ -15,6 +15,7 @@ import {
   blogPostingNode,
   breadcrumbNode,
   faqPageNode,
+  SITE_URL,
 } from '../../lib/schema';
 
 export const getStaticPaths = async () => {
@@ -133,7 +134,7 @@ const articleSchema = buildGraph(
   ogImageHeight={optimizedOg.attributes.height}
   articleMeta={{
     publishedTime: post.data.date.toISOString(),
-    author: post.data.author.name,
+    author: authorEntry ? `${SITE_URL}/autor/${authorEntry.id}/` : undefined,
     tags: post.data.tags,
   }}
 >
