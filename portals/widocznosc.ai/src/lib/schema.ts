@@ -23,8 +23,8 @@ export const ICEA_SOCIAL = [
 ];
 
 // Profile social marki widocznosc.ai – sameAs dla węzła Organization marki.
-// Strona FB bez username (numeric ID); po nadaniu nazwy podmienić na /widocznosc.ai.
-export const WIDOCZNOSC_FACEBOOK = 'https://www.facebook.com/1323010697555592';
+// Strona FB: Widocznosc.ai (page ID 1323010697555592), username widocznoscai.
+export const WIDOCZNOSC_FACEBOOK = 'https://www.facebook.com/widocznoscai/';
 export const WIDOCZNOSC_SOCIAL = [WIDOCZNOSC_FACEBOOK];
 
 const cleanUrl = (path: string) => `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
