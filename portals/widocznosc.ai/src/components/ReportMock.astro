@@ -1,0 +1,324 @@
+---
+/**
+ * ReportMock – statyczny podgląd raportu narzędzia brand-check (układ 1:1
+ * z realnym wynikiem). Używany w podglądach kierunków redesignu.
+ * Prop `frame` dodaje ramkę przeglądarki (kropki + pasek adresu).
+ */
+interface Props {
+  frame?: boolean;
+  compact?: boolean;
+}
+const { frame = false, compact = false } = Astro.props;
+---
+
+<figure class:list={['rm', { 'rm--frame': frame, 'rm--compact': compact }]} aria-label="Przykładowy raport widoczności marki w AI">
+  {
+    frame && (
+      <div class="rm-chrome" aria-hidden="true">
+        <span class="rm-dots"><i /><i /><i /></span>
+        <span class="rm-url">widocznosc.ai/narzedzia/brand-check</span>
+        <span class="rm-live"><i />raport gotowy</span>
+      </div>
+    )
+  }
+  <div class="rm-bar">
+    <span class="rm-title">Widoczność marki w&nbsp;AI</span>
+    <span class="rm-meta">twojamarka.pl · 4 modele · przykładowy raport</span>
+  </div>
+  <div class="rm-grid">
+    <div class="rm-col">
+      <div class="rm-score">
+        <div class="rm-ring" style="--score: 41" aria-hidden="true"><span>41</span></div>
+        <div class="rm-score-meta">
+          <span class="rm-label">Brand Visibility Score</span>
+          <strong>Twoja marka w&nbsp;odpowiedziach AI</strong>
+          <span class="rm-copy">2&nbsp;z&nbsp;4 modeli zna markę. Domena cytowana 2 razy. Sentyment neutralny.</span>
+        </div>
+      </div>
+      <dl class="rm-stats">
+        <div><dt>modele cytujące domenę</dt><dd>2/4</dd></div>
+        <div><dt>możliwe halucynacje</dt><dd>3</dd></div>
+        <div><dt>konkurenci</dt><dd>5</dd></div>
+        <div><dt>status modeli</dt><dd>4/4</dd></div>
+      </dl>
+    </div>
+    <div class="rm-col">
+      <span class="rm-label">Wyniki per model</span>
+      <ul class="rm-models">
+        <li><span class="rm-model">ChatGPT</span><span class="rm-tags"><span class="tag ok">zna markę</span><span class="tag ok">pozytywny</span><span class="tag ok">cytuje domenę</span></span></li>
+        <li><span class="rm-model">Claude</span><span class="rm-tags"><span class="tag warn">zna częściowo</span><span class="tag">neutralny</span><span class="tag warn">nie cytuje</span></span></li>
+        <li><span class="rm-model">Gemini</span><span class="rm-tags"><span class="tag bad">nie zna marki</span><span class="tag">brak oceny</span><span class="tag warn">nie cytuje</span></span></li>
+        <li><span class="rm-model">Perplexity</span><span class="rm-tags"><span class="tag ok">zna markę</span><span class="tag">neutralny</span><span class="tag ok">cytuje domenę</span></span></li>
+      </ul>
+    </div>
+    {
+      !compact && (
+        <div class="rm-col rm-col--side">
+          <div>
+            <span class="rm-label">Konkurenci polecani zamiast marki</span>
+            <ul class="rm-list">
+              <li><span>konkurent-a.pl</span><span class="muted">3 modele</span></li>
+              <li><span>konkurent-b.pl</span><span class="muted">2 modele</span></li>
+              <li><span>marketplace-x.com</span><span class="muted">2 modele</span></li>
+            </ul>
+          </div>
+          <div>
+            <span class="rm-label">Priorytety działań</span>
+            <ol class="rm-list rm-list--actions">
+              <li><span class="prio">P0</span><span>Strona „O firmie” z&nbsp;faktami, które modele mylą</span></li>
+              <li><span class="prio">P0</span><span>Schema Organization + sameAs</span></li>
+              <li><span class="prio p1">P1</span><span>Porównanie z&nbsp;konkurentami cytowanymi przez AI</span></li>
+            </ol>
+          </div>
+        </div>
+      )
+    }
+  </div>
+</figure>
+
+<style>
+  .rm {
+    margin: 0;
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.06) inset,
+      0 40px 80px -40px rgba(0, 0, 0, 0.7);
+    font-size: 13px;
+    color: var(--ink);
+  }
+  :root[data-theme='light'] .rm {
+    box-shadow: var(--shadow-l2);
+  }
+  .rm-chrome {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 16px;
+    background: var(--bg-canvas);
+    border-bottom: 1px solid var(--hairline);
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+  .rm-dots {
+    display: inline-flex;
+    gap: 5px;
+  }
+  .rm-dots i {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--bg-surface-3);
+  }
+  .rm-url {
+    flex: 1;
+    max-width: 360px;
+    padding: 5px 12px;
+    border-radius: var(--r-pill);
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .rm-live {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .rm-live i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ok-fg);
+  }
+  .rm-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+  .rm-title {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .rm-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 900px) {
+    .rm:not(.rm--compact) .rm-grid {
+      grid-template-columns: 1.05fr 1.25fr 0.95fr;
+    }
+    .rm--compact .rm-grid {
+      grid-template-columns: 1fr 1.2fr;
+    }
+    .rm-col + .rm-col {
+      border-left: 1px solid var(--hairline);
+      border-top: 0;
+    }
+  }
+  .rm-col {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid var(--hairline-soft);
+  }
+  .rm-col--side {
+    gap: 20px;
+  }
+  .rm-label {
+    display: block;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  .rm-score {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .rm-ring {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(closest-side, var(--bg-surface-1) 78%, transparent 80%),
+      conic-gradient(var(--ink) calc(var(--score) * 1%), var(--bg-surface-3) 0);
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+  .rm-score-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .rm-score-meta strong {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .rm-copy {
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--ink-muted);
+  }
+  .rm-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    margin: 0;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-md);
+    overflow: hidden;
+  }
+  .rm-stats > div {
+    background: var(--bg-surface-1);
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2px;
+  }
+  .rm-stats dt {
+    font-size: 10.5px;
+    color: var(--ink-faint);
+  }
+  .rm-stats dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+  }
+  .rm-models,
+  .rm-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .rm-models li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+  .rm-model {
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .rm-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .tag {
+    font-size: 10.5px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: var(--r-pill);
+    background: var(--bg-surface-2);
+    color: var(--ink-muted);
+    white-space: nowrap;
+  }
+  .tag.ok {
+    color: var(--ok-fg);
+    background: var(--ok-bg);
+  }
+  .tag.warn {
+    color: var(--warn-fg);
+    background: var(--warn-bg);
+  }
+  .tag.bad {
+    color: var(--bad-fg);
+    background: var(--bad-bg);
+  }
+  .rm-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 0;
+    border-top: 1px solid var(--hairline-soft);
+    font-size: 12.5px;
+    line-height: 1.35;
+  }
+  .rm-list--actions li {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .prio {
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: var(--ink);
+    color: var(--bg-canvas);
+    flex-shrink: 0;
+  }
+  .prio.p1 {
+    background: var(--bg-surface-3);
+    color: var(--ink);
+  }
+</style>
