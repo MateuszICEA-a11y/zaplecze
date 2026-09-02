@@ -208,12 +208,8 @@ const collectionSchema = buildGraph(
     position: relative;
     overflow: hidden;
     background:
-      radial-gradient(
-        circle at 12% 18%,
-        color-mix(in srgb, var(--pillar-accent) 18%, transparent) 0%,
-        transparent 32%
-      ),
-      radial-gradient(circle at 86% 14%, rgba(167, 139, 250, 0.14) 0%, transparent 30%),
+      linear-gradient(transparent, transparent),
+      linear-gradient(transparent, transparent),
       linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 84%);
     padding: 128px 0 64px 0;
   }
@@ -231,43 +227,43 @@ const collectionSchema = buildGraph(
   }
 
   .blog-hero--agenci-ai {
-    --pillar-accent: #22d3ee;
+    --pillar-accent: var(--brand);
   }
 
   .blog-hero--ai-w-biznesie {
-    --pillar-accent: #4ade80;
+    --pillar-accent: var(--brand);
   }
 
   .blog-hero--modele-llm {
-    --pillar-accent: #a78bfa;
+    --pillar-accent: var(--brand);
   }
 
   .blog-hero--prompty {
-    --pillar-accent: #f472b6;
+    --pillar-accent: var(--brand);
   }
 
   .blog-hero--rag {
-    --pillar-accent: #fbbf24;
+    --pillar-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .blog-hero--agenci-ai {
-    --pillar-accent: #0891b2;
+    --pillar-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .blog-hero--ai-w-biznesie {
-    --pillar-accent: #16a34a;
+    --pillar-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .blog-hero--modele-llm {
-    --pillar-accent: #7c3aed;
+    --pillar-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .blog-hero--prompty {
-    --pillar-accent: #db2777;
+    --pillar-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .blog-hero--rag {
-    --pillar-accent: #d97706;
+    --pillar-accent: var(--brand);
   }
 
   @media (min-width: 1024px) {
@@ -325,11 +321,7 @@ const collectionSchema = buildGraph(
     display: grid;
     grid-template-columns: 1fr;
     background:
-      radial-gradient(
-        circle at 70% 0%,
-        color-mix(in srgb, var(--pillar-accent) 15%, transparent) 0%,
-        transparent 36%
-      ),
+      linear-gradient(transparent, transparent),
       var(--bg-surface-1);
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
@@ -343,23 +335,23 @@ const collectionSchema = buildGraph(
   }
 
   .blog-featured--agenci-ai {
-    --pillar-accent: #22d3ee;
+    --pillar-accent: var(--brand);
   }
 
   .blog-featured--ai-w-biznesie {
-    --pillar-accent: #4ade80;
+    --pillar-accent: var(--brand);
   }
 
   .blog-featured--modele-llm {
-    --pillar-accent: #a78bfa;
+    --pillar-accent: var(--brand);
   }
 
   .blog-featured--prompty {
-    --pillar-accent: #f472b6;
+    --pillar-accent: var(--brand);
   }
 
   .blog-featured--rag {
-    --pillar-accent: #fbbf24;
+    --pillar-accent: var(--brand);
   }
 
   @media (min-width: 1024px) {
@@ -523,11 +515,7 @@ const collectionSchema = buildGraph(
     display: flex;
     flex-direction: column;
     background:
-      radial-gradient(
-        circle at 16% 0%,
-        color-mix(in srgb, var(--post-accent) 10%, transparent) 0%,
-        transparent 30%
-      ),
+      linear-gradient(transparent, transparent),
       var(--bg-surface-1);
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
@@ -542,43 +530,43 @@ const collectionSchema = buildGraph(
   }
 
   .post-card[data-category='agenci-ai'] {
-    --post-accent: #22d3ee;
+    --post-accent: var(--brand);
   }
 
   .post-card[data-category='ai-w-biznesie'] {
-    --post-accent: #4ade80;
+    --post-accent: var(--brand);
   }
 
   .post-card[data-category='modele-llm'] {
-    --post-accent: #a78bfa;
+    --post-accent: var(--brand);
   }
 
   .post-card[data-category='prompty'] {
-    --post-accent: #f472b6;
+    --post-accent: var(--brand);
   }
 
   .post-card[data-category='rag'] {
-    --post-accent: #fbbf24;
+    --post-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .post-card[data-category='agenci-ai'] {
-    --post-accent: #0891b2;
+    --post-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .post-card[data-category='ai-w-biznesie'] {
-    --post-accent: #16a34a;
+    --post-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .post-card[data-category='modele-llm'] {
-    --post-accent: #7c3aed;
+    --post-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .post-card[data-category='prompty'] {
-    --post-accent: #db2777;
+    --post-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .post-card[data-category='rag'] {
-    --post-accent: #d97706;
+    --post-accent: var(--brand);
   }
 
   .post-card-image {

@@ -63,44 +63,14 @@ const stats: Stat[] = [
   }
 
   .stat-cell {
-    --stat-accent: var(--accent-blue);
+    --stat-accent: var(--ink);
     display: flex;
     flex-direction: column;
     gap: 12px;
     padding: 20px;
-    border: 1px solid var(--hairline-soft);
+    border: 1px solid var(--hairline);
     border-radius: var(--r-xl);
-    background:
-      radial-gradient(
-        circle at 16% 0%,
-        color-mix(in srgb, var(--stat-accent) 15%, transparent) 0%,
-        transparent 36%
-      ),
-      var(--bg-surface-1);
-  }
-
-  .stat-cell:nth-child(2) {
-    --stat-accent: #4ade80;
-  }
-
-  .stat-cell:nth-child(3) {
-    --stat-accent: #fbbf24;
-  }
-
-  .stat-cell:nth-child(4) {
-    --stat-accent: #a78bfa;
-  }
-
-  :global(:root[data-theme='light']) .stat-cell:nth-child(2) {
-    --stat-accent: #16a34a;
-  }
-
-  :global(:root[data-theme='light']) .stat-cell:nth-child(3) {
-    --stat-accent: #d97706;
-  }
-
-  :global(:root[data-theme='light']) .stat-cell:nth-child(4) {
-    --stat-accent: #7c3aed;
+    background: var(--bg-surface-1);
   }
 
   /* Desktop: vertical hairline dividers between cells */

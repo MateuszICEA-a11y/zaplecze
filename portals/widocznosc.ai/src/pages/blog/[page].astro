@@ -191,11 +191,7 @@ for (const post of pagePosts) {
   .blog-page-hero {
     padding: 128px 0 48px;
     background:
-      radial-gradient(
-        circle at 12% 18%,
-        color-mix(in srgb, var(--accent-blue) 16%, transparent) 0%,
-        transparent 32%
-      ),
+      linear-gradient(transparent, transparent),
       linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 84%);
   }
 
@@ -254,11 +250,7 @@ for (const post of pagePosts) {
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
     background:
-      radial-gradient(
-        circle at 16% 0%,
-        color-mix(in srgb, var(--post-accent) 10%, transparent) 0%,
-        transparent 30%
-      ),
+      linear-gradient(transparent, transparent),
       var(--bg-surface-1);
     text-decoration: none;
     transition: background 0.2s ease;
@@ -269,43 +261,43 @@ for (const post of pagePosts) {
   }
 
   .post-card[data-category='agenci-ai'] {
-    --post-accent: #22d3ee;
+    --post-accent: var(--brand);
   }
 
   .post-card[data-category='ai-w-biznesie'] {
-    --post-accent: #4ade80;
+    --post-accent: var(--brand);
   }
 
   .post-card[data-category='modele-llm'] {
-    --post-accent: #a78bfa;
+    --post-accent: var(--brand);
   }
 
   .post-card[data-category='prompty'] {
-    --post-accent: #f472b6;
+    --post-accent: var(--brand);
   }
 
   .post-card[data-category='rag'] {
-    --post-accent: #fbbf24;
+    --post-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .post-card[data-category='agenci-ai'] {
-    --post-accent: #0891b2;
+    --post-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .post-card[data-category='ai-w-biznesie'] {
-    --post-accent: #16a34a;
+    --post-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .post-card[data-category='modele-llm'] {
-    --post-accent: #7c3aed;
+    --post-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .post-card[data-category='prompty'] {
-    --post-accent: #db2777;
+    --post-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .post-card[data-category='rag'] {
-    --post-accent: #d97706;
+    --post-accent: var(--brand);
   }
 
   .post-card-image {

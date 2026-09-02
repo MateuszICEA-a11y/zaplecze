@@ -244,7 +244,7 @@ const siteUrl = 'https://widocznosc.ai';
   <!-- Zespół (AuthorsStrip z homepage) -->
   <AuthorsStrip
     eyebrow="Zespół"
-    sectionIndex="A/03"
+    showStats={false}
     title='Cztery osoby, <span class="accent">15+ lat doświadczenia</span>'
     subtitle="Każdy artykuł na stronie widocznosc.ai oraz każda rekomendacja w naszych audytach są podpisane imieniem i nazwiskiem. Wiesz, z kim rozmawiasz, kogo uwiarygadniają znaczniki strukturalne na stronie i czyje wieloletnie doświadczenie stoi za proponowaną strategią."
     limit={4}
@@ -271,12 +271,8 @@ const siteUrl = 'https://widocznosc.ai';
     padding: 112px 0 72px;
     border-bottom: 1px solid var(--hairline-soft);
     background:
-      radial-gradient(
-        circle at 16% 18%,
-        color-mix(in srgb, var(--accent-blue) 17%, transparent) 0%,
-        transparent 34%
-      ),
-      radial-gradient(circle at 88% 18%, rgba(167, 139, 250, 0.16) 0%, transparent 32%),
+      linear-gradient(transparent, transparent),
+      linear-gradient(transparent, transparent),
       linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 82%);
   }
 
@@ -355,7 +351,7 @@ const siteUrl = 'https://widocznosc.ai';
   }
 
   .about-hero-panel {
-    --panel-accent: #38bdf8;
+    --panel-accent: var(--brand);
     display: grid;
     gap: 0.95rem;
     min-width: 0;
@@ -363,11 +359,7 @@ const siteUrl = 'https://widocznosc.ai';
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
     background:
-      radial-gradient(
-        circle at 18% 0%,
-        color-mix(in srgb, var(--panel-accent) 18%, transparent) 0%,
-        transparent 36%
-      ),
+      linear-gradient(transparent, transparent),
       var(--bg-surface-1);
     box-shadow: 0 24px 80px color-mix(in srgb, #000 18%, transparent);
   }
@@ -539,11 +531,7 @@ const siteUrl = 'https://widocznosc.ai';
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
     background:
-      radial-gradient(
-        circle at 12% 0%,
-        color-mix(in srgb, var(--card-accent) 13%, transparent) 0%,
-        transparent 34%
-      ),
+      linear-gradient(transparent, transparent),
       var(--bg-surface-1);
   }
 
@@ -553,27 +541,27 @@ const siteUrl = 'https://widocznosc.ai';
   }
 
   .principle-card:nth-child(2) {
-    --card-accent: #4ade80;
+    --card-accent: var(--brand);
   }
 
   .principle-card:nth-child(3) {
-    --card-accent: #fbbf24;
+    --card-accent: var(--brand);
   }
 
   .principle-card:nth-child(4) {
-    --card-accent: #a78bfa;
+    --card-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .principle-card:nth-child(2) {
-    --card-accent: #16a34a;
+    --card-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .principle-card:nth-child(3) {
-    --card-accent: #d97706;
+    --card-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .principle-card:nth-child(4) {
-    --card-accent: #7c3aed;
+    --card-accent: var(--brand);
   }
 
   .principle-number {
@@ -589,15 +577,15 @@ const siteUrl = 'https://widocznosc.ai';
   }
 
   .anti-card:nth-child(2) {
-    --card-accent: #4ade80;
+    --card-accent: var(--brand);
   }
 
   .anti-card:nth-child(3) {
-    --card-accent: #fbbf24;
+    --card-accent: var(--brand);
   }
 
   .anti-card:nth-child(4) {
-    --card-accent: #a78bfa;
+    --card-accent: var(--brand);
   }
 
   @media (max-width: 980px) {

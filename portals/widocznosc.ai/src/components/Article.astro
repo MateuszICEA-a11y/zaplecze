@@ -735,11 +735,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     /* Firmowy gradient – jasny akcent w light, głęboki w dark. Tekst
        to var(--ink), więc czytelność trzyma się na obu motywach. */
     background:
-      radial-gradient(
-        120% 120% at 0% 0%,
-        color-mix(in srgb, var(--accent-blue) 24%, var(--bg-surface-1)) 0%,
-        transparent 60%
-      ),
+      linear-gradient(transparent, transparent),
       linear-gradient(
         110deg,
         color-mix(in srgb, var(--accent-blue) 16%, var(--bg-surface-1)) 0%,
@@ -749,11 +745,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 
   :root[data-theme='dark'] .article-banner {
     background:
-      radial-gradient(
-        120% 120% at 0% 0%,
-        color-mix(in srgb, var(--accent-blue) 38%, var(--bg-surface-1)) 0%,
-        transparent 62%
-      ),
+      linear-gradient(transparent, transparent),
       linear-gradient(
         110deg,
         color-mix(in srgb, var(--accent-blue) 26%, var(--bg-surface-1)) 0%,

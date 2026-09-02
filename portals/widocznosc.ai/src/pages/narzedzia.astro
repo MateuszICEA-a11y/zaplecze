@@ -302,11 +302,7 @@ const toolsListSchema = buildGraph(
     padding: 104px 0 84px;
     border-bottom: 1px solid var(--hairline-soft);
     background:
-      radial-gradient(
-        circle at 28% 16%,
-        color-mix(in srgb, var(--accent-blue) 14%, transparent) 0%,
-        transparent 34%
-      ),
+      linear-gradient(transparent, transparent),
       linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 78%);
   }
 
@@ -382,11 +378,7 @@ const toolsListSchema = buildGraph(
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
     background:
-      radial-gradient(
-        circle at 18% 0%,
-        color-mix(in srgb, var(--panel-accent) 18%, transparent) 0%,
-        transparent 36%
-      ),
+      linear-gradient(transparent, transparent),
       var(--bg-surface-1);
     box-shadow: 0 24px 80px color-mix(in srgb, #000 18%, transparent);
   }
@@ -581,11 +573,7 @@ const toolsListSchema = buildGraph(
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
     background:
-      radial-gradient(
-        circle at 18% 0%,
-        color-mix(in srgb, var(--tool-accent) 18%, transparent) 0%,
-        transparent 36%
-      ),
+      linear-gradient(transparent, transparent),
       linear-gradient(
         180deg,
         color-mix(in srgb, var(--bg-surface-1) 92%, var(--tool-accent) 8%) 0%,
@@ -602,27 +590,27 @@ const toolsListSchema = buildGraph(
   }
 
   .tool-card--green {
-    --tool-accent: #4ade80;
+    --tool-accent: var(--brand);
   }
 
   .tool-card--amber {
-    --tool-accent: #fbbf24;
+    --tool-accent: var(--brand);
   }
 
   .tool-card--violet {
-    --tool-accent: #a78bfa;
+    --tool-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .tool-card--green {
-    --tool-accent: #16a34a;
+    --tool-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .tool-card--amber {
-    --tool-accent: #d97706;
+    --tool-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .tool-card--violet {
-    --tool-accent: #7c3aed;
+    --tool-accent: var(--brand);
   }
 
   .tool-card-link {

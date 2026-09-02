@@ -844,12 +844,8 @@ const serviceSchema = {
     padding: 128px 0 88px;
     border-bottom: 1px solid var(--hairline-soft);
     background:
-      radial-gradient(
-        circle at 50% 10%,
-        color-mix(in srgb, var(--accent-blue) 17%, transparent) 0%,
-        transparent 32%
-      ),
-      radial-gradient(circle at 84% 16%, rgba(167, 139, 250, 0.18) 0%, transparent 30%),
+      linear-gradient(transparent, transparent),
+      linear-gradient(transparent, transparent),
       linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 82%);
   }
 
@@ -925,13 +921,9 @@ const serviceSchema = {
   }
 
   .hero-stat-cell {
-    --stat-accent: var(--accent-blue);
+    --stat-accent: var(--ink);
     background:
-      radial-gradient(
-        circle at 12% 0%,
-        color-mix(in srgb, var(--stat-accent) 13%, transparent) 0%,
-        transparent 36%
-      ),
+      linear-gradient(transparent, transparent),
       var(--bg-surface-1);
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
@@ -939,27 +931,27 @@ const serviceSchema = {
   }
 
   .hero-stat-cell:nth-child(2) {
-    --stat-accent: #4ade80;
+    --stat-accent: var(--ink);
   }
 
   .hero-stat-cell:nth-child(3) {
-    --stat-accent: #fbbf24;
+    --stat-accent: var(--ink);
   }
 
   .hero-stat-cell:nth-child(4) {
-    --stat-accent: #a78bfa;
+    --stat-accent: var(--ink);
   }
 
   :global(:root[data-theme='light']) .hero-stat-cell:nth-child(2) {
-    --stat-accent: #16a34a;
+    --stat-accent: var(--ink);
   }
 
   :global(:root[data-theme='light']) .hero-stat-cell:nth-child(3) {
-    --stat-accent: #d97706;
+    --stat-accent: var(--ink);
   }
 
   :global(:root[data-theme='light']) .hero-stat-cell:nth-child(4) {
-    --stat-accent: #7c3aed;
+    --stat-accent: var(--ink);
   }
 
   .hero-stat-cell dt {
@@ -1016,41 +1008,37 @@ const serviceSchema = {
     border-radius: 15px;
     padding: 24px;
     background:
-      radial-gradient(
-        circle at 14% 0%,
-        color-mix(in srgb, var(--model-accent) 14%, transparent) 0%,
-        transparent 36%
-      ),
+      linear-gradient(transparent, transparent),
       var(--bg-surface-1);
     border-color: var(--hairline-soft);
   }
 
   .model-card:nth-child(2) {
-    --model-accent: #4ade80;
+    --model-accent: var(--brand);
   }
 
   .model-card:nth-child(3) {
-    --model-accent: #fbbf24;
+    --model-accent: var(--brand);
   }
 
   .model-card:nth-child(4) {
-    --model-accent: #a78bfa;
+    --model-accent: var(--brand);
   }
 
   .model-card:nth-child(5) {
-    --model-accent: #22d3ee;
+    --model-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .model-card:nth-child(2) {
-    --model-accent: #16a34a;
+    --model-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .model-card:nth-child(3) {
-    --model-accent: #d97706;
+    --model-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .model-card:nth-child(4) {
-    --model-accent: #7c3aed;
+    --model-accent: var(--brand);
   }
 
   .model-card .model-hook strong,
@@ -1081,19 +1069,19 @@ const serviceSchema = {
   }
 
   .decision-row:not(.decision-head):nth-child(3) {
-    --decision-accent: #4ade80;
+    --decision-accent: var(--brand);
   }
 
   .decision-row:not(.decision-head):nth-child(4) {
-    --decision-accent: #fbbf24;
+    --decision-accent: var(--brand);
   }
 
   .decision-row:not(.decision-head):nth-child(5) {
-    --decision-accent: #a78bfa;
+    --decision-accent: var(--brand);
   }
 
   .decision-row:not(.decision-head):nth-child(6) {
-    --decision-accent: #22d3ee;
+    --decision-accent: var(--brand);
   }
 
   .decision-row:not(.decision-head):hover {
@@ -1261,7 +1249,7 @@ const serviceSchema = {
 
     .decision-row {
       background:
-        radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--decision-accent) 10%, transparent), transparent 46%),
+        linear-gradient(transparent, transparent),
         var(--bg-surface-1);
       border: 1px solid var(--hairline-soft);
       border-radius: var(--r-lg);
@@ -1446,36 +1434,32 @@ const serviceSchema = {
     --card-accent: var(--accent-blue);
     border: 1px solid var(--hairline-soft);
     background:
-      radial-gradient(
-        circle at 12% 0%,
-        color-mix(in srgb, var(--card-accent) 12%, transparent) 0%,
-        transparent 34%
-      ),
+      linear-gradient(transparent, transparent),
       var(--bg-surface-1);
   }
 
   .faq-stack .faq-row:nth-child(2) {
-    --card-accent: #4ade80;
+    --card-accent: var(--brand);
   }
 
   .faq-stack .faq-row:nth-child(3) {
-    --card-accent: #fbbf24;
+    --card-accent: var(--brand);
   }
 
   .faq-stack .faq-row:nth-child(4) {
-    --card-accent: #a78bfa;
+    --card-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .faq-stack .faq-row:nth-child(2) {
-    --card-accent: #16a34a;
+    --card-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .faq-stack .faq-row:nth-child(3) {
-    --card-accent: #d97706;
+    --card-accent: var(--brand);
   }
 
   :global(:root[data-theme='light']) .faq-stack .faq-row:nth-child(4) {
-    --card-accent: #7c3aed;
+    --card-accent: var(--brand);
   }
 
   .faq-summary {

@@ -688,11 +688,7 @@ const privacySchema = buildGraph(
   .legal-hero {
     padding: clamp(6rem, 12vw, 10rem) 0 clamp(2.5rem, 5vw, 4rem);
     background:
-      radial-gradient(
-        circle at 20% 10%,
-        color-mix(in srgb, var(--accent-blue) 14%, transparent) 0%,
-        transparent 38%
-      ),
+      linear-gradient(transparent, transparent),
       linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 80%);
     border-bottom: 1px solid var(--hairline-soft);
   }
