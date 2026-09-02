@@ -22,6 +22,11 @@ export const ICEA_SOCIAL = [
   'https://www.youtube.com/@GRUPA_ICEA',
 ];
 
+// Profile social marki widocznosc.ai – sameAs dla węzła Organization marki.
+// Strona FB bez username (numeric ID); po nadaniu nazwy podmienić na /widocznosc.ai.
+export const WIDOCZNOSC_FACEBOOK = 'https://www.facebook.com/1323010697555592';
+export const WIDOCZNOSC_SOCIAL = [WIDOCZNOSC_FACEBOOK];
+
 const cleanUrl = (path: string) => `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
 
 const ensureTrailingSlash = (path: string) => (path.endsWith('/') ? path : `${path}/`);
@@ -102,7 +107,7 @@ export const organizationNode = () => ({
     vatID: 'PL7811993323',
     sameAs: ICEA_SOCIAL,
   },
-  sameAs: ICEA_SOCIAL,
+  sameAs: WIDOCZNOSC_SOCIAL,
 });
 
 /**

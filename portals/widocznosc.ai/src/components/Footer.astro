@@ -6,6 +6,7 @@
 import FacebookIcon from '../assets/icons/FacebookIcon.astro';
 import InstagramIcon from '../assets/icons/InstagramIcon.astro';
 import YouTubeIcon from '../assets/icons/YouTubeIcon.astro';
+import { WIDOCZNOSC_FACEBOOK } from '../lib/schema';
 
 const footerData = [
   {
@@ -137,11 +138,11 @@ const year = new Date().getFullYear();
           </svg>
         </a>
         <a
-          href="https://www.facebook.com/iCEAGroup/"
+          href={WIDOCZNOSC_FACEBOOK}
           target="_blank"
           rel="me noopener noreferrer"
           class="footer-social"
-          aria-label="Facebook ICEA"><FacebookIcon /></a>
+          aria-label="Facebook widocznosc.ai"><FacebookIcon /></a>
         <a
           href="https://www.instagram.com/icea.pl/"
           target="_blank"
