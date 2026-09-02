@@ -54,3 +54,22 @@ Planhat (moduły, sekcja leadowa), Index (sposób pokazywania danych).
   AuthorsStrip → RecentArticles → FAQ → CTABand.
 - Zrzuty: `Downloads/widocznosc-redesign/final-A-dark.jpeg`, `final-A-light.jpeg`,
   `kierunek-A|B|C.jpeg` (archiwum odrzuconych).
+
+## Część 3 – ocena szablonu Pixel Point (21st)
+
+- `21st.dev/@pixelpoint/templates/pixel-point-agency` = otwarte repo MIT
+  `pixel-point/pixelpoint-website` (Gatsby 5 + React + Tailwind 3 + Rive). Płatny plan
+  21st nie jest potrzebny do pobrania; przejęcie = przepisanie serwisu, nie reskin.
+- Styl: czerń/biel + dwa akcenty + abstrakcyjne ilustracje – sprzeczne z briefem
+  (jeden kolor, dane zamiast grafik). Do pożyczenia: rytm pasów ciemny/jasny, listy
+  numerowane 1-2-3, siatka case studies z logotypami klientów, blok CTA z obrazem.
+- Plan 21st: Builder 6 USD/mies. (rocznie), +AI 15 USD, Team 7,50 USD/seat. Decyzja:
+  na razie bez planu; ewentualnie miesiąc Buildera w fazie dopieszczania.
+
+## Następne kroki
+
+1. Pokazać Arturowi podgląd https://redesign-dayos.widocznosc-ai.pages.dev (kierunek A).
+2. Po akceptacji: merge `redesign/widocznosc-dayos` → main (deploy prod z main).
+3. Opcjonalnie: sekcja case studies z logotypami ICEA (potrzebna lista klientów ze zgodą)
+   i dodatkowy jasny pas w rytmie Pixel Point.
+4. Realne liczby w mocku raportu w hero (dziś przykładowe, podpisane).
