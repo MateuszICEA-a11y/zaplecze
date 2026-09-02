@@ -1,13 +1,5 @@
 [
   {
-    "title": "Czwartek na stacjach paliw. Sprawdzamy, ile zapłacą kierowcy",
-    "date": "2026-05-21",
-    "slug": "czwartek-na-stacjach-paliw-sprawdzamy-ile-zaplaca-kierowcy",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Dacia Duster Pickup 2026 z LPG trafiła do sprzedaży we Francji. Jest też wersja kamper",
     "date": "2026-05-22",
     "slug": "dacia-duster-pickup-2026-z-lpg-trafila-do-sprzedazy-we-francji-jest-tez-wersja",
@@ -717,6 +709,14 @@
     "slug": "elektryczny-kamper-na-platformie-evolve-bez-podwozia-dostawczaka",
     "section": "kampery",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Volkswagen ID. California Cruise – pierwszy w pełni elektryczny kamper marki",
+    "date": "2026-09-02",
+    "slug": "volkswagen-id-california-cruise-pierwszy-w-pelni-elektryczny-kamper-marki",
+    "section": "kampery",
+    "format": "short",
     "source": "rss"
   }
 ]
