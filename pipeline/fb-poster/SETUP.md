@@ -112,3 +112,22 @@ store its ID and Page Access Token under the `FB_WIDOCZNOSC_*` secrets.
 ```bash
 python3 pipeline/fb-poster/post_to_fb.py --site widocznosc --dry-run
 ```
+
+### widocznosc-news (second daily slot)
+
+`--site widocznosc-news` posts the **newest** item from
+`portals/widocznosc.ai/src/content/news/` (URL `/news/<slug>/`, summary from
+`lead`, source from `sourceName`). Differences from the blog slot:
+
+- picks newest first, not random; only news dated within the last 2 days
+  (`max_age_days`); exits quietly when nothing fresh is unposted,
+- never resets tracking (`posted-widocznosc-news.json`) – old news is never re-posted,
+- own prompt: event + why it matters, names the original source, no brand plug.
+
+The workflow `fb-poster-widocznosc.yml` has two crons: `0 9 * * 1-5` → blog,
+`0 13 * * 1-5` (15:00 PL) → news. Manual run: pick the slot in the
+`workflow_dispatch` input.
+
+```bash
+python3 pipeline/fb-poster/post_to_fb.py --site widocznosc-news --dry-run
+```

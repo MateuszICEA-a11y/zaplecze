@@ -5,7 +5,13 @@ Picks a random unposted article, generates a social media description
 via Gemini Flash (OpenRouter), and posts it to the Facebook Page.
 
 Usage:
-    python post_to_fb.py [--site busmaniak|widocznosc] [--dry-run]
+    python post_to_fb.py [--site busmaniak|widocznosc|widocznosc-news] [--dry-run]
+
+Sites:
+    busmaniak        - random unposted article, 1/day
+    widocznosc       - random unposted blog post, 1/day
+    widocznosc-news  - newest news not older than `max_age_days`; silent when
+                       nothing fresh (never re-posts old news)
 
 Environment variables:
     OPENROUTER_KEY   - OpenRouter API key (fallback: OPENROUTER_API_KEY)
@@ -21,7 +27,7 @@ import re
 import sys
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone, date
+from datetime import datetime, timezone, date, timedelta
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -92,6 +98,43 @@ Zasady:
 
 Zwróć TYLKO tekst posta, nic więcej.""",
     },
+    "widocznosc-news": {
+        "content_dir": REPO_ROOT / "portals" / "widocznosc.ai" / "src" / "content" / "news",
+        "posted_file": SCRIPT_DIR / "posted-widocznosc-news.json",
+        "base_url": "https://widocznosc.ai",
+        # Astro: src/content/news/<slug>.md -> /news/<slug>/
+        "url_prefix": "/news",
+        "skip_dirs": set(),
+        "skip_files": set(),
+        "summary_field": "lead",
+        "page_id_env": "FB_WIDOCZNOSC_PAGE_ID",
+        "token_env": "FB_WIDOCZNOSC_ACCESS_TOKEN",
+        # News-only behaviour: pick the newest item, never reset tracking,
+        # skip anything older than N days (stale news reads badly on FB).
+        "pick": "newest",
+        "max_age_days": 2,
+        "prompt": """Napisz krótki opis posta na Facebooka dla newsa z widocznosc.ai – serwisu eksperckiego o widoczności marek w wyszukiwarkach AI (ChatGPT, Perplexity, Google AI Overviews), modelach LLM i GEO.
+
+Tytuł newsa: {title}
+Lead: {summary}
+Źródło pierwotne: {source}
+Tagi: {keyword}
+
+Zasady:
+- 2-3 zdania. Pierwsze zdanie: co się stało, z konkretem z leadu (liczba, nazwa produktu, decyzja). Drugie: dlaczego ma to znaczenie dla marketera lub specjalisty SEO
+- Jeśli podano źródło pierwotne, wymień je z nazwy w tekście (np. „według Search Engine Journal”)
+- To jest news, nie treść promocyjna: nie wspominaj o widocznosc.ai, ICEA ani o „naszej ofercie”
+- Odbiorca: marketerzy, właściciele firm, specjaliści SEO – ton rzeczowy, bez clickbaitu i bez wykrzykników
+- Napisz po polsku, poprawną polszczyzną
+- Bez emoji
+- Nazwy „ChatGPT" i „Perplexity" są nieodmienne
+- Używaj półpauzy (–), nigdy myślnika (—)
+- Bez zdań opisujących sam tekst („artykuł omawia…”) – pisz o wydarzeniu
+- NIE dodawaj URL-a – link zostanie dodany automatycznie
+- NIE używaj hashtagów
+
+Zwróć TYLKO tekst posta, nic więcej.""",
+    },
 }
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
@@ -135,12 +178,24 @@ def parse_frontmatter(filepath: Path, summary_field: str) -> dict | None:
 
     # Simple YAML parsing for flat scalar keys (title, lead, description, tags…).
     # Nested blocks (author:, faq:) start with an empty value and are skipped.
-    for line in raw.split("\n"):
+    lines = raw.split("\n")
+    for i, line in enumerate(lines):
         m = re.match(r"^(\w[\w_]*):\s*(.*?)\s*$", line)
         if not m:
             continue
         key, val = m.group(1), m.group(2)
-        if not val or val.startswith("{") or val.startswith(">") or val.startswith("|"):
+        if not val:
+            # block list (Astro news: "tags:\n- Anthropic\n- Claude") -> "Anthropic, Claude"
+            items = []
+            for nxt in lines[i + 1:]:
+                lm = re.match(r"^\s*-\s+(.+?)\s*$", nxt)
+                if not lm:
+                    break
+                items.append(_unquote(lm.group(1)))
+            if items:
+                fm[key] = ", ".join(items)
+            continue
+        if val.startswith("{") or val.startswith(">") or val.startswith("|"):
             continue
         if val.startswith("["):
             # inline list: ['GEO', 'E-commerce'] -> "GEO, E-commerce"
@@ -190,6 +245,8 @@ def scan_articles(site: dict) -> list[dict]:
             "summary": fm.get(site["summary_field"], ""),
             "keyword": fm.get("main_keyword") or fm.get("tags", ""),
             "image": fm.get("image", ""),
+            "date": fm.get("date", "")[:10],
+            "source": fm.get("sourceName", ""),
         })
 
     return articles
@@ -213,6 +270,16 @@ def pick_random_article(articles: list[dict], posted: dict) -> dict | None:
     return random.choice(unposted)
 
 
+def pick_newest_fresh(articles: list[dict], posted: dict, max_age_days: int) -> dict | None:
+    """Pick the newest unposted article dated within the last `max_age_days` days."""
+    cutoff = (date.today() - timedelta(days=max_age_days)).isoformat()
+    fresh = [a for a in articles if a["url"] not in posted and a["date"] >= cutoff]
+    if not fresh:
+        return None
+    fresh.sort(key=lambda a: (a["date"], a["path"]), reverse=True)
+    return fresh[0]
+
+
 def generate_description(article: dict, site: dict) -> str:
     """Generate a social media description using Gemini Flash via OpenRouter."""
     if not OPENROUTER_KEY:
@@ -224,6 +291,7 @@ def generate_description(article: dict, site: dict) -> str:
         subtitle=article["subtitle"],
         summary=article["summary"],
         keyword=article["keyword"],
+        source=article.get("source") or "brak",
     )
 
     payload = json.dumps({
@@ -308,13 +376,19 @@ def main():
         print("Already posted today – skipping.")
         return
 
-    # 4. Pick random unposted article
-    article = pick_random_article(articles, posted)
-    if article is None:
-        print("All articles have been posted! Resetting tracking.")
-        posted = {}
-        save_posted(posted_file, posted)
+    # 4. Pick an article
+    if site.get("pick") == "newest":
+        article = pick_newest_fresh(articles, posted, site["max_age_days"])
+        if article is None:
+            print(f"No unposted news from the last {site['max_age_days']} days – skipping.")
+            return
+    else:
         article = pick_random_article(articles, posted)
+        if article is None:
+            print("All articles have been posted! Resetting tracking.")
+            posted = {}
+            save_posted(posted_file, posted)
+            article = pick_random_article(articles, posted)
 
     print(f"Selected: {article['title']}")
     print(f"URL: {article['url']}")

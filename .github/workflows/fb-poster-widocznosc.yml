@@ -1,8 +1,17 @@
 name: Facebook Auto-Poster (widocznosc.ai)
 on:
   schedule:
-    - cron: '0 9 * * 1-5'  # 11:00 PL (UTC+2) / 10:00 PL (UTC+1 winter), pon–pt (B2B)
-  workflow_dispatch:  # manual fallback
+    - cron: '0 9 * * 1-5'   # 11:00 PL (UTC+2) / 10:00 PL (UTC+1 winter), pon–pt – blog
+    - cron: '0 13 * * 1-5'  # 15:00 PL (UTC+2) / 14:00 PL (UTC+1 winter), pon–pt – świeży news
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: 'Which slot to run'
+        type: choice
+        default: widocznosc
+        options:
+          - widocznosc
+          - widocznosc-news
 
 permissions:
   contents: write
@@ -19,18 +28,29 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Resolve slot
+        id: slot
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "site=${{ github.event.inputs.slot }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 13 * * 1-5" ]; then
+            echo "site=widocznosc-news" >> "$GITHUB_OUTPUT"
+          else
+            echo "site=widocznosc" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Post to Facebook
-        run: python pipeline/fb-poster/post_to_fb.py --site widocznosc
+        run: python pipeline/fb-poster/post_to_fb.py --site "${{ steps.slot.outputs.site }}"
         env:
           OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
           FB_WIDOCZNOSC_PAGE_ID: ${{ secrets.FB_WIDOCZNOSC_PAGE_ID }}
           FB_WIDOCZNOSC_ACCESS_TOKEN: ${{ secrets.FB_WIDOCZNOSC_ACCESS_TOKEN }}
 
-      - name: Commit posted-widocznosc.json tracking
+      - name: Commit tracking
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add pipeline/fb-poster/posted-widocznosc.json
-          git diff --cached --quiet || git commit -m "chore: update fb-poster tracking (widocznosc)"
+          git add pipeline/fb-poster/posted-widocznosc.json pipeline/fb-poster/posted-widocznosc-news.json
+          git diff --cached --quiet || git commit -m "chore: update fb-poster tracking (${{ steps.slot.outputs.site }})"
           git pull --rebase
           git push
