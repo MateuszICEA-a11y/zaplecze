@@ -8,11 +8,16 @@
 
 :root {
   /* Surface ladder */
-  --bg-canvas: #08090c;
-  --bg-surface-1: #11141a;
-  --bg-surface-2: #1a2029;
-  --bg-surface-3: #242b36;
-  --bg-inverse: #ffffff;
+  --bg-canvas: #0a0a0a;
+  --bg-surface-1: #141414;
+  --bg-surface-2: #1d1d1d;
+  --bg-surface-3: #282828;
+  --bg-inverse: #f4f3ef;
+  --ink-inverse: #0a0a0a;
+  --ink-inverse-muted: #55554f;
+  --hairline-inverse: rgba(10, 10, 10, 0.12);
+  /* Ciemny panel „na kontraście” – zastępuje dawne karty gradientowe */
+  --bg-panel: #131313;
 
   /* Hairlines (translucent na dark) */
   --hairline: rgba(255, 255, 255, 0.08);
@@ -20,14 +25,24 @@
 
   /* Ink */
   --ink: #ffffff;
-  --ink-muted: #a6abb5;
-  --ink-faint: #788294;
+  --ink-muted: #a1a1a1;
+  --ink-faint: #6f6f6f;
 
-  /* Single chromatic accent – signal only */
-  --accent-blue: #0a9cff;
-  --accent-blue-soft: rgba(10, 156, 255, 0.16);
+  /* Jedyny kolor marki widocznosc.ai (logo, linki, akcent w nagłówku).
+     Reszta palety = czerń/biel/szarości; zieleń/bursztyn/czerwień tylko
+     funkcjonalnie (wynik dobry / do poprawy / zły). */
+  --brand: #2f8cff;
+  --brand-soft: rgba(47, 140, 255, 0.16);
+  --accent-blue: var(--brand);
+  --accent-blue-soft: var(--brand-soft);
 
-  /* Semantic */
+  /* Semantic – wyłącznie do oznaczania wyników */
+  --ok-fg: #4ade80;
+  --ok-bg: rgba(74, 222, 128, 0.12);
+  --warn-fg: #fbbf24;
+  --warn-bg: rgba(251, 191, 36, 0.12);
+  --bad-fg: #f87171;
+  --bad-bg: rgba(248, 113, 113, 0.12);
   --success-green: #1aaa55;
   --err-fg: #fca5a5;
   --err-bg: rgba(239, 68, 68, 0.14);
@@ -52,54 +67,24 @@
   --gutter: 32px;
 
   /* Gradient spotlight family */
-  --gradient-violet: radial-gradient(
-    ellipse 120% 100% at 25% 30%,
-    #8b5cf6 0%,
-    #6d28d9 35%,
-    #1e1b4b 75%,
-    #0a0a0b 100%
-  );
-  --gradient-orange: radial-gradient(
-    ellipse 110% 90% at 70% 25%,
-    #ff8a3d 0%,
-    #ff5722 30%,
-    #b91c1c 65%,
-    #1a0a0a 100%
-  );
-  --gradient-magenta: radial-gradient(
-    ellipse at 30% 30%,
-    #ec4899 0%,
-    #be185d 40%,
-    #4c1d24 80%,
-    #0a0a0b 100%
-  );
-  --gradient-coral: radial-gradient(
-    ellipse at 70% 30%,
-    #fb7185 0%,
-    #e11d48 40%,
-    #4c1d24 80%,
-    #0a0a0b 100%
-  );
-  /* Stitch iteration 2026-05-08: prostszy 2-stop linear gradient dla hero spotlight.
-     Cleaner niż radial 4-stop, dramatic z box-shadow */
-  --gradient-violet-linear: linear-gradient(145deg, #7b32f2 0%, #3e1b7a 100%);
-
-  /* Claude Design iteration 2026-05-08: stonowana paleta dla Process cards
-     (mniej "alarmująca" niż coral/orange, lepsze do B2B tech) */
-  --gradient-process-violet: linear-gradient(145deg, #5b21b6 0%, #1e1b4b 100%);
-  --gradient-process-cyan: linear-gradient(145deg, #0891b2 0%, #164e63 100%);
-  --gradient-process-green: linear-gradient(145deg, #16a34a 0%, #14532d 100%);
-  --gradient-process-blue: linear-gradient(145deg, #2563eb 0%, #1e3a8a 100%);
-
-  /* Landing redesign 2026-05-09 – radial 3-stop atmosphere cards z handoffu.
-     Inner-light overlay przez ::before na .on-gradient (poniżej). */
-  --grad-violet: radial-gradient(120% 100% at 0% 0%, #b99aff 0%, #6545f2 40%, #2a2678 100%);
-  --grad-magenta: radial-gradient(120% 100% at 0% 0%, #ff7acb 0%, #cb3299 42%, #631b58 100%);
-  --grad-orange: radial-gradient(120% 100% at 0% 0%, #ffbb72 0%, #f26722 42%, #873016 100%);
-  --grad-coral: radial-gradient(120% 100% at 0% 0%, #ff98ac 0%, #e5426b 42%, #7b1e38 100%);
-  --grad-cyan: radial-gradient(120% 100% at 0% 0%, #83e9f7 0%, #089fc1 42%, #0b465a 100%);
-  --grad-green: radial-gradient(120% 100% at 0% 0%, #95e7a1 0%, #20a957 42%, #123f27 100%);
-  --grad-blue: radial-gradient(120% 100% at 0% 0%, #91bbff 0%, #3478ea 42%, #18366e 100%);
+  /* Rodzina gradientów wycofana (uwagi marketingu 2026-08-21): wszystkie
+     dawne „atmosphere cards” renderują się jako płaski ciemny panel. */
+  --gradient-violet: linear-gradient(var(--bg-panel), var(--bg-panel));
+  --gradient-orange: var(--gradient-violet);
+  --gradient-magenta: var(--gradient-violet);
+  --gradient-coral: var(--gradient-violet);
+  --gradient-violet-linear: var(--gradient-violet);
+  --gradient-process-violet: var(--gradient-violet);
+  --gradient-process-cyan: var(--gradient-violet);
+  --gradient-process-green: var(--gradient-violet);
+  --gradient-process-blue: var(--gradient-violet);
+  --grad-violet: var(--gradient-violet);
+  --grad-magenta: var(--gradient-violet);
+  --grad-orange: var(--gradient-violet);
+  --grad-coral: var(--gradient-violet);
+  --grad-cyan: var(--gradient-violet);
+  --grad-green: var(--gradient-violet);
+  --grad-blue: var(--gradient-violet);
 
   /* Tracking ratio – relative scaling dla display headlines (clamp + em).
      Stosowane jako: letter-spacing: calc(var(--tracking-display) * 1em). */
@@ -170,38 +155,48 @@
 :root[data-theme='light'] {
   /* Surface ladder – lekko przygaszony light mode.
      Duże płaszczyzny nie świecą jak czysta biel, a karty mają czytelniejszą separację. */
-  --bg-canvas: #f2f5f9;
-  --bg-surface-1: #e8eef5;
-  --bg-surface-2: #dce5ef;
-  --bg-surface-3: #ccd8e6;
-  --bg-inverse: #0a0a0b;
+  --bg-canvas: #f5f5f2;
+  --bg-surface-1: #ebebe7;
+  --bg-surface-2: #e0e0db;
+  --bg-surface-3: #d2d2cc;
+  --bg-inverse: #0f0f0f;
+  --ink-inverse: #ffffff;
+  --ink-inverse-muted: #a3a3a3;
+  --hairline-inverse: rgba(255, 255, 255, 0.14);
+  --bg-panel: #141414;
 
   /* Hairlines – minimalnie mocniejsze, żeby jasny UI nie był płaski. */
-  --hairline: rgba(15, 23, 42, 0.15);
-  --hairline-soft: rgba(15, 23, 42, 0.09);
+  --hairline: rgba(20, 20, 20, 0.14);
+  --hairline-soft: rgba(20, 20, 20, 0.08);
 
   /* Ink – nadal mocny, ale bez ostrego pure-black kontrastu. */
-  --ink: #111827;
-  --ink-muted: #526176;
-  --ink-faint: #758195;
+  --ink: #111111;
+  --ink-muted: #5c5c58;
+  --ink-faint: #85857f;
 
   /* Accent – ciemniejszy na jasnym tle, żeby małe linki i logo spełniały kontrast AA. */
-  --accent-blue: #0068cc;
-  --accent-blue-soft: rgba(0, 104, 204, 0.14);
+  --brand: #1a62d6;
+  --brand-soft: rgba(26, 98, 214, 0.14);
+  --ok-fg: #15803d;
+  --ok-bg: rgba(21, 128, 61, 0.1);
+  --warn-fg: #b45309;
+  --warn-bg: rgba(180, 83, 9, 0.1);
+  --bad-fg: #b91c1c;
+  --bad-bg: rgba(185, 28, 28, 0.1);
 
   /* Pills (landing redesign) – chłodne slate tints zamiast ciepłego brązu. */
-  --pill-translucent: rgba(15, 23, 42, 0.075);
-  --pill-translucent-hover: rgba(15, 23, 42, 0.13);
+  --pill-translucent: rgba(20, 20, 20, 0.07);
+  --pill-translucent-hover: rgba(20, 20, 20, 0.12);
   --pill-secondary-bg: var(--ink);
   --pill-secondary-bg-hover: #222938;
 
-  --button-secondary-bg: rgba(15, 23, 42, 0.035);
-  --button-secondary-bg-hover: rgba(15, 23, 42, 0.075);
-  --button-secondary-border: rgba(15, 23, 42, 0.13);
-  --button-secondary-border-hover: rgba(15, 23, 42, 0.22);
+  --button-secondary-bg: rgba(20, 20, 20, 0.035);
+  --button-secondary-bg-hover: rgba(20, 20, 20, 0.075);
+  --button-secondary-border: rgba(20, 20, 20, 0.14);
+  --button-secondary-border-hover: rgba(20, 20, 20, 0.24);
 
   /* Card shadow – neutralne, chłodne cienie pasujące do blue-gray surface ladder. */
-  --shadow-card: 0 20px 40px -24px rgba(15, 23, 42, 0.18);
+  --shadow-card: 0 20px 40px -24px rgba(20, 20, 20, 0.18);
 
   /* Semantic */
   --success-green: #14783a;
@@ -212,7 +207,7 @@
      dla --gradient-violet/orange/magenta/coral/violet-linear/process-* */
 
   /* Elevation – delikatne cienie bez ciepłego zafarbu. */
-  --shadow-l2: 0 1px 2px rgba(15, 23, 42, 0.06), 0 10px 26px rgba(15, 23, 42, 0.09);
+  --shadow-l2: 0 1px 2px rgba(20, 20, 20, 0.06), 0 10px 26px rgba(20, 20, 20, 0.09);
   --shadow-l3: 0 0 0 2px var(--accent-blue);
 }
 
@@ -387,31 +382,31 @@ h4:not([class*='text-']):not([class*='display-']) {
    letter-spacing w em (-5%) automatycznie skaluje z fontem. */
 .display-xxl {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(2rem, 4.4vw, 3.75rem);
-  line-height: 0.9;
-  letter-spacing: -0.042em;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5.6vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
 }
 .display-xl {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(1.625rem, 3.5vw, 2.75rem);
-  line-height: 0.95;
-  letter-spacing: -0.042em;
+  font-weight: 600;
+  font-size: clamp(1.875rem, 3.6vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.038em;
 }
 .display-lg {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(1.375rem, 2.6vw, 2.125rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
 }
 .display-md {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(1.1875rem, 2.2vw, 1.625rem);
-  line-height: 1.13;
-  letter-spacing: -0.031em;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2.1vw, 1.625rem);
+  line-height: 1.15;
+  letter-spacing: -0.028em;
 }
 
 @media (max-width: 639px) {
@@ -428,15 +423,15 @@ h4:not([class*='text-']):not([class*='display-']) {
   }
 
   .display-xxl {
-    font-size: clamp(34px, 9vw, 40px);
+    font-size: clamp(36px, 10vw, 44px);
     line-height: 1;
     letter-spacing: -0.038em;
   }
 
   .display-xl {
-    font-size: clamp(27px, 7vw, 32px);
-    line-height: 1.08;
-    letter-spacing: -0.038em;
+    font-size: clamp(28px, 7.5vw, 34px);
+    line-height: 1.06;
+    letter-spacing: -0.036em;
   }
 
   .display-lg {
@@ -885,9 +880,7 @@ h4:not([class*='text-']):not([class*='display-']) {
   grid-template-columns: minmax(0, 1fr) minmax(340px, 0.78fr);
   align-items: center;
   gap: 32px 56px;
-  margin-bottom: 44px;
-  padding-bottom: 22px;
-  border-bottom: 1px solid var(--hairline-soft);
+  margin-bottom: 56px;
 }
 .section-head .head-left {
   display: flex;
@@ -920,7 +913,8 @@ h4:not([class*='text-']):not([class*='display-']) {
   padding-top: 22px;
 }
 .section-head h2 {
-  max-width: 18ch;
+  max-width: 16ch;
+  text-wrap: balance;
 }
 .section-head .subhead {
   max-width: 44ch;
@@ -966,9 +960,9 @@ h4:not([class*='text-']):not([class*='display-']) {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 110% 110%, rgba(255, 255, 255, 0.18) 0%, transparent 45%),
-    radial-gradient(circle at -10% -10%, rgba(255, 255, 255, 0.12) 0%, transparent 55%);
+  /* Dawny „inner light” po gradientach – teraz tylko hairline wokół panelu */
+  box-shadow: inset 0 0 0 1px var(--hairline);
+  border-radius: inherit;
   pointer-events: none;
 }
 .on-gradient > * {
@@ -1040,35 +1034,20 @@ h4:not([class*='text-']):not([class*='display-']) {
   text-transform: none;
 }
 .mock-pill.ok {
-  color: #4ade80;
-  background: rgba(34, 197, 94, 0.12);
+  color: var(--ok-fg);
+  background: var(--ok-bg);
 }
 .mock-pill.warn {
-  color: #fbbf24;
-  background: rgba(251, 191, 36, 0.12);
+  color: var(--warn-fg);
+  background: var(--warn-bg);
 }
 .mock-pill.bad {
-  color: #f87171;
-  background: rgba(248, 113, 113, 0.12);
+  color: var(--bad-fg);
+  background: var(--bad-bg);
 }
 .mock-pill.faint {
   color: var(--ink-faint);
   background: var(--bg-surface-2);
-}
-
-/* Light mode tweaks dla mock-pill .ok/.warn/.bad – na ivory canvas
-   neonowe zielenie/żółcie/czerwienie się rozjeżdżają */
-:root[data-theme='light'] .mock-pill.ok {
-  color: #15803d;
-  background: rgba(21, 128, 61, 0.1);
-}
-:root[data-theme='light'] .mock-pill.warn {
-  color: #b45309;
-  background: rgba(180, 83, 9, 0.1);
-}
-:root[data-theme='light'] .mock-pill.bad {
-  color: #b91c1c;
-  background: rgba(185, 28, 28, 0.1);
 }
 
 /* ============================================================
