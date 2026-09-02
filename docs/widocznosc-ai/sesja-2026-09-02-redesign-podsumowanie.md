@@ -36,3 +36,21 @@ Planhat (moduły, sekcja leadowa), Index (sposób pokazywania danych).
 - Lint: 2 błędy `no-explicit-any` w ReportLeadForm i kontakt – zastane.
 - `docs/design-system-dark.md` / `-light.md` opisują stary system Framer – do aktualizacji
   po akceptacji.
+
+## Część 2 – eksploracja kierunków z 21st.dev (wieczór)
+
+- Skille 21st zainstalowane (`npx @21st-dev/cli install-skill`); klucz API działa
+  przez `TWENTYFIRST_TOKEN` (search, `21st get` 2/dzień na free; `21st generate` płatne).
+- Kontekst projektu w `portals/widocznosc.ai/.21st/design.json` (tokeny, ograniczenia,
+  decyzje) – `21st search --context auto` z niego korzysta.
+- Trzy kierunki zbudowane jako podglądy Astro (`/podglad/kierunek-a|b|c`), pokazane
+  Mateuszowi; **wybrany A „Raport w ramce”** (ref. 21st: Hero with Dashboard Mockup,
+  Sticky Scroll). B (bento) i C (poster + ticker) usunięte z repo po decyzji.
+- Wdrożenie A na stronie głównej: `Hero.astro` (split + `ReportMock frame compact`,
+  raport wychodzi poza kontener ≥1280px), `HowItWorks.astro` (sticky panel podmieniany
+  IntersectionObserverem, klik w krok też przełącza; mobile bez sticky), `LogosBand`
+  z realnymi logotypami w monochromie, `Process.astro` usunięty z home.
+- Kolejność home: Hero → Logos → HowItWorks → ProofData → Audits → Industries →
+  AuthorsStrip → RecentArticles → FAQ → CTABand.
+- Zrzuty: `Downloads/widocznosc-redesign/final-A-dark.jpeg`, `final-A-light.jpeg`,
+  `kierunek-A|B|C.jpeg` (archiwum odrzuconych).

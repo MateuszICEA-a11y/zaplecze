@@ -1,63 +1,417 @@
 ---
-const process = [
+/**
+ * HowItWorks – kierunek A. Trzy kroki narzędzia po lewej, po prawej
+ * przyklejony (sticky) panel produktu, który podmienia widok wraz
+ * z przewijaniem (IntersectionObserver; klik w krok też przełącza).
+ * Ref. 21st: Sticky Scroll (uilayout.contact).
+ */
+import ReportMock from './ReportMock.astro';
+
+const steps = [
   {
-    step: '01',
-    title: 'Connect your data',
-    description:
-      'Install our lightweight SDK or use the REST API. Most teams are sending events within 15 minutes.',
+    n: '01',
+    k: 'form',
+    t: 'Podajesz markę i domenę',
+    d: 'Bez rejestracji. Narzędzie odpytuje ChatGPT, Claude, Gemini i Perplexity świeżymi sesjami, bez personalizacji i bez podpowiadania odpowiedzi.',
   },
   {
-    step: '02',
-    title: 'Build your views',
-    description:
-      'Use pre-built templates or create custom dashboards. Drag and drop metrics, set filters, choose visualizations.',
+    n: '02',
+    k: 'models',
+    t: 'Dostajesz wynik per model',
+    d: 'Czy model zna markę, jak o niej mówi, czy cytuje Twoją domenę i jakie fakty zmyśla. Każdy model osobno, bo każdy cytuje inaczej.',
   },
   {
-    step: '03',
-    title: 'Get insights automatically',
-    description:
-      'Our AI surfaces anomalies and trends before you notice them. Set alerts that actually matter.',
-  },
-  {
-    step: '04',
-    title: 'Scale with confidence',
-    description:
-      'From startup to enterprise - same platform, same speed. No re-architecture needed as your data grows.',
+    n: '03',
+    k: 'plan',
+    t: 'Widzisz konkurentów i plan',
+    d: 'Lista firm polecanych zamiast Ciebie i pierwsze działania ułożone według priorytetu. Resztę omawiasz z ekspertem ICEA.',
   },
 ];
 ---
 
-<section class="pt-8 pb-32">
-  <div class="content-container">
-    <div class="fade-in">
-      <div class="mb-20 text-center">
-        <span class="block-subtitle mb-6 block">How it works</span>
-        <h2 class="text-primaryText text-3xl font-bold tracking-tight lg:text-4xl">
-          From zero to insights in minutes
-        </h2>
+<section class="hiw-section" id="jak-to-dziala" aria-labelledby="hiw-title">
+  <div class="container">
+    <header class="section-head">
+      <div class="head-left">
+        <div class="head-meta"><span class="eyebrow">Jak to działa</span></div>
+        <h2 id="hiw-title" class="display-xl">Od domeny do planu działań w&nbsp;trzech krokach.</h2>
       </div>
+      <div class="head-right">
+        <p class="subhead">
+          To samo narzędzie, które widzisz wyżej. Każdy krok pokazuje realny fragment raportu, nie
+          ilustrację.
+        </p>
+      </div>
+    </header>
 
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+    <div class="hiw-grid">
+      <ol class="hiw-steps">
         {
-          process.map((item, i) => (
-            <div class="group relative">
-              {i < process.length - 1 && (
-                <div class="bg-mainBorderDarker absolute top-10 right-[calc(-50%+2rem)] left-[calc(50%+2rem)] hidden h-px lg:block" />
-              )}
-              <div class="text-center">
-                <div
-                  class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full transition-all duration-500"
-                  style="background: rgba(99,102,241,0.05); border: 1px solid rgba(99,102,241,0.1);"
-                >
-                  <span class="text-primaryColor text-2xl font-bold">{item.step}</span>
-                </div>
-                <h3 class="text-primaryText mb-3 text-lg font-bold">{item.title}</h3>
-                <p class="text-secondaryText text-sm leading-relaxed">{item.description}</p>
-              </div>
-            </div>
+          steps.map((s, i) => (
+            <li class:list={['hiw-step', { 'is-active': i === 0 }]} data-step={s.k}>
+              <button type="button" class="hiw-step-btn">
+                <span class="hiw-num">{s.n}</span>
+                <span class="hiw-t">{s.t}</span>
+                <span class="hiw-d">{s.d}</span>
+              </button>
+            </li>
           ))
         }
+      </ol>
+
+      <div class="hiw-stage" aria-live="polite">
+        <div class="hiw-panel is-active" data-panel="form">
+          <div class="hiw-card">
+            <span class="hiw-lbl">Narzędzie · widoczność marki w&nbsp;AI</span>
+            <div class="hiw-field"><span>Nazwa marki</span><b>Twoja Marka</b></div>
+            <div class="hiw-field"><span>Domena</span><b>twojamarka.pl</b></div>
+            <div class="hiw-field"><span>Kategoria</span><b>np. producent mebli</b></div>
+            <span class="btn-primary hiw-fakebtn" aria-hidden="true">Sprawdź markę</span>
+            <span class="hiw-progress" aria-hidden="true"><i></i></span>
+            <span class="hiw-lbl">Odpytywanie 4 modeli · ok. 60 s</span>
+          </div>
+        </div>
+        <div class="hiw-panel" data-panel="models">
+          <ReportMock compact />
+        </div>
+        <div class="hiw-panel" data-panel="plan">
+          <div class="hiw-card">
+            <span class="hiw-lbl">Konkurenci polecani zamiast marki</span>
+            <ul class="hiw-rows">
+              <li>
+                <span>konkurent-a.pl</span><i><b style="width:75%"></b></i><span>3 modele</span>
+              </li>
+              <li>
+                <span>konkurent-b.pl</span><i><b style="width:50%"></b></i><span>2 modele</span>
+              </li>
+              <li>
+                <span>marketplace-x.com</span><i><b style="width:50%"></b></i><span>2 modele</span>
+              </li>
+              <li>
+                <span>twojamarka.pl</span><i><b class="me" style="width:50%"></b></i><span
+                  >2 modele</span
+                >
+              </li>
+            </ul>
+            <span class="hiw-lbl">Priorytety działań</span>
+            <ol class="hiw-actions">
+              <li><b>P0</b><span>Strona „O firmie” z&nbsp;faktami, które modele mylą</span></li>
+              <li><b>P0</b><span>Schema Organization + sameAs na stronie głównej</span></li>
+              <li><b>P1</b><span>Porównanie z&nbsp;konkurentami cytowanymi przez AI</span></li>
+              <li><b>P2</b><span>FAQ pod pytania, które ludzie zadają AI</span></li>
+            </ol>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  const initHiw = () => {
+    const root = document.getElementById('jak-to-dziala');
+    if (!root || root.dataset.ready) return;
+    root.dataset.ready = '1';
+    const steps = Array.from(root.querySelectorAll<HTMLElement>('.hiw-step'));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('.hiw-panel'));
+    const activate = (k: string) => {
+      steps.forEach((s) => s.classList.toggle('is-active', s.dataset.step === k));
+      panels.forEach((p) => p.classList.toggle('is-active', p.dataset.panel === k));
+    };
+    steps.forEach((s) =>
+      s.querySelector('button')?.addEventListener('click', () => activate(s.dataset.step || ''))
+    );
+    if (!window.matchMedia('(min-width: 980px)').matches) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) activate((e.target as HTMLElement).dataset.step || '');
+        });
+      },
+      { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+    );
+    steps.forEach((s) => obs.observe(s));
+  };
+  initHiw();
+  document.addEventListener('astro:page-load', initHiw);
+</script>
+
+<style>
+  .hiw-section {
+    padding: 96px 0;
+    background: var(--bg-canvas);
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  @media (min-width: 980px) {
+    .hiw-section {
+      padding: 128px 0;
+    }
+  }
+
+  .hiw-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  @media (min-width: 980px) {
+    .hiw-grid {
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .hiw-stage {
+      position: sticky;
+      top: max(96px, calc(50vh - 280px));
+    }
+    /* zapas na dole, żeby panel został przyklejony, aż ostatni krok minie środek ekranu */
+    .hiw-steps {
+      padding-bottom: 24vh;
+    }
+  }
+
+  .hiw-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hiw-step {
+    border-left: 2px solid var(--hairline);
+    transition: border-color 0.2s ease;
+  }
+
+  .hiw-step.is-active {
+    border-left-color: var(--ink);
+  }
+
+  .hiw-step-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding: 28px 0 28px 24px;
+    background: none;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+  }
+
+  .hiw-step-btn:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-l3);
+    border-radius: var(--r-md);
+  }
+
+  @media (min-width: 980px) {
+    .hiw-step-btn {
+      min-height: 44vh;
+      justify-content: center;
+      padding: 36px 0 36px 28px;
+    }
+  }
+
+  .hiw-num {
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+
+  .hiw-t {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--ink-muted);
+    transition: color 0.2s ease;
+  }
+
+  .hiw-step.is-active .hiw-t {
+    color: var(--ink);
+  }
+
+  .hiw-d {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    max-width: 40ch;
+  }
+
+  /* Na mobile pokazujemy tylko aktywny opis, reszta zwinięta do tytułu */
+  @media (max-width: 979px) {
+    .hiw-step:not(.is-active) .hiw-d {
+      display: none;
+    }
+  }
+
+  .hiw-stage {
+    display: grid;
+  }
+
+  .hiw-panel {
+    grid-area: 1 / 1;
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+    pointer-events: none;
+  }
+
+  .hiw-panel.is-active {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  /* Mobile: bez nakładania paneli – nieaktywne znikają z układu */
+  @media (max-width: 979px) {
+    .hiw-panel:not(.is-active) {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hiw-panel {
+      transition: none;
+    }
+  }
+
+  .hiw-card {
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-xl);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .hiw-lbl {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+
+  .hiw-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 14px;
+    background: var(--bg-canvas);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-md);
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .hiw-field span {
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+
+  .hiw-fakebtn {
+    align-self: flex-start;
+    pointer-events: none;
+  }
+
+  .hiw-progress {
+    height: 4px;
+    background: var(--bg-surface-3);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .hiw-progress i {
+    display: block;
+    height: 100%;
+    width: 62%;
+    background: var(--ink);
+  }
+
+  .hiw-rows,
+  .hiw-actions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hiw-rows li {
+    display: grid;
+    grid-template-columns: 140px 1fr 70px;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-top: 1px solid var(--hairline-soft);
+    color: var(--ink);
+  }
+
+  .hiw-rows li span:last-child {
+    text-align: right;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hiw-rows i {
+    display: block;
+    height: 4px;
+    background: var(--bg-surface-3);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .hiw-rows b {
+    display: block;
+    height: 100%;
+    background: var(--ink);
+  }
+
+  .hiw-rows b.me {
+    background: var(--brand);
+  }
+
+  .hiw-actions li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-top: 1px solid var(--hairline-soft);
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .hiw-actions b {
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background: var(--ink);
+    color: var(--bg-canvas);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .hiw-actions li:nth-child(n + 3) b {
+    background: var(--bg-surface-3);
+    color: var(--ink);
+  }
+
+  @media (max-width: 479px) {
+    .hiw-rows li {
+      grid-template-columns: 110px 1fr 60px;
+      font-size: 12px;
+    }
+  }
+</style>

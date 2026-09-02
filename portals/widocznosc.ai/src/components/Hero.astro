@@ -1,31 +1,25 @@
 ---
 /**
- * Hero – redesign 2026-09 (uwagi marketingu: mniej „jesteśmy AI”, więcej
- * „mamy dane”). Duża typografia na czarnym tle, jedno główne CTA
- * („Sprawdź widoczność swojej marki”) i od razu produkt: formularz testu
- * marki + podgląd realnego raportu z narzędzia brand-check.
- *
- * Formularz to zwykły GET na /narzedzia/brand-check/ – narzędzie czyta
- * ?domain= i ?brand= z query stringa i wypełnia własne pola.
+ * Hero – kierunek A „Raport w ramce” (wybrany 2026-09-02).
+ * Split: nagłówek + formularz testu marki po lewej, raport narzędzia
+ * brand-check w ramce przeglądarki po prawej (wychodzi poza kontener).
+ * Formularz to GET na /narzedzia/brand-check/ (?brand=&domain=).
+ * Ref. 21st: Hero with Dashboard Mockup; Dayos: produkt na pierwszym ekranie.
  */
+import ReportMock from './ReportMock.astro';
 ---
 
 <section class="hero-section" id="home">
-  <div class="container">
+  <div class="hero-grid container">
     <div class="hero-copy">
-      <span class="eyebrow">Pomiar widoczności marki w&nbsp;wyszukiwarkach AI</span>
-
-      <h1 class="display-xxl hero-headline">
-        Sprawdź, czy AI poleca <span class="hero-nowrap">Twoją markę</span>.
-      </h1>
-
+      <span class="eyebrow">Pomiar widoczności marki w&nbsp;AI</span>
+      <h1 class="display-xxl hero-headline">Sprawdź, czy AI poleca Twoją markę.</h1>
       <p class="hero-lead hero-sub">
         Odpytujemy ChatGPT, Claude, Gemini i&nbsp;Perplexity o&nbsp;Twoją firmę i&nbsp;pokazujemy,
-        co odpowiadają: czy znają markę, jak o&nbsp;niej mówią, jakie fakty zmyślają i&nbsp;kogo
-        polecają zamiast Ciebie.
+        co odpowiadają: czy znają markę, jak o&nbsp;niej mówią i&nbsp;kogo polecają zamiast Ciebie.
+        Wynik w&nbsp;około minutę, bez rejestracji.
       </p>
-
-      <form class="hero-form" action="/narzedzia/brand-check/" method="get" data-hero-form>
+      <form class="hero-form" action="/narzedzia/brand-check/" method="get">
         <label class="hero-field">
           <span class="sr-only">Nazwa marki</span>
           <input
@@ -54,114 +48,15 @@
         </button>
       </form>
       <p class="hero-note">
-        Bezpłatnie, bez rejestracji. Wynik w&nbsp;około minutę.
-        <a href="/kontakt/?type=konsultacja">Wolisz porozmawiać z&nbsp;ekspertem ICEA?</a>
+        <a href="/kontakt/?type=konsultacja">Porozmawiaj z&nbsp;ekspertem ICEA</a>
+        <span aria-hidden="true">·</span>
+        <span class="hero-by">widocznosc.ai by ICEA</span>
       </p>
     </div>
 
-    <!-- Podgląd produktu: układ 1:1 z raportem narzędzia brand-check -->
-    <figure class="hero-product" aria-label="Przykładowy raport widoczności marki w AI">
-      <div class="product-bar">
-        <span class="product-bar-title">Widoczność marki w&nbsp;AI</span>
-        <span class="product-bar-meta">
-          <span class="product-dot" aria-hidden="true"></span>
-          twojamarka.pl · 4 modele · przykładowy raport
-        </span>
-      </div>
-
-      <div class="product-grid">
-        <!-- Kolumna 1: wynik + statystyki -->
-        <div class="product-col product-col--score">
-          <div class="product-score">
-            <div class="product-ring" style="--score: 41" aria-hidden="true">
-              <span class="product-ring-num">41</span>
-            </div>
-            <div class="product-score-meta">
-              <span class="product-label">Brand Visibility Score</span>
-              <strong>Twoja marka w&nbsp;odpowiedziach AI</strong>
-              <span class="product-copy"
-                >2&nbsp;z&nbsp;4 modeli zna markę bezpośrednio. Domena cytowana 2 razy. Sentyment:
-                neutralny.</span
-              >
-            </div>
-          </div>
-          <dl class="product-stats">
-            <div><dt>modele cytujące domenę</dt><dd>2/4</dd></div>
-            <div><dt>możliwe halucynacje</dt><dd>3</dd></div>
-            <div><dt>konkurenci w&nbsp;odpowiedziach</dt><dd>5</dd></div>
-            <div><dt>status modeli</dt><dd>4/4</dd></div>
-          </dl>
-        </div>
-
-        <!-- Kolumna 2: wyniki per model -->
-        <div class="product-col product-col--models">
-          <span class="product-label">Wyniki per model</span>
-          <ul class="product-models">
-            <li>
-              <span class="product-model-name">ChatGPT</span>
-              <span class="product-tags">
-                <span class="tag ok">zna markę</span>
-                <span class="tag ok">pozytywny</span>
-                <span class="tag ok">cytuje domenę</span>
-              </span>
-            </li>
-            <li>
-              <span class="product-model-name">Claude</span>
-              <span class="product-tags">
-                <span class="tag warn">zna częściowo</span>
-                <span class="tag">neutralny</span>
-                <span class="tag warn">nie cytuje domeny</span>
-              </span>
-            </li>
-            <li>
-              <span class="product-model-name">Gemini</span>
-              <span class="product-tags">
-                <span class="tag bad">nie zna marki</span>
-                <span class="tag">brak oceny</span>
-                <span class="tag warn">nie cytuje domeny</span>
-              </span>
-            </li>
-            <li>
-              <span class="product-model-name">Perplexity</span>
-              <span class="product-tags">
-                <span class="tag ok">zna markę</span>
-                <span class="tag">neutralny</span>
-                <span class="tag ok">cytuje domenę</span>
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Kolumna 3: konkurenci + priorytety -->
-        <div class="product-col product-col--side">
-          <div>
-            <span class="product-label">Konkurenci polecani zamiast marki</span>
-            <ul class="product-list">
-              <li><span>konkurent-a.pl</span><span class="tabular muted">3 modele</span></li>
-              <li><span>konkurent-b.pl</span><span class="tabular muted">2 modele</span></li>
-              <li><span>marketplace-x.com</span><span class="tabular muted">2 modele</span></li>
-            </ul>
-          </div>
-          <div>
-            <span class="product-label">Priorytety działań</span>
-            <ol class="product-list product-list--actions">
-              <li>
-                <span class="prio">P0</span><span
-                  >Strona „O firmie” z&nbsp;faktami, które modele mylą</span>
-              </li>
-              <li>
-                <span class="prio">P0</span><span
-                  >Schema Organization + sameAs na stronie głównej</span>
-              </li>
-              <li>
-                <span class="prio p1">P1</span><span
-                  >Porównanie z&nbsp;konkurentami cytowanymi przez AI</span>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </figure>
+    <div class="hero-product">
+      <ReportMock frame compact />
+    </div>
   </div>
 </section>
 
@@ -169,59 +64,51 @@
   .hero-section {
     position: relative;
     background: var(--bg-canvas);
-    padding: 96px 0 72px;
+    padding: 112px 0 72px;
+    overflow: hidden;
   }
 
-  @media (min-width: 980px) {
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 44px;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
     .hero-section {
-      padding: 136px 0 88px;
+      padding: 152px 0 96px;
+    }
+    .hero-grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 56px;
     }
   }
 
   .hero-copy {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 28px;
-    margin: 0 auto 56px;
-    max-width: 880px;
+    align-items: flex-start;
+    gap: 26px;
   }
 
   .hero-headline {
     margin: 0;
-    max-width: 15ch;
+    max-width: 11ch;
     text-wrap: balance;
   }
 
-  .hero-nowrap {
-    white-space: nowrap;
-  }
-
   .hero-sub {
-    max-width: 640px;
+    max-width: 46ch;
     color: var(--ink-muted);
-    font-size: clamp(16px, 1.35vw, 19px);
   }
 
-  /* Formularz – jeden pasek, trzy elementy */
   .hero-form {
     display: grid;
     grid-template-columns: 1fr;
     gap: 8px;
     width: 100%;
-    max-width: 720px;
-    padding: 8px;
-    background: var(--bg-surface-1);
-    border: 1px solid var(--hairline);
-    border-radius: 22px;
-  }
-
-  @media (min-width: 720px) {
-    .hero-form {
-      grid-template-columns: 1fr 1.15fr auto;
-      border-radius: var(--r-pill);
-    }
+    max-width: 460px;
   }
 
   .hero-field {
@@ -230,17 +117,17 @@
 
   .hero-field input {
     width: 100%;
-    min-height: 44px;
+    min-height: 46px;
     padding: 10px 16px;
-    background: transparent;
+    background: var(--bg-surface-1);
     color: var(--ink);
     font-family: var(--font-sans);
     font-size: 15px;
     letter-spacing: -0.01em;
-    border: 0;
-    border-radius: var(--r-pill);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-md);
     outline: none;
-    transition: background 0.15s ease;
+    transition: border-color 0.15s ease;
   }
 
   .hero-field input::placeholder {
@@ -248,42 +135,50 @@
   }
 
   .hero-field input:focus-visible {
-    background: var(--bg-surface-2);
-  }
-
-  @media (min-width: 720px) {
-    .hero-field + .hero-field {
-      border-left: 1px solid var(--hairline);
-    }
-    .hero-field + .hero-field input {
-      border-radius: 0;
-    }
-    .hero-field:first-child input {
-      border-radius: var(--r-pill) 0 0 var(--r-pill);
-    }
+    border-color: var(--ink-faint);
+    box-shadow: var(--shadow-l3);
   }
 
   .hero-submit {
-    min-height: 44px;
-    padding-inline: 20px;
+    min-height: 46px;
+    border-radius: var(--r-md);
   }
 
   .hero-note {
-    margin: -8px 0 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 13px;
     color: var(--ink-faint);
   }
 
   .hero-note a {
-    color: var(--ink-muted);
+    color: var(--ink);
     text-decoration: underline;
     text-underline-offset: 3px;
     text-decoration-color: var(--hairline);
-    margin-left: 6px;
   }
 
   .hero-note a:hover {
-    color: var(--ink);
+    text-decoration-color: currentColor;
+  }
+
+  .hero-by {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+  }
+
+  .hero-product {
+    min-width: 0;
+  }
+
+  /* Na szerokich ekranach raport wychodzi poza kontener – produkt dominuje */
+  @media (min-width: 1280px) {
+    .hero-product {
+      width: calc(100% + 120px);
+    }
   }
 
   .sr-only {
@@ -298,302 +193,18 @@
     border: 0;
   }
 
-  /* ============================================================
-     Podgląd produktu – panel raportu
-     ============================================================ */
-
-  .hero-product {
-    margin: 0;
-    background: var(--bg-surface-1);
-    border: 1px solid var(--hairline);
-    border-radius: var(--r-xl);
-    overflow: hidden;
-    box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.06) inset,
-      0 40px 80px -40px rgba(0, 0, 0, 0.7);
-  }
-
-  :root[data-theme='light'] .hero-product {
-    box-shadow: var(--shadow-l2);
-  }
-
-  .product-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    padding: 14px 22px;
-    border-bottom: 1px solid var(--hairline);
-    font-size: 12px;
-    color: var(--ink-muted);
-  }
-
-  .product-bar-title {
-    font-weight: 600;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-
-  .product-bar-meta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .product-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--ok-fg);
-  }
-
-  .product-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  @media (min-width: 900px) {
-    .product-grid {
-      grid-template-columns: 1.05fr 1.25fr 0.95fr;
-    }
-  }
-
-  .product-col {
-    padding: 24px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border-top: 1px solid var(--hairline-soft);
-  }
-
-  @media (min-width: 900px) {
-    .product-col {
-      border-top: 0;
-    }
-    .product-col + .product-col {
-      border-left: 1px solid var(--hairline);
-    }
-  }
-
-  .product-label {
-    display: block;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink-faint);
-    margin-bottom: 10px;
-  }
-
-  .product-score {
-    display: flex;
-    gap: 18px;
-    align-items: center;
-  }
-
-  .product-ring {
-    --size: 92px;
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    flex-shrink: 0;
-    display: grid;
-    place-items: center;
-    background:
-      radial-gradient(closest-side, var(--bg-surface-1) 78%, transparent 80%),
-      conic-gradient(var(--ink) calc(var(--score) * 1%), var(--bg-surface-3) 0);
-  }
-
-  .product-ring-num {
-    font-family: var(--font-display);
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: -0.04em;
-    color: var(--ink);
-  }
-
-  .product-score-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .product-score-meta .product-label {
-    margin-bottom: 2px;
-  }
-
-  .product-score-meta strong {
-    font-family: var(--font-display);
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    line-height: 1.2;
-  }
-
-  .product-copy {
-    font-size: 12.5px;
-    line-height: 1.45;
-    color: var(--ink-muted);
-  }
-
-  .product-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    margin: 0;
-    background: var(--hairline);
-    border: 1px solid var(--hairline);
-    border-radius: var(--r-md);
-    overflow: hidden;
-  }
-
-  .product-stats > div {
-    background: var(--bg-surface-1);
-    padding: 12px 14px;
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 2px;
-  }
-
-  .product-stats dt {
-    font-size: 11px;
-    color: var(--ink-faint);
-    line-height: 1.3;
-  }
-
-  .product-stats dd {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    font-variant-numeric: tabular-nums;
-  }
-
-  .product-models {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .product-models li {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 12px 0;
-    border-top: 1px solid var(--hairline-soft);
-  }
-
-  @media (min-width: 560px) {
-    .product-models li {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-  }
-
-  .product-model-name {
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-
-  .product-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .tag {
-    font-size: 11px;
-    font-weight: 500;
-    padding: 4px 9px;
-    border-radius: var(--r-pill);
-    background: var(--bg-surface-2);
-    color: var(--ink-muted);
-    white-space: nowrap;
-  }
-
-  .tag.ok {
-    color: var(--ok-fg);
-    background: var(--ok-bg);
-  }
-  .tag.warn {
-    color: var(--warn-fg);
-    background: var(--warn-bg);
-  }
-  .tag.bad {
-    color: var(--bad-fg);
-    background: var(--bad-bg);
-  }
-
-  .product-col--side {
-    gap: 22px;
-  }
-
-  .product-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    font-size: 13px;
-    color: var(--ink);
-  }
-
-  .product-list li {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 9px 0;
-    border-top: 1px solid var(--hairline-soft);
-    line-height: 1.35;
-  }
-
-  .product-list--actions li {
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  .prio {
-    font-family: ui-monospace, 'JetBrains Mono', monospace;
-    font-size: 10px;
-    font-weight: 600;
-    padding: 3px 6px;
-    border-radius: 4px;
-    background: var(--ink);
-    color: var(--bg-canvas);
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .prio.p1 {
-    background: var(--bg-surface-3);
-    color: var(--ink);
-  }
-
   @media (max-width: 639px) {
     .hero-section {
-      padding: 88px 0 56px;
-    }
-    .hero-copy {
-      gap: 22px;
-      margin-bottom: 36px;
+      padding: 96px 0 56px;
     }
     .hero-headline {
       max-width: 100%;
     }
-    .hero-nowrap {
-      white-space: normal;
+    .hero-form {
+      max-width: 100%;
     }
-    .hero-submit {
-      width: 100%;
+    .hero-note {
+      flex-wrap: wrap;
     }
   }
 </style>

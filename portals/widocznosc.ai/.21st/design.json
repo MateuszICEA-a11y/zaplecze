@@ -3,13 +3,28 @@
   "project": {
     "name": "widocznosc.ai",
     "productType": "B2B marketing site + free AI-visibility tools (brand by ICEA S.A.)",
-    "stack": ["astro", "tailwind-v4", "vanilla-css-custom-properties", "no-react-runtime"]
+    "stack": [
+      "astro",
+      "tailwind-v4",
+      "vanilla-css-custom-properties",
+      "no-react-runtime"
+    ]
   },
   "sources": {
-    "tokens": ["src/styles/Theme.css"],
-    "components": ["src/components"],
-    "assets": ["src/assets", "public/logos/ai-engines", "public/authors"],
-    "instructions": ["docs/widocznosc-ai/sesja-2026-09-02-redesign-podsumowanie.md"]
+    "tokens": [
+      "src/styles/Theme.css"
+    ],
+    "components": [
+      "src/components"
+    ],
+    "assets": [
+      "src/assets",
+      "public/logos/ai-engines",
+      "public/authors"
+    ],
+    "instructions": [
+      "docs/widocznosc-ai/sesja-2026-09-02-redesign-podsumowanie.md"
+    ]
   },
   "design": {
     "colorMode": "dark-default-with-light-toggle",
@@ -32,16 +47,53 @@
       "body": "Inter Variable 400/500, 14–15px, OpenType cv01/cv05/cv09/cv11/ss03/ss07, tabular-nums",
       "mono": "ui-monospace / JetBrains Mono for eyebrows, indexes and mock UI"
     },
-    "spacing": { "section": "96px mobile / 128px desktop", "container": "1440px, gutter 32px" },
-    "radius": { "md": "10px", "lg": "15px", "xl": "20px", "pill": "100px" },
-    "shadows": { "card": "0 30px 60px -25px rgba(0,0,0,.55)" },
-    "motion": { "policy": "subtle, opacity/transform only, prefers-reduced-motion respected" },
+    "spacing": {
+      "section": "96px mobile / 128px desktop",
+      "container": "1440px, gutter 32px"
+    },
+    "radius": {
+      "md": "10px",
+      "lg": "15px",
+      "xl": "20px",
+      "pill": "100px"
+    },
+    "shadows": {
+      "card": "0 30px 60px -25px rgba(0,0,0,.55)"
+    },
+    "motion": {
+      "policy": "subtle, opacity/transform only, prefers-reduced-motion respected"
+    },
     "density": "airy"
   },
   "components": {
-    "installed": ["Navbar", "Hero", "LogosBand", "ProofData", "Audits", "Process", "Industries", "AuthorsStrip", "RecentArticles", "FAQ", "CTABand", "Footer"],
-    "preferredPrimitives": [".btn-primary (white pill)", ".btn-secondary (translucent pill)", ".eyebrow", ".section-head (2-col editorial header)", ".display-xxl/.display-xl", ".mock-pill.ok/.warn/.bad"],
-    "patterns": ["hairline rows instead of colored cards", "inverse light panel for one highlighted module per page", "product mock 1:1 with real tool output"]
+    "installed": [
+      "Navbar",
+      "Hero",
+      "LogosBand",
+      "ProofData",
+      "Audits",
+      "Industries",
+      "AuthorsStrip",
+      "RecentArticles",
+      "FAQ",
+      "CTABand",
+      "Footer",
+      "HowItWorks",
+      "ReportMock"
+    ],
+    "preferredPrimitives": [
+      ".btn-primary (white pill)",
+      ".btn-secondary (translucent pill)",
+      ".eyebrow",
+      ".section-head (2-col editorial header)",
+      ".display-xxl/.display-xl",
+      ".mock-pill.ok/.warn/.bad"
+    ],
+    "patterns": [
+      "hairline rows instead of colored cards",
+      "inverse light panel for one highlighted module per page",
+      "product mock 1:1 with real tool output"
+    ]
   },
   "constraints": {
     "must": [
@@ -61,11 +113,28 @@
     ]
   },
   "decisions": [
-    { "date": "2026-09-02", "decision": "Redesign direction: Dayos (big type, black/white base) + Planhat (ordered modules, lead section) + Index (data display). Branch redesign/widocznosc-dayos." }
+    {
+      "date": "2026-09-02",
+      "decision": "Redesign direction: Dayos (big type, black/white base) + Planhat (ordered modules, lead section) + Index (data display). Branch redesign/widocznosc-dayos."
+    },
+    {
+      "date": "2026-09-02",
+      "decision": "Homepage: direction A 'Raport w ramce' chosen by user over B (bento dashboard) and C (editorial poster+ticker). Split hero with ReportMock in browser frame + sticky HowItWorks; Process section dropped from homepage.",
+      "references": [
+        "21st: felipemenezes098/hero-02 (Hero with Dashboard Mockup)",
+        "21st: uilayout.contact/sticky-scroll"
+      ]
+    }
   ],
   "evidence": [
-    { "fact": "tokens", "source": "src/styles/Theme.css :root and [data-theme='light']" },
-    { "fact": "marketing brief", "source": "Artur Osak, 2026-08-21 (uwagi do szaty graficznej)" }
+    {
+      "fact": "tokens",
+      "source": "src/styles/Theme.css :root and [data-theme='light']"
+    },
+    {
+      "fact": "marketing brief",
+      "source": "Artur Osak, 2026-08-21 (uwagi do szaty graficznej)"
+    }
   ],
   "generatedAt": "2026-09-02T19:12:50.743Z"
 }

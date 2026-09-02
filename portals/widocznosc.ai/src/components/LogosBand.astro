@@ -1,24 +1,42 @@
 ---
 /**
- * LogosBand – redesign 2026-09. Cichy pasek z nazwami silników AI
- * (bez kolorowych kropek – jeden kolor marki, reszta monochrom).
+ * LogosBand – pasek logotypów silników AI w monochromie
+ * (biały w dark, czarny w light – jeden kolor marki, reszta bez koloru).
  */
 
-const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Microsoft Copilot'];
+const aiEngines = [
+  { name: 'ChatGPT', file: 'chatgpt' },
+  { name: 'Claude', file: 'claude' },
+  { name: 'Gemini', file: 'gemini' },
+  { name: 'Perplexity', file: 'perplexity' },
+  { name: 'Microsoft Copilot', file: 'copilot' },
+];
 ---
 
 <section class="logos-section" aria-label="Mierzymy widoczność w silnikach AI">
   <div class="logos-inner container">
     <span class="logos-label">Mierzymy widoczność w</span>
     <ul class="logos-row">
-      {aiEngines.map((name) => <li class="logo-item">{name}</li>)}
+      {
+        aiEngines.map((e) => (
+          <li>
+            <img
+              src={`/logos/ai-engines/${e.file}.png`}
+              alt={e.name}
+              height="22"
+              loading="lazy"
+              decoding="async"
+            />
+          </li>
+        ))
+      }
     </ul>
   </div>
 </section>
 
 <style>
   .logos-section {
-    padding: 28px 0;
+    padding: 26px 0;
     border-top: 1px solid var(--hairline-soft);
     border-bottom: 1px solid var(--hairline-soft);
     background: var(--bg-canvas);
@@ -41,7 +59,7 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Microsoft Copil
 
   .logos-row {
     display: flex;
-    gap: 20px 32px;
+    gap: 24px 36px;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
@@ -50,11 +68,27 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Microsoft Copil
     padding: 0;
   }
 
-  .logo-item {
-    font-family: var(--font-display);
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--ink-muted);
+  .logos-row img {
+    display: block;
+    height: 22px;
+    width: auto;
+    /* monochrom: dark → biały, light → czarny */
+    filter: brightness(0) invert(1);
+    opacity: 0.72;
+    transition: opacity 0.2s ease;
+  }
+
+  :root[data-theme='light'] .logos-row img {
+    filter: brightness(0);
+  }
+
+  .logos-row li:hover img {
+    opacity: 1;
+  }
+
+  @media (max-width: 639px) {
+    .logos-row img {
+      height: 18px;
+    }
   }
 </style>

@@ -11,13 +11,25 @@ interface Props {
 const { frame = false, compact = false } = Astro.props;
 ---
 
-<figure class:list={['rm', { 'rm--frame': frame, 'rm--compact': compact }]} aria-label="Przykładowy raport widoczności marki w AI">
+<figure
+  class:list={['rm', { 'rm--frame': frame, 'rm--compact': compact }]}
+  aria-label="Przykładowy raport widoczności marki w AI"
+>
   {
     frame && (
       <div class="rm-chrome" aria-hidden="true">
-        <span class="rm-dots"><i /><i /><i /></span>
+        <span class="rm-dots">
+          <>
+            <i />
+            <i />
+            <i />
+          </>
+        </span>
         <span class="rm-url">widocznosc.ai/narzedzia/brand-check</span>
-        <span class="rm-live"><i />raport gotowy</span>
+        <span class="rm-live">
+          <i />
+          raport gotowy
+        </span>
       </div>
     )
   }
@@ -32,7 +44,9 @@ const { frame = false, compact = false } = Astro.props;
         <div class="rm-score-meta">
           <span class="rm-label">Brand Visibility Score</span>
           <strong>Twoja marka w&nbsp;odpowiedziach AI</strong>
-          <span class="rm-copy">2&nbsp;z&nbsp;4 modeli zna markę. Domena cytowana 2 razy. Sentyment neutralny.</span>
+          <span class="rm-copy"
+            >2&nbsp;z&nbsp;4 modeli zna markę. Domena cytowana 2 razy. Sentyment neutralny.</span
+          >
         </div>
       </div>
       <dl class="rm-stats">
@@ -45,10 +59,30 @@ const { frame = false, compact = false } = Astro.props;
     <div class="rm-col">
       <span class="rm-label">Wyniki per model</span>
       <ul class="rm-models">
-        <li><span class="rm-model">ChatGPT</span><span class="rm-tags"><span class="tag ok">zna markę</span><span class="tag ok">pozytywny</span><span class="tag ok">cytuje domenę</span></span></li>
-        <li><span class="rm-model">Claude</span><span class="rm-tags"><span class="tag warn">zna częściowo</span><span class="tag">neutralny</span><span class="tag warn">nie cytuje</span></span></li>
-        <li><span class="rm-model">Gemini</span><span class="rm-tags"><span class="tag bad">nie zna marki</span><span class="tag">brak oceny</span><span class="tag warn">nie cytuje</span></span></li>
-        <li><span class="rm-model">Perplexity</span><span class="rm-tags"><span class="tag ok">zna markę</span><span class="tag">neutralny</span><span class="tag ok">cytuje domenę</span></span></li>
+        <li>
+          <span class="rm-model">ChatGPT</span><span class="rm-tags"
+            ><span class="tag ok">zna markę</span><span class="tag ok">pozytywny</span><span
+              class="tag ok">cytuje domenę</span
+            ></span>
+        </li>
+        <li>
+          <span class="rm-model">Claude</span><span class="rm-tags"
+            ><span class="tag warn">zna częściowo</span><span class="tag">neutralny</span><span
+              class="tag warn">nie cytuje</span
+            ></span>
+        </li>
+        <li>
+          <span class="rm-model">Gemini</span><span class="rm-tags"
+            ><span class="tag bad">nie zna marki</span><span class="tag">brak oceny</span><span
+              class="tag warn">nie cytuje</span
+            ></span>
+        </li>
+        <li>
+          <span class="rm-model">Perplexity</span><span class="rm-tags"
+            ><span class="tag ok">zna markę</span><span class="tag">neutralny</span><span
+              class="tag ok">cytuje domenę</span
+            ></span>
+        </li>
       </ul>
     </div>
     {
@@ -57,17 +91,47 @@ const { frame = false, compact = false } = Astro.props;
           <div>
             <span class="rm-label">Konkurenci polecani zamiast marki</span>
             <ul class="rm-list">
-              <li><span>konkurent-a.pl</span><span class="muted">3 modele</span></li>
-              <li><span>konkurent-b.pl</span><span class="muted">2 modele</span></li>
-              <li><span>marketplace-x.com</span><span class="muted">2 modele</span></li>
+              <li>
+                <>
+                  <span>konkurent-a.pl</span>
+                  <span class="muted">3 modele</span>
+                </>
+              </li>
+              <li>
+                <>
+                  <span>konkurent-b.pl</span>
+                  <span class="muted">2 modele</span>
+                </>
+              </li>
+              <li>
+                <>
+                  <span>marketplace-x.com</span>
+                  <span class="muted">2 modele</span>
+                </>
+              </li>
             </ul>
           </div>
           <div>
             <span class="rm-label">Priorytety działań</span>
             <ol class="rm-list rm-list--actions">
-              <li><span class="prio">P0</span><span>Strona „O firmie” z&nbsp;faktami, które modele mylą</span></li>
-              <li><span class="prio">P0</span><span>Schema Organization + sameAs</span></li>
-              <li><span class="prio p1">P1</span><span>Porównanie z&nbsp;konkurentami cytowanymi przez AI</span></li>
+              <li>
+                <>
+                  <span class="prio">P0</span>
+                  <span>Strona „O firmie” z&nbsp;faktami, które modele mylą</span>
+                </>
+              </li>
+              <li>
+                <>
+                  <span class="prio">P0</span>
+                  <span>Schema Organization + sameAs</span>
+                </>
+              </li>
+              <li>
+                <>
+                  <span class="prio p1">P1</span>
+                  <span>Porównanie z&nbsp;konkurentami cytowanymi przez AI</span>
+                </>
+              </li>
             </ol>
           </div>
         </div>
