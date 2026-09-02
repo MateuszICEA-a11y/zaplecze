@@ -1,11 +1,8 @@
 ---
 /**
- * Audits – landing redesign 2026-05-09 (handoff).
- * Section-head editorial 5fr/4fr + 3 darmowe testy w 3-col grid +
- * pełny raport GEO jako orange spotlight (radial gradient + ::before).
- *
- * Mock UI: monospaced font, surface canvas inset, status pills (.ok/.warn/.bad/.faint),
- * progress bars 4px (.dim/.accent variants).
+ * Audits – redesign 2026-09. Trzy darmowe testy jako monochromatyczne karty
+ * z podglądem wyniku (kolory tylko funkcjonalnie: dobry / do poprawy / zły)
+ * + pełny raport GEO jako jasny panel (odwrócony kontrast zamiast gradientu).
  */
 ---
 
@@ -14,29 +11,24 @@
     <header class="section-head">
       <div class="head-left">
         <div class="head-meta">
-          <span class="section-index">S/02</span>
-          <span class="eyebrow">Co dostajesz</span>
+          <span class="eyebrow">Narzędzia</span>
         </div>
-        <h2 id="audyty-title" class="display-xl">
-          Trzy darmowe testy i&nbsp;<span class="accent">pełny raport GEO</span>
-        </h2>
+        <h2 id="audyty-title" class="display-xl">Trzy testy za darmo. Jeden pełny raport.</h2>
       </div>
       <div class="head-right">
         <p class="subhead">
-          Zacznij od&nbsp;trzech szybkich testów &ndash; bez logowania, każdy w&nbsp;kilka sekund.
-          Gdy chcesz głębszy obraz, zamów rozbudowany raport GEO ze&nbsp;skanem 25&ndash;50 URL-i
-          Twojej domeny.
+          Każdy test działa bez logowania i&nbsp;daje wynik w&nbsp;kilkadziesiąt sekund. Gdy chcesz
+          pełny obraz domeny, zamawiasz raport GEO z&nbsp;analizą 25&ndash;50 adresów.
         </p>
       </div>
     </header>
 
-    <!-- Grid 3 darmowych testów -->
     <div class="services-grid">
       <!-- 01 – Widoczność marki w AI -->
       <article id="brand-check" class="audit-card">
         <div class="service-head">
-          <span class="card-eyebrow">01 / 04</span>
-          <span class="card-eyebrow accent">darmowe · instant</span>
+          <span class="card-eyebrow">01</span>
+          <span class="card-eyebrow">bezpłatnie · ok. 60 s</span>
         </div>
         <h3 class="card-title">Widoczność marki w&nbsp;AI</h3>
         <p class="card-body">
@@ -45,55 +37,41 @@
         </p>
 
         <div class="service-mock">
-          <div class="mock-line muted">
-            <span>Przykładowy wynik</span>
-          </div>
-          <div class="mock-line">
-            <span>twojadomena.pl</span>
-            <span class="accent">● live</span>
+          <div class="mock-line muted"><span>Przykładowy wynik</span><span>4 modele</span></div>
+          <div class="mock-row">
+            <span>ChatGPT</span><span class="mock-pill ok">zna · cytuje</span>
           </div>
           <div class="mock-row">
-            <span>ChatGPT</span><span class="mock-pill warn">Myli ofertę</span>
+            <span>Claude</span><span class="mock-pill warn">zna częściowo</span>
           </div>
           <div class="mock-row">
-            <span>Claude</span><span class="mock-pill faint">Brak danych</span>
+            <span>Gemini</span><span class="mock-pill bad">poleca konkurenta</span>
           </div>
           <div class="mock-row">
-            <span>Gemini</span><span class="mock-pill warn">Poleca konkurenta</span>
-          </div>
-          <div class="mock-row">
-            <span>Perplexity</span><span class="mock-pill ok">Zna · neutralny</span>
+            <span>Perplexity</span><span class="mock-pill ok">zna · neutralny</span>
           </div>
         </div>
 
-        <a
-          class="service-link"
-          href="/narzedzia/brand-check/"
-          aria-label="Sprawdź widoczność marki w AI"
-        >
-          Sprawdź widoczność <span aria-hidden="true">→</span>
+        <a class="service-link" href="/narzedzia/brand-check/">
+          Sprawdź widoczność marki <span aria-hidden="true">→</span>
         </a>
       </article>
 
       <!-- 02 – Ocena cytowalności strony -->
       <article id="url-check" class="audit-card">
         <div class="service-head">
-          <span class="card-eyebrow">02 / 04</span>
-          <span class="card-eyebrow accent">darmowe · instant</span>
+          <span class="card-eyebrow">02</span>
+          <span class="card-eyebrow">bezpłatnie · ok. 30 s</span>
         </div>
-        <h3 class="card-title">Ocena cytowalności strony</h3>
+        <h3 class="card-title">Cytowalność strony</h3>
         <p class="card-body">
-          Wskazujesz jeden URL. Wynik 0&ndash;100 + lista 5 priorytetowych zmian według badań
-          Princeton i&nbsp;Indiga (1,2 mln cytowań ChatGPT).
+          Wskazujesz jeden adres. Wynik 0&ndash;100 i&nbsp;pięć priorytetowych zmian według badań
+          Princeton i&nbsp;analizy 1,2&nbsp;mln cytowań ChatGPT.
         </p>
 
         <div class="service-mock">
           <div class="mock-line muted">
-            <span>Przykładowy wynik</span>
-          </div>
-          <div class="mock-line">
-            <span>/blog/jak-wybrac-saas</span>
-            <span class="tabular">43 / 100</span>
+            <span>Przykładowy wynik</span><span class="tabular">43 / 100</span>
           </div>
           <div class="mock-line"><span>Front-load</span><span class="tabular">78%</span></div>
           <div class="mock-bar"><div class="mock-bar-fill" style="width:78%"></div></div>
@@ -103,11 +81,7 @@
           <div class="mock-bar"><div class="mock-bar-fill dim" style="width:12%"></div></div>
         </div>
 
-        <a
-          class="service-link"
-          href="/narzedzia/url-check/"
-          aria-label="Oceń cytowalność jednej strony"
-        >
+        <a class="service-link" href="/narzedzia/url-check/">
           Oceń stronę <span aria-hidden="true">→</span>
         </a>
       </article>
@@ -115,127 +89,102 @@
       <!-- 03 – Dostęp botów AI -->
       <article id="ai-bots-check" class="audit-card">
         <div class="service-head">
-          <span class="card-eyebrow">03 / 04</span>
-          <span class="card-eyebrow accent">darmowe · instant</span>
+          <span class="card-eyebrow">03</span>
+          <span class="card-eyebrow">bezpłatnie · natychmiast</span>
         </div>
         <h3 class="card-title">Dostęp botów AI</h3>
         <p class="card-body">
-          Sprawdzamy <code>robots.txt</code>: czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended
-          i&nbsp;9 innych botów AI ma dostęp do&nbsp;Twojej strony.
+          Sprawdzamy <code>robots.txt</code> i&nbsp;WAF: czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended
+          i&nbsp;9 innych botów AI może czytać Twoją stronę.
         </p>
 
         <div class="service-mock">
           <div class="mock-line muted">
-            <span>Przykładowy wynik</span>
+            <span>Przykładowy wynik</span><span class="tabular">8 / 13</span>
           </div>
-          <div class="mock-line">
-            <span>twojadomena.pl/robots.txt</span>
-            <span class="tabular">8 / 13</span>
-          </div>
-          <div class="mock-row"><span>GPTBot</span><span class="mock-pill ok">✓</span></div>
-          <div class="mock-row"><span>ClaudeBot</span><span class="mock-pill bad">✗</span></div>
-          <div class="mock-row"><span>PerplexityBot</span><span class="mock-pill ok">✓</span></div>
+          <div class="mock-row"><span>GPTBot</span><span class="mock-pill ok">dostęp</span></div>
           <div class="mock-row">
-            <span>Google-Extended</span><span class="mock-pill bad">✗</span>
+            <span>ClaudeBot</span><span class="mock-pill bad">blokada</span>
           </div>
-          <div class="mock-row"><span>CCBot</span><span class="mock-pill bad">✗</span></div>
-          <div class="mock-line muted" style="justify-content:center; margin-top:4px">
-            <span>+ 8 innych botów</span>
+          <div class="mock-row">
+            <span>PerplexityBot</span><span class="mock-pill ok">dostęp</span>
+          </div>
+          <div class="mock-row">
+            <span>Google-Extended</span><span class="mock-pill bad">blokada</span>
           </div>
         </div>
 
-        <a
-          class="service-link"
-          href="/narzedzia/ai-bots-check/"
-          aria-label="Sprawdź dostęp botów AI do Twojej strony"
-        >
+        <a class="service-link" href="/narzedzia/ai-bots-check/">
           Sprawdź boty AI <span aria-hidden="true">→</span>
         </a>
       </article>
     </div>
 
-    <!-- 04 – Pełny raport GEO – orange spotlight -->
-    <article id="pelny-raport" class="cta-card on-gradient">
-      <div class="cta-card-copy">
-        <div class="cta-tabs">
-          <span class="cta-tab active">Pełny raport</span>
-          <span class="cta-tab">25&ndash;50 URL-i</span>
-          <span class="cta-tab cta-tab--filled">Polecane</span>
-        </div>
-
-        <h3 class="cta-headline">Rozbudowany raport GEO dla Twojej domeny</h3>
-
-        <p class="cta-lead">
-          Skanujemy 25&ndash;50 URL-i z&nbsp;Twojej domeny i&nbsp;analizujemy cztery obszary:
-          spójność tematyczną, sygnały autorytetu, dostępność dla AI oraz widoczność
-          w&nbsp;wyszukiwarkach AI.
+    <!-- 04 – Pełny raport GEO: jasny panel -->
+    <article id="pelny-raport" class="report-card">
+      <div class="report-copy">
+        <span class="report-eyebrow">Pełny raport GEO · 25&ndash;50 adresów</span>
+        <h3 class="report-headline">Raport GEO dla całej domeny</h3>
+        <p class="report-lead">
+          Skanujemy 25&ndash;50 adresów i&nbsp;oceniamy cztery obszary: spójność tematyczną, sygnały
+          autorytetu, dostępność dla AI i&nbsp;widoczność w&nbsp;wyszukiwarkach AI. Dostajesz plan
+          działań ułożony według priorytetu.
         </p>
-
-        <ul class="cta-bullets">
-          <li>Wynik GEO dla każdego URL-a z&nbsp;konkretnymi problemami i&nbsp;rekomendacjami</li>
-          <li>Mapa luk w&nbsp;treści pod konwersacyjne zapytania AI</li>
-          <li>Plan działań ułożony wg&nbsp;priorytetu (krytyczne / ważne / średnie)</li>
-          <li>Wnioski i&nbsp;kierunek działań w&nbsp;dłuższym horyzoncie</li>
+        <ul class="report-bullets">
+          <li>Wynik GEO dla każdego adresu z&nbsp;konkretnymi problemami</li>
+          <li>Mapa luk w&nbsp;treści pod pytania zadawane AI</li>
+          <li>Plan działań: krytyczne, ważne, średnie</li>
+          <li>Omówienie wyników z&nbsp;ekspertem ICEA</li>
         </ul>
-
-        <div class="cta-actions">
-          <a
-            class="btn-primary"
-            href="/kontakt/?type=full-report"
-            aria-label="Zamów pełny raport GEO"
-          >
+        <div class="report-actions">
+          <a class="btn-primary report-btn" href="/kontakt/?type=full-report">
             Zamów pełny raport <span aria-hidden="true">→</span>
           </a>
+          <a class="report-link" href="/kontakt/?type=konsultacja"
+            >Porozmawiaj z&nbsp;ekspertem ICEA</a
+          >
         </div>
       </div>
 
-      <!-- Glass panel z mock UI raportu -->
-      <div class="cta-panel" aria-hidden="true">
-        <div class="cta-panel-head">
-          <span>Raport GEO · podgląd</span>
-          <span>25&ndash;50 URL-i</span>
+      <div class="report-panel" aria-hidden="true">
+        <div class="report-panel-head">
+          <span>GEO Score · twojadomena.pl</span>
+          <span class="tabular">13 / 25 adresów</span>
         </div>
-
-        <div class="cta-panel-domain">
-          <span class="cta-panel-label">GEO Score · twojadomena.pl</span>
-          <span class="cta-bignum">38<span>%</span><sup>13 / 25 URL-i</sup></span>
-        </div>
-
-        <div class="cta-mini-rows">
-          <div class="cta-mini-row">
-            <span class="cta-mini-label">Spójność tematyczna</span>
-            <span class="cta-mini-bar"><i style="width:56%"></i></span>
+        <div class="report-bignum"><span>38</span><small>%</small></div>
+        <div class="report-rows">
+          <div class="report-row">
+            <span>Spójność tematyczna</span>
+            <span class="report-bar"><i style="width:56%"></i></span>
             <span class="tabular">56%</span>
           </div>
-          <div class="cta-mini-row">
-            <span class="cta-mini-label">Sygnały autorytetu</span>
-            <span class="cta-mini-bar"><i style="width:42%"></i></span>
+          <div class="report-row">
+            <span>Sygnały autorytetu</span>
+            <span class="report-bar"><i style="width:42%"></i></span>
             <span class="tabular">42%</span>
           </div>
-          <div class="cta-mini-row">
-            <span class="cta-mini-label">Dostępność dla AI</span>
-            <span class="cta-mini-bar"><i style="width:68%"></i></span>
+          <div class="report-row">
+            <span>Dostępność dla AI</span>
+            <span class="report-bar"><i style="width:68%"></i></span>
             <span class="tabular">68%</span>
           </div>
-          <div class="cta-mini-row">
-            <span class="cta-mini-label">Widoczność w&nbsp;AI</span>
-            <span class="cta-mini-bar"><i style="width:30%"></i></span>
+          <div class="report-row">
+            <span>Widoczność w&nbsp;AI</span>
+            <span class="report-bar"><i style="width:30%"></i></span>
             <span class="tabular">30%</span>
           </div>
         </div>
-
-        <div class="cta-plan">
-          <div class="cta-plan-head"><span>Plan działań</span><span>23 zadania</span></div>
-          <div class="cta-plan-row">
-            <span class="prio p0">P0</span><span>Schema FAQ na&nbsp;12 podstronach kategorii</span>
+        <div class="report-plan">
+          <div class="report-plan-head"><span>Plan działań</span><span>23 zadania</span></div>
+          <div class="report-plan-row">
+            <span class="prio">P0</span><span>Schema FAQ na 12 podstronach kategorii</span>
           </div>
-          <div class="cta-plan-row">
-            <span class="prio p0">P0</span><span>Pillar /porownanie-[marka]-vs-konkurencja</span>
+          <div class="report-plan-row">
+            <span class="prio">P0</span><span>Strona porównawcza marka vs konkurencja</span>
           </div>
-          <div class="cta-plan-row">
+          <div class="report-plan-row">
             <span class="prio p1">P1</span><span>Spójność danych marki w&nbsp;sieci</span>
           </div>
-          <div class="cta-plan-row faint"><span>+ 20 więcej w&nbsp;raporcie</span></div>
         </div>
       </div>
     </article>
@@ -244,80 +193,44 @@
 
 <style>
   .audits-section {
-    padding: 80px 0;
+    padding: 96px 0;
     background: var(--bg-canvas);
+    border-top: 1px solid var(--hairline-soft);
   }
 
   @media (min-width: 980px) {
     .audits-section {
-      padding: 104px 0;
+      padding: 128px 0;
     }
   }
-
-  /* ============================================================
-     Service cards (3 darmowe)
-     ============================================================ */
 
   .services-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
   }
 
   @media (min-width: 768px) {
-    .services-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
     .services-grid {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
   .audit-card {
-    --audit-accent: var(--accent-blue);
     display: flex;
     flex-direction: column;
     gap: 16px;
-    background:
-      radial-gradient(
-        circle at 12% 0%,
-        color-mix(in srgb, var(--audit-accent) 14%, transparent) 0%,
-        transparent 34%
-      ),
-      var(--bg-surface-1);
-    border: 1px solid var(--hairline-soft);
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline);
     border-radius: var(--r-xl);
-    padding: 24px;
-    min-height: 280px;
+    padding: 28px;
     color: var(--ink);
-    transition:
-      border-color 0.2s ease,
-      transform 0.2s ease,
-      background 0.2s ease;
+    transition: border-color 0.2s ease;
   }
 
   .audit-card:hover {
-    border-color: var(--hairline);
-  }
-
-  .audit-card:nth-child(2) {
-    --audit-accent: #4ade80;
-  }
-
-  .audit-card:nth-child(3) {
-    --audit-accent: #fbbf24;
-  }
-
-  :global(:root[data-theme='light']) .audit-card:nth-child(2) {
-    --audit-accent: #16a34a;
-  }
-
-  :global(:root[data-theme='light']) .audit-card:nth-child(3) {
-    --audit-accent: #d97706;
+    border-color: var(--ink-faint);
   }
 
   .service-head {
@@ -328,7 +241,6 @@
   }
 
   .card-eyebrow {
-    font-family: var(--font-sans);
     font-size: 11px;
     font-weight: 500;
     color: var(--ink-faint);
@@ -336,22 +248,17 @@
     letter-spacing: 0.08em;
   }
 
-  .card-eyebrow.accent {
-    color: var(--audit-accent);
-  }
-
   .card-title {
     font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 600;
     letter-spacing: -0.03em;
-    line-height: 1.15;
+    line-height: 1.12;
     color: var(--ink);
     margin: 0;
   }
 
   .card-body {
-    font-family: var(--font-sans);
     font-size: 14px;
     color: var(--ink-muted);
     line-height: 1.5;
@@ -367,7 +274,6 @@
     border-radius: 3px;
   }
 
-  /* Mock UI panel */
   .service-mock {
     background: var(--bg-canvas);
     border-radius: var(--r-md);
@@ -382,289 +288,229 @@
   }
 
   .service-link {
-    font-family: var(--font-sans);
-    font-size: 13px;
-    color: var(--audit-accent);
-    margin-top: auto;
+    font-size: 14px;
+    color: var(--ink);
     display: inline-flex;
     align-items: center;
     gap: 6px;
     font-weight: 500;
     text-decoration: none;
-    transition:
-      color 0.15s ease,
-      gap 0.15s ease;
+    transition: gap 0.15s ease;
   }
 
   .service-link:hover {
-    color: var(--ink);
     gap: 10px;
+    color: var(--brand);
   }
 
   /* ============================================================
-     Premium GEO report – orange spotlight (radial 3-stop + overlay)
+     Pełny raport – jasny panel (inverse)
      ============================================================ */
 
-  .cta-card {
-    background: var(--grad-orange);
-    border-radius: var(--r-xxl);
-    padding: 32px;
+  .report-card {
+    background: var(--bg-inverse);
+    color: var(--ink-inverse);
+    border-radius: var(--r-xl);
+    padding: 36px 28px;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px;
-    box-shadow: 0 40px 100px -30px rgba(255, 90, 26, 0.45);
+    gap: 36px;
   }
 
   @media (min-width: 980px) {
-    .cta-card {
-      grid-template-columns: 1.2fr 1fr;
-      gap: 48px;
-      padding: 56px;
+    .report-card {
+      grid-template-columns: 1.15fr 1fr;
+      gap: 64px;
+      padding: 64px;
     }
   }
 
-  .cta-card-copy {
+  .report-copy {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 20px;
   }
 
-  /* Tabs row */
-  .cta-tabs {
-    display: inline-flex;
-    gap: 4px;
-    padding: 4px;
-    background: rgba(0, 0, 0, 0.18);
-    border-radius: var(--r-pill);
-    align-self: flex-start;
-    margin-bottom: 22px;
-  }
-
-  .cta-tab {
-    font-family: var(--font-sans);
-    font-size: 12px;
-    padding: 6px 14px;
-    border-radius: var(--r-pill);
-    color: rgba(255, 255, 255, 0.7);
+  .report-eyebrow {
+    font-size: 11px;
     font-weight: 500;
-    letter-spacing: -0.12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-inverse-muted);
   }
 
-  .cta-tab.active {
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-  }
-
-  .cta-tab--filled {
-    background: #fff;
-    color: #1a1a1a;
-  }
-
-  .cta-headline {
+  .report-headline {
     font-family: var(--font-display);
-    font-size: clamp(28px, 3.4vw, 48px);
-    font-weight: 500;
+    font-size: clamp(30px, 3.4vw, 48px);
+    font-weight: 600;
     letter-spacing: -0.04em;
-    line-height: 1.02;
-    color: #fff;
-    margin: 0 0 22px;
-    max-width: 16ch;
+    line-height: 1;
+    color: var(--ink-inverse);
+    margin: 0;
+    max-width: 14ch;
     text-wrap: balance;
   }
 
-  .cta-lead {
-    font-family: var(--font-sans);
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.85);
+  .report-lead {
+    font-size: 15px;
     line-height: 1.5;
-    margin: 0 0 22px;
-    max-width: 44ch;
+    color: var(--ink-inverse-muted);
+    margin: 0;
+    max-width: 48ch;
   }
 
-  .cta-bullets {
+  .report-bullets {
     list-style: none;
     padding: 0;
-    margin: 0 0 26px;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    font-family: var(--font-sans);
+    gap: 10px;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.92);
+    color: var(--ink-inverse);
     line-height: 1.45;
   }
 
-  .cta-bullets li {
+  .report-bullets li {
     display: flex;
     gap: 10px;
     align-items: flex-start;
   }
 
-  .cta-bullets li::before {
-    content: '→';
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
+  .report-bullets li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ink-inverse);
     flex-shrink: 0;
+    margin-top: 7px;
   }
 
-  .cta-actions {
+  .report-actions {
     display: flex;
-    gap: 8px;
+    gap: 20px;
+    align-items: center;
     flex-wrap: wrap;
+    margin-top: 6px;
   }
 
-  /* Glass panel z mock report */
-  .cta-panel {
-    background: rgba(0, 0, 0, 0.22);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: var(--r-xl);
-    padding: 28px;
+  .report-btn {
+    background: var(--ink-inverse);
+    color: var(--bg-inverse);
+  }
+
+  .report-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-inverse);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--hairline-inverse);
+  }
+
+  .report-link:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .report-panel {
+    background: color-mix(in srgb, var(--ink-inverse) 5%, var(--bg-inverse));
+    border: 1px solid var(--hairline-inverse);
+    border-radius: var(--r-lg);
+    padding: 26px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
     align-self: center;
-    font-family: var(--font-sans);
+    font-size: 12.5px;
+    color: var(--ink-inverse);
   }
 
-  .cta-panel-head {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.6);
+  .report-panel-head,
+  .report-plan-head {
     display: flex;
     justify-content: space-between;
-  }
-
-  .cta-panel-domain {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  }
-
-  .cta-panel-label {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--ink-inverse-muted);
   }
 
-  .cta-bignum {
+  .report-bignum {
     font-family: var(--font-display);
-    font-size: 56px;
-    font-weight: 500;
-    letter-spacing: -0.04em;
-    color: #fff;
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: -0.045em;
     line-height: 1;
-    display: inline-flex;
+    display: flex;
     align-items: baseline;
+    gap: 2px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--hairline-inverse);
   }
 
-  .cta-bignum > span {
+  .report-bignum small {
     font-size: 26px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.85);
-    margin-left: 2px;
+    color: var(--ink-inverse-muted);
   }
 
-  .cta-bignum sup {
-    font-size: 11px;
-    vertical-align: top;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
-    margin-left: 12px;
-    align-self: center;
-  }
-
-  .cta-mini-rows {
+  .report-rows {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.85);
   }
 
-  .cta-mini-row {
-    display: flex;
-    justify-content: space-between;
+  .report-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 40px;
     align-items: center;
     gap: 12px;
   }
 
-  .cta-mini-label {
-    min-width: 120px;
-    flex-shrink: 0;
+  .report-row .tabular {
+    text-align: right;
   }
 
-  .cta-mini-bar {
-    flex: 1;
+  .report-bar {
     height: 4px;
     border-radius: 2px;
-    background: rgba(255, 255, 255, 0.15);
+    background: color-mix(in srgb, var(--ink-inverse) 12%, transparent);
     overflow: hidden;
   }
 
-  .cta-mini-bar i {
+  .report-bar i {
     display: block;
     height: 100%;
-    background: #fff;
+    background: var(--ink-inverse);
   }
 
-  .cta-plan {
+  .report-plan {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    margin-top: 8px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline-inverse);
   }
 
-  .cta-plan-head {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 4px;
-  }
-
-  .cta-plan-row {
+  .report-plan-row {
     display: flex;
     gap: 10px;
     align-items: center;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.92);
-    letter-spacing: -0.12px;
-  }
-
-  .cta-plan-row.faint {
-    color: rgba(255, 255, 255, 0.5);
-    padding-left: 36px;
-    font-style: italic;
   }
 
   .prio {
     font-family: ui-monospace, 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     padding: 3px 6px;
     border-radius: 4px;
-    letter-spacing: 0.04em;
+    background: var(--ink-inverse);
+    color: var(--bg-inverse);
     flex-shrink: 0;
-    width: 26px;
-    text-align: center;
   }
 
-  .prio.p0 {
-    background: rgba(255, 90, 26, 0.85);
-    color: #fff;
-  }
   .prio.p1 {
-    background: rgba(255, 255, 255, 0.18);
-    color: #fff;
+    background: color-mix(in srgb, var(--ink-inverse) 14%, transparent);
+    color: var(--ink-inverse);
   }
 </style>

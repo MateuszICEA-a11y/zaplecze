@@ -1,38 +1,24 @@
 ---
 /**
- * LogosBand – landing redesign 2026-05-09 (handoff).
- * Single-row strip między top/bottom hairlines, padding 36px.
- * Label po lewej, 5 brand chipów z 16px square dotami po prawej.
+ * LogosBand – redesign 2026-09. Cichy pasek z nazwami silników AI
+ * (bez kolorowych kropek – jeden kolor marki, reszta monochrom).
  */
 
-const aiEngines = [
-  { name: 'ChatGPT', color: '#10a37f' },
-  { name: 'Claude', color: '#d97757' },
-  { name: 'Gemini', color: '#4285f4' },
-  { name: 'Perplexity', color: '#20b8cd' },
-  { name: 'Copilot', color: '#0078d4' },
-];
+const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Microsoft Copilot'];
 ---
 
-<section class="logos-section" aria-label="Audytujemy widoczność w silnikach AI">
-  <div class="container logos-inner">
-    <span class="logos-label">Audytujemy widoczność w&nbsp;silnikach AI</span>
-    <div class="logos-row">
-      {
-        aiEngines.map((engine) => (
-          <span class="logo-item">
-            <span class="logo-dot" style={`background: ${engine.color};`} aria-hidden="true" />
-            {engine.name}
-          </span>
-        ))
-      }
-    </div>
+<section class="logos-section" aria-label="Mierzymy widoczność w silnikach AI">
+  <div class="logos-inner container">
+    <span class="logos-label">Mierzymy widoczność w</span>
+    <ul class="logos-row">
+      {aiEngines.map((name) => <li class="logo-item">{name}</li>)}
+    </ul>
   </div>
 </section>
 
 <style>
   .logos-section {
-    padding: 36px 0;
+    padding: 28px 0;
     border-top: 1px solid var(--hairline-soft);
     border-bottom: 1px solid var(--hairline-soft);
     background: var(--bg-canvas);
@@ -41,49 +27,34 @@ const aiEngines = [
   .logos-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: center;
+    gap: 20px 40px;
     flex-wrap: wrap;
   }
 
   .logos-label {
-    font-family: var(--font-sans);
     font-size: 11px;
     text-transform: uppercase;
     color: var(--ink-faint);
     letter-spacing: 0.08em;
-    flex-shrink: 0;
   }
 
   .logos-row {
     display: flex;
-    gap: 24px;
+    gap: 20px 32px;
     align-items: center;
     flex-wrap: wrap;
-  }
-
-  @media (min-width: 768px) {
-    .logos-row { gap: 36px; }
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   .logo-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
     font-family: var(--font-display);
     font-size: 17px;
-    font-weight: 500;
-    letter-spacing: -0.4px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
     color: var(--ink-muted);
-    transition: color 0.18s ease;
-  }
-
-  .logo-item:hover { color: var(--ink); }
-
-  .logo-dot {
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-    flex-shrink: 0;
   }
 </style>

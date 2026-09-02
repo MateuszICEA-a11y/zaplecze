@@ -1,9 +1,9 @@
 ---
 /**
- * CTABand / Final CTA – landing redesign 2026-05-09 (handoff).
- * Full-width surface-1 card, radius xxl 30, padding 80x64.
- * Decorative violet glow orb top-right (480x480, blur 80px, opacity 0.35).
- * 2-col grid 1.5fr/1fr: lewy CTA + meta row, prawy testimonial-style quote.
+ * CTABand / Final CTA – redesign 2026-09.
+ * Jedna główna akcja w serwisie: „Sprawdź widoczność swojej marki”.
+ * Druga, cichsza: „Porozmawiaj z ekspertem ICEA”. Bez orba i gradientów;
+ * po prawej ICEA jako gwarant kompetencji.
  */
 
 interface Props {
@@ -25,16 +25,16 @@ interface Props {
 const {
   eyebrow = 'Następny krok',
   title,
-  titleHtml = 'Sprawdź, jak Twoja marka radzi sobie w&nbsp;<span class="accent">AI search</span>.',
-  subtitle = 'Bezpłatna konsultacja 30 minut. Bez sprzedaży, bez zobowiązań &ndash; pokazujemy gdzie marka jest cytowana, gdzie traci do&nbsp;konkurencji i&nbsp;co realnie zmienić.',
-  primaryLabel = 'Zamów audyt AI',
-  primaryHref = '/kontakt/',
-  ghostLabel = 'Bezpłatna konsultacja',
+  titleHtml = 'Sprawdź widoczność swojej marki w&nbsp;AI.',
+  subtitle = 'Test trwa około minuty i&nbsp;nie wymaga rejestracji. Jeśli wynik pokaże luki, omówisz go z&nbsp;ekspertem ICEA na bezpłatnej, 30&#8209;minutowej konsultacji.',
+  primaryLabel = 'Sprawdź widoczność marki',
+  primaryHref = '/narzedzia/brand-check/',
+  ghostLabel = 'Porozmawiaj z ekspertem ICEA',
   ghostHref = '/kontakt/?type=konsultacja',
-  rightLabel = 'Co dostajesz na rozmowie',
-  quote = '„Pokazujemy, gdzie Twoja marka jest cytowana, gdzie traci do&nbsp;konkurencji i&nbsp;co konkretnie zmienić w&nbsp;pierwszej kolejności."',
-  author = '&ndash; zespół widocznosc.ai',
-  meta = ['30 minut', 'Bez zobowiązań', 'Konkretny plan'],
+  rightLabel = 'widocznosc.ai by ICEA',
+  quote = 'Za pomiarem stoi zespół ICEA: ponad 15 lat pracy nad widocznością marek w&nbsp;wyszukiwarkach i&nbsp;500+ wdrożonych projektów SEO.',
+  author = 'ICEA S.A. · Poznań',
+  meta = ['Bez rejestracji', 'Wynik w ok. 60 s', 'Konsultacja bez zobowiązań'],
   compactTop = false,
 } = Astro.props;
 ---
@@ -53,11 +53,11 @@ const {
         </h2>
         <p class="subhead final-cta-sub" set:html={subtitle} />
         <div class="final-cta-actions">
-          <a class="btn-primary" href={primaryHref} aria-label={primaryLabel}>
+          <a class="btn-primary" href={primaryHref}>
             {primaryLabel}
             <span aria-hidden="true">→</span>
           </a>
-          <a class="btn-secondary" href={ghostHref} aria-label={ghostLabel}>
+          <a class="btn-secondary" href={ghostHref}>
             {ghostLabel}
           </a>
         </div>
@@ -77,14 +77,14 @@ const {
 
 <style>
   .final-cta-section {
-    padding: 80px 0;
+    padding: 96px 0;
     background: var(--bg-canvas);
     border-top: 1px solid var(--hairline-soft);
   }
 
   @media (min-width: 980px) {
     .final-cta-section {
-      padding: 104px 0;
+      padding: 128px 0;
     }
   }
 
@@ -100,58 +100,32 @@ const {
 
   .final-cta-card {
     background: var(--bg-surface-1);
-    border: 1px solid var(--hairline-soft);
-    border-radius: var(--r-xxl);
-    padding: 48px 32px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-xl);
+    padding: 44px 28px;
     display: grid;
     grid-template-columns: 1fr;
     align-items: end;
-    gap: 48px;
-    position: relative;
-    overflow: hidden;
+    gap: 40px;
   }
 
   @media (min-width: 980px) {
     .final-cta-card {
       grid-template-columns: 1.5fr 1fr;
-      padding: 80px 64px;
+      padding: 72px 64px;
+      gap: 64px;
     }
-  }
-
-  /* Decorative violet glow orb (top-right) */
-  .final-cta-card::before {
-    content: '';
-    position: absolute;
-    width: 480px;
-    height: 480px;
-    border-radius: 50%;
-    right: -120px;
-    top: -120px;
-    background: var(--grad-violet);
-    filter: blur(80px);
-    opacity: 0.35;
-    pointer-events: none;
-  }
-
-  .final-cta-card > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Light mode – violet orb mocniej osłabiony żeby nie krzyczał na ivory */
-  :root[data-theme='light'] .final-cta-card::before {
-    opacity: 0.22;
   }
 
   .final-cta-left {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    max-width: 580px;
+    max-width: 620px;
   }
 
   .final-cta-sub {
-    color: var(--ink);
+    color: var(--ink-muted);
     max-width: 520px;
   }
 
@@ -162,7 +136,6 @@ const {
   }
 
   .final-cta-meta {
-    font-family: var(--font-sans);
     font-size: 12px;
     color: var(--ink-faint);
     letter-spacing: 0.04em;
@@ -188,39 +161,50 @@ const {
     display: none;
   }
 
-  /* Right column – testimonial */
   .final-cta-right {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     align-items: flex-start;
-    font-family: var(--font-sans);
     font-size: 13px;
     color: var(--ink-muted);
+    padding-top: 28px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  @media (min-width: 980px) {
+    .final-cta-right {
+      padding-top: 0;
+      padding-left: 40px;
+      border-top: 0;
+      border-left: 1px solid var(--hairline);
+      align-self: stretch;
+      justify-content: flex-end;
+    }
   }
 
   .final-cta-label {
-    font-family: var(--font-sans);
     font-size: 11px;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--ink-faint);
+    color: var(--ink);
   }
 
   .final-cta-quote {
     font-family: var(--font-display);
-    font-size: 22px;
-    letter-spacing: -0.025em;
-    line-height: 1.2;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
     color: var(--ink);
     font-weight: 500;
     margin: 0;
-    text-wrap: balance;
+    text-wrap: pretty;
   }
 
   .final-cta-author {
     font-size: 12px;
     color: var(--ink-faint);
-    margin-top: 8px;
+    margin-top: 6px;
   }
 </style>

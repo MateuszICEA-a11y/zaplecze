@@ -84,6 +84,7 @@ const isActive = (href: string) => {
         </svg>
       </span>
       <span class="nav-logo-text">widocznosc<span class="accent">.ai</span></span>
+      <span class="nav-logo-by">by ICEA</span>
     </a>
 
     <!-- Nav links (desktop, lg+) -->
@@ -164,12 +165,8 @@ const isActive = (href: string) => {
     <!-- CTA right: theme toggle + primary CTA -->
     <div class="nav-cta">
       <ThemeToggle />
-      <a
-        class="btn-primary nav-cta-btn"
-        href="/narzedzia/"
-        aria-label="Uruchom darmowy test widoczności AI"
-      >
-        Uruchom test za darmo
+      <a class="btn-primary nav-cta-btn" href="/narzedzia/brand-check/">
+        Sprawdź widoczność marki
       </a>
     </div>
 
@@ -233,7 +230,8 @@ const isActive = (href: string) => {
       <span class="nav-mobile-theme-label">Motyw</span>
       <ThemeToggle />
     </div>
-    <a class="btn-primary nav-mobile-cta" href="/narzedzia/"> Uruchom test za darmo </a>
+    <a class="btn-primary nav-mobile-cta" href="/narzedzia/brand-check/">Sprawdź widoczność marki</a
+    >
   </div>
 </nav>
 
@@ -426,6 +424,26 @@ const isActive = (href: string) => {
 
   .nav-logo-text .accent {
     color: var(--accent-blue);
+  }
+
+  /* „by ICEA” – podpis marki, nie drugie logo */
+  .nav-logo-by {
+    margin-left: 4px;
+    padding-left: 10px;
+    border-left: 1px solid var(--nav-hairline);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--nav-muted);
+    transform: translateY(1px);
+  }
+
+  @media (max-width: 360px) {
+    .nav-logo-by {
+      display: none;
+    }
   }
 
   /* Nav links (desktop) */

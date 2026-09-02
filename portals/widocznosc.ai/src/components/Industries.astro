@@ -1,9 +1,7 @@
 ---
 /**
- * Industries – landing redesign 2026-05-09 (handoff).
- * Section-head editorial 5fr/4fr + 3-col grid 6 cards
- * (B2B SaaS, Finanse i Prawo, Medycyna, E-commerce, Edukacja, Usługi B2B).
- * Card: surface-1, hairline, hover surface-2.
+ * Industries – redesign 2026-09. Sześć branż jako lista na liniach
+ * w dwóch kolumnach, bez kolorowych kropek i kart.
  */
 
 interface Industry {
@@ -14,27 +12,27 @@ interface Industry {
 const industries: Industry[] = [
   {
     name: 'B2B SaaS i Tech',
-    desc: 'Długa droga zakupowa oparta na researchu. Decydent pyta ChatGPT „najlepsze X dla zespołu Y" – warto, żebyście pojawili się w odpowiedzi.',
+    desc: 'Decydent pyta ChatGPT o „najlepsze narzędzie X dla zespołu Y”. Chcesz być w tej odpowiedzi.',
   },
   {
     name: 'Finanse i Prawo',
-    desc: 'Wysoka wartość transakcji, AI bywa pierwszym doradcą klienta. Wzmianka w odpowiedzi AI to rozmowa z osobą, która już wie, czego szuka.',
+    desc: 'AI bywa pierwszym doradcą klienta. Wzmianka w odpowiedzi to rozmowa z kimś, kto już wie, czego szuka.',
   },
   {
     name: 'Medycyna i Zdrowie',
-    desc: 'Pacjenci pytają AI o objawy, leki i miejsca leczenia. AI Overviews coraz częściej zastępują pierwszy etap szukania w klasycznej wyszukiwarce.',
+    desc: 'Pacjenci pytają AI o objawy, leki i miejsca leczenia, zanim otworzą klasyczną wyszukiwarkę.',
   },
   {
     name: 'E-commerce i DTC',
-    desc: 'Pytania porównawcze („X vs Y", „tańszy zamiennik dla Z"). Ruch z AI to użytkownicy w końcowej fazie wyboru produktu.',
+    desc: 'Pytania porównawcze: „X vs Y”, „tańszy zamiennik Z”. Użytkownik jest w końcowej fazie wyboru.',
   },
   {
     name: 'Edukacja i Szkolenia',
-    desc: 'Długi proces decyzyjny z wieloma punktami styku. Kursanci pytają AI o „najlepszy kurs X" miesiące przed zapisem.',
+    desc: 'Kursanci pytają AI o „najlepszy kurs X” miesiące przed zapisem. Długa droga, wiele punktów styku.',
   },
   {
     name: 'Usługi B2B',
-    desc: 'Konsulting, agencje, software house’y. Klienci pytają AI o polecanych dostawców, zanim wyślą pierwszego maila.',
+    desc: 'Konsulting, agencje, software house’y. Klient pyta AI o polecanych dostawców przed pierwszym mailem.',
   },
 ];
 ---
@@ -44,150 +42,99 @@ const industries: Industry[] = [
     <header class="section-head">
       <div class="head-left">
         <div class="head-meta">
-          <span class="section-index">S/04</span>
           <span class="eyebrow">Dla kogo</span>
         </div>
         <h2 id="industries-title" class="display-xl">
-          Sześć branż, na których <span class="accent">koncentrujemy uwagę</span>
+          Branże, w&nbsp;których klient zaczyna od pytania do&nbsp;AI
         </h2>
       </div>
       <div class="head-right">
         <p class="subhead">
-          Tam, gdzie klient zaczyna od pytania zadanego AI, a&nbsp;decyzja zakupowa wymaga
-          rzetelnego rozeznania. To branże, w&nbsp;których widzimy największy wpływ wyszukiwarek AI
-          &ndash; nie jedyne, z&nbsp;którymi pracujemy.
+          Tam, gdzie decyzja zakupowa wymaga rozeznania, wyszukiwarki AI mają dziś największy wpływ.
+          To branże, w&nbsp;których widzimy najwięcej danych, nie jedyne, z&nbsp;którymi pracujemy.
         </p>
       </div>
     </header>
 
-    <div class="industries-grid">
+    <ul class="industries-list">
       {
-        industries.map((it) => (
-          <article class="industry-card">
-            <h3 class="industry-name">{it.name}</h3>
-            <p class="industry-desc">{it.desc}</p>
-          </article>
+        industries.map((it, i) => (
+          <li class="industry-row">
+            <span class="industry-idx">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3 class="industry-name">{it.name}</h3>
+              <p class="industry-desc">{it.desc}</p>
+            </div>
+          </li>
         ))
       }
-    </div>
+    </ul>
 
     <p class="process-footer">
-      Twoja branża nie jest na liście? <a href="/kontakt/">Sprawdzimy potencjał →</a>
+      Twojej branży nie ma na liście? <a href="/kontakt/">Sprawdzimy potencjał →</a>
     </p>
   </div>
 </section>
 
 <style>
   .industries-section {
-    padding: 80px 0;
+    padding: 96px 0;
     background: var(--bg-canvas);
     border-top: 1px solid var(--hairline-soft);
   }
 
   @media (min-width: 980px) {
     .industries-section {
-      padding: 104px 0;
+      padding: 128px 0;
     }
   }
 
-  .industries-grid {
+  .industries-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 0 64px;
+    border-top: 1px solid var(--hairline);
   }
 
-  @media (min-width: 640px) {
-    .industries-grid {
+  @media (min-width: 820px) {
+    .industries-list {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media (min-width: 1024px) {
-    .industries-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .industry-row {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--hairline);
   }
 
-  .industry-card {
-    --industry-accent: var(--accent-blue);
-    background:
-      radial-gradient(
-        circle at 12% 0%,
-        color-mix(in srgb, var(--industry-accent) 13%, transparent) 0%,
-        transparent 34%
-      ),
-      var(--bg-surface-1);
-    border: 1px solid var(--hairline-soft);
-    border-radius: var(--r-lg);
-    padding: 22px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    min-height: 140px;
-    transition:
-      background 0.18s ease,
-      border-color 0.18s ease;
-  }
-
-  .industry-card:hover {
-    background: var(--bg-surface-2);
-    border-color: var(--hairline);
-  }
-
-  .industry-card:nth-child(2),
-  .industry-card:nth-child(6) {
-    --industry-accent: #4ade80;
-  }
-
-  .industry-card:nth-child(3) {
-    --industry-accent: #fbbf24;
-  }
-
-  .industry-card:nth-child(4) {
-    --industry-accent: #a78bfa;
-  }
-
-  .industry-card:nth-child(5) {
-    --industry-accent: #22d3ee;
-  }
-
-  :global(:root[data-theme='light']) .industry-card:nth-child(2),
-  :global(:root[data-theme='light']) .industry-card:nth-child(6) {
-    --industry-accent: #16a34a;
-  }
-
-  :global(:root[data-theme='light']) .industry-card:nth-child(3) {
-    --industry-accent: #d97706;
-  }
-
-  :global(:root[data-theme='light']) .industry-card:nth-child(4) {
-    --industry-accent: #7c3aed;
+  .industry-idx {
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+    padding-top: 6px;
   }
 
   .industry-name {
     font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
     color: var(--ink);
-    margin: 0;
-  }
-
-  .industry-name::before {
-    content: '';
-    display: block;
-    width: 0.55rem;
-    height: 0.55rem;
-    margin-bottom: 0.75rem;
-    border-radius: var(--r-pill);
-    background: var(--industry-accent);
+    margin: 0 0 8px;
+    line-height: 1.15;
   }
 
   .industry-desc {
-    font-family: var(--font-sans);
     font-size: 14px;
     color: var(--ink-muted);
-    line-height: 1.45;
+    line-height: 1.5;
     margin: 0;
+    max-width: 48ch;
   }
 </style>

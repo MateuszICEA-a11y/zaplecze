@@ -34,7 +34,7 @@ const footerData = [
     items: [
       { label: 'O nas', href: '/o-nas/' },
       { label: 'Kontakt', href: '/kontakt/' },
-      { label: 'ICEA ↗', href: 'https://grupa-icea.pl', external: true },
+      { label: 'ICEA S.A. ↗', href: 'https://grupa-icea.pl', external: true },
       { label: 'Polityka prywatności', href: '/polityka-prywatnosci/' },
     ],
   },
@@ -69,10 +69,13 @@ const year = new Date().getFullYear();
             </svg>
           </span>
           <span class="nav-logo-text">widocznosc<span class="accent">.ai</span></span>
+          <span class="nav-logo-by">by ICEA</span>
         </a>
         <p class="footer-brand-tag">
-          Pozycjonujemy marki w&nbsp;wyszukiwarkach AI. Zbadamy Twoją widoczność w&nbsp;ChatGPT,
-          Claude, Gemini i&nbsp;Perplexity. Jesteśmy częścią ICEA (agencja SEO &amp; AI).
+          Mierzymy widoczność marek w&nbsp;ChatGPT, Claude, Gemini, Perplexity i&nbsp;Copilocie
+          i&nbsp;pomagamy ją budować. widocznosc.ai to marka
+          <a href="https://grupa-icea.pl" target="_blank" rel="noopener noreferrer">ICEA S.A.</a>,
+          agencji SEO z&nbsp;Poznania.
         </p>
       </div>
 
@@ -117,7 +120,7 @@ const year = new Date().getFullYear();
 
     <!-- Bottom bar -->
     <div class="footer-bottom">
-      <span class="footer-copy">© {year} widocznosc.ai · ICEA</span>
+      <span class="footer-copy">© {year} widocznosc.ai · marka ICEA S.A.</span>
       <button type="button" class="footer-cookie-btn" data-open-cookie-settings>
         Ustawienia cookies
       </button>
@@ -209,9 +212,20 @@ const year = new Date().getFullYear();
     font-family: var(--font-sans);
     font-size: 14px;
     color: var(--ink-muted);
-    max-width: 320px;
+    max-width: 340px;
     line-height: 1.5;
     margin: 0;
+  }
+
+  .footer-brand-tag a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--hairline);
+  }
+
+  .footer-brand-tag a:hover {
+    text-decoration-color: currentColor;
   }
 
   /* Footer columns – mobile: accordion (<details>); desktop: zawsze otwarte */

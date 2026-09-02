@@ -1,0 +1,302 @@
+---
+/**
+ * ProofData – redesign 2026-09. Zastępuje StatsBand + Authority.
+ * Sekcja „dane, nie deklaracje”: tabela liczb z badań i patentów
+ * (układ jak w narzędziu BI: liczba tabularna, twierdzenie, źródło)
+ * + pasek faktów o samym pomiarze.
+ */
+
+interface Row {
+  num: string;
+  unit: string;
+  claim: string;
+  detail: string;
+  kind: string;
+  source: string;
+  href: string;
+}
+
+const rows: Row[] = [
+  {
+    num: '+40',
+    unit: '%',
+    claim: 'wzrost widoczności w odpowiedziach AI po zastosowaniu metod GEO',
+    detail:
+      'Pierwsze recenzowane badanie definiujące dyscyplinę (Princeton, ACM SIGKDD 2024). Z tej pracy wynikają nasze rekomendacje dotyczące treści.',
+    kind: 'Badanie peer-reviewed',
+    source: 'Aggarwal et al., KDD 2024',
+    href: 'https://arxiv.org/abs/2311.09735',
+  },
+  {
+    num: '8',
+    unit: '×',
+    claim: 'tyle podzapytań Google generuje z jednego pytania w trybie AI',
+    detail:
+      'Indeksowanie odbywa się na poziomie fragmentów, nie całych stron. Dlatego mierzymy cytowalność pojedynczych akapitów, nie tylko adresu.',
+    kind: 'Patent Google',
+    source: 'Search Engine Land, analiza patentów',
+    href: 'https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346',
+  },
+  {
+    num: '+357',
+    unit: '%',
+    claim: 'wzrost ruchu z silników AI rok do roku dla najpopularniejszych stron',
+    detail:
+      '13 miesięcy danych o ruchu z LLM. Marki, które optymalizują pod cytowania, notują nawet +800%.',
+    kind: 'Dane rynkowe',
+    source: 'Authoritas / Search Engine Land',
+    href: 'https://searchengineland.com/what-13-months-of-data-reveals-about-llm-traffic-growth-and-conversions-470115',
+  },
+  {
+    num: '84',
+    unit: '%',
+    claim: 'rekomendacji w silnikach AI pochodzi z ChatGPT',
+    detail:
+      '1,96 mln sesji z LLM. Copilot rośnie 25,2×, Claude 12,8×. Każdy silnik cytuje inaczej, więc testujemy je osobno.',
+    kind: 'Benchmark',
+    source: 'Previsible, AI SEO Study 2025',
+    href: 'https://previsible.io/seo-strategy/ai-seo-study-2025/',
+  },
+];
+
+const facts = [
+  { value: '4', label: 'modele AI odpytywane w teście marki' },
+  { value: '13', label: 'botów AI sprawdzanych w robots.txt' },
+  { value: '0–100', label: 'wynik cytowalności pojedynczej strony' },
+  { value: '25–50', label: 'adresów w pełnym raporcie GEO' },
+];
+---
+
+<section class="proof-section" id="dane" aria-labelledby="proof-title">
+  <div class="container">
+    <header class="section-head">
+      <div class="head-left">
+        <div class="head-meta">
+          <span class="eyebrow">Dane, nie deklaracje</span>
+        </div>
+        <h2 id="proof-title" class="display-xl">Widoczność w&nbsp;AI da się zmierzyć.</h2>
+      </div>
+      <div class="head-right">
+        <p class="subhead">
+          Nie opowiadamy o&nbsp;rewolucji AI. Opieramy się na&nbsp;badaniach, patentach
+          i&nbsp;danych rynkowych, a&nbsp;potem mierzymy te same zjawiska dla Twojej marki.
+        </p>
+      </div>
+    </header>
+
+    <div class="proof-table" role="table" aria-label="Liczby z badań o widoczności w AI">
+      <div class="proof-row proof-row--head" role="row">
+        <span role="columnheader">Wartość</span>
+        <span role="columnheader">Co oznacza</span>
+        <span role="columnheader">Źródło</span>
+      </div>
+      {
+        rows.map((r) => (
+          <div class="proof-row" role="row">
+            <div class="proof-num" role="cell">
+              <span class="proof-num-value">{r.num}</span>
+              <span class="proof-num-unit">{r.unit}</span>
+            </div>
+            <div class="proof-claim" role="cell">
+              <p class="proof-claim-main">{r.claim}</p>
+              <p class="proof-claim-detail">{r.detail}</p>
+            </div>
+            <div class="proof-source" role="cell">
+              <span class="proof-kind">{r.kind}</span>
+              <a href={r.href} target="_blank" rel="noopener noreferrer">
+                {r.source}
+                <span class="proof-arrow" aria-hidden="true">
+                  &nbsp;↗
+                </span>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <dl class="proof-facts" aria-label="Zakres pomiaru">
+      {
+        facts.map((f) => (
+          <div class="proof-fact">
+            <dd>{f.value}</dd>
+            <dt>{f.label}</dt>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>
+
+<style>
+  .proof-section {
+    padding: 96px 0;
+    background: var(--bg-canvas);
+  }
+
+  @media (min-width: 980px) {
+    .proof-section {
+      padding: 128px 0;
+    }
+  }
+
+  .proof-table {
+    border-top: 1px solid var(--hairline);
+  }
+
+  .proof-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  @media (min-width: 820px) {
+    .proof-row {
+      grid-template-columns: 200px minmax(0, 1fr) 240px;
+      padding: 32px 0;
+      align-items: start;
+    }
+  }
+
+  .proof-row--head {
+    display: none;
+    padding: 12px 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+
+  @media (min-width: 820px) {
+    .proof-row--head {
+      display: grid;
+    }
+  }
+
+  .proof-num {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    line-height: 0.95;
+  }
+
+  .proof-num-value {
+    font-size: clamp(48px, 5vw, 72px);
+  }
+
+  .proof-num-unit {
+    font-size: clamp(20px, 2vw, 28px);
+    color: var(--ink-muted);
+  }
+
+  .proof-claim {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 62ch;
+  }
+
+  .proof-claim p {
+    margin: 0;
+  }
+
+  .proof-claim-main {
+    font-family: var(--font-display);
+    font-size: clamp(18px, 1.6vw, 22px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+
+  .proof-claim-detail {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+  }
+
+  .proof-source {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .proof-kind {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+  }
+
+  .proof-source a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 1px;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  .proof-arrow {
+    white-space: nowrap;
+  }
+
+  .proof-source a:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .proof-facts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    margin: 40px 0 0;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+  }
+
+  @media (min-width: 820px) {
+    .proof-facts {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 48px;
+    }
+  }
+
+  .proof-fact {
+    background: var(--bg-surface-1);
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .proof-fact dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+
+  .proof-fact dt {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.4;
+  }
+</style>

@@ -12,16 +12,23 @@ interface Props {
   title?: string;
   subtitle?: string;
   limit?: number;
-  sectionIndex?: string;
+  showStats?: boolean;
 }
 
 const {
-  eyebrow = 'Zespół',
-  title = 'Stoi za nami <span class="accent">zespół ICEA</span>',
-  subtitle = 'Nasze kilkunastoletnie doświadczenie w&nbsp;SEO przekuwamy w&nbsp;skuteczne strategie widoczności w&nbsp;dobie AI Search. Nie teoretyzujemy &ndash; każda rekomendacja na&nbsp;tej stronie to wniosek z&nbsp;realnych projektów.',
+  eyebrow = 'widocznosc.ai by ICEA',
+  title = 'Za pomiarem stoi zespół ICEA',
+  subtitle = 'widocznosc.ai to marka agencji ICEA S.A. Kilkunastoletnie doświadczenie w&nbsp;SEO przekładamy na pomiar i&nbsp;budowanie widoczności w&nbsp;wyszukiwarkach AI. Każda rekomendacja na&nbsp;tej stronie to wniosek z&nbsp;realnych projektów.',
   limit,
-  sectionIndex = 'S/06',
+  showStats = true,
 } = Astro.props;
+
+const iceaStats = [
+  { value: '15+', label: 'lat doświadczenia w SEO' },
+  { value: '500+', label: 'wdrożonych projektów' },
+  { value: '5', label: 'silników AI w audycie' },
+  { value: '#1', label: 'najwyżej oceniona prezentacja SEMKRK 2024' },
+];
 
 const ORDER = [
   'tomasz-czechowski',
@@ -50,7 +57,6 @@ const initialsOf = (name: string) =>
     <header class="section-head">
       <div class="head-left">
         <div class="head-meta">
-          <span class="section-index">{sectionIndex}</span>
           <span class="eyebrow">{eyebrow}</span>
         </div>
         <h2 id="team-title" class="display-xl" set:html={title} />
@@ -59,6 +65,19 @@ const initialsOf = (name: string) =>
         <p class="subhead" set:html={subtitle} />
       </div>
     </header>
+
+    {
+      showStats && (
+        <dl class="icea-stats" aria-label="ICEA w liczbach">
+          {iceaStats.map((st) => (
+            <div class="icea-stat">
+              <dd>{st.value}</dd>
+              <dt>{st.label}</dt>
+            </div>
+          ))}
+        </dl>
+      )
+    }
 
     <div class="team-grid">
       {
@@ -121,15 +140,56 @@ const initialsOf = (name: string) =>
 
 <style>
   .team-section {
-    padding: 80px 0;
+    padding: 96px 0;
     background: var(--bg-canvas);
     border-top: 1px solid var(--hairline-soft);
   }
 
   @media (min-width: 980px) {
     .team-section {
-      padding: 104px 0;
+      padding: 128px 0;
     }
+  }
+
+  .icea-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 32px;
+    margin: 0 0 40px;
+    padding: 28px 0;
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  @media (min-width: 820px) {
+    .icea-stats {
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 48px;
+    }
+  }
+
+  .icea-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .icea-stat dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(36px, 3.6vw, 52px);
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 0.95;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .icea-stat dt {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.4;
+    max-width: 20ch;
   }
 
   .team-grid {
@@ -158,7 +218,7 @@ const initialsOf = (name: string) =>
     display: flex;
     flex-direction: column;
     gap: 16px;
-    min-height: 490px;
+    min-height: 0;
     transition:
       background 0.2s ease,
       border-color 0.2s ease,
@@ -277,7 +337,7 @@ const initialsOf = (name: string) =>
   .team-role {
     font-family: var(--font-sans);
     font-size: 12px;
-    color: var(--accent-blue);
+    color: var(--ink-muted);
     letter-spacing: -0.12px;
     font-weight: 500;
   }
