@@ -1,13 +1,5 @@
 [
   {
-    "title": "Dacia Duster Pickup 2026 z LPG trafiła do sprzedaży we Francji. Jest też wersja kamper",
-    "date": "2026-05-22",
-    "slug": "dacia-duster-pickup-2026-z-lpg-trafila-do-sprzedazy-we-francji-jest-tez-wersja",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Polski VW Grand California w nowej odsłonie. Kamper z Wrześni rusza na światowe rynki",
     "date": "2026-05-23",
     "slug": "polski-vw-grand-california-w-nowej-odslonie-kamper-z-wrzesni-rusza-na-swiatowe",
@@ -716,6 +708,14 @@
     "date": "2026-09-02",
     "slug": "volkswagen-id-california-cruise-pierwszy-w-pelni-elektryczny-kamper-marki",
     "section": "kampery",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Orlen podniósł hurtowe ceny paliw. Benzyna 95 powyżej 6 zł pierwszy raz od czterech lat",
+    "date": "2026-09-03",
+    "slug": "orlen-podniosl-hurtowe-ceny-paliw-benzyna-95-powyzej-6-zl-pierwszy-raz-od",
+    "section": "news",
     "format": "short",
     "source": "rss"
   }
