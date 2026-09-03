@@ -130,7 +130,7 @@ const {
     let fontSize = Math.round(markH * 1.02);
     let textW = 0;
     if (side.text) {
-      c.font = `500 ${fontSize}px 'Mona Sans Variable', 'Mona Sans', Inter, sans-serif`;
+      c.font = `700 ${fontSize}px 'Mona Sans Variable', 'Mona Sans', Inter, sans-serif`;
       textW = c.measureText(side.text).width;
     }
 
@@ -146,12 +146,20 @@ const {
     let x = cx - targetW / 2;
     if (img) {
       c.drawImage(img, x, cy - sMarkH / 2, sMarkW, sMarkH);
+      // drugi przebieg lekko powiększony pogrubia cienkie kreski znaku
+      if (side.text) c.drawImage(img, x - 1, cy - sMarkH / 2 - 1, sMarkW + 2, sMarkH + 2);
       x += sMarkW + sGap;
     }
     if (side.text) {
-      c.font = `500 ${fontSize}px 'Mona Sans Variable', 'Mona Sans', Inter, sans-serif`;
+      // Gruby napis + obrys: cienkie kreski dawały za mało trafień przy
+      // próbkowaniu i napis ginął obok wypełnionego logotypu iCEA.
+      c.font = `700 ${fontSize}px 'Mona Sans Variable', 'Mona Sans', Inter, sans-serif`;
       c.textAlign = 'left';
       c.textBaseline = 'middle';
+      c.lineWidth = Math.max(1.5, fontSize * 0.045);
+      c.strokeStyle = '#fff';
+      c.lineJoin = 'round';
+      c.strokeText(side.text, x, cy);
       c.fillText(side.text, x, cy);
     }
 
@@ -226,18 +234,19 @@ const {
         isNarrow = narrow;
         // Znaki zsunięte do 0.3 / 0.7 szerokości – wstęga między nimi ma być
         // łącznikiem, nie przestrzenią do pokonania.
-        const widthProp = narrow ? 0.62 : 0.24;
+        // Lewy lockup (znak + napis) jest szerszy niż logotyp iCEA, żeby
+        // litery dostały tyle samo wierszy próbkowania co gruby znak.
         const A = await sampleSide(
           sideA, W, H,
-          narrow ? W * 0.5 : W * 0.3,
+          narrow ? W * 0.5 : W * 0.28,
           narrow ? H * 0.24 : H * 0.5,
-          step, widthProp,
+          step, narrow ? 0.7 : 0.31,
         );
         const B = await sampleSide(
           sideB, W, H,
-          narrow ? W * 0.5 : W * 0.7,
+          narrow ? W * 0.5 : W * 0.72,
           narrow ? H * 0.76 : H * 0.5,
-          step, widthProp,
+          step, narrow ? 0.62 : 0.24,
         );
         if (!A.length || !B.length) return;
 
@@ -277,7 +286,7 @@ const {
             nx: 0,
             ny: 0,
             x: 0, y: 0, vx: 0, vy: 0,
-            r: (trail ? 0.85 : 1.15) * dpr,
+            r: (trail ? 0.85 : t === 0 ? 1.3 : 1.15) * dpr,
             col: trail ? PAL[Math.floor(t * 31)] : `rgba(${col[0]}, ${col[1]}, ${col[2]}, 0.95)`,
             trail,
             ph: t,
