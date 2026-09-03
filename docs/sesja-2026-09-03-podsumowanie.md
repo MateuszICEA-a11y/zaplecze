@@ -46,9 +46,37 @@ Worker (`dashboard/app`):
 
 Testy: pipeline 105/105, Worker 190/190, `astro build` OK.
 
+## Część 2 – shortcody motywu (po południu)
+
+Dev przysłał wytyczne motywu (dokument Google, kopia `Downloads/Wytyczne.md`).
+Test na wpisie 20811 (slot 7, wpisane i wycofane): shortcody w `page_text_N`
+są wykonywane. `k_quote_box` daje kartę cytatu z CSS strony, `k_img` zdjęcie
+z podpisem, `k_link`/`k_link_word` KARTĘ „Zobacz również” (nie link inline),
+`k_expert_box` wizytówkę. Brak shortcode'u CTA.
+
+Wdrożone (commity `fae509d1` pipeline, `6b06b8cd` dashboard; Worker
+zdeployowany ręcznie `wrangler deploy` z main):
+- cytat eksperta: `[k_quote_box text author_name author_pos author_link
+  author_link_nofollow="false" author_img]` – Worker dokłada link do strony
+  autora z WP REST (`link`), pipeline bez linku;
+- infografika: `[k_img src alt name]` (name = podpis);
+- sanityzacja przepuszcza `div.k-table` i `ol.k-ol-h3`; reguły redakcyjne
+  każą owijać tabele; przejazd stylu nie rusza shortcodów;
+- edytor rysuje podgląd shortcodów w dokumencie, „kopiuj cytat/treść” dają
+  shortcode.
+
+Test E2E: `POST /wp-draft` dla zadania 964ee898 (wpis 20811) zaktualizował
+szkic 41895 – surowe pole (`acf_format=light`) ma `[k_quote_box …]`, a REST
+w formacie standard oddaje już wyrenderowany `blockquote.k-quote-box`
+z nazwiskiem Radosława Borawskiego i domyślnym awatarem motywu. Podgląd szkicu
+wymaga zalogowania do wp-admin – do obejrzenia przez Mateusza.
+Linki wewnętrzne zostają zwykłym `<a>` (k_link to karta, nie anchor).
+
 ## Co dalej
 
 - Push `main` = deploy Workera (Workers Builds) i pipeline'u (GitHub Actions
   bierze kod z repo). Do pierwszego realnego przejazdu z pakietem `sources`
   warto zajrzeć do edytora i sprawdzić, czy blok stoi pod FAQ.
 - `wp-apply` (podmiana oryginału) wciąż nie ma realnego wdrożenia z bibliografią.
+- Obejrzeć szkic 41895 w wp-admin (cytat jako k_quote_box); dev: shortcode CTA/konsultacji.
+- Stare cytaty inline (`blockquote.expert`) w już wdrożonych wpisach zostają.
