@@ -94,7 +94,7 @@ export async function handleCta(request, env, id, slot, { fetchImpl = fetch } = 
   const job = await db(env).prepare('SELECT * FROM jobs WHERE id = ?').bind(id).first();
   if (!job) return json({ error: 'Nie ma takiego zadania.' }, 404);
   if (job.status !== 'done') return json({ error: 'CTA będzie dostępne po zakończeniu analizy.' }, 409);
-  if (slot > 100) return json({ error: 'CTA nie wchodzi do bloku FAQ – wybierz sekcję treści.' }, 400);
+  if (slot > 100) return json({ error: 'CTA nie wchodzi do bloku FAQ ani do Źródeł – wybierz sekcję treści.' }, 400);
 
   const body = await request.json().catch(() => null);
   const step = String(body?.step ?? '').trim();

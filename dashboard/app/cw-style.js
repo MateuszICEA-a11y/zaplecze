@@ -20,7 +20,7 @@
  * - straż zmian: `styleGuard` niżej vs diff_guard w widocznosc-blog-polish.
  */
 
-import { contentDomains, mapAcfFaq, mapAcfSections, sanitizeSectionHtml } from './cw-api.js';
+import { contentDomains, mapAcfFaq, mapAcfSections, sanitizeSectionHtml, SOURCES_SLOT } from './cw-api.js';
 import { extractJson } from './cw-expert.js';
 import { contentHash, postUrl, wpFetch } from './cw-wp.js';
 
@@ -68,7 +68,9 @@ export async function styleDocument(env, job, sections, fetchImpl = fetch) {
   for (const row of mapAcfSections(acf).sections) live.set(row.slot, row);
   for (const row of mapAcfFaq(acf).items) live.set(row.slot, row);
 
-  const proposals = new Map((sections ?? []).map((row) => [row.slot, row]));
+  // Blok Źródeł (slot 200) to lista linków, nie proza – nie wchodzi do dokumentu
+  // redaktorskiego ani pod infografikę/cytat (zapis do WP idzie z job_sections).
+  const proposals = new Map((sections ?? []).filter((row) => row.slot !== SOURCES_SLOT).map((row) => [row.slot, row]));
   const slots = [...new Set([...live.keys(), ...proposals.keys()])].sort((a, b) => a - b);
 
   const rows = [];

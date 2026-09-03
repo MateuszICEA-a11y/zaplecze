@@ -14,6 +14,8 @@ import {
   sanitizeSectionHtml,
   DEFAULT_MODELS,
   isKnownSlot,
+  fieldsForSlot,
+  mapAcfSources,
   SIGNATURE_WINDOW_S,
 } from './cw-api.js';
 import { avatarUrl, buildExpertPrompt, expertBlockquote, generateExpertQuote, hasResearch, isPersonName, researchBlock, wpAuthors } from './cw-expert.js';
@@ -281,6 +283,20 @@ test('isKnownSlot: sekcje 1..30 i pary FAQ 101..118', () => {
   assert.equal(isKnownSlot(101), true);
   assert.equal(isKnownSlot(118), true);
   assert.equal(isKnownSlot(119), false);
+  // Blok Źródeł (page_sources_*, render za FAQ) – pseudo-slot 200.
+  assert.equal(isKnownSlot(200), true);
+  assert.equal(isKnownSlot(201), false);
+  assert.deepEqual(fieldsForSlot(200), ['page_sources_title', 'page_sources_text']);
+  assert.deepEqual(fieldsForSlot(101), ['page_faq_question_1', 'page_faq_answer_1']);
+  assert.deepEqual(fieldsForSlot(7), ['page_title_h2_7', 'page_text_7']);
+});
+
+test('mapAcfSources: pusty blok = null, pusty nagłówek = domyślne „Źródła”', () => {
+  assert.equal(mapAcfSources({ page_sources_text: '' }), null);
+  const row = mapAcfSources({ page_sources_text: '<ul><li>a</li></ul>' });
+  assert.equal(row.slot, 200);
+  assert.equal(row.title, 'Źródła');
+  assert.equal(row.text_field, 'page_sources_text');
 });
 
 /* ---------- proxy treści wpisu ---------- */

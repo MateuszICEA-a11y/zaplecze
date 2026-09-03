@@ -438,11 +438,22 @@ const ACF_SLOTS = 30; // lustro config.py (ACF_SLOTS) – szablon ma 30 par pól
 // Lustro config.py (FAQ_SLOTS, FAQ_SLOT_BASE).
 const FAQ_SLOTS = 18;
 const FAQ_SLOT_BASE = 100;
-/** Slot sekcji (1..30) albo pary FAQ (101..118) – lustro sections.py. */
+// Źródła: od 2026-09-03 osobne pola ACF (page_sources_title/_text), które motyw
+// renderuje ZA blokiem FAQ. Pseudo-slot – lustro config.py (SOURCES_SLOT).
+export const SOURCES_SLOT = 200;
+export const SOURCES_FIELDS = { title: 'page_sources_title', text: 'page_sources_text' };
+/** Slot sekcji (1..30), pary FAQ (101..118) albo bloku Źródeł (200) – lustro sections.py. */
 export const isKnownSlot = (slot) =>
   Number.isFinite(slot)
   && ((slot >= 1 && slot <= ACF_SLOTS)
-    || (slot > FAQ_SLOT_BASE && slot <= FAQ_SLOT_BASE + FAQ_SLOTS));
+    || (slot > FAQ_SLOT_BASE && slot <= FAQ_SLOT_BASE + FAQ_SLOTS)
+    || slot === SOURCES_SLOT);
+/** Nazwy pól ACF dla slotu – fallback, gdy pipeline ich nie przysłał. */
+export function fieldsForSlot(slot) {
+  if (slot === SOURCES_SLOT) return [SOURCES_FIELDS.title, SOURCES_FIELDS.text];
+  if (slot > FAQ_SLOT_BASE) return [`page_faq_question_${slot - FAQ_SLOT_BASE}`, `page_faq_answer_${slot - FAQ_SLOT_BASE}`];
+  return [`page_title_h2_${slot}`, `page_text_${slot}`];
+}
 
 const MAX_WP_BYTES = 2 * 1024 * 1024; // jak FETCH_MAX_BYTES w pipeline
 const CONTENT_CACHE_S = 60;
@@ -504,6 +515,20 @@ export function mapAcfFaq(acf) {
   };
 }
 
+/** Blok „Źródła” z pól page_sources_* jako pseudo-sekcja 200 (null, gdy pusty).
+    Pusty nagłówek w CMS-ie = motyw pokazuje domyślne „Źródła”. */
+export function mapAcfSources(acf) {
+  const text = String(acf?.[SOURCES_FIELDS.text] ?? '').trim();
+  if (!text) return null;
+  return {
+    slot: SOURCES_SLOT,
+    title_field: SOURCES_FIELDS.title,
+    text_field: SOURCES_FIELDS.text,
+    title: String(acf?.[SOURCES_FIELDS.title] ?? '').trim() || 'Źródła',
+    text,
+  };
+}
+
 export async function fetchPostContent(request, env, domain, postType, postId, fetchImpl = fetch) {
   const base = contentDomains(env).get(domain.toLowerCase());
   if (!base) return json({ error: 'Edytor nie obsługuje tej domeny.' }, 404);
@@ -551,6 +576,7 @@ export async function fetchPostContent(request, env, domain, postType, postId, f
   const acf = post?.acf && typeof post.acf === 'object' ? post.acf : {};
   const { sections, free_slots: freeSlots } = mapAcfSections(acf);
   const faq = mapAcfFaq(acf);
+  const sources = mapAcfSources(acf);
   // Wpisy bez sekcji ACF trzymają całość w `content` albo w
   // `page_content_no_section` – edytor i tak ma pokazać pełną treść.
   const lead = String(post?.content?.rendered ?? '').trim();
@@ -566,6 +592,7 @@ export async function fetchPostContent(request, env, domain, postType, postId, f
     sections,
     free_slots: freeSlots,
     faq,
+    sources,
   });
   response.headers.set('Cache-Control', `private, max-age=${CONTENT_CACHE_S}`);
   if (cache) {
@@ -829,7 +856,7 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
   const wantedSlot = Number.parseInt(body?.slot, 10);
   if (Number.isInteger(wantedSlot) && wantedSlot >= 1) {
     if (wantedSlot > 100) {
-      return json({ error: 'Cytat nie wchodzi do bloku FAQ – wybierz sekcję treści.' }, 400);
+      return json({ error: 'Cytat nie wchodzi do bloku FAQ ani do Źródeł – wybierz sekcję treści.' }, 400);
     }
     const rowsForDoc = await db(env)
       .prepare('SELECT slot, title_field, text_field, title_after, text_after, decision FROM job_sections WHERE job_id = ? ORDER BY slot')
@@ -1282,12 +1309,10 @@ async function handleCallback(request, env) {
         )
         .bind(
           cb.job_id, slot,
-          // Nazwy pól niesie pipeline; fallback musi znać obie przestrzenie,
-          // bo FAQ siedzi w page_faq_*, nie w page_title_h2_*.
-          section.title_field ?? (slot > FAQ_SLOT_BASE
-            ? `page_faq_question_${slot - FAQ_SLOT_BASE}` : `page_title_h2_${slot}`),
-          section.text_field ?? (slot > FAQ_SLOT_BASE
-            ? `page_faq_answer_${slot - FAQ_SLOT_BASE}` : `page_text_${slot}`),
+          // Nazwy pól niesie pipeline; fallback musi znać wszystkie przestrzenie,
+          // bo FAQ siedzi w page_faq_*, a Źródła w page_sources_*.
+          section.title_field ?? fieldsForSlot(slot)[0],
+          section.text_field ?? fieldsForSlot(slot)[1],
           ['insert', 'move'].includes(section.operation) ? section.operation : 'update',
           section.title_before ?? null, section.title_after ?? null,
           section.text_before ?? null, section.text_after ?? null,

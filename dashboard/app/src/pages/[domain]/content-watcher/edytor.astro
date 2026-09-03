@@ -410,6 +410,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   // Sloty FAQ zaczynają się nad tą wartością (101+) – lustro FAQ_SLOT_BASE
   // z config.py i cw-api.js.
   const FAQ_SLOT_BASE = 100;
+  // Blok „Źródła”: osobne pola ACF (page_sources_*), na stronie ZA blokiem FAQ
+  // (motyw od 2026-09-03). Pseudo-slot – lustro SOURCES_SLOT z config.py/cw-api.js.
+  const SOURCES_SLOT = 200;
+  type DocKind = 'section' | 'faq' | 'sources';
+  const kindOfSlot = (slot: number): DocKind =>
+    slot === SOURCES_SLOT ? 'sources' : (slot > FAQ_SLOT_BASE ? 'faq' : 'section');
 
   // Lustro config.py (STEPS + OPTIONAL_STEPS) – przy zmianie kolejności kroków
   // pipeline'u zaktualizuj oba miejsca.
@@ -559,6 +565,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     lead?: string;
     no_section?: string;
     sections: { slot: number; title: string; text: string }[];
+    faq?: { title: string; schema: boolean; items: { slot: number; title: string; text: string }[] };
+    // Blok Źródeł z pól page_sources_* (null, gdy wpis go nie ma).
+    sources?: { slot: number; title: string; text: string } | null;
   } | null = null;
   let job: Job | null = null;
   // Id zadania, którego propozycje są nałożone na dokument – ponowny przebieg
@@ -705,10 +714,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   }
 
   /** Sekcja dokumentu: nagłówek + treść + (po pipelinie) narzędzia i tryby. */
-  function docSection(slot: number, title: string, html: string | null, kind: 'section' | 'faq' = 'section') {
+  function docSection(slot: number, title: string, html: string | null, kind: DocKind = 'section') {
     const faq = kind === 'faq';
     const section = document.createElement('section');
-    section.className = faq ? 'ed-doc-section ed-doc-faq' : 'ed-doc-section';
+    section.className = faq ? 'ed-doc-section ed-doc-faq'
+      : (kind === 'sources' ? 'ed-doc-section ed-doc-sources' : 'ed-doc-section');
     section.dataset.slot = String(slot);
     section.dataset.kind = kind;
     const head = document.createElement('div');
@@ -717,8 +727,16 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     // żeby liczba nagłówków w ocenie treści zgadzała się z tym, co widzi Google.
     const heading = document.createElement(faq ? 'h3' : 'h2');
     heading.dataset.block = faq ? 'h3' : 'h2';
-    heading.textContent = title || (faq ? `Pytanie ${slot - 100}` : `Sekcja ${slot}`);
+    heading.textContent = title || (faq ? `Pytanie ${slot - 100}` : (kind === 'sources' ? 'Źródła' : `Sekcja ${slot}`));
     head.append(heading);
+    if (kind === 'sources') {
+      // Bibliografia stoi na stronie pod FAQ, przed boksem autora – etykieta,
+      // żeby nikt nie szukał jej wśród sekcji treści.
+      const where = document.createElement('span');
+      where.className = 'ed-sec-tag';
+      where.textContent = 'blok za FAQ · page_sources_text';
+      head.append(where);
+    }
 
     // Szkic z poprzedniej sesji ma pierwszeństwo przed treścią z WordPressa –
     // inaczej odświeżenie strony po cichu kasowałoby pracę redaktora.
@@ -780,7 +798,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       copy.textContent = 'skopiowano';
       setTimeout(() => (copy.textContent = 'kopiuj treść'), 1500);
     });
-    tools.append(spacer, save, drop, edit, infographicButton(slot), ctaButton(slot), copy);
+    // Infografika i CTA to narzędzia sekcji treści – w FAQ i w bibliografii
+    // Worker i tak je odrzuca (400), więc przycisków tam nie pokazujemy.
+    tools.append(spacer, save, drop, edit,
+      ...(kind === 'section' ? [infographicButton(slot), ctaButton(slot)] : []), copy);
 
     section.append(head, tools, body);
     return section;
@@ -833,16 +854,16 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       liczenie wprost z ekranu gubiło jej nagłówki, akapity i linki, a słowa
       liczyło podwójnie (wersja przed i po naraz). Dlatego metryki idą z kopii:
       tekst z podglądu, a przy widoku różnic – wersja, która wejdzie na stronę. */
-  // Sekcja „Źródła". Na STRONIE stoi przed blokiem FAQ – motyw renderuje FAQ
-  // zawsze pod wszystkimi sekcjami treści i tego nie przeskoczymy (rola editor,
-  // brak dostępu do szablonu). Edytor i podgląd pokazują więc ten sam układ;
-  // rozpoznanie służy tylko do trzymania cytatu eksperta i CTA z dala od
-  // bibliografii. Próba pokazywania Źródeł za FAQ (2026-08-19) cofnięta –
-  // podgląd obiecywał układ, którego nie dało się opublikować.
+  // Blok „Źródła". Od 2026-09-03 to osobne pola ACF (page_sources_*), które motyw
+  // renderuje ZA blokiem FAQ – w dokumencie stoi więc na końcu (.ed-doc-sources).
+  // Rozpoznanie po tytule zostaje dla starych wpisów, w których bibliografia
+  // wciąż siedzi w slocie treści; w obu przypadkach cytat eksperta i CTA mają
+  // trzymać się od niej z daleka.
   const SOURCES_TITLE = /^(źródła|zrodla|bibliografia)$/i;
   const isSourcesTitle = (title: string | null | undefined) => SOURCES_TITLE.test((title ?? '').trim());
   const isSourcesNode = (node: Element) =>
-    isSourcesTitle(node.querySelector('.ed-sec-head h2, .ed-sec-head h3')?.textContent);
+    node.classList.contains('ed-doc-sources')
+    || isSourcesTitle(node.querySelector('.ed-sec-head h2, .ed-sec-head h3')?.textContent);
 
   function docSnapshot() {
     const box = document.createElement('div');
@@ -895,7 +916,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const words = (text.match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu) ?? []).length;
     const headings = snapshot.querySelectorAll('h2, h3, h4').length;
     const paragraphs = snapshot.querySelectorAll('p').length;
-    const sections = doc.querySelectorAll('.ed-doc-section:not(.ed-doc-intro):not(.ed-doc-faq)').length;
+    const sections = doc.querySelectorAll('.ed-doc-section:not(.ed-doc-intro):not(.ed-doc-faq):not(.ed-doc-sources)').length;
     const faq = doc.querySelectorAll('.ed-doc-section.ed-doc-faq').length;
 
     const stat = (value: string, label: string) => {
@@ -1400,11 +1421,15 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       blocks.push(...content.faq.items.map((row: any) =>
         docSection(row.slot, row.title, row.text, 'faq')));
     }
+    // Bibliografia z pól page_sources_* – na stronie za FAQ, więc i tu na końcu.
+    if (content?.sources?.text) {
+      blocks.push(docSection(content.sources.slot ?? SOURCES_SLOT, content.sources.title, content.sources.text, 'sources'));
+    }
 
     host.replaceChildren(...blocks);
     const faqCount = content?.faq?.items?.length ?? 0;
     $('[data-ed-doc-meta]')!.textContent = content?.sections?.length
-      ? `${content.sections.length} sekcji${faqCount ? ` + ${faqCount} pytań FAQ` : ''} · pełna treść z WordPressa`
+      ? `${content.sections.length} sekcji${faqCount ? ` + ${faqCount} pytań FAQ` : ''}${content?.sources?.text ? ' + Źródła' : ''} · pełna treść z WordPressa`
       : 'treść z WordPressa';
     renderDocStats();
     renderScore();
@@ -2111,7 +2136,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const stats = section.diff?.stats;
     // Nazywamy rzecz po imieniu: w bloku FAQ dochodzi pytanie, nie sekcja.
     if (section.operation === 'insert') {
-      tag(section.slot > FAQ_SLOT_BASE ? 'nowe pytanie FAQ' : 'nowa sekcja', 'new');
+      const kind = kindOfSlot(section.slot);
+      tag(kind === 'sources' ? 'nowy blok Źródła (za FAQ)' : (kind === 'faq' ? 'nowe pytanie FAQ' : 'nowa sekcja'), 'new');
     }
     else if (section.operation === 'move') {
       // Renumeracja układu: treść przyszła z innego slotu. Diff liczony jest
@@ -2151,14 +2177,19 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         // pierwszym „wyższym" węzłem bywało pytanie FAQ, więc nowa sekcja
         // lądowała pod nagłówkiem bloku FAQ – w dokumencie wyglądało to jak
         // drugie, rozbite FAQ w środku artykułu.
-        const isFaq = section.slot > FAQ_SLOT_BASE;
-        node = docSection(section.slot, section.title_after ?? '', null, isFaq ? 'faq' : 'section');
+        const kind = kindOfSlot(section.slot);
+        node = docSection(section.slot, section.title_after ?? '', null, kind);
         const after = [...bySlot.entries()]
-          .filter(([slot]) => slot > section.slot && (slot > FAQ_SLOT_BASE) === isFaq)
+          .filter(([slot]) => slot > section.slot && kindOfSlot(slot) === kind)
           .sort((a, b) => a[0] - b[0])[0];
         // Sekcja bez następnika staje przed blokiem FAQ, nie za nim – FAQ na
-        // stronie stoi pod całym artykułem.
-        host.insertBefore(node, after?.[1] ?? (isFaq ? null : host.querySelector('.ed-faq-head')));
+        // stronie stoi pod całym artykułem. Pytanie FAQ bez następnika staje
+        // przed blokiem Źródeł, a Źródła zawsze na samym końcu (motyw renderuje
+        // je za FAQ, przed boksem autora).
+        const fallback = kind === 'section'
+          ? (host.querySelector('.ed-faq-head') ?? host.querySelector('.ed-doc-sources'))
+          : (kind === 'faq' ? host.querySelector('.ed-doc-sources') : null);
+        host.insertBefore(node, after?.[1] ?? fallback);
         bySlot.set(section.slot, node);
       }
       node.classList.add(section.operation === 'insert' ? 'is-new' : 'is-changed');
@@ -4418,6 +4449,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-doc-section.ed-doc-faq { padding-top: 18px; padding-bottom: 20px; }
   .ed-doc-section.ed-doc-faq > .ed-sec-head h3 { margin: 0; font: 600 1.02rem var(--font-display);
     color: var(--ink); line-height: 1.3; }
+  /* Blok Źródeł: na stronie za FAQ, przed boksem autora – odcięty kreską jak FAQ. */
+  .ed-doc-section.ed-doc-sources { border-top: 1px solid var(--hairline); }
   .ed-sec-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin: 0 0 14px; }
   .ed-doc-section h1, .ed-doc-section > .ed-sec-head h2 { margin: 0; font-family: var(--font-display);
     color: var(--ink); line-height: 1.25; }
