@@ -72,11 +72,20 @@ z nazwiskiem Radosława Borawskiego i domyślnym awatarem motywu. Podgląd szkic
 wymaga zalogowania do wp-admin – do obejrzenia przez Mateusza.
 Linki wewnętrzne zostają zwykłym `<a>` (k_link to karta, nie anchor).
 
+## Część 3 – pusty podgląd szkicu
+
+Mateusz zobaczył w podglądzie szkicu 41895 tylko lead i boks autora
+„Redaktor". Pola ACF były kompletne. Przyczyna: aktualizacja szkicu przez REST
+tworzy rewizję bez meta ACF, a ACF w trybie podglądu czyta pola z najnowszej
+rewizji. Rola editor nie skasuje rewizji przez REST (403).
+Poprawka: `wp-draft` kasuje stary szkic i zakłada nowy (bez rewizji), szkic
+dziedziczy autora, kategorie i tagi oryginału. Nowy szkic testowy: 41915.
+
 ## Co dalej
 
 - Push `main` = deploy Workera (Workers Builds) i pipeline'u (GitHub Actions
   bierze kod z repo). Do pierwszego realnego przejazdu z pakietem `sources`
   warto zajrzeć do edytora i sprawdzić, czy blok stoi pod FAQ.
 - `wp-apply` (podmiana oryginału) wciąż nie ma realnego wdrożenia z bibliografią.
-- Obejrzeć szkic 41895 w wp-admin (cytat jako k_quote_box); dev: shortcode CTA/konsultacji.
+- Obejrzeć szkic 41915 w wp-admin (sekcje, FAQ, cytat jako k_quote_box); dev: shortcode CTA/konsultacji.
 - Stare cytaty inline (`blockquote.expert`) w już wdrożonych wpisach zostają.
