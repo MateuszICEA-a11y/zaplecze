@@ -145,6 +145,18 @@ function fakeWp(routes) {
   return { calls, impl };
 }
 
+test('acfFieldPayload: stare Źródła ze slotu treści jadą do page_sources_* (za FAQ)', () => {
+  const legacy = { ...section(10, { decision: 'accepted' }), operation: 'insert', title_before: '', text_before: '', title_after: 'Źródła', text_after: '<ol><li><a href="https://x.pl">x</a></li></ol>', text_hash_before: null };
+  const { fields, slots } = acfFieldPayload({ expert: null }, [legacy]);
+  assert.equal(fields.page_sources_title, 'Źródła');
+  assert.match(fields.page_sources_text, /^<ol><li>/);
+  assert.equal(fields.page_text_10, undefined);
+  assert.deepEqual(slots, [200]);
+  // Zwykła nowa sekcja o innym tytule zostaje w swoim slocie.
+  const plain = { ...legacy, title_after: 'Podsumowanie' };
+  assert.equal(acfFieldPayload({ expert: null }, [plain]).fields.page_text_10.startsWith('<ol>'), true);
+});
+
 test('wp-draft: bez sekretów WP jest 503 z czytelnym komunikatem', async () => {
   const db = fakeDb({ 'FROM jobs': JOB });
   const response = await handleWpDraft(post('/api/cw/jobs/job-123456/wp-draft'), env(db, { WP_APP_PASSWORD: '' }), 'job-123456');

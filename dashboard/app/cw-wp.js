@@ -9,7 +9,7 @@
  * Workera – przeglądarka nigdy go nie widzi, dostaje tylko wynik operacji.
  */
 
-import { checkMutationOrigin, contentDomains, sanitizeSectionHtml } from './cw-api.js';
+import { checkMutationOrigin, contentDomains, sanitizeSectionHtml, SOURCES_FIELDS, SOURCES_SLOT } from './cw-api.js';
 import { expertShortcode } from './cw-expert.js';
 
 const json = (value, status = 200) =>
@@ -113,6 +113,21 @@ function expertHtml(job) {
  * (odrzucone sekcje zostają w brzmieniu z CMS-a, reszta dostaje propozycje);
  * wdrożenie pisze WYŁĄCZNIE sekcje zatwierdzone przez redaktora.
  */
+/** Wiersz „Źródła” z przejazdu sprzed 2026-09-03: pipeline wstawiał
+    bibliografię w wolny slot TREŚCI, więc na stronie stała przed FAQ. Przy
+    zapisie taki wiersz jedzie do pól page_sources_* (render za FAQ), a slot
+    treści zostaje pusty. Nowe przejazdy przysyłają slot 200 od razu. */
+const SOURCES_TITLE_RE = /^(źródła|zrodla|bibliografia)$/i;
+export function legacySourcesRow(row) {
+  return Number.isFinite(row?.slot) && row.slot >= 1 && row.slot <= 30
+    && row.operation === 'insert'
+    && SOURCES_TITLE_RE.test(String(row.title_after ?? '').trim());
+}
+export function targetFields(row) {
+  if (legacySourcesRow(row)) return { slot: SOURCES_SLOT, title_field: SOURCES_FIELDS.title, text_field: SOURCES_FIELDS.text };
+  return { slot: row.slot, title_field: row.title_field, text_field: row.text_field };
+}
+
 export function acfFieldPayload(job, sections, { forApply = false } = {}) {
   const rows = (sections ?? []).filter((section) => {
     if (section.decision === 'rejected') return false;
@@ -127,14 +142,15 @@ export function acfFieldPayload(job, sections, { forApply = false } = {}) {
   const fields = {};
   const slots = [];
   for (const row of rows) {
-    if (!ACF_FIELD.test(row.title_field ?? '') || !ACF_FIELD.test(row.text_field ?? '')) continue;
+    const target = targetFields(row);
+    if (!ACF_FIELD.test(target.title_field ?? '') || !ACF_FIELD.test(target.text_field ?? '')) continue;
     let text = sanitizeSectionHtml(row.text_after ?? row.text_before ?? '');
     // Cytat eksperta stoi na końcu wskazanej sekcji – text_after w bazie
     // zostaje czystym wynikiem pipeline'u (jak w sectionCopyText edytora).
     if (expert && expert.slot === row.slot) text = `${text}\n${sanitizeSectionHtml(expert.html)}`;
-    fields[row.title_field] = row.title_after ?? row.title_before ?? '';
-    fields[row.text_field] = text;
-    slots.push(row.slot);
+    fields[target.title_field] = row.title_after ?? row.title_before ?? '';
+    fields[target.text_field] = text;
+    slots.push(target.slot);
   }
   return { fields, slots, undecided };
 }
@@ -296,8 +312,9 @@ export async function handleWpApply(request, env, id, { fetchImpl = fetch } = {}
   }
   const conflicts = [];
   for (const section of sections) {
-    if (section.decision !== 'accepted' || !slots.includes(section.slot)) continue;
-    const liveText = String(current.data?.acf?.[section.text_field] ?? '');
+    const target = targetFields(section);
+    if (section.decision !== 'accepted' || !slots.includes(target.slot)) continue;
+    const liveText = String(current.data?.acf?.[target.text_field] ?? '');
     if (section.text_hash_before) {
       if ((await contentHash(liveText)) !== section.text_hash_before) conflicts.push(section.slot);
     } else if (liveText.trim()) {

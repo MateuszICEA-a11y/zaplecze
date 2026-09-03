@@ -416,6 +416,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   type DocKind = 'section' | 'faq' | 'sources';
   const kindOfSlot = (slot: number): DocKind =>
     slot === SOURCES_SLOT ? 'sources' : (slot > FAQ_SLOT_BASE ? 'faq' : 'section');
+  /** Wiersz „Źródła” z przejazdu sprzed 2026-09-03 (bibliografia w slocie
+      treści). Zapis do WP przenosi go do pól page_sources_* (lustro
+      legacySourcesRow w cw-wp.js), więc w dokumencie też stoi na końcu. */
+  const legacySourcesRow = (section: Section) =>
+    section.slot >= 1 && section.slot <= 30 && section.operation === 'insert'
+    && /^(źródła|zrodla|bibliografia)$/i.test((section.title_after ?? '').trim());
+  const kindOfSection = (section: Section): DocKind => legacySourcesRow(section) ? 'sources' : kindOfSlot(section.slot);
 
   // Lustro config.py (STEPS + OPTIONAL_STEPS) – przy zmianie kolejności kroków
   // pipeline'u zaktualizuj oba miejsca.
@@ -2211,7 +2218,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const stats = section.diff?.stats;
     // Nazywamy rzecz po imieniu: w bloku FAQ dochodzi pytanie, nie sekcja.
     if (section.operation === 'insert') {
-      const kind = kindOfSlot(section.slot);
+      const kind = kindOfSection(section);
       tag(kind === 'sources' ? 'nowy blok Źródła (za FAQ)' : (kind === 'faq' ? 'nowe pytanie FAQ' : 'nowa sekcja'), 'new');
     }
     else if (section.operation === 'move') {
@@ -2252,7 +2259,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         // pierwszym „wyższym" węzłem bywało pytanie FAQ, więc nowa sekcja
         // lądowała pod nagłówkiem bloku FAQ – w dokumencie wyglądało to jak
         // drugie, rozbite FAQ w środku artykułu.
-        const kind = kindOfSlot(section.slot);
+        const kind = kindOfSection(section);
         node = docSection(section.slot, section.title_after ?? '', null, kind);
         const after = [...bySlot.entries()]
           .filter(([slot]) => slot > section.slot && kindOfSlot(slot) === kind)
