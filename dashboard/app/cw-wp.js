@@ -207,7 +207,7 @@ export async function handleWpDraft(request, env, id, { fetchImpl = fetch } = {}
   // w formacie „light" – to one wracają bezstratnie przy zapisie.
   const original = await wpFetch(
     env,
-    `${postUrl(base, job.post_type, job.post_id)}?context=edit&acf_format=light&_fields=id,title,content,acf,status`,
+    `${postUrl(base, job.post_type, job.post_id)}?context=edit&acf_format=light&_fields=id,title,content,acf,status,author,categories,tags`,
     {},
     fetchImpl,
   );
@@ -215,25 +215,32 @@ export async function handleWpDraft(request, env, id, { fetchImpl = fetch } = {}
     return json({ error: `Nie udało się pobrać oryginalnego wpisu (HTTP ${original.status}).`, code: wpErrorCode(original) }, 502);
   }
 
+  // Szkic ma wyglądać jak oryginał: ten sam autor (chyba że redaktor go
+  // podmienia), kategorie i tagi – szablon i boks autora biorą je z wpisu.
+  const originalAuthor = Number.isInteger(original.data?.author) ? original.data.author : null;
+  const idList = (value) => (Array.isArray(value) ? value.filter((item) => Number.isInteger(item)) : []);
   const body = {
     status: 'draft',
     title: `${DRAFT_TITLE_PREFIX}${original.data?.title?.raw ?? job.title}`,
     content: original.data?.content?.raw ?? '',
     acf: { ...scalarAcf(original.data?.acf), ...fields },
-    ...(authorId ? { author: authorId } : {}),
+    ...(authorId || originalAuthor ? { author: authorId || originalAuthor } : {}),
+    ...(idList(original.data?.categories).length ? { categories: idList(original.data.categories) } : {}),
+    ...(idList(original.data?.tags).length ? { tags: idList(original.data.tags) } : {}),
   };
 
-  // Ponowny zapis aktualizuje istniejący szkic; skasowany ręcznie w CMS-ie
-  // (404/410) jest zakładany od nowa.
-  let draftId = job.wp_draft_id || null;
-  let saved = null;
-  if (draftId) {
-    saved = await wpFetch(env, postUrl(base, job.post_type, draftId), { method: 'POST', body }, fetchImpl);
-    if (saved.status === 404 || saved.status === 410) draftId = null;
+  // Ponowny zapis ZAKŁADA szkic od nowa, nie aktualizuje istniejącego.
+  // Aktualizacja przez REST tworzy rewizję BEZ pól ACF, a WordPress w trybie
+  // podglądu czyta pola z najnowszej rewizji – szkic pokazywał sam lead
+  // i boks autora (2026-09-03, szkic 41895). Rewizji rola editor nie może
+  // skasować przez REST (403), świeży wpis rewizji nie ma.
+  const previousDraftId = job.wp_draft_id || null;
+  let replaced = false;
+  if (previousDraftId) {
+    const removed = await wpFetch(env, `${postUrl(base, job.post_type, previousDraftId)}?force=true`, { method: 'DELETE' }, fetchImpl);
+    replaced = removed.ok;
   }
-  if (!draftId) {
-    saved = await wpFetch(env, postUrl(base, job.post_type), { method: 'POST', body }, fetchImpl);
-  }
+  const saved = await wpFetch(env, postUrl(base, job.post_type), { method: 'POST', body }, fetchImpl);
   if (!saved.ok || !saved.data?.id) {
     return json({ error: `WordPress odrzucił zapis szkicu (HTTP ${saved.status}).`, code: wpErrorCode(saved) }, 502);
   }
@@ -243,9 +250,9 @@ export async function handleWpDraft(request, env, id, { fetchImpl = fetch } = {}
     .prepare('UPDATE jobs SET wp_draft_id = ?, wp_draft_url = ?, updated_at = ? WHERE id = ?')
     .bind(saved.data.id, previewUrl, nowIso(), id)
     .run();
-  await audit(env, 'wp.draft', id, { draft_id: saved.data.id, slots, author_id: authorId ?? undefined });
+  await audit(env, 'wp.draft', id, { draft_id: saved.data.id, replaced_draft_id: previousDraftId ?? undefined, slots, author_id: authorId ?? undefined });
 
-  return json({ draft_id: saved.data.id, preview_url: previewUrl, updated: Boolean(job.wp_draft_id && job.wp_draft_id === saved.data.id), slots });
+  return json({ draft_id: saved.data.id, preview_url: previewUrl, updated: replaced, slots });
 }
 
 /** POST /api/cw/jobs/:id/wp-apply – podmiana treści na oryginale + kasowanie szkicu.

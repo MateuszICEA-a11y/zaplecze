@@ -180,20 +180,27 @@ test('wp-draft: tworzy szkic z kopią skalarnych ACF i zapisuje ID w bazie', asy
   assert.ok(db.calls.some((call) => call.sql.includes('wp_draft_id') && call.args[0] === 777));
 });
 
-test('wp-draft: istniejący szkic jest aktualizowany, skasowany ręcznie – zakładany od nowa', async () => {
+test('wp-draft: istniejący szkic jest kasowany i zakładany od nowa (rewizja bez ACF psuła podgląd)', async () => {
   const db = fakeDb({
     'FROM jobs': { ...JOB, wp_draft_id: 500 },
     'FROM job_sections': [section(1, { decision: 'accepted' })],
   });
   const wp = fakeWp({
-    'GET /wp-json/wp/v2/posts/41/': { id: 41, title: { raw: 'Oryginał' }, content: { raw: '' }, acf: {} },
-    'POST /wp-json/wp/v2/posts/500/': { status: 404, body: { code: 'rest_post_invalid_id' } },
+    'GET /wp-json/wp/v2/posts/41/': { id: 41, title: { raw: 'Oryginał' }, content: { raw: '' }, acf: {}, author: 13, categories: [24], tags: [] },
+    'DELETE /wp-json/wp/v2/posts/500/': { deleted: true },
     'POST /wp-json/wp/v2/posts/': { id: 501 },
   });
   const response = await handleWpDraft(post('/api/cw/jobs/job-123456/wp-draft'), env(db), 'job-123456', { fetchImpl: wp.impl });
-  assert.equal((await response.json()).draft_id, 501);
-  assert.deepEqual(wp.calls.filter((call) => call.method === 'POST').map((call) => call.path.split('?')[0]),
-    ['/wp-json/wp/v2/posts/500/', '/wp-json/wp/v2/posts/']);
+  const data = await response.json();
+  assert.equal(data.draft_id, 501);
+  assert.equal(data.updated, true);
+  assert.deepEqual(wp.calls.filter((call) => call.method !== 'GET').map((call) => `${call.method} ${call.path.split('?')[0]}`),
+    ['DELETE /wp-json/wp/v2/posts/500/', 'POST /wp-json/wp/v2/posts/']);
+  // Szkic dziedziczy autora i kategorie oryginału – szablon bierze je z wpisu.
+  const create = wp.calls.find((call) => call.method === 'POST');
+  assert.equal(create.body.author, 13);
+  assert.deepEqual(create.body.categories, [24]);
+  assert.equal(create.body.tags, undefined);
 });
 
 test('wp-apply: niezdecydowane sekcje blokują wdrożenie (bez wyjątku dla force)', async () => {
