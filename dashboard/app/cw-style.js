@@ -148,6 +148,7 @@ Zasady odpowiedzi:
 - "additions" to propozycje uzupełnień wyłącznie o fakty pewne. Nie wstawiaj ich samodzielnie do "text" – decyduje redaktor.
 - Zachowaj polską interpunkcję i pełne znaki diakrytyczne. Półpauza (–), nigdy myślnik em (—).
 - Cytaty w cudzysłowie zostaw dosłownie.
+- Shortcody WordPressa w nawiasach kwadratowych, np. [k_img …], [k_quote_box …], [k_link …], przepisz znak w znak – nie poprawiaj tekstu w ich atrybutach.
 - Nie zmieniaj sensu zdań, które są poprawne merytorycznie.`;
 }
 

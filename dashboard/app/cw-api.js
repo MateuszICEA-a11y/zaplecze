@@ -215,6 +215,8 @@ const SANITIZE_ALLOWED = new Set(['p', 'br', 'ul', 'ol', 'li', 'strong', 'b', 'e
 // w których w stylu dałoby się przemycić zasób albo kod.
 const STYLE_TAGS = new Set(['blockquote', 'p', 'footer', 'span', 'div', 'img', 'figure', 'figcaption']);
 const STYLE_SAFE = /^[a-z0-9 .,:;%#\/-]+$/i;
+// Lustro w edytorze (sanitizeInto): THEME_CLASSES.
+const THEME_CLASSES = { div: ['k-table'], ol: ['k-ol-h3'] };
 
 const safeStyle = (tag, attrs) => {
   if (!STYLE_TAGS.has(tag)) return '';
@@ -256,6 +258,10 @@ export function sanitizeSectionHtml(html) {
     if (tag === 'blockquote' && /class\s*=\s*["']?[^"'>]*\bexpert\b/i.test(attrs)) {
       return `<blockquote class="expert"${style}>`;
     }
+    // Klasy motywu z wytycznych deva WP (2026-09-03): tabela w opakowaniu
+    // `div.k-table`, enumeracja jako H3 przez `ol.k-ol-h3`. Reszta klas wypada.
+    const themeClass = THEME_CLASSES[tag]?.find((name) => new RegExp(`class\\s*=\\s*["']?[^"'>]*\\b${name}\\b`, 'i').test(attrs));
+    if (themeClass) return `<${tag} class="${themeClass}"${style}>`;
     return `<${tag}${style}>`;
   });
   return out;
@@ -818,6 +824,7 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
       // Zdjęcie sprawdzamy przy każdym cytacie: dziś żadne konto go nie ma,
       // ale wgrany później avatar wjedzie do kartki bez zmiany w kodzie.
       photo: await expertPhoto(match.avatar, fetchImpl ?? fetch),
+      link: match.link ?? '',
     };
   }
 

@@ -67,7 +67,7 @@ export const isPersonName = (name) => PERSON_NAME.test(String(name ?? '').trim()
  * nie podajemy; kolejność alfabetyczna.
  */
 export async function wpAuthors(base, fetchImpl = fetch, auth = '') {
-  const url = `${String(base).replace(/\/$/, '')}/wp-json/wp/v2/users/?per_page=100&_fields=id,name,slug,description,avatar_urls`;
+  const url = `${String(base).replace(/\/$/, '')}/wp-json/wp/v2/users/?per_page=100&_fields=id,name,slug,link,description,avatar_urls`;
   const response = await fetchImpl(url, {
     headers: {
       Accept: 'application/json',
@@ -89,6 +89,8 @@ export async function wpAuthors(base, fetchImpl = fetch, auth = '') {
       slug: String(row?.slug ?? '').trim(),
       role: KNOWN_ROLES[String(row?.name ?? '').trim()] ?? '',
       avatar: avatarUrl((row?.avatar_urls ?? {})['96'] ?? ''),
+      // Strona autora (/autor/slug/) – trafia do author_link w [k_quote_box].
+      link: /^https?:\/\//i.test(String(row?.link ?? '')) ? String(row.link).trim() : '',
     }))
     .filter((row) => isPersonName(row.name))
     .sort((a, b) => a.name.localeCompare(b.name, 'pl'));
@@ -337,6 +339,40 @@ export function expertInitials(name) {
   return words.slice(0, 2).map((word) => word[0].toUpperCase()).join('');
 }
 
+/** Wartość atrybutu shortcode'u WordPressa: bez znaczników, bez cudzysłowów
+    prostych (kończyłyby atrybut) i bez nawiasów kwadratowych (kończyłyby
+    shortcode). Cudzysłów zamieniamy na typograficzny, nie kasujemy – cytat
+    w cytacie ma zostać czytelny. */
+export function shortcodeAttr(value) {
+  return String(value ?? '')
+    .replace(/<[^>]*>/g, '')
+    .replace(/&quot;/g, '”')
+    .replace(/"/g, '”')
+    .replace(/\[/g, '(')
+    .replace(/\]/g, ')')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** Cytat eksperta jako shortcode motywu (od 2026-09-03, wytyczne deva WP):
+    [k_quote_box …] renderuje się z CSS motywu – zdjęcie, podpis, link do
+    strony autora. Link autora domyślnie nofollow, u nas dofollow (własna
+    strona /autor/). Lustro: expert_shortcode w run.py i expertShortcode
+    w edytorze. Bez linku/zdjęcia atrybut nie idzie wcale. */
+export function expertShortcode({ quote, expert, role, photo, link }) {
+  const attrs = [
+    ['text', shortcodeAttr(quote)],
+    ['author_name', shortcodeAttr(expert)],
+    ['author_pos', shortcodeAttr([role, 'ICEA'].filter(Boolean).join(', '))],
+    ['author_link', /^https:\/\//i.test(String(link ?? '')) ? String(link).trim() : ''],
+    ['author_link_nofollow', /^https:\/\//i.test(String(link ?? '')) ? 'false' : ''],
+    ['author_img', /^https:\/\//i.test(String(photo ?? '')) ? String(photo).trim() : ''],
+  ].filter(([, value]) => value);
+  return `[k_quote_box ${attrs.map(([key, value]) => `${key}="${value}"`).join(' ')}]`;
+}
+
+/** Podgląd cytatu w edytorze i archiwalny format zapisu (do 2026-09-03 –
+    karta ze stylami inline). Zapis do WP idzie przez expertShortcode. */
 export function expertBlockquote({ quote, expert, role, photo }) {
   const name = String(expert ?? '').trim();
   const initials = expertInitials(name);
@@ -436,6 +472,7 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
       // zanim podpisze wypowiedź nazwiskiem realnej osoby.
       basis: data.basis ? String(data.basis).slice(0, 500) : '',
       photo: person?.photo ?? '',
+      link: person?.link ?? '',
     },
     model: payload?.model ?? model,
     cost: {

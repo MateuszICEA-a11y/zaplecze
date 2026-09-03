@@ -10,7 +10,7 @@
  */
 
 import { checkMutationOrigin, contentDomains, sanitizeSectionHtml } from './cw-api.js';
-import { expertBlockquote } from './cw-expert.js';
+import { expertShortcode } from './cw-expert.js';
 
 const json = (value, status = 200) =>
   new Response(JSON.stringify(value), {
@@ -103,8 +103,9 @@ const parse = (value, fallback) => {
 function expertHtml(job) {
   const expert = parse(job.expert, null);
   if (expert?.status !== 'done' || !expert?.quote) return null;
-  // Jedno źródło HTML cytatu: cw-expert.js (to samo, co „kopiuj cytat”).
-  return { slot: expert.slot ?? null, html: expertBlockquote(expert) };
+  // Jedno źródło cytatu: cw-expert.js (to samo, co „kopiuj cytat”) – od
+  // 2026-09-03 shortcode [k_quote_box], który renderuje motyw WordPressa.
+  return { slot: expert.slot ?? null, html: expertShortcode(expert) };
 }
 
 /**

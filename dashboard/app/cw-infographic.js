@@ -21,6 +21,7 @@
 import { checkMutationOrigin, contentDomains, sanitizeSectionHtml } from './cw-api.js';
 import { extractJson } from './cw-expert.js';
 import { styleDocument } from './cw-style.js';
+import { shortcodeAttr } from './cw-expert.js';
 import { ACF_FIELD, contentHash, postUrl, wpAuth, wpFetch } from './cw-wp.js';
 
 const json = (value, status = 200) =>
@@ -290,9 +291,20 @@ export const FIGURE_STYLE = {
   caption: 'margin:10px 0 0;color:#6e7181;font-size:14px;line-height:1.6',
 };
 
+/** Infografika w treści – od 2026-09-03 shortcode motywu [k_img src alt name]
+    (name = podpis pod zdjęciem), renderowany z CSS strony (zoom, podpis).
+    Alt i podpis pochodzą od modelu – wpuszczamy sam tekst bez znaczników,
+    cudzysłowów i nawiasów kwadratowych (shortcodeAttr). Adres tylko https. */
 export function figureHtml({ src, alt, caption }) {
-  // Alt i podpis pochodzą od modelu – wpuszczamy sam tekst. Znaczniki lecą
-  // razem z zawartością, żeby w alcie nie zostawało samotne „b" po <b>.
+  const safeSrc = /^https:\/\/[^\s"'\[\]<>]+$/i.test(String(src ?? '')) ? String(src) : '';
+  if (!safeSrc) return '';
+  const attrs = [['src', safeSrc], ['alt', shortcodeAttr(alt)], ['name', shortcodeAttr(caption)]]
+    .filter(([key, value]) => key === 'alt' || value);
+  return `[k_img ${attrs.map(([key, value]) => `${key}="${value}"`).join(' ')}]`;
+}
+
+/** Archiwalny format (do 2026-09-03) – zostaje do rozpoznawania starych wstawek. */
+export function legacyFigureHtml({ src, alt, caption }) {
   const plain = (value) => String(value ?? '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
   const safeAlt = plain(alt).replace(/["<>]/g, '');
   const safeCaption = plain(caption).replace(/[<>]/g, '');
@@ -451,7 +463,7 @@ export async function handleInfographic(request, env, id, slot, { fetchImpl = fe
     if (!upload.ok) return json({ error: upload.error, code: upload.code ?? null }, 502);
 
     const figure = sanitizeSectionHtml(figureHtml({ src: upload.url, alt: record.alt, caption: record.caption }));
-    if (!/<img\s/i.test(figure)) {
+    if (!/^\[k_img\s/.test(figure)) {
       // Sanityzacja zdjęła obraz (adres nie na https) – nie zapisujemy sekcji
       // z pustym blokiem.
       return json({ error: 'WordPress oddał adres obrazu, którego nie wolno wstawić do treści.' }, 502);

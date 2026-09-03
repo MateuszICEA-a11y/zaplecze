@@ -505,8 +505,54 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   const WIDGET_SELECTORS = ['[class*="k-post-link"]', '[class*="k-post-list"]', '[class*="k-post-item"]',
     '[class*="related"]', '.wp-block-embed'];
 
+  /* Shortcody motywu (wytyczne deva WP, 2026-09-03). W CMS-ie zostają jako
+     tekst w nawiasach kwadratowych, ale redaktor ma widzieć, co zatwierdza –
+     w dokumencie rysujemy ich podgląd: [k_img] jako zdjęcie z podpisem,
+     [k_quote_box] jako kartę cytatu, [k_link]/[k_link_word] jako etykietę
+     karty „Zobacz również”. Podgląd jest przybliżeniem CSS strony. */
+  const SHORTCODE_RE = /\[(k_[a-z_]+)((?:\s+[a-z_]+="[^"]*")*)\s*\]/g;
+  const THEME_CLASSES: Record<string, string[]> = { DIV: ['k-table'], OL: ['k-ol-h3'] };
+  function shortcodeAttrs(raw: string): Record<string, string> {
+    const out: Record<string, string> = {};
+    for (const match of raw.matchAll(/([a-z_]+)="([^"]*)"/g)) out[match[1]] = match[2];
+    return out;
+  }
+  const escapeHtml = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  function shortcodePreview(name: string, attrs: Record<string, string>): string | null {
+    if (name === 'k_img' || name === 'k_img_full') {
+      if (!/^https:\/\//i.test(attrs.src ?? '')) return '';
+      return `<figure data-shortcode="${name}"><img src="${escapeHtml(attrs.src)}" alt="${escapeHtml(attrs.alt ?? '')}" />`
+        + (attrs.name ? `<figcaption>${escapeHtml(attrs.name)}</figcaption>` : '') + '</figure>';
+    }
+    if (name === 'k_quote_box') {
+      const person = attrs.author_name ?? '';
+      const initials = person.split(/\s+/).filter(Boolean).slice(0, 2).map((word) => word[0].toUpperCase()).join('');
+      const face = /^https:\/\//i.test(attrs.author_img ?? '')
+        ? `<img src="${escapeHtml(attrs.author_img)}" alt="${escapeHtml(person)}" />`
+        : (initials ? `<div>${initials}</div>` : '');
+      return `<blockquote class="expert" data-shortcode="k_quote_box"><div>${face}<div>`
+        + '<span>Zdaniem eksperta</span>'
+        + `<p>${escapeHtml(attrs.text ?? '')}</p>`
+        + `<footer>${person ? `<span>${escapeHtml(person)}</span>` : ''}${attrs.author_pos ? ` · ${escapeHtml(attrs.author_pos)}` : ''}</footer>`
+        + '</div></div></blockquote>';
+    }
+    if (name === 'k_link' || name === 'k_link_word') {
+      return `<span class="ed-shortcode" data-shortcode="${name}">karta „Zobacz również” · ${name === 'k_link_word' ? 'słownik' : 'wpis'} #${escapeHtml(attrs.id ?? '?')}</span>`;
+    }
+    return null;
+  }
+  /** Zamienia shortcody w tekście HTML na ich podgląd; nieznane zostają jako
+      etykieta, żeby nie zniknęły z oczu. */
+  function renderShortcodes(html: string): string {
+    return html.replace(SHORTCODE_RE, (whole, name: string, raw: string) => {
+      const preview = shortcodePreview(name, shortcodeAttrs(raw));
+      if (preview === null) return `<span class="ed-shortcode" data-shortcode="${name}">${escapeHtml(whole)}</span>`;
+      return preview;
+    });
+  }
+
   function sanitizeInto(host: HTMLElement, html: string | null) {
-    const doc = new DOMParser().parseFromString(html ?? '', 'text/html');
+    const doc = new DOMParser().parseFromString(renderShortcodes(html ?? ''), 'text/html');
     for (const selector of WIDGET_SELECTORS) {
       doc.body.querySelectorAll(selector).forEach((node) => node.remove());
     }
@@ -524,8 +570,16 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         const src = child.tagName === 'IMG' ? child.getAttribute('src') ?? '' : '';
         const alt = child.tagName === 'IMG' ? child.getAttribute('alt') ?? '' : '';
         const style = STYLE_TAGS.has(child.tagName) ? child.getAttribute('style') ?? '' : '';
+        const shortcode = child.getAttribute('data-shortcode') ?? '';
+        const themeClass = (THEME_CLASSES[child.tagName] ?? []).find((name) => child.classList.contains(name));
+        const shortcodeTag = child.tagName === 'SPAN' && child.classList.contains('ed-shortcode');
         for (const attr of [...child.attributes]) child.removeAttribute(attr.name);
         if (expertQuote) child.className = 'expert';
+        // Podgląd shortcode'u i klasy motywu (k-table, k-ol-h3) zostają –
+        // lustro THEME_CLASSES w sanitizeSectionHtml (cw-api.js).
+        if (shortcode) child.setAttribute('data-shortcode', shortcode);
+        if (themeClass) child.className = themeClass;
+        if (shortcodeTag) child.className = 'ed-shortcode';
         if (style && STYLE_SAFE.test(style)) child.setAttribute('style', style);
         if (child.tagName === 'IMG') {
           // Zdjęcie eksperta: adres zostaje, ale tylko https – reszta atrybutów
@@ -1925,6 +1979,27 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     name: 'color:#000623;font-weight:600',
   };
 
+  /** Lustro shortcodeAttr / expertShortcode z cw-expert.js – „kopiuj cytat”
+      i „kopiuj treść” dają dokładnie to, co zapis do WP. */
+  function shortcodeAttr(value: string): string {
+    return String(value ?? '').replace(/<[^>]*>/g, '').replace(/&quot;/g, '”').replace(/"/g, '”')
+      .replace(/\[/g, '(').replace(/\]/g, ')').replace(/\s+/g, ' ').trim();
+  }
+  function expertShortcode(expert: any): string {
+    const link = /^https:\/\//i.test(expert.link ?? '') ? String(expert.link).trim() : '';
+    const attrs: [string, string][] = [
+      ['text', shortcodeAttr(expert.quote ?? '')],
+      ['author_name', shortcodeAttr(expert.expert ?? '')],
+      ['author_pos', shortcodeAttr([expert.role, 'ICEA'].filter(Boolean).join(', '))],
+      ['author_link', link],
+      ['author_link_nofollow', link ? 'false' : ''],
+      ['author_img', /^https:\/\//i.test(expert.photo ?? '') ? String(expert.photo).trim() : ''],
+    ];
+    return `[k_quote_box ${attrs.filter(([, value]) => value).map(([key, value]) => `${key}="${value}"`).join(' ')}]`;
+  }
+
+  /** Podgląd karty cytatu w edytorze (styled=true to archiwalny format
+      zapisu sprzed shortcodów – zostaje dla starych wpisów). */
   function expertBlockquote(expert: any, styled = false) {
     const s = (key: keyof typeof EXPERT_STYLE) => (styled ? ` style="${EXPERT_STYLE[key]}"` : '');
     const name = String(expert.expert ?? '').trim();
@@ -1953,7 +2028,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   function sectionCopyText(section: Section) {
     const expert = activeExpert(job);
     const base = section.text_after ?? '';
-    return expert && expert.slot === section.slot ? `${base}\n${expertBlockquote(expert, true)}` : base;
+    return expert && expert.slot === section.slot ? `${base}\n${expertShortcode(expert)}` : base;
   }
 
   function renderSectionBody(host: HTMLElement, section: Section, mode: string, onDirty?: () => void) {
@@ -2556,7 +2631,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       basis.hidden = !expert.basis;
       if (expert.basis) basis.textContent = `podstawa: ${expert.basis}`;
       actions.append(quote, meta, basis,
-        button('kopiuj cytat', async () => { await navigator.clipboard.writeText(expertBlockquote(expert, true)); }),
+        button('kopiuj cytat', async () => { await navigator.clipboard.writeText(expertShortcode(expert)); }),
         button('wygeneruj ponownie', () => callExpert('POST', expertChoice())),
         button('odrzuć', () => callExpert('PATCH', { rejected: true })));
       return;
@@ -4785,6 +4860,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     background: transparent; color: var(--ink-muted); font-size: .72rem; cursor: pointer; }
   .ed-expert-secondary:hover { color: var(--ink); border-color: var(--accent-blue); }
   .ed-doc-expert { margin-top: 14px; }
+  /* Etykieta shortcode'u bez własnego podglądu (np. karta „Zobacz również”). */
+  .ed-shortcode { display: inline-block; padding: 1px 8px; border: 1px dashed var(--hairline);
+    border-radius: 6px; font-size: .78rem; color: var(--ink-faint); background: var(--surface-2, transparent); }
 
   /* ----- edycja inline propozycji ----- */
   .ed-editable { outline: none; border-radius: 2px; padding: 4px 6px; margin: -4px -6px;

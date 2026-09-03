@@ -163,14 +163,13 @@ test('kie.ai: zerwane połączenie nie ubija zlecenia', async () => {
 
 /* ---------- blok w treści ---------- */
 
-test('figure: podpis opcjonalny, znaczniki w alt nie przechodzą', () => {
-  const withCaption = figureHtml({ src: 'https://cdn.example/a.png', alt: 'Schemat "RAG" <b>groźny</b>', caption: 'Podpis' });
-  assert.match(withCaption, /<figure style="[^"]+">/);
-  // Znaczniki i cudzysłowy wypadają, treść zostaje – alt to tekst dla czytnika.
-  assert.match(withCaption, /alt="Schemat RAG groźny"/);
-  assert.match(withCaption, /<figcaption[^>]*>Podpis<\/figcaption>/);
+test('figure: shortcode [k_img] motywu, podpis w name, znaczniki w alt nie przechodzą', () => {
+  const withCaption = figureHtml({ src: 'https://cdn.example/a.png', alt: 'Schemat "RAG" <b>groźny</b>', caption: 'Podpis [1]' });
+  assert.equal(withCaption, '[k_img src="https://cdn.example/a.png" alt="Schemat ”RAG” groźny" name="Podpis (1)"]');
   const bare = figureHtml({ src: 'https://cdn.example/a.png', alt: '', caption: '' });
-  assert.doesNotMatch(bare, /figcaption/);
+  assert.equal(bare, '[k_img src="https://cdn.example/a.png" alt=""]');
+  // Adres spoza https nie daje bloku – insert ma to odrzucić.
+  assert.equal(figureHtml({ src: 'http://cdn.example/a.png', alt: 'a', caption: '' }), '');
 });
 
 /* ---------- biblioteka mediów ---------- */

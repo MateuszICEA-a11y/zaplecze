@@ -18,7 +18,7 @@ import {
   mapAcfSources,
   SIGNATURE_WINDOW_S,
 } from './cw-api.js';
-import { avatarUrl, buildExpertPrompt, expertBlockquote, generateExpertQuote, hasResearch, isPersonName, researchBlock, wpAuthors } from './cw-expert.js';
+import { avatarUrl, buildExpertPrompt, expertBlockquote, expertShortcode, generateExpertQuote, hasResearch, isPersonName, researchBlock, shortcodeAttr, wpAuthors } from './cw-expert.js';
 
 const SECRET = 'testowy-sekret-callbacku';
 
@@ -721,6 +721,30 @@ test('expertBlockquote: zdjęcie zastępuje inicjały, gdy konto WP je ma', () =
   });
   assert.match(quote, /<img src="https:\/\/secure\.gravatar\.com\/avatar\/abc\?s=112&d=404" alt="Jan Bochen"/);
   assert.equal(quote.includes('>JB<'), false);
+});
+
+test('expertShortcode: cytat jako [k_quote_box] motywu, link autora dofollow', () => {
+  const short = expertShortcode({
+    quote: 'Model "widzi" kontekst [RAG] <b>lepiej</b>.', expert: 'Jan Bochen', role: 'specjalista SEO',
+    photo: 'https://www.grupa-icea.pl/foto/jan.jpg', link: 'https://www.grupa-icea.pl/autor/jan-bochen/',
+  });
+  assert.match(short, /^\[k_quote_box text="Model ”widzi” kontekst \(RAG\) lepiej\." /);
+  assert.match(short, / author_name="Jan Bochen" author_pos="specjalista SEO, ICEA" /);
+  assert.match(short, / author_link="https:\/\/www\.grupa-icea\.pl\/autor\/jan-bochen\/" author_link_nofollow="false" /);
+  assert.match(short, / author_img="https:\/\/www\.grupa-icea\.pl\/foto\/jan\.jpg"\]$/);
+  // Bez linku i zdjęcia atrybuty nie idą wcale (motyw nie dostaje pustych).
+  const bare = expertShortcode({ quote: 'Q', expert: 'Jan Bochen', role: '' });
+  assert.equal(bare, '[k_quote_box text="Q" author_name="Jan Bochen" author_pos="ICEA"]');
+  // Shortcode to tekst – sanityzacja zapisu go nie rusza.
+  assert.equal(sanitizeSectionHtml(short), short);
+  assert.equal(shortcodeAttr('  a  "b"  '), 'a ”b”');
+});
+
+test('sanitizeSectionHtml: klasy motywu k-table i k-ol-h3 zostają, inne wypadają', () => {
+  const html = '<div class="k-table"><table><tr><td>1</td></tr></table></div><ol class="k-ol-h3 x"><li>a</li></ol><div class="hero">b</div>';
+  const clean = sanitizeSectionHtml(html);
+  assert.match(clean, /^<div class="k-table"><table>/);
+  assert.match(clean, /<ol class="k-ol-h3"><li>a<\/li><\/ol><div>b<\/div>$/);
 });
 
 test('avatarUrl: Gravatar ma oddać 404 zamiast zastępczej ikonki', () => {
