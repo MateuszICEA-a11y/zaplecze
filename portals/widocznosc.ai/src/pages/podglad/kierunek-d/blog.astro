@@ -1,7 +1,6 @@
 ---
 /**
- * Podgląd kierunku D – magazyn bloga.
- * Wpisy pobierane z realnej kolekcji `blog`, nie z atrap.
+ * Podgląd kierunku D – magazyn bloga. Wpisy z realnej kolekcji `blog`.
  */
 import KierunekD from '../../../layouts/KierunekD.astro';
 import { getCollection } from 'astro:content';
@@ -17,7 +16,6 @@ const [lead, ...rest] = posts;
 const fmt = (d: Date) =>
   d.toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric' });
 
-// Liczebność per filar – w chromie, jak licznik w narzędziu.
 const counts = Object.entries(PILLAR_LABELS).map(([key, label]) => ({
   label,
   n: posts.filter((p) => p.data.pillar === key).length,
@@ -25,60 +23,62 @@ const counts = Object.entries(PILLAR_LABELS).map(([key, label]) => ({
 ---
 
 <KierunekD title="Podgląd D: magazyn – widocznosc.ai" current="blog">
-  <section class="kd-wrap" style="padding-top:72px">
-    <span class="kd-eyebrow">Baza wiedzy · {posts.length} wpisów</span>
-    <h1 class="kd-d2" style="margin-top:20px">Baza wiedzy o <em>AI</em></h1>
-    <p class="kd-lead" style="margin-top:20px">
-      Poradniki, analizy i&nbsp;case studies o&nbsp;ChatGPT, Claude, Gemini, Perplexity,
-      automatyzacji, SEO i&nbsp;widoczności marek w&nbsp;wyszukiwarkach AI.
-    </p>
-
-    <div class="kd-filters">
-      <span class="is-on">wszystkie <i>{posts.length}</i></span>
-      {counts.map((c) => (
-        <span>{c.label} <i>{c.n}</i></span>
-      ))}
+  <section class="kd-section">
+    <div class="kd-wrap">
+      <span class="kd-label">Baza wiedzy · {posts.length} wpisów</span>
+      <h1 class="kd-text-title" style="margin-top:16px">Baza wiedzy o <em>AI</em></h1>
+      <p class="kd-lead" style="margin-top:24px">
+        Poradniki, analizy i&nbsp;case studies o&nbsp;ChatGPT, Claude, Gemini, Perplexity,
+        automatyzacji, SEO i&nbsp;widoczności marek w&nbsp;wyszukiwarkach AI.
+      </p>
+      <div class="kd-tags" style="margin-top:32px">
+        <span class="is-on">wszystkie<i>{posts.length}</i></span>
+        {counts.map((c) => <span>{c.label}<i>{c.n}</i></span>)}
+      </div>
     </div>
   </section>
 
   {
     lead && (
-      <section class="kd-wrap kd-section" style="margin-top:64px">
-        <a class="kd-card kd-lead-post" href={`${base}/wpis/`}>
-          <span class="kd-micro">
-            wyróżnione · {PILLAR_LABELS[lead.data.pillar]} · {fmt(lead.data.date)} ·{' '}
-            {lead.data.readTime}
-          </span>
-          <h2 class="kd-title">{lead.data.title}</h2>
-          <p class="kd-lead">{lead.data.description}</p>
-          <span class="kd-micro kd-author">{lead.data.author.name} · {lead.data.author.role}</span>
-        </a>
+      <section class="kd-section">
+        <div class="kd-wrap">
+          <a class="kd-card is-hot" href={`${base}/wpis/`}>
+            <span class="kd-tag">
+              wyróżnione · {PILLAR_LABELS[lead.data.pillar]} · {fmt(lead.data.date)} · {lead.data.readTime}
+            </span>
+            <h2 class="kd-text-heading" style="margin-top:12px">{lead.data.title}</h2>
+            <p class="kd-body" style="margin-top:12px;max-width:64ch">{lead.data.description}</p>
+            <span class="kd-micro">{lead.data.author.name} · {lead.data.author.role}</span>
+          </a>
+        </div>
       </section>
     )
   }
 
-  <section class="kd-wrap kd-section" style="margin-top:64px">
-    <div class="kd-section-head">
-      <span class="kd-eyebrow">Wszystkie wpisy</span>
-      <h2 class="kd-title">Najnowsze</h2>
+  <section class="kd-section">
+    <div class="kd-wrap">
+      <div class="kd-section-head">
+        <span class="kd-label">Wszystkie wpisy</span>
+        <h2 class="kd-text-title">Najnowsze</h2>
+      </div>
+      <div class="kd-grid-3">
+        {
+          rest.slice(0, 12).map((p) => (
+            <a class="kd-card" href={`${base}/wpis/`}>
+              <span class="kd-tag">{PILLAR_LABELS[p.data.pillar]}</span>
+              <h3 class="kd-text-sub" style="margin-top:10px">{p.data.title}</h3>
+              <p class="kd-body-sm kd-clamp" style="margin-top:10px">{p.data.description}</p>
+              <span class="kd-micro" style="margin-top:auto;padding-top:20px">
+                {fmt(p.data.date)} · {p.data.readTime} · {p.data.author.name}
+              </span>
+            </a>
+          ))
+        }
+      </div>
+      <p class="kd-meta" style="margin-top:16px">
+        {posts.length} wpisów · sześć filarów · sortowanie po dacie publikacji
+      </p>
     </div>
-    <div class="kd-posts">
-      {
-        rest.slice(0, 12).map((p) => (
-          <a class="kd-card kd-post" href={`${base}/wpis/`}>
-            <span class="kd-micro">
-              {PILLAR_LABELS[p.data.pillar]} · {fmt(p.data.date)} · {p.data.readTime}
-            </span>
-            <h3>{p.data.title}</h3>
-            <p>{p.data.description}</p>
-            <span class="kd-micro kd-author">{p.data.author.name}</span>
-          </a>
-        ))
-      }
-    </div>
-    <p class="kd-note" style="margin-top:24px">
-      {posts.length} wpisów · sześć filarów · sortowanie po dacie publikacji
-    </p>
   </section>
 
   <fragment slot="machine">{`# Baza wiedzy o AI – widocznosc.ai
@@ -94,9 +94,7 @@ ${posts
   .slice(0, 20)
   .map(
     (p) =>
-      `- [${p.data.title}](/blog/${p.id}/) – ${PILLAR_LABELS[p.data.pillar]}, ${fmt(
-        p.data.date,
-      )}, ${p.data.readTime}. ${p.data.description}`,
+      `- [${p.data.title}](/blog/${p.id}/) – ${PILLAR_LABELS[p.data.pillar]}, ${fmt(p.data.date)}, ${p.data.readTime}. ${p.data.description}`,
   )
   .join('\n')}
 
@@ -105,71 +103,10 @@ widocznosc.ai by ICEA S.A.
 </KierunekD>
 
 <style>
-  .kd-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 32px;
-  }
-  .kd-filters span {
-    font-family: var(--kd-mono);
-    font-size: 12px;
-    line-height: 16px;
-    color: var(--kd-chrome);
-    border: 1px solid var(--kd-line);
-    border-radius: 4px;
-    padding: 7px 12px;
-  }
-  .kd-filters span.is-on {
-    color: var(--kd-ink);
-    border-color: var(--kd-accent);
-  }
-  .kd-filters i {
-    font-style: normal;
-    color: var(--kd-mute);
-    margin-left: 6px;
-  }
-
-  .kd-lead-post {
-    padding: 32px;
-  }
-  .kd-lead-post .kd-title {
-    margin: 16px 0 12px;
-  }
-  .kd-author {
-    display: block;
-    margin-top: 16px;
-  }
-
-  .kd-posts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-  .kd-post h3 {
-    font-size: 20px;
-    line-height: 26px;
-    letter-spacing: -0.4px;
-    margin: 12px 0 8px;
-  }
-  .kd-post p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 22px;
-    color: var(--kd-body);
-  }
-
-  @media (max-width: 1023px) {
-    .kd-posts {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (max-width: 767px) {
-    .kd-posts {
-      grid-template-columns: 1fr;
-    }
-    .kd-lead-post {
-      padding: 20px;
-    }
+  .kd-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 </style>

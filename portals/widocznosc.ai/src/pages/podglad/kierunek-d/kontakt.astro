@@ -1,7 +1,6 @@
 ---
 /**
- * Podgląd kierunku D – kontakt.
- * Formularz leadowy w systemie D; pola jak na produkcyjnym /kontakt/.
+ * Podgląd kierunku D – kontakt. Pola jak na produkcyjnym /kontakt/.
  */
 import KierunekD from '../../../layouts/KierunekD.astro';
 
@@ -13,50 +12,47 @@ const types = [
 ---
 
 <KierunekD title="Podgląd D: kontakt – widocznosc.ai" current="kontakt">
-  <section class="kd-wrap kd-contact" style="padding-top:72px">
-    <div>
-      <span class="kd-eyebrow">Kontakt</span>
-      <h1 class="kd-d2" style="margin-top:20px">Porozmawiajmy o <em>cytowaniach</em>.</h1>
-      <p class="kd-lead" style="margin-top:20px">
-        Odpowiadamy w jeden dzień roboczy. Jeśli wolisz zacząć od liczb, uruchom
-        najpierw bezpłatny test widoczności – rozmowa będzie krótsza.
-      </p>
+  <section class="kd-section">
+    <div class="kd-wrap kd-contact">
+      <div>
+        <span class="kd-caption">Kontakt</span>
+        <h1 class="kd-text-title" style="margin-top:16px">Porozmawiajmy o <em>cytowaniach</em>.</h1>
+        <p class="kd-lead" style="margin-top:24px">
+          Odpowiadamy w jeden dzień roboczy. Jeśli wolisz zacząć od liczb, uruchom
+          najpierw bezpłatny test widoczności – rozmowa będzie krótsza.
+        </p>
+        <dl class="kd-stats" style="margin-top:48px">
+          <div><dd class="kd-text-num-sm">ICEA S.A.</dd><dt class="kd-label">Firma</dt></div>
+          <div><dd class="kd-text-num-sm">Poznań</dd><dt class="kd-label">Szyperska 14</dt></div>
+          <div><dd class="kd-text-num-sm">1 dzień</dd><dt class="kd-label">Czas odpowiedzi</dt></div>
+        </dl>
+      </div>
 
-      <dl class="kd-contact-meta">
-        <div><dt>Firma</dt><dd>ICEA S.A.</dd></div>
-        <div><dt>Adres</dt><dd>Szyperska 14, Poznań</dd></div>
-        <div><dt>Odpowiedź</dt><dd>1 dzień roboczy</dd></div>
-      </dl>
+      <form class="kd-card kd-contact-form">
+        <label>
+          <span class="kd-label">rodzaj sprawy</span>
+          <select class="kd-input">{types.map((t) => <option value={t.v}>{t.l}</option>)}</select>
+        </label>
+        <label>
+          <span class="kd-label">imię i nazwisko</span>
+          <input class="kd-input" type="text" placeholder="Jan Kowalski" />
+        </label>
+        <label>
+          <span class="kd-label">adres e-mail</span>
+          <input class="kd-input" type="email" placeholder="jan@twojafirma.pl" />
+        </label>
+        <label>
+          <span class="kd-label">domena</span>
+          <input class="kd-input" type="text" placeholder="twojafirma.pl" spellcheck="false" />
+        </label>
+        <label>
+          <span class="kd-label">wiadomość</span>
+          <textarea class="kd-input" rows="4" placeholder="Czego chcesz się dowiedzieć?"></textarea>
+        </label>
+        <button type="button" class="kd-btn kd-btn-block">Wyślij wiadomość</button>
+        <span class="kd-micro">Podgląd – formularz nie wysyła zgłoszeń.</span>
+      </form>
     </div>
-
-    <form class="kd-card kd-contact-form">
-      <label>
-        <span class="kd-micro">rodzaj sprawy</span>
-        <select>
-          {types.map((t) => <option value={t.v}>{t.l}</option>)}
-        </select>
-      </label>
-      <label>
-        <span class="kd-micro">imię i nazwisko</span>
-        <input type="text" placeholder="Jan Kowalski" />
-      </label>
-      <label>
-        <span class="kd-micro">adres e-mail</span>
-        <input type="email" placeholder="jan@twojafirma.pl" />
-      </label>
-      <label>
-        <span class="kd-micro">domena</span>
-        <input type="text" placeholder="twojafirma.pl" spellcheck="false" />
-      </label>
-      <label>
-        <span class="kd-micro">wiadomość</span>
-        <textarea rows="4" placeholder="Czego chcesz się dowiedzieć?"></textarea>
-      </label>
-      <button type="button" class="kd-btn">Wyślij wiadomość</button>
-      <p class="kd-micro">
-        Podgląd – formularz nie wysyła zgłoszeń.
-      </p>
-    </form>
   </section>
 
   <fragment slot="machine">{`# Kontakt – widocznosc.ai
@@ -80,67 +76,28 @@ widocznosc.ai by ICEA S.A.
 <style>
   .kd-contact {
     display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 48px;
+    grid-template-columns: 1fr 400px;
+    gap: 64px;
     align-items: start;
   }
-  .kd-contact-meta {
-    margin: 40px 0 0;
-    border-top: 1px solid var(--kd-line);
-    font-family: var(--kd-mono);
-    font-size: 12px;
-    line-height: 16px;
-  }
-  .kd-contact-meta > div {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--kd-line);
-  }
-  .kd-contact-meta dt {
-    color: var(--kd-mute);
-  }
-  .kd-contact-meta dd {
-    margin: 0;
-    color: var(--kd-body);
-  }
-
   .kd-contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    padding: 24px;
+    gap: 16px;
   }
   .kd-contact-form label {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
   }
-  .kd-contact-form input,
-  .kd-contact-form select,
-  .kd-contact-form textarea {
-    background: var(--kd-canvas);
-    border: 1px solid var(--kd-line);
-    border-radius: 4px;
-    color: var(--kd-ink);
-    padding: 11px 12px;
-    font-size: 15px;
-    font-family: inherit;
+  .kd-contact-form .kd-input {
+    width: 100%;
   }
-  .kd-contact-form input::placeholder,
-  .kd-contact-form textarea::placeholder {
-    color: var(--kd-mute);
+  .kd-contact-form .kd-micro {
+    margin-top: 0;
   }
-  .kd-contact-form :is(input, select, textarea):focus-visible {
-    outline: none;
-    border-color: var(--kd-accent);
-  }
-
   @media (max-width: 1023px) {
     .kd-contact {
       grid-template-columns: 1fr;
-      gap: 32px;
+      gap: 40px;
     }
   }
 </style>

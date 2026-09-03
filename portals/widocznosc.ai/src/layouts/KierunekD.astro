@@ -2,9 +2,9 @@
 /**
  * Layout podglądu kierunku D „Instrument”.
  *
- * Daje nawigację, stopkę i przełącznik człowiek/maszyna. Treść widoku
- * maszynowego strona przekazuje w slocie `machine` – to ma być markdown
- * odpowiadający temu, co widzi człowiek, a nie osobny tekst marketingowy.
+ * Nagłówek 52 px (jak we wzorcu), stopka w sansie 13 px, przełącznik
+ * człowiek/maszyna. Treść widoku maszynowego strona przekazuje w slocie
+ * `machine` – markdown odpowiadający temu, co widzi człowiek.
  *
  * Wszystkie strony podglądu są noindex i wykluczone z sitemapy
  * (filtr w astro.config.mjs).
@@ -12,13 +12,14 @@
 import '@fontsource-variable/fraunces';
 import '@fontsource-variable/fraunces/wght-italic.css';
 import '@fontsource/geist-mono/400.css';
+import '@fontsource/geist-mono/700.css';
 import '../styles/kierunek-d.css';
 import Layout from './Layout.astro';
 
 interface Props {
   title: string;
   description?: string;
-  /** Ścieżka podglądu do podświetlenia w nawigacji */
+  /** Klucz podstrony do podświetlenia w nawigacji */
   current?: string;
 }
 
@@ -36,17 +37,19 @@ const nav = [
 <Layout title={title} description={description} noindex={true}>
   <div class="kd">
     <header class="kd-nav">
-      <a class="kd-brand" href={`${base}/`}>widocznosc.ai <span>by ICEA</span></a>
-      <nav class="kd-nav-links">
-        {
-          nav.map((n) => (
-            <a href={n.href} aria-current={current === n.key ? 'page' : undefined}>
-              {n.label}
-            </a>
-          ))
-        }
-      </nav>
-      <a class="kd-btn kd-btn-sm" href={`${base}/narzedzia/`}>Sprawdź markę</a>
+      <div class="kd-nav-inner">
+        <a class="kd-brand" href={`${base}/`}>widocznosc.ai <span>by ICEA</span></a>
+        <nav class="kd-nav-links">
+          {
+            nav.map((n) => (
+              <a href={n.href} aria-current={current === n.key ? 'page' : undefined}>
+                {n.label}
+              </a>
+            ))
+          }
+        </nav>
+        <a class="kd-btn kd-btn-nav" href={`${base}/narzedzia/`}>Sprawdź markę</a>
+      </div>
     </header>
 
     <div class="kd-human">
@@ -56,28 +59,30 @@ const nav = [
     <footer class="kd-footer kd-human">
       <div class="kd-footer-grid">
         <div>
-          <h2>widocznosc.ai</h2>
-          <p>
-            Pozycjonowanie marek w wyszukiwarkach AI.<br />
-            Marka ICEA S.A., Szyperska 14, Poznań.
-          </p>
+          <h2 class="kd-text-footer">widocznosc.ai</h2>
+          <p>Pozycjonowanie marek w wyszukiwarkach AI.</p>
+          <p>Marka ICEA S.A., Szyperska 14, Poznań.</p>
         </div>
         <div>
-          <h2>Usługi</h2>
+          <h2 class="kd-text-footer">Usługi</h2>
           <a href={`${base}/oferta/`}>Pozycjonowanie pod LLM</a>
           <a href={`${base}/oferta/`}>Audyt widoczności w AI</a>
           <a href={`${base}/oferta/`}>Monitoring cytowań</a>
         </div>
         <div>
-          <h2>Zasoby</h2>
+          <h2 class="kd-text-footer">Zasoby</h2>
           <a href={`${base}/blog/`}>Magazyn</a>
           <a href={`${base}/narzedzia/`}>Narzędzia</a>
         </div>
         <div>
-          <h2>Kontakt</h2>
+          <h2 class="kd-text-footer">Kontakt</h2>
           <a href={`${base}/kontakt/`}>Formularz</a>
           <a href="https://www.linkedin.com/company/icea-group">LinkedIn</a>
         </div>
+      </div>
+      <div class="kd-footer-bottom">
+        <span class="kd-caption">© 2026 widocznosc.ai · dla LLM-ów: /llms.txt</span>
+        <span class="kd-caption">część grupy iCEA</span>
       </div>
     </footer>
 

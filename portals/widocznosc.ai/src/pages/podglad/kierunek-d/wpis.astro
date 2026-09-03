@@ -1,8 +1,7 @@
 ---
 /**
- * Podgląd kierunku D – strona wpisu.
- * Bierze najnowszy realny artykuł z kolekcji i renderuje jego pełną treść,
- * żeby ocenić typografię tekstu długiego, a nie atrapę.
+ * Podgląd kierunku D – strona wpisu. Najnowszy realny artykuł z kolekcji,
+ * wyrenderowany w całości – ocena typografii tekstu długiego.
  */
 import KierunekD from '../../../layouts/KierunekD.astro';
 import { getCollection, render } from 'astro:content';
@@ -16,7 +15,9 @@ const posts = (await getCollection('blog')).sort(
 const post = posts[0];
 const { Content, headings } = await render(post);
 
-const related = posts.filter((p) => p.data.pillar === post.data.pillar && p.id !== post.id).slice(0, 3);
+const related = posts
+  .filter((p) => p.data.pillar === post.data.pillar && p.id !== post.id)
+  .slice(0, 3);
 
 const fmt = (d: Date) =>
   d.toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric' });
@@ -27,14 +28,11 @@ const toc = headings.filter((h) => h.depth === 2);
 <KierunekD title={`Podgląd D: wpis – ${post.data.title}`} current="blog">
   <article>
     <header class="kd-article kd-post-head">
-      <p class="kd-eyebrow">
-        <a href={`${base}/blog/`}>magazyn</a> / {PILLAR_LABELS[post.data.pillar]}
-      </p>
-      <h1 class="kd-post-title">{post.data.title}</h1>
-      <p class="kd-lead">{post.data.subtitle}</p>
+      <p class="kd-tag"><a href={`${base}/blog/`}>magazyn</a> / {PILLAR_LABELS[post.data.pillar]}</p>
+      <h1 class="kd-text-title" style="margin-top:16px">{post.data.title}</h1>
+      <p class="kd-lead" style="margin-top:20px">{post.data.subtitle}</p>
       <p class="kd-micro kd-byline">
-        {post.data.author.name} · {post.data.author.role} · {fmt(post.data.date)} ·
-        {post.data.readTime}
+        {post.data.author.name} · {post.data.author.role} · {fmt(post.data.date)} · {post.data.readTime}
         {post.data.updated && <> · aktualizacja {fmt(post.data.updated)}</>}
       </p>
     </header>
@@ -42,11 +40,11 @@ const toc = headings.filter((h) => h.depth === 2);
     {
       toc.length > 0 && (
         <nav class="kd-article kd-toc" aria-label="Spis treści">
-          <span class="kd-micro">w tym wpisie</span>
+          <span class="kd-label">W tym wpisie</span>
           <ol>
             {toc.map((h, i) => (
               <li>
-                <span>{String(i + 1).padStart(2, '0')}</span>
+                <span class="kd-micro">{String(i + 1).padStart(2, '0')}</span>
                 <a href={`#${h.slug}`}>{h.text}</a>
               </li>
             ))}
@@ -60,25 +58,32 @@ const toc = headings.filter((h) => h.depth === 2);
     </div>
 
     <aside class="kd-article kd-cta">
-      <h2 class="kd-sub">Sprawdź, czy AI poleca Twoją markę.</h2>
-      <p class="kd-micro">bezpłatnie · ok. 60 s · bez rejestracji</p>
-      <a class="kd-btn" href={`${base}/narzedzia/`}>Sprawdź widoczność marki</a>
+      <div class="kd-strip">
+        <div>
+          <span class="kd-tag">Narzędzie</span>
+          <h2 class="kd-text-sub">Sprawdź, czy AI poleca Twoją markę.</h2>
+          <span class="kd-micro" style="display:block;margin-top:6px">bezpłatnie · ok. 60 s · bez rejestracji</span>
+        </div>
+        <a class="kd-btn" href={`${base}/narzedzia/`}>Uruchom test</a>
+      </div>
     </aside>
 
     {
       related.length > 0 && (
-        <section class="kd-wrap kd-section">
-          <div class="kd-section-head">
-            <span class="kd-eyebrow">Z tego samego filaru</span>
-            <h2 class="kd-title">{PILLAR_LABELS[post.data.pillar]}</h2>
-          </div>
-          <div class="kd-grid-3">
-            {related.map((p) => (
-              <a class="kd-card" href={`${base}/wpis/`}>
-                <span class="kd-micro">{fmt(p.data.date)} · {p.data.readTime}</span>
-                <h3 class="kd-rel-title">{p.data.title}</h3>
-              </a>
-            ))}
+        <section class="kd-section">
+          <div class="kd-wrap">
+            <div class="kd-section-head">
+              <span class="kd-label">Z tego samego filaru</span>
+              <h2 class="kd-text-title">{PILLAR_LABELS[post.data.pillar]}</h2>
+            </div>
+            <div class="kd-grid-3">
+              {related.map((p) => (
+                <a class="kd-card" href={`${base}/wpis/`}>
+                  <span class="kd-tag">{fmt(p.data.date)} · {p.data.readTime}</span>
+                  <h3 class="kd-text-sub" style="margin-top:10px">{p.data.title}</h3>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
       )
@@ -106,23 +111,18 @@ ${post.body}
 
 <style>
   .kd-post-head {
-    padding-top: 72px;
+    padding-top: 96px;
   }
-  .kd-post-head .kd-eyebrow a {
-    color: var(--kd-chrome);
-  }
-  .kd-post-title {
-    font-size: 52px;
-    line-height: 54px;
-    letter-spacing: -1.4px;
-    margin: 20px 0 20px;
+  .kd-post-head .kd-tag a {
+    color: inherit;
+    text-decoration: none;
   }
   .kd-byline {
+    display: block;
     margin-top: 24px;
     padding-top: 16px;
     border-top: 1px solid var(--kd-line);
   }
-
   .kd-toc {
     margin-top: 48px;
   }
@@ -138,46 +138,30 @@ ${post.body}
     gap: 8px;
     padding: 9px 0;
     border-bottom: 1px solid var(--kd-line);
+  }
+  .kd-toc a {
     font-family: var(--kd-mono);
     font-size: 12px;
     line-height: 18px;
-  }
-  .kd-toc span {
-    color: var(--kd-mute);
-  }
-  .kd-toc a {
     color: var(--kd-chrome);
     text-decoration: none;
   }
   .kd-toc a:hover {
     color: var(--kd-ink);
   }
-
   .kd-article-body {
     margin-top: 56px;
   }
-
   .kd-cta {
     margin-top: 72px;
-    border-top: 1px solid var(--kd-line);
-    padding-top: 32px;
   }
-  .kd-cta .kd-micro {
-    margin: 8px 0 20px;
-  }
-
-  .kd-rel-title {
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: -0.3px;
-    margin-top: 10px;
-  }
-
   @media (max-width: 767px) {
-    .kd-post-title {
-      font-size: 32px;
-      line-height: 36px;
-      letter-spacing: -0.9px;
+    .kd-post-head {
+      padding-top: 56px;
+    }
+    .kd-strip {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 </style>

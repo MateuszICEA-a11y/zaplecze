@@ -2,6 +2,8 @@
 /**
  * Podgląd kierunku D – strona główna.
  * Treść 1:1 z produkcji: Hero, HowItWorks, Audits, ProofData, Industries, FAQ.
+ * Karty narzędzi odwzorowują strukturę karty cennika wzorca:
+ * tytuł → pasek kropek → mono → duża liczba → mono → lista na hairline → przycisk.
  */
 import KierunekD from '../../../layouts/KierunekD.astro';
 import HalftoneSentence from '../../../components/HalftoneSentence.astro';
@@ -9,7 +11,6 @@ import { homepageFaq } from '../../../data/homepageFaq';
 
 const base = '/podglad/kierunek-d';
 
-// Kroki z HowItWorks.astro
 const steps = [
   {
     n: '01',
@@ -28,14 +29,37 @@ const steps = [
   },
 ];
 
-// Karty z Audits.astro
 const audits = [
-  { n: '01', meta: 'bezpłatnie · ok. 60 s', t: 'Widoczność marki w AI' },
-  { n: '02', meta: 'bezpłatnie · ok. 30 s', t: 'Cytowalność strony' },
-  { n: '03', meta: 'bezpłatnie · natychmiast', t: 'Dostęp botów AI' },
+  {
+    t: 'Widoczność marki w AI',
+    dots: 20,
+    micro: '4 silniki · świeże sesje',
+    num: '60',
+    unit: 's',
+    meta: 'bezpłatnie · bez rejestracji',
+    list: ['ChatGPT, Claude, Gemini, Perplexity', 'Sentyment i lista halucynacji', 'Konkurenci polecani zamiast Ciebie'],
+    hot: true,
+  },
+  {
+    t: 'Cytowalność strony',
+    dots: 10,
+    micro: 'jeden adres · wynik 0–100',
+    num: '30',
+    unit: 's',
+    meta: 'bezpłatnie · bez rejestracji',
+    list: ['Pięć priorytetowych zmian', 'Według badań Princeton', 'Analiza 1,2 mln cytowań ChatGPT'],
+  },
+  {
+    t: 'Dostęp botów AI',
+    dots: 2,
+    micro: 'robots.txt i WAF',
+    num: '<1',
+    unit: 's',
+    meta: 'bezpłatnie · natychmiast',
+    list: ['GPTBot, ClaudeBot, PerplexityBot', 'Google-Extended i 9 innych botów', 'Dostęp albo blokada per bot'],
+  },
 ];
 
-// Liczby z ProofData.astro
 const rows = [
   {
     num: '+40',
@@ -71,40 +95,23 @@ const rows = [
   },
 ];
 
-// Branże z Industries.astro
 const industries = [
-  {
-    name: 'B2B SaaS i Tech',
-    desc: 'Decydent pyta ChatGPT o „najlepsze narzędzie X dla zespołu Y”. Chcesz być w tej odpowiedzi.',
-  },
-  {
-    name: 'Finanse i Prawo',
-    desc: 'AI bywa pierwszym doradcą klienta. Wzmianka w odpowiedzi to rozmowa z kimś, kto już wie, czego szuka.',
-  },
-  {
-    name: 'Medycyna i Zdrowie',
-    desc: 'Pacjenci pytają AI o objawy, leki i miejsca leczenia, zanim otworzą klasyczną wyszukiwarkę.',
-  },
-  {
-    name: 'E-commerce i DTC',
-    desc: 'Pytania porównawcze: „X vs Y”, „tańszy zamiennik Z”. Użytkownik jest w końcowej fazie wyboru.',
-  },
-  {
-    name: 'Edukacja i Szkolenia',
-    desc: 'Kursanci pytają AI o „najlepszy kurs X” miesiące przed zapisem. Długa droga, wiele punktów styku.',
-  },
-  {
-    name: 'Usługi B2B',
-    desc: 'Konsulting, agencje, software house’y. Klient pyta AI o polecanych dostawców przed pierwszym mailem.',
-  },
+  { name: 'B2B SaaS i Tech', desc: 'Decydent pyta ChatGPT o „najlepsze narzędzie X dla zespołu Y”. Chcesz być w tej odpowiedzi.' },
+  { name: 'Finanse i Prawo', desc: 'AI bywa pierwszym doradcą klienta. Wzmianka w odpowiedzi to rozmowa z kimś, kto już wie, czego szuka.' },
+  { name: 'Medycyna i Zdrowie', desc: 'Pacjenci pytają AI o objawy, leki i miejsca leczenia, zanim otworzą klasyczną wyszukiwarkę.' },
+  { name: 'E-commerce i DTC', desc: 'Pytania porównawcze: „X vs Y”, „tańszy zamiennik Z”. Użytkownik jest w końcowej fazie wyboru.' },
+  { name: 'Edukacja i Szkolenia', desc: 'Kursanci pytają AI o „najlepszy kurs X” miesiące przed zapisem. Długa droga, wiele punktów styku.' },
+  { name: 'Usługi B2B', desc: 'Konsulting, agencje, software house’y. Klient pyta AI o polecanych dostawców przed pierwszym mailem.' },
 ];
+
+const DOTS = 24;
 ---
 
 <KierunekD title="Podgląd D: strona główna – widocznosc.ai" current="home">
   <section class="kd-hero">
     <div class="kd-wrap">
-      <span class="kd-eyebrow">Pomiar widoczności marki w AI</span>
-      <h1>
+      <span class="kd-caption">Pomiar widoczności marki w AI</span>
+      <h1 class="kd-text-display">
         <span class="kd-d1">Sprawdź, czy AI</span>
         <span class="kd-d2">poleca <em>Twoją markę</em>.</span>
       </h1>
@@ -115,24 +122,13 @@ const industries = [
       </p>
 
       <form class="kd-form" action={`${base}/narzedzia/`} method="get">
-        <input type="text" name="brand" placeholder="Nazwa marki" maxlength="80" aria-label="Nazwa marki" />
-        <input
-          type="text"
-          name="domain"
-          placeholder="twojadomena.pl"
-          maxlength="200"
-          inputmode="url"
-          spellcheck="false"
-          aria-label="Domena"
-        />
-        <button type="submit" class="kd-btn">
-          Sprawdź widoczność marki <span aria-hidden="true">→</span>
-        </button>
+        <input class="kd-input" type="text" name="brand" placeholder="Nazwa marki" maxlength="80" aria-label="Nazwa marki" />
+        <input class="kd-input" type="text" name="domain" placeholder="twojadomena.pl" maxlength="200" inputmode="url" spellcheck="false" aria-label="Domena" />
+        <button type="submit" class="kd-btn">Sprawdź widoczność marki <span aria-hidden="true">→</span></button>
       </form>
 
-      <p class="kd-note">
-        <a href={`${base}/kontakt/`}>Porozmawiaj z ekspertem ICEA</a>
-        <span aria-hidden="true">·</span> widocznosc.ai by ICEA
+      <p class="kd-meta kd-hero-note">
+        <a href={`${base}/kontakt/`}>Porozmawiaj z ekspertem ICEA</a> · widocznosc.ai by ICEA
       </p>
     </div>
 
@@ -144,108 +140,125 @@ const industries = [
         alt="Ilustracja: znak widocznosc.ai rozsypuje się w chmurę kropek i scala w logotyp iCEA"
       />
       <figcaption>
-        <span>widocznosc.ai</span>
-        <span>część grupy iCEA</span>
+        <span class="kd-caption">widocznosc.ai</span>
+        <span class="kd-caption">część grupy iCEA</span>
       </figcaption>
     </figure>
   </section>
 
-  <section class="kd-section kd-wrap">
-    <div class="kd-section-head">
-      <span class="kd-eyebrow">Jak to działa</span>
-      <h2 class="kd-title">Od domeny do planu działań w trzech krokach.</h2>
-    </div>
-    <ol class="kd-steps">
-      {
-        steps.map((s) => (
-          <li class="kd-card kd-step">
-            <span class="kd-step-n">{s.n}</span>
-            <h3>{s.t}</h3>
-            <p>{s.d}</p>
-          </li>
-        ))
-      }
-    </ol>
-  </section>
-
-  <section class="kd-section kd-wrap">
-    <div class="kd-section-head">
-      <span class="kd-eyebrow">Narzędzia</span>
-      <h2 class="kd-title">Trzy testy za darmo. Jeden pełny raport.</h2>
-    </div>
-    <div class="kd-grid-3">
-      {
-        audits.map((a) => (
-          <a class="kd-card kd-step" href={`${base}/narzedzia/`}>
-            <span class="kd-step-n">{a.n}</span>
-            <h3>{a.t}</h3>
-            <p class="kd-micro">{a.meta}</p>
-          </a>
-        ))
-      }
+  <section class="kd-section">
+    <div class="kd-wrap">
+      <div class="kd-section-head">
+        <span class="kd-label">Jak to działa</span>
+        <h2 class="kd-text-title">Od domeny do planu działań w trzech krokach.</h2>
+      </div>
+      <ol class="kd-grid-3 kd-ol">
+        {
+          steps.map((s) => (
+            <li class="kd-card">
+              <span class="kd-tag">{s.n}</span>
+              <h3 class="kd-text-heading" style="margin-top:12px">{s.t}</h3>
+              <p class="kd-body-sm">{s.d}</p>
+            </li>
+          ))
+        }
+      </ol>
     </div>
   </section>
 
-  <section class="kd-section kd-wrap">
-    <div class="kd-section-head">
-      <span class="kd-eyebrow">Dowody</span>
-      <h2 class="kd-title">Dane, nie deklaracje.</h2>
-    </div>
-    <div>
-      {
-        rows.map((r) => (
-          <div class="kd-row">
-            <span class="kd-num">
-              {r.num}
-              <i>{r.unit}</i>
-            </span>
-            <span class="kd-claim">{r.claim}</span>
-            <span class="kd-src">
-              <span>{r.kind}</span>
-              <a href={r.href} target="_blank" rel="noopener noreferrer">
-                {r.source}
-              </a>
-            </span>
-          </div>
-        ))
-      }
-    </div>
-    <p class="kd-note" style="margin-top:16px">
-      cztery źródła zewnętrzne · badanie, patent, dane rynkowe, benchmark ·
-      <a href={`${base}/oferta/`}>jak to mierzymy</a>
-    </p>
-  </section>
-
-  <section class="kd-section kd-wrap">
-    <div class="kd-section-head">
-      <span class="kd-eyebrow">Branże</span>
-      <h2 class="kd-title">Gdzie pytanie do AI zastępuje pierwszy research.</h2>
-    </div>
-    <div class="kd-grid-3">
-      {
-        industries.map((i) => (
-          <div class="kd-card kd-step">
-            <h3>{i.name}</h3>
-            <p>{i.desc}</p>
-          </div>
-        ))
-      }
+  <section class="kd-section">
+    <div class="kd-wrap">
+      <div class="kd-section-head">
+        <span class="kd-label">Narzędzia</span>
+        <h2 class="kd-text-title">Trzy testy za darmo. Jeden pełny raport.</h2>
+      </div>
+      <div class="kd-grid-3">
+        {
+          audits.map((a) => (
+            <div class:list={['kd-card', a.hot && 'is-hot']}>
+              <h3 class="kd-text-heading">{a.t}</h3>
+              <div class="kd-dots" aria-hidden="true">
+                {Array.from({ length: DOTS }, (_, i) => <i class:list={[i < a.dots && 'on']} />)}
+              </div>
+              <span class="kd-micro">{a.micro}</span>
+              <div class="kd-text-num">{a.num}<i>{a.unit}</i></div>
+              <span class="kd-meta">{a.meta}</span>
+              <ul class="kd-list">{a.list.map((l) => <li>{l}</li>)}</ul>
+              <div class="kd-card-foot">
+                <a class:list={['kd-btn', 'kd-btn-block', !a.hot && 'kd-btn-2']} href={`${base}/narzedzia/`}>
+                  Uruchom test
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <p class="kd-meta" style="margin-top:16px">
+        trzy testy · każdy kończy się liczbą, nie opinią · <a href={`${base}/narzedzia/`}>wszystkie narzędzia</a>
+      </p>
     </div>
   </section>
 
-  <section class="kd-section kd-wrap kd-faq">
-    <div class="kd-section-head">
-      <span class="kd-eyebrow">FAQ</span>
-      <h2 class="kd-title">Najczęstsze pytania.</h2>
+  <section class="kd-section">
+    <div class="kd-wrap">
+      <div class="kd-section-head">
+        <span class="kd-label">Dowody</span>
+        <h2 class="kd-text-title">Dane, nie deklaracje.</h2>
+      </div>
+      <div>
+        {
+          rows.map((r) => (
+            <div class="kd-row">
+              <span class="kd-text-num-md">{r.num}<i>{r.unit}</i></span>
+              <span class="kd-body">{r.claim}</span>
+              <span class="kd-src">
+                <span class="kd-label">{r.kind}</span>
+                <a href={r.href} target="_blank" rel="noopener noreferrer">{r.source}</a>
+              </span>
+            </div>
+          ))
+        }
+      </div>
+      <p class="kd-meta" style="margin-top:16px">
+        cztery źródła zewnętrzne · badanie, patent, dane rynkowe, benchmark · <a href={`${base}/oferta/`}>jak to mierzymy</a>
+      </p>
     </div>
-    {
-      homepageFaq.map((f, i) => (
-        <details open={i === 0}>
-          <summary>{f.q}</summary>
-          <p set:html={f.a} />
-        </details>
-      ))
-    }
+  </section>
+
+  <section class="kd-section">
+    <div class="kd-wrap">
+      <div class="kd-section-head">
+        <span class="kd-label">Branże</span>
+        <h2 class="kd-text-title">Gdzie pytanie do AI zastępuje pierwszy research.</h2>
+      </div>
+      <div class="kd-grid-3">
+        {
+          industries.map((i) => (
+            <div class="kd-card">
+              <h3 class="kd-text-sub">{i.name}</h3>
+              <p class="kd-body-sm">{i.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="kd-section">
+    <div class="kd-wrap kd-faq">
+      <div class="kd-section-head">
+        <span class="kd-label">FAQ</span>
+        <h2 class="kd-text-title">Najczęstsze pytania.</h2>
+      </div>
+      {
+        homepageFaq.map((f, i) => (
+          <details open={i === 0}>
+            <summary><span class="kd-text-sub">{f.q}</span></summary>
+            <p class="kd-body-sm" set:html={f.a} />
+          </details>
+        ))
+      }
+    </div>
   </section>
 
   <fragment slot="machine">{`# widocznosc.ai – pozycjonowanie marek w AI
@@ -297,12 +310,12 @@ widocznosc.ai by ICEA S.A., Szyperska 14, Poznań.
 
 <style>
   .kd-hero {
-    padding: 88px 0 0;
+    padding: 120px 0 0;
     text-align: center;
   }
-  .kd-hero .kd-eyebrow {
+  .kd-hero > .kd-wrap > .kd-caption {
     display: block;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
   .kd-hero .kd-lead {
     margin: 28px auto 0;
@@ -314,51 +327,38 @@ widocznosc.ai by ICEA S.A., Szyperska 14, Poznań.
     margin-top: 32px;
     flex-wrap: wrap;
   }
-  .kd-form input {
-    background: var(--kd-tint);
-    border: 1px solid var(--kd-line);
-    border-radius: 4px;
-    color: var(--kd-ink);
-    padding: 13px 14px;
-    font-size: 15px;
+  .kd-form .kd-input {
     min-width: 200px;
   }
-  .kd-form input::placeholder {
-    color: var(--kd-mute);
-  }
-  .kd-form input:focus-visible {
-    outline: none;
-    border-color: var(--kd-accent);
-  }
-  .kd-hero .kd-note {
-    margin-top: 16px;
-  }
-  .kd-hero .kd-note a {
-    color: var(--kd-body);
+  .kd-hero-note {
+    margin-top: 20px;
   }
   .kd-figure {
-    margin: 72px 0 0;
+    margin: 64px 0 0;
   }
   .kd-figure figcaption {
     display: flex;
     justify-content: space-between;
     max-width: 62%;
     margin: 8px auto 0;
-    font-family: var(--kd-mono);
-    font-size: 10px;
-    line-height: 14px;
-    color: var(--kd-mute);
   }
-
+  .kd-ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .kd-card .kd-body-sm {
+    margin-top: 12px;
+  }
   @media (max-width: 767px) {
     .kd-hero {
-      padding-top: 56px;
+      padding-top: 64px;
     }
     .kd-form {
       flex-direction: column;
     }
-    .kd-form input,
-    .kd-form button {
+    .kd-form .kd-input,
+    .kd-form .kd-btn {
       width: 100%;
     }
     .kd-figure figcaption {

@@ -1,7 +1,7 @@
 ---
 /**
- * Podgląd kierunku D – narzędzia.
- * Trzy testy z Audits.astro plus makieta wyniku brand-checka w systemie D.
+ * Podgląd kierunku D – narzędzia. Trzy testy z Audits.astro w karcie
+ * o strukturze karty cennika wzorca + makieta wyniku per silnik.
  */
 import KierunekD from '../../../layouts/KierunekD.astro';
 
@@ -9,95 +9,123 @@ const base = '/podglad/kierunek-d';
 
 const tools = [
   {
-    n: '01',
     t: 'Widoczność marki w AI',
-    meta: 'bezpłatnie · ok. 60 s',
-    d: 'Odpytujemy pięć modeli o Twoją markę i pokazujemy, co odpowiadają: czy ją znają, jak o niej mówią i kogo polecają zamiast Ciebie.',
+    dots: 20,
+    micro: '4 silniki · świeże sesje',
+    num: '60',
+    unit: 's',
+    meta: 'bezpłatnie · bez rejestracji',
+    list: ['ChatGPT, Claude, Gemini, Perplexity', 'Sentyment i lista halucynacji', 'Konkurenci polecani zamiast Ciebie'],
+    hot: true,
   },
   {
-    n: '02',
     t: 'Cytowalność strony',
-    meta: 'bezpłatnie · ok. 30 s',
-    d: 'Sprawdzamy, czy pojedyncze akapity nadają się na cytat: gęstość faktów, strukturę nagłówków i dane strukturalne.',
+    dots: 10,
+    micro: 'jeden adres · wynik 0–100',
+    num: '30',
+    unit: 's',
+    meta: 'bezpłatnie · bez rejestracji',
+    list: ['Pięć priorytetowych zmian', 'Według badań Princeton', 'Analiza 1,2 mln cytowań ChatGPT'],
   },
   {
-    n: '03',
     t: 'Dostęp botów AI',
+    dots: 2,
+    micro: 'robots.txt i WAF',
+    num: '<1',
+    unit: 's',
     meta: 'bezpłatnie · natychmiast',
-    d: 'Weryfikujemy, czy GPTBot, ClaudeBot, PerplexityBot i Google-Extended w ogóle wchodzą na Twoją domenę.',
+    list: ['GPTBot, ClaudeBot, PerplexityBot', 'Google-Extended i 9 innych botów', 'Dostęp albo blokada per bot'],
   },
 ];
 
 const results = [
-  { model: 'ChatGPT', zna: 'tak', cytuje: 'tak', stan: 'ok' },
-  { model: 'Perplexity', zna: 'tak', cytuje: 'tak', stan: 'ok' },
-  { model: 'Gemini', zna: 'tak', cytuje: 'nie', stan: 'warn' },
-  { model: 'Claude', zna: 'częściowo', cytuje: 'nie', stan: 'warn' },
-  { model: 'Microsoft Copilot', zna: 'nie', cytuje: 'nie', stan: 'bad' },
+  { model: 'ChatGPT', zna: 'zna · cytuje', stan: 'ok' },
+  { model: 'Perplexity', zna: 'zna · neutralny', stan: 'ok' },
+  { model: 'Gemini', zna: 'zna częściowo', stan: 'warn' },
+  { model: 'Claude', zna: 'zna częściowo', stan: 'warn' },
+  { model: 'Microsoft Copilot', zna: 'poleca konkurenta', stan: 'bad' },
 ];
+
+const DOTS = 24;
 ---
 
 <KierunekD title="Podgląd D: narzędzia – widocznosc.ai" current="narzedzia">
-  <section class="kd-wrap" style="padding-top:72px">
-    <span class="kd-eyebrow">Narzędzia · bez rejestracji</span>
-    <h1 class="kd-d2" style="margin-top:20px">Trzy testy za darmo.<br />Jeden pełny <em>raport</em>.</h1>
-    <p class="kd-lead" style="margin-top:20px">
-      Każdy test odpowiada na jedno pytanie i kończy się liczbą, nie opinią.
-      Pełny raport z rekomendacjami omawiasz z ekspertem ICEA.
-    </p>
-  </section>
-
-  <section class="kd-section kd-wrap">
-    <div class="kd-grid-3">
-      {
-        tools.map((t) => (
-          <div class="kd-card kd-step">
-            <span class="kd-step-n">{t.n}</span>
-            <h3>{t.t}</h3>
-            <p>{t.d}</p>
-            <p class="kd-micro" style="margin-top:14px">{t.meta}</p>
-          </div>
-        ))
-      }
+  <section class="kd-section">
+    <div class="kd-wrap">
+      <span class="kd-caption">Narzędzia · bez rejestracji</span>
+      <h1 class="kd-text-title" style="margin-top:16px">Trzy testy za darmo.<br />Jeden pełny <em>raport</em>.</h1>
+      <p class="kd-lead" style="margin-top:24px">
+        Każdy test odpowiada na jedno pytanie i kończy się liczbą, nie opinią.
+        Pełny raport z rekomendacjami omawiasz z ekspertem ICEA.
+      </p>
     </div>
   </section>
 
-  <section class="kd-section kd-wrap">
-    <div class="kd-section-head">
-      <span class="kd-eyebrow">Przykładowy wynik</span>
-      <h2 class="kd-title">Każdy model osobno.</h2>
-    </div>
-    <div class="kd-result">
-      <div class="kd-result-head kd-micro">
-        <span>model</span><span>zna markę</span><span>cytuje domenę</span><span>stan</span>
+  <section class="kd-section">
+    <div class="kd-wrap">
+      <div class="kd-grid-3">
+        {
+          tools.map((a) => (
+            <div class:list={['kd-card', a.hot && 'is-hot']}>
+              <h3 class="kd-text-heading">{a.t}</h3>
+              <div class="kd-dots" aria-hidden="true">
+                {Array.from({ length: DOTS }, (_, i) => <i class:list={[i < a.dots && 'on']} />)}
+              </div>
+              <span class="kd-micro">{a.micro}</span>
+              <div class="kd-text-num">{a.num}<i>{a.unit}</i></div>
+              <span class="kd-meta">{a.meta}</span>
+              <ul class="kd-list">{a.list.map((l) => <li>{l}</li>)}</ul>
+              <div class="kd-card-foot">
+                <a class:list={['kd-btn', 'kd-btn-block', !a.hot && 'kd-btn-2']} href="#wynik">
+                  Uruchom test
+                </a>
+              </div>
+            </div>
+          ))
+        }
       </div>
-      {
-        results.map((r) => (
-          <div class="kd-result-row">
-            <span class="kd-result-model">{r.model}</span>
-            <span class="kd-micro">{r.zna}</span>
-            <span class="kd-micro">{r.cytuje}</span>
-            <span class:list={['kd-dot', `is-${r.stan}`]} aria-label={r.stan} />
-          </div>
-        ))
-      }
     </div>
-    <p class="kd-note" style="margin-top:16px">
-      pięć silników · świeże sesje, bez personalizacji · pomiar demonstracyjny
-    </p>
+  </section>
+
+  <section class="kd-section" id="wynik">
+    <div class="kd-wrap">
+      <div class="kd-section-head">
+        <span class="kd-label">Przykładowy wynik</span>
+        <h2 class="kd-text-title">Każdy model osobno.</h2>
+      </div>
+      <div class="kd-result">
+        <div class="kd-result-row kd-result-head">
+          <span class="kd-label">model</span>
+          <span class="kd-label">odczyt</span>
+          <span class="kd-label" style="text-align:right">stan</span>
+        </div>
+        {
+          results.map((r) => (
+            <div class="kd-result-row">
+              <span class="kd-text-sub">{r.model}</span>
+              <span class="kd-meta">{r.zna}</span>
+              <span class:list={['kd-dot', `is-${r.stan}`]} aria-label={r.stan} />
+            </div>
+          ))
+        }
+      </div>
+      <p class="kd-meta" style="margin-top:16px">
+        pięć silników · świeże sesje, bez personalizacji · pomiar demonstracyjny
+      </p>
+    </div>
   </section>
 
   <fragment slot="machine">{`# Narzędzia – widocznosc.ai
 
 Trzy testy za darmo. Jeden pełny raport. Bez rejestracji.
 
-${tools.map((t) => `## ${t.n}. ${t.t}\n\n${t.meta}\n\n${t.d}`).join('\n\n')}
+${tools.map((t) => `## ${t.t}\n\n${t.meta} · ok. ${t.num} ${t.unit}\n\n${t.list.map((l) => `- ${l}`).join('\n')}`).join('\n\n')}
 
 ## Przykładowy wynik
 
-| Model | Zna markę | Cytuje domenę |
-|---|---|---|
-${results.map((r) => `| ${r.model} | ${r.zna} | ${r.cytuje} |`).join('\n')}
+| Model | Odczyt |
+|---|---|
+${results.map((r) => `| ${r.model} | ${r.zna} |`).join('\n')}
 
 Pomiar demonstracyjny na pięciu silnikach, świeże sesje, bez personalizacji.
 
@@ -109,49 +137,39 @@ widocznosc.ai by ICEA S.A.
   .kd-result {
     border-top: 1px solid var(--kd-line);
   }
-  .kd-result-head,
   .kd-result-row {
     display: grid;
-    grid-template-columns: 1fr 140px 140px 40px;
+    grid-template-columns: 1fr 220px 40px;
     gap: 16px;
     align-items: center;
-    padding: 14px 0;
+    padding: 16px 0;
     border-bottom: 1px solid var(--kd-line);
   }
-  .kd-result-model {
-    font-family: var(--kd-serif);
-    font-size: 22px;
-    line-height: 28px;
-    letter-spacing: -0.4px;
+  .kd-result-head {
+    padding: 10px 0;
   }
   .kd-dot {
     width: 8px;
     height: 8px;
-    border-radius: 50%;
     display: block;
     justify-self: end;
   }
   .kd-dot.is-ok {
-    background: #4ade80;
+    background: var(--kd-ok);
   }
   .kd-dot.is-warn {
-    background: #fbbf24;
+    background: var(--kd-warn);
   }
   .kd-dot.is-bad {
-    background: #f87171;
+    background: var(--kd-bad);
   }
-
   @media (max-width: 767px) {
     .kd-result-head {
       display: none;
     }
     .kd-result-row {
-      grid-template-columns: 1fr 70px 70px 20px;
+      grid-template-columns: 1fr 120px 20px;
       gap: 8px;
-    }
-    .kd-result-model {
-      font-size: 17px;
-      line-height: 22px;
     }
   }
 </style>
