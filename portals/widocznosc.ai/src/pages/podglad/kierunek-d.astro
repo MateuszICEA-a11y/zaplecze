@@ -1,0 +1,467 @@
+---
+/**
+ * Podgląd kierunku D „Instrument”.
+ *
+ * System z DESIGN.md: antykwa w nagłówkach, monospace w całym chromie,
+ * jeden akcent, promień 4 px, zero cieni i gradientów. Ilustracja hero jest
+ * generowana (HalftoneSentence), nie jest plikiem graficznym.
+ *
+ * Strona jest noindex i wykluczona z sitemapy (astro.config.mjs).
+ */
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/fraunces/wght-italic.css';
+import '@fontsource/geist-mono/400.css';
+import Layout from '../../layouts/Layout.astro';
+import HalftoneSentence from '../../components/HalftoneSentence.astro';
+
+const engines = [
+  { name: 'ChatGPT', value: 42, own: true },
+  { name: 'Google AI Overviews', value: 31, own: false },
+  { name: 'Perplexity', value: 18, own: false },
+  { name: 'Claude', value: 12, own: false },
+  { name: 'Copilot', value: 9, own: false },
+];
+const max = Math.max(...engines.map((e) => e.value));
+---
+
+<Layout
+  title="Podgląd: kierunek D „Instrument” – widocznosc.ai"
+  description="Wewnętrzny podgląd kierunku redesignu. Nie do publikacji."
+  noindex={true}
+>
+  <div class="kd">
+    <header class="kd-nav">
+      <span class="kd-brand">widocznosc.ai</span>
+      <nav class="kd-nav-links">
+        <a href="#">pozycjonowanie ai</a>
+        <a href="#">narzędzia</a>
+        <a href="#">blog</a>
+        <a href="#">kontakt</a>
+      </nav>
+      <a class="kd-nav-cta" href="#">Sprawdź markę</a>
+    </header>
+
+    <section class="kd-hero">
+      <h1>
+        <span class="kd-d1">Wyszukiwarki AI nie</span>
+        <span class="kd-d2">widzą <em>layoutu</em>.</span>
+      </h1>
+      <p class="kd-lead">
+        Widzą strukturę. Mierzymy, co model faktycznie cytuje o twojej marce – i
+        układamy treść tak, żeby cytował ciebie.
+      </p>
+      <div class="kd-cta">
+        <a class="kd-btn" href="#">Sprawdź markę</a>
+        <a class="kd-btn kd-btn-2" href="#">Zobacz metodologię</a>
+      </div>
+
+      <figure class="kd-figure">
+        <HalftoneSentence from="Twoja treść" to="Odpowiedź AI" />
+        <figcaption>
+          <span>treść</span>
+          <span>cytowanie</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="kd-proof">
+      <h2>
+        <span>Sprawdzamy pięć silników.</span>
+        <span>Nie jeden.</span>
+      </h2>
+
+      <div class="kd-chart">
+        {
+          engines.map((e) => (
+            <div class="kd-row">
+              <span class="kd-row-name">{e.name}</span>
+              <span
+                class:list={['kd-bar', e.own && 'is-accent']}
+                style={`width: ${(e.value / max) * 100}%`}
+              />
+              <span class="kd-row-val">{e.value}%</span>
+            </div>
+          ))
+        }
+      </div>
+      <p class="kd-note">
+        udział cytowań marki · 240 zapytań · pomiar wrzesień 2026 ·
+        <a href="#">metodologia</a>
+      </p>
+    </section>
+
+    <div class="kd-toggle" role="group" aria-label="Widok strony">
+      <button type="button" data-view="human" class="is-on">człowiek</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-view="machine">maszyna</button>
+    </div>
+
+    <div class="kd-machine" hidden>
+      <button type="button" class="kd-copy">Kopiuj stronę</button>
+      <pre><code># widocznosc.ai – pozycjonowanie marek w wyszukiwarkach AI
+
+Wyszukiwarki AI nie widzą layoutu. Widzą strukturę. Mierzymy, co model
+faktycznie cytuje o twojej marce – i układamy treść tak, żeby cytował ciebie.
+
+## Sprawdzamy pięć silników
+
+| Silnik | Udział cytowań |
+|---|---|
+| ChatGPT | 42% |
+| Google AI Overviews | 31% |
+| Perplexity | 18% |
+| Claude | 12% |
+| Copilot | 9% |
+
+Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
+
+## Kontakt
+
+- [Sprawdź markę](/kontakt/)
+- widocznosc.ai by ICEA S.A.
+</code></pre>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .kd {
+    --kd-canvas: #0a0a0a;
+    --kd-ink: #fafafa;
+    --kd-body: #a1a1aa;
+    --kd-mute: #71717a;
+    --kd-chrome: rgba(255, 255, 255, 0.5);
+    --kd-line: #27272a;
+    --kd-accent: #2f8cff;
+    --kd-serif: 'Fraunces Variable', Georgia, serif;
+    --kd-mono: 'Geist Mono', ui-monospace, monospace;
+
+    background: var(--kd-canvas);
+    color: var(--kd-ink);
+    min-height: 100vh;
+    padding-bottom: 128px;
+  }
+
+  /* --- chrom: wszystko w monospace, małą literą --- */
+  .kd-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--kd-line);
+    font-family: var(--kd-mono);
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .kd-brand {
+    color: var(--kd-ink);
+  }
+  .kd-nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  .kd-nav-links a {
+    color: var(--kd-chrome);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .kd-nav-links a:hover {
+    color: var(--kd-ink);
+  }
+  .kd-nav-cta {
+    background: var(--kd-accent);
+    color: #09090b;
+    padding: 8px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  /* --- hero --- */
+  .kd-hero {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 96px 32px 0;
+    text-align: center;
+  }
+  .kd-hero h1 {
+    font-family: var(--kd-serif);
+    font-weight: 400;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .kd-d1 {
+    font-size: 88px;
+    line-height: 86.24px;
+    letter-spacing: -2.64px;
+  }
+  .kd-d2 {
+    font-size: 68px;
+    line-height: 70.72px;
+    letter-spacing: -1.768px;
+  }
+  .kd-d2 em {
+    font-style: italic;
+    color: var(--kd-accent);
+  }
+  .kd-lead {
+    max-width: 46ch;
+    margin: 28px auto 0;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.09px;
+    color: var(--kd-body);
+  }
+  .kd-cta {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 32px;
+  }
+  .kd-btn {
+    background: var(--kd-accent);
+    color: #09090b;
+    padding: 14px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+  }
+  .kd-btn-2 {
+    background: transparent;
+    color: var(--kd-ink);
+    border: 1px solid var(--kd-line);
+  }
+
+  .kd-figure {
+    margin: 64px 0 0;
+  }
+  .kd-figure figcaption {
+    display: flex;
+    justify-content: space-between;
+    max-width: 62%;
+    margin: 8px auto 0;
+    font-family: var(--kd-mono);
+    font-size: 10px;
+    line-height: 14px;
+    color: var(--kd-mute);
+  }
+
+  /* --- sekcja dowodowa --- */
+  .kd-proof {
+    max-width: 1000px;
+    margin: 128px auto 0;
+    padding: 0 32px;
+  }
+  .kd-proof h2 {
+    font-family: var(--kd-serif);
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 55.12px;
+    letter-spacing: -1.144px;
+    margin: 0 0 48px;
+    display: flex;
+    flex-direction: column;
+  }
+  .kd-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 48px;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--kd-line);
+  }
+  .kd-row-name,
+  .kd-row-val {
+    font-family: var(--kd-mono);
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--kd-mute);
+  }
+  .kd-row-val {
+    text-align: right;
+    color: var(--kd-body);
+  }
+  .kd-bar {
+    display: block;
+    height: 10px;
+    background: #3f3f46;
+    border-radius: 2px;
+  }
+  .kd-bar.is-accent {
+    background: var(--kd-accent);
+  }
+  .kd-note {
+    margin-top: 16px;
+    font-family: var(--kd-mono);
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--kd-mute);
+  }
+  .kd-note a {
+    color: var(--kd-body);
+  }
+
+  /* --- przełącznik człowiek / maszyna --- */
+  .kd-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: #131313;
+    border: 1px solid var(--kd-line);
+    border-radius: 4px;
+    font-family: var(--kd-mono);
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .kd-toggle span {
+    color: var(--kd-mute);
+  }
+  .kd-toggle button {
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    color: var(--kd-chrome);
+    font: inherit;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .kd-toggle button::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--kd-mute);
+  }
+  .kd-toggle button.is-on {
+    color: var(--kd-ink);
+  }
+  .kd-toggle button.is-on::before {
+    background: var(--kd-accent);
+  }
+
+  /* --- widok maszynowy --- */
+  .kd-machine {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 32px;
+  }
+  .kd-machine[hidden] {
+    display: none;
+  }
+  .kd-machine pre {
+    margin: 0;
+    font-family: var(--kd-mono);
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--kd-body);
+    white-space: pre-wrap;
+  }
+  .kd-copy {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    background: #131313;
+    border: 1px solid var(--kd-line);
+    border-radius: 4px;
+    color: var(--kd-ink);
+    font-family: var(--kd-mono);
+    font-size: 12px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1023px) {
+    .kd-d1 {
+      font-size: 56px;
+      line-height: 56px;
+      letter-spacing: -1.7px;
+    }
+    .kd-d2 {
+      font-size: 44px;
+      line-height: 46px;
+      letter-spacing: -1.1px;
+    }
+    .kd-proof h2 {
+      font-size: 36px;
+      line-height: 40px;
+      letter-spacing: -0.8px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .kd-nav-links {
+      display: none;
+    }
+    .kd-hero {
+      padding-top: 56px;
+    }
+    .kd-d1 {
+      font-size: 40px;
+      line-height: 42px;
+      letter-spacing: -1.2px;
+    }
+    .kd-d2 {
+      font-size: 34px;
+      line-height: 36px;
+      letter-spacing: -0.9px;
+    }
+    .kd-cta {
+      flex-direction: column;
+    }
+    .kd-row {
+      grid-template-columns: 130px 1fr 40px;
+      gap: 10px;
+    }
+    /* Ilustracja jest na mobile pionowa – podpisy też. */
+    .kd-figure figcaption {
+      max-width: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+  }
+</style>
+
+<script>
+  function boot() {
+    const root = document.querySelector<HTMLElement>('.kd');
+    if (!root) return;
+    const machine = root.querySelector<HTMLElement>('.kd-machine');
+    const buttons = root.querySelectorAll<HTMLButtonElement>('.kd-toggle button');
+    const hidable = [
+      root.querySelector('.kd-hero'),
+      root.querySelector('.kd-proof'),
+    ].filter(Boolean) as HTMLElement[];
+
+    buttons.forEach((b) =>
+      b.addEventListener('click', () => {
+        const machineOn = b.dataset.view === 'machine';
+        buttons.forEach((x) => x.classList.toggle('is-on', x === b));
+        hidable.forEach((el) => (el.hidden = machineOn));
+        if (machine) machine.hidden = !machineOn;
+      }),
+    );
+
+    const copy = root.querySelector<HTMLButtonElement>('.kd-copy');
+    const pre = root.querySelector('.kd-machine code');
+    copy?.addEventListener('click', async () => {
+      if (!pre) return;
+      await navigator.clipboard.writeText(pre.textContent || '');
+      const prev = copy.textContent;
+      copy.textContent = 'Skopiowano';
+      setTimeout(() => (copy.textContent = prev), 1600);
+    });
+  }
+
+  boot();
+  document.addEventListener('astro:page-load', boot);
+</script>

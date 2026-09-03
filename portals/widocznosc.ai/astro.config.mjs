@@ -6,7 +6,8 @@ import rehypeExternalLinks from 'rehype-external-links';
 export default defineConfig({
   site: 'https://widocznosc.ai',
   trailingSlash: 'always',
-  integrations: [sitemap()],
+  // Podglądy redesignu (/podglad/*) są noindex i nie należą do sitemapy.
+  integrations: [sitemap({ filter: (page) => !/\/podglad\//.test(page) })],
   markdown: {
     // Dual-theme Shiki – kod dostaje zmienne --shiki-light / --shiki-dark,
     // a wybór motywu robi nasz selektor [data-theme] w CSS (Article.astro).
