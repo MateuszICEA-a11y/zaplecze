@@ -90,6 +90,18 @@ FAQ_QUESTION = "page_faq_question_{n}"
 FAQ_ANSWER = "page_faq_answer_{n}"
 FAQ_TITLE = "page_faq_title"
 
+# --- Źródła (bibliografia) ---
+# Od 2026-09-03 motyw ma osobne pola ACF na bibliografię, renderowane ZA blokiem
+# FAQ i przed boksem autora (spec: docs/spec-acf-zrodla-za-faq-grupa-icea.html).
+# Wcześniej lista lądowała w wolnym slocie treści i stała PRZED FAQ. Blok dostaje
+# własny pseudo-slot, żeby diff, decyzja redaktora i zapis (po nazwach pól)
+# szły tą samą ścieżką co sekcje i FAQ. Nagłówek zostawiamy pusty – motyw
+# podstawia domyślne „Źródła”.
+SOURCES_SLOT = 200
+SOURCES_TITLE_FIELD = "page_sources_title"
+SOURCES_TEXT_FIELD = "page_sources_text"
+SOURCES_HEADING = "Źródła"
+
 # --- eksperci ICEA cytowani w treści ---
 # Cytat MUSI trafić do realnej osoby z zespołu i nigdy do autora wpisu (to byłoby
 # cytowanie samego siebie – reguła redakcyjna). Dlatego rola nie pochodzi od

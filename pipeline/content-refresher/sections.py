@@ -11,7 +11,8 @@ import sys
 from pathlib import Path
 
 from config import (ACF_SLOTS, FAQ_ANSWER, FAQ_QUESTION, FAQ_SLOT_BASE, FAQ_SLOTS,
-                    SLOT_TEXT, SLOT_TITLE)
+                    SLOT_TEXT, SLOT_TITLE, SOURCES_HEADING, SOURCES_SLOT,
+                    SOURCES_TEXT_FIELD, SOURCES_TITLE_FIELD)
 
 # Maper ACF ma jedną implementację – tę z collectora.
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "dashboard" / "collector"))
@@ -55,8 +56,20 @@ def free_faq_slots(acf: dict) -> list[int]:
     return [FAQ_SLOT_BASE + n for n in range(1, FAQ_SLOTS + 1) if FAQ_SLOT_BASE + n not in taken]
 
 
+def is_sources(slot: int) -> bool:
+    """Czy to pseudo-slot bloku „Źródła” (osobne pola ACF, render za FAQ)."""
+    return slot == SOURCES_SLOT
+
+
+def is_fixed(slot: int) -> bool:
+    """Bloki o stałym miejscu na stronie (FAQ, Źródła) – poza renumeracją sekcji."""
+    return is_faq(slot) or is_sources(slot)
+
+
 def fields_for(slot: int) -> tuple[str, str]:
-    """Para pól ACF dla slotu – sekcja albo FAQ, zależnie od przestrzeni numeru."""
+    """Para pól ACF dla slotu – sekcja, FAQ albo Źródła, zależnie od numeru."""
+    if is_sources(slot):
+        return SOURCES_TITLE_FIELD, SOURCES_TEXT_FIELD
     if is_faq(slot):
         n = faq_index(slot)
         return FAQ_QUESTION.format(n=n), FAQ_ANSWER.format(n=n)
@@ -92,6 +105,19 @@ def snapshot(acf: dict) -> list[dict]:
             "title": (acf.get(FAQ_QUESTION.format(n=n)) or "").strip(),
             "text": (acf.get(FAQ_ANSWER.format(n=n)) or "").strip(),
             "hash": content_hash(acf.get(FAQ_ANSWER.format(n=n)) or ""),
+        })
+    # Bibliografia z poprzedniego przejazdu – żeby kolejny ją nadpisał, a nie
+    # dokładał drugą listę. Pusty nagłówek w CMS-ie = domyślne „Źródła”.
+    sources_text = (acf.get(SOURCES_TEXT_FIELD) or "").strip()
+    if sources_text:
+        rows.append({
+            "slot": SOURCES_SLOT,
+            "kind": "sources",
+            "title_field": SOURCES_TITLE_FIELD,
+            "text_field": SOURCES_TEXT_FIELD,
+            "title": (acf.get(SOURCES_TITLE_FIELD) or "").strip() or SOURCES_HEADING,
+            "text": sources_text,
+            "hash": content_hash(sources_text),
         })
     return rows
 
@@ -153,11 +179,11 @@ def renumber(before: list[dict], proposals: dict[int, dict],
     na koniec (stare zachowanie). Gdy przesunięciom zabrakłoby slotów (>30),
     zwraca wejście bez zmian – lepszy stary układ niż utrata sekcji.
     """
-    # FAQ ma własną przestrzeń numerów i stałe miejsce na stronie – renumeracja
+    # FAQ i Źródła mają własne numery i stałe miejsce na stronie – renumeracja
     # dotyczy wyłącznie sekcji treści, inaczej pytanie wjechałoby w slot sekcji.
-    faq = {slot: proposal for slot, proposal in proposals.items() if is_faq(slot)}
-    proposals = {slot: proposal for slot, proposal in proposals.items() if not is_faq(slot)}
-    before = [item for item in before if not is_faq(item["slot"])]
+    faq = {slot: proposal for slot, proposal in proposals.items() if is_fixed(slot)}
+    proposals = {slot: proposal for slot, proposal in proposals.items() if not is_fixed(slot)}
+    before = [item for item in before if not is_fixed(item["slot"])]
     occupied = [item["slot"] for item in before]
     occupied_set = set(occupied)
     inserts = {slot: proposal for slot, proposal in proposals.items() if slot not in occupied_set}
@@ -247,7 +273,7 @@ def build_sections(before: list[dict], proposals: dict[int, dict],
         title_field, text_field = fields_for(slot)
         rows.append({
             "slot": slot,
-            "kind": "faq" if is_faq(slot) else "section",
+            "kind": "sources" if is_sources(slot) else ("faq" if is_faq(slot) else "section"),
             "title_field": title_field,
             "text_field": text_field,
             "operation": "insert" if is_insert else ("move" if moved_from else "update"),

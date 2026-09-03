@@ -44,6 +44,25 @@ class TestSections(unittest.TestCase):
         self.assertEqual(snapshot[0]["text_field"], "page_text_1")
         self.assertTrue(snapshot[0]["hash"])
 
+    def test_zrodla_maja_wlasny_pseudo_slot_i_pola(self):
+        """Blok Źródeł (page_sources_*, render za FAQ) jedzie jako slot 200 –
+        poza sekcjami treści i poza FAQ, ale tą samą ścieżką diff/zapis."""
+        self.assertEqual(sec.fields_for(200), ("page_sources_title", "page_sources_text"))
+        self.assertTrue(sec.is_sources(200))
+        self.assertFalse(sec.is_faq(200))
+        self.assertTrue(sec.is_fixed(200))
+        self.assertFalse(sec.is_fixed(5))
+        # Bez bibliografii w CMS-ie snapshot nie zakłada pustego wiersza.
+        self.assertFalse([row for row in sec.snapshot(ACF) if row["kind"] == "sources"])
+        acf = {**ACF, "page_sources_text": "<ul><li><a href=\"https://x.pl\">X</a></li></ul>"}
+        rows = [row for row in sec.snapshot(acf) if row["kind"] == "sources"]
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["slot"], 200)
+        self.assertEqual(rows[0]["title"], "Źródła")  # pusty nagłówek = domyślny motywu
+        self.assertEqual(rows[0]["text_field"], "page_sources_text")
+        # Wolne sloty treści nie ubywają przez bibliografię.
+        self.assertEqual(sec.free_slots(acf), sec.free_slots(ACF))
+
     def test_diff_pokazuje_dodane_slowa(self):
         opcodes = sec.diff_tokens("<p>Serwer odmawia dostępu.</p>",
                                   "<p>Serwer odmawia dostępu do zasobu.</p>")
@@ -97,6 +116,21 @@ class TestRenumeracja(unittest.TestCase):
         "page_title_h2_2": "Jak go naprawić", "page_text_2": "<p>Sprawdź uprawnienia.</p>",
         "page_title_h2_3": "Podsumowanie", "page_text_3": "<p>Wystarczy poprawić uprawnienia.</p>",
     }
+
+    def test_zrodla_nie_podlegaja_renumeracji(self):
+        snapshot = sec.snapshot(self.ACF_CIAGLE)
+        proposals, moves, inserted = sec.renumber(snapshot, {
+            4: {"title": "Nowa", "text": "<p>Nowa.</p>", "after_slot": 1},
+            200: {"title": "Źródła", "text": "<ol><li>a</li></ol>"},
+        })
+        self.assertEqual(proposals[200]["text"], "<ol><li>a</li></ol>")
+        self.assertEqual(moves, {3: 2, 4: 3})
+        rows = sec.build_sections(snapshot, proposals, moves, inserted)
+        sources = next(row for row in rows if row["slot"] == 200)
+        self.assertEqual(sources["kind"], "sources")
+        self.assertEqual(sources["operation"], "insert")
+        self.assertEqual((sources["title_field"], sources["text_field"]),
+                         ("page_sources_title", "page_sources_text"))
 
     def test_nowa_sekcja_wchodzi_za_kotwice_a_reszta_jedzie_w_dol(self):
         snapshot = sec.snapshot(self.ACF_CIAGLE)

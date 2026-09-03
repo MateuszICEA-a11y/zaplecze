@@ -125,6 +125,18 @@ def _faq(acf: dict) -> list[tuple[str, str]]:
     return out
 
 
+def _sources(acf: dict) -> str:
+    """Blok „Źródła” (pola page_sources_*, od 2026-09-03; motyw renderuje go
+    za FAQ). Realna treść strony z linkami – wchodzi do licznika słów, linków
+    i hasha. Dziś żaden wpis go nie ma, więc BODY_VERSION zostaje – pusty
+    blok nie zmienia hasha."""
+    text = (acf.get("page_sources_text") or "").strip()
+    if not text:
+        return ""
+    title = (acf.get("page_sources_title") or "").strip() or "Źródła"
+    return f"<h2>{title}</h2>\n{text}"
+
+
 def _body(post: dict, custom_fields: list[str]) -> tuple[str, int, str]:
     """(HTML pełnej treści, liczba H2 z ACF, tryb odczytu).
 
@@ -140,7 +152,8 @@ def _body(post: dict, custom_fields: list[str]) -> tuple[str, int, str]:
     faq = _faq(acf)
     faq_html = "\n".join(f"<h3>{question}</h3>\n{answer}" for question, answer in faq)
     faq_headings = sum(1 for question, _ in faq if question)
-    tail = f"\n{faq_html}" if faq_html else ""
+    sources_html = _sources(acf)
+    tail = (f"\n{faq_html}" if faq_html else "") + (f"\n{sources_html}" if sources_html else "")
 
     sections = _sections(acf)
     if sections:

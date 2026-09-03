@@ -149,8 +149,9 @@ def apply_citations(sections: dict[int, str], citations: list[dict],
     Decyzja redakcyjna (2026-08-03): w tekście nie stawiamy odnośników [n]
     ani linków przy tezach – bibliografia z rel="nofollow" stoi w osobnej
     sekcji, a jedynym linkiem zewnętrznym w treści pozostaje pojedyncza
-    definicja z Wikipedii (apply_definitions). Bez wolnego slotu lista nie
-    powstaje – lepiej zgłosić to człowiekowi niż zgubić bibliografię.
+    definicja z Wikipedii (apply_definitions). `sources_slot` to od
+    2026-09-03 pseudo-slot pól `page_sources_*` (render za FAQ) – bez niego
+    lista nie powstaje, lepiej zgłosić to człowiekowi niż zgubić bibliografię.
     """
     result = dict(sections)
     applied, skipped = [], []

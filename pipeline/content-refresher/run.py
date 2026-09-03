@@ -36,6 +36,9 @@ from config import (  # noqa: E402
     MODEL_RESEARCH,
     MODEL_WRITER,
     PIPELINE_VERSION,
+    SOURCES_HEADING,
+    SOURCES_SLOT,
+    SOURCES_TEXT_FIELD,
 )
 
 MAX_PROMPT_CONTENT = 24000  # znaków treści artykułu w promptach
@@ -191,6 +194,7 @@ class Pipeline:
             "words": len(content["text"].split()),
             "sections": sum(1 for item in self.context["snapshot"] if item.get("kind", "section") == "section"),
             "faq": sum(1 for item in self.context["snapshot"] if item.get("kind") == "faq"),
+            "sources": any(item.get("kind") == "sources" for item in self.context["snapshot"]),
             "free_slots": self.context["free_slots"][:5],
             "hash": content["hash"],
         }}
@@ -786,11 +790,12 @@ class Pipeline:
 
         `faq=False` zostawia same sekcje treści – przypisy i linkowanie
         wewnętrzne nie mają czego szukać w odpowiedziach FAQ, które mają być
-        krótkie i samodzielne (idą do schema.org/FAQPage).
+        krótkie i samodzielne (idą do schema.org/FAQPage), ani w bibliografii
+        (blok Źródeł ma stałe miejsce za FAQ i jest listą, nie prozą).
         """
         slots = {item["slot"] for item in self.context["snapshot"]} | set(self.context.get("proposals") or {})
         return {slot: self._current_text(slot) for slot in sorted(slots)
-                if faq or not sec.is_faq(slot)}
+                if faq or not sec.is_fixed(slot)}
 
     def _store_section_texts(self, texts: dict[int, str]) -> None:
         """Zapisuje zmienione sekcje jako propozycje – tylko te, które faktycznie
@@ -829,7 +834,12 @@ class Pipeline:
             if text:
                 # FAQ oznaczamy pytaniem, nie numerem sekcji – model ma widzieć,
                 # że to gotowa para pytanie/odpowiedź, a nie akapit do rozbudowy.
-                label = f"[FAQ: {titles.get(slot, '')}]" if sec.is_faq(slot) else f"[sekcja {slot}]"
+                if sec.is_sources(slot):
+                    label = "[Źródła – bibliografia z poprzedniego przejazdu]"
+                elif sec.is_faq(slot):
+                    label = f"[FAQ: {titles.get(slot, '')}]"
+                else:
+                    label = f"[sekcja {slot}]"
                 parts.append(f"{label}\n{extract.strip_html(text)}")
         merged = "\n\n".join(parts)
         # Flaga do payloadów kroków pracujących na złączonej treści: przy uciętym
@@ -898,16 +908,19 @@ class Pipeline:
         # Propozycje wstawiamy w treść – lista adresów obok artykułu nie ma
         # wartości, dopóki ktoś nie przepisze jej ręcznie do CMS-a.
         texts = self._section_texts(faq=False)
-        # Wpis po wcześniejszym przejeździe ma już sekcję „Źródła" – nową listę
-        # wstawiamy w jej slot (nadpisanie), inaczej każdy przejazd dokładałby
-        # kolejną bibliografię na końcu artykułu.
-        existing_sources = next(
+        # Bibliografia idzie do osobnych pól ACF (pseudo-slot SOURCES_SLOT),
+        # które motyw renderuje ZA blokiem FAQ. Do 2026-09-03 lista zajmowała
+        # wolny slot treści i stała przed FAQ; kolejny przejazd nadpisuje
+        # to samo pole, więc nie ma ryzyka drugiej listy. Stara sekcja
+        # „Źródła” w slocie treści (żaden wpis jej dziś nie ma – skan 539
+        # wpisów) zostaje bez zmian, ale zgłaszamy ją w wyniku kroku.
+        legacy_sources = next(
             (item["slot"] for item in self.context["snapshot"]
              if item.get("kind", "section") == "section"
              and item["title"].strip().lower() in ("źródła", "zrodla", "bibliografia")),
             None,
         )
-        sources_slot = existing_sources or self._take_free_slot()
+        sources_slot = SOURCES_SLOT
         texts, definitions = apply.apply_definitions(
             texts, data.get("definitions") or [],
             banned_phrases=[self.context.get("main_keyword") or "",
@@ -916,9 +929,7 @@ class Pipeline:
         )
         texts, citations = apply.apply_citations(texts, data.get("citations") or [], sources_slot)
         if citations.get("sources_slot"):
-            self.context.setdefault("new_titles", {})[citations["sources_slot"]] = "Źródła"
-        elif not existing_sources:
-            self._return_free_slot(sources_slot)
+            self.context.setdefault("new_titles", {})[citations["sources_slot"]] = SOURCES_HEADING
         self._store_section_texts(texts)
         self.context["citations"] = data
         return {"payload": {
@@ -927,6 +938,8 @@ class Pipeline:
             "skipped": citations["skipped"] + definitions["skipped"],
             "unsupported": data.get("unsupported") or [],
             "sources_slot": citations.get("sources_slot"),
+            "sources_field": SOURCES_TEXT_FIELD if citations.get("sources_slot") else None,
+            "legacy_sources_slot": legacy_sources,
             "content_truncated": bool(self.context.get("merged_truncated")),
         }, "model": result["model"], "prompt_version": version, "cost": result["usage"]}
 
