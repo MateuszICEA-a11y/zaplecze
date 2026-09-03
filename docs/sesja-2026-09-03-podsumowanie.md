@@ -81,11 +81,19 @@ rewizji. Rola editor nie skasuje rewizji przez REST (403).
 Poprawka: `wp-draft` kasuje stary szkic i zakłada nowy (bez rewizji), szkic
 dziedziczy autora, kategorie i tagi oryginału. Nowy szkic testowy: 41915.
 
+## Część 4 – Źródła nad FAQ w starym zadaniu
+
+Zadanie 964ee898 (19.08) ma bibliografię jako insert w slocie treści 10, więc
+szkic pokazywał ją przed FAQ. Worker przemapowuje takie wiersze przy zapisie
+(`legacySourcesRow` → `page_sources_*`, slot treści pusty), edytor stawia je
+na końcu dokumentu. Szkic 41916: slot 10 pusty, `page_sources_text` z listą,
+bez rewizji.
+
 ## Co dalej
 
 - Push `main` = deploy Workera (Workers Builds) i pipeline'u (GitHub Actions
   bierze kod z repo). Do pierwszego realnego przejazdu z pakietem `sources`
   warto zajrzeć do edytora i sprawdzić, czy blok stoi pod FAQ.
 - `wp-apply` (podmiana oryginału) wciąż nie ma realnego wdrożenia z bibliografią.
-- Obejrzeć szkic 41915 w wp-admin (sekcje, FAQ, cytat jako k_quote_box); dev: shortcode CTA/konsultacji.
+- Obejrzeć szkic 41916 w wp-admin (sekcje, FAQ, cytat jako k_quote_box); dev: shortcode CTA/konsultacji.
 - Stare cytaty inline (`blockquote.expert`) w już wdrożonych wpisach zostają.
