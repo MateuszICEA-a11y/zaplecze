@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sieć BWP 2.0 – szacunek kosztów scenariuszy B i C</title>
+<style>
+  @font-face { font-family: "Roobert"; font-weight: 400; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Regular.otf"); }
+  @font-face { font-family: "Roobert"; font-weight: 500; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Medium.otf"); }
+  :root { --midnight:#000623; --blue:#5768ff; --orange:#f6704c; --off:#f9f9f9; --soft:rgba(0,6,35,.66); --line:rgba(0,6,35,.14); --blue-soft:rgba(87,104,255,.10); }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--midnight); background:var(--off); font-family:"Roobert",Arial,sans-serif; font-size:16px; line-height:1.5; }
+  h1,h2,h3,h4 { font-weight:500; margin:0 0 .4em; line-height:1.15; }
+  h1 { font-size:clamp(28px,3vw,36px); line-height:1.15; }
+  h2 { font-size:clamp(22px,2.4vw,28px); }
+  h3 { font-size:19px; }
+  h4 { font-size:17px; margin-bottom:.2em; }
+  p, li { color:var(--midnight); }
+  .wrap { width:min(calc(100% - 48px),1280px); margin-inline:auto; }
+  .narrow { max-width:760px; }
+  .bar { position:sticky; top:0; z-index:10; background:rgba(249,249,249,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+  .bar-in { display:flex; align-items:center; gap:24px; min-height:64px; }
+  .bar strong { font-weight:500; }
+  .bar .sp { flex:1; }
+  .btn { min-height:40px; padding:8px 14px; border:1px solid var(--midnight); border-radius:3px; background:transparent; color:var(--midnight); font:inherit; cursor:pointer; }
+  .logo { display:block; height:28px; width:auto; color:var(--off); margin-bottom:28px; }
+  .bar .logo { height:20px; margin:0; color:var(--midnight); }
+  .hero { background:var(--midnight); color:var(--off); padding:72px 0 56px; }
+  .hero p { color:rgba(249,249,249,.72); max-width:900px; font-size:15px; }
+  .hero .thesis { color:var(--off); font-size:clamp(17px,1.6vw,20px); line-height:1.35; max-width:1000px; margin:0 0 14px; }
+  .hero .lbl { color:var(--blue); font-weight:500; margin-bottom:14px; }
+  .hero h1 { max-width:1100px; }
+  .hero .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:40px; border:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div { padding:18px 20px; border-left:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div:first-child { border-left:0; }
+  .hero .kpis b { display:block; font-size:26px; font-weight:500; line-height:1.1; color:var(--off); }
+  .hero .kpis span { font-size:13px; color:rgba(249,249,249,.72); }
+  section.sec { padding:56px 0; border-top:1px solid var(--line); }
+  .lead { font-size:16px; color:var(--soft); }
+  .summary { background:#fff; border:1px solid var(--line); padding:28px; }
+  .summary ol { margin:0; padding-left:20px; }
+  .summary li { margin:8px 0; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin:12px 0 28px; background:#fff; }
+  th { background:var(--midnight); color:var(--off); text-align:left; padding:10px 12px; font-weight:400; font-size:12px; }
+  td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  td.num, th.num { text-align:right; white-space:nowrap; }
+  tr.sum td { font-weight:500; border-top:2px solid var(--midnight); }
+  tr.sub td { background:var(--blue-soft); font-weight:500; }
+  .tag { display:inline-block; padding:1px 8px; border:1px solid var(--midnight); border-radius:3px; font-size:12px; white-space:nowrap; }
+  .tag.ok { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:500; }
+  .tag.no { background:var(--midnight); color:var(--off); }
+  .tag.kb { border-color:var(--blue); background:var(--blue-soft); color:var(--midnight); }
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); margin:20px 0; }
+  .card { padding:22px; border-left:1px solid var(--line); background:#fff; }
+  .card:first-child { border-left:0; }
+  .card p { font-size:14px; color:var(--soft); margin:6px 0 0; }
+  .card .n { display:block; font-size:26px; font-weight:500; color:var(--blue); line-height:1.1; margin-bottom:6px; }
+  .card.dark { background:var(--midnight); color:var(--off); }
+  .card.dark h4, .card.dark p { color:var(--off); }
+  .card.dark p { opacity:.75; }
+  .callout { border-left:4px solid var(--orange); background:#fff; padding:16px 20px; margin:20px 0; }
+  .callout b { font-weight:500; }
+  .callout.blue { border-left-color:var(--blue); }
+  .step { display:grid; grid-template-columns:56px minmax(0,1fr) 220px; gap:20px; padding:20px 0; border-top:1px solid var(--line); }
+  .step:first-of-type { border-top:0; }
+  .step .no { font-size:26px; font-weight:500; color:var(--blue); line-height:1; }
+  .step .meta { font-size:13px; color:var(--soft); }
+  .step .meta em { display:block; font-style:normal; color:var(--midnight); font-weight:500; }
+  .step p { margin:4px 0 0; font-size:15px; }
+  ul.plain { padding-left:20px; }
+  .sm { font-size:13px; color:var(--soft); }
+  code { padding:1px 5px; background:var(--blue-soft); font-family:ui-monospace,Consolas,monospace; font-size:.9em; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+  @media (max-width:1000px) { .hero .kpis, .cards, .two { grid-template-columns:1fr; } .card { border-left:0; border-top:1px solid var(--line); } .hero .kpis div { border-left:0; border-top:1px solid rgba(249,249,249,.18); } .step { grid-template-columns:44px 1fr; } .step .meta { grid-column:2; } }
+
+
+  @media print { .bar { display:none; } body { background:#fff; } table, .step, .callout { break-inside:avoid; } }
+</style>
+
+</head>
+<body>
+<div class="bar"><div class="wrap bar-in"><strong>Kosztorys sieci BWP 2.0</strong><span class="sm">stan 03.09.2026 · odpowiedź na zlecenie Michała Ziacha · do ticketu 434172</span><span class="sp"></span><button class="btn" onclick="pobierzMd()">Pobierz .md</button><button class="btn" onclick="print()">Drukuj / PDF</button></div></div>
+
+<header class="hero"><div class="wrap">
+  <svg class="logo" role="img" aria-label="iCEA" height="34" viewBox="0 0 186 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1437_16974)">
+<path d="M0 0.350281H10.1556V39.9221H0V0.350281Z" fill="currentColor"/>
+<path d="M0 0.332703H10.3132V10.3132H0V0.332703Z" fill="currentColor"/>
+<path d="M60.02 15.2941C60.0224 14.7134 59.9095 14.0459 59.6885 13.5089C59.4666 12.9525 59.1277 12.4502 58.6948 12.0363C58.2259 11.597 57.6761 11.2531 57.0759 11.024C56.3653 10.7539 55.6096 10.6227 54.8496 10.6375H32.5857C31.8231 10.6321 31.0669 10.7759 30.3594 11.0608C29.6719 11.3233 29.0457 11.7244 28.5194 12.239C27.988 12.7588 27.5736 13.3864 27.3048 14.0795C27.0215 14.8005 26.878 15.5687 26.8816 16.3434V23.8709C26.8762 24.6338 27.02 25.3907 27.3048 26.0983C27.5715 26.7926 27.9862 27.4206 28.5194 27.9389C29.0457 28.4534 29.6719 28.8542 30.3594 29.1166C31.0669 29.4015 31.8231 29.5453 32.5857 29.5399H54.8496C55.5218 29.5343 56.1859 29.3902 56.8 29.1166C57.4068 28.8701 57.9667 28.5214 58.4558 28.0858C58.919 27.6414 59.2988 27.1181 59.578 26.5401C59.8646 25.9686 60.0161 25.3388 60.02 24.6995H70.3977V25.8036C70.3931 27.5456 70.0748 29.2725 69.4588 30.9019C68.8633 32.5559 67.9852 34.0941 66.8642 35.448C65.7437 36.7864 64.3681 37.8877 62.8168 38.6874C61.2029 39.5223 59.4083 39.9462 57.5916 39.9208H28.851C27.2077 39.9324 25.5793 39.6067 24.0669 38.9637C21.0933 37.7309 18.731 35.3674 17.4985 32.3929C16.8558 30.88 16.5301 29.2511 16.5417 27.6073V12.6623C16.5245 11.0061 16.8503 9.36398 17.4985 7.83985C18.1286 6.38862 19.0199 5.06614 20.1291 3.93813C21.2638 2.82016 22.6001 1.92724 24.0669 1.30628C25.5793 0.663348 27.2077 0.33757 28.851 0.349158H57.5916C59.4083 0.323811 61.2029 0.747248 62.8168 1.58218C64.3633 2.38137 65.7379 3.47558 66.8642 4.80313C67.9841 6.12368 68.8626 7.63134 69.4588 9.2571C70.0709 10.83 70.3894 12.5023 70.3977 14.1901V15.2941L60.02 15.2941Z" fill="currentColor"/>
+<path d="M181.349 39.8294H169.444L165.322 33.0743H137.116L133.049 39.8294H121.071L144.53 0.257751H157.889L181.349 39.8294ZM150.51 10.6382L143.15 22.6754H159.416L151.946 10.6382H150.51Z" fill="currentColor"/>
+<path d="M113.178 29.6704H77.8135V39.8302H113.178V29.6704Z" fill="currentColor"/>
+<path d="M119.029 15.092H77.8135V24.7364H119.029V15.092Z" fill="currentColor"/>
+<path d="M129.774 0.240967H77.8135V10.4008H129.774V0.240967Z" fill="currentColor"/>
+<path d="M176.914 0V1.49095H173.859V5.66902H172.369V1.49095H169.443V0H176.914Z" fill="currentColor"/>
+<path d="M185.69 0V5.66902H184.218V2.28226L181.716 5.66902L179.231 2.30068V5.66902H177.741V0H179.471L181.771 3.09244L184.071 0H185.69Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_1437_16974">
+<rect width="185.69" height="40" fill="currentColor"/>
+</clipPath>
+</defs>
+</svg>
+
+  <p class="lbl">BWP 2.0 · Szacunkowy kosztorys · Do przeglądu 11.09</p>
+  <h1>Sieć BWP 2.0 – szacunek kosztów scenariuszy B i C</h1>
+  <p class="thesis">Portal w scenariuszu B kosztuje w 12 miesiącach ok. 12 tys. zł, portal numer 100 w scenariuszu C ok. 2,7 tys. zł, ale C istnieje tylko po zbudowaniu fabryki i panelu za 130–170 tys. zł i po potwierdzeniu trafialności na pierwszych 10 portalach.</p>
+  <p>Liczby są rzędem wielkości z dokładnością plus minus jedna trzecia. Każda pozycja ma obok założenie, przy którym jest prawdziwa. Podstawa: portal numer 1 (busmaniak.pl), jego 52,2 h w tickecie 441565, 280 tekstów evergreen, 123 newsy z automatu, 421 grafik i realne koszty API z pięciu miesięcy. Stawki i cenniki modeli w sekcji założeń, łatwo je podmienić.</p>
+  <div class="kpis">
+    <div><b>160–230 tys. zł</b><span>scenariusz B, 15 portali, całość 12 miesięcy (CAPEX + OPEX, w tym 2 seaty Claude Max)</span></div>
+    <div><b>12 tys. zł</b><span>jeden portal B w 12 miesiącach, widełki 9–16 tys.</span></div>
+    <div><b>2,7 tys. zł</b><span>portal numer 100 w 12 miesiącach, bez amortyzacji fabryki</span></div>
+    <div><b>3 / 10</b><span>portali, które moim zdaniem powtórzą wynik busmaniaka</span></div>
+  </div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <h2>Odpowiedź w siedmiu tezach</h2>
+  <div class="summary"><ol>
+    <li><b>Portal numer 1 kosztował realnie ok. 110 rbh, nie 52.</b> Ticket nie zawiera projektowania procesu, budowy skilli, motywu i narzędzi ani późniejszych przejazdów redakcyjnych. 52 h to dolna granica, 90–120 rbh to mój szacunek pełny. Koszt API całego portalu do dziś: ok. 250 zł.</li>
+    <li><b>Krzywa opada, ale w dwóch krokach, nie płynnie.</b> Portal 1 ok. 20 tys. zł, portal 10 ok. 12 tys. zł, portal 100 ok. 2,7 tys. zł w 12 miesiącach. Spadek z 10 na 100 nie bierze się z wprawy, tylko z inwestycji w fabrykę i panel. Bez niej portal numer 100 kosztuje tyle co portal numer 10.</li>
+    <li><b>B jest do zrobienia dzisiejszymi narzędziami, C nie.</b> B to wzmocniony pipeline plus junior; C wymaga orkiestratora bez człowieka w pętli, panelu i innego hostingu. To osobne 130–170 tys. zł CAPEX i 6–9 miesięcy pracy.</li>
+    <li><b>Modele językowe są pomijalną pozycją kosztową.</b> Pełny artykuł z fact-checkiem, grafiką hero i dwiema infografikami to 3–5 zł. Przy 250 portalach modele i API to ok. 12 tys. zł miesięcznie, ludzie ok. 23 tys. zł. Etaty decydują o OPEX, nie tokeny.</li>
+    <li><b>Trafialność: 3 na 10 portali powtórzy busmaniaka, 4 będą przeciętne, 3 słabe.</b> Busmaniak trafił w niszę z dużym popytem informacyjnym i słabą konkurencją. Koszt portalu, który realnie pracuje, jest więc w B ok. 17 tys. zł, w C ok. 5 tys. zł.</li>
+    <li><b>Recykling co 6 miesięcy: ok. 40 zł miesięcznie na portal B i 8 zł na portal C w API</b> plus 1–2 rbh przeglądu. Pipeline odświeżania (Content Watcher) już istnieje i jest w tej wycenie kosztem konfiguracji, nie budowy.</li>
+    <li><b>Zarządzanie: terminal na etapie B pod dwoma warunkami, panel jako warunek wejścia w C.</b> Panel budujemy w miesiącach 7–10 za 40–55 tys. zł, dopiero po decyzji o C. Do tego czasu wąskim gardłem jestem ja i trzeba to nazwać wprost.</li>
+  </ol></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>1. Portal numer 1 – korekta liczby 52 h</h2>
+  <p class="lead">Zestawienie tego, co jest w tickecie 441565, z tym, co realnie poszło w busmaniaka. Liczby w rbh to mój szacunek na podstawie historii repozytorium i sesji.</p>
+  <table>
+    <tr><th>Składnik pracy nad portalem numer 1</th><th class="num">Rbh</th><th>Skąd liczba</th><th>Czy powtarza się przy kolejnym portalu</th></tr>
+    <tr><td>Praca raportowana w tickecie: struktura, 280 tekstów, 123 newsy z automatu, deploy</td><td class="num">52</td><td>ticket 441565, 23.03–03.08</td><td>tak, ale krócej – patrz krzywa</td></tr>
+    <tr><td>Projekt procesu i skille: content writer, fact-checker, news generator, YouTube finder, FB poster, stamp-lastmod</td><td class="num">30–40</td><td>poza ticketem, częściowo w tickecie 434172 i w sesjach widocznosc.ai</td><td>nie – to jest współdzielony pipeline</td></tr>
+    <tr><td>Motyw Hugo, branding, 4 interaktywne narzędzia (kalkulatory, porównywarka)</td><td class="num">12–16</td><td>historia commitów z marca</td><td>motyw nie, narzędzia i CSS per portal tak</td></tr>
+    <tr><td>Przejazdy redakcyjne po starcie: fact-check 272 tekstów, korekta makaronizmów 423 stron, wpięcia FAST, lastmod</td><td class="num">12–15</td><td>sesje 08.2026, docs/</td><td>tak, jako utrzymanie</td></tr>
+    <tr class="sum"><td>Pełny koszt portalu numer 1 w rbh</td><td class="num">≈ 110</td><td colspan="2">widełki 90–120 rbh; przy stawce 180 zł/rbh ≈ 20 tys. zł plus ok. 250 zł API i 100 zł domeny</td></tr>
+  </table>
+  <div class="cards">
+    <div class="card"><span class="n">≈ 250 zł</span><h4>API za pięć miesięcy portalu</h4><p>OpenRouter ok. 80 zł, kie.ai za 421 grafik ok. 160 zł, OpenAI dla newsów ok. 20–40 zł miesięcznie. Hosting 0 zł (Cloudflare Pages).</p></div>
+    <div class="card"><span class="n">~ 0,15 rbh</span><h4>Uwagi człowieka na artykuł</h4><p>280 tekstów evergreen w ok. 40 rbh produkcji. To jest tempo pracy z Claude Code, nie ręcznego pisania.</p></div>
+    <div class="card dark"><span class="n">0,4 zł</span><h4>Jedna grafika</h4><p>kie.ai, ok. 0,10 $ za obraz hero lub infografikę sekcji. Grafiki to dziś większy koszt API niż tekst.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>2. Zakres – bloki pracy osobno dla B i C</h2>
+  <p class="lead">Bloki, nie zadania. Tag mówi, w którym scenariuszu blok jest wymagany. Rbh dotyczą części współdzielonej (CAPEX), koszty per portal są w sekcji 5.</p>
+  <table>
+    <tr><th>Blok pracy</th><th>Scenariusz B (10–20)</th><th>Scenariusz C (200–300)</th><th class="num">Rbh współdzielone B</th><th class="num">Rbh współdzielone C (ponad B)</th><th>Założenie</th></tr>
+    <tr class="sub"><td colspan="6">Zakres i treść</td></tr>
+    <tr><td>Dobór nisz i walidacja popytu</td><td><span class="tag ok">ręcznie, ja</span></td><td><span class="tag ok">półautomat + junior</span></td><td class="num">10</td><td class="num">30</td><td>w C potrzebny skoring nisz z Senuto i DataForSEO, bo 250 nisz nikt nie dobierze ręcznie; jakość doboru jest głównym czynnikiem trafialności</td></tr>
+    <tr><td>Silosy i architektura informacji per portal</td><td><span class="tag ok">szablon 10–12 sekcji</span></td><td><span class="tag ok">generator z seeda</span></td><td class="num">15</td><td class="num">40</td><td>busmaniak ma 12 sekcji; w C generator silosów z fraz, bez ręcznej mapy</td></tr>
+    <tr><td>Content plan (adresy, frazy, wolumeny) – praca powtarzalna</td><td><span class="tag ok">skill istnieje</span></td><td><span class="tag ok">bez człowieka w pętli</span></td><td class="num">10</td><td class="num">20</td><td>etap 1 pipeline’u już to robi; w C zdejmujemy bramkę akceptacji</td></tr>
+    <tr><td>Pipeline produkcji treści: draft, humanizacja, fact-check, grafiki, FAQ, schema</td><td><span class="tag ok">wzmocnienie pod wiele portali</span></td><td><span class="tag ok">orkiestrator API</span></td><td class="num">40</td><td class="num">180</td><td>dziś pipeline jedzie w Claude Code z człowiekiem; C wymaga kolejki, budżetów, retry, sędziego jakości, bez terminala</td></tr>
+    <tr><td>Newsy i social z automatu</td><td><span class="tag ok">config per portal</span></td><td><span class="tag ok">config per portal</span></td><td class="num">5</td><td class="num">10</td><td>news generator i FB poster działają; w C ograniczamy do 3 newsów tygodniowo, żeby nie powielać starej sieci</td></tr>
+    <tr class="sub"><td colspan="6">Publikacja i infrastruktura</td></tr>
+    <tr><td>Motyw i warianty wizualne</td><td><span class="tag ok">1 motyw, CSS per portal</span></td><td><span class="tag ok">5–8 rodzin motywów</span></td><td class="num">10</td><td class="num">50</td><td>300 portali na jednym motywie to footprint sieci; różne układy, fonty, komponenty</td></tr>
+    <tr><td>Hosting, domeny, DNS, GSC, uruchomienie</td><td><span class="tag ok">skrypt</span></td><td><span class="tag ok">skrypt + inne konto CF</span></td><td class="num">8</td><td class="num">50</td><td>Cloudflare Pages ma limit projektów na konto (100 w standardzie, do podniesienia na wniosek) – w C trzeba to rozstrzygnąć przed portalem 80</td></tr>
+    <tr><td>Interaktywne narzędzia per portal</td><td><span class="tag ok">1–2 na portal</span></td><td><span class="tag no">pomijamy</span></td><td class="num">0</td><td class="num">0</td><td>w B narzędzia są wyróżnikiem premium; w C ich koszt nie schodzi z kilku rbh, więc znikają</td></tr>
+    <tr class="sub"><td colspan="6">Linkowanie, monitoring, zarządzanie</td></tr>
+    <tr><td>Linkowanie wewnętrzne i klastry</td><td><span class="tag ok">w pipeline</span></td><td><span class="tag ok">w pipeline</span></td><td class="num">5</td><td class="num">10</td><td>etap 2 pipeline’u dobiera 3–5 linków z mapy strony; w C dochodzi kontrola sierot</td></tr>
+    <tr><td>Integracja z dzisiejszym flow link buildingu: inwentarz portali, bramka 90 dni i 12 tekstów, zlecenie wpięcia, raport</td><td><span class="tag ok">arkusz + skill wpięcia</span></td><td><span class="tag ok">moduł panelu</span></td><td class="num">25</td><td class="num">60</td><td>wpięcia FAST na busmaniaku zrobiliśmy ręcznie; w B wystarczy arkusz i skill, w C zlecenia muszą wchodzić z panelu</td></tr>
+    <tr><td>Monitoring: indeksacja, widoczność, cytowania AI, alerty</td><td><span class="tag ok">rozbudowa dashboardu</span></td><td><span class="tag ok">rozbudowa dashboardu</span></td><td class="num">15</td><td class="num">30</td><td>dashboard zaplecza z 7 źródłami już istnieje; dokładamy widok wielu portali i alerty na wyjątki</td></tr>
+    <tr><td>Recykling treści co 6 miesięcy</td><td><span class="tag ok">Content Watcher</span></td><td><span class="tag ok">Content Watcher, próbkowanie</span></td><td class="num">10</td><td class="num">20</td><td>pipeline odświeżania działa na grupa-icea.pl; podpięcie Hugo zamiast WordPressa</td></tr>
+    <tr><td>Panel zarządzania całością</td><td><span class="tag no">nie w B</span></td><td><span class="tag ok">warunek wejścia</span></td><td class="num">0</td><td class="num">250</td><td>szczegóły w sekcji 8; część rbh może wykonać dev ICEA po niższej stawce</td></tr>
+    <tr><td>Bramki jakości i guardraile: sędzia LLM, deduplikacja między portalami, kontrola footprintu</td><td><span class="tag kb">próbka ręczna</span></td><td><span class="tag ok">automat</span></td><td class="num">5</td><td class="num">40</td><td>w B czytam co dziesiąty tekst; w C nikt nie czyta, więc bramki muszą być w kodzie</td></tr>
+    <tr class="sum"><td>Razem rbh współdzielone</td><td colspan="2"></td><td class="num">≈ 160</td><td class="num">≈ 790</td><td>B 130–190 rbh; C dodatkowo 600–900 rbh ponad B</td></tr>
+  </table>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>3. Czego świadomie nie wyceniam</h2>
+  <div class="two">
+    <div>
+      <ul class="plain">
+        <li><b>Migracja i utrzymanie starej sieci BWP</b> – zgodnie z koncepcją z lutego starej sieci nie ruszamy; w tej wycenie nie ma ani złotówki na jej treści, hosting ani wygaszanie.</li>
+        <li><b>Scenariusz A i koszt utraconych projektów</b> – liczy Michał z Krzyśkiem Wrzesińskim.</li>
+        <li><b>Zakup domen z historią (aged domains)</b> – liczę świeże domeny .pl po ok. 100 zł rocznie. Domeny z historią kosztują 300–2 000 zł sztuka i zmieniają CAPEX C o 75–500 tys. zł. To osobna decyzja strategiczna, nie pozycja kosztorysu.</li>
+        <li><b>Treści na strony klientów i sprzedaż usługi</b> – wyceniam tylko produkcję i utrzymanie sieci, nie pakietowanie w umowy VIP i Platformę Wzrostu.</li>
+        <li><b>Wideo, rolki, YouTube Shorts</b> – potencjał z dokumentacji procesu, ale poza zakresem.</li>
+        <li><b>Karta projektu, harmonogram zadań, osoba managera</b> – po decyzji o skali.</li>
+        <li><b>Pozycje poniżej progu istotności</b> – YouTube Data API, Facebook Graph API, GitHub, GitHub Actions: w tej skali darmowe lub poniżej 100 zł miesięcznie, pominięte.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="callout blue"><b>Założenia stawek i kursu.</b> Senior (ja, dev ICEA) 180 zł/rbh kosztu wewnętrznego. Junior SEO na etacie 9 000 zł miesięcznie pełnego kosztu pracodawcy, czyli ok. 56 zł/rbh. Kurs 3,8 zł za dolara. Zmiana stawki seniora o 30 zł przesuwa CAPEX B o ok. 5 tys. zł, CAPEX C o ok. 25 tys. zł.</div>
+      <div class="callout blue"><b>Założenia skali.</b> B: 15 portali, każdy 200 tekstów na starcie i 15 tekstów evergreen miesięcznie plus 1 news dziennie z automatu. C: 250 portali, każdy 60 tekstów na starcie i 6 tekstów miesięcznie plus 3 newsy tygodniowo. Busmaniak wystartował z 280 tekstami; próg z koncepcji (12 tekstów, 90 dni) to minimum do pierwszego linku, nie do widoczności.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>4. Koszt jednego artykułu i jednej grafiki – per model</h2>
+  <p class="lead">Ceny modeli według cenników z września 2026, do sprawdzenia przy każdej aktualizacji. Artykuł referencyjny: 1 600 słów, 6 nagłówków H2, FAQ, hero i dwie infografiki, fact-check dwuprzebiegowy.</p>
+  <table>
+    <tr><th>Etap pipeline’u</th><th>Model lub usługa</th><th>Cennik</th><th>Zużycie na artykuł</th><th class="num">Koszt na artykuł</th></tr>
+    <tr><td>1. Research fraz</td><td>SerpData, Senuto, DataForSEO</td><td>subskrypcje firmowe, jednostki</td><td>1 SERP, 5 adresów w Senuto, 1 zapytanie DataForSEO</td><td class="num">~0,15 zł</td></tr>
+    <tr><td>2. Research faktów</td><td>Perplexity Sonar</td><td>ok. 1 $/1M wejścia i wyjścia plus opłata za zapytanie</td><td>3 zapytania po ok. 4 tys. tokenów</td><td class="num">~0,15 zł</td></tr>
+    <tr><td>3. Draft</td><td>Gemini 3 Flash</td><td>ok. 0,10 $/1M wejścia, 0,40 $/1M wyjścia</td><td>10 tys. wejścia, 3 tys. wyjścia</td><td class="num">~0,01 zł</td></tr>
+    <tr><td>3b. Dosypanie danych per sekcja</td><td>Perplexity Sonar</td><td>jak wyżej</td><td>6 zapytań</td><td class="num">~0,25 zł</td></tr>
+    <tr><td>4. Humanizacja</td><td>Claude Sonnet 5</td><td>2 $/1M wejścia, 10 $/1M wyjścia</td><td>12 tys. wejścia, 4 tys. wyjścia</td><td class="num">~0,25 zł</td></tr>
+    <tr><td>5. Frontmatter, FAQ, walidacja</td><td>Gemini 3 Flash</td><td>jak wyżej</td><td>2 wywołania</td><td class="num">~0,01 zł</td></tr>
+    <tr><td>5. Grafika hero</td><td>kie.ai (nano-banana-2)</td><td>ok. 0,10 $/obraz</td><td>1 obraz</td><td class="num">0,40 zł</td></tr>
+    <tr><td>5. Infografiki sekcji</td><td>kie.ai (gpt-image-2)</td><td>ok. 0,10–0,20 $/obraz</td><td>2 obrazy plus 2 opisy modelem</td><td class="num">1,00 zł</td></tr>
+    <tr><td>Fact-check dwuprzebiegowy</td><td>Gemini 3.1 Pro + GPT-5.4</td><td>ok. 0,08 $/artykuł (z dokumentacji procesu)</td><td>2 przebiegi</td><td class="num">0,30 zł</td></tr>
+    <tr class="sum"><td>Artykuł w B (pipeline w Claude Code, człowiek w pętli)</td><td colspan="3">bez kosztu subskrypcji Claude, którą liczę w OPEX jako stanowisko</td><td class="num">≈ 2,5 zł</td></tr>
+    <tr><td>Orkiestracja w C zamiast Claude Code</td><td>Claude Sonnet 5 jako agent, Opus 5 do sędziego jakości</td><td>Sonnet 2 $/10 $, Opus 5 $/25 $ za 1M</td><td>ok. 50 tys. tokenów wejścia i 10 tys. wyjścia na artykuł, sędzia 1 wywołanie</td><td class="num">+1,0–1,5 zł</td></tr>
+    <tr class="sum"><td>Artykuł w C (bez człowieka w pętli)</td><td colspan="3">zaokrąglam w górę, bo retry i sędzia dokładają tokeny</td><td class="num">≈ 4 zł</td></tr>
+    <tr><td>News z automatu</td><td>GPT-5.4 sędzia + pisarz, Gemini Flash</td><td>ok. 0,05 $/wywołanie</td><td>2–3 wywołania, hero</td><td class="num">≈ 0,6 zł</td></tr>
+    <tr><td>Odświeżenie istniejącego tekstu (recykling)</td><td>SerpData ×2, Jina, Sonnet 5, Gemini Flash (styl)</td><td>przejazd Content Watchera: rywale ok. 0,09 $, reszta ok. 0,35 $</td><td>1 przejazd na artykuł</td><td class="num">≈ 1,7 zł</td></tr>
+  </table>
+  <div class="callout"><b>Modele nie są ryzykiem kosztowym, ale limity narzędzi SEO są.</b> Przy 250 portalach po 60 adresów research to 15 tys. zapytań SERP i ok. 75 tys. adresów w Senuto na start. To nie mieści się w dzisiejszych subskrypcjach ani w limicie SerpData (ok. 20 s na zapytanie, czyli 80 godzin czystego czekania). W OPEX C zakładam wyższe pakiety za 2–3 tys. zł miesięcznie i kolejkę researchu rozłożoną w czasie.</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>4a. Operator Claude Code, licencje i wydajność</h2>
+  <p class="lead">W B produkcja jedzie tak jak na busmaniaku: człowiek w terminalu, Claude Code na subskrypcji Max, Sonnet do humanizacji w ramach seatu. Ta sekcja pokazuje, ile to kosztuje jako stanowisko i ile portali daje w miesiącu.</p>
+  <table>
+    <tr><th>Pozycja</th><th class="num">Wartość</th><th>Skąd liczba i założenie</th></tr>
+    <tr><td>Uwaga człowieka na artykuł w trybie wsadowym</td><td class="num">≈ 0,15 rbh</td><td>280 tekstów evergreen busmaniaka w ok. 40 rbh produkcji; operator uruchamia partie, czyta co dziesiąty tekst, poprawia wyjątki</td></tr>
+    <tr><td>Czas maszyny na artykuł (research, draft, humanizacja, grafika, walidacja)</td><td class="num">6–8 min</td><td>pipeline 6 etapów z subagentem Sonnet; 8–10 tekstów na godzinę zegarową przy pracy wsadowej</td></tr>
+    <tr><td>Przepustowość jednego seatu Max 20x</td><td class="num">1 portal (200 tekstów) na 5–7 dni roboczych</td><td>z dokumentacji procesu: przy standardowych limitach 5–7 dni, busmaniak powstał w 4–6 dzięki marcowej promocji podwojonych limitów; sufitem są limity okien i limit tygodniowy, nie liczba tokenów</td></tr>
+    <tr><td>Realne tempo B przy dwóch seatach (ja 50% czasu + junior)</td><td class="num">2–3 portale miesięcznie</td><td>seat juniora od miesiąca 3; przy jednym seacie 1–2 portale miesięcznie i 15 portali zajmuje 10–12 miesięcy zamiast 8</td></tr>
+    <tr><td>Licencja Claude Max 20x</td><td class="num">≈ 760 zł/mies. za seat</td><td>200 $ miesięcznie; Max 5x za 100 $ nie wystarcza na tryb wsadowy, bo okna kończą się po 30–40 tekstach</td></tr>
+    <tr><td>Licencje w OPEX B</td><td class="num">≈ 1,5 tys. zł/mies.</td><td>2 seaty Max 20x (ja + junior); w pierwszej wersji tabeli liczyłem jeden, sekcja 5 poprawiona</td></tr>
+    <tr><td>Alternatywa: Claude Code na kluczu API zamiast subskrypcji</td><td class="num">≈ 1–1,5 zł/artykuł, bez limitów okien</td><td>ok. 50 tys. tokenów wejścia i 10 tys. wyjścia orkiestracji na Sonnet 5; 200 tekstów ≈ 300 zł, czyli przy 2 portalach miesięcznie taniej niż seat, ale bez przewidywalnego rachunku</td></tr>
+    <tr><td>Licencje w C</td><td class="num">≈ 760 zł/mies. + API w OPEX</td><td>orkiestrator idzie przez API (4 zł na artykuł, ujęte w „modele i API”); jeden seat zostaje dla mnie do rozwoju pipeline’u; juniorzy pracują w panelu, nie w terminalu</td></tr>
+    <tr><td>Wydajność C</td><td class="num">30 portali miesięcznie, 1 800 tekstów</td><td>ogranicza ją kolejka researchu SERP (SerpData ok. 20 s na zapytanie) i pakiety Senuto, nie modele; 1 800 tekstów to ok. 7 tys. zł API miesięcznie w rozruchu</td></tr>
+  </table>
+  <div class="callout blue"><b>Rekomendacja dla B: subskrypcja do dwóch seatów, klucz API jako zawór.</b> Seat daje przewidywalny koszt i pełny Claude Code z subagentami. Kiedy limit tygodniowy blokuje partię, pipeline przełącza się na klucz API i dolicza ok. 300 zł na portal. Przy więcej niż trzech operatorach subskrypcje przestają się opłacać względem API i wtedy jest już scenariusz C.</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>5. Tabela kosztów w układzie ze zlecenia</h2>
+  <p class="lead">Wartości dla 15 portali w B i 250 portali w C. OPEX podany dla pełnej skali, czyli po zakończeniu rozruchu. Widełki plus minus jedna trzecia.</p>
+  <table>
+    <tr><th>Pozycja kosztowa</th><th class="num">Scenariusz B (10–20)</th><th class="num">Scenariusz C (200–300)</th><th>Założenie, przy którym liczba jest prawdziwa</th></tr>
+    <tr class="sub"><td colspan="4">CAPEX, jednorazowo</td></tr>
+    <tr><td>Projekt architektury informacji i silosów (część współdzielona)</td><td class="num">4–6 tys. zł</td><td class="num">15–20 tys. zł</td><td>B: szablon sekcji i skill; C: generator silosów z seeda i skoring nisz (100 rbh łącznie z doborem nisz)</td></tr>
+    <tr><td>Content plan dla domeny, praca powtarzalna na każdy portal</td><td class="num">1,5–2 tys. zł na portal</td><td class="num">0,25–0,4 tys. zł na portal</td><td>B: 8 rbh seniora i 100 zł API na 200 adresów; C: 1 rbh juniora, 50 zł API na 60 adresów, bez akceptacji</td></tr>
+    <tr><td>Pipeline produkcji i publikacji treści</td><td class="num">12–18 tys. zł</td><td class="num">55–75 tys. zł</td><td>B: 70 rbh uogólnienia pod wiele portali; C: dodatkowo 250–300 rbh orkiestratora, bramek jakości i motywów</td></tr>
+    <tr><td>Panel lub inne narzędzie zarządzania</td><td class="num">0 zł</td><td class="num">40–55 tys. zł</td><td>B: terminal i dashboard read-only; C: 250 rbh, część po stawce deva</td></tr>
+    <tr><td>Domeny i uruchomienie infrastruktury</td><td class="num">3–4 tys. zł</td><td class="num">45–60 tys. zł</td><td>domena 100 zł, uruchomienie B 3 rbh, C 0,5 rbh skryptem; C dodatkowo 50 rbh na hosting poza limitem Pages i osobne konta</td></tr>
+    <tr><td>Uruchomienie treści startowych i grafik na wszystkich portalach</td><td class="num">55–75 tys. zł</td><td class="num">120–160 tys. zł</td><td>B: 15 × (200 tekstów × 2,5 zł + 25 rbh mieszanych); C: 250 × (60 tekstów × 4 zł + 2 rbh juniora)</td></tr>
+    <tr class="sum"><td>CAPEX razem</td><td class="num">≈ 100 tys. zł (75–130)</td><td class="num">≈ 320 tys. zł (280–380)</td><td>C zawiera CAPEX B jako warunek wstępny</td></tr>
+    <tr class="sub"><td colspan="4">OPEX, miesięcznie, przy pełnej skali</td></tr>
+    <tr><td>Modele językowe i API</td><td class="num">1,5 tys. zł</td><td class="num">12–13 tys. zł</td><td>B: 100 zł na portal (15 tekstów, 30 newsów, recykling, grafiki); C: 50 zł na portal (6 tekstów, 12 newsów, recykling próbkowany)</td></tr>
+    <tr><td>Hosting, domeny, narzędzia, licencje Claude</td><td class="num">1,8 tys. zł</td><td class="num">6–7 tys. zł</td><td>B: 2 seaty Claude Max 20x 1,5 tys., odnowienia domen 0,1 tys., narzędzia w obecnych subskrypcjach; C: 1 seat Max 0,8 tys., domeny 2,1 tys., wyższe pakiety Senuto/SerpData/DataForSEO 2–3 tys., Cloudflare Workers/Pages 0,4 tys.</td></tr>
+    <tr><td>Praca ludzka na utrzymaniu i nadzorze (senior)</td><td class="num">2,7 tys. zł</td><td class="num">5,4 tys. zł</td><td>B: 15 rbh miesięcznie (1 rbh na portal); C: 30 rbh na wyjątki, panel, pipeline</td></tr>
+    <tr><td>Etaty</td><td class="num">4,5 tys. zł</td><td class="num">18 tys. zł</td><td>B: pół etatu juniora (QA treści, wpięcia, monitoring); C: 2 juniorów, po ok. 125 portali na osobę, z panelem</td></tr>
+    <tr class="sum"><td>OPEX razem miesięcznie</td><td class="num">≈ 11 tys. zł (8–14)</td><td class="num">≈ 43 tys. zł (30–55)</td><td>C bez amortyzacji CAPEX; z amortyzacją 24 miesiące dochodzi 13 tys. zł miesięcznie</td></tr>
+    <tr class="sub"><td colspan="4">Koszt jednego kolejnego portalu</td></tr>
+    <tr><td>Uruchomienie, jednorazowo</td><td class="num">5,5 tys. zł (4–8)</td><td class="num">0,6 tys. zł (0,5–0,8)</td><td>B: 12 rbh seniora + 20 rbh juniora + 700 zł API i grafik + domena; C: 2 rbh juniora + 300 zł API + domena</td></tr>
+    <tr><td>Utrzymanie, miesięcznie</td><td class="num">550 zł (400–700)</td><td class="num">170 zł (120–220)</td><td>B: 100 zł API + 100 zł udziału w seatach Claude + 1 rbh seniora + 2 rbh juniora; C: 50 zł API + narzędzia i domena 25 zł + 0,1 rbh seniora + 1,3 rbh juniora</td></tr>
+    <tr class="sum"><td>Koszt całkowity portalu w 12 miesiącach</td><td class="num">≈ 12 tys. zł (9–16)</td><td class="num">≈ 2,7 tys. zł (2–3,5)</td><td>liczba do zabrania do Wojtka; C bez amortyzacji fabryki, z amortyzacją na 250 portali ≈ 4 tys. zł</td></tr>
+  </table>
+  <div class="cards">
+    <div class="card"><span class="n">160–230 tys. zł</span><h4>B w 12 miesiącach, 15 portali</h4><p>CAPEX ok. 100 tys. plus OPEX narastający od 4 do 11 tys. miesięcznie w miarę uruchamiania portali. Mieści się w budżecie jednego etatu seniora i pół etatu juniora.</p></div>
+    <div class="card"><span class="n">≈ 320 tys. zł + 43 tys. zł/mies.</span><h4>C przy pełnej skali</h4><p>CAPEX zawiera treści startowe 250 portali. Pełne 250 portali nie stanie w 12 miesięcy: przy 30 uruchomieniach miesięcznie od miesiąca 10 to horyzont 18–20 miesięcy.</p></div>
+    <div class="card dark"><span class="n">≈ 4×</span><h4>Wzrost budżetu za 17× więcej portali</h4><p>Taka jest treść krzywej: C jest tańsze per portal o rząd wielkości, ale droższe jako całość i wymaga ludzi, których dziś nie ma.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>6. Krzywa kosztu – portal 1, 10 i 100</h2>
+  <p class="lead">Trzy punkty zamiast średniej. Koszt całkowity w 12 miesiącach, bez współdzielonego CAPEX, żeby porównanie dotyczyło samego portalu.</p>
+  <table>
+    <tr><th>Portal</th><th>Kto i jak go stawia</th><th class="num">Rbh człowieka na portal w 12 miesiącach</th><th class="num">API i grafiki w 12 miesiącach</th><th class="num">Koszt całkowity w 12 miesiącach</th><th>Co musi być prawdą</th></tr>
+    <tr><td>Numer 1 (busmaniak.pl)</td><td>ja, w terminalu, ucząc się procesu</td><td class="num">≈ 110</td><td class="num">≈ 400 zł</td><td class="num">≈ 20 tys. zł</td><td>znamy; 52 h w tickecie plus korekta z sekcji 1</td></tr>
+    <tr><td>Numer 10 (scenariusz B)</td><td>ja plus junior, wzmocniony pipeline, terminal</td><td class="num">≈ 48 (12 seniora + 36 juniora)</td><td class="num">≈ 1,9 tys. zł + 1,2 tys. zł udziału w seatach</td><td class="num">≈ 12 tys. zł</td><td>pipeline uogólniony pod wiele portali (CAPEX B zrobiony), junior wdrożony od miesiąca 3</td></tr>
+    <tr><td>Numer 100 (scenariusz C)</td><td>junior z panelu, orkiestrator bez człowieka w pętli</td><td class="num">≈ 18 (1,5 seniora + 16,5 juniora)</td><td class="num">≈ 0,9 tys. zł</td><td class="num">≈ 2,7 tys. zł</td><td>fabryka, panel i bramki jakości działają (CAPEX C zrobiony), hosting poza limitem Pages, wyższe pakiety narzędzi</td></tr>
+    <tr><td>Numer 300</td><td>jak numer 100</td><td class="num">≈ 18</td><td class="num">≈ 0,9 tys. zł</td><td class="num">≈ 2,7 tys. zł</td><td>od portalu 100 krzywa jest płaska; dalszy spadek wymagałby zejścia z jakości treści, czego nie rekomenduję</td></tr>
+  </table>
+  <div class="two">
+    <div>
+      <p class="lead">Spadek z 20 na 12 tys. zł to efekt wprawy i uogólnienia skilli. Spadek z 12 na 2,7 tys. zł to efekt zdjęcia człowieka z pętli produkcji i zastąpienia go bramkami w kodzie. Ten drugi krok nie wydarzy się sam: bez CAPEX C portal numer 100 kosztuje tyle, co portal numer 10, i wtedy scenariusz C nie istnieje.</p>
+      <p class="lead">Jest jeszcze trzeci parametr, którego krzywa nie pokazuje: czas. W B stawiam 2–3 portale miesięcznie. W C orkiestrator stawia 30 miesięcznie, ale dopiero od miesiąca 10.</p>
+    </div>
+    <div>
+      <div class="callout"><b>Warunek istnienia C.</b> Portal numer 100 kosztuje ułamek portalu numer 1 tylko wtedy, gdy nikt nie czyta jego tekstów przed publikacją. To znaczy, że jakość pilnują sędzia LLM, fact-check i próbka 1 na 10 czytana przez juniora. Jeżeli zarząd nie akceptuje publikacji bez oka człowieka, C kosztuje 3–4 razy więcej i przestaje być C.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>7. Trafialność i koszt portalu, który pracuje</h2>
+  <p class="lead">Busmaniak trafił w niszę z dużym popytem informacyjnym (bezpieczniki, przekaźniki, kontrolki Ducato), słabą konkurencją i zerową obecnością producentów w treści poradnikowej. Zakładam, że odwzorowanie w innej branży będzie przeciętnie słabsze.</p>
+  <table>
+    <tr><th>Klasa portalu po 6 miesiącach</th><th>Definicja</th><th class="num">Z 10 portali w B</th><th class="num">Z 10 portali w C</th><th>Co z nim robimy</th></tr>
+    <tr><td>Powtórka busmaniaka</td><td>widoczność Senuto powyżej 5 000 pkt, ponad 1 000 cytowań AI, ruch powyżej 10 tys. użytkowników tygodniowo</td><td class="num">3</td><td class="num">1</td><td>wyróżnik dla umów VIP, case study, linki premium</td></tr>
+    <tr><td>Przeciętny, ale użyteczny</td><td>widoczność 1 000–3 000 pkt, zaindeksowany, po 90 dniach i 12 tekstach nadaje się do linku</td><td class="num">4</td><td class="num">4</td><td>standardowe wpięcia, dosypanie treści z recyklingu</td></tr>
+    <tr><td>Słaby</td><td>poniżej 500 pkt po 6 miesiącach</td><td class="num">3</td><td class="num">5</td><td>B: zmiana niszy lub wygaszenie; C: wygaszenie po 9 miesiącach, domena do puli</td></tr>
+  </table>
+  <div class="cards">
+    <div class="card"><span class="n">≈ 17 tys. zł</span><h4>Portal, który pracuje, w B</h4><p>12 tys. zł podzielone przez 0,7 trafialności (klasy 1 i 2). Jeśli liczyć tylko powtórki busmaniaka, ok. 40 tys. zł.</p></div>
+    <div class="card"><span class="n">≈ 5,4 tys. zł</span><h4>Portal, który pracuje, w C</h4><p>2,7 tys. zł przez 0,5 trafialności. Z amortyzacją fabryki ok. 8 tys. zł.</p></div>
+    <div class="card dark"><span class="n">10 portali, 6 miesięcy</span><h4>Ile walidacji przed C</h4><p>Tyle wystarczy, żeby zobaczyć, czy trafialność 3/10 jest prawdziwa. Pierwsze 10 portali B startuje w miesiącach 2–5, odczyt w miesiącu 8–11.</p></div>
+  </div>
+  <p class="sm">Trafialność w C jest niższa nie dlatego, że pipeline pisze gorzej, tylko dlatego, że nisze dobiera skoring zamiast człowieka i portal startuje z 60 tekstami zamiast 200. Jeśli pierwsze 10 portali B pokaże trafialność poniżej 2/10, C nie ma sensu niezależnie od kosztu na portal.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>8. Architektura zarządzania – rozstrzygnięcie</h2>
+  <p class="lead">Odpowiedź mieszana i rozłożona w czasie: terminal w B pod dwoma warunkami, lekkie wejście w pojedynczy portal od miesiąca 4, panel jako warunek wejścia w C.</p>
+  <table>
+    <tr><th>Wariant</th><th>Decyzja</th><th>Kiedy</th><th class="num">Koszt</th><th>Warunek, przy którym jest bezpieczny</th></tr>
+    <tr><td>Sterowanie z terminala</td><td><span class="tag ok">przyjęte na etap B</span></td><td>od teraz do decyzji o C</td><td class="num">w CAPEX B</td><td>1) każdy portal powstaje wyłącznie skillem i konfiguracją w repozytorium, nigdy ręcznie, więc drugi człowiek z Claude Code odtwarza go z instrukcji; 2) junior od miesiąca 3 uruchamia co najmniej co trzeci portal samodzielnie, co jest testem, że kompetencja nie siedzi w jednej głowie</td></tr>
+    <tr><td>Łatwe wejście w pojedynczy portal</td><td><span class="tag ok">przyjęte od miesiąca 4</span></td><td>miesiąc 4–5</td><td class="num">≈ 3 tys. zł (15 rbh)</td><td>CMS na plikach (Sveltia lub Decap) nad tym samym repozytorium; specjalista poprawia tekst w przeglądarce, commit idzie sam; standard konfiguracji i dostępów wspólny dla wszystkich portali</td></tr>
+    <tr><td>Panel do zarządzania całością</td><td><span class="tag kb">warunek wejścia w C</span></td><td>miesiące 7–10, po decyzji o C</td><td class="num">40–55 tys. zł + 10 rbh/mies.</td><td>zakres: lista portali ze stanem, kolejka treści i budżetów, zlecenia wpięć z flow link buildingu, alerty, wejście w portal; bez panelu 2 juniorów nie obsłuży 250 portali i wracamy do jednej osoby w terminalu</td></tr>
+  </table>
+  <div class="callout blue"><b>Dashboard zaplecza już istnieje</b> (7 źródeł danych, cron codzienny, Content Watcher z edytorem). Panel dla C to jego rozbudowa, nie produkt od zera. Dlatego 250 rbh, nie 600.</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>9. Recykling treści co 6 miesięcy</h2>
+  <p class="lead">Minimum jeden przejazd na tekst evergreen na pół roku. Pipeline Content Watchera dobiera pilność z macierzy wyniki × wiek, więc nie odświeżamy wszystkiego na ślepo.</p>
+  <table>
+    <tr><th>Pozycja</th><th class="num">Portal B (250 tekstów evergreen po roku)</th><th class="num">Portal C (100 tekstów po roku)</th><th>Założenie</th></tr>
+    <tr><td>Teksty odświeżane w półroczu</td><td class="num">125 (50%)</td><td class="num">30 (30%)</td><td>reszta ma okres ochronny 90 dni albo brak sygnału spadku; wszystkie teksty dostają nowy lastmod dopiero po realnej zmianie</td></tr>
+    <tr><td>API na półrocze</td><td class="num">≈ 210 zł</td><td class="num">≈ 50 zł</td><td>1,7 zł za przejazd: analiza SERP, treść rywali, przepisanie sekcji, styl, fact-check</td></tr>
+    <tr><td>Praca człowieka na półrocze</td><td class="num">10 rbh juniora</td><td class="num">1 rbh juniora</td><td>B: akceptacja propozycji w edytorze, 5 minut na tekst; C: próbka 1 na 10, reszta idzie automatem po bramkach</td></tr>
+    <tr class="sum"><td>Równowartość miesięczna</td><td class="num">≈ 35 zł API + 1,7 rbh</td><td class="num">≈ 8 zł API + 0,2 rbh</td><td>ujęte w OPEX „utrzymanie miesięczne” w sekcji 5</td></tr>
+  </table>
+  <p class="sm">Koszt jednorazowy: podpięcie Content Watchera pod Hugo zamiast WordPressa (zapis do repozytorium zamiast REST) – ok. 10 rbh w CAPEX B, ujęte w bloku „Recykling treści” w sekcji 2.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>10. Obsada – kogo, kiedy, do czego</h2>
+  <p class="lead">Etat jest największą pozycją i najdłuższym terminem, więc rekrutacja wyprzedza decyzję o skali.</p>
+  <table>
+    <tr><th>Rola</th><th>Scenariusz B</th><th>Scenariusz C (ponad B)</th><th>Od kiedy</th><th>Do czego</th></tr>
+    <tr><td>Ja (senior, architekt)</td><td>ok. 50% czasu przez 12 miesięcy, ok. 900 rbh</td><td>75–100% przez miesiące 7–14</td><td>teraz</td><td>B: pipeline, dobór nisz, pierwsze 3 portale, nadzór; C: orkiestrator, panel, bramki jakości</td></tr>
+    <tr><td>Junior SEO uczony pracy z AI</td><td>1 etat, w B wykorzystany w połowie</td><td>2 etaty</td><td>rekrutacja we wrześniu, start w miesiącu 1–2, samodzielność od miesiąca 3</td><td>uruchamianie portali ze skilla, QA treści, wpięcia, monitoring; w C obsługa ok. 125 portali na osobę z panelu</td></tr>
+    <tr><td>Dev (ICEA lub zewnętrzny)</td><td>nie</td><td>ok. 300 rbh w miesiącach 7–10</td><td>po decyzji o C, w miesiącu 6–7</td><td>panel, hosting poza limitem Pages, kolejka orkiestratora</td></tr>
+    <tr><td>Redaktor QA (pół etatu lub zlecenie)</td><td>nie, robi to junior</td><td>pół etatu od miesiąca 10</td><td>miesiąc 10</td><td>próbka 1 na 10 tekstów w C, eskalacje z sędziego LLM</td></tr>
+  </table>
+  <div class="callout"><b>Ryzyko obsady, nie budżetu.</b> Junior samodzielny w miesiącu 3 jest założeniem optymistycznym. Na busmaniaku wszystkie decyzje redakcyjne i o niszy podejmowałem ja. Jeśli junior nie przejmie uruchamiania portali do miesiąca 4, B zwalnia do 1 portalu miesięcznie i 15 portali zajmuje 15 miesięcy zamiast 8.</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>11. Rekomendacja i kolejność</h2>
+  <p class="lead">B teraz, C po odczycie trafialności. To jest ta sama ścieżka, którą zlecenie dopuszcza: najpierw premium, potem schodzenie w dół segmentu.</p>
+  <div class="step"><div class="no">1</div><div><h4>Decyzja o B i rekrutacja juniora</h4><p>Budżet B: ok. 100 tys. zł CAPEX i do 11 tys. zł miesięcznie OPEX, w tym dwa seaty Claude Max. Rekrutacja juniora startuje od razu, bo wdrożenie trwa 2 miesiące.</p></div><div class="meta"><em>Michał, Wojtek</em>do końca września</div></div>
+  <div class="step"><div class="no">2</div><div><h4>Uogólnienie pipeline’u i pierwsze 3 portale</h4><p>Skille niezależne od niszy, motyw z presetami, skrypt uruchomienia, arkusz inwentarza dla link buildingu. Trzy portale w trzech różnych typach nisz, żeby trafialność mierzyć na zróżnicowanej próbce.</p></div><div class="meta"><em>ja</em>miesiące 1–3</div></div>
+  <div class="step"><div class="no">3</div><div><h4>Portale 4–15 i wejście w pojedynczy portal</h4><p>2–3 portale miesięcznie, od miesiąca 3 co trzeci uruchamia junior. CMS na plikach w miesiącu 4. Content Watcher podpięty pod Hugo w miesiącu 5.</p></div><div class="meta"><em>ja, junior</em>miesiące 3–8</div></div>
+  <div class="step"><div class="no">4</div><div><h4>Odczyt trafialności i decyzja o C</h4><p>Pierwsze 10 portali ma 6 miesięcy. Kryterium: co najmniej 2 z 10 w klasie „powtórka busmaniaka” i co najmniej 6 z 10 użytecznych. Poniżej tego C nie ma sensu, a B zostaje usługą premium.</p></div><div class="meta"><em>Michał, ja</em>miesiąc 8–9</div></div>
+  <div class="step"><div class="no">5</div><div><h4>Fabryka i panel</h4><p>Orkiestrator bez człowieka w pętli, panel, hosting poza limitem Pages, wyższe pakiety narzędzi, drugi junior. Pierwsze 30 portali C jako test fabryki.</p></div><div class="meta"><em>ja, dev, juniorzy</em>miesiące 9–14, po decyzji</div></div>
+  <h3 style="margin-top:40px">Do rozstrzygnięcia na przeglądzie 11.09</h3>
+  <ul class="plain">
+    <li><b>Stawka seniora i kurs</b> – czy 180 zł/rbh i 3,8 zł za dolara są kwotami, którymi liczy zarząd.</li>
+    <li><b>Publikacja bez oka człowieka w C</b> – to założenie decyduje o istnieniu C; jeśli nie przejdzie, tabelę C trzeba przeliczyć razy 3–4.</li>
+    <li><b>Domeny świeże czy z historią</b> – zmienia CAPEX C o 75–500 tys. zł i wymaga osobnej decyzji.</li>
+    <li><b>Wielkość portalu startowego w B</b> – 200 tekstów jak busmaniak, czy 100 i dosypywanie; 100 obniża uruchomienie portalu B o ok. 1,5 tys. zł, ale opóźnia widoczność.</li>
+  </ul>
+</div></section>
+
+<script>
+function pobierzMd(){
+  const t=(el)=>el.textContent.replace(/\s+/g,' ').trim();
+  const inline=(el)=>{let o='';el.childNodes.forEach(n=>{if(n.nodeType===3)o+=n.textContent.replace(/\s+/g,' ');else if(n.tagName==='B'||n.tagName==='STRONG')o+='**'+inline(n).trim()+'**';else if(n.tagName==='CODE')o+='`'+t(n)+'`';else if(n.tagName==='BR')o+='\n';else o+=inline(n);});return o;};
+  const table=(tb)=>{const rows=[...tb.querySelectorAll('tr')];let out=[];rows.forEach((r,i)=>{const cells=[...r.children];const isHead=cells[0].tagName==='TH';if(cells.length===1&&cells[0].colSpan>1){out.push('| **'+t(cells[0])+'** |'+' |'.repeat(0));return;}
+    out.push('| '+cells.map(c=>t(c).replace(/\|/g,'\\|')).join(' | ')+' |');if(isHead)out.push('|'+cells.map(()=>' --- ').join('|')+'|');});return out.join('\n');};
+  const lsp=(box)=>{let o=[];box.querySelectorAll('.sec').forEach(sec=>{o.push('### '+t(sec.querySelector('h4')).replace(/NOWA SEKCJA/,'(nowa sekcja)'));const h=sec.querySelector('.hint');if(h)o.push('_'+t(h)+'_');
+    sec.querySelectorAll('.f').forEach(f=>{const l=f.querySelector('label');const v=f.querySelector('.in,.ta,.sel,.tg');if(!l||!v)return;const lab=t(l).replace(/\*/,'').replace(/NOWE/,'(nowe)').trim();let val=t(v).replace(/⌄$/,'').trim();if(v.classList.contains('empty'))val='— ('+val+')';o.push('- **'+lab+'**: '+val);});
+    sec.querySelectorAll('.sl').forEach(sl=>o.push('- **'+t(sl.querySelector('b'))+'** ('+t(sl.querySelector('small'))+'): '+t(sl.querySelector('.val'))));
+    const cond=sec.querySelector('.cond');if(cond){o.push('- **'+t(cond.querySelector('.ph')).replace(/NOWE/,'(nowe)')+'**');cond.querySelectorAll('.tg').forEach(g=>o.push('  - '+(g.classList.contains('on')?'[x] ':'[ ] ')+t(g)));}
+    o.push('');});return o.join('\n');};
+  let md=[];
+  md.push('# '+t(document.querySelector('h1')));md.push('');md.push('_'+t(document.querySelector('.hero .lbl'))+' · '+t(document.querySelector('.bar .sm'))+'_');md.push('');
+  document.querySelectorAll('.hero p:not(.lbl)').forEach(p=>{md.push(inline(p).trim());md.push('');});
+  document.querySelectorAll('.hero .kpis div').forEach(d=>md.push('- **'+t(d.querySelector('b'))+'** '+t(d.querySelector('span'))));md.push('');
+  document.querySelectorAll('section.sec').forEach(sec=>{
+    [...sec.querySelector('.wrap').children].forEach(walk);
+    function walk(el){
+      if(el.tagName==='H2'){md.push('## '+t(el));md.push('');}
+      else if(el.tagName==='H3'){md.push('### '+t(el));md.push('');}
+      else if(el.tagName==='P'){md.push(inline(el).trim());md.push('');}
+      else if(el.tagName==='TABLE'){md.push(table(el));md.push('');}
+      else if(el.tagName==='OL'||el.tagName==='UL'){[...el.children].forEach((li,i)=>md.push((el.tagName==='OL'?(i+1)+'. ':'- ')+inline(li).trim()));md.push('');}
+      else if(el.classList.contains('callout')){md.push('> '+inline(el).trim().replace(/\n/g,'\n> '));md.push('');}
+      else if(el.classList.contains('cards')){el.querySelectorAll('.card').forEach(c=>{const n=c.querySelector('.n');md.push('- **'+(n?t(n)+' – ':'')+t(c.querySelector('h4'))+'**: '+t(c.querySelector('p')));});md.push('');}
+      else if(el.classList.contains('step')){const no=t(el.querySelector('.no'));const h=t(el.querySelector('h4'));const p=el.querySelector('p');const meta=el.querySelector('.meta');md.push(no+'. **'+h+'** – '+(p?inline(p).trim():'')+(meta?' _('+t(meta.querySelector('em'))+'; '+t(meta).replace(t(meta.querySelector('em')),'').trim()+')_':''));md.push('');}
+      else if(el.classList.contains('lsp')){md.push(lsp(el));}
+      else if(el.classList.contains('summary')||el.classList.contains('two')||el.tagName==='DIV'){[...el.children].forEach(walk);}
+    }
+  });
+  const blob=new Blob([md.join('\n').replace(/\n{3,}/g,'\n\n')],{type:'text/markdown;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(document.title||'dokument').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').toLowerCase()+'.md';a.click();URL.revokeObjectURL(a.href);
+}
+</script>
+
+</body>
+</html>
