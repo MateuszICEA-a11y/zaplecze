@@ -33,7 +33,14 @@
   <h1>Blok „Źródła" renderowany ZA blokiem FAQ</h1>
   <p class="meta">grupa-icea.pl · motyw knight-theme · ACF · 2026-08-19 · zamawiający: Mateusz Wiśniewski (SEO/R&amp;D) · dotyczy wpisów blogowych i podstron ofertowych budowanych na polach <code>page_text_*</code></p>
 
-  <h2>1. Problem</h2>
+  <div class="card" style="border-color:#1b7f4d;background:#f2faf5"><b class="ok">Odebrane 2026-09-03.</b>
+Pola <code>page_sources_title</code> / <code>page_sources_text</code> są w REST (posty i wpisy blogowe typu <code>page</code>),
+zapis hasłem aplikacji konta <code>redaktor</code> działa, HTML z <code>rel="noopener nofollow"</code> wraca bez zmian
+(WYSIWYG dokłada tylko znaki nowej linii). Render sprawdzony na żywym wpisie 20811: blok
+<code>.k-single-post-sources</code> z H2 „Źródła" stoi ZA blokiem FAQ i PRZED boksem autora. Content Watcher pisze
+bibliografię do tego pola od tego samego dnia (pseudo-slot 200, commity na <code>main</code> z 2026-09-03).
+Nie było czego migrować: skan 539 wpisów nie znalazł sekcji „Źródła" w slotach treści.</div>
+<h2>1. Problem</h2>
   <div class="card">
     <p>Do wpisów optymalizowanych przez nasz pipeline (Content Watcher) dodajemy na końcu treści sekcję
     <strong>„Źródła"</strong> – listę odnośników nofollow do materiałów, na których stoi artykuł.
