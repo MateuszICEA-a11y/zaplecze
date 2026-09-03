@@ -642,7 +642,8 @@ class TestCytatEksperta(unittest.TestCase):
         with mock.patch.object(pipeline, "_ask", return_value=(answer, "1.0.0")):
             pipeline.step_expert()
         text = pipeline.context["proposals"][2]["text"]
-        self.assertLess(text.index("blockquote"), text.index("<p>Drugi.</p>"))
+        # Cytat to shortcode motywu [k_quote_box] – po pierwszym akapicie.
+        self.assertLess(text.index("[k_quote_box "), text.index("<p>Drugi.</p>"))
         self.assertTrue(text.strip().endswith("</ul>"))
 
 
@@ -1251,9 +1252,9 @@ class TestExpertDobor(unittest.TestCase):
         # Stanowisko pochodzi z naszej listy, nie z odpowiedzi modelu.
         self.assertNotEqual(payload["role"], "dyrektor")
         block = pipeline.context["proposals"][1]["text"]
-        self.assertIn(f'{payload["expert"]}</span> · {payload["role"]}, ICEA', block)
-        # Podpis nie może wejść w ciemne tło `blockquote footer` z motywu.
-        self.assertIn("background:transparent", block)
+        # Shortcode motywu: nazwisko z naszej listy i stanowisko z dopiskiem ICEA.
+        self.assertIn(f'author_name="{payload["expert"]}" author_pos="{payload["role"]}, ICEA"', block)
+        self.assertNotIn("<blockquote", block)
 
 
 class TestKolektorFaq(unittest.TestCase):

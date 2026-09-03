@@ -95,6 +95,24 @@ EXPERT_STYLE = {
 }
 
 
+def shortcode_attr(value: str) -> str:
+    """Wartość atrybutu shortcode'u WP – lustro shortcodeAttr z cw-expert.js."""
+    text = re.sub(r"<[^>]*>", "", value or "")
+    text = text.replace("&quot;", "”").replace('"', "”").replace("[", "(").replace("]", ")")
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def expert_shortcode(quote: str, expert: str, role: str) -> str:
+    """Cytat eksperta jako shortcode motywu [k_quote_box] (wytyczne deva WP,
+    2026-09-03) – wygląd daje CSS strony. Bez author_link: pipeline nie zna
+    adresów stron autorów, ten dokłada Worker przy cytacie z edytora.
+    Lustro: expertShortcode w cw-expert.js."""
+    sign = ", ".join(part for part in [(role or "").strip(), "ICEA"] if part)
+    attrs = [("text", shortcode_attr(quote)), ("author_name", shortcode_attr(expert)),
+             ("author_pos", shortcode_attr(sign))]
+    return "[k_quote_box " + " ".join(f'{key}="{value}"' for key, value in attrs if value) + "]"
+
+
 def expert_blockquote(quote: str, expert: str, role: str) -> str:
     """Karta cytatu eksperta – awatar z inicjałów, cytat kursywą, podpis."""
     name = (expert or "").strip()
@@ -886,7 +904,7 @@ class Pipeline:
         data["expert"], data["role"] = chosen["name"], chosen["role"]
 
         if quote and 1 <= slot <= 30:
-            block = expert_blockquote(quote, data["expert"], data["role"])
+            block = expert_shortcode(quote, data["expert"], data["role"])
             proposals = self.context.setdefault("proposals", {})
             base = self._current_text(slot)
             # Cytat po pierwszym akapicie sekcji, nie na doczepkę na końcu –

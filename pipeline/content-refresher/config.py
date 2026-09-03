@@ -149,4 +149,9 @@ Frazy kluczowe – tak się ich używa:
   psuje tekst i nic nie daje.
 - Wystąpienie w nagłówku H2 liczy się tak samo jak w akapicie – jeśli fraza
   pasuje do tematu sekcji, jej miejsce jest w nagłówku, nie w doklejonym zdaniu.
-- Nie zbieraj fraz w listy ani w zdania typu „W tym artykule omówimy X, Y i Z"."""
+- Nie zbieraj fraz w listy ani w zdania typu „W tym artykule omówimy X, Y i Z".
+
+Szablon strony (motyw WordPressa):
+- Tabelę zawsze owiń w <div class="k-table">…</div>.
+- Shortcody w nawiasach kwadratowych, np. [k_img …] czy [k_link …], przepisuj
+  znak w znak – to elementy szablonu, nie tekst do redagowania."""
