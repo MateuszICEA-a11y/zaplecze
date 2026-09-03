@@ -1,0 +1,222 @@
+---
+/**
+ * Podgląd kierunku D – strona oferty.
+ * Treść 1:1 z /pozycjonowanie-ai/ (hero, cztery filary, proces, FAQ).
+ */
+import KierunekD from '../../../layouts/KierunekD.astro';
+
+const base = '/podglad/kierunek-d';
+
+const pillars = [
+  {
+    n: '01',
+    title: 'Audyt widoczności w AI',
+    desc: 'Sprawdzamy, jak Twoja marka jest obecnie cytowana w 5 głównych modelach AI. Budujemy mapę cytowań oraz przeprowadzamy analizę luk (gap analysis) i porównanie z działaniami Twojej konkurencji.',
+  },
+  {
+    n: '02',
+    title: 'Optymalizacja treści pod modele językowe',
+    desc: 'Optymalizujemy istniejące teksty pod kątem gęstości faktów i danych strukturalnych (Schema), by stały się idealnym źródłem do cytowania dla sztucznej inteligencji. Tworzymy precyzyjne wytyczne (briefy) dla copywriterów.',
+  },
+  {
+    n: '03',
+    title: 'Stały monitoring cytowań',
+    desc: 'Regularnie, z tygodnia na tydzień, śledzimy od 50 do 200 najważniejszych zapytań dla Twojej firmy. Otrzymujesz alerty o działaniach konkurencji oraz dostęp do panelu analitycznego (dashboardu) z historią widoczności.',
+  },
+  {
+    n: '04',
+    title: 'Strategia GEO na 12 miesięcy',
+    desc: 'Tworzymy kompleksowy plan widoczności na cały rok: mapę fraz, kalendarz publikacji treści, plan dystrybucji oraz strategię pozyskiwania wzmianek marki.',
+  },
+];
+
+const process = [
+  'Audyt i punkt zerowy',
+  'Dostęp dla botów i encja marki',
+  'Przebudowa treści pod cytowalność',
+  'Wzmianki marki poza własną domeną',
+  'Monitoring i korekta kursu',
+];
+
+const engines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Microsoft Copilot'];
+
+const timing = [
+  {
+    t: 'Kilka dni',
+    d: 'ChatGPT Search, Perplexity i Copilot pobierają treść w momencie zapytania – poprawiona strona może zostać zacytowana w odpowiedziach AI w ciągu kilku dni od zaindeksowania.',
+  },
+  {
+    t: 'Kwartały',
+    d: 'Wzmianki marki w źródłach zewnętrznych działają dopiero, gdy trafią do korpusu treningowego kolejnej wersji modelu. To inwestycja liczona w kwartałach, nie tygodniach.',
+  },
+  {
+    t: 'Kilka serii',
+    d: 'Wcześniejsze odczyty są zbyt zaszumione – generowanie odpowiedzi jest niedeterministyczne, więc trend widać dopiero po kilku seriach pomiarów.',
+  },
+];
+---
+
+<KierunekD title="Podgląd D: oferta – widocznosc.ai" current="oferta">
+  <section class="kd-wrap" style="padding-top:72px">
+    <span class="kd-eyebrow">Usługi · Generative Engine Optimization</span>
+    <h1 style="margin-top:24px">
+      <span class="kd-d1">Pozycjonowanie</span>
+      <span class="kd-d2">pod <em>LLM</em>.</span>
+    </h1>
+    <p class="kd-lead" style="margin-top:28px">
+      Pozycjonowanie AI to budowanie widoczności marki w ChatGPT, Claude'zie, Gemini,
+      Perplexity i Microsoft Copilocie – tam, gdzie odpowiedzi generują duże modele
+      językowe (LLM-y). W nowym standardzie wyszukiwania nie walczymy o pozycje
+      w rankingu – walczymy o bycie cytowanym źródłem.
+    </p>
+    <div class="kd-actions">
+      <a class="kd-btn" href={`${base}/kontakt/`}>Zamów audyt wszystkich modeli</a>
+      <a class="kd-btn kd-btn-2" href={`${base}/narzedzia/`}>Sprawdź widoczność · 60 s</a>
+    </div>
+
+    <div class="kd-engines">
+      {engines.map((e) => <span>{e}</span>)}
+    </div>
+  </section>
+
+  <section class="kd-section kd-wrap">
+    <div class="kd-section-head">
+      <span class="kd-eyebrow">Zakres</span>
+      <h2 class="kd-title">Cztery filary współpracy</h2>
+    </div>
+    <div class="kd-grid-2">
+      {
+        pillars.map((p) => (
+          <div class="kd-card kd-step">
+            <span class="kd-step-n">{p.n}</span>
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="kd-section kd-wrap">
+    <div class="kd-section-head">
+      <span class="kd-eyebrow">Wdrożenie</span>
+      <h2 class="kd-title">Jak wygląda wdrożenie krok po kroku</h2>
+    </div>
+    <ol class="kd-process">
+      {
+        process.map((p, i) => (
+          <li>
+            <span class="kd-micro">{String(i + 1).padStart(2, '0')}</span>
+            <span class="kd-process-t">{p}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="kd-section kd-wrap">
+    <div class="kd-section-head">
+      <span class="kd-eyebrow">Horyzont czasowy</span>
+      <h2 class="kd-title">Kiedy widać efekty</h2>
+    </div>
+    <div class="kd-grid-3">
+      {
+        timing.map((t) => (
+          <div class="kd-card kd-step">
+            <h3>{t.t}</h3>
+            <p>{t.d}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="kd-note" style="margin-top:16px">
+      trzy horyzonty · zależne od mechaniki silnika ·
+      <a href={`${base}/blog/`}>rozwinięcie w bazie wiedzy</a>
+    </p>
+  </section>
+
+  <fragment slot="machine">{`# Pozycjonowanie pod LLM – widocznosc.ai
+
+Usługi · Generative Engine Optimization
+
+Pozycjonowanie AI to budowanie widoczności marki w ChatGPT, Claude'zie, Gemini,
+Perplexity i Microsoft Copilocie – tam, gdzie odpowiedzi generują duże modele
+językowe (LLM-y). W nowym standardzie wyszukiwania nie walczymy o pozycje
+w rankingu – walczymy o bycie cytowanym źródłem.
+
+Silniki objęte usługą: ChatGPT, Claude, Gemini, Perplexity, Microsoft Copilot.
+
+## Cztery filary współpracy
+
+${pillars.map((p) => `### ${p.n}. ${p.title}\n\n${p.desc}`).join('\n\n')}
+
+## Jak wygląda wdrożenie krok po kroku
+
+${process.map((p, i) => `${i + 1}. ${p}`).join('\n')}
+
+## Kiedy widać efekty
+
+${timing.map((t) => `- **${t.t}** – ${t.d}`).join('\n')}
+
+## Kontakt
+
+- Zamów audyt wszystkich modeli: /kontakt/?type=audyt-ai
+- Sprawdź widoczność w 60 s: /narzedzia/brand-check/
+
+widocznosc.ai by ICEA S.A.
+`}</fragment>
+</KierunekD>
+
+<style>
+  .kd-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .kd-engines {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--kd-line);
+  }
+  .kd-engines span {
+    font-family: var(--kd-mono);
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--kd-mute);
+    border: 1px solid var(--kd-line);
+    border-radius: 4px;
+    padding: 7px 12px;
+  }
+
+  .kd-process {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--kd-line);
+  }
+  .kd-process li {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--kd-line);
+  }
+  .kd-process-t {
+    font-family: var(--kd-serif);
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.5px;
+  }
+
+  @media (max-width: 767px) {
+    .kd-process-t {
+      font-size: 19px;
+      line-height: 26px;
+    }
+  }
+</style>

@@ -1,0 +1,371 @@
+---
+/**
+ * Podgląd kierunku D – strona główna.
+ * Treść 1:1 z produkcji: Hero, HowItWorks, Audits, ProofData, Industries, FAQ.
+ */
+import KierunekD from '../../../layouts/KierunekD.astro';
+import HalftoneSentence from '../../../components/HalftoneSentence.astro';
+import { homepageFaq } from '../../../data/homepageFaq';
+
+const base = '/podglad/kierunek-d';
+
+// Kroki z HowItWorks.astro
+const steps = [
+  {
+    n: '01',
+    t: 'Podajesz markę i domenę',
+    d: 'Bez rejestracji. Narzędzie odpytuje ChatGPT, Claude, Gemini i Perplexity świeżymi sesjami, bez personalizacji i bez podpowiadania odpowiedzi.',
+  },
+  {
+    n: '02',
+    t: 'Dostajesz wynik per model',
+    d: 'Czy model zna markę, jak o niej mówi, czy cytuje Twoją domenę i jakie fakty zmyśla. Każdy model osobno, bo każdy cytuje inaczej.',
+  },
+  {
+    n: '03',
+    t: 'Widzisz konkurentów i plan',
+    d: 'Lista firm polecanych zamiast Ciebie i pierwsze działania ułożone według priorytetu. Resztę omawiasz z ekspertem ICEA.',
+  },
+];
+
+// Karty z Audits.astro
+const audits = [
+  { n: '01', meta: 'bezpłatnie · ok. 60 s', t: 'Widoczność marki w AI' },
+  { n: '02', meta: 'bezpłatnie · ok. 30 s', t: 'Cytowalność strony' },
+  { n: '03', meta: 'bezpłatnie · natychmiast', t: 'Dostęp botów AI' },
+];
+
+// Liczby z ProofData.astro
+const rows = [
+  {
+    num: '+40',
+    unit: '%',
+    claim: 'wzrost widoczności w odpowiedziach AI po zastosowaniu metod GEO',
+    kind: 'Badanie peer-reviewed',
+    source: 'Aggarwal et al., KDD 2024',
+    href: 'https://arxiv.org/abs/2311.09735',
+  },
+  {
+    num: '8',
+    unit: '×',
+    claim: 'tyle podzapytań Google generuje z jednego pytania w trybie AI',
+    kind: 'Patent Google',
+    source: 'Search Engine Land, analiza patentów',
+    href: 'https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346',
+  },
+  {
+    num: '+357',
+    unit: '%',
+    claim: 'wzrost ruchu z silników AI rok do roku dla najpopularniejszych stron',
+    kind: 'Dane rynkowe',
+    source: 'Authoritas / Search Engine Land',
+    href: 'https://searchengineland.com/what-13-months-of-data-reveals-about-llm-traffic-growth-and-conversions-470115',
+  },
+  {
+    num: '84',
+    unit: '%',
+    claim: 'rekomendacji w silnikach AI pochodzi z ChatGPT',
+    kind: 'Benchmark',
+    source: 'Previsible, AI SEO Study 2025',
+    href: 'https://previsible.io/seo-strategy/ai-seo-study-2025/',
+  },
+];
+
+// Branże z Industries.astro
+const industries = [
+  {
+    name: 'B2B SaaS i Tech',
+    desc: 'Decydent pyta ChatGPT o „najlepsze narzędzie X dla zespołu Y”. Chcesz być w tej odpowiedzi.',
+  },
+  {
+    name: 'Finanse i Prawo',
+    desc: 'AI bywa pierwszym doradcą klienta. Wzmianka w odpowiedzi to rozmowa z kimś, kto już wie, czego szuka.',
+  },
+  {
+    name: 'Medycyna i Zdrowie',
+    desc: 'Pacjenci pytają AI o objawy, leki i miejsca leczenia, zanim otworzą klasyczną wyszukiwarkę.',
+  },
+  {
+    name: 'E-commerce i DTC',
+    desc: 'Pytania porównawcze: „X vs Y”, „tańszy zamiennik Z”. Użytkownik jest w końcowej fazie wyboru.',
+  },
+  {
+    name: 'Edukacja i Szkolenia',
+    desc: 'Kursanci pytają AI o „najlepszy kurs X” miesiące przed zapisem. Długa droga, wiele punktów styku.',
+  },
+  {
+    name: 'Usługi B2B',
+    desc: 'Konsulting, agencje, software house’y. Klient pyta AI o polecanych dostawców przed pierwszym mailem.',
+  },
+];
+---
+
+<KierunekD title="Podgląd D: strona główna – widocznosc.ai" current="home">
+  <section class="kd-hero">
+    <div class="kd-wrap">
+      <span class="kd-eyebrow">Pomiar widoczności marki w AI</span>
+      <h1>
+        <span class="kd-d1">Sprawdź, czy AI</span>
+        <span class="kd-d2">poleca <em>Twoją markę</em>.</span>
+      </h1>
+      <p class="kd-lead">
+        Odpytujemy ChatGPT, Claude, Gemini i&nbsp;Perplexity o&nbsp;Twoją firmę
+        i&nbsp;pokazujemy, co odpowiadają: czy znają markę, jak o&nbsp;niej mówią
+        i&nbsp;kogo polecają zamiast Ciebie. Wynik w&nbsp;około minutę, bez rejestracji.
+      </p>
+
+      <form class="kd-form" action={`${base}/narzedzia/`} method="get">
+        <input type="text" name="brand" placeholder="Nazwa marki" maxlength="80" aria-label="Nazwa marki" />
+        <input
+          type="text"
+          name="domain"
+          placeholder="twojadomena.pl"
+          maxlength="200"
+          inputmode="url"
+          spellcheck="false"
+          aria-label="Domena"
+        />
+        <button type="submit" class="kd-btn">
+          Sprawdź widoczność marki <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <p class="kd-note">
+        <a href={`${base}/kontakt/`}>Porozmawiaj z ekspertem ICEA</a>
+        <span aria-hidden="true">·</span> widocznosc.ai by ICEA
+      </p>
+    </div>
+
+    <figure class="kd-figure">
+      <HalftoneSentence
+        fromSrc="/logos/brand/widocznosc-mark.svg"
+        fromText="widocznosc.ai"
+        toSrc="/logos/brand/icea-wordmark.svg"
+        alt="Ilustracja: znak widocznosc.ai rozsypuje się w chmurę kropek i scala w logotyp iCEA"
+      />
+      <figcaption>
+        <span>widocznosc.ai</span>
+        <span>część grupy iCEA</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="kd-section kd-wrap">
+    <div class="kd-section-head">
+      <span class="kd-eyebrow">Jak to działa</span>
+      <h2 class="kd-title">Od domeny do planu działań w trzech krokach.</h2>
+    </div>
+    <ol class="kd-steps">
+      {
+        steps.map((s) => (
+          <li class="kd-card kd-step">
+            <span class="kd-step-n">{s.n}</span>
+            <h3>{s.t}</h3>
+            <p>{s.d}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="kd-section kd-wrap">
+    <div class="kd-section-head">
+      <span class="kd-eyebrow">Narzędzia</span>
+      <h2 class="kd-title">Trzy testy za darmo. Jeden pełny raport.</h2>
+    </div>
+    <div class="kd-grid-3">
+      {
+        audits.map((a) => (
+          <a class="kd-card kd-step" href={`${base}/narzedzia/`}>
+            <span class="kd-step-n">{a.n}</span>
+            <h3>{a.t}</h3>
+            <p class="kd-micro">{a.meta}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="kd-section kd-wrap">
+    <div class="kd-section-head">
+      <span class="kd-eyebrow">Dowody</span>
+      <h2 class="kd-title">Dane, nie deklaracje.</h2>
+    </div>
+    <div>
+      {
+        rows.map((r) => (
+          <div class="kd-row">
+            <span class="kd-num">
+              {r.num}
+              <i>{r.unit}</i>
+            </span>
+            <span class="kd-claim">{r.claim}</span>
+            <span class="kd-src">
+              <span>{r.kind}</span>
+              <a href={r.href} target="_blank" rel="noopener noreferrer">
+                {r.source}
+              </a>
+            </span>
+          </div>
+        ))
+      }
+    </div>
+    <p class="kd-note" style="margin-top:16px">
+      cztery źródła zewnętrzne · badanie, patent, dane rynkowe, benchmark ·
+      <a href={`${base}/oferta/`}>jak to mierzymy</a>
+    </p>
+  </section>
+
+  <section class="kd-section kd-wrap">
+    <div class="kd-section-head">
+      <span class="kd-eyebrow">Branże</span>
+      <h2 class="kd-title">Gdzie pytanie do AI zastępuje pierwszy research.</h2>
+    </div>
+    <div class="kd-grid-3">
+      {
+        industries.map((i) => (
+          <div class="kd-card kd-step">
+            <h3>{i.name}</h3>
+            <p>{i.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="kd-section kd-wrap kd-faq">
+    <div class="kd-section-head">
+      <span class="kd-eyebrow">FAQ</span>
+      <h2 class="kd-title">Najczęstsze pytania.</h2>
+    </div>
+    {
+      homepageFaq.map((f, i) => (
+        <details open={i === 0}>
+          <summary>{f.q}</summary>
+          <p set:html={f.a} />
+        </details>
+      ))
+    }
+  </section>
+
+  <fragment slot="machine">{`# widocznosc.ai – pozycjonowanie marek w AI
+
+Pomiar widoczności marki w AI.
+
+## Sprawdź, czy AI poleca Twoją markę
+
+Odpytujemy ChatGPT, Claude, Gemini i Perplexity o Twoją firmę i pokazujemy,
+co odpowiadają: czy znają markę, jak o niej mówią i kogo polecają zamiast
+Ciebie. Wynik w około minutę, bez rejestracji.
+
+## Od domeny do planu działań w trzech krokach
+
+1. Podajesz markę i domenę – bez rejestracji, świeże sesje, bez personalizacji.
+2. Dostajesz wynik per model – czy zna markę, jak o niej mówi, co zmyśla.
+3. Widzisz konkurentów i plan – firmy polecane zamiast Ciebie, działania wg priorytetu.
+
+## Trzy testy za darmo
+
+| Test | Czas | Koszt |
+|---|---|---|
+| Widoczność marki w AI | ok. 60 s | bezpłatnie |
+| Cytowalność strony | ok. 30 s | bezpłatnie |
+| Dostęp botów AI | natychmiast | bezpłatnie |
+
+## Dane, nie deklaracje
+
+| Liczba | Twierdzenie | Rodzaj | Źródło |
+|---|---|---|---|
+| +40% | wzrost widoczności w odpowiedziach AI po zastosowaniu metod GEO | Badanie peer-reviewed | Aggarwal et al., KDD 2024 |
+| 8× | tyle podzapytań Google generuje z jednego pytania w trybie AI | Patent Google | Search Engine Land |
+| +357% | wzrost ruchu z silników AI rok do roku | Dane rynkowe | Authoritas / Search Engine Land |
+| 84% | rekomendacji w silnikach AI pochodzi z ChatGPT | Benchmark | Previsible, AI SEO Study 2025 |
+
+## Branże
+
+B2B SaaS i Tech, Finanse i Prawo, Medycyna i Zdrowie, E-commerce i DTC,
+Edukacja i Szkolenia, Usługi B2B.
+
+## Kontakt
+
+- Sprawdź widoczność marki: /narzedzia/brand-check/
+- Porozmawiaj z ekspertem ICEA: /kontakt/
+
+widocznosc.ai by ICEA S.A., Szyperska 14, Poznań.
+`}</fragment>
+</KierunekD>
+
+<style>
+  .kd-hero {
+    padding: 88px 0 0;
+    text-align: center;
+  }
+  .kd-hero .kd-eyebrow {
+    display: block;
+    margin-bottom: 28px;
+  }
+  .kd-hero .kd-lead {
+    margin: 28px auto 0;
+  }
+  .kd-form {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .kd-form input {
+    background: var(--kd-tint);
+    border: 1px solid var(--kd-line);
+    border-radius: 4px;
+    color: var(--kd-ink);
+    padding: 13px 14px;
+    font-size: 15px;
+    min-width: 200px;
+  }
+  .kd-form input::placeholder {
+    color: var(--kd-mute);
+  }
+  .kd-form input:focus-visible {
+    outline: none;
+    border-color: var(--kd-accent);
+  }
+  .kd-hero .kd-note {
+    margin-top: 16px;
+  }
+  .kd-hero .kd-note a {
+    color: var(--kd-body);
+  }
+  .kd-figure {
+    margin: 72px 0 0;
+  }
+  .kd-figure figcaption {
+    display: flex;
+    justify-content: space-between;
+    max-width: 62%;
+    margin: 8px auto 0;
+    font-family: var(--kd-mono);
+    font-size: 10px;
+    line-height: 14px;
+    color: var(--kd-mute);
+  }
+
+  @media (max-width: 767px) {
+    .kd-hero {
+      padding-top: 56px;
+    }
+    .kd-form {
+      flex-direction: column;
+    }
+    .kd-form input,
+    .kd-form button {
+      width: 100%;
+    }
+    .kd-figure figcaption {
+      max-width: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+  }
+</style>

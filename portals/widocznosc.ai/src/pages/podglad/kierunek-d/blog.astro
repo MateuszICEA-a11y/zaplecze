@@ -1,0 +1,175 @@
+---
+/**
+ * Podgląd kierunku D – magazyn bloga.
+ * Wpisy pobierane z realnej kolekcji `blog`, nie z atrap.
+ */
+import KierunekD from '../../../layouts/KierunekD.astro';
+import { getCollection } from 'astro:content';
+import { PILLAR_LABELS } from '../../../content.config';
+
+const base = '/podglad/kierunek-d';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const [lead, ...rest] = posts;
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+// Liczebność per filar – w chromie, jak licznik w narzędziu.
+const counts = Object.entries(PILLAR_LABELS).map(([key, label]) => ({
+  label,
+  n: posts.filter((p) => p.data.pillar === key).length,
+}));
+---
+
+<KierunekD title="Podgląd D: magazyn – widocznosc.ai" current="blog">
+  <section class="kd-wrap" style="padding-top:72px">
+    <span class="kd-eyebrow">Baza wiedzy · {posts.length} wpisów</span>
+    <h1 class="kd-d2" style="margin-top:20px">Baza wiedzy o <em>AI</em></h1>
+    <p class="kd-lead" style="margin-top:20px">
+      Poradniki, analizy i&nbsp;case studies o&nbsp;ChatGPT, Claude, Gemini, Perplexity,
+      automatyzacji, SEO i&nbsp;widoczności marek w&nbsp;wyszukiwarkach AI.
+    </p>
+
+    <div class="kd-filters">
+      <span class="is-on">wszystkie <i>{posts.length}</i></span>
+      {counts.map((c) => (
+        <span>{c.label} <i>{c.n}</i></span>
+      ))}
+    </div>
+  </section>
+
+  {
+    lead && (
+      <section class="kd-wrap kd-section" style="margin-top:64px">
+        <a class="kd-card kd-lead-post" href={`${base}/wpis/`}>
+          <span class="kd-micro">
+            wyróżnione · {PILLAR_LABELS[lead.data.pillar]} · {fmt(lead.data.date)} ·{' '}
+            {lead.data.readTime}
+          </span>
+          <h2 class="kd-title">{lead.data.title}</h2>
+          <p class="kd-lead">{lead.data.description}</p>
+          <span class="kd-micro kd-author">{lead.data.author.name} · {lead.data.author.role}</span>
+        </a>
+      </section>
+    )
+  }
+
+  <section class="kd-wrap kd-section" style="margin-top:64px">
+    <div class="kd-section-head">
+      <span class="kd-eyebrow">Wszystkie wpisy</span>
+      <h2 class="kd-title">Najnowsze</h2>
+    </div>
+    <div class="kd-posts">
+      {
+        rest.slice(0, 12).map((p) => (
+          <a class="kd-card kd-post" href={`${base}/wpis/`}>
+            <span class="kd-micro">
+              {PILLAR_LABELS[p.data.pillar]} · {fmt(p.data.date)} · {p.data.readTime}
+            </span>
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+            <span class="kd-micro kd-author">{p.data.author.name}</span>
+          </a>
+        ))
+      }
+    </div>
+    <p class="kd-note" style="margin-top:24px">
+      {posts.length} wpisów · sześć filarów · sortowanie po dacie publikacji
+    </p>
+  </section>
+
+  <fragment slot="machine">{`# Baza wiedzy o AI – widocznosc.ai
+
+Poradniki, analizy i case studies o ChatGPT, Claude, Gemini, Perplexity,
+automatyzacji, SEO i widoczności marek w wyszukiwarkach AI.
+
+Filary: GEO, Modele LLM, Prompty, Agenci AI, RAG, AI w biznesie.
+
+## Wpisy
+
+${posts
+  .slice(0, 20)
+  .map(
+    (p) =>
+      `- [${p.data.title}](/blog/${p.id}/) – ${PILLAR_LABELS[p.data.pillar]}, ${fmt(
+        p.data.date,
+      )}, ${p.data.readTime}. ${p.data.description}`,
+  )
+  .join('\n')}
+
+widocznosc.ai by ICEA S.A.
+`}</fragment>
+</KierunekD>
+
+<style>
+  .kd-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 32px;
+  }
+  .kd-filters span {
+    font-family: var(--kd-mono);
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--kd-chrome);
+    border: 1px solid var(--kd-line);
+    border-radius: 4px;
+    padding: 7px 12px;
+  }
+  .kd-filters span.is-on {
+    color: var(--kd-ink);
+    border-color: var(--kd-accent);
+  }
+  .kd-filters i {
+    font-style: normal;
+    color: var(--kd-mute);
+    margin-left: 6px;
+  }
+
+  .kd-lead-post {
+    padding: 32px;
+  }
+  .kd-lead-post .kd-title {
+    margin: 16px 0 12px;
+  }
+  .kd-author {
+    display: block;
+    margin-top: 16px;
+  }
+
+  .kd-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .kd-post h3 {
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: -0.4px;
+    margin: 12px 0 8px;
+  }
+  .kd-post p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--kd-body);
+  }
+
+  @media (max-width: 1023px) {
+    .kd-posts {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 767px) {
+    .kd-posts {
+      grid-template-columns: 1fr;
+    }
+    .kd-lead-post {
+      padding: 20px;
+    }
+  }
+</style>
