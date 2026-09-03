@@ -13,9 +13,9 @@ description: >
 
 colors:
   # akcent – JEDYNY kolor marki (browser-use ma tu #fe750e; my zostajemy przy swoim)
-  primary: "#2f8cff"
+  primary: "#5768ff"
   on-primary: "#09090b"
-  primary-soft: "rgba(47, 140, 255, 0.16)"
+  primary-soft: "rgba(87, 104, 255, 0.16)"
 
   # płótno i powierzchnie
   canvas: "#0a0a0a"
@@ -230,7 +230,7 @@ Przełącza całą stronę na jej wersję markdown z przyciskiem `Kopiuj stronę
 
 ## 8. Prompt dla agenta
 
-> Zbuduj sekcję zgodnie z DESIGN.md widocznosc.ai. Płótno #0a0a0a, jeden akcent #2f8cff
+> Zbuduj sekcję zgodnie z DESIGN.md widocznosc.ai. Płótno #0a0a0a, jeden akcent #5768ff
 > użyty maksymalnie trzy razy. Nagłówki w Fraunces z ujemnym trackingiem, tekst ciągły
 > w Geist, cały chrom (etykiety, statusy, opisy osi, przypisy) w Geist Mono 12 px kolorem
 > rgba(255,255,255,0.5). Promień 4 px, obramowania 1px #27272a, zero cieni i gradientów.

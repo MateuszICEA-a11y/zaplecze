@@ -3,8 +3,11 @@
  * Podgląd kierunku D „Instrument”.
  *
  * System z DESIGN.md: antykwa w nagłówkach, monospace w całym chromie,
- * jeden akcent, promień 4 px, zero cieni i gradientów. Ilustracja hero jest
- * generowana (HalftoneSentence), nie jest plikiem graficznym.
+ * jeden akcent, promień 4 px, zero cieni i gradientów.
+ *
+ * Treść jest 1:1 z produkcji – hero z Hero.astro, liczby z ProofData.astro,
+ * FAQ z data/homepageFaq. Podgląd ma pokazywać kierunek wizualny na naszym
+ * tekście, a nie na wypełniaczu.
  *
  * Strona jest noindex i wykluczona z sitemapy (astro.config.mjs).
  */
@@ -14,14 +17,41 @@ import '@fontsource/geist-mono/400.css';
 import Layout from '../../layouts/Layout.astro';
 import HalftoneSentence from '../../components/HalftoneSentence.astro';
 
-const engines = [
-  { name: 'ChatGPT', value: 42, own: true },
-  { name: 'Google AI Overviews', value: 31, own: false },
-  { name: 'Perplexity', value: 18, own: false },
-  { name: 'Claude', value: 12, own: false },
-  { name: 'Copilot', value: 9, own: false },
+// Liczby przepisane 1:1 z ProofData.astro (produkcja).
+const rows = [
+  {
+    num: '+40',
+    unit: '%',
+    claim: 'wzrost widoczności w odpowiedziach AI po zastosowaniu metod GEO',
+    kind: 'Badanie peer-reviewed',
+    source: 'Aggarwal et al., KDD 2024',
+    href: 'https://arxiv.org/abs/2311.09735',
+  },
+  {
+    num: '8',
+    unit: '×',
+    claim: 'tyle podzapytań Google generuje z jednego pytania w trybie AI',
+    kind: 'Patent Google',
+    source: 'Search Engine Land, analiza patentów',
+    href: 'https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346',
+  },
+  {
+    num: '+357',
+    unit: '%',
+    claim: 'wzrost ruchu z silników AI rok do roku dla najpopularniejszych stron',
+    kind: 'Dane rynkowe',
+    source: 'Authoritas / Search Engine Land',
+    href: 'https://searchengineland.com/what-13-months-of-data-reveals-about-llm-traffic-growth-and-conversions-470115',
+  },
+  {
+    num: '84',
+    unit: '%',
+    claim: 'rekomendacji w silnikach AI pochodzi z ChatGPT',
+    kind: 'Benchmark',
+    source: 'Previsible, AI SEO Study 2025',
+    href: 'https://previsible.io/seo-strategy/ai-seo-study-2025/',
+  },
 ];
-const max = Math.max(...engines.map((e) => e.value));
 ---
 
 <Layout
@@ -31,62 +61,90 @@ const max = Math.max(...engines.map((e) => e.value));
 >
   <div class="kd">
     <header class="kd-nav">
-      <span class="kd-brand">widocznosc.ai</span>
+      <span class="kd-brand">widocznosc.ai <span>by ICEA</span></span>
       <nav class="kd-nav-links">
-        <a href="#">pozycjonowanie ai</a>
-        <a href="#">narzędzia</a>
-        <a href="#">blog</a>
-        <a href="#">kontakt</a>
+        <a href="/pozycjonowanie-ai/">pozycjonowanie ai</a>
+        <a href="/narzedzia/">narzędzia</a>
+        <a href="/blog/">blog</a>
+        <a href="/o-nas/">o nas</a>
+        <a href="/kontakt/">kontakt</a>
       </nav>
-      <a class="kd-nav-cta" href="#">Sprawdź markę</a>
+      <a class="kd-nav-cta" href="/narzedzia/brand-check/">Sprawdź markę</a>
     </header>
 
     <section class="kd-hero">
+      <span class="kd-eyebrow">Pomiar widoczności marki w AI</span>
       <h1>
-        <span class="kd-d1">Wyszukiwarki AI nie</span>
-        <span class="kd-d2">widzą <em>layoutu</em>.</span>
+        <span class="kd-d1">Sprawdź, czy AI</span>
+        <span class="kd-d2">poleca <em>Twoją markę</em>.</span>
       </h1>
       <p class="kd-lead">
-        Widzą strukturę. Mierzymy, co model faktycznie cytuje o twojej marce – i
-        układamy treść tak, żeby cytował ciebie.
+        Odpytujemy ChatGPT, Claude, Gemini i&nbsp;Perplexity o&nbsp;Twoją firmę
+        i&nbsp;pokazujemy, co odpowiadają: czy znają markę, jak o&nbsp;niej mówią
+        i&nbsp;kogo polecają zamiast Ciebie. Wynik w&nbsp;około minutę, bez rejestracji.
       </p>
-      <div class="kd-cta">
-        <a class="kd-btn" href="#">Sprawdź markę</a>
-        <a class="kd-btn kd-btn-2" href="#">Zobacz metodologię</a>
-      </div>
+
+      <form class="kd-form" action="/narzedzia/brand-check/" method="get">
+        <input type="text" name="brand" placeholder="Nazwa marki" maxlength="80" aria-label="Nazwa marki" />
+        <input
+          type="text"
+          name="domain"
+          placeholder="twojadomena.pl"
+          maxlength="200"
+          inputmode="url"
+          spellcheck="false"
+          aria-label="Domena"
+          required
+        />
+        <button type="submit">Sprawdź widoczność marki <span aria-hidden="true">→</span></button>
+      </form>
+
+      <p class="kd-note">
+        <a href="/kontakt/?type=konsultacja">Porozmawiaj z ekspertem ICEA</a>
+        <span aria-hidden="true">·</span> widocznosc.ai by ICEA
+      </p>
 
       <figure class="kd-figure">
-        <HalftoneSentence from="Twoja treść" to="Odpowiedź AI" />
+        <HalftoneSentence
+          fromSrc="/logos/brand/widocznosc-mark.svg"
+          fromText="widocznosc.ai"
+          toSrc="/logos/brand/icea-wordmark.svg"
+          alt="Ilustracja: znak widocznosc.ai rozsypuje się w chmurę kropek i scala w logotyp iCEA"
+        />
         <figcaption>
-          <span>treść</span>
-          <span>cytowanie</span>
+          <span>widocznosc.ai</span>
+          <span>część grupy iCEA</span>
         </figcaption>
       </figure>
     </section>
 
     <section class="kd-proof">
       <h2>
-        <span>Sprawdzamy pięć silników.</span>
-        <span>Nie jeden.</span>
+        <span>Dane, nie deklaracje.</span>
       </h2>
 
-      <div class="kd-chart">
+      <div class="kd-table">
         {
-          engines.map((e) => (
+          rows.map((r) => (
             <div class="kd-row">
-              <span class="kd-row-name">{e.name}</span>
-              <span
-                class:list={['kd-bar', e.own && 'is-accent']}
-                style={`width: ${(e.value / max) * 100}%`}
-              />
-              <span class="kd-row-val">{e.value}%</span>
+              <span class="kd-num">
+                {r.num}
+                <i>{r.unit}</i>
+              </span>
+              <span class="kd-claim">{r.claim}</span>
+              <span class="kd-src">
+                <span class="kd-kind">{r.kind}</span>
+                <a href={r.href} target="_blank" rel="noopener noreferrer">
+                  {r.source}
+                </a>
+              </span>
             </div>
           ))
         }
       </div>
-      <p class="kd-note">
-        udział cytowań marki · 240 zapytań · pomiar wrzesień 2026 ·
-        <a href="#">metodologia</a>
+      <p class="kd-tablenote">
+        cztery źródła zewnętrzne · badanie, patent, dane rynkowe, benchmark ·
+        <a href="/pozycjonowanie-ai/">jak to mierzymy</a>
       </p>
     </section>
 
@@ -98,27 +156,29 @@ const max = Math.max(...engines.map((e) => e.value));
 
     <div class="kd-machine" hidden>
       <button type="button" class="kd-copy">Kopiuj stronę</button>
-      <pre><code># widocznosc.ai – pozycjonowanie marek w wyszukiwarkach AI
+      <pre><code># widocznosc.ai – pozycjonowanie marek w AI
 
-Wyszukiwarki AI nie widzą layoutu. Widzą strukturę. Mierzymy, co model
-faktycznie cytuje o twojej marce – i układamy treść tak, żeby cytował ciebie.
+Pomiar widoczności marki w AI.
 
-## Sprawdzamy pięć silników
+## Sprawdź, czy AI poleca Twoją markę
 
-| Silnik | Udział cytowań |
-|---|---|
-| ChatGPT | 42% |
-| Google AI Overviews | 31% |
-| Perplexity | 18% |
-| Claude | 12% |
-| Copilot | 9% |
+Odpytujemy ChatGPT, Claude, Gemini i Perplexity o Twoją firmę i pokazujemy,
+co odpowiadają: czy znają markę, jak o niej mówią i kogo polecają zamiast
+Ciebie. Wynik w około minutę, bez rejestracji.
 
-Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
+- [Sprawdź widoczność marki](/narzedzia/brand-check/)
+- [Porozmawiaj z ekspertem ICEA](/kontakt/?type=konsultacja)
 
-## Kontakt
+## Dane, nie deklaracje
 
-- [Sprawdź markę](/kontakt/)
-- widocznosc.ai by ICEA S.A.
+| Liczba | Twierdzenie | Rodzaj | Źródło |
+|---|---|---|---|
+| +40% | wzrost widoczności w odpowiedziach AI po zastosowaniu metod GEO | Badanie peer-reviewed | Aggarwal et al., KDD 2024 |
+| 8× | tyle podzapytań Google generuje z jednego pytania w trybie AI | Patent Google | Search Engine Land |
+| +357% | wzrost ruchu z silników AI rok do roku | Dane rynkowe | Authoritas / Search Engine Land |
+| 84% | rekomendacji w silnikach AI pochodzi z ChatGPT | Benchmark | Previsible, AI SEO Study 2025 |
+
+widocznosc.ai by ICEA S.A.
 </code></pre>
     </div>
   </div>
@@ -132,7 +192,7 @@ Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
     --kd-mute: #71717a;
     --kd-chrome: rgba(255, 255, 255, 0.5);
     --kd-line: #27272a;
-    --kd-accent: #2f8cff;
+    --kd-accent: #5768ff;
     --kd-serif: 'Fraunces Variable', Georgia, serif;
     --kd-mono: 'Geist Mono', ui-monospace, monospace;
 
@@ -142,7 +202,7 @@ Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
     padding-bottom: 128px;
   }
 
-  /* --- chrom: wszystko w monospace, małą literą --- */
+  /* --- chrom: monospace, małą literą --- */
   .kd-nav {
     display: flex;
     align-items: center;
@@ -154,8 +214,8 @@ Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
     font-size: 12px;
     line-height: 16px;
   }
-  .kd-brand {
-    color: var(--kd-ink);
+  .kd-brand span {
+    color: var(--kd-mute);
   }
   .kd-nav-links {
     display: flex;
@@ -171,7 +231,7 @@ Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
   }
   .kd-nav-cta {
     background: var(--kd-accent);
-    color: #09090b;
+    color: #fff;
     padding: 8px 14px;
     border-radius: 4px;
     text-decoration: none;
@@ -181,8 +241,16 @@ Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
   .kd-hero {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 96px 32px 0;
+    padding: 88px 32px 0;
     text-align: center;
+  }
+  .kd-eyebrow {
+    display: block;
+    font-family: var(--kd-mono);
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--kd-mute);
+    margin-bottom: 28px;
   }
   .kd-hero h1 {
     font-family: var(--kd-serif);
@@ -206,36 +274,58 @@ Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
     color: var(--kd-accent);
   }
   .kd-lead {
-    max-width: 46ch;
+    max-width: 58ch;
     margin: 28px auto 0;
     font-size: 18px;
     line-height: 27px;
     letter-spacing: -0.09px;
     color: var(--kd-body);
   }
-  .kd-cta {
+
+  .kd-form {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     justify-content: center;
     margin-top: 32px;
+    flex-wrap: wrap;
   }
-  .kd-btn {
-    background: var(--kd-accent);
-    color: #09090b;
-    padding: 14px 20px;
-    border-radius: 4px;
-    font-size: 16px;
-    line-height: 24px;
-    text-decoration: none;
-  }
-  .kd-btn-2 {
-    background: transparent;
-    color: var(--kd-ink);
+  .kd-form input {
+    background: rgba(255, 255, 255, 0.016);
     border: 1px solid var(--kd-line);
+    border-radius: 4px;
+    color: var(--kd-ink);
+    padding: 13px 14px;
+    font-size: 15px;
+    min-width: 200px;
+  }
+  .kd-form input::placeholder {
+    color: var(--kd-mute);
+  }
+  .kd-form input:focus-visible {
+    outline: none;
+    border-color: var(--kd-accent);
+  }
+  .kd-form button {
+    background: var(--kd-accent);
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 14px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .kd-note {
+    margin-top: 16px;
+    font-family: var(--kd-mono);
+    font-size: 12px;
+    color: var(--kd-mute);
+  }
+  .kd-note a {
+    color: var(--kd-body);
   }
 
   .kd-figure {
-    margin: 64px 0 0;
+    margin: 72px 0 0;
   }
   .kd-figure figcaption {
     display: flex;
@@ -248,7 +338,7 @@ Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
     color: var(--kd-mute);
   }
 
-  /* --- sekcja dowodowa --- */
+  /* --- sekcja dowodowa: tabela liczb --- */
   .kd-proof {
     max-width: 1000px;
     margin: 128px auto 0;
@@ -261,45 +351,55 @@ Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
     line-height: 55.12px;
     letter-spacing: -1.144px;
     margin: 0 0 48px;
-    display: flex;
-    flex-direction: column;
   }
   .kd-row {
     display: grid;
-    grid-template-columns: 200px 1fr 48px;
-    align-items: center;
-    gap: 16px;
-    padding: 10px 0;
+    grid-template-columns: 132px 1fr 230px;
+    align-items: baseline;
+    gap: 24px;
+    padding: 20px 0;
     border-bottom: 1px solid var(--kd-line);
   }
-  .kd-row-name,
-  .kd-row-val {
-    font-family: var(--kd-mono);
-    font-size: 13px;
-    line-height: 18px;
+  .kd-num {
+    font-family: var(--kd-serif);
+    font-size: 44px;
+    line-height: 44px;
+    letter-spacing: -1.2px;
+    color: var(--kd-accent);
+  }
+  .kd-num i {
+    font-size: 22px;
+    font-style: normal;
     color: var(--kd-mute);
   }
-  .kd-row-val {
-    text-align: right;
+  .kd-claim {
+    font-size: 16px;
+    line-height: 24px;
     color: var(--kd-body);
   }
-  .kd-bar {
-    display: block;
-    height: 10px;
-    background: #3f3f46;
-    border-radius: 2px;
+  .kd-src {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-family: var(--kd-mono);
+    font-size: 11px;
+    line-height: 15px;
+    text-align: right;
   }
-  .kd-bar.is-accent {
-    background: var(--kd-accent);
+  .kd-kind {
+    color: var(--kd-mute);
   }
-  .kd-note {
+  .kd-src a {
+    color: var(--kd-chrome);
+  }
+  .kd-tablenote {
     margin-top: 16px;
     font-family: var(--kd-mono);
     font-size: 12px;
     line-height: 16px;
     color: var(--kd-mute);
   }
-  .kd-note a {
+  .kd-tablenote a {
     color: var(--kd-body);
   }
 
@@ -320,7 +420,7 @@ Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
     font-size: 12px;
     line-height: 16px;
   }
-  .kd-toggle span {
+  .kd-toggle > span {
     color: var(--kd-mute);
   }
   .kd-toggle button {
@@ -395,6 +495,13 @@ Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
       line-height: 40px;
       letter-spacing: -0.8px;
     }
+    .kd-row {
+      grid-template-columns: 100px 1fr;
+    }
+    .kd-src {
+      grid-column: 2;
+      text-align: left;
+    }
   }
 
   @media (max-width: 767px) {
@@ -414,12 +521,19 @@ Podstawa: 240 zapytań, pomiar wrzesień 2026. [Metodologia](/metodologia/)
       line-height: 36px;
       letter-spacing: -0.9px;
     }
-    .kd-cta {
+    .kd-form {
       flex-direction: column;
     }
+    .kd-form input,
+    .kd-form button {
+      width: 100%;
+    }
     .kd-row {
-      grid-template-columns: 130px 1fr 40px;
-      gap: 10px;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .kd-src {
+      grid-column: 1;
     }
     /* Ilustracja jest na mobile pionowa – podpisy też. */
     .kd-figure figcaption {

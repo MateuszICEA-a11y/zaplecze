@@ -2,39 +2,52 @@
 /**
  * HalftoneSentence – rastrowana ilustracja hero w kierunku D.
  *
- * Motyw: zdanie w języku naturalnym rozpada się w chmurę kropek i scala po
- * prawej w kształt odpowiedzi AI. Nie jest to plik graficzny – tekst jest
- * renderowany do offscreen canvasu, próbkowany co `step` pikseli, a każda
- * próbka staje się cząstką. Zmiana napisu = zmiana propsa, nie nowy asset.
+ * Motyw: znak widocznosc.ai rozpada się w chmurę kropek i scala po drugiej
+ * stronie w logotyp iCEA – wizualne domknięcie relacji marka → grupa.
  *
- * Rozkład cząstek wzdłuż toru A→B jest U-kształtny (gęsto na końcach, rzadko
- * w środku), więc oba napisy są czytelne, a między nimi zostaje rozproszenie.
- * Amplituda szumu i kolor idą tą samą krzywą: biel → szarość → akcent.
+ * Nie jest to plik graficzny. Każda strona (lockup) jest rysowana do offscreen
+ * canvasu – SVG jako maska alfa plus opcjonalny napis – a potem próbkowana co
+ * `step` pikseli na cząstki. Podmiana ilustracji to podmiana propsa.
+ *
+ * Rozkład wzdłuż toru A→B: 40% cząstek przypiętych twardo do t=0, 40% do t=1,
+ * 20% w chmurze pośredniej. Przypięcie musi być twarde – przy torze długim na
+ * ~1600 px cząstki „prawie na końcu” rozmazują znak w nieczytelny pył.
  */
 interface Props {
-  /** Tekst źródłowy (lewa strona, biel) */
-  from?: string;
-  /** Tekst docelowy (prawa strona, akcent) */
-  to?: string;
-  /** Proporcja canvasu; wysokość liczona z szerokości */
+  /** Lewa strona: ścieżka do SVG/PNG (maska alfa) */
+  fromSrc?: string;
+  /** Lewa strona: napis rysowany obok maski */
+  fromText?: string;
+  /** Prawa strona: ścieżka do SVG/PNG */
+  toSrc?: string;
+  /** Prawa strona: napis rysowany obok maski */
+  toText?: string;
+  /** Proporcja canvasu na desktopie; wysokość liczona z szerokości */
   ratio?: number;
+  /** Opis dla czytników ekranu */
+  alt: string;
   class?: string;
 }
 
 const {
-  from = 'Twoja treść',
-  to = 'Odpowiedź AI',
+  fromSrc,
+  fromText,
+  toSrc,
+  toText,
   ratio = 0.3,
+  alt,
   class: className = '',
 } = Astro.props;
 ---
 
 <canvas
   class:list={['halftone', className]}
-  data-from={from}
-  data-to={to}
+  data-from-src={fromSrc}
+  data-from-text={fromText}
+  data-to-src={toSrc}
+  data-to-text={toText}
   data-ratio={ratio}
-  aria-label={`Ilustracja: napis „${from}” rozsypuje się w chmurę kropek i scala po prawej w napis „${to}”`}
+  aria-label={alt}
   role="img"></canvas>
 
 <style>
@@ -48,7 +61,7 @@ const {
 
 <script>
   const INK = [250, 250, 250];
-  const ACCENT = [47, 140, 255];
+  const ACCENT = [87, 104, 255];
   const MUTE = [113, 113, 122];
 
   function mix(a: number[], b: number[], t: number) {
@@ -59,40 +72,85 @@ const {
     ];
   }
 
-  /** Próbkuje napis do listy punktów w układzie canvasu. */
-  function samplePoints(
-    text: string,
+  const imgCache = new Map<string, Promise<HTMLImageElement | null>>();
+  function loadImage(src: string) {
+    if (!imgCache.has(src)) {
+      imgCache.set(
+        src,
+        new Promise((resolve) => {
+          const im = new Image();
+          im.onload = () => resolve(im);
+          im.onerror = () => resolve(null);
+          im.src = src;
+        }),
+      );
+    }
+    return imgCache.get(src)!;
+  }
+
+  type Side = { src?: string; text?: string };
+
+  /**
+   * Rysuje lockup (maska SVG + opcjonalny napis) wyśrodkowany w (cx, cy)
+   * i zwraca jego punkty alfa jako listę cząstek.
+   */
+  async function sampleSide(
+    side: Side,
     w: number,
     h: number,
     cx: number,
     cy: number,
     step: number,
     widthProp: number,
-  ): { x: number; y: number }[] {
+  ): Promise<{ x: number; y: number }[]> {
     const off = document.createElement('canvas');
     off.width = w;
     off.height = h;
     const c = off.getContext('2d', { willReadFrequently: true });
     if (!c) return [];
 
-    // Stopień dobrany tak, by napis zajął zadany ułamek szerokości płótna.
-    let size = Math.round(h * 0.34);
-    c.font = `400 ${size}px Fraunces, Georgia, serif`;
-    const target = w * widthProp;
-    const measured = c.measureText(text).width;
-    if (measured > 0) size = Math.max(18, Math.round((size * target) / measured));
-    c.font = `400 ${size}px Fraunces, Georgia, serif`;
+    const targetW = w * widthProp;
+    const img = side.src ? await loadImage(side.src) : null;
+
+    // Wysokość znaku wyznacza stopień pisma, żeby logotyp i napis stały
+    // na jednej linii optycznej.
+    const markH = h * 0.16;
+    const markW = img ? (img.width / img.height) * markH : 0;
+    const gap = side.text && img ? markH * 0.45 : 0;
+
+    let fontSize = Math.round(markH * 1.02);
+    let textW = 0;
+    if (side.text) {
+      c.font = `500 ${fontSize}px 'Mona Sans Variable', 'Mona Sans', Inter, sans-serif`;
+      textW = c.measureText(side.text).width;
+    }
+
+    // Cały lockup skalujemy do zadanego ułamka szerokości płótna.
+    const rawW = markW + gap + textW;
+    const scale = rawW > 0 ? targetW / rawW : 1;
+    const sMarkW = markW * scale;
+    const sMarkH = markH * scale;
+    const sGap = gap * scale;
+    fontSize = Math.round(fontSize * scale);
 
     c.fillStyle = '#fff';
-    c.textAlign = 'center';
-    c.textBaseline = 'middle';
-    c.fillText(text, cx, cy);
+    let x = cx - targetW / 2;
+    if (img) {
+      c.drawImage(img, x, cy - sMarkH / 2, sMarkW, sMarkH);
+      x += sMarkW + sGap;
+    }
+    if (side.text) {
+      c.font = `500 ${fontSize}px 'Mona Sans Variable', 'Mona Sans', Inter, sans-serif`;
+      c.textAlign = 'left';
+      c.textBaseline = 'middle';
+      c.fillText(side.text, x, cy);
+    }
 
     const data = c.getImageData(0, 0, w, h).data;
     const pts: { x: number; y: number }[] = [];
     for (let y = 0; y < h; y += step) {
-      for (let x = 0; x < w; x += step) {
-        if (data[(y * w + x) * 4 + 3] > 140) pts.push({ x, y });
+      for (let px = 0; px < w; px += step) {
+        if (data[(y * w + px) * 4 + 3] > 120) pts.push({ x: px, y });
       }
     }
     return pts;
@@ -109,8 +167,14 @@ const {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const from = canvas.dataset.from || '';
-    const to = canvas.dataset.to || '';
+    const sideA: Side = {
+      src: canvas.dataset.fromSrc || undefined,
+      text: canvas.dataset.fromText || undefined,
+    };
+    const sideB: Side = {
+      src: canvas.dataset.toSrc || undefined,
+      text: canvas.dataset.toText || undefined,
+    };
     const ratio = Number(canvas.dataset.ratio || 0.3);
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -126,82 +190,95 @@ const {
     let H = 0;
     let raf = 0;
     let interactive = false;
+    let building = false;
     const pointer = { x: -9999, y: -9999 };
 
-    function build() {
-      const cssW = canvas.clientWidth;
-      if (!cssW) return;
-      // Na wąskim ekranie napisy muszą być proporcjonalnie większe i gęściej
-      // próbkowane, inaczej z 390 px szerokości zostaje kilkanaście kropek.
-      const narrow = cssW < 768;
-      const cssH = Math.round(cssW * (narrow ? 0.5 : ratio));
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      W = Math.round(cssW * dpr);
-      H = Math.round(cssH * dpr);
-      canvas.width = W;
-      canvas.height = H;
-      canvas.style.height = cssH + 'px';
+    async function build() {
+      if (building) return;
+      building = true;
+      try {
+        const cssW = canvas.clientWidth;
+        if (!cssW) return;
 
-      // Na telefonie napisy idą jeden pod drugim i zajmują 70% szerokości –
-      // obok siebie na 390 px robi się z nich nieczytelny pył.
-      const step = Math.max(2, Math.round((narrow ? 2 : 3) * dpr));
-      const widthProp = narrow ? 0.7 : 0.3;
-      const ax = narrow ? W * 0.5 : W * 0.2;
-      const bx = narrow ? W * 0.5 : W * 0.8;
-      const ay = narrow ? H * 0.24 : H * 0.5;
-      const by = narrow ? H * 0.76 : H * 0.5;
-      const A = samplePoints(from, W, H, ax, ay, step, widthProp);
-      const B = samplePoints(to, W, H, bx, by, step, widthProp);
-      const n = Math.min(A.length, B.length);
-      if (!n) return;
+        // Na wąskim ekranie znaki idą jeden pod drugim i są proporcjonalnie
+        // większe – obok siebie na 390 px robi się z nich pył.
+        const narrow = cssW < 768;
+        const cssH = Math.round(cssW * (narrow ? 0.5 : ratio));
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        W = Math.round(cssW * dpr);
+        H = Math.round(cssH * dpr);
+        canvas.width = W;
+        canvas.height = H;
+        canvas.style.height = cssH + 'px';
 
-      particles = new Array(n);
-      for (let i = 0; i < n; i++) {
-        const a = A[i];
-        const b = B[Math.floor((i / n) * B.length)];
+        const step = Math.max(2, Math.round((narrow ? 2 : 3) * dpr));
+        const widthProp = narrow ? 0.62 : 0.28;
+        const A = await sampleSide(
+          sideA, W, H,
+          narrow ? W * 0.5 : W * 0.2,
+          narrow ? H * 0.24 : H * 0.5,
+          step, widthProp,
+        );
+        const B = await sampleSide(
+          sideB, W, H,
+          narrow ? W * 0.5 : W * 0.8,
+          narrow ? H * 0.76 : H * 0.5,
+          step, widthProp,
+        );
+        if (!A.length || !B.length) return;
 
-        // Ciąg złotego podziału – równomierny, bez klastrów, deterministyczny.
-        const u = (i * 0.6180339887) % 1;
+        // Bierzemy DŁUŻSZĄ listę i zawijamy krótszą modulo. Wcześniejsze
+        // podpróbkowanie dłuższej co k-ty punkt wycinało z logotypu całe
+        // pionowe pasy (punkty są w porządku wierszowym) – znak rozpadał się
+        // na fragmenty. Powtórzone punkty tylko nakładają się na siebie.
+        const n = Math.max(A.length, B.length);
 
-        // Końce toru są przypięte TWARDO do t=0 i t=1. Bez tego cząstki
-        // „prawie na końcu” lądują kilkadziesiąt pikseli w bok (tor ma ~1600 px)
-        // i rozmazują litery w nieczytelną smugę. Środkowa mniejszość niesie
-        // chmurę rozproszenia między napisami.
-        let t: number;
-        let spread: number;
-        if (u < 0.4) {
-          t = 0;
-          spread = 0;
-        } else if (u > 0.6) {
-          t = 1;
-          spread = 0;
-        } else {
-          t = 0.12 + 0.76 * ((u - 0.4) / 0.2);
-          spread = 4 * t * (1 - t);
+        particles = new Array(n);
+        for (let i = 0; i < n; i++) {
+          const a = A[i % A.length];
+          const b = B[i % B.length];
+
+          // Ciąg złotego podziału – równomierny, bez klastrów, deterministyczny.
+          const u = (i * 0.6180339887) % 1;
+
+          let t: number;
+          let spread: number;
+          if (u < 0.4) {
+            t = 0;
+            spread = 0;
+          } else if (u > 0.6) {
+            t = 1;
+            spread = 0;
+          } else {
+            t = 0.12 + 0.76 * ((u - 0.4) / 0.2);
+            spread = 4 * t * (1 - t);
+          }
+
+          const jitter = ((i * 2654435761) % 1000) / 1000;
+          const ang = u * Math.PI * 2 * 7.3;
+          const mag = spread * H * 0.3 * (0.3 + jitter);
+
+          const col = t === 0 ? INK : t === 1 ? ACCENT : mix(MUTE, ACCENT, t);
+          const alpha = spread === 0 ? 0.95 : 0.34 + (1 - spread) * 0.38;
+
+          particles[i] = {
+            ax: a.x, ay: a.y, bx: b.x, by: b.y, t,
+            nx: Math.cos(ang) * mag * (narrow ? 0.55 : 1),
+            ny: Math.sin(ang) * mag * (narrow ? 1 : 0.55),
+            x: 0, y: 0, vx: 0, vy: 0,
+            r: (spread === 0 ? 1.15 : 0.8) * dpr,
+            col: `rgba(${col[0]}, ${col[1]}, ${col[2]}, ${alpha.toFixed(2)})`,
+          };
         }
 
-        const jitter = ((i * 2654435761) % 1000) / 1000;
-        const ang = u * Math.PI * 2 * 7.3;
-        const mag = spread * H * 0.3 * (0.3 + jitter);
-
-        const col = t === 0 ? INK : t === 1 ? ACCENT : mix(MUTE, ACCENT, t);
-        const alpha = spread === 0 ? 0.95 : 0.34 + (1 - spread) * 0.38;
-
-        particles[i] = {
-          ax: a.x, ay: a.y, bx: b.x, by: b.y, t,
-          nx: Math.cos(ang) * mag * (narrow ? 0.55 : 1),
-          ny: Math.sin(ang) * mag * (narrow ? 1 : 0.55),
-          x: 0, y: 0, vx: 0, vy: 0,
-          r: (spread === 0 ? 1.15 : 0.8) * dpr,
-          col: `rgba(${col[0]}, ${col[1]}, ${col[2]}, ${alpha.toFixed(2)})`,
-        };
+        for (const p of particles) {
+          p.x = p.ax + (p.bx - p.ax) * p.t + p.nx;
+          p.y = p.ay + (p.by - p.ay) * p.t + p.ny;
+        }
+        draw();
+      } finally {
+        building = false;
       }
-
-      for (const p of particles) {
-        p.x = p.ax + (p.bx - p.ax) * p.t + p.nx;
-        p.y = p.ay + (p.by - p.ay) * p.t + p.ny;
-      }
-      draw();
     }
 
     function draw() {
@@ -255,7 +332,7 @@ const {
       raf = 0;
     }
 
-    build();
+    await build();
 
     // Animujemy tylko gdy płótno jest w kadrze – poza nim pętla stoi.
     const io = new IntersectionObserver(
@@ -281,7 +358,7 @@ const {
         setTimeout(() => {
           interactive = false;
           stop();
-          build();
+          void build();
         }, 1200);
       });
     }
@@ -289,14 +366,14 @@ const {
     let rt: number;
     window.addEventListener('resize', () => {
       clearTimeout(rt);
-      rt = window.setTimeout(build, 180);
+      rt = window.setTimeout(() => void build(), 180);
     });
   }
 
   function boot() {
     document
       .querySelectorAll<HTMLCanvasElement>('canvas.halftone')
-      .forEach((c) => init(c));
+      .forEach((c) => void init(c));
   }
 
   boot();
