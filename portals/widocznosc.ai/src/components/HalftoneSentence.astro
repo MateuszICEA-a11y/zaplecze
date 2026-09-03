@@ -9,9 +9,11 @@
  * canvasu – SVG jako maska alfa plus opcjonalny napis – a potem próbkowana co
  * `step` pikseli na cząstki. Podmiana ilustracji to podmiana propsa.
  *
- * Rozkład wzdłuż toru A→B: 40% cząstek przypiętych twardo do t=0, 40% do t=1,
- * 20% w chmurze pośredniej. Przypięcie musi być twarde – przy torze długim na
- * ~1600 px cząstki „prawie na końcu” rozmazują znak w nieczytelny pył.
+ * Rozkład wzdłuż toru A→B: 35% cząstek przypiętych twardo do t=0, 35% do t=1,
+ * 30% płynie w pętli jako spleciona wstęga (biel → akcent). Przypięcie końców
+ * musi być twarde – przy torze długim na ~1000 px cząstki „prawie na końcu”
+ * rozmazują znak w nieczytelny pył. Pętla animacji chodzi, gdy płótno jest
+ * w kadrze; przy prefers-reduced-motion zostaje jedna statyczna klatka.
  */
 interface Props {
   /** Lewa strona: ścieżka do SVG/PNG (maska alfa) */
@@ -34,7 +36,7 @@ const {
   fromText,
   toSrc,
   toText,
-  ratio = 0.3,
+  ratio = 0.24,
   alt,
   class: className = '',
 } = Astro.props;
@@ -71,6 +73,13 @@ const {
       Math.round(a[2] + (b[2] - a[2]) * t),
     ];
   }
+
+  // Paleta 32 kroków biel → akcent; cząstki wstęgi zmieniają kolor co klatkę,
+  // więc nie składamy stringów rgba w pętli.
+  const PAL = Array.from({ length: 32 }, (_, i) => {
+    const c = mix(INK, ACCENT, i / 31);
+    return `rgba(${c[0]}, ${c[1]}, ${c[2]}, 0.85)`;
+  });
 
   const imgCache = new Map<string, Promise<HTMLImageElement | null>>();
   function loadImage(src: string) {
@@ -161,6 +170,8 @@ const {
     t: number; nx: number; ny: number;
     x: number; y: number; vx: number; vy: number;
     r: number; col: string;
+    /** cząstka wstęgi: płynie A→B w pętli */
+    trail: boolean; ph: number; amp: number; lane: number;
   };
 
   async function init(canvas: HTMLCanvasElement) {
@@ -175,7 +186,7 @@ const {
       src: canvas.dataset.toSrc || undefined,
       text: canvas.dataset.toText || undefined,
     };
-    const ratio = Number(canvas.dataset.ratio || 0.3);
+    const ratio = Number(canvas.dataset.ratio || 0.24);
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     try {
@@ -189,8 +200,8 @@ const {
     let W = 0;
     let H = 0;
     let raf = 0;
-    let interactive = false;
     let building = false;
+    let isNarrow = false;
     const pointer = { x: -9999, y: -9999 };
 
     async function build() {
@@ -212,16 +223,19 @@ const {
         canvas.style.height = cssH + 'px';
 
         const step = Math.max(2, Math.round((narrow ? 2 : 3) * dpr));
-        const widthProp = narrow ? 0.62 : 0.28;
+        isNarrow = narrow;
+        // Znaki zsunięte do 0.3 / 0.7 szerokości – wstęga między nimi ma być
+        // łącznikiem, nie przestrzenią do pokonania.
+        const widthProp = narrow ? 0.62 : 0.24;
         const A = await sampleSide(
           sideA, W, H,
-          narrow ? W * 0.5 : W * 0.2,
+          narrow ? W * 0.5 : W * 0.3,
           narrow ? H * 0.24 : H * 0.5,
           step, widthProp,
         );
         const B = await sampleSide(
           sideB, W, H,
-          narrow ? W * 0.5 : W * 0.8,
+          narrow ? W * 0.5 : W * 0.7,
           narrow ? H * 0.76 : H * 0.5,
           step, widthProp,
         );
@@ -243,42 +257,59 @@ const {
 
           let t: number;
           let spread: number;
-          if (u < 0.4) {
+          if (u < 0.35) {
             t = 0;
             spread = 0;
-          } else if (u > 0.6) {
+          } else if (u > 0.65) {
             t = 1;
             spread = 0;
           } else {
-            t = 0.12 + 0.76 * ((u - 0.4) / 0.2);
+            t = (u - 0.35) / 0.3;
             spread = 4 * t * (1 - t);
           }
+          const trail = spread > 0;
 
           const jitter = ((i * 2654435761) % 1000) / 1000;
-          const ang = u * Math.PI * 2 * 7.3;
-          const mag = spread * H * 0.3 * (0.3 + jitter);
-
-          const col = t === 0 ? INK : t === 1 ? ACCENT : mix(MUTE, ACCENT, t);
-          const alpha = spread === 0 ? 0.95 : 0.34 + (1 - spread) * 0.38;
+          const col = t === 0 ? INK : ACCENT;
 
           particles[i] = {
             ax: a.x, ay: a.y, bx: b.x, by: b.y, t,
-            nx: Math.cos(ang) * mag * (narrow ? 0.55 : 1),
-            ny: Math.sin(ang) * mag * (narrow ? 1 : 0.55),
+            nx: 0,
+            ny: 0,
             x: 0, y: 0, vx: 0, vy: 0,
-            r: (spread === 0 ? 1.15 : 0.8) * dpr,
-            col: `rgba(${col[0]}, ${col[1]}, ${col[2]}, ${alpha.toFixed(2)})`,
+            r: (trail ? 0.85 : 1.15) * dpr,
+            col: trail ? PAL[Math.floor(t * 31)] : `rgba(${col[0]}, ${col[1]}, ${col[2]}, 0.95)`,
+            trail,
+            ph: t,
+            // amplituda splotu: kilka pasm o różnej wysokości
+            amp: H * (0.05 + 0.13 * jitter),
+            lane: jitter * Math.PI * 2,
           };
         }
 
         for (const p of particles) {
-          p.x = p.ax + (p.bx - p.ax) * p.t + p.nx;
-          p.y = p.ay + (p.by - p.ay) * p.t + p.ny;
+          const h = home(p, p.t);
+          p.x = h[0];
+          p.y = h[1];
         }
         draw();
       } finally {
         building = false;
       }
+    }
+
+    /**
+     * Pozycja spoczynkowa dla parametru toru tt. Wstęga biegnie po prostej
+     * A→B, spleciona sinusoidą o amplitudzie gasnącej na końcach, więc
+     * cząstki „wypływają” z jednego znaku i „wsiąkają” w drugi.
+     */
+    function home(p: P, tt: number): [number, number] {
+      const x = p.ax + (p.bx - p.ax) * tt;
+      const y = p.ay + (p.by - p.ay) * tt;
+      if (!p.trail) return [x, y];
+      const env = Math.sin(tt * Math.PI); // 0 na końcach, 1 w środku
+      const wave = Math.sin(tt * Math.PI * 2 * 1.5 + p.lane) * p.amp * env;
+      return isNarrow ? [x + wave, y] : [x, y + wave];
     }
 
     function draw() {
@@ -291,12 +322,29 @@ const {
       }
     }
 
-    function frame() {
+    function frame(now: number) {
       const rad = 110 * dpr;
       const rad2 = rad * rad;
+      const T = now / 1000;
       for (const p of particles) {
-        const hx = p.ax + (p.bx - p.ax) * p.t + p.nx;
-        const hy = p.ay + (p.by - p.ay) * p.t + p.ny;
+        let hx: number;
+        let hy: number;
+        if (p.trail) {
+          // pętla A→B, ~14 s na przejście; kolor podąża za położeniem
+          const tt = (p.ph + T * 0.07) % 1;
+          [hx, hy] = home(p, tt);
+          p.col = PAL[Math.floor(tt * 31)];
+          // cząstka, która właśnie „urodziła się” w A, dogania tor bez smugi
+          if (tt < 0.02) {
+            p.x = hx;
+            p.y = hy;
+            p.vx = 0;
+            p.vy = 0;
+          }
+        } else {
+          hx = p.ax + (p.bx - p.ax) * p.t;
+          hy = p.ay + (p.by - p.ay) * p.t;
+        }
 
         // sprężyna do pozycji spoczynkowej
         p.vx += (hx - p.x) * 0.06;
@@ -323,7 +371,7 @@ const {
     }
 
     function start() {
-      if (raf || reduced || !interactive) return;
+      if (raf || reduced) return;
       raf = requestAnimationFrame(frame);
     }
     function stop() {
@@ -342,10 +390,6 @@ const {
     io.observe(canvas);
 
     if (!reduced && matchMedia('(pointer: fine)').matches) {
-      canvas.addEventListener('pointerenter', () => {
-        interactive = true;
-        start();
-      });
       canvas.addEventListener('pointermove', (e) => {
         const r = canvas.getBoundingClientRect();
         pointer.x = (e.clientX - r.left) * dpr;
@@ -354,12 +398,6 @@ const {
       canvas.addEventListener('pointerleave', () => {
         pointer.x = -9999;
         pointer.y = -9999;
-        // domykamy ruch, żeby cząstki wróciły na miejsce, potem gasimy pętlę
-        setTimeout(() => {
-          interactive = false;
-          stop();
-          void build();
-        }, 1200);
       });
     }
 
