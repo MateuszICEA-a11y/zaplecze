@@ -160,19 +160,20 @@ const formatDate = (date: Date) =>
         <span class="kd-d2">i Perplexity mówią o <em>Twojej marce</em>.</span>
       </h1>
       <div class="kd-hero-support">
-        <p class="kd-lead">
-          Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp do Twojej
-          strony i jak zoptymalizować swój content, aby był cytowany przez wyszukiwarki AI.
-        </p>
+        <div class="kd-hero-offer">
+          <p class="kd-lead">
+            Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp do Twojej
+            strony i jak zoptymalizować swój content, aby był cytowany przez wyszukiwarki AI.
+          </p>
+          <div class="kd-actions kd-hero-actions">
+            <a class="kd-btn" href="#audyty">Uruchom darmowe testy →</a>
+            <a class="kd-btn kd-btn-2" href="/kontakt/?type=full-report">Zamów pełny raport</a>
+          </div>
+        </div>
         <aside class="kd-hero-thesis">
           <span class="kd-label">SEO + GEO · Ewolucja wyszukiwania</span>
           <p class="kd-body">AI zmienia wyszukiwarki w <strong>silniki odpowiedzi</strong>, które eliminują konieczność przeklikiwania się przez wyniki. Marki pominięte przez ChatGPT, Claude czy Perplexity po prostu <strong>przestają istnieć</strong> w decyzji konsumenta.</p>
         </aside>
-      </div>
-
-      <div class="kd-actions kd-hero-actions">
-        <a class="kd-btn" href="#audyty">Uruchom darmowe testy →</a>
-        <a class="kd-btn kd-btn-2" href="/kontakt/?type=full-report">Zamów pełny raport</a>
       </div>
     </div>
 
@@ -497,8 +498,8 @@ widocznosc.ai by ICEA S.A., Szyperska 14, Poznań.
   }
   .kd-hero-support {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 36px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.16fr);
+    gap: 32px;
     margin-top: 40px;
     padding-top: 28px;
     border-top: 1px solid var(--kd-line);
@@ -508,8 +509,10 @@ widocznosc.ai by ICEA S.A., Szyperska 14, Poznań.
     margin: 0;
   }
   .kd-hero-thesis {
-    padding-left: 36px;
-    border-left: 1px solid var(--kd-line);
+    align-self: stretch;
+    padding: 22px 24px;
+    background: var(--kd-card);
+    border: 1px solid var(--kd-line);
   }
   .kd-hero-thesis .kd-label {
     display: block;
@@ -521,6 +524,17 @@ widocznosc.ai by ICEA S.A., Szyperska 14, Poznań.
   .kd-hero-thesis strong {
     color: var(--kd-ink);
     font-weight: 600;
+  }
+  .kd-hero-offer .kd-hero-actions {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .kd-hero-offer .kd-btn {
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
   }
   .kd-figure {
     margin: 44px 0 0;
@@ -556,9 +570,10 @@ widocznosc.ai by ICEA S.A., Szyperska 14, Poznań.
       padding-top: 24px;
     }
     .kd-hero-thesis {
-      padding: 24px 0 0;
-      border-top: 1px solid var(--kd-line);
-      border-left: 0;
+      padding: 22px;
+    }
+    .kd-hero-offer .kd-hero-actions {
+      grid-template-columns: 1fr;
     }
   }
 </style>
