@@ -31,16 +31,6 @@ const steps = [
 
 const audits = [
   {
-    t: 'Widoczność marki w AI',
-    dots: 20,
-    micro: '4 silniki · świeże sesje',
-    num: '60',
-    unit: 's',
-    meta: 'bezpłatnie · bez rejestracji',
-    list: ['ChatGPT, Claude, Gemini, Perplexity', 'Sentyment i lista halucynacji', 'Konkurenci polecani zamiast Ciebie'],
-    hot: true,
-  },
-  {
     t: 'Cytowalność strony',
     dots: 10,
     micro: 'jeden adres · wynik 0–100',
@@ -57,6 +47,16 @@ const audits = [
     unit: 's',
     meta: 'bezpłatnie · natychmiast',
     list: ['GPTBot, ClaudeBot, PerplexityBot', 'Google-Extended i 9 innych botów', 'Dostęp albo blokada per bot'],
+  },
+  {
+    t: 'Widoczność marki w AI',
+    dots: 20,
+    micro: '4 silniki · świeże sesje',
+    num: '60',
+    unit: 's',
+    meta: 'bezpłatnie · bez rejestracji',
+    list: ['ChatGPT, Claude, Gemini, Perplexity', 'Sentyment i lista halucynacji', 'Konkurenci polecani zamiast Ciebie'],
+    hot: true,
   },
 ];
 
@@ -115,9 +115,9 @@ const credentials = [
 
 const team = [
   { name: 'Tomasz Czechowski', role: 'Head of SEO', photo: '/authors/tomasz-czechowski.avif', text: 'Łączy możliwości technologii LLM z celami biznesowymi. Twórca autorskich frameworków pozycjonowania w ekosystemach AI.', href: 'https://www.linkedin.com/in/tomasz-czechowski/' },
-  { name: 'Michał Ziach', role: 'CTO', photo: '/authors/michal-ziach.avif', text: 'Architekt rozwiązań AI/ML i systemów wspierających SEO.', href: 'https://www.linkedin.com/in/michal-ziach/' },
-  { name: 'Piotr Wicenciak', role: 'SEO Operations Manager', photo: '/authors/piotr-wicenciak.avif', text: 'Strateg specjalizujący się w optymalizacji dla generatywnych silników wyszukiwania.', href: 'https://www.linkedin.com/' },
-  { name: 'Mateusz Wiśniewski', role: 'Ekspert SEO / AI Search', photo: '/authors/mateusz-wisniewski.avif', text: 'Przekłada złożone dane i analizę semantyczną na strategie widoczności.', href: 'https://www.linkedin.com/' },
+  { name: 'Michał Ziach', role: 'CTO', photo: '/authors/michal-ziach.avif', text: 'Chief Technology Officer w ICEA. Architekt rozwiązań AI/ML i systemów wspierających SEO.', href: 'https://www.linkedin.com/in/micha%C5%82-ziach/' },
+  { name: 'Piotr Wicenciak', role: 'SEO Operations Manager', photo: '/authors/piotr-wicenciak.avif', text: 'Strateg specjalizujący się w optymalizacji dla generatywnych silników wyszukiwania. Architekt widoczności w erze AI.', href: 'https://www.linkedin.com/in/piotr-wicenciak/' },
+  { name: 'Mateusz Wiśniewski', role: 'Ekspert SEO/AI Search', photo: '/authors/mateusz-wisniewski.avif', text: 'Ekspert w inżynierii promptów i analizie semantycznej. Przekłada złożone dane na strategie dominacji w wynikach AI.', href: 'https://www.linkedin.com/in/mateusz-wi%C5%9Bniewski-b23338221/' },
 ];
 
 const articles = [
@@ -279,9 +279,9 @@ const DOTS = 24;
     <div class="kd-wrap">
       <div class="kd-section-head">
         <span class="kd-label">Zespół</span>
-        <h2 class="kd-text-title">Za pomiarem stoi ICEA.</h2>
+        <h2 class="kd-text-title">Stoi za nami zespół ICEA.</h2>
       </div>
-      <p class="kd-lead kd-team-intro">Kilkunastoletnie doświadczenie w SEO przekładamy na pomiar i budowanie widoczności w AI. Każda rekomendacja wynika z pracy nad realnymi projektami.</p>
+      <p class="kd-lead kd-team-intro">Nasze kilkunastoletnie doświadczenie w SEO przekuwamy w skuteczne strategie widoczności w dobie AI Search. Nie teoretyzujemy – każda rekomendacja na tej stronie to wniosek z realnych projektów.</p>
       <div class="kd-team-grid">
         {team.map((person) => (
           <article class="kd-team-card">
