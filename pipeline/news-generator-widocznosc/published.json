@@ -1,11 +1,5 @@
 [
   {
-    "title": "Gdy firmy przesadzają z AI",
-    "date": "2026-05-30",
-    "slug": "gdy-firmy-przesadzaja-z-ai",
-    "source": "rss"
-  },
-  {
     "title": "SoftBank planuje do 75 mld euro na centra danych we Francji",
     "date": "2026-05-31",
     "slug": "softbank-planuje-do-75-mld-euro-na-centra-danych-we-francji",
@@ -627,5 +621,12 @@
     "slug": "chatgpt-i-reddit-pod-najsurowszymi-unijnymi-regulami-bezpieczenstwa",
     "source": "rss",
     "source_name": "Ars Technica AI"
+  },
+  {
+    "title": "Problemy z wdrożeniem GPT-6 Astra: Sam Altman przeprasza płacących użytkowników",
+    "date": "2026-09-04",
+    "slug": "problemy-z-wdrozeniem-gpt-6-astra-sam-altman-przeprasza-placacych-uzytkownikow",
+    "source": "rss",
+    "source_name": "The Verge AI"
   }
 ]
