@@ -40,15 +40,6 @@ const audits = [
     list: ['Pięć priorytetowych zmian', 'Według badań Princeton', 'Analiza 1,2 mln cytowań ChatGPT'],
   },
   {
-    t: 'Dostęp botów AI',
-    dots: 2,
-    micro: 'robots.txt i WAF',
-    num: '<1',
-    unit: 's',
-    meta: 'bezpłatnie · natychmiast',
-    list: ['GPTBot, ClaudeBot, PerplexityBot', 'Google-Extended i 9 innych botów', 'Dostęp albo blokada per bot'],
-  },
-  {
     t: 'Widoczność marki w AI',
     dots: 20,
     micro: '4 silniki · świeże sesje',
@@ -57,6 +48,15 @@ const audits = [
     meta: 'bezpłatnie · bez rejestracji',
     list: ['ChatGPT, Claude, Gemini, Perplexity', 'Sentyment i lista halucynacji', 'Konkurenci polecani zamiast Ciebie'],
     hot: true,
+  },
+  {
+    t: 'Dostęp botów AI',
+    dots: 2,
+    micro: 'robots.txt i WAF',
+    num: '<1',
+    unit: 's',
+    meta: 'bezpłatnie · natychmiast',
+    list: ['GPTBot, ClaudeBot, PerplexityBot', 'Google-Extended i 9 innych botów', 'Dostęp albo blokada per bot'],
   },
 ];
 
@@ -104,7 +104,13 @@ const industries = [
   { name: 'Usługi B2B', desc: 'Konsulting, agencje, software house’y. Klient pyta AI o polecanych dostawców przed pierwszym mailem.' },
 ];
 
-const engines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Microsoft Copilot'];
+const engines = [
+  { name: 'ChatGPT', signal: '01' },
+  { name: 'Claude', signal: '02' },
+  { name: 'Gemini', signal: '03' },
+  { name: 'Perplexity', signal: '04' },
+  { name: 'Copilot', signal: '05' },
+];
 
 const credentials = [
   { value: '15+', label: 'lat doświadczenia ICEA w SEO i AI' },
@@ -161,17 +167,20 @@ const DOTS = 24;
         toSrc="/logos/brand/icea-wordmark.svg"
         alt="Ilustracja: znak widocznosc.ai rozsypuje się w chmurę kropek i scala w logotyp iCEA"
       />
-      <figcaption>
-        <span class="kd-caption">widocznosc.ai</span>
-        <span class="kd-caption">część grupy iCEA</span>
-      </figcaption>
     </figure>
   </section>
 
   <section class="kd-engine-band" aria-label="Silniki AI objęte pomiarem">
     <div class="kd-wrap kd-engine-band-inner">
-      <span class="kd-label">Mierzymy widoczność w</span>
-      <ul>{engines.map((engine) => <li>{engine}</li>)}</ul>
+      <div class="kd-engine-copy"><span class="kd-label">Sygnał pomiarowy</span><span class="kd-micro">5 silników · świeże sesje</span></div>
+      <ol class="kd-engine-rail">
+        {engines.map((engine, i) => (
+          <li class:list={[i === 0 && 'is-active']}>
+            <span class="kd-engine-node">{engine.signal}</span>
+            <strong>{engine.name}</strong>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
