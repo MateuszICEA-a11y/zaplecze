@@ -347,7 +347,7 @@
 .kd-team-intro { margin: -16px 0 32px; }
 .kd-team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .kd-team-card { display: flex; flex-direction: column; gap: 10px; padding-top: 0; }
-.kd-team-card img { aspect-ratio: 1; background: var(--kd-card); border: 1px solid var(--kd-line); filter: grayscale(1); object-fit: cover; width: 100%; }
+.kd-team-card img { aspect-ratio: 1; background: var(--kd-card); border: 1px solid var(--kd-line); filter: grayscale(0.42) saturate(0.78) contrast(1.02); object-fit: cover; width: 100%; }
 .kd-team-card .kd-tag { margin-top: 6px; }
 .kd-team-card .kd-text-sub { font-size: 21px; line-height: 25px; }
 .kd-team-card .kd-meta { margin-top: auto; padding-top: 8px; }
