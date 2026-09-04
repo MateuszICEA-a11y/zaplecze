@@ -288,10 +288,10 @@ const {
             nx: 0,
             ny: 0,
             x: 0, y: 0, vx: 0, vy: 0,
-            // Końce mają większe, prawie stykające się punkty; wstęga zostaje
-            // lżejsza, dzięki czemu nie konkuruje z nazwami marek.
-            r: (trail ? 0.78 : t === 0 ? 1.46 : 1.32) * dpr,
-            col: trail ? PAL[Math.floor(t * 31)] : `rgba(${col[0]}, ${col[1]}, ${col[2]}, 0.95)`,
+            // Punkty końców nie stykają się ze sobą: zachowują charakter
+            // rastra, ale nie sklejają liter w nieostry kontur.
+            r: (trail ? 0.72 : t === 0 ? 1.08 : 1.04) * dpr,
+            col: trail ? PAL[Math.floor(t * 31)] : `rgba(${col[0]}, ${col[1]}, ${col[2]}, 1)`,
             trail,
             ph: t,
             // amplituda splotu: kilka pasm o różnej wysokości
