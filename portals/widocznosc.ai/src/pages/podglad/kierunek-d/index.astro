@@ -141,10 +141,7 @@ const team = [
 const allPosts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
-const homepagePillars = ['geo', 'modele-llm', 'ai-w-biznesie', 'rag'] as const;
-const articles = homepagePillars
-  .map((pillar) => allPosts.find((post) => post.data.pillar === pillar))
-  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const articles = allPosts.slice(0, 3);
 const formatDate = (date: Date) =>
   date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
 
@@ -329,7 +326,7 @@ const formatDate = (date: Date) =>
           <a class="kd-meta" href="/blog/">Wszystkie artykuły →</a>
         </div>
       </div>
-      <div class="kd-grid-4" id="wiedza-grid">
+      <div class="kd-articles-grid" id="wiedza-grid">
         {articles.map((article) => (
           <a class="kd-card kd-article-card" href={`/${article.id}/`}>
             <div class="kd-article-image">
@@ -337,13 +334,15 @@ const formatDate = (date: Date) =>
                 src={article.data.image}
                 alt={article.data.title}
                 widths={[360, 540, 720]}
-                sizes="(min-width: 1180px) 24vw, (min-width: 700px) 48vw, 100vw"
+                sizes="(min-width: 1180px) 33vw, (min-width: 700px) 48vw, 100vw"
                 loading="lazy"
               />
             </div>
             <div class="kd-article-content">
-              <span class="kd-tag">{PILLAR_LABELS[article.data.pillar]}</span>
-              <span class="kd-micro">{article.data.readTime} · {formatDate(article.data.date)}</span>
+              <div class="kd-article-meta">
+                <span class="kd-tag">{PILLAR_LABELS[article.data.pillar]}</span>
+                <span class="kd-micro">{article.data.readTime} · {formatDate(article.data.date)}</span>
+              </div>
               <h3 class="kd-text-heading">{article.data.title}</h3>
               {article.data.subtitle && <p class="kd-body-sm">{article.data.subtitle}</p>}
               <span class="kd-meta">Czytaj →</span>

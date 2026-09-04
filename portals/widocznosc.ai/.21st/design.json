@@ -132,6 +132,10 @@
     {
       "date": "2026-09-04",
       "decision": "Homepage hero uses a centered vertical hierarchy: display headline, wide unboxed SEO-to-answer-engines thesis, then a narrower service promise with two CTAs. The brand-to-ICEA halftone sits directly below it with a lower canvas ratio and denser particles for legibility at 100% browser zoom."
+    },
+    {
+      "date": "2026-09-04",
+      "decision": "Homepage knowledge section shows the three newest Markdown articles in a three-column editorial grid with 16:9 imagery and Fraunces titles. The global footer aligns to the same 1360px grid as the homepage."
     }
   ],
   "evidence": [
