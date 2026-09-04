@@ -118,7 +118,7 @@
     <li><b>Claude Code robi produkcję i utrzymanie, człowiek robi decyzje i dostępy.</b> Pipeline pisze, sprawdza fakty, generuje grafiki, publikuje i codziennie dokłada newsy. Człowiek dobiera niszę, rejestruje domenę, zakłada konta, uruchamia partie tekstów i czyta próbkę.</li>
     <li><b>Infrastruktura kosztuje mniej niż jedna subskrypcja.</b> GitHub, Cloudflare Pages, Workers i domeny to przy 15 portalach ok. 300 zł miesięcznie. Narzędzia SEO (Senuto, SerpData, DataForSEO, Ahrefs) już są w firmie.</li>
     <li><b>Recykling treści już istnieje.</b> Content Watcher odświeża wpisy na grupa-icea.pl. Podpięcie go pod portale Hugo to ok. 10 godzin pracy. Jeden przejazd odświeżenia kosztuje ok. 1,7 zł.</li>
-    <li><b>Największa pozycja to ludzie.</b> Przy 15 portalach: pół etatu juniora i ok. 15 godzin seniora miesięcznie. To ok. 7 tys. zł z 11 tys. zł miesięcznych kosztów całej sieci.</li>
+    <li><b>Gotówka i czas ludzi to dwie osobne liczby.</b> Przy 15 portalach z firmy wychodzi ok. 3 300 zł miesięcznie (subskrypcje, modele, domeny). Do tego praca: ok. 15 h seniora i ok. 70 h juniora miesięcznie na utrzymanie, a w czasie rozruchu drugie tyle na uruchamianie kolejnych portali. Start całej sieci to ok. 12 tys. zł gotówki i ok. 700 godzin pracy.</li>
   </ol></div>
 </div></section>
 
@@ -185,20 +185,20 @@
     <tr><td>Mapa treści: 12 sekcji, klastry, 200 adresów z frazami</td><td>junior z Claude Code, akceptuje senior</td><td class="num">4 h + 2 h seniora</td><td>tak: pipeline generuje, człowiek zatwierdza</td></tr>
     <tr><td>Produkcja 200 tekstów startowych: uruchamianie partii, czytanie co dziesiątego tekstu, poprawki wyjątków</td><td>operator z Claude Code (junior)</td><td class="num">5–7 dni roboczych, w tym ok. 20 h uwagi</td><td>maszyna pisze 8–10 tekstów na godzinę; człowiek pilnuje jakości i limitów</td></tr>
     <tr><td>Interaktywne narzędzia (kalkulatory, porównywarki), 1–2 na portal</td><td>senior z Claude Code</td><td class="num">3–4 h</td><td>częściowo: szablony narzędzi są, dane per nisza wpisuje człowiek</td></tr>
-    <tr class="sum"><td>Uruchomienie kolejnego portalu razem</td><td colspan="3">ok. 12 h seniora + ok. 30 h juniora, w kalendarzu 2–3 tygodnie; koszt pracy ok. 4 tys. zł, API i grafiki ok. 700 zł, domena 100 zł</td></tr>
+    <tr class="sum"><td>Uruchomienie kolejnego portalu razem</td><td colspan="3">praca: ok. 12 h seniora + ok. 30 h juniora, w kalendarzu 2–3 tygodnie; gotówka: API i grafiki ok. 700 zł, domena 100 zł</td></tr>
     <tr class="sub"><td colspan="4">Co miesiąc – utrzymanie jednego portalu</td></tr>
     <tr><td>Nowe teksty evergreen (ok. 15 miesięcznie)</td><td>junior z Claude Code</td><td class="num">2 h</td><td>maszyna pisze, człowiek czyta próbkę</td></tr>
     <tr><td>Przegląd newsów z automatu (30 miesięcznie), wyłapanie wpadek</td><td>junior</td><td class="num">0,5 h</td><td>sędzia LLM odrzuca słabe tematy; człowiek sprawdza raz w tygodniu</td></tr>
     <tr><td>Reakcja na alerty: nieudany build, wyczerpane saldo API, spadek indeksacji</td><td>senior</td><td class="num">0,5–1 h</td><td>alerty są automatyczne, naprawa ręczna</td></tr>
     <tr><td>Wpięcia linków do klientów (zlecenia z link buildingu)</td><td>junior z Claude Code</td><td class="num">0,5 h na wpięcie</td><td>tak: skill wpięcia jest, decyzja o miejscu i anchorze ludzka</td></tr>
-    <tr class="sum"><td>Utrzymanie jednego portalu razem</td><td colspan="3">ok. 3 h juniora + ok. 1 h seniora miesięcznie; przy 15 portalach to pół etatu juniora i 15 h seniora</td></tr>
+    <tr class="sum"><td>Utrzymanie jednego portalu razem</td><td colspan="3">ok. 3 h juniora + ok. 1 h seniora miesięcznie; przy 15 portalach, razem z recyklingiem, ok. 70 h juniora i 15 h seniora</td></tr>
     <tr class="sub"><td colspan="4">Raz na kwartał lub rzadziej – cała sieć</td></tr>
     <tr><td>Odnowienie tokenu Senuto (wygasa co ok. 31 dni), tokenu Meta (co 60 dni), kluczy API</td><td>senior</td><td class="num">0,5 h / mies.</td><td>nie: logowanie do paneli dostawców; formularz rotacji tokenu Senuto jest w dashboardzie</td></tr>
     <tr><td>Odnowienie domen, opłacenie subskrypcji Claude, doładowanie kie.ai i OpenRouter</td><td>administracja / senior</td><td class="num">1 h / kwartał</td><td>nie: karty i faktury</td></tr>
     <tr><td>Rozwój pipeline'u: nowe modele, zmiany w API dostawców, nowe funkcje</td><td>senior</td><td class="num">5–10 h / mies.</td><td>nie: to jest praca inżynierska</td></tr>
     <tr><td>Recykling treści (sekcja 5)</td><td>junior</td><td class="num">1,7 h / portal / mies.</td><td>automat proponuje, człowiek akceptuje w edytorze</td></tr>
   </table>
-  <div class="callout"><b>Jedno ryzyko, które trzeba nazwać:</b> dziś wszystkie te czynności robi Mateusz. Przy 15 portalach potrzebny jest junior SEO na pół etatu z własną subskrypcją Claude Code, wdrażany 2 miesiące. Bez niego sieć rośnie o 1 portal miesięcznie zamiast 2–3 i zależy od jednej osoby.</div>
+  <div class="callout"><b>Jedno ryzyko, które trzeba nazwać:</b> dziś wszystkie te czynności robi Mateusz. Przy 15 portalach potrzebny jest junior SEO z własną subskrypcją Claude Code, wdrażany 2 miesiące. W czasie rozruchu (2–3 portale miesięcznie) to niemal pełny etat: ok. 70 h utrzymania plus 60–90 h uruchamiania. Po rozruchu zostaje pół etatu. Bez juniora sieć rośnie o 1 portal miesięcznie zamiast 2–3 i zależy od jednej osoby.</div>
 </div></section>
 
 <section class="sec"><div class="wrap">
@@ -260,7 +260,7 @@
         <tr><td>API na półrocze</td><td class="num">ok. 210 zł</td><td>125 × 1,7 zł</td></tr>
         <tr><td>Praca juniora na półrocze</td><td class="num">ok. 10 h</td><td>5 minut na akceptację tekstu w edytorze</td></tr>
         <tr class="sum"><td>Miesięcznie na portal</td><td class="num">ok. 35 zł API + 1,7 h</td><td>ujęte w utrzymaniu w sekcji 3 i w tabeli zbiorczej</td></tr>
-        <tr class="sum"><td>Miesięcznie na 15 portali</td><td class="num">ok. 530 zł API + 25 h juniora</td><td>ok. 1 400 zł pracy</td></tr>
+        <tr class="sum"><td>Miesięcznie na 15 portali</td><td class="num">ok. 530 zł API + 25 h juniora</td><td>gotówka w tabeli zbiorczej w pozycji „modele i grafiki”, godziny w pozycji „junior”</td></tr>
       </table>
       <p class="sm">Dlaczego to ma sens: na busmaniaku liczba adresów w Top 50 spadła z 287 do 238, a fraz w Top 10 przybyło 1 400. Google i AI premiują strony, które rosną w autorytet, a nie takie, których jest więcej. Odświeżanie istniejących tekstów jest tańsze niż pisanie nowych i podtrzymuje ten efekt.</p>
     </div>
@@ -268,30 +268,36 @@
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <h2>6. Wszystko razem – miesięcznie i na start</h2>
-  <p class="lead">Dwie kolumny: sieć dziś (busmaniak) i sieć docelowa 15 portali po rozruchu. Stawki: senior 180 zł/h kosztu wewnętrznego, junior 9 000 zł miesięcznie pełnego kosztu (ok. 56 zł/h). Widełki plus minus jedna trzecia.</p>
+  <h2>6. Wszystko razem – gotówka osobno, czas ludzi osobno</h2>
+  <p class="lead">Dwie osobne liczby, bo to dwie różne decyzje. Gotówka to przelewy z firmy do dostawców. Czas ludzi to godziny Mateusza i juniora, które zarząd przydziela do tego projektu zamiast do innego. Nie sumuję ich w jedną kwotę.</p>
+  <h3>Co miesiąc</h3>
   <table>
-    <tr><th>Pozycja miesięczna</th><th class="num">Dziś, 1 portal</th><th class="num">15 portali</th><th>Skąd liczba</th></tr>
-    <tr><td>Subskrypcje Claude Code</td><td class="num">380 zł</td><td class="num">1 520 zł</td><td>1 × Max 5x dziś; 2 × Max 20x docelowo (sekcja 1)</td></tr>
-    <tr><td>Modele językowe, grafiki, SerpData</td><td class="num">100 zł</td><td class="num">1 500 zł</td><td>ok. 100 zł na portal: 15 tekstów, 30 newsów, grafiki, recykling (sekcja 4)</td></tr>
-    <tr><td>Hosting, domeny, automaty, dashboard</td><td class="num">10 zł</td><td class="num">300 zł</td><td>GitHub Actions ponad limit, Workers, domeny 1 500 zł rocznie (sekcja 4)</td></tr>
-    <tr><td>Narzędzia SEO: Senuto, DataForSEO, Ahrefs</td><td class="num">0 zł ekstra</td><td class="num">0 zł ekstra</td><td>subskrypcje firmowe już opłacone; wyższe pakiety dopiero przy 250 portalach</td></tr>
-    <tr><td>Senior: nadzór, alerty, rozwój pipeline'u</td><td class="num">1 800 zł (10 h)</td><td class="num">2 700 zł (15 h)</td><td>sekcja 3</td></tr>
-    <tr><td>Junior SEO</td><td class="num">0 zł</td><td class="num">4 500 zł (pół etatu)</td><td>3 h na portal miesięcznie plus recykling i wpięcia (sekcja 3)</td></tr>
-    <tr class="sum"><td>Razem miesięcznie</td><td class="num">ok. 2 300 zł</td><td class="num">ok. 10 500 zł</td><td>w tym ludzie 7 200 zł, technologia 3 300 zł</td></tr>
+    <tr><th>Pozycja</th><th class="num">Dziś, 1 portal</th><th class="num">15 portali po rozruchu</th><th class="num">15 portali w czasie rozruchu</th><th>Skąd liczba</th></tr>
+    <tr class="sub"><td colspan="5">Gotówka z firmy</td></tr>
+    <tr><td>Subskrypcje Claude Code</td><td class="num">380 zł</td><td class="num">1 520 zł</td><td class="num">1 520 zł</td><td>1 × Max 5x dziś; 2 × Max 20x docelowo (sekcja 1)</td></tr>
+    <tr><td>Modele językowe, grafiki, SerpData</td><td class="num">100 zł</td><td class="num">1 500 zł</td><td class="num">2 500 zł</td><td>ok. 100 zł na portal miesięcznie; w rozruchu plus 700 zł na każdy uruchamiany portal (sekcja 4)</td></tr>
+    <tr><td>Hosting, domeny, automaty, dashboard</td><td class="num">10 zł</td><td class="num">300 zł</td><td class="num">300 zł</td><td>GitHub Actions ponad limit, Workers, domeny 1 500 zł rocznie (sekcja 4)</td></tr>
+    <tr><td>Narzędzia SEO: Senuto, DataForSEO, Ahrefs</td><td class="num">0 zł</td><td class="num">0 zł</td><td class="num">0 zł</td><td>subskrypcje firmowe już opłacone; wyższe pakiety dopiero przy 250 portalach</td></tr>
+    <tr class="sum"><td>Gotówka razem miesięcznie</td><td class="num">ok. 500 zł</td><td class="num">ok. 3 300 zł</td><td class="num">ok. 4 300 zł</td><td></td></tr>
+    <tr class="sub"><td colspan="5">Czas ludzi</td></tr>
+    <tr><td>Senior (Mateusz): nadzór, alerty, rozwój pipeline'u, dobór nisz i mapy treści nowych portali</td><td class="num">10 h</td><td class="num">15 h</td><td class="num">40–50 h</td><td>1 h na portal plus 5–10 h rozwoju; w rozruchu plus 12 h na każdy nowy portal (sekcja 3)</td></tr>
+    <tr><td>Junior SEO: teksty, newsy, wpięcia, recykling, uruchamianie portali</td><td class="num">0 h</td><td class="num">ok. 70 h (pół etatu)</td><td class="num">130–160 h (prawie etat)</td><td>3 h na portal plus recykling; w rozruchu plus 30 h na każdy nowy portal (sekcje 3 i 5)</td></tr>
+    <tr class="sum"><td>Czas razem miesięcznie</td><td class="num">10 h</td><td class="num">ok. 85 h</td><td class="num">ok. 190 h</td><td>rozruch trwa ok. 8 miesięcy przy 2–3 portalach miesięcznie</td></tr>
   </table>
+  <h3>Jednorazowo na start 15 portali</h3>
   <table>
-    <tr><th>Koszt jednorazowy na start 15 portali (rozłożony na ok. 8 miesięcy)</th><th class="num">Kwota</th><th>Skąd liczba</th></tr>
-    <tr><td>Uogólnienie pipeline'u pod wiele portali: skill uruchomienia portalu z jednego pliku, motyw z wariantami, skrypt DNS i Pages, arkusz inwentarza dla link buildingu, Content Watcher pod Hugo</td><td class="num">ok. 13 000 zł</td><td>ok. 70 h seniora</td></tr>
-    <tr><td>Uruchomienie 15 portali: nisza, konta, mapa treści, 200 tekstów, narzędzia</td><td class="num">ok. 70 000 zł</td><td>15 × (12 h seniora + 30 h juniora + 700 zł API i grafik), sekcja 3</td></tr>
-    <tr><td>Domeny na pierwszy rok</td><td class="num">ok. 1 500 zł</td><td>15 × 100 zł</td></tr>
-    <tr class="sum"><td>Razem na start</td><td class="num">ok. 85 000 zł (widełki 65–110 tys.)</td><td>plus koszty miesięczne z tabeli wyżej narastające od 2 300 do 10 500 zł</td></tr>
+    <tr><th>Pozycja</th><th class="num">Gotówka</th><th class="num">Czas ludzi</th><th>Skąd liczba</th></tr>
+    <tr><td>Uogólnienie pipeline'u pod wiele portali: skill uruchomienia portalu z jednego pliku, motyw z wariantami, skrypt DNS i Pages, arkusz inwentarza dla link buildingu, Content Watcher pod Hugo</td><td class="num">0 zł</td><td class="num">ok. 70 h seniora</td><td>praca inżynierska raz dla całej sieci</td></tr>
+    <tr><td>Uruchomienie 15 portali: nisza, konta, mapa treści, 200 tekstów, narzędzia</td><td class="num">ok. 10 500 zł</td><td class="num">ok. 180 h seniora + ok. 450 h juniora</td><td>15 × (700 zł API i grafik; 12 h seniora + 30 h juniora), sekcja 3</td></tr>
+    <tr><td>Domeny na pierwszy rok</td><td class="num">ok. 1 500 zł</td><td class="num">2 h</td><td>15 × 100 zł</td></tr>
+    <tr class="sum"><td>Razem na start</td><td class="num">ok. 12 tys. zł</td><td class="num">ok. 700 h (250 seniora, 450 juniora)</td><td>godziny są już w kolumnie „w czasie rozruchu” tabeli miesięcznej; tu pokazane jako suma</td></tr>
   </table>
   <div class="cards">
-    <div class="card"><span class="n">ok. 12 tys. zł</span><h4>Jeden portal w 12 miesiącach</h4><p>Uruchomienie 5 tys. zł plus 12 × 600 zł utrzymania (udział w subskrypcjach, API, praca). Portal, który realnie łapie widoczność, kosztuje ok. 17 tys. zł, bo zakładam, że 3 z 10 portali będą słabe.</p></div>
-    <div class="card"><span class="n">ok. 170 tys. zł</span><h4>Cała sieć 15 portali w pierwszym roku</h4><p>Start 85 tys. zł plus koszty miesięczne narastające przez rok. Z tego ponad połowa to praca ludzi, ok. 20 tys. zł to subskrypcje Claude, ok. 15 tys. zł to modele, grafiki i infrastruktura.</p></div>
-    <div class="card dark"><span class="n">250 portali</span><h4>Osobna decyzja</h4><p>Wymaga produkcji bez czytania tekstów przez człowieka, panelu dla zespołu i orkiestratora na kluczu API. To dodatkowe 130–170 tys. zł budowy i 2 etaty juniorów. Liczby w kosztorysie z 03.09, sekcje 5–8.</p></div>
+    <div class="card"><span class="n">3,5 tys. zł + 110 h</span><h4>Jeden portal w 12 miesiącach</h4><p>Gotówka: 800 zł na start i ok. 220 zł miesięcznie (udział w subskrypcjach, modele, infrastruktura). Praca: 42 h na start i ok. 6 h miesięcznie. Portal, który realnie łapie widoczność, kosztuje ok. 1,4 raza więcej, bo zakładam, że 3 z 10 portali będą słabe.</p></div>
+    <div class="card"><span class="n">40 tys. zł + 1 600 h</span><h4>Cała sieć 15 portali w pierwszym roku</h4><p>Gotówka: 12 tys. zł na start plus miesięczne od 500 do 3 300 zł. Praca: ok. 430 h seniora i ok. 1 150 h juniora. Jeśli przeliczyć godziny po stawkach wewnętrznych (180 zł i 56 zł), wychodzi ok. 140 tys. zł, ale to wycena czasu, nie wydatek.</p></div>
+    <div class="card dark"><span class="n">250 portali</span><h4>Osobna decyzja</h4><p>Wymaga produkcji bez czytania tekstów przez człowieka, panelu dla zespołu i orkiestratora na kluczu API. To ok. 800 h pracy inżynierskiej, 2 etaty juniorów i ok. 12 tys. zł gotówki miesięcznie na modele. Liczby w kosztorysie z 03.09, sekcje 5–8.</p></div>
   </div>
+  <div class="callout blue"><b>Jedyne nowe pieniądze w tym projekcie</b> to junior SEO (ok. 9 000 zł miesięcznie pełnego kosztu, jeśli to nowy etat) i ok. 3–4 tys. zł miesięcznie na subskrypcje, modele i domeny. Wszystko inne to czas Mateusza, który firma już opłaca.</div>
 </div></section>
 
 <section class="sec"><div class="wrap">
@@ -303,7 +309,7 @@
   <ul class="plain">
     <li><b>Wielkość portalu startowego</b> – 200 tekstów jak busmaniak czy 100 i dosypywanie. 100 obniża start portalu o ok. 1,5 tys. zł, ale opóźnia widoczność o 1–2 miesiące.</li>
     <li><b>Domeny świeże czy z historią</b> – liczę świeże po 100 zł. Domeny z historią to osobna decyzja i osobny budżet.</li>
-    <li><b>Stawki do rachunku</b> – 180 zł/h seniora i 9 000 zł juniora to moje założenia; jeśli zarząd liczy inaczej, tabela zbiorcza przelicza się wprost.</li>
+    <li><b>Czy junior to nowy etat, czy przesunięcie</b> – to jedyna pozycja, która zmienia gotówkę o rząd wielkości: nowy etat to ok. 9 000 zł miesięcznie, przesunięcie kogoś z zespołu to zero nowych pieniędzy.</li>
   </ul>
 </div></section>
 <script>
