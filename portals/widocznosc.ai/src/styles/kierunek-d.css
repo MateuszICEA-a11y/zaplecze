@@ -353,6 +353,55 @@
 .kd-card.is-hot .kd-audit-preview b { color: var(--kd-accent); }
 .kd-process-intro { margin: -16px 0 32px; }
 .kd-process-footer { margin-top: 24px; }
+.kd-process-card {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  background: transparent;
+  border-color: var(--kd-line-strong);
+}
+.kd-process-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: var(--kd-accent);
+  opacity: 0.72;
+}
+.kd-process-title { margin-top: 14px !important; }
+.kd-process-card > .kd-body-sm {
+  min-height: 120px;
+  margin-top: 16px;
+}
+.kd-process-results {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--kd-line);
+}
+.kd-result-list {
+  gap: 8px;
+  margin-top: 10px;
+  padding: 0;
+  border: 0;
+}
+.kd-result-list li {
+  position: relative;
+  padding: 11px 14px 11px 34px;
+  background: var(--kd-tint);
+  border: 1px solid var(--kd-line);
+  color: var(--kd-ink);
+  font-size: 14px;
+  line-height: 20px;
+}
+.kd-result-list li::before {
+  content: '';
+  position: absolute;
+  top: 17px;
+  left: 15px;
+  width: 5px;
+  height: 5px;
+  background: var(--kd-accent);
+}
 .kd-tools-intro { margin: -16px 0 32px; }
 .kd-proof-intro,
 .kd-industry-intro { margin: 24px 0 32px; }
@@ -1012,6 +1061,7 @@ textarea.kd-input {
   .kd-team-grid { grid-template-columns: repeat(2, 1fr); }
   .kd-cred-grid { grid-template-columns: repeat(2, 1fr); }
   .kd-cred-grid > div:nth-child(3) { border-left: 0; }
+  .kd-process-card > .kd-body-sm { min-height: 72px; }
   .kd-articles-head { grid-template-columns: 1fr; align-items: start; gap: 24px; }
   .kd-hero-spotlight { gap: 18px; }
 }
@@ -1083,6 +1133,8 @@ textarea.kd-input {
   .kd-report-bars > div > span { grid-column: 1 / -1; grid-row: 2; }
   .kd-report-bars > div > dd { text-align: right; }
   .kd-team-grid { grid-template-columns: 1fr 1fr; }
+  .kd-process-card { padding: 24px; }
+  .kd-process-card > .kd-body-sm { min-height: 0; }
   .kd-final-cta { gap: 32px; }
   .kd-final-cta aside { border-left: 0; border-top: 1px solid var(--kd-line); padding: 24px 0 0; }
   .kd-hero-spotlight { margin-top: 48px; padding-top: 36px; padding-bottom: 36px; }

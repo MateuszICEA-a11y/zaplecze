@@ -221,11 +221,14 @@ const formatDate = (date: Date) =>
       <ol class="kd-grid-4 kd-ol">
         {
           steps.map((s) => (
-            <li class="kd-card">
+            <li class="kd-card kd-process-card">
               <span class="kd-tag">{s.n} · {s.stage}</span>
-              <h3 class="kd-text-heading" style="margin-top:12px">{s.t}</h3>
+              <h3 class="kd-text-heading kd-process-title">{s.t}</h3>
               <p class="kd-body-sm">{s.d}</p>
-              <ul class="kd-list">{s.list.map((item) => <li>{item}</li>)}</ul>
+              <div class="kd-process-results">
+                <span class="kd-label">W tym etapie</span>
+                <ul class="kd-list kd-result-list">{s.list.map((item) => <li>{item}</li>)}</ul>
+              </div>
             </li>
           ))
         }
