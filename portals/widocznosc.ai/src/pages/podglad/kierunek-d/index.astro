@@ -104,6 +104,28 @@ const industries = [
   { name: 'Usługi B2B', desc: 'Konsulting, agencje, software house’y. Klient pyta AI o polecanych dostawców przed pierwszym mailem.' },
 ];
 
+const engines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Microsoft Copilot'];
+
+const credentials = [
+  { value: '15+', label: 'lat doświadczenia ICEA w SEO i AI' },
+  { value: '5', label: 'silników AI w jednym audycie' },
+  { value: '500+', label: 'projektów SEO wdrożonych przez zespół' },
+  { value: '#1', label: 'prezentacja SEMKRK 2024' },
+];
+
+const team = [
+  { name: 'Tomasz Czechowski', role: 'Head of SEO', photo: '/authors/tomasz-czechowski.avif', text: 'Łączy możliwości technologii LLM z celami biznesowymi. Twórca autorskich frameworków pozycjonowania w ekosystemach AI.', href: 'https://www.linkedin.com/in/tomasz-czechowski/' },
+  { name: 'Michał Ziach', role: 'CTO', photo: '/authors/michal-ziach.avif', text: 'Architekt rozwiązań AI/ML i systemów wspierających SEO.', href: 'https://www.linkedin.com/in/michal-ziach/' },
+  { name: 'Piotr Wicenciak', role: 'SEO Operations Manager', photo: '/authors/piotr-wicenciak.avif', text: 'Strateg specjalizujący się w optymalizacji dla generatywnych silników wyszukiwania.', href: 'https://www.linkedin.com/' },
+  { name: 'Mateusz Wiśniewski', role: 'Ekspert SEO / AI Search', photo: '/authors/mateusz-wisniewski.avif', text: 'Przekłada złożone dane i analizę semantyczną na strategie widoczności.', href: 'https://www.linkedin.com/' },
+];
+
+const articles = [
+  { type: 'GEO', meta: '13 min · 17 lipca 2026', title: 'Topic Insights w Microsoft Clarity. Zmierz, czy AI cytuje Twoje treści', desc: 'Jak wygenerować raport, poprawnie odczytać dane i poznać granice tego narzędzia.', href: `${base}/blog/` },
+  { type: 'Modele LLM', meta: '16 min · 28 sierpnia 2026', title: 'Jak działa ChatGPT? Od tokenu do odpowiedzi', desc: 'Co dzieje się między wpisaniem pytania a wygenerowaniem odpowiedzi.', href: `${base}/blog/` },
+  { type: 'AI w biznesie', meta: '19 min · 25 maja 2026', title: 'Wdrożenie AI w firmie – przewodnik dla decydenta', desc: 'Jak wybrać obszar, zbudować strukturę i mierzyć zwrot z inwestycji.', href: `${base}/blog/` },
+];
+
 const DOTS = 24;
 ---
 
@@ -146,6 +168,29 @@ const DOTS = 24;
     </figure>
   </section>
 
+  <section class="kd-engine-band" aria-label="Silniki AI objęte pomiarem">
+    <div class="kd-wrap kd-engine-band-inner">
+      <span class="kd-label">Mierzymy widoczność w</span>
+      <ul>{engines.map((engine) => <li>{engine}</li>)}</ul>
+    </div>
+  </section>
+
+  <section class="kd-cred-section">
+    <div class="kd-wrap">
+      <p class="kd-label">Ewolucja tradycyjnego SEO</p>
+      <p class="kd-cred-intro">AI zmienia wyszukiwarki w silniki odpowiedzi. Marki pominięte w odpowiedzi nie uczestniczą w decyzji klienta.</p>
+      <dl class="kd-cred-grid">
+        {credentials.map((item, i) => (
+          <div>
+            <dt class="kd-tag">0{i + 1}</dt>
+            <dd class="kd-text-num-md">{item.value}</dd>
+            <dt class="kd-body-sm">{item.label}</dt>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
   <section class="kd-section">
     <div class="kd-wrap">
       <div class="kd-section-head">
@@ -163,6 +208,37 @@ const DOTS = 24;
           ))
         }
       </ol>
+    </div>
+  </section>
+
+  <section class="kd-section">
+    <div class="kd-wrap">
+      <div class="kd-section-head">
+        <span class="kd-label">Pełny obraz</span>
+        <h2 class="kd-text-title">Raport GEO dla domeny, nie kolejny wynik bez kontekstu.</h2>
+      </div>
+      <div class="kd-report">
+        <div class="kd-report-copy">
+          <p class="kd-lead">Skanujemy 25–50 URL-i i łączymy widoczność marki, dostęp botów, strukturę treści oraz sygnały autorytetu w jeden plan działań.</p>
+          <ul class="kd-list">
+            <li>Wynik GEO i konkretne rekomendacje dla każdego URL-a</li>
+            <li>Mapa luk treści pod konwersacyjne pytania AI</li>
+            <li>Priorytety P0/P1/P2 do wdrożenia z zespołem lub samodzielnie</li>
+          </ul>
+          <a class="kd-btn kd-btn-2" href={`${base}/oferta/`}>Zobacz zakres raportu <span aria-hidden="true">→</span></a>
+        </div>
+        <aside class="kd-report-machine" aria-label="Przykładowy wynik raportu GEO">
+          <div class="kd-report-top"><span>GEO Score · twojadomena.pl</span><b>38%</b></div>
+          <div class="kd-meter"><i style="width:38%"></i></div>
+          <dl>
+            <div><dt>Spójność tematyczna</dt><dd>56%</dd></div>
+            <div><dt>Sygnały autorytetu</dt><dd>42%</dd></div>
+            <div><dt>Dostępność dla AI</dt><dd>68%</dd></div>
+            <div><dt>Widoczność w AI</dt><dd>30%</dd></div>
+          </dl>
+          <p><span class="kd-tag">Plan działań</span> 23 zadania · 2 krytyczne</p>
+        </aside>
+      </div>
     </div>
   </section>
 
@@ -202,6 +278,47 @@ const DOTS = 24;
   <section class="kd-section">
     <div class="kd-wrap">
       <div class="kd-section-head">
+        <span class="kd-label">Zespół</span>
+        <h2 class="kd-text-title">Za pomiarem stoi ICEA.</h2>
+      </div>
+      <p class="kd-lead kd-team-intro">Kilkunastoletnie doświadczenie w SEO przekładamy na pomiar i budowanie widoczności w AI. Każda rekomendacja wynika z pracy nad realnymi projektami.</p>
+      <div class="kd-team-grid">
+        {team.map((person) => (
+          <article class="kd-team-card">
+            <img src={person.photo} alt={`${person.name} – ${person.role}`} loading="lazy" width="240" height="240" />
+            <p class="kd-tag">{person.role}</p>
+            <h3 class="kd-text-sub">{person.name}</h3>
+            <p class="kd-body-sm">{person.text}</p>
+            <a class="kd-meta" href={person.href} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="kd-section">
+    <div class="kd-wrap">
+      <div class="kd-section-head kd-articles-head">
+        <div><span class="kd-label">Centrum wiedzy</span><h2 class="kd-text-title">Jak działają modele AI?</h2></div>
+        <a class="kd-meta" href={`${base}/blog/`}>Wszystkie artykuły →</a>
+      </div>
+      <div class="kd-grid-3">
+        {articles.map((article) => (
+          <a class="kd-card kd-article-card" href={article.href}>
+            <span class="kd-tag">{article.type}</span>
+            <span class="kd-micro">{article.meta}</span>
+            <h3 class="kd-text-heading">{article.title}</h3>
+            <p class="kd-body-sm">{article.desc}</p>
+            <span class="kd-meta">Czytaj →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="kd-section">
+    <div class="kd-wrap">
+      <div class="kd-section-head">
         <span class="kd-label">Dowody</span>
         <h2 class="kd-text-title">Dane, nie deklaracje.</h2>
       </div>
@@ -222,6 +339,20 @@ const DOTS = 24;
       <p class="kd-meta" style="margin-top:16px">
         cztery źródła zewnętrzne · badanie, patent, dane rynkowe, benchmark · <a href={`${base}/oferta/`}>jak to mierzymy</a>
       </p>
+    </div>
+  </section>
+
+  <section class="kd-section kd-cta-section">
+    <div class="kd-wrap">
+      <div class="kd-final-cta">
+        <div>
+          <span class="kd-label">Następny krok</span>
+          <h2 class="kd-text-title">Sprawdź, jak Twoja marka radzi sobie w AI Search.</h2>
+          <p class="kd-lead">Test trwa około minuty, nie wymaga rejestracji i pokazuje punkt wyjścia do rozmowy o konkretach.</p>
+          <div class="kd-actions"><a class="kd-btn" href={`${base}/narzedzia/`}>Sprawdź widoczność marki →</a><a class="kd-btn kd-btn-2" href={`${base}/kontakt/`}>Porozmawiaj z ekspertem</a></div>
+        </div>
+        <aside><span class="kd-caption">widocznosc.ai by ICEA</span><p class="kd-text-sub">„Pokazujemy, gdzie marka jest cytowana, gdzie traci do konkurencji i co zmienić najpierw.”</p><span class="kd-meta">ICEA S.A. · Poznań</span></aside>
+      </div>
     </div>
   </section>
 

@@ -230,7 +230,9 @@ const {
         canvas.height = H;
         canvas.style.height = cssH + 'px';
 
-        const step = Math.max(2, Math.round((narrow ? 2 : 3) * dpr));
+        // Końcowe logotypy są informacją, nie samą teksturą. Gęstsza siatka
+        // desktopowa daje czytelne litery także na ekranach o standardowym DPR.
+        const step = Math.max(2, Math.round((narrow ? 2 : 2) * dpr));
         isNarrow = narrow;
         // Znaki zsunięte do 0.3 / 0.7 szerokości – wstęga między nimi ma być
         // łącznikiem, nie przestrzenią do pokonania.
@@ -286,7 +288,9 @@ const {
             nx: 0,
             ny: 0,
             x: 0, y: 0, vx: 0, vy: 0,
-            r: (trail ? 0.85 : t === 0 ? 1.3 : 1.15) * dpr,
+            // Końce mają większe, prawie stykające się punkty; wstęga zostaje
+            // lżejsza, dzięki czemu nie konkuruje z nazwami marek.
+            r: (trail ? 0.78 : t === 0 ? 1.46 : 1.32) * dpr,
             col: trail ? PAL[Math.floor(t * 31)] : `rgba(${col[0]}, ${col[1]}, ${col[2]}, 0.95)`,
             trail,
             ph: t,
