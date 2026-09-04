@@ -354,21 +354,15 @@
 .kd-process-intro { margin: -16px 0 32px; }
 .kd-process-footer { margin-top: 24px; }
 .kd-process-card {
-  position: relative;
-  overflow: hidden;
   padding: 32px;
   background: transparent;
   border-color: var(--kd-line-strong);
+  border-left-color: color-mix(in srgb, var(--kd-accent) 28%, var(--kd-line-strong));
 }
-.kd-process-card::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 2px;
-  background: var(--kd-accent);
-  opacity: 0.72;
+.kd-process-title {
+  min-height: 54px;
+  margin-top: 14px !important;
 }
-.kd-process-title { margin-top: 14px !important; }
 .kd-process-card > .kd-body-sm {
   min-height: 120px;
   margin-top: 16px;
@@ -1134,6 +1128,7 @@ textarea.kd-input {
   .kd-report-bars > div > dd { text-align: right; }
   .kd-team-grid { grid-template-columns: 1fr 1fr; }
   .kd-process-card { padding: 24px; }
+  .kd-process-title { min-height: 0; }
   .kd-process-card > .kd-body-sm { min-height: 0; }
   .kd-final-cta { gap: 32px; }
   .kd-final-cta aside { border-left: 0; border-top: 1px solid var(--kd-line); padding: 24px 0 0; }
