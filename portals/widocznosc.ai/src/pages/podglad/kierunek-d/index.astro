@@ -15,56 +15,54 @@ import { homepageFaq } from '../../../data/homepageFaq';
 const steps = [
   {
     n: '01',
-    t: 'Podajesz markę i domenę',
-    d: 'Bez rejestracji. Narzędzie odpytuje ChatGPT, Claude, Gemini i Perplexity świeżymi sesjami, bez personalizacji i bez podpowiadania odpowiedzi.',
+    stage: 'Etap 1',
+    t: 'Mapa pytań',
+    d: 'Tworzymy 32–48 zapytań z trzech warstw – brandowych, ogólnych i porównawczych. Lista wynika z Twojej kategorii, nie z generatora.',
+    list: ['Spotkanie strategiczne z zespołem', 'Analiza intencji kupujących', 'Lista benchmarkowych konkurentów'],
   },
   {
     n: '02',
-    t: 'Dostajesz wynik per model',
-    d: 'Czy model zna markę, jak o niej mówi, czy cytuje Twoją domenę i jakie fakty zmyśla. Każdy model osobno, bo każdy cytuje inaczej.',
+    stage: 'Etap 2',
+    t: 'Test 5 silników AI',
+    d: 'Zapytania trafiają równolegle do ChatGPT, Claude, Gemini, Perplexity i Copilot – ze świeżymi sesjami i bez personalizacji.',
+    list: ['Standaryzacja promptów', 'Wielokrotne sesje', 'Pomiar wariancji odpowiedzi'],
   },
   {
     n: '03',
-    t: 'Widzisz konkurentów i plan',
-    d: 'Lista firm polecanych zamiast Ciebie i pierwsze działania ułożone według priorytetu. Resztę omawiasz z ekspertem ICEA.',
+    stage: 'Etap 3',
+    t: 'Audyt techniczny + content',
+    d: 'Analiza struktury, schema, llms.txt i danych źródłowych. Mapujemy luki contentu pod konwersacyjne zapytania.',
+    list: ['Schema & semantyka', 'Audyt llms.txt', 'Mapowanie luk treści'],
+  },
+  {
+    n: '04',
+    stage: 'Etap 4',
+    t: 'Raport + kierunek dalszych działań',
+    d: 'Raport z wnioskami i konkretnymi rekomendacjami. Pokazujemy, gdzie marka jest dziś, gdzie może być za pół roku i jakie kroki nas tam zaprowadzą.',
+    list: ['Warsztat z omówieniem wyników', 'Strategia na budowanie widoczności', 'Lista briefów na treści'],
   },
 ];
 
 const audits = [
   {
-    t: 'Cytowalność strony',
-    dots: 10,
-    micro: 'jeden adres · wynik 0–100',
-    num: '30',
-    unit: 's',
-    meta: 'bezpłatnie · bez rejestracji',
-    description: 'Wskazujesz jeden adres. Wynik 0–100 i pięć priorytetowych zmian według badań Princeton i analizy 1,2 mln cytowań ChatGPT.',
-    list: ['Pięć priorytetowych zmian', 'Według badań Princeton', 'Analiza 1,2 mln cytowań ChatGPT'],
+    t: 'Ocena cytowalności strony',
+    description: 'Wskazujesz jeden URL. Wynik 0–100 + lista 5 priorytetowych zmian według badań Princeton i Indiga (1,2 mln cytowań ChatGPT).',
+    preview: [['/blog/jak-wybrac-saas', '43 / 100'], ['Front-load', '78%'], ['Schema', '25%'], ['Cytowania', '12%']],
     cta: 'Oceń stronę',
     href: '/narzedzia/url-check/',
   },
   {
     t: 'Widoczność marki w AI',
-    dots: 20,
-    micro: '4 silniki · świeże sesje',
-    num: '60',
-    unit: 's',
-    meta: 'bezpłatnie · bez rejestracji',
     description: 'Odpytujemy ChatGPT, Claude, Gemini i Perplexity o Twoją firmę. Dostajesz sentyment, listę halucynacji i konkurentów, których AI poleca zamiast Ciebie.',
-    list: ['ChatGPT, Claude, Gemini, Perplexity', 'Sentyment i lista halucynacji', 'Konkurenci polecani zamiast Ciebie'],
+    preview: [['twojadomena.pl', '● live'], ['ChatGPT', 'Myli ofertę'], ['Claude', 'Brak danych'], ['Gemini', 'Poleca konkurenta'], ['Perplexity', 'Zna · neutralny']],
     cta: 'Sprawdź widoczność marki',
     href: '/narzedzia/brand-check/',
     hot: true,
   },
   {
     t: 'Dostęp botów AI',
-    dots: 2,
-    micro: 'robots.txt i WAF',
-    num: '<1',
-    unit: 's',
-    meta: 'bezpłatnie · natychmiast',
-    description: 'Sprawdzamy robots.txt i WAF: czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended i 9 innych botów AI może czytać Twoją stronę.',
-    list: ['GPTBot, ClaudeBot, PerplexityBot', 'Google-Extended i 9 innych botów', 'Dostęp albo blokada per bot'],
+    description: 'Sprawdzamy robots.txt: czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended i 9 innych botów AI ma dostęp do Twojej strony.',
+    preview: [['twojadomena.pl/robots.txt', '8 / 13'], ['GPTBot', '✓'], ['ClaudeBot', '✗'], ['PerplexityBot', '✓'], ['Google-Extended', '✗']],
     cta: 'Sprawdź boty AI',
     href: '/narzedzia/ai-bots-check/',
   },
@@ -74,48 +72,48 @@ const rows = [
   {
     num: '+40',
     unit: '%',
-    claim: 'wzrost widoczności w odpowiedziach AI po zastosowaniu metod GEO',
-    detail: 'Pierwsze recenzowane badanie definiujące dyscyplinę (Princeton, ACM SIGKDD 2024). Z tej pracy wynikają nasze rekomendacje dotyczące treści.',
-    kind: 'Badanie peer-reviewed',
-    source: 'Aggarwal et al., KDD 2024',
+    claim: 'Wzrost widoczności w odpowiedziach silników AI przy zastosowaniu metodyki GEO.',
+    detail: 'Pierwsze peer-reviewed badanie z ACM SIGKDD definiujące samą dyscyplinę – nie marketing, tylko akademicki framework.',
+    kind: 'Peer-reviewed · Fundament GEO',
+    source: 'Princeton · KDD 2024 · Aggarwal et al., GEO Paper',
     href: 'https://arxiv.org/abs/2311.09735',
   },
   {
     num: '8',
     unit: '×',
-    claim: 'tyle podzapytań Google generuje z jednego pytania w trybie AI',
-    detail: 'Indeksowanie odbywa się na poziomie fragmentów, nie całych stron. Dlatego mierzymy cytowalność pojedynczych akapitów, nie tylko adresu.',
-    kind: 'Patent Google',
-    source: 'Search Engine Land, analiza patentów',
+    claim: 'Tyle różnych podzapytań Google generuje z jednego pytania użytkownika.',
+    detail: 'Indeksowanie odbywa się na poziomie pojedynczych fragmentów, nie całych stron – optymalizacja na poziomie strony już nie wystarcza.',
+    kind: 'Patent',
+    source: 'Google · patent 2024 · query fan-out, passage retrieval',
     href: 'https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346',
   },
   {
     num: '+357',
     unit: '%',
-    claim: 'wzrost ruchu z silników AI rok do roku dla najpopularniejszych stron',
-    detail: '13 miesięcy danych o ruchu z LLM. Marki, które optymalizują pod cytowania, notują nawet +800%.',
+    claim: 'Wzrost ruchu z silników AI rok do roku dla najpopularniejszych stron.',
+    detail: 'Marki aktywnie optymalizujące pod cytowania AI notują nawet +800% wzrostu ruchu z LLM.',
     kind: 'Dane rynkowe',
-    source: 'Authoritas / Search Engine Land',
+    source: 'TechCrunch · Authoritas · 13 miesięcy danych ruchu AI',
     href: 'https://searchengineland.com/what-13-months-of-data-reveals-about-llm-traffic-growth-and-conversions-470115',
   },
   {
     num: '84',
     unit: '%',
-    claim: 'rekomendacji w silnikach AI pochodzi z ChatGPT',
-    detail: '1,96 mln sesji z LLM. Copilot rośnie 25,2×, Claude 12,8×. Każdy silnik cytuje inaczej, więc testujemy je osobno.',
+    claim: 'Rekomendacji w silnikach AI pochodzi z ChatGPT (rośnie 3,26× YoY).',
+    detail: 'Copilot rośnie 25,2×, Claude 12,8× – każdy silnik wymaga innej taktyki cytowania.',
     kind: 'Benchmark',
-    source: 'Previsible, AI SEO Study 2025',
+    source: 'Previsible · 2025 · 1,96 mln sesji LLM',
     href: 'https://previsible.io/seo-strategy/ai-seo-study-2025/',
   },
 ];
 
 const industries = [
-  { name: 'B2B SaaS i Tech', desc: 'Decydent pyta ChatGPT o „najlepsze narzędzie X dla zespołu Y”. Chcesz być w tej odpowiedzi.' },
-  { name: 'Finanse i Prawo', desc: 'AI bywa pierwszym doradcą klienta. Wzmianka w odpowiedzi to rozmowa z kimś, kto już wie, czego szuka.' },
-  { name: 'Medycyna i Zdrowie', desc: 'Pacjenci pytają AI o objawy, leki i miejsca leczenia, zanim otworzą klasyczną wyszukiwarkę.' },
-  { name: 'E-commerce i DTC', desc: 'Pytania porównawcze: „X vs Y”, „tańszy zamiennik Z”. Użytkownik jest w końcowej fazie wyboru.' },
-  { name: 'Edukacja i Szkolenia', desc: 'Kursanci pytają AI o „najlepszy kurs X” miesiące przed zapisem. Długa droga, wiele punktów styku.' },
-  { name: 'Usługi B2B', desc: 'Konsulting, agencje, software house’y. Klient pyta AI o polecanych dostawców przed pierwszym mailem.' },
+  { name: 'B2B SaaS i Tech', desc: 'Długa droga zakupowa oparta na researchu. Decydent pyta ChatGPT „najlepsze X dla zespołu Y” – warto, żebyście pojawili się w odpowiedzi.' },
+  { name: 'Finanse i Prawo', desc: 'Wysoka wartość transakcji, AI bywa pierwszym doradcą klienta. Wzmianka w odpowiedzi AI to rozmowa z osobą, która już wie, czego szuka.' },
+  { name: 'Medycyna i Zdrowie', desc: 'Pacjenci pytają AI o objawy, leki i miejsca leczenia. AI Overviews coraz częściej zastępują pierwszy etap szukania w klasycznej wyszukiwarce.' },
+  { name: 'E-commerce i DTC', desc: 'Pytania porównawcze („X vs Y”, „tańszy zamiennik dla Z”). Ruch z AI to użytkownicy w końcowej fazie wyboru produktu.' },
+  { name: 'Edukacja i Szkolenia', desc: 'Długi proces decyzyjny z wieloma punktami styku. Kursanci pytają AI o „najlepszy kurs X” miesiące przed zapisem.' },
+  { name: 'Usługi B2B', desc: 'Konsulting, agencje, software house’y. Klienci pytają AI o polecanych dostawców, zanim wyślą pierwszego maila.' },
 ];
 
 const engines = [
@@ -131,13 +129,6 @@ const credentials = [
   { value: '5', label: 'wyszukiwarek AI', caption: 'ChatGPT · Claude · Gemini · Perplexity · Copilot' },
   { value: '500+', label: 'projektów SEO', caption: 'wdrożonych przez zespół' },
   { value: '#1', label: 'SEMKRK 2024', caption: 'najwyżej oceniona prezentacja' },
-];
-
-const measurementFacts = [
-  { value: '4', label: 'modele AI odpytywane w teście marki' },
-  { value: '13', label: 'botów AI sprawdzanych w robots.txt' },
-  { value: '0–100', label: 'wynik cytowalności pojedynczej strony' },
-  { value: '25–50', label: 'adresów w pełnym raporcie GEO' },
 ];
 
 const team = [
@@ -157,31 +148,33 @@ const articles = homepagePillars
 const formatDate = (date: Date) =>
   date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
 
-const DOTS = 24;
 ---
 
 <KierunekD title="Podgląd D: strona główna – widocznosc.ai" current="home">
   <div class="kd-home">
   <section class="kd-hero">
     <div class="kd-wrap">
-      <span class="kd-caption">Pomiar widoczności marki w AI</span>
+      <span class="kd-caption">Generative Engine Optimization</span>
       <h1 class="kd-text-display">
-        <span class="kd-d1">Sprawdź, czy AI</span>
-        <span class="kd-d2">poleca <em>Twoją markę</em>.</span>
+        <span class="kd-d1">Sprawdź, co ChatGPT, Claude, Gemini</span>
+        <span class="kd-d2">i Perplexity mówią o <em>Twojej marce</em>.</span>
       </h1>
       <p class="kd-lead">
-        Odpytujemy ChatGPT, Claude, Gemini i Perplexity o Twoją firmę i pokazujemy,
-        co odpowiadają: czy znają markę, jak o niej mówią i kogo polecają zamiast Ciebie.
-        Wynik w około minutę, bez rejestracji.
+        Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp do Twojej
+        strony i jak zoptymalizować swój content, aby był cytowany przez wyszukiwarki AI.
       </p>
 
-      <form class="kd-form" action="/narzedzia/brand-check/" method="get">
-        <input class="kd-input" type="text" name="brand" placeholder="Nazwa marki" autocomplete="organization" maxlength="80" aria-label="Nazwa marki" />
-        <input class="kd-input" type="text" name="domain" placeholder="twojadomena.pl" autocomplete="url" maxlength="200" inputmode="url" spellcheck="false" required aria-label="Domena" />
-        <button type="submit" class="kd-btn">Sprawdź widoczność marki <span aria-hidden="true">→</span></button>
-      </form>
-      <p class="kd-meta kd-hero-note"><a href="/kontakt/?type=konsultacja">Porozmawiaj z ekspertem ICEA</a> · widocznosc.ai by ICEA</p>
+      <div class="kd-actions kd-hero-actions">
+        <a class="kd-btn" href="#audyty">Uruchom darmowe testy →</a>
+        <a class="kd-btn kd-btn-2" href="/kontakt/?type=full-report">Zamów pełny raport</a>
+      </div>
     </div>
+
+    <aside class="kd-wrap kd-hero-spotlight">
+      <span class="kd-label">Ewolucja tradycyjnego SEO</span>
+      <p class="kd-body">AI zmienia wyszukiwarki w <strong>silniki odpowiedzi</strong>, które eliminują konieczność przeklikiwania się przez wyniki. Marki pominięte przez ChatGPT, Claude czy Perplexity po prostu <strong>przestają istnieć</strong> w decyzji konsumenta.</p>
+      <p class="kd-micro">Cytowania zamiast pozycji · SEO + GEO</p>
+    </aside>
 
     <figure class="kd-figure">
       <HalftoneSentence
@@ -221,38 +214,40 @@ const DOTS = 24;
   <section class="kd-section" id="jak-to-dziala">
     <div class="kd-wrap">
       <div class="kd-section-head">
-        <span class="kd-label">Jak to działa</span>
-        <h2 class="kd-text-title">Od domeny do planu działań w trzech krokach.</h2>
+        <span class="kd-label">Jak działamy</span>
+        <h2 class="kd-text-title">Cztery etapy budowania widoczności w AI</h2>
       </div>
-      <p class="kd-lead kd-process-intro">To samo narzędzie, które widzisz wyżej. Każdy krok pokazuje realny fragment raportu, nie ilustrację.</p>
-      <ol class="kd-grid-3 kd-ol">
+      <p class="kd-lead kd-process-intro">Pokazujemy, gdzie Twoja marka jest dziś w wyszukiwarkach AI i jakie kroki mogą zwiększyć jej widoczność. Co dalej – decydujesz sam.</p>
+      <ol class="kd-grid-4 kd-ol">
         {
           steps.map((s) => (
             <li class="kd-card">
-              <span class="kd-tag">{s.n}</span>
+              <span class="kd-tag">{s.n} · {s.stage}</span>
               <h3 class="kd-text-heading" style="margin-top:12px">{s.t}</h3>
               <p class="kd-body-sm">{s.d}</p>
+              <ul class="kd-list">{s.list.map((item) => <li>{item}</li>)}</ul>
             </li>
           ))
         }
       </ol>
+      <p class="kd-meta kd-process-footer">Każdy etap z konkretnym rezultatem. Po audycie sam decydujesz, jakiej formy współpracy potrzebujesz.</p>
     </div>
   </section>
 
   <section class="kd-section" id="pelny-raport">
-    <div class="kd-wrap">
+    <div class="kd-wrap kd-measure-wrap">
       <div class="kd-section-head">
-        <span class="kd-label">Pełny obraz</span>
-        <h2 class="kd-text-title">Raport GEO dla całej domeny.</h2>
+        <span class="kd-label">Pełny raport · 25–50 URL-i · Polecane</span>
+        <h2 class="kd-text-title">Rozbudowany raport GEO dla Twojej domeny</h2>
       </div>
       <div class="kd-report">
         <div class="kd-report-copy">
-          <p class="kd-lead">Skanujemy 25–50 adresów i oceniamy cztery obszary: spójność tematyczną, sygnały autorytetu, dostępność dla AI i widoczność w wyszukiwarkach AI. Dostajesz plan działań ułożony według priorytetu.</p>
+          <p class="kd-lead">Skanujemy 25–50 URL-i z Twojej domeny i analizujemy cztery obszary: spójność tematyczną, sygnały autorytetu, dostępność dla AI oraz widoczność w wyszukiwarkach AI.</p>
           <ul class="kd-list">
-            <li>Wynik GEO dla każdego adresu z konkretnymi problemami</li>
-            <li>Mapa luk w treści pod pytania zadawane AI</li>
-            <li>Plan działań: krytyczne, ważne, średnie</li>
-            <li>Omówienie wyników z ekspertem ICEA</li>
+            <li>Wynik GEO dla każdego URL-a z konkretnymi problemami i rekomendacjami</li>
+            <li>Mapa luk w treści pod konwersacyjne zapytania AI</li>
+            <li>Plan działań ułożony wg priorytetu (krytyczne / ważne / średnie)</li>
+            <li>Wnioski i kierunek działań w dłuższym horyzoncie</li>
           </ul>
           <div class="kd-actions kd-report-actions">
             <a class="kd-btn" href="/kontakt/?type=full-report">Zamów pełny raport <span aria-hidden="true">→</span></a>
@@ -262,38 +257,36 @@ const DOTS = 24;
         <aside class="kd-report-machine" aria-label="Przykładowy wynik raportu GEO">
           <div class="kd-report-top"><span>GEO Score · twojadomena.pl</span><b>38%</b></div>
           <div class="kd-meter"><i style="width:38%"></i></div>
-          <dl>
-            <div><dt>Spójność tematyczna</dt><dd>56%</dd></div>
-            <div><dt>Sygnały autorytetu</dt><dd>42%</dd></div>
-            <div><dt>Dostępność dla AI</dt><dd>68%</dd></div>
-            <div><dt>Widoczność w AI</dt><dd>30%</dd></div>
+          <dl class="kd-report-bars">
+            <div><dt>Spójność tematyczna</dt><span><i style="width:56%"></i></span><dd>56%</dd></div>
+            <div><dt>Sygnały autorytetu</dt><span><i style="width:42%"></i></span><dd>42%</dd></div>
+            <div><dt>Dostępność dla AI</dt><span><i style="width:68%"></i></span><dd>68%</dd></div>
+            <div><dt>Widoczność w AI</dt><span><i style="width:30%"></i></span><dd>30%</dd></div>
           </dl>
-          <p><span class="kd-tag">Plan działań</span> 23 zadania · 2 krytyczne</p>
+          <p><span class="kd-tag">Plan działań</span> 23 zadania · 13 / 25 URL-i</p>
         </aside>
       </div>
     </div>
   </section>
 
   <section class="kd-section" id="audyty">
-    <div class="kd-wrap">
+    <div class="kd-wrap kd-measure-wrap">
       <div class="kd-section-head">
-        <span class="kd-label">Narzędzia</span>
-        <h2 class="kd-text-title">Trzy testy za darmo. Jeden pełny raport.</h2>
+        <span class="kd-label">Co dostajesz</span>
+        <h2 class="kd-text-title">Trzy darmowe testy i pełny raport GEO</h2>
       </div>
-      <p class="kd-lead kd-tools-intro">Każdy test działa bez logowania i daje wynik w kilkadziesiąt sekund. Gdy chcesz pełny obraz domeny, zamawiasz raport GEO z analizą 25–50 adresów.</p>
+      <p class="kd-lead kd-tools-intro">Zacznij od trzech szybkich testów – bez logowania, każdy w kilka sekund. Gdy chcesz głębszy obraz, zamów rozbudowany raport GEO ze skanem 25–50 URL-i Twojej domeny.</p>
       <div class="kd-grid-3">
         {
-          audits.map((a) => (
+          audits.map((a, i) => (
             <div class:list={['kd-card', a.hot && 'is-hot']}>
+              <div class="kd-audit-kicker"><span class="kd-tag">0{i + 1} / 04</span><span class="kd-micro">darmowe · instant</span></div>
               <h3 class="kd-text-heading">{a.t}</h3>
-              <div class="kd-dots" aria-hidden="true">
-                {Array.from({ length: DOTS }, (_, i) => <i class:list={[i < a.dots && 'on']} />)}
-              </div>
-              <span class="kd-micro">{a.micro}</span>
               <p class="kd-body-sm kd-audit-desc">{a.description}</p>
-              <div class="kd-text-num">{a.num}<i>{a.unit}</i></div>
-              <span class="kd-meta">{a.meta}</span>
-              <ul class="kd-list">{a.list.map((l) => <li>{l}</li>)}</ul>
+              <div class="kd-audit-preview" aria-label={`Przykładowy wynik: ${a.t}`}>
+                <span class="kd-label">Przykładowy wynik</span>
+                {a.preview.map(([label, value]) => <div><span>{label}</span><b>{value}</b></div>)}
+              </div>
               <div class="kd-card-foot">
                 <a class:list={['kd-btn', 'kd-btn-block', !a.hot && 'kd-btn-2']} href={a.href}>
                   {a.cta}
@@ -303,19 +296,16 @@ const DOTS = 24;
           ))
         }
       </div>
-      <p class="kd-meta" style="margin-top:16px">
-        trzy testy · każdy kończy się liczbą, nie opinią · <a href="/narzedzia/">wszystkie narzędzia</a>
-      </p>
     </div>
   </section>
 
   <section class="kd-section" id="zespol">
     <div class="kd-wrap">
       <div class="kd-section-head">
-        <span class="kd-label">widocznosc.ai by ICEA</span>
-        <h2 class="kd-text-title">Za pomiarem stoi zespół ICEA</h2>
+        <span class="kd-label">Zespół</span>
+        <h2 class="kd-text-title">Stoi za nami zespół ICEA</h2>
       </div>
-      <p class="kd-lead kd-team-intro">widocznosc.ai to marka agencji ICEA S.A. Kilkunastoletnie doświadczenie w SEO przekładamy na pomiar i budowanie widoczności w wyszukiwarkach AI. Każda rekomendacja na tej stronie to wniosek z realnych projektów.</p>
+      <p class="kd-lead kd-team-intro">Nasze kilkunastoletnie doświadczenie w SEO przekuwamy w skuteczne strategie widoczności w dobie AI Search. Nie teoretyzujemy – każda rekomendacja na tej stronie to wniosek z realnych projektów.</p>
       <div class="kd-team-grid">
         {team.map((person) => (
           <article class="kd-team-card">
@@ -333,13 +323,13 @@ const DOTS = 24;
   <section class="kd-section" id="wiedza">
     <div class="kd-wrap">
       <div class="kd-section-head kd-articles-head">
-        <div class="kd-articles-title"><span class="kd-label">Baza wiedzy</span><h2 class="kd-text-title">Jak działają modele AI i co decyduje o cytowaniu</h2></div>
+        <div class="kd-articles-title"><span class="kd-label">Centrum wiedzy</span><h2 class="kd-text-title">Jak działają modele AI?</h2></div>
         <div class="kd-articles-aside">
           <p class="kd-body-sm">Definicje, case studies i poradniki – dowiedz się, jak modele językowe syntezują odpowiedzi i co decyduje o cytowalności Twojej marki w świecie AI.</p>
           <a class="kd-meta" href="/blog/">Wszystkie artykuły →</a>
         </div>
       </div>
-      <div class="kd-grid-4">
+      <div class="kd-grid-4" id="wiedza-grid">
         {articles.map((article) => (
           <a class="kd-card kd-article-card" href={`/${article.id}/`}>
             <div class="kd-article-image">
@@ -367,8 +357,8 @@ const DOTS = 24;
   <section class="kd-section" id="dane">
     <div class="kd-wrap">
       <div class="kd-section-head">
-        <span class="kd-label">Dane, nie deklaracje</span>
-        <h2 class="kd-text-title">Widoczność w AI da się zmierzyć.</h2>
+        <span class="kd-label">Źródła i badania</span>
+        <h2 class="kd-text-title">Nie wymyślamy GEO – opieramy się na badaniach</h2>
       </div>
       <div>
         {
@@ -384,16 +374,8 @@ const DOTS = 24;
           ))
         }
       </div>
-      <p class="kd-lead kd-proof-intro">Nie opowiadamy o rewolucji AI. Opieramy się na badaniach, patentach i danych rynkowych, a potem mierzymy te same zjawiska dla Twojej marki.</p>
-      <dl class="kd-cred-grid kd-proof-facts" aria-label="Zakres pomiaru">
-        {measurementFacts.map((item, i) => (
-          <div>
-            <dt class="kd-tag">0{i + 1}</dt>
-            <dd class="kd-text-num-md">{item.value}</dd>
-            <dt class="kd-body-sm">{item.label}</dt>
-          </div>
-        ))}
-      </dl>
+      <p class="kd-lead kd-proof-intro">Każda rekomendacja w naszym audycie ma źródło – akademickie badania, patenty Google, dane rynkowe albo nasze własne testy. Zero marketingowego bełkotu.</p>
+      <p class="kd-meta kd-proof-footer">Plus 15+ lat doświadczenia ICEA w klasycznym SEO – te same fundamenty (autorytet, semantyka, struktura) działają w AI inaczej, ale rygor pracy zostaje ten sam.</p>
     </div>
   </section>
 
@@ -401,9 +383,9 @@ const DOTS = 24;
     <div class="kd-wrap">
       <div class="kd-section-head">
         <span class="kd-label">Dla kogo</span>
-        <h2 class="kd-text-title">Branże, w których klient zaczyna od pytania do AI.</h2>
+        <h2 class="kd-text-title">Sześć branż, na których koncentrujemy uwagę</h2>
       </div>
-      <p class="kd-lead kd-industry-intro">Tam, gdzie decyzja zakupowa wymaga rozeznania, wyszukiwarki AI mają dziś największy wpływ. To branże, w których widzimy najwięcej danych, nie jedyne, z którymi pracujemy.</p>
+      <p class="kd-lead kd-industry-intro">Tam, gdzie klient zaczyna od pytania zadanego AI, a decyzja zakupowa wymaga rzetelnego rozeznania. To branże, w których widzimy największy wpływ wyszukiwarek AI – nie jedyne, z którymi pracujemy.</p>
       <div class="kd-grid-3">
         {
           industries.map((i) => (
@@ -414,7 +396,7 @@ const DOTS = 24;
           ))
         }
       </div>
-      <p class="kd-meta kd-industry-footer">Twojej branży nie ma na liście? <a href="/kontakt/">Sprawdzimy potencjał →</a></p>
+      <p class="kd-meta kd-industry-footer">Twoja branża nie jest na liście? <a href="/kontakt/">Sprawdzimy potencjał →</a></p>
     </div>
   </section>
 
@@ -424,6 +406,7 @@ const DOTS = 24;
         <span class="kd-label">FAQ</span>
         <h2 class="kd-text-title">Najczęściej zadawane pytania</h2>
       </div>
+      <p class="kd-lead kd-faq-intro">Pięć pytań, które słyszymy od klientów najczęściej. Konkretne odpowiedzi, bez korpomowy.</p>
       {
         homepageFaq.map((f, i) => (
           <details open={i === 0}>
@@ -440,12 +423,12 @@ const DOTS = 24;
       <div class="kd-final-cta">
         <div>
           <span class="kd-label">Następny krok</span>
-          <h2 class="kd-text-title">Sprawdź widoczność swojej marki w AI.</h2>
-          <p class="kd-lead">Test trwa około minuty i nie wymaga rejestracji. Jeśli wynik pokaże luki, omówisz go z ekspertem ICEA na bezpłatnej, 30-minutowej konsultacji.</p>
-          <div class="kd-actions"><a class="kd-btn" href="/narzedzia/brand-check/">Sprawdź widoczność marki →</a><a class="kd-btn kd-btn-2" href="/kontakt/?type=konsultacja">Porozmawiaj z ekspertem ICEA</a></div>
-          <p class="kd-micro kd-cta-meta">Bez rejestracji · Wynik w ok. 60 s · Konsultacja bez zobowiązań</p>
+          <h2 class="kd-text-title">Sprawdź, jak Twoja marka radzi sobie w AI search.</h2>
+          <p class="kd-lead">Bezpłatna konsultacja 30 minut. Bez sprzedaży, bez zobowiązań – pokazujemy gdzie marka jest cytowana, gdzie traci do konkurencji i co realnie zmienić.</p>
+          <div class="kd-actions"><a class="kd-btn" href="/kontakt/">Zamów audyt AI →</a><a class="kd-btn kd-btn-2" href="/kontakt/?type=konsultacja">Bezpłatna konsultacja</a></div>
+          <p class="kd-micro kd-cta-meta">30 minut · Bez zobowiązań · Konkretny plan</p>
         </div>
-        <aside><span class="kd-caption">widocznosc.ai by ICEA</span><p class="kd-text-sub">Za pomiarem stoi zespół ICEA: ponad 15 lat pracy nad widocznością marek w wyszukiwarkach i 500+ wdrożonych projektów SEO.</p><span class="kd-meta">ICEA S.A. · Poznań</span></aside>
+        <aside><span class="kd-caption">Co dostajesz na rozmowie</span><p class="kd-text-sub">„Pokazujemy, gdzie Twoja marka jest cytowana, gdzie traci do konkurencji i co konkretnie zmienić w pierwszej kolejności.”</p><span class="kd-meta">– zespół widocznosc.ai</span></aside>
       </div>
     </div>
   </section>
@@ -454,29 +437,29 @@ const DOTS = 24;
 
   <fragment slot="machine">{`# widocznosc.ai – pozycjonowanie marek w AI
 
-Pomiar widoczności marki w AI.
+Generative Engine Optimization.
 
-## Sprawdź, czy AI poleca Twoją markę
+## Sprawdź, co ChatGPT, Claude, Gemini i Perplexity mówią o Twojej marce
 
-Odpytujemy ChatGPT, Claude, Gemini i Perplexity o Twoją firmę i pokazujemy,
-co odpowiadają: czy znają markę, jak o niej mówią i kogo polecają zamiast
-Ciebie. Wynik w około minutę, bez rejestracji.
+Sprawdź, czy AI poleca Twoją markę, czy boty AI mają dostęp do Twojej strony
+i jak zoptymalizować content, aby był cytowany przez wyszukiwarki AI.
 
-## Od domeny do planu działań w trzech krokach
+## Trzy darmowe testy i pełny raport GEO
 
-1. Podajesz markę i domenę – bez rejestracji, świeże sesje, bez personalizacji.
-2. Dostajesz wynik per model – czy zna markę, jak o niej mówi, co zmyśla.
-3. Widzisz konkurentów i plan – firmy polecane zamiast Ciebie, działania wg priorytetu.
-
-## Trzy testy za darmo
-
-| Test | Czas | Koszt |
+| Test | Zakres | Koszt |
 |---|---|---|
-| Widoczność marki w AI | ok. 60 s | bezpłatnie |
-| Cytowalność strony | ok. 30 s | bezpłatnie |
-| Dostęp botów AI | natychmiast | bezpłatnie |
+| Widoczność marki w AI | 4 modele | bezpłatnie |
+| Ocena cytowalności strony | wynik 0–100 | bezpłatnie |
+| Dostęp botów AI | 13 botów | bezpłatnie |
 
-## Dane, nie deklaracje
+## Cztery etapy budowania widoczności w AI
+
+1. Mapa pytań – 32–48 zapytań brandowych, ogólnych i porównawczych.
+2. Test 5 silników AI – ChatGPT, Claude, Gemini, Perplexity i Copilot.
+3. Audyt techniczny + content – struktura, schema, llms.txt i dane źródłowe.
+4. Raport + kierunek dalszych działań – wnioski i konkretne rekomendacje.
+
+## Źródła i badania
 
 | Liczba | Twierdzenie | Rodzaj | Źródło |
 |---|---|---|---|
@@ -511,19 +494,6 @@ widocznosc.ai by ICEA S.A., Szyperska 14, Poznań.
   .kd-hero .kd-lead {
     margin: 28px auto 0;
   }
-  .kd-form {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-top: 32px;
-    flex-wrap: wrap;
-  }
-  .kd-form .kd-input {
-    min-width: 200px;
-  }
-  .kd-hero-note {
-    margin-top: 20px;
-  }
   .kd-figure {
     margin: 64px 0 0;
   }
@@ -544,13 +514,6 @@ widocznosc.ai by ICEA S.A., Szyperska 14, Poznań.
   @media (max-width: 767px) {
     .kd-hero {
       padding-top: 64px;
-    }
-    .kd-form {
-      flex-direction: column;
-    }
-    .kd-form .kd-input,
-    .kd-form .kd-btn {
-      width: 100%;
     }
     .kd-figure figcaption {
       max-width: none;
