@@ -308,7 +308,26 @@
   border: 1px solid var(--kd-line-strong);
 }
 .kd-report-copy { padding: 36px; }
-.kd-report-copy .kd-list { max-width: 52ch; }
+.kd-report-copy .kd-list {
+  max-width: 54ch;
+  gap: 0;
+  padding-top: 0;
+  border-top: 1px solid var(--kd-line-card);
+}
+.kd-report-copy .kd-list li {
+  position: relative;
+  padding: 11px 8px 11px 24px;
+  border-bottom: 1px solid var(--kd-line-card);
+}
+.kd-report-copy .kd-list li::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 4px;
+  width: 5px;
+  height: 5px;
+  background: var(--kd-accent);
+}
 .kd-report-actions { margin-top: 32px; }
 .kd-report-actions .kd-btn { margin-top: 0; }
 .kd-report-machine { background: var(--kd-card); border-left: 1px solid var(--kd-line); padding: 28px; }
