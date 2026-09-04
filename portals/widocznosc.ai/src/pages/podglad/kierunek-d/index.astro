@@ -159,21 +159,16 @@ const formatDate = (date: Date) =>
         <span class="kd-d1">Sprawdź, co ChatGPT, Claude, Gemini</span>
         <span class="kd-d2">i Perplexity mówią o <em>Twojej marce</em>.</span>
       </h1>
-      <div class="kd-hero-support">
-        <div class="kd-hero-offer">
-          <p class="kd-lead">
-            Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp do Twojej
-            strony i jak zoptymalizować swój content, aby był cytowany przez wyszukiwarki AI.
-          </p>
-          <div class="kd-actions kd-hero-actions">
-            <a class="kd-btn" href="#audyty">Uruchom darmowe testy →</a>
-            <a class="kd-btn kd-btn-2" href="/kontakt/?type=full-report">Zamów pełny raport</a>
-          </div>
+      <p class="kd-hero-thesis">AI zmienia wyszukiwarki w <strong>silniki odpowiedzi</strong>, które eliminują konieczność przeklikiwania się przez wyniki. Marki pominięte przez ChatGPT, Claude czy Perplexity po prostu <strong>przestają istnieć</strong> w decyzji konsumenta.</p>
+      <div class="kd-hero-offer">
+        <p class="kd-lead">
+          Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp do Twojej
+          strony i jak zoptymalizować swój content, aby był cytowany przez wyszukiwarki AI.
+        </p>
+        <div class="kd-actions kd-hero-actions">
+          <a class="kd-btn" href="#audyty">Uruchom darmowe testy →</a>
+          <a class="kd-btn kd-btn-2" href="/kontakt/?type=full-report">Zamów pełny raport</a>
         </div>
-        <aside class="kd-hero-thesis">
-          <span class="kd-label">SEO + GEO · Ewolucja wyszukiwania</span>
-          <p class="kd-body">AI zmienia wyszukiwarki w <strong>silniki odpowiedzi</strong>, które eliminują konieczność przeklikiwania się przez wyniki. Marki pominięte przez ChatGPT, Claude czy Perplexity po prostu <strong>przestają istnieć</strong> w decyzji konsumenta.</p>
-        </aside>
       </div>
     </div>
 
@@ -496,45 +491,39 @@ widocznosc.ai by ICEA S.A., Szyperska 14, Poznań.
     display: block;
     margin-bottom: 24px;
   }
-  .kd-hero-support {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.16fr);
-    gap: 32px;
-    margin-top: 40px;
-    padding-top: 28px;
-    border-top: 1px solid var(--kd-line);
-    text-align: left;
-  }
-  .kd-hero-support .kd-lead {
-    margin: 0;
-  }
   .kd-hero-thesis {
-    align-self: stretch;
-    padding: 22px 24px;
-    background: var(--kd-card);
-    border: 1px solid var(--kd-line);
-  }
-  .kd-hero-thesis .kd-label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  .kd-hero-thesis .kd-body {
-    max-width: 55ch;
+    max-width: 940px;
+    margin: 42px auto 0;
+    color: var(--kd-body);
+    font-family: var(--kd-sans);
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.2px;
+    text-wrap: balance;
   }
   .kd-hero-thesis strong {
     color: var(--kd-ink);
     font-weight: 600;
   }
+  .kd-hero-offer {
+    max-width: 720px;
+    margin: 30px auto 0;
+    padding-top: 28px;
+    border-top: 1px solid var(--kd-line);
+  }
+  .kd-hero-offer .kd-lead {
+    margin: 0 auto;
+  }
   .kd-hero-offer .kd-hero-actions {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    display: flex;
+    justify-content: center;
     gap: 10px;
     margin-top: 24px;
   }
   .kd-hero-offer .kd-btn {
-    width: 100%;
-    padding-right: 12px;
-    padding-left: 12px;
+    width: auto;
+    padding-right: 24px;
+    padding-left: 24px;
   }
   .kd-figure {
     margin: 44px 0 0;
@@ -563,17 +552,15 @@ widocznosc.ai by ICEA S.A., Szyperska 14, Poznań.
       align-items: center;
       gap: 2px;
     }
-    .kd-hero-support {
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-top: 32px;
-      padding-top: 24px;
-    }
     .kd-hero-thesis {
-      padding: 22px;
+      margin-top: 32px;
+      font-size: 18px;
+      line-height: 27px;
     }
     .kd-hero-offer .kd-hero-actions {
+      display: grid;
       grid-template-columns: 1fr;
     }
+    .kd-hero-offer .kd-btn { width: 100%; }
   }
 </style>
