@@ -409,11 +409,6 @@
 .kd-cta-meta { margin: 18px 0 0; }
 .kd-final-cta aside { display: flex; flex-direction: column; align-items: flex-start; justify-content: end; gap: 14px; border-left: 1px solid var(--kd-line); padding-left: 40px; }
 .kd-final-cta aside .kd-text-sub { max-width: 24ch; }
-.kd-hero-spotlight { display: flex; flex-direction: column; align-items: center; gap: 22px; margin-top: 64px; padding-top: 48px; padding-bottom: 48px; border-top: 1px solid var(--kd-line); border-bottom: 1px solid var(--kd-line); text-align: center; }
-.kd-spotlight-copy { max-width: 48ch; margin: 0; color: var(--kd-body); font-family: var(--kd-serif); font-size: 28px; font-weight: 400; line-height: 38px; letter-spacing: -0.45px; text-wrap: balance; }
-.kd-spotlight-copy strong { color: var(--kd-ink); font-weight: 500; }
-.kd-spotlight-meta { display: flex; align-items: center; justify-content: center; gap: 14px; color: var(--kd-body); font-family: var(--kd-mono); font-size: 11px; letter-spacing: 0.5px; }
-.kd-spotlight-meta i { width: 28px; height: 1px; background: var(--kd-line-strong); }
 .kd-hero-actions { justify-content: center; margin-top: 32px; }
 .kd-faq-intro { margin: -16px 0 32px; }
 
@@ -1057,7 +1052,6 @@ textarea.kd-input {
   .kd-cred-grid > div:nth-child(3) { border-left: 0; }
   .kd-process-card > .kd-body-sm { min-height: 72px; }
   .kd-articles-head { grid-template-columns: 1fr; align-items: start; gap: 24px; }
-  .kd-hero-spotlight { gap: 18px; }
 }
 
 @media (max-width: 767px) {
@@ -1132,6 +1126,4 @@ textarea.kd-input {
   .kd-process-card > .kd-body-sm { min-height: 0; }
   .kd-final-cta { gap: 32px; }
   .kd-final-cta aside { border-left: 0; border-top: 1px solid var(--kd-line); padding: 24px 0 0; }
-  .kd-hero-spotlight { margin-top: 48px; padding-top: 36px; padding-bottom: 36px; }
-  .kd-spotlight-copy { font-size: 22px; line-height: 31px; }
 }

@@ -130,7 +130,7 @@ const {
     let fontSize = Math.round(markH * 1.02);
     let textW = 0;
     if (side.text) {
-      c.font = `700 ${fontSize}px 'Mona Sans Variable', 'Mona Sans', Inter, sans-serif`;
+      c.font = `700 ${fontSize}px 'Geist Variable', Geist, Inter, sans-serif`;
       textW = c.measureText(side.text).width;
     }
 
@@ -153,7 +153,7 @@ const {
     if (side.text) {
       // Gruby napis + obrys: cienkie kreski dawały za mało trafień przy
       // próbkowaniu i napis ginął obok wypełnionego logotypu iCEA.
-      c.font = `700 ${fontSize}px 'Mona Sans Variable', 'Mona Sans', Inter, sans-serif`;
+      c.font = `700 ${fontSize}px 'Geist Variable', Geist, Inter, sans-serif`;
       c.textAlign = 'left';
       c.textBaseline = 'middle';
       c.lineWidth = Math.max(1.5, fontSize * 0.045);
@@ -256,7 +256,9 @@ const {
         // podpróbkowanie dłuższej co k-ty punkt wycinało z logotypu całe
         // pionowe pasy (punkty są w porządku wierszowym) – znak rozpadał się
         // na fragmenty. Powtórzone punkty tylko nakładają się na siebie.
-        const n = Math.max(A.length, B.length);
+        // Przy zoomie 100% liczba punktów odpowiada teraz gęstości, którą
+        // wcześniej było widać dopiero po oddaleniu strony do 80%.
+        const n = Math.ceil(Math.max(A.length, B.length) * 1.55);
 
         particles = new Array(n);
         for (let i = 0; i < n; i++) {

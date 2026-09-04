@@ -128,6 +128,10 @@
     {
       "date": "2026-09-04",
       "decision": "Direction D Instrument typography and width: Fraunces for headings and display numerals, Geist Sans for body/UI, Geist Mono for labels; one 1360px homepage container with only hero copy narrowed for reading. Engine logos use an unframed marquee with a centered label."
+    },
+    {
+      "date": "2026-09-04",
+      "decision": "Homepage hero combines the service promise and SEO-to-answer-engines thesis in one two-column support block. The brand-to-ICEA halftone sits directly below it with a lower canvas ratio and denser particles for legibility at 100% browser zoom."
     }
   ],
   "evidence": [
