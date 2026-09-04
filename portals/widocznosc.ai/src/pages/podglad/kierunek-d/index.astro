@@ -37,6 +37,7 @@ const audits = [
     num: '30',
     unit: 's',
     meta: 'bezpłatnie · bez rejestracji',
+    description: 'Wskazujesz jeden adres. Wynik 0–100 i pięć priorytetowych zmian według badań Princeton i analizy 1,2 mln cytowań ChatGPT.',
     list: ['Pięć priorytetowych zmian', 'Według badań Princeton', 'Analiza 1,2 mln cytowań ChatGPT'],
   },
   {
@@ -46,6 +47,7 @@ const audits = [
     num: '60',
     unit: 's',
     meta: 'bezpłatnie · bez rejestracji',
+    description: 'Odpytujemy ChatGPT, Claude, Gemini i Perplexity o Twoją firmę. Dostajesz sentyment, listę halucynacji i konkurentów, których AI poleca zamiast Ciebie.',
     list: ['ChatGPT, Claude, Gemini, Perplexity', 'Sentyment i lista halucynacji', 'Konkurenci polecani zamiast Ciebie'],
     hot: true,
   },
@@ -56,6 +58,7 @@ const audits = [
     num: '<1',
     unit: 's',
     meta: 'bezpłatnie · natychmiast',
+    description: 'Sprawdzamy robots.txt i WAF: czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended i 9 innych botów AI może czytać Twoją stronę.',
     list: ['GPTBot, ClaudeBot, PerplexityBot', 'Google-Extended i 9 innych botów', 'Dostęp albo blokada per bot'],
   },
 ];
@@ -105,11 +108,11 @@ const industries = [
 ];
 
 const engines = [
-  { name: 'ChatGPT', signal: '01' },
-  { name: 'Claude', signal: '02' },
-  { name: 'Gemini', signal: '03' },
-  { name: 'Perplexity', signal: '04' },
-  { name: 'Copilot', signal: '05' },
+  { name: 'ChatGPT', file: 'chatgpt' },
+  { name: 'Claude', file: 'claude' },
+  { name: 'Gemini', file: 'gemini' },
+  { name: 'Perplexity', file: 'perplexity' },
+  { name: 'Microsoft Copilot', file: 'copilot' },
 ];
 
 const credentials = [
@@ -130,12 +133,14 @@ const articles = [
   { type: 'GEO', meta: '13 min · 17 lipca 2026', title: 'Topic Insights w Microsoft Clarity. Zmierz, czy AI cytuje Twoje treści', desc: 'Jak wygenerować raport, poprawnie odczytać dane i poznać granice tego narzędzia.', href: `${base}/blog/` },
   { type: 'Modele LLM', meta: '16 min · 28 sierpnia 2026', title: 'Jak działa ChatGPT? Od tokenu do odpowiedzi', desc: 'Co dzieje się między wpisaniem pytania a wygenerowaniem odpowiedzi.', href: `${base}/blog/` },
   { type: 'AI w biznesie', meta: '19 min · 25 maja 2026', title: 'Wdrożenie AI w firmie – przewodnik dla decydenta', desc: 'Jak wybrać obszar, zbudować strukturę i mierzyć zwrot z inwestycji.', href: `${base}/blog/` },
+  { type: 'RAG', meta: '19 min · 24 maja 2026', title: 'RAG (Retrieval-Augmented Generation) – przewodnik wdrożeniowy', desc: 'Zbuduj system, który odpowiada z własnych danych – bez halucynacji.', href: `${base}/blog/` },
 ];
 
 const DOTS = 24;
 ---
 
 <KierunekD title="Podgląd D: strona główna – widocznosc.ai" current="home">
+  <div class="kd-home">
   <section class="kd-hero">
     <div class="kd-wrap">
       <span class="kd-caption">Pomiar widoczności marki w AI</span>
@@ -172,15 +177,12 @@ const DOTS = 24;
 
   <section class="kd-engine-band" aria-label="Silniki AI objęte pomiarem">
     <div class="kd-wrap kd-engine-band-inner">
-      <div class="kd-engine-copy"><span class="kd-label">Sygnał pomiarowy</span><span class="kd-micro">5 silników · świeże sesje</span></div>
-      <ol class="kd-engine-rail">
-        {engines.map((engine, i) => (
-          <li class:list={[i === 0 && 'is-active']}>
-            <span class="kd-engine-node">{engine.signal}</span>
-            <strong>{engine.name}</strong>
-          </li>
-        ))}
-      </ol>
+      <div class="kd-engine-copy"><span class="kd-label">Mierzymy widoczność w</span><span class="kd-micro">5 silników · świeże sesje</span></div>
+      <div class="kd-logo-slider" aria-label="ChatGPT, Claude, Gemini, Perplexity i Microsoft Copilot">
+        <div class="kd-logo-track">
+          {[...engines, ...engines].map((engine, i) => <img src={`/logos/ai-engines/${engine.file}.png`} alt={i < engines.length ? engine.name : ''} aria-hidden={i >= engines.length ? 'true' : undefined} loading="lazy" />)}
+        </div>
+      </div>
     </div>
   </section>
 
@@ -224,15 +226,16 @@ const DOTS = 24;
     <div class="kd-wrap">
       <div class="kd-section-head">
         <span class="kd-label">Pełny obraz</span>
-        <h2 class="kd-text-title">Raport GEO dla domeny, nie kolejny wynik bez kontekstu.</h2>
+        <h2 class="kd-text-title">Raport GEO dla całej domeny.</h2>
       </div>
       <div class="kd-report">
         <div class="kd-report-copy">
-          <p class="kd-lead">Skanujemy 25–50 URL-i i łączymy widoczność marki, dostęp botów, strukturę treści oraz sygnały autorytetu w jeden plan działań.</p>
+          <p class="kd-lead">Skanujemy 25–50 adresów i oceniamy cztery obszary: spójność tematyczną, sygnały autorytetu, dostępność dla AI i widoczność w wyszukiwarkach AI. Dostajesz plan działań ułożony według priorytetu.</p>
           <ul class="kd-list">
-            <li>Wynik GEO i konkretne rekomendacje dla każdego URL-a</li>
-            <li>Mapa luk treści pod konwersacyjne pytania AI</li>
-            <li>Priorytety P0/P1/P2 do wdrożenia z zespołem lub samodzielnie</li>
+            <li>Wynik GEO dla każdego adresu z konkretnymi problemami</li>
+            <li>Mapa luk w treści pod pytania zadawane AI</li>
+            <li>Plan działań: krytyczne, ważne, średnie</li>
+            <li>Omówienie wyników z ekspertem ICEA</li>
           </ul>
           <a class="kd-btn kd-btn-2" href={`${base}/oferta/`}>Zobacz zakres raportu <span aria-hidden="true">→</span></a>
         </div>
@@ -266,6 +269,7 @@ const DOTS = 24;
                 {Array.from({ length: DOTS }, (_, i) => <i class:list={[i < a.dots && 'on']} />)}
               </div>
               <span class="kd-micro">{a.micro}</span>
+              <p class="kd-body-sm kd-audit-desc">{a.description}</p>
               <div class="kd-text-num">{a.num}<i>{a.unit}</i></div>
               <span class="kd-meta">{a.meta}</span>
               <ul class="kd-list">{a.list.map((l) => <li>{l}</li>)}</ul>
@@ -288,9 +292,9 @@ const DOTS = 24;
     <div class="kd-wrap">
       <div class="kd-section-head">
         <span class="kd-label">Zespół</span>
-        <h2 class="kd-text-title">Stoi za nami zespół ICEA.</h2>
+        <h2 class="kd-text-title">Za pomiarem stoi zespół ICEA.</h2>
       </div>
-      <p class="kd-lead kd-team-intro">Nasze kilkunastoletnie doświadczenie w SEO przekuwamy w skuteczne strategie widoczności w dobie AI Search. Nie teoretyzujemy – każda rekomendacja na tej stronie to wniosek z realnych projektów.</p>
+      <p class="kd-lead kd-team-intro">widocznosc.ai to marka agencji ICEA S.A. Kilkunastoletnie doświadczenie w SEO przekładamy na pomiar i budowanie widoczności w wyszukiwarkach AI. Każda rekomendacja na tej stronie to wniosek z realnych projektów.</p>
       <div class="kd-team-grid">
         {team.map((person) => (
           <article class="kd-team-card">
@@ -311,7 +315,7 @@ const DOTS = 24;
         <div><span class="kd-label">Centrum wiedzy</span><h2 class="kd-text-title">Jak działają modele AI?</h2></div>
         <a class="kd-meta" href={`${base}/blog/`}>Wszystkie artykuły →</a>
       </div>
-      <div class="kd-grid-3">
+      <div class="kd-grid-4">
         {articles.map((article) => (
           <a class="kd-card kd-article-card" href={article.href}>
             <span class="kd-tag">{article.type}</span>
@@ -329,7 +333,7 @@ const DOTS = 24;
     <div class="kd-wrap">
       <div class="kd-section-head">
         <span class="kd-label">Dowody</span>
-        <h2 class="kd-text-title">Dane, nie deklaracje.</h2>
+        <h2 class="kd-text-title">Widoczność w AI da się zmierzyć.</h2>
       </div>
       <div>
         {
@@ -345,9 +349,7 @@ const DOTS = 24;
           ))
         }
       </div>
-      <p class="kd-meta" style="margin-top:16px">
-        cztery źródła zewnętrzne · badanie, patent, dane rynkowe, benchmark · <a href={`${base}/oferta/`}>jak to mierzymy</a>
-      </p>
+      <p class="kd-lead kd-proof-intro">Nie opowiadamy o rewolucji AI. Opieramy się na badaniach, patentach i danych rynkowych, a potem mierzymy te same zjawiska dla Twojej marki.</p>
     </div>
   </section>
 
@@ -356,8 +358,8 @@ const DOTS = 24;
       <div class="kd-final-cta">
         <div>
           <span class="kd-label">Następny krok</span>
-          <h2 class="kd-text-title">Sprawdź, jak Twoja marka radzi sobie w AI Search.</h2>
-          <p class="kd-lead">Test trwa około minuty, nie wymaga rejestracji i pokazuje punkt wyjścia do rozmowy o konkretach.</p>
+          <h2 class="kd-text-title">Sprawdź widoczność swojej marki w AI.</h2>
+          <p class="kd-lead">Test trwa około minuty i nie wymaga rejestracji. Jeśli wynik pokaże luki, omówisz go z ekspertem ICEA na bezpłatnej, 30-minutowej konsultacji.</p>
           <div class="kd-actions"><a class="kd-btn" href={`${base}/narzedzia/`}>Sprawdź widoczność marki →</a><a class="kd-btn kd-btn-2" href={`${base}/kontakt/`}>Porozmawiaj z ekspertem</a></div>
         </div>
         <aside><span class="kd-caption">widocznosc.ai by ICEA</span><p class="kd-text-sub">„Pokazujemy, gdzie marka jest cytowana, gdzie traci do konkurencji i co zmienić najpierw.”</p><span class="kd-meta">ICEA S.A. · Poznań</span></aside>
@@ -369,8 +371,9 @@ const DOTS = 24;
     <div class="kd-wrap">
       <div class="kd-section-head">
         <span class="kd-label">Branże</span>
-        <h2 class="kd-text-title">Gdzie pytanie do AI zastępuje pierwszy research.</h2>
+        <h2 class="kd-text-title">Branże, w których klient zaczyna od pytania do AI.</h2>
       </div>
+      <p class="kd-lead kd-industry-intro">Tam, gdzie decyzja zakupowa wymaga rozeznania, wyszukiwarki AI mają dziś największy wpływ. To branże, w których widzimy najwięcej danych, nie jedyne, z którymi pracujemy.</p>
       <div class="kd-grid-3">
         {
           industries.map((i) => (
@@ -388,7 +391,7 @@ const DOTS = 24;
     <div class="kd-wrap kd-faq">
       <div class="kd-section-head">
         <span class="kd-label">FAQ</span>
-        <h2 class="kd-text-title">Najczęstsze pytania.</h2>
+        <h2 class="kd-text-title">Najczęściej zadawane pytania.</h2>
       </div>
       {
         homepageFaq.map((f, i) => (
@@ -400,6 +403,8 @@ const DOTS = 24;
       }
     </div>
   </section>
+
+  </div>
 
   <fragment slot="machine">{`# widocznosc.ai – pozycjonowanie marek w AI
 
