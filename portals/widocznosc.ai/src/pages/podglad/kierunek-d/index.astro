@@ -153,7 +153,7 @@ const formatDate = (date: Date) =>
 <KierunekD title="Podgląd D: strona główna – widocznosc.ai" current="home">
   <div class="kd-home">
   <section class="kd-hero">
-    <div class="kd-wrap">
+    <div class="kd-wrap kd-hero-copy">
       <span class="kd-caption">Generative Engine Optimization</span>
       <h1 class="kd-text-display">
         <span class="kd-d1">Sprawdź, co ChatGPT, Claude, Gemini</span>
@@ -172,8 +172,8 @@ const formatDate = (date: Date) =>
 
     <aside class="kd-wrap kd-hero-spotlight">
       <span class="kd-label">Ewolucja tradycyjnego SEO</span>
-      <p class="kd-body">AI zmienia wyszukiwarki w <strong>silniki odpowiedzi</strong>, które eliminują konieczność przeklikiwania się przez wyniki. Marki pominięte przez ChatGPT, Claude czy Perplexity po prostu <strong>przestają istnieć</strong> w decyzji konsumenta.</p>
-      <p class="kd-micro">Cytowania zamiast pozycji · SEO + GEO</p>
+      <p class="kd-spotlight-copy">AI zmienia wyszukiwarki w <strong>silniki odpowiedzi</strong>, które eliminują konieczność przeklikiwania się przez wyniki. Marki pominięte przez ChatGPT, Claude czy Perplexity po prostu <strong>przestają istnieć</strong> w decyzji konsumenta.</p>
+      <div class="kd-spotlight-meta"><span>Cytowania zamiast pozycji</span><i></i><span>SEO + GEO</span></div>
     </aside>
 
     <figure class="kd-figure">
@@ -186,9 +186,9 @@ const formatDate = (date: Date) =>
     </figure>
   </section>
 
-  <section class="kd-engine-band" aria-label="Silniki AI objęte pomiarem">
+  <section class="kd-engine-band" id="silniki-ai" aria-label="Silniki AI objęte pomiarem">
     <div class="kd-wrap kd-engine-band-inner">
-      <div class="kd-engine-copy"><span class="kd-label">Mierzymy widoczność w</span><span class="kd-micro">5 silników · świeże sesje</span></div>
+      <div class="kd-engine-copy"><span class="kd-label">Audytujemy widoczność w silnikach AI</span></div>
       <div class="kd-logo-slider" aria-label="ChatGPT, Claude, Gemini, Perplexity i Microsoft Copilot">
         <div class="kd-logo-track">
           {[...engines, ...engines].map((engine, i) => <img src={`/logos/ai-engines/${engine.file}.png`} alt={i < engines.length ? engine.name : ''} aria-hidden={i >= engines.length ? 'true' : undefined} loading="lazy" />)}
@@ -197,7 +197,7 @@ const formatDate = (date: Date) =>
     </div>
   </section>
 
-  <section class="kd-cred-section">
+  <section class="kd-cred-section" id="liczby">
     <div class="kd-wrap">
       <dl class="kd-cred-grid" aria-label="Liczby widocznosc.ai">
         {credentials.map((item, i) => (
