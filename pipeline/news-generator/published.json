@@ -1,13 +1,5 @@
 [
   {
-    "title": "Polski VW Grand California w nowej odsłonie. Kamper z Wrześni rusza na światowe rynki",
-    "date": "2026-05-23",
-    "slug": "polski-vw-grand-california-w-nowej-odslonie-kamper-z-wrzesni-rusza-na-swiatowe",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Barykady na Vo Van Kiet. Ruszyły prace przy nowym oświetleniu ulicznym",
     "date": "2026-05-24",
     "slug": "barykady-na-vo-van-kiet-ruszyly-prace-przy-nowym-oswietleniu-ulicznym",
@@ -715,6 +707,14 @@
     "title": "Orlen podniósł hurtowe ceny paliw. Benzyna 95 powyżej 6 zł pierwszy raz od czterech lat",
     "date": "2026-09-03",
     "slug": "orlen-podniosl-hurtowe-ceny-paliw-benzyna-95-powyzej-6-zl-pierwszy-raz-od",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Ceny paliw od 8 września 2026: benzyna 95, diesel i LPG – aktualne stawki",
+    "date": "2026-09-05",
+    "slug": "ceny-paliw-od-8-wrzesnia-2026-benzyna-95-diesel-i-lpg-aktualne-stawki",
     "section": "news",
     "format": "short",
     "source": "rss"
