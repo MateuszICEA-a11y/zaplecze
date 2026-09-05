@@ -1,12 +1,5 @@
 [
   {
-    "title": "SoftBank planuje do 75 mld euro na centra danych we Francji",
-    "date": "2026-05-31",
-    "slug": "softbank-planuje-do-75-mld-euro-na-centra-danych-we-francji",
-    "source": "rss",
-    "source_name": "TechCrunch AI"
-  },
-  {
     "title": "Nvidia wchodzi do PC z własnym układem Arm",
     "date": "2026-06-01",
     "slug": "nvidia-wchodzi-do-pc-z-wlasnym-ukladem-arm",
@@ -628,5 +621,12 @@
     "slug": "problemy-z-wdrozeniem-gpt-6-astra-sam-altman-przeprasza-placacych-uzytkownikow",
     "source": "rss",
     "source_name": "The Verge AI"
+  },
+  {
+    "title": "OpenAI wdraża GPT-6 Astra dla najwyższych planów ChatGPT ze znacznie niższymi limitami",
+    "date": "2026-09-05",
+    "slug": "openai-wdraza-gpt-6-astra-dla-najwyzszych-planow-chatgpt-ze-znacznie-nizszymi",
+    "source": "rss",
+    "source_name": "The Decoder"
   }
 ]
