@@ -1,25 +1,43 @@
 ---
 title: OpenAI wdraża obsługę WebMCP w desktopowej przeglądarce ChatGPT
-lead: OpenAI dodało wsparcie dla protokołu WebMCP do desktopowej przeglądarki ChatGPT. Nowość umożliwia witrynom internetowym udostępnianie ustrukturyzowanych akcji dla ChatGPT Work oraz środowiska Codex.
-date: 2026-08-27
+lead: Desktopowa przeglądarka ChatGPT może korzystać z narzędzi WebMCP udostępnianych przez strony internetowe. Mechanizm ma pozwalać agentom wykonywać na stronach konkretne działania w ustrukturyzowany sposób.
+date: '2026-08-27'
 sourceName: Search Engine Journal
 sourceUrl: https://www.searchenginejournal.com/chatgpt-adds-webmcp-support/587237/
 tags:
-- OpenAI
+- agenci AI
 - ChatGPT
 - WebMCP
-- Agenci AI
+- przeglądarki AI
 author: Redakcja widocznosc.ai
 image: ../../assets/images/news-2026-08-27-openai-wdraza-obsluge-webmcp-w-desktopowej-przegladarce-chatgpt.webp
 ---
-## ChatGPT zyskuje bezpośrednią komunikację z narzędziami witryn dzięki WebMCP
+## WebMCP daje ChatGPT uporządkowany dostęp do działań na stronach
 
-OpenAI rozszerzyło możliwości desktopowej wersji ChatGPT o natywną obsługę protokołu WebMCP. Rozwiązanie to pozwala przystosowanym serwisom internetowym na bezpośrednie udostępnianie ustrukturyzowanych akcji i narzędzi modelom AI. Z mechanizmu mogą korzystać narzędzia ChatGPT Work oraz środowisko programistyczne Codex.
+OpenAI wdrożyło obsługę WebMCP w desktopowej przeglądarce ChatGPT. Dzięki temu witryny udostępniające kompatybilne narzędzia mogą przekazać agentowi AI jasno zdefiniowane możliwości działania bezpośrednio w obrębie strony.
 
-W praktyce oznacza to, że kompatybilna witryna nie musi być już analizowana wyłącznie jako statyczny dokument tekstowy czy układ elementów wizualnych. Za pośrednictwem WebMCP serwis może przekazać modelowi sformalizowany zestaw funkcji i operacji, które asystent jest w stanie wywołać bezpośrednio w trakcie przeglądania zasobów sieciowych.
+W praktyce WebMCP ma umożliwiać agentowi wyszukiwanie informacji, edytowanie treści oraz realizowanie zadań na obsługiwanych witrynach. Kluczowe jest tu słowo „ustrukturyzowane”. Zamiast opierać się wyłącznie na rozpoznawaniu elementów interfejsu i symulowaniu kliknięć, model otrzymuje dostęp do narzędzi opisujących czynności, jakie może wykonać.
 
-> **Nasz komentarz:** Wdrożenie WebMCP to wyraźny krok w ewolucji modeli językowych z biernych czytelników kodu HTML w pełnoprawnych agentów wykonujących precyzyjne operacje w aplikacjach webowych.
+Nie oznacza to, że ChatGPT automatycznie zyskuje swobodny dostęp do każdej strony i każdego procesu. Funkcja wymaga wdrożenia odpowiednich rozwiązań po stronie konkretnej witryny. To jej twórcy określają, jakie narzędzia udostępniają agentowi oraz do jakich działań może je wykorzystać.
 
-## Od parsowania interfejsów do standaryzacji interakcji agentowych
+> **Nasz komentarz:** WebMCP przesuwa agentów AI od improwizowanego „obsługiwania ekranu” w stronę kontrolowanej współpracy z aplikacjami internetowymi.
 
-Naszym zdaniem dodanie obsługi WebMCP do ChatGPT wskazuje na kierunek, w którym zmierza cała architektura systemów agentowych. Dotychczasowe przeglądanie sieci przez duże modele językowe opierało się głównie na odczytywaniu surowego
+## Agenci przestają tylko czytać internet, a zaczynają działać w jego ramach
+
+Naszym zdaniem najważniejsza w tej zmianie nie jest sama kolejna integracja ChatGPT, lecz sposób projektowania relacji między modelem a stroną internetową. Model językowy dobrze interpretuje polecenia w języku naturalnym, ale nie zawsze radzi sobie z dynamicznym interfejsem przeglądarki. Formularze, przyciski, ukryte elementy i zmieniający się układ strony mogą utrudniać autonomiczne wykonanie nawet prostego zadania.
+
+WebMCP może ograniczyć ten problem, ponieważ udostępnia agentowi zestaw konkretnych funkcji. W naszej ocenie taki model interakcji przynosi trzy istotne konsekwencje:
+
+- **Większa przewidywalność działań** – agent operuje w ramach narzędzi przygotowanych przez witrynę, a nie wyłącznie na podstawie wizualnej interpretacji interfejsu.
+- **Lepsza realizacja wieloetapowych zadań** – wyszukanie danych, ich modyfikacja i finalizacja procesu mogą stać się elementami jednego przepływu prowadzonego przez ChatGPT.
+- **Nowy kierunek dla aplikacji internetowych** – strony mogą być projektowane nie tylko dla użytkownika klikającego w interfejs, lecz także dla agenta wykonującego zadania za pomocą udostępnionych funkcji.
+
+Dla użytkowników oznacza to w praktyce mniej ręcznego przechodzenia między kolejnymi ekranami. Trzeba jednak zachować ostrożność w ocenie skali tej zmiany. Przydatność rozwiązania będzie zależała od tego, ile witryn wdroży jego obsługę oraz jak precyzyjnie ich twórcy zaprojektują dostępne narzędzia.
+
+Uważamy, że jest to kolejny krok w ewolucji modeli z systemów odpowiadających na pytania w rozwiązania zdolne do wykonywania konkretnych, praktycznych operacji. O sukcesie zdecyduje nie tylko jakość modelu, lecz także przejrzystość reguł, zakres uprawnień i niezawodność integracji.
+
+## W skrócie
+
+- Desktopowa przeglądarka ChatGPT obsługuje narzędzia WebMCP udostępniane przez kompatybilne strony.
+- Mechanizm pozwala agentom wyszukiwać, edytować i realizować zadania w obrębie witryny.
+- WebMCP może zwiększyć przewidywalność działań agentów, ponieważ opiera je na zdefiniowanych funkcjach, a nie na samym rozpoznawaniu interfejsu.
