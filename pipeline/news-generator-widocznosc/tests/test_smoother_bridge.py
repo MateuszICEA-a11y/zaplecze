@@ -41,3 +41,13 @@ def test_smooth_news_smoothed_returns_model_text():
     out = smooth_news_out(text, call_fn=lambda pb, r: pb.replace("źle", "dobrze"))
     assert "dobrze" in out
     assert out != text
+
+
+def test_smooth_news_rejects_truncated_review(monkeypatch):
+    """Model ucięty limitem tokenów oddaje kikut bez liczb – diff-guard tego nie łapie, bramka długości tak."""
+    import smoother_bridge
+
+    original = "---\ntitle: X\n---\n" + ("Zdanie bez liczb i modeli. " * 40)
+    truncated = "Zdanie bez liczb i modeli. " * 5
+    out = smoother_bridge.smooth_news(original, call_fn=lambda pb, r: truncated)
+    assert out == original

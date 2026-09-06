@@ -60,6 +60,23 @@ def save_published(history: list[dict]) -> None:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
 
+def body_completeness_problems(body: str, fmt_cfg: dict) -> list[str]:
+    """Heurystyka „czy wpis jest cały”: minimalna liczba słów, sekcja „W skrócie” na końcu,
+    ostatnia linia zakończona jak zdanie/punkt listy. Pusta lista = OK."""
+    problems: list[str] = []
+    words = len(body.split())
+    min_words = int(fmt_cfg.get("short_min_words", 400) * 0.6)
+    if words < min_words:
+        problems.append(f"za krótki: {words} słów (minimum {min_words})")
+    if "## W skrócie" not in body:
+        problems.append("brak sekcji „## W skrócie”")
+    lines = [ln.rstrip() for ln in body.splitlines() if ln.strip()]
+    last = lines[-1] if lines else ""
+    if not last or last[-1] not in ".!?)»\"*":
+        problems.append(f"ostatnia linia nie kończy się jak zdanie: {last[-80:]!r}")
+    return problems
+
+
 def run() -> None:
     """Run the full news pipeline."""
     log.info("=== widocznosc.ai News Pipeline ===")
@@ -141,6 +158,13 @@ def run() -> None:
     except ValueError as e:
         log.error("Failed to parse LLM output: %s", e)
         log.error("Raw output:\n%s", raw_output[:500])
+        sys.exit(1)
+
+    # 8b. Bramka kompletności – urwany wpis nie może trafić na produkcję
+    problems = body_completeness_problems(body, fmt_cfg)
+    if problems:
+        log.error("Wpis niekompletny, nie publikuję: %s", "; ".join(problems))
+        log.error("Body tail:\n%s", body[-300:])
         sys.exit(1)
 
     # 9. Ensure a title is present, then derive date + slug + paths

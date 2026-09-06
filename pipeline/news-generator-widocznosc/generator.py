@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 import os
 import re
 from datetime import datetime, timezone
@@ -11,6 +12,8 @@ from openai import OpenAI
 
 from collector import Signal
 from scorer import ScoredSignal
+
+log = logging.getLogger("news-generator")
 
 
 SYSTEM_PROMPT = (
@@ -89,17 +92,41 @@ def generate_article(
 
     prompt = build_prompt(topic, related_articles, format_config or {})
 
-    response = client.chat.completions.create(
-        model=model,
-        temperature=temperature,
-        max_completion_tokens=max_completion_tokens,
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": prompt},
-        ],
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": prompt},
+    ]
+    # Modele „myślące” (Gemini 3.7 Flash) liczą tokeny rozumowania do max_completion_tokens.
+    # Ucięcie (finish_reason=length) dawało wpisy urwane w pół zdania – ponów z podwojonym budżetem,
+    # a jeśli nadal ucina, przerwij zamiast publikować kikut.
+    budget = max_completion_tokens
+    for attempt in (1, 2):
+        response = client.chat.completions.create(
+            model=model,
+            temperature=temperature,
+            max_completion_tokens=budget,
+            messages=messages,
+        )
+        choice = response.choices[0]
+        content = (choice.message.content or "").strip()
+        usage = response.usage
+        details = getattr(usage, "completion_tokens_details", None) if usage else None
+        reasoning = getattr(details, "reasoning_tokens", None) if details else None
+        log.info(
+            "Writer: finish_reason=%s completion_tokens=%s reasoning_tokens=%s words=%d (budget %d, attempt %d)",
+            choice.finish_reason,
+            getattr(usage, "completion_tokens", None),
+            reasoning,
+            len(content.split()),
+            budget,
+            attempt,
+        )
+        if choice.finish_reason != "length":
+            return content
+        budget *= 2
+    raise RuntimeError(
+        f"Writer uciął odpowiedź (finish_reason=length) mimo budżetu {budget // 2} tokenów"
     )
-
-    return response.choices[0].message.content.strip()
 
 
 def parse_llm_output(raw: str) -> tuple[dict, str]:

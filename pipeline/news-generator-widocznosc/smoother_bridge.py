@@ -122,6 +122,15 @@ def smooth_news(text: str, call_fn=None) -> str:
 
     result = smoother.process_text(text, news_rules(), call_fn)
     status = result["status"]
+    # Diff-guard pilnuje liczb i nazw modeli, ale nie długości – model bywa ucinany
+    # (limit tokenów) i oddaje kikut bez żadnej liczby w odciętej części. Odrzuć skróty > 15 %.
+    if status == "smoothed" and len(result["text"]) < 0.85 * len(text):
+        result = {
+            "status": "rejected",
+            "text": text,
+            "detail": f"tekst po redakcji za krótki: {len(result['text'])} vs {len(text)} znaków",
+        }
+        status = "rejected"
     if status in ("rejected", "error"):
         log.warning("news bez przejazdu redaktorskiego (%s): %s", status, result["detail"])
     elif status == "smoothed":
