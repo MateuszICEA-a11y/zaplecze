@@ -1,13 +1,5 @@
 [
   {
-    "title": "Barykady na Vo Van Kiet. Ruszyły prace przy nowym oświetleniu ulicznym",
-    "date": "2026-05-24",
-    "slug": "barykady-na-vo-van-kiet-ruszyly-prace-przy-nowym-oswietleniu-ulicznym",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "NSA: przedsiębiorca nie jest bez wpływu na znaki drogowe. Ważny sygnał dla firm transportowych",
     "date": "2026-05-25",
     "slug": "nsa-przedsiebiorca-nie-jest-bez-wplywu-na-znaki-drogowe-wazny-sygnal-dla-firm",
@@ -715,6 +707,14 @@
     "title": "Ceny paliw od 8 września 2026: benzyna 95, diesel i LPG – aktualne stawki",
     "date": "2026-09-05",
     "slug": "ceny-paliw-od-8-wrzesnia-2026-benzyna-95-diesel-i-lpg-aktualne-stawki",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Nowy bus trafił do OSP Celiny. Zakup sfinansowała lokalna społeczność",
+    "date": "2026-09-06",
+    "slug": "nowy-bus-trafil-do-osp-celiny-zakup-sfinansowala-lokalna-spolecznosc",
     "section": "news",
     "format": "short",
     "source": "rss"
