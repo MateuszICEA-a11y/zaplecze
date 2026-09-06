@@ -2,7 +2,7 @@
 """Most między generatorem newsów a silnikiem wygładzania blog-polish (smoother.py).
 
 `smooth_news(text)` wykonuje przejazd redaktorski newsa (REVIEW_MODEL przez OpenRouter,
-domyślnie google/gemini-3.7-flash:online – z web searchem do weryfikacji faktów), zachowując
+domyślnie google/gemini-3.8-flash, od 2026-09-06 bez sufiksu :online), zachowując
 fail-safe: brak klucza / odrzucenie przez diff-guard / błąd API -> zwraca ORYGINAŁ + log.
 Nigdy nie rzuca wyjątku w górę, żeby nie wywalić codziennej generacji newsa.
 
@@ -26,7 +26,7 @@ log = logging.getLogger("news-generator")
 
 # Model przejazdu redaktorskiego – z web searchem (:online), żeby weryfikacja
 # faktów nie była ślepa (recenzent bez :online nie widzi świeżych premier).
-REVIEW_MODEL = os.environ.get("NEWS_REVIEW_MODEL", "google/gemini-3.7-flash:online")
+REVIEW_MODEL = os.environ.get("NEWS_REVIEW_MODEL", "google/gemini-3.8-flash")
 
 REVIEW_SYSTEM_PROMPT = """Wciel się w doświadczonego polskiego redaktora językowego i dziennikarza technologicznego specjalizującego się w SEO, AI search, GEO (Generative Engine Optimization) i dużych modelach językowych. Sprawdź poniższy tekst pod kątem poprawności polszczyzny, fleksji i faktów.
 
