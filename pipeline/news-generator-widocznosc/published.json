@@ -1,12 +1,5 @@
 [
   {
-    "title": "Nvidia wchodzi do PC z własnym układem Arm",
-    "date": "2026-06-01",
-    "slug": "nvidia-wchodzi-do-pc-z-wlasnym-ukladem-arm",
-    "source": "rss",
-    "source_name": "CNBC"
-  },
-  {
     "title": "MiniMax M3 – otwarty model z milionem tokenów rzuca wyzwanie liderom",
     "date": "2026-06-01",
     "slug": "minimax-m3-otwarty-model-milion-tokenow",
@@ -628,5 +621,12 @@
     "slug": "openai-wdraza-gpt-6-astra-dla-najwyzszych-planow-chatgpt-ze-znacznie-nizszymi",
     "source": "rss",
     "source_name": "The Decoder"
+  },
+  {
+    "title": "Seattle Times i Newsday pozywają OpenAI oraz Microsoft za trenowanie AI na ich artykułach",
+    "date": "2026-09-06",
+    "slug": "seattle-times-i-newsday-pozywaja-openai-oraz-microsoft-za-trenowanie-ai-na-ich",
+    "source": "rss",
+    "source_name": "TechCrunch AI"
   }
 ]
