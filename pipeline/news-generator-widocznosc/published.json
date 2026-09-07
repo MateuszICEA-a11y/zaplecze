@@ -1,12 +1,5 @@
 [
   {
-    "title": "MiniMax M3 – otwarty model z milionem tokenów rzuca wyzwanie liderom",
-    "date": "2026-06-01",
-    "slug": "minimax-m3-otwarty-model-milion-tokenow",
-    "source": "rss",
-    "source_name": "The Decoder"
-  },
-  {
     "title": "Gemini 3.5 Flash – Google stawia na szybkie i tanie agenty",
     "date": "2026-06-02",
     "slug": "gemini-3-5-flash-agentowy-model-google",
@@ -628,5 +621,12 @@
     "slug": "seattle-times-i-newsday-pozywaja-openai-oraz-microsoft-za-trenowanie-ai-na-ich",
     "source": "rss",
     "source_name": "TechCrunch AI"
+  },
+  {
+    "title": "Claude i nieautoryzowany dostęp do systemów",
+    "date": "2026-09-07",
+    "slug": "claude-i-nieautoryzowany-dostep-do-systemow",
+    "source": "rss",
+    "source_name": "Anthropic"
   }
 ]
