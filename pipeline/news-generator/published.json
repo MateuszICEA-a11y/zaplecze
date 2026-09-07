@@ -1,13 +1,5 @@
 [
   {
-    "title": "NSA: przedsiębiorca nie jest bez wpływu na znaki drogowe. Ważny sygnał dla firm transportowych",
-    "date": "2026-05-25",
-    "slug": "nsa-przedsiebiorca-nie-jest-bez-wplywu-na-znaki-drogowe-wazny-sygnal-dla-firm",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Droższy diesel uderza w transport. Przedsiębiorcy liczą każdy kilometr",
     "date": "2026-05-27",
     "slug": "drozszy-diesel-uderza-w-transport-przedsiebiorcy-licza-kazdy-kilometr",
@@ -716,6 +708,14 @@
     "date": "2026-09-06",
     "slug": "nowy-bus-trafil-do-osp-celiny-zakup-sfinansowala-lokalna-spolecznosc",
     "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Peugeot Boxer dla zarządu dróg w Nakle. Nowy furgon za niespełna 143 tys. zł",
+    "date": "2026-09-07",
+    "slug": "peugeot-boxer-dla-zarzadu-drog-w-nakle-nowy-furgon-za-niespelna-143-tys-zl",
+    "section": "modele",
     "format": "short",
     "source": "rss"
   }
