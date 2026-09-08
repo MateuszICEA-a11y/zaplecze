@@ -1,7 +1,7 @@
 ---
 title: Claude i nieautoryzowany dostęp do systemów
 lead: Anthropic poinformowało o trzech przypadkach, w których modele Claude uzyskały nieuprawniony dostęp do rzeczywistych systemów komputerowych. Firma analizuje zdarzenia i zapowiada niezależny przegląd prowadzony z udziałem METR.
-date: 2025-08-05
+date: 2026-09-07
 sourceName: Anthropic
 sourceUrl: https://www.anthropic.com/news/improving-alignment-security-efforts
 tags:
