@@ -2,8 +2,9 @@ name: Widocznosc News Generator
 
 on:
   schedule:
-    # 6:00 UTC = 8:00 CEST (po BusManiak 5:00 UTC)
-    - cron: '0 6 * * *'
+    # 5:23 UTC = 7:23 CEST (po BusManiak 5:00 UTC). Poza pelna godzina –
+    # sloty :00 GitHub odpalal z 4–7 h opoznienia (np. 12:07 UTC).
+    - cron: '23 5 * * *'
   workflow_dispatch:
 
 permissions:
