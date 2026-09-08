@@ -44,7 +44,8 @@ def build_prompt(topic, related_articles, format_config) -> str:
     src_summary = getattr(topic.signal, "summary", "") or getattr(topic.signal, "description", "")
     lo = format_config.get("short_min_words", 400)
     hi = format_config.get("short_max_words", 600)
-    return f"""Na podstawie poniższego anglojęzycznego newsa napisz polski wpis dla sekcji News portalu widocznosc.ai.
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    return f"""Dzisiaj jest {today}. Na podstawie poniższego anglojęzycznego newsa napisz polski wpis dla sekcji News portalu widocznosc.ai.
 
 ŹRÓDŁO: {src_name}
 TYTUŁ ORYGINAŁU: {src_title}
@@ -53,7 +54,7 @@ STRESZCZENIE/FRAGMENT: {src_summary}
 
 Wymagania:
 - Długość całości: {lo}–{hi} słów.
-- Zacznij od frontmatteru YAML między --- z polami: title (polski, zwięzły), lead (1–2 zdania), date (RRRR-MM-DD, dzisiejsza data), sourceName ("{src_name}"), sourceUrl ("{src_url}"), tags (2–4 polskie tagi).
+- Zacznij od frontmatteru YAML między --- z polami: title (polski, zwięzły), lead (1–2 zdania), date ({today}), sourceName ("{src_name}"), sourceUrl ("{src_url}"), tags (2–4 polskie tagi).
 - Po frontmatterze body w markdown w następującej strukturze (zachowaj kolejność i funkcję sekcji, ale NAGŁÓWKI H2 sekcji 1 i 3 formułuj ZA KAŻDYM RAZEM INDYWIDUALNIE pod konkretny temat – NIE używaj szablonowych, powtarzalnych nagłówków):
   1. Sekcja faktów – streszczenie wydarzenia własnymi słowami. Nagłówek H2 napisz pod temat newsa, tak by oddawał jego sedno (np. nawiązanie do konkretu, liczby, firmy lub napięcia w historii). NIE używaj dosłownie „Co się wydarzyło?” – to zbyt szablonowe i powtarza się między newsami. Może mieć formę pytania albo zwięzłego stwierdzenia.
   2. Zaraz po tej sekcji wstaw jednozdaniowy wyróżnik jako cytat blockquote:

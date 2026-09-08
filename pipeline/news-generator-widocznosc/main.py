@@ -170,6 +170,12 @@ def run() -> None:
     # 9. Ensure a title is present, then derive date + slug + paths
     fm.setdefault("title", topic.signal.title)
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # Data publikacji ZAWSZE z pipeline'u, nigdy od modelu. Writer nie zna
+    # dzisiejszej daty i wpisywał datę ze swojego cutoffu (np. 2025-08-05),
+    # przez co news lądował na dnie listingu i FB-poster go nie widział.
+    if fm.get("date") != date_str:
+        log.warning("Data od modelu %r zastapiona przez %s", fm.get("date"), date_str)
+    fm["date"] = date_str
     slug = generate_slug(fm["title"])
     # Slug newsa bez daty – data publikacji zostaje w frontmatterze (date),
     # po niej sortuje listing. Data nadal prefiksuje nazwę pliku hero-obrazu.
