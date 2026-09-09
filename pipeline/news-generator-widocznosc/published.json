@@ -1,12 +1,5 @@
 [
   {
-    "title": "Gemini 3.5 Flash – Google stawia na szybkie i tanie agenty",
-    "date": "2026-06-02",
-    "slug": "gemini-3-5-flash-agentowy-model-google",
-    "source": "manual",
-    "source_name": "Google (blog)"
-  },
-  {
     "title": "Android dostaje wykrywanie podszywania się w połączeniach",
     "date": "2026-06-03",
     "slug": "android-dostaje-wykrywanie-podszywania-sie-w-polaczeniach",
@@ -628,5 +621,12 @@
     "slug": "claude-i-nieautoryzowany-dostep-do-systemow",
     "source": "rss",
     "source_name": "Anthropic"
+  },
+  {
+    "title": "GPT-5.6 Sol wspiera autonomiczne eksperymenty kwantowe",
+    "date": "2026-09-09",
+    "slug": "gpt-56-sol-wspiera-autonomiczne-eksperymenty-kwantowe",
+    "source": "rss",
+    "source_name": "OpenAI"
   }
 ]
