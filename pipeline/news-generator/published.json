@@ -1,13 +1,5 @@
 [
   {
-    "title": "Droższy diesel uderza w transport. Przedsiębiorcy liczą każdy kilometr",
-    "date": "2026-05-27",
-    "slug": "drozszy-diesel-uderza-w-transport-przedsiebiorcy-licza-kazdy-kilometr",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Kamper – wynajem czy zakup? Sprawdzamy, ile naprawdę kosztuje wolność podróżowania",
     "date": "2026-05-28",
     "slug": "kamper-wynajem-czy-zakup-sprawdzamy-ile-naprawde-kosztuje-wolnosc-podrozowania",
@@ -717,6 +709,14 @@
     "slug": "peugeot-boxer-dla-zarzadu-drog-w-nakle-nowy-furgon-za-niespelna-143-tys-zl",
     "section": "modele",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Paliwo po 10 zł za litr w całej Polsce. Stacje tylko czekają na sygnał",
+    "date": "2026-09-09",
+    "slug": "paliwo-po-10-zl-za-litr-w-calej-polsce-stacje-tylko-czekaja-na-sygnal",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
