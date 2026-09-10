@@ -1,12 +1,5 @@
 [
   {
-    "title": "Android dostaje wykrywanie podszywania się w połączeniach",
-    "date": "2026-06-03",
-    "slug": "android-dostaje-wykrywanie-podszywania-sie-w-polaczeniach",
-    "source": "rss",
-    "source_name": "Ars Technica AI"
-  },
-  {
     "title": "Amazon rozwija magazynowego robota Proteus",
     "date": "2026-06-04",
     "slug": "amazon-rozwija-magazynowego-robota-proteus",
@@ -628,5 +621,12 @@
     "slug": "gpt-56-sol-wspiera-autonomiczne-eksperymenty-kwantowe",
     "source": "rss",
     "source_name": "OpenAI"
+  },
+  {
+    "title": "Koszt AI na pracownika spadł niemal o 10 proc.",
+    "date": "2026-09-10",
+    "slug": "koszt-ai-na-pracownika-spadl-niemal-o-10-proc",
+    "source": "rss",
+    "source_name": "The Decoder"
   }
 ]
