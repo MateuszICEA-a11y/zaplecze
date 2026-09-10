@@ -1,13 +1,5 @@
 [
   {
-    "title": "Kamper – wynajem czy zakup? Sprawdzamy, ile naprawdę kosztuje wolność podróżowania",
-    "date": "2026-05-28",
-    "slug": "kamper-wynajem-czy-zakup-sprawdzamy-ile-naprawde-kosztuje-wolnosc-podrozowania",
-    "section": "kampery",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Kamper z Poloneza Trucka podbija zloty. Nietypowa przeróbka przyciąga tłumy",
     "date": "2026-05-29",
     "slug": "kamper-z-poloneza-trucka-podbija-zloty-nietypowa-przerobka-przyciaga-tlumy",
@@ -716,6 +708,14 @@
     "date": "2026-09-09",
     "slug": "paliwo-po-10-zl-za-litr-w-calej-polsce-stacje-tylko-czekaja-na-sygnal",
     "section": "news",
+    "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Rekordowe ceny paliw zjadają zyski firm. Izba alarmuje o zagrożeniu",
+    "date": "2026-09-10",
+    "slug": "rekordowe-ceny-paliw-zjadaja-zyski-firm-izba-alarmuje-o-zagrozeniu",
+    "section": "kampery",
     "format": "analysis",
     "source": "rss"
   }
