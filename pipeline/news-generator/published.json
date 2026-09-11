@@ -1,13 +1,5 @@
 [
   {
-    "title": "Kamper z Poloneza Trucka podbija zloty. Nietypowa przeróbka przyciąga tłumy",
-    "date": "2026-05-29",
-    "slug": "kamper-z-poloneza-trucka-podbija-zloty-nietypowa-przerobka-przyciaga-tlumy",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "20 mln zł kary za obchodzenie sankcji na Rosję. Dostawczy korytarz przez Białoruś pod lupą",
     "date": "2026-05-30",
     "slug": "20-mln-zl-kary-za-obchodzenie-sankcji-na-rosje-dostawczy-korytarz-przez",
@@ -717,6 +709,14 @@
     "slug": "rekordowe-ceny-paliw-zjadaja-zyski-firm-izba-alarmuje-o-zagrozeniu",
     "section": "kampery",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Ceny paliw w Polsce dogoniły Europę. Diesel tańszy już u sąsiadów",
+    "date": "2026-09-11",
+    "slug": "ceny-paliw-w-polsce-dogonily-europe-diesel-tanszy-juz-u-sasiadow",
+    "section": "news",
+    "format": "short",
     "source": "rss"
   }
 ]
