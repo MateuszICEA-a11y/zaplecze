@@ -1,12 +1,5 @@
 [
   {
-    "title": "Amazon rozwija magazynowego robota Proteus",
-    "date": "2026-06-04",
-    "slug": "amazon-rozwija-magazynowego-robota-proteus",
-    "source": "rss",
-    "source_name": "The Verge AI"
-  },
-  {
     "title": "Claude pisze już większość kodu Anthropic",
     "date": "2026-06-05",
     "slug": "claude-pisze-juz-wiekszosc-kodu-anthropic",
@@ -628,5 +621,12 @@
     "slug": "koszt-ai-na-pracownika-spadl-niemal-o-10-proc",
     "source": "rss",
     "source_name": "The Decoder"
+  },
+  {
+    "title": "Gemini trafia na Windows",
+    "date": "2026-09-11",
+    "slug": "gemini-trafia-na-windows",
+    "source": "rss",
+    "source_name": "Google – Gemini"
   }
 ]
