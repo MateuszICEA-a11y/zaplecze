@@ -1,13 +1,5 @@
 [
   {
-    "title": "20 mln zł kary za obchodzenie sankcji na Rosję. Dostawczy korytarz przez Białoruś pod lupą",
-    "date": "2026-05-30",
-    "slug": "20-mln-zl-kary-za-obchodzenie-sankcji-na-rosje-dostawczy-korytarz-przez",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Ceny paliw 30 maja 2026 – ile kosztują benzyna i diesel?",
     "date": "2026-05-31",
     "slug": "ceny-paliw-30-maja-2026-ile-kosztuja-benzyna-i-diesel",
@@ -717,6 +709,14 @@
     "slug": "ceny-paliw-w-polsce-dogonily-europe-diesel-tanszy-juz-u-sasiadow",
     "section": "news",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Ukraiński Renault Master z dwoma dowodami – DMC 3500 kg i 5900 kg",
+    "date": "2026-09-12",
+    "slug": "ukrainski-renault-master-z-dwoma-dowodami-dmc-3500-kg-i-5900-kg",
+    "section": "porownania",
+    "format": "analysis",
     "source": "rss"
   }
 ]
