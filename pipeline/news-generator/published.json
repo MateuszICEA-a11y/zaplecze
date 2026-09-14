@@ -1,13 +1,5 @@
 [
   {
-    "title": "Paliwa tanieją po weekendzie. Pb95 spada poniżej 6 zł za litr",
-    "date": "2026-06-01",
-    "slug": "paliwa-tanieja-po-weekendzie-pb95-spada-ponizej-6-zl-za-litr",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "To nie jest zwykły kamper. Nietypowa zabudowa zwraca uwagę",
     "date": "2026-06-02",
     "slug": "to-nie-jest-zwykly-kamper-nietypowa-zabudowa-zwraca-uwage",
@@ -717,6 +709,14 @@
     "slug": "bus-wypadl-z-drogi-na-lubelszczyznie-piec-osob-rannych",
     "section": "porownania",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Ceny diesla idą w górę. Resort finansów nie wraca do programu CPN",
+    "date": "2026-09-14",
+    "slug": "ceny-diesla-ida-w-gore-resort-finansow-nie-wraca-do-programu-cpn",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
