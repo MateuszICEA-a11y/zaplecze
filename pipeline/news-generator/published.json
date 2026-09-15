@@ -1,13 +1,5 @@
 [
   {
-    "title": "To nie jest zwykły kamper. Nietypowa zabudowa zwraca uwagę",
-    "date": "2026-06-02",
-    "slug": "to-nie-jest-zwykly-kamper-nietypowa-zabudowa-zwraca-uwage",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "To nie jest zwykły kamper cz. 2 – nietypowa zabudowa znów przyciąga uwagę",
     "date": "2026-06-03",
     "slug": "to-nie-jest-zwykly-kamper-cz-2-nietypowa-zabudowa-znow-przyciaga-uwage",
@@ -715,6 +707,14 @@
     "title": "Ceny diesla idą w górę. Resort finansów nie wraca do programu CPN",
     "date": "2026-09-14",
     "slug": "ceny-diesla-ida-w-gore-resort-finansow-nie-wraca-do-programu-cpn",
+    "section": "news",
+    "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Tańsze paliwo jeszcze w 2026? Rząd rozważa podatek od zysków i cięcia VAT",
+    "date": "2026-09-15",
+    "slug": "tansze-paliwo-jeszcze-w-2026-rzad-rozwaza-podatek-od-zyskow-i-ciecia-vat",
     "section": "news",
     "format": "analysis",
     "source": "rss"
