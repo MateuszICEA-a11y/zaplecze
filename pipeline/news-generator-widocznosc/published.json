@@ -1,12 +1,5 @@
 [
   {
-    "title": "Pozew po niewykryciu broni przez system AI",
-    "date": "2026-06-08",
-    "slug": "pozew-po-niewykryciu-broni-przez-system-ai",
-    "source": "rss",
-    "source_name": "Ars Technica AI"
-  },
-  {
     "title": "OpenAI rusza w stronę giełdy, ale bez daty",
     "date": "2026-06-09",
     "slug": "openai-rusza-w-strone-gieldy-ale-bez-daty",
@@ -628,5 +621,12 @@
     "slug": "openai-chce-wolniejszego-tempa-ale-nie-rezygnuje-z-postepu",
     "source": "rss",
     "source_name": "The Decoder"
+  },
+  {
+    "title": "OpenAI ma przejąć Glass Imaging za 300 mln dolarów",
+    "date": "2026-09-15",
+    "slug": "openai-ma-przejac-glass-imaging-za-300-mln-dolarow",
+    "source": "rss",
+    "source_name": "TechCrunch AI"
   }
 ]
