@@ -84,6 +84,24 @@ const tools = [
     crossLabel: 'Jak modele wybierają źródła odpowiedzi',
     crossHref: '/pozycjonowanie-ai/perplexity/',
   },
+  {
+    id: 'fanout-explorer',
+    accent: 'rose',
+    eyebrow: 'Bookmarklet do ChatGPT',
+    time: '1 kliknięcie',
+    title: 'Fan-out Explorer',
+    desc: 'Zakładka w przeglądarce, która na chatgpt.com pokazuje prawdziwy query fan-out Twojej rozmowy: każde wyszukiwanie w tle, strony, które wróciły, i te zacytowane w odpowiedzi.',
+    href: '/narzedzia/fanout-explorer/',
+    cta: 'Zainstaluj bookmarklet',
+    bullets: [
+      'Twoje własne czaty, na żywo i z historii',
+      'Rundy, domeny, okno świeżości, cytowania',
+      'Eksport CSV, nic nie wychodzi z przeglądarki',
+    ],
+    preview: ['runda 1 · reddit.com, g2.com +34', '↳ 73 strony, 5 cytowanych', 'fora: 33 pobrane, 2 użyte'],
+    crossLabel: 'Czym jest query fan-out',
+    crossHref: '/blog/geo/query-fan-out/',
+  },
 ];
 
 const siteUrl = SITE_URL;
@@ -95,7 +113,7 @@ const toolsListSchema = buildGraph(
     url: `${siteUrl}/narzedzia/`,
     name: 'Darmowe narzędzia widoczności AI',
     description:
-      'Cztery darmowe narzędzia widocznosc.ai do testowania marki, treści, dostępu botów i query fan-out w wyszukiwarkach AI.',
+      'Pięć darmowych narzędzi widocznosc.ai do testowania marki, treści, dostępu botów i query fan-out w wyszukiwarkach AI.',
     inLanguage: 'pl-PL',
     isPartOf: { '@id': `${siteUrl}/#website` },
     publisher: { '@id': ORG_ID },
@@ -138,7 +156,7 @@ const toolsListSchema = buildGraph(
 
 <Layout
   title="Darmowe narzędzia widoczności AI – widocznosc.ai"
-  description="Cztery darmowe narzędzia od widocznosc.ai: Widoczność marki w AI, Ocena cytowalności strony, Dostęp botów AI i Analiza zapytań AI."
+  description="Pięć darmowych narzędzi od widocznosc.ai: Widoczność marki w AI, Ocena cytowalności strony, Dostęp botów AI, Analiza zapytań AI i bookmarklet Fan-out Explorer."
 >
   <Navbar />
 
@@ -167,12 +185,12 @@ const toolsListSchema = buildGraph(
         <aside class="tools-hero-panel" aria-label="Rekomendowana ścieżka testów">
           <div class="tools-panel-top">
             <span class="tools-panel-kicker">Start bez formularza</span>
-            <strong>4 testy, które pokazują jak AI widzi Twoją markę</strong>
+            <strong>4 testy i bookmarklet, które pokazują jak AI widzi Twoją markę</strong>
           </div>
           <dl class="tools-panel-stats">
             <div>
               <dt>narzędzia</dt>
-              <dd>4</dd>
+              <dd>5</dd>
             </div>
             <div>
               <dt>logowania</dt>
@@ -204,6 +222,11 @@ const toolsListSchema = buildGraph(
               <strong>Analiza zapytań AI</strong>
               <em>zapytania i źródła w tle</em>
             </li>
+            <li>
+              <span>05</span>
+              <strong>Fan-out Explorer</strong>
+              <em>bookmarklet do Twoich czatów w ChatGPT</em>
+            </li>
           </ol>
         </aside>
       </div>
@@ -226,6 +249,7 @@ const toolsListSchema = buildGraph(
             <li><a href="/narzedzia/ai-bots-check/">Dostęp botów AI</a></li>
             <li><a href="/narzedzia/url-check/">Ocena cytowalności strony</a></li>
             <li><a href="/narzedzia/fanout/">Analiza zapytań AI</a></li>
+            <li><a href="/narzedzia/fanout-explorer/">Fan-out Explorer (bookmarklet)</a></li>
           </ol>
         </div>
 
@@ -613,6 +637,10 @@ const toolsListSchema = buildGraph(
     --tool-accent: #a78bfa;
   }
 
+  .tool-card--rose {
+    --tool-accent: #fb7185;
+  }
+
   :global(:root[data-theme='light']) .tool-card--green {
     --tool-accent: #16a34a;
   }
@@ -623,6 +651,10 @@ const toolsListSchema = buildGraph(
 
   :global(:root[data-theme='light']) .tool-card--violet {
     --tool-accent: #7c3aed;
+  }
+
+  :global(:root[data-theme='light']) .tool-card--rose {
+    --tool-accent: #e11d48;
   }
 
   .tool-card-link {

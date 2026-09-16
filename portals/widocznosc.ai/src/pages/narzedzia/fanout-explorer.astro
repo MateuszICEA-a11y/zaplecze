@@ -1,0 +1,719 @@
+---
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import { buildGraph, softwareApplicationNode, breadcrumbNode } from '../../lib/schema';
+
+// Bookmarklety budowane skryptem scripts/build-fanout-bookmarklet.mjs z tools-src/fanout-explorer.js.
+const read = (name: string) =>
+  readFileSync(
+    fileURLToPath(new URL(`../../../public/tools/${name}`, import.meta.url)),
+    'utf8'
+  ).trim();
+const standalone = read('fanout-explorer.bookmarklet.txt');
+const source = read('fanout-explorer.js');
+const version = (source.match(/VERSION = '([^']+)'/) || [])[1] || '1.0.0';
+const standaloneKb = (Buffer.byteLength(standalone, 'utf8') / 1024).toFixed(0);
+
+const columns = [
+  ['nr', 'Kolejność, w jakiej ChatGPT wysyłał wyszukiwania.'],
+  [
+    'runda',
+    'Numer partii. ChatGPT szuka partiami: wysyła kilka zapytań, czyta wyniki i często dosyła kolejną partię.',
+  ],
+  [
+    'typ',
+    'Rodzaj wyszukiwania: fast (zwykłe), slow (głębsze), business (miejsca), image (obrazy), news, product i inne.',
+  ],
+  ['zapytanie', 'Dokładne słowa wysłane do wyszukiwarki, razem z operatorem site: i cudzysłowami.'],
+  [
+    'dni',
+    'Okno świeżości: 30 to ostatni miesiąc, 365 rok, 3650 dziesięć lat. Puste pole oznacza brak ograniczenia.',
+  ],
+  [
+    'domena',
+    'Witryna, do której ChatGPT ograniczył wyszukiwanie. To lista stron, którym model ufa w Twoim temacie.',
+  ],
+  ['wyniki', 'Ile stron wróciło z tego wyszukiwania.'],
+  [
+    'cytowane',
+    'Ile z nich ChatGPT pokazał jako źródło odpowiedzi. Zero też jest informacją: model przeczytał i pominął.',
+  ],
+];
+
+const faq = [
+  {
+    q: 'Czy bookmarklet wysyła moje rozmowy gdziekolwiek?',
+    a: 'Nie. Czyta rozmowę tym samym adresem, którym pobiera ją aplikacja ChatGPT, w Twojej zalogowanej sesji, buduje tabelę w przeglądarce i trzyma kopię czatu w localStorage chatgpt.com, żeby następne otwarcie było natychmiastowe. Nic nie trafia do widocznosc.ai ani do nikogo innego. Zakładka ma cały kod w sobie i nie łączy się z niczym poza chatgpt.com, nawet z widocznosc.ai.',
+  },
+  {
+    q: 'Dlaczego w kolumnie „zapytanie” widzę „ukryte przez ChatGPT”?',
+    a: 'Modele z rozumowaniem (GPT-5.6 Thinking i podobne) zapisują w rozmowie wyniki i cytowania każdej rundy, ale nie treść zapytań wysłanych do wyszukiwarki. Panel pokazuje wtedy jeden wiersz na rundę: domeny, z których wróciły strony, ich liczbę i to, które zostały zacytowane. Treść zapytań zobaczysz na modelach bez rozumowania (np. Instant), jeśli Twój plan pozwala je wybrać.',
+  },
+  {
+    q: 'Dlaczego kolumny „wyniki” i „cytowane” bywają puste?',
+    a: 'Dla wyszukiwań typu business i image ChatGPT nie ujawnia w rozmowie, co wróciło. Kolumna „cytowane” pokazuje wielokropek, dopóki odpowiedź nie jest zapisana. Zero oznacza, że panel sprawdził i nic z tego wyszukiwania nie trafiło do odpowiedzi.',
+  },
+  {
+    q: 'Co znaczy komunikat o limicie (429)?',
+    a: 'ChatGPT odrzuca zbyt częste odczyty rozmów. Panel czyta tylko wtedy, gdy ChatGPT odpowiada, gotowy czat kosztuje jeden odczyt, a czat otwarty wcześniej nie kosztuje nic, bo wraca z kopii. Gdy limit jednak przyjdzie, panel zostawia to, co ma, i próbuje ponownie po minucie.',
+  },
+  {
+    q: 'Czy działa w aplikacji ChatGPT na komputer, w Safari albo w Claude i Gemini?',
+    a: 'Nie. Narzędzie czyta format rozmów ChatGPT i działa na chatgpt.com w Chrome, Edge i Brave na komputerze. Aplikacja desktopowa nie ma paska zakładek. Safari i Firefoksa nie testowaliśmy.',
+  },
+  {
+    q: 'Czym to się różni od narzędzia „Analiza zapytań AI”?',
+    a: 'Analiza zapytań AI pyta model przez API OpenAI i pokazuje, jak model szuka, gdy ma włączone wyszukiwanie, bez logowania i na dowolną frazę. Bookmarklet czyta Twoje prawdziwe rozmowy na chatgpt.com: te same rundy, strony i cytowania, które widziałeś w odpowiedzi. Pierwsze jest szybkim sondażem, drugie dowodem z Twojego konta.',
+  },
+];
+
+const schema = buildGraph(
+  softwareApplicationNode({
+    slug: 'fanout-explorer',
+    name: 'Fan-out Explorer – bookmarklet do ChatGPT – widocznosc.ai',
+    description:
+      'Bezpłatny bookmarklet widocznosc.ai, który na chatgpt.com pokazuje query fan-out za Twoim promptem: każde wyszukiwanie, strony, które wróciły, i te zacytowane w odpowiedzi. Działa na żywo i na zapisanych czatach, nic nie wysyła.',
+    featureList: [
+      'Tabela wyszukiwań ChatGPT: runda, typ, zapytanie, okno świeżości, domena',
+      'Lista stron z każdego wyszukiwania z oznaczeniem cytowanych',
+      'Podsumowanie udziału forów (Reddit, Wykop, Quora, GoWork)',
+      'Tryb na żywo w trakcie odpowiedzi i odczyt zapisanych czatów',
+      'Eksport: kopiowanie zapytań, tabela do arkusza, CSV wyszukiwań i CSV źródeł',
+      'Tylko odczyt, dane zostają w przeglądarce',
+    ],
+  }),
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'Narzędzia', path: '/narzedzia/' },
+    { name: 'Fan-out Explorer', path: '/narzedzia/fanout-explorer/' },
+  ]),
+  {
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
+);
+---
+
+<Layout
+  title="Fan-out Explorer – bookmarklet pokazujący, czego ChatGPT szuka za Twoim promptem"
+  description="Darmowy bookmarklet do chatgpt.com: jedno kliknięcie i widzisz każde wyszukiwanie ChatGPT, strony, które wróciły, i te zacytowane w odpowiedzi. Na żywo i na zapisanych czatach. Nic nie wysyła."
+>
+  <script type="application/ld+json" is:inline set:html={schema} />
+
+  <Navbar />
+
+  <div class="flex-grow">
+    <section class="tool-hero">
+      <div class="content-container tool-hero-inner">
+        <nav class="tool-breadcrumb" aria-label="Ścieżka nawigacji">
+          <a href="/narzedzia/" class="tool-breadcrumb-link">Narzędzia</a>
+          <span class="tool-breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="tool-breadcrumb-current">Fan-out Explorer</span>
+        </nav>
+
+        <header class="tool-hero-header">
+          <span class="eyebrow tool-eyebrow">Bookmarklet · bezpłatny · wersja {version}</span>
+          <h1 class="tool-hero-title display-xxl">
+            Zobacz, czego <span class="tool-hero-accent">ChatGPT szuka</span> za Twoim promptem
+          </h1>
+          <p class="tool-hero-copy">
+            Fan-out Explorer to zakładka w przeglądarce. Klikasz ją na dowolnym czacie na
+            chatgpt.com i dostajesz tabelę: każde wyszukiwanie, które ChatGPT wysłał w tle, strony,
+            które z niego wróciły, i te, które trafiły do odpowiedzi jako źródło. Działa na żywo w
+            trakcie odpowiedzi i na zapisanych czatach. Niczego nie instalujesz, nic nie wychodzi z
+            Twojej przeglądarki.
+          </p>
+        </header>
+
+        <div class="install" id="instalacja">
+          <div class="install-drag">
+            <p class="install-step"><span>1</span> Przeciągnij przycisk na pasek zakładek</p>
+            <a
+              class="install-button"
+              href={standalone}
+              draggable="true"
+              title="Przeciągnij mnie na pasek zakładek"
+              onclick="return false"
+            >
+              ⚡ Fan-out Explorer
+            </a>
+            <p class="install-hint">
+              Pasek zakładek włączysz skrótem <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> (Mac: <kbd
+                >Cmd</kbd
+              >+<kbd>Shift</kbd>+<kbd>B</kbd>). Zakładka ma w sobie cały kod ({standaloneKb} KB) i nie
+              łączy się z niczym poza chatgpt.com. Gdy wydamy nową wersję, numer na tej stronie się zmieni,
+              a Ty przeciągasz przycisk jeszcze raz.
+            </p>
+          </div>
+          <div class="install-copy">
+            <p class="install-step"><span>2</span> Albo skopiuj i wklej jako adres zakładki</p>
+            <div class="install-copy-row">
+              <button type="button" class="btn-secondary" data-copy="standalone"
+                >Kopiuj kod zakładki ({standaloneKb} KB)</button
+              >
+            </div>
+            <p class="install-hint">
+              Dodaj zakładkę do dowolnej strony, kliknij ją prawym przyciskiem, wybierz „Edytuj” i
+              wklej skopiowany tekst w pole adresu. Na Windowsie długie zakładki nie zawsze
+              przeżywają przeciąganie, ta droga działa zawsze.
+            </p>
+          </div>
+          <div class="install-copy">
+            <p class="install-step"><span>3</span> Przeglądarka firmowa blokuje zakładki?</p>
+            <p class="install-hint">
+              Otwórz czat na chatgpt.com, naciśnij <kbd>F12</kbd>, przejdź do zakładki Console,
+              wklej skopiowany kod zakładki i zatwierdź Enterem. Chrome poprosi za pierwszym razem o
+              wpisanie <code>allow pasting</code>. Kod możesz wcześniej przeczytać:
+              <a href="/tools/fanout-explorer.js" target="_blank" rel="noopener"
+                >fanout-explorer.js</a
+              >.
+            </p>
+          </div>
+          <textarea id="copy-standalone" class="sr-only" readonly aria-hidden="true"
+            >{standalone}</textarea
+          >
+        </div>
+
+        <ol class="usage">
+          <li>
+            <b>Nowy prompt</b> – otwórz pusty czat na chatgpt.com, kliknij zakładkę, wyślij prompt. Wiersze
+            pojawiają się runda po rundzie.
+          </li>
+          <li>
+            <b>Zapisany czat</b> – otwórz dowolną rozmowę z historii i kliknij zakładkę. Pierwszy odczyt
+            trwa sekundę, kolejne są natychmiastowe.
+          </li>
+          <li>
+            <b>Nic się nie dzieje?</b> Kliknij zakładkę prawym przyciskiem, wybierz „Edytuj” i sprawdź,
+            czy adres zaczyna się od <code>javascript:</code>. Jeśli nie, użyj drogi 2.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="tool-overview">
+      <div class="content-container">
+        <h2 class="display-xl tool-overview-title">Co pokazuje panel</h2>
+        <p class="text-ink tool-overview-copy mt-6 max-w-3xl text-lg leading-relaxed">
+          Nad tabelą widzisz swój prompt i linie podsumowania: ile wyszukiwań poszło w ilu rundach,
+          ile stron wróciło, ile z nich ChatGPT pokazał jako źródło, a osobno to samo dla forów
+          (Reddit, Wykop, Quora, GoWork). Dalej jest tabela, jeden wiersz na wyszukiwanie, z
+          sortowaniem po każdej kolumnie. Plus przy wierszu otwiera listę stron pogrupowaną po
+          witrynie, z ptaszkiem przy każdej zacytowanej.
+        </p>
+
+        <div class="columns-table-wrap mt-10">
+          <table class="columns-table">
+            <thead>
+              <tr><th>Kolumna</th><th>Co pokazuje</th></tr>
+            </thead>
+            <tbody>
+              {
+                columns.map(([name, desc]) => (
+                  <tr>
+                    <>
+                      <td>
+                        <code>{name}</code>
+                      </td>
+                      <td>{desc}</td>
+                    </>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-12 grid gap-4 lg:grid-cols-2">
+          <div class="info-card">
+            <h3 class="info-card-title">Eksport</h3>
+            <ul class="info-list">
+              <li>
+                <b>Kopiuj zapytania</b> – sama kolumna zapytań, jedno na wiersz, prosto do narzędzia od
+                fraz.
+              </li>
+              <li>
+                <b>Kopiuj tabelę</b> – całość rozdzielona tabulatorami, do Arkuszy lub Excela.
+              </li>
+              <li>
+                <b>Pobierz CSV</b> – wiersz na wyszukiwanie, strony w dodatkowych kolumnach, identyfikator
+                czatu i data odczytu w nagłówku.
+              </li>
+              <li>
+                <b>Pobierz CSV źródeł</b> – wiersz na stronę, z hostem, tytułem i flagą cytowania.
+              </li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title">Jak z tego korzystać w pracy nad widocznością</h3>
+            <ul class="info-list">
+              <li>
+                <b>Frazy, które napisał ChatGPT</b> – zapytania z tabeli to gotowy zestaw fraz pod treść,
+                często z rokiem, słowem „opinie” albo „oficjalny”.
+              </li>
+              <li>
+                <b>Witryny, którym model ufa</b> – kolumna „domena” mówi, gdzie ChatGPT szuka na wyłączność.
+                Jeśli nie ma tam Ciebie, a jest konkurencja, to jest luka.
+              </li>
+              <li>
+                <b>Czytane i pominięte</b> – strona, która wraca w wynikach, ale nigdy nie jest cytowana,
+                potrzebuje innej naprawy niż ta, która nie wraca wcale.
+              </li>
+              <li>
+                <b>Ten sam prompt za miesiąc</b> – eksport ma datę i identyfikator czatu, więc porównanie
+                dwóch przejazdów to dwa pliki obok siebie.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-overview tool-overview--alt">
+      <div class="content-container">
+        <h2 class="display-xl tool-overview-title">Pytania i odpowiedzi</h2>
+        <div class="faq mt-8">
+          {
+            faq.map((f) => (
+              <details class="faq-item">
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))
+          }
+        </div>
+        <p class="tool-overview-copy mt-12 max-w-3xl text-lg leading-relaxed">
+          Narzędzie powstało z inspiracji bookmarkletem Orit Mutznik i rozszerzeniami FanoutFox
+          (Suganthan Mohanadasan) oraz Natiego Elimelecha. Kod napisaliśmy od zera, po polsku i z
+          myślą o polskich promptach: liczy Wykop i GoWork obok Reddita. Jeśli ChatGPT zmieni format
+          rozmów i tabela przestanie się wypełniać,
+          <a href="/kontakt/">daj nam znać</a>.
+        </p>
+        <div class="mt-10">
+          <a href="/kontakt/" class="btn-primary"
+            >Chcesz przełożyć fan-outy na plan treści? Porozmawiajmy</a
+          >
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <Footer />
+  <ScrollUpButton />
+</Layout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const ta = document.getElementById('copy-' + btn.dataset.copy) as HTMLTextAreaElement | null;
+      if (!ta) return;
+      const label = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(ta.value);
+      } catch {
+        ta.classList.remove('sr-only');
+        ta.select();
+        document.execCommand('copy');
+        ta.classList.add('sr-only');
+      }
+      btn.textContent = 'Skopiowano – wklej jako adres zakładki';
+      setTimeout(() => (btn.textContent = label), 2200);
+    });
+  });
+</script>
+
+<style>
+  .tool-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 104px 0 88px;
+    background:
+      radial-gradient(
+        circle at 50% 12%,
+        color-mix(in srgb, var(--accent-blue) 12%, transparent) 0%,
+        transparent 34%
+      ),
+      linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 78%);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .tool-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.16), transparent 62%);
+    pointer-events: none;
+  }
+
+  .tool-hero-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .tool-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 36px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-muted);
+  }
+
+  .tool-breadcrumb-link {
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .tool-breadcrumb-link:hover {
+    color: var(--ink);
+  }
+
+  .tool-breadcrumb-sep {
+    color: var(--ink-faint);
+  }
+
+  .tool-breadcrumb-current {
+    color: var(--ink);
+  }
+
+  .tool-eyebrow {
+    margin-bottom: 28px;
+  }
+
+  .tool-hero-title {
+    max-width: 980px;
+    margin: 0;
+    font-size: clamp(36px, 4.1vw, 56px);
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .tool-hero-accent {
+    color: var(--accent-blue);
+  }
+
+  .tool-hero-copy {
+    max-width: 780px;
+    margin: 28px 0 0;
+    font-family: var(--font-sans);
+    font-size: clamp(17px, 1.4vw, 21px);
+    line-height: 1.55;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+
+  /* Instalacja */
+  .install {
+    width: 100%;
+    max-width: 1080px;
+    margin-top: 48px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 900px) {
+    .install {
+      grid-template-columns: 1.1fr 1fr 1fr;
+    }
+  }
+
+  .install-drag,
+  .install-copy {
+    padding: 24px;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-lg, 16px);
+    background: color-mix(in srgb, var(--bg-surface-1) 82%, transparent);
+  }
+
+  .install-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 16px;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .install-step span {
+    display: inline-grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    background: var(--accent-blue);
+    color: #fff;
+    font-size: 13px;
+  }
+
+  .install-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 22px;
+    border-radius: 12px;
+    background: var(--accent-blue);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: grab;
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-blue) 35%, transparent);
+    user-select: none;
+  }
+
+  .install-button:active {
+    cursor: grabbing;
+  }
+
+  .install-hint {
+    margin: 14px 0 0;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-muted);
+  }
+
+  .install-hint kbd,
+  .install-hint code,
+  .usage code {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 12.5px;
+    padding: 1px 6px;
+    border-radius: 6px;
+    border: 1px solid var(--hairline-soft);
+    background: var(--bg-surface-1);
+    color: var(--ink);
+  }
+
+  .install-hint a {
+    color: var(--accent-blue);
+  }
+
+  .install-copy-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .usage {
+    max-width: 880px;
+    margin: 36px 0 0;
+    padding-left: 22px;
+    font-family: var(--font-sans);
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .usage li + li {
+    margin-top: 8px;
+  }
+
+  /* Sekcje opisowe */
+  .tool-overview {
+    padding: 72px 0 80px;
+  }
+
+  .tool-overview--alt {
+    border-top: 1px solid var(--hairline-soft);
+    background: var(--bg-surface-1);
+  }
+
+  .tool-overview-title {
+    max-width: 960px;
+    font-size: 35px;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  .tool-overview-copy {
+    font-size: 17px;
+    line-height: 1.62;
+  }
+
+  .tool-overview-copy a {
+    color: var(--accent-blue);
+  }
+
+  .columns-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-lg, 16px);
+  }
+
+  .columns-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 15px;
+  }
+
+  .columns-table th,
+  .columns-table td {
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .columns-table th {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+    background: var(--bg-surface-1);
+  }
+
+  .columns-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .columns-table code {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 13px;
+    color: var(--accent-blue);
+  }
+
+  .info-card {
+    padding: 26px 28px;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-lg, 16px);
+    background: var(--bg-surface-1);
+  }
+
+  .info-card-title {
+    margin: 0 0 14px;
+    font-family: var(--font-sans);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .info-list {
+    margin: 0;
+    padding-left: 18px;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .info-list li + li {
+    margin-top: 8px;
+  }
+
+  .faq {
+    max-width: 880px;
+  }
+
+  .faq-item {
+    border-top: 1px solid var(--hairline-soft);
+    padding: 6px 0;
+  }
+
+  .faq-item:last-child {
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    padding: 12px 0;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::before {
+    content: '+';
+    display: inline-block;
+    width: 22px;
+    color: var(--accent-blue);
+  }
+
+  .faq-item[open] summary::before {
+    content: '–';
+  }
+
+  .faq-item p {
+    margin: 0 0 14px 22px;
+    font-family: var(--font-sans);
+    font-size: 15.5px;
+    line-height: 1.62;
+    color: var(--ink-muted);
+  }
+
+  @media (max-width: 640px) {
+    .tool-hero {
+      padding: 72px 0 64px;
+    }
+
+    .tool-breadcrumb {
+      margin-bottom: 28px;
+      font-size: 13px;
+    }
+
+    .tool-eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .tool-hero-title {
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .tool-hero-copy {
+      max-width: 100%;
+      margin-top: 24px;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .install {
+      margin-top: 36px;
+    }
+
+    .tool-overview-title {
+      font-size: 28px;
+    }
+  }
+</style>
