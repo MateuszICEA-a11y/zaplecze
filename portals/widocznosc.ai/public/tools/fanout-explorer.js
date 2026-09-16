@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.3.1';
+  var VERSION = '1.3.2';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv:';
   var QUERIES_PREFIX = NS + ':q:';
@@ -33,13 +33,13 @@
     sports: { search: true, pool: 'web', pl: 'wyniki sportowe' },
     image: { search: true, pool: null, pl: 'wyszukiwanie obrazów (wyniki nieujawnione w danych)' },
     business: { search: true, pool: null, pl: 'wyszukiwanie miejsc (mapy; wyniki nieujawnione)' },
-    open: { search: false, pl: 'otwarcie strony, która wróciła z wyszukiwania' },
+    open: { search: false, pl: 'otwarcie strony, która została zwrócona w wynikach wyszukiwania' },
     find: { search: false, pl: 'szukanie tekstu na otwartej stronie' },
     click: { search: false, pl: 'przejście po linku na otwartej stronie' },
-    screenshot: { search: false, pl: 'zrzut otwartej strony' },
+    screenshot: { search: false, pl: 'zrzut ekranu otwartej strony' },
     scroll: { search: false, pl: 'przewinięcie otwartej strony' },
     length: { search: false, pl: 'wskazówka o długości odpowiedzi (nie jest wyszukiwaniem)' },
-    genui_run: { search: false, pl: 'budowa wykresu lub tabeli (nie jest wyszukiwaniem)' },
+    genui_run: { search: false, pl: 'generowanie wykresu lub tabeli (nie jest wyszukiwaniem)' },
   };
   var FORUM_HOSTS = ['reddit.com', 'wykop.pl', 'quora.com', 'gowork.pl', 'forum.pl'];
 
@@ -665,9 +665,9 @@
         + '<button data-a="copyq" title="Sama kolumna zapytań, jedno na wiersz">Kopiuj zapytania</button> '
         + '<button data-a="copyt" title="Cała tabela, do wklejenia w arkusz">Kopiuj tabelę</button> '
         + '<button data-a="csv" title="Jeden wiersz na wyszukiwanie, strony w dodatkowych kolumnach">Pobierz CSV</button> '
-        + '<button data-a="csvs" title="Jeden wiersz na stronę, z flagą cytowania">Pobierz CSV źródeł</button>';
+        + '<button data-a="csvs" title="Jeden wiersz na stronę, z oznaczeniem cytowania">Pobierz CSV źródeł</button>';
       else if (state.tab === 'domains') tools.innerHTML = '<label class="wf-chk"><input type="checkbox" data-a="onlycited"' + (state.onlyCited ? ' checked' : '') + '> tylko cytowane</label> '
-        + '<button data-a="copyd" title="Domena, kategoria, pobrane, cytowane – tabulatory">Kopiuj domeny</button> '
+        + '<button data-a="copyd" title="Domena, kategoria, pobrane, cytowane – rozdzielone tabulatorami">Kopiuj domeny</button> '
         + '<button data-a="csvd" title="Jeden wiersz na domenę">Pobierz CSV domen</button>';
       else tools.innerHTML = '';
     }
@@ -694,8 +694,8 @@
     h += '<p class="wf-meta">Odczyt: <span>' + esc(state.source) + '</span> · ' + esc(stamp(state.capturedAt || new Date()))
       + (s.recordedRounds ? ' · zapytania z nagrania: <span>' + s.recordedRounds + '</span> ' + plural(s.recordedRounds, 'runda', 'rundy', 'rund') : '')
       + '</p>';
-    if (s.hidden) h += '<p class="wf-note">W ' + s.hidden + ' ' + plural(s.hidden, 'rundzie', 'rundach', 'rundach') + ' brak treści zapytań: ChatGPT wysyła je tylko w trakcie odpowiedzi, a ten czat nie był wtedy nagrywany. Widać domeny, strony i cytowania każdej rundy. Otwórz panel przed wysłaniem promptu, a zapytania zostaną zapisane.</p>';
-    if (s.pending) h += '<p class="wf-note info">Odpowiedź na ' + s.pending + ' ' + plural(s.pending, 'prompt', 'prompty', 'promptów') + ' nie jest jeszcze zapisana, kolumna „cytowane” czeka.</p>';
+    if (s.hidden) h += '<p class="wf-note">Dla ' + s.hidden + ' ' + plural(s.hidden, 'rundy', 'rund', 'rund') + ' brak treści zapytań: ChatGPT wysyła je tylko w trakcie odpowiedzi, a ta rozmowa nie była wtedy nagrywana. Widać domeny, strony i cytowania każdej rundy. Otwórz panel przed wysłaniem promptu, a zapytania zostaną zapisane.</p>';
+    if (s.pending) h += '<p class="wf-note info">Odpowiedź na ' + s.pending + ' ' + plural(s.pending, 'prompt', 'prompty', 'promptów') + ' nie jest jeszcze zapisana, kolumna „cytowane” oczekuje na dane.</p>';
     return h;
   }
   function plural(n, one, few, many) {
@@ -708,7 +708,7 @@
   var CATS = [
     ['forum', 'Fora i społeczności', '#a78bfa'],
     ['opinie', 'Opinie, rankingi, porównania', '#fbbf24'],
-    ['sklep', 'Sklepy i marketplace', '#fb7185'],
+    ['sklep', 'Sklepy i platformy handlowe', '#fb7185'],
     ['media', 'Media i portale', '#38bdf8'],
     ['docs', 'Dokumentacja i pomoc producentów', '#34d399'],
     ['inst', 'Instytucje, nauka, encyklopedie', '#f472b6'],
@@ -747,7 +747,7 @@
     if (state.onlyCited) rows = rows.filter(function (d) { return d.cited > 0; });
     if (!rows.length) return '<div class="wf-empty">Brak domen do pokazania.</div>';
     var maxF = 1; rows.forEach(function (d) { maxF = Math.max(maxF, d.fetched); });
-    var h = '<p class="wf-meta">Wszystkie strony z tego czatu zebrane per witryna. Kategoria to heurystyka po adresie. Plakietka „site: ×N” przy domenie mówi, ile wyszukiwań ChatGPT ograniczył do tej witryny operatorem site:. Kliknij „+”, aby zobaczyć strony.</p>';
+    var h = '<p class="wf-meta">Wszystkie strony z tego czatu pogrupowane według witryn. Kategorie są przydzielane heurystycznie na podstawie adresu. Plakietka „site: ×N” przy domenie wskazuje, ile wyszukiwań ChatGPT ograniczył do tej witryny operatorem site:. Kliknij „+”, aby zobaczyć strony.</p>';
     CATS.forEach(function (c) {
       var list = rows.filter(function (d) { return d.cat === c[0]; });
       if (!list.length) return;
@@ -806,7 +806,7 @@
         var k = c[0];
         if (k === 'n' || k === 'round') h += '<td class="num">' + r[k] + '</td>';
         else if (k === 'type') h += '<td class="tp">' + esc(r.type) + '</td>';
-        else if (k === 'query') h += '<td class="q">' + (r.hidden ? '<span style="color:var(--faint)">zapytanie nie nagrane – runda z ' + r.pages.length + ' ' + plural(r.pages.length, 'stroną', 'stronami', 'stronami') + '</span>' : esc(r.query)) + (r.place ? ' <span class="chip">' + esc(r.place) + '</span>' : '') + '</td>';
+        else if (k === 'query') h += '<td class="q">' + (r.hidden ? '<span style="color:var(--faint)">zapytanie nienagrane – runda z ' + r.pages.length + ' ' + plural(r.pages.length, 'stroną', 'stronami', 'stronami') + '</span>' : esc(r.query)) + (r.place ? ' <span class="chip">' + esc(r.place) + '</span>' : '') + '</td>';
         else if (k === 'days') h += '<td class="num">' + esc(r.days) + '</td>';
         else if (k === 'lockedHost') h += '<td class="dm">' + (r.lockedHost ? (r.hidden ? '<span style="color:var(--muted)">' + esc(r.lockedHost) + '</span>' : '<span class="chip dom">' + esc(r.lockedHost) + '</span>') : '') + '</td>';
         else if (k === 'results') h += '<td class="num">' + (r.results == null ? '' : r.results) + '</td>';
@@ -834,35 +834,35 @@
   function legendHtml() {
     return '<div class="wf-ref">'
       + '<h3>Co widzisz w panelu</h3><dl>'
-      + '<dt>Prompt</dt><dd>Twoja wiadomość. Przy kilku promptach w jednym czacie każdy ma numer, a kolumna „prompt” w eksporcie mówi, do którego należy wiersz.</dd>'
-      + '<dt>Kafelki podsumowania</dt><dd>Ile wyszukiwań poszło w ilu rundach, ile stron wróciło i ile z nich ChatGPT pokazał jako źródło. Osobno liczone są fora: Reddit, Wykop, Quora, GoWork. Linia pod kafelkami mówi, skąd pochodzi odczyt: świeży odczyt albo kopia z przeglądarki.</dd><dt>Plakietka w nagłówku</dt><dd>„● na żywo” oznacza, że panel czuwa i dopyta o rozmowę, gdy ChatGPT zacznie odpowiadać. „czytam…” to trwający odczyt. Przy wyłączonym trybie na żywo plakietka pokazuje źródło ostatniego odczytu.</dd>'
+      + '<dt>Prompt</dt><dd>Twoja wiadomość. Przy kilku promptach w jednym czacie każdy ma numer, a kolumna „prompt” w eksporcie wskazuje, do którego z nich przypisany jest dany wiersz.</dd>'
+      + '<dt>Kafelki podsumowania</dt><dd>Ile wyszukiwań wykonano w ilu rundach, ile stron pobrano i ile z nich ChatGPT pokazał jako źródło. Osobno liczone są fora: Reddit, Wykop, Quora, GoWork. Linia pod kafelkami informuje, skąd pochodzi odczyt: świeży odczyt albo kopia z przeglądarki.</dd><dt>Plakietka w nagłówku</dt><dd>„● na żywo” oznacza, że panel czuwa i zaktualizuje dane o rozmowie, gdy ChatGPT zacznie odpowiadać. „czytam…” to trwający odczyt. Przy wyłączonym trybie na żywo plakietka pokazuje źródło ostatniego odczytu.</dd>'
       + '<dt>Kolumny</dt><dd>Kliknięcie nagłówka sortuje tabelę, drugie kliknięcie odwraca kolejność. Kolumny „typ” i „dni” pojawiają się tylko wtedy, gdy czat zawiera te dane.</dd><dt>nr</dt><dd>Kolejność, w jakiej ChatGPT wysyłał wyszukiwania. 1 to pierwsze.</dd>'
       + '<dt>runda</dt><dd>ChatGPT szuka partiami: wysyła kilka zapytań, czyta wyniki i często dosyła kolejną partię. To numer partii, liczony ciągiem przez cały czat.</dd>'
       + '<dt>typ</dt><dd>Rodzaj wyszukiwania, np. <code>fast</code> zwykłe, <code>slow</code> głębsze, <code>business</code> miejsca, <code>image</code> obrazy. Pełna lista w zakładce „Typy”.</dd>'
       + '<dt>zapytanie</dt><dd>Dokładne słowa wysłane do wyszukiwarki, razem z operatorem <code>site:</code> i cudzysłowami.</dd>'
-      + '<dt>dni</dt><dd>Okno świeżości: jak nowe miały być strony. 30 to ostatni miesiąc, 365 rok, 3650 dziesięć lat. Puste pole oznacza brak ograniczenia.</dd>'
-      + '<dt>domena</dt><dd>Jeśli wypełniona, ChatGPT ograniczył to wyszukiwanie do jednej witryny (parametr domeny albo <code>site:</code> w zapytaniu). Traktuj to jako listę witryn, którym model ufa w Twoim temacie.</dd>'
-      + '<dt>wyniki</dt><dd>Ile stron wróciło. Uwaga: ChatGPT zapisuje wyniki raz na rundę, więc dwa wyszukiwania z tej samej rundy bez ograniczenia domeny dzielą jedną pulę stron i pokazują tę samą liczbę. Puste dla <code>business</code> i <code>image</code>, bo danych nie ma w rozmowie.</dd>'
-      + '<dt>cytowane</dt><dd>Ile z tych stron ChatGPT pokazał jako źródło odpowiedzi (przypisy w tekście i lista źródeł). 0 zostaje w tabeli, bo mówi, co model przeczytał i pominął. Wielokropek oznacza, że odpowiedź jeszcze nie jest zapisana.</dd>'
-      + '<dt>Wiersz „runda” bez zapytania</dt><dd>ChatGPT wysyła treść zapytań tylko w strumieniu odpowiedzi, a w zapisanej rozmowie zostają wyniki i cytowania rund. Panel nagrywa zapytania, gdy jest otwarty w trakcie odpowiedzi, i trzyma je w przeglądarce razem z czatem. Czat z historii, który nie był nagrywany, pokazuje wiersz per runda: domeny, liczbę stron i cytowania.</dd>'
-      + '<dt>Brak kolumn „typ” i „dni”</dt><dd>Dla zapytań z nagrania ChatGPT zwykle nie podaje typu ani okna świeżości, więc panel ukrywa obie kolumny. W eksporcie typ takiego zapytania to „search”. Starszy format (linie fast/slow) jest nadal obsługiwany i wtedy kolumny wracają.</dd>'
+      + '<dt>dni</dt><dd>Okno świeżości: z jakiego okresu miały pochodzić strony. 30 to ostatni miesiąc, 365 rok, 3650 dziesięć lat. Puste pole oznacza brak ograniczenia.</dd>'
+      + '<dt>domena</dt><dd>Jeśli pole jest wypełnione, ChatGPT ograniczył to wyszukiwanie do jednej witryny (parametr domeny albo <code>site:</code> w zapytaniu). Traktuj to jako listę witryn, którym model ufa w Twoim temacie.</dd>'
+      + '<dt>wyniki</dt><dd>Liczba zwróconych stron. Uwaga: ChatGPT zapisuje wyniki raz na rundę, więc dwa wyszukiwania z tej samej rundy bez ograniczenia domeny współdzielą pulę stron i pokazują tę samą liczbę. Puste dla <code>business</code> i <code>image</code>, bo danych nie ma w rozmowie.</dd>'
+      + '<dt>cytowane</dt><dd>Ile z tych stron ChatGPT pokazał jako źródło odpowiedzi (przypisy w tekście i lista źródeł). Wartość 0 pozostaje w tabeli, ponieważ wskazuje, co model przeczytał i pominął. Wielokropek oznacza, że odpowiedź jeszcze nie jest zapisana.</dd>'
+      + '<dt>Wiersz „runda” bez zapytania</dt><dd>ChatGPT wysyła treść zapytań tylko w strumieniu odpowiedzi, a w zapisanej rozmowie pozostają wyniki i cytowania rund. Panel nagrywa zapytania, gdy jest otwarty w trakcie odpowiedzi, i przechowuje je w przeglądarce razem z czatem. Czat z historii, który nie był nagrywany, pokazuje jeden wiersz na rundę: domeny, liczbę stron i cytowania.</dd>'
+      + '<dt>Brak kolumn „typ” i „dni”</dt><dd>Dla zapytań z nagrania ChatGPT zwykle nie podaje typu ani okna świeżości, więc panel ukrywa obie kolumny. W eksporcie typ takiego zapytania to „search”. Starszy format (linie fast/slow) jest nadal obsługiwany i wtedy kolumny są ponownie widoczne.</dd>'
       + '<dt>Wiersze podświetlone</dt><dd>Wyszukiwania kierowane na fora albo pytające o opinie.</dd>'
-      + '<dt>+</dt><dd>Otwiera listę stron z tego wyszukiwania, pogrupowaną po witrynie. Ptaszek oznacza stronę użytą jako źródło. Plakietka przy witrynie, np. 1/3, mówi, ile jej stron zacytowano i ile wróciło.</dd>'
+      + '<dt>+</dt><dd>Otwiera listę stron z tego wyszukiwania, pogrupowaną według witryn. Znacznik (ptaszek) oznacza stronę użytą jako źródło. Plakietka przy witrynie, np. 1/3, informuje, ile z pobranych stron zostało zacytowanych.</dd>'
       + '</dl><h3>Zakładka Domeny</h3><dl>'
-      + '<dt>Co to jest</dt><dd>Wszystkie strony z czatu zebrane per witryna: ile wróciło, ile zacytowano i w ilu wyszukiwaniach ChatGPT ograniczył się do tej witryny operatorem site:. Witryny są pogrupowane w kategorie: fora i społeczności, opinie i rankingi, sklepy, media, dokumentacja producentów, instytucje oraz strony firm i marek.</dd>'
-      + '<dt>Kategoria</dt><dd>Heurystyka po nazwie hosta i ścieżkach, nie po treści. Reddit, Wykop, subdomeny forum/spolecznosc to fora; GoWork, Clutch, G2, Capterra, Trustpilot i adresy z „ranking”/„opinie” to opinie; x-kom, Allegro, Morele i ścieżki /produkt/ to sklepy; Bankier, money.pl i ścieżki /wiadomosci/ to media; help., docs., developers. to dokumentacja; .gov, Wikipedia, arXiv to instytucje. Reszta to strony firm. Pomyłki są możliwe, kategorię traktuj jako pierwsze sortowanie.</dd>'
-      + '<dt>site: ×N</dt><dd>Plakietka przy domenie: w tylu wyszukiwaniach ChatGPT ograniczył się do tej witryny operatorem site:. Domeny bez plakietki trafiły do wyników zwykłych wyszukiwań.</dd><dt>skala</dt><dd>Pasek pokazuje liczbę pobranych stron domeny na tle domeny z największą liczbą w tym czacie. To nie jest udział procentowy.</dd><dt>Tylko cytowane</dt><dd>Ukrywa domeny, z których nic nie trafiło do odpowiedzi. Bez filtra widać też te czytane i pomijane, a to często ciekawsza lista.</dd>'
+      + '<dt>Co to jest</dt><dd>Wszystkie strony z czatu pogrupowane według witryn: ile pobrano, ile zacytowano i w ilu wyszukiwaniach ChatGPT ograniczył się do tej witryny operatorem site:. Witryny są pogrupowane w kategorie: fora i społeczności, opinie i rankingi, sklepy, media, dokumentacja producentów, instytucje oraz strony firm i marek.</dd>'
+      + '<dt>Kategoria</dt><dd>Kategoryzacja oparta na heurystyce nazwy hosta i ścieżkach, nie po treści. Reddit, Wykop, subdomeny forum/spolecznosc to fora; GoWork, Clutch, G2, Capterra, Trustpilot i adresy z „ranking”/„opinie” to opinie; x-kom, Allegro, Morele i ścieżki /produkt/ to sklepy; Bankier, money.pl i ścieżki /wiadomosci/ to media; help., docs., developers. to dokumentacja; .gov, Wikipedia, arXiv to instytucje. Reszta to strony firm. Pomyłki są możliwe, kategorię traktuj jako wstępne grupowanie.</dd>'
+      + '<dt>site: ×N</dt><dd>Plakietka przy domenie: w tylu wyszukiwaniach ChatGPT ograniczył się do tej witryny operatorem site:. Domeny bez plakietki trafiły do wyników zwykłych wyszukiwań.</dd><dt>skala</dt><dd>Pasek pokazuje liczbę pobranych stron domeny na tle domeny z największą liczbą w tym czacie. To nie jest udział procentowy.</dd><dt>Tylko cytowane</dt><dd>Ukrywa domeny, z których nic nie trafiło do odpowiedzi. Bez filtra widać też te przeczytane i pominięte, a to często ciekawsza lista.</dd>'
       + '</dl><h3>Przyciski</h3><dl><dt>Rozwiń wszystko</dt><dd>Otwiera listy stron we wszystkich wierszach. Drugie kliknięcie zwija je z powrotem.</dd>'
-      + '<dt>Kopiuj zapytania</dt><dd>Sama kolumna zapytań, jedno na wiersz, do narzędzia od fraz.</dd>'
-      + '<dt>Kopiuj tabelę</dt><dd>Cała tabela rozdzielona tabulatorami, do wklejenia w Arkusze lub Excel.</dd>'
-      + '<dt>Pobierz CSV</dt><dd>Jeden wiersz na wyszukiwanie, strony w dodatkowych kolumnach, ptaszek przed adresem oznacza cytowanie. Na górze identyfikator czatu i data odczytu.</dd>'
-      + '<dt>Pobierz CSV źródeł</dt><dd>Jeden wiersz na stronę, z hostem, tytułem i flagą cytowania.</dd><dt>Kopiuj domeny</dt><dd>Zakładka Domeny: domena, kategoria, liczba pobranych i cytowanych stron oraz liczba wyszukiwań site:, rozdzielone tabulatorami.</dd><dt>Pobierz CSV domen</dt><dd>Jeden wiersz na domenę, z adresami zacytowanych stron w ostatniej kolumnie. Filtr „tylko cytowane” nie wpływa na eksport.</dd>'
-      + '<dt>Na żywo</dt><dd>Domyślnie włączone (zielony przycisk). Panel czuwa cały czas i pobiera rozmowę, gdy ChatGPT odpowiada, a przestaje, gdy odpowiedź jest zapisana. Wyłączone (czerwony przycisk) oznacza, że panel nie dopytuje w trakcie odpowiedzi. Rozmowę odczyta przy zmianie czatu, po nagraniu nowej partii zapytań albo na Odśwież. Zapytania ze strumienia są nagrywane w obu trybach. Ustawienie jest zapamiętywane. Przy limicie (HTTP 429) panel czeka minutę i próbuje ponownie.</dd><dt>Rozmiar panelu</dt><dd>Przeciągnij lewą krawędź, aby zmienić szerokość (zapamiętywana). Przycisk „–” albo dwuklik w nagłówek zwija panel do małego paska w prawym dolnym rogu, nie przerywając nagrywania. Kliknięcie paska albo przycisku „▢” rozwija go z powrotem.</dd>'
+      + '<dt>Kopiuj zapytania</dt><dd>Sama kolumna zapytań, jedno na wiersz, do narzędzia analizy słów kluczowych.</dd>'
+      + '<dt>Kopiuj tabelę</dt><dd>Cała tabela rozdzielona tabulatorami, do wklejenia w arkusz kalkulacyjny.</dd>'
+      + '<dt>Pobierz CSV</dt><dd>Jeden wiersz na wyszukiwanie, strony w dodatkowych kolumnach, znacznik przed adresem oznacza cytowanie. Na górze identyfikator czatu i data odczytu.</dd>'
+      + '<dt>Pobierz CSV źródeł</dt><dd>Jeden wiersz na stronę, z hostem, tytułem i oznaczeniem cytowania.</dd><dt>Kopiuj domeny</dt><dd>Zakładka Domeny: domena, kategoria, liczba pobranych i cytowanych stron oraz liczba wyszukiwań site:, rozdzielone tabulatorami.</dd><dt>Pobierz CSV domen</dt><dd>Jeden wiersz na domenę, z adresami zacytowanych stron w ostatniej kolumnie. Filtr „tylko cytowane” nie wpływa na eksport.</dd>'
+      + '<dt>Na żywo</dt><dd>Domyślnie włączone (zielony przycisk). Panel czuwa cały czas i pobiera rozmowę, gdy ChatGPT odpowiada, a przestaje, gdy odpowiedź jest zapisana. Wyłączone (czerwony przycisk) oznacza, że panel nie pobiera danych w trakcie odpowiedzi. Rozmowę odczyta przy zmianie czatu, po nagraniu nowej partii zapytań lub po kliknięciu Odśwież. Zapytania ze strumienia są nagrywane w obu trybach. Ustawienie jest zapamiętywane. Przy limicie (HTTP 429) panel czeka minutę i próbuje ponownie.</dd><dt>Rozmiar panelu</dt><dd>Przeciągnij lewą krawędź, aby zmienić szerokość (zapamiętywana). Przycisk „–” albo dwukrotne kliknięcie nagłówka zwija panel do małego paska w prawym dolnym rogu, nie przerywając nagrywania. Kliknięcie paska albo przycisku „▢” rozwija go z powrotem.</dd>'
       + '<dt>Odśwież</dt><dd>Jednorazowy ponowny odczyt, z pominięciem kopii w przeglądarce.</dd>'
-      + '</dl><h3>Prywatność</h3><dl><dd>Bookmarklet czyta rozmowę tym samym adresem, którym pobiera ją aplikacja ChatGPT, w Twojej sesji. Nic nie wysyła, promptów nie tworzy, a kopię czatu trzyma tylko w localStorage tej przeglądarki.</dd></dl></div>';
+      + '</dl><h3>Prywatność</h3><dl><dd>Skrypt (bookmarklet) czyta rozmowę z tego samego adresu, z którego pobiera ją aplikacja ChatGPT, w Twojej sesji. Nic nie wysyła, promptów nie tworzy, a kopię czatu przechowuje tylko w localStorage tej przeglądarki.</dd></dl></div>';
   }
   function typesHtml() {
-    var h = '<div class="wf-ref"><h3>Linie, które ChatGPT wysyła do narzędzia web.run</h3><p style="color:#b7bdcc">Każde polecenie to jedna linia tekstu, a pierwsze słowo mówi, co to jest. Postać wyszukiwania: <code>typ|zapytanie|dni|domena</code>, gdzie dni i domena są opcjonalne. Lista pochodzi z obserwacji rozmów, nie z dokumentacji OpenAI, więc nowe typy mogą się pojawić. W obecnym formacie (wrzesień 2026) ChatGPT zwykle nie zostawia tych linii w rozmowie, więc typy zobaczysz głównie w starszych czatach.</p><dl>';
+    var h = '<div class="wf-ref"><h3>Linie, które ChatGPT wysyła do narzędzia web.run</h3><p style="color:#b7bdcc">Każde polecenie to jedna linia tekstu, a pierwsze słowo określa jego rodzaj. Postać wyszukiwania: <code>typ|zapytanie|dni|domena</code>, gdzie dni i domena są opcjonalne. Lista pochodzi z obserwacji rozmów, nie z dokumentacji OpenAI, więc nowe typy mogą się pojawić. W obecnym formacie (wrzesień 2026) ChatGPT zwykle nie zostawia tych linii w rozmowie, więc typy zobaczysz głównie w starszych czatach.</p><dl>';
     Object.keys(TYPES).forEach(function (k) {
       var d = TYPES[k];
       h += '<dt><code>' + k + '</code>' + (d.search ? '' : ' <span class="chip">poza tabelą</span>') + (d.search && !d.pool ? ' <span class="chip">bez listy wyników</span>' : '') + '</dt><dd>' + esc(d.pl) + '</dd>';
@@ -905,7 +905,7 @@
     }).catch(function (err) {
       state.busy = false;
       if (err.rateLimited) {
-        state.note = 'ChatGPT ogranicza odczyty (429). Zostawiam to, co mam, i spróbuję za ' + Math.round(state.backoff / 1000) + ' s.';
+        state.note = 'ChatGPT ogranicza odczyty (429). Zachowuję dotychczasowe dane i ponowię próbę za ' + Math.round(state.backoff / 1000) + ' s.';
         render();
         if (state.retry) clearTimeout(state.retry);
         state.retry = setTimeout(function () { state.retry = null; state.backoff = Math.min(state.backoff * 2, 600000); load(true); }, state.backoff);
