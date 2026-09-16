@@ -134,7 +134,7 @@ Zakładkę można kliknąć przed wysłaniem promptu albo w dowolnym czacie z hi
 
 ## Sześć polskich promptów, sześć różnych fan-outów
 
-Wszystkie testy przeprowadzono 16 września 2026 roku na koncie Free, z wykorzystaniem modelu GPT-5.6. Jeden prompt na czat, bez historii, bez pamięci między rozmowami. W przypadku porównania CRM-ów zachowały się wyniki i cytowania bez treści zapytań. To przykłady pojedynczych sesji, a nie pomiar częstotliwości zachowań ChatGPT.
+Wszystkie testy przeprowadzono 16 września 2026 roku na koncie Free, z wykorzystaniem modelu GPT-5.6. Jeden prompt na czat, bez historii, bez pamięci między rozmowami. To przykłady pojedynczych sesji, a nie pomiar częstotliwości zachowań ChatGPT.
 
 ### Kredyt hipoteczny dla singla, „chcę realne opinie klientów”
 
@@ -183,7 +183,7 @@ W tej odpowiedzi o AI Search **model zacytował wyłącznie źródła producent�
 
 ### Shoper kontra WooCommerce i porównanie CRM-ów
 
-Dwa prompty porównawcze przyniosły różne wyniki. Porównanie Shopera i WooCommerce z prośbą o ceny wygenerowało cztery zapytania o cenniki, hosting i opinie, 47 stron oraz 4 cytowania (z cyberfolks.pl i niepoddawajsie.pl). W porównaniu trzech systemów CRM z prośbą o opinie użytkowników pojawiły się platformy Reddit, G2 i Capterra: ze 100 stron zacytowanych zostało 10, w tym pięć wątków z Reddita i cennik Livespace. Dla CRM nie nagraliśmy treści zapytań, więc analizujemy tu wyniki i cytowania.
+Dwa prompty porównawcze przyniosły różne wyniki. Porównanie Shopera i WooCommerce z prośbą o ceny wygenerowało cztery zapytania o cenniki, hosting i opinie, 47 stron oraz 4 cytowania (z cyberfolks.pl i niepoddawajsie.pl). W porównaniu trzech systemów CRM z prośbą o opinie użytkowników pojawiły się platformy Reddit, G2 i Capterra: ze 100 stron zacytowanych zostało 10, w tym pięć wątków z Reddita i cennik Livespace. Pierwsza runda to sześć zapytań: dla każdego systemu osobno opinie (z nazwami Reddita, G2, Capterry i Trustpilota w treści zapytania) i cennik. W drugiej rundzie model zawęził wyszukiwanie operatorem `site:` do stron z recenzjami konkretnych produktów na G2 i Capterrze.
 
 W tej próbie Reddit był cytowany w odpowiedzi o CRM, a nie o kredycie czy agencjach. **Obok Reddita warto sprawdzać publikacje branżowe, społeczności klientów i platformy opinii, takie jak Clutch.** Sześć sesji nie wystarcza, aby ustalić stałą hierarchię tych źródeł.
 
