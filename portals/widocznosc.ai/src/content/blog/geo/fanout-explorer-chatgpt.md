@@ -21,13 +21,17 @@ faq:
       Nie. Zakładka ma cały kod w sobie, odczytuje rozmowę z tego samego adresu URL, z którego pobiera ją aplikacja
       ChatGPT, i trzyma kopię w localStorage Twojej przeglądarki. Nie łączy się z widocznosc.ai ani z
       żadnym serwerem poza chatgpt.com.
-  - q: 'Dlaczego w historii czatu nie widzę treści zapytań?'
+  - q: 'Czy panel pokaże zapytania także w czacie z historii?'
     a: >-
-      W sprawdzonych nowych czatach treść zapytań jest dostępna tylko w strumieniu odpowiedzi.
-      Panel rejestruje ją, jeśli został uruchomiony przed wysłaniem promptu i ma włączony tryb „na żywo”.
-      Bez nagrania czat z historii pokazuje rundy, domeny, liczbę stron i cytowania.
-      Zapytania można odczytać, jeśli nagranie nadal jest w pamięci tej przeglądarki
-      lub zachowały się one w danych starszej rozmowy.
+      Tak, od wersji 1.4.0. Panel czyta rozmowę z tego samego adresu co aplikacja ChatGPT, a te dane
+      zawierają treść zapytań również w zapisanych czatach. Wcześniejsze wersje korzystały z adresu,
+      który zapytań nie zawiera, i musiały nagrywać je w trakcie odpowiedzi. Jeśli po aktualizacji
+      nadal widzisz wiersz rundy bez zapytań, podmień zakładkę na nową wersję i przeładuj chatgpt.com.
+  - q: 'Jak sprawdzić, czy moja firma jest w cytowaniach?'
+    a: >-
+      Wpisz domenę albo nazwę firmy w polu „Twoja marka” pod zakładkami panelu, np. grupa-icea.pl, ICEA.
+      Panel pokaże, czy ChatGPT pobrał Twoje strony, czy je zacytował i czy wymienił markę w odpowiedzi,
+      a w tabeli i zakładce Domeny podświetli wiersze Twojej marki.
   - q: 'Czy to działa w Claude, Gemini albo w aplikacji ChatGPT na komputer?'
     a: >-
       Nie. Narzędzie analizuje format rozmów chatgpt.com i działa w przeglądarkach Chrome, Edge i Brave na komputerze.
@@ -106,11 +110,21 @@ Z tą klasyfikacją warto pamiętać o dwóch rzeczach:
 
 <span class="img-caption">Zakładka Domeny: witryny z tego samego czatu pogrupowane w kategorie.</span>
 
+### Czy Twoja firma jest w cytowaniach
+
+Od wersji 1.5.0 pod zakładkami panelu jest pole **„Twoja marka”**. Wpisz w nim domenę albo nazwę firmy (kilka wartości rozdziel przecinkami, np. `grupa-icea.pl, ICEA`). Nad tabelą pojawi się ramka z trzema odpowiedziami:
+
+- **W wynikach** – czy ChatGPT pobrał strony z Twojej domeny i ile ich było.
+- **Cytowana** – czy któraś z nich trafiła do odpowiedzi jako źródło.
+- **Wymieniona w odpowiedzi** – czy nazwa albo domena marki pojawia się w tekście odpowiedzi, nawet bez linku.
+
+Pod spodem panel wypisuje zapytania, w których puli wyników znalazły się Twoje strony, oraz same adresy, a w tabeli i zakładce Domeny podświetla wiersze marki. Dwie uwagi. ChatGPT zapisuje wyniki dla całej rundy, więc przy kilku zapytaniach w jednej rundzie nie da się wskazać, które z nich zwróciło Twoją stronę. Nazwa jest szukana w adresie, tytule strony i tekście odpowiedzi, dlatego krótkie, popularne słowa mogą dać fałszywe trafienia – domena jest pewniejsza. Wpis zostaje zapamiętany w przeglądarce, więc przy kolejnych czatach wystarczy otworzyć panel.
+
 ## Jak zainstalować i kiedy kliknąć
 
 Instalacja polega na przeciągnięciu przycisku ze strony narzędzia [Fan-out Explorer](/narzedzia/fanout-explorer/) na pasek zakładek. W systemie Windows długie kody zakładek nie zawsze działają poprawnie po przeciągnięciu, dlatego dostępna jest też metoda polegająca na ręcznym skopiowaniu kodu do pola adresu zakładki. Jeśli zakładki są zablokowane, ale masz dostęp do narzędzi deweloperskich, możesz uruchomić kod przez konsolę.
 
-Ważniejsze od samej instalacji jest jedno: **zakładkę należy kliknąć przed wysłaniem promptu i pozostawić włączony tryb „na żywo”**. W sprawdzonych nowych czatach ChatGPT przesyła treść zapytań wyłącznie w strumieniu odpowiedzi, w wywołaniu funkcji narzędzia (ang. tool call), które nie jest zapisywane w historii rozmowy. Sprawdziliśmy to na koncie Free z modelem GPT-5.6 bez trybu rozumowania (Thinking) oraz na koncie Business z włączonym GPT-5.6 Thinking. W obu przypadkach zapisana rozmowa ma puste pola tam, gdzie znajdowały się polecenia wyszukiwania; zostają tylko wyniki i cytowania. Panel podpina się więc pod strumień, rejestruje zapytania i przechowuje je w przeglądarce razem z czatem. Czat z historii, który nie był rejestrowany na żywo, pokazuje jeden wiersz na rundę: domeny, liczbę stron i cytowania, ale bez dokładnej treści zapytań. Nagranie można odczytać ponownie w tej samej przeglądarce, dopóki pozostaje w jej pamięci. Starsze rozmowy mogą zawierać zapytania zapisane bezpośrednio w danych czatu.
+Zakładkę można kliknąć przed wysłaniem promptu albo w dowolnym czacie z historii. **Od wersji 1.4.0 panel czyta rozmowę z tego samego adresu, z którego pobiera ją aplikacja ChatGPT, a te dane zawierają treść zapytań także w zapisanych czatach.** Wcześniejsze wersje korzystały ze starszego adresu rozmowy, w którym polecenia wyszukiwania są puste, dlatego musiały nagrywać zapytania w trakcie odpowiedzi – i wtedy wymagały kliknięcia przed promptem. Przy włączonym trybie „na żywo” panel czeka, aż ChatGPT skończy odpowiadać, i dopiero wtedy raz odczytuje rozmowę. Częste odczyty w trakcie generowania kończyły się blokadą ChatGPT (błąd 429). Jeśli masz starszą wersję zakładki, podmień ją na nową i przeładuj chatgpt.com.
 
 ![Strona narzędzia Fan-out Explorer na widocznosc.ai: tytuł, opis działania i trzy sposoby instalacji – przeciągnięcie przycisku na pasek zakładek, wklejenie kodu jako adresu zakładki i uruchomienie w konsoli przeglądarki](../../../assets/images/blog-geo-fanout-explorer-install.webp)
 
@@ -181,17 +195,17 @@ Sześć promptów to za mało na pełną statystykę, ale wystarczająco dużo, 
 4. **Sprawdzaj różne warianty promptu.** W naszych przykładach prośby o opinie wiązały się z obecnością forów i serwisów opinii, a pytania o ceny — ze sklepami i producentami. Monitoring powinien uwzględniać oba warianty; ta próba nie dowodzi, że model zawsze zachowa się tak samo.
 5. **Ten sam prompt za miesiąc może wygenerować inny fan-out.** Eksport zawiera datę i identyfikator czatu, więc porównanie dwóch sesji sprowadza się do zestawienia dwóch plików.
 
-Warto też wiedzieć, czego w danych nie ma. W sprawdzonych nowych czatach nie były dostępne typ wyszukiwania ani parametr przedziału czasowego w dniach; w starszych rozmowach panel nadal może je pokazać. Dostępne są wyniki dla każdej rundy oraz — jeśli zostały przechwycone — treść zapytania i domena z operatora `site:`. W porównawczej sesji z trybem Thinking ten sam prompt o CRM wygenerował na koncie Business 11 rund i 230 stron, a na koncie Free – 2 rundy i 100 stron. To porównanie dwóch sesji na różnych kontach, więc nie izoluje wpływu samego trybu Thinking.
+Warto też wiedzieć, czego w danych nie ma. W sprawdzonych nowych czatach nie były dostępne typ wyszukiwania ani parametr przedziału czasowego w dniach; w starszych rozmowach panel nadal może je pokazać. Dostępne są wyniki dla każdej rundy oraz treść zapytania i domena z operatora `site:`. W porównawczej sesji z trybem Thinking ten sam prompt o CRM wygenerował na koncie Business 11 rund i 230 stron, a na koncie Free – 2 rundy i 100 stron. To porównanie dwóch sesji na różnych kontach, więc nie izoluje wpływu samego trybu Thinking.
 
 ## Prosty proces do powtarzania co miesiąc
 
 1. Wypisz 10 promptów, które wpisują Twoi klienci, w dwóch wariantach: z prośbą o opinie i bez.
-2. Dla każdego otwórz pusty czat, kliknij zakładkę, sprawdź, czy tryb „na żywo” jest włączony, i wyślij prompt.
+2. Dla każdego otwórz pusty czat, wyślij prompt i po odpowiedzi kliknij zakładkę (albo otwórz panel wcześniej z włączonym trybem „na żywo”).
 3. Skopiuj zapytania do listy fraz. Pamiętaj, że to frazy, które wygenerował model (LLM), a nie tradycyjne narzędzie SEO.
 4. Posortuj tabelę według domen i zapisz, do których witryn model zawęził wyszukiwanie (użył operatora `site:`).
 5. Sprawdź wiersze forów i wiersze z nazwami marek w cudzysłowie.
 6. Pobierz plik CSV ze źródłami i zarchiwizuj go z odpowiednią datą.
-7. Znajdź w tabeli swoje strony. Jeśli wróciły w wynikach, ale nie zostały zacytowane, porównaj ich dopasowanie do pytania z cytowanymi źródłami. Sprawdź, czy treść odpowiada na zarejestrowane zapytania.
+7. Wpisz swoją domenę w polu „Twoja marka” i sprawdź ramkę nad tabelą. Jeśli wróciły w wynikach, ale nie zostały zacytowane, porównaj ich dopasowanie do pytania z cytowanymi źródłami. Sprawdź, czy treść odpowiada na zarejestrowane zapytania.
 8. Jeśli Twoich stron nie ma w wynikach wcale, a konkurencja jest, sprawdź ich indeksowanie w Google Search Console i Bing Webmaster Tools oraz to, czy robots.txt nie blokuje bota OAI-SearchBot.
 9. Za miesiąc powtórz proces i porównaj wyniki.
 
