@@ -16,7 +16,7 @@ intent: 'HOWTO'
 level: 'L2'
 faqHeading: 'Pytania o Fan-out Explorer'
 faq:
-  - q: 'Czy bookmarklet wysyła moje rozmowy gdziekolwiek?'
+  - q: 'Czy bookmarklet przesyła moje rozmowy na zewnątrz?'
     a: >-
       Nie. Zakładka ma cały kod w sobie, odczytuje rozmowę z tego samego adresu URL, z którego pobiera ją aplikacja
       ChatGPT, i trzyma kopię w localStorage Twojej przeglądarki. Nie łączy się z widocznosc.ai ani z

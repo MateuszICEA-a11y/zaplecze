@@ -38,20 +38,20 @@ const columns = [
 
 const faq = [
   {
-    q: 'Czy bookmarklet wysyła moje rozmowy gdziekolwiek?',
-    a: 'Nie. Czyta rozmowę tym samym adresem, którym pobiera ją aplikacja ChatGPT, w Twojej zalogowanej sesji, buduje tabelę w przeglądarce i trzyma kopię czatu w localStorage chatgpt.com, żeby następne otwarcie było natychmiastowe. Nic nie trafia do widocznosc.ai ani do nikogo innego. Zakładka ma cały kod w sobie i nie łączy się z niczym poza chatgpt.com, nawet z widocznosc.ai.',
+    q: 'Czy bookmarklet przesyła moje rozmowy na zewnątrz?',
+    a: 'Nie. Bookmarklet pobiera rozmowę z tego samego adresu co aplikacja ChatGPT i korzysta przy tym z Twojej zalogowanej sesji. Tabelę tworzy w przeglądarce, a kopię czatu zapisuje w jej pamięci (localStorage), dzięki czemu kolejne otwarcie panelu jest natychmiastowe. Cały kod znajduje się w zakładce, która łączy się wyłącznie z chatgpt.com. Żadne dane nie trafiają do widocznosc.ai ani do innych serwisów.',
   },
   {
     q: 'Dlaczego w kolumnie „zapytanie” widzę „nienagrane”?',
-    a: 'ChatGPT wysyła treść zapytań tylko w strumieniu odpowiedzi, a w zapisanej rozmowie zostają wyniki i cytowania każdej rundy. Panel podpina się pod ten strumień i nagrywa zapytania, gdy jest otwarty w chwili wysyłania promptu, a potem trzyma je w przeglądarce razem z czatem. Czat z historii, który nie był nagrywany, pokazuje jeden wiersz na rundę: domeny, z których wróciły strony, ich liczbę i to, które zostały zacytowane. Dotyczy to każdego modelu, także bez trybu „Myślenie”.',
+    a: 'ChatGPT wysyła treść zapytań tylko w strumieniu odpowiedzi, a w zapisanej rozmowie zostają wyniki i cytowania każdej rundy. Panel podpina się pod ten strumień i nagrywa zapytania, gdy jest otwarty w chwili wysyłania promptu, a potem trzyma je w przeglądarce razem z czatem. Czat z historii, który nie był nagrywany, pokazuje jeden wiersz na rundę: domeny, z których wróciły strony, ich liczbę i to, które zostały zacytowane. Dotyczy to każdego modelu, także bez trybu Thinking.',
   },
   {
     q: 'Dlaczego kolumny „wyniki” i „cytowane” bywają puste?',
     a: 'W starszych czatach z kolumną „typ” wyszukiwania business i image nie mają wyników, bo ChatGPT nie ujawniał w rozmowie, co wróciło. Kolumna „cytowane” pokazuje wielokropek, dopóki odpowiedź nie jest zapisana. Zero oznacza, że panel sprawdził i nic z tego wyszukiwania nie trafiło do odpowiedzi.',
   },
   {
-    q: 'Co znaczy komunikat o limicie (429)?',
-    a: 'ChatGPT odrzuca zbyt częste odczyty rozmów. Panel czyta tylko wtedy, gdy ChatGPT odpowiada, gotowy czat kosztuje jeden odczyt, a czat otwarty wcześniej nie kosztuje nic, bo wraca z kopii. Gdy limit jednak przyjdzie, panel zostawia to, co ma, i próbuje ponownie po minucie.',
+    q: 'Co oznacza komunikat o limicie (429)?',
+    a: 'ChatGPT blokuje zbyt częste pobieranie rozmów. Panel pobiera rozmowę tylko wtedy, gdy ChatGPT generuje odpowiedź. Zakończona rozmowa wymaga jednego pobrania, a rozmowa otwarta wcześniej nie wymaga żadnego, bo panel wczytuje ją z zapisanej kopii. Jeśli limit mimo to zostanie przekroczony, panel zachowuje dotychczasowe dane i ponawia próbę po minucie.',
   },
   {
     q: 'Czy działa w aplikacji ChatGPT na komputer, w Safari albo w Claude i Gemini?',
