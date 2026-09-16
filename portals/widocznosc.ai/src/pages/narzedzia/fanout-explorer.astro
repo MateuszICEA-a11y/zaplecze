@@ -76,7 +76,7 @@ const schema = buildGraph(
     slug: 'fanout-explorer',
     name: 'Fan-out Explorer – bookmarklet do ChatGPT – widocznosc.ai',
     description:
-      'Bezpłatny bookmarklet widocznosc.ai, który na chatgpt.com pokazuje query fan-out za Twoim promptem: każde wyszukiwanie, strony, które wróciły, i te zacytowane w odpowiedzi. Nagrywa zapytania w trakcie odpowiedzi, czyta zapisane czaty, nic nie wysyła.',
+      'Bezpłatny bookmarklet widocznosc.ai, który na chatgpt.com pokazuje query fan-out ChatGPT: każde wyszukiwanie, strony, które wróciły, i te zacytowane w odpowiedzi. Nagrywa zapytania w trakcie odpowiedzi, czyta zapisane czaty, nic nie wysyła.',
     featureList: [
       'Tabela wyszukiwań ChatGPT: runda, typ, zapytanie, okno świeżości, domena',
       'Lista stron z każdego wyszukiwania z oznaczeniem cytowanych',
@@ -104,7 +104,7 @@ const schema = buildGraph(
 ---
 
 <Layout
-  title="Fan-out Explorer – bookmarklet pokazujący, czego ChatGPT szuka za Twoim promptem"
+  title="Fan-out Explorer – zobacz, czego ChatGPT szuka w sieci, zanim Ci odpowie"
   description="Darmowy bookmarklet do chatgpt.com: jedno kliknięcie i widzisz każde wyszukiwanie ChatGPT, strony, które wróciły, i te zacytowane w odpowiedzi. Na żywo i na zapisanych czatach. Nic nie wysyła."
 >
   <script type="application/ld+json" is:inline set:html={schema} />
@@ -123,15 +123,16 @@ const schema = buildGraph(
         <header class="tool-hero-header">
           <span class="eyebrow tool-eyebrow">Bookmarklet · bezpłatny · wersja {version}</span>
           <h1 class="tool-hero-title display-xxl">
-            Zobacz, czego <span class="tool-hero-accent">ChatGPT szuka</span> za Twoim promptem
+            Fan-out Explorer – zobacz, czego <span class="tool-hero-accent">ChatGPT szuka</span> w sieci, zanim Ci odpowie
           </h1>
           <p class="tool-hero-copy">
-            Fan-out Explorer to zakładka w przeglądarce. Klikasz ją na dowolnym czacie na
-            chatgpt.com i dostajesz tabelę: każde wyszukiwanie, które ChatGPT wysłał w tle, strony,
-            które z niego wróciły, i te, które trafiły do odpowiedzi jako źródło. Treść zapytań
-            ChatGPT wysyła tylko w trakcie odpowiedzi, więc panel otwierasz przed wysłaniem promptu
-            i nagrywa runda po rundzie. Zapisany czat z historii pokazuje rundy, domeny, strony i
-            cytowania. Niczego nie instalujesz, nic nie wychodzi z Twojej przeglądarki.
+            Zanim ChatGPT odpowie na pytanie, zwykle przeszukuje sieć. Twój prompt rozbija na kilka
+            lub kilkanaście zapytań (to tzw. query fan-out), przegląda dziesiątki stron i cytuje tylko
+            kilka z nich. Tych zapytań nie widać w oknie czatu. Fan-out Explorer to zakładka
+            w przeglądarce, która je pokazuje: każde wyszukiwanie, strony, które z niego wróciły, i te,
+            które trafiły do odpowiedzi jako źródło. Otwórz panel przed wysłaniem promptu, bo treść
+            zapytań ChatGPT przesyła tylko w trakcie odpowiedzi. W czatach z historii zobaczysz rundy,
+            domeny, strony i cytowania. Niczego nie instalujesz, a dane nie opuszczają Twojej przeglądarki.
           </p>
         </header>
 
