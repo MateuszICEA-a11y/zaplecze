@@ -33,7 +33,7 @@ faq:
   - q: 'Czym Fan-out Explorer różni się od narzędzia Analiza zapytań AI na widocznosc.ai?'
     a: >-
       Analiza zapytań AI pyta model przez API OpenAI i pokazuje, jak model szuka informacji na dowolną frazę,
-      bez logowania. Bookmarklet analizuje Twoje prawdziwe rozmowy na chatgpt.com, czyli te same rundy,
+      bez logowania. Bookmarklet analizuje Twoje rozmowy na chatgpt.com, czyli te same rundy,
       strony i cytowania, które widziałeś w wygenerowanej odpowiedzi.
 ---
 Kiedy ChatGPT odpowiada na pytanie o kredyt, laptop albo agencję SEO, nie wyszukuje dokładnie Twojej frazy. **Rozbija prompt na kilka do kilkunastu zapytań, wysyła je partiami, analizuje dziesiątki stron i cytuje zaledwie kilka.** Ten proces to [query fan-out](/geo/query-fan-out/), który od dłuższego czasu jest w SEO głośnym tematem, głównie za sprawą narzędzi pozwalających śledzić go na żywo. Zbudowaliśmy własne rozwiązanie, dostosowane do języka polskiego, i przetestowaliśmy za jego pomocą sześć polskich promptów. Poniżej znajdziesz narzędzie, dane i wnioski dla marki, która chce być cytowana w odpowiedziach AI.
@@ -143,4 +143,4 @@ Warto też wiedzieć, czego w danych nie ma. W obecnym formacie ChatGPT nie poka
 7. Popraw strony, na które wskazuje tabela, zaczynając od tych przeanalizowanych, ale pomijanych.
 8. Za miesiąc powtórz proces i porównaj wyniki.
 
-Jeśli wolisz szybki test bez logowania do ChatGPT, na widocznosc.ai dostępna jest też [Analiza zapytań AI](/narzedzia/fanout/), która pyta model przez API i pokazuje zapytania pomocnicze oraz cytowane domeny. Bookmarklet daje dokładnie to samo, ale na podstawie prawdziwej rozmowy na Twoim koncie. A jeśli chcesz, żeby to, co pokazuje tabela, zamienić w plan treści i cytowań, zobacz, jak pracujemy nad [pozycjonowaniem w ChatGPT](/pozycjonowanie-ai/chatgpt/).
+Jeśli wolisz szybki test bez logowania do ChatGPT, na widocznosc.ai dostępna jest też [Analiza zapytań AI](/narzedzia/fanout/), która pyta model przez API i pokazuje zapytania pomocnicze oraz cytowane domeny. Bookmarklet daje dokładnie to samo, ale na podstawie rozmowy na Twoim koncie. A jeśli chcesz, żeby to, co pokazuje tabela, zamienić w plan treści i cytowań, zobacz, jak pracujemy nad [pozycjonowaniem w ChatGPT](/pozycjonowanie-ai/chatgpt/).
