@@ -12,11 +12,14 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.2.0';
+  var VERSION = '1.3.0';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv:';
   var QUERIES_PREFIX = NS + ':q:';
   var SITE = 'https://widocznosc.ai/narzedzia/fanout-explorer/';
+  var PREF_LIVE = NS + ':live', PREF_WIDTH = NS + ':w';
+  function pref(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function setPref(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 
   /* ---------- słownik typów linii web.run ---------- */
   var TYPES = {
@@ -399,20 +402,28 @@
   /* ---------- stan ---------- */
   var state = {
     id: '', model: null, source: '', capturedAt: null, sort: { col: 'n', dir: 1 }, tab: 'table',
-    expanded: {}, live: true, timer: null, backoff: 60000, note: '', busy: false, recorded: 0, onlyCited: false, domOpen: {},
+    expanded: {}, live: pref(PREF_LIVE) !== '0', timer: null, retry: null, backoff: 60000, min: false, note: '', busy: false, recorded: 0, onlyCited: false, domOpen: {},
   };
 
   /* ---------- panel ---------- */
   var CSS = ''
     + '#' + NS + '{--bg:#08090c;--s1:#11141a;--s2:#171b23;--line:rgba(255,255,255,.07);--line2:rgba(255,255,255,.12);--ink:#fff;--muted:#a6abb5;--faint:#6b7280;--blue:#0a9cff;--blue-soft:rgba(10,156,255,.16);--green:#34d399;--green-soft:rgba(52,211,153,.14);--amber:#fbbf24;--violet:#a78bfa;--rose:#fb7185;--r:10px;'
-    + 'position:fixed;top:0;right:0;width:min(1000px,96vw);height:100vh;z-index:2147483000;background:var(--bg);color:var(--ink);font:13px/1.5 "Inter Variable",Inter,-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;box-shadow:-24px 0 64px rgba(0,0,0,.55);display:flex;flex-direction:column;border-left:1px solid var(--line);letter-spacing:-.005em}'
+    + 'position:fixed;top:0;right:0;width:min(1000px,96vw);min-width:340px;max-width:96vw;height:100vh;z-index:2147483000;background:var(--bg);color:var(--ink);font:13px/1.5 "Inter Variable",Inter,-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;box-shadow:-24px 0 64px rgba(0,0,0,.55);display:flex;flex-direction:column;border-left:1px solid var(--line);letter-spacing:-.005em}'
     + '#' + NS + ' *{box-sizing:border-box}'
+    + '#' + NS + ' .wf-grip{position:absolute;left:-5px;top:0;bottom:0;width:12px;cursor:col-resize;z-index:2}'
+    + '#' + NS + ' .wf-grip:hover,#' + NS + '.resizing .wf-grip{background:var(--blue-soft);box-shadow:inset 2px 0 0 var(--blue)}'
+    + '#' + NS + '.resizing{user-select:none}'
+    + '#' + NS + '.min{top:auto;bottom:16px;right:16px;width:auto!important;min-width:0;height:auto;border-radius:12px;border:1px solid var(--line2);box-shadow:0 12px 40px rgba(0,0,0,.5)}'
+    + '#' + NS + '.min .wf-bar,#' + NS + '.min .wf-body,#' + NS + '.min .wf-grip,#' + NS + '.min [data-a=refresh],#' + NS + '.min [data-a=live],#' + NS + '.min .wf-brand .ver{display:none}'
+    + '#' + NS + '.min .wf-head{padding:8px 12px;border-bottom:none;background:var(--s1);border-radius:12px;cursor:pointer}'
+    + '#' + NS + ' button[data-a=live].on{background:var(--green-soft);border-color:rgba(52,211,153,.45);color:var(--green)}'
+    + '#' + NS + ' button[data-a=live].off{background:rgba(251,113,133,.14);border-color:rgba(251,113,133,.45);color:var(--rose)}'
     + '#' + NS + ' a{color:inherit}'
-    + '#' + NS + ' .wf-head{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--s1),var(--bg))}'
+    + '#' + NS + ' .wf-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:12px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--s1),var(--bg))}'
     + '#' + NS + ' .wf-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;letter-spacing:-.02em}'
     + '#' + NS + ' .wf-brand .wm{color:var(--ink)}#' + NS + ' .wf-brand .wm b{color:var(--blue);font-weight:700}'
     + '#' + NS + ' .wf-brand .sep{width:1px;height:16px;background:var(--line2)}'
-    + '#' + NS + ' .wf-brand .nm{color:var(--muted);font-weight:500}#' + NS + ' .wf-brand .ver{color:var(--faint);font-weight:400;font-size:11px;margin-left:4px}'
+    + '#' + NS + ' .wf-brand .nm{color:var(--muted);font-weight:500;white-space:nowrap}#' + NS + ' .wf-brand .ver{color:var(--faint);font-weight:400;font-size:11px;margin-left:4px}'
     + '#' + NS + ' .wf-spacer{flex:1}'
     + '#' + NS + ' button{background:var(--s1);color:var(--ink);border:1px solid var(--line2);border-radius:8px;padding:6px 11px;font:inherit;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s}'
     + '#' + NS + ' button:hover{background:var(--s2);border-color:rgba(255,255,255,.2)}'
@@ -495,15 +506,21 @@
     if (st) st.remove();
     st = document.createElement('style'); st.id = NS + '-css'; st.textContent = CSS; document.head.appendChild(st);
     var root = el('<div id="' + NS + '" role="dialog" aria-label="Fan-out Explorer">'
+      + '<div class="wf-grip" title="Przeciągnij, aby zmienić szerokość"></div>'
       + '<div class="wf-head"><div class="wf-brand"><a class="wm" href="' + SITE + '" target="_blank" rel="noopener" style="text-decoration:none">widocznosc<b>.ai</b></a><span class="sep"></span><span class="nm">Fan-out Explorer</span><span class="ver">v' + VERSION + '</span></div>'
       + '<span class="chip" data-r="pill"></span><div class="wf-spacer"></div>'
       + '<button data-a="refresh" title="Odczytaj rozmowę ponownie">Odśwież</button>'
       + '<button data-a="live" title="Czytaj rozmowę na bieżąco, dopóki ChatGPT odpowiada"></button>'
+      + '<button class="wf-x" data-a="min" title="Zwiń do paska">–</button>'
       + '<button class="wf-x" data-a="close" title="Zamknij (Esc)">×</button></div>'
       + '<div class="wf-bar"><div class="wf-tabs"><button data-t="table">Wyszukiwania</button><button data-t="domains">Domeny</button><button data-t="legend">Legenda</button><button data-t="types">Typy</button></div>'
       + '<span data-r="tools"></span></div>'
       + '<div class="wf-body" data-r="body"></div></div>');
+    var w = parseInt(pref(PREF_WIDTH), 10);
+    if (w > 0) root.style.width = Math.min(w, Math.round(window.innerWidth * 0.96)) + 'px';
     document.body.appendChild(root);
+    root.querySelector('.wf-grip').addEventListener('mousedown', startResize);
+    root.querySelector('.wf-head').addEventListener('dblclick', function (e) { if (!e.target.closest('button,a')) toggleMin(); });
     root.addEventListener('click', onClick);
     root.addEventListener('change', onChange);
     document.addEventListener('keydown', onKey);
@@ -514,8 +531,32 @@
     if (t && t.getAttribute('data-a') === 'onlycited') { state.onlyCited = !!t.checked; render(); }
   }
   function onKey(e) { if (e.key === 'Escape') close(); }
+  function toggleMin() {
+    var r = document.getElementById(NS); if (!r) return;
+    state.min = !state.min;
+    r.classList.toggle('min', state.min);
+    var b = q('[data-a=min]'); if (b) { b.textContent = state.min ? '▢' : '–'; b.title = state.min ? 'Rozwiń panel' : 'Zwiń do paska'; }
+  }
+  function startResize(e) {
+    var r = document.getElementById(NS); if (!r || state.min) return;
+    e.preventDefault();
+    r.classList.add('resizing');
+    function move(ev) {
+      var w = Math.max(340, Math.min(Math.round(window.innerWidth * 0.96), window.innerWidth - ev.clientX));
+      r.style.width = w + 'px';
+    }
+    function up() {
+      r.classList.remove('resizing');
+      document.removeEventListener('mousemove', move);
+      document.removeEventListener('mouseup', up);
+      setPref(PREF_WIDTH, String(parseInt(r.style.width, 10) || ''));
+    }
+    document.addEventListener('mousemove', move);
+    document.addEventListener('mouseup', up);
+  }
   function close() {
     stopLive();
+    if (state.retry) { clearTimeout(state.retry); state.retry = null; }
     var r = document.getElementById(NS); if (r) r.remove();
     document.removeEventListener('keydown', onKey);
   }
@@ -526,8 +567,9 @@
     var a = b.getAttribute('data-a'), t = b.getAttribute('data-t');
     if (t) { state.tab = t; render(); return; }
     if (a === 'close') close();
+    else if (a === 'min') { toggleMin(); if (state.min) return; }
     else if (a === 'refresh') load(true);
-    else if (a === 'live') { state.live = !state.live; if (state.live) startLive(); else stopLive(); render(); }
+    else if (a === 'live') { state.live = !state.live; setPref(PREF_LIVE, state.live ? '1' : '0'); if (state.live) startLive(); else stopLive(); render(); }
     else if (a === 'expand') {
       var all = state.model ? state.model.rows.every(function (r) { return state.expanded[r.n]; }) : false;
       state.expanded = {};
@@ -608,9 +650,9 @@
     var body = q('[data-r=body]'); if (!body) return;
     var pill = q('[data-r=pill]');
     var liveBtn = q('[data-a=live]');
-    if (liveBtn) liveBtn.textContent = state.live ? 'Na żywo: wł.' : 'Na żywo: wył.';
+    if (liveBtn) { liveBtn.textContent = state.live ? '● Na żywo: wł.' : '○ Na żywo: wył.'; liveBtn.className = state.live ? 'on' : 'off'; }
     if (pill) {
-      pill.className = 'chip' + (state.live && state.timer ? ' live' : '');
+      pill.className = 'chip' + (state.live && state.timer && !state.busy ? ' live' : '');
       pill.textContent = state.busy ? 'czytam…' : state.live && state.timer ? '● na żywo' : state.source || '';
     }
     var tabs = document.getElementById(NS).querySelectorAll('[data-t]');
@@ -813,7 +855,7 @@
       + '<dt>Kopiuj tabelę</dt><dd>Cała tabela rozdzielona tabulatorami, do wklejenia w Arkusze lub Excel.</dd>'
       + '<dt>Pobierz CSV</dt><dd>Jeden wiersz na wyszukiwanie, strony w dodatkowych kolumnach, ptaszek przed adresem oznacza cytowanie. Na górze identyfikator czatu i data odczytu.</dd>'
       + '<dt>Pobierz CSV źródeł</dt><dd>Jeden wiersz na stronę, z hostem, tytułem i flagą cytowania.</dd>'
-      + '<dt>Na żywo</dt><dd>Panel dopytuje o rozmowę tylko wtedy, gdy ChatGPT odpowiada, i przestaje, gdy odpowiedź jest zapisana. Przy limicie (HTTP 429) czeka minutę i próbuje ponownie.</dd>'
+      + '<dt>Na żywo</dt><dd>Domyślnie włączone (zielony przycisk). Panel czuwa cały czas i pobiera rozmowę, gdy ChatGPT odpowiada, a przestaje, gdy odpowiedź jest zapisana. Wyłączone (czerwony przycisk) oznacza odczyt tylko na Odśwież. Ustawienie jest zapamiętywane. Przy limicie (HTTP 429) panel czeka minutę i próbuje ponownie.</dd><dt>Rozmiar panelu</dt><dd>Przeciągnij lewą krawędź, aby zmienić szerokość (zapamiętywana). Przycisk „–” albo dwuklik w nagłówek zwija panel do małego paska w rogu, nie przerywając nagrywania; kliknięcie paska rozwija go z powrotem.</dd>'
       + '<dt>Odśwież</dt><dd>Jednorazowy ponowny odczyt, z pominięciem kopii w przeglądarce.</dd>'
       + '</dl><h3>Prywatność</h3><dl><dd>Bookmarklet czyta rozmowę tym samym adresem, którym pobiera ją aplikacja ChatGPT, w Twojej sesji. Nic nie wysyła, promptów nie tworzy, a kopię czatu trzyma tylko w localStorage tej przeglądarki.</dd></dl></div>';
   }
@@ -838,7 +880,7 @@
     var id = conversationId();
     if (!id) {
       state.model = null; state.note = 'Panel nagrywa. Wyślij prompt w tym czacie, a zapytania i wyniki pojawią się runda po rundzie.';
-      render(); if (state.live) startLive(); return;
+      render(); ensureLive(); return;
     }
     state.id = id;
     if (!force) {
@@ -847,7 +889,7 @@
         apply(cached.conv, 'kopia z przeglądarki');
         state.capturedAt = new Date(cached.at || Date.now());
         render();
-        if (state.model.stats.pending && state.live) startLive();
+        ensureLive();
         return;
       }
     }
@@ -857,14 +899,14 @@
       apply(conv, 'świeży odczyt');
       writeCache(id, conv);
       render();
-      if (state.live && state.model.stats.pending) startLive(); else stopLive();
+      ensureLive();
     }).catch(function (err) {
       state.busy = false;
       if (err.rateLimited) {
         state.note = 'ChatGPT ogranicza odczyty (429). Zostawiam to, co mam, i spróbuję za ' + Math.round(state.backoff / 1000) + ' s.';
         render();
-        stopLive();
-        state.timer = setTimeout(function () { state.timer = null; state.backoff = Math.min(state.backoff * 2, 600000); load(true); }, state.backoff);
+        if (state.retry) clearTimeout(state.retry);
+        state.retry = setTimeout(function () { state.retry = null; state.backoff = Math.min(state.backoff * 2, 600000); load(true); }, state.backoff);
       } else {
         state.note = 'Nie udało się odczytać rozmowy (' + err.message + '). Upewnij się, że jesteś zalogowany, i kliknij Odśwież.';
         render();
@@ -875,21 +917,24 @@
     // przycisk „Zatrzymaj” w kompozytorze pojawia się tylko podczas generowania odpowiedzi
     return !!document.querySelector('button[data-testid="stop-button"],button[aria-label*="Stop"],button[aria-label*="Zatrzymaj"]');
   }
+  function ensureLive() { if (state.live && !state.timer) startLive(); }
   function startLive() {
     stopLive();
+    // Obserwator działa, dopóki tryb jest włączony: co 4 s sprawdza DOM (tanie), a rozmowę
+    // pobiera tylko, gdy ChatGPT właśnie odpowiada, zmienił się czat albo odpowiedź czeka na zapis.
     var lastId = conversationId(), idleTicks = 0;
     state.timer = setInterval(function () {
+      if (!document.getElementById(NS)) { stopLive(); return; }
       var id = conversationId();
       if (id && id !== lastId) { lastId = id; idleTicks = 0; load(true); return; }
       if (!id) return;
       if (answering()) { idleTicks = 0; if (!state.busy) load(true); return; }
-      if (state.model && state.model.stats.pending) { idleTicks++; if (idleTicks % 2 === 0 && !state.busy) load(true); if (idleTicks > 12) stopLive(); return; }
-      if (state.model && !state.model.stats.pending && idleTicks++ > 1) stopLive();
+      if (state.model && state.model.stats.pending) { idleTicks++; if (idleTicks % 2 === 0 && idleTicks <= 12 && !state.busy) load(true); }
     }, 4000);
     render();
   }
   function stopLive() {
-    if (state.timer) { clearInterval(state.timer); clearTimeout(state.timer); state.timer = null; }
+    if (state.timer) { clearInterval(state.timer); state.timer = null; }
     var pill = q('[data-r=pill]'); if (pill) { pill.className = 'chip'; pill.textContent = state.source || ''; }
   }
 
