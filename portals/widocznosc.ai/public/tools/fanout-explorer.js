@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.1.0';
+  var VERSION = '1.2.0';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv:';
   var QUERIES_PREFIX = NS + ':q:';
@@ -399,58 +399,92 @@
   /* ---------- stan ---------- */
   var state = {
     id: '', model: null, source: '', capturedAt: null, sort: { col: 'n', dir: 1 }, tab: 'table',
-    expanded: {}, live: true, timer: null, backoff: 60000, note: '', busy: false, recorded: 0,
+    expanded: {}, live: true, timer: null, backoff: 60000, note: '', busy: false, recorded: 0, onlyCited: false, domOpen: {},
   };
 
   /* ---------- panel ---------- */
   var CSS = ''
-    + '#' + NS + '{position:fixed;top:0;right:0;width:min(960px,96vw);height:100vh;z-index:2147483000;background:#0f1117;color:#e7e9ee;font:13px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;box-shadow:-8px 0 32px rgba(0,0,0,.45);display:flex;flex-direction:column;border-left:1px solid #262a35}'
+    + '#' + NS + '{--bg:#08090c;--s1:#11141a;--s2:#171b23;--line:rgba(255,255,255,.07);--line2:rgba(255,255,255,.12);--ink:#fff;--muted:#a6abb5;--faint:#6b7280;--blue:#0a9cff;--blue-soft:rgba(10,156,255,.16);--green:#34d399;--green-soft:rgba(52,211,153,.14);--amber:#fbbf24;--violet:#a78bfa;--rose:#fb7185;--r:10px;'
+    + 'position:fixed;top:0;right:0;width:min(1000px,96vw);height:100vh;z-index:2147483000;background:var(--bg);color:var(--ink);font:13px/1.5 "Inter Variable",Inter,-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;box-shadow:-24px 0 64px rgba(0,0,0,.55);display:flex;flex-direction:column;border-left:1px solid var(--line);letter-spacing:-.005em}'
     + '#' + NS + ' *{box-sizing:border-box}'
-    + '#' + NS + ' .wf-head{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #262a35;background:#141722}'
-    + '#' + NS + ' .wf-title{font-weight:700;font-size:14px;letter-spacing:.01em}'
-    + '#' + NS + ' .wf-title small{font-weight:400;color:#8b93a7;margin-left:6px}'
-    + '#' + NS + ' .wf-title a{color:#7c86ff;text-decoration:none}'
+    + '#' + NS + ' a{color:inherit}'
+    + '#' + NS + ' .wf-head{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--s1),var(--bg))}'
+    + '#' + NS + ' .wf-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;letter-spacing:-.02em}'
+    + '#' + NS + ' .wf-brand .wm{color:var(--ink)}#' + NS + ' .wf-brand .wm b{color:var(--blue);font-weight:700}'
+    + '#' + NS + ' .wf-brand .sep{width:1px;height:16px;background:var(--line2)}'
+    + '#' + NS + ' .wf-brand .nm{color:var(--muted);font-weight:500}#' + NS + ' .wf-brand .ver{color:var(--faint);font-weight:400;font-size:11px;margin-left:4px}'
     + '#' + NS + ' .wf-spacer{flex:1}'
-    + '#' + NS + ' button{background:#1f2433;color:#e7e9ee;border:1px solid #2f3546;border-radius:6px;padding:5px 10px;font:inherit;font-size:12px;cursor:pointer;white-space:nowrap}'
-    + '#' + NS + ' button:hover{background:#2a3044}'
-    + '#' + NS + ' button.wf-x{padding:4px 9px;font-size:15px;line-height:1}'
-    + '#' + NS + ' .wf-bar{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px;border-bottom:1px solid #262a35;align-items:center}'
-    + '#' + NS + ' .wf-tabs{display:flex;gap:2px;margin-right:auto}'
-    + '#' + NS + ' .wf-tabs button{border-radius:6px 6px 0 0;border-bottom:none;background:transparent}'
-    + '#' + NS + ' .wf-tabs button.on{background:#1f2433;border-color:#3b4258}'
-    + '#' + NS + ' .wf-body{flex:1;overflow:auto;padding:12px 14px 40px}'
-    + '#' + NS + ' .wf-prompt{background:#1a1e2b;border-left:3px solid #7c86ff;padding:8px 10px;margin:0 0 8px;border-radius:0 6px 6px 0}'
-    + '#' + NS + ' .wf-prompt b{color:#7c86ff;margin-right:6px}'
-    + '#' + NS + ' .wf-sum{color:#b7bdcc;margin:0 0 12px;font-size:12.5px}'
-    + '#' + NS + ' .wf-sum span{color:#e7e9ee;font-weight:600}'
-    + '#' + NS + ' .wf-note{color:#ffb86b;margin:0 0 10px;font-size:12.5px}'
-    + '#' + NS + ' table{width:100%;border-collapse:collapse;font-size:12.5px}'
-    + '#' + NS + ' th{position:sticky;top:-12px;background:#141722;text-align:left;padding:6px 8px;border-bottom:1px solid #2f3546;cursor:pointer;user-select:none;white-space:nowrap;font-weight:600;color:#b7bdcc}'
-    + '#' + NS + ' th.sorted{color:#fff}'
-    + '#' + NS + ' td{padding:5px 8px;border-bottom:1px solid #1f2433;vertical-align:top}'
-    + '#' + NS + ' tr.forum td{background:#20192a}'
+    + '#' + NS + ' button{background:var(--s1);color:var(--ink);border:1px solid var(--line2);border-radius:8px;padding:6px 11px;font:inherit;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s}'
+    + '#' + NS + ' button:hover{background:var(--s2);border-color:rgba(255,255,255,.2)}'
+    + '#' + NS + ' button.wf-x{padding:4px 10px;font-size:16px;line-height:1;color:var(--muted)}'
+    + '#' + NS + ' button.primary{background:var(--blue);border-color:var(--blue);color:#fff}#' + NS + ' button.primary:hover{background:#2aa8ff}'
+    + '#' + NS + ' .wf-bar{display:flex;flex-wrap:wrap;gap:6px;padding:10px 18px;border-bottom:1px solid var(--line);align-items:center}'
+    + '#' + NS + ' .wf-tabs{display:flex;gap:4px;margin-right:auto;background:var(--s1);padding:3px;border-radius:999px;border:1px solid var(--line)}'
+    + '#' + NS + ' .wf-tabs button{border:none;background:transparent;border-radius:999px;padding:5px 12px;color:var(--muted)}'
+    + '#' + NS + ' .wf-tabs button.on{background:var(--blue);color:#fff}'
+    + '#' + NS + ' .wf-body{flex:1;overflow:auto;padding:16px 18px 48px}'
+    + '#' + NS + ' .wf-prompt{position:relative;background:var(--s1);border:1px solid var(--line);border-left:3px solid var(--blue);padding:10px 14px;margin:0 0 10px;border-radius:0 var(--r) var(--r) 0;font-size:13.5px;line-height:1.5}'
+    + '#' + NS + ' .wf-prompt b{color:var(--blue);margin-right:8px;font-weight:600}'
+    + '#' + NS + ' .wf-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:12px 0}'
+    + '#' + NS + ' .wf-stat{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px}'
+    + '#' + NS + ' .wf-stat dt{margin:0;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}'
+    + '#' + NS + ' .wf-stat dd{margin:4px 0 0;font-size:22px;font-weight:700;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums}'
+    + '#' + NS + ' .wf-stat dd small{font-size:12px;font-weight:500;color:var(--muted);margin-left:6px;letter-spacing:0}'
+    + '#' + NS + ' .wf-meta{color:var(--faint);font-size:12px;margin:0 0 12px}'
+    + '#' + NS + ' .wf-meta span{color:var(--muted)}'
+    + '#' + NS + ' .wf-note{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.25);color:#fcd77a;border-radius:var(--r);padding:9px 12px;margin:0 0 12px;font-size:12.5px}'
+    + '#' + NS + ' .wf-note.info{background:var(--blue-soft);border-color:rgba(10,156,255,.3);color:#9fd3ff}'
+    + '#' + NS + ' table{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}'
+    + '#' + NS + ' th{position:sticky;top:-16px;z-index:1;background:var(--s1);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line2);cursor:pointer;user-select:none;white-space:nowrap;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}'
+    + '#' + NS + ' th.sorted{color:var(--blue)}'
+    + '#' + NS + ' td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}'
+    + '#' + NS + ' tbody tr:last-child td{border-bottom:none}'
+    + '#' + NS + ' tbody tr:not(.detail):hover td{background:rgba(255,255,255,.025)}'
+    + '#' + NS + ' tr.forum td{background:rgba(167,139,250,.07)}'
     + '#' + NS + ' td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}'
-    + '#' + NS + ' td.q{word-break:break-word;max-width:420px}'
-    + '#' + NS + ' td.tp{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;color:#9fd6ff}'
-    + '#' + NS + ' td.dm{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px}'
-    + '#' + NS + ' button.wf-more{padding:0 6px;font-size:13px;line-height:18px}'
-    + '#' + NS + ' tr.detail td{background:#12151f;padding:8px 12px 10px 34px}'
-    + '#' + NS + ' .wf-host{margin:4px 0 2px;color:#8b93a7;font-weight:600}'
+    + '#' + NS + ' td.q{word-break:break-word;max-width:460px}'
+    + '#' + NS + ' td.tp,#' + NS + ' td.dm{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px}'
+    + '#' + NS + ' td.tp{color:var(--blue)}'
+    + '#' + NS + ' .chip{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:500;background:var(--s2);border:1px solid var(--line2);color:var(--muted);white-space:nowrap}'
+    + '#' + NS + ' .chip.ok{background:var(--green-soft);border-color:rgba(52,211,153,.35);color:var(--green)}'
+    + '#' + NS + ' .chip.zero{color:var(--faint)}'
+    + '#' + NS + ' .chip.dom{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--ink)}'
+    + '#' + NS + ' .chip.live{background:var(--green-soft);color:var(--green);border-color:rgba(52,211,153,.35)}'
+    + '#' + NS + ' button.wf-more{padding:0 7px;font-size:13px;line-height:20px;border-radius:6px}'
+    + '#' + NS + ' tr.detail td{background:var(--bg);padding:10px 14px 12px 40px}'
+    + '#' + NS + ' .wf-host{margin:6px 0 2px;color:var(--muted);font-weight:600;font-size:12px}'
     + '#' + NS + ' .wf-pg{margin:0;padding:0;list-style:none}'
-    + '#' + NS + ' .wf-pg li{padding:1px 0 1px 20px;position:relative;word-break:break-all}'
-    + '#' + NS + ' .wf-pg li.c::before{content:"✓";position:absolute;left:0;color:#5be49b;font-weight:700}'
-    + '#' + NS + ' .wf-pg li.c{color:#fff}'
-    + '#' + NS + ' .wf-pg li a{color:inherit;text-decoration:none}'
-    + '#' + NS + ' .wf-pg li a:hover{text-decoration:underline}'
-    + '#' + NS + ' .wf-empty{color:#8b93a7;padding:30px 0;text-align:center}'
+    + '#' + NS + ' .wf-pg li{padding:2px 0 2px 22px;position:relative;word-break:break-all;color:var(--muted)}'
+    + '#' + NS + ' .wf-pg li.c{color:var(--ink)}'
+    + '#' + NS + ' .wf-pg li.c::before{content:"✓";position:absolute;left:2px;color:var(--green);font-weight:700}'
+    + '#' + NS + ' .wf-pg li a{text-decoration:none}#' + NS + ' .wf-pg li a:hover{text-decoration:underline}'
+    + '#' + NS + ' .wf-pg li .t{color:var(--faint)}'
+    + '#' + NS + ' .wf-empty{color:var(--muted);padding:48px 0;text-align:center}'
     + '#' + NS + ' .wf-ref{max-width:820px}'
-    + '#' + NS + ' .wf-ref h3{margin:14px 0 6px;font-size:13px;color:#fff}'
-    + '#' + NS + ' .wf-ref dl{margin:0}'
-    + '#' + NS + ' .wf-ref dt{font-weight:600;margin-top:8px}'
-    + '#' + NS + ' .wf-ref dd{margin:2px 0 0;color:#b7bdcc}'
-    + '#' + NS + ' .wf-ref code{font-family:ui-monospace,Menlo,Consolas,monospace;background:#1f2433;padding:1px 5px;border-radius:4px;font-size:11.5px}'
-    + '#' + NS + ' .wf-pill{display:inline-block;padding:1px 7px;border-radius:99px;font-size:11px;background:#2a3044;color:#b7bdcc;margin-left:6px}'
-    + '#' + NS + ' .wf-pill.live{background:#193626;color:#5be49b}';
+    + '#' + NS + ' .wf-ref h3{margin:18px 0 8px;font-size:13px;color:var(--ink);text-transform:uppercase;letter-spacing:.06em}'
+    + '#' + NS + ' .wf-ref dl{margin:0}#' + NS + ' .wf-ref dt{font-weight:600;margin-top:10px}#' + NS + ' .wf-ref dd{margin:2px 0 0;color:var(--muted)}'
+    + '#' + NS + ' .wf-ref code,#' + NS + ' code{font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--s1);border:1px solid var(--line);padding:1px 6px;border-radius:5px;font-size:11.5px}'
+    + '#' + NS + ' .wf-ref p{color:var(--muted)}'
+    /* Domeny */
+    + '#' + NS + ' .wf-cat{margin:18px 0 8px;display:flex;align-items:center;gap:10px}'
+    + '#' + NS + ' .wf-cat h3{margin:0;font-size:13px;font-weight:700;letter-spacing:-.01em}'
+    + '#' + NS + ' .wf-cat .dot{width:8px;height:8px;border-radius:999px}'
+    + '#' + NS + ' .wf-cat .cnt{color:var(--faint);font-size:12px}'
+    + '#' + NS + ' .wf-dom{display:grid;grid-template-columns:minmax(200px,1.2fr) 80px 80px minmax(120px,1fr) 32px;gap:10px;align-items:center;padding:7px 10px;border:1px solid var(--line);border-top:none;background:var(--s1)}'
+    + '#' + NS + ' .wf-dom:first-of-type,#' + NS + ' .wf-dom.first{border-top:1px solid var(--line);border-radius:var(--r) var(--r) 0 0}'
+    + '#' + NS + ' .wf-dom.last{border-radius:0 0 var(--r) var(--r)}'
+    + '#' + NS + ' .wf-dom.only{border-radius:var(--r)}'
+    + '#' + NS + ' .wf-dom .h{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;word-break:break-all}'
+    + '#' + NS + ' .wf-dom .n{text-align:right;font-variant-numeric:tabular-nums}'
+    + '#' + NS + ' .wf-dom .n small{color:var(--faint);margin-left:4px;font-size:11px}'
+    + '#' + NS + ' .wf-bar2{height:6px;border-radius:999px;background:var(--s2);overflow:hidden;border:1px solid var(--line)}'
+    + '#' + NS + ' .wf-bar2 i{display:block;height:100%;background:var(--blue)}'
+    + '#' + NS + ' .wf-bar2 i.c{background:var(--green)}'
+    + '#' + NS + ' .wf-domd{padding:8px 14px 12px 24px;border:1px solid var(--line);border-top:none;background:var(--bg)}'
+    + '#' + NS + ' .wf-domhead{display:grid;grid-template-columns:minmax(200px,1.2fr) 80px 80px minmax(120px,1fr) 32px;gap:10px;padding:0 10px 6px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}'
+    + '#' + NS + ' .wf-domhead .n{text-align:right}'
+    + '#' + NS + ' label.wf-chk{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);cursor:pointer;padding:5px 10px;border:1px solid var(--line2);border-radius:8px;background:var(--s1)}'
+    + '#' + NS + ' label.wf-chk input{accent-color:var(--blue);margin:0}';
 
   function el(html) { var d = document.createElement('div'); d.innerHTML = html; return d.firstElementChild; }
 
@@ -458,24 +492,26 @@
     var old = document.getElementById(NS);
     if (old) old.remove();
     var st = document.getElementById(NS + '-css');
-    if (!st) { st = document.createElement('style'); st.id = NS + '-css'; st.textContent = CSS; document.head.appendChild(st); }
+    if (st) st.remove();
+    st = document.createElement('style'); st.id = NS + '-css'; st.textContent = CSS; document.head.appendChild(st);
     var root = el('<div id="' + NS + '" role="dialog" aria-label="Fan-out Explorer">'
-      + '<div class="wf-head"><div class="wf-title">Fan-out Explorer <small>v' + VERSION + ' · <a href="' + SITE + '" target="_blank" rel="noopener">widocznosc.ai</a></small></div>'
-      + '<span class="wf-pill" data-r="pill"></span><div class="wf-spacer"></div>'
+      + '<div class="wf-head"><div class="wf-brand"><a class="wm" href="' + SITE + '" target="_blank" rel="noopener" style="text-decoration:none">widocznosc<b>.ai</b></a><span class="sep"></span><span class="nm">Fan-out Explorer</span><span class="ver">v' + VERSION + '</span></div>'
+      + '<span class="chip" data-r="pill"></span><div class="wf-spacer"></div>'
       + '<button data-a="refresh" title="Odczytaj rozmowę ponownie">Odśwież</button>'
       + '<button data-a="live" title="Czytaj rozmowę na bieżąco, dopóki ChatGPT odpowiada"></button>'
       + '<button class="wf-x" data-a="close" title="Zamknij (Esc)">×</button></div>'
-      + '<div class="wf-bar"><div class="wf-tabs"><button data-t="table">Tabela</button><button data-t="legend">Legenda</button><button data-t="types">Typy</button></div>'
-      + '<button data-a="expand">Rozwiń wszystko</button>'
-      + '<button data-a="copyq" title="Sama kolumna zapytań, jedno na wiersz">Kopiuj zapytania</button>'
-      + '<button data-a="copyt" title="Cała tabela, do wklejenia w arkusz">Kopiuj tabelę</button>'
-      + '<button data-a="csv" title="Jeden wiersz na wyszukiwanie, strony w dodatkowych kolumnach">Pobierz CSV</button>'
-      + '<button data-a="csvs" title="Jeden wiersz na stronę, z flagą cytowania">Pobierz CSV źródeł</button></div>'
+      + '<div class="wf-bar"><div class="wf-tabs"><button data-t="table">Wyszukiwania</button><button data-t="domains">Domeny</button><button data-t="legend">Legenda</button><button data-t="types">Typy</button></div>'
+      + '<span data-r="tools"></span></div>'
       + '<div class="wf-body" data-r="body"></div></div>');
     document.body.appendChild(root);
     root.addEventListener('click', onClick);
+    root.addEventListener('change', onChange);
     document.addEventListener('keydown', onKey);
     return root;
+  }
+  function onChange(e) {
+    var t = e.target;
+    if (t && t.getAttribute('data-a') === 'onlycited') { state.onlyCited = !!t.checked; render(); }
   }
   function onKey(e) { if (e.key === 'Escape') close(); }
   function close() {
@@ -508,6 +544,9 @@
       render();
     }
     else if (a === 'more') { var n = +b.getAttribute('data-n'); state.expanded[n] = !state.expanded[n]; render(); }
+    else if (a === 'dom') { var hkey = b.getAttribute('data-h'); state.domOpen[hkey] = !state.domOpen[hkey]; render(); }
+    else if (a === 'csvd') download(fileName('domeny'), domainsCsv(), 'text/csv;charset=utf-8');
+    else if (a === 'copyd') copyText(domainsText(), b);
   }
 
   function sortedRows() {
@@ -571,56 +610,174 @@
     var liveBtn = q('[data-a=live]');
     if (liveBtn) liveBtn.textContent = state.live ? 'Na żywo: wł.' : 'Na żywo: wył.';
     if (pill) {
-      pill.className = 'wf-pill' + (state.live && state.timer ? ' live' : '');
-      pill.textContent = state.busy ? 'czytam…' : state.live && state.timer ? 'na żywo' : state.source || '';
+      pill.className = 'chip' + (state.live && state.timer ? ' live' : '');
+      pill.textContent = state.busy ? 'czytam…' : state.live && state.timer ? '● na żywo' : state.source || '';
     }
     var tabs = document.getElementById(NS).querySelectorAll('[data-t]');
     for (var i = 0; i < tabs.length; i++) tabs[i].className = tabs[i].getAttribute('data-t') === state.tab ? 'on' : '';
+    var tools = q('[data-r=tools]');
+    if (tools) {
+      if (state.tab === 'table') tools.innerHTML = '<button data-a="expand">Rozwiń wszystko</button> '
+        + '<button data-a="copyq" title="Sama kolumna zapytań, jedno na wiersz">Kopiuj zapytania</button> '
+        + '<button data-a="copyt" title="Cała tabela, do wklejenia w arkusz">Kopiuj tabelę</button> '
+        + '<button data-a="csv" title="Jeden wiersz na wyszukiwanie, strony w dodatkowych kolumnach">Pobierz CSV</button> '
+        + '<button data-a="csvs" title="Jeden wiersz na stronę, z flagą cytowania">Pobierz CSV źródeł</button>';
+      else if (state.tab === 'domains') tools.innerHTML = '<label class="wf-chk"><input type="checkbox" data-a="onlycited"' + (state.onlyCited ? ' checked' : '') + '> tylko cytowane</label> '
+        + '<button data-a="copyd" title="Domena, kategoria, pobrane, cytowane – tabulatory">Kopiuj domeny</button> '
+        + '<button data-a="csvd" title="Jeden wiersz na domenę">Pobierz CSV domen</button>';
+      else tools.innerHTML = '';
+    }
     if (state.tab === 'legend') { body.innerHTML = legendHtml(); return; }
     if (state.tab === 'types') { body.innerHTML = typesHtml(); return; }
-    body.innerHTML = tableHtml();
+    if (state.tab === 'domains') { body.innerHTML = headerHtml() + domainsHtml(); return; }
+    body.innerHTML = headerHtml() + tableHtml();
   }
 
-  function tableHtml() {
+  function headerHtml() {
     var h = '';
     if (state.note) h += '<p class="wf-note">' + esc(state.note) + '</p>';
-    if (!state.model) return h + '<div class="wf-empty">' + (state.busy ? 'Czytam rozmowę…' : 'Brak danych. Otwórz czat na chatgpt.com i kliknij zakładkę jeszcze raz.') + '</div>';
+    if (!state.model) return h;
     var m = state.model, s = m.stats;
     m.turns.forEach(function (t, i) {
       h += '<p class="wf-prompt"><b>' + (i + 1) + '.</b>' + esc(t.prompt || '(prompt bez treści)') + '</p>';
     });
-    h += '<p class="wf-sum">Odczyt: <span>' + esc(state.source) + '</span>, ' + esc(stamp(state.capturedAt || new Date()))
-      + ' · wyszukiwań <span>' + s.searches + '</span> w <span>' + s.rounds + '</span> rundach, z tego na forach (Reddit, Wykop i podobne) <span>' + s.forumSearches + '</span>'
-      + (s.hidden ? '<br><span style="color:#ffb86b">W ' + s.hidden + ' rundach brak treści zapytań: ChatGPT wysyła je tylko w trakcie odpowiedzi, a ten czat nie był wtedy nagrywany. Widać domeny, strony i cytowania każdej rundy. Otwórz panel przed wysłaniem promptu, a zapytania zostaną zapisane.</span>' : '')
-      + (s.recordedRounds ? '<br>Zapytania z nagrania na żywo: <span>' + s.recordedRounds + '</span> rund.' : '')
-      + '<br>stron pobranych <span>' + s.pages + '</span>, użytych jako źródło <span>' + s.cited + '</span>'
-      + ' · z forów pobranych <span>' + s.forumPages + '</span>, użytych <span>' + s.forumCited + '</span>'
-      + (s.pending ? '<br><span style="color:#ffb86b">Odpowiedź na ' + s.pending + ' prompt(ów) jeszcze nie jest zapisana, kolumna „cytowane” czeka.</span>' : '')
+    h += '<dl class="wf-stats">'
+      + '<div class="wf-stat"><dt>wyszukiwania</dt><dd>' + s.searches + '<small>w ' + s.rounds + ' ' + plural(s.rounds, 'rundzie', 'rundach', 'rundach') + '</small></dd></div>'
+      + '<div class="wf-stat"><dt>strony pobrane</dt><dd>' + s.pages + '</dd></div>'
+      + '<div class="wf-stat"><dt>cytowane</dt><dd style="color:var(--green)">' + s.cited + '<small>' + (s.pages ? Math.round(100 * s.cited / s.pages) + '%' : '') + '</small></dd></div>'
+      + '<div class="wf-stat"><dt>fora i społeczności</dt><dd>' + s.forumPages + '<small>cytowane ' + s.forumCited + '</small></dd></div>'
+      + '</dl>';
+    h += '<p class="wf-meta">Odczyt: <span>' + esc(state.source) + '</span> · ' + esc(stamp(state.capturedAt || new Date()))
+      + (s.recordedRounds ? ' · zapytania z nagrania: <span>' + s.recordedRounds + '</span> ' + plural(s.recordedRounds, 'runda', 'rundy', 'rund') : '')
       + '</p>';
-    if (!m.rows.length) return h + '<div class="wf-empty">W tej rozmowie ChatGPT nie wysłał żadnego wyszukiwania do sieci.</div>';
-    h += '<table><thead><tr>';
-    COLS.forEach(function (c) {
+    if (s.hidden) h += '<p class="wf-note">W ' + s.hidden + ' ' + plural(s.hidden, 'rundzie', 'rundach', 'rundach') + ' brak treści zapytań: ChatGPT wysyła je tylko w trakcie odpowiedzi, a ten czat nie był wtedy nagrywany. Widać domeny, strony i cytowania każdej rundy. Otwórz panel przed wysłaniem promptu, a zapytania zostaną zapisane.</p>';
+    if (s.pending) h += '<p class="wf-note info">Odpowiedź na ' + s.pending + ' prompt(ów) jeszcze nie jest zapisana, kolumna „cytowane” czeka.</p>';
+    return h;
+  }
+  function plural(n, one, few, many) {
+    n = Math.abs(n); if (n === 1) return one;
+    var t = n % 10, h = n % 100;
+    return (t >= 2 && t <= 4 && (h < 12 || h > 14)) ? few : many;
+  }
+
+  /* ---------- Domeny: agregacja i kategorie ---------- */
+  var CATS = [
+    ['forum', 'Fora i społeczności', '#a78bfa'],
+    ['opinie', 'Opinie, rankingi, porównania', '#fbbf24'],
+    ['sklep', 'Sklepy i marketplace', '#fb7185'],
+    ['media', 'Media i portale', '#38bdf8'],
+    ['docs', 'Dokumentacja i pomoc producentów', '#34d399'],
+    ['inst', 'Instytucje, nauka, encyklopedie', '#f472b6'],
+    ['marka', 'Strony firm i marek', '#0a9cff'],
+  ];
+  function categorize(host, paths) {
+    var h = host, p = ' ' + paths.join(' ').toLowerCase() + ' ';
+    if (isSub(h, 'reddit.com') || isSub(h, 'wykop.pl') || isSub(h, 'quora.com') || /(^|\.)forum\./.test(h) || /forum\./.test(h) || /^(spolecznosc|community|forum|forums|discuss)\./.test(h) || /\/forum(\/|s\/| )/.test(p) || isSub(h, 'stackoverflow.com') || isSub(h, 'stackexchange.com') || /facebook\.com\/groups/.test(p)) return 'forum';
+    if (/\.gov(\.pl)?$/.test(h) || /\.edu(\.pl)?$/.test(h) || isSub(h, 'wikipedia.org') || isSub(h, 'europa.eu') || isSub(h, 'arxiv.org') || isSub(h, 'nbp.pl') || isSub(h, 'knf.gov.pl') || isSub(h, 'uokik.gov.pl') || isSub(h, 'gus.gov.pl')) return 'inst';
+    if (/^(help|support|docs|developers|developer|learn|community|status|api|dev)\./.test(h) || isSub(h, 'blogs.bing.com') || isSub(h, 'bing.com') && /webmaster/.test(p) || isSub(h, 'openai.com') || isSub(h, 'developers.google.com') || isSub(h, 'support.google.com')) return 'docs';
+    if (isSub(h, 'gowork.pl') || isSub(h, 'opiniak.com') || isSub(h, 'aleo.com') || isSub(h, 'trustpilot.com') || isSub(h, 'g2.com') || isSub(h, 'capterra.com') || isSub(h, 'capterra.co.uk') || isSub(h, 'clutch.co') || isSub(h, 'getapp.com') || isSub(h, 'softwareadvice.com') || isSub(h, 'opineo.pl') || isSub(h, 'ceneo.pl') || isSub(h, 'comperia.pl') || isSub(h, 'totalmoney.pl') || isSub(h, 'najlepszecrm.pl') || isSub(h, 'crmexpert.pl') || /(ranking|rankingi|porownanie|porownywarka|opinie|recenzja|recenzje|review|reviews|test)/.test(h) || /\/(ranking|rankingi|porownanie|opinie|recenzja|recenzje|reviews?|test)(-|\/|s|$)/.test(p)) return 'opinie';
+    if (isSub(h, 'allegro.pl') || isSub(h, 'x-kom.pl') || isSub(h, 'morele.net') || isSub(h, 'mediaexpert.pl') || isSub(h, 'euro.com.pl') || isSub(h, 'komputronik.pl') || isSub(h, 'amazon.com') || isSub(h, 'amazon.pl') || isSub(h, 'empik.com') || isSub(h, 'olx.pl') || /(sklep|shop|store)\./.test(h) || /\/(produkt|product|products|p|sklep|shop|kategoria|category)\//.test(p)) return 'sklep';
+    if (isSub(h, 'bankier.pl') || isSub(h, 'money.pl') || isSub(h, 'businessinsider.com.pl') || isSub(h, 'forbes.pl') || isSub(h, 'rp.pl') || isSub(h, 'pb.pl') || isSub(h, 'wyborcza.pl') || isSub(h, 'onet.pl') || isSub(h, 'wp.pl') || isSub(h, 'interia.pl') || isSub(h, 'spidersweb.pl') || isSub(h, 'antyweb.pl') || isSub(h, 'benchmark.pl') || isSub(h, 'pcformat.pl') || isSub(h, 'chip.pl') || isSub(h, 'komputerswiat.pl') || isSub(h, 'techcrunch.com') || isSub(h, 'theverge.com') || isSub(h, 'searchengineland.com') || isSub(h, 'searchenginejournal.com') || /\/(wiadomosc|wiadomosci|news|artykul|aktualnosci)\//.test(p)) return 'media';
+    return 'marka';
+  }
+  function domainRows() {
+    if (!state.model) return [];
+    var byHost = {};
+    state.model.turns.forEach(function (t) {
+      t.rounds.forEach(function (r) {
+        r.pages.forEach(function (p) {
+          var d = byHost[p.host]; if (!d) { d = byHost[p.host] = { host: p.host, pages: [], seen: {}, fetched: 0, cited: 0, locked: 0 }; }
+          if (d.seen[p.canon]) { if (p.cited) { var ex = d.seen[p.canon]; if (!ex.cited) { ex.cited = true; d.cited++; } } return; }
+          d.seen[p.canon] = p; d.pages.push(p); d.fetched++; if (p.cited) d.cited++;
+        });
+        r.searches.forEach(function (sq) { if (sq.lockedHost) { var k = Object.keys(byHost).filter(function (x) { return isSub(x, sq.lockedHost); }); k.forEach(function (x) { byHost[x].locked++; }); } });
+      });
+    });
+    return Object.keys(byHost).map(function (k) {
+      var d = byHost[k]; d.cat = categorize(d.host, d.pages.map(function (p) { return p.canon; })); return d;
+    }).sort(function (a, b) { return (b.cited - a.cited) || (b.fetched - a.fetched) || a.host.localeCompare(b.host); });
+  }
+  function domainsHtml() {
+    if (!state.model) return '<div class="wf-empty">' + (state.busy ? 'Czytam rozmowę…' : 'Brak danych. Otwórz czat na chatgpt.com i kliknij zakładkę jeszcze raz.') + '</div>';
+    var rows = domainRows();
+    if (state.onlyCited) rows = rows.filter(function (d) { return d.cited > 0; });
+    if (!rows.length) return '<div class="wf-empty">Brak domen do pokazania.</div>';
+    var maxF = 1; rows.forEach(function (d) { maxF = Math.max(maxF, d.fetched); });
+    var h = '<p class="wf-meta">Wszystkie strony z tego czatu zebrane per witryna. Kategoria to heurystyka po adresie, „na wyłączność” liczy wyszukiwania ograniczone do tej witryny operatorem site:. Kliknij wiersz, aby zobaczyć strony.</p>';
+    CATS.forEach(function (c) {
+      var list = rows.filter(function (d) { return d.cat === c[0]; });
+      if (!list.length) return;
+      var fetched = 0, cited = 0; list.forEach(function (d) { fetched += d.fetched; cited += d.cited; });
+      h += '<div class="wf-cat"><span class="dot" style="background:' + c[2] + '"></span><h3>' + esc(c[1]) + '</h3><span class="cnt">' + list.length + ' ' + plural(list.length, 'domena', 'domeny', 'domen') + ' · ' + fetched + ' stron · ' + cited + ' cyt.</span></div>';
+      h += '<div class="wf-domhead"><span>domena</span><span class="n">pobrane</span><span class="n">cytowane</span><span>udział</span><span></span></div>';
+      list.forEach(function (d, i) {
+        var open = !!state.domOpen[d.host];
+        var cls = 'wf-dom' + (i === 0 ? ' first' : '') + (i === list.length - 1 && !open ? ' last' : '') + (list.length === 1 && !open ? ' only' : '');
+        h += '<div class="' + cls + '"><span class="h">' + esc(d.host) + (d.locked ? ' <span class="chip dom" title="wyszukiwania ograniczone do tej witryny">site: ×' + d.locked + '</span>' : '') + '</span>'
+          + '<span class="n">' + d.fetched + '</span>'
+          + '<span class="n">' + (d.cited ? '<span class="chip ok">' + d.cited + '</span>' : '<span class="chip zero">0</span>') + '</span>'
+          + '<span class="wf-bar2" title="pobrane ' + d.fetched + ', cytowane ' + d.cited + '"><i style="width:' + Math.round(100 * d.fetched / maxF) + '%"></i></span>'
+          + '<span><button class="wf-more" data-a="dom" data-h="' + esc(d.host) + '">' + (open ? '−' : '+') + '</button></span></div>';
+        if (open) {
+          h += '<div class="wf-domd' + (i === list.length - 1 ? ' last' : '') + '"><ul class="wf-pg">';
+          d.pages.slice().sort(function (a, b) { return (b.cited - a.cited) || a.canon.localeCompare(b.canon); }).forEach(function (p) {
+            h += '<li class="' + (p.cited ? 'c' : '') + '"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.canon) + '</a>' + (p.title ? ' <span class="t">– ' + esc(p.title) + '</span>' : '') + '</li>';
+          });
+          h += '</ul></div>';
+        }
+      });
+    });
+    return h;
+  }
+  function catLabel(k) { for (var i = 0; i < CATS.length; i++) if (CATS[i][0] === k) return CATS[i][1]; return k; }
+  function domainsText() {
+    return ['domena\tkategoria\tpobrane\tcytowane\tsite:'].concat(domainRows().map(function (d) { return [d.host, catLabel(d.cat), d.fetched, d.cited, d.locked].join('\t'); })).join('\n');
+  }
+  function domainsCsv() {
+    return metaLines().concat([['domena', 'kategoria', 'pobrane', 'cytowane', 'wyszukiwań site:', 'strony cytowane'].map(csvCell).join(',')]).concat(domainRows().map(function (d) {
+      return [d.host, catLabel(d.cat), d.fetched, d.cited, d.locked, d.pages.filter(function (p) { return p.cited; }).map(function (p) { return p.url; }).join(' | ')].map(csvCell).join(',');
+    })).join('\n');
+  }
+
+  function visibleCols() {
+    var rows = state.model ? state.model.rows : [];
+    var hasDays = rows.some(function (r) { return r.days; });
+    var hasType = rows.some(function (r) { return r.type && r.type !== 'search' && r.type !== 'runda'; });
+    return COLS.filter(function (c) { return !(c[0] === 'days' && !hasDays) && !(c[0] === 'type' && !hasType); });
+  }
+  function tableHtml() {
+    if (!state.model) return '<div class="wf-empty">' + (state.busy ? 'Czytam rozmowę…' : 'Brak danych. Otwórz czat na chatgpt.com i kliknij zakładkę jeszcze raz.') + '</div>';
+    var m = state.model;
+    if (!m.rows.length) return '<div class="wf-empty">W tej rozmowie ChatGPT nie wysłał żadnego wyszukiwania do sieci.</div>';
+    var cols = visibleCols(), h = '<table><thead><tr>';
+    cols.forEach(function (c) {
       var on = state.sort.col === c[0];
       h += '<th class="' + (on ? 'sorted' : '') + '"><button data-a="sort" data-c="' + c[0] + '" style="all:unset;cursor:pointer">' + c[1] + (on ? (state.sort.dir === 1 ? ' ▲' : ' ▼') : '') + '</button></th>';
     });
     h += '<th></th></tr></thead><tbody>';
     sortedRows().forEach(function (r) {
       var canOpen = r.pages.length > 0;
-      h += '<tr class="' + (r.forum ? 'forum' : '') + '">'
-        + '<td class="num">' + r.n + '</td><td class="num">' + r.round + '</td><td class="tp">' + esc(r.type) + '</td>'
-        + '<td class="q">' + (r.hidden ? '<span style="color:#8b93a7">zapytanie nie nagrane – runda z ' + r.pages.length + ' stronami</span>' : esc(r.query)) + (r.place ? ' <span class="wf-pill">' + esc(r.place) + '</span>' : '') + '</td>'
-        + '<td class="num">' + esc(r.days) + '</td><td class="dm">' + esc(r.lockedHost) + '</td>'
-        + '<td class="num">' + (r.results == null ? '' : r.results) + '</td>'
-        + '<td class="num">' + (r.cited == null ? (r.results == null ? '' : '…') : r.cited) + '</td>'
-        + '<td>' + (canOpen ? '<button class="wf-more" data-a="more" data-n="' + r.n + '">' + (state.expanded[r.n] ? '−' : '+') + '</button>' : '') + '</td></tr>';
+      h += '<tr class="' + (r.forum ? 'forum' : '') + '">';
+      cols.forEach(function (c) {
+        var k = c[0];
+        if (k === 'n' || k === 'round') h += '<td class="num">' + r[k] + '</td>';
+        else if (k === 'type') h += '<td class="tp">' + esc(r.type) + '</td>';
+        else if (k === 'query') h += '<td class="q">' + (r.hidden ? '<span style="color:var(--faint)">zapytanie nie nagrane – runda z ' + r.pages.length + ' stronami</span>' : esc(r.query)) + (r.place ? ' <span class="chip">' + esc(r.place) + '</span>' : '') + '</td>';
+        else if (k === 'days') h += '<td class="num">' + esc(r.days) + '</td>';
+        else if (k === 'lockedHost') h += '<td class="dm">' + (r.lockedHost ? (r.hidden ? '<span style="color:var(--muted)">' + esc(r.lockedHost) + '</span>' : '<span class="chip dom">' + esc(r.lockedHost) + '</span>') : '') + '</td>';
+        else if (k === 'results') h += '<td class="num">' + (r.results == null ? '' : r.results) + '</td>';
+        else if (k === 'cited') h += '<td class="num">' + (r.cited == null ? (r.results == null ? '' : '<span class="chip">…</span>') : (r.cited ? '<span class="chip ok">' + r.cited + '</span>' : '<span class="chip zero">0</span>')) + '</td>';
+      });
+      h += '<td>' + (canOpen ? '<button class="wf-more" data-a="more" data-n="' + r.n + '">' + (state.expanded[r.n] ? '−' : '+') + '</button>' : '') + '</td></tr>';
       if (state.expanded[r.n] && canOpen) {
-        h += '<tr class="detail"><td colspan="9">';
+        h += '<tr class="detail"><td colspan="' + (cols.length + 1) + '">';
         var byHost = {}, order = [];
         r.pages.forEach(function (p) { if (!byHost[p.host]) { byHost[p.host] = []; order.push(p.host); } byHost[p.host].push(p); });
         order.forEach(function (host) {
-          h += '<div class="wf-host">' + esc(host) + ' (' + byHost[host].length + ')</div><ul class="wf-pg">';
+          var cnt = byHost[host].filter(function (p) { return p.cited; }).length;
+          h += '<div class="wf-host">' + esc(host) + ' <span class="chip' + (cnt ? ' ok' : ' zero') + '">' + cnt + '/' + byHost[host].length + '</span></div><ul class="wf-pg">';
           byHost[host].forEach(function (p) {
-            h += '<li class="' + (p.cited ? 'c' : '') + '"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.canon) + '</a>' + (p.title ? ' <span style="color:#8b93a7">– ' + esc(p.title) + '</span>' : '') + '</li>';
+            h += '<li class="' + (p.cited ? 'c' : '') + '"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.canon) + '</a>' + (p.title ? ' <span class="t">– ' + esc(p.title) + '</span>' : '') + '</li>';
           });
           h += '</ul>';
         });
@@ -647,6 +804,10 @@
       + '<dt>typ „search”</dt><dd>Dla zapytań z nagrania ChatGPT nie podaje typu ani okna świeżości, więc kolumna pokazuje „search”, a „dni” zostaje puste. Starszy format (linie fast/slow) jest nadal obsługiwany.</dd>'
       + '<dt>Wiersze podświetlone</dt><dd>Wyszukiwania kierowane na fora albo pytające o opinie.</dd>'
       + '<dt>+</dt><dd>Otwiera listę stron z tego wyszukiwania, pogrupowaną po witrynie. Ptaszek oznacza stronę użytą jako źródło.</dd>'
+      + '</dl><h3>Zakładka Domeny</h3><dl>'
+      + '<dt>Co to jest</dt><dd>Wszystkie strony z czatu zebrane per witryna: ile wróciło, ile zacytowano i w ilu wyszukiwaniach ChatGPT ograniczył się do tej witryny operatorem site:. Witryny są pogrupowane w kategorie: fora i społeczności, opinie i rankingi, sklepy, media, dokumentacja producentów, instytucje oraz strony firm i marek.</dd>'
+      + '<dt>Kategoria</dt><dd>Heurystyka po nazwie hosta i ścieżkach, nie po treści. Reddit, Wykop, subdomeny forum/spolecznosc to fora; GoWork, Clutch, G2, Capterra, Trustpilot i adresy z „ranking”/„opinie” to opinie; x-kom, Allegro, Morele i ścieżki /produkt/ to sklepy; Bankier, money.pl i ścieżki /wiadomosci/ to media; help., docs., developers. to dokumentacja; .gov, Wikipedia, arXiv to instytucje. Reszta to strony firm. Pomyłki są możliwe, kategorię traktuj jako pierwsze sortowanie.</dd>'
+      + '<dt>Tylko cytowane</dt><dd>Ukrywa domeny, z których nic nie trafiło do odpowiedzi. Bez filtra widać też te czytane i pomijane, a to często ciekawsza lista.</dd>'
       + '</dl><h3>Przyciski</h3><dl>'
       + '<dt>Kopiuj zapytania</dt><dd>Sama kolumna zapytań, jedno na wiersz, do narzędzia od fraz.</dd>'
       + '<dt>Kopiuj tabelę</dt><dd>Cała tabela rozdzielona tabulatorami, do wklejenia w Arkusze lub Excel.</dd>'
@@ -660,7 +821,7 @@
     var h = '<div class="wf-ref"><h3>Linie, które ChatGPT wysyła do narzędzia web.run</h3><p style="color:#b7bdcc">Każde polecenie to jedna linia tekstu, a pierwsze słowo mówi, co to jest. Postać wyszukiwania: <code>typ|zapytanie|dni|domena</code>, gdzie dni i domena są opcjonalne. Lista pochodzi z obserwacji rozmów, nie z dokumentacji OpenAI, więc nowe typy mogą się pojawić.</p><dl>';
     Object.keys(TYPES).forEach(function (k) {
       var d = TYPES[k];
-      h += '<dt><code>' + k + '</code>' + (d.search ? '' : ' <span class="wf-pill">poza tabelą</span>') + (d.search && !d.pool ? ' <span class="wf-pill">bez listy wyników</span>' : '') + '</dt><dd>' + esc(d.pl) + '</dd>';
+      h += '<dt><code>' + k + '</code>' + (d.search ? '' : ' <span class="chip">poza tabelą</span>') + (d.search && !d.pool ? ' <span class="chip">bez listy wyników</span>' : '') + '</dt><dd>' + esc(d.pl) + '</dd>';
     });
     h += '</dl><h3>Nieznany typ</h3><p style="color:#b7bdcc">Linia z pierwszym słowem spoza tej listy jest pomijana. Jeśli zauważysz taki przypadek, daj znać na <a href="' + SITE + '" target="_blank" rel="noopener" style="color:#7c86ff">widocznosc.ai</a>, dopiszemy go.</p></div>';
     return h;
@@ -729,7 +890,7 @@
   }
   function stopLive() {
     if (state.timer) { clearInterval(state.timer); clearTimeout(state.timer); state.timer = null; }
-    var pill = q('[data-r=pill]'); if (pill) { pill.className = 'wf-pill'; pill.textContent = state.source || ''; }
+    var pill = q('[data-r=pill]'); if (pill) { pill.className = 'chip'; pill.textContent = state.source || ''; }
   }
 
   /* ---------- start ---------- */

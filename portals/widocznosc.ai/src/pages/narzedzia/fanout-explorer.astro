@@ -81,6 +81,7 @@ const schema = buildGraph(
       'Tabela wyszukiwań ChatGPT: runda, typ, zapytanie, okno świeżości, domena',
       'Lista stron z każdego wyszukiwania z oznaczeniem cytowanych',
       'Podsumowanie udziału forów (Reddit, Wykop, Quora, GoWork)',
+      'Zakładka Domeny: witryny pogrupowane w kategorie (fora, opinie, sklepy, media, dokumentacja, instytucje, firmy) z liczbą pobranych i cytowanych stron',
       'Nagrywanie zapytań ze strumienia odpowiedzi, odczyt zapisanych czatów',
       'Eksport: kopiowanie zapytań, tabela do arkusza, CSV wyszukiwań i CSV źródeł',
       'Tylko odczyt, dane zostają w przeglądarce',
@@ -210,7 +211,16 @@ const schema = buildGraph(
           ile stron wróciło, ile z nich ChatGPT pokazał jako źródło, a osobno to samo dla forów
           (Reddit, Wykop, Quora, GoWork). Dalej jest tabela, jeden wiersz na wyszukiwanie, z
           sortowaniem po każdej kolumnie. Plus przy wierszu otwiera listę stron pogrupowaną po
-          witrynie, z ptaszkiem przy każdej zacytowanej.
+          witrynie, z ptaszkiem przy każdej zacytowanej. Kolumny bez danych w danym czacie panel
+          ukrywa sam.
+        </p>
+        <p class="text-ink tool-overview-copy mt-4 max-w-3xl text-lg leading-relaxed">
+          Zakładka <b>Domeny</b> zbiera wszystkie strony z czatu per witryna: ile ChatGPT pobrał, ile
+          zacytował i w ilu wyszukiwaniach ograniczył się do tej witryny operatorem
+          <code class="font-mono text-sm">site:</code>. Witryny są wstępnie pogrupowane w siedem
+          kategorii (fora i społeczności, opinie i rankingi, sklepy, media, dokumentacja
+          producentów, instytucje, strony firm), z filtrem „tylko cytowane” i eksportem do CSV.
+          Kategoria to heurystyka po adresie, więc traktuj ją jako pierwsze sortowanie.
         </p>
 
         <div class="columns-table-wrap mt-10">
