@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.3.2';
+  var VERSION = '1.3.3';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv:';
   var QUERIES_PREFIX = NS + ':q:';
@@ -332,77 +332,158 @@
     try { var raw = localStorage.getItem(QUERIES_PREFIX + id); return raw ? JSON.parse(raw) : []; } catch (e) { return []; }
   }
   function saveQueries(id, batches) {
-    try { localStorage.setItem(QUERIES_PREFIX + id, JSON.stringify(batches)); } catch (e) {}
+    try { localStorage.setItem(QUERIES_PREFIX + id, JSON.stringify(batches)); return true; }
+    catch (e) { state.capture.storageError = true; return false; }
   }
   function recordBatch(convId, msgId, queries, types) {
     if (!convId || !queries || !queries.length) return;
     var list = readQueries(convId);
-    for (var i = 0; i < list.length; i++) if (list[i].id === msgId) return;
-    list.push({ id: msgId, queries: queries, types: types || null, at: Date.now() });
-    saveQueries(convId, list);
+    var batch = null;
+    for (var i = 0; i < list.length; i++) if (list[i].id === msgId) { batch = list[i]; break; }
+    if (batch) {
+      var changed = false;
+      queries.forEach(function (q, qi) {
+        if (batch.queries.indexOf(q) !== -1) return;
+        batch.queries.push(q);
+        if (types) { if (!batch.types) batch.types = []; batch.types[batch.queries.length - 1] = types[qi]; }
+        changed = true;
+      });
+      if (!changed) return;
+    } else list.push({ id: msgId, queries: queries.slice(), types: types || null, at: Date.now() });
+    if (!saveQueries(convId, list)) return;
     state.recorded++;
-    if (convId !== state.id) { state.id = convId; }
-    if (!state.busy) load(true);
+    state.capture.batches++;
+    // Nie przełączaj panelu na czat, którego odpowiedź kończy się już po zmianie karty rozmowy.
+    if (convId === conversationId() && !state.busy) load(true);
   }
-  function scanEvent(obj, convHint) {
-    var convId = convHint, found = [];
-    (function walk(v) {
-      if (!v || typeof v !== 'object') return;
-      if (Array.isArray(v)) { v.forEach(walk); return; }
-      if (typeof v.conversation_id === 'string') convId = v.conversation_id;
-      if (v.search_model_queries && Array.isArray(v.search_model_queries.queries)) {
-        found.push({ msg: v, queries: v.search_model_queries.queries.filter(function (q) { return typeof q === 'string' && q.trim(); }), types: v.search_tool_query_types || null });
+  function scanEvent(obj, capture) {
+    var found = [];
+    function foundQueries(value, msgId, types) {
+      state.capture.queryFields++;
+      var queries = Array.isArray(value) ? value : value && value.queries;
+      if (!Array.isArray(queries)) { state.capture.unsupported++; return; }
+      queries = queries.map(function (q) {
+        return typeof q === 'string' ? q : q && typeof q.query === 'string' ? q.query : '';
+      }).filter(function (q) { return q.trim(); });
+      if (!queries.length) return;
+      var id = msgId || capture.messageId;
+      // Gdy brak ID wiadomości, rozpoznaj powtórzoną migawkę w obrębie tego strumienia.
+      if (!id) {
+        var key = JSON.stringify(queries);
+        if (!capture.anonymous[key]) capture.anonymous[key] = capture.id + ':' + (++capture.sequence);
+        id = capture.anonymous[key];
       }
-      Object.keys(v).forEach(function (k) { walk(v[k]); });
-    })(obj);
-    found.forEach(function (f) {
-      recordBatch(convId, f.msg.id || ('n' + Date.now() + Math.random()), f.queries, f.types);
+      found.push({ id: id, queries: queries, types: types || null });
+    }
+    (function walk(v, msgId) {
+      if (!v || typeof v !== 'object') return;
+      if (Array.isArray(v)) { v.forEach(function (item) { walk(item, msgId); }); return; }
+      if (typeof v.conversation_id === 'string' && v.conversation_id) capture.convId = v.conversation_id;
+      if (typeof v.id === 'string' && (v.author || v.metadata || v.content)) {
+        msgId = v.id; capture.messageId = v.id;
+      }
+      if (v.search_model_queries) foundQueries(v.search_model_queries, msgId || v.id, v.search_tool_query_types);
+      // Pełne wartości metadanych mogą przyjść jako aktualizacja ścieżki, zamiast całej wiadomości.
+      var path = typeof v.p === 'string' ? v.p : v.path;
+      var value = Object.prototype.hasOwnProperty.call(v, 'v') ? v.v : v.value;
+      if (typeof path === 'string') {
+        if (/(^|\/)conversation_id$/.test(path) && typeof value === 'string' && value) capture.convId = value;
+        if (/(^|\/)message\/id$/.test(path) && typeof value === 'string') capture.messageId = value;
+        if (/(^|\/)search_model_queries(?:\/queries)?$/.test(path)) foundQueries(value, msgId, null);
+        else if (/search_model_queries/.test(path)) state.capture.unsupported++;
+      }
+      Object.keys(v).forEach(function (k) { walk(v[k], msgId); });
+    })(obj, '');
+    capture.pending = capture.pending.concat(found);
+    if (!capture.convId) return;
+    capture.pending.forEach(function (f) {
+      recordBatch(capture.convId, f.id, f.queries, f.types);
     });
-    return convId;
+    capture.pending = [];
   }
-  function tapStream(body) {
-    var reader = body.getReader(), dec = new TextDecoder(), buf = '', convId = conversationId();
-    (function pump() {
-      reader.read().then(function (r) {
-        if (r.done) return;
-        buf += dec.decode(r.value, { stream: true });
-        var parts = buf.split(/\n\n/); buf = parts.pop();
-        parts.forEach(function (ev) {
-          ev.split(/\n/).forEach(function (line) {
-            if (line.indexOf('data: ') !== 0) return;
-            var payload = line.slice(6).trim();
-            if (!payload || payload === '[DONE]' || payload.charAt(0) !== '{') return;
-            try { convId = scanEvent(JSON.parse(payload), convId); } catch (e) {}
-          });
-        });
-        pump();
-      }).catch(function () {});
-    })();
+  function tapStream(body, hint) {
+    var reader = body.getReader(), dec = new TextDecoder(), buf = '', data = [];
+    var capture = { convId: hint || '', messageId: '', pending: [], anonymous: Object.create(null), sequence: 0, id: 'stream:' + Date.now() + ':' + Math.random() };
+    state.capture.streams++;
+    function line(text) {
+      if (text === '') {
+        if (!data.length) return;
+        var payload = data.join('\n').trim(); data = [];
+        if (!payload || payload === '[DONE]') return;
+        try {
+          var obj = JSON.parse(payload);
+          state.capture.events++;
+          scanEvent(obj, capture);
+        } catch (e) { state.capture.parseErrors++; }
+      } else if (text.slice(0, 5) === 'data:') {
+        var value = text.slice(5);
+        data.push(value.charAt(0) === ' ' ? value.slice(1) : value);
+      }
+    }
+    function consume(final) {
+      var match;
+      while ((match = /[\r\n]/.exec(buf))) {
+        var i = match.index;
+        // CR i LF mogą znajdować się w dwóch różnych fragmentach sieciowych.
+        if (buf.charAt(i) === '\r' && i === buf.length - 1 && !final) break;
+        var skip = buf.slice(i, i + 2) === '\r\n' ? 2 : 1;
+        line(buf.slice(0, i)); buf = buf.slice(i + skip);
+      }
+    }
+    function pump() {
+      return reader.read().then(function (r) {
+        if (r.done) { buf += dec.decode(); consume(true); return; }
+        buf += dec.decode(r.value, { stream: true }); consume(false);
+        return pump();
+      });
+    }
+    return pump().catch(function () { state.capture.streamErrors++; }).then(function () {
+      state.capture.unassigned += capture.pending.length;
+      reader.releaseLock(); render();
+    });
   }
   function installStreamHook() {
-    if (window.__waiFanoutHooked) return;
-    window.__waiFanoutHooked = true;
+    var previous = window.__waiFanoutRecorder;
+    if (previous && window.fetch === previous.fetch) {
+      previous.enabled = function () { return !state.closed && state.live; };
+      previous.tap = tapStream;
+      return;
+    }
+    // Hook 1.3.2 nie przechowuje oryginalnego fetch — bez przeładowania nie da się go bezpiecznie zastąpić.
+    if (window.__waiFanoutHooked && !previous) { state.capture.legacyHook = true; return; }
     var orig = window.fetch;
-    window.fetch = function (input, init) {
-      var url = typeof input === 'string' ? input : (input && input.url) || '';
+    var hook = { enabled: function () { return !state.closed && state.live; }, tap: tapStream, fetch: null };
+    hook.fetch = function (input, init) {
+      var url = typeof input === 'string' ? input : input instanceof URL ? input.href : (input && input.url) || '';
       var method = (init && init.method) || (input && input.method) || 'GET';
+      var eligible = false, hint = conversationId(), tap = hook.tap;
+      try {
+        var target = new URL(url, location.href);
+        eligible = hook.enabled() && target.origin === location.origin && String(method).toUpperCase() === 'POST'
+          && /^\/backend-api\/(f\/)?conversation\/?$/.test(target.pathname);
+        if (eligible && init && typeof init.body === 'string') {
+          var requestBody = JSON.parse(init.body);
+          if (typeof requestBody.conversation_id === 'string') hint = requestBody.conversation_id;
+        }
+      } catch (e) {}
       return orig.apply(this, arguments).then(function (res) {
-        try {
-          if (String(method).toUpperCase() === 'POST' && /\/backend-api\/(f\/)?conversation(\?|$)/.test(url) && res && res.body) {
-            var pair = res.body.tee();
-            tapStream(pair[1]);
-            return new Response(pair[0], { status: res.status, statusText: res.statusText, headers: res.headers });
-          }
-        } catch (e) {}
+        // Kopia zachowuje oryginalny Response (url, redirected, body) dla aplikacji ChatGPT.
+        if (eligible && res && res.ok && res.body && /text\/event-stream/i.test(res.headers.get('content-type') || '')) {
+          try { tap(res.clone().body, hint); } catch (e) { state.capture.streamErrors++; }
+        }
         return res;
       });
     };
+    window.fetch = hook.fetch;
+    window.__waiFanoutRecorder = hook;
+    window.__waiFanoutHooked = true;
   }
 
   /* ---------- stan ---------- */
   var state = {
     id: '', model: null, source: '', capturedAt: null, sort: { col: 'n', dir: 1 }, tab: 'table',
-    expanded: {}, live: pref(PREF_LIVE) !== '0', timer: null, retry: null, backoff: 60000, min: false, minAt: 0, note: '', busy: false, recorded: 0, onlyCited: false, domOpen: {},
+    expanded: {}, live: pref(PREF_LIVE) !== '0', timer: null, retry: null, backoff: 60000, min: false, minAt: 0, note: '', busy: false, recorded: 0, onlyCited: false, domOpen: {}, closed: false,
+    capture: { streams: 0, events: 0, queryFields: 0, batches: 0, parseErrors: 0, streamErrors: 0, unassigned: 0, unsupported: 0, storageError: false, legacyHook: false },
   };
 
   /* ---------- panel ---------- */
@@ -557,7 +638,9 @@
     document.addEventListener('mouseup', up);
   }
   function close() {
+    state.closed = true;
     stopLive();
+    if (urlWatch) clearInterval(urlWatch);
     if (state.retry) { clearTimeout(state.retry); state.retry = null; }
     var r = document.getElementById(NS); if (r) r.remove();
     document.removeEventListener('keydown', onKey);
@@ -649,6 +732,7 @@
 
   /* ---------- render ---------- */
   function render() {
+    if (state.closed) return;
     var body = q('[data-r=body]'); if (!body) return;
     var pill = q('[data-r=pill]');
     var liveBtn = q('[data-a=live]');
@@ -680,13 +764,15 @@
   function headerHtml() {
     var h = '';
     if (state.note) h += '<p class="wf-note">' + esc(state.note) + '</p>';
+    if (state.capture.legacyHook) h += '<p class="wf-note">W tej karcie działa jeszcze nagrywanie ze starszej wersji. Przeładuj chatgpt.com i uruchom nową zakładkę przed kolejnym promptem.</p>';
+    if (state.capture.storageError) h += '<p class="wf-note">Nie udało się zapisać zapytań w pamięci przeglądarki. Sprawdź dostępność i wolne miejsce w pamięci witryny chatgpt.com.</p>';
     if (!state.model) return h;
     var m = state.model, s = m.stats;
     m.turns.forEach(function (t, i) {
       h += '<p class="wf-prompt"><b>' + (i + 1) + '.</b>' + esc(t.prompt || '(prompt bez treści)') + '</p>';
     });
     h += '<dl class="wf-stats">'
-      + '<div class="wf-stat"><dt>wyszukiwania</dt><dd>' + s.searches + '<small>w ' + s.rounds + ' ' + plural(s.rounds, 'rundzie', 'rundach', 'rundach') + '</small></dd></div>'
+      + '<div class="wf-stat"><dt>wyszukiwania</dt><dd>' + (s.hidden ? (s.searches ? s.searches + '+' : '—') : s.searches) + '<small>w ' + s.rounds + ' ' + plural(s.rounds, 'rundzie', 'rundach', 'rundach') + '</small></dd></div>'
       + '<div class="wf-stat"><dt>strony pobrane</dt><dd>' + s.pages + '</dd></div>'
       + '<div class="wf-stat"><dt>cytowane</dt><dd style="color:var(--green)">' + s.cited + '<small>' + (s.pages ? Math.round(100 * s.cited / s.pages) + '%' : '') + '</small></dd></div>'
       + '<div class="wf-stat"><dt>fora i społeczności</dt><dd>' + s.forumPages + '<small>cytowane ' + s.forumCited + '</small></dd></div>'
@@ -694,7 +780,16 @@
     h += '<p class="wf-meta">Odczyt: <span>' + esc(state.source) + '</span> · ' + esc(stamp(state.capturedAt || new Date()))
       + (s.recordedRounds ? ' · zapytania z nagrania: <span>' + s.recordedRounds + '</span> ' + plural(s.recordedRounds, 'runda', 'rundy', 'rund') : '')
       + '</p>';
-    if (s.hidden) h += '<p class="wf-note">Dla ' + s.hidden + ' ' + plural(s.hidden, 'rundy', 'rund', 'rund') + ' brak treści zapytań: ChatGPT wysyła je tylko w trakcie odpowiedzi, a ta rozmowa nie była wtedy nagrywana. Widać domeny, strony i cytowania każdej rundy. Otwórz panel przed wysłaniem promptu, a zapytania zostaną zapisane.</p>';
+    if (s.hidden) {
+      h += '<p class="wf-note">Dla ' + s.hidden + ' ' + plural(s.hidden, 'rundy', 'rund', 'rund') + ' nie udało się odczytać treści zapytań. Widać dostępne domeny, strony i cytowania. Przyczyną może być brak nagrania, nierozpoznany format odpowiedzi albo brak zapytań w danych udostępnionych przez ChatGPT. Samo otwarcie panelu przed promptem nie gwarantuje ich odczytu.</p>';
+      h += '<p class="wf-meta">Nagrywanie od uruchomienia panelu: strumienie <span>' + state.capture.streams
+        + '</span> · zdarzenia <span>' + state.capture.events + '</span> · pola zapytań <span>' + state.capture.queryFields
+        + '</span> · zapisane partie <span>' + state.capture.batches + '</span>'
+        + (state.capture.parseErrors ? ' · błędy odczytu: ' + state.capture.parseErrors : '')
+        + (state.capture.streamErrors ? ' · błędy strumienia: ' + state.capture.streamErrors : '')
+        + (state.capture.unsupported ? ' · nierozpoznane pola: ' + state.capture.unsupported : '')
+        + (state.capture.unassigned ? ' · partie bez identyfikatora czatu: ' + state.capture.unassigned : '') + '</p>';
+    }
     if (s.pending) h += '<p class="wf-note info">Odpowiedź na ' + s.pending + ' ' + plural(s.pending, 'prompt', 'prompty', 'promptów') + ' nie jest jeszcze zapisana, kolumna „cytowane” oczekuje na dane.</p>';
     return h;
   }
@@ -806,7 +901,7 @@
         var k = c[0];
         if (k === 'n' || k === 'round') h += '<td class="num">' + r[k] + '</td>';
         else if (k === 'type') h += '<td class="tp">' + esc(r.type) + '</td>';
-        else if (k === 'query') h += '<td class="q">' + (r.hidden ? '<span style="color:var(--faint)">zapytanie nienagrane – runda z ' + r.pages.length + ' ' + plural(r.pages.length, 'stroną', 'stronami', 'stronami') + '</span>' : esc(r.query)) + (r.place ? ' <span class="chip">' + esc(r.place) + '</span>' : '') + '</td>';
+        else if (k === 'query') h += '<td class="q">' + (r.hidden ? '<span style="color:var(--faint)">treść zapytań niedostępna – runda z ' + r.pages.length + ' ' + plural(r.pages.length, 'stroną', 'stronami', 'stronami') + '</span>' : esc(r.query)) + (r.place ? ' <span class="chip">' + esc(r.place) + '</span>' : '') + '</td>';
         else if (k === 'days') h += '<td class="num">' + esc(r.days) + '</td>';
         else if (k === 'lockedHost') h += '<td class="dm">' + (r.lockedHost ? (r.hidden ? '<span style="color:var(--muted)">' + esc(r.lockedHost) + '</span>' : '<span class="chip dom">' + esc(r.lockedHost) + '</span>') : '') + '</td>';
         else if (k === 'results') h += '<td class="num">' + (r.results == null ? '' : r.results) + '</td>';
@@ -844,7 +939,7 @@
       + '<dt>domena</dt><dd>Jeśli pole jest wypełnione, ChatGPT ograniczył to wyszukiwanie do jednej witryny (parametr domeny albo <code>site:</code> w zapytaniu). Traktuj to jako listę witryn, którym model ufa w Twoim temacie.</dd>'
       + '<dt>wyniki</dt><dd>Liczba zwróconych stron. Uwaga: ChatGPT zapisuje wyniki raz na rundę, więc dwa wyszukiwania z tej samej rundy bez ograniczenia domeny współdzielą pulę stron i pokazują tę samą liczbę. Puste dla <code>business</code> i <code>image</code>, bo danych nie ma w rozmowie.</dd>'
       + '<dt>cytowane</dt><dd>Ile z tych stron ChatGPT pokazał jako źródło odpowiedzi (przypisy w tekście i lista źródeł). Wartość 0 pozostaje w tabeli, ponieważ wskazuje, co model przeczytał i pominął. Wielokropek oznacza, że odpowiedź jeszcze nie jest zapisana.</dd>'
-      + '<dt>Wiersz „runda” bez zapytania</dt><dd>ChatGPT wysyła treść zapytań tylko w strumieniu odpowiedzi, a w zapisanej rozmowie pozostają wyniki i cytowania rund. Panel nagrywa zapytania, gdy jest otwarty w trakcie odpowiedzi, i przechowuje je w przeglądarce razem z czatem. Czat z historii, który nie był nagrywany, pokazuje jeden wiersz na rundę: domeny, liczbę stron i cytowania.</dd>'
+      + '<dt>Wiersz „runda” bez zapytania</dt><dd>Panel nie znalazł treści zapytań w dostępnych danych. Przyczyną może być brak nagrania, nierozpoznany format albo brak tych danych w odpowiedzi ChatGPT. Otwórz panel i włącz tryb „na żywo” przed promptem. Pod komunikatem o brakach zobaczysz liczniki odebranych strumieni, zdarzeń, pól zapytań i zapisanych partii. Nie zawierają treści rozmowy. Kafelek wyszukiwań pokazuje „—”, gdy liczba zapytań jest nieznana, lub „+”, gdy znana jest tylko część.</dd>'
       + '<dt>Brak kolumn „typ” i „dni”</dt><dd>Dla zapytań z nagrania ChatGPT zwykle nie podaje typu ani okna świeżości, więc panel ukrywa obie kolumny. W eksporcie typ takiego zapytania to „search”. Starszy format (linie fast/slow) jest nadal obsługiwany i wtedy kolumny są ponownie widoczne.</dd>'
       + '<dt>Wiersze podświetlone</dt><dd>Wyszukiwania kierowane na fora albo pytające o opinie.</dd>'
       + '<dt>+</dt><dd>Otwiera listę stron z tego wyszukiwania, pogrupowaną według witryn. Znacznik (ptaszek) oznacza stronę użytą jako źródło. Plakietka przy witrynie, np. 1/3, informuje, ile z pobranych stron zostało zacytowanych.</dd>'
@@ -857,7 +952,7 @@
       + '<dt>Kopiuj tabelę</dt><dd>Cała tabela rozdzielona tabulatorami, do wklejenia w arkusz kalkulacyjny.</dd>'
       + '<dt>Pobierz CSV</dt><dd>Jeden wiersz na wyszukiwanie, strony w dodatkowych kolumnach, znacznik przed adresem oznacza cytowanie. Na górze identyfikator czatu i data odczytu.</dd>'
       + '<dt>Pobierz CSV źródeł</dt><dd>Jeden wiersz na stronę, z hostem, tytułem i oznaczeniem cytowania.</dd><dt>Kopiuj domeny</dt><dd>Zakładka Domeny: domena, kategoria, liczba pobranych i cytowanych stron oraz liczba wyszukiwań site:, rozdzielone tabulatorami.</dd><dt>Pobierz CSV domen</dt><dd>Jeden wiersz na domenę, z adresami zacytowanych stron w ostatniej kolumnie. Filtr „tylko cytowane” nie wpływa na eksport.</dd>'
-      + '<dt>Na żywo</dt><dd>Domyślnie włączone (zielony przycisk). Panel czuwa cały czas i pobiera rozmowę, gdy ChatGPT odpowiada, a przestaje, gdy odpowiedź jest zapisana. Wyłączone (czerwony przycisk) oznacza, że panel nie pobiera danych w trakcie odpowiedzi. Rozmowę odczyta przy zmianie czatu, po nagraniu nowej partii zapytań lub po kliknięciu Odśwież. Zapytania ze strumienia są nagrywane w obu trybach. Ustawienie jest zapamiętywane. Przy limicie (HTTP 429) panel czeka minutę i próbuje ponownie.</dd><dt>Rozmiar panelu</dt><dd>Przeciągnij lewą krawędź, aby zmienić szerokość (zapamiętywana). Przycisk „–” albo dwukrotne kliknięcie nagłówka zwija panel do małego paska w prawym dolnym rogu, nie przerywając nagrywania. Kliknięcie paska albo przycisku „▢” rozwija go z powrotem.</dd>'
+      + '<dt>Na żywo</dt><dd>Domyślnie włączone (zielony przycisk). Panel przechwytuje odpowiedzi rozpoczęte w tym trybie i odświeża dane rozmowy podczas generowania. Wyłączenie trybu lub zamknięcie panelu zatrzymuje przechwytywanie kolejnych odpowiedzi; odczyt już rozpoczętego strumienia może się dokończyć. Ustawienie jest zapamiętywane. Przycisk Odśwież pobiera zapisane dane, ale nie odzyskuje minionego strumienia. Przy HTTP 429 pierwsza ponowna próba następuje po minucie, kolejne odstępy rosną do 10 minut.</dd><dt>Rozmiar panelu</dt><dd>Przeciągnij lewą krawędź, aby zmienić szerokość (zapamiętywana). Przycisk „–” albo dwukrotne kliknięcie nagłówka zwija panel do małego paska w prawym dolnym rogu, nie przerywając nagrywania. Kliknięcie paska albo przycisku „▢” rozwija go z powrotem.</dd>'
       + '<dt>Odśwież</dt><dd>Jednorazowy ponowny odczyt, z pominięciem kopii w przeglądarce.</dd>'
       + '</dl><h3>Prywatność</h3><dl><dd>Skrypt (bookmarklet) czyta rozmowę z tego samego adresu, z którego pobiera ją aplikacja ChatGPT, w Twojej sesji. Nic nie wysyła, promptów nie tworzy, a kopię czatu przechowuje tylko w localStorage tej przeglądarki.</dd></dl></div>';
   }
@@ -879,9 +974,12 @@
     state.note = '';
   }
   function load(force) {
+    if (state.closed) return;
     var id = conversationId();
     if (!id) {
-      state.model = null; state.note = 'Panel nagrywa. Wyślij prompt w tym czacie, a zapytania i wyniki pojawią się runda po rundzie.';
+      state.model = null; state.note = state.live
+        ? 'Panel czeka na odpowiedź. Wyślij prompt w tym czacie; pokażemy zapytania i wyniki, które uda się odczytać.'
+        : 'Tryb „na żywo” jest wyłączony. Włącz go przed wysłaniem promptu, aby rozpocząć przechwytywanie odpowiedzi.';
       render(); ensureLive(); return;
     }
     state.id = id;
@@ -897,12 +995,14 @@
     }
     state.busy = true; render();
     fetchConversation(id).then(function (conv) {
+      if (state.closed) return;
       state.busy = false; state.backoff = 60000;
       apply(conv, 'świeży odczyt');
       writeCache(id, conv);
       render();
       ensureLive();
     }).catch(function (err) {
+      if (state.closed) return;
       state.busy = false;
       if (err.rateLimited) {
         state.note = 'ChatGPT ogranicza odczyty (429). Zachowuję dotychczasowe dane i ponowię próbę za ' + Math.round(state.backoff / 1000) + ' s.';
@@ -945,6 +1045,7 @@
     alert('Fan-out Explorer działa tylko na chatgpt.com. Otwórz czat i kliknij zakładkę jeszcze raz.');
     return;
   }
+  if (window[NS] && typeof window[NS].close === 'function') window[NS].close();
   installStreamHook();
   mount();
   render();
@@ -956,5 +1057,13 @@
     var id = conversationId();
     if (id !== lastUrlId) { lastUrlId = id; state.expanded = {}; load(true); }
   }, 1500);
-  window[NS] = { version: VERSION, reload: function () { load(true); }, close: close };
+  window[NS] = {
+    version: VERSION, reload: function () { load(true); }, close: close,
+    // Wyłącznie liczniki i stan: bez promptów, zapytań, adresów URL, tokenów i identyfikatorów czatów.
+    diagnostics: function () {
+      var out = { version: VERSION, live: state.live, hookActive: !!(window.__waiFanoutRecorder && window.fetch === window.__waiFanoutRecorder.fetch) };
+      Object.keys(state.capture).forEach(function (k) { out[k] = state.capture[k]; });
+      return out;
+    },
+  };
 })();
