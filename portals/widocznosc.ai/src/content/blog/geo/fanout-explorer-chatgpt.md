@@ -23,10 +23,8 @@ faq:
       żadnym serwerem poza chatgpt.com.
   - q: 'Czy panel pokaże zapytania także w czacie z historii?'
     a: >-
-      Tak, od wersji 1.4.0. Panel czyta rozmowę z tego samego adresu co aplikacja ChatGPT, a te dane
-      zawierają treść zapytań również w zapisanych czatach. Wcześniejsze wersje korzystały z adresu,
-      który zapytań nie zawiera, i musiały nagrywać je w trakcie odpowiedzi. Jeśli po aktualizacji
-      nadal widzisz wiersz rundy bez zapytań, podmień zakładkę na nową wersję i przeładuj chatgpt.com.
+      Tak. Panel czyta rozmowę z tego samego adresu co aplikacja ChatGPT, a te dane zawierają treść
+      zapytań również w zapisanych czatach. Nie trzeba otwierać panelu przed wysłaniem promptu.
   - q: 'Jak sprawdzić, czy moja firma jest w cytowaniach?'
     a: >-
       Wpisz domenę albo nazwę firmy w polu „Twoja marka” pod zakładkami panelu, np. grupa-icea.pl, ICEA.
@@ -71,7 +69,7 @@ Kiedy ChatGPT korzysta z wyszukiwania, odpowiadając na pytanie o kredyt, laptop
 
 Impuls dały trzy narzędzia z rynku anglojęzycznego, które zadebiutowały w 2026 roku. Suganthan Mohanadasan opisał, że ChatGPT przeszukuje Reddit z parametrami przedziału czasowego (ang. time window) 365 i 3650 dni, po czym udostępnił rozszerzenie <a href="https://fanoutfox.com/" target="_blank" rel="nofollow noopener noreferrer">FanoutFox</a>. Nati Elimelech zbudował <a href="https://en.natielimelech.com/tools/chatgpt-query-fan-out-chrome-extension" target="_blank" rel="nofollow noopener noreferrer">rozszerzenie do Chrome</a> z eksportem do CSV. Orit Mutznik stworzyła własny bookmarklet <a href="https://www.oritmutznik.com/" target="_blank" rel="nofollow noopener noreferrer">Fanout Explorer</a>, czyli jeden przycisk na pasku zakładek, niewymagający instalacji. Wszystkie trzy przechwytują dane, które ChatGPT i tak wysyła do przeglądarki.
 
-Nasz [Fan-out Explorer](/narzedzia/fanout-explorer/) został dostosowany do polskich realiów wyszukiwania. Po pierwsze, osobno liczy fora i serwisy z opiniami, z których korzystają polscy internauci: Wykop, GoWork, Reddita oraz Quorę, która od 2019 roku ma polską wersję. Po drugie, rejestruje treść zapytań bezpośrednio ze strumienia danych, ponieważ w sprawdzonych przez nas nowych rozmowach ChatGPT nie zachowuje jej w historii. To obserwacja z naszych testów, do której wrócę niżej, bo wpływa na sposób korzystania z narzędzia.
+Nasz [Fan-out Explorer](/narzedzia/fanout-explorer/) został dostosowany do polskich realiów wyszukiwania. Po pierwsze, osobno liczy fora i serwisy z opiniami, z których korzystają polscy internauci: Wykop, GoWork, Reddita oraz Quorę, która od 2019 roku ma polską wersję. Po drugie, pokazuje zapytania także w czatach z historii, więc nie trzeba pamiętać o otwarciu panelu przed promptem. Po trzecie, po wpisaniu domeny od razu mówi, czy Twoja marka trafiła do wyników, cytowań i treści odpowiedzi.
 
 ## Co pokazuje panel
 
@@ -87,7 +85,7 @@ Przy `site:` panel filtruje pulę rundy po domenie. Te same strony i cytowania m
 
 Ikona plusa przy wierszu rozwija listę stron pogrupowaną według witryny, ze znacznikiem wyboru (ang. check mark) przy każdej zacytowanej. Kolumny, których w danym czacie nie ma (np. okno czasowe w dniach, którego ChatGPT już nie podaje), panel ukrywa automatycznie. Cztery przyciski eksportu pozwalają wyeksportować zapytania do narzędzi słów kluczowych, pobrać tabelę do arkusza kalkulacyjnego oraz wygenerować pliki CSV z wyszukiwaniami i źródłami (z informacją o cytowaniu). Wszystkie dane pozostają w Twojej przeglądarce.
 
-![Panel Fan-out Explorer w wersji 1.3.2 na czacie o kredycie hipotecznym: prompt, kafelki z liczbą wyszukiwań, pobranych i cytowanych stron oraz tabela z rozwiniętym pierwszym wyszukiwaniem, w którym zielone znaczniki oznaczają strony zacytowane w odpowiedzi](../../../assets/images/blog-geo-fanout-explorer-panel.webp)
+![Panel Fan-out Explorer na czacie o kredycie hipotecznym: prompt, kafelki z liczbą wyszukiwań, pobranych i cytowanych stron oraz tabela z rozwiniętym pierwszym wyszukiwaniem, w którym zielone znaczniki oznaczają strony zacytowane w odpowiedzi](../../../assets/images/blog-geo-fanout-explorer-panel.webp)
 
 <span class="img-caption">Panel na czacie o kredycie hipotecznym: kafelki podsumowania i lista stron z pierwszego wyszukiwania.</span>
 
@@ -112,7 +110,7 @@ Z tą klasyfikacją warto pamiętać o dwóch rzeczach:
 
 ### Czy Twoja firma jest w cytowaniach
 
-Od wersji 1.5.0 pod zakładkami panelu jest pole **„Twoja marka”**. Wpisz w nim domenę albo nazwę firmy (kilka wartości rozdziel przecinkami, np. `grupa-icea.pl, ICEA`). Nad tabelą pojawi się ramka z trzema odpowiedziami:
+Pod zakładkami panelu jest pole **„Twoja marka”**. Wpisz w nim domenę albo nazwę firmy (kilka wartości rozdziel przecinkami, np. `grupa-icea.pl, ICEA`). Nad tabelą pojawi się ramka z trzema odpowiedziami:
 
 - **W wynikach** – czy ChatGPT pobrał strony z Twojej domeny i ile ich było.
 - **Cytowana** – czy któraś z nich trafiła do odpowiedzi jako źródło.
@@ -124,7 +122,7 @@ Pod spodem panel wypisuje zapytania, w których puli wyników znalazły się Two
 
 Instalacja polega na przeciągnięciu przycisku ze strony narzędzia [Fan-out Explorer](/narzedzia/fanout-explorer/) na pasek zakładek. W systemie Windows długie kody zakładek nie zawsze działają poprawnie po przeciągnięciu, dlatego dostępna jest też metoda polegająca na ręcznym skopiowaniu kodu do pola adresu zakładki. Jeśli zakładki są zablokowane, ale masz dostęp do narzędzi deweloperskich, możesz uruchomić kod przez konsolę.
 
-Zakładkę można kliknąć przed wysłaniem promptu albo w dowolnym czacie z historii. **Od wersji 1.4.0 panel czyta rozmowę z tego samego adresu, z którego pobiera ją aplikacja ChatGPT, a te dane zawierają treść zapytań także w zapisanych czatach.** Wcześniejsze wersje korzystały ze starszego adresu rozmowy, w którym polecenia wyszukiwania są puste, dlatego musiały nagrywać zapytania w trakcie odpowiedzi – i wtedy wymagały kliknięcia przed promptem. Przy włączonym trybie „na żywo” panel czeka, aż ChatGPT skończy odpowiadać, i dopiero wtedy raz odczytuje rozmowę. Częste odczyty w trakcie generowania kończyły się blokadą ChatGPT (błąd 429). Jeśli masz starszą wersję zakładki, podmień ją na nową i przeładuj chatgpt.com.
+Zakładkę można kliknąć przed wysłaniem promptu albo w dowolnym czacie z historii. **Panel czyta rozmowę z tego samego adresu, z którego pobiera ją aplikacja ChatGPT, a te dane zawierają treść zapytań także w zapisanych czatach.** Przy włączonym trybie „na żywo” panel czeka, aż ChatGPT skończy odpowiadać, i dopiero wtedy odczytuje rozmowę. Nie pobiera jej w trakcie generowania, bo zbyt częste odczyty ChatGPT blokuje błędem 429.
 
 ![Strona narzędzia Fan-out Explorer na widocznosc.ai: tytuł, opis działania i trzy sposoby instalacji – przeciągnięcie przycisku na pasek zakładek, wklejenie kodu jako adresu zakładki i uruchomienie w konsoli przeglądarki](../../../assets/images/blog-geo-fanout-explorer-install.webp)
 
@@ -132,7 +130,7 @@ Zakładkę można kliknąć przed wysłaniem promptu albo w dowolnym czacie z hi
 
 ## Sześć polskich promptów, sześć różnych fan-outów
 
-Wszystkie testy przeprowadzono 16 września 2026 roku na koncie Free, z wykorzystaniem modelu GPT-5.6. Jeden prompt na czat, bez historii, bez pamięci między rozmowami. Dane zebraliśmy wersją 1.1.0 bookmarkletu; zapytania o Shoper i WooCommerce przechwyciliśmy ręcznie ze strumienia, a w przypadku CRM zachowały się wyniki i cytowania bez treści zapytań. Zrzuty panelu pokazują nowszą wersję 1.3.2. To przykłady pojedynczych sesji, a nie pomiar częstotliwości zachowań ChatGPT.
+Wszystkie testy przeprowadzono 16 września 2026 roku na koncie Free, z wykorzystaniem modelu GPT-5.6. Jeden prompt na czat, bez historii, bez pamięci między rozmowami. W przypadku porównania CRM-ów zachowały się wyniki i cytowania bez treści zapytań. To przykłady pojedynczych sesji, a nie pomiar częstotliwości zachowań ChatGPT.
 
 ### Kredyt hipoteczny dla singla, „chcę realne opinie klientów”
 
@@ -153,7 +151,7 @@ Prompt zawierał prośbę o najlepszy kredyt hipoteczny dla singla we wrześniu 
 
 Trzy rzeczy rzucają się w oczy. Model zachował miesiąc i rok podane w prompcie oraz dopisał nazwy sześciu banków. W drugiej rundzie zawęził wyszukiwanie do Reddita, forum Bankiera i społeczności ING, co pasuje do prośby o opinie. Reddit pojawił się w wynikach, ale nie został zacytowany. Trzecia runda zawiera próbę trafienia w konkretny blog finansowy z frazą w cudzysłowie; do tego wiersza panel przypisał dwie strony i zero cytowań.
 
-Tabela odtwarza zapis z wersji 1.1.0. Wiersz społeczności ING pokazuje zero cytowań, choć lista źródeł końcowej odpowiedzi obejmuje wątek z tej witryny. Bez surowego eksportu nie rozstrzygamy tej rozbieżności ani dokładnego udziału forów w cytowaniach. Ograniczenie domeny w zapytaniu również nie oznacza, że każdy wynik z tej domeny pochodzi z jej forum.
+Tabela odtwarza zapis z dnia testu. Wiersz społeczności ING pokazuje zero cytowań, choć lista źródeł końcowej odpowiedzi obejmuje wątek z tej witryny. Bez surowego eksportu nie rozstrzygamy tej rozbieżności ani dokładnego udziału forów w cytowaniach. Ograniczenie domeny w zapytaniu również nie oznacza, że każdy wynik z tej domeny pochodzi z jej forum.
 
 Według zapisanej listy źródeł w odpowiedzi znalazły się: ranking z mdyrda.pl z marca 2026, dwa artykuły Bankiera o kredytach na wrzesień 2026 oraz wątek „przestrzegam przed ING” ze społeczności banku. **Ten przykład wskazuje miejsca do analizy: rankingi, publikacje finansowe i społeczności klientów.** Pokazuje też, że miesiąc w zapytaniu nie gwarantuje aktualności każdego cytowanego źródła.
 

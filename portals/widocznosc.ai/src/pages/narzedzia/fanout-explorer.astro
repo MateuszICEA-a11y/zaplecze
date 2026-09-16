@@ -49,7 +49,7 @@ const faq = [
   },
   {
     q: 'Dlaczego treść zapytań jest niedostępna mimo otwartego panelu?',
-    a: 'Od wersji 1.4.0 panel czyta rozmowę tym samym adresem co aplikacja ChatGPT (od września 2026), a on zawiera treść zapytań także w zapisanych czatach, na koncie Free i Business. Nagrywanie strumienia zostaje jako zapas. Jeśli zapytań nadal brakuje, możliwe, że ChatGPT w danej odpowiedzi ich nie udostępnił albo zmienił format. Pod komunikatem o brakach panel pokazuje liczniki strumieni, zdarzeń i zapisanych partii. Przekaż je razem z planem konta, bez treści rozmowy. Po aktualizacji zakładki przeładuj chatgpt.com.'',
+    a: 'Panel czyta rozmowę z tego samego adresu co aplikacja ChatGPT, a te dane zawierają treść zapytań także w zapisanych czatach, na koncie Free i Business. Jeśli zapytań brakuje, możliwe, że ChatGPT w danej odpowiedzi ich nie udostępnił albo zmienił format. Pod komunikatem o brakach panel pokazuje liczniki strumieni, zdarzeń i zapisanych partii. Przekaż je razem z planem konta, bez treści rozmowy. Po aktualizacji zakładki przeładuj chatgpt.com.',
   },
   {
     q: 'Dlaczego kolumny „wyniki” i „cytowane” bywają puste?',
@@ -61,7 +61,7 @@ const faq = [
   },
   {
     q: 'Co oznacza komunikat o limicie (Błąd 429)?',
-    a: 'Kod 429 (Too Many Requests) oznacza, że ChatGPT blokuje zbyt częste pobieranie danych. Od wersji 1.4.0 panel nie pobiera rozmowy w trakcie generowania, tylko raz po zakończeniu odpowiedzi. Zakończona rozmowa wymaga zwykle jednego pobrania, a jeśli dostępna jest jej lokalna kopia, panel może wczytać ją bez ponownego pobierania. Jeśli limit zostanie przekroczony, panel zachowuje dotychczasowe dane i wstrzymuje wszystkie odczyty rozmowy, także z przycisku Odśwież. Pierwsza przerwa trwa co najmniej minutę; kolejne rosną do 10 minut. Jeśli serwer poda dłuższy czas w Retry-After, panel go respektuje. Komunikat pokazuje godzinę kolejnej próby.',
+    a: 'Kod 429 (Too Many Requests) oznacza, że ChatGPT blokuje zbyt częste pobieranie danych. Panel nie pobiera rozmowy w trakcie generowania, tylko po zakończeniu odpowiedzi. Zakończona rozmowa wymaga zwykle jednego pobrania, a jeśli dostępna jest jej lokalna kopia, panel może wczytać ją bez ponownego pobierania. Jeśli limit zostanie przekroczony, panel zachowuje dotychczasowe dane i wstrzymuje wszystkie odczyty rozmowy, także z przycisku Odśwież. Pierwsza przerwa trwa co najmniej minutę; kolejne rosną do 10 minut. Jeśli serwer poda dłuższy czas w Retry-After, panel go respektuje. Komunikat pokazuje godzinę kolejnej próby.',
   },
   {
     q: 'Czy narzędzie działa w aplikacji desktopowej ChatGPT, w Safari albo w Claude i Gemini?',
