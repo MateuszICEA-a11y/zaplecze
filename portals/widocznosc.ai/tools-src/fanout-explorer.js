@@ -12,9 +12,10 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.0.0';
+  var VERSION = '1.1.0';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv:';
+  var QUERIES_PREFIX = NS + ':q:';
   var SITE = 'https://widocznosc.ai/narzedzia/fanout-explorer/';
 
   /* ---------- słownik typów linii web.run ---------- */
@@ -136,7 +137,7 @@
     return nodes.reverse();
   }
 
-  function build(conv) {
+  function build(conv, recorded) {
     var turns = [];
     var cur = null, turn = null;
     var idToIndex = {}; // długi identyfikator rundy (z wyników narzędzia) -> pozycja rundy w turze
@@ -199,11 +200,8 @@
         cur = { turn: turn, index: turn.rounds.length, searches: [], pages: [], seen: {}, hidden: false };
         turn.rounds.push(cur);
         text.split(/\r?\n/).forEach(function (l) { var s = parseSearchLine(l); if (s) cur.searches.push(s); });
-        if (!cur.searches.length) {
-          // Modele „thinking” zapisują rundę bez treści poleceń web.run: zostają wyniki i cytowania.
-          cur.hidden = true;
-          cur.searches.push({ type: 'runda', query: '', days: '', domain: '', place: '', lockedHost: '', hidden: true });
-        }
+        // Format od 2026: zapisana rozmowa ma puste parts dla web.run. Zapytania bierzemy z nagrania
+        // strumienia (jeśli panel był otwarty w trakcie odpowiedzi), inaczej runda zostaje bez treści.
         return;
       }
       if (role === 'tool' && cur && meta.search_result_groups) {
@@ -230,14 +228,35 @@
       }
     });
 
+    /* dopasuj nagrane partie zapytań do rund bez treści: po kolei, od końca (nagranie obejmuje ostatnie odpowiedzi) */
+    var emptyRounds = [];
+    turns.forEach(function (t) { t.rounds.forEach(function (r) { if (!r.searches.length) emptyRounds.push(r); }); });
+    var batches = (recorded || []).slice();
+    var offset = Math.max(0, emptyRounds.length - batches.length);
+    emptyRounds.forEach(function (r, i) {
+      var b = batches[i - offset];
+      if (b && i >= offset) {
+        b.queries.forEach(function (q, qi) {
+          var type = (b.types && b.types[qi]) || 'search';
+          var m = q.match(/site:([^\s"']+)/i);
+          r.searches.push({ type: type, query: q, days: '', domain: '', place: '', lockedHost: m ? m[1].replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0].toLowerCase() : '', recorded: true });
+        });
+        r.recorded = true;
+      }
+      if (!r.searches.length) {
+        r.hidden = true;
+        r.searches.push({ type: 'runda', query: '', days: '', domain: '', place: '', lockedHost: '', hidden: true });
+      }
+    });
+
     /* oznacz strony cytowane i zbuduj wiersze */
     var rows = [], n = 0, roundNo = 0;
-    var stats = { prompts: turns.length, searches: 0, rounds: 0, hidden: 0, forumSearches: 0, pages: 0, cited: 0, forumPages: 0, forumCited: 0, pending: 0 };
+    var stats = { prompts: turns.length, searches: 0, rounds: 0, hidden: 0, recordedRounds: 0, forumSearches: 0, pages: 0, cited: 0, forumPages: 0, forumCited: 0, pending: 0 };
     var seenPage = {}, seenCited = {};
     turns.forEach(function (t, ti) {
       if (!t.answered) stats.pending++;
       t.rounds.forEach(function (r) {
-        roundNo++; stats.rounds++;
+        roundNo++; stats.rounds++; if (r.recorded) stats.recordedRounds++;
         r.pages.forEach(function (p) {
           p.cited = !!(t.citedRefs[p.refKey] || t.citedUrls[p.canon]);
           if (!seenPage[p.canon]) { seenPage[p.canon] = 1; stats.pages++; if (isForum(p.host)) stats.forumPages++; }
@@ -247,7 +266,7 @@
           n++;
           var pool = null;
           if (s.hidden) { stats.hidden++; pool = r.pages.slice(); }
-          else { stats.searches++; if (TYPES[s.type].pool === 'web') pool = s.lockedHost ? r.pages.filter(function (p) { return isSub(p.host, s.lockedHost); }) : r.pages.slice(); }
+          else { stats.searches++; var def = TYPES[s.type]; if (!def || def.pool === 'web') pool = s.lockedHost ? r.pages.filter(function (p) { return isSub(p.host, s.lockedHost); }) : r.pages.slice(); }
           var hosts = {}; r.pages.forEach(function (p) { hosts[p.host] = (hosts[p.host] || 0) + 1; });
           var hostList = Object.keys(hosts).sort(function (a, b) { return hosts[b] - hosts[a]; });
           var forum = s.hidden ? hostList.some(isForum) : (isForum(s.lockedHost) || /reddit|wykop|forum|quora|opinie/i.test(s.query));
@@ -301,10 +320,86 @@
     }
   }
 
+  /* ---------- nagrywanie zapytań ze strumienia odpowiedzi ----------
+   * ChatGPT (format od 2026) wysyła treść zapytań tylko w strumieniu SSE odpowiedzi, w wiadomości
+   * narzędzia z metadata.search_model_queries.queries. Zapisana rozmowa tego pola nie ma, więc panel
+   * podpina się pod fetch strony, przepisuje kopię strumienia i odkłada zapytania per czat w localStorage.
+   */
+  function readQueries(id) {
+    try { var raw = localStorage.getItem(QUERIES_PREFIX + id); return raw ? JSON.parse(raw) : []; } catch (e) { return []; }
+  }
+  function saveQueries(id, batches) {
+    try { localStorage.setItem(QUERIES_PREFIX + id, JSON.stringify(batches)); } catch (e) {}
+  }
+  function recordBatch(convId, msgId, queries, types) {
+    if (!convId || !queries || !queries.length) return;
+    var list = readQueries(convId);
+    for (var i = 0; i < list.length; i++) if (list[i].id === msgId) return;
+    list.push({ id: msgId, queries: queries, types: types || null, at: Date.now() });
+    saveQueries(convId, list);
+    state.recorded++;
+    if (convId !== state.id) { state.id = convId; }
+    if (!state.busy) load(true);
+  }
+  function scanEvent(obj, convHint) {
+    var convId = convHint, found = [];
+    (function walk(v) {
+      if (!v || typeof v !== 'object') return;
+      if (Array.isArray(v)) { v.forEach(walk); return; }
+      if (typeof v.conversation_id === 'string') convId = v.conversation_id;
+      if (v.search_model_queries && Array.isArray(v.search_model_queries.queries)) {
+        found.push({ msg: v, queries: v.search_model_queries.queries.filter(function (q) { return typeof q === 'string' && q.trim(); }), types: v.search_tool_query_types || null });
+      }
+      Object.keys(v).forEach(function (k) { walk(v[k]); });
+    })(obj);
+    found.forEach(function (f) {
+      recordBatch(convId, f.msg.id || ('n' + Date.now() + Math.random()), f.queries, f.types);
+    });
+    return convId;
+  }
+  function tapStream(body) {
+    var reader = body.getReader(), dec = new TextDecoder(), buf = '', convId = conversationId();
+    (function pump() {
+      reader.read().then(function (r) {
+        if (r.done) return;
+        buf += dec.decode(r.value, { stream: true });
+        var parts = buf.split(/\n\n/); buf = parts.pop();
+        parts.forEach(function (ev) {
+          ev.split(/\n/).forEach(function (line) {
+            if (line.indexOf('data: ') !== 0) return;
+            var payload = line.slice(6).trim();
+            if (!payload || payload === '[DONE]' || payload.charAt(0) !== '{') return;
+            try { convId = scanEvent(JSON.parse(payload), convId); } catch (e) {}
+          });
+        });
+        pump();
+      }).catch(function () {});
+    })();
+  }
+  function installStreamHook() {
+    if (window.__waiFanoutHooked) return;
+    window.__waiFanoutHooked = true;
+    var orig = window.fetch;
+    window.fetch = function (input, init) {
+      var url = typeof input === 'string' ? input : (input && input.url) || '';
+      var method = (init && init.method) || (input && input.method) || 'GET';
+      return orig.apply(this, arguments).then(function (res) {
+        try {
+          if (String(method).toUpperCase() === 'POST' && /\/backend-api\/(f\/)?conversation(\?|$)/.test(url) && res && res.body) {
+            var pair = res.body.tee();
+            tapStream(pair[1]);
+            return new Response(pair[0], { status: res.status, statusText: res.statusText, headers: res.headers });
+          }
+        } catch (e) {}
+        return res;
+      });
+    };
+  }
+
   /* ---------- stan ---------- */
   var state = {
     id: '', model: null, source: '', capturedAt: null, sort: { col: 'n', dir: 1 }, tab: 'table',
-    expanded: {}, live: true, timer: null, backoff: 60000, note: '', busy: false,
+    expanded: {}, live: true, timer: null, backoff: 60000, note: '', busy: false, recorded: 0,
   };
 
   /* ---------- panel ---------- */
@@ -496,7 +591,8 @@
     });
     h += '<p class="wf-sum">Odczyt: <span>' + esc(state.source) + '</span>, ' + esc(stamp(state.capturedAt || new Date()))
       + ' · wyszukiwań <span>' + s.searches + '</span> w <span>' + s.rounds + '</span> rundach, z tego na forach (Reddit, Wykop i podobne) <span>' + s.forumSearches + '</span>'
-      + (s.hidden ? '<br><span style="color:#ffb86b">W ' + s.hidden + ' rundach ChatGPT nie zapisał treści zapytań (tak robi model z rozumowaniem, np. GPT-5.6 Thinking). Widać domeny, strony i cytowania każdej rundy.</span>' : '')
+      + (s.hidden ? '<br><span style="color:#ffb86b">W ' + s.hidden + ' rundach brak treści zapytań: ChatGPT wysyła je tylko w trakcie odpowiedzi, a ten czat nie był wtedy nagrywany. Widać domeny, strony i cytowania każdej rundy. Otwórz panel przed wysłaniem promptu, a zapytania zostaną zapisane.</span>' : '')
+      + (s.recordedRounds ? '<br>Zapytania z nagrania na żywo: <span>' + s.recordedRounds + '</span> rund.' : '')
       + '<br>stron pobranych <span>' + s.pages + '</span>, użytych jako źródło <span>' + s.cited + '</span>'
       + ' · z forów pobranych <span>' + s.forumPages + '</span>, użytych <span>' + s.forumCited + '</span>'
       + (s.pending ? '<br><span style="color:#ffb86b">Odpowiedź na ' + s.pending + ' prompt(ów) jeszcze nie jest zapisana, kolumna „cytowane” czeka.</span>' : '')
@@ -512,7 +608,7 @@
       var canOpen = r.pages.length > 0;
       h += '<tr class="' + (r.forum ? 'forum' : '') + '">'
         + '<td class="num">' + r.n + '</td><td class="num">' + r.round + '</td><td class="tp">' + esc(r.type) + '</td>'
-        + '<td class="q">' + (r.hidden ? '<span style="color:#8b93a7">zapytanie ukryte przez ChatGPT – runda z ' + r.pages.length + ' stronami</span>' : esc(r.query)) + (r.place ? ' <span class="wf-pill">' + esc(r.place) + '</span>' : '') + '</td>'
+        + '<td class="q">' + (r.hidden ? '<span style="color:#8b93a7">zapytanie nie nagrane – runda z ' + r.pages.length + ' stronami</span>' : esc(r.query)) + (r.place ? ' <span class="wf-pill">' + esc(r.place) + '</span>' : '') + '</td>'
         + '<td class="num">' + esc(r.days) + '</td><td class="dm">' + esc(r.lockedHost) + '</td>'
         + '<td class="num">' + (r.results == null ? '' : r.results) + '</td>'
         + '<td class="num">' + (r.cited == null ? (r.results == null ? '' : '…') : r.cited) + '</td>'
@@ -547,7 +643,8 @@
       + '<dt>domena</dt><dd>Jeśli wypełniona, ChatGPT ograniczył to wyszukiwanie do jednej witryny (parametr domeny albo <code>site:</code> w zapytaniu). Traktuj to jako listę witryn, którym model ufa w Twoim temacie.</dd>'
       + '<dt>wyniki</dt><dd>Ile stron wróciło. Uwaga: ChatGPT zapisuje wyniki raz na rundę, więc dwa wyszukiwania z tej samej rundy bez ograniczenia domeny dzielą jedną pulę stron i pokazują tę samą liczbę. Puste dla <code>business</code> i <code>image</code>, bo danych nie ma w rozmowie.</dd>'
       + '<dt>cytowane</dt><dd>Ile z tych stron ChatGPT pokazał jako źródło odpowiedzi (przypisy w tekście i lista źródeł). 0 zostaje w tabeli, bo mówi, co model przeczytał i pominął. Wielokropek oznacza, że odpowiedź jeszcze nie jest zapisana.</dd>'
-      + '<dt>Wiersz „runda” z ukrytym zapytaniem</dt><dd>Modele z rozumowaniem (GPT-5.6 Thinking i podobne) zapisują w rozmowie wyniki i cytowania każdej rundy, ale nie treść zapytań. Wiersz pokazuje wtedy domeny, z których wróciły strony, ich liczbę i cytowania. Treść zapytań zobaczysz na modelach bez rozumowania (Instant).</dd>'
+      + '<dt>Wiersz „runda” bez zapytania</dt><dd>ChatGPT wysyła treść zapytań tylko w strumieniu odpowiedzi, a w zapisanej rozmowie zostają wyniki i cytowania rund. Panel nagrywa zapytania, gdy jest otwarty w trakcie odpowiedzi, i trzyma je w przeglądarce razem z czatem. Czat z historii, który nie był nagrywany, pokazuje wiersz per runda: domeny, liczbę stron i cytowania.</dd>'
+      + '<dt>typ „search”</dt><dd>Dla zapytań z nagrania ChatGPT nie podaje typu ani okna świeżości, więc kolumna pokazuje „search”, a „dni” zostaje puste. Starszy format (linie fast/slow) jest nadal obsługiwany.</dd>'
       + '<dt>Wiersze podświetlone</dt><dd>Wyszukiwania kierowane na fora albo pytające o opinie.</dd>'
       + '<dt>+</dt><dd>Otwiera listę stron z tego wyszukiwania, pogrupowaną po witrynie. Ptaszek oznacza stronę użytą jako źródło.</dd>'
       + '</dl><h3>Przyciski</h3><dl>'
@@ -571,7 +668,7 @@
 
   /* ---------- ładowanie i tryb live ---------- */
   function apply(conv, source) {
-    state.model = build(conv);
+    state.model = build(conv, readQueries(state.id));
     state.source = source;
     state.capturedAt = new Date();
     state.note = '';
@@ -579,7 +676,7 @@
   function load(force) {
     var id = conversationId();
     if (!id) {
-      state.model = null; state.note = 'Otwórz konkretny czat (adres z /c/…). Na pustym czacie wyślij prompt, a panel zacznie czytać po zapisaniu rozmowy.';
+      state.model = null; state.note = 'Panel nagrywa. Wyślij prompt w tym czacie, a zapytania i wyniki pojawią się runda po rundzie.';
       render(); if (state.live) startLive(); return;
     }
     state.id = id;
@@ -640,8 +737,16 @@
     alert('Fan-out Explorer działa tylko na chatgpt.com. Otwórz czat i kliknij zakładkę jeszcze raz.');
     return;
   }
+  installStreamHook();
   mount();
   render();
   load(false);
+  // stały obserwator adresu: przejście do innego czatu (także z pustego na nowy) przeładowuje panel
+  var lastUrlId = conversationId();
+  var urlWatch = setInterval(function () {
+    if (!document.getElementById(NS)) { clearInterval(urlWatch); return; }
+    var id = conversationId();
+    if (id !== lastUrlId) { lastUrlId = id; state.expanded = {}; load(true); }
+  }, 1500);
   window[NS] = { version: VERSION, reload: function () { load(true); }, close: close };
 })();

@@ -50,8 +50,8 @@ const faq = [
     a: 'Nie. Czyta rozmowę tym samym adresem, którym pobiera ją aplikacja ChatGPT, w Twojej zalogowanej sesji, buduje tabelę w przeglądarce i trzyma kopię czatu w localStorage chatgpt.com, żeby następne otwarcie było natychmiastowe. Nic nie trafia do widocznosc.ai ani do nikogo innego. Zakładka ma cały kod w sobie i nie łączy się z niczym poza chatgpt.com, nawet z widocznosc.ai.',
   },
   {
-    q: 'Dlaczego w kolumnie „zapytanie” widzę „ukryte przez ChatGPT”?',
-    a: 'Modele z rozumowaniem (GPT-5.6 Thinking i podobne) zapisują w rozmowie wyniki i cytowania każdej rundy, ale nie treść zapytań wysłanych do wyszukiwarki. Panel pokazuje wtedy jeden wiersz na rundę: domeny, z których wróciły strony, ich liczbę i to, które zostały zacytowane. Treść zapytań zobaczysz na modelach bez rozumowania (np. Instant), jeśli Twój plan pozwala je wybrać.',
+    q: 'Dlaczego w kolumnie „zapytanie” widzę „nie nagrane”?',
+    a: 'ChatGPT wysyła treść zapytań tylko w strumieniu odpowiedzi, a w zapisanej rozmowie zostają wyniki i cytowania każdej rundy. Panel podpina się pod ten strumień i nagrywa zapytania, gdy jest otwarty w chwili wysyłania promptu, a potem trzyma je w przeglądarce razem z czatem. Czat z historii, który nie był nagrywany, pokazuje jeden wiersz na rundę: domeny, z których wróciły strony, ich liczbę i to, które zostały zacytowane. Dotyczy to każdego modelu, także bez trybu „Myślenie”.',
   },
   {
     q: 'Dlaczego kolumny „wyniki” i „cytowane” bywają puste?',
@@ -76,12 +76,12 @@ const schema = buildGraph(
     slug: 'fanout-explorer',
     name: 'Fan-out Explorer – bookmarklet do ChatGPT – widocznosc.ai',
     description:
-      'Bezpłatny bookmarklet widocznosc.ai, który na chatgpt.com pokazuje query fan-out za Twoim promptem: każde wyszukiwanie, strony, które wróciły, i te zacytowane w odpowiedzi. Działa na żywo i na zapisanych czatach, nic nie wysyła.',
+      'Bezpłatny bookmarklet widocznosc.ai, który na chatgpt.com pokazuje query fan-out za Twoim promptem: każde wyszukiwanie, strony, które wróciły, i te zacytowane w odpowiedzi. Nagrywa zapytania w trakcie odpowiedzi, czyta zapisane czaty, nic nie wysyła.',
     featureList: [
       'Tabela wyszukiwań ChatGPT: runda, typ, zapytanie, okno świeżości, domena',
       'Lista stron z każdego wyszukiwania z oznaczeniem cytowanych',
       'Podsumowanie udziału forów (Reddit, Wykop, Quora, GoWork)',
-      'Tryb na żywo w trakcie odpowiedzi i odczyt zapisanych czatów',
+      'Nagrywanie zapytań ze strumienia odpowiedzi, odczyt zapisanych czatów',
       'Eksport: kopiowanie zapytań, tabela do arkusza, CSV wyszukiwań i CSV źródeł',
       'Tylko odczyt, dane zostają w przeglądarce',
     ],
@@ -127,9 +127,10 @@ const schema = buildGraph(
           <p class="tool-hero-copy">
             Fan-out Explorer to zakładka w przeglądarce. Klikasz ją na dowolnym czacie na
             chatgpt.com i dostajesz tabelę: każde wyszukiwanie, które ChatGPT wysłał w tle, strony,
-            które z niego wróciły, i te, które trafiły do odpowiedzi jako źródło. Działa na żywo w
-            trakcie odpowiedzi i na zapisanych czatach. Niczego nie instalujesz, nic nie wychodzi z
-            Twojej przeglądarki.
+            które z niego wróciły, i te, które trafiły do odpowiedzi jako źródło. Treść zapytań
+            ChatGPT wysyła tylko w trakcie odpowiedzi, więc panel otwierasz przed wysłaniem promptu
+            i nagrywa runda po rundzie. Zapisany czat z historii pokazuje rundy, domeny, strony i
+            cytowania. Niczego nie instalujesz, nic nie wychodzi z Twojej przeglądarki.
           </p>
         </header>
 
@@ -184,12 +185,14 @@ const schema = buildGraph(
 
         <ol class="usage">
           <li>
-            <b>Nowy prompt</b> – otwórz pusty czat na chatgpt.com, kliknij zakładkę, wyślij prompt. Wiersze
-            pojawiają się runda po rundzie.
+            <b>Nowy prompt</b> – otwórz pusty czat na chatgpt.com, kliknij zakładkę, dopiero potem wyślij
+            prompt. Zapytania i wiersze pojawiają się runda po rundzie. Zakładka kliknięta po wysłaniu
+            promptu nie zobaczy już treści zapytań tej odpowiedzi.
           </li>
           <li>
-            <b>Zapisany czat</b> – otwórz dowolną rozmowę z historii i kliknij zakładkę. Pierwszy odczyt
-            trwa sekundę, kolejne są natychmiastowe.
+            <b>Zapisany czat</b> – otwórz dowolną rozmowę z historii i kliknij zakładkę. Zobaczysz rundy,
+            domeny, strony i cytowania, a zapytania tylko wtedy, gdy ten czat był nagrywany. Pierwszy
+            odczyt trwa sekundę, kolejne są natychmiastowe.
           </li>
           <li>
             <b>Nic się nie dzieje?</b> Kliknij zakładkę prawym przyciskiem, wybierz „Edytuj” i sprawdź,
