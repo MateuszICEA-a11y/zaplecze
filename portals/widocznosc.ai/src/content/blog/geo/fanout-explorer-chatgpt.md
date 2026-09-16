@@ -56,7 +56,20 @@ Po kliknięciu zakładki w oknie czatu, z prawej strony otwiera się panel. Na g
 
 Ikona plusa przy wierszu rozwija listę stron pogrupowaną według witryny, ze znacznikiem wyboru (ang. check mark) przy każdej zacytowanej. Kolumny, których w danym czacie nie ma (np. okno czasowe w dniach, którego ChatGPT już nie podaje), panel ukrywa automatycznie. Cztery przyciski eksportu pozwalają wyeksportować zapytania do narzędzi słów kluczowych, pobrać tabelę do arkusza kalkulacyjnego oraz wygenerować pliki CSV z wyszukiwaniami i źródłami (z informacją o cytowaniu). Wszystkie dane pozostają w Twojej przeglądarce.
 
-Druga zakładka, **Domeny**, zbiera wszystkie strony z czatu z podziałem na witryny: ile ChatGPT pobrał, ile zacytował i w ilu wyszukiwaniach ograniczył się do tej witryny operatorem `site:`. Witryny są wstępnie pogrupowane w siedem kategorii: fora i społeczności, opinie i rankingi, sklepy i platformy handlowe (marketplace), media, dokumentacja producentów, instytucje oraz strony firm i marek. To klasyfikacja na podstawie adresu, nie po treści, więc traktuj ją jako pierwsze sortowanie, ale w praktyce od razu widać, czy w danej kategorii model czerpie wiedzę z forów, rankingów czy stron producentów. Filtr „tylko cytowane” zostawia witryny, które trafiły do odpowiedzi, a bez filtra widać też te czytane i pomijane, czyli często ciekawszą listę.
+Druga zakładka, **Domeny**, zbiera wszystkie strony z czatu z podziałem na witryny: ile ChatGPT pobrał, ile zacytował i w ilu wyszukiwaniach ograniczył się do tej witryny operatorem `site:`. Witryny są wstępnie pogrupowane w siedem kategorii:
+
+- fora i społeczności,
+- opinie i rankingi,
+- sklepy i platformy handlowe (marketplace),
+- media,
+- dokumentacja producentów,
+- instytucje,
+- strony firm i marek.
+
+Z tą klasyfikacją warto pamiętać o dwóch rzeczach:
+
+- **Przypisanie po adresie** – kategoria wynika z adresu strony, nie z jej treści, więc traktuj ją jako pierwsze sortowanie. W praktyce i tak od razu widać, czy w danej kategorii model czerpie wiedzę z forów, rankingów czy stron producentów.
+- **Filtr „tylko cytowane”** – zostawia witryny, które trafiły do odpowiedzi. Bez filtra widać też te czytane i pomijane, czyli często ciekawszą listę.
 
 ![Panel Fan-out Explorer na czacie o kredycie hipotecznym: prompt, linie podsumowania i tabela z rozwiniętym pierwszym wyszukiwaniem, w którym znaczniki wyboru oznaczają strony cytowane w odpowiedzi](../../../assets/images/blog-geo-fanout-explorer-panel.webp)
 
