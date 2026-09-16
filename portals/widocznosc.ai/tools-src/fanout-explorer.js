@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.3.5';
+  var VERSION = '1.4.0';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv:';
   var QUERIES_PREFIX = NS + ':q:';
@@ -175,7 +175,8 @@
       refs.forEach(function (c) {
         if (!c || !c.type) return;
         var list = (c.items || []).concat(c.sources || []);
-        if (c.url) list.push({ url: c.url });
+        if (c.item) list.push(c.item);
+        if (c.url || c.refs) list.push({ url: c.url, refs: c.refs });
         list.forEach(function (it) {
           if (!it) return;
           if (it.url) t.citedUrls[canon(it.url)] = 1;
@@ -206,6 +207,16 @@
         // Format od 2026: zapisana rozmowa ma puste parts dla web.run. Zapytania bierzemy z nagrania
         // strumienia (jeśli panel był otwarty w trakcie odpowiedzi), inaczej runda zostaje bez treści.
         return;
+      }
+      // Nowy endpoint zachowuje zapytania w wiadomości narzędzia (search_model_queries).
+      if (role === 'tool' && cur && meta.search_model_queries) {
+        var smq = meta.search_model_queries, list = Array.isArray(smq) ? smq : smq.queries || [];
+        list.forEach(function (q, qi) {
+          q = typeof q === 'string' ? q : q && typeof q.query === 'string' ? q.query : '';
+          if (!q.trim() || cur.searches.some(function (s) { return s.query === q; })) return;
+          var lm = q.match(/site:([^\s"']+)/i), types = meta.search_tool_query_types;
+          cur.searches.push({ type: (Array.isArray(types) && types[qi]) || 'search', query: q, days: '', domain: '', place: '', lockedHost: lm ? lm[1].replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0].toLowerCase() : '' });
+        });
       }
       if (role === 'tool' && cur && meta.search_result_groups) {
         meta.search_result_groups.forEach(function (g) {
@@ -285,9 +296,10 @@
         });
       });
     });
-    var waitingQueries = [];
+    var waitingQueries = [], known = {};
+    rows.forEach(function (r) { if (r.query) known[r.query] = 1; });
     (recorded || []).forEach(function (b) {
-      if (b.id && !(conv.mapping && conv.mapping[b.id])) waitingQueries = waitingQueries.concat(b.queries || []);
+      if (b.id && !(conv.mapping && conv.mapping[b.id])) (b.queries || []).forEach(function (q) { if (!known[q]) { known[q] = 1; waitingQueries.push(q); } });
     });
     return { turns: turns, rows: rows, stats: stats, waitingQueries: waitingQueries };
   }
@@ -301,20 +313,55 @@
       .then(function (j) { tokenCache = j && j.accessToken ? j.accessToken : ''; return tokenCache; })
       .catch(function () { return ''; });
   }
+  function checkResponse(r) {
+    if (r.status === 429) {
+      var e = new Error('429'); e.rateLimited = true;
+      var after = r.headers.get('retry-after'), seconds = after && /^\d+(?:\.\d+)?$/.test(after.trim()) ? Number(after) : NaN;
+      e.retryAfter = Number.isFinite(seconds) ? seconds * 1000 : Math.max(0, Date.parse(after) - Date.now()) || 0;
+      throw e;
+    }
+    if (!r.ok) { var err = new Error('HTTP ' + r.status); err.status = r.status; throw err; }
+    return r.json();
+  }
+  // Format od września 2026 (/backend-api/conversations/<id>): płaska lista messages aktywnej gałęzi,
+  // stronicowana od końca. Zamieniamy ją na łańcuch mapping/current_node, który rozumie build().
+  function messagesToConv(conv, messages) {
+    var mapping = {}, parent = null;
+    messages.forEach(function (m, i) {
+      var key = (m && m.id) || 'm' + i;
+      if (mapping[key]) key = key + ':' + i;
+      mapping[key] = { id: key, parent: parent, message: m };
+      parent = key;
+    });
+    var out = {};
+    Object.keys(conv).forEach(function (k) { if (k !== 'messages' && k !== 'page_info') out[k] = conv[k]; });
+    out.mapping = mapping; out.current_node = parent;
+    return out;
+  }
   function fetchConversation(id) {
+    var headers = { Accept: 'application/json' };
+    function get(url) {
+      return fetch(url, { credentials: 'include', headers: headers }).then(checkResponse);
+    }
     return getToken().then(function (token) {
-      var headers = { Accept: 'application/json' };
       if (token) headers.Authorization = 'Bearer ' + token;
-      return fetch('/backend-api/conversation/' + id, { credentials: 'include', headers: headers });
-    }).then(function (r) {
-      if (r.status === 429) {
-        var e = new Error('429'); e.rateLimited = true;
-        var after = r.headers.get('retry-after'), seconds = after && /^\d+(?:\.\d+)?$/.test(after.trim()) ? Number(after) : NaN;
-        e.retryAfter = Number.isFinite(seconds) ? seconds * 1000 : Math.max(0, Date.parse(after) - Date.now()) || 0;
-        throw e;
+      var base = '/backend-api/conversations/' + id + '?include_has_versions=true&num_turns=100';
+      var messages = [], first = null, pages = 0;
+      function page(before) {
+        return get(base + (before ? '&before=' + encodeURIComponent(before) : '')).then(function (j) {
+          if (!j || !Array.isArray(j.messages)) return j; // odpowiedź w starym formacie
+          if (!first) first = j;
+          messages = j.messages.concat(messages);
+          var info = j.page_info || {};
+          if (info.has_previous_page && info.start_cursor && ++pages < 10) return page(info.start_cursor);
+          return messagesToConv(first, messages);
+        });
       }
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.json();
+      return page('').catch(function (e) {
+        // Konto bez nowego endpointu: stary odczyt pełnej rozmowy.
+        if (e.rateLimited || (e.status !== 404 && e.status !== 405 && e.status !== 422)) throw e;
+        return get('/backend-api/conversation/' + id);
+      });
     });
   }
   function readCache(id) {
@@ -1248,9 +1295,8 @@
       if (cached && cached.conv) {
         apply(cached.conv, 'kopia z przeglądarki');
         state.capturedAt = new Date(cached.at || Date.now());
-        render();
-        ensureLive();
-        return;
+        // Kopia z niedokończoną odpowiedzią jest nieaktualna – pokaż ją, ale doczytaj rozmowę.
+        if (!state.model.stats.pending || answering()) { render(); ensureLive(); return; }
       }
     }
     state.busy = true; state.nextPollAt = Date.now() + 15000; render();
@@ -1290,15 +1336,20 @@
     stopLive();
     // Obserwator działa, dopóki tryb jest włączony: co 4 s sprawdza DOM (tanie), a rozmowę
     // pobiera tylko, gdy ChatGPT właśnie odpowiada, zmienił się czat albo odpowiedź czeka na zapis.
-    var lastId = conversationId(), idleTicks = 0;
+    // Zapisana rozmowa zawiera już zapytania, więc w trakcie generowania nie odpytujemy serwera
+    // (to wywoływało 429). Jeden odczyt po zakończeniu odpowiedzi, potem rzadkie dopytania.
+    var lastId = conversationId(), idleTicks = 0, wasAnswering = answering(), dirty = false;
     state.timer = setInterval(function () {
       if (!document.getElementById(NS)) { stopLive(); return; }
       var id = conversationId();
       if (id && id !== lastId) { lastId = id; idleTicks = 0; load(false); return; }
       if (!id) return;
-      if (Date.now() < state.nextPollAt) return;
-      if (answering()) { idleTicks = 0; if (!state.busy) load(true); return; }
-      if (state.model && state.model.stats.pending) { idleTicks++; if (idleTicks % 2 === 0 && idleTicks <= 12 && !state.busy) load(true); }
+      var now = answering();
+      if (now) { wasAnswering = true; idleTicks = 0; return; }
+      if (wasAnswering) { wasAnswering = false; dirty = true; idleTicks = 0; }
+      if (state.busy || Date.now() < state.nextPollAt) return;
+      if (dirty) { dirty = false; load(true); return; }
+      if (state.model && state.model.stats.pending) { idleTicks++; if (idleTicks % 4 === 0 && idleTicks <= 16) load(true); }
     }, 4000);
     render();
   }

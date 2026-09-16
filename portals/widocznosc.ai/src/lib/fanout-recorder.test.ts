@@ -1344,18 +1344,19 @@ describe('fanout recorder load cooldown and navigation guards', () => {
     }
   });
 
-  it('keeps live polling at least 15 seconds apart after a read', async () => {
+  it('does not poll while ChatGPT answers and reads once after the answer ends', async () => {
     vi.useFakeTimers();
     const harness = createHarness();
     try {
       setConversation(harness, 'ffffffffffffffffffff');
+      let answeringNow = true;
       const documentStub = harness.sandbox.document as {
         getElementById: (id: string) => unknown;
         querySelector: () => unknown;
       };
       documentStub.getElementById = (id) =>
         id === 'wai-fanout' ? { querySelector: () => null } : null;
-      documentStub.querySelector = () => ({});
+      documentStub.querySelector = () => (answeringNow ? {} : null);
       let conversationCalls = 0;
       const fetchSpy = vi.fn((input: unknown) => {
         if (String(input).includes('/api/auth/session')) return Promise.resolve(sessionResponse());
@@ -1363,23 +1364,42 @@ describe('fanout recorder load cooldown and navigation guards', () => {
         return Promise.resolve(emptyConversationResponse());
       });
       installLoadFetch(harness, fetchSpy);
+      harness.api.state.busy = false;
       harness.api.startLive();
 
-      await vi.advanceTimersByTimeAsync(3_999);
+      await vi.advanceTimersByTimeAsync(60_000);
+      await flushMicrotasks();
       expect(conversationCalls).toBe(0);
-      await vi.advanceTimersByTimeAsync(1);
-      await flushMicrotasks();
-      expect(conversationCalls).toBe(1);
-      await vi.advanceTimersByTimeAsync(12_000);
-      await flushMicrotasks();
-      expect(conversationCalls).toBe(1);
+      answeringNow = false;
       await vi.advanceTimersByTimeAsync(4_000);
       await flushMicrotasks();
-      expect(conversationCalls).toBe(2);
+      expect(conversationCalls).toBe(1);
+      await vi.advanceTimersByTimeAsync(60_000);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(1);
     } finally {
       harness.api.stopLive();
       vi.useRealTimers();
     }
+  });
+
+  it('reads queries and citations from the paged conversations endpoint', () => {
+    const harness = createHarness();
+    const conv = {
+      mapping: {
+        u: { id: 'u', parent: null, message: { id: 'u', author: { role: 'user' }, content: { parts: ['polec firme'] } } },
+        w: { id: 'w', parent: 'u', message: { id: 'w', author: { role: 'assistant' }, recipient: 'web.run', content: { parts: [''] } } },
+        q: { id: 'q', parent: 'w', message: { id: 'q', author: { role: 'tool' }, recipient: 'all', content: { parts: [''] }, metadata: { search_model_queries: { type: 'search_model_queries', queries: ['agencja GEO', 'site:reddit.com geo'] } } } },
+        r: { id: 'r', parent: 'q', message: { id: 'r', author: { role: 'tool' }, recipient: 'all', content: { parts: [''] }, metadata: { search_result_groups: [{ entries: [{ url: 'https://geolead.pl/', ref_id: { turn_index: 0, ref_type: 'search', ref_index: 0 } }, { url: 'https://www.reddit.com/r/seo/x' }] }] } } },
+        a: { id: 'a', parent: 'r', message: { id: 'a', author: { role: 'assistant' }, recipient: 'all', end_turn: true, content: { parts: ['ok'] }, metadata: { content_references: [{ type: 'url', refs: [{ turn_index: 0, ref_type: 'search', ref_index: 0 }], items: [] }] } } },
+      },
+      current_node: 'a',
+    };
+    const model = harness.api.build(conv, []);
+    expect(model.rows.map((r) => r.query)).toEqual(['agencja GEO', 'site:reddit.com geo']);
+    expect(model.stats.hidden).toBe(0);
+    expect(model.rows[0].cited).toBe(1);
+    expect(model.rows[1].lockedHost).toBe('reddit.com');
   });
 
   it('uses an HTTP-date Retry-After value instead of the default backoff', async () => {

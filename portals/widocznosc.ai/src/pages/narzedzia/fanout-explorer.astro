@@ -49,7 +49,7 @@ const faq = [
   },
   {
     q: 'Dlaczego treść zapytań jest niedostępna mimo otwartego panelu?',
-    a: 'Panel może odczytać tylko dane udostępnione przez ChatGPT. Uruchomienie przed promptem i włączony tryb „na żywo” są potrzebne do przechwycenia odpowiedzi, ale nie gwarantują odczytu zapytań: ich pola mogą być nieobecne lub mieć nierozpoznany format. Panel rozpoznaje przekazanie odpowiedzi do kolejnego strumienia (stream_handoff) i dodaje obsługę kontynuacji SSE oraz wiadomości WebSocket powiązanych z tym samym tematem. Przy brakujących zapytaniach pokazuje liczniki strumieni, zdarzeń, pól zapytań i zapisanych partii, a po przekazaniu także liczniki WebSocket. Wersja 1.3.5 obsługuje również istniejące połączenie WebSocket, którego metodę wysyłania podmienił inny skrypt. Przechwycenie zapytań potwierdziliśmy na koncie Business. Obsługa kontynuacji nie gwarantuje dostępności zapytań w każdej rozmowie. Jeśli problem się powtarza, podaj te liczniki i plan konta — bez treści rozmowy. W nowych czatach sama historia często zawiera tylko wyniki i cytowania; treść zapytań wymaga lokalnego nagrania. Starsze rozmowy mogą nadal zawierać zapisane zapytania. Po aktualizacji zakładki przeładuj chatgpt.com i uruchom nową wersję przed kolejnym promptem.',
+    a: 'Od wersji 1.4.0 panel czyta rozmowę tym samym adresem co aplikacja ChatGPT (od września 2026), a on zawiera treść zapytań także w zapisanych czatach, na koncie Free i Business. Nagrywanie strumienia zostaje jako zapas. Jeśli zapytań nadal brakuje, możliwe, że ChatGPT w danej odpowiedzi ich nie udostępnił albo zmienił format. Pod komunikatem o brakach panel pokazuje liczniki strumieni, zdarzeń i zapisanych partii. Przekaż je razem z planem konta, bez treści rozmowy. Po aktualizacji zakładki przeładuj chatgpt.com.'',
   },
   {
     q: 'Dlaczego kolumny „wyniki” i „cytowane” bywają puste?',
@@ -57,7 +57,7 @@ const faq = [
   },
   {
     q: 'Co oznacza komunikat o limicie (Błąd 429)?',
-    a: 'Kod 429 (Too Many Requests) oznacza, że ChatGPT blokuje zbyt częste pobieranie danych. Podczas generowania panel automatycznie pobiera rozmowę nie częściej niż co 15 sekund. Zakończona rozmowa wymaga zwykle jednego pobrania, a jeśli dostępna jest jej lokalna kopia, panel może wczytać ją bez ponownego pobierania. Jeśli limit zostanie przekroczony, panel zachowuje dotychczasowe dane i wstrzymuje wszystkie odczyty rozmowy, także z przycisku Odśwież. Pierwsza przerwa trwa co najmniej minutę; kolejne rosną do 10 minut. Jeśli serwer poda dłuższy czas w Retry-After, panel go respektuje. Komunikat pokazuje godzinę kolejnej próby. Limit pobierania historii jest osobny od odczytu strumienia zapytań.',
+    a: 'Kod 429 (Too Many Requests) oznacza, że ChatGPT blokuje zbyt częste pobieranie danych. Od wersji 1.4.0 panel nie pobiera rozmowy w trakcie generowania, tylko raz po zakończeniu odpowiedzi. Zakończona rozmowa wymaga zwykle jednego pobrania, a jeśli dostępna jest jej lokalna kopia, panel może wczytać ją bez ponownego pobierania. Jeśli limit zostanie przekroczony, panel zachowuje dotychczasowe dane i wstrzymuje wszystkie odczyty rozmowy, także z przycisku Odśwież. Pierwsza przerwa trwa co najmniej minutę; kolejne rosną do 10 minut. Jeśli serwer poda dłuższy czas w Retry-After, panel go respektuje. Komunikat pokazuje godzinę kolejnej próby.',
   },
   {
     q: 'Czy narzędzie działa w aplikacji desktopowej ChatGPT, w Safari albo w Claude i Gemini?',
@@ -74,7 +74,7 @@ const schema = buildGraph(
     slug: 'fanout-explorer',
     name: 'Fan-out Explorer – bookmarklet do ChatGPT – widocznosc.ai',
     description:
-      'Bezpłatny bookmarklet widocznosc.ai do chatgpt.com: pokazuje przechwycone zapytania, zwrócone strony i cytowania. Nagrywa zapytania na żywo i odczytuje dostępne dane zapisanych czatów. Nie przekazuje danych do widocznosc.ai ani podmiotów trzecich.',
+      'Bezpłatny bookmarklet widocznosc.ai do chatgpt.com: pokazuje przechwycone zapytania, zwrócone strony i cytowania. Działa na nowych promptach i zapisanych czatach. Nie przekazuje danych do widocznosc.ai ani podmiotów trzecich.',
     featureList: [
       'Tabela wyszukiwań ChatGPT: runda, zapytanie, domena, wyniki, cytowania',
       'Lista stron z rundy wyszukiwania z oznaczeniem cytowanych',
@@ -130,10 +130,8 @@ const schema = buildGraph(
               >query fan-out</em
             >), przeanalizować wyniki z dziesiątek stron, a w odpowiedzi zacytować zaledwie kilka z
             nich. Fan-out Explorer to zakładka w przeglądarce, która pokazuje zapytania udostępnione
-            przez ChatGPT, strony zwrócone w wynikach i te oznaczone jako cytowane. Otwórz panel
-            przed wysłaniem promptu i zostaw włączony tryb „na żywo”, ponieważ w nowych czatach
-            treść zapytań jest dostępna podczas generowania odpowiedzi. W czatach z historii
-            zobaczysz rundy, domeny, strony i cytowania. Niczego nie instalujesz, a bookmarklet nie
+            przez ChatGPT, strony zwrócone w wynikach i te oznaczone jako cytowane. Działa na
+            nowym prompcie i na czatach z historii: zapytania, domeny, strony i cytowania. Niczego nie instalujesz, a bookmarklet nie
             przekazuje Twoich danych poza chatgpt.com.
           </p>
         </header>
@@ -193,14 +191,12 @@ const schema = buildGraph(
         <ol class="usage">
           <li>
             <b>Nowy prompt</b> – otwórz pusty czat na chatgpt.com, kliknij zakładkę, upewnij się, że tryb
-            „na żywo” jest włączony, i dopiero potem wyślij prompt. Zapytania i wiersze pojawiają się
-            runda po rundzie. Zakładka uruchomiona po wysłaniu promptu nie przechwyci treści zapytań dla
-            tej odpowiedzi.
+            „na żywo” jest włączony, i wyślij prompt. Panel odczyta zapytania i wyniki,
+            gdy ChatGPT skończy odpowiadać.
           </li>
           <li>
-            <b>Zapisany czat</b> – otwórz dowolną rozmowę z historii i kliknij zakładkę. Zobaczysz rundy,
-            domeny, strony i cytowania, a same zapytania, jeśli zostały wcześniej nagrane w tej przeglądarce
-            i nadal są w jej pamięci lub zachowały się w danych starszego czatu. Pierwszy odczyt wymaga
+            <b>Zapisany czat</b> – otwórz dowolną rozmowę z historii i kliknij zakładkę. Zobaczysz zapytania,
+            rundy, domeny, strony i cytowania. Pierwszy odczyt wymaga
             pobrania rozmowy, kolejne mogą korzystać z lokalnej kopii.
           </li>
         </ol>
