@@ -56,6 +56,10 @@ const faq = [
     a: 'W starszych czatach z kolumną „typ” wyszukiwania typu business i image mogą nie mieć wyników, ponieważ w danych rozmowy brakuje listy zwróconych stron. Kolumna „cytowane” pokazuje wielokropek, dopóki odpowiedź nie zostanie w pełni wygenerowana i zapisana. Zero oznacza, że panel zweryfikował dostępne dane i żadna strona z puli przypisanej do wiersza nie została oznaczona jako cytowana w ostatecznej odpowiedzi.',
   },
   {
+    q: 'Jak sprawdzić, czy moja firma jest w cytowaniach?',
+    a: 'Wpisz w polu „Twoja marka” pod zakładkami domenę albo nazwę firmy, np. grupa-icea.pl, ICEA (kilka wartości rozdziel przecinkami). Panel pokaże, czy ChatGPT pobrał Twoje strony, czy je zacytował, czy wymienił markę w odpowiedzi i w puli wyników których zapytań się pojawiły. Wiersze i strony marki są podświetlone w tabeli i w zakładce Domeny. Wpis jest zapamiętywany w przeglądarce. Domena obejmuje też subdomeny; nazwa jest szukana w adresie, tytule strony i tekście odpowiedzi, więc krótkie, popularne słowa mogą dać fałszywe trafienia.',
+  },
+  {
     q: 'Co oznacza komunikat o limicie (Błąd 429)?',
     a: 'Kod 429 (Too Many Requests) oznacza, że ChatGPT blokuje zbyt częste pobieranie danych. Od wersji 1.4.0 panel nie pobiera rozmowy w trakcie generowania, tylko raz po zakończeniu odpowiedzi. Zakończona rozmowa wymaga zwykle jednego pobrania, a jeśli dostępna jest jej lokalna kopia, panel może wczytać ją bez ponownego pobierania. Jeśli limit zostanie przekroczony, panel zachowuje dotychczasowe dane i wstrzymuje wszystkie odczyty rozmowy, także z przycisku Odśwież. Pierwsza przerwa trwa co najmniej minutę; kolejne rosną do 10 minut. Jeśli serwer poda dłuższy czas w Retry-After, panel go respektuje. Komunikat pokazuje godzinę kolejnej próby.',
   },

@@ -12,12 +12,12 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.4.0';
+  var VERSION = '1.5.0';
   var NS = 'wai-fanout';
-  var CACHE_PREFIX = NS + ':conv:';
+  var CACHE_PREFIX = NS + ':conv2:'; // conv: = kopie ze starego endpointu, bez zapytań
   var QUERIES_PREFIX = NS + ':q:';
   var SITE = 'https://widocznosc.ai/narzedzia/fanout-explorer/';
-  var PREF_LIVE = NS + ':live', PREF_WIDTH = NS + ':w';
+  var PREF_LIVE = NS + ':live', PREF_WIDTH = NS + ':w', PREF_BRAND = NS + ':brand';
   function pref(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function setPref(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 
@@ -238,6 +238,9 @@
           });
         }
         if (meta.content_references && meta.content_references.length) collectCitations(turn, meta.content_references);
+        if (msg.recipient !== 'web.run' && content.content_type === 'text' && content.parts) {
+          turn.answerText = (turn.answerText || '') + ' ' + content.parts.filter(function (p) { return typeof p === 'string'; }).join(' ');
+        }
         if (msg.end_turn === true || (meta.content_references || []).length) turn.answered = true;
       }
     });
@@ -756,7 +759,7 @@
   /* ---------- stan ---------- */
   var state = {
     id: '', model: null, source: '', capturedAt: null, sort: { col: 'n', dir: 1 }, tab: 'table',
-    expanded: {}, live: pref(PREF_LIVE) !== '0', timer: null, retry: null, backoff: 60000, nextReadAt: 0, nextPollAt: 0, min: false, minAt: 0, note: '', busy: false, recorded: 0, onlyCited: false, domOpen: {}, closed: false,
+    expanded: {}, live: pref(PREF_LIVE) !== '0', brand: pref(PREF_BRAND) || '', timer: null, retry: null, backoff: 60000, nextReadAt: 0, nextPollAt: 0, min: false, minAt: 0, note: '', busy: false, recorded: 0, onlyCited: false, domOpen: {}, closed: false,
     capture: { streams: 0, events: 0, queryFields: 0, batches: 0, parseErrors: 0, streamErrors: 0, unassigned: 0, unsupported: 0, storageError: false, legacyHook: false, handoffs: 0, wsConnections: 0, wsFrames: 0, wsChunks: 0, wsUnknown: 0, wsDropped: 0 },
   };
   var previousReadLimit = window.__waiFanoutReadLimit;
@@ -774,7 +777,7 @@
     + '#' + NS + ' .wf-grip:hover,#' + NS + '.resizing .wf-grip{background:var(--blue-soft);box-shadow:inset 2px 0 0 var(--blue)}'
     + '#' + NS + '.resizing{user-select:none}'
     + '#' + NS + '.min{top:auto;bottom:16px;right:16px;width:auto!important;min-width:0;height:auto;border-radius:12px;border:1px solid var(--line2);box-shadow:0 12px 40px rgba(0,0,0,.5)}'
-    + '#' + NS + '.min .wf-bar,#' + NS + '.min .wf-body,#' + NS + '.min .wf-grip,#' + NS + '.min [data-a=refresh],#' + NS + '.min [data-a=live],#' + NS + '.min .wf-brand .ver{display:none}'
+    + '#' + NS + '.min .wf-bar,#' + NS + '.min .wf-mine,#' + NS + '.min .wf-body,#' + NS + '.min .wf-grip,#' + NS + '.min [data-a=refresh],#' + NS + '.min [data-a=live],#' + NS + '.min .wf-brand .ver{display:none}'
     + '#' + NS + '.min .wf-head{padding:8px 12px;border-bottom:none;background:var(--s1);border-radius:12px;cursor:pointer}'
     + '#' + NS + ' button[data-a=live].on{background:var(--green-soft);border-color:rgba(52,211,153,.45);color:var(--green)}'
     + '#' + NS + ' button[data-a=live].off{background:rgba(251,113,133,.14);border-color:rgba(251,113,133,.45);color:var(--rose)}'
@@ -855,7 +858,20 @@
     + '#' + NS + ' .wf-domhead{display:grid;grid-template-columns:minmax(200px,1.2fr) 80px 80px minmax(120px,1fr) 32px;gap:10px;padding:0 10px 6px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}'
     + '#' + NS + ' .wf-domhead .n{text-align:right}'
     + '#' + NS + ' label.wf-chk{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);cursor:pointer;padding:5px 10px;border:1px solid var(--line2);border-radius:8px;background:var(--s1)}'
-    + '#' + NS + ' label.wf-chk input{accent-color:var(--blue);margin:0}';
+    + '#' + NS + ' label.wf-chk input{accent-color:var(--blue);margin:0}'
+    /* Twoja marka */
+    + '#' + NS + ' .wf-mine{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 18px;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted)}'
+    + '#' + NS + ' .wf-mine input{flex:1;min-width:220px;background:var(--s1);color:var(--ink);border:1px solid var(--line2);border-radius:8px;padding:6px 10px;font:inherit;font-size:12.5px}'
+    + '#' + NS + ' .wf-mine input:focus{outline:none;border-color:var(--amber)}'
+    + '#' + NS + ' .wf-brandbox{border:1px solid rgba(251,191,36,.35);background:rgba(251,191,36,.06);border-radius:var(--r);padding:10px 14px;margin:0 0 12px}'
+    + '#' + NS + ' .wf-brandbox h4{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--amber)}'
+    + '#' + NS + ' .wf-brandbox .v{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0 0 6px}'
+    + '#' + NS + ' .wf-brandbox .v b{font-size:15px}'
+    + '#' + NS + ' .wf-brandbox .yes{color:var(--green)}#' + NS + ' .wf-brandbox .no{color:var(--rose)}'
+    + '#' + NS + ' .wf-brandbox ul{margin:4px 0 0;padding-left:18px;color:var(--muted)}'
+    + '#' + NS + ' tr.mine td:first-child{box-shadow:inset 3px 0 0 var(--amber)}'
+    + '#' + NS + ' .chip.mine{background:rgba(251,191,36,.14);border-color:rgba(251,191,36,.45);color:var(--amber)}'
+    + '#' + NS + ' .wf-dom.mine{box-shadow:inset 3px 0 0 var(--amber)}';
 
   function el(html) { var d = document.createElement('div'); d.innerHTML = html; return d.firstElementChild; }
 
@@ -875,6 +891,7 @@
       + '<button class="wf-x" data-a="close" title="Zamknij (Esc)">×</button></div>'
       + '<div class="wf-bar"><div class="wf-tabs"><button data-t="table">Wyszukiwania</button><button data-t="domains">Domeny</button><button data-t="legend">Legenda</button><button data-t="types">Typy</button></div>'
       + '<span data-r="tools"></span></div>'
+      + '<label class="wf-mine">Twoja marka:<input data-r="brand" type="text" spellcheck="false" placeholder="domena lub nazwa, np. grupa-icea.pl, ICEA" value="' + esc(state.brand) + '"></label>'
       + '<div class="wf-body" data-r="body"></div></div>');
     var w = parseInt(pref(PREF_WIDTH), 10);
     if (w > 0) root.style.width = Math.min(w, Math.round(window.innerWidth * 0.96)) + 'px';
@@ -885,6 +902,12 @@
     head.addEventListener('dblclick', function (e) { if (!state.min && Date.now() - state.minAt > 600 && !e.target.closest('button,a')) toggleMin(); });
     root.addEventListener('click', onClick);
     root.addEventListener('change', onChange);
+    var brandTimer = null;
+    root.querySelector('[data-r=brand]').addEventListener('input', function (e) {
+      var v = e.target.value;
+      clearTimeout(brandTimer);
+      brandTimer = setTimeout(function () { state.brand = v; setPref(PREF_BRAND, v); render(); }, 250);
+    });
     document.addEventListener('keydown', onKey);
     return root;
   }
@@ -1078,8 +1101,64 @@
       m.waitingQueries.forEach(function (query) { h += '<li>' + esc(query) + '</li>'; });
       h += '</ul></details>';
     }
+    h += brandHtml();
     if (s.pending) h += '<p class="wf-note info">Odpowiedź na ' + s.pending + ' ' + plural(s.pending, 'prompt', 'prompty', 'promptów') + ' nie jest jeszcze zapisana, kolumna „cytowane” oczekuje na dane.</p>';
     return h;
+  }
+  /* ---------- Twoja marka ----------
+   * Pole w panelu: domeny (z kropką) i nazwy, rozdzielone przecinkami. Domena pasuje do hosta
+   * i subdomen; nazwa do hosta, tytułu strony i tekstu odpowiedzi (bez rozróżniania wielkości liter).
+   */
+  function brandTerms() {
+    return String(state.brand || '').split(/[,;\n]/).map(function (t) {
+      t = t.trim().toLowerCase();
+      return /\./.test(t) ? t.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0] : t;
+    }).filter(function (t) { return t.length >= 2; });
+  }
+  function isMine(p) {
+    var terms = brandTerms();
+    if (!terms.length || !p) return false;
+    var title = String(p.title || '').toLowerCase();
+    return terms.some(function (t) {
+      if (/\./.test(t)) return isSub(p.host, t);
+      var slug = t.replace(/\s+/g, '');
+      return p.host.indexOf(slug) !== -1 || title.indexOf(t) !== -1;
+    });
+  }
+  function brandHtml() {
+    var terms = brandTerms();
+    if (!terms.length || !state.model) return '';
+    var m = state.model, fetched = {}, cited = {}, queries = [], mentions = 0, answered = 0;
+    m.turns.forEach(function (t) {
+      t.rounds.forEach(function (r) { r.pages.forEach(function (p) { if (isMine(p)) { fetched[p.canon] = p; if (p.cited) cited[p.canon] = p; } }); });
+      if (t.answered) {
+        answered++;
+        var text = String(t.answerText || '').toLowerCase();
+        if (terms.some(function (x) { return text.indexOf(x) !== -1; })) mentions++;
+      }
+    });
+    m.rows.forEach(function (r) { if (!r.hidden && r.pages.some(isMine)) queries.push(r); });
+    var nf = Object.keys(fetched).length, nc = Object.keys(cited).length;
+    var yes = function (ok, label) { return '<span class="' + (ok ? 'yes' : 'no') + '">' + label + '</span>'; };
+    var h = '<div class="wf-brandbox"><h4>Twoja marka w tej rozmowie</h4><div class="v">'
+      + '<span>W wynikach: <b>' + yes(nf > 0, nf ? 'tak, ' + nf + ' ' + plural(nf, 'strona', 'strony', 'stron') : 'nie') + '</b></span>'
+      + '<span>Cytowana: <b>' + yes(nc > 0, nc ? 'tak, ' + nc + ' ' + plural(nc, 'strona', 'strony', 'stron') : (nf ? 'nie' : '—')) + '</b></span>'
+      + '<span>Wymieniona w odpowiedzi: <b>' + (answered ? yes(mentions > 0, mentions ? 'tak (' + mentions + '/' + answered + ')' : 'nie') : '…') + '</b></span>'
+      + '</div>';
+    if (queries.length) {
+      h += '<div>W puli wyników ' + plural(queries.length, 'zapytania', 'zapytań', 'zapytań') + ' (ChatGPT zapisuje wyniki dla całej rundy, więc przy kilku zapytaniach w rundzie nie da się wskazać jednego):</div><ul>';
+      queries.forEach(function (r) { h += '<li>' + r.n + '. ' + esc(r.query) + '</li>'; });
+      h += '</ul>';
+    }
+    var list = Object.keys(fetched).map(function (k) { return fetched[k]; });
+    if (list.length) {
+      h += '<ul class="wf-pg" style="margin-top:6px">';
+      list.forEach(function (p) { h += '<li class="' + (p.cited ? 'c' : '') + '"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.canon) + '</a></li>'; });
+      h += '</ul>';
+    } else if (m.rows.length) {
+      h += '<div>ChatGPT nie pobrał żadnej strony pasującej do „' + esc(state.brand) + '”. Sprawdź w zakładce Domeny, kto zajął to miejsce.</div>';
+    }
+    return h + '</div>';
   }
   function plural(n, one, few, many) {
     n = Math.abs(n); if (n === 1) return one;
@@ -1139,7 +1218,7 @@
       h += '<div class="wf-domhead"><span>domena</span><span class="n">pobrane</span><span class="n">cytowane</span><span>skala</span><span></span></div>';
       list.forEach(function (d, i) {
         var open = !!state.domOpen[d.host];
-        var cls = 'wf-dom' + (i === 0 ? ' first' : '') + (i === list.length - 1 && !open ? ' last' : '') + (list.length === 1 && !open ? ' only' : '');
+        var cls = 'wf-dom' + (d.pages.some(isMine) ? ' mine' : '') + (i === 0 ? ' first' : '') + (i === list.length - 1 && !open ? ' last' : '') + (list.length === 1 && !open ? ' only' : '');
         h += '<div class="' + cls + '"><span class="h">' + esc(d.host) + (d.locked ? ' <span class="chip dom" title="wyszukiwania ograniczone do tej witryny">site: ×' + d.locked + '</span>' : '') + '</span>'
           + '<span class="n">' + d.fetched + '</span>'
           + '<span class="n">' + (d.cited ? '<span class="chip ok">' + d.cited + '</span>' : '<span class="chip zero">0</span>') + '</span>'
@@ -1148,7 +1227,7 @@
         if (open) {
           h += '<div class="wf-domd' + (i === list.length - 1 ? ' last' : '') + '"><ul class="wf-pg">';
           d.pages.slice().sort(function (a, b) { return (b.cited - a.cited) || a.canon.localeCompare(b.canon); }).forEach(function (p) {
-            h += '<li class="' + (p.cited ? 'c' : '') + '"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.canon) + '</a>' + (p.title ? ' <span class="t">– ' + esc(p.title) + '</span>' : '') + '</li>';
+            h += '<li class="' + (p.cited ? 'c' : '') + '"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.canon) + '</a>' + (isMine(p) ? ' <span class="chip mine">Twoja marka</span>' : '') + (p.title ? ' <span class="t">– ' + esc(p.title) + '</span>' : '') + '</li>';
           });
           h += '</ul></div>';
         }
@@ -1184,7 +1263,7 @@
     h += '<th></th></tr></thead><tbody>';
     sortedRows().forEach(function (r) {
       var canOpen = r.pages.length > 0;
-      h += '<tr class="' + (r.forum ? 'forum' : '') + '">';
+      h += '<tr class="' + (r.forum ? 'forum' : '') + (r.pages.some(isMine) ? ' mine' : '') + '">';
       cols.forEach(function (c) {
         var k = c[0];
         if (k === 'n' || k === 'round') h += '<td class="num">' + r[k] + '</td>';
@@ -1204,7 +1283,7 @@
           var cnt = byHost[host].filter(function (p) { return p.cited; }).length;
           h += '<div class="wf-host">' + esc(host) + ' <span class="chip' + (cnt ? ' ok' : ' zero') + '">' + cnt + '/' + byHost[host].length + '</span></div><ul class="wf-pg">';
           byHost[host].forEach(function (p) {
-            h += '<li class="' + (p.cited ? 'c' : '') + '"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.canon) + '</a>' + (p.title ? ' <span class="t">– ' + esc(p.title) + '</span>' : '') + '</li>';
+            h += '<li class="' + (p.cited ? 'c' : '') + '"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.canon) + '</a>' + (isMine(p) ? ' <span class="chip mine">Twoja marka</span>' : '') + (p.title ? ' <span class="t">– ' + esc(p.title) + '</span>' : '') + '</li>';
           });
           h += '</ul>';
         });

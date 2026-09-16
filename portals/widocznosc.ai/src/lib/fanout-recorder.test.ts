@@ -40,9 +40,11 @@ type Recorder = {
   startLive: () => void;
   stopLive: () => void;
   build: (conversation: unknown, recorded?: unknown[]) => BuildResult;
+  brandHtml: () => string;
   readQueries: (id: string) => Array<Record<string, unknown>>;
   recordBatch: (convId: string, msgId: string, queries: string[], types?: string[] | null) => void;
   state: {
+    brand?: string;
     busy: boolean;
     live: boolean;
     model: unknown;
@@ -237,7 +239,7 @@ function createHarness(): Harness {
 ${startMarker}
   render = function () {};
   state.busy = true;
-  globalThis.__fanoutRecorderTest = { tapStream: tapStream, installStreamHook: installStreamHook, load: load, startLive: startLive, stopLive: stopLive, build: build, readQueries: readQueries, recordBatch: recordBatch, state: state };
+  globalThis.__fanoutRecorderTest = { tapStream: tapStream, installStreamHook: installStreamHook, load: load, startLive: startLive, stopLive: stopLive, build: build, brandHtml: brandHtml, readQueries: readQueries, recordBatch: recordBatch, state: state };
 })();
 `;
   vm.runInNewContext(source.slice(0, markerAt) + testTail, sandbox, { filename: sourcePath });
@@ -1400,6 +1402,30 @@ describe('fanout recorder load cooldown and navigation guards', () => {
     expect(model.stats.hidden).toBe(0);
     expect(model.rows[0].cited).toBe(1);
     expect(model.rows[1].lockedHost).toBe('reddit.com');
+  });
+
+  it('reports whether the configured brand was fetched, cited and mentioned', () => {
+    const harness = createHarness();
+    const entry = (url: string, i: number) => ({ url, title: 'T', ref_id: { turn_index: 0, ref_type: 'search', ref_index: i } });
+    const conv = {
+      mapping: {
+        u: { id: 'u', parent: null, message: { id: 'u', author: { role: 'user' }, content: { parts: ['polec agencje'] } } },
+        w: { id: 'w', parent: 'u', message: { id: 'w', author: { role: 'assistant' }, recipient: 'web.run', content: { parts: [''] } } },
+        q: { id: 'q', parent: 'w', message: { id: 'q', author: { role: 'tool' }, content: { parts: [''] }, metadata: { search_model_queries: { queries: ['agencja seo poznan'] } } } },
+        r: { id: 'r', parent: 'q', message: { id: 'r', author: { role: 'tool' }, content: { parts: [''] }, metadata: { search_result_groups: [{ entries: [entry('https://www.grupa-icea.pl/oferta/', 0), entry('https://other.pl/', 1)] }] } } },
+        a: { id: 'a', parent: 'r', message: { id: 'a', author: { role: 'assistant' }, recipient: 'all', end_turn: true, content: { content_type: 'text', parts: ['Polecam ICEA oraz Other.'] }, metadata: { content_references: [{ type: 'url', refs: [{ turn_index: 0, ref_type: 'search', ref_index: 0 }] }] } } },
+      },
+      current_node: 'a',
+    };
+    harness.api.state.model = harness.api.build(conv, []);
+    harness.api.state.brand = 'grupa-icea.pl, ICEA';
+    const html = harness.api.brandHtml();
+    expect(html).toContain('W wynikach: <b><span class="yes">tak, 1 strona');
+    expect(html).toContain('Cytowana: <b><span class="yes">tak, 1 strona');
+    expect(html).toContain('tak (1/1)');
+    expect(html).toContain('agencja seo poznan');
+    harness.api.state.brand = 'nieobecna.pl';
+    expect(harness.api.brandHtml()).toContain('<span class="no">nie</span>');
   });
 
   it('uses an HTTP-date Retry-After value instead of the default backoff', async () => {
