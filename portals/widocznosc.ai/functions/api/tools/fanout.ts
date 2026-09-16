@@ -111,6 +111,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       body: JSON.stringify({
         model,
         tools: [{ type: 'web_search' }],
+        // Bez include API nie zwraca listy stron, które wyszukiwanie odwiedziło (searchedSources = 0 na prod).
+        include: ['web_search_call.action.sources'],
         tool_choice: 'auto',
         instructions: FANOUT_INSTRUCTIONS,
         input: query,
