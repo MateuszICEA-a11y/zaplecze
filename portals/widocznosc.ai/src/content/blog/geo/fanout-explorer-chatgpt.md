@@ -138,7 +138,7 @@ Reddit został zacytowany tylko w temacie, w którym w języku angielskim ma tys
 Sześć promptów to za mało na pełną statystykę, ale wystarczająco dużo, by wypracować metodę. Oto, co uwzględniamy w audytach widoczności w AI (GEO):
 
 1. **Zapytania z drugiej rundy są ważniejsze niż z pierwszej.** Pierwsza runda to zapytania ogólne z rokiem i miesiącem. Druga to nazwy marek w cudzysłowie z dopiskiem „opinie” albo domeny, do których model zawęża wyszukiwanie. Dopiero tam rozstrzyga się, czy marka zostanie zacytowana.
-2. **Kolumna „domena” to lista witryn, którym model ufa w danej kategorii.** Sklepy dla laptopów, fora dla kredytów, dokumentacja producentów dla pytań o AI. Jeśli Twojej marki tam nie ma, a konkurencja jest, masz lukę do zamknięcia. Pamiętaj też, że ChatGPT korzysta w tle z indeksu Binga – brak widoczności w Bing Webmaster Tools oznacza brak widoczności w ChatGPT.
+2. **Kolumna „domena” to lista witryn, którym model ufa w danej kategorii.** Sklepy dla laptopów, fora dla kredytów, dokumentacja producentów dla pytań o AI. Jeśli Twojej marki tam nie ma, a konkurencja jest, masz lukę do zamknięcia. Pamiętaj też, że ChatGPT korzysta z kilku źródeł jednocześnie: indeksu Binga, wyników Google i własnego indeksu OpenAI. Słaba widoczność w Bingu i Google, a także zablokowany bot OAI-SearchBot, zmniejszają szansę, że model w ogóle trafi na Twoją stronę.
 3. **Strony przeanalizowane i pominięte to inny problem niż te, których model w ogóle nie znalazł.** Strona, która pojawia się w wynikach i nigdy nie jest cytowana, ma problem z treścią fragmentu (snippetu) lub optymalizacją pod RAG (Retrieval-Augmented Generation). Strona, która nie pojawia się wcale, ma problem z indeksem albo dostępem dla botów (crawlerów). Fan-out Explorer rozróżnia te dwa przypadki za pomocą jednej kolumny.
 4. **Prompt decyduje, czy fora w ogóle są analizowane.** Prośba o opinie uruchamia rundę przeszukiwania forów. Prośba o ceny wysyła model bezpośrednio do producentów i sklepów. Zestaw promptów do monitoringu powinien uwzględniać oba warianty.
 5. **Ten sam prompt za miesiąc może wygenerować inny fan-out.** Eksport zawiera datę i identyfikator czatu, więc porównanie dwóch sesji sprowadza się do zestawienia dwóch plików.
@@ -153,7 +153,20 @@ Warto też wiedzieć, czego w danych nie ma. W obecnym formacie ChatGPT nie poka
 4. Posortuj tabelę według domen i zapisz, do których witryn model zawęził wyszukiwanie (użył operatora `site:`).
 5. Sprawdź wiersze forów i wiersze z nazwami marek w cudzysłowie.
 6. Pobierz plik CSV ze źródłami i zarchiwizuj go z odpowiednią datą.
-7. Popraw strony, na które wskazuje tabela, zaczynając od tych przeanalizowanych, ale pomijanych.
-8. Za miesiąc powtórz proces i porównaj wyniki.
+7. Znajdź w tabeli swoje strony. Jeśli wróciły w wynikach, ale nie zostały zacytowane, zacznij od nich: model je przeczytał i wybrał inne źródło, więc dopracuj fragment, który odpowiada na zapytanie z danego wiersza.
+8. Jeśli Twoich stron nie ma w wynikach wcale, a konkurencja jest, sprawdź ich indeksowanie w Google Search Console i Bing Webmaster Tools oraz to, czy robots.txt nie blokuje bota OAI-SearchBot.
+9. Za miesiąc powtórz proces i porównaj wyniki.
 
 Jeśli wolisz szybki test bez logowania do ChatGPT, na widocznosc.ai dostępna jest też [Analiza zapytań AI](/narzedzia/fanout/), która pyta model przez API i pokazuje zapytania pomocnicze oraz cytowane domeny. Bookmarklet daje dokładnie to samo, ale na podstawie rozmowy na Twoim koncie. A jeśli chcesz, żeby to, co pokazuje tabela, zamienić w plan treści i cytowań, zobacz, jak pracujemy nad [pozycjonowaniem w ChatGPT](/pozycjonowanie-ai/chatgpt/).
+
+## Źródła
+
+Dane z testów pochodzą z sześciu rozmów przeprowadzonych 16 września 2026 roku na koncie ChatGPT Free (GPT-5.6) i z porównawczej rozmowy na koncie Business (GPT-5.6 Thinking). Pozostałe informacje opierają się na poniższych materiałach:
+
+- <a href="https://peec.ai/blog/chatgpt-built-its-own-search-index" target="_blank" rel="nofollow noopener noreferrer">ChatGPT built its own search index</a> – Peec AI. Analiza źródeł wyników ChatGPT: własny indeks OpenAI (Labrador), wyniki Google i Bing.
+- <a href="https://searchengineland.com/openai-chatgpt-serpapi-google-search-results-461226" target="_blank" rel="nofollow noopener noreferrer">ChatGPT’s answers came from Google Search after all: Report</a> – Search Engine Land, 26 sierpnia 2025. Omówienie raportu The Information o pobieraniu wyników Google przez SerpApi.
+- <a href="https://www.tomsguide.com/ai/chatgpt-is-secretly-using-google-search-data-heres-how" target="_blank" rel="nofollow noopener noreferrer">ChatGPT Is Using Google Search To Answer Your Questions</a> – Tom’s Guide.
+- <a href="https://brief.pl/quora-jest-juz-dostepna-w-jezyku-polskim/" target="_blank" rel="nofollow noopener noreferrer">Quora jest już dostępna w języku polskim</a> – BRIEF. Start polskiej wersji Quory w 2019 roku.
+- <a href="https://fanoutfox.com/" target="_blank" rel="nofollow noopener noreferrer">FanoutFox</a> – rozszerzenie Suganthana Mohanadasana.
+- <a href="https://en.natielimelech.com/tools/chatgpt-query-fan-out-chrome-extension" target="_blank" rel="nofollow noopener noreferrer">ChatGPT Query Fan-out Chrome Extension</a> – Nati Elimelech.
+- <a href="https://www.oritmutznik.com/" target="_blank" rel="nofollow noopener noreferrer">Fanout Explorer</a> – bookmarklet Orit Mutznik.
