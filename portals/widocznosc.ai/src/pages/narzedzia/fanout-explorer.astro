@@ -24,15 +24,7 @@ const columns = [
     'runda',
     'Numer partii. ChatGPT szuka partiami: wysyła kilka zapytań, czyta wyniki i często dosyła kolejną partię.',
   ],
-  [
-    'typ',
-    'Rodzaj wyszukiwania: fast (zwykłe), slow (głębsze), business (miejsca), image (obrazy), news, product i inne.',
-  ],
   ['zapytanie', 'Dokładne słowa wysłane do wyszukiwarki, razem z operatorem site: i cudzysłowami.'],
-  [
-    'dni',
-    'Okno świeżości: 30 to ostatni miesiąc, 365 rok, 3650 dziesięć lat. Puste pole oznacza brak ograniczenia.',
-  ],
   [
     'domena',
     'Witryna, do której ChatGPT ograniczył wyszukiwanie. To lista stron, którym model ufa w Twoim temacie.',
@@ -50,12 +42,12 @@ const faq = [
     a: 'Nie. Czyta rozmowę tym samym adresem, którym pobiera ją aplikacja ChatGPT, w Twojej zalogowanej sesji, buduje tabelę w przeglądarce i trzyma kopię czatu w localStorage chatgpt.com, żeby następne otwarcie było natychmiastowe. Nic nie trafia do widocznosc.ai ani do nikogo innego. Zakładka ma cały kod w sobie i nie łączy się z niczym poza chatgpt.com, nawet z widocznosc.ai.',
   },
   {
-    q: 'Dlaczego w kolumnie „zapytanie” widzę „nie nagrane”?',
+    q: 'Dlaczego w kolumnie „zapytanie” widzę „nienagrane”?',
     a: 'ChatGPT wysyła treść zapytań tylko w strumieniu odpowiedzi, a w zapisanej rozmowie zostają wyniki i cytowania każdej rundy. Panel podpina się pod ten strumień i nagrywa zapytania, gdy jest otwarty w chwili wysyłania promptu, a potem trzyma je w przeglądarce razem z czatem. Czat z historii, który nie był nagrywany, pokazuje jeden wiersz na rundę: domeny, z których wróciły strony, ich liczbę i to, które zostały zacytowane. Dotyczy to każdego modelu, także bez trybu „Myślenie”.',
   },
   {
     q: 'Dlaczego kolumny „wyniki” i „cytowane” bywają puste?',
-    a: 'Dla wyszukiwań typu business i image ChatGPT nie ujawnia w rozmowie, co wróciło. Kolumna „cytowane” pokazuje wielokropek, dopóki odpowiedź nie jest zapisana. Zero oznacza, że panel sprawdził i nic z tego wyszukiwania nie trafiło do odpowiedzi.',
+    a: 'W starszych czatach z kolumną „typ” wyszukiwania business i image nie mają wyników, bo ChatGPT nie ujawniał w rozmowie, co wróciło. Kolumna „cytowane” pokazuje wielokropek, dopóki odpowiedź nie jest zapisana. Zero oznacza, że panel sprawdził i nic z tego wyszukiwania nie trafiło do odpowiedzi.',
   },
   {
     q: 'Co znaczy komunikat o limicie (429)?',
@@ -78,7 +70,7 @@ const schema = buildGraph(
     description:
       'Bezpłatny bookmarklet widocznosc.ai, który na chatgpt.com pokazuje query fan-out ChatGPT: każde wyszukiwanie, strony, które wróciły, i te zacytowane w odpowiedzi. Nagrywa zapytania w trakcie odpowiedzi, czyta zapisane czaty, nic nie wysyła.',
     featureList: [
-      'Tabela wyszukiwań ChatGPT: runda, typ, zapytanie, okno świeżości, domena',
+      'Tabela wyszukiwań ChatGPT: runda, zapytanie, domena, wyniki, cytowania',
       'Lista stron z każdego wyszukiwania z oznaczeniem cytowanych',
       'Podsumowanie udziału forów (Reddit, Wykop, Quora, GoWork)',
       'Zakładka Domeny: witryny pogrupowane w kategorie (fora, opinie, sklepy, media, dokumentacja, instytucje, firmy) z liczbą pobranych i cytowanych stron',
@@ -241,6 +233,13 @@ const schema = buildGraph(
             </tbody>
           </table>
         </div>
+        <p class="text-ink tool-overview-copy mt-4 max-w-3xl text-base leading-relaxed">
+          W starszych czatach mogą się pojawić dwie dodatkowe kolumny: <code>typ</code> (rodzaj
+          wyszukiwania, np. fast, slow, business, image) i <code>dni</code> (okno świeżości, np. 365
+          to ostatni rok). ChatGPT zapisywał je w rozmowach, zanim zmienił format. Obecnie tych danych
+          nie przesyła, więc w nowych czatach panel ukrywa obie kolumny. Wrócą same, jeśli ChatGPT
+          znów zacznie je podawać.
+        </p>
 
         <div class="mt-12 grid gap-4 lg:grid-cols-2">
           <div class="info-card">
