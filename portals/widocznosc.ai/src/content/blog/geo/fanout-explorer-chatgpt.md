@@ -46,7 +46,7 @@ Nasz [Fan-out Explorer](/narzedzia/fanout-explorer/) został dostosowany do pols
 
 ## Co pokazuje panel
 
-Po kliknięciu zakładki w oknie czatu, z prawej strony otwiera się panel. Na górze widnieje Twój prompt i podsumowanie: ile wyszukiwań wykonano w ilu rundach, ile stron zostało zwróconych, ile z nich ChatGPT pokazał jako źródło, a osobno te same statystyki dla forów. Niżej znajduje się tabela, w której jeden wiersz odpowiada jednemu wyszukiwaniu:
+Po kliknięciu zakładki w oknie czatu, z prawej strony otwiera się panel. Na górze widnieje Twój prompt i podsumowanie: ile wyszukiwań wykonano w ilu rundach, ile stron zostało zwróconych, ile z nich ChatGPT pokazał jako źródło, a osobno te same statystyki dla forów. Strony przypisujemy do forów na podstawie dopasowania adresu, więc mogą pojawiać się błędy. Niżej znajduje się tabela, w której jeden wiersz odpowiada jednemu wyszukiwaniu:
 
 - **runda** – ChatGPT szuka partiami. Wysyła kilka zapytań, analizuje wyniki i często generuje kolejną partię. Numer rundy mówi, na którym etapie procesu powstało zapytanie.
 - **zapytanie** – dokładne słowa wysłane do wyszukiwarki, łącznie z operatorem `site:` i cudzysłowami.
