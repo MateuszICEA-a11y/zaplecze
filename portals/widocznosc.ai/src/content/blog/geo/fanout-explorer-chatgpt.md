@@ -131,7 +131,7 @@ Dla treści poradnikowych o AI Search wnioski są brutalne. **Na pytanie „czy 
 
 Dwa prompty porównawcze potwierdziły wzorzec z artykułu Orit Mutznik. Porównanie Shopera i WooCommerce z prośbą o ceny wygenerowało cztery zapytania o cenniki i hosting, 47 stron, 4 cytowania (z cyberfolks.pl i niepoddawajsie.pl) oraz zero forów. Porównanie trzech systemów CRM z prośbą o opinie użytkowników skupiło się na platformach Reddit, G2 i Capterra: ze 100 stron zacytowanych zostało 10, w tym pięć wątków z Reddita i cennik Livespace.
 
-Reddit został zacytowany tylko w temacie, w którym w języku angielskim ma tysiące wątków. W tematach polskich (kredyt, agencje) był analizowany, ale ostatecznie pomijany. **Dla części polskich zapytań widać, że rolę Reddita pełni forum Bankiera, a w innych kategoriach dedykowana społeczność banku albo Clutch.**
+Reddit został zacytowany tylko w temacie, w którym w języku angielskim ma tysiące wątków. W tematach polskich (kredyt, agencje) był analizowany, ale ostatecznie pomijany. **Dla części polskich zapytań widać, że rolę Reddita pełni forum Bankiera, a w innych przypadkach dedykowana społeczność banku albo Clutch.**
 
 ## Co z tego wynika dla marki
 
