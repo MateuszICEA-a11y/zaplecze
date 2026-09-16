@@ -1,13 +1,5 @@
 [
   {
-    "title": "To nie jest zwykły kamper cz. 2 – nietypowa zabudowa znów przyciąga uwagę",
-    "date": "2026-06-03",
-    "slug": "to-nie-jest-zwykly-kamper-cz-2-nietypowa-zabudowa-znow-przyciaga-uwage",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Ceny paliw na czwartek i piątek – tyle zapłacimy na stacjach",
     "date": "2026-06-04",
     "slug": "ceny-paliw-na-czwartek-i-piatek-tyle-zaplacimy-na-stacjach",
@@ -717,6 +709,14 @@
     "slug": "tansze-paliwo-jeszcze-w-2026-rzad-rozwaza-podatek-od-zyskow-i-ciecia-vat",
     "section": "news",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Euro Bus Expo 2026: ponad 75 autobusów i 200 wystawców w Birmingham",
+    "date": "2026-09-16",
+    "slug": "euro-bus-expo-2026-ponad-75-autobusow-i-200-wystawcow-w-birmingham",
+    "section": "news",
+    "format": "short",
     "source": "rss"
   }
 ]
