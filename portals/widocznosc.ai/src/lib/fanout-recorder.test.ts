@@ -1284,7 +1284,7 @@ describe('fanout recorder handoff deduplication', () => {
 });
 
 describe('fanout recorder load cooldown and navigation guards', () => {
-  it('coalesces concurrent loads and respects the 429 cooldown for manual calls', async () => {
+  it('coalesces concurrent loads, respects the 429 cooldown and never retries on its own', async () => {
     vi.useFakeTimers();
     try {
       const harness = createHarness();
@@ -1308,12 +1308,33 @@ describe('fanout recorder load cooldown and navigation guards', () => {
       await vi.advanceTimersByTimeAsync(59_999);
       await flushMicrotasks();
       expect(conversationCalls).toBe(1);
-      await vi.advanceTimersByTimeAsync(1);
+      await vi.advanceTimersByTimeAsync(10 * 60_000);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(1);
+      harness.api.load(true);
       await flushMicrotasks();
       expect(conversationCalls).toBe(2);
     } finally {
       vi.useRealTimers();
     }
+  });
+
+  it('shows recorded queries when the conversation read is rate limited', async () => {
+    const harness = createHarness();
+    const id = 'cccccccccccccccccccc';
+    setConversation(harness, id);
+    const fetchSpy = vi.fn((input: unknown) => {
+      if (String(input).includes('/api/auth/session')) return Promise.resolve(sessionResponse());
+      return Promise.resolve(rateLimitResponse());
+    });
+    installLoadFetch(harness, fetchSpy);
+    harness.api.recordBatch(id, 'tool-msg-1', ['agencja seo poznan', 'site:clutch.co seo poznan']);
+    harness.api.load(true);
+    await flushMicrotasks();
+    await flushMicrotasks();
+    const model = harness.api.state.model as BuildResult;
+    expect(model.rows.map((r) => r.query)).toEqual(['agencja seo poznan', 'site:clutch.co seo poznan']);
+    expect(model.stats.hidden).toBe(0);
   });
 
   it('uses Retry-After seconds to schedule the next read', async () => {

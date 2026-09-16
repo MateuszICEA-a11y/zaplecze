@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.5.1';
+  var VERSION = '1.5.2';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv2:'; // conv: = kopie ze starego endpointu, bez zapytań
   var QUERIES_PREFIX = NS + ':q:';
@@ -451,7 +451,7 @@
       var cached = readCache(convId);
       if (cached && cached.conv && state.id === convId) {
         state.model = build(cached.conv, readQueries(convId)); render();
-      }
+      } else if (!cached && (!state.model || state.id === convId || !state.id) && fromRecorded(convId)) render();
     }
   }
   // Identyfikatory służą wyłącznie do połączenia części tej samej odpowiedzi. Tokenów nie zachowujemy.
@@ -1397,6 +1397,27 @@
     state.capturedAt = new Date();
     state.note = '';
   }
+  function limitNote() {
+    return 'ChatGPT nie wydaje teraz treści tej rozmowy (429). Blokada obejmuje też samą aplikację, więc czat może się nie otwierać. Panel nie ponawia odczytu sam, żeby jej nie wydłużać; zapytania z promptów wysłanych przy otwartym panelu nadal są zapisywane. Kliknij Odśwież po ' + new Date(state.nextReadAt).toLocaleTimeString('pl-PL') + ' albo otwórz czat ponownie, gdy ChatGPT znów go wyświetli – panel wczyta wtedy dane z odczytu aplikacji.';
+  }
+  // Rozmowa niedostępna (np. 429), ale zapytania nagrano ze strumienia: tabela z samymi zapytaniami.
+  function fromRecorded(id) {
+    var recorded = id ? readQueries(id) : [];
+    if (!recorded.length) return false;
+    var users = document.querySelectorAll ? document.querySelectorAll('[data-message-author-role="user"]') : [];
+    var prompt = users.length ? String(users[users.length - 1].innerText || '').trim() : '';
+    var mapping = { u: { id: 'u', parent: null, message: { id: 'u', author: { role: 'user' }, content: { parts: [prompt] } } } }, parent = 'u';
+    recorded.forEach(function (b, i) {
+      var key = b.id || 'rec' + i;
+      mapping[key] = { id: key, parent: parent, message: { id: key, author: { role: 'assistant' }, recipient: 'web.run', content: { parts: [''] } } };
+      parent = key;
+    });
+    state.id = id;
+    state.model = build({ mapping: mapping, current_node: parent }, recorded);
+    state.source = 'zapytania nagrane w tej przeglądarce';
+    state.capturedAt = new Date();
+    return true;
+  }
   function scheduleRetry() {
     if (state.retry) clearTimeout(state.retry);
     state.retry = setTimeout(function () {
@@ -1414,8 +1435,8 @@
     if (Date.now() < state.nextReadAt) {
       var waitingId = conversationId(), waitingCache = !force && waitingId ? readCache(waitingId) : null;
       if (waitingCache && waitingCache.conv) { state.id = waitingId; apply(waitingCache.conv, 'kopia z przeglądarki'); state.capturedAt = new Date(waitingCache.at || Date.now()); }
-      state.note = 'ChatGPT ogranicza odczyty (429). Pobieranie rozmowy jest wstrzymane do ' + new Date(state.nextReadAt).toLocaleTimeString('pl-PL') + '. Aby wczytać rozmowę od razu, przejdź do innego czatu i wróć.';
-      if (!state.retry) scheduleRetry();
+      if (!state.model || state.id !== waitingId) fromRecorded(waitingId);
+      state.note = limitNote();
       render(); return;
     }
     var id = conversationId();
@@ -1452,10 +1473,12 @@
       if (err.rateLimited) {
         var delay = Math.max(state.backoff, err.retryAfter || 0);
         state.nextReadAt = Date.now() + delay;
+        state.backoff = Math.min(state.backoff * 2, 1800000);
         window.__waiFanoutReadLimit = { until: state.nextReadAt, backoff: state.backoff };
-        state.note = 'ChatGPT ogranicza odczyty (429). Pobieranie rozmowy jest wstrzymane do ' + new Date(state.nextReadAt).toLocaleTimeString('pl-PL') + '. Zachowuję dotychczasowe dane. Aby wczytać rozmowę od razu, przejdź do innego czatu i wróć – panel skorzysta z odczytu samej aplikacji.';
+        // Bez automatycznego ponawiania: limit obejmuje odczyt rozmów na koncie, każda próba może go wydłużyć.
+        if (!state.model || state.id !== id) fromRecorded(id);
+        state.note = limitNote();
         render();
-        scheduleRetry();
       } else {
         if (id !== conversationId()) { load(false); return; }
         state.note = 'Nie udało się odczytać rozmowy (' + err.message + '). Upewnij się, że jesteś zalogowany, i kliknij Odśwież.';
