@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.5.2';
+  var VERSION = '1.5.3';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv2:'; // conv: = kopie ze starego endpointu, bez zapytań
   var QUERIES_PREFIX = NS + ':q:';
@@ -449,7 +449,8 @@
     // Nie przełączaj panelu na czat, którego odpowiedź kończy się już po zmianie karty rozmowy.
     if (convId === conversationId()) {
       var cached = readCache(convId);
-      if (cached && cached.conv && state.id === convId) {
+      if (Date.now() < state.nextReadAt) { if (fromRecorded(convId, state.id === convId ? state.conv : cached && cached.conv)) render(); }
+      else if (cached && cached.conv && state.id === convId) {
         state.model = build(cached.conv, readQueries(convId)); render();
       } else if (!cached && (!state.model || state.id === convId || !state.id) && fromRecorded(convId)) render();
     }
@@ -1392,6 +1393,7 @@
 
   /* ---------- ładowanie i tryb live ---------- */
   function apply(conv, source) {
+    state.conv = conv;
     state.model = build(conv, readQueries(state.id));
     state.source = source;
     state.capturedAt = new Date();
@@ -1400,21 +1402,37 @@
   function limitNote() {
     return 'ChatGPT nie wydaje teraz treści tej rozmowy (429). Blokada obejmuje też samą aplikację, więc czat może się nie otwierać. Panel nie ponawia odczytu sam, żeby jej nie wydłużać; zapytania z promptów wysłanych przy otwartym panelu nadal są zapisywane. Kliknij Odśwież po ' + new Date(state.nextReadAt).toLocaleTimeString('pl-PL') + ' albo otwórz czat ponownie, gdy ChatGPT znów go wyświetli – panel wczyta wtedy dane z odczytu aplikacji.';
   }
-  // Rozmowa niedostępna (np. 429), ale zapytania nagrano ze strumienia: tabela z samymi zapytaniami.
-  function fromRecorded(id) {
+  // Rozmowa niedostępna (np. 429), ale zapytania nagrano ze strumienia. Posiadana kopia rozmowy bywa sprzed
+  // odpowiedzi (odczyt w trakcie), więc nagrane rundy spoza niej dokładamy na koniec zamiast je pomijać.
+  function fromRecorded(id, conv) {
     var recorded = id ? readQueries(id) : [];
     if (!recorded.length) return false;
+    var base = conv && conv.mapping ? conv : { mapping: {}, current_node: null };
+    var missing = recorded.filter(function (b, i) { return !base.mapping[b.id || 'rec' + i]; });
+    if (conv && conv.mapping && !missing.length) return false;
+    var mapping = {}, parent = base.current_node, hasPrompt = false, lastAnswered = false;
+    Object.keys(base.mapping).forEach(function (k) { mapping[k] = base.mapping[k]; });
+    activeBranch(base).forEach(function (node) {
+      var m = node.message;
+      if (!m || !m.author) return;
+      if (m.author.role === 'user') { hasPrompt = true; lastAnswered = false; }
+      else if (m.author.role === 'assistant' && m.end_turn === true) lastAnswered = true;
+    });
     var users = document.querySelectorAll ? document.querySelectorAll('[data-message-author-role="user"]') : [];
-    var prompt = users.length ? String(users[users.length - 1].innerText || '').trim() : '';
-    var mapping = { u: { id: 'u', parent: null, message: { id: 'u', author: { role: 'user' }, content: { parts: [prompt] } } } }, parent = 'u';
-    recorded.forEach(function (b, i) {
+    var prompt = users.length ? String(users[users.length - 1].innerText || '').replace(/\s+/g, ' ').trim() : '';
+    // Kopia sprzed odpowiedzi kończy się promptem, do którego należą nagrane rundy; nowy prompt tylko po zakończonej turze.
+    if (!hasPrompt || lastAnswered) {
+      mapping['rec-u'] = { id: 'rec-u', parent: parent, message: { id: 'rec-u', author: { role: 'user' }, content: { parts: [prompt] } } };
+      parent = 'rec-u';
+    }
+    missing.forEach(function (b, i) {
       var key = b.id || 'rec' + i;
       mapping[key] = { id: key, parent: parent, message: { id: key, author: { role: 'assistant' }, recipient: 'web.run', content: { parts: [''] } } };
       parent = key;
     });
     state.id = id;
     state.model = build({ mapping: mapping, current_node: parent }, recorded);
-    state.source = 'zapytania nagrane w tej przeglądarce';
+    state.source = conv ? 'kopia rozmowy + zapytania nagrane w tej przeglądarce' : 'zapytania nagrane w tej przeglądarce';
     state.capturedAt = new Date();
     return true;
   }
@@ -1435,7 +1453,7 @@
     if (Date.now() < state.nextReadAt) {
       var waitingId = conversationId(), waitingCache = !force && waitingId ? readCache(waitingId) : null;
       if (waitingCache && waitingCache.conv) { state.id = waitingId; apply(waitingCache.conv, 'kopia z przeglądarki'); state.capturedAt = new Date(waitingCache.at || Date.now()); }
-      if (!state.model || state.id !== waitingId) fromRecorded(waitingId);
+      fromRecorded(waitingId, state.id === waitingId ? state.conv : null);
       state.note = limitNote();
       render(); return;
     }
@@ -1476,7 +1494,7 @@
         state.backoff = Math.min(state.backoff * 2, 1800000);
         window.__waiFanoutReadLimit = { until: state.nextReadAt, backoff: state.backoff };
         // Bez automatycznego ponawiania: limit obejmuje odczyt rozmów na koncie, każda próba może go wydłużyć.
-        if (!state.model || state.id !== id) fromRecorded(id);
+        fromRecorded(id, state.id === id ? state.conv : null);
         state.note = limitNote();
         render();
       } else {
