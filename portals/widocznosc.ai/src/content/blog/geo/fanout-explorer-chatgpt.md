@@ -107,13 +107,13 @@ W odpowiedzi znalazły się: ranking z mdyrda.pl, dwa artykuły Bankiera o kredy
 
 ### Agencja SEO w Poznaniu dla sklepu z meblami
 
-Ten prompt dotyczy nas bezpośrednio, więc pokazuję go bez retuszu. Prośba o agencję z opiniami klientów i studiami przypadków (case study) wygenerowała 9 zapytań w 2 rundach, 103 strony i 11 cytowań.
+Ten prompt dotyczy nas bezpośrednio, więc pokazuję go bez retuszu. Prośba o agencję z opiniami klientów i opisami realizacji (case study) wygenerowała 9 zapytań w 2 rundach, 103 strony i 11 cytowań.
 
-Pierwsza runda to trzy ogólne zapytania w stylu „agencja SEO Poznań opinie klienci case study e-commerce meble”. Zwrócono 32 strony, a zacytowane zostały trzy studia przypadków o sklepach meblowych: z neseo.pl, non.agency i rezulto.pl. Żadna z tych agencji nie jest z Poznania. Model priorytetowo potraktował dopasowanie tematyczne (meble) kosztem lokalizacji.
+Pierwsza runda to trzy ogólne zapytania w stylu „agencja SEO Poznań opinie klienci case study e-commerce meble”. Zwrócono 32 strony, a zacytowane zostały trzy opisy realizacji dla sklepów meblowych: z neseo.pl, non.agency i rezulto.pl. Żadna z tych agencji nie jest z Poznania. Model priorytetowo potraktował dopasowanie tematyczne (meble) kosztem lokalizacji.
 
-Druga runda wygląda zupełnie inaczej. ChatGPT wypisał sześć nazw agencji i dla każdej wysłał zapytanie w cudzysłowie: „Widoczni”, „Semcore”, „Sempire”, „NON.agency”, „mplace” i „ICEA”, każde z dopiskiem „opinie klienci SEO Poznań”. Z 72 stron zacytował 8: profil Sempire na Clutch, strony ze studiami przypadków Semcore, Sempire i Widocznych oraz trzy adresy grupa-icea.pl, w tym stronę ze studium przypadku i ofertę pozycjonowania sklepów.
+Druga runda wygląda zupełnie inaczej. ChatGPT wypisał sześć nazw agencji i dla każdej wysłał zapytanie w cudzysłowie: „Widoczni”, „Semcore”, „Sempire”, „NON.agency”, „mplace” i „ICEA”, każde z dopiskiem „opinie klienci SEO Poznań”. Z 72 stron zacytował 8: profil Sempire na Clutch, strony z realizacjami Semcore, Sempire i Widocznych oraz trzy adresy grupa-icea.pl, w tym opis realizacji i ofertę pozycjonowania sklepów.
 
-To najważniejsza obserwacja z całej sesji. **Marka zyskuje znaczenie dopiero w drugiej rundzie, gdy model szuka jej po nazwie z dopiskiem „opinie”.** Na to zapytanie odpowiada własna strona ze studium przypadku albo profil na Clutch. Fora opinii, takie jak aleo.com czy opiniak.com, pojawiły się w wynikach, ale nie zostały zacytowane. Agencja, której nie ma na liście nazw z drugiej rundy, nie ma czego optymalizować, bo model w ogóle jej nie szuka.
+To najważniejsza obserwacja z całej sesji. **Marka zyskuje znaczenie dopiero w drugiej rundzie, gdy model szuka jej po nazwie z dopiskiem „opinie”.** Na to zapytanie odpowiada własny opis realizacji albo profil na Clutch. Fora opinii, takie jak aleo.com czy opiniak.com, pojawiły się w wynikach, ale nie zostały zacytowane. Agencja, której nie ma na liście nazw z drugiej rundy, nie ma czego optymalizować, bo model w ogóle jej nie szuka.
 
 ### Laptop do 4000 zł, trzy modele i gdzie najtaniej
 
@@ -125,13 +125,13 @@ Sklep, który nie znajduje się w tej trójce, nie istnieje w odpowiedzi o cenac
 
 Prompt informacyjny z naszej niszy wygenerował jedną rundę i cztery zapytania, wszystkie po angielsku, mimo polskiego promptu. Trzy z nich były ograniczone do konkretnych domen: openai.com, developers.google.com i bing.com/webmasters. Z 55 stron ChatGPT zacytował 7 i wszystkie pochodziły ze źródeł pierwotnych: sekcji FAQ dla wydawców w pomocy OpenAI, przewodnik Google po optymalizacji pod AI, wpisy z bloga Google Search Central i dokumentacja raportów AI w Bing Webmaster Tools. Ponad 40 stron agencji i blogów SEO pojawiło się w wynikach, ale żadna nie została zacytowana.
 
-Dla treści poradnikowych o AI Search wnioski są brutalne. **Na pytanie „czy warto i jak zacząć” model cytuje producenta wyszukiwarki, a nie komentatora.** Miejsce dla agencji jest w pytaniach, na które producent nie odpowiada: porównaniach narzędzi, kosztach, studiach przypadków czy procesach.
+Dla treści poradnikowych o AI Search wnioski są brutalne. **Na pytanie „czy warto i jak zacząć” model cytuje producenta wyszukiwarki, a nie komentatora.** Miejsce dla agencji jest w pytaniach, na które producent nie odpowiada: porównaniach narzędzi, kosztach, realizacjach czy procesach.
 
 ### Shoper kontra WooCommerce i porównanie CRM-ów
 
 Dwa prompty porównawcze potwierdziły wzorzec z artykułu Orit Mutznik. Porównanie Shopera i WooCommerce z prośbą o ceny wygenerowało cztery zapytania o cenniki i hosting, 47 stron, 4 cytowania (z cyberfolks.pl i niepoddawajsie.pl) oraz zero forów. Porównanie trzech systemów CRM z prośbą o opinie użytkowników skupiło się na platformach Reddit, G2 i Capterra: ze 100 stron zacytowanych zostało 10, w tym pięć wątków z Reddita i cennik Livespace.
 
-Reddit został zacytowany tylko w temacie, w którym w języku angielskim ma tysiące wątków. W tematach polskich (kredyt, agencje) był analizowany, ale ostatecznie pomijany. **W polskim internecie rolę Reddita pełni forum Bankiera, dedykowana społeczność banku albo Clutch, zależnie od kategorii.**
+Reddit został zacytowany tylko w temacie, w którym w języku angielskim ma tysiące wątków. W tematach polskich (kredyt, agencje) był analizowany, ale ostatecznie pomijany. **Dla części polskich zapytań widać, że rolę Reddita pełni forum Bankiera, a w innych kategoriach dedykowana społeczność banku albo Clutch.**
 
 ## Co z tego wynika dla marki
 
