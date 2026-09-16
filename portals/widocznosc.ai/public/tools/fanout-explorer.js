@@ -1146,14 +1146,16 @@
       + '<span>Wymieniona w odpowiedzi: <b>' + (answered ? yes(mentions > 0, mentions ? 'tak (' + mentions + '/' + answered + ')' : 'nie') : '…') + '</b></span>'
       + '</div>';
     if (queries.length) {
-      h += '<div>W puli wyników ' + plural(queries.length, 'zapytania', 'zapytań', 'zapytań') + ' (ChatGPT zapisuje wyniki dla całej rundy, więc przy kilku zapytaniach w rundzie nie da się wskazać jednego):</div><ul>';
+      h += '<div>W puli wyników ' + plural(queries.length, 'zapytania', 'zapytań', 'zapytań') + ' <span style="color:var(--faint)">(wyniki są zapisywane dla całej rundy)</span>:</div><ul>';
       queries.forEach(function (r) { h += '<li>' + r.n + '. ' + esc(r.query) + '</li>'; });
       h += '</ul>';
     }
-    var list = Object.keys(fetched).map(function (k) { return fetched[k]; });
+    var list = Object.keys(fetched).map(function (k) { return fetched[k]; })
+      .sort(function (a, b) { return (b.cited - a.cited) || a.canon.localeCompare(b.canon); });
     if (list.length) {
       h += '<ul class="wf-pg" style="margin-top:6px">';
-      list.forEach(function (p) { h += '<li class="' + (p.cited ? 'c' : '') + '"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.canon) + '</a></li>'; });
+      list.slice(0, 8).forEach(function (p) { h += '<li class="' + (p.cited ? 'c' : '') + '"><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.canon) + '</a></li>'; });
+      if (list.length > 8) h += '<li>i ' + (list.length - 8) + ' ' + plural(list.length - 8, 'kolejna', 'kolejne', 'kolejnych') + ' – pełna lista w zakładce Domeny</li>';
       h += '</ul>';
     } else if (m.rows.length) {
       h += '<div>ChatGPT nie pobrał żadnej strony pasującej do „' + esc(state.brand) + '”. Sprawdź w zakładce Domeny, kto zajął to miejsce.</div>';
