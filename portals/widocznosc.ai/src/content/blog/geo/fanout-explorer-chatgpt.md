@@ -75,7 +75,7 @@ Z tą klasyfikacją warto pamiętać o dwóch rzeczach:
 
 ## Jak zainstalować i kiedy kliknąć
 
-Instalacja polega na przeciągnięciu przycisku ze [strony narzędzia](/narzedzia/fanout-explorer/) na pasek zakładek. W systemie Windows długie kody zakładek nie zawsze działają poprawnie po przeciągnięciu, dlatego dostępna jest też metoda polegająca na ręcznym skopiowaniu kodu do pola adresu zakładki, a dla przeglądarek firmowych z zablokowanymi zakładkami – instalacja przez konsolę.
+Instalacja polega na przeciągnięciu przycisku ze strony narzędzia [Fan-out Explorer](/narzedzia/fanout-explorer/) na pasek zakładek. W systemie Windows długie kody zakładek nie zawsze działają poprawnie po przeciągnięciu, dlatego dostępna jest też metoda polegająca na ręcznym skopiowaniu kodu do pola adresu zakładki, a dla przeglądarek firmowych z zablokowanymi zakładkami – instalacja przez konsolę.
 
 Ważniejsze od samej instalacji jest jedno: **zakładkę należy kliknąć przed wysłaniem promptu**. ChatGPT przesyła treść zapytań wyłącznie w strumieniu odpowiedzi, w wywołaniu funkcji narzędzia (ang. tool call), które nie jest zapisywane w historii rozmowy. Sprawdziliśmy to na koncie Free z modelem GPT-5.6 bez trybu rozumowania (Thinking) oraz na koncie Business z włączonym GPT-5.6 Thinking. W obu przypadkach zapisana rozmowa ma puste pola tam, gdzie znajdowały się polecenia wyszukiwania; zostają tylko wyniki i cytowania. Panel podpina się więc pod strumień, rejestruje zapytania i przechowuje je w przeglądarce razem z czatem. Czat z historii, który nie był rejestrowany na żywo, pokazuje jeden wiersz na rundę: domeny, liczbę stron i cytowania, ale bez dokładnej treści zapytań.
 
