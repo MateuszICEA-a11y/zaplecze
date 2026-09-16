@@ -118,6 +118,10 @@ Pod zakładkami panelu jest pole **„Twoja marka”**. Wpisz w nim domenę albo
 
 Pod spodem panel wypisuje zapytania, w których puli wyników znalazły się Twoje strony, oraz same adresy, a w tabeli i zakładce Domeny podświetla wiersze marki. Dwie uwagi. ChatGPT zapisuje wyniki dla całej rundy, więc przy kilku zapytaniach w jednej rundzie nie da się wskazać, które z nich zwróciło Twoją stronę. Nazwa jest szukana w adresie, tytule strony i tekście odpowiedzi, dlatego krótkie, popularne słowa mogą dać fałszywe trafienia – domena jest pewniejsza. Wpis zostaje zapamiętany w przeglądarce, więc przy kolejnych czatach wystarczy otworzyć panel.
 
+![Ramka „Twoja marka w tej rozmowie” w panelu Fan-out Explorer dla domeny bankier.pl na czacie o kredycie hipotecznym: 19 stron w wynikach, 2 cytowane, marka wymieniona w odpowiedzi, lista zapytań z puli wyników i adresy z zaznaczonymi cytowaniami](../../../assets/images/blog-geo-fanout-explorer-marka.webp)
+
+<span class="img-caption">Pole „Twoja marka” z domeną bankier.pl: zacytowane strony są na górze listy, wiersze marki podświetlone w tabeli.</span>
+
 ## Jak zainstalować i kiedy kliknąć
 
 Instalacja polega na przeciągnięciu przycisku ze strony narzędzia [Fan-out Explorer](/narzedzia/fanout-explorer/) na pasek zakładek. W systemie Windows długie kody zakładek nie zawsze działają poprawnie po przeciągnięciu, dlatego dostępna jest też metoda polegająca na ręcznym skopiowaniu kodu do pola adresu zakładki. Jeśli zakładki są zablokowane, ale masz dostęp do narzędzi deweloperskich, możesz uruchomić kod przez konsolę.
