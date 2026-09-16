@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.3.3';
+  var VERSION = '1.3.4';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv:';
   var QUERIES_PREFIX = NS + ':q:';
@@ -356,7 +356,31 @@
     // Nie przełączaj panelu na czat, którego odpowiedź kończy się już po zmianie karty rozmowy.
     if (convId === conversationId() && !state.busy) load(true);
   }
+  // Identyfikatory służą wyłącznie do połączenia części tej samej odpowiedzi. Tokenów nie zachowujemy.
+  var topicCaptures = Object.create(null), pendingSocketTopics = Object.create(null);
+  function newCapture(hint) {
+    return { convId: hint || '', messageId: '', pending: [], anonymous: Object.create(null), sequence: 0, id: 'stream:' + Date.now() + ':' + Math.random() };
+  }
+  function trimTopics(map, limit) {
+    var keys = Object.keys(map).sort(function (a, b) { return map[a].at - map[b].at; });
+    keys.slice(0, Math.max(0, keys.length - limit)).forEach(function (key) { delete map[key]; });
+  }
+  function rememberHandoff(event, capture) {
+    if (!capture.convId || !Array.isArray(event.options)) return;
+    if (!capture.handoff) { capture.handoff = true; state.capture.handoffs++; }
+    event.options.forEach(function (option) {
+      if (!option || (option.type !== 'subscribe_ws_topic' && option.type !== 'resume_sse_endpoint')) return;
+      var topic = option.topic_id;
+      if (typeof topic !== 'string' || !/^conversation-turn-[a-z0-9-]{1,160}$/i.test(topic)) return;
+      if (!topicCaptures[topic]) topicCaptures[topic] = { capture: capture, parsers: Object.create(null), at: Date.now() };
+      var waiting = pendingSocketTopics[topic];
+      delete pendingSocketTopics[topic];
+      if (waiting && Date.now() - waiting.at < 30000) waiting.chunks.forEach(function (entry) { socketChunk(topic, entry.chunk, entry.leg); });
+    });
+    trimTopics(topicCaptures, 16);
+  }
   function scanEvent(obj, capture) {
+    if (state.closed) return;
     var found = [];
     function foundQueries(value, msgId, types) {
       state.capture.queryFields++;
@@ -379,6 +403,8 @@
       if (!v || typeof v !== 'object') return;
       if (Array.isArray(v)) { v.forEach(function (item) { walk(item, msgId); }); return; }
       if (typeof v.conversation_id === 'string' && v.conversation_id) capture.convId = v.conversation_id;
+      if (v.type === 'resume_conversation_token') return;
+      if (v.type === 'stream_handoff') { rememberHandoff(v, capture); return; }
       if (typeof v.id === 'string' && (v.author || v.metadata || v.content)) {
         msgId = v.id; capture.messageId = v.id;
       }
@@ -401,15 +427,14 @@
     });
     capture.pending = [];
   }
-  function tapStream(body, hint) {
-    var reader = body.getReader(), dec = new TextDecoder(), buf = '', data = [];
-    var capture = { convId: hint || '', messageId: '', pending: [], anonymous: Object.create(null), sequence: 0, id: 'stream:' + Date.now() + ':' + Math.random() };
-    state.capture.streams++;
+  function sseDecoder(capture, onDone) {
+    var buf = '', data = [];
     function line(text) {
       if (text === '') {
         if (!data.length) return;
         var payload = data.join('\n').trim(); data = [];
-        if (!payload || payload === '[DONE]') return;
+        if (!payload) return;
+        if (payload === '[DONE]') { if (onDone) onDone(); return; }
         try {
           var obj = JSON.parse(payload);
           state.capture.events++;
@@ -429,11 +454,24 @@
         var skip = buf.slice(i, i + 2) === '\r\n' ? 2 : 1;
         line(buf.slice(0, i)); buf = buf.slice(i + skip);
       }
+      if (buf.length > 2 * 1024 * 1024 || data.join('').length > 2 * 1024 * 1024) {
+        buf = ''; data = []; state.capture.parseErrors++;
+      }
     }
+    return {
+      write: function (text) { buf += text; consume(false); },
+      end: function () { consume(true); },
+    };
+  }
+  function tapStream(body, hint) {
+    var reader = body.getReader(), dec = new TextDecoder();
+    var capture = hint && typeof hint === 'object' ? hint : newCapture(hint);
+    var parser = sseDecoder(capture);
+    state.capture.streams++;
     function pump() {
       return reader.read().then(function (r) {
-        if (r.done) { buf += dec.decode(); consume(true); return; }
-        buf += dec.decode(r.value, { stream: true }); consume(false);
+        if (r.done) { parser.write(dec.decode()); parser.end(); return; }
+        parser.write(dec.decode(r.value, { stream: true }));
         return pump();
       });
     }
@@ -442,34 +480,173 @@
       reader.releaseLock(); render();
     });
   }
+  function socketChunk(topic, chunk, leg) {
+    if (state.closed) return;
+    leg = leg || 'ws';
+    var known = topicCaptures[topic];
+    if (!known) {
+      // Subskrypcja aplikacji może wyprzedzić odczyt naszej kopii strumienia początkowego.
+      var pending = pendingSocketTopics[topic];
+      if (!pending) return;
+      if (Date.now() - pending.at > 30000 || pending.bytes + chunk.length > 512 * 1024 || pending.chunks.length >= 256) {
+        delete pendingSocketTopics[topic]; state.capture.wsDropped++; return;
+      }
+      pending.chunks.push({ chunk: chunk, leg: leg }); pending.bytes += chunk.length; return;
+    }
+    var parser = known.parsers[leg];
+    if (!parser) {
+      parser = { done: false, decoder: null };
+      parser.decoder = sseDecoder(known.capture, function () { parser.done = true; });
+      known.parsers[leg] = parser;
+    }
+    if (parser.done) return;
+    if (leg === 'ws') state.capture.wsChunks++;
+    parser.decoder.write(chunk);
+  }
+  function tapContinuation(body, topic) {
+    if (!topicCaptures[topic] && !pendingSocketTopics[topic]) {
+      pendingSocketTopics[topic] = { at: Date.now(), bytes: 0, chunks: [] };
+      trimTopics(pendingSocketTopics, 8);
+    }
+    var reader = body.getReader(), decoder = new TextDecoder(), leg = 'sse:' + (++state.capture.streams);
+    function pump() {
+      return reader.read().then(function (result) {
+        if (state.closed || (!topicCaptures[topic] && !pendingSocketTopics[topic])) return reader.cancel();
+        socketChunk(topic, decoder.decode(result.value, { stream: !result.done }), leg);
+        if (!result.done) return pump();
+      });
+    }
+    return pump().catch(function () { state.capture.streamErrors++; }).then(function () { reader.releaseLock(); render(); });
+  }
+  function observeSocketMessage(data) {
+    if (state.closed || typeof data !== 'string') return;
+    var items;
+    try { items = JSON.parse(data); } catch (e) { return; }
+    if (!Array.isArray(items)) items = [items];
+    function item(msg) {
+      if (!msg || typeof msg !== 'object') return;
+      if (msg.type === 'reply' && msg.reply && msg.reply.type === 'subscribe' && Array.isArray(msg.reply.catchups)) {
+        msg.reply.catchups.forEach(item); return;
+      }
+      if (msg.type !== 'message' || typeof msg.topic_id !== 'string') return;
+      if (!topicCaptures[msg.topic_id] && !pendingSocketTopics[msg.topic_id]) return;
+      state.capture.wsFrames++;
+      var outer = msg.payload, inner = outer && outer.payload;
+      if (!outer || outer.type !== 'conversation-turn-stream' || !inner) { state.capture.wsUnknown++; return; }
+      if (inner.type === 'heartbeat') return;
+      if (inner.type === 'stream-item' && typeof inner.encoded_item === 'string') socketChunk(msg.topic_id, inner.encoded_item);
+      else state.capture.wsUnknown++;
+    }
+    items.forEach(item);
+    render();
+  }
+  function observeSocketSend(data) {
+    if (state.closed || !state.live || typeof data !== 'string') return;
+    var items;
+    try { items = JSON.parse(data); } catch (e) { return; }
+    if (!Array.isArray(items)) items = [items];
+    items.forEach(function (item) {
+      var command = item && item.command, topic = command && command.topic_id;
+      if (!command || command.type !== 'subscribe' || typeof topic !== 'string' || !/^conversation-turn-[a-z0-9-]{1,160}$/i.test(topic)) return;
+      if (!topicCaptures[topic] && !pendingSocketTopics[topic]) pendingSocketTopics[topic] = { at: Date.now(), bytes: 0, chunks: [] };
+    });
+    Object.keys(pendingSocketTopics).forEach(function (topic) { if (Date.now() - pendingSocketTopics[topic].at > 30000) delete pendingSocketTopics[topic]; });
+    trimTopics(pendingSocketTopics, 8);
+  }
+  function installSocketHook() {
+    var Socket = window.WebSocket;
+    if (!Socket || !Socket.prototype || typeof Socket.prototype.send !== 'function') return;
+    var previous = window.__waiFanoutSocketRecorder;
+    if (previous && Socket.prototype.send === previous.send) {
+      previous.receive = observeSocketMessage; previous.observeSend = observeSocketSend;
+      state.capture.wsConnections = previous.count;
+      return;
+    }
+    var originalSend = Socket.prototype.send, seen = new WeakSet();
+    var hook = { receive: observeSocketMessage, observeSend: observeSocketSend, count: 0, send: null };
+    hook.send = function (data) {
+      try {
+        var url = new URL(this.url);
+        if (url.protocol === 'wss:' && url.hostname === 'ws.chatgpt.com') {
+          if (!seen.has(this)) {
+            var socket = this;
+            socket.addEventListener('message', function (event) {
+              // Nie zmieniamy formatu ani listenerów aplikacji; Chrome domyślnie dostarcza tekst.
+              try { hook.receive(event.data); } catch (e) { state.capture.streamErrors++; }
+            });
+            seen.add(socket); hook.count++; state.capture.wsConnections = hook.count;
+          }
+          hook.observeSend(data);
+        }
+      } catch (e) {}
+      return originalSend.apply(this, arguments);
+    };
+    Socket.prototype.send = hook.send;
+    window.__waiFanoutSocketRecorder = hook;
+  }
+  function continuationCapture(url, body) {
+    if (state.closed) return null;
+    var topics = Object.keys(topicCaptures), values = [];
+    url.searchParams.forEach(function (value) { values.push(value); });
+    if (body && typeof body.topic_id === 'string') values.push(body.topic_id);
+    var segments = url.pathname.split('/').map(function (segment) { try { return decodeURIComponent(segment); } catch (e) { return segment; } });
+    for (var i = 0; i < topics.length; i++) {
+      if (values.indexOf(topics[i]) !== -1 || segments.indexOf(topics[i]) !== -1) return topicCaptures[topics[i]].capture;
+    }
+    return null;
+  }
+  function continuationTopic(url, body) {
+    var values = url.pathname.split('/');
+    url.searchParams.forEach(function (value) { values.push(value); });
+    if (body && typeof body.topic_id === 'string') values.push(body.topic_id);
+    for (var i = 0; i < values.length; i++) {
+      var value = values[i];
+      try { value = decodeURIComponent(value); } catch (e) {}
+      if (/^conversation-turn-[a-z0-9-]{1,160}$/i.test(value)) return value;
+    }
+    return '';
+  }
   function installStreamHook() {
     var previous = window.__waiFanoutRecorder;
     if (previous && window.fetch === previous.fetch) {
       previous.enabled = function () { return !state.closed && state.live; };
       previous.tap = tapStream;
+      // 1.3.3 ma stary matcher fetch. Zadziała obserwator WS, a pełna aktualizacja wymaga przeładowania karty.
+      previous.continuation = continuationCapture;
+      previous.tapContinuation = tapContinuation;
+      if (previous.version !== VERSION) state.capture.legacyHook = true;
+      installSocketHook();
       return;
     }
     // Hook 1.3.2 nie przechowuje oryginalnego fetch — bez przeładowania nie da się go bezpiecznie zastąpić.
     if (window.__waiFanoutHooked && !previous) { state.capture.legacyHook = true; return; }
     var orig = window.fetch;
-    var hook = { enabled: function () { return !state.closed && state.live; }, tap: tapStream, fetch: null };
+    var hook = { version: VERSION, enabled: function () { return !state.closed && state.live; }, tap: tapStream, continuation: continuationCapture, tapContinuation: tapContinuation, fetch: null };
     hook.fetch = function (input, init) {
       var url = typeof input === 'string' ? input : input instanceof URL ? input.href : (input && input.url) || '';
       var method = (init && init.method) || (input && input.method) || 'GET';
-      var eligible = false, hint = conversationId(), tap = hook.tap;
+      var eligible = false, liveAtStart = hook.enabled(), hint = conversationId(), tap = hook.tap, target = null, requestBody = null;
       try {
-        var target = new URL(url, location.href);
+        target = new URL(url, location.href);
         eligible = hook.enabled() && target.origin === location.origin && String(method).toUpperCase() === 'POST'
           && /^\/backend-api\/(f\/)?conversation\/?$/.test(target.pathname);
-        if (eligible && init && typeof init.body === 'string') {
-          var requestBody = JSON.parse(init.body);
-          if (typeof requestBody.conversation_id === 'string') hint = requestBody.conversation_id;
+        if (init && typeof init.body === 'string') {
+          requestBody = JSON.parse(init.body);
+          if (eligible && typeof requestBody.conversation_id === 'string') hint = requestBody.conversation_id;
         }
       } catch (e) {}
       return orig.apply(this, arguments).then(function (res) {
         // Kopia zachowuje oryginalny Response (url, redirected, body) dla aplikacji ChatGPT.
-        if (eligible && res && res.ok && res.body && /text\/event-stream/i.test(res.headers.get('content-type') || '')) {
-          try { tap(res.clone().body, hint); } catch (e) { state.capture.streamErrors++; }
+        if (res && res.ok && res.body && /text\/event-stream/i.test(res.headers.get('content-type') || '')) {
+          var continuation = target && target.origin === location.origin && /^\/backend-api\//.test(target.pathname)
+            ? hook.continuation(target, requestBody) : null;
+          var topic = target && target.origin === location.origin && /^\/backend-api\//.test(target.pathname)
+            ? continuationTopic(target, requestBody) : '';
+          if (topic && (liveAtStart || continuation) && !state.closed) {
+            try { hook.tapContinuation(res.clone().body, topic); } catch (e) { state.capture.streamErrors++; }
+          } else if (eligible || continuation) {
+            try { tap(res.clone().body, continuation || hint); } catch (e) { state.capture.streamErrors++; }
+          }
         }
         return res;
       });
@@ -477,13 +654,14 @@
     window.fetch = hook.fetch;
     window.__waiFanoutRecorder = hook;
     window.__waiFanoutHooked = true;
+    installSocketHook();
   }
 
   /* ---------- stan ---------- */
   var state = {
     id: '', model: null, source: '', capturedAt: null, sort: { col: 'n', dir: 1 }, tab: 'table',
     expanded: {}, live: pref(PREF_LIVE) !== '0', timer: null, retry: null, backoff: 60000, min: false, minAt: 0, note: '', busy: false, recorded: 0, onlyCited: false, domOpen: {}, closed: false,
-    capture: { streams: 0, events: 0, queryFields: 0, batches: 0, parseErrors: 0, streamErrors: 0, unassigned: 0, unsupported: 0, storageError: false, legacyHook: false },
+    capture: { streams: 0, events: 0, queryFields: 0, batches: 0, parseErrors: 0, streamErrors: 0, unassigned: 0, unsupported: 0, storageError: false, legacyHook: false, handoffs: 0, wsConnections: 0, wsFrames: 0, wsChunks: 0, wsUnknown: 0, wsDropped: 0 },
   };
 
   /* ---------- panel ---------- */
@@ -639,6 +817,7 @@
   }
   function close() {
     state.closed = true;
+    topicCaptures = Object.create(null); pendingSocketTopics = Object.create(null);
     stopLive();
     if (urlWatch) clearInterval(urlWatch);
     if (state.retry) { clearTimeout(state.retry); state.retry = null; }
@@ -785,6 +964,9 @@
       h += '<p class="wf-meta">Nagrywanie od uruchomienia panelu: strumienie <span>' + state.capture.streams
         + '</span> · zdarzenia <span>' + state.capture.events + '</span> · pola zapytań <span>' + state.capture.queryFields
         + '</span> · zapisane partie <span>' + state.capture.batches + '</span>'
+        + (state.capture.handoffs ? ' · przekazania strumienia: ' + state.capture.handoffs + ' · połączenia WS: ' + state.capture.wsConnections + ' · fragmenty WS: ' + state.capture.wsChunks : '')
+        + (state.capture.wsUnknown ? ' · nierozpoznane wiadomości WS: ' + state.capture.wsUnknown : '')
+        + (state.capture.wsDropped ? ' · pominięte bufory WS: ' + state.capture.wsDropped : '')
         + (state.capture.parseErrors ? ' · błędy odczytu: ' + state.capture.parseErrors : '')
         + (state.capture.streamErrors ? ' · błędy strumienia: ' + state.capture.streamErrors : '')
         + (state.capture.unsupported ? ' · nierozpoznane pola: ' + state.capture.unsupported : '')
@@ -842,7 +1024,7 @@
     if (state.onlyCited) rows = rows.filter(function (d) { return d.cited > 0; });
     if (!rows.length) return '<div class="wf-empty">Brak domen do pokazania.</div>';
     var maxF = 1; rows.forEach(function (d) { maxF = Math.max(maxF, d.fetched); });
-    var h = '<p class="wf-meta">Wszystkie strony z tego czatu pogrupowane według witryn. Kategorie są przydzielane heurystycznie na podstawie adresu. Plakietka „site: ×N” przy domenie wskazuje, ile wyszukiwań ChatGPT ograniczył do tej witryny operatorem site:. Kliknij „+”, aby zobaczyć strony.</p>';
+    var h = '<p class="wf-meta">Wszystkie strony z tego czatu pogrupowane według witryn. Kategorie są przydzielane heurystycznie na podstawie adresu. Plakietka „site: ×N” pojawia się przy domenie tylko wtedy, gdy odczytane zapytania zawierają operator site: dla tej witryny; N oznacza liczbę takich wyszukiwań. Przy niedostępnej treści zapytań nie da się ustalić tego licznika. Kliknij „+”, aby zobaczyć strony.</p>';
     CATS.forEach(function (c) {
       var list = rows.filter(function (d) { return d.cat === c[0]; });
       if (!list.length) return;
@@ -946,7 +1128,7 @@
       + '</dl><h3>Zakładka Domeny</h3><dl>'
       + '<dt>Co to jest</dt><dd>Wszystkie strony z czatu pogrupowane według witryn: ile pobrano, ile zacytowano i w ilu wyszukiwaniach ChatGPT ograniczył się do tej witryny operatorem site:. Witryny są pogrupowane w kategorie: fora i społeczności, opinie i rankingi, sklepy, media, dokumentacja producentów, instytucje oraz strony firm i marek.</dd>'
       + '<dt>Kategoria</dt><dd>Kategoryzacja oparta na heurystyce nazwy hosta i ścieżkach, nie po treści. Reddit, Wykop, subdomeny forum/spolecznosc to fora; GoWork, Clutch, G2, Capterra, Trustpilot i adresy z „ranking”/„opinie” to opinie; x-kom, Allegro, Morele i ścieżki /produkt/ to sklepy; Bankier, money.pl i ścieżki /wiadomosci/ to media; help., docs., developers. to dokumentacja; .gov, Wikipedia, arXiv to instytucje. Reszta to strony firm. Pomyłki są możliwe, kategorię traktuj jako wstępne grupowanie.</dd>'
-      + '<dt>site: ×N</dt><dd>Plakietka przy domenie: w tylu wyszukiwaniach ChatGPT ograniczył się do tej witryny operatorem site:. Domeny bez plakietki trafiły do wyników zwykłych wyszukiwań.</dd><dt>skala</dt><dd>Pasek pokazuje liczbę pobranych stron domeny na tle domeny z największą liczbą w tym czacie. To nie jest udział procentowy.</dd><dt>Tylko cytowane</dt><dd>Ukrywa domeny, z których nic nie trafiło do odpowiedzi. Bez filtra widać też te przeczytane i pominięte, a to często ciekawsza lista.</dd>'
+      + '<dt>site: ×N</dt><dd>Plakietka przy domenie: w tylu wyszukiwaniach ChatGPT ograniczył się do tej witryny operatorem site:. Brak plakietki oznacza brak odczytanego ograniczenia site:; gdy treść zapytań jest niedostępna, nie można ustalić, czy takie ograniczenie wystąpiło.</dd><dt>skala</dt><dd>Pasek pokazuje liczbę pobranych stron domeny na tle domeny z największą liczbą w tym czacie. To nie jest udział procentowy.</dd><dt>Tylko cytowane</dt><dd>Ukrywa domeny, z których nic nie trafiło do odpowiedzi. Bez filtra widać też te przeczytane i pominięte, a to często ciekawsza lista.</dd>'
       + '</dl><h3>Przyciski</h3><dl><dt>Rozwiń wszystko</dt><dd>Otwiera listy stron we wszystkich wierszach. Drugie kliknięcie zwija je z powrotem.</dd>'
       + '<dt>Kopiuj zapytania</dt><dd>Sama kolumna zapytań, jedno na wiersz, do narzędzia analizy słów kluczowych.</dd>'
       + '<dt>Kopiuj tabelę</dt><dd>Cała tabela rozdzielona tabulatorami, do wklejenia w arkusz kalkulacyjny.</dd>'
