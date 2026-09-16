@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.3.4';
+  var VERSION = '1.3.5';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv:';
   var QUERIES_PREFIX = NS + ':q:';
@@ -200,7 +200,7 @@
       if (msg.recipient === 'web.run') {
         var text = typeof content.text === 'string' ? content.text
           : (content.parts || []).filter(function (p) { return typeof p === 'string'; }).join('\n');
-        cur = { turn: turn, index: turn.rounds.length, searches: [], pages: [], seen: {}, hidden: false };
+        cur = { turn: turn, messageId: msg.id, index: turn.rounds.length, searches: [], pages: [], seen: {}, hidden: false };
         turn.rounds.push(cur);
         text.split(/\r?\n/).forEach(function (l) { var s = parseSearchLine(l); if (s) cur.searches.push(s); });
         // Format od 2026: zapisana rozmowa ma puste parts dla web.run. Zapytania bierzemy z nagrania
@@ -231,14 +231,14 @@
       }
     });
 
-    /* dopasuj nagrane partie zapytań do rund bez treści: po kolei, od końca (nagranie obejmuje ostatnie odpowiedzi) */
+    /* Dopasuj po ID wiadomości. Pozycja w nieaktualnej kopii nie identyfikuje rundy nowej odpowiedzi. */
     var emptyRounds = [];
     turns.forEach(function (t) { t.rounds.forEach(function (r) { if (!r.searches.length) emptyRounds.push(r); }); });
-    var batches = (recorded || []).slice();
-    var offset = Math.max(0, emptyRounds.length - batches.length);
-    emptyRounds.forEach(function (r, i) {
-      var b = batches[i - offset];
-      if (b && i >= offset) {
+    var batches = Object.create(null);
+    (recorded || []).forEach(function (b) { if (b.id) batches[b.id] = b; });
+    emptyRounds.forEach(function (r) {
+      var b = batches[r.messageId];
+      if (b) {
         b.queries.forEach(function (q, qi) {
           var type = (b.types && b.types[qi]) || 'search';
           var m = q.match(/site:([^\s"']+)/i);
@@ -285,7 +285,11 @@
         });
       });
     });
-    return { turns: turns, rows: rows, stats: stats };
+    var waitingQueries = [];
+    (recorded || []).forEach(function (b) {
+      if (b.id && !(conv.mapping && conv.mapping[b.id])) waitingQueries = waitingQueries.concat(b.queries || []);
+    });
+    return { turns: turns, rows: rows, stats: stats, waitingQueries: waitingQueries };
   }
 
   /* ---------- pobieranie rozmowy ---------- */
@@ -303,7 +307,12 @@
       if (token) headers.Authorization = 'Bearer ' + token;
       return fetch('/backend-api/conversation/' + id, { credentials: 'include', headers: headers });
     }).then(function (r) {
-      if (r.status === 429) { var e = new Error('429'); e.rateLimited = true; throw e; }
+      if (r.status === 429) {
+        var e = new Error('429'); e.rateLimited = true;
+        var after = r.headers.get('retry-after'), seconds = after && /^\d+(?:\.\d+)?$/.test(after.trim()) ? Number(after) : NaN;
+        e.retryAfter = Number.isFinite(seconds) ? seconds * 1000 : Math.max(0, Date.parse(after) - Date.now()) || 0;
+        throw e;
+      }
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
     });
@@ -354,10 +363,16 @@
     state.recorded++;
     state.capture.batches++;
     // Nie przełączaj panelu na czat, którego odpowiedź kończy się już po zmianie karty rozmowy.
-    if (convId === conversationId() && !state.busy) load(true);
+    if (convId === conversationId()) {
+      var cached = readCache(convId);
+      if (cached && cached.conv && state.id === convId) {
+        state.model = build(cached.conv, readQueries(convId)); render();
+      }
+    }
   }
   // Identyfikatory służą wyłącznie do połączenia części tej samej odpowiedzi. Tokenów nie zachowujemy.
   var topicCaptures = Object.create(null), pendingSocketTopics = Object.create(null);
+  var seenSocketEvents = new WeakSet(), observedSockets = new WeakSet();
   function newCapture(hint) {
     return { convId: hint || '', messageId: '', pending: [], anonymous: Object.create(null), sequence: 0, id: 'stream:' + Date.now() + ':' + Math.random() };
   }
@@ -529,11 +544,15 @@
         msg.reply.catchups.forEach(item); return;
       }
       if (msg.type !== 'message' || typeof msg.topic_id !== 'string') return;
+      if (!topicCaptures[msg.topic_id] && !pendingSocketTopics[msg.topic_id] && state.live && /^conversation-turn-[a-z0-9-]{1,160}$/i.test(msg.topic_id)) {
+        pendingSocketTopics[msg.topic_id] = { at: Date.now(), bytes: 0, chunks: [] };
+        trimTopics(pendingSocketTopics, 8);
+      }
       if (!topicCaptures[msg.topic_id] && !pendingSocketTopics[msg.topic_id]) return;
       state.capture.wsFrames++;
       var outer = msg.payload, inner = outer && outer.payload;
       if (!outer || outer.type !== 'conversation-turn-stream' || !inner) { state.capture.wsUnknown++; return; }
-      if (inner.type === 'heartbeat') return;
+      if (inner.type === 'heartbeat' || inner.type === 'done') return;
       if (inner.type === 'stream-item' && typeof inner.encoded_item === 'string') socketChunk(msg.topic_id, inner.encoded_item);
       else state.capture.wsUnknown++;
     }
@@ -558,12 +577,12 @@
     if (!Socket || !Socket.prototype || typeof Socket.prototype.send !== 'function') return;
     var previous = window.__waiFanoutSocketRecorder;
     if (previous && Socket.prototype.send === previous.send) {
-      previous.receive = observeSocketMessage; previous.observeSend = observeSocketSend;
-      state.capture.wsConnections = previous.count;
+      previous.receive = observeSocketMessage; previous.receiveEvent = observeSocketEvent; previous.observeSend = observeSocketSend;
+      installSocketEventHook();
       return;
     }
     var originalSend = Socket.prototype.send, seen = new WeakSet();
-    var hook = { receive: observeSocketMessage, observeSend: observeSocketSend, count: 0, send: null };
+    var hook = { receive: observeSocketMessage, receiveEvent: observeSocketEvent, observeSend: observeSocketSend, count: 0, send: null };
     hook.send = function (data) {
       try {
         var url = new URL(this.url);
@@ -572,9 +591,9 @@
             var socket = this;
             socket.addEventListener('message', function (event) {
               // Nie zmieniamy formatu ani listenerów aplikacji; Chrome domyślnie dostarcza tekst.
-              try { hook.receive(event.data); } catch (e) { state.capture.streamErrors++; }
+              try { hook.receiveEvent(event, socket, event.data); } catch (e) { state.capture.streamErrors++; }
             });
-            seen.add(socket); hook.count++; state.capture.wsConnections = hook.count;
+            seen.add(socket); hook.count++;
           }
           hook.observeSend(data);
         }
@@ -583,6 +602,36 @@
     };
     Socket.prototype.send = hook.send;
     window.__waiFanoutSocketRecorder = hook;
+    installSocketEventHook();
+  }
+  function observeSocketEvent(event, socket, data) {
+    if (state.closed || !socket || seenSocketEvents.has(event)) return;
+    if (!(socket instanceof window.WebSocket)) return;
+    var url;
+    try { url = new URL(socket.url); } catch (e) { return; }
+    if (url.protocol !== 'wss:' || url.hostname !== 'ws.chatgpt.com') return;
+    seenSocketEvents.add(event);
+    if (!observedSockets.has(socket)) { observedSockets.add(socket); state.capture.wsConnections++; }
+    observeSocketMessage(data);
+  }
+  function installSocketEventHook() {
+    // Istniejący socket może mieć własne send, zapisane przez inny skrypt przed bookmarkletem.
+    // Odczyt natywnego event.data przez aplikację pozwala zobaczyć te same wiadomości bez nowej subskrypcji.
+    if (!window.MessageEvent) return;
+    var proto = window.MessageEvent.prototype, descriptor = Object.getOwnPropertyDescriptor(proto, 'data');
+    var previous = window.__waiFanoutMessageRecorder;
+    if (previous && descriptor && descriptor.get === previous.get) { previous.receive = observeSocketEvent; return; }
+    if (!descriptor || !descriptor.configurable || typeof descriptor.get !== 'function') return;
+    var hook = { receive: observeSocketEvent, get: null };
+    hook.get = function () {
+      var data = descriptor.get.call(this);
+      try { hook.receive(this, this.currentTarget || this.target, data); } catch (e) {}
+      return data;
+    };
+    try {
+      Object.defineProperty(proto, 'data', { configurable: descriptor.configurable, enumerable: descriptor.enumerable, get: hook.get, set: descriptor.set });
+      window.__waiFanoutMessageRecorder = hook;
+    } catch (e) {}
   }
   function continuationCapture(url, body) {
     if (state.closed) return null;
@@ -660,9 +709,14 @@
   /* ---------- stan ---------- */
   var state = {
     id: '', model: null, source: '', capturedAt: null, sort: { col: 'n', dir: 1 }, tab: 'table',
-    expanded: {}, live: pref(PREF_LIVE) !== '0', timer: null, retry: null, backoff: 60000, min: false, minAt: 0, note: '', busy: false, recorded: 0, onlyCited: false, domOpen: {}, closed: false,
+    expanded: {}, live: pref(PREF_LIVE) !== '0', timer: null, retry: null, backoff: 60000, nextReadAt: 0, nextPollAt: 0, min: false, minAt: 0, note: '', busy: false, recorded: 0, onlyCited: false, domOpen: {}, closed: false,
     capture: { streams: 0, events: 0, queryFields: 0, batches: 0, parseErrors: 0, streamErrors: 0, unassigned: 0, unsupported: 0, storageError: false, legacyHook: false, handoffs: 0, wsConnections: 0, wsFrames: 0, wsChunks: 0, wsUnknown: 0, wsDropped: 0 },
   };
+  var previousReadLimit = window.__waiFanoutReadLimit;
+  if (previousReadLimit && Number.isFinite(previousReadLimit.until) && previousReadLimit.until > Date.now()) {
+    state.nextReadAt = previousReadLimit.until;
+    state.backoff = previousReadLimit.backoff || 60000;
+  }
 
   /* ---------- panel ---------- */
   var CSS = ''
@@ -972,6 +1026,11 @@
         + (state.capture.unsupported ? ' · nierozpoznane pola: ' + state.capture.unsupported : '')
         + (state.capture.unassigned ? ' · partie bez identyfikatora czatu: ' + state.capture.unassigned : '') + '</p>';
     }
+    if (m.waitingQueries && m.waitingQueries.length) {
+      h += '<details class="wf-note info"><summary>Zapisano ' + m.waitingQueries.length + ' nowych zapytań. Oczekują na pobranie właściwych rund rozmowy — pokaż zapytania.</summary><ul>';
+      m.waitingQueries.forEach(function (query) { h += '<li>' + esc(query) + '</li>'; });
+      h += '</ul></details>';
+    }
     if (s.pending) h += '<p class="wf-note info">Odpowiedź na ' + s.pending + ' ' + plural(s.pending, 'prompt', 'prompty', 'promptów') + ' nie jest jeszcze zapisana, kolumna „cytowane” oczekuje na dane.</p>';
     return h;
   }
@@ -1134,8 +1193,8 @@
       + '<dt>Kopiuj tabelę</dt><dd>Cała tabela rozdzielona tabulatorami, do wklejenia w arkusz kalkulacyjny.</dd>'
       + '<dt>Pobierz CSV</dt><dd>Jeden wiersz na wyszukiwanie, strony w dodatkowych kolumnach, znacznik przed adresem oznacza cytowanie. Na górze identyfikator czatu i data odczytu.</dd>'
       + '<dt>Pobierz CSV źródeł</dt><dd>Jeden wiersz na stronę, z hostem, tytułem i oznaczeniem cytowania.</dd><dt>Kopiuj domeny</dt><dd>Zakładka Domeny: domena, kategoria, liczba pobranych i cytowanych stron oraz liczba wyszukiwań site:, rozdzielone tabulatorami.</dd><dt>Pobierz CSV domen</dt><dd>Jeden wiersz na domenę, z adresami zacytowanych stron w ostatniej kolumnie. Filtr „tylko cytowane” nie wpływa na eksport.</dd>'
-      + '<dt>Na żywo</dt><dd>Domyślnie włączone (zielony przycisk). Panel przechwytuje odpowiedzi rozpoczęte w tym trybie i odświeża dane rozmowy podczas generowania. Wyłączenie trybu lub zamknięcie panelu zatrzymuje przechwytywanie kolejnych odpowiedzi; odczyt już rozpoczętego strumienia może się dokończyć. Ustawienie jest zapamiętywane. Przycisk Odśwież pobiera zapisane dane, ale nie odzyskuje minionego strumienia. Przy HTTP 429 pierwsza ponowna próba następuje po minucie, kolejne odstępy rosną do 10 minut.</dd><dt>Rozmiar panelu</dt><dd>Przeciągnij lewą krawędź, aby zmienić szerokość (zapamiętywana). Przycisk „–” albo dwukrotne kliknięcie nagłówka zwija panel do małego paska w prawym dolnym rogu, nie przerywając nagrywania. Kliknięcie paska albo przycisku „▢” rozwija go z powrotem.</dd>'
-      + '<dt>Odśwież</dt><dd>Jednorazowy ponowny odczyt, z pominięciem kopii w przeglądarce.</dd>'
+      + '<dt>Na żywo</dt><dd>Domyślnie włączone (zielony przycisk). Panel przechwytuje odpowiedzi rozpoczęte w tym trybie i odświeża dane rozmowy podczas generowania. Wyłączenie trybu lub zamknięcie panelu zatrzymuje przechwytywanie kolejnych odpowiedzi; odczyt już rozpoczętego strumienia może się dokończyć. Ustawienie jest zapamiętywane. Przycisk Odśwież pobiera zapisane dane, ale nie odzyskuje minionego strumienia. Automatyczne odczyty podczas generowania następują nie częściej niż co 15 sekund. Przy HTTP 429 wszystkie odczyty rozmowy, także ręczne, czekają co najmniej minutę; kolejne odstępy rosną do 10 minut lub dłużej, jeśli serwer wymaga tego przez Retry-After.</dd><dt>Rozmiar panelu</dt><dd>Przeciągnij lewą krawędź, aby zmienić szerokość (zapamiętywana). Przycisk „–” albo dwukrotne kliknięcie nagłówka zwija panel do małego paska w prawym dolnym rogu, nie przerywając nagrywania. Kliknięcie paska albo przycisku „▢” rozwija go z powrotem.</dd>'
+      + '<dt>Odśwież</dt><dd>Jednorazowy ponowny odczyt, z pominięciem kopii w przeglądarce. Podczas przerwy po błędzie 429 nie wysyła nowego żądania.</dd>'
       + '</dl><h3>Prywatność</h3><dl><dd>Skrypt (bookmarklet) czyta rozmowę z tego samego adresu, z którego pobiera ją aplikacja ChatGPT, w Twojej sesji. Nic nie wysyła, promptów nie tworzy, a kopię czatu przechowuje tylko w localStorage tej przeglądarki.</dd></dl></div>';
   }
   function typesHtml() {
@@ -1155,8 +1214,27 @@
     state.capturedAt = new Date();
     state.note = '';
   }
+  function scheduleRetry() {
+    if (state.retry) clearTimeout(state.retry);
+    state.retry = setTimeout(function () {
+      state.retry = null;
+      if (state.closed) return;
+      if (Date.now() < state.nextReadAt) { scheduleRetry(); return; }
+      state.backoff = Math.min(state.backoff * 2, 600000);
+      load(true);
+    }, Math.min(Math.max(0, state.nextReadAt - Date.now()), 2147483647));
+  }
   function load(force) {
     if (state.closed) return;
+    // Każda ścieżka (przycisk, nagranie, obserwator URL i live) respektuje ten sam limit.
+    if (state.busy) return;
+    if (Date.now() < state.nextReadAt) {
+      var waitingId = conversationId(), waitingCache = !force && waitingId ? readCache(waitingId) : null;
+      if (waitingCache && waitingCache.conv) { state.id = waitingId; apply(waitingCache.conv, 'kopia z przeglądarki'); state.capturedAt = new Date(waitingCache.at || Date.now()); }
+      state.note = 'ChatGPT ogranicza odczyty (429). Pobieranie rozmowy jest wstrzymane do ' + new Date(state.nextReadAt).toLocaleTimeString('pl-PL') + '.';
+      if (!state.retry) scheduleRetry();
+      render(); return;
+    }
     var id = conversationId();
     if (!id) {
       state.model = null; state.note = state.live
@@ -1175,10 +1253,13 @@
         return;
       }
     }
-    state.busy = true; render();
+    state.busy = true; state.nextPollAt = Date.now() + 15000; render();
     fetchConversation(id).then(function (conv) {
       if (state.closed) return;
-      state.busy = false; state.backoff = 60000;
+      state.busy = false; state.backoff = 60000; state.nextReadAt = 0;
+      window.__waiFanoutReadLimit = null;
+      if (state.retry) { clearTimeout(state.retry); state.retry = null; }
+      if (id !== conversationId()) { load(false); return; }
       apply(conv, 'świeży odczyt');
       writeCache(id, conv);
       render();
@@ -1187,11 +1268,14 @@
       if (state.closed) return;
       state.busy = false;
       if (err.rateLimited) {
-        state.note = 'ChatGPT ogranicza odczyty (429). Zachowuję dotychczasowe dane i ponowię próbę za ' + Math.round(state.backoff / 1000) + ' s.';
+        var delay = Math.max(state.backoff, err.retryAfter || 0);
+        state.nextReadAt = Date.now() + delay;
+        window.__waiFanoutReadLimit = { until: state.nextReadAt, backoff: state.backoff };
+        state.note = 'ChatGPT ogranicza odczyty (429). Pobieranie rozmowy jest wstrzymane do ' + new Date(state.nextReadAt).toLocaleTimeString('pl-PL') + '. Zachowuję dotychczasowe dane; przycisk Odśwież również respektuje tę przerwę.';
         render();
-        if (state.retry) clearTimeout(state.retry);
-        state.retry = setTimeout(function () { state.retry = null; state.backoff = Math.min(state.backoff * 2, 600000); load(true); }, state.backoff);
+        scheduleRetry();
       } else {
+        if (id !== conversationId()) { load(false); return; }
         state.note = 'Nie udało się odczytać rozmowy (' + err.message + '). Upewnij się, że jesteś zalogowany, i kliknij Odśwież.';
         render();
       }
@@ -1210,8 +1294,9 @@
     state.timer = setInterval(function () {
       if (!document.getElementById(NS)) { stopLive(); return; }
       var id = conversationId();
-      if (id && id !== lastId) { lastId = id; idleTicks = 0; load(true); return; }
+      if (id && id !== lastId) { lastId = id; idleTicks = 0; load(false); return; }
       if (!id) return;
+      if (Date.now() < state.nextPollAt) return;
       if (answering()) { idleTicks = 0; if (!state.busy) load(true); return; }
       if (state.model && state.model.stats.pending) { idleTicks++; if (idleTicks % 2 === 0 && idleTicks <= 12 && !state.busy) load(true); }
     }, 4000);

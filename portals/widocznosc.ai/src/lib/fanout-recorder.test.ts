@@ -3,6 +3,8 @@ import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 import { describe, expect, it, vi } from 'vitest';
 
+const hostGlobal = globalThis;
+
 const sourcePath = fileURLToPath(new URL('../../tools-src/fanout-explorer.js', import.meta.url));
 const source = readFileSync(sourcePath, 'utf8');
 const startMarker = '  /* ---------- start ---------- */';
@@ -34,11 +36,18 @@ class MemoryStorage {
 type Recorder = {
   tapStream: (body: ReadableStream<Uint8Array>, hint?: string) => Promise<void> | void;
   installStreamHook: () => void;
+  load: (force?: boolean) => void;
+  startLive: () => void;
+  stopLive: () => void;
+  build: (conversation: unknown, recorded?: unknown[]) => BuildResult;
   readQueries: (id: string) => Array<Record<string, unknown>>;
   recordBatch: (convId: string, msgId: string, queries: string[], types?: string[] | null) => void;
   state: {
     busy: boolean;
     live: boolean;
+    model: unknown;
+    nextReadAt?: number;
+    retry?: unknown;
     capture: {
       storageError: boolean;
       handoffs?: number;
@@ -49,11 +58,29 @@ type Recorder = {
   };
 };
 
+type BuildResult = {
+  turns: Array<{ rounds: Array<{ searches: Array<Record<string, unknown>> }> }>;
+  rows: Array<Record<string, unknown>>;
+  stats: { hidden: number; recordedRounds: number };
+  waitingQueries: string[];
+};
+
 type Sandbox = Record<string, unknown> & {
   fetch: (input?: unknown, init?: unknown) => Promise<Response>;
 };
 
 type FakeSocketListener = (event: { data: unknown }) => void;
+
+type FakeMessageEventInstance = {
+  readonly data: unknown;
+  readonly target: unknown;
+  readonly currentTarget: unknown;
+};
+
+type FakeMessageEventClass = {
+  new (data: unknown, target?: unknown, currentTarget?: unknown): FakeMessageEventInstance;
+  prototype: FakeMessageEventInstance;
+};
 
 type FakeWebSocketInstance = {
   readonly url: string;
@@ -66,6 +93,11 @@ type FakeWebSocketInstance = {
   addEventListener: (type: string, listener: FakeSocketListener) => void;
   removeEventListener: (type: string, listener: FakeSocketListener) => void;
   emit: (data: unknown) => void;
+  emitNative: (
+    data: unknown,
+    target?: unknown,
+    currentTarget?: unknown
+  ) => FakeMessageEventInstance;
 };
 
 type FakeWebSocketClass = {
@@ -78,9 +110,32 @@ type Harness = {
   sandbox: Sandbox;
   storage: MemoryStorage;
   WebSocket: FakeWebSocketClass;
+  MessageEvent: FakeMessageEventClass;
 };
 
-function createFakeWebSocket(): FakeWebSocketClass {
+function createFakeMessageEvent(): FakeMessageEventClass {
+  class LocalFakeMessageEvent {
+    readonly target: unknown;
+    readonly currentTarget: unknown;
+    private readonly value: unknown;
+
+    constructor(data: unknown, target: unknown = null, currentTarget: unknown = target) {
+      this.value = data;
+      this.target = target;
+      this.currentTarget = currentTarget;
+    }
+  }
+  Object.defineProperty(LocalFakeMessageEvent.prototype, 'data', {
+    configurable: true,
+    enumerable: true,
+    get() {
+      return this.value;
+    },
+  });
+  return LocalFakeMessageEvent as unknown as FakeMessageEventClass;
+}
+
+function createFakeWebSocket(MessageEvent: FakeMessageEventClass): FakeWebSocketClass {
   class LocalFakeWebSocket {
     static instances: FakeWebSocketInstance[] = [];
 
@@ -123,20 +178,34 @@ function createFakeWebSocket(): FakeWebSocketClass {
       this.listeners.get('message')?.forEach((listener) => listener(event));
       this.onmessage?.(event);
     }
+
+    emitNative(data: unknown, target: unknown = this, currentTarget: unknown = target) {
+      const event = new MessageEvent(data, target, currentTarget);
+      this.listeners.get('message')?.forEach((listener) => listener(event));
+      this.onmessage?.(event);
+      return event;
+    }
   }
   return LocalFakeWebSocket;
 }
 
 function createHarness(): Harness {
   const storage = new MemoryStorage();
-  const WebSocket = createFakeWebSocket();
+  const MessageEvent = createFakeMessageEvent();
+  const WebSocket = createFakeWebSocket(MessageEvent);
   const sandbox: Sandbox = {
     URL,
+    Date,
+    MessageEvent,
     Request,
     Response,
     TextDecoder,
     TextEncoder,
     ReadableStream,
+    setTimeout: (...args: Parameters<typeof setTimeout>) => hostGlobal.setTimeout(...args),
+    clearTimeout: (...args: Parameters<typeof clearTimeout>) => hostGlobal.clearTimeout(...args),
+    setInterval: (...args: Parameters<typeof setInterval>) => hostGlobal.setInterval(...args),
+    clearInterval: (...args: Parameters<typeof clearInterval>) => hostGlobal.clearInterval(...args),
     localStorage: storage,
     location: {
       hostname: 'chatgpt.com',
@@ -167,13 +236,27 @@ function createHarness(): Harness {
   const testTail = `
 ${startMarker}
   render = function () {};
-  load = function () {};
   state.busy = true;
-  globalThis.__fanoutRecorderTest = { tapStream: tapStream, installStreamHook: installStreamHook, readQueries: readQueries, recordBatch: recordBatch, state: state };
+  globalThis.__fanoutRecorderTest = { tapStream: tapStream, installStreamHook: installStreamHook, load: load, startLive: startLive, stopLive: stopLive, build: build, readQueries: readQueries, recordBatch: recordBatch, state: state };
 })();
 `;
   vm.runInNewContext(source.slice(0, markerAt) + testTail, sandbox, { filename: sourcePath });
-  return { api: sandbox.__fanoutRecorderTest as Recorder, sandbox, storage, WebSocket };
+  sandbox.__codexSetTimeout = sandbox.setTimeout;
+  sandbox.__codexClearTimeout = sandbox.clearTimeout;
+  sandbox.__codexSetInterval = sandbox.setInterval;
+  sandbox.__codexClearInterval = sandbox.clearInterval;
+  vm.runInNewContext(
+    'globalThis.setTimeout = __codexSetTimeout; globalThis.clearTimeout = __codexClearTimeout; globalThis.setInterval = __codexSetInterval; globalThis.clearInterval = __codexClearInterval;',
+    sandbox,
+    { filename: sourcePath }
+  );
+  return {
+    api: sandbox.__fanoutRecorderTest as Recorder,
+    sandbox,
+    storage,
+    WebSocket,
+    MessageEvent,
+  };
 }
 
 function streamFrom(...chunks: string[]) {
@@ -243,6 +326,66 @@ async function bootstrapHandoff(harness: Harness) {
 
 async function delay(ms = 0) {
   await new Promise<void>((resolve) => setTimeout(resolve, ms));
+}
+
+async function flushMicrotasks() {
+  for (let i = 0; i < 20; i++) await Promise.resolve();
+}
+
+function setConversation(harness: Harness, id: string) {
+  (harness.sandbox.location as { pathname: string }).pathname = `/c/${id}`;
+}
+
+function emptyConversationResponse() {
+  return new Response(JSON.stringify({ mapping: {}, current_node: null }), {
+    headers: { 'content-type': 'application/json' },
+  });
+}
+
+function sessionResponse() {
+  return { ok: true, json: () => Promise.resolve({}) } as unknown as Response;
+}
+
+function rateLimitResponse(retryAfter?: string) {
+  return {
+    ok: false,
+    status: 429,
+    headers: {
+      get: (name: string) => (name.toLowerCase() === 'retry-after' ? retryAfter || null : null),
+    },
+  } as unknown as Response;
+}
+
+function installLoadFetch(harness: Harness, fetchSpy: ReturnType<typeof vi.fn>) {
+  harness.sandbox.fetch = fetchSpy;
+  harness.api.installStreamHook();
+  harness.api.state.busy = false;
+}
+
+function conversationWithWebRuns(messageIds: string[]) {
+  const mapping: Record<string, unknown> = {};
+  const userId = 'synthetic-user';
+  let parent: string | null = null;
+  mapping[userId] = {
+    id: userId,
+    parent,
+    message: { id: userId, author: { role: 'user' }, content: { parts: ['synthetic prompt'] } },
+  };
+  parent = userId;
+  messageIds.forEach((messageId) => {
+    mapping[messageId] = {
+      id: messageId,
+      parent,
+      message: {
+        id: messageId,
+        author: { role: 'assistant' },
+        recipient: 'web.run',
+        content: { parts: [] },
+      },
+    };
+    parent = messageId;
+  });
+  return { current_node: parent, mapping };
 }
 
 async function waitFor<T>(read: () => T, predicate: (value: T) => boolean, timeout = 500) {
@@ -476,6 +619,62 @@ describe('fanout recorder SSE parser', () => {
       ['identical query'],
       ['identical query'],
     ]);
+  });
+});
+
+describe('fanout recorder recorded batch matching', () => {
+  it('keeps an unmatched new batch out of a cached old empty round', () => {
+    const harness = createHarness();
+    const result = harness.api.build(conversationWithWebRuns(['msg-cached-old']), [
+      { id: 'msg-new-unmatched', queries: ['new live query'] },
+    ]);
+
+    expect(result.turns[0].rounds[0].searches[0]).toMatchObject({ hidden: true });
+    expect(result.stats.hidden).toBe(1);
+    expect(result.rows.some((row: { query: string }) => row.query === 'new live query')).toBe(
+      false
+    );
+    expect(result.waitingQueries).toEqual(['new live query']);
+  });
+
+  it('matches recorded batches by message id even when recording order is reversed', () => {
+    const harness = createHarness();
+    const result = harness.api.build(conversationWithWebRuns(['msg-round-a', 'msg-round-b']), [
+      { id: 'msg-round-b', queries: ['query for b'] },
+      { id: 'msg-round-a', queries: ['query for a'] },
+    ]);
+
+    expect(
+      result.turns[0].rounds.map(
+        (round: { searches: Array<{ query: string }> }) => round.searches[0].query
+      )
+    ).toEqual(['query for a', 'query for b']);
+    expect(result.stats.recordedRounds).toBe(2);
+  });
+
+  it('ignores a batch whose message id belongs to an inactive branch', () => {
+    const harness = createHarness();
+    const conversation = conversationWithWebRuns(['msg-active']);
+    const inactive = {
+      id: 'msg-inactive',
+      parent: 'synthetic-user',
+      message: {
+        id: 'msg-inactive',
+        author: { role: 'assistant' },
+        recipient: 'web.run',
+        content: { parts: [] },
+      },
+    };
+    conversation.mapping['msg-inactive'] = inactive;
+    const result = harness.api.build(conversation, [
+      { id: 'msg-inactive', queries: ['inactive branch query'] },
+    ]);
+
+    expect(result.turns[0].rounds[0].searches[0]).toMatchObject({ hidden: true });
+    expect(
+      result.rows.some((row: { query: string }) => row.query === 'inactive branch query')
+    ).toBe(false);
+    expect(result.waitingQueries).toEqual([]);
   });
 });
 
@@ -822,6 +1021,97 @@ describe('fanout recorder WebSocket stream handoff', () => {
     expect(harness.WebSocket.instances).toEqual([socket]);
     expect(socket.nativeSend).not.toHaveBeenCalled();
   });
+
+  it('captures an existing socket whose own send bypasses the prototype wrapper', async () => {
+    const harness = createHarness();
+    const socket = new harness.WebSocket('wss://ws.chatgpt.com/synthetic-stream');
+    const originalSend = socket.send;
+    socket.send = originalSend.bind(socket);
+    socket.addEventListener('message', (event) => void event.data);
+    harness.api.installStreamHook();
+    await bootstrapHandoff(harness);
+
+    const command = subscribeCommand(HANDOFF_TOPIC);
+    socket.send(command);
+    expect(socket.nativeSend).toHaveBeenCalledWith(command);
+    socket.emitNative(
+      JSON.stringify(
+        rossettaEnvelope(
+          HANDOFF_TOPIC,
+          frame(nestedMessage('msg-owned-send', ['owned send query'], HANDOFF_CONVERSATION))
+        )
+      )
+    );
+
+    const batches = await waitFor(
+      () => harness.api.readQueries(HANDOFF_CONVERSATION),
+      (value) => value.length === 1
+    );
+    expect(batches[0]).toMatchObject({ id: 'msg-owned-send', queries: ['owned send query'] });
+  });
+
+  it('returns the original MessageEvent data and deduplicates repeated accessor reads', async () => {
+    const harness = createHarness();
+    const socket = new harness.WebSocket('wss://ws.chatgpt.com/synthetic-stream');
+    socket.addEventListener('message', (event) => void event.data);
+    harness.api.installStreamHook();
+    await bootstrapHandoff(harness);
+
+    const data = JSON.stringify(
+      rossettaEnvelope(
+        HANDOFF_TOPIC,
+        frame(nestedMessage('msg-accessor', ['accessor query'], HANDOFF_CONVERSATION))
+      )
+    );
+    const event = socket.emitNative(data);
+    expect(event.data).toBe(data);
+    expect(event.data).toBe(data);
+    const batches = await waitFor(
+      () => harness.api.readQueries(HANDOFF_CONVERSATION),
+      (value) => value.length === 1
+    );
+    expect(batches[0]).toMatchObject({ id: 'msg-accessor', queries: ['accessor query'] });
+    expect(harness.api.state.capture.wsFrames).toBe(1);
+  });
+
+  it('ignores MessageEvents whose target is unrelated to the native WebSocket', async () => {
+    const harness = createHarness();
+    const socket = new harness.WebSocket('wss://ws.chatgpt.com/synthetic-stream');
+    socket.addEventListener('message', (event) => void event.data);
+    harness.api.installStreamHook();
+    await bootstrapHandoff(harness);
+
+    const unrelated = {};
+    socket.emitNative(
+      JSON.stringify(
+        rossettaEnvelope(
+          HANDOFF_TOPIC,
+          frame(
+            nestedMessage('msg-unrelated-event', ['unrelated event query'], HANDOFF_CONVERSATION)
+          )
+        )
+      ),
+      unrelated,
+      unrelated
+    );
+    await delay(20);
+    expect(harness.api.readQueries(HANDOFF_CONVERSATION)).toEqual([]);
+  });
+
+  it('propagates an exception from the original MessageEvent data getter', () => {
+    const harness = createHarness();
+    const socket = new harness.WebSocket('wss://ws.chatgpt.com/synthetic-stream');
+    const error = new Error('synthetic data getter failure');
+    Object.defineProperty(harness.MessageEvent.prototype, 'data', {
+      configurable: true,
+      get() {
+        throw error;
+      },
+    });
+    harness.api.installStreamHook();
+    const event = new harness.MessageEvent('synthetic payload', socket, socket);
+    expect(() => event.data).toThrow(error);
+  });
 });
 
 describe('fanout recorder fetch continuation after stream handoff', () => {
@@ -987,5 +1277,166 @@ describe('fanout recorder handoff deduplication', () => {
     );
     expect(batches).toHaveLength(1);
     expect(batches[0]).toMatchObject({ id: 'msg-duplicate', queries: ['duplicate query'] });
+  });
+});
+
+describe('fanout recorder load cooldown and navigation guards', () => {
+  it('coalesces concurrent loads and respects the 429 cooldown for manual calls', async () => {
+    vi.useFakeTimers();
+    try {
+      const harness = createHarness();
+      setConversation(harness, 'aaaaaaaaaaaaaaaaaaaa');
+      let conversationCalls = 0;
+      const fetchSpy = vi.fn((input: unknown) => {
+        if (String(input).includes('/api/auth/session')) return Promise.resolve(sessionResponse());
+        conversationCalls++;
+        return Promise.resolve(rateLimitResponse());
+      });
+      installLoadFetch(harness, fetchSpy);
+
+      harness.api.load(true);
+      harness.api.load(true);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(1);
+
+      harness.api.load(true);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(1);
+      await vi.advanceTimersByTimeAsync(59_999);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(1);
+      await vi.advanceTimersByTimeAsync(1);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(2);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('uses Retry-After seconds to schedule the next read', async () => {
+    vi.useFakeTimers();
+    try {
+      const harness = createHarness();
+      setConversation(harness, 'bbbbbbbbbbbbbbbbbbbb');
+      let conversationCalls = 0;
+      const fetchSpy = vi.fn((input: unknown) => {
+        if (String(input).includes('/api/auth/session')) return Promise.resolve(sessionResponse());
+        conversationCalls++;
+        return conversationCalls === 1
+          ? Promise.resolve(rateLimitResponse('120'))
+          : Promise.resolve(emptyConversationResponse());
+      });
+      installLoadFetch(harness, fetchSpy);
+
+      harness.api.load(true);
+      await flushMicrotasks();
+      expect((harness.api.state.nextReadAt || 0) - Date.now()).toBe(120_000);
+      vi.setSystemTime(new Date((harness.api.state.nextReadAt || Date.now()) - 1));
+      harness.api.load(true);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(1);
+      vi.setSystemTime(new Date((harness.api.state.nextReadAt || Date.now()) + 1));
+      harness.api.load(true);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(2);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('keeps live polling at least 15 seconds apart after a read', async () => {
+    vi.useFakeTimers();
+    const harness = createHarness();
+    try {
+      setConversation(harness, 'ffffffffffffffffffff');
+      const documentStub = harness.sandbox.document as {
+        getElementById: (id: string) => unknown;
+        querySelector: () => unknown;
+      };
+      documentStub.getElementById = (id) =>
+        id === 'wai-fanout' ? { querySelector: () => null } : null;
+      documentStub.querySelector = () => ({});
+      let conversationCalls = 0;
+      const fetchSpy = vi.fn((input: unknown) => {
+        if (String(input).includes('/api/auth/session')) return Promise.resolve(sessionResponse());
+        conversationCalls++;
+        return Promise.resolve(emptyConversationResponse());
+      });
+      installLoadFetch(harness, fetchSpy);
+      harness.api.startLive();
+
+      await vi.advanceTimersByTimeAsync(3_999);
+      expect(conversationCalls).toBe(0);
+      await vi.advanceTimersByTimeAsync(1);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(1);
+      await vi.advanceTimersByTimeAsync(12_000);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(1);
+      await vi.advanceTimersByTimeAsync(4_000);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(2);
+    } finally {
+      harness.api.stopLive();
+      vi.useRealTimers();
+    }
+  });
+
+  it('uses an HTTP-date Retry-After value instead of the default backoff', async () => {
+    vi.useFakeTimers();
+    try {
+      const harness = createHarness();
+      setConversation(harness, 'cccccccccccccccccccc');
+      let conversationCalls = 0;
+      const retryAt = Date.now() + 120_000;
+      const retryHeader = new Date(retryAt).toUTCString();
+      const fetchSpy = vi.fn((input: unknown) => {
+        if (String(input).includes('/api/auth/session')) return Promise.resolve(sessionResponse());
+        conversationCalls++;
+        return conversationCalls === 1
+          ? Promise.resolve(
+              new Response('', { status: 429, headers: { 'Retry-After': retryHeader } })
+            )
+          : Promise.resolve(emptyConversationResponse());
+      });
+      installLoadFetch(harness, fetchSpy);
+
+      harness.api.load(true);
+      await flushMicrotasks();
+      expect(harness.api.state.nextReadAt).toBe(Date.parse(retryHeader));
+      const wait = Math.max(0, Date.parse(retryHeader) - Date.now());
+      vi.setSystemTime(new Date(Date.now() + Math.max(0, wait - 1)));
+      harness.api.load(true);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(1);
+      vi.setSystemTime(new Date(Date.now() + 2));
+      harness.api.load(true);
+      await flushMicrotasks();
+      expect(conversationCalls).toBe(2);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('does not apply a response for the previous conversation after navigation', async () => {
+    const harness = createHarness();
+    setConversation(harness, 'dddddddddddddddddddd');
+    let resolveConversation!: (response: Response) => void;
+    const pendingConversation = new Promise<Response>((resolve) => {
+      resolveConversation = resolve;
+    });
+    const fetchSpy = vi.fn((input: unknown) => {
+      if (String(input).includes('/api/auth/session')) return Promise.resolve(sessionResponse());
+      return pendingConversation;
+    });
+    installLoadFetch(harness, fetchSpy);
+
+    harness.api.load(true);
+    await flushMicrotasks();
+    setConversation(harness, 'eeeeeeeeeeeeeeeeeeee');
+    resolveConversation(emptyConversationResponse());
+    await flushMicrotasks();
+
+    expect(harness.api.state.model).toBeNull();
   });
 });
