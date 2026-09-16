@@ -1,0 +1,79 @@
+---
+/**
+ * ArticleSources – sekcja „Źródła” na końcu wpisu bazy wiedzy, pod FAQ.
+ * Źródło: frontmatter `sources` (+ opcjonalne `sourcesIntro`). Linki zewnętrzne
+ * zawsze z rel="nofollow noopener noreferrer" i w nowej karcie.
+ */
+type Source = { title: string; url: string; note?: string };
+const { items, intro } = Astro.props as { items: Source[]; intro?: string };
+---
+
+{
+  items && items.length > 0 && (
+    <section class="article-sources" aria-labelledby="article-sources-title">
+      <h2 id="article-sources-title" class="article-sources-title">
+        Źródła
+      </h2>
+      {intro && <p class="article-sources-intro">{intro}</p>}
+      <ul class="article-sources-list">
+        {items.map((s) => (
+          <li>
+            <a href={s.url} target="_blank" rel="nofollow noopener noreferrer">
+              {s.title}
+            </a>
+            {s.note && <span class="article-sources-note"> – {s.note}</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+<style>
+  .article-sources {
+    margin: 56px 0 0;
+    padding-top: 40px;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .article-sources-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: var(--ls-headline);
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+
+  .article-sources-intro {
+    color: var(--ink-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 16px;
+  }
+
+  .article-sources-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .article-sources-list a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--hairline-soft);
+  }
+
+  .article-sources-list a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .article-sources-note {
+    color: var(--ink-muted);
+  }
+</style>

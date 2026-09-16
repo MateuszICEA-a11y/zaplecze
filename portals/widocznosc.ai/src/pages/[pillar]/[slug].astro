@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Article from '../../components/Article.astro';
 import ArticleFAQ from '../../components/ArticleFAQ.astro';
+import ArticleSources from '../../components/ArticleSources.astro';
 import AuthorBox from '../../components/AuthorBox.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
@@ -155,6 +156,11 @@ const articleSchema = buildGraph(
     {
       post.data.faq && post.data.faq.length > 0 && (
         <ArticleFAQ items={post.data.faq} title={post.data.faqHeading} />
+      )
+    }
+    {
+      post.data.sources && post.data.sources.length > 0 && (
+        <ArticleSources items={post.data.sources} intro={post.data.sourcesIntro} />
       )
     }
     {

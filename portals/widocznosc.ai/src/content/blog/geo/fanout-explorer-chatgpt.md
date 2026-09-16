@@ -35,6 +35,29 @@ faq:
       Analiza zapytań AI pyta model przez API OpenAI i pokazuje, jak model szuka informacji na dowolną frazę,
       bez logowania. Bookmarklet analizuje Twoje rozmowy na chatgpt.com, czyli te same rundy,
       strony i cytowania, które widziałeś w wygenerowanej odpowiedzi.
+sourcesIntro: 'Dane z testów pochodzą z sześciu rozmów przeprowadzonych 16 września 2026 roku na koncie ChatGPT Free (GPT-5.6) i z porównawczej rozmowy na koncie Business (GPT-5.6 Thinking). Pozostałe informacje opierają się na poniższych materiałach.'
+sources:
+  - title: 'ChatGPT built its own search index'
+    url: 'https://peec.ai/blog/chatgpt-built-its-own-search-index'
+    note: 'Peec AI. Analiza źródeł wyników ChatGPT: własny indeks OpenAI (Labrador), wyniki Google i Bing.'
+  - title: 'ChatGPT’s answers came from Google Search after all: Report'
+    url: 'https://searchengineland.com/openai-chatgpt-serpapi-google-search-results-461226'
+    note: 'Search Engine Land, 26 sierpnia 2025. Omówienie raportu The Information o pobieraniu wyników Google przez SerpApi.'
+  - title: 'ChatGPT Is Using Google Search To Answer Your Questions'
+    url: 'https://www.tomsguide.com/ai/chatgpt-is-secretly-using-google-search-data-heres-how'
+    note: 'Tom’s Guide.'
+  - title: 'Quora jest już dostępna w języku polskim'
+    url: 'https://brief.pl/quora-jest-juz-dostepna-w-jezyku-polskim/'
+    note: 'BRIEF. Start polskiej wersji Quory w 2019 roku.'
+  - title: 'FanoutFox'
+    url: 'https://fanoutfox.com/'
+    note: 'rozszerzenie Suganthana Mohanadasana.'
+  - title: 'ChatGPT Query Fan-out Chrome Extension'
+    url: 'https://en.natielimelech.com/tools/chatgpt-query-fan-out-chrome-extension'
+    note: 'Nati Elimelech.'
+  - title: 'Fanout Explorer'
+    url: 'https://www.oritmutznik.com/'
+    note: 'bookmarklet Orit Mutznik.'
 ---
 Kiedy ChatGPT odpowiada na pytanie o kredyt, laptop albo agencję SEO, nie wyszukuje dokładnie Twojej frazy. **Rozbija prompt na kilka do kilkunastu zapytań, wysyła je partiami, analizuje dziesiątki stron i cytuje zaledwie kilka.** Ten proces to [query fan-out](/geo/query-fan-out/), który od dłuższego czasu jest w SEO głośnym tematem, głównie za sprawą narzędzi pozwalających śledzić go na żywo. Zbudowaliśmy własne rozwiązanie, dostosowane do języka polskiego, i przetestowaliśmy za jego pomocą sześć polskich promptów. Poniżej znajdziesz narzędzie, dane i wnioski dla marki, która chce być cytowana w odpowiedziach AI.
 
@@ -58,6 +81,8 @@ Ikona plusa przy wierszu rozwija listę stron pogrupowaną według witryny, ze z
 
 ![Panel Fan-out Explorer w wersji 1.3.2 na czacie o kredycie hipotecznym: prompt, kafelki z liczbą wyszukiwań, pobranych i cytowanych stron oraz tabela z rozwiniętym pierwszym wyszukiwaniem, w którym zielone znaczniki oznaczają strony zacytowane w odpowiedzi](../../../assets/images/blog-geo-fanout-explorer-panel.webp)
 
+<span class="img-caption">Panel na czacie o kredycie hipotecznym: kafelki podsumowania i lista stron z pierwszego wyszukiwania.</span>
+
 Druga zakładka, **Domeny**, zbiera wszystkie strony z czatu z podziałem na witryny: ile ChatGPT pobrał, ile zacytował i w ilu wyszukiwaniach ograniczył się do tej witryny operatorem `site:`. Witryny są wstępnie pogrupowane w siedem kategorii:
 
 - fora i społeczności,
@@ -75,6 +100,8 @@ Z tą klasyfikacją warto pamiętać o dwóch rzeczach:
 
 ![Zakładka Domeny w panelu Fan-out Explorer: witryny z czatu o kredycie hipotecznym pogrupowane w kategorie fora i społeczności oraz opinie i rankingi, z liczbą pobranych i cytowanych stron, plakietką site: i paskiem skali](../../../assets/images/blog-geo-fanout-explorer-domeny.webp)
 
+<span class="img-caption">Zakładka Domeny: witryny z tego samego czatu pogrupowane w kategorie.</span>
+
 ## Jak zainstalować i kiedy kliknąć
 
 Instalacja polega na przeciągnięciu przycisku ze strony narzędzia [Fan-out Explorer](/narzedzia/fanout-explorer/) na pasek zakładek. W systemie Windows długie kody zakładek nie zawsze działają poprawnie po przeciągnięciu, dlatego dostępna jest też metoda polegająca na ręcznym skopiowaniu kodu do pola adresu zakładki, a dla przeglądarek firmowych z zablokowanymi zakładkami – instalacja przez konsolę.
@@ -82,6 +109,8 @@ Instalacja polega na przeciągnięciu przycisku ze strony narzędzia [Fan-out Ex
 Ważniejsze od samej instalacji jest jedno: **zakładkę należy kliknąć przed wysłaniem promptu**. ChatGPT przesyła treść zapytań wyłącznie w strumieniu odpowiedzi, w wywołaniu funkcji narzędzia (ang. tool call), które nie jest zapisywane w historii rozmowy. Sprawdziliśmy to na koncie Free z modelem GPT-5.6 bez trybu rozumowania (Thinking) oraz na koncie Business z włączonym GPT-5.6 Thinking. W obu przypadkach zapisana rozmowa ma puste pola tam, gdzie znajdowały się polecenia wyszukiwania; zostają tylko wyniki i cytowania. Panel podpina się więc pod strumień, rejestruje zapytania i przechowuje je w przeglądarce razem z czatem. Czat z historii, który nie był rejestrowany na żywo, pokazuje jeden wiersz na rundę: domeny, liczbę stron i cytowania, ale bez dokładnej treści zapytań.
 
 ![Strona narzędzia Fan-out Explorer na widocznosc.ai: tytuł, opis działania i trzy sposoby instalacji – przeciągnięcie przycisku na pasek zakładek, wklejenie kodu jako adresu zakładki i uruchomienie w konsoli przeglądarki](../../../assets/images/blog-geo-fanout-explorer-install.webp)
+
+<span class="img-caption">Strona narzędzia z trzema sposobami instalacji bookmarkletu.</span>
 
 ## Sześć polskich promptów, sześć różnych fan-outów
 
@@ -160,15 +189,3 @@ Warto też wiedzieć, czego w danych nie ma. W obecnym formacie ChatGPT nie poka
 9. Za miesiąc powtórz proces i porównaj wyniki.
 
 Jeśli wolisz szybki test bez logowania do ChatGPT, na widocznosc.ai dostępna jest też [Analiza zapytań AI](/narzedzia/fanout/), która pyta model przez API i pokazuje zapytania pomocnicze oraz cytowane domeny. Bookmarklet daje dokładnie to samo, ale na podstawie rozmowy na Twoim koncie. A jeśli chcesz, żeby to, co pokazuje tabela, zamienić w plan treści i cytowań, zobacz, jak pracujemy nad [pozycjonowaniem w ChatGPT](/pozycjonowanie-ai/chatgpt/).
-
-## Źródła
-
-Dane z testów pochodzą z sześciu rozmów przeprowadzonych 16 września 2026 roku na koncie ChatGPT Free (GPT-5.6) i z porównawczej rozmowy na koncie Business (GPT-5.6 Thinking). Pozostałe informacje opierają się na poniższych materiałach:
-
-- <a href="https://peec.ai/blog/chatgpt-built-its-own-search-index" target="_blank" rel="nofollow noopener noreferrer">ChatGPT built its own search index</a> – Peec AI. Analiza źródeł wyników ChatGPT: własny indeks OpenAI (Labrador), wyniki Google i Bing.
-- <a href="https://searchengineland.com/openai-chatgpt-serpapi-google-search-results-461226" target="_blank" rel="nofollow noopener noreferrer">ChatGPT’s answers came from Google Search after all: Report</a> – Search Engine Land, 26 sierpnia 2025. Omówienie raportu The Information o pobieraniu wyników Google przez SerpApi.
-- <a href="https://www.tomsguide.com/ai/chatgpt-is-secretly-using-google-search-data-heres-how" target="_blank" rel="nofollow noopener noreferrer">ChatGPT Is Using Google Search To Answer Your Questions</a> – Tom’s Guide.
-- <a href="https://brief.pl/quora-jest-juz-dostepna-w-jezyku-polskim/" target="_blank" rel="nofollow noopener noreferrer">Quora jest już dostępna w języku polskim</a> – BRIEF. Start polskiej wersji Quory w 2019 roku.
-- <a href="https://fanoutfox.com/" target="_blank" rel="nofollow noopener noreferrer">FanoutFox</a> – rozszerzenie Suganthana Mohanadasana.
-- <a href="https://en.natielimelech.com/tools/chatgpt-query-fan-out-chrome-extension" target="_blank" rel="nofollow noopener noreferrer">ChatGPT Query Fan-out Chrome Extension</a> – Nati Elimelech.
-- <a href="https://www.oritmutznik.com/" target="_blank" rel="nofollow noopener noreferrer">Fanout Explorer</a> – bookmarklet Orit Mutznik.

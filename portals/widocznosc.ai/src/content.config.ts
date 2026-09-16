@@ -136,6 +136,20 @@ const blog = defineCollection({
           })
         )
         .optional(),
+      /**
+       * Źródła wpisu – renderowane pod FAQ (ArticleSources.astro), linki z nofollow.
+       * `sourcesIntro` to opcjonalne zdanie nad listą (np. skąd pochodzą dane własne).
+       */
+      sourcesIntro: z.string().optional(),
+      sources: z
+        .array(
+          z.object({
+            title: z.string(),
+            url: z.string().url(),
+            note: z.string().optional(),
+          })
+        )
+        .optional(),
     }),
 });
 
