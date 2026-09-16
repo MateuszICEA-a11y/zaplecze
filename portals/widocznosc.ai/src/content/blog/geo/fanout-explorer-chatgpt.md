@@ -1,5 +1,5 @@
 ---
-title: 'Czego ChatGPT naprawdę szuka za Twoim promptem – Fan-out Explorer na polskich zapytaniach'
+title: 'Czego ChatGPT szuka w sieci, zanim Ci odpowie – Fan-out Explorer na polskich zapytaniach'
 subtitle: 'Darmowy bookmarklet, który pokazuje każde wyszukiwanie ChatGPT, strony, które zostały zwrócone, i te, które trafiły do odpowiedzi. Sześć polskich promptów i to, co z nich wynika dla marki'
 description: 'Fan-out Explorer to bookmarklet widocznosc.ai do chatgpt.com. Zobacz, na jakie zapytania ChatGPT rozbija prompt o kredyt, agencję SEO, laptop czy CRM, do których domen zawęża wyszukiwanie i kiedy Reddit albo Bankier są analizowane, a kiedy cytowane.'
 date: 2026-09-16
