@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.5.0';
+  var VERSION = '1.5.1';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv2:'; // conv: = kopie ze starego endpointu, bez zapytań
   var QUERIES_PREFIX = NS + ':q:';
@@ -341,13 +341,47 @@
     out.mapping = mapping; out.current_node = parent;
     return out;
   }
+  /* Nagłówki, które aplikacja ChatGPT dokłada do swoich zapytań (konto/przestrzeń Business, urządzenie,
+   * wersja klienta). Bez nich odczyt wygląda na ruch spoza aplikacji i na kontach Business kończy się 429.
+   * Trzymamy je wyłącznie w pamięci karty, nigdy w localStorage. */
+  var appHeaders = null, ownRequest = false;
+  function rememberAppHeaders(input, init) {
+    try {
+      var src = (init && init.headers) || (input && typeof input === 'object' && input.headers);
+      if (!src) return;
+      var h = new Headers(src), out = {}, useful = false;
+      h.forEach(function (v, k) {
+        if (/^(content-type|content-length|accept|x-openai-target-(path|route))$/i.test(k)) return;
+        out[k] = v;
+        if (/^(chatgpt-account-id|oai-device-id|authorization)$/i.test(k)) useful = true;
+      });
+      if (useful) appHeaders = out;
+    } catch (e) {}
+  }
+  function cookie(name) {
+    var m = String(document.cookie || '').match(new RegExp('(?:^|; )' + name.replace(/[-.]/g, '\$&') + '=([^;]*)'));
+    try { return m ? decodeURIComponent(m[1]) : ''; } catch (e) { return ''; }
+  }
   function fetchConversation(id) {
     var headers = { Accept: 'application/json' };
     function get(url) {
-      return fetch(url, { credentials: 'include', headers: headers }).then(checkResponse);
+      var path = url.split('?')[0];
+      headers['x-openai-target-path'] = path;
+      headers['x-openai-target-route'] = /\/conversations\//.test(path) ? '/backend-api/conversations/{conversation_id}' : '/backend-api/conversation/{conversation_id}';
+      ownRequest = true; // hook fetch odczytuje flagę synchronicznie, więc nie pomyli tego z odczytem aplikacji
+      try { var pending = fetch(url, { credentials: 'include', headers: headers }); } finally { ownRequest = false; }
+      return pending.then(checkResponse);
     }
-    return getToken().then(function (token) {
-      if (token) headers.Authorization = 'Bearer ' + token;
+    return (appHeaders && appHeaders.authorization ? Promise.resolve('') : getToken()).then(function (token) {
+      if (appHeaders) Object.keys(appHeaders).forEach(function (k) { headers[k] = appHeaders[k]; });
+      else {
+        // Panel uruchomiony na otwartym czacie nie widział jeszcze zapytań aplikacji: te same wartości z ciasteczek.
+        var did = cookie('oai-did'), account = cookie('_account');
+        if (did) headers['oai-device-id'] = did;
+        if (account && account !== 'personal') headers['chatgpt-account-id'] = account;
+        headers['oai-language'] = navigator.language || 'pl-PL';
+      }
+      if (token && !headers.authorization) headers.Authorization = 'Bearer ' + token;
       var base = '/backend-api/conversations/' + id + '?include_has_versions=true&num_turns=100';
       var messages = [], first = null, pages = 0;
       function page(before) {
@@ -705,6 +739,24 @@
     }
     return '';
   }
+  // Aplikacja sama pobiera rozmowę przy otwarciu czatu. Kopia tej odpowiedzi zastępuje własny odczyt panelu.
+  function observeAppConversation(target, method, res) {
+    if (state.closed || !res || !res.ok || String(method).toUpperCase() !== 'GET') return;
+    var m = target.pathname.match(/^\/backend-api\/conversations\/([0-9a-f-]{20,})\/?$/i);
+    if (!m || target.searchParams.get('before')) return;
+    var id = m[1];
+    res.clone().json().then(function (j) {
+      if (state.closed || !j || !Array.isArray(j.messages)) return;
+      if (j.page_info && j.page_info.has_previous_page) return; // tylko fragment długiej rozmowy
+      var conv = messagesToConv(j, j.messages);
+      writeCache(id, conv);
+      state.capture.appReads++;
+      if (id !== conversationId()) return;
+      state.id = id;
+      apply(conv, 'odczyt aplikacji ChatGPT');
+      render();
+    }).catch(function () {});
+  }
   function installStreamHook() {
     var previous = window.__waiFanoutRecorder;
     if (previous && window.fetch === previous.fetch) {
@@ -713,6 +765,7 @@
       // 1.3.3 ma stary matcher fetch. Zadziała obserwator WS, a pełna aktualizacja wymaga przeładowania karty.
       previous.continuation = continuationCapture;
       previous.tapContinuation = tapContinuation;
+      previous.observe = observeAppConversation; previous.headers = rememberAppHeaders;
       if (previous.version !== VERSION) state.capture.legacyHook = true;
       installSocketHook();
       return;
@@ -720,11 +773,11 @@
     // Hook 1.3.2 nie przechowuje oryginalnego fetch — bez przeładowania nie da się go bezpiecznie zastąpić.
     if (window.__waiFanoutHooked && !previous) { state.capture.legacyHook = true; return; }
     var orig = window.fetch;
-    var hook = { version: VERSION, enabled: function () { return !state.closed && state.live; }, tap: tapStream, continuation: continuationCapture, tapContinuation: tapContinuation, fetch: null };
+    var hook = { version: VERSION, enabled: function () { return !state.closed && state.live; }, tap: tapStream, continuation: continuationCapture, tapContinuation: tapContinuation, observe: observeAppConversation, headers: rememberAppHeaders, fetch: null };
     hook.fetch = function (input, init) {
       var url = typeof input === 'string' ? input : input instanceof URL ? input.href : (input && input.url) || '';
       var method = (init && init.method) || (input && input.method) || 'GET';
-      var eligible = false, liveAtStart = hook.enabled(), hint = conversationId(), tap = hook.tap, target = null, requestBody = null;
+      var own = ownRequest, eligible = false, liveAtStart = hook.enabled(), hint = conversationId(), tap = hook.tap, target = null, requestBody = null;
       try {
         target = new URL(url, location.href);
         eligible = hook.enabled() && target.origin === location.origin && String(method).toUpperCase() === 'POST'
@@ -733,8 +786,10 @@
           requestBody = JSON.parse(init.body);
           if (eligible && typeof requestBody.conversation_id === 'string') hint = requestBody.conversation_id;
         }
+        if (!own && target.origin === location.origin && /^\/backend-api\//.test(target.pathname) && hook.headers) hook.headers(input, init);
       } catch (e) {}
       return orig.apply(this, arguments).then(function (res) {
+        try { if (!own && target && target.origin === location.origin && hook.observe) hook.observe(target, method, res); } catch (e) {}
         // Kopia zachowuje oryginalny Response (url, redirected, body) dla aplikacji ChatGPT.
         if (res && res.ok && res.body && /text\/event-stream/i.test(res.headers.get('content-type') || '')) {
           var continuation = target && target.origin === location.origin && /^\/backend-api\//.test(target.pathname)
@@ -760,7 +815,7 @@
   var state = {
     id: '', model: null, source: '', capturedAt: null, sort: { col: 'n', dir: 1 }, tab: 'table',
     expanded: {}, live: pref(PREF_LIVE) !== '0', brand: pref(PREF_BRAND) || '', timer: null, retry: null, backoff: 60000, nextReadAt: 0, nextPollAt: 0, min: false, minAt: 0, note: '', busy: false, recorded: 0, onlyCited: false, domOpen: {}, closed: false,
-    capture: { streams: 0, events: 0, queryFields: 0, batches: 0, parseErrors: 0, streamErrors: 0, unassigned: 0, unsupported: 0, storageError: false, legacyHook: false, handoffs: 0, wsConnections: 0, wsFrames: 0, wsChunks: 0, wsUnknown: 0, wsDropped: 0 },
+    capture: { streams: 0, events: 0, queryFields: 0, batches: 0, parseErrors: 0, streamErrors: 0, unassigned: 0, unsupported: 0, storageError: false, legacyHook: false, handoffs: 0, wsConnections: 0, wsFrames: 0, wsChunks: 0, wsUnknown: 0, wsDropped: 0, appReads: 0 },
   };
   var previousReadLimit = window.__waiFanoutReadLimit;
   if (previousReadLimit && Number.isFinite(previousReadLimit.until) && previousReadLimit.until > Date.now()) {
@@ -1359,7 +1414,7 @@
     if (Date.now() < state.nextReadAt) {
       var waitingId = conversationId(), waitingCache = !force && waitingId ? readCache(waitingId) : null;
       if (waitingCache && waitingCache.conv) { state.id = waitingId; apply(waitingCache.conv, 'kopia z przeglądarki'); state.capturedAt = new Date(waitingCache.at || Date.now()); }
-      state.note = 'ChatGPT ogranicza odczyty (429). Pobieranie rozmowy jest wstrzymane do ' + new Date(state.nextReadAt).toLocaleTimeString('pl-PL') + '.';
+      state.note = 'ChatGPT ogranicza odczyty (429). Pobieranie rozmowy jest wstrzymane do ' + new Date(state.nextReadAt).toLocaleTimeString('pl-PL') + '. Aby wczytać rozmowę od razu, przejdź do innego czatu i wróć.';
       if (!state.retry) scheduleRetry();
       render(); return;
     }
@@ -1398,7 +1453,7 @@
         var delay = Math.max(state.backoff, err.retryAfter || 0);
         state.nextReadAt = Date.now() + delay;
         window.__waiFanoutReadLimit = { until: state.nextReadAt, backoff: state.backoff };
-        state.note = 'ChatGPT ogranicza odczyty (429). Pobieranie rozmowy jest wstrzymane do ' + new Date(state.nextReadAt).toLocaleTimeString('pl-PL') + '. Zachowuję dotychczasowe dane; przycisk Odśwież również respektuje tę przerwę.';
+        state.note = 'ChatGPT ogranicza odczyty (429). Pobieranie rozmowy jest wstrzymane do ' + new Date(state.nextReadAt).toLocaleTimeString('pl-PL') + '. Zachowuję dotychczasowe dane. Aby wczytać rozmowę od razu, przejdź do innego czatu i wróć – panel skorzysta z odczytu samej aplikacji.';
         render();
         scheduleRetry();
       } else {
@@ -1423,7 +1478,7 @@
     state.timer = setInterval(function () {
       if (!document.getElementById(NS)) { stopLive(); return; }
       var id = conversationId();
-      if (id && id !== lastId) { lastId = id; idleTicks = 0; load(false); return; }
+      if (id && id !== lastId) { lastId = id; idleTicks = 0; return; } // odczyt po zmianie czatu obsługuje obserwator adresu
       if (!id) return;
       var now = answering();
       if (now) { wasAnswering = true; idleTicks = 0; return; }
@@ -1454,7 +1509,11 @@
   var urlWatch = setInterval(function () {
     if (!document.getElementById(NS)) { clearInterval(urlWatch); return; }
     var id = conversationId();
-    if (id !== lastUrlId) { lastUrlId = id; state.expanded = {}; load(true); }
+    if (id !== lastUrlId) {
+      lastUrlId = id; state.expanded = {};
+      // Aplikacja właśnie pobiera ten czat – daj jej chwilę, a własny odczyt tylko wtedy, gdy nic nie przyszło.
+      setTimeout(function () { if (conversationId() === id && !(state.id === id && state.model)) load(false); }, 3000);
+    }
   }, 1500);
   window[NS] = {
     version: VERSION, reload: function () { load(true); }, close: close,

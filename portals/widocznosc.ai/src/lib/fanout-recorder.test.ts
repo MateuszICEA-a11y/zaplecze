@@ -201,6 +201,7 @@ function createHarness(): Harness {
     MessageEvent,
     Request,
     Response,
+    Headers,
     TextDecoder,
     TextEncoder,
     ReadableStream,
@@ -1426,6 +1427,46 @@ describe('fanout recorder load cooldown and navigation guards', () => {
     expect(html).toContain('agencja seo poznan');
     harness.api.state.brand = 'nieobecna.pl';
     expect(harness.api.brandHtml()).toContain('<span class="no">nie</span>');
+  });
+
+  it('uses the app conversation response and mirrors app headers in its own read', async () => {
+    const harness = createHarness();
+    const id = 'aaaaaaaaaaaaaaaaaaaaaaaa';
+    setConversation(harness, id);
+    const calls: Array<{ url: string; headers: Record<string, string> }> = [];
+    const body = {
+      messages: [
+        { id: 'u', author: { role: 'user' }, content: { parts: ['prompt'] } },
+        { id: 'w', author: { role: 'assistant' }, recipient: 'web.run', content: { parts: [''] } },
+        { id: 'q', author: { role: 'tool' }, content: { parts: [''] }, metadata: { search_model_queries: { queries: ['z aplikacji'] } } },
+      ],
+      page_info: { has_previous_page: false },
+    };
+    const fetchSpy = vi.fn((input: unknown, init?: { headers?: Record<string, string> }) => {
+      calls.push({ url: String(input), headers: { ...(init?.headers || {}) } });
+      return Promise.resolve(new Response(JSON.stringify(body), { headers: { 'content-type': 'application/json' } }));
+    });
+    installLoadFetch(harness, fetchSpy);
+
+    // Aplikacja pobiera czat ze swoimi nagłówkami – panel bierze kopię, bez własnego zapytania.
+    await harness.sandbox.fetch(`https://chatgpt.com/backend-api/conversations/${id}?num_turns=10`, {
+      headers: { authorization: 'Bearer app', 'chatgpt-account-id': 'workspace-1', 'oai-device-id': 'device-1' },
+    });
+    await flushMicrotasks();
+    await flushMicrotasks();
+    const model = harness.api.state.model as BuildResult;
+    expect(model.rows.map((r) => r.query)).toEqual(['z aplikacji']);
+    expect(calls).toHaveLength(1);
+
+    harness.api.load(true);
+    await flushMicrotasks();
+    await flushMicrotasks();
+    const own = calls[1];
+    expect(own.url).toContain(`/backend-api/conversations/${id}`);
+    expect(own.headers['chatgpt-account-id']).toBe('workspace-1');
+    expect(own.headers['oai-device-id']).toBe('device-1');
+    expect(own.headers.authorization).toBe('Bearer app');
+    expect(calls.some((c) => c.url.includes('/api/auth/session'))).toBe(false);
   });
 
   it('uses an HTTP-date Retry-After value instead of the default backoff', async () => {
