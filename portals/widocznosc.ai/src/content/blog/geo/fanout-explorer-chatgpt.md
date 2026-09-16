@@ -56,6 +56,8 @@ Po kliknięciu zakładki w oknie czatu, z prawej strony otwiera się panel. Na g
 
 Ikona plusa przy wierszu rozwija listę stron pogrupowaną według witryny, ze znacznikiem wyboru (ang. check mark) przy każdej zacytowanej. Kolumny, których w danym czacie nie ma (np. okno czasowe w dniach, którego ChatGPT już nie podaje), panel ukrywa automatycznie. Cztery przyciski eksportu pozwalają wyeksportować zapytania do narzędzi słów kluczowych, pobrać tabelę do arkusza kalkulacyjnego oraz wygenerować pliki CSV z wyszukiwaniami i źródłami (z informacją o cytowaniu). Wszystkie dane pozostają w Twojej przeglądarce.
 
+![Panel Fan-out Explorer w wersji 1.3.2 na czacie o kredycie hipotecznym: prompt, kafelki z liczbą wyszukiwań, pobranych i cytowanych stron oraz tabela z rozwiniętym pierwszym wyszukiwaniem, w którym zielone znaczniki oznaczają strony zacytowane w odpowiedzi](../../../assets/images/blog-geo-fanout-explorer-panel.webp)
+
 Druga zakładka, **Domeny**, zbiera wszystkie strony z czatu z podziałem na witryny: ile ChatGPT pobrał, ile zacytował i w ilu wyszukiwaniach ograniczył się do tej witryny operatorem `site:`. Witryny są wstępnie pogrupowane w siedem kategorii:
 
 - fora i społeczności,
@@ -71,7 +73,7 @@ Z tą klasyfikacją warto pamiętać o dwóch rzeczach:
 - **Przypisanie po adresie** – kategoria wynika z adresu strony, nie z jej treści, więc traktuj ją jako pierwsze sortowanie. W praktyce i tak od razu widać, czy w danej kategorii model czerpie wiedzę z forów, rankingów czy stron producentów.
 - **Filtr „tylko cytowane”** – zostawia witryny, które trafiły do odpowiedzi. Bez filtra widać też te czytane i pomijane, czyli często ciekawszą listę.
 
-![Panel Fan-out Explorer na czacie o kredycie hipotecznym: prompt, linie podsumowania i tabela z rozwiniętym pierwszym wyszukiwaniem, w którym znaczniki wyboru oznaczają strony cytowane w odpowiedzi](../../../assets/images/blog-geo-fanout-explorer-panel.webp)
+![Zakładka Domeny w panelu Fan-out Explorer: witryny z czatu o kredycie hipotecznym pogrupowane w kategorie fora i społeczności oraz opinie i rankingi, z liczbą pobranych i cytowanych stron, plakietką site: i paskiem skali](../../../assets/images/blog-geo-fanout-explorer-domeny.webp)
 
 ## Jak zainstalować i kiedy kliknąć
 
@@ -79,7 +81,7 @@ Instalacja polega na przeciągnięciu przycisku ze strony narzędzia [Fan-out Ex
 
 Ważniejsze od samej instalacji jest jedno: **zakładkę należy kliknąć przed wysłaniem promptu**. ChatGPT przesyła treść zapytań wyłącznie w strumieniu odpowiedzi, w wywołaniu funkcji narzędzia (ang. tool call), które nie jest zapisywane w historii rozmowy. Sprawdziliśmy to na koncie Free z modelem GPT-5.6 bez trybu rozumowania (Thinking) oraz na koncie Business z włączonym GPT-5.6 Thinking. W obu przypadkach zapisana rozmowa ma puste pola tam, gdzie znajdowały się polecenia wyszukiwania; zostają tylko wyniki i cytowania. Panel podpina się więc pod strumień, rejestruje zapytania i przechowuje je w przeglądarce razem z czatem. Czat z historii, który nie był rejestrowany na żywo, pokazuje jeden wiersz na rundę: domeny, liczbę stron i cytowania, ale bez dokładnej treści zapytań.
 
-![Strona instalacyjna Fan-out Explorer na widocznosc.ai z przyciskiem do przeciągnięcia na pasek zakładek i dwiema alternatywnymi metodami instalacji](../../../assets/images/blog-geo-fanout-explorer-install.webp)
+![Strona narzędzia Fan-out Explorer na widocznosc.ai: tytuł, opis działania i trzy sposoby instalacji – przeciągnięcie przycisku na pasek zakładek, wklejenie kodu jako adresu zakładki i uruchomienie w konsoli przeglądarki](../../../assets/images/blog-geo-fanout-explorer-install.webp)
 
 ## Sześć polskich promptów, sześć różnych fan-outów
 
