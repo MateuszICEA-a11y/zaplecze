@@ -19,47 +19,53 @@ const version = (source.match(/VERSION = '([^']+)'/) || [])[1] || '1.0.0';
 const standaloneKb = (Buffer.byteLength(standalone, 'utf8') / 1024).toFixed(0);
 
 const columns = [
-  ['nr', 'Kolejność, w jakiej ChatGPT wysyłał wyszukiwania.'],
+  ['nr', 'Kolejność, w jakiej ChatGPT wysyłał zapytania do wyszukiwarki.'],
   [
     'runda',
-    'Numer partii. ChatGPT szuka partiami: wysyła kilka zapytań, czyta wyniki i często dosyła kolejną partię.',
+    'Numer partii. ChatGPT szuka iteracyjnie: wysyła kilka zapytań, analizuje wyniki i często generuje kolejną partię zapytań.',
   ],
-  ['zapytanie', 'Dokładne słowa wysłane do wyszukiwarki, razem z operatorem site: i cudzysłowami.'],
+  [
+    'zapytanie',
+    'Dokładna fraza wysłana do wyszukiwarki, łącznie z operatorem site: i cudzysłowami.',
+  ],
   [
     'domena',
-    'Witryna, do której ChatGPT ograniczył wyszukiwanie. To lista stron, którym model ufa w Twoim temacie.',
+    'Witryna wskazana operatorem site: w zapytaniu. Pokazuje, gdzie model postanowił szukać w tej rozmowie; nie jest miarą zaufania do witryny.',
   ],
-  ['wyniki', 'Ile stron wróciło z tego wyszukiwania.'],
+  [
+    'wyniki',
+    'Liczba stron z puli wyników rundy przypisanej do wiersza. Zapytania bez ograniczenia domeny dzielą wspólną pulę; przy site: panel filtruje ją po domenie.',
+  ],
   [
     'cytowane',
-    'Ile z nich ChatGPT pokazał jako źródło odpowiedzi. Zero też jest informacją: model przeczytał i pominął.',
+    'Liczba stron z tej puli oznaczonych jako cytowane w odpowiedzi. Zero oznacza brak cytowania; sama obecność w wynikach nie dowodzi przeczytania pełnej treści strony.',
   ],
 ];
 
 const faq = [
   {
     q: 'Czy bookmarklet przesyła moje rozmowy na zewnątrz?',
-    a: 'Nie. Bookmarklet pobiera rozmowę z tego samego adresu co aplikacja ChatGPT i korzysta przy tym z Twojej zalogowanej sesji. Tabelę tworzy w przeglądarce, a kopię czatu zapisuje w jej pamięci (localStorage), dzięki czemu kolejne otwarcie panelu jest natychmiastowe. Cały kod znajduje się w zakładce, która łączy się wyłącznie z chatgpt.com. Żadne dane nie trafiają do widocznosc.ai ani do innych serwisów.',
+    a: 'Nie. Bookmarklet pobiera rozmowę z tego samego adresu co aplikacja ChatGPT, korzystając z Twojej aktywnej sesji. Tabelę generuje lokalnie w przeglądarce, a kopię czatu zapisuje w jej pamięci (localStorage), dzięki czemu kolejne otwarcie panelu może korzystać z lokalnych danych. Cały kod znajduje się w zakładce, która komunikuje się wyłącznie z domeną chatgpt.com. Bookmarklet nie przekazuje danych do widocznosc.ai ani do podmiotów trzecich.',
   },
   {
     q: 'Dlaczego w kolumnie „zapytanie” widzę „nienagrane”?',
-    a: 'ChatGPT wysyła treść zapytań tylko w strumieniu odpowiedzi, a w zapisanej rozmowie zostają wyniki i cytowania każdej rundy. Panel podpina się pod ten strumień i nagrywa zapytania, gdy jest otwarty w chwili wysyłania promptu, a potem trzyma je w przeglądarce razem z czatem. Czat z historii, który nie był nagrywany, pokazuje jeden wiersz na rundę: domeny, z których wróciły strony, ich liczbę i to, które zostały zacytowane. Dotyczy to każdego modelu, także bez trybu Thinking.',
+    a: 'W sprawdzonych przez nas nowych czatach ChatGPT przesyła treść zapytań wyłącznie w strumieniu generowanej odpowiedzi, a w zapisanej historii rozmowy zostają tylko wyniki i cytowania z poszczególnych rund. Panel podpina się pod ten strumień i przechwytuje zapytania, jeśli jest uruchomiony w momencie wysyłania promptu i ma włączony tryb „na żywo”, a następnie przechowuje je w przeglądarce razem z czatem. Czat z historii, który nie był nagrywany w czasie rzeczywistym, pokazuje jeden wiersz na rundę: domeny, z których zwrócono strony, ich liczbę oraz to, które z nich zostały zacytowane. Zaobserwowaliśmy to zarówno z włączonym, jak i wyłączonym trybem Thinking. W starszych rozmowach zapisane zapytania mogą nadal być dostępne.',
   },
   {
     q: 'Dlaczego kolumny „wyniki” i „cytowane” bywają puste?',
-    a: 'W starszych czatach z kolumną „typ” wyszukiwania business i image nie mają wyników, bo ChatGPT nie ujawniał w rozmowie, co wróciło. Kolumna „cytowane” pokazuje wielokropek, dopóki odpowiedź nie jest zapisana. Zero oznacza, że panel sprawdził i nic z tego wyszukiwania nie trafiło do odpowiedzi.',
+    a: 'W starszych czatach z kolumną „typ” wyszukiwania typu business i image mogą nie mieć wyników, ponieważ w danych rozmowy brakuje listy zwróconych stron. Kolumna „cytowane” pokazuje wielokropek, dopóki odpowiedź nie zostanie w pełni wygenerowana i zapisana. Zero oznacza, że panel zweryfikował dostępne dane i żadna strona z puli przypisanej do wiersza nie została oznaczona jako cytowana w ostatecznej odpowiedzi.',
   },
   {
-    q: 'Co oznacza komunikat o limicie (429)?',
-    a: 'ChatGPT blokuje zbyt częste pobieranie rozmów. Panel pobiera rozmowę tylko wtedy, gdy ChatGPT generuje odpowiedź. Zakończona rozmowa wymaga jednego pobrania, a rozmowa otwarta wcześniej nie wymaga żadnego, bo panel wczytuje ją z zapisanej kopii. Jeśli limit mimo to zostanie przekroczony, panel zachowuje dotychczasowe dane i ponawia próbę po minucie.',
+    q: 'Co oznacza komunikat o limicie (Błąd 429)?',
+    a: 'Kod 429 (Too Many Requests) oznacza, że ChatGPT blokuje zbyt częste pobieranie danych. Panel cyklicznie pobiera rozmowę podczas generowania odpowiedzi. Zakończona rozmowa wymaga zwykle jednego pobrania, a jeśli dostępna jest jej lokalna kopia, panel może wczytać ją bez ponownego pobierania. Jeśli limit zostanie przekroczony, panel zachowuje dotychczasowe dane i pierwszy raz ponawia próbę po minucie. Przy kolejnych błędach odstęp rośnie, maksymalnie do 10 minut.',
   },
   {
-    q: 'Czy działa w aplikacji ChatGPT na komputer, w Safari albo w Claude i Gemini?',
-    a: 'Nie. Narzędzie czyta format rozmów ChatGPT i działa na chatgpt.com w Chrome, Edge i Brave na komputerze. Aplikacja desktopowa nie ma paska zakładek. Safari i Firefoksa nie testowaliśmy.',
+    q: 'Czy narzędzie działa w aplikacji desktopowej ChatGPT, w Safari albo w Claude i Gemini?',
+    a: 'Narzędzie analizuje specyficzny format rozmów ChatGPT. Testowaliśmy je na stronie chatgpt.com w przeglądarkach Chrome, Edge i Brave na komputerach osobistych. Aplikacja desktopowa nie obsługuje tej metody uruchamiania przez pasek zakładek. Przeglądarek Safari i Firefox nie testowaliśmy. Claude i Gemini korzystają z innych formatów danych, których narzędzie nie obsługuje.',
   },
   {
     q: 'Czym to się różni od narzędzia „Analiza zapytań AI”?',
-    a: 'Analiza zapytań AI pyta model przez API OpenAI i pokazuje, jak model szuka, gdy ma włączone wyszukiwanie, bez logowania i na dowolną frazę. Bookmarklet czyta Twoje rozmowy na chatgpt.com: te same rundy, strony i cytowania, które widziałeś w odpowiedzi. Pierwsze jest szybkim sondażem, drugie dowodem z Twojego konta.',
+    a: 'Analiza zapytań AI odpytuje model przez API OpenAI i pokazuje, jak model szuka, gdy ma włączony moduł wyszukiwania – bez logowania i na podaną frazę. Bookmarklet analizuje Twoje rzeczywiste rozmowy na chatgpt.com: zapytania, rundy, strony i cytowania udostępnione w danych czatu. Pierwsze narzędzie to szybki sondaż przez API, drugie to zapis obserwacji z Twojego własnego konta. Wyniki obu narzędzi mogą się różnić.',
   },
 ];
 
@@ -68,12 +74,12 @@ const schema = buildGraph(
     slug: 'fanout-explorer',
     name: 'Fan-out Explorer – bookmarklet do ChatGPT – widocznosc.ai',
     description:
-      'Bezpłatny bookmarklet widocznosc.ai, który na chatgpt.com pokazuje query fan-out ChatGPT: każde wyszukiwanie, strony, które wróciły, i te zacytowane w odpowiedzi. Nagrywa zapytania w trakcie odpowiedzi, czyta zapisane czaty, nic nie wysyła.',
+      'Bezpłatny bookmarklet widocznosc.ai do chatgpt.com: pokazuje przechwycone zapytania, zwrócone strony i cytowania. Nagrywa zapytania na żywo i odczytuje dostępne dane zapisanych czatów. Nie przekazuje danych do widocznosc.ai ani podmiotów trzecich.',
     featureList: [
       'Tabela wyszukiwań ChatGPT: runda, zapytanie, domena, wyniki, cytowania',
-      'Lista stron z każdego wyszukiwania z oznaczeniem cytowanych',
+      'Lista stron z rundy wyszukiwania z oznaczeniem cytowanych',
       'Podsumowanie udziału forów (Reddit, Wykop, Quora, GoWork)',
-      'Zakładka Domeny: witryny pogrupowane w kategorie (fora, opinie, sklepy, media, dokumentacja, instytucje, firmy) z liczbą pobranych i cytowanych stron',
+      'Zakładka Domeny: witryny pogrupowane w kategorie (fora, opinie, sklepy, media, dokumentacja, instytucje, firmy) z liczbą zwróconych i cytowanych stron',
       'Nagrywanie zapytań ze strumienia odpowiedzi, odczyt zapisanych czatów',
       'Eksport: kopiowanie zapytań, tabela do arkusza, CSV wyszukiwań i CSV źródeł',
       'Tylko odczyt, dane zostają w przeglądarce',
@@ -96,8 +102,8 @@ const schema = buildGraph(
 ---
 
 <Layout
-  title="Fan-out Explorer – zobacz, czego ChatGPT szuka w sieci, zanim Ci odpowie"
-  description="Darmowy bookmarklet do chatgpt.com: jedno kliknięcie i widzisz każde wyszukiwanie ChatGPT, strony, które wróciły, i te zacytowane w odpowiedzi. Na żywo i na zapisanych czatach. Nic nie wysyła."
+  title="Fan-out Explorer – zobacz, czego ChatGPT szuka w sieci, zanim wygeneruje odpowiedź"
+  description="Darmowy bookmarklet do chatgpt.com: zapytania na żywo, zwrócone strony i cytowania także w historii czatu. Bez przekazywania danych do widocznosc.ai."
 >
   <script type="application/ld+json" is:inline set:html={schema} />
 
@@ -115,16 +121,20 @@ const schema = buildGraph(
         <header class="tool-hero-header">
           <span class="eyebrow tool-eyebrow">Bookmarklet · bezpłatny · wersja {version}</span>
           <h1 class="tool-hero-title display-xxl">
-            Fan-out Explorer – zobacz, czego <span class="tool-hero-accent">ChatGPT szuka</span> w sieci, zanim Ci odpowie
+            Fan-out Explorer – zobacz, czego <span class="tool-hero-accent">ChatGPT szuka</span> w sieci,
+            zanim wygeneruje odpowiedź
           </h1>
           <p class="tool-hero-copy">
-            Zanim ChatGPT odpowie na pytanie, zwykle przeszukuje sieć. Twój prompt rozbija na kilka
-            lub kilkanaście zapytań (to tzw. query fan-out), przegląda dziesiątki stron i cytuje tylko
-            kilka z nich. Tych zapytań nie widać w oknie czatu. Fan-out Explorer to zakładka
-            w przeglądarce, która je pokazuje: każde wyszukiwanie, strony, które z niego wróciły, i te,
-            które trafiły do odpowiedzi jako źródło. Otwórz panel przed wysłaniem promptu, bo treść
-            zapytań ChatGPT przesyła tylko w trakcie odpowiedzi. W czatach z historii zobaczysz rundy,
-            domeny, strony i cytowania. Niczego nie instalujesz, a dane nie opuszczają Twojej przeglądarki.
+            Zanim ChatGPT odpowie na pytanie, często przeszukuje sieć, korzystając z funkcji ChatGPT
+            Search. Może rozbić Twój prompt na kilka lub kilkanaście zapytań (to tzw. <em
+              >query fan-out</em
+            >), przeanalizować wyniki z dziesiątek stron, a w odpowiedzi zacytować zaledwie kilka z
+            nich. Fan-out Explorer to zakładka w przeglądarce, która pokazuje zapytania udostępnione
+            przez ChatGPT, strony zwrócone w wynikach i te oznaczone jako cytowane. Otwórz panel
+            przed wysłaniem promptu i zostaw włączony tryb „na żywo”, ponieważ w nowych czatach
+            treść zapytań jest dostępna podczas generowania odpowiedzi. W czatach z historii
+            zobaczysz rundy, domeny, strony i cytowania. Niczego nie instalujesz, a bookmarklet nie
+            przekazuje Twoich danych poza chatgpt.com.
           </p>
         </header>
 
@@ -143,9 +153,9 @@ const schema = buildGraph(
             <p class="install-hint">
               Pasek zakładek włączysz skrótem <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> (Mac: <kbd
                 >Cmd</kbd
-              >+<kbd>Shift</kbd>+<kbd>B</kbd>). Zakładka ma w sobie cały kod ({standaloneKb} KB) i nie
-              łączy się z niczym poza chatgpt.com. Gdy wydamy nową wersję, numer na tej stronie się zmieni,
-              a Ty przeciągasz przycisk jeszcze raz.
+              >+<kbd>Shift</kbd>+<kbd>B</kbd>). Zakładka zawiera cały kod ({standaloneKb} KB) i nie łączy
+              się z żadnymi serwerami poza chatgpt.com. Gdy wydamy nową wersję, numer na tej stronie się
+              zmieni, a Ty po prostu przeciągniesz przycisk jeszcze raz.
             </p>
           </div>
           <div class="install-copy">
@@ -156,17 +166,20 @@ const schema = buildGraph(
               >
             </div>
             <p class="install-hint">
-              Dodaj zakładkę do dowolnej strony, kliknij ją prawym przyciskiem, wybierz „Edytuj” i
-              wklej skopiowany tekst w pole adresu. Na Windowsie długie zakładki nie zawsze
-              przeżywają przeciąganie, ta droga działa zawsze.
+              Dodaj zakładkę do dowolnej strony, kliknij ją prawym przyciskiem myszy, wybierz
+              „Edytuj” i wklej skopiowany tekst w pole adresu. W systemie Windows długie zakładki
+              nie zawsze dają się poprawnie przeciągnąć; w takiej sytuacji skorzystaj z kopiowania
+              kodu.
             </p>
           </div>
           <div class="install-copy">
             <p class="install-step"><span>3</span> Przeglądarka firmowa blokuje zakładki?</p>
             <p class="install-hint">
-              Otwórz czat na chatgpt.com, naciśnij <kbd>F12</kbd>, przejdź do zakładki Console,
-              wklej skopiowany kod zakładki i zatwierdź Enterem. Chrome poprosi za pierwszym razem o
-              wpisanie <code>allow pasting</code>. Kod możesz wcześniej przeczytać:
+              Jeśli masz dostęp do narzędzi deweloperskich, otwórz czat na chatgpt.com, naciśnij <kbd
+                >F12</kbd
+              >, przejdź do karty Console, wklej skopiowany kod zakładki i zatwierdź Enterem. Chrome
+              może wyświetlić ostrzeżenie i poprosić o wpisanie <code>allow pasting</code>. Przed
+              uruchomieniem przeanalizuj kod:
               <a href="/tools/fanout-explorer.js" target="_blank" rel="noopener"
                 >fanout-explorer.js</a
               >.
@@ -179,14 +192,16 @@ const schema = buildGraph(
 
         <ol class="usage">
           <li>
-            <b>Nowy prompt</b> – otwórz pusty czat na chatgpt.com, kliknij zakładkę, dopiero potem wyślij
-            prompt. Zapytania i wiersze pojawiają się runda po rundzie. Zakładka kliknięta po wysłaniu
-            promptu nie zobaczy już treści zapytań tej odpowiedzi.
+            <b>Nowy prompt</b> – otwórz pusty czat na chatgpt.com, kliknij zakładkę, upewnij się, że tryb
+            „na żywo” jest włączony, i dopiero potem wyślij prompt. Zapytania i wiersze pojawiają się
+            runda po rundzie. Zakładka uruchomiona po wysłaniu promptu nie przechwyci treści zapytań dla
+            tej odpowiedzi.
           </li>
           <li>
             <b>Zapisany czat</b> – otwórz dowolną rozmowę z historii i kliknij zakładkę. Zobaczysz rundy,
-            domeny, strony i cytowania, a zapytania tylko wtedy, gdy ten czat był nagrywany. Pierwszy
-            odczyt trwa sekundę, kolejne są natychmiastowe.
+            domeny, strony i cytowania, a same zapytania, jeśli zostały wcześniej nagrane w tej przeglądarce
+            i nadal są w jej pamięci lub zachowały się w danych starszego czatu. Pierwszy odczyt wymaga
+            pobrania rozmowy, kolejne mogą korzystać z lokalnej kopii.
           </li>
         </ol>
       </div>
@@ -196,20 +211,23 @@ const schema = buildGraph(
       <div class="content-container">
         <h2 class="display-xl tool-overview-title">Co pokazuje panel</h2>
         <p class="text-ink tool-overview-copy mt-6 max-w-3xl text-lg leading-relaxed">
-          Nad tabelą widzisz swój prompt i linie podsumowania: ile wyszukiwań poszło w ilu rundach,
-          ile stron wróciło, ile z nich ChatGPT pokazał jako źródło, a osobno to samo dla forów
-          (Reddit, Wykop, Quora, GoWork). Dalej jest tabela, jeden wiersz na wyszukiwanie, z
-          sortowaniem po każdej kolumnie. Plus przy wierszu otwiera listę stron pogrupowaną po
-          witrynie, z ptaszkiem przy każdej zacytowanej. Kolumny bez danych w danym czacie panel
-          ukrywa sam.
+          Nad tabelą widzisz swój prompt i podsumowanie: ile wyszukiwań zostało zarejestrowanych w
+          ilu rundach, ile stron zwróciła wyszukiwarka i ile z nich ChatGPT zacytował. Osobne
+          statystyki dotyczą platform UGC i forów (m.in. Reddit, Wykop, Quora, GoWork). Poniżej
+          znajduje się tabela (jeden wiersz na zarejestrowane zapytanie lub na rundę, jeśli treść
+          zapytań nie jest dostępna) z możliwością sortowania każdej kolumny. Plus przy wierszu
+          rozwija listę stron pogrupowaną według witryn, ze znacznikiem przy każdej zacytowanej
+          stronie. Kolumny bez danych w danym czacie panel ukrywa automatycznie.
         </p>
         <p class="text-ink tool-overview-copy mt-4 max-w-3xl text-lg leading-relaxed">
-          Zakładka <b>Domeny</b> zbiera wszystkie strony z czatu per witryna: ile ChatGPT pobrał, ile
-          zacytował i w ilu wyszukiwaniach ograniczył się do tej witryny operatorem
+          Zakładka <b>Domeny</b> agreguje wszystkie strony z czatu dla danej witryny: ile adresów URL
+          znalazło się w wynikach, ile zostało zacytowanych i w ilu wyszukiwaniach ChatGPT ograniczył
+          się do tej witryny operatorem
           <code class="font-mono text-sm">site:</code>. Witryny są wstępnie pogrupowane w siedem
           kategorii (fora i społeczności, opinie i rankingi, sklepy, media, dokumentacja
-          producentów, instytucje, strony firm), z filtrem „tylko cytowane” i eksportem do CSV.
-          Kategoria to heurystyka po adresie, więc traktuj ją jako pierwsze sortowanie.
+          producentów, instytucje, strony firmowe), z filtrem „tylko cytowane” i opcją eksportu do
+          pliku CSV. Kategoryzacja opiera się na heurystyce adresów, więc traktuj ją jako wstępne
+          sortowanie.
         </p>
 
         <div class="columns-table-wrap mt-10">
@@ -234,11 +252,17 @@ const schema = buildGraph(
           </table>
         </div>
         <p class="text-ink tool-overview-copy mt-4 max-w-3xl text-base leading-relaxed">
-          W starszych czatach mogą się pojawić dwie dodatkowe kolumny: <code>typ</code> (rodzaj
-          wyszukiwania, np. fast, slow, business, image) i <code>dni</code> (okno świeżości, np. 365
-          to ostatni rok). ChatGPT zapisywał je w rozmowach, zanim zmienił format. Obecnie tych danych
-          nie przesyła, więc w nowych czatach panel ukrywa obie kolumny. Wrócą same, jeśli ChatGPT
-          znów zacznie je podawać.
+          W starszych czatach mogą pojawić się dwie dodatkowe kolumny: <code>typ</code> (rodzaj wyszukiwania,
+          np. fast, slow, business, image) oraz <code>dni</code> (okno czasowe, np. 365 oznacza ostatni
+          rok). ChatGPT zapisywał je w rozmowach, zanim zmienił format. W sprawdzonych nowych czatach
+          te dane nie są dostępne, więc panel ukrywa obie kolumny. Pojawią się ponownie, jeśli dane będą
+          dostępne w obsługiwanym przez panel formacie.
+        </p>
+        <p class="text-ink tool-overview-copy mt-4 max-w-3xl text-base leading-relaxed">
+          Wyniki są zapisywane raz na rundę. Wiersze zapytań mogą więc pokazywać te same strony i
+          cytowania — nie sumuj ich, aby obliczyć liczbę unikalnych stron w czacie. Przykłady
+          odczytu i interpretacji danych znajdziesz we wpisie
+          <a href="/geo/fanout-explorer-chatgpt/">Fan-out Explorer na polskich zapytaniach</a>.
         </p>
 
         <div class="mt-12 grid gap-4 lg:grid-cols-2">
@@ -246,11 +270,13 @@ const schema = buildGraph(
             <h3 class="info-card-title">Eksport</h3>
             <ul class="info-list">
               <li>
-                <b>Kopiuj zapytania</b> – sama kolumna zapytań, jedno na wiersz. Możesz sprawdzić w narzędziach
-                SEO, czy fraza ma wyszukiwania, albo opracować pod nią dedykowany wpis.
+                <b>Kopiuj zapytania</b> – kopiuje samą kolumnę zapytań (jedno na wiersz). Możesz sprawdzić
+                w narzędziach SEO, czy dana fraza ma wolumen wyszukiwań, lub opracować pod nią osobny
+                artykuł.
               </li>
               <li>
-                <b>Kopiuj tabelę</b> – całość rozdzielona tabulatorami, do Arkuszy lub Excela.
+                <b>Kopiuj tabelę</b> – kopiuje całość rozdzieloną tabulatorami, gotową do wklejenia w
+                Arkuszach Google lub Excelu.
               </li>
               <li>
                 <b>Pobierz CSV</b> – wiersz na wyszukiwanie, strony w dodatkowych kolumnach, identyfikator
@@ -262,23 +288,25 @@ const schema = buildGraph(
             </ul>
           </div>
           <div class="info-card">
-            <h3 class="info-card-title">Jak z tego korzystać w pracy nad widocznością</h3>
+            <h3 class="info-card-title">Jak wykorzystać to w pracy nad widocznością (GEO/SEO)</h3>
             <ul class="info-list">
               <li>
-                <b>Frazy, które napisał ChatGPT</b> – zapytania z tabeli to gotowy zestaw fraz pod treść,
-                często z rokiem, słowem „opinie” albo „oficjalny”.
+                <b>Frazy generowane przez ChatGPT</b> – zapytania z tabeli to punkt wyjścia do planu treści;
+                często zawierają bieżący rok, słowo „opinie” lub „oficjalny”.
               </li>
               <li>
-                <b>Witryny, którym model ufa</b> – kolumna „domena” mówi, gdzie ChatGPT szuka na wyłączność.
-                Jeśli nie ma tam Ciebie, a jest konkurencja, to jest luka.
+                <b>Witryny wskazane w zapytaniach</b> – kolumna „domena” pokazuje, do których witryn ChatGPT
+                zawęził wyszukiwanie operatorem <code>site:</code>. Obecność konkurencji może
+                wskazywać obszar do dalszej analizy; sprawdź też wyniki i cytowania Twojej marki.
               </li>
               <li>
-                <b>Czytane i pominięte</b> – strona, która wraca w wynikach, ale nigdy nie jest cytowana,
-                potrzebuje innej naprawy niż ta, która nie wraca wcale.
+                <b>W wynikach, ale bez cytowania</b> – strona, która pojawia się w wynikach, ale nie jest
+                cytowana w odpowiedzi AI, wymaga innej analizy niż ta, której w wynikach nie ma. Sam panel
+                nie wyjaśnia przyczyny braku cytowania.
               </li>
               <li>
-                <b>Ten sam prompt za miesiąc</b> – eksport ma datę i identyfikator czatu, więc porównanie
-                dwóch przejazdów to dwa pliki obok siebie.
+                <b>Ten sam prompt za miesiąc</b> – eksport zawiera datę i identyfikator czatu, więc porównanie
+                dwóch sesji to po prostu zestawienie dwóch plików obok siebie.
               </li>
             </ul>
           </div>
@@ -300,9 +328,9 @@ const schema = buildGraph(
           }
         </div>
         <p class="tool-overview-copy mt-12 max-w-3xl text-lg leading-relaxed">
-          Narzędzie powstało z inspiracji bookmarkletem Orit Mutznik i rozszerzeniami FanoutFox
-          (Suganthan Mohanadasan) oraz Natiego Elimelecha. Kod napisaliśmy z myślą o polskich
-          promptach: liczy Wykop i GoWork obok Reddita. Jeśli ChatGPT zmieni format
+          Narzędzie powstało z inspiracji bookmarkletem Orit Mutznik oraz rozszerzeniami FanoutFox
+          (Suganthan Mohanadasan) i narzędziami Natiego Elimelecha. Kod napisaliśmy z myślą o
+          polskich promptach: uwzględnia Wykop i GoWork obok Reddita. Jeśli OpenAI zmieni format
           rozmów i tabela przestanie się wypełniać,
           <a href="/kontakt/">daj nam znać</a>.
         </p>
