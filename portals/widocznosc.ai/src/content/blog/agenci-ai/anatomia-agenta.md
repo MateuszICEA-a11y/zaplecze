@@ -14,6 +14,31 @@ tags: ['Agenci AI', 'Architektura', 'Pamięć', 'Narzędzia AI']
 pillar: 'agenci-ai'
 intent: 'INFO'
 level: 'L2'
+sources:
+  - title: 'LLM Powered Autonomous Agents'
+    url: 'https://lilianweng.github.io/posts/2023-06-23-agent/'
+    note: 'Lilian Weng, 23 czerwca 2023. Przegląd architektury agentów: problem MRKL z ekstrakcją argumentów przez model Jurassic1, refleksja w Generative Agents i paradoks ewaluacji ChemCrow.'
+  - title: 'Toolformer: Language Models Can Teach Themselves to Use Tools'
+    url: 'https://arxiv.org/abs/2302.04761'
+    note: 'Schick i in., luty 2023. Model uczy się korzystać z API w sposób samonadzorowany, na podstawie kilku przykładów na narzędzie.'
+  - title: 'ReAct: Synergizing Reasoning and Acting in Language Models'
+    url: 'https://arxiv.org/abs/2210.03629'
+    note: 'Yao i in., październik 2022. Pierwotny opis wzorca ReAct – przeplatania wnioskowania i działań.'
+  - title: 'Reflexion: Language Agents with Verbal Reinforcement Learning'
+    url: 'https://arxiv.org/abs/2303.11366'
+    note: 'Shinn i in., marzec 2023. Agent zapisuje werbalną autorefleksję w pamięci epizodycznej i korzysta z niej w kolejnych próbach.'
+  - title: 'Generative Agents: Interactive Simulacra of Human Behavior'
+    url: 'https://arxiv.org/abs/2304.03442'
+    note: 'Park i in., kwiecień 2023. Symulacja 25 agentów z pamięcią, refleksją i planowaniem oraz emergentnymi zachowaniami społecznymi.'
+  - title: 'Graphiti'
+    url: 'https://github.com/getzep/graphiti'
+    note: 'Zep, repozytorium open source (Apache 2.0). Temporalny graf wiedzy, w którym fakty mają okna ważności, a nieaktualne są unieważniane, nie kasowane.'
+  - title: 'How Ramp built a full context background coding agent on Modal'
+    url: 'https://modal.com/blog/how-ramp-built-a-full-context-background-coding-agent-on-modal'
+    note: 'Modal, 19 lutego 2026. Agent Inspect firmy Ramp działa w izolowanych sandboksach Modal, osobnych dla każdej sesji.'
+  - title: 'ChemCrow: Augmenting large-language models with chemistry tools'
+    url: 'https://arxiv.org/abs/2304.05376'
+    note: 'Bran i in., kwiecień 2023. GPT-4 jako ewaluator nie odróżniał błędnych odpowiedzi GPT-4 od wyników ChemCrow, w przeciwieństwie do ekspertów.'
 ---
 **Agent AI to nie chatbot z lepszym promptem, ale system, który planuje, wywołuje narzędzia i zapamiętuje wyniki aż do osiągnięcia celu.** Żeby ocenić, czy sprawdzi się w Twojej organizacji, musisz zrozumieć trzy filary jego architektury: narzędzia (czyli „ręce”), pamięć (czyli „kontekst operacyjny”) i pętlę decyzyjną (czyli „mózg”). Zanim powierzysz mu dostęp do CRM-u, bazy danych lub skrzynki mailowej, sprawdź mechanizmy działania pod spodem. Szerszy kontekst – czym agenci AI różnią się od klasycznych automatyzacji i kiedy warto po nie sięgać – znajdziesz w [przewodniku po agentach AI](/agenci-ai/przewodnik/).
 
@@ -52,7 +77,7 @@ Cztery wzorce kontroli przepływu, które warto rozróżniać:
 
 Wzorzec Reflexion rozwiązuje inny problem: uczenie się na błędach. Gdy agent wykryje nieefektywną pętlę – na przykład wielokrotne wywołanie tego samego narzędzia z identycznym wynikiem – resetuje środowisko, generuje autorefleksję na podstawie historii niepowodzenia i zapisuje ją do pamięci roboczej. Kolejna próba korzysta już z tej lekcji jako twardego kontekstu.
 
-LangGraph, jeden z najbardziej dojrzałych frameworków agentowych (wersja v0.4, 2026), modeluje przepływ agenta jako [grafy skierowane](https://pl.wikipedia.org/wiki/Graf_(matematyka) – wierzchołki to stany, a krawędzie to przejścia warunkowe. Taka architektura daje pełną kontrolę nad cyklami i punktami kontrolnymi (checkpoints), w których człowiek może zatwierdzić lub zablokować kolejny krok.
+LangGraph, jeden z najbardziej dojrzałych frameworków agentowych (wersja v0.4, 2026), modeluje przepływ agenta jako [grafy skierowane](https://pl.wikipedia.org/wiki/Graf_(matematyka)) – wierzchołki to stany, a krawędzie to przejścia warunkowe. Taka architektura daje pełną kontrolę nad cyklami i punktami kontrolnymi (checkpoints), w których człowiek może zatwierdzić lub zablokować kolejny krok.
 
 ![Anatomia agenta AI: model językowy w centrum połączony z czterema modułami – pamięcią, narzędziami, planowaniem i pętlą decyzyjną](../../../assets/images/infographic-agenci-ai-anatomia-agenta.png)
 

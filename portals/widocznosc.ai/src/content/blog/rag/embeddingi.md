@@ -14,6 +14,25 @@ tags: ['Embeddingi', 'Wektory', 'RAG', 'NLP']
 pillar: 'rag'
 intent: 'INFO'
 level: 'L2'
+sources:
+  - title: 'Osadzanie słów'
+    url: 'https://pl.wikipedia.org/wiki/Osadzanie_s%C5%82%C3%B3w'
+    note: 'Wikipedia. Definicja osadzeń: słowa o podobnym znaczeniu reprezentowane przez bliskie sobie wektory.'
+  - title: 'Efficient Estimation of Word Representations in Vector Space'
+    url: 'https://arxiv.org/abs/1301.3781'
+    note: 'Mikolov i in., styczeń 2013. Publikacja wprowadzająca modele znane jako Word2Vec.'
+  - title: 'Attention Is All You Need'
+    url: 'https://arxiv.org/abs/1706.03762'
+    note: 'Vaswani i in., czerwiec 2017. Pierwotny opis architektury Transformer opartej na mechanizmie uwagi.'
+  - title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'
+    url: 'https://arxiv.org/abs/1810.04805'
+    note: 'Devlin i in., październik 2018. Kontekstowe reprezentacje uwzględniające lewy i prawy kontekst słowa.'
+  - title: 'Text Embeddings by Weakly-Supervised Contrastive Pre-training'
+    url: 'https://arxiv.org/abs/2212.03533'
+    note: 'Wang i in., grudzień 2022. Modele E5: kontrastowy trening wstępny na parach tekstów CCPairs, a następnie dostrajanie.'
+  - title: 'Vector embeddings'
+    url: 'https://developers.openai.com/api/docs/guides/embeddings'
+    note: 'OpenAI, dokumentacja API. Wymiarowość text-embedding-3-small (1536) i -large (3072), zalecane podobieństwo kosinusowe, wektory znormalizowane do długości 1.'
 ---
 Kiedy system RAG (Retrieval-Augmented Generation, czyli generowanie wspomagane wyszukiwaniem) odpowiada na zapytanie użytkownika, nie przeszukuje tekstu jak klasyczna wyszukiwarka. Zamienia zapytanie oraz każdy fragment dokumentu na ciąg liczb – wektor osadzony (embedding). Następnie szuka wektorów leżących najbliżej siebie w matematycznej przestrzeni. To właśnie ten moment decyduje o być albo nie być Twojej strony w odpowiedzi LLM-a. **Zrozumienie embeddingów nie jest wyłącznie sprawą inżynierów – każdy, kto tworzy treści pod AI Search, powinien wiedzieć, jak komputery mierzą znaczenie.**
 

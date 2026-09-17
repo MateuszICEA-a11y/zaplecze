@@ -14,6 +14,28 @@ tags: ['Chunking', 'RAG', 'Dokumenty', 'Bazy wektorowe']
 pillar: 'rag'
 intent: 'HOWTO'
 level: 'L3'
+sources:
+  - title: 'A Systematic Investigation of Document Chunking Strategies and Embedding Sensitivity'
+    url: 'https://arxiv.org/abs/2603.06976'
+    note: 'Shaukat, Adnan, Kuhn, marzec 2026. Podział znakowy: nDCG@5 < 0,244 i Precision@1 ok. 2–3%; Paragraph Group Chunking: nDCG@5 ok. 0,459, Precision@1 ok. 24%, Hit@5 ok. 59%.'
+  - title: 'A Systematic Analysis of Chunking Strategies for Reliable Question Answering'
+    url: 'https://arxiv.org/abs/2601.14123'
+    note: 'Styczeń 2026. „Klif kontekstowy” powyżej ok. 2,5 tys. tokenów oraz brak mierzalnej korzyści z nakładki przy wyższym koszcie indeksowania.'
+  - title: 'sentence-transformers/all-MiniLM-L6-v2'
+    url: 'https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2'
+    note: 'Karta modelu na Hugging Face. Tekst dłuższy niż 256 tokenów (word pieces) jest domyślnie obcinany.'
+  - title: 'Long-Context Isn’t All You Need: How Retrieval & Chunking Impact Finance RAG'
+    url: 'https://www.snowflake.com/en/engineering-blog/impact-retrieval-chunking-finance-rag/'
+    note: 'Snowflake, 11 marca 2025. Podział uwzględniający nagłówki Markdown wypada o 5–10 punktów procentowych lepiej niż podział stały i semantyczny (bez metadanych dokumentu).'
+  - title: 'Osadzanie słów'
+    url: 'https://pl.wikipedia.org/wiki/Osadzanie_s%C5%82%C3%B3w'
+    note: 'Wikipedia. Definicja osadzeń jako wektorów, w których słowa o podobnym znaczeniu leżą blisko siebie.'
+  - title: 'Finding the Best Chunking Strategy for Accurate AI Responses'
+    url: 'https://developer.nvidia.com/blog/finding-the-best-chunking-strategy-for-accurate-ai-responses/'
+    note: 'NVIDIA, 18 czerwca 2025. Podział na poziomie stron uzyskał najwyższą średnią trafność 0,648 przy najniższym odchyleniu standardowym.'
+  - title: 'Evaluating the Ideal Chunk Size for a RAG System using LlamaIndex'
+    url: 'https://www.llamaindex.ai/blog/evaluating-the-ideal-chunk-size-for-a-rag-system-using-llamaindex-6207e5d3fec5'
+    note: 'LlamaIndex (Ravi Theja), 5 października 2023. Ocena rozmiaru fragmentów według wierności, trafności i czasu odpowiedzi.'
 ---
 Wybór strategii chunkingu (podziału dokumentów na fragmenty) determinuje jakość całego systemu RAG (ang. *Retrieval-Augmented Generation*, czyli generowania wspomaganego wyszukiwaniem) mocniej niż dobór modelu LLM czy algorytmu wyszukiwania. **Fragment (ang. chunk) to podstawowa jednostka, którą silnik RAG indeksuje i wyszukuje – błędnie wyznaczone granice niszczą kontekst semantyczny, zanim model w ogóle zobaczy dane.** Badanie z arXiv (2603.06976) dowodzi, że prosta segmentacja znakowa osiąga metrykę Precision@1 na poziomie zaledwie 2–3%, podczas gdy metody semantyczne przekraczają 24%. Różnica powstaje na etapie podziału, a nie samego wyszukiwania (retrieval).
 
