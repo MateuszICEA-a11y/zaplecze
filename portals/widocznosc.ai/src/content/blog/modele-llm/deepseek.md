@@ -1,9 +1,9 @@
 ---
 title: 'DeepSeek – kompletny przewodnik po chińskim modelu open source'
 subtitle: 'Poznaj model, który dorównał zachodnim gigantom przy ułamku ich kosztów – i dowiedz się, co jego architektura open source oznacza dla widoczności Twojej marki i bezpieczeństwa danych'
-description: 'DeepSeek – czym jest chiński model AI od High-Flyer, jak działa architektura MoE, modele V4 Pro i Flash, licencja MIT, cennik API oraz kwestie bezpieczeństwa danych i cenzury.'
+description: 'DeepSeek – czym jest chiński model AI od High-Flyer, jak działa architektura MoE, modele V4-Pro i V4.1-Flash, licencja MIT, cennik API oraz kwestie bezpieczeństwa danych i cenzury.'
 date: 2026-07-04
-updated: 2026-08-28
+updated: 2026-09-17
 image: ../../../assets/images/blog-modele-llm-deepseek.webp
 icon: '<path d="M3 7l9 4 9-4-9-4-9 4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/>'
 author:
@@ -29,12 +29,13 @@ faq:
       że dane trafiają na serwery w Chinach i podlegają tamtejszemu prawu – dla danych wrażliwych
       i wymagań RODO jest to poważne ryzyko. Alternatywą jest samodzielne uruchomienie otwartych
       wag modelu na własnej infrastrukturze w UE, gdzie żadne dane nie opuszczają Twojego środowiska.
-  - q: 'Czym różni się DeepSeek V4-Pro od V4-Flash?'
+  - q: 'Czym różni się DeepSeek V4-Pro od V4.1-Flash?'
     a: >-
-      V4-Pro to flagowy model wnioskujący (1,6 biliona parametrów, 49 mld aktywnych) przeznaczony
-      do złożonego rozumowania, kodowania agentowego i analiz. V4-Flash to wariant wydajnościowy
-      (284 mld parametrów, 13 mld aktywnych) zoptymalizowany pod wysoką przepustowość i niski koszt.
-      Oba obsługują okno kontekstowe 1 miliona tokenów.
+      V4-Pro to duży model wnioskujący (1,6 biliona parametrów, 49 mld aktywnych) przeznaczony
+      do złożonego rozumowania, kodowania agentowego i analiz. V4.1-Flash, wydany we wrześniu 2026 roku,
+      to wariant wydajnościowy (552 mld parametrów, 8–16 mld aktywnych) z natywną obsługą obrazów –
+      tańszy i według DeepSeeka lepszy w benchmarkach nawet od V4-Pro. Oba obsługują okno
+      kontekstowe 1 miliona tokenów.
   - q: 'Czy DeepSeek cenzuruje odpowiedzi?'
     a: >-
       Tak, w tematach politycznie wrażliwych dla Chin (np. Tiananmen, Tajwan, status Tybetu) model
@@ -58,7 +59,7 @@ sources:
     note: 'Reuters (przedruk The Kathmandu Post), 28 stycznia 2025. Rekordowa jednodniowa utrata 593 mld USD wartości Nvidii i określenie „moment Sputnika”.'
   - title: 'DeepSeek-V3 Technical Report'
     url: 'https://arxiv.org/abs/2412.19437'
-    note: 'DeepSeek-AI, grudzień 2024. Architektura MoE (671 mld parametrów, 37 mld aktywnych), MLA, predykcja wielu tokenów, kontekst 128 tys. i koszt treningu 5,576 mln USD na chipach H800.'
+    note: 'DeepSeek-AI, grudzień 2024. Architektura MoE (671 mld parametrów, 37 mld aktywnych), MLA, predykcja wielu tokenów, kontekst 128 tys. oraz pełny trening w 2,788 mln godzin GPU H800 (ok. 5,576 mln USD).'
   - title: 'DeepSeek V4 Preview Release'
     url: 'https://api-docs.deepseek.com/news/news260424/'
     note: 'DeepSeek, 24 kwietnia 2026. Parametry V4-Pro i V4-Flash, kontekst 1 mln tokenów oraz wycofanie nazw deepseek-chat i deepseek-reasoner.'
@@ -67,10 +68,19 @@ sources:
     note: 'Hugging Face. Karta modelu z otwartymi wagami na licencji MIT.'
   - title: 'Models & Pricing'
     url: 'https://api-docs.deepseek.com/quick_start/pricing'
-    note: 'DeepSeek API Docs. Aktualny cennik API za milion tokenów, z podziałem na godziny szczytu i poza szczytem.'
+    note: 'DeepSeek API Docs. Cennik API za milion tokenów dla deepseek-flash (V4.1-Flash) i deepseek-v4-pro (V4-Pro-0813), stawki poza szczytem o połowę niższe niż w godzinach szczytu.'
+  - title: 'DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient'
+    url: 'https://api-docs.deepseek.com/news/news260910'
+    note: 'DeepSeek, 10 września 2026. Premiera V4.1-Flash (552 mld parametrów, 8–16 mld aktywnych, natywna obsługa obrazów), identyfikator deepseek-flash i obniżka cen.'
+  - title: 'deepseek-ai/DeepSeek-V4.1-Flash'
+    url: 'https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash'
+    note: 'Hugging Face. Karta modelu V4.1-Flash z otwartymi wagami na licencji MIT i kontekstem 1 mln tokenów.'
+  - title: 'GPT-5.6 Sol'
+    url: 'https://developers.openai.com/api/docs/models/gpt-5.6-sol'
+    note: 'OpenAI API Docs. Cena GPT-5.6 Sol – 4 USD za milion tokenów wejściowych i 20 USD za wyjściowe (stawka promocyjna do 21 listopada 2026).'
   - title: 'Detecting and preventing distillation attacks'
     url: 'https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks'
-    note: 'Anthropic, 23 lutego 2026. Zarzut kampanii destylacji Claude’a przez DeepSeek, Moonshot i MiniMax przy użyciu ok. 24 tys. fałszywych kont.'
+    note: 'Anthropic, 23 lutego 2026. Zarzut kampanii destylacji Claude’a przez DeepSeek, Moonshot i MiniMax – łącznie ok. 24 tys. fałszywych kont i ponad 16 mln wymian, w tym ponad 150 tys. po stronie DeepSeeka.'
 ---
 DeepSeek to chiński model językowy, który w styczniu 2025 roku zrobił coś, czego nie udało się żadnemu wcześniejszemu wyzwaniu wobec OpenAI – dorównał najlepszym modelom Zachodu przy kilkukrotnie niższych kosztach i udostępnił wagi za darmo. Efekt był na tyle silny, że wywołał gwałtowną przecenę spółek technologicznych i na stałe zmienił rozmowę o tym, ile naprawdę kosztuje budowa modelu klasy premium. Ten przewodnik wyjaśnia, jak działa DeepSeek, czym różnią się jego modele i co jego otwartość oznacza dla widoczności Twojej marki oraz dla bezpieczeństwa danych.
 
@@ -92,7 +102,7 @@ DeepSeek dołożył do tego kilka autorskich optymalizacji:
 - **Predykcja wielu tokenów** (multi-token prediction) – model uczy się przewidywać kilka kolejnych tokenów naraz, co przyspiesza generowanie.
 - **Rzadkie mechanizmy uwagi** (sparse attention) – ograniczają liczbę porównań przy bardzo długich dokumentach.
 
-Efekt praktyczny: według DeepSeeka wytrenowanie modelu V3 pochłonęło **mniej niż jedną dziesiątą** mocy obliczeniowej użytej przy Meta Llama 3.1, a firma osiągnęła to na słabszych chipach przeznaczonych na rynki objęte amerykańskimi ograniczeniami eksportowymi.
+Efekt praktyczny: według raportu technicznego pełny trening modelu V3 zajął **2,788 mln godzin pracy GPU H800**, a firma osiągnęła to na słabszych chipach przeznaczonych na rynki objęte amerykańskimi ograniczeniami eksportowymi.
 
 ![Architektura Mixture of Experts w DeepSeek – centralny router kieruje tokeny do siatki wyspecjalizowanych ekspertów, z których dla każdego zapytania aktywuje się tylko niewielka część](../../../assets/images/infographic-modele-llm-deepseek.png)
 
@@ -107,8 +117,9 @@ DeepSeek rozwija dwie linie: modele ogólnego przeznaczenia (dawniej `deepseek-c
 | DeepSeek-V3.2 | grudzień 2025 | – | 128 tys. | MIT |
 | DeepSeek-V4-Flash | kwiecień 2026 | 284 mld (13 mld) | 1 mln | MIT |
 | DeepSeek-V4-Pro | kwiecień 2026 | 1,6 bln (49 mld) | 1 mln | MIT |
+| DeepSeek-V4.1-Flash | wrzesień 2026 | 552 mld (8–16 mld) | 1 mln | MIT |
 
-Aktualnie w API dostępne są dwa modele czwartej generacji. **V4-Flash** to wariant wydajnościowy – szybki i tani, do zadań o dużej skali. **V4-Pro** to flagowiec wnioskujący, przeznaczony do złożonego rozumowania, kodowania agentowego i analiz. Oba obsługują okno kontekstowe **1 miliona tokenów**, co pozwala przetworzyć kilka obszernych raportów w jednej sesji. Starsze nazwy modeli (`deepseek-chat`, `deepseek-reasoner`) są wycofywane – DeepSeek utrzymuje szybkie tempo iteracji, więc przy wdrożeniach warto sprawdzać aktualny identyfikator modelu w dokumentacji.
+Aktualnie w API dostępne są dwa modele. **V4.1-Flash** (identyfikator `deepseek-flash`, od 10 września 2026 roku) to wariant wydajnościowy – szybki, tani, z natywną obsługą obrazów, do zadań o dużej skali. **V4-Pro** (wersja V4-Pro-0813, identyfikator `deepseek-v4-pro`) to duży model wnioskujący, przeznaczony do złożonego rozumowania, kodowania agentowego i analiz. Oba obsługują okno kontekstowe **1 miliona tokenów**, co pozwala przetworzyć kilka obszernych raportów w jednej sesji. Starsze nazwy modeli `deepseek-chat` i `deepseek-reasoner` zostały wycofane 24 lipca 2026 roku, a zapytania do `deepseek-v4-flash` obsługuje już V4.1-Flash – DeepSeek utrzymuje szybkie tempo iteracji, więc przy wdrożeniach warto sprawdzać aktualny identyfikator modelu w dokumentacji.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -120,14 +131,14 @@ Aktualnie w API dostępne są dwa modele czwartej generacji. **V4-Flash** to war
 
 ## Ile kosztuje DeepSeek – rewolucja cenowa
 
-To właśnie cena jest głównym argumentem DeepSeeka. Firma konsekwentnie schodzi poniżej stawek amerykańskich dostawców, często o rząd wielkości. Oficjalny cennik API (za 1 milion tokenów) wygląda następująco:
+To właśnie cena jest głównym argumentem DeepSeeka. Firma konsekwentnie schodzi poniżej stawek amerykańskich dostawców, często o rząd wielkości. Oficjalny cennik API (za 1 milion tokenów, stawki w godzinach szczytu) wygląda następująco:
 
 | Model | Wejście (cache miss) | Wyjście |
 |---|---|---|
-| deepseek-v4-flash | 0,14 USD | 0,28 USD |
-| deepseek-v4-pro | 0,435 USD | 0,87 USD |
+| deepseek-flash (V4.1-Flash) | 0,30 USD | 1,20 USD |
+| deepseek-v4-pro (V4-Pro-0813) | 1,32 USD | 3,96 USD |
 
-Dla porównania: flagowy GPT-5.6 Sol kosztuje 5 USD za milion tokenów wejściowych. Oznacza to, że **V4-Flash jest w warstwie wejściowej kilkudziesięciokrotnie tańszy** od zachodniego flagowca, a V4-Pro – kilkunastokrotnie. Do tego dochodzi agresywny rabat za trafienie w pamięć podręczną (cache hit), który przy powtarzalnych promptach dodatkowo obniża rachunek. Dla firm budujących własne aplikacje AI, w których liczą się miliony zapytań miesięcznie, ta różnica przekłada się wprost na model biznesowy.
+Poza godzinami szczytu (w dni robocze szczyt to 01:00–04:00 i 06:00–10:00 UTC) wszystkie stawki są o połowę niższe. Dla porównania: flagowy GPT-5.6 Sol kosztuje w API 4 USD za milion tokenów wejściowych i 20 USD za wyjściowe (stawka promocyjna). Oznacza to, że **V4.1-Flash jest w warstwie wejściowej kilkanaście razy tańszy** od zachodniego flagowca (poza szczytem – ponad 25 razy), a V4-Pro – około trzykrotnie. Do tego dochodzi agresywny rabat za trafienie w pamięć podręczną (cache hit), który przy powtarzalnych promptach dodatkowo obniża rachunek. Dla firm budujących własne aplikacje AI, w których liczą się miliony zapytań miesięcznie, ta różnica przekłada się wprost na model biznesowy.
 
 ## Licencja MIT i modele open source – co to realnie daje firmom
 
@@ -147,7 +158,7 @@ Tu zaczynają się kwestie, które dla firmy są równie ważne jak benchmarki. 
 
 Druga kwestia to **cenzura**. W tematach politycznie wrażliwych dla Chin model w oficjalnej wersji unika odpowiedzi lub powiela oficjalną narrację. Uruchomienie otwartych wag lokalnie usuwa część filtrów nakładanych po stronie usługi, ale ślady dostrajania pod chińskie regulacje pozostają w samym modelu.
 
-Na to nakłada się szerszy kontekst rywalizacji. Na początku 2026 roku Anthropic publicznie zarzucił DeepSeekowi pozyskiwanie danych z modelu Claude przy użyciu tysięcy fałszywych kont – spór, który dobrze pokazuje, jak wysoka jest stawka w wyścigu o przewagę modeli.
+Na to nakłada się szerszy kontekst rywalizacji. W lutym 2026 roku Anthropic publicznie zarzucił DeepSeekowi, Moonshot i MiniMax pozyskiwanie danych z modelu Claude metodą destylacji – trzy laboratoria miały użyć łącznie ok. 24 tys. fałszywych kont, a na DeepSeeka przypadło ponad 150 tys. wymian z modelem. Spór dobrze pokazuje, jak wysoka jest stawka w wyścigu o przewagę modeli.
 
 Praktyczny wniosek dla firm: DeepSeek świetnie sprawdza się tam, gdzie liczą się koszt i kontrola nad wdrożeniem, ale **wyłącznie w wariancie self-hosted, jeśli w grę wchodzą dane wrażliwe**. Więcej o tym, jak podejść do tego tematu systemowo, piszemy w artykule o [bezpieczeństwie danych w pracy z LLM](/ai-w-biznesie/bezpieczenstwo-danych-llm/).
 

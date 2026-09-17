@@ -3,7 +3,7 @@ title: 'Modele językowe (LLM) – przewodnik po ekosystemie'
 subtitle: 'Poznaj różnice między ChatGPT, Claude, Gemini, Copilotem a modelami open source, żeby wybrać właściwy model do swojej strategii AI'
 description: 'Przewodnik po ekosystemie dużych modeli językowych (LLM): ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot i open source. Który model wybrać i dlaczego.'
 date: 2026-05-26
-updated: 2026-08-28
+updated: 2026-09-17
 image: ../../../assets/images/blog-modele-llm-przewodnik.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3M6.34 6.34l2.12 2.12M15.54 15.54l2.12 2.12M6.34 17.66l2.12-2.12M15.54 8.46l2.12-2.12"/>'
 author:
@@ -19,32 +19,38 @@ faqHeading: 'Często zadawane pytania o ekosystem LLM'
 faq:
   - q: 'Który model AI jest najlepszy dla małej firmy?'
     a: >-
-      To zależy od przypadku użycia. Do pisania treści i analizy dokumentów – Claude Sonnet 4.6 lub GPT-5.6 (oba dostępne w planie freemium – w ChatGPT Free jako lżejszy wariant Luna). Do wyszukiwania z aktualnymi danymi i cytowaniami – Perplexity. Do zadań wymagających pełnej kontroli nad danymi – model open source jak Mistral lub Bielik uruchomiony lokalnie.
+      To zależy od przypadku użycia. Do pisania treści i analizy dokumentów – Claude Sonnet 5 lub GPT-5.6 (oba dostępne w planie freemium – w ChatGPT Free jako lżejszy wariant Luna). Do wyszukiwania z aktualnymi danymi i cytowaniami – Perplexity. Do zadań wymagających pełnej kontroli nad danymi – model open source jak Mistral lub Bielik uruchomiony lokalnie.
   - q: 'Czy blokowanie botów AI w robots.txt zaszkodzi mojej stronie?'
     a: >-
-      Tak, jeśli zależy Ci na widoczności w AI. Zablokowanie <code>GPTBot</code> wyłącza stronę z SearchGPT. Zablokowanie <code>PerplexityBot</code> eliminuje ją z cytowań Perplexity. Zablokowanie <code>ClaudeBot</code> oznacza, że Claude nie pobierze aktualnych danych o Twojej marce. Każdy z tych botów blokujesz oddzielną dyrektywą w <code>robots.txt</code>.
+      Tak, jeśli zależy Ci na widoczności w AI. Zablokowanie <code>OAI-SearchBot</code> wyłącza stronę z odpowiedzi wyszukiwania w ChatGPT (<code>GPTBot</code> zbiera natomiast dane treningowe). Zablokowanie <code>PerplexityBot</code> eliminuje ją z cytowań Perplexity. Zablokowanie <code>Claude-SearchBot</code> i <code>Claude-User</code> oznacza, że Claude nie pobierze aktualnych danych o Twojej marce przy wyszukiwaniu (<code>ClaudeBot</code> służy do zbierania danych treningowych). Każdy z tych botów blokujesz oddzielną dyrektywą w <code>robots.txt</code>.
   - q: 'Czym różni się LLM od tradycyjnej wyszukiwarki?'
     a: >-
       Tradycyjna wyszukiwarka tworzy ranking stron i pokazuje listę linków. LLM generuje syntetyczną odpowiedź, która może – ale nie musi – zawierać link do Twojej strony. Użytkownik dostaje gotową odpowiedź, nie listę stron do kliknięcia. <strong>Dla marketerów oznacza to, że samo bycie na pierwszej stronie Google nie gwarantuje już obecności w odpowiedzi, którą zobaczy użytkownik.</strong>
   - q: 'Co to jest okno kontekstowe i dlaczego ma znaczenie?'
     a: >-
-      Okno kontekstowe to ilość tekstu, którą model może przetworzyć naraz. Im większe, tym dłuższe dokumenty możesz analizować w jednej sesji. Dla użytkownika końcowego: GPT-5.6, Claude Sonnet 4.6 i Gemini 3.1 Pro przetworzą nawet kilkadziesiąt raportów rocznych naraz (okna rzędu 1 miliona tokenów), choć w planach konsumenckich limity są zwykle niższe. Dla widoczności marki: model z małym oknem może nie „zobaczyć" Twojej marki, jeśli pojawia się tylko w dalszej części długiego dokumentu.
+      Okno kontekstowe to ilość tekstu, którą model może przetworzyć naraz. Im większe, tym dłuższe dokumenty możesz analizować w jednej sesji. Dla użytkownika końcowego: GPT-5.6, Claude Sonnet 5 i Gemini 3.1 Pro przetworzą nawet kilkadziesiąt raportów rocznych naraz (okna rzędu 1 miliona tokenów), choć w planach konsumenckich limity są zwykle niższe. Dla widoczności marki: model z małym oknem może nie „zobaczyć" Twojej marki, jeśli pojawia się tylko w dalszej części długiego dokumentu.
   - q: 'Czy modele AI mają datę graniczną wiedzy?'
     a: >-
-      Tak. Modele trenowane są na danych z określonego przedziału czasowego (do tzw. daty odcięcia, ang. <em>cutoff date</em>) – po tej dacie nowe informacje o Twojej firmie nie trafiają automatycznie do wiedzy modelu. Modele z aktywnym RAG (SearchGPT, Perplexity, Copilot, Gemini z Searchem) uzupełniają wiedzę treningową danymi pobranymi w chwili zapytania. Dlatego aktualne treści na stronie mają znaczenie – bot może je pobrać i dołączyć do odpowiedzi.
+      Tak. Modele trenowane są na danych z określonego przedziału czasowego (do tzw. daty odcięcia, ang. <em>cutoff date</em>) – po tej dacie nowe informacje o Twojej firmie nie trafiają automatycznie do wiedzy modelu. Modele z aktywnym RAG (ChatGPT z wyszukiwaniem, Perplexity, Copilot, Gemini z Searchem) uzupełniają wiedzę treningową danymi pobranymi w chwili zapytania. Dlatego aktualne treści na stronie mają znaczenie – bot może je pobrać i dołączyć do odpowiedzi.
 sources:
   - title: 'Duży model językowy'
     url: 'https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy'
     note: 'Wikipedia. Definicja dużego modelu językowego i zasada przewidywania kolejnych tokenów.'
   - title: 'GPT-5.6 Sol'
     url: 'https://developers.openai.com/api/docs/models/gpt-5.6-sol'
-    note: 'OpenAI, dokumentacja API. Okno kontekstowe 1 050 000 tokenów, 128 000 tokenów wyjścia i aktualny cennik modelu.'
+    note: 'OpenAI, dokumentacja API. Okno kontekstowe 1 050 000 tokenów, 128 000 tokenów wyjścia i cena 4/20 USD za milion tokenów (promocja co najmniej do 21 listopada 2026).'
+  - title: 'API Pricing'
+    url: 'https://developers.openai.com/api/docs/pricing'
+    note: 'OpenAI, dokumentacja API. Ceny modeli GPT-5.6 Sol, Terra i Luna za milion tokenów wejściowych i wyjściowych.'
   - title: 'Overview of OpenAI Crawlers'
     url: 'https://developers.openai.com/api/docs/bots'
     note: 'OpenAI, dokumentacja. Role botów GPTBot (dane treningowe) i OAI-SearchBot (widoczność w wyszukiwaniu ChatGPT).'
   - title: 'Models overview'
     url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
-    note: 'Anthropic, dokumentacja. Aktualne modele Claude, ich okna kontekstowe (1 mln tokenów) i ceny API.'
+    note: 'Anthropic, dokumentacja. Aktualne modele Claude (Fable 5.1, Opus 5, Sonnet 5 za 2/10 USD, Haiku 4.5), ich okna kontekstowe (1 mln tokenów) i ceny API; Opus 4.8 i Sonnet 4.6 jako modele legacy.'
+  - title: 'Does Anthropic crawl data from the web, and how can site owners block the crawler?'
+    url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
+    note: 'Anthropic, centrum pomocy. Role botów ClaudeBot (dane treningowe), Claude-User (pobieranie stron na prośbę użytkownika) i Claude-SearchBot (jakość wyników wyszukiwania).'
   - title: 'Anthropic writes 23,000-word ‘constitution’ for Claude, suggests it may have feelings'
     url: 'https://www.theregister.com/2026/01/22/anthropic_claude_constitution/'
     note: 'The Register, 22 stycznia 2026. Konstytucja Claude’a urosła z ok. 2 700 słów (2023) do 23 000 słów.'
@@ -58,7 +64,7 @@ sources:
     url: 'https://docs.mistral.ai/models/model-cards/mistral-large-3-25-12'
     note: 'Mistral AI, dokumentacja. Karta modelu Mistral Large 3 (2512): cena 0,50 USD za milion tokenów wejściowych i okno 256 tys. tokenów.'
 ---
-LLM (Large Language Model, czyli duży model językowy) to nie jeden produkt, lecz cały ekosystem kilkudziesięciu systemów. Różnią się architekturą, mocnymi stronami, ceną i podejściem do Twojej marki jako potencjalnego źródła cytowań. **Dziś niemal 80% firm korzysta z AI, a większość wdrożyła już generatywną AI w co najmniej jednym obszarze; użytkownicy coraz częściej zadają pytania o produkty i usługi bezpośrednio w ChatGPT, Perplexity czy w Gemini – zamiast wpisywać je w wyszukiwarkę.** Ten przewodnik pokazuje, jak działa każdy z głównych modeli. Dowiesz się, czym się od siebie różnią i co to oznacza dla widoczności Twojej firmy w odpowiedziach AI.
+LLM (Large Language Model, czyli duży model językowy) to nie jeden produkt, lecz cały ekosystem kilkudziesięciu systemów. Różnią się architekturą, mocnymi stronami, ceną i podejściem do Twojej marki jako potencjalnego źródła cytowań. **Zdecydowana większość dużych firm korzysta już z AI w co najmniej jednym obszarze działalności, a użytkownicy coraz częściej zadają pytania o produkty i usługi bezpośrednio w ChatGPT, Perplexity czy w Gemini – zamiast wpisywać je w wyszukiwarkę.** Ten przewodnik pokazuje, jak działa każdy z głównych modeli. Dowiesz się, czym się od siebie różnią i co to oznacza dla widoczności Twojej firmy w odpowiedziach AI.
 
 ## Jak działa duży model językowy?
 
@@ -84,9 +90,9 @@ Poniższa tabela zestawia osiem najważniejszych ekosystemów w jednym miejscu. 
 
 | Model / ekosystem | Twórca | Dostęp dla użytkownika | Mocna strona | Klucz dla widoczności marki |
 |---|---|---|---|---|
-| ChatGPT (GPT-5.6) | OpenAI | Freemium + API | Szeroki korpus treningowy, SearchGPT | Indeksowanie przez GPTBot; SearchGPT cytuje na żywo |
-| Claude (Opus 4.8 / Sonnet 4.6) | Anthropic | Freemium + API | Długi kontekst, analiza dokumentów | ClaudeBot; silna w analizie B2B |
-| Gemini (3.1 Pro / 3.5 Flash) | Google | Freemium + API | Integracja z Google Search, AI Overviews | Bezpośrednie powiązanie z indeksem Google |
+| ChatGPT (GPT-5.6) | OpenAI | Freemium + API | Szeroki korpus treningowy, wyszukiwanie w ChatGPT | Dostęp OAI-SearchBot; wyszukiwanie cytuje na żywo |
+| Claude (Opus 5 / Sonnet 5) | Anthropic | Freemium + API | Długi kontekst, analiza dokumentów | Claude-SearchBot; silna w analizie B2B |
+| Gemini (3.1 Pro / Flash) | Google | Freemium + API | Integracja z Google Search, AI Overviews | Bezpośrednie powiązanie z indeksem Google |
 | Copilot | Microsoft | Wbudowany w Windows/Edge + API | Integracja z Bing, Microsoft 365 | BingBot + Bing Search jako źródło |
 | Perplexity AI | Perplexity | Freemium + API | RAG w czasie rzeczywistym z linkami źródłowymi | PerplexityBot; cytuje URL bezpośrednio |
 | [Grok](/modele-llm/grok/) (4.x) | xAI (Elon Musk) | X Premium + API | Dostęp do X w czasie rzeczywistym | Wzmianki i dyskusje na X zasilają odpowiedzi |
@@ -99,28 +105,28 @@ Każdy z tych ekosystemów ma inny mechanizm pobierania informacji o Twojej marc
 
 ## ChatGPT i ekosystem OpenAI
 
-ChatGPT jest punktem startowym dla zdecydowanej większości firm wchodzących w temat AI. To z nim rozmawiają Twoi klienci, kiedy pytają „który dostawca X jest najlepszy" albo „porównaj Y i Z". **Według danych OpenAI z początku 2026 roku z ChatGPT Enterprise korzysta dziewięciokrotnie więcej firm niż rok wcześniej.**
+ChatGPT jest punktem startowym dla zdecydowanej większości firm wchodzących w temat AI. To z nim rozmawiają Twoi klienci, kiedy pytają „który dostawca X jest najlepszy" albo „porównaj Y i Z". **Według danych OpenAI z początku 2026 roku liczba stanowisk (licencji) w ChatGPT Enterprise była dziewięciokrotnie większa niż rok wcześniej.**
 
-Główny flagowiec dostępny obecnie w ChatGPT to GPT-5.6 Sol (rodzina GPT-5.6: Sol, Terra i Luna, ogólnie dostępna od 9 lipca 2026) – multimodalny system przetwarzający tekst, obraz i dźwięk. W wariancie z włączonym SearchGPT model w chwili zapytania przeszukuje internet. Pobiera aktualne fragmenty i generuje odpowiedź z przypisami. To oznacza, że strony, do których ma dostęp `GPTBot`, mogą być cytowane w czasie rzeczywistym.
+Główny flagowiec dostępny obecnie w ChatGPT to GPT-5.6 Sol (rodzina GPT-5.6: Sol, Terra i Luna, ogólnie dostępna od 9 lipca 2026) – multimodalny system przetwarzający tekst, obraz i dźwięk. W wariancie z włączonym wyszukiwaniem (ChatGPT Search) model w chwili zapytania przeszukuje internet. Pobiera aktualne fragmenty i generuje odpowiedź z przypisami. To oznacza, że strony, do których ma dostęp `OAI-SearchBot`, mogą być cytowane w czasie rzeczywistym.
 
 Kluczowe aspekty dla strategii widoczności:
 
-- **`GPTBot`** – bot indeksujący OpenAI. Jego dostęp do Twojej strony warunkuje pojawienie się w SearchGPT. Sprawdź plik `robots.txt` i upewnij się, że nie jest blokowany.
-- **Tryb offline** – zapytania bez SearchGPT korzystają wyłącznie z danych treningowych (do tzw. daty odcięcia, ang. *cutoff*). Marka, która nie była wzmiankowana przed tą datą, może w ogóle nie istnieć dla modelu.
+- **`OAI-SearchBot`** – bot wyszukiwania OpenAI. Jego dostęp do Twojej strony warunkuje pojawienie się w odpowiedziach wyszukiwania ChatGPT. Sprawdź plik `robots.txt` i upewnij się, że nie jest blokowany. `GPTBot` to osobny bot zbierający dane treningowe – można go zablokować bez wpływu na widoczność w wyszukiwaniu.
+- **Tryb offline** – zapytania bez wyszukiwania korzystają wyłącznie z danych treningowych (do tzw. daty odcięcia, ang. *cutoff*). Marka, która nie była wzmiankowana przed tą datą, może w ogóle nie istnieć dla modelu.
 - **Kontekst 1,05 mln tokenów** – w GPT-5.6 (128 000 tokenów wyjścia) pozwala na przetworzenie bardzo długich dokumentów; w planach konsumenckich limit jest niższy. Pamiętaj jednak, że dla B2B ważniejsza jest jakość fragmentów niż sama ich objętość.
-- **API OpenAI** – najpopularniejsze narzędzie do budowy własnych aplikacji AI. Koszt flagowego GPT-5.6 Sol to 5,00 USD za milion tokenów wejściowych (Terra – 2,50 USD, Luna – 1,00 USD).
+- **API OpenAI** – najpopularniejsze narzędzie do budowy własnych aplikacji AI. Koszt flagowego GPT-5.6 Sol to 4,00 USD za milion tokenów wejściowych w cenie promocyjnej (Terra – 2,00 USD, Luna – 0,20 USD).
 
 Szczegółowe omówienie możliwości i ograniczeń znajdziesz w artykule o [ChatGPT](/modele-llm/chatgpt/) oraz o tym, [co potrafi ChatGPT](/modele-llm/co-potrafi-chatgpt/) w kontekście codziennej pracy marketera.
 
 ## Claude – model Anthropic
 
-Claude to bezpośredni rywal ChatGPT. Projektowano go z naciskiem na bezpieczeństwo, interpretację długich dokumentów i precyzję w analizach B2B. Flagowym modelem Anthropic jest obecnie Claude Opus 4.8. Jednak to Claude Sonnet 4.6 pozostaje wyborem większości firm potrzebujących modelu do automatyzacji procesów. Przy koszcie ok. 3 USD za milion tokenów wejściowych oferuje doskonały stosunek jakości do ceny.
+Claude to bezpośredni rywal ChatGPT. Projektowano go z naciskiem na bezpieczeństwo, interpretację długich dokumentów i precyzję w analizach B2B. Najmocniejszym modelem Anthropic jest obecnie Claude Fable 5.1, a modelem rekomendowanym do większości zadań – Claude Opus 5. Jednak to Claude Sonnet 5 pozostaje wyborem większości firm potrzebujących modelu do automatyzacji procesów. Przy koszcie 2 USD za milion tokenów wejściowych (10 USD za wyjściowe) oferuje doskonały stosunek jakości do ceny.
 
 Wyróżniki architektury Anthropic:
 
 - **Okno kontekstowe 1 000 000 tokenów** – Claude bez problemu przetworzy cały regulamin, kilkadziesiąt raportów PDF lub transkrypcję wielogodzinnego spotkania w jednej sesji.
 - **Constitutional AI** – wewnętrzny protokół bezpieczeństwa. Modele Opus potrafią autonomicznie zerwać rozmowę, jeśli wykryją złośliwe instrukcje.
-- **`ClaudeBot`** – bot indeksujący Anthropic. Jeśli Twoja strona go blokuje, dane o marce nie trafiają do systemu.
+- **`Claude-SearchBot` i `ClaudeBot`** – boty Anthropic. Pierwszy indeksuje strony na potrzeby wyszukiwania w Claude, drugi zbiera dane treningowe. Jeśli Twoja strona blokuje oba, dane o marce nie trafiają do systemu.
 
 **Claude szczególnie dobrze sprawdza się przy analizie treści specjalistycznych** – dokumentacji technicznej, raportów finansowych, umów. Dla agencji i firm B2B SaaS tworzących takie materiały, budowanie widoczności w Claude oznacza przede wszystkim dbanie o jakość i gęstość faktograficzną tekstów.
 
@@ -175,7 +181,7 @@ Strategicznie: jeśli chcesz, żeby Twoja marka pojawiała się z linkiem w odpo
   <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
-    <p>W audytach przeprowadzanych przez ICEA regularnie widzimy ten sam schemat: firma inwestuje w SEO i ma świetne pozycje w Google, ale w ChatGPT, Claude i Perplexity jest nieobecna. Powód jest prawie zawsze ten sam – treści pisane pod bota Google'a sprzed 2022 roku: ogólnikowe, bez liczb, bez cytowań, bez samodzielnych bloków tematycznych. <strong>Pierwsza rekomendacja jest zawsze ta sama: zanim cokolwiek zmienisz technicznie, sprawdź, czy PerplexityBot i ClaudeBot mają dostęp do Twojej strony w robots.txt. Blokada bota to koniec gry, zanim się zaczęła.</strong></p>
+    <p>W audytach przeprowadzanych przez ICEA regularnie widzimy ten sam schemat: firma inwestuje w SEO i ma świetne pozycje w Google, ale w ChatGPT, Claude i Perplexity jest nieobecna. Powód jest prawie zawsze ten sam – treści pisane pod bota Google'a sprzed 2022 roku: ogólnikowe, bez liczb, bez cytowań, bez samodzielnych bloków tematycznych. <strong>Pierwsza rekomendacja jest zawsze ta sama: zanim cokolwiek zmienisz technicznie, sprawdź, czy PerplexityBot, OAI-SearchBot i Claude-SearchBot mają dostęp do Twojej strony w robots.txt. Blokada bota to koniec gry, zanim się zaczęła.</strong></p>
     <div class="callout-author">Tomasz Czechowski · Head of SEO, ICEA</div>
   </div>
 </aside>
@@ -211,7 +217,7 @@ Najpopularniejsze otwarte modele na 2026 rok to:
 - **Bielik-2.1** – najlepszy otwarty model dla języka polskiego. Osiąga wyniki w testach językowych porównywalne z GPT-4.
 - **Phi-4-mini (Microsoft)** – działa na urządzeniach brzegowych. To dobry wybór do prostych zadań bez połączenia z chmurą.
 
-Ważne zastrzeżenie: modele open source nie mają własnych botów indeksujących. Ich wiedza pochodzi z danych treningowych, a nie z indeksowania na żywo. Widoczność marki w modelach open source wdrożonych przez klientów zależy od tego, czy Twoje treści trafiły do zbiorów treningowych (np. Common Crawl). To zupełnie inny mechanizm niż w SearchGPT czy Perplexity.
+Ważne zastrzeżenie: modele open source nie mają własnych botów indeksujących. Ich wiedza pochodzi z danych treningowych, a nie z indeksowania na żywo. Widoczność marki w modelach open source wdrożonych przez klientów zależy od tego, czy Twoje treści trafiły do zbiorów treningowych (np. Common Crawl). To zupełnie inny mechanizm niż w wyszukiwaniu ChatGPT czy Perplexity.
 
 ## Jak wybrać model do strategii widoczności marki?
 
@@ -223,6 +229,6 @@ Jeśli Twoja firma sprzedaje B2B i klienci używają Microsoft 365 – Copilot j
 
 Jeśli zależy Ci na cytowaniach z widocznym linkiem – Perplexity generuje ruch bezpośredni. Odblokowanie `PerplexityBot` to najszybsza wygrana.
 
-Jeśli budujesz brand w kategorii, w której klienci porównują dostawców – ChatGPT z SearchGPT jest pierwszym miejscem, gdzie szukają. Treści porównawcze z danymi liczbowymi są tu najskuteczniejsze.
+Jeśli budujesz brand w kategorii, w której klienci porównują dostawców – ChatGPT z wyszukiwaniem jest pierwszym miejscem, gdzie szukają. Treści porównawcze z danymi liczbowymi są tu najskuteczniejsze.
 
 Strategię opartą na danych zamiast na domysłach buduje [pozycjonowanie AI](/pozycjonowanie-ai/) – metodyka GEO, która mierzy widoczność Twojej marki we wszystkich głównych modelach jednocześnie i wyznacza priorytety działań. Swój punkt startowy możesz sprawdzić przez [Widoczność marki w AI](/narzedzia/brand-check/), który odpyta cztery silniki AI o Twoją markę i pokaże, jak wypadasz na tle kategorii.

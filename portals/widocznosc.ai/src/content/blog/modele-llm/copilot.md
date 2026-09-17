@@ -3,6 +3,7 @@ title: 'Microsoft Copilot – kompletny przewodnik'
 subtitle: 'Poznaj ekosystem Copilota i naucz się go efektywnie wdrożyć w swojej organizacji'
 description: 'Kompletny przewodnik po Microsoft Copilot: architektura, Copilot for Microsoft 365, Windows, GitHub Copilot, Copilot Studio i koszty wdrożenia w 2026 roku.'
 date: 2026-05-04
+updated: 2026-09-17
 image: ../../../assets/images/blog-modele-llm-copilot.webp
 icon: '<rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><circle cx="17" cy="17" r="4"/><line x1="17" y1="14" x2="17" y2="20"/><line x1="14" y1="17" x2="20" y2="17"/>'
 author:
@@ -25,11 +26,12 @@ faq:
     a: >-
       Nie. Microsoft w ramach Enterprise Data Protection (EDP) gwarantuje, że prompty, odpowiedzi i dane z Microsoft Graph
       nie są używane do uczenia modeli. Firma Microsoft działa jako podmiot przetwarzający dane w rozumieniu RODO.
-  - q: 'Jakie są różnice między wersjami Copilot Free i Copilot Pro?'
+  - q: 'Jakie są różnice między darmowym Copilotem a płatną wersją dla użytkowników indywidualnych?'
     a: >-
-      Wersja Copilot Free oferuje do 15 doładowań dziennie dla generowania obrazów i dostęp do modeli poza godzinami szczytu.
-      Wersja Copilot Pro (20 USD miesięcznie) zapewnia priorytetowy dostęp do mocy obliczeniowej, 100 doładowań dziennie
-      i głęboki interfejs w aplikacjach pakietu Office – wymaga jednak osobnej licencji M365 Personal lub Family.
+      Darmowy Copilot daje podstawowy dostęp do czatu i generowania obrazów z limitami użycia. Dawną subskrypcję
+      Copilot Pro (20 USD miesięcznie) Microsoft wycofał – jej funkcje trafiły do planu Microsoft 365 Premium
+      (19,99 USD miesięcznie), który łączy pakiet Microsoft 365 Family, 1 TB w chmurze, Copilota w aplikacjach Office,
+      rozszerzone limity użycia AI oraz agentów Researcher i Analyst.
   - q: 'Czy GitHub Copilot współpracuje z edytorami innymi niż VS Code?'
     a: >-
       Tak – GitHub Copilot współpracuje z edytorami takimi jak VS Code, z rozwiązaniami JetBrains (IntelliJ, PyCharm, Rider),
@@ -55,13 +57,22 @@ sources:
     note: 'Microsoft. Cena 30 USD za użytkownika miesięcznie przy płatności rocznej i wymóg kwalifikującej się subskrypcji Microsoft 365.'
   - title: 'Microsoft 365 Copilot Plans and Pricing'
     url: 'https://www.microsoft.com/en-us/microsoft-365-copilot/pricing'
-    note: 'Microsoft. Cennik planu Microsoft 365 Copilot Business dla firm do 300 użytkowników (18–25,20 USD miesięcznie).'
+    note: 'Microsoft. Cennik planu Microsoft 365 Copilot Business dla firm do 300 użytkowników – 21 USD miesięcznie przy płatności rocznej, promocyjnie 18 USD w pierwszym roku (oferta od 1 lipca do 31 grudnia 2026).'
   - title: 'GitHub Copilot is moving to usage-based billing'
     url: 'https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/'
     note: 'The GitHub Blog. Przejście wszystkich planów na GitHub AI Credits od 1 czerwca 2026 roku, ceny planów Pro, Pro+, Business i Enterprise oraz łączenie kredytów w organizacjach.'
   - title: 'Usage-based billing for individuals'
     url: 'https://docs.github.com/copilot/concepts/billing/usage-based-billing-for-individuals'
-    note: 'GitHub Docs. Limity planu Free (2000 uzupełnień kodu) oraz pule kredytów AI w planach Pro i Pro+.'
+    note: 'GitHub Docs. Limity planu Free (2000 uzupełnień kodu) oraz pule kredytów AI w planach Pro (1500), Pro+ (7000) i Max (20 000).'
+  - title: 'Excel’s COPILOT function is headed for the recycle bin'
+    url: 'https://www.theregister.com/ai-and-ml/2026/08/17/excels-copilot-function-is-headed-for-the-recycle-bin/5288327'
+    note: 'The Register, 17 sierpnia 2026. Funkcja =COPILOT() w Excelu, dostępna od sierpnia 2025 w wersji zapoznawczej, zostaje wycofana 14 września 2026; Microsoft kieruje użytkowników do panelu bocznego Copilota.'
+  - title: 'The next phase of the Microsoft–OpenAI partnership'
+    url: 'https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/'
+    note: 'Official Microsoft Blog, 27 kwietnia 2026. Licencja Microsoftu na własność intelektualną OpenAI (modele i produkty) staje się niewyłączna i obowiązuje do 2032 roku.'
+  - title: 'Microsoft adds Microsoft 365 Premium, cuts Copilot Pro'
+    url: 'https://www.pcworld.com/article/2925962/microsoft-adds-microsoft-365-premium-cuts-copilot-pro.html'
+    note: 'PCWorld. Wycofanie subskrypcji Copilot Pro i start planu Microsoft 365 Premium za 19,99 USD miesięcznie (1 października 2025).'
   - title: 'Model Context Protocol (MCP) is now generally available in Microsoft Copilot Studio'
     url: 'https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/model-context-protocol-mcp-is-now-generally-available-in-microsoft-copilot-studio/'
     note: 'Microsoft Copilot Blog, Zankar Desai, 29 maja 2025. Ogólna dostępność integracji MCP w Copilot Studio.'
@@ -70,7 +81,7 @@ Microsoft Copilot nie jest prostym chatbotem doklejonym do pakietu biurowego. To
 
 ## Czym jest Microsoft Copilot i jak działa jego architektura?
 
-Copilot to marka parasolowa, pod którą Microsoft zebrał kilka powiązanych, ale odrębnych produktów opartych na sztucznej inteligencji. Wspólnym mianownikiem są modele z rodziny GPT od OpenAI (Microsoft jest ich największym inwestorem). Co ciekawe, w 2026 roku organizacje mogą w niektórych aplikacjach wybierać między modelami OpenAI a modelami Claude firmy Anthropic.
+Copilot to marka parasolowa, pod którą Microsoft zebrał kilka powiązanych, ale odrębnych produktów opartych na sztucznej inteligencji. Wspólnym mianownikiem są modele z rodziny GPT od OpenAI (Microsoft jest jednym z największych udziałowców tej firmy). Co ciekawe, w 2026 roku organizacje mogą w niektórych aplikacjach wybierać między modelami OpenAI a modelami Claude firmy Anthropic.
 
 **Kluczowym elementem architektury jest Indeks Semantyczny (Semantic Index for Copilot) – wektorowa reprezentacja wiedzy korporacyjnej budowana na bazie usługi Microsoft Graph.** Zamiast klasycznego wyszukiwania po słowach kluczowych, system generuje wielowymiarowe osadzenia wektorowe (ang. *embeddings*) dla dokumentów, wiadomości e-mail i spotkań. Obiekty o zbliżonym znaczeniu trafiają do sąsiadujących klastrów wektorowych. Dzięki temu model rozumie intencję pytania, nawet jeśli nie znasz dokładnej nazwy pliku.
 
@@ -79,15 +90,15 @@ Architektura przetwarzania zapytania wygląda następująco:
 - **Wstępne wzbogacenie kontekstu** – zanim prompt trafi do modelu, system odpytuje Microsoft Graph i Indeks Semantyczny, dołączając dziesiątki stron kontekstu z wiadomości e-mail, dysków i kalendarza
 - **Ugruntowanie odpowiedzi** – model generuje treść ściśle osadzoną w danych organizacji, a nie wyłącznie w wiedzy ogólnej
 - **Weryfikacja uprawnień** – każda odpowiedź przechodzi przez filtry RBAC (Role-Based Access Control); model nie udostępni danych, do których pytający nie ma dostępu
-- **Szyfrowanie typu end-to-end** – dane klientów nie służą do trenowania modeli bazowych; Microsoft działa tu jako podmiot przetwarzający dane, zgodnie z przepisami RODO
+- **Ochrona danych firmowych (Enterprise Data Protection)** – dane są szyfrowane w trakcie przesyłania i w spoczynku, nie służą do trenowania modeli bazowych, a Microsoft działa tu jako podmiot przetwarzający dane, zgodnie z przepisami RODO
 
-To odróżnia usługę Copilot for Microsoft 365 od publicznie dostępnego ChatGPT. Model GPT-5 w wariancie konsumenckim nie wie, co znajduje się na Twoim dysku OneDrive ani kto uczestniczył we wczorajszym spotkaniu. Copilot ma do tego dostęp. Co więcej, potrafi połączyć tę wiedzę z zadanym pytaniem.
+To odróżnia usługę Copilot for Microsoft 365 od publicznie dostępnego ChatGPT. Konsumencka wersja ChatGPT nie wie, co znajduje się na Twoim dysku OneDrive ani kto uczestniczył we wczorajszym spotkaniu. Copilot ma do tego dostęp. Co więcej, potrafi połączyć tę wiedzę z zadanym pytaniem.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Od 2019 roku Microsoft zainwestował w OpenAI łącznie ponad 13 miliardów dolarów. <strong>W zamian firma otrzymała wyłączne prawa do komercjalizacji modeli GPT w swoich produktach – to właśnie ta umowa jest technicznym fundamentem całego ekosystemu Copilota.</strong></p>
+    <p>Od 2019 roku Microsoft zainwestował w OpenAI łącznie ponad 13 miliardów dolarów. <strong>W zamian firma otrzymała licencję na modele i produkty OpenAI – to właśnie ta umowa jest technicznym fundamentem całego ekosystemu Copilota.</strong> Przez lata licencja była wyłączna, ale od 27 kwietnia 2026 roku jest niewyłączna i obowiązuje do 2032 roku.</p>
   </div>
 </aside>
 
@@ -95,7 +106,7 @@ To odróżnia usługę Copilot for Microsoft 365 od publicznie dostępnego ChatG
 
 To flagowy produkt z perspektywy organizacji. Copilot for Microsoft 365 osadza asystenta AI bezpośrednio w programach Word, Excel, PowerPoint, Outlook i Teams. Nie jest to jedynie okno czatu obok aplikacji. Sztuczna inteligencja ma wgląd w aktualnie otwarty plik i może na nim operować.
 
-W Wordzie Copilot potrafi napisać pierwszy szkic na podstawie briefu, podsumować długi raport do dwóch stron albo zaproponować korekty stylistyczne z uwzględnieniem firmowego szablonu. **W programie Excel zadebiutowała natywna funkcja `=COPILOT()`, która pozwala osadzać żądania AI bezpośrednio w komórkach arkusza i przetwarzać całe kolumny tekstowe jednym promptem.** Dla działów analitycznych to realna zmiana. Zamiast ręcznego kategoryzowania setek rekordów, wystarczy opisać pożądaną kategorię w języku naturalnym.
+W Wordzie Copilot potrafi napisać pierwszy szkic na podstawie briefu, podsumować długi raport do dwóch stron albo zaproponować korekty stylistyczne z uwzględnieniem firmowego szablonu. **W programie Excel Copilot w panelu bocznym potrafi podsumowywać teksty, klasyfikować dane i generować treści na podstawie arkusza.** Dla działów analitycznych to realna zmiana. Zamiast ręcznego kategoryzowania setek rekordów, wystarczy opisać pożądaną kategorię w języku naturalnym. Testowana od sierpnia 2025 roku funkcja `=COPILOT()`, osadzająca żądania AI bezpośrednio w komórkach, nie wyszła z fazy zapoznawczej – Microsoft wycofał ją 14 września 2026 roku.
 
 W programie PowerPoint Copilot potrafi wygenerować całą prezentację z pliku Word (do 24 MB). Automatycznie dobiera przy tym zaaprobowane zdjęcia z firmowego zestawu identyfikacji wizualnej i dodaje poprawne teksty alternatywne dla czytników ekranu.
 
@@ -106,7 +117,7 @@ Poniższa tabela porównuje główne zastosowania usługi Copilot w poszczególn
 | Aplikacja | Kluczowe zastosowanie | Wymagany kontekst |
 |---|---|---|
 | Word | Szkic, podsumowanie, korekta stylu | Dokument otwarty lub plik w OneDrive |
-| Excel | Analiza danych, formuły, =COPILOT() | Arkusz lokalny lub chmurowy |
+| Excel | Analiza danych, formuły, klasyfikacja tekstów | Arkusz lokalny lub chmurowy |
 | PowerPoint | Generowanie prezentacji, brand kit | Plik Word jako źródło, SharePoint |
 | Outlook | Zarządzanie kalendarzem, odpowiedzi na e-maile | Skrzynka i kalendarz użytkownika |
 | Teams | Podsumowania spotkań, przeszukiwanie wątków | Nagranie lub transkrypcja spotkania |
@@ -114,7 +125,7 @@ Poniższa tabela porównuje główne zastosowania usługi Copilot w poszczególn
 
 ### Cennik i wymagania licencyjne
 
-Model biznesowy usługi Copilot for Microsoft 365 wymaga posiadania bazowej licencji Microsoft 365 (Business Standard, Business Premium lub Enterprise E3/E5). Sama usługa kosztuje 30 USD za użytkownika miesięcznie w wariancie Enterprise. Dla mniejszych firm (do 300 użytkowników) dostępny jest plan w cenie od 18 do 25 USD przy zobowiązaniu rocznym.
+Model biznesowy usługi Copilot for Microsoft 365 wymaga posiadania bazowej licencji Microsoft 365 (Business Standard, Business Premium lub Enterprise E3/E5). Sama usługa kosztuje 30 USD za użytkownika miesięcznie w wariancie Enterprise. Dla mniejszych firm (do 300 użytkowników) dostępny jest plan Business za 21 USD miesięcznie przy zobowiązaniu rocznym – do końca 2026 roku w promocji za 18 USD w pierwszym roku.
 
 **Bez bazowej licencji M365 nie można dokupić usługi Copilot – jest to twarde wymaganie techniczne**, a nie wyłącznie handlowe. Indeks Semantyczny potrzebuje danych z Microsoft Graph, który jest dostępny tylko w ramach subskrypcji M365.
 
@@ -142,13 +153,14 @@ GitHub Copilot to najstarszy produkt z rodziny. Działał jako narzędzie do aut
 
 ### Nowy model rozliczeń AI Credits
 
-Od czerwca 2026 roku GitHub przechodzi od stałych opłat na model rozliczeń oparty na faktycznym zużyciu (ang. usage-based billing). Każda licencja ma przydzieloną pulę Kredytów AI (AI Credits) równą wartości planu:
+Od czerwca 2026 roku GitHub przechodzi od stałych opłat na model rozliczeń oparty na faktycznym zużyciu (ang. usage-based billing). Każda licencja ma przydzieloną miesięczną pulę Kredytów AI (AI Credits), zużywanych według cen tokenów danego modelu:
 
-- **Plan Free (0 USD)** – 50 zapytań premium miesięcznie (w tym dostęp do trybu agentowego) oraz 2000 autouzupełnień
-- **Plan Pro (10 USD)** – pula 1000 kredytów AI (równowartość 10 USD) na koszty wnioskowania; nielimitowane autouzupełnianie składni
-- **Plan Pro+ (39 USD)** – pula 3900 kredytów AI (równowartość 39 USD); pełny dostęp do narzędzia GitHub Spark i nieograniczone autouzupełnianie
-- **Plan Business (19 USD/os.)** – możliwość łączenia niewykorzystanych kredytów między pracownikami (pooling)
-- **Plan Enterprise (39 USD/os.)** – pełna pula z twardymi limitami budżetowymi narzucanymi przez dział IT
+- **Plan Free (0 USD)** – ograniczona pula kredytów AI z automatycznym doborem modelu oraz 2000 uzupełnień kodu miesięcznie
+- **Plan Pro (10 USD)** – 1500 kredytów AI miesięcznie (1000 bazowych i 500 elastycznych); nielimitowane uzupełnienia kodu
+- **Plan Pro+ (39 USD)** – 7000 kredytów AI miesięcznie (3900 bazowych i 3100 elastycznych); nielimitowane uzupełnienia kodu
+- **Plan Max (100 USD)** – 20 000 kredytów AI miesięcznie dla najintensywniej korzystających programistów
+- **Plan Business (19 USD/os.)** – kredyty o wartości planu z możliwością łączenia niewykorzystanych kredytów w organizacji (pooling)
+- **Plan Enterprise (39 USD/os.)** – kredyty o wartości planu i limity budżetowe ustawiane na poziomie firmy, centrum kosztów i użytkownika
 
 Zmiana modelu rozliczeń to reakcja na realne wydarzenia rynkowe. Programiści z firmy Uber wyczerpali swój budżet na narzędzia AI w ciągu zaledwie czterech miesięcy (warto zaznaczyć, że całkowity budżet R&D firmy wynosił 3,4 mld USD, a wydatki na AI stanowiły jego istotną część). Microsoft wyciągnął z tego wnioski i wymusił na organizacjach wdrożenie praktyk kontroli kosztów. W literaturze branżowej określa się to terminem FinOps (Financial Operations) dla AI.
 

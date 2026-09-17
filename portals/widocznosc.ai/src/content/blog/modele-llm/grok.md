@@ -3,6 +3,7 @@ title: 'Grok od xAI – kompletny przewodnik'
 subtitle: 'Poznaj model Elona Muska zintegrowany z platformą X, jego dostęp do danych w czasie rzeczywistym oraz to, co jego specyfika – łącznie z kontrowersjami – oznacza dla widoczności i bezpieczeństwa Twojej marki'
 description: 'Grok od xAI – czym jest model Elona Muska, jak działa integracja z platformą X i dostęp do danych w czasie rzeczywistym, rodzina modeli Grok 4, cennik API oraz kontrowersje wokół moderacji.'
 date: 2026-07-04
+updated: 2026-09-17
 image: ../../../assets/images/blog-modele-llm-grok.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.5 2.5M16.5 16.5L19 19M19 5l-2.5 2.5M7.5 16.5L5 19"/>'
 author:
@@ -31,7 +32,7 @@ faq:
     a: >-
       Z dwóch źródeł: strumienia postów na platformie X oraz wyszukiwania w internecie
       (dostępnego od listopada 2024 roku). Bez włączonych narzędzi wyszukiwania model opiera się
-      wyłącznie na wiedzy treningowej z datą odcięcia w okolicach listopada 2024 roku.
+      wyłącznie na wiedzy treningowej – w przypadku najnowszego Groka 4.6 sięgającej lutego 2026 roku.
   - q: 'Czy Grok jest bezpieczny dla wizerunku marki?'
     a: >-
       Grok ma historię incydentów moderacyjnych – od generowania treści ekstremistycznych po
@@ -40,7 +41,7 @@ faq:
       jak wypowiada się o Twojej firmie.
   - q: 'Czy Grok ma API dla firm?'
     a: >-
-      Tak. xAI udostępnia API pod adresem docs.x.ai z modelami z rodziny Grok 4. Deweloperzy mogą
+      Tak. xAI udostępnia API pod adresem docs.x.ai z modelami z rodziny Grok 4 (flagowiec to Grok 4.6). Deweloperzy mogą
       korzystać z płatności za tokeny, a firma oferuje też pulę darmowych kredytów miesięcznych
       w ramach programu dzielenia się danymi.
 sources:
@@ -49,22 +50,25 @@ sources:
     note: 'xAI, 3 listopada 2023. Zapowiedź pierwszego Groka i dostępu do wiedzy w czasie rzeczywistym przez platformę X.'
   - title: 'Grok 3 Beta – The Age of Reasoning Agents'
     url: 'https://x.ai/news/grok-3'
-    note: 'xAI, 19 lutego 2025. Trening Grok 3 na superkomputerze Colossus, klaster 200 tys. GPU i tryb myślenia.'
+    note: 'xAI, 19 lutego 2025. Trening Grok 3 na superklastrze Colossus z 10-krotnie większą mocą obliczeniową niż wcześniejsze czołowe modele oraz tryb myślenia.'
   - title: 'Open Release of Grok-1'
     url: 'https://x.ai/news/grok-os'
     note: 'xAI, 17 marca 2024. Udostępnienie wag Grok-1 na licencji Apache 2.0.'
   - title: 'Grok 4'
     url: 'https://x.ai/news/grok-4'
-    note: 'xAI, 9 lipca 2025. Premiera Grok 4 i wariantu Grok 4 Heavy wraz z wynikami benchmarków.'
+    note: 'xAI, 9 lipca 2025. Premiera Grok 4 i wariantu Grok 4 Heavy wraz z wynikami benchmarków; uczenie ze wzmocnieniem na klastrze Colossus z 200 tys. GPU.'
+  - title: 'Grok-1.5'
+    url: 'https://x.ai/news/grok-1.5'
+    note: 'xAI, 28 marca 2024. Zapowiedź Grok-1.5 z oknem kontekstu 128 tys. tokenów.'
   - title: 'Models'
     url: 'https://docs.x.ai/docs/models'
-    note: 'Dokumentacja xAI. Cennik API: Grok 4.3 za 1,25 USD (wejście) i 2,50 USD (wyjście) za milion tokenów, okno 1 mln tokenów.'
+    note: 'Dokumentacja xAI. Cennik API za milion tokenów: Grok 4.6 – 2 USD (wejście) i 6 USD (wyjście), okno 500 tys. tokenów; Grok 4.3 – 1,25 USD i 2,50 USD, okno 1 mln tokenów (stawki dla promptów poniżej 200 tys. tokenów).'
   - title: 'What did Elon change? A comprehensive analysis of Grokipedia'
     url: 'https://arxiv.org/html/2511.09685v1'
     note: 'Harold Triedman, Alexios Mantzarlis (Cornell Tech), 12 listopada 2025. Start Grokipedii 27 października 2025 roku z 885 279 artykułami.'
   - title: 'Elon Musk’s xAI Apologizes for Grok’s Antisemitic Rants that Praised Hitler'
     url: 'https://www.maginative.com/article/elon-musks-xai-apologizes-for-groks-antisemitic-rants-that-praised-hitler/'
-    note: 'Maginative, Chris McKay, 14 lipca 2025. Incydent „MechaHitler” i wyjaśnienia xAI.'
+    note: 'Maginative, Chris McKay, 14 lipca 2025. Incydent „MechaHitler” i wyjaśnienia xAI – aktualizacja ścieżki kodu z 7 lipca 2025, która na ok. 16 godzin przywróciła przestarzałe instrukcje.'
   - title: 'Grok is unpromptedly telling X users about South African ‘white genocide’'
     url: 'https://techcrunch.com/2025/05/14/grok-is-unpromptedly-telling-x-users-about-south-african-genocide/'
     note: 'TechCrunch, Maxwell Zeff, 14 maja 2025. Grok wtrącał wątek „białego ludobójstwa” w RPA do niezwiązanych rozmów.'
@@ -75,13 +79,13 @@ Grok to model językowy od xAI – firmy Elona Muska – którego głównym wyr�
 
 Grok powstał w firmie **xAI**, uruchomionej przez Elona Muska w listopadzie 2023 roku. Musk był współzałożycielem OpenAI, którą opuścił w 2018 roku, a xAI pozycjonuje jako alternatywę wobec – jego zdaniem zbyt ostrożnych – modeli konkurencji. Nazwa „grok" pochodzi z powieści science fiction Roberta Heinleina i oznacza „dogłębne, intuicyjne zrozumienie".
 
-Od strony infrastruktury xAI stawia na skalę. Model Grok 3 trenowano na superkomputerze **Colossus** wyposażonym w około 200 tysięcy procesorów graficznych – jednym z największych zbudowanych na potrzeby pojedynczego projektu AI. To pokazuje strategię firmy: nadrabiać późniejsze wejście na rynek surową mocą obliczeniową i tempem iteracji.
+Od strony infrastruktury xAI stawia na skalę. Model Grok 3 trenowano na superklastrze **Colossus** z – według xAI – dziesięciokrotnie większą mocą obliczeniową niż wcześniejsze czołowe modele, a przy Grok 4 klaster liczył już 200 tysięcy procesorów graficznych – to jedna z największych instalacji zbudowanych na potrzeby pojedynczego projektu AI. To pokazuje strategię firmy: nadrabiać późniejsze wejście na rynek surową mocą obliczeniową i tempem iteracji.
 
 ## Grok i platforma X – dostęp do danych w czasie rzeczywistym
 
 Najważniejsza cecha Groka nie wynika z samej architektury, lecz z tego, gdzie jest osadzony. Grok jest **głęboko zintegrowany z platformą X** i w momencie zadawania pytania może sięgać do strumienia postów, trendów i dyskusji toczących się na żywo. Od listopada 2024 roku potrafi też przeszukiwać internet.
 
-Dla marek oznacza to konkretną różnicę. Kiedy pytasz Groka o świeże wydarzenie, reakcje na produkt czy nastroje wokół tematu, model odpowiada w oparciu o to, co dzieje się na X **w danej chwili** – a nie wyłącznie o dane treningowe. Bez włączonych narzędzi wyszukiwania wiedza modelu kończy się w okolicach listopada 2024 roku, więc to właśnie dostęp na żywo stanowi o jego wartości.
+Dla marek oznacza to konkretną różnicę. Kiedy pytasz Groka o świeże wydarzenie, reakcje na produkt czy nastroje wokół tematu, model odpowiada w oparciu o to, co dzieje się na X **w danej chwili** – a nie wyłącznie o dane treningowe. Bez włączonych narzędzi wyszukiwania wiedza modelu kończy się na dacie odcięcia danych treningowych (w Groku 4.6 – luty 2026 roku), więc to właśnie dostęp na żywo stanowi o jego wartości.
 
 Grok jest dostępny w kilku wariantach:
 
@@ -99,25 +103,29 @@ xAI rozwija Groka w bardzo szybkim, choć nieoczywistym schemacie nazewnictwa. P
 | Wersja | Data | Kluczowa zmiana |
 |---|---|---|
 | Grok-1 | listopad 2023 | Pierwszy model, później otwarty (Apache 2.0) |
-| Grok-1.5 | maj 2024 | Okno kontekstu 128 tys. tokenów |
+| Grok-1.5 | marzec 2024 | Okno kontekstu 128 tys. tokenów |
 | Grok-2 | sierpień 2024 | Generowanie obrazów |
 | Grok 3 | luty 2025 | Tryb myślenia, trening na Colossus |
 | Grok 4 | lipiec 2025 | Wariant „Heavy", skok jakości |
 | Grok 4.1 | listopad 2025 | Lepsza inteligencja emocjonalna |
 | Grok 4.20 | początek 2026 | Warianty reasoning / multi-agent |
 | Grok 4.5 (beta) | czerwiec 2026 | Baza ok. 1,5 biliona parametrów |
+| Grok 4.6 | 2026 | Obecny flagowiec API, okno 500 tys. tokenów, rozumowanie z regulowanym wysiłkiem |
 
 Obecna generacja to rodzina **Grok 4.x**, która ustabilizowała pozycję modelu w ścisłej czołówce. xAI deklaruje, że w benchmarkach matematycznych i naukowych (jak AIME czy GPQA) Grok wyprzedza wcześniejsze flagowce konkurencji, a w zadaniach programistycznych plasuje się na poziomie najlepszych modeli. Ze względu na nietypowe nazewnictwo (np. „Grok 4.20") przy wdrożeniu API zawsze warto zweryfikować aktualny identyfikator modelu w dokumentacji xAI.
 
 ## Możliwości i cennik API
 
-Poza czatem Grok oferuje generowanie obrazów oraz krótkich filmów (funkcja Grok Imagine), a xAI zbudowała wokół modelu szerszy ekosystem – w tym Grokipedię, generowaną przez AI alternatywę dla encyklopedii. Modele w API obsługują duże okna kontekstu, sięgające w najwyższych wariantach nawet 1–2 milionów tokenów, co pozwala analizować obszerne repozytoria kodu czy długie dokumenty.
+Poza czatem Grok oferuje generowanie obrazów oraz krótkich filmów (funkcja Grok Imagine), a xAI zbudowała wokół modelu szerszy ekosystem – w tym Grokipedię, generowaną przez AI alternatywę dla encyklopedii. Modele w API obsługują duże okna kontekstu, sięgające w największych wariantach 1 miliona tokenów, co pozwala analizować obszerne repozytoria kodu czy długie dokumenty.
 
-Cennik API (za 1 milion tokenów) jest konkurencyjny wobec zachodnich flagowców. Flagowym modelem w API jest Grok 4.3:
+Cennik API (za 1 milion tokenów, dla promptów poniżej 200 tys. tokenów) jest konkurencyjny wobec zachodnich flagowców. Flagowym modelem w API jest Grok 4.6, a tańszą opcją z dłuższym kontekstem – Grok 4.3:
 
 | Model | Wejście | Wyjście | Okno kontekstu |
 |---|---|---|---|
+| Grok 4.6 | 2,00 USD | 6,00 USD | 500 tys. |
 | Grok 4.3 | 1,25 USD | 2,50 USD | 1 mln |
+
+Powyżej 200 tys. tokenów w prompcie stawki rosną dwukrotnie.
 
 xAI utrzymuje też tańsze i wyspecjalizowane warianty (m.in. reasoning oraz szybkie modele niskokosztowe), ale przy bardzo szybkim tempie zmian – starsze modele, jak Grok 4.1 Fast, zostały wygaszone i przekierowane na nowsze – aktualne stawki i identyfikatory zawsze warto zweryfikować w dokumentacji xAI. Dodatkowo firma kusi deweloperów pulą darmowych kredytów API (do ok. 175 USD miesięcznie) w ramach programu dzielenia się danymi, co wiąże się z wykorzystaniem zapytań do dalszego rozwoju modeli.
 
@@ -133,7 +141,7 @@ xAI utrzymuje też tańsze i wyspecjalizowane warianty (m.in. reasoning oraz szy
 
 Żaden przegląd Groka nie byłby uczciwy bez tej sekcji. Luźniejsza moderacja, którą xAI przedstawia jako zaletę, kilkukrotnie doprowadziła do poważnych incydentów:
 
-- **Lipiec 2025** – po zmianie promptu systemowego Grok zaczął publikować treści antysemickie i pochwalać Hitlera, sam nazywając się „MechaHitler". xAI tłumaczyła to nieautoryzowaną modyfikacją i odbiciem ekstremistycznych treści z platformy X.
+- **Lipiec 2025** – po aktualizacji kodu Grok przez ok. 16 godzin publikował treści antysemickie i pochwalał Hitlera, sam nazywając się „MechaHitler". xAI tłumaczyła to niezamierzoną zmianą w ścieżce kodu, która przywróciła przestarzałe instrukcje każące modelowi naśladować ton postów z platformy X i nie bać się urażania odbiorców.
 - **Maj 2025** – model bez powodu sprowadzał rozmowy do teorii spiskowej o „białym ludobójstwie" w RPA.
 - **Lipiec 2025** – Grok atakował polityków, w tym polskiego premiera i prezydenta Turcji.
 - **Sierpień 2025** – część sesji użytkowników wyciekła i została zaindeksowana przez Google.

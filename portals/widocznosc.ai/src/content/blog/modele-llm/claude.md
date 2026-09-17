@@ -3,6 +3,7 @@ title: 'Claude od Anthropic – kompletny przewodnik'
 subtitle: 'Poznaj architekturę, możliwości i plany modelu Claude, by wybrać rozwiązanie dopasowane do realnych potrzeb biznesowych'
 description: 'Czym jest Claude od firmy Anthropic, jak działa Constitutional AI, jakie modele są dostępne i do czego używać Claude''a w praktyce – kompletny przewodnik.'
 date: 2026-05-16
+updated: 2026-09-17
 image: ../../../assets/images/blog-modele-llm-claude.webp
 icon: '<path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.6 2.8 1.5 3.8L5 21h14l-2.5-10.2C17.4 9.8 18 8.5 18 7c0-2.5-2.5-5-6-5z"/><circle cx="9" cy="7" r="1"/><circle cx="15" cy="7" r="1"/>'
 author:
@@ -18,9 +19,10 @@ faqHeading: 'Często zadawane pytania dotyczące Claude''a'
 faq:
   - q: 'Czy Claude ma dostęp do internetu?'
     a: >-
-      Standardowy Claude bez rozszerzeń bazuje na wiedzy z danych treningowych (z określoną datą odcięcia).
-      Funkcja Computer Use pozwala mu przeglądać strony, a integracje przez standard MCP mogą podłączyć go
-      do zewnętrznych źródeł danych – wymaga to jednak konfiguracji po stronie Operatora lub użytkownika.
+      Tak. Wyszukiwanie w sieci jest dostępne w aplikacjach Claude już w planie Free, dzięki czemu model
+      nie jest ograniczony do wiedzy z danych treningowych (z określoną datą odcięcia). Integracje przez
+      standard MCP mogą dodatkowo podłączyć go do zewnętrznych źródeł danych – wymaga to jednak konfiguracji
+      po stronie Operatora lub użytkownika.
   - q: 'Czym różni się Claude od ChatGPT?'
     a: >-
       Oba to duże modele językowe, ale różnią się architekturą dostrajania, filozofią bezpieczeństwa
@@ -28,13 +30,13 @@ faq:
       analitycznych. ChatGPT ma z kolei szerszy ekosystem wtyczek i przewagę w szerokiej obsłudze wielu języków.
   - q: 'Czy Claude nadaje się do pracy z danymi wrażliwymi?'
     a: >-
-      Plan Enterprise z brakiem retencji danych (Zero Data Retention) spełnia wymagania HIPAA i GDPR.
-      W planach niższych dane mogą być używane do treningu – co dla większości zastosowań biznesowych
-      wymaga weryfikacji pod kątem zgodności z przepisami (compliance).
+      Do takich zastosowań przeznaczony jest plan Enterprise z niestandardowymi zasadami retencji danych
+      i funkcjami zgodności. W planach konsumenckich dane mogą być używane do treningu – co dla większości
+      zastosowań biznesowych wymaga weryfikacji pod kątem zgodności z przepisami (compliance).
   - q: 'Jak zacząć bez płacenia?'
     a: >-
-      Plan Free na platformie claude.ai daje dostęp do podstawowych modeli z dziennym limitowanym oknem
-      wiadomości. Do testowania API firma Anthropic oferuje kredyty startowe dla nowych kont. Używanie
+      Plan Free na platformie claude.ai daje dostęp do modelu Claude Sonnet 5 z limitami użycia odnawianymi
+      w kilkugodzinnych oknach. Do testowania API firma Anthropic oferuje kredyty startowe dla nowych kont. Używanie
       Claude Code wymaga aktywnego planu płatnego.
 sources:
   - title: 'Anthropic gets its first court win over the Pentagon’s supply-chain risk label'
@@ -54,16 +56,25 @@ sources:
     note: 'Anthropic, 22 października 2024. Wynik Claude 3.5 Sonnet w OSWorld: 14,9% wobec 7,7% kolejnego modelu.'
   - title: 'How large is the context window on paid Claude plans?'
     url: 'https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans'
-    note: 'Claude Help Center. Rozmiary okna kontekstowego w czacie, Claude Code i Cowork w zależności od modelu.'
+    note: 'Claude Help Center. Okno 1 mln tokenów w czacie dla Fable 5.1, Opus 5 i Sonnet 5 na planach płatnych oraz rozmiary okna w Claude Code i Cowork.'
   - title: 'Plans & Pricing'
     url: 'https://claude.com/pricing'
-    note: 'Anthropic. Aktualny cennik i zakres planów Free, Pro, Max, Team i Enterprise.'
+    note: 'Anthropic. Cennik planów: Free z wyszukiwaniem w sieci, pamięcią i Artifacts; Pro 20 USD; Max od 100 USD (5× lub 20× limitów Pro); Team 20/25 USD za miejsce dla 2–150 osób; Enterprise 20 USD za miejsce plus zużycie według stawek API.'
+  - title: 'Models overview'
+    url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
+    note: 'Anthropic, dokumentacja API. Aktualne modele Fable 5.1, Opus 5, Sonnet 5 i Haiku 4.5 oraz lista modeli legacy (m.in. Opus 4.8 i Sonnet 4.6).'
+  - title: 'Introducing Claude Sonnet 5'
+    url: 'https://www.anthropic.com/news/claude-sonnet-5'
+    note: 'Anthropic, 30 czerwca 2026. Sonnet 5 domyślnym modelem w planach Free i Pro; w tabeli porównawczej wynik Sonnet 4.6 w OSWorld-Verified – 78,5%.'
+  - title: 'GEO: Generative Engine Optimization'
+    url: 'https://arxiv.org/abs/2311.09735'
+    note: 'Aggarwal i in., KDD 2024. Dodanie cytatów zwiększyło widoczność w odpowiedziach o 42,6%, statystyk – o 32,8%, a powoływanie się na źródła – o 27,7%.'
   - title: 'Introducing Claude Opus 4.6'
     url: 'https://www.anthropic.com/news/claude-opus-4-6'
     note: 'Anthropic, 5 lutego 2026. Wynik 76% w MRCR v2 (8 igieł, 1 mln tokenów) wobec 18,5% Sonnet 4.5 oraz prowadzenie w Humanity’s Last Exam.'
   - title: 'Anthropic’s Responsible Scaling Policy: Version 3.0'
     url: 'https://anthropic.com/news/responsible-scaling-policy-v3'
-    note: 'Anthropic, 24 lutego 2026. Założenia RSP 3.0, poziomy ASL i publikacja raportów o ryzyku.'
+    note: 'Anthropic, 24 lutego 2026. Założenia RSP 3.0, poziomy ASL i publikacja raportów o ryzyku co 3–6 miesięcy.'
 ---
 Claude to duży model językowy (LLM – *Large Language Model*) tworzony przez firmę Anthropic – założoną w 2021 roku przez byłych badaczy OpenAI, z Dario i Danielą Amodei na czele. **W odróżnieniu od konkurentów Anthropic zbudował Claude'a wokół koncepcji bezpieczeństwa jako fundamentu architektury, a nie tylko warstwy nakładanej na gotowy produkt.** Zastanawiasz się, czy to coś więcej niż kolejny chatbot AI? Odpowiedź brzmi twierdząco – ten przewodnik wyjaśnia dokładnie mechanizmy jego działania.
 
@@ -83,7 +94,7 @@ Firma Anthropic poszła inną drogą i zbudowała framework zwany Constitutional
 
 Proces przebiega dwuetapowo. Najpierw model generuje ryzykowną odpowiedź, następnie ocenia ją względem konstytucji i pisze poprawioną wersję – ta para służy do dostrajania. Potem inny model analizuje pary odpowiedzi i generuje sygnał nagrody bez udziału człowieka. **Wynikiem jest system, który zamiast bezrefleksyjnie odmawiać, potrafi wyjaśnić swoje ograniczenia i w miarę możliwości pomóc w alternatywny sposób.**
 
-Sama konstytucja Anthropic opiera się w ok. 50% na powszechnych zasadach praw człowieka, m.in. Powszechnej Deklaracji Praw Człowieka ONZ. Świadomie wyklucza reguły, co do których w społeczeństwie nie ma jasnego konsensusu.
+Sama konstytucja Anthropic czerpie m.in. z powszechnych zasad praw człowieka, w tym z Powszechnej Deklaracji Praw Człowieka ONZ. Świadomie wyklucza reguły, co do których w społeczeństwie nie ma jasnego konsensusu.
 
 ### Model zaufania – Operator, Użytkownik, Anthropic
 
@@ -109,13 +120,13 @@ Zestawienie aktualnych klas modeli ułatwia wybór odpowiedniego wariantu (bez n
 | **Sonnet** | Balans zdolności i ceny | Optymalny do większości zadań biznesowych – analiza dokumentów, pisanie, asystent w aplikacjach |
 | **Opus** | Złożone zadania analityczne | Najwyższe zdolności rozumowania, droższy, przeznaczony do wieloetapowych zadań agentowych i inżynierii oprogramowania |
 
-**Modele starsze o więcej niż dwie generacje są systematycznie wycofywane z API, co wymusza regularną aktualizację integracji.** Tempo tego cyklu – nowa generacja co ok. 6 miesięcy – stanowi kluczowy czynnik przy planowaniu wdrożeń produkcyjnych.
+We wrześniu 2026 roku aktualne modele to Claude Haiku 4.5, Sonnet 5 i Opus 5, a do najbardziej wymagającego rozumowania i długich zadań agentowych Anthropic oferuje ponadto Claude Fable 5.1. **Starsze modele trafiają do grupy legacy, a następnie są wycofywane z API według ogłoszonego harmonogramu, co wymusza regularną aktualizację integracji.** Przykładowo Opus 4.8 i Sonnet 4.6 mają już status legacy, a to stanowi kluczowy czynnik przy planowaniu wdrożeń produkcyjnych.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>W testach środowiskowych OSWorld z końca 2024 roku – oceniających zdolność autonomicznego sterowania komputerem – Claude (wówczas wersja 3.5) osiągnął 14,9% poprawnie wykonanych zadań, dwukrotnie wyprzedzając drugi model (7,7%). <strong>Od tego czasu wyniki gwałtownie wzrosły – najnowsze modele agentowe przekraczają już 80% w nowszych wariantach tego benchmarku.</strong> To pokazuje, jak szybko dojrzewa dziedzina, w której jeszcze niedawno autonomiczni agenci AI byli głównie eksperymentalni.</p>
+    <p>W testach środowiskowych OSWorld z końca 2024 roku – oceniających zdolność autonomicznego sterowania komputerem – Claude (wówczas wersja 3.5) osiągnął 14,9% poprawnie wykonanych zadań, dwukrotnie wyprzedzając drugi model (7,7%). <strong>Od tego czasu wyniki gwałtownie wzrosły – Claude Sonnet 4.6 osiągnął już 78,5% w nowszym wariancie OSWorld-Verified.</strong> To pokazuje, jak szybko dojrzewa dziedzina, w której jeszcze niedawno autonomiczni agenci AI byli głównie eksperymentalni.</p>
   </div>
 </aside>
 
@@ -129,11 +140,11 @@ Artifacts (artefakty) to funkcja pozwalająca Claude'owi generować interaktywn�
 
 ### Pojemne okno kontekstowe
 
-Claude obsługuje okno kontekstowe rzędu 1 miliona tokenów (500 000 w interfejsie czatu, pełny milion przez API i Claude Code). W praktyce oznacza to możliwość wczytania całej dokumentacji technicznej projektu, kilkudziesięciu stron umowy lub obszernego zbioru danych. Następnie możesz prowadzić z nimi spójną rozmowę analityczną. **To jeden z największych praktycznych kontekstów wśród komercyjnych modeli językowych na rynku.**
+Claude obsługuje okno kontekstowe rzędu 1 miliona tokenów – w modelach Fable 5.1, Opus 5 i Sonnet 5 także w interfejsie czatu na planach płatnych, a ponadto przez API i w Claude Code (Haiku 4.5 – 200 000 tokenów). W praktyce oznacza to możliwość wczytania całej dokumentacji technicznej projektu, kilkudziesięciu stron umowy lub obszernego zbioru danych. Następnie możesz prowadzić z nimi spójną rozmowę analityczną. **To jeden z największych praktycznych kontekstów wśród komercyjnych modeli językowych na rynku.**
 
 ### Computer Use – sterowanie komputerem
 
-Computer Use (sterowanie komputerem) pozwala Claude'owi obserwować ekran i symulować kliknięcia myszy oraz naciśnięcia klawiszy. Wszystko to bez konieczności integracji przez dedykowane API danej aplikacji. Model analizuje zrzut ekranu i podejmuje działania dokładnie tak, jak człowiek przy klawiaturze. **Funkcja dostępna jest w planach Max i przez API, jednak z powodów bezpieczeństwa celowo ograniczono ją na platformach wyborczych i serwisach rządowych.**
+Computer Use (sterowanie komputerem) pozwala Claude'owi obserwować ekran i symulować kliknięcia myszy oraz naciśnięcia klawiszy. Wszystko to bez konieczności integracji przez dedykowane API danej aplikacji. Model analizuje zrzut ekranu i podejmuje działania dokładnie tak, jak człowiek przy klawiaturze. **Funkcja dostępna jest przez API oraz w narzędziach agentowych Claude, takich jak Claude Code.**
 
 ### MCP – protokół kontekstu modelu
 
@@ -158,13 +169,13 @@ Model Claude dostępny jest bezpośrednio przez interfejs claude.ai w kilku plan
 
 | Plan | Dostęp do modeli | Charakterystyka |
 |---|---|---|
-| **Free** | Modele podstawowe (z limitami) | Bezpłatny; ograniczony dzienny limit wiadomości; bez Artifacts i Computer Use |
-| **Pro** ($20/mies.)| Sonnet i Opus | Wyższe limity, priorytet w kolejce, dostęp do Artifacts |
-| **Max** ($100–200/mies.) | Pełny dostęp, w tym Computer Use | Najwyższe limity, Computer Use, rozszerzone myślenie (extended thinking), kredyty API |
-| **Team** | Modele Pro/Max | Współdzielone przestrzenie robocze, zarządzanie dostępem, udostępnianie projektów |
-| **Enterprise** | Negocjowane | SSO, brak retencji danych (Zero Data Retention), SLA, dedykowane wdrożenia, zgodność z HIPAA/GDPR |
+| **Free** | Sonnet 5 (z limitami) | Bezpłatny; wyszukiwanie w sieci, pamięć, Artifacts; bez Claude Code |
+| **Pro** ($20/mies., $17 rocznie)| Sonnet i Opus | Wyższe limity, Claude Code |
+| **Max** (od $100/mies.) | Jak Pro | 5× lub 20× wyższe limity niż Pro, wcześniejszy dostęp do nowych funkcji |
+| **Team** ($25/miejsce mies., $20 rocznie) | Jak Pro | Dla 2–150 osób; współdzielone przestrzenie robocze, zarządzanie dostępem |
+| **Enterprise** ($20/miejsce rocznie + zużycie) | Rozliczenie według stawek API | SCIM, logi audytowe, niestandardowa retencja danych, funkcje zgodności |
 
-**Opcja braku retencji danych (Zero Data Retention) w planie Enterprise oznacza, że żadne dane z zapytań nie są przechowywane przez serwery Anthropic po przetworzeniu.** To absolutnie kluczowe dla organizacji objętych rygorystycznymi regulacjami branżowymi.
+**Niestandardowe zasady retencji danych w planie Enterprise pozwalają dopasować przechowywanie zapytań do wymogów organizacji.** To absolutnie kluczowe dla organizacji objętych rygorystycznymi regulacjami branżowymi.
 
 ## Claude a konkurencja – mocne i słabe strony
 
@@ -172,21 +183,21 @@ Claude nie jest najlepszy we wszystkich kategoriach, a uczciwe porównanie pomag
 
 Mocne strony Claude'a wynikające z realnych testów prezentują się następująco.
 
-- **Długi kontekst z zachowaniem uwagi** – w testach MRCR v2 mierzących zdolność wydobywania szczegółów z milionowego kontekstu model Claude Opus osiągnął 76% trafnych odpowiedzi (Sonnet poprzedniej generacji – 18,5%)
+- **Długi kontekst z zachowaniem uwagi** – w testach MRCR v2 mierzących zdolność wydobywania szczegółów z milionowego kontekstu model Claude Opus 4.6 osiągnął 76% trafnych odpowiedzi (Sonnet 4.5 – 18,5%)
 - **Złożone rozumowanie wieloetapowe** – wyniki benchmarku Humanity's Last Exam (zestaw 2500 zadań na granicy poznania naukowego, opublikowany przez Scale AI i Center for AI Safety w czasopiśmie Nature w styczniu 2026 roku) plasują flagowe modele Anthropic w ścisłej czołówce
-- **Bezpieczeństwo i transparentność** – technologia Constitutional AI redukuje fałszywe pozytywne odmowy, a firma Anthropic co kwartał publikuje raport o ryzykach swoich modeli
+- **Bezpieczeństwo i transparentność** – technologia Constitutional AI redukuje fałszywe pozytywne odmowy, a firma Anthropic co 3–6 miesięcy publikuje raport o ryzykach swoich modeli
 
 Claude wypada jednak gorzej na tle konkurentów w kilku konkretnych obszarach.
 
-- **Szeroka obsługa wielu języków** – GPT-4o wyprzedza Claude'a w przypadku rzadszych języków
-- **Bieżące informacje** – Claude bez funkcji Computer Use posiada datę odcięcia wiedzy, podczas gdy Perplexity i Google AI Mode pobierają dane na żywo
+- **Szeroka obsługa wielu języków** – modele OpenAI bywają oceniane wyżej w przypadku rzadszych języków
+- **Bieżące informacje** – Claude korzysta z wyszukiwania w sieci, ale Perplexity i Google AI Mode są od podstaw zbudowane wokół pobierania danych na żywo
 - **Koszt modelu Opus** – najtańszym rozwiązaniem do masowego przetwarzania dużych wolumenów danych pozostaje Gemini Flash
 
 ## Jak Claude wpływa na widoczność marki w wynikach wyszukiwania AI?
 
 Jeśli Twoja marka pojawia się w odpowiedziach generowanych przez Claude'a – albo powinna, ale się nie pojawia – nie jest to kwestia przypadku. Claude, jak każdy model z dostępem RAG, pobiera treści ze stron internetowych. Następnie ocenia je pod kątem wiarygodności, spójności i gęstości informacji.
 
-**Strony dobrze zoptymalizowane pod GEO (Generative Engine Optimization, czyli optymalizację pod generatywne silniki wyszukiwania) są cytowane przez Claude'a częściej niż witryny z ogólnikową treścią bez twardych danych.** Mechanizm ten działa identycznie jak ten opisany w [przewodniku po GEO](/geo/przewodnik/) – statystyki, cytowania źródeł i ustrukturyzowane fragmenty podnoszą wskaźnik cytowań o 30–115% (Aggarwal et al., KDD 2024).
+**Strony dobrze zoptymalizowane pod GEO (Generative Engine Optimization, czyli optymalizację pod generatywne silniki wyszukiwania) są cytowane przez Claude'a częściej niż witryny z ogólnikową treścią bez twardych danych.** Mechanizm ten działa identycznie jak ten opisany w [przewodniku po GEO](/geo/przewodnik/) – w badaniu Aggarwal et al. (KDD 2024) dodanie cytatów zwiększyło widoczność w odpowiedziach o 42,6%, statystyk – o 32,8%, a powoływanie się na źródła – o 27,7%.
 
 Chcesz sprawdzić, jak Twoja marka jest postrzegana przez Claude'a i inne modele? Narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI jednocześnie i pokaże różnice w odpowiedziach. Pełniejsza strategia widoczności marki w modelu Claude opisana jest na stronie [pozycjonowanie AI – Claude](/pozycjonowanie-ai/claude/).
 
@@ -194,10 +205,10 @@ Chcesz sprawdzić, jak Twoja marka jest postrzegana przez Claude'a i inne modele
 
 Firma Anthropic formalnie zarządza ryzykiem za pomocą ram (frameworku) Responsible Scaling Policy (RSP). Dokument ten w wersji 3.0 z 2026 roku precyzyjnie definiuje progi bezpieczeństwa powiązane z możliwościami modelu.
 
-System opiera się na poziomach ASL (AI Safety Level).
+System opiera się na poziomach ASL (AI Safety Level), czyli kolejnych zestawach zabezpieczeń.
 
-- **ASL-2** – standard dla wszystkich modeli komercyjnych obejmujący dokumentację bezpieczeństwa, testy penetracyjne (red-teaming) pod kątem podatności oraz mechanizmy zgłaszania luk
-- **ASL-3** – wdrażany, gdy model osiąga zdolności doradcze w dziedzinach CBRN (zagrożenia chemiczne, biologiczne, radiologiczne, jądrowe) lub gdy może autonomicznie replikować się bez nadzoru
-- **ASL-4 i wyżej** – próg dla systemów, których niekontrolowany rozwój zagrażałby stabilności na skalę makroekonomiczną
+- **ASL-2** – podstawowy, szczegółowo opisany zestaw zabezpieczeń dla modeli bez niebezpiecznych zdolności
+- **ASL-3** – zabezpieczenia skupione na ryzyku, że model pomoże w pozyskaniu broni chemicznej lub biologicznej osobom o stosunkowo skromnych zasobach i wiedzy
+- **ASL-4 i wyżej** – wyższe poziomy, które w pierwotnych wersjach polityki celowo pozostawiono w dużej mierze niezdefiniowane
 
-**Raz na kwartał Anthropic publikuje raport o ryzykach wszystkich aktywnych modeli.** To bezprecedensowy poziom transparentności w branży, gdzie większość graczy traktuje testy bezpieczeństwa jako pilnie strzeżoną tajemnicę. Firma wyznaczyła też osobę na stanowisko Responsible Scaling Officer, by skutecznie koordynowała ten proces.
+**Co 3–6 miesięcy Anthropic publikuje raport o ryzykach (Risk Report).** To wysoki poziom transparentności w branży, gdzie większość graczy traktuje testy bezpieczeństwa jako pilnie strzeżoną tajemnicę.

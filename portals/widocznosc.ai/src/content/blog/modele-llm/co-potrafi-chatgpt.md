@@ -3,7 +3,7 @@ title: 'Co potrafi ChatGPT – przegląd funkcji dla początkujących'
 subtitle: 'Poznaj konkretne zastosowania ChatGPT, które od razu możesz wdrożyć w pracy i codziennych zadaniach'
 description: 'ChatGPT potrafi pisać, analizować, tłumaczyć i kodować. Sprawdź przegląd głównych funkcji dla początkujących z przykładami zastosowań.'
 date: 2026-05-01
-updated: 2026-08-28
+updated: 2026-09-17
 image: ../../../assets/images/blog-modele-llm-co-potrafi-chatgpt.webp
 icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 9h8M8 12h5M8 15h6"/>'
 author:
@@ -19,7 +19,8 @@ faqHeading: 'Często zadawane pytania o ChatGPT'
 faq:
   - q: 'Czy ChatGPT jest bezpłatny?'
     a: >-
-      Plan Free jest dostępny bez opłat, ale posiada limity liczby wiadomości. Do regularnej
+      Plan Free jest dostępny bez opłat, ale ma limity – m.in. przesyłania plików, generowania obrazów
+      i Deep Research, a mocniejsze modele (GPT-5.6 Sol i Terra) są zarezerwowane dla planów płatnych. Do regularnej
       pracy zawodowej plan Plus (20 USD/miesiąc) znosi praktyczne ograniczenia w codziennym
       użytkowaniu.
   - q: 'Czy ChatGPT zapamiętuje poprzednie rozmowy?'
@@ -47,18 +48,18 @@ faq:
       Wyszukiwarka jest lepsza do znajdowania konkretnych zasobów; ChatGPT – do syntezy, analizy,
       pisania i wyjaśniania.
 sources:
-  - title: 'ChatGPT pricing in 2026: every plan, what it costs, and which one is worth it'
-    url: 'https://www.cloudzero.com/blog/how-much-does-chatgpt-cost/'
-    note: 'CloudZero, aktualizacja 4 września 2026. Zestawienie planów Free, Go (8 USD), Plus (20 USD), Pro (100 i 200 USD) i Business (25 USD za stanowisko miesięcznie) wraz z gwarancją nietrenowania na danych firmowych.'
+  - title: 'ChatGPT Plans Compared: Every Tier, August 2026 Edition'
+    url: 'https://www.digitalapplied.com/blog/chatgpt-plans-compared-august-2026-guide'
+    note: 'Digital Applied, 7 sierpnia 2026. Plany Free i Go (GPT-5.6 Luna), Plus (Sol, Terra, Luna), Pro od 100 USD (5× lub 20× limitów Plus) i Business (20 USD za stanowisko rocznie, 25 USD miesięcznie, min. 2 użytkowników, bez trenowania na danych firmowych).'
   - title: 'ChatGPT sets record for fastest-growing user base - analyst note'
     url: 'https://finance.yahoo.com/news/chatgpt-sets-record-fastest-growing-190911828.html'
     note: 'Reuters, 2 lutego 2023. Analiza UBS: 100 mln aktywnych użytkowników miesięcznie dwa miesiące po premierze, najszybciej rosnąca aplikacja konsumencka.'
   - title: 'Threads hits 100 million users in five-day record surge'
     url: 'https://www.aljazeera.com/news/2023/7/10/threads-hits-100-million-users-in-five-days-in-record-surge'
     note: 'Al Jazeera, 10 lipca 2023. Threads zdobył 100 mln użytkowników w pięć dni i pobił rekord ChatGPT.'
-  - title: 'OpenAI says ChatGPT is on track to reach 700M weekly users'
-    url: 'https://techcrunch.com/2025/08/04/openai-says-chatgpt-is-on-track-to-reach-700m-weekly-users/'
-    note: 'TechCrunch, 4 sierpnia 2025. Zapowiedź Nicka Turleya z OpenAI o 700 mln aktywnych użytkowników tygodniowo.'
+  - title: 'ChatGPT reaches 900M weekly active users'
+    url: 'https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users'
+    note: 'TechCrunch, 27 lutego 2026. OpenAI podaje 900 mln aktywnych użytkowników tygodniowo i 50 mln płacących subskrybentów.'
   - title: 'OpenAI Launches ChatGPT Images 2.0'
     url: 'https://www.macrumors.com/2026/04/22/openai-chatgpt-images-2-0/'
     note: 'MacRumors, 22 kwietnia 2026. Premiera modelu ChatGPT Images 2.0 dostępnego w ChatGPT, Codex i API.'
@@ -89,7 +90,7 @@ Model radzi sobie też z trudniejszymi formatami – scenariuszami do filmów na
 
 ### Analiza danych i dokumentów
 
-W planach Plus i wyższych możesz wgrywać pliki (CSV, PDF, DOCX) i prosić model o wyciągnięcie wniosków, wygenerowanie tabel podsumowujących czy znalezienie anomalii. **Funkcja Code Interpreter (interpreter kodu) uruchamia język Python w wydzielonym środowisku (piaskownicy) – wyniki opierają się na twardych obliczeniach, a nie tylko na opisach.** To znaczy, że prosisz o wykres słupkowy z danych sprzedażowych i od razu dostajesz gotowy obraz w formacie PNG.
+Pliki (CSV, PDF, DOCX) możesz wgrywać już w planie Free (z limitami), a w planach Plus i wyższych – z wyższymi limitami. Możesz prosić model o wyciągnięcie wniosków, wygenerowanie tabel podsumowujących czy znalezienie anomalii. **Funkcja Code Interpreter (interpreter kodu) uruchamia język Python w wydzielonym środowisku (piaskownicy) – wyniki opierają się na twardych obliczeniach, a nie tylko na opisach.** To znaczy, że prosisz o wykres słupkowy z danych sprzedażowych i od razu dostajesz gotowy obraz w formacie PNG.
 
 ## Plany – który wybrać i za ile
 
@@ -97,11 +98,11 @@ OpenAI oferuje kilka poziomów dostępu, a różnice są kluczowe w codziennej p
 
 | Plan | Koszt/miesiąc | Dostęp do modeli | Kluczowe cechy i limity |
 |---|---|---|---|
-| Free | 0 USD | GPT-5.6 Luna (z limitami) | Podstawowy dostęp, limity liczby wiadomości |
+| Free | 0 USD | GPT-5.6 Luna | Podstawowy dostęp, limity plików, obrazów i Deep Research; w niektórych krajach reklamy |
 | Go | 8 USD | GPT-5.6 Luna (wyższe limity) | Dla codziennych użytkowników, w niektórych krajach zawiera reklamy |
-| Plus | 20 USD | GPT-5.6 Sol | Zaawansowane funkcje (Deep Research, Codex), wyższe limity |
-| Business | 25 USD/stanowisko | GPT-5.6 Sol z priorytetem dostępu | Przestrzeń zespołowa, dane nie służą do trenowania modeli |
-| Pro | 100–200 USD | GPT-5.6 Sol Pro, Codex, brak limitów | Najwyższa wydajność dla zaawansowanych profesjonalistów i programistów |
+| Plus | 20 USD | GPT-5.6 Sol, Terra i Luna | Zaawansowane funkcje (Deep Research, Codex), wyższe limity |
+| Business | 20 USD/stanowisko rocznie (25 USD miesięcznie), min. 2 stanowiska | Konfigurowalne w przestrzeni roboczej | Przestrzeń zespołowa, dane nie służą do trenowania modeli |
+| Pro | 100–200 USD | GPT-5.6 Sol Pro, Codex | 5× lub 20× wyższe limity niż Plus, dla zaawansowanych profesjonalistów i programistów |
 
 **Dla większości użytkowników plan Plus zwraca się, jeśli ChatGPT oszczędza im co najmniej godzinę pracy tygodniowo.** Plan Free wystarcza do poznania możliwości narzędzia. Do regularnej pracy to jednak za mało.
 
@@ -111,7 +112,7 @@ Jedna istotna uwaga dotyczy prywatności. W planach Free i Plus historia konwers
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>ChatGPT osiągnął 100 milionów użytkowników w ciągu zaledwie dwóch miesięcy od premiery w listopadzie 2022 roku – był to ówcześnie najszybciej rosnący produkt konsumencki w historii (zanim jego rekord pobiła w 2023 roku aplikacja Threads). <strong>W 2025 roku aktywna baza użytkowników ChatGPT przekroczyła 700 milionów tygodniowo.</strong></p>
+    <p>ChatGPT osiągnął 100 milionów użytkowników w ciągu zaledwie dwóch miesięcy od premiery w listopadzie 2022 roku – był to ówcześnie najszybciej rosnący produkt konsumencki w historii (zanim jego rekord pobiła w 2023 roku aplikacja Threads). <strong>W lutym 2026 roku OpenAI podało, że ChatGPT ma już 900 milionów aktywnych użytkowników tygodniowo.</strong></p>
   </div>
 </aside>
 
@@ -184,7 +185,7 @@ Na rynku działają inne duże modele językowe (LLM – Large Language Model) o
 | Model | Producent | Mocne strony | Typowe zastosowanie |
 |---|---|---|---|
 | ChatGPT (GPT-5.x) | OpenAI | Ekosystem narzędzi, generowanie obrazów, Code Interpreter | Wszechstronne; copywriting, analiza, kod |
-| Claude 4.x (Sonnet/Opus) | Anthropic | Długie dokumenty (do 1M tokenów), precyzyjna instrukcja | Analiza obszernych raportów, pisanie złożone |
+| Claude (Sonnet 5 / Opus 5) | Anthropic | Długie dokumenty (do 1M tokenów), precyzyjna instrukcja | Analiza obszernych raportów, pisanie złożone |
 | Gemini | Google | Integracja z Google Workspace, wyszukiwanie w czasie rzeczywistym | Analiza danych z arkuszy, research |
 | Copilot | Microsoft | Wbudowany w Microsoft 365 i Edge | Praca w środowisku MS |
 

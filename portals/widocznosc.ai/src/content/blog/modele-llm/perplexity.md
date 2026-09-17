@@ -3,6 +3,7 @@ title: 'Perplexity – wyszukiwarka AI'
 subtitle: 'Dowiedz się, jak Perplexity pobiera i cytuje źródła oraz dlaczego to właśnie w niej Twoja marka musi być widoczna'
 description: 'Perplexity AI – czym jest, jak działa architektura RAG, plany Pro/Max, Spaces, Comet i dlaczego to kluczowy kanał cytowań dla GEO.'
 date: 2026-05-07
+updated: 2026-09-17
 image: ../../../assets/images/blog-modele-llm-perplexity.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>'
 author:
@@ -63,12 +64,12 @@ sources:
     note: 'TechCrunch, 27 lutego 2026. Premiera agenta Computer w planie Max.'
   - title: 'GEO: Generative Engine Optimization'
     url: 'https://arxiv.org/abs/2311.09735'
-    note: 'Aggarwal i in., KDD 2024. Badanie metod zwiększania widoczności treści w odpowiedziach silników generatywnych.'
+    note: 'Aggarwal i in., KDD 2024. Badanie metod zwiększania widoczności treści w odpowiedziach silników generatywnych – dodanie statystyk podniosło widoczność o 32,8%, a cytatów o 42,6% (metryka PAWC).'
   - title: 'Dow Jones & Company Inc. v. Perplexity AI Inc.'
     url: 'https://www.loeb.com/en/insights/publications/2025/08/dow-jones-and-company-inc-v-perplexity-ai-inc'
-    note: 'Loeb & Loeb, sierpień 2025. Oddalenie wniosków Perplexity o umorzenie sprawy z powodu braku jurysdykcji i właściwości sądu.'
+    note: 'Loeb & Loeb, sierpień 2025. Decyzja sądu federalnego dla Południowego Dystryktu Nowego Jorku z 21 sierpnia 2025 – oddalenie wniosków Perplexity o umorzenie sprawy z powodu braku jurysdykcji i niewłaściwości sądu oraz o przeniesienie jej do Kalifornii; sąd nie orzekał co do meritum.'
 ---
-Perplexity to nie kolejny chatbot, lecz wyszukiwarka zbudowana wokół cytowań, która w czasie rzeczywistym przeczesuje internet, syntetyzuje dziesiątki źródeł i odpowiada z przypisami. Od założenia w sierpniu 2022 roku platforma urosła do ponad 100 milionów aktywnych użytkowników miesięcznie i wyceny 20 miliardów dolarów (stan na początek 2026 roku). Dla specjalistów SEO i marketerów B2B to dziś jeden z najważniejszych kanałów dotarcia. Jeśli Twoja marka nie pojawia się w jego odpowiedziach, tracisz widoczność u osób aktywnie szukających rozwiązań w Twojej niszy. Z tego artykułu dowiesz się, jak Perplexity działa pod maską, skąd czerpie źródła i co zrobić, by bot zaczął cytować Twoją domenę.
+Perplexity to nie kolejny chatbot, lecz wyszukiwarka zbudowana wokół cytowań, która w czasie rzeczywistym przeczesuje internet, syntetyzuje dziesiątki źródeł i odpowiada z przypisami. Od założenia w sierpniu 2022 roku platforma urosła do ponad 100 milionów użytkowników miesięcznie we wszystkich swoich produktach i wyceny 20 miliardów dolarów (stan na początek 2026 roku). Dla specjalistów SEO i marketerów B2B to dziś jeden z najważniejszych kanałów dotarcia. Jeśli Twoja marka nie pojawia się w jego odpowiedziach, tracisz widoczność u osób aktywnie szukających rozwiązań w Twojej niszy. Z tego artykułu dowiesz się, jak Perplexity działa pod maską, skąd czerpie źródła i co zrobić, by bot zaczął cytować Twoją domenę.
 
 ## Czym jest Perplexity i czym różni się od ChatGPT?
 
@@ -115,7 +116,7 @@ Perplexity oferuje trzy główne poziomy dostępu. Poniższe zestawienie pokazuj
 | Plan | Cena (mies.) | Główne możliwości | Limit zapytań Pro |
 |---|---|---|---|
 | Free | 0 USD | Standardowe wyszukiwanie z przypisami, wybrane modele | ~5 zapytań Pro dziennie |
-| Pro | 20 USD | Nieograniczone zapytania, GPT-5 / Claude Opus 4, wgrywanie plików PDF | Bez limitu |
+| Pro | 20 USD | Nieograniczone zapytania, wybór czołowych modeli OpenAI, Anthropic i Google, wgrywanie plików PDF | Bez limitu |
 | Max | 200 USD | Model Council, Deep Research bez limitu, priorytetowy dostęp | Bez limitu + kredyty compute |
 | Enterprise | Kontakt | RAG na prywatnych danych firmowych, prywatność danych, SSO | Indywidualny |
 
@@ -160,11 +161,11 @@ Druga zasada to semantyczna zgodność fragmentu z zapytaniem. Boty nie indeksuj
 
 Trzecia zasada to autorytet domeny i wzajemne cytowania. Perplexity znacznie chętniej sięga do źródeł wzmiankowanych przez inne indeksowane strony – działa to na podobnej zasadzie jak ocena PageRank w Google. Obecność w raportach branżowych, Wikipedii czy prestiżowych mediach mocno winduje szansę na uwzględnienie Twojej domeny przez silnik.
 
-Czwarta zasada to struktura tekstu. Fragmenty zawierające tabele, listy definicji oraz dane liczbowe z datą i źródłem są wyraźnie preferowane przez silniki RAG. Potwierdza to badanie [Aggarwala i in. (KDD 2024)](https://arxiv.org/abs/2311.09735), które udokumentowało wzrost wskaźnika cytowań o 30–41% po dodaniu statystyk i twardych danych do treści.
+Czwarta zasada to struktura tekstu. Fragmenty zawierające tabele, listy definicji oraz dane liczbowe z datą i źródłem są wyraźnie preferowane przez silniki RAG. Potwierdza to badanie [Aggarwala i in. (KDD 2024)](https://arxiv.org/abs/2311.09735): dodanie statystyk podniosło widoczność treści w odpowiedziach silnika generatywnego o ok. 33%, a dodanie cytatów – o ok. 43%.
 
 ### Perplexity a prawa autorskie wydawców
 
-Perplexity od 2024 roku zmaga się z pozwami wydawców. Dow Jones & Company (wydawca „Wall Street Journal") oraz grupy medialne takie jak BBC i „New York Times" twierdzą, że boty pobierały treści z naruszeniem pliku `robots.txt` i reprodukowały obszerne fragmenty artykułów bez licencji. W sierpniu 2025 roku federalny sąd w Nowym Jorku odrzucił wnioski Perplexity o oddalenie sprawy na etapie formalnym, co oznacza, że trafi ona do sądu przysięgłych. Równolegle firma buduje program podziału przychodów z wydawcami w proporcji 80/20 (80% dla wydawcy).
+Perplexity od 2024 roku zmaga się z pozwami wydawców. Dow Jones & Company (wydawca „Wall Street Journal") oraz grupy medialne takie jak BBC i „New York Times" twierdzą, że boty pobierały treści z naruszeniem pliku `robots.txt` i reprodukowały obszerne fragmenty artykułów bez licencji. W sierpniu 2025 roku federalny sąd w Nowym Jorku odrzucił wnioski Perplexity o umorzenie sprawy z powodu braku jurysdykcji i o przeniesienie jej do Kalifornii. Była to decyzja proceduralna – sąd nie rozstrzygał jeszcze, czy doszło do naruszenia praw autorskich, ale sprawa toczy się dalej w Nowym Jorku. Równolegle firma buduje program podziału przychodów z wydawcami w proporcji 80/20 (80% dla wydawcy).
 
 Dla marketerów płynie z tego bardzo praktyczna konkluzja. **Model prawny, na którym operuje Perplexity, pozostaje wciąż mocno niestabilny.** Warto na bieżąco monitorować, jakie zmiany w polityce cytowań przyniosą kolejne orzeczenia sądowe. Mogą one bezpośrednio wpłynąć na to, które domeny będą chętniej cytowane w wynikach.
 

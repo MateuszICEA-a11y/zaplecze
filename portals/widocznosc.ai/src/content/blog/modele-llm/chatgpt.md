@@ -3,7 +3,7 @@ title: 'ChatGPT i ekosystem OpenAI – kompletny przewodnik'
 subtitle: 'Zrozum, jak działa ChatGPT i cały ekosystem OpenAI, żeby świadomie używać go w pracy'
 description: 'Czym jest ChatGPT, jak działa architektura GPT, co potrafi ekosystem OpenAI i jak używać go efektywnie – kompletny przewodnik po modelu i platformie.'
 date: 2026-05-20
-updated: 2026-08-28
+updated: 2026-09-17
 image: ../../../assets/images/blog-modele-llm-chatgpt.webp
 icon: '<path d="M12 2a5 5 0 0 1 5 5c0 1.4-.6 2.7-1.5 3.6A5 5 0 0 1 17 15v1h-2v-1a3 3 0 0 0-6 0v1H7v-1a5 5 0 0 1 1.5-3.4A5 5 0 0 1 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="2"/>'
 author:
@@ -34,10 +34,10 @@ faq:
   - q: 'Czy rozmowy z ChatGPT są używane do trenowania modelu?'
     a: >-
       W planach Free i Plus – domyślnie tak, jeśli użytkownik nie wyłączy tej opcji w
-      ustawieniach prywatności. Plan Team i Enterprise domyślnie izoluje dane od trenowania.
+      ustawieniach prywatności. Plany Business i Enterprise domyślnie izolują dane od trenowania.
       Po aferze z naruszeniem danych w marcu 2023 roku i karze 15 milionów euro nałożonej
-      (choć ostatecznie anulowanej przez sąd w 2026 r.) przez włoski organ nadzorczy (Garante)
-      w grudniu 2024 roku, OpenAI wdrożyło wyraźniejsze opcje opt-out i bardziej czytelne
+      przez włoski organ nadzorczy (Garante) decyzją z 2 listopada 2024 roku (uchyloną przez
+      rzymski sąd 18 marca 2026 roku), OpenAI wdrożyło wyraźniejsze opcje opt-out i bardziej czytelne
       informacje o przetwarzaniu danych.
   - q: 'Jak ChatGPT wypada w porównaniu do Claude?'
     a: >-
@@ -59,15 +59,21 @@ sources:
   - title: 'ChatGPT finally offers $100/month Pro plan'
     url: 'https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/'
     note: 'TechCrunch, 9 kwietnia 2026. Plany Free, Go (8 USD), Plus (20 USD) oraz Pro za 100 i 200 USD miesięcznie.'
-  - title: 'OpenAI GPT-5.6 public rollout starts July 9 for Sol, Terra and Luna'
-    url: 'https://techmymoney.com/2026/07/08/openai-gpt-56-public-rollout-july-9-sol-terra-luna/'
-    note: 'TechMyMoney, 8 lipca 2026. Publiczne udostępnienie GPT-5.6 w trzech wariantach od 9 lipca po ograniczonym podglądzie z końca czerwca.'
+  - title: 'The new GPT-5.6 family: Luna, Terra, Sol'
+    url: 'https://simonwillison.net/2026/Jul/9/gpt-5-6/'
+    note: 'Simon Willison, 9 lipca 2026. Ogólna dostępność rodziny GPT-5.6 (Sol, Terra, Luna) od 9 lipca 2026.'
+  - title: 'ChatGPT Plans Compared: Every Tier, August 2026 Edition'
+    url: 'https://www.digitalapplied.com/blog/chatgpt-plans-compared-august-2026-guide'
+    note: 'Digital Applied, 7 sierpnia 2026. Plany ChatGPT: Free na GPT-5.6 Luna, Plus z Sol, Terra i Luna, Pro od 100 USD z 5× lub 20× limitów Plus i oknem do 400 tys. tokenów, Business 20 USD rocznie (25 USD miesięcznie) od 2 użytkowników.'
+  - title: 'OpenAI Launches ChatGPT Images 2.0'
+    url: 'https://www.macrumors.com/2026/04/22/openai-chatgpt-images-2-0/'
+    note: 'MacRumors, 22 kwietnia 2026. Premiera modelu ChatGPT Images 2.0 dostępnego w ChatGPT, Codex i API.'
   - title: 'ChatGPT reaches 900M weekly active users'
     url: 'https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users'
     note: 'TechCrunch, 27 lutego 2026. OpenAI podaje 900 mln aktywnych użytkowników tygodniowo i 50 mln płacących subskrybentów.'
   - title: 'Traditional Search Forecast To Fall 25% By 2026: Gartner'
     url: 'https://www.mediapost.com/publications/article/393629/traditional-search-forecast-to-fall-25-by-2026-g'
-    note: 'MediaPost, luty 2024. Prognoza Gartnera o spadku ruchu z tradycyjnych wyszukiwarek o 25% na rzecz chatbotów AI.'
+    note: 'MediaPost, luty 2024. Prognoza Gartnera o spadku wolumenu zapytań w tradycyjnych wyszukiwarkach o 25% na rzecz chatbotów AI.'
   - title: 'Italian court kills OpenAI’s €15M fine – and it wasn’t even close'
     url: 'https://ppc.land/italian-court-kills-openais-eur15m-fine-and-it-wasnt-even-close/'
     note: 'PPC Land, 2026. Rzymski sąd 18 marca 2026 roku uchylił karę 15 mln euro nałożoną na OpenAI przez włoski Garante.'
@@ -81,9 +87,9 @@ OpenAI to laboratorium badań nad sztuczną inteligencją założone w 2015 roku
 Uporządkujmy te pojęcia na samym wstępie:
 
 - **GPT** – seria modeli językowych (GPT-3, GPT-4, a obecnie rodzina GPT-5; od lipca 2026 flagowa generacja to GPT-5.6 w trzech wariantach: Sol, Terra i Luna); sam model to „silnik", który przetwarza tekst
-- **ChatGPT** – produkt konsumencki, interfejs czatu dostępny pod adresem chat.openai.com, napędzany aktualnym modelem GPT
-- **OpenAI API** – programistyczny dostęp do modeli GPT, GPT Image i innych, używany przez deweloperów do budowy własnych aplikacji
-- **GPT Image** – model do generowania obrazów z opisu tekstowego, wbudowany w ChatGPT (zastąpił DALL-E pod koniec 2025 roku)
+- **ChatGPT** – produkt konsumencki, interfejs czatu dostępny pod adresem chatgpt.com, napędzany aktualnym modelem GPT
+- **OpenAI API** – programistyczny dostęp do modeli GPT, modeli obrazowych i innych, używany przez deweloperów do budowy własnych aplikacji
+- **ChatGPT Images** – generowanie obrazów z opisu tekstowego wbudowane w ChatGPT (DALL-E zastąpiono w marcu 2025 roku, a od kwietnia 2026 roku działa model ChatGPT Images 2.0)
 - **Whisper** – model do transkrypcji i tłumaczenia mowy
 
 ChatGPT działa w przeglądarce i aplikacji mobilnej, a od 2023 roku również jako wtyczka i element Microsoft 365 Copilot. **OpenAI udostępnia swoje modele przez API, co pozwala firmom zewnętrznym wbudowywać je we własne produkty.** Właśnie dlatego technologia ta pojawia się pośrednio w Bingu, narzędziach do pisania, systemach obsługi klienta i dziesiątkach innych miejsc.
@@ -120,14 +126,14 @@ ChatGPT jest dostępny w kilku planach subskrypcyjnych. Zestawienie kluczowych r
 
 | Plan | Cena | Dostęp do modeli | Kluczowe funkcje |
 |---|---|---|---|
-| Free | 0 USD/mies. | GPT-5.6 Luna (z limitem) | Czat, podstawowe generowanie obrazów, tryb głosowy; w niektórych krajach z reklamami |
+| Free | 0 USD/mies. | GPT-5.6 Luna | Czat tekstowy na Luna bez limitu wiadomości, limitowane generowanie obrazów, pliki i Deep Research; w niektórych krajach z reklamami |
 | Go | 8 USD/mies. | GPT-5.6 Luna | Plan dla codziennych użytkowników, wyższe limity niż Free |
-| Plus | 20 USD/mies. | GPT-5.6 Sol (w tym tryb rozumowania), GPT Image | Wyższe limity, Deep Research, Codex, priorytet w godzinach szczytu |
-| Business | 25 USD/os./mies. | Jak Plus + priorytet dostępu | Przestrzeń zespołowa, izolacja danych od trenowania |
-| Pro | 100–200 USD/mies. | GPT-5.6 Sol Pro, Codex, brak limitów | Okno kontekstowe do 1 mln tokenów, rozszerzone limity Deep Research |
-| Enterprise | Negocjowane | Jak Pro + opcje prywatne | SOC 2 Type II, SSO, niestandardowe retencje danych, wyższy limit kontekstu |
+| Plus | 20 USD/mies. | GPT-5.6 Sol, Terra i Luna, ChatGPT Images 2.0 | Wyższe limity, Deep Research, Codex, okno 54 tys. / 256 tys. tokenów (Instant / rozumowanie) |
+| Business | 20 USD/os./mies. rocznie (25 USD miesięcznie), min. 2 osoby | Konfigurowalne w przestrzeni roboczej | Przestrzeń zespołowa, izolacja danych od trenowania |
+| Pro | 100–200 USD/mies. | GPT-5.6 Sol Pro, Codex | 5× lub 20× wyższe limity niż Plus, okno 128 tys. / 400 tys. tokenów |
+| Enterprise | Negocjowane | Konfigurowalne | SOC 2 Type II, SSO, niestandardowe retencje danych |
 
-**Plan Free wystarczy do testowania i zadań sporadycznych.** Do regularnej pracy – szczególnie gdy liczy się jakość i brak ograniczeń w dostępie do asystentów AI (tzw. copilotów) – Plus pozostaje standardowym wyborem. Daje dostęp do flagowego GPT-5.6 Sol – rodzina GPT-5.6 trafiła do ogólnej dostępności 9 lipca 2026 roku, po ograniczonym podglądzie od 26 czerwca. Plany Pro (warianty 100 i 200 USD) celują w zaawansowanych profesjonalistów i programistów. Rozszerzają okno kontekstowe do miliona tokenów i odblokowują GPT-5.6 Sol Pro z najwyższym budżetem wnioskowania.
+**Plan Free wystarczy do testowania i zadań sporadycznych.** Do regularnej pracy – szczególnie gdy liczy się jakość i wyższe limity w dostępie do asystentów AI (tzw. copilotów) – Plus pozostaje standardowym wyborem. Daje dostęp do flagowego GPT-5.6 Sol – rodzina GPT-5.6 trafiła do ogólnej dostępności 9 lipca 2026 roku. Plany Pro (warianty 100 i 200 USD) celują w zaawansowanych profesjonalistów i programistów. Dają 5× lub 20× wyższe limity niż Plus, rozszerzają okno kontekstowe w czacie do 400 tysięcy tokenów i odblokowują GPT-5.6 Sol Pro z najwyższym budżetem wnioskowania.
 
 ## Do czego używać ChatGPT – zastosowania w praktyce
 
@@ -172,7 +178,7 @@ Generowanie wspomagane wyszukiwaniem (RAG – Retrieval-Augmented Generation) to
 
 ## ChatGPT a pozycjonowanie Twojej marki w AI
 
-**Rosnąca liczba użytkowników, którzy zamiast Google wpisują pytania bezpośrednio w ChatGPT, tworzy zupełnie nową kategorię widoczności.** Dane Wall Street Journal z połowy 2025 roku pokazują, że 5,6% wszystkich zapytań w USA trafia już do LLM jako podstawowego narzędzia. Z kolei Gartner prognozuje, że do 2026 roku tradycyjne wyszukiwarki stracą 25% ruchu na rzecz interfejsów konwersacyjnych.
+**Rosnąca liczba użytkowników, którzy zamiast Google wpisują pytania bezpośrednio w ChatGPT, tworzy zupełnie nową kategorię widoczności.** Gartner prognozował w 2024 roku, że do 2026 roku wolumen zapytań w tradycyjnych wyszukiwarkach spadnie o 25% na rzecz chatbotów i wirtualnych agentów AI.
 
 Jeśli potencjalny klient pyta „Które agencje SEO w Polsce specjalizują się w AI Search?", to obecność Twojej marki w odpowiedzi zależy od kilku czynników. Czy Twoje treści były w korpusie treningowym modelu? Czy pojawiasz się w kontekście cytowań w wiarygodnych źródłach? Czy inne modele (z dostępem do internetu) Cię „widzą"? To zupełnie inne zmienne niż profil linków i zagęszczenie słów kluczowych, którymi rządzi się klasyczne SEO.
 

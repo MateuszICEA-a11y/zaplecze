@@ -3,7 +3,7 @@ title: 'Jak działa ChatGPT? Od tokenu do odpowiedzi – wyjaśnienie krok po kr
 subtitle: 'Co naprawdę dzieje się między wpisaniem pytania a wygenerowaną odpowiedzią – tokeny, mechanizm uwagi, RLHF, wyszukiwanie i pamięć'
 description: 'Jak działa ChatGPT? Wyjaśniamy krok po kroku: tokenizacja, embeddingi, transformer i mechanizm uwagi, przewidywanie kolejnego tokenu, trening RLHF, tryb rozumowania, wyszukiwanie w sieci i skąd biorą się halucynacje.'
 date: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-17
 image: ../../../assets/images/blog-modele-llm-jak-dziala-chatgpt.webp
 icon: '<path d="M4 12a8 8 0 0 1 8-8h1a7 7 0 0 1 7 7v1a8 8 0 0 1-8 8H8l-4 3z"/><path d="M8 11h8M8 14h5"/>'
 author:
@@ -28,16 +28,16 @@ faq:
     a: >-
       Tylko wtedy, gdy uruchomi wyszukiwanie (ChatGPT Search). W trybie podstawowym odpowiada z
       wag modelu, czyli z wiedzy „zamrożonej” w momencie zakończenia treningu. Gdy pytanie
-      dotyczy aktualnych faktów, model wysyła zapytania do indeksu Bing, pobiera fragmenty stron
+      dotyczy aktualnych faktów, model wysyła zapytania do wyszukiwarki, pobiera fragmenty stron
       i na ich podstawie buduje odpowiedź z przypisami. To dwa różne mechanizmy z różnymi
       konsekwencjami dla wiarygodności.
   - q: 'Czym jest token i ile tokenów ma polskie słowo?'
     a: >-
       Token to jednostka, na jakiej operuje model – fragment słowa, całe krótkie słowo, znak
-      interpunkcyjny lub spacja. Tokenizer OpenAI jest zoptymalizowany pod angielski, więc
-      polskie słowa dzielą się na więcej kawałków: przeciętnie 2–3 tokeny na słowo wobec około
-      1,3 w angielskim. W praktyce ten sam tekst po polsku „kosztuje” w oknie kontekstowym i w API
-      wyraźnie więcej.
+      interpunkcyjny lub spacja. Słownik tokenizera OpenAI budowany jest głównie na tekstach
+      angielskich, więc polskie słowa – zwłaszcza w formach odmienionych – częściej dzielą się
+      na kilka kawałków niż angielskie. W praktyce ten sam tekst po polsku „kosztuje” w oknie
+      kontekstowym i w API więcej.
   - q: 'Dlaczego ChatGPT odpowiada inaczej na to samo pytanie?'
     a: >-
       Bo generowanie jest losowe. Na każdym kroku model ma rozkład prawdopodobieństwa nad
@@ -70,7 +70,7 @@ sources:
     note: 'Infosecurity Magazine, Alessandro Mascellino, 29 czerwca 2026. Zamknięty podgląd GPT-5.6 udostępniony partnerom uzgodnionym z rządem USA.'
   - title: 'GPT-5.6 Sol'
     url: 'https://developers.openai.com/api/docs/models/gpt-5.6-sol'
-    note: 'OpenAI, dokumentacja API. Okno kontekstowe 1 050 000 tokenów, do 128 tys. tokenów wyjścia i data odcięcia wiedzy 16 lutego 2026.'
+    note: 'OpenAI, dokumentacja API. Okno kontekstowe 1 050 000 tokenów, do 128 tys. tokenów wyjścia, data odcięcia wiedzy 16 lutego 2026 oraz poziomy wysiłku rozumowania od none do max.'
   - title: 'tiktoken'
     url: 'https://github.com/openai/tiktoken'
     note: 'OpenAI, GitHub. Tokenizer BPE używany w modelach OpenAI, w tym kodowanie o200k_base ze słownikiem około 200 tys. tokenów.'
@@ -108,7 +108,7 @@ Przejdziemy przez wszystkie trzy warstwy po kolei. Aktualnie flagową generacją
 
 Pierwszym etapem przetwarzania Twojej wiadomości jest jej podział na tokeny. **Token to podstawowa jednostka, na której operuje model: fragment słowa, całe krótkie słowo, znak interpunkcyjny albo spacja ze słowem.** Tokenizer OpenAI (rodzina algorytmów BPE, Byte Pair Encoding) buduje słownik około 200 tysięcy najczęstszych sekwencji znaków i każdy tekst zamienia na ciąg identyfikatorów z tego słownika.
 
-Dla angielskiego jeden token to średnio około trzech czwartych słowa. Język polski wypada na tym tle gorzej: fleksja i rzadsze w danych treningowych sekwencje sprawiają, że przeciętne słowo rozpada się na dwa lub trzy tokeny. Słowo „pozycjonowanie” może być jednym tokenem w wersji podstawowej, ale „pozycjonowaniem” lub „pozycjonowaniu” – już dwoma lub trzema. Ma to trzy konsekwencje:
+Dla angielskiego jeden token to średnio około trzech czwartych słowa. Język polski wypada na tym tle gorzej: fleksja i rzadsze w danych treningowych sekwencje sprawiają, że polskie słowa częściej rozpadają się na kilka tokenów. Forma podstawowa popularnego słowa może trafić do słownika w całości, a jej rzadsze formy odmienione są już dzielone na kawałki. Ma to trzy konsekwencje:
 
 - **Ten sam tekst po polsku zajmuje więcej miejsca w oknie kontekstowym** niż po angielsku, więc limity „w tokenach” po polsku oznaczają mniej treści
 - **W API ten sam tekst kosztuje więcej**, ponieważ opłaty naliczane są za tokeny
@@ -138,7 +138,7 @@ Trzy cechy tej architektury wyjaśniają większość zachowań ChatGPT:
 
 - **Równoległość** – wszystkie tokeny wejścia są przetwarzane jednocześnie, dlatego trening na tysiącach procesorów graficznych był w ogóle możliwy i dlatego model „czyta” 100 stron w sekundę
 - **Kontekst jest wszystkim** – model nie ma innego źródła informacji o bieżącej rozmowie niż to, co jest w oknie kontekstowym; jeśli czegoś tam nie ma, dla modelu to nie istnieje
-- **Koszt rośnie z długością** – uwaga porównuje każdy token z każdym, więc bardzo długie rozmowy są droższe i wolniejsze, a modele mają twardy limit okna kontekstowego (w planie Pro – do miliona tokenów, w tańszych planach mniej)
+- **Koszt rośnie z długością** – uwaga porównuje każdy token z każdym, więc bardzo długie rozmowy są droższe i wolniejsze, a modele mają twardy limit okna kontekstowego (w API GPT-5.6 to ok. 1,05 mln tokenów, a w ChatGPT dostępny limit zależy od planu)
 
 ## Krok 4: przewidywanie kolejnego tokenu – i dlaczego odpowiedzi są losowe
 
@@ -199,7 +199,7 @@ Od 2024 roku modele OpenAI (seria o1, a potem tryby Myśl / Thinking w GPT-5) do
 
 Mechanicznie to nadal przewidywanie kolejnego tokenu. Różnica polega na tym, że model został wytrenowany metodą uczenia ze wzmocnieniem, by ten proces „myślenia na głos” prowadził do poprawnych odpowiedzi w zadaniach z weryfikowalnym wynikiem – matematyce, programowaniu, logice. Nagrodę dostawał nie za ładne brzmienie, lecz za poprawny wynik końcowy. W efekcie nauczył się strategii, które ludzie znają jako „sprawdź dwa razy”, „zacznij od prostszego przypadku” czy „wróć, jeśli utknąłeś”.
 
-W GPT-5.6 budżet na to rozumowanie jest regulowany. Niski poziom odpowiada niemal natychmiast i praktycznie nie rozumuje – tak działa Luna w planie Free. Tryb „max” poświęca sekundy lub minuty. Tryb „ultra” (w ChatGPT: Sol Pro) może pracować wielokrotnie dłużej, uruchamiając równolegle kilka ścieżek i wybierając najlepszą – to on odpowiada za wynik 91,9% Sola w Terminal-Bench 2.1 wobec 88,8% w trybie standardowym. To tzw. skalowanie w czasie wnioskowania (test-time compute) – zamiast trenować większy model, pozwala się mniejszemu dłużej „myśleć”. W zwykłych pytaniach różnica jest mała; w wieloetapowych analizach, debugowaniu kodu czy zadaniach z liczbami – ogromna.
+W GPT-5.6 budżet na to rozumowanie jest regulowany – w API poziomy wysiłku sięgają od „none” przez „low”, „medium”, „high” i „xhigh” po „max”. Najniższe poziomy odpowiadają niemal natychmiast i praktycznie nie rozumują, najwyższe poświęcają na jedno zadanie sekundy lub minuty. To tzw. skalowanie w czasie wnioskowania (test-time compute) – zamiast trenować większy model, pozwala się mniejszemu dłużej „myśleć”. W zwykłych pytaniach różnica jest mała; w wieloetapowych analizach, debugowaniu kodu czy zadaniach z liczbami – ogromna.
 
 ## Wyszukiwanie w sieci – jak ChatGPT znajduje aktualne informacje
 
@@ -208,19 +208,19 @@ Wszystko powyżej dotyczy wiedzy zamrożonej w wagach. Od końca 2024 roku ChatG
 Przebieg w uproszczeniu wygląda tak:
 
 - **Rozbicie pytania** – model przekształca Twoją wiadomość w jedno lub kilka zapytań do wyszukiwarki, często inaczej sformułowanych niż oryginał (to tzw. query fan-out; więcej o nim w artykule o [query fan-out](/geo/query-fan-out/))
-- **Pobranie wyników** – zapytania trafiają do indeksu Bing i własnego indeksu OpenAI; system pobiera treść kilku–kilkunastu stron, a te, które odpowiadają zbyt wolno, są zwykle pomijane
+- **Pobranie wyników** – zapytania trafiają do indeksów wyszukiwania, z których korzysta OpenAI; system pobiera treść kilku–kilkunastu stron, a te, które odpowiadają zbyt wolno, są zwykle pomijane
 - **Wybór fragmentów** – strony są dzielone na krótkie fragmenty; do okna kontekstowego trafiają te, które najlepiej pasują do zapytań, z preferencją dla źródeł powtarzających się przy różnych wariantach pytania
 - **Generowanie z przypisami** – model pisze odpowiedź, mając w oknie kontekstowym wybrane fragmenty, i oznacza, z którego źródła pochodzi które zdanie
 
 Ten schemat to praktyczne wdrożenie generowania wspomaganego wyszukiwaniem (RAG, Retrieval-Augmented Generation): zamiast liczyć na pamięć modelu, podsuwa mu się aktualny materiał źródłowy i każe streścić. Za pobieranie stron na potrzeby wyszukiwania odpowiada robot OAI-SearchBot – inny niż GPTBot, który zbiera dane treningowe. Strona może być zablokowana dla jednego, a otwarta dla drugiego; więcej o tym w [przewodniku po botach AI](/geo/boty-ai-przewodnik/).
 
-Dla widoczności marki to kanał kluczowy, bo działa w dniach, nie w miesiącach. Aby firma pojawiła się w odpowiedzi z wyszukiwaniem, jej strona musi: być dobrze widoczna w wyszukiwarce Bing, ładować się szybko, mieć treść, która da się wyciąć jako samodzielny, faktograficzny fragment, i nie blokować OAI-SearchBota. Jak to zrobić krok po kroku, opisuje strona o [pozycjonowaniu w ChatGPT](/pozycjonowanie-ai/chatgpt/).
+Dla widoczności marki to kanał kluczowy, bo działa w dniach, nie w miesiącach. Aby firma pojawiła się w odpowiedzi z wyszukiwaniem, jej strona musi: być dobrze widoczna w wyszukiwarkach, ładować się szybko, mieć treść, która da się wyciąć jako samodzielny, faktograficzny fragment, i nie blokować OAI-SearchBota. Jak to zrobić krok po kroku, opisuje strona o [pozycjonowaniu w ChatGPT](/pozycjonowanie-ai/chatgpt/).
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
-    <p>Najczęstszy błąd, jaki widzę w rozmowach z klientami, to traktowanie ChatGPT jako jednego systemu. To dwa różne kanały: wagi modelu, na które wpływa się przez obecność w źródłach latami, i wyszukiwanie, w którym liczy się to, co jest w indeksie Bing dziś. Gdy firma pyta, „dlaczego ChatGPT nas nie zna”, pierwsze pytanie brzmi: w którym trybie sprawdzaliście? <strong>Bez wyszukiwania model wymienia marki, które istniały w danych treningowych – z wyszukiwaniem cytuje strony, które da się szybko pobrać i z których da się wyciąć konkretne zdanie z liczbą. To dwie osobne strategie i dwie osobne listy zadań.</strong></p>
+    <p>Najczęstszy błąd, jaki widzę w rozmowach z klientami, to traktowanie ChatGPT jako jednego systemu. To dwa różne kanały: wagi modelu, na które wpływa się przez obecność w źródłach latami, i wyszukiwanie, w którym liczy się to, co jest w indeksach wyszukiwarek dziś. Gdy firma pyta, „dlaczego ChatGPT nas nie zna”, pierwsze pytanie brzmi: w którym trybie sprawdzaliście? <strong>Bez wyszukiwania model wymienia marki, które istniały w danych treningowych – z wyszukiwaniem cytuje strony, które da się szybko pobrać i z których da się wyciąć konkretne zdanie z liczbą. To dwie osobne strategie i dwie osobne listy zadań.</strong></p>
     <div class="callout-author">Mateusz Wiśniewski · Ekspert SEO/AI Search, ICEA</div>
   </div>
 </aside>
