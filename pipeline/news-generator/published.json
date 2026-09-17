@@ -1,13 +1,5 @@
 [
   {
-    "title": "Ceny paliw na czwartek i piątek – tyle zapłacimy na stacjach",
-    "date": "2026-06-04",
-    "slug": "ceny-paliw-na-czwartek-i-piatek-tyle-zaplacimy-na-stacjach",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Yutong IC12E w Bus Euro Test 2026. Chiński autobus zadebiutuje w konkursie",
     "date": "2026-06-05",
     "slug": "yutong-ic12e-w-bus-euro-test-2026-chinski-autobus-zadebiutuje-w-konkursie",
@@ -717,6 +709,14 @@
     "slug": "euro-bus-expo-2026-ponad-75-autobusow-i-200-wystawcow-w-birmingham",
     "section": "news",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Rosnące ceny paliw uderzają w przewoźników. Bilety autobusowe pójdą w górę",
+    "date": "2026-09-17",
+    "slug": "rosnace-ceny-paliw-uderzaja-w-przewoznikow-bilety-autobusowe-pojda-w-gore",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
