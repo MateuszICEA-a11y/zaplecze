@@ -32,6 +32,31 @@ faq:
   - q: 'Czy modele AI mają datę graniczną wiedzy?'
     a: >-
       Tak. Modele trenowane są na danych z określonego przedziału czasowego (do tzw. daty odcięcia, ang. <em>cutoff date</em>) – po tej dacie nowe informacje o Twojej firmie nie trafiają automatycznie do wiedzy modelu. Modele z aktywnym RAG (SearchGPT, Perplexity, Copilot, Gemini z Searchem) uzupełniają wiedzę treningową danymi pobranymi w chwili zapytania. Dlatego aktualne treści na stronie mają znaczenie – bot może je pobrać i dołączyć do odpowiedzi.
+sources:
+  - title: 'Duży model językowy'
+    url: 'https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy'
+    note: 'Wikipedia. Definicja dużego modelu językowego i zasada przewidywania kolejnych tokenów.'
+  - title: 'GPT-5.6 Sol'
+    url: 'https://developers.openai.com/api/docs/models/gpt-5.6-sol'
+    note: 'OpenAI, dokumentacja API. Okno kontekstowe 1 050 000 tokenów, 128 000 tokenów wyjścia i aktualny cennik modelu.'
+  - title: 'Overview of OpenAI Crawlers'
+    url: 'https://developers.openai.com/api/docs/bots'
+    note: 'OpenAI, dokumentacja. Role botów GPTBot (dane treningowe) i OAI-SearchBot (widoczność w wyszukiwaniu ChatGPT).'
+  - title: 'Models overview'
+    url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
+    note: 'Anthropic, dokumentacja. Aktualne modele Claude, ich okna kontekstowe (1 mln tokenów) i ceny API.'
+  - title: 'Anthropic writes 23,000-word ‘constitution’ for Claude, suggests it may have feelings'
+    url: 'https://www.theregister.com/2026/01/22/anthropic_claude_constitution/'
+    note: 'The Register, 22 stycznia 2026. Konstytucja Claude’a urosła z ok. 2 700 słów (2023) do 23 000 słów.'
+  - title: 'Gemini 3.1 Pro - Model Card'
+    url: 'https://deepmind.google/models/model-cards/gemini-3-1-pro/'
+    note: 'Google DeepMind, 19 lutego 2026. Wynik 94,3% w GPQA Diamond i okno kontekstowe do 1 mln tokenów.'
+  - title: 'Perplexity Crawlers'
+    url: 'https://docs.perplexity.ai/guides/bots'
+    note: 'Perplexity, dokumentacja. Rola PerplexityBot i sterowanie jego dostępem przez robots.txt.'
+  - title: 'Mistral Large 3'
+    url: 'https://docs.mistral.ai/models/model-cards/mistral-large-3-25-12'
+    note: 'Mistral AI, dokumentacja. Karta modelu Mistral Large 3 (2512): cena 0,50 USD za milion tokenów wejściowych i okno 256 tys. tokenów.'
 ---
 LLM (Large Language Model, czyli duży model językowy) to nie jeden produkt, lecz cały ekosystem kilkudziesięciu systemów. Różnią się architekturą, mocnymi stronami, ceną i podejściem do Twojej marki jako potencjalnego źródła cytowań. **Dziś niemal 80% firm korzysta z AI, a większość wdrożyła już generatywną AI w co najmniej jednym obszarze; użytkownicy coraz częściej zadają pytania o produkty i usługi bezpośrednio w ChatGPT, Perplexity czy w Gemini – zamiast wpisywać je w wyszukiwarkę.** Ten przewodnik pokazuje, jak działa każdy z głównych modeli. Dowiesz się, czym się od siebie różnią i co to oznacza dla widoczności Twojej firmy w odpowiedziach AI.
 

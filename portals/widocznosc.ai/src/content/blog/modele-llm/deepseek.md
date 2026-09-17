@@ -46,6 +46,31 @@ faq:
       Tak. Wagi modeli od wersji V3 są publikowane na licencji MIT i dostępne na Hugging Face.
       Mniejsze warianty uruchomisz przez narzędzia takie jak Ollama na własnym serwerze,
       a pełny model flagowy wymaga infrastruktury z wieloma akceleratorami GPU.
+sources:
+  - title: 'DeepSeek'
+    url: 'https://en.wikipedia.org/wiki/DeepSeek'
+    note: 'Wikipedia. Definicja firmy: siedziba w Hangzhou, właściciel High-Flyer, założyciel Liang Wenfeng.'
+  - title: 'DeepSeek-R1 Release'
+    url: 'https://api-docs.deepseek.com/news/news250120'
+    note: 'DeepSeek, 20 stycznia 2025. Premiera R1 z wynikami porównywalnymi z OpenAI o1 i licencją MIT.'
+  - title: 'DeepSeek sparks AI stock selloff; Nvidia posts record market-cap loss'
+    url: 'https://kathmandupost.com/world/2025/01/28/deepseek-sparks-ai-stock-selloff-nvidia-posts-record-market-cap-loss'
+    note: 'Reuters (przedruk The Kathmandu Post), 28 stycznia 2025. Rekordowa jednodniowa utrata 593 mld USD wartości Nvidii i określenie „moment Sputnika”.'
+  - title: 'DeepSeek-V3 Technical Report'
+    url: 'https://arxiv.org/abs/2412.19437'
+    note: 'DeepSeek-AI, grudzień 2024. Architektura MoE (671 mld parametrów, 37 mld aktywnych), MLA, predykcja wielu tokenów, kontekst 128 tys. i koszt treningu 5,576 mln USD na chipach H800.'
+  - title: 'DeepSeek V4 Preview Release'
+    url: 'https://api-docs.deepseek.com/news/news260424/'
+    note: 'DeepSeek, 24 kwietnia 2026. Parametry V4-Pro i V4-Flash, kontekst 1 mln tokenów oraz wycofanie nazw deepseek-chat i deepseek-reasoner.'
+  - title: 'deepseek-ai/DeepSeek-V4-Pro'
+    url: 'https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro'
+    note: 'Hugging Face. Karta modelu z otwartymi wagami na licencji MIT.'
+  - title: 'Models & Pricing'
+    url: 'https://api-docs.deepseek.com/quick_start/pricing'
+    note: 'DeepSeek API Docs. Aktualny cennik API za milion tokenów, z podziałem na godziny szczytu i poza szczytem.'
+  - title: 'Detecting and preventing distillation attacks'
+    url: 'https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks'
+    note: 'Anthropic, 23 lutego 2026. Zarzut kampanii destylacji Claude’a przez DeepSeek, Moonshot i MiniMax przy użyciu ok. 24 tys. fałszywych kont.'
 ---
 DeepSeek to chiński model językowy, który w styczniu 2025 roku zrobił coś, czego nie udało się żadnemu wcześniejszemu wyzwaniu wobec OpenAI – dorównał najlepszym modelom Zachodu przy kilkukrotnie niższych kosztach i udostępnił wagi za darmo. Efekt był na tyle silny, że wywołał gwałtowną przecenę spółek technologicznych i na stałe zmienił rozmowę o tym, ile naprawdę kosztuje budowa modelu klasy premium. Ten przewodnik wyjaśnia, jak działa DeepSeek, czym różnią się jego modele i co jego otwartość oznacza dla widoczności Twojej marki oraz dla bezpieczeństwa danych.
 

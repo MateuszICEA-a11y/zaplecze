@@ -46,6 +46,31 @@ faq:
       bazowych i preferuje bardziej powściągliwy, precyzyjny styl odpowiedzi. Szczegółowe
       zestawienie znajdziesz w artykule o <a href="/modele-llm/claude/">Claude</a>, który opisuje
       różnice z perspektywy zastosowań marketingowych i SEO.
+sources:
+  - title: 'ChatGPT sets record for fastest-growing user base – analyst note'
+    url: 'https://finance.yahoo.com/news/chatgpt-sets-record-fastest-growing-190911828.html'
+    note: 'Reuters, 2 lutego 2023. Raport UBS: 100 mln aktywnych użytkowników w dwa miesiące, TikTok potrzebował 9 miesięcy, Instagram 2,5 roku.'
+  - title: 'Attention Is All You Need'
+    url: 'https://arxiv.org/abs/1706.03762'
+    note: 'Vaswani i in., arXiv, czerwiec 2017. Praca wprowadzająca architekturę Transformer opartą na mechanizmie uwagi.'
+  - title: 'GPT-5.6 Sol'
+    url: 'https://developers.openai.com/api/docs/models/gpt-5.6-sol'
+    note: 'OpenAI, dokumentacja API. Okno kontekstowe 1 050 000 tokenów i data odcięcia wiedzy 16 lutego 2026 roku.'
+  - title: 'ChatGPT finally offers $100/month Pro plan'
+    url: 'https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/'
+    note: 'TechCrunch, 9 kwietnia 2026. Plany Free, Go (8 USD), Plus (20 USD) oraz Pro za 100 i 200 USD miesięcznie.'
+  - title: 'OpenAI GPT-5.6 public rollout starts July 9 for Sol, Terra and Luna'
+    url: 'https://techmymoney.com/2026/07/08/openai-gpt-56-public-rollout-july-9-sol-terra-luna/'
+    note: 'TechMyMoney, 8 lipca 2026. Publiczne udostępnienie GPT-5.6 w trzech wariantach od 9 lipca po ograniczonym podglądzie z końca czerwca.'
+  - title: 'ChatGPT reaches 900M weekly active users'
+    url: 'https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users'
+    note: 'TechCrunch, 27 lutego 2026. OpenAI podaje 900 mln aktywnych użytkowników tygodniowo i 50 mln płacących subskrybentów.'
+  - title: 'Traditional Search Forecast To Fall 25% By 2026: Gartner'
+    url: 'https://www.mediapost.com/publications/article/393629/traditional-search-forecast-to-fall-25-by-2026-g'
+    note: 'MediaPost, luty 2024. Prognoza Gartnera o spadku ruchu z tradycyjnych wyszukiwarek o 25% na rzecz chatbotów AI.'
+  - title: 'Italian court kills OpenAI’s €15M fine – and it wasn’t even close'
+    url: 'https://ppc.land/italian-court-kills-openais-eur15m-fine-and-it-wasnt-even-close/'
+    note: 'PPC Land, 2026. Rzymski sąd 18 marca 2026 roku uchylił karę 15 mln euro nałożoną na OpenAI przez włoski Garante.'
 ---
 **ChatGPT to interfejs konwersacyjny zbudowany na modelach z rodziny GPT (Generative Pre-trained Transformer) – dużych modelach językowych (LLM, Large Language Model) opracowanych przez OpenAI.** Od publicznego debiutu w listopadzie 2022 roku zgromadził milion użytkowników w pięć dni. Sto milionów osiągnął w dwa miesiące. Zrobił to szybciej niż jakakolwiek inna aplikacja w historii. Jeśli dopiero zaczynasz pracę z AI lub chcesz wreszcie zrozumieć, co kryje się za tym oknem czatu, ten przewodnik wyjaśnia mechanizm, możliwości i realne ograniczenia. Bez skrótów. Bez żargonu, który więcej ukrywa, niż tłumaczy.
 

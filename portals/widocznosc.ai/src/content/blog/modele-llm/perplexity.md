@@ -42,6 +42,31 @@ faq:
       i możliwością przesyłania dokumentów. Konwersacja standardowa jest jednorazowa –
       model nie pamięta poprzednich sesji. Space pozwala skonfigurować stałe zachowanie
       asystenta dla konkretnego projektu lub dziedziny i udostępnić ten kontekst zespołowi.
+sources:
+  - title: 'Inside Perplexity AI’s Unicorn Journey: From AI Search Startup to $20B+ Answer Engine'
+    url: 'https://www.turingpost.com/p/perplexityai'
+    note: 'Turing Post. Historia firmy: założenie w sierpniu 2022 roku, założyciele, prototyp na Twitterze i runda seed 3,1 mln USD.'
+  - title: 'Perplexity received 780 million queries last month, CEO says'
+    url: 'https://techcrunch.com/2025/06/05/perplexity-received-780-million-queries-last-month-ceo-says'
+    note: 'TechCrunch, 5 czerwca 2025. Aravind Srinivas o 780 mln zapytań w maju 2025 roku.'
+  - title: 'Retrieval-augmented generation'
+    url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
+    note: 'Wikipedia. Definicja architektury RAG i jej etapów.'
+  - title: 'Perplexity Crawlers'
+    url: 'https://docs.perplexity.ai/guides/bots'
+    note: 'Perplexity, dokumentacja. Rola PerplexityBot i sterowanie jego dostępem przez robots.txt.'
+  - title: 'Perplexity launches a $200 monthly subscription plan'
+    url: 'https://www.techcrunch.com/2025/07/02/perplexity-launches-a-200-monthly-subscription-plan/'
+    note: 'TechCrunch, 2 lipca 2025. Start planu Max za 200 USD i cena planu Pro (20 USD).'
+  - title: 'Perplexity’s new Computer is another bet that users need many AI models'
+    url: 'https://techcrunch.com/2026/02/27/perplexitys-new-computer-is-another-bet-that-users-need-many-ai-models'
+    note: 'TechCrunch, 27 lutego 2026. Premiera agenta Computer w planie Max.'
+  - title: 'GEO: Generative Engine Optimization'
+    url: 'https://arxiv.org/abs/2311.09735'
+    note: 'Aggarwal i in., KDD 2024. Badanie metod zwiększania widoczności treści w odpowiedziach silników generatywnych.'
+  - title: 'Dow Jones & Company Inc. v. Perplexity AI Inc.'
+    url: 'https://www.loeb.com/en/insights/publications/2025/08/dow-jones-and-company-inc-v-perplexity-ai-inc'
+    note: 'Loeb & Loeb, sierpień 2025. Oddalenie wniosków Perplexity o umorzenie sprawy z powodu braku jurysdykcji i właściwości sądu.'
 ---
 Perplexity to nie kolejny chatbot, lecz wyszukiwarka zbudowana wokół cytowań, która w czasie rzeczywistym przeczesuje internet, syntetyzuje dziesiątki źródeł i odpowiada z przypisami. Od założenia w sierpniu 2022 roku platforma urosła do ponad 100 milionów aktywnych użytkowników miesięcznie i wyceny 20 miliardów dolarów (stan na początek 2026 roku). Dla specjalistów SEO i marketerów B2B to dziś jeden z najważniejszych kanałów dotarcia. Jeśli Twoja marka nie pojawia się w jego odpowiedziach, tracisz widoczność u osób aktywnie szukających rozwiązań w Twojej niszy. Z tego artykułu dowiesz się, jak Perplexity działa pod maską, skąd czerpie źródła i co zrobić, by bot zaczął cytować Twoją domenę.
 

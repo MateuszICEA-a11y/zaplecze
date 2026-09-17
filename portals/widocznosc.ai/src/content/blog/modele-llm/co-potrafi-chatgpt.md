@@ -46,6 +46,25 @@ faq:
       podstawie modelu statystycznego i (jeśli włączono wyszukiwanie) bieżących danych z sieci.
       Wyszukiwarka jest lepsza do znajdowania konkretnych zasobów; ChatGPT – do syntezy, analizy,
       pisania i wyjaśniania.
+sources:
+  - title: 'ChatGPT pricing in 2026: every plan, what it costs, and which one is worth it'
+    url: 'https://www.cloudzero.com/blog/how-much-does-chatgpt-cost/'
+    note: 'CloudZero, aktualizacja 4 września 2026. Zestawienie planów Free, Go (8 USD), Plus (20 USD), Pro (100 i 200 USD) i Business (25 USD za stanowisko miesięcznie) wraz z gwarancją nietrenowania na danych firmowych.'
+  - title: 'ChatGPT sets record for fastest-growing user base - analyst note'
+    url: 'https://finance.yahoo.com/news/chatgpt-sets-record-fastest-growing-190911828.html'
+    note: 'Reuters, 2 lutego 2023. Analiza UBS: 100 mln aktywnych użytkowników miesięcznie dwa miesiące po premierze, najszybciej rosnąca aplikacja konsumencka.'
+  - title: 'Threads hits 100 million users in five-day record surge'
+    url: 'https://www.aljazeera.com/news/2023/7/10/threads-hits-100-million-users-in-five-days-in-record-surge'
+    note: 'Al Jazeera, 10 lipca 2023. Threads zdobył 100 mln użytkowników w pięć dni i pobił rekord ChatGPT.'
+  - title: 'OpenAI says ChatGPT is on track to reach 700M weekly users'
+    url: 'https://techcrunch.com/2025/08/04/openai-says-chatgpt-is-on-track-to-reach-700m-weekly-users/'
+    note: 'TechCrunch, 4 sierpnia 2025. Zapowiedź Nicka Turleya z OpenAI o 700 mln aktywnych użytkowników tygodniowo.'
+  - title: 'OpenAI Launches ChatGPT Images 2.0'
+    url: 'https://www.macrumors.com/2026/04/22/openai-chatgpt-images-2-0/'
+    note: 'MacRumors, 22 kwietnia 2026. Premiera modelu ChatGPT Images 2.0 dostępnego w ChatGPT, Codex i API.'
+  - title: 'ChatGPT rolling out ‘Memory’ to Plus tier, excludes users in Europe and Korea'
+    url: 'https://9to5google.com/2024/04/30/chatgpt-memory-feature/'
+    note: '9to5Google, 30 kwietnia 2024. Udostępnienie funkcji pamięci w planie Plus z możliwością jej wyłączenia i usuwania wspomnień.'
 ---
 ChatGPT to narzędzie stworzone przez OpenAI, które opiera się na architekturze GPT (Generative Pre-trained Transformer) – jednej z najważniejszych innowacji w dziedzinie [przetwarzania języka naturalnego](https://pl.wikipedia.org/wiki/Przetwarzanie_j%C4%99zyka_naturalnego). Model nie „myśli” w ludzkim tego słowa znaczeniu. Analizuje statystyczne wzorce w miliardach zdań i na tej podstawie generuje odpowiedzi dopasowane do kontekstu zapytania. Jeśli dopiero zaczynasz, ten artykuł pokaże Ci, do czego ChatGPT realnie się nadaje, jakich planów możesz używać i gdzie leżą jego granice. Bez lania wody i technicznego żargonu.
 

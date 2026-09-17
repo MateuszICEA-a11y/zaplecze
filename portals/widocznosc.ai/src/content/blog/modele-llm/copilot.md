@@ -40,6 +40,31 @@ faq:
       Copilot Studio to nowa nazwa i znacznie rozszerzona wersja Power Virtual Agents. Główną różnicą jest głębsza integracja
       z modelami GPT, natywna obsługa protokołu MCP i możliwość budowania agentów wieloetapowych (multi-turn) w miejsce
       prostych drzew decyzyjnych.
+sources:
+  - title: 'Expanding model choice in Microsoft 365 Copilot'
+    url: 'https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/24/expanding-model-choice-in-microsoft-365-copilot/'
+    note: 'Microsoft 365 Blog, Charles Lamanna, 24 września 2025. Modele Claude firmy Anthropic jako alternatywa dla modeli OpenAI w agencie Researcher i w Copilot Studio.'
+  - title: 'Semantic indexing for Microsoft Copilot'
+    url: 'https://learn.microsoft.com/en-us/microsoftsearch/semantic-index-for-copilot'
+    note: 'Microsoft Learn. Indeks semantyczny budowany z danych Microsoft Graph na wektorach, z poszanowaniem uprawnień użytkownika (RBAC).'
+  - title: 'Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat'
+    url: 'https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection'
+    note: 'Microsoft Learn. Microsoft jako podmiot przetwarzający dane; prompty, odpowiedzi i dane z Microsoft Graph nie służą do trenowania modeli bazowych.'
+  - title: 'Microsoft 365 Copilot for enterprise'
+    url: 'https://www.microsoft.com/en-us/microsoft-365-copilot/enterprise'
+    note: 'Microsoft. Cena 30 USD za użytkownika miesięcznie przy płatności rocznej i wymóg kwalifikującej się subskrypcji Microsoft 365.'
+  - title: 'Microsoft 365 Copilot Plans and Pricing'
+    url: 'https://www.microsoft.com/en-us/microsoft-365-copilot/pricing'
+    note: 'Microsoft. Cennik planu Microsoft 365 Copilot Business dla firm do 300 użytkowników (18–25,20 USD miesięcznie).'
+  - title: 'GitHub Copilot is moving to usage-based billing'
+    url: 'https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/'
+    note: 'The GitHub Blog. Przejście wszystkich planów na GitHub AI Credits od 1 czerwca 2026 roku, ceny planów Pro, Pro+, Business i Enterprise oraz łączenie kredytów w organizacjach.'
+  - title: 'Usage-based billing for individuals'
+    url: 'https://docs.github.com/copilot/concepts/billing/usage-based-billing-for-individuals'
+    note: 'GitHub Docs. Limity planu Free (2000 uzupełnień kodu) oraz pule kredytów AI w planach Pro i Pro+.'
+  - title: 'Model Context Protocol (MCP) is now generally available in Microsoft Copilot Studio'
+    url: 'https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/model-context-protocol-mcp-is-now-generally-available-in-microsoft-copilot-studio/'
+    note: 'Microsoft Copilot Blog, Zankar Desai, 29 maja 2025. Ogólna dostępność integracji MCP w Copilot Studio.'
 ---
 Microsoft Copilot nie jest prostym chatbotem doklejonym do pakietu biurowego. To wielowarstwowa platforma oparta na [dużych modelach językowych](https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy) (LLM – Large Language Model), która integruje wnioskowanie AI z danymi korporacyjnymi, systemem operacyjnym Windows i środowiskiem programistycznym GitHub. W 2026 roku ekosystem Copilota obejmuje co najmniej cztery odrębne produkty – Copilot for Microsoft 365, Copilot w Windows 11, GitHub Copilot i Copilot Studio. Każdy z nich działa według innej logiki. Jeśli szukasz szerszego kontekstu rynkowego, [przewodnik po modelach LLM](/modele-llm/przewodnik/) zestawia usługę Copilot z innymi platformami AI dostępnymi dla firm. Poniższy artykuł wyjaśnia, jak działa każde z tych rozwiązań, czym się od siebie różnią i kiedy ich wdrożenie ma uzasadnienie finansowe.
 

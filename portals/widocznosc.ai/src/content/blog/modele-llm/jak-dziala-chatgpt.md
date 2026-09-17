@@ -64,6 +64,31 @@ faq:
       prawda”, a nie „jest prawdą”. Halucynacje najczęściej dotyczą liczb, dat, nazwisk,
       tytułów publikacji i adresów URL. Wyszukiwanie w sieci i wgrywanie własnych dokumentów
       znacząco ograniczają to ryzyko.
+sources:
+  - title: 'OpenAI Reveals GPT-5.6 Sol Cybersecurity Model, Restricts Early Access'
+    url: 'https://www.infosecurity-magazine.com/news/openai-gpt-5-6-sol-limited-preview/'
+    note: 'Infosecurity Magazine, Alessandro Mascellino, 29 czerwca 2026. Zamknięty podgląd GPT-5.6 udostępniony partnerom uzgodnionym z rządem USA.'
+  - title: 'GPT-5.6 Sol'
+    url: 'https://developers.openai.com/api/docs/models/gpt-5.6-sol'
+    note: 'OpenAI, dokumentacja API. Okno kontekstowe 1 050 000 tokenów, do 128 tys. tokenów wyjścia i data odcięcia wiedzy 16 lutego 2026.'
+  - title: 'tiktoken'
+    url: 'https://github.com/openai/tiktoken'
+    note: 'OpenAI, GitHub. Tokenizer BPE używany w modelach OpenAI, w tym kodowanie o200k_base ze słownikiem około 200 tys. tokenów.'
+  - title: 'Attention Is All You Need'
+    url: 'https://arxiv.org/abs/1706.03762'
+    note: 'Vaswani i in., arXiv, 12 czerwca 2017. Praca, która wprowadziła architekturę Transformer opartą wyłącznie na mechanizmie uwagi.'
+  - title: 'Training language models to follow instructions with human feedback'
+    url: 'https://arxiv.org/abs/2203.02155'
+    note: 'Ouyang i in. (OpenAI), arXiv, 4 marca 2022. Opis InstructGPT: fine-tuning nadzorowany, ranking odpowiedzi przez ludzi, model nagrody i RLHF.'
+  - title: 'OpenAI o1 System Card'
+    url: 'https://arxiv.org/abs/2412.16720'
+    note: 'OpenAI, arXiv, grudzień 2024. Seria o1 trenowana uczeniem ze wzmocnieniem do rozumowania łańcuchem myśli przed odpowiedzią.'
+  - title: 'OpenAI brings search features to ChatGPT in challenge to Google'
+    url: 'https://fortune.com/2024/10/31/openai-chatgpt-search-engine-google-alphabet-4o-model/'
+    note: 'Fortune / Bloomberg, 31 października 2024. Start ChatGPT Search z odpowiedziami opatrzonymi przypisami do źródeł.'
+  - title: 'Overview of OpenAI Crawlers'
+    url: 'https://developers.openai.com/api/docs/bots'
+    note: 'OpenAI, dokumentacja. OAI-SearchBot obsługuje wyszukiwanie w ChatGPT, GPTBot zbiera dane treningowe – oba można blokować niezależnie w robots.txt.'
 ---
 **W swoim podstawowym trybie (bez użycia narzędzi) model językowy napędzający ChatGPT nie wyszukuje odpowiedzi, nie sprawdza faktów w bazie danych i nie „wie” niczego w ludzkim sensie. Za każdym razem robi jedną rzecz: przewiduje, jaki fragment tekstu – token – jest najbardziej prawdopodobny jako kolejny.** Powtarza to kilkaset lub kilka tysięcy razy, aż powstanie cała odpowiedź. Cała reszta – rozumowanie krok po kroku, wyszukiwanie w sieci, pamięć między rozmowami, analiza plików – to warstwy zbudowane wokół tego jednego mechanizmu. Ten artykuł rozkłada go na czynniki pierwsze: od podziału tekstu na tokeny, przez architekturę Transformer i mechanizm uwagi, po trening RLHF i to, co naprawdę dzieje się, gdy ChatGPT „szuka w internecie”. Bez matematyki, ale z precyzją, która pozwala przewidzieć, kiedy modelowi wolno ufać, a kiedy nie.
 

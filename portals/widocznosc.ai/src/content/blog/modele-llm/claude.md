@@ -36,6 +36,34 @@ faq:
       Plan Free na platformie claude.ai daje dostęp do podstawowych modeli z dziennym limitowanym oknem
       wiadomości. Do testowania API firma Anthropic oferuje kredyty startowe dla nowych kont. Używanie
       Claude Code wymaga aktywnego planu płatnego.
+sources:
+  - title: 'Anthropic gets its first court win over the Pentagon’s supply-chain risk label'
+    url: 'https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/'
+    note: 'TechCrunch, 28 sierpnia 2026. Spór z Pentagonem wynikł z odmowy zniesienia zabezpieczeń przed użyciem Claude’a w autonomicznej broni i masowej inwigilacji.'
+  - title: 'Anthropic raises $30 billion in Series G funding at $380 billion post-money valuation'
+    url: 'https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation'
+    note: 'Anthropic, 12 lutego 2026. Wycena 380 mld USD po rundzie Series G.'
+  - title: 'Constitutional AI: Harmlessness from AI Feedback'
+    url: 'https://arxiv.org/abs/2212.08073'
+    note: 'Bai i in. (Anthropic), grudzień 2022. Opis metody: etap samokrytyki i poprawek oraz uczenie ze wzmocnieniem na podstawie ocen AI (RLAIF).'
+  - title: 'Claude’s constitution'
+    url: 'https://www.anthropic.com/news/claudes-constitution'
+    note: 'Anthropic, 9 maja 2023 (z adnotacją o nowej wersji ze stycznia 2026). Źródła zasad konstytucji, w tym Powszechna Deklaracja Praw Człowieka ONZ.'
+  - title: 'Developing a computer use model'
+    url: 'https://www.anthropic.com/news/developing-computer-use'
+    note: 'Anthropic, 22 października 2024. Wynik Claude 3.5 Sonnet w OSWorld: 14,9% wobec 7,7% kolejnego modelu.'
+  - title: 'How large is the context window on paid Claude plans?'
+    url: 'https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans'
+    note: 'Claude Help Center. Rozmiary okna kontekstowego w czacie, Claude Code i Cowork w zależności od modelu.'
+  - title: 'Plans & Pricing'
+    url: 'https://claude.com/pricing'
+    note: 'Anthropic. Aktualny cennik i zakres planów Free, Pro, Max, Team i Enterprise.'
+  - title: 'Introducing Claude Opus 4.6'
+    url: 'https://www.anthropic.com/news/claude-opus-4-6'
+    note: 'Anthropic, 5 lutego 2026. Wynik 76% w MRCR v2 (8 igieł, 1 mln tokenów) wobec 18,5% Sonnet 4.5 oraz prowadzenie w Humanity’s Last Exam.'
+  - title: 'Anthropic’s Responsible Scaling Policy: Version 3.0'
+    url: 'https://anthropic.com/news/responsible-scaling-policy-v3'
+    note: 'Anthropic, 24 lutego 2026. Założenia RSP 3.0, poziomy ASL i publikacja raportów o ryzyku.'
 ---
 Claude to duży model językowy (LLM – *Large Language Model*) tworzony przez firmę Anthropic – założoną w 2021 roku przez byłych badaczy OpenAI, z Dario i Danielą Amodei na czele. **W odróżnieniu od konkurentów Anthropic zbudował Claude'a wokół koncepcji bezpieczeństwa jako fundamentu architektury, a nie tylko warstwy nakładanej na gotowy produkt.** Zastanawiasz się, czy to coś więcej niż kolejny chatbot AI? Odpowiedź brzmi twierdząco – ten przewodnik wyjaśnia dokładnie mechanizmy jego działania.
 

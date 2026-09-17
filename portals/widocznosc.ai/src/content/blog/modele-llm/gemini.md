@@ -28,6 +28,34 @@ faq:
   - q: 'Czy integracja Gemini w korporacyjnym środowisku Workspace obliguje z automatu do osobnej opłaty?'
     a: >-
       Już od pierwszych dni stycznia 2025 roku – absolutnie nie. Firma Google definitywnie wbudowała asystenta Gemini bezpośrednio w niemal wszystkie abonamentowe plany komercyjne środowiska Workspace – począwszy od planu Business Standard wzwyż – całkowicie bez jakichkolwiek dopłat czy kruczków z limitami. Przed starymi zmianami, środowisko oparte na Gemini było wprawdzie dostępne, ale figurowało jedynie jako całkowicie osobny i płatny dodatek w astronomicznej kwocie aż 30 dolarów pobieranej miesięcznie z góry od każdego aktywnego użytkownika konta; z początkiem aktualnego cyklu wydawniczego wszystkie te unikalne funkcje połączono z główną usługą, stając się domyślną oraz integralną częścią każdego standardowego abonamentu korporacyjnego.
+sources:
+  - title: 'Introducing Gemini: our largest and most capable AI model'
+    url: 'https://blog.google/technology/ai/google-gemini-ai/'
+    note: 'Google, 6 grudnia 2023. Debiut Gemini, multimodalność od podstaw i wynik 90,0% Gemini Ultra w MMLU.'
+  - title: 'The best of Google AI, now included in Workspace Business and Enterprise plans'
+    url: 'https://workspaceupdates.googleblog.com/2025/01/expanding-google-ai-to-more-of-google-workspace.html'
+    note: 'Google Workspace Updates, 15 stycznia 2025. Gemini wbudowany w plany Business i Enterprise, koniec sprzedaży osobnych dodatków.'
+  - title: 'A new era of intelligence with Gemini 3'
+    url: 'https://blog.google/products/gemini/gemini-3/'
+    note: 'Google, 18 listopada 2025. Premiera Gemini 3 Pro z oknem kontekstowym 1 mln tokenów.'
+  - title: 'Google AI Pro & Ultra – get access to Gemini 3.1 Pro & more'
+    url: 'https://gemini.google/us/subscriptions/?hl=en'
+    note: 'Google. Aktualne plany Free, AI Plus, AI Pro i AI Ultra wraz z cenami w USD.'
+  - title: 'Deep Research Max: a step change for autonomous research agents'
+    url: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/'
+    note: 'Google, 21 kwietnia 2026. Deep Research i Deep Research Max na Gemini 3.1 Pro z obsługą MCP i danych prywatnych.'
+  - title: 'Introducing Veo 3.1 and new creative capabilities in the Gemini API'
+    url: 'https://developers.googleblog.com/introducing-veo-3-1-and-new-creative-capabilities-in-the-gemini-api/'
+    note: 'Google for Developers, 15 października 2025. Veo 3.1 i Veo 3.1 Fast, rozszerzanie scen i do trzech obrazów referencyjnych.'
+  - title: 'Gemini Developer API pricing'
+    url: 'https://ai.google.dev/gemini-api/docs/pricing'
+    note: 'Google AI for Developers. Cennik API za milion tokenów dla Gemini 3.5 Flash i Gemini 3.1 Pro.'
+  - title: 'AIO Impact on Google CTR: September 2025 Update'
+    url: 'https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update'
+    note: 'Seer Interactive, 4 listopada 2025. Organiczny CTR przy zapytaniach z AI Overviews spadł z 1,76% do 0,61%.'
+  - title: 'An Analysis of AI Overview Brand Visibility Factors (75K Brands Studied)'
+    url: 'https://ahrefs.com/blog/ai-overview-brand-correlation/'
+    note: 'Ahrefs, Louise Linehan, 26 maja 2025. Wzmianki o marce silniej niż linki korelują z widocznością w AI Overviews; marki z górnego kwartyla mają ponad 10 razy więcej wzmianek.'
 ---
 Gemini to rodzina dużych modeli językowych (LLM – Large Language Model) opracowana przez Google DeepMind. Napędza asystenta na gemini.google.com oraz setki funkcji AI wbudowanych w Gmail, Dokumenty, Arkusze, Prezentacje, Dysk i Meet. Google zadebiutowało z Gemini w grudniu 2023 roku, zastępując linię PaLM 2. Od tamtej pory ekosystem rozrósł się do kilkunastu wariantów modeli, czterech planów konsumenckich i głębokiej integracji z Workspace. Klienci coraz częściej zadają pytania w Google AI Mode, zamiast wpisywać frazy w tradycyjną wyszukiwarkę. Jeśli Twoja marka działa w tej przestrzeni, ten przewodnik wyjaśni Ci mechanizmy, możliwości i praktyczne implikacje Gemini w kontekście biznesowym.
 

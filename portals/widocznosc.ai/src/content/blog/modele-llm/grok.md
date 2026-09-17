@@ -43,6 +43,31 @@ faq:
       Tak. xAI udostępnia API pod adresem docs.x.ai z modelami z rodziny Grok 4. Deweloperzy mogą
       korzystać z płatności za tokeny, a firma oferuje też pulę darmowych kredytów miesięcznych
       w ramach programu dzielenia się danymi.
+sources:
+  - title: 'Announcing Grok'
+    url: 'https://x.ai/news/grok'
+    note: 'xAI, 3 listopada 2023. Zapowiedź pierwszego Groka i dostępu do wiedzy w czasie rzeczywistym przez platformę X.'
+  - title: 'Grok 3 Beta – The Age of Reasoning Agents'
+    url: 'https://x.ai/news/grok-3'
+    note: 'xAI, 19 lutego 2025. Trening Grok 3 na superkomputerze Colossus, klaster 200 tys. GPU i tryb myślenia.'
+  - title: 'Open Release of Grok-1'
+    url: 'https://x.ai/news/grok-os'
+    note: 'xAI, 17 marca 2024. Udostępnienie wag Grok-1 na licencji Apache 2.0.'
+  - title: 'Grok 4'
+    url: 'https://x.ai/news/grok-4'
+    note: 'xAI, 9 lipca 2025. Premiera Grok 4 i wariantu Grok 4 Heavy wraz z wynikami benchmarków.'
+  - title: 'Models'
+    url: 'https://docs.x.ai/docs/models'
+    note: 'Dokumentacja xAI. Cennik API: Grok 4.3 za 1,25 USD (wejście) i 2,50 USD (wyjście) za milion tokenów, okno 1 mln tokenów.'
+  - title: 'What did Elon change? A comprehensive analysis of Grokipedia'
+    url: 'https://arxiv.org/html/2511.09685v1'
+    note: 'Harold Triedman, Alexios Mantzarlis (Cornell Tech), 12 listopada 2025. Start Grokipedii 27 października 2025 roku z 885 279 artykułami.'
+  - title: 'Elon Musk’s xAI Apologizes for Grok’s Antisemitic Rants that Praised Hitler'
+    url: 'https://www.maginative.com/article/elon-musks-xai-apologizes-for-groks-antisemitic-rants-that-praised-hitler/'
+    note: 'Maginative, Chris McKay, 14 lipca 2025. Incydent „MechaHitler” i wyjaśnienia xAI.'
+  - title: 'Grok is unpromptedly telling X users about South African ‘white genocide’'
+    url: 'https://techcrunch.com/2025/05/14/grok-is-unpromptedly-telling-x-users-about-south-african-genocide/'
+    note: 'TechCrunch, Maxwell Zeff, 14 maja 2025. Grok wtrącał wątek „białego ludobójstwa” w RPA do niezwiązanych rozmów.'
 ---
 Grok to model językowy od xAI – firmy Elona Muska – którego głównym wyróżnikiem jest wbudowany dostęp do platformy X (dawniej Twitter) i danych w czasie rzeczywistym. To sprawia, że w tematach bieżących zachowuje się inaczej niż konkurenci, ale jednocześnie czyni z niego jeden z najbardziej kontrowersyjnych modeli na rynku. Ten przewodnik wyjaśnia, jak działa Grok, jak wygląda jego rodzina modeli i cennik, a także co jego specyfika – łącznie z problemami moderacji – oznacza dla widoczności i bezpieczeństwa Twojej marki.
 
