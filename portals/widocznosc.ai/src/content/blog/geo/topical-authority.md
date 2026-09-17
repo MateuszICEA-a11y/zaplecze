@@ -34,6 +34,9 @@ sources:
   - title: 'Intro to How Structured Data Markup Works'
     url: 'https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data'
     note: 'Google Search Central. Wprowadzenie do danych strukturalnych schema.org w formacie JSON-LD.'
+  - title: 'Models – OpenAI API'
+    url: 'https://developers.openai.com/api/docs/models'
+    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
 ---
 **Większość stron wygrywających kiedyś w klasycznym SEO dzięki silnemu profilowi linkowemu dziś przegrywa w AI Overviews.** Powód jest bolesny dla agencji link buildingowych. LLM-y nie patrzą na linki w taki sam sposób jak klasyczny algorytm. Zwracają uwagę na to, czy domena „wie wszystko" o danej niszy – a to mierzy się głębokością pokrycia, a nie liczbą backlinków. Dlatego koncepcja topical authority, znana w SEO od kilku lat, w erze GEO przestaje być miłym dodatkiem i staje się fundamentem.
 
@@ -95,7 +98,7 @@ Każdy z tych tekstów ma własną, ściśle określoną intencję oraz struktur
 W ICEA stosujemy ten proces u każdego klienta, który rozpoczyna wdrożenie GEO.
 
 1. **Wybierz 3–5 głównych pillarów** – zdefiniuj je dla swojej niszy.
-2. **Dla każdego pillara wygeneruj 30 podzapytań** – wykorzystaj narzędzia takie jak Qforia, GPT-4 z odpowiednim promptem albo Search Console i analizę autocomplete.
+2. **Dla każdego pillara wygeneruj 30 podzapytań** – wykorzystaj narzędzia takie jak Qforia, GPT-5.6 z odpowiednim promptem albo Search Console i analizę autocomplete.
 3. **Z 30 podzapytań wybierz 12–18** – skup się na tych, które poruszają różne aspekty (intencja, format, faza decyzji).
 4. **Każde z nich staje się tytułem strony typu cluster** – potraktuj to jako sztywną regułę.
 5. **Sprawdź pokrycie konkurencji** – ile z tych 12–18 podzapytań ma już dobre wyniki w AI Mode? Reszta to białe plamy do zajęcia.

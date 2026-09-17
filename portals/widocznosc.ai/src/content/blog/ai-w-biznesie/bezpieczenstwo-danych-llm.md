@@ -58,6 +58,12 @@ sources:
   - title: 'Art. 33 GDPR – Notification of a personal data breach to the supervisory authority'
     url: 'https://gdpr-info.eu/art-33-gdpr/'
     note: 'Tekst RODO w serwisie gdpr-info.eu. Administrator zgłasza naruszenie organowi nadzorczemu w ciągu 72 godzin, procesor informuje administratora bez zbędnej zwłoki.'
+  - title: 'Models – OpenAI API'
+    url: 'https://developers.openai.com/api/docs/models'
+    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
+  - title: 'Models overview – Claude Docs'
+    url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
+    note: 'Anthropic, dokumentacja, stan na 17 września 2026. Aktualne modele Claude Fable 5.1, Opus 5, Sonnet 5 i Haiku 4.5.'
 ---
 Każdy prompt, który Twój pracownik wkleja do ChatGPT, wędruje na serwery OpenAI – i domyślnie może tam zostać przez 30 dni. **Raport LayerX z 2025 roku wskazuje, że 77% pracowników wkleja dane do promptów generatywnej AI, a 82% takich operacji odbywa się z kont niezarządzanych przez firmę.** Do tego dochodzi tzw. shadow AI (nieautoryzowane narzędzia AI, po polsku: ukryta sztuczna inteligencja). Ten artykuł wyjaśnia, gdzie naprawdę leżą ryzyka, jak działają polityki retencji danych u głównych dostawców, kiedy wybrać wdrożenie lokalne zamiast chmury i co powinna zawierać umowa DPA (Data Processing Agreement, czyli umowa o powierzeniu przetwarzania danych).
 
@@ -157,7 +163,7 @@ Podstawowa zasada brzmi prosto. Chmura to szybkość i niski koszt startowy, nat
 
 Porównanie najważniejszych wymiarów:
 
-- **Suwerenność danych** – modele lokalne (np. Llama 3, Mistral, Qwen) przetwarzają dane wyłącznie w infrastrukturze firmy, a żaden prompt nie opuszcza sieci wewnętrznej.
+- **Suwerenność danych** – modele lokalne (np. Llama, Mistral, Qwen) przetwarzają dane wyłącznie w infrastrukturze firmy, a żaden prompt nie opuszcza sieci wewnętrznej.
 - **Koszt tokenów** – przy dużej i stałej skali uruchomienie modelu z otwartymi wagami (open-weight) lokalnie może obniżyć koszt miliona tokenów względem komercyjnego API, ale opłaca się dopiero po uwzględnieniu kosztu sprzętu i utrzymania.
 - **Jakość modelu** – modele open-source nadal ustępują flagowcom pokroju GPT-5.6 Sol czy Claude Opus 5 w zadaniach wymagających złożonego wnioskowania (luka maleje, ale wciąż istnieje).
 - **Infrastruktura** – wdrożenie on-premise wymaga znaczących nakładów, takich jak serwery GPU (np. NVIDIA A100 lub H100), MLOps i zarządzanie aktualizacjami modeli.

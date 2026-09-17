@@ -68,7 +68,7 @@ sources:
     note: 'Hugging Face. Karta modelu z otwartymi wagami na licencji MIT.'
   - title: 'Models & Pricing'
     url: 'https://api-docs.deepseek.com/quick_start/pricing'
-    note: 'DeepSeek API Docs. Cennik API za milion tokenów dla deepseek-flash (V4.1-Flash) i deepseek-v4-pro (V4-Pro-0813), stawki poza szczytem o połowę niższe niż w godzinach szczytu.'
+    note: 'DeepSeek API Docs. Cennik API za milion tokenów dla deepseek-flash (V4.1-Flash, 1 mln kontekstu, 384 tys. wyjścia, vision) i deepseek-v4-pro (V4-Pro-0813), stawki poza szczytem (szczyt: 01–04 i 06–10 UTC pn–pt) o połowę niższe.'
   - title: 'DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient'
     url: 'https://api-docs.deepseek.com/news/news260910'
     note: 'DeepSeek, 10 września 2026. Premiera V4.1-Flash (552 mld parametrów, 8–16 mld aktywnych, natywna obsługa obrazów), identyfikator deepseek-flash i obniżka cen.'
@@ -78,6 +78,9 @@ sources:
   - title: 'GPT-5.6 Sol'
     url: 'https://developers.openai.com/api/docs/models/gpt-5.6-sol'
     note: 'OpenAI API Docs. Cena GPT-5.6 Sol – 4 USD za milion tokenów wejściowych i 20 USD za wyjściowe (stawka promocyjna do 21 listopada 2026).'
+  - title: 'GPT-6 Astra'
+    url: 'https://developers.openai.com/api/docs/models/gpt-6-astra'
+    note: 'OpenAI API Docs. Cena GPT-6 Astra – 10 USD za milion tokenów wejściowych i 50 USD za wyjściowe, okno 1,05 mln tokenów.'
   - title: 'Detecting and preventing distillation attacks'
     url: 'https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks'
     note: 'Anthropic, 23 lutego 2026. Zarzut kampanii destylacji Claude’a przez DeepSeek, Moonshot i MiniMax – łącznie ok. 24 tys. fałszywych kont i ponad 16 mln wymian, w tym ponad 150 tys. po stronie DeepSeeka.'
@@ -119,7 +122,7 @@ DeepSeek rozwija dwie linie: modele ogólnego przeznaczenia (dawniej `deepseek-c
 | DeepSeek-V4-Pro | kwiecień 2026 | 1,6 bln (49 mld) | 1 mln | MIT |
 | DeepSeek-V4.1-Flash | wrzesień 2026 | 552 mld (8–16 mld) | 1 mln | MIT |
 
-Aktualnie w API dostępne są dwa modele. **V4.1-Flash** (identyfikator `deepseek-flash`, od 10 września 2026 roku) to wariant wydajnościowy – szybki, tani, z natywną obsługą obrazów, do zadań o dużej skali. **V4-Pro** (wersja V4-Pro-0813, identyfikator `deepseek-v4-pro`) to duży model wnioskujący, przeznaczony do złożonego rozumowania, kodowania agentowego i analiz. Oba obsługują okno kontekstowe **1 miliona tokenów**, co pozwala przetworzyć kilka obszernych raportów w jednej sesji. Starsze nazwy modeli `deepseek-chat` i `deepseek-reasoner` zostały wycofane 24 lipca 2026 roku, a zapytania do `deepseek-v4-flash` obsługuje już V4.1-Flash – DeepSeek utrzymuje szybkie tempo iteracji, więc przy wdrożeniach warto sprawdzać aktualny identyfikator modelu w dokumentacji.
+Aktualnie w API dostępne są dwa modele. **V4.1-Flash** (identyfikator `deepseek-flash`, od 10 września 2026 roku) to wariant wydajnościowy – szybki, tani, z natywną obsługą obrazów, do zadań o dużej skali. **V4-Pro** (wersja V4-Pro-0813, identyfikator `deepseek-v4-pro`) to duży model wnioskujący, przeznaczony do złożonego rozumowania, kodowania agentowego i analiz. Oba obsługują okno kontekstowe **1 miliona tokenów** (V4.1-Flash generuje do 384 tys. tokenów odpowiedzi i domyślnie działa w trybie myślenia), co pozwala przetworzyć kilka obszernych raportów w jednej sesji. Starsze nazwy modeli `deepseek-chat` i `deepseek-reasoner` zostały wycofane 24 lipca 2026 roku, a zapytania do `deepseek-v4-flash` obsługuje już V4.1-Flash – DeepSeek utrzymuje szybkie tempo iteracji, więc przy wdrożeniach warto sprawdzać aktualny identyfikator modelu w dokumentacji. API DeepSeeka obsługuje też format API Anthropic, co ułatwia przepięcie istniejących integracji.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -138,7 +141,7 @@ To właśnie cena jest głównym argumentem DeepSeeka. Firma konsekwentnie schod
 | deepseek-flash (V4.1-Flash) | 0,30 USD | 1,20 USD |
 | deepseek-v4-pro (V4-Pro-0813) | 1,32 USD | 3,96 USD |
 
-Poza godzinami szczytu (w dni robocze szczyt to 01:00–04:00 i 06:00–10:00 UTC) wszystkie stawki są o połowę niższe. Dla porównania: flagowy GPT-5.6 Sol kosztuje w API 4 USD za milion tokenów wejściowych i 20 USD za wyjściowe (stawka promocyjna). Oznacza to, że **V4.1-Flash jest w warstwie wejściowej kilkanaście razy tańszy** od zachodniego flagowca (poza szczytem – ponad 25 razy), a V4-Pro – około trzykrotnie. Do tego dochodzi agresywny rabat za trafienie w pamięć podręczną (cache hit), który przy powtarzalnych promptach dodatkowo obniża rachunek. Dla firm budujących własne aplikacje AI, w których liczą się miliony zapytań miesięcznie, ta różnica przekłada się wprost na model biznesowy.
+Poza godzinami szczytu (w dni robocze szczyt to 01:00–04:00 i 06:00–10:00 UTC) wszystkie stawki są o połowę niższe. Dla porównania: najmocniejszy model OpenAI w API, GPT-6 Astra, kosztuje 10 USD za milion tokenów wejściowych i 50 USD za wyjściowe, a GPT-5.6 Sol – 4 i 20 USD (stawka promocyjna). Oznacza to, że **V4.1-Flash jest w warstwie wejściowej kilkanaście razy tańszy** od GPT-5.6 Sol (poza szczytem – ponad 25 razy) i ponad 30 razy tańszy od GPT-6 Astra, a V4-Pro – około trzykrotnie tańszy od Sola. Do tego dochodzi agresywny rabat za trafienie w pamięć podręczną (cache hit), który przy powtarzalnych promptach dodatkowo obniża rachunek. Dla firm budujących własne aplikacje AI, w których liczą się miliony zapytań miesięcznie, ta różnica przekłada się wprost na model biznesowy.
 
 ## Licencja MIT i modele open source – co to realnie daje firmom
 

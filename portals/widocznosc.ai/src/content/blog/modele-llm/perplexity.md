@@ -75,7 +75,7 @@ Perplexity to nie kolejny chatbot, lecz wyszukiwarka zbudowana wokół cytowań,
 
 Perplexity to silnik odpowiedzi (answer engine) – kategoria narzędzi stojąca w rozkroku między klasyczną wyszukiwarką a asystentem AI. **Zamiast zwracać listę linków, system syntetyzuje informacje z kilkunastu aktualnych źródeł i prezentuje jedną spójną odpowiedź z numerowanymi przypisami.**
 
-Różnica w stosunku do [ChatGPT](/modele-llm/chatgpt/) i [Claude](/modele-llm/claude/) polega na architekturze. Tamte modele w trybie offline opierają się na wiedzy zamkniętej w parametrach sieci neuronowej. To wiedza ograniczona datą zakończenia trenowania, nierzadko z kilkunastomiesięcznym opóźnieniem. Perplexity za każdym razem uruchamia pobieranie danych z sieci, zanim wygeneruje odpowiedź. **Każde zapytanie to żywy proces: szukaj, pobierz, zsyntetyzuj, zacytuj.**
+Różnica w stosunku do [ChatGPT](/modele-llm/chatgpt/) i [Claude](/modele-llm/claude/) polega na architekturze. Tamte modele w trybie offline opierają się na wiedzy zamkniętej w parametrach sieci neuronowej. To wiedza ograniczona datą zakończenia trenowania, zwykle o kilka miesięcy wcześniejszą niż premiera modelu. Perplexity za każdym razem uruchamia pobieranie danych z sieci, zanim wygeneruje odpowiedź. **Każde zapytanie to żywy proces: szukaj, pobierz, zsyntetyzuj, zacytuj.**
 
 Właśnie ta architektura sprawia, że Perplexity odgrywa kluczową rolę w kontekście [pozycjonowania w AI](/pozycjonowanie-ai/perplexity/). Twoja strona musi być technicznie dostępna dla `PerplexityBot`. Co więcej, powinna zawierać treść, którą silnik z łatwością wyekstrahuje jako gotową odpowiedź, a nie tylko potraktuje jako tło.
 

@@ -40,12 +40,18 @@ faq:
   - q: 'Czym narzędzie Copilot Studio różni się od Power Virtual Agents?'
     a: >-
       Copilot Studio to nowa nazwa i znacznie rozszerzona wersja Power Virtual Agents. Główną różnicą jest głębsza integracja
-      z modelami GPT, natywna obsługa protokołu MCP i możliwość budowania agentów wieloetapowych (multi-turn) w miejsce
+      z dużymi modelami językowymi (OpenAI i Anthropic), natywna obsługa protokołu MCP i możliwość budowania agentów wieloetapowych (multi-turn) w miejsce
       prostych drzew decyzyjnych.
 sources:
   - title: 'Expanding model choice in Microsoft 365 Copilot'
     url: 'https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/24/expanding-model-choice-in-microsoft-365-copilot/'
     note: 'Microsoft 365 Blog, Charles Lamanna, 24 września 2025. Modele Claude firmy Anthropic jako alternatywa dla modeli OpenAI w agencie Researcher i w Copilot Studio.'
+  - title: 'What is Microsoft Copilot?'
+    url: 'https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview'
+    note: 'Microsoft Learn, aktualizacja z września 2026. Wybór modelu w Copilot (Auto, Quick response, Think deeper) z automatycznym routerem modeli oraz modele Anthropic jako podprocesor w wybranych usługach Microsoft 365.'
+  - title: 'Supported AI models in GitHub Copilot'
+    url: 'https://docs.github.com/en/copilot/reference/ai-models/supported-models'
+    note: 'GitHub Docs. Modele dostępne w GitHub Copilot, m.in. GPT-6 Astra i GPT-5.6 (OpenAI), Claude Fable 5.1 i Opus 5 (Anthropic), Gemini 3.8 Flash (Google), Grok 4.6 (xAI), Kimi K3 (Moonshot AI) i MAI-Code-1.1-Flash (Microsoft).'
   - title: 'Semantic indexing for Microsoft Copilot'
     url: 'https://learn.microsoft.com/en-us/microsoftsearch/semantic-index-for-copilot'
     note: 'Microsoft Learn. Indeks semantyczny budowany z danych Microsoft Graph na wektorach, z poszanowaniem uprawnień użytkownika (RBAC).'
@@ -81,7 +87,7 @@ Microsoft Copilot nie jest prostym chatbotem doklejonym do pakietu biurowego. To
 
 ## Czym jest Microsoft Copilot i jak działa jego architektura?
 
-Copilot to marka parasolowa, pod którą Microsoft zebrał kilka powiązanych, ale odrębnych produktów opartych na sztucznej inteligencji. Wspólnym mianownikiem są modele z rodziny GPT od OpenAI (Microsoft jest jednym z największych udziałowców tej firmy). Co ciekawe, w 2026 roku organizacje mogą w niektórych aplikacjach wybierać między modelami OpenAI a modelami Claude firmy Anthropic.
+Copilot to marka parasolowa, pod którą Microsoft zebrał kilka powiązanych, ale odrębnych produktów opartych na sztucznej inteligencji. Historycznie wspólnym mianownikiem były modele z rodziny GPT od OpenAI (Microsoft jest jednym z największych udziałowców tej firmy). Dziś Microsoft nie wiąże się z jednym dostawcą: w Microsoft 365 Copilot domyślny tryb „Auto” sam dobiera model do zapytania, w części usług dla firm dostępne są modele Anthropic, a GitHub Copilot oferuje modele OpenAI, Anthropic, Google, xAI i Moonshot AI oraz własny model Microsoftu.
 
 **Kluczowym elementem architektury jest Indeks Semantyczny (Semantic Index for Copilot) – wektorowa reprezentacja wiedzy korporacyjnej budowana na bazie usługi Microsoft Graph.** Zamiast klasycznego wyszukiwania po słowach kluczowych, system generuje wielowymiarowe osadzenia wektorowe (ang. *embeddings*) dla dokumentów, wiadomości e-mail i spotkań. Obiekty o zbliżonym znaczeniu trafiają do sąsiadujących klastrów wektorowych. Dzięki temu model rozumie intencję pytania, nawet jeśli nie znasz dokładnej nazwy pliku.
 

@@ -71,6 +71,12 @@ sources:
   - title: 'GPT-5.6 Sol'
     url: 'https://developers.openai.com/api/docs/models/gpt-5.6-sol'
     note: 'OpenAI, dokumentacja API. Okno kontekstowe 1 050 000 tokenów, do 128 tys. tokenów wyjścia, data odcięcia wiedzy 16 lutego 2026 oraz poziomy wysiłku rozumowania od none do max.'
+  - title: 'GPT-6 Astra'
+    url: 'https://developers.openai.com/api/docs/models/gpt-6-astra'
+    note: 'OpenAI, dokumentacja API. Najmocniejszy model OpenAI: okno 1,05 mln tokenów (922 tys. wejścia), do 128 tys. tokenów wyjścia, data odcięcia wiedzy 30 kwietnia 2026, poziomy wysiłku rozumowania od low do max.'
+  - title: 'Changelog'
+    url: 'https://developers.openai.com/api/docs/changelog'
+    note: 'OpenAI, dokumentacja API. Udostępnienie GPT-6 Astra w API 3 września 2026 roku.'
   - title: 'tiktoken'
     url: 'https://github.com/openai/tiktoken'
     note: 'OpenAI, GitHub. Tokenizer BPE używany w modelach OpenAI, w tym kodowanie o200k_base ze słownikiem około 200 tys. tokenów.'
@@ -102,7 +108,7 @@ To rozróżnienie ma praktyczne znaczenie. Ten sam model GPT jest dostępny prze
 - **Jak model nauczył się odpowiadać jak asystent** – pre-training, fine-tuning, RLHF
 - **Jak działa produkt wokół modelu** – okno kontekstowe, pamięć, wyszukiwanie, narzędzia, tryb rozumowania
 
-Przejdziemy przez wszystkie trzy warstwy po kolei. Aktualnie flagową generacją OpenAI jest GPT-5.6. Zadebiutowała ona 26 czerwca 2026 roku w zamkniętym podglądzie (ze względu na restrykcje rządu USA związane z bezpieczeństwem cybernetycznym), a ogólnie dostępna stała się 9 lipca 2026 roku. Występuje w trzech wariantach: Sol (flagowy), Terra (zbalansowany) i Luna (najszybszy i najtańszy). Wszystkie mają okno kontekstowe 1,05 mln tokenów, do 128 tys. tokenów wyjścia i datę odcięcia wiedzy 16 lutego 2026. Różnią się rozmiarem i ilością obliczeń, jaką mogą poświęcić na jedną odpowiedź – do tego wrócimy. Przegląd całego ekosystemu OpenAI, planów i cen znajdziesz w osobnym artykule o [ChatGPT i ekosystemie OpenAI](/modele-llm/chatgpt/).
+Przejdziemy przez wszystkie trzy warstwy po kolei. W ChatGPT flagową generacją jest obecnie GPT-5.6. Zadebiutowała ona 26 czerwca 2026 roku w zamkniętym podglądzie (ze względu na restrykcje rządu USA związane z bezpieczeństwem cybernetycznym), a ogólnie dostępna stała się 9 lipca 2026 roku. Występuje w trzech wariantach: Sol (flagowy), Terra (zbalansowany) i Luna (najszybszy i najtańszy). Wszystkie mają okno kontekstowe 1,05 mln tokenów, do 128 tys. tokenów wyjścia i datę odcięcia wiedzy 16 lutego 2026. Różnią się rozmiarem i ilością obliczeń, jaką mogą poświęcić na jedną odpowiedź – do tego wrócimy. Najnowszym i najmocniejszym modelem OpenAI jest jednak GPT-6 Astra, udostępniony 3 września 2026 roku wyłącznie w API (okno 1,05 mln tokenów, do 128 tys. tokenów wyjścia, data odcięcia wiedzy 30 kwietnia 2026) – w ChatGPT go nie ma. Przegląd całego ekosystemu OpenAI, planów i cen znajdziesz w osobnym artykule o [ChatGPT i ekosystemie OpenAI](/modele-llm/chatgpt/).
 
 ## Krok 1: tokenizacja – model nie widzi słów
 
@@ -138,7 +144,7 @@ Trzy cechy tej architektury wyjaśniają większość zachowań ChatGPT:
 
 - **Równoległość** – wszystkie tokeny wejścia są przetwarzane jednocześnie, dlatego trening na tysiącach procesorów graficznych był w ogóle możliwy i dlatego model „czyta” 100 stron w sekundę
 - **Kontekst jest wszystkim** – model nie ma innego źródła informacji o bieżącej rozmowie niż to, co jest w oknie kontekstowym; jeśli czegoś tam nie ma, dla modelu to nie istnieje
-- **Koszt rośnie z długością** – uwaga porównuje każdy token z każdym, więc bardzo długie rozmowy są droższe i wolniejsze, a modele mają twardy limit okna kontekstowego (w API GPT-5.6 to ok. 1,05 mln tokenów, a w ChatGPT dostępny limit zależy od planu)
+- **Koszt rośnie z długością** – uwaga porównuje każdy token z każdym, więc bardzo długie rozmowy są droższe i wolniejsze, a modele mają twardy limit okna kontekstowego (w API GPT-5.6 i GPT-6 Astra to ok. 1,05 mln tokenów, a w ChatGPT dostępny limit zależy od planu)
 
 ## Krok 4: przewidywanie kolejnego tokenu – i dlaczego odpowiedzi są losowe
 
@@ -199,7 +205,7 @@ Od 2024 roku modele OpenAI (seria o1, a potem tryby Myśl / Thinking w GPT-5) do
 
 Mechanicznie to nadal przewidywanie kolejnego tokenu. Różnica polega na tym, że model został wytrenowany metodą uczenia ze wzmocnieniem, by ten proces „myślenia na głos” prowadził do poprawnych odpowiedzi w zadaniach z weryfikowalnym wynikiem – matematyce, programowaniu, logice. Nagrodę dostawał nie za ładne brzmienie, lecz za poprawny wynik końcowy. W efekcie nauczył się strategii, które ludzie znają jako „sprawdź dwa razy”, „zacznij od prostszego przypadku” czy „wróć, jeśli utknąłeś”.
 
-W GPT-5.6 budżet na to rozumowanie jest regulowany – w API poziomy wysiłku sięgają od „none” przez „low”, „medium”, „high” i „xhigh” po „max”. Najniższe poziomy odpowiadają niemal natychmiast i praktycznie nie rozumują, najwyższe poświęcają na jedno zadanie sekundy lub minuty. To tzw. skalowanie w czasie wnioskowania (test-time compute) – zamiast trenować większy model, pozwala się mniejszemu dłużej „myśleć”. W zwykłych pytaniach różnica jest mała; w wieloetapowych analizach, debugowaniu kodu czy zadaniach z liczbami – ogromna.
+W GPT-5.6 budżet na to rozumowanie jest regulowany – w API poziomy wysiłku sięgają od „none” przez „low”, „medium”, „high” i „xhigh” po „max” (w GPT-6 Astra skala zaczyna się od „low”). Najniższe poziomy odpowiadają niemal natychmiast i praktycznie nie rozumują, najwyższe poświęcają na jedno zadanie sekundy lub minuty. To tzw. skalowanie w czasie wnioskowania (test-time compute) – zamiast trenować większy model, pozwala się mniejszemu dłużej „myśleć”. W zwykłych pytaniach różnica jest mała; w wieloetapowych analizach, debugowaniu kodu czy zadaniach z liczbami – ogromna.
 
 ## Wyszukiwanie w sieci – jak ChatGPT znajduje aktualne informacje
 

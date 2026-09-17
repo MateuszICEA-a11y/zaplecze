@@ -41,7 +41,7 @@ sources:
     note: 'Google, 18 listopada 2025. Premiera Gemini 3 Pro z oknem kontekstowym 1 mln tokenów.'
   - title: 'Google AI Pro & Ultra – get access to Gemini 3.1 Pro & more'
     url: 'https://gemini.google/us/subscriptions/?hl=en'
-    note: 'Google. Aktualne plany Free (Gemini 3.6 Flash), AI Plus (4,99 USD), AI Pro (19,99 USD, 5 TB) i AI Ultra (od 99,99 USD, od 20 TB) wraz z limitami.'
+    note: 'Google. Aktualne plany Free (Gemini 3.6 Flash), AI Plus (4,99 USD), AI Pro (19,99 USD, 5 TB, Deep Think w wybranych krajach) i AI Ultra (od 99,99 USD, do 20× limity, Gemini Spark) wraz z limitami oraz Gemini Omni Flash w Google Flow od planu AI Plus.'
   - title: 'Deep Research Max: a step change for autonomous research agents'
     url: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/'
     note: 'Google, 21 kwietnia 2026. Deep Research i Deep Research Max na Gemini 3.1 Pro z obsługą MCP i danych prywatnych.'
@@ -51,6 +51,9 @@ sources:
   - title: 'Gemini Developer API pricing'
     url: 'https://ai.google.dev/gemini-api/docs/pricing'
     note: 'Google AI for Developers. Cennik API za milion tokenów dla Gemini 3.8 Flash (stawka do 31 grudnia 2026) i Gemini 3.1 Pro.'
+  - title: 'Gemini models'
+    url: 'https://ai.google.dev/gemini-api/docs/models'
+    note: 'Google AI for Developers. Aktualna lista modeli: Gemini 3.8 Flash (najnowszy stabilny Flash), 3.8 Live, 3.7, 3.6 i 3.5 Flash, 3.5 i 3.1 Flash-Lite, Gemini 3.1 Pro (preview) oraz modele wyłączone, m.in. 2.0 Flash i 3 Pro Preview.'
   - title: 'AIO Impact on Google CTR: September 2025 Update'
     url: 'https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update'
     note: 'Seer Interactive, 4 listopada 2025. Organiczny CTR przy zapytaniach z AI Overviews spadł od czerwca 2024 do września 2025 z 1,76% do 0,61% (o 61%).'
@@ -91,13 +94,13 @@ Google dzieli swoje modele na trzy klasy, różnicując je pod względem szybko�
 | **Gemini Pro** | Zaawansowane wnioskowanie | Analiza dokumentów, złożone pytania, Deep Research |
 | **Gemini Ultra** | Maksymalne możliwości (pierwsza generacja) | Nazwa flagowca Gemini 1.0; dziś plan AI Ultra daje najwyższe limity modelu Gemini Pro |
 
-Aktualna generacja nosi oznaczenie 3.x (po debiucie Gemini 3 Pro w listopadzie 2025 roku i Gemini 3 Flash w grudniu 2025). Google stosuje sześciomiesięczny cykl wydań. Starsze generacje znikają z API, co wymusza ciągłą aktualizację integracji.
+Aktualna generacja nosi oznaczenie 3.x (po debiucie Gemini 3 Pro w listopadzie 2025 roku i Gemini 3 Flash w grudniu 2025). We wrześniu 2026 roku najnowszym stabilnym modelem Flash jest Gemini 3.8 Flash, który Google opisuje jako najinteligentniejszy model Flash, przeznaczony m.in. do długich zadań programistycznych i autonomicznych agentów. W API dostępne są też Gemini 3.7 Flash, 3.6 Flash, 3.5 Flash oraz lżejsze 3.5 Flash-Lite i 3.1 Flash-Lite, a linię Pro reprezentuje Gemini 3.1 Pro (w wersji preview). Starsze modele znikają z API – wyłączono już m.in. Gemini 2.0 Flash, 2.0 Flash-Lite i 3 Pro Preview – co wymusza ciągłą aktualizację integracji.
 
 **Gemini Flash Lite to najtańszy model w koszyku Google: przy cenach API rzędu ułamka dolara za milion tokenów obsługuje masowe przepływy pracy przy minimalnym koszcie jednostkowym.** To właśnie on zasila większość automatyzacji w środowisku Workspace.
 
 ### Okno kontekstowe 1 miliona tokenów
 
-Modele Gemini Pro operują na oknie kontekstowym wynoszącym 1 milion tokenów. W praktyce oznacza to możliwość wczytania całej dokumentacji technicznej projektu, kilkudziesięciu raportów lub obszernego zbioru danych. Model poddaje je spójnej analizie. To jeden z największych praktycznych kontekstów na rynku. Dla porównania: GPT-4o obsługuje 128 000 tokenów, a Claude 3 Opus okno rzędu 200 000 w standardowej konfiguracji.
+Modele Gemini Pro operują na oknie kontekstowym wynoszącym 1 milion tokenów. W praktyce oznacza to możliwość wczytania całej dokumentacji technicznej projektu, kilkudziesięciu raportów lub obszernego zbioru danych. Model poddaje je spójnej analizie. Google jako jedno z pierwszych laboratoriów wprowadziło kontekst tej skali – jeszcze w 2024 roku GPT-4o obsługiwał 128 000 tokenów, a Claude 3 Opus okno rzędu 200 000. Dziś podobne okna oferują też konkurenci, np. GPT-6 Astra od OpenAI (1,05 mln tokenów).
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -116,9 +119,9 @@ Aplikacja Gemini oferuje cztery plany konsumenckie. Poniżej zestawienie aktualn
 | Plan | Cena | Modele | Kluczowe funkcje |
 |---|---|---|---|
 | **Free** | 0 USD/mies. | Gemini 3.6 Flash, ograniczony dostęp do 3.1 Pro | Czat, Gemini Live, Deep Research i Gems z limitami, 15 GB przestrzeni |
-| **AI Plus** | 4,99 USD/mies. | Gemini 3.6 Flash, ograniczony dostęp do 3.1 Pro | 2× wyższe limity niż Free, Gemini w Gmailu i innych aplikacjach Google, 400 GB przestrzeni |
-| **AI Pro** | 19,99 USD/mies. | Gemini 3.1 Pro | 4× wyższe limity niż Free, szerszy dostęp do Deep Research, okno 1M tokenów, więcej Audio Overviews w notatnikach, 5 TB przestrzeni |
-| **AI Ultra** | od 99,99 USD/mies. (199,99 USD w wariancie z 20× limitami) | Gemini 3.1 Pro z najwyższymi limitami | Najwyższy dostęp do Deep Research, kredyty Google Flow do generowania wideo, priorytetowy dostęp do nowości, od 20 TB przestrzeni |
+| **AI Plus** | 4,99 USD/mies. | Gemini 3.6 Flash, ograniczony dostęp do 3.1 Pro | 2× wyższe limity niż Free, Gemini w Gmailu i innych aplikacjach Google, Gemini Omni Flash w Google Flow, 400 GB przestrzeni |
+| **AI Pro** | 19,99 USD/mies. | Gemini 3.1 Pro | 4× wyższe limity niż Free, szerszy dostęp do Deep Research, Deep Search, Deep Think (w wybranych krajach), okno 1M tokenów, więcej Audio Overviews w notatnikach, 5 TB przestrzeni |
+| **AI Ultra** | od 99,99 USD/mies. (199,99 USD w wariancie z 20× limitami) | Gemini 3.1 Pro z najwyższymi limitami | Do 20× wyższe limity niż Free, najwyższy dostęp do Deep Research, Deep Think, Gemini Spark (w wybranych krajach), kredyty Google Flow do generowania wideo, priorytetowy dostęp do nowości, od 20 TB przestrzeni |
 
 **Plan AI Pro za 19,99 USD miesięcznie to standard dla osób pracujących z AI na co dzień.** Szerszy dostęp do Deep Research i okno kontekstowe 1 miliona tokenów pokrywają większość zastosowań analitycznych. Nie musisz przechodzić na dużo droższy plan AI Ultra.
 
@@ -154,7 +157,7 @@ Gemy były początkowo dostępne wyłącznie w planach płatnych. Od marca 2025 
 
 ## Deep Research – agent badawczy Gemini
 
-Deep Research to zaawansowany agent badawczy, dostępny w planie AI Pro oraz wyższych. Działa zupełnie inaczej niż standardowe zapytanie do modelu. Zamiast generować odpowiedź od razu lub opierać się na pojedynczym wyszukiwaniu, przeprowadza autonomiczny proces badawczy. Trwa to nierzadko kilka minut.
+Deep Research to zaawansowany agent badawczy – z limitami dostępny także w planie Free, a w szerszym zakresie w planie AI Pro oraz wyższych. Działa zupełnie inaczej niż standardowe zapytanie do modelu. Zamiast generować odpowiedź od razu lub opierać się na pojedynczym wyszukiwaniu, przeprowadza autonomiczny proces badawczy. Trwa to nierzadko kilka minut.
 
 Mechanizm przebiega w czterech krokach. Najpierw model tworzy plan badania i przedstawia go do zatwierdzenia lub modyfikacji. To mocno odróżnia Deep Research od zwykłego wyszukiwania. Następnie agent iteracyjnie przeszukuje dziesiątki, a w trybie Deep Research Max setki źródeł. Każde z nich może wygenerować nowe pytania badawcze. Kolejny krok to synteza zebranych informacji w spójny raport, bogaty w cytowania. Na końcu eksportujesz wynik do Dokumentów Google jednym kliknięciem.
 
@@ -189,7 +192,7 @@ Veo to rodzina modeli przeznaczonych do generowania wideo wysokiej jakości z op
 
 W marketingu Veo ma potężne zastosowanie przy produkcji krótkich formatów do mediów społecznościowych, animacji produktowych i zajawek kampanii. **Osiągasz to bez angażowania pełnego studia produkcyjnego przy niskich wolumenach treści.**
 
-Z kolei środowisko Gemini Live API, uruchomione w marcu 2026 roku wraz z wersją Gemini 3.1 Flash Live, to równoległa warstwa technologiczna. Służy do budowania aplikacji obsługujących rozmowy głosowe w czasie rzeczywistym z niezwykle niskim opóźnieniem. Model na bieżąco przetwarza ciągły strumień audio i wideo. Obsługuje naturalne przerwania rozmowy i odpowiada głosem w ułamku sekundy. Deweloperzy wykorzystują to API do konstruowania interfejsów głosowych nowej generacji, inteligentnych asystentów sprzedażowych czy autonomicznych systemów obsługi klienta.
+Z kolei środowisko Gemini Live API, uruchomione w marcu 2026 roku wraz z wersją Gemini 3.1 Flash Live, to równoległa warstwa technologiczna. Obecnie najnowsze modele tej linii to Gemini 3.8 Live oraz Gemini 3.8 Live Extended Thinking. Służy do budowania aplikacji obsługujących rozmowy głosowe w czasie rzeczywistym z niezwykle niskim opóźnieniem. Model na bieżąco przetwarza ciągły strumień audio i wideo. Obsługuje naturalne przerwania rozmowy i odpowiada głosem w ułamku sekundy. Deweloperzy wykorzystują to API do konstruowania interfejsów głosowych nowej generacji, inteligentnych asystentów sprzedażowych czy autonomicznych systemów obsługi klienta.
 
 ## Google AI Studio – platforma deweloperska
 

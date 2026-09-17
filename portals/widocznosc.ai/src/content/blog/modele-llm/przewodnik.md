@@ -28,7 +28,7 @@ faq:
       Tradycyjna wyszukiwarka tworzy ranking stron i pokazuje listę linków. LLM generuje syntetyczną odpowiedź, która może – ale nie musi – zawierać link do Twojej strony. Użytkownik dostaje gotową odpowiedź, nie listę stron do kliknięcia. <strong>Dla marketerów oznacza to, że samo bycie na pierwszej stronie Google nie gwarantuje już obecności w odpowiedzi, którą zobaczy użytkownik.</strong>
   - q: 'Co to jest okno kontekstowe i dlaczego ma znaczenie?'
     a: >-
-      Okno kontekstowe to ilość tekstu, którą model może przetworzyć naraz. Im większe, tym dłuższe dokumenty możesz analizować w jednej sesji. Dla użytkownika końcowego: GPT-5.6, Claude Sonnet 5 i Gemini 3.1 Pro przetworzą nawet kilkadziesiąt raportów rocznych naraz (okna rzędu 1 miliona tokenów), choć w planach konsumenckich limity są zwykle niższe. Dla widoczności marki: model z małym oknem może nie „zobaczyć" Twojej marki, jeśli pojawia się tylko w dalszej części długiego dokumentu.
+      Okno kontekstowe to ilość tekstu, którą model może przetworzyć naraz. Im większe, tym dłuższe dokumenty możesz analizować w jednej sesji. Dla użytkownika końcowego: GPT-5.6, GPT-6 Astra, Claude Sonnet 5 i Gemini 3.1 Pro przetworzą nawet kilkadziesiąt raportów rocznych naraz (okna rzędu 1 miliona tokenów), choć w planach konsumenckich limity są zwykle niższe. Dla widoczności marki: model z małym oknem może nie „zobaczyć" Twojej marki, jeśli pojawia się tylko w dalszej części długiego dokumentu.
   - q: 'Czy modele AI mają datę graniczną wiedzy?'
     a: >-
       Tak. Modele trenowane są na danych z określonego przedziału czasowego (do tzw. daty odcięcia, ang. <em>cutoff date</em>) – po tej dacie nowe informacje o Twojej firmie nie trafiają automatycznie do wiedzy modelu. Modele z aktywnym RAG (ChatGPT z wyszukiwaniem, Perplexity, Copilot, Gemini z Searchem) uzupełniają wiedzę treningową danymi pobranymi w chwili zapytania. Dlatego aktualne treści na stronie mają znaczenie – bot może je pobrać i dołączyć do odpowiedzi.
@@ -39,6 +39,9 @@ sources:
   - title: 'GPT-5.6 Sol'
     url: 'https://developers.openai.com/api/docs/models/gpt-5.6-sol'
     note: 'OpenAI, dokumentacja API. Okno kontekstowe 1 050 000 tokenów, 128 000 tokenów wyjścia i cena 4/20 USD za milion tokenów (promocja co najmniej do 21 listopada 2026).'
+  - title: 'GPT-6 Astra'
+    url: 'https://developers.openai.com/api/docs/models/gpt-6-astra'
+    note: 'OpenAI, dokumentacja API. Najmocniejszy model OpenAI, dostępny w API od 3 września 2026: okno 1,05 mln tokenów, 128 tys. tokenów wyjścia, cena 10/50 USD za milion tokenów.'
   - title: 'API Pricing'
     url: 'https://developers.openai.com/api/docs/pricing'
     note: 'OpenAI, dokumentacja API. Ceny modeli GPT-5.6 Sol, Terra i Luna za milion tokenów wejściowych i wyjściowych.'
@@ -57,6 +60,12 @@ sources:
   - title: 'Gemini 3.1 Pro - Model Card'
     url: 'https://deepmind.google/models/model-cards/gemini-3-1-pro/'
     note: 'Google DeepMind, 19 lutego 2026. Wynik 94,3% w GPQA Diamond i okno kontekstowe do 1 mln tokenów.'
+  - title: 'Gemini models'
+    url: 'https://ai.google.dev/gemini-api/docs/models'
+    note: 'Google, dokumentacja Gemini API. Gemini 3.1 Pro w wersji preview i Gemini 3.8 Flash jako najnowszy model z linii Flash.'
+  - title: 'Models'
+    url: 'https://docs.x.ai/docs/models'
+    note: 'xAI, dokumentacja API. Grok 4.6 jako flagowy model xAI (okno 500 tys. tokenów, 2/6 USD za milion tokenów).'
   - title: 'Perplexity Crawlers'
     url: 'https://docs.perplexity.ai/guides/bots'
     note: 'Perplexity, dokumentacja. Rola PerplexityBot i sterowanie jego dostępem przez robots.txt.'
@@ -86,17 +95,17 @@ W rozmowach o LLM-ach regularnie myli się dwie warstwy produktowe. Model podsta
 
 ## Przegląd głównych modeli – tabela porównawcza
 
-Poniższa tabela zestawia osiem najważniejszych ekosystemów w jednym miejscu. Dane dotyczą flagowych, publicznie dostępnych wariantów na połowę 2026 roku.
+Poniższa tabela zestawia osiem najważniejszych ekosystemów w jednym miejscu. Dane dotyczą flagowych, publicznie dostępnych wariantów na wrzesień 2026 roku.
 
 | Model / ekosystem | Twórca | Dostęp dla użytkownika | Mocna strona | Klucz dla widoczności marki |
 |---|---|---|---|---|
-| ChatGPT (GPT-5.6) | OpenAI | Freemium + API | Szeroki korpus treningowy, wyszukiwanie w ChatGPT | Dostęp OAI-SearchBot; wyszukiwanie cytuje na żywo |
-| Claude (Opus 5 / Sonnet 5) | Anthropic | Freemium + API | Długi kontekst, analiza dokumentów | Claude-SearchBot; silna w analizie B2B |
-| Gemini (3.1 Pro / Flash) | Google | Freemium + API | Integracja z Google Search, AI Overviews | Bezpośrednie powiązanie z indeksem Google |
+| ChatGPT (GPT-5.6; w API także GPT-6 Astra) | OpenAI | Freemium + API | Szeroki korpus treningowy, wyszukiwanie w ChatGPT | Dostęp OAI-SearchBot; wyszukiwanie cytuje na żywo |
+| Claude (Fable 5.1 / Opus 5 / Sonnet 5) | Anthropic | Freemium + API | Długi kontekst, analiza dokumentów | Claude-SearchBot; silna w analizie B2B |
+| Gemini (3.1 Pro / 3.8 Flash) | Google | Freemium + API | Integracja z Google Search, AI Overviews | Bezpośrednie powiązanie z indeksem Google |
 | Copilot | Microsoft | Wbudowany w Windows/Edge + API | Integracja z Bing, Microsoft 365 | BingBot + Bing Search jako źródło |
 | Perplexity AI | Perplexity | Freemium + API | RAG w czasie rzeczywistym z linkami źródłowymi | PerplexityBot; cytuje URL bezpośrednio |
-| [Grok](/modele-llm/grok/) (4.x) | xAI (Elon Musk) | X Premium + API | Dostęp do X w czasie rzeczywistym | Wzmianki i dyskusje na X zasilają odpowiedzi |
-| [DeepSeek](/modele-llm/deepseek/) (V4) | High-Flyer (Chiny) | Freemium + API + otwarte wagi (MIT) | Bardzo niski koszt, model open source | Brak własnego bota; wiedza z danych treningowych |
+| [Grok](/modele-llm/grok/) (4.6) | xAI (Elon Musk) | X Premium + API | Dostęp do X w czasie rzeczywistym | Wzmianki i dyskusje na X zasilają odpowiedzi |
+| [DeepSeek](/modele-llm/deepseek/) (V4.1-Flash / V4-Pro) | High-Flyer (Chiny) | Freemium + API + otwarte wagi (MIT) | Bardzo niski koszt, model open source | Brak własnego bota; wiedza z danych treningowych |
 | Modele open source | Meta, Mistral AI i in. | Pobieranie + API | Suwerenność danych, dostosowywalność | Brak własnego bota; używają cudzych indeksów |
 
 Każdy z tych ekosystemów ma inny mechanizm pobierania informacji o Twojej marce – i inny wzorzec tego, jakie treści trafiają do odpowiedzi. Poniższe sekcje opisują każdy z nich z perspektywy praktycznej.
@@ -107,14 +116,14 @@ Każdy z tych ekosystemów ma inny mechanizm pobierania informacji o Twojej marc
 
 ChatGPT jest punktem startowym dla zdecydowanej większości firm wchodzących w temat AI. To z nim rozmawiają Twoi klienci, kiedy pytają „który dostawca X jest najlepszy" albo „porównaj Y i Z". **Według danych OpenAI z początku 2026 roku liczba stanowisk (licencji) w ChatGPT Enterprise była dziewięciokrotnie większa niż rok wcześniej.**
 
-Główny flagowiec dostępny obecnie w ChatGPT to GPT-5.6 Sol (rodzina GPT-5.6: Sol, Terra i Luna, ogólnie dostępna od 9 lipca 2026) – multimodalny system przetwarzający tekst, obraz i dźwięk. W wariancie z włączonym wyszukiwaniem (ChatGPT Search) model w chwili zapytania przeszukuje internet. Pobiera aktualne fragmenty i generuje odpowiedź z przypisami. To oznacza, że strony, do których ma dostęp `OAI-SearchBot`, mogą być cytowane w czasie rzeczywistym.
+Główny flagowiec dostępny obecnie w ChatGPT to GPT-5.6 Sol (rodzina GPT-5.6: Sol, Terra i Luna, ogólnie dostępna od 9 lipca 2026) – multimodalny system przetwarzający tekst, obraz i dźwięk. W wariancie z włączonym wyszukiwaniem (ChatGPT Search) model w chwili zapytania przeszukuje internet. Pobiera aktualne fragmenty i generuje odpowiedź z przypisami. To oznacza, że strony, do których ma dostęp `OAI-SearchBot`, mogą być cytowane w czasie rzeczywistym. Najnowszym i najmocniejszym modelem OpenAI jest od 3 września 2026 roku GPT-6 Astra, dostępny jednak tylko w API – w ChatGPT flagowcem pozostaje GPT-5.6 Sol.
 
 Kluczowe aspekty dla strategii widoczności:
 
 - **`OAI-SearchBot`** – bot wyszukiwania OpenAI. Jego dostęp do Twojej strony warunkuje pojawienie się w odpowiedziach wyszukiwania ChatGPT. Sprawdź plik `robots.txt` i upewnij się, że nie jest blokowany. `GPTBot` to osobny bot zbierający dane treningowe – można go zablokować bez wpływu na widoczność w wyszukiwaniu.
 - **Tryb offline** – zapytania bez wyszukiwania korzystają wyłącznie z danych treningowych (do tzw. daty odcięcia, ang. *cutoff*). Marka, która nie była wzmiankowana przed tą datą, może w ogóle nie istnieć dla modelu.
-- **Kontekst 1,05 mln tokenów** – w GPT-5.6 (128 000 tokenów wyjścia) pozwala na przetworzenie bardzo długich dokumentów; w planach konsumenckich limit jest niższy. Pamiętaj jednak, że dla B2B ważniejsza jest jakość fragmentów niż sama ich objętość.
-- **API OpenAI** – najpopularniejsze narzędzie do budowy własnych aplikacji AI. Koszt flagowego GPT-5.6 Sol to 4,00 USD za milion tokenów wejściowych w cenie promocyjnej (Terra – 2,00 USD, Luna – 0,20 USD).
+- **Kontekst 1,05 mln tokenów** – w GPT-5.6 i GPT-6 Astra (128 000 tokenów wyjścia) pozwala na przetworzenie bardzo długich dokumentów; w planach konsumenckich limit jest niższy. Pamiętaj jednak, że dla B2B ważniejsza jest jakość fragmentów niż sama ich objętość.
+- **API OpenAI** – najpopularniejsze narzędzie do budowy własnych aplikacji AI. Najmocniejszy GPT-6 Astra kosztuje 10,00 USD za milion tokenów wejściowych (50,00 USD za wyjściowe), a GPT-5.6 Sol – 4,00 USD w cenie promocyjnej (Terra – 2,00 USD, Luna – 0,20 USD).
 
 Szczegółowe omówienie możliwości i ograniczeń znajdziesz w artykule o [ChatGPT](/modele-llm/chatgpt/) oraz o tym, [co potrafi ChatGPT](/modele-llm/co-potrafi-chatgpt/) w kontekście codziennej pracy marketera.
 
@@ -144,7 +153,7 @@ Pełny przegląd modeli Anthropic i ich zastosowań znajdziesz w artykule o [Cla
 
 Gemini to ekosystem, który jako jedyny jest bezpośrednio powiązany z algorytmem wyszukiwania Google. Oznacza to jedno. Strony z silną pozycją organiczną mają naturalną przewagę w pojawianiu się w Google AI Overviews i odpowiedziach Gemini. Jednak sama pozycja SEO nie gwarantuje cytowania – treść musi spełniać warunki cytowalności.
 
-Gemini 3.1 Pro obsługuje okno kontekstowe do 1 miliona tokenów. W praktyce pozwala to na przetworzenie całej dokumentacji produktowej, archiwum newsletterów lub historii rozmów z klientami w jednym prompcie. **W benchmarku wnioskowania logicznego (GPQA Diamond) Gemini 3.1 Pro osiąga 94,3%, plasując się w ścisłej czołówce modeli wnioskujących.**
+Gemini 3.1 Pro (w API wciąż w wersji preview) obsługuje okno kontekstowe do 1 miliona tokenów, a najnowszym modelem z linii Flash jest Gemini 3.8 Flash. W praktyce pozwala to na przetworzenie całej dokumentacji produktowej, archiwum newsletterów lub historii rozmów z klientami w jednym prompcie. **W benchmarku wnioskowania logicznego (GPQA Diamond) Gemini 3.1 Pro osiągnął według karty modelu z lutego 2026 roku 94,3%, co w chwili premiery plasowało go w ścisłej czołówce modeli wnioskujących.**
 
 Dla widoczności marki kluczowe są trzy mechanizmy Gemini:
 
@@ -156,7 +165,7 @@ Jeśli Twoja strategia treści skupia się na [pozycjonowaniu AI](/pozycjonowani
 
 ## Microsoft Copilot i Bing
 
-Copilot to produkt Microsoftu zbudowany na modelach OpenAI, zintegrowany z wyszukiwarką Bing. Jest wbudowany w Windows, Edge, pakiet Microsoft 365 i Teams. Dla B2B to ważny ekosystem. Użytkownicy korporacyjni spotykają się z nim codziennie – bez aktywnego wyboru, po prostu jako część środowiska pracy.
+Copilot to produkt Microsoftu zbudowany na dużych modelach językowych – historycznie przede wszystkim od OpenAI, a w części usług dla firm także od Anthropic – i zintegrowany z wyszukiwarką Bing. Jest wbudowany w Windows, Edge, pakiet Microsoft 365 i Teams. Dla B2B to ważny ekosystem. Użytkownicy korporacyjni spotykają się z nim codziennie – bez aktywnego wyboru, po prostu jako część środowiska pracy.
 
 Architektura Copilot różni się od ChatGPT jednym kluczowym elementem. Każda odpowiedź generowana przez Copilot z włączoną funkcją wyszukiwania korzysta z indeksu Bing. To oznacza, że `BingBot` musi mieć dostęp do Twojej strony. Firmy, które blokują Binga w `robots.txt`, nieświadomie wycinają się z odpowiedzi Copilot dla milionów użytkowników korporacyjnych.
 

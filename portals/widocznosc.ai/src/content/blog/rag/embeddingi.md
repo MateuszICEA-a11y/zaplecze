@@ -34,6 +34,9 @@ sources:
   - title: 'Vector embeddings'
     url: 'https://developers.openai.com/api/docs/guides/embeddings'
     note: 'OpenAI, dokumentacja API. Wymiarowość text-embedding-3-small (1536) i -large (3072), zalecane podobieństwo kosinusowe, wektory znormalizowane do długości 1.'
+  - title: 'Models – OpenAI API'
+    url: 'https://developers.openai.com/api/docs/models'
+    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
 ---
 Kiedy system RAG (Retrieval-Augmented Generation, czyli generowanie wspomagane wyszukiwaniem) odpowiada na zapytanie użytkownika, nie przeszukuje tekstu jak klasyczna wyszukiwarka. Zamienia zapytanie oraz każdy fragment dokumentu na ciąg liczb – wektor osadzony (embedding). Następnie szuka wektorów leżących najbliżej siebie w matematycznej przestrzeni. To właśnie ten moment decyduje o być albo nie być Twojej strony w odpowiedzi LLM-a. **Zrozumienie embeddingów nie jest wyłącznie sprawą inżynierów – każdy, kto tworzy treści pod AI Search, powinien wiedzieć, jak komputery mierzą znaczenie.**
 
@@ -149,7 +152,7 @@ Jak sprawdzić gotowość własnych tekstów pod kątem cytowalności w AI? Darm
 
 Embeddingi w systemach RAG to tylko jedno z zastosowań. Warto wiedzieć, że duże modele językowe używają wektorów osadzonych również wewnętrznie. To właśnie one stanowią bazową reprezentację, na której operuje każda warstwa Transformera.
 
-Kiedy GPT-5 lub Claude przetwarza tekst, na wejściu każdy token (fragment słowa lub znak interpunkcyjny) zamienia się w wektor. Mechanizm samouwagi przekształca te dane przez kolejne warstwy sieci, wzbogacając je o kontekst całego zdania i dokumentu. Na wyjściu każdej warstwy pojawiają się nowe wektory – coraz silniej przetworzone semantycznie. Ostateczna decyzja o wygenerowaniu kolejnego tokena wynika bezpośrednio z tych wewnętrznych reprezentacji.
+Kiedy GPT-5.6 lub Claude przetwarza tekst, na wejściu każdy token (fragment słowa lub znak interpunkcyjny) zamienia się w wektor. Mechanizm samouwagi przekształca te dane przez kolejne warstwy sieci, wzbogacając je o kontekst całego zdania i dokumentu. Na wyjściu każdej warstwy pojawiają się nowe wektory – coraz silniej przetworzone semantycznie. Ostateczna decyzja o wygenerowaniu kolejnego tokena wynika bezpośrednio z tych wewnętrznych reprezentacji.
 
 Oznacza to, że embeddingi służą nie tylko do wyszukiwania podobnych dokumentów. To dosłownie język, w którym modele językowe myślą. **Kiedy tworzysz tekst zrozumiały dla LLM-a, piszesz materiał generujący przejrzyste, jednoznaczne wektory na każdym poziomie przetwarzania.**
 

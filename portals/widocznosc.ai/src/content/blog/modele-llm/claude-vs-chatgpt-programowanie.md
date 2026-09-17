@@ -45,7 +45,13 @@ sources:
     note: 'OpenAI. Stawki GPT-5.6 Sol (4/0,40/20 USD), Terra (2/0,20/12 USD) i Luna (0,20/0,02/1,20 USD) – wejście, cache, wyjście.'
   - title: 'Models overview'
     url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
-    note: 'Anthropic, dokumentacja API. Aktualne modele Fable 5.1, Opus 5, Sonnet 5 i Haiku 4.5 z oknami kontekstowymi; Opus 4.8 i Sonnet 4.6 jako legacy.'
+    note: 'Anthropic, dokumentacja API. Aktualne modele Fable 5.1 (10/50 USD), Opus 5 (domyślnie polecany), Sonnet 5 i Haiku 4.5 z oknami kontekstowymi; Fable 5, Opus 4.8 i Sonnet 4.6 jako legacy.'
+  - title: 'Models | OpenAI API'
+    url: 'https://developers.openai.com/api/docs/models'
+    note: 'OpenAI, dokumentacja API. GPT-6 Astra jako najmocniejszy model: okno 1,05 mln tokenów, 128 tys. tokenów wyjścia, cena 10/50 USD za milion tokenów.'
+  - title: 'Changelog | OpenAI API'
+    url: 'https://developers.openai.com/api/docs/changelog'
+    note: 'OpenAI. Ogólna dostępność GPT-6 Astra w API od 3 września 2026.'
   - title: 'Introducing Claude Opus 5'
     url: 'https://www.anthropic.com/news/claude-opus-5'
     note: 'Anthropic, 24 lipca 2026. Premiera Claude Opus 5 w cenie 5/25 USD za milion tokenów.'
@@ -62,7 +68,7 @@ Jeśli piszesz kod produkcyjny z pomocą dużego modelu językowego (LLM – Lar
 
 SWE-bench Verified to dziś najtrudniejsza publicznie dostępna miara zdolności kodowania modeli AI. Zamiast pisać nową funkcję od zera, model musi przeanalizować istniejące repozytorium Pythona, zlokalizować przyczynę błędu opisaną w zgłoszeniu (tickecie) z GitHuba i wygenerować łatkę. Ta musi przejść testy automatyczne. Z 500 zweryfikowanych przez człowieka problemów korzysta wiele niezależnych laboratoriów. Wyniki są więc w pełni porównywalne między firmami.
 
-Wyniki opublikowane do maja 2026 roku pokazują silną przewagę Anthropic w tej kategorii. **Claude Opus 4.5 był pierwszym modelem, który przekroczył próg 80%, osiągając 80,9%.** Claude Opus 4.8, wydany 28 maja 2026 roku, uzyskał 88,6% (poprzedni Opus 4.7 – 87,6%; dane: [BenchLM.ai](https://benchlm.ai/benchmarks/sweVerified)), a niedostępny publicznie Claude Mythos Preview – 93,9% według Anthropic. Na trudniejszym SWE-bench Pro GPT-5.5 zanotował 58,6%, a Claude Opus 4.8 prowadził z wynikiem 69,2% (Opus 4.7 – 64,3%). Od tego czasu obie firmy wydały nowe modele – rodzinę GPT-5.6 (lipiec 2026) oraz Claude Sonnet 5 (czerwiec 2026) i Opus 5 (lipiec 2026) – ale Anthropic w zapowiedzi Opus 5 nie podał wyniku SWE-bench Verified.
+Wyniki opublikowane do maja 2026 roku pokazują silną przewagę Anthropic w tej kategorii. **Claude Opus 4.5 był pierwszym modelem, który przekroczył próg 80%, osiągając 80,9%.** Claude Opus 4.8, wydany 28 maja 2026 roku, uzyskał 88,6% (poprzedni Opus 4.7 – 87,6%; dane: [BenchLM.ai](https://benchlm.ai/benchmarks/sweVerified)), a niedostępny publicznie Claude Mythos Preview – 93,9% według Anthropic. Na trudniejszym SWE-bench Pro GPT-5.5 zanotował 58,6%, a Claude Opus 4.8 prowadził z wynikiem 69,2% (Opus 4.7 – 64,3%). Od tego czasu obie firmy wydały nowe modele – rodzinę GPT-5.6 (lipiec 2026) i GPT-6 Astra (w API od 3 września 2026) oraz Claude Sonnet 5 (czerwiec 2026), Opus 5 (lipiec 2026) i Fable 5.1 – ale Anthropic w zapowiedzi Opus 5 nie podał wyniku SWE-bench Verified, więc powyższe liczby trzeba traktować jako stan z maja 2026, a nie aktualny ranking.
 
 Co te liczby znaczą w praktyce? SWE-bench wymaga analizy wielu plików jednocześnie. Model musi śledzić zależności między modułami, zrozumieć historię zmian i napisać łatkę, która nie wywali innych testów. **To dokładnie ten typ pracy, który zajmuje programistom długie godziny.**
 
@@ -76,7 +82,7 @@ Co te liczby znaczą w praktyce? SWE-bench wymaga analizy wielu plików jednocze
 
 ### HumanEval i MBPP – gdzie benchmarki przestają rozróżniać modele
 
-Na HumanEval (generowanie funkcji Pythona z opisu w języku naturalnym) Claude 3.5 Sonnet i GPT-4o osiągają odpowiednio 92% i 90,2%. Przy takich wynikach różnica zaciera się w codziennym użyciu. **Dla prostych zadań generowania kodu oba modele są praktycznie równoważne – wybór zależy wtedy od ekosystemu, a nie od zdolności modelu.**
+Na HumanEval (generowanie funkcji Pythona z opisu w języku naturalnym) już w 2024 roku Claude 3.5 Sonnet i GPT-4o osiągały odpowiednio 92% i 90,2%. Przy takich wynikach różnica zaciera się w codziennym użyciu. **Dla prostych zadań generowania kodu oba modele są praktycznie równoważne – wybór zależy wtedy od ekosystemu, a nie od zdolności modelu.**
 
 Nasycenie HumanEval przez wiodące modele sprawiło, że branża przeniosła się na trudniejsze benchmarki. Na SWE-bench Pro – zestawie bardziej złożonych, wieloplikowych problemów – rozstrzał między modelami rośnie. To właśnie tutaj widać rzeczywistą przewagę Claude'a w złożonym rozumowaniu nad kodem. Pełny profil możliwości modelu i jego historię opisuje [artykuł o Claude](/modele-llm/claude/), a odpowiednik po stronie OpenAI – [artykuł o ChatGPT](/modele-llm/chatgpt/).
 
@@ -107,26 +113,27 @@ Zestawienie najważniejszych parametrów obu ekosystemów ułatwia podjęcie dec
 |---|---|---|
 | **SWE-bench Verified (maj 2026)** | 88,6% (Opus 4.8) | – |
 | **SWE-bench Pro (maj 2026)** | 69,2% (Opus 4.8) | 58,6% (GPT-5.5) |
-| **HumanEval (mid-tier)** | 92% (Sonnet 3.5) | 90,2% (GPT-4o) |
+| **HumanEval (mid-tier, 2024)** | 92% (Claude 3.5 Sonnet) | 90,2% (GPT-4o) |
 | **Cena API – balans (in/out)** | $2/$10 za 1M tokenów (Sonnet 5) | $2/$12 za 1M tokenów (GPT-5.6 Terra) |
 | **Cena API – flagship (in/out)** | $5/$25 za 1M tokenów (Opus 5) | $4/$20 za 1M tokenów (GPT-5.6 Sol, cena promocyjna) |
+| **Cena API – najmocniejszy model (in/out)** | $10/$50 za 1M tokenów (Fable 5.1) | $10/$50 za 1M tokenów (GPT-6 Astra, tylko API) |
 | **Cena API – ekonomiczny** | $1/$5 za 1M tokenów (Haiku 4.5) | $0,20/$1,20 za 1M tokenów (GPT-5.6 Luna) |
-| **Okno kontekstowe** | 1 000 000 tokenów (Opus 5, Sonnet 5) | 1 050 000 tokenów (GPT-5.6 Sol) |
+| **Okno kontekstowe** | 1 000 000 tokenów (Fable 5.1, Opus 5, Sonnet 5) | 1 050 000 tokenów (GPT-6 Astra, GPT-5.6) |
 | **Agent do kodowania** | Claude Code (terminal, IDE, desktop, web) | Codex CLI i IDE (lokalnie) + Codex cloud (chmura) |
 | **Tryb wykonania agenta** | głównie lokalny (filesystem) | hybrydowy (lokalny CLI + chmurowy kontener) |
 | **Dostęp do narzędzi** | MCP (otwarty standard) | Function Calling, Responses API |
-| **Plan subskrypcji z agentem** | Pro ($20/mies.) lub Max ($100–200/mies.) | ChatGPT Plus ($20/mies.) lub Pro (od $100/mies.) |
+| **Plan subskrypcji z agentem** | Pro ($20/mies.) lub Max ($100–200/mies.) | ChatGPT Plus ($20/mies.) lub Pro (od $100/mies.; nowe zapisy na wariant $200 wstrzymane) |
 | **Prompt caching (odczyt)** | $0,20/1M tokenów (Sonnet 5) | $0,20/1M tokenów (GPT-5.6 Terra) |
 
-Warto doprecyzować kilka kwestii. W klasie zbalansowanej Sonnet 5 i GPT-5.6 Terra kosztują tyle samo na wejściu, a Sonnet jest nieco tańszy na wyjściu. U obu dostawców odczyt z cache kosztuje 10% ceny wejścia, więc przy długich sesjach agentowych, gdzie ten sam kontekst projektu przesyła się wielokrotnie, koszt pojedynczego żądania mocno spada. We flagowcach relacja się odwraca – GPT-5.6 Sol w cenie promocyjnej ($4/$20) jest tańszy od Claude Opus 5 ($5/$25). **Rzeczywisty koszt miesięczny zależy bardziej od liczby i długości sesji agentowych niż od różnic w cennikach, dlatego warto go zmierzyć na własnym repozytorium.**
+Warto doprecyzować kilka kwestii. W klasie zbalansowanej Sonnet 5 i GPT-5.6 Terra kosztują tyle samo na wejściu, a Sonnet jest nieco tańszy na wyjściu. U obu dostawców odczyt z cache kosztuje 10% ceny wejścia, więc przy długich sesjach agentowych, gdzie ten sam kontekst projektu przesyła się wielokrotnie, koszt pojedynczego żądania mocno spada. We flagowcach relacja się odwraca – GPT-5.6 Sol w cenie promocyjnej ($4/$20) jest tańszy od Claude Opus 5 ($5/$25). Na samej górze oferty cenniki się zrównują – GPT-6 Astra i Claude Fable 5.1 kosztują po $10/$50. **Rzeczywisty koszt miesięczny zależy bardziej od liczby i długości sesji agentowych niż od różnic w cennikach, dlatego warto go zmierzyć na własnym repozytorium.**
 
 ## Jakość kodu w praktyce – gdzie naprawdę widać różnicę
 
 Benchmarki to mierzalny punkt wyjścia. W codziennej pracy programistów powtarzają się jednak inne obserwacje. Nie trafiają one do tabel, a bywają decydujące przy wyborze narzędzia.
 
-**Claude wyróżnia się w złożonych refaktoryzacjach, gdzie konieczne jest śledzenie zależności przez wiele plików jednocześnie.** Milionowe okno kontekstowe to nie tylko marketing. Model potrafi wczytać całe repozytorium średniej wielkości (do ~700 tys. tokenów kodu), przeanalizować historię zmian i zaproponować refaktoryzację spójną z istniejącymi wzorcami. Warto jednak zaznaczyć, że w 2026 roku OpenAI nadrobiło te zaległości. GPT-5.5 również dysponuje oknem powyżej miliona tokenów (w przeciwieństwie do starszego GPT-4o, który bywał zmuszony do wycinania kontekstu lub korzystania ze strategii streszczania, przez co traciło się szczegóły).
+**Claude wyróżnia się w złożonych refaktoryzacjach, gdzie konieczne jest śledzenie zależności przez wiele plików jednocześnie.** Milionowe okno kontekstowe to nie tylko marketing. Model potrafi wczytać całe repozytorium średniej wielkości (do ~700 tys. tokenów kodu), przeanalizować historię zmian i zaproponować refaktoryzację spójną z istniejącymi wzorcami. Warto jednak zaznaczyć, że w 2026 roku OpenAI nadrobiło te zaległości. Już GPT-5.5 dysponował oknem powyżej miliona tokenów, a obecne GPT-5.6 i GPT-6 Astra obsługują 1,05 mln (w przeciwieństwie do starszego GPT-4o, który bywał zmuszony do wycinania kontekstu lub korzystania ze strategii streszczania, przez co traciło się szczegóły).
 
-Od lipca 2026 flagowcem OpenAI jest GPT-5.6 Sol (4/20 USD za 1M tokenów w cenie promocyjnej, okno 1,05 mln), a po stronie Anthropic – Claude Opus 5 (5/25 USD, okno 1 mln), obok którego do najbardziej wymagających zadań dostępny jest Claude Fable 5.1. Z kolei ChatGPT i GPT-5.6 pokazują przewagę przy generowaniu kodu szablonowego (boilerplate) i pracy z mniej popularnymi frameworkami. Ekosystem OpenAI jest rozleglejszy, a model widywał więcej różnorodnego kodu w danych treningowych. Jeśli piszesz szybki skrypt w niszowej bibliotece, Codex często proponuje działający prototyp już w pierwszej iteracji.
+Najmocniejszym modelem OpenAI jest od 3 września 2026 GPT-6 Astra (10/50 USD za 1M tokenów, okno 1,05 mln) – dostępny w API, ale nie w ChatGPT, gdzie najwyższą półkę nadal zajmuje GPT-5.6 Sol (w API 4/20 USD w cenie promocyjnej, okno 1,05 mln). Po stronie Anthropic domyślnie polecanym modelem jest Claude Opus 5 (5/25 USD, okno 1 mln), a do najbardziej wymagających zadań dostępny jest Claude Fable 5.1 (10/50 USD). Z kolei ChatGPT i GPT-5.6 pokazują przewagę przy generowaniu kodu szablonowego (boilerplate) i pracy z mniej popularnymi frameworkami. Ekosystem OpenAI jest rozleglejszy, a model widywał więcej różnorodnego kodu w danych treningowych. Jeśli piszesz szybki skrypt w niszowej bibliotece, Codex często proponuje działający prototyp już w pierwszej iteracji.
 
 Przy pracy w językach innych niż angielski różnica jest mniejsza, ale wciąż widoczna. Modele OpenAI radzą sobie lepiej z generowaniem komentarzy i dokumentacji po polsku. Dla samego kodu (logika, algorytmy, architektura) język naturalny nie ma oczywiście żadnego znaczenia.
 
@@ -163,9 +170,9 @@ Orientacyjny dobór modelu do intensywności pracy:
 
 - **Lekkie użycie** (skrypty, eksperymenty) – wystarczą tańsze modele, np. Claude Haiku 4.5 lub GPT-5.6 Luna
 - **Regularna praca** (daily coding assistant) – modele zbalansowane: Claude Sonnet 5 lub GPT-5.6 Terra
-- **Intensywna praca z agentami** (Claude Code / Codex, cały dzień roboczy) – flagowce Claude Opus 5 lub GPT-5.6 Sol, często korzystniej w ramach subskrypcji niż w rozliczeniu za tokeny
+- **Intensywna praca z agentami** (Claude Code / Codex, cały dzień roboczy) – flagowce Claude Opus 5 lub GPT-5.6 Sol, często korzystniej w ramach subskrypcji niż w rozliczeniu za tokeny; po najdroższe Claude Fable 5.1 i GPT-6 Astra ($10/$50) warto sięgać tylko przy zadaniach, z którymi flagowce sobie nie radzą
 
-Subskrypcja ChatGPT Pro (od $100/mies.) obejmuje dostęp do Codex i modeli GPT-5.6 bez dodatkowych opłat za token. Dla zaawansowanych użytkowników narzędzi agentowych może to być znacznie korzystniejsze niż model płatności za zużycie (pay-as-you-go) w Anthropic. Claude oferuje analogicznie plan Max ($100–200/mies.) z wyższymi limitami, ale rozliczenia tokenowe nadal obowiązują przy przekroczeniu puli.
+Subskrypcja ChatGPT Pro (od $100/mies.; nowe zapisy na wariant za $200 są obecnie wstrzymane) obejmuje dostęp do Codex i modeli GPT-5.6 bez dodatkowych opłat za token. Dla zaawansowanych użytkowników narzędzi agentowych może to być znacznie korzystniejsze niż model płatności za zużycie (pay-as-you-go) w Anthropic. Claude oferuje analogicznie plan Max ($100–200/mies.) z wyższymi limitami, ale rozliczenia tokenowe nadal obowiązują przy przekroczeniu puli.
 
 Pełny przegląd modeli i ich pozycjonowania cenowego – razem z alternatywami ekonomicznymi dla różnych wolumenów użycia – zestawia przewodnik po modelach LLM dostępny w sekcji powyżej.
 

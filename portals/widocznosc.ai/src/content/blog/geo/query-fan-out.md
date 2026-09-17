@@ -40,6 +40,9 @@ sources:
   - title: 'ChatGPT Citations Study: 44% From First Third of Content'
     url: 'https://almcorp.com/blog/chatgpt-citations-study-44-percent-first-third-content/'
     note: 'ALM Corp, omówienie badania Kevina Indiga z lutego 2026 roku. 44,2% cytowań ChatGPT pochodzi z pierwszych 30% treści.'
+  - title: 'Models – OpenAI API'
+    url: 'https://developers.openai.com/api/docs/models'
+    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
 ---
 Klasyczne SEO przyzwyczaiło nas do prostego modelu: użytkownik wpisuje frazę, wyszukiwarka dopasowuje wyniki, a my optymalizujemy pod to treść. **Query fan-out (rozszczepienie zapytania) wywraca ten schemat do góry nogami.** Pomiędzy pytaniem a odpowiedzią pojawia się nowa warstwa. Rozbija ona jeden prompt na wiele szczegółowych podzapytań i dopiero one trafiają do indeksu. **Jeśli Twoja strona pasuje do oryginalnej frazy, ale omija wygenerowane podzapytania, w odpowiedzi AI po prostu Cię nie ma.**
 
@@ -113,7 +116,7 @@ Istnieją konkretne działania, które realnie zwiększają szanse na cytowanie.
 
 ### Opracowanie mapy podzapytań przed pisaniem treści
 
-Zanim napiszesz tekst na temat X, użyj narzędzia takiego jak `Qforia` (darmowe od iPullRank) lub własnego promptu w GPT-4: *"Wygeneruj 30 podzapytań, które Google AI Mode mógłby utworzyć na pytanie [X]"*. W ten sposób błyskawicznie otrzymasz gotowy plan nagłówków H2 i H3 dla swojego artykułu.
+Zanim napiszesz tekst na temat X, użyj narzędzia takiego jak `Qforia` (darmowe od iPullRank) lub własnego promptu w GPT-5.6: *"Wygeneruj 30 podzapytań, które Google AI Mode mógłby utworzyć na pytanie [X]"*. W ten sposób błyskawicznie otrzymasz gotowy plan nagłówków H2 i H3 dla swojego artykułu.
 
 Każde podzapytanie musi otrzymać swój samodzielny fragment z odpowiedzią. **Nie wciskaj 30 podzapytań w jeden artykuł na siłę.** Jeśli dana grupa naturalnie pasuje do osobnego filaru (pillar page), po prostu ją wydziel.
 

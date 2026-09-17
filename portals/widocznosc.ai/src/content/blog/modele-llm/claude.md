@@ -62,7 +62,7 @@ sources:
     note: 'Anthropic. Cennik planów: Free z wyszukiwaniem w sieci, pamięcią i Artifacts; Pro 20 USD; Max od 100 USD (5× lub 20× limitów Pro); Team 20/25 USD za miejsce dla 2–150 osób; Enterprise 20 USD za miejsce plus zużycie według stawek API.'
   - title: 'Models overview'
     url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
-    note: 'Anthropic, dokumentacja API. Aktualne modele Fable 5.1, Opus 5, Sonnet 5 i Haiku 4.5 oraz lista modeli legacy (m.in. Opus 4.8 i Sonnet 4.6).'
+    note: 'Anthropic, dokumentacja API. Aktualne modele Fable 5.1 (10/50 USD), Opus 5 (5/25 USD, polecany na start dla większości zadań), Sonnet 5 (2/10 USD) i Haiku 4.5 (1/5 USD) oraz lista modeli legacy (m.in. Fable 5, Opus 4.8 i Sonnet 4.6).'
   - title: 'Introducing Claude Sonnet 5'
     url: 'https://www.anthropic.com/news/claude-sonnet-5'
     note: 'Anthropic, 30 czerwca 2026. Sonnet 5 domyślnym modelem w planach Free i Pro; w tabeli porównawczej wynik Sonnet 4.6 w OSWorld-Verified – 78,5%.'
@@ -108,25 +108,26 @@ Claude rozróżnia trzy poziomy zaufania w każdej rozmowie.
 
 ![Rodzina modeli Claude – Haiku, Sonnet i Opus uszeregowane według mocy i szybkości, oparte na Constitutional AI](../../../assets/images/infographic-modele-llm-claude.png)
 
-## Rodzina modeli Claude – Haiku, Sonnet, Opus
+## Rodzina modeli Claude – Haiku, Sonnet, Opus i Fable
 
-Anthropic strukturyzuje swoje modele według trzech klas, różnicując je szybkością, zdolnościami i ceną. Pozwala to precyzyjnie dopasować model do konkretnego zadania bez przepłacania za niepotrzebną moc obliczeniową.
+Anthropic strukturyzuje swoje modele według klas, różnicując je szybkością, zdolnościami i ceną. Pozwala to precyzyjnie dopasować model do konkretnego zadania bez przepłacania za niepotrzebną moc obliczeniową.
 
 Zestawienie aktualnych klas modeli ułatwia wybór odpowiedniego wariantu (bez numerów wersji, które zmieniają się wraz z kolejnymi wydaniami).
 
 | Klasa modelu | Przeznaczenie | Charakterystyka |
 |---|---|---|
 | **Haiku** | Zadania masowe, szybkie interakcje | Najniższy koszt w przeliczeniu na token, najkrótszy czas odpowiedzi, dobry do klasyfikacji, ekstrakcji danych i prostych Q&A |
-| **Sonnet** | Balans zdolności i ceny | Optymalny do większości zadań biznesowych – analiza dokumentów, pisanie, asystent w aplikacjach |
-| **Opus** | Złożone zadania analityczne | Najwyższe zdolności rozumowania, droższy, przeznaczony do wieloetapowych zadań agentowych i inżynierii oprogramowania |
+| **Sonnet** | Balans zdolności i ceny | Dobry wybór do wielu zadań biznesowych – analiza dokumentów, pisanie, asystent w aplikacjach |
+| **Opus** | Złożone zadania analityczne | Wysokie zdolności rozumowania, droższy, przeznaczony do wieloetapowych zadań agentowych i inżynierii oprogramowania; Anthropic poleca go na start do większości zadań |
+| **Fable** | Najbardziej wymagające zadania | Najmocniejsza i najdroższa klasa, do złożonego rozumowania i długich zadań agentowych |
 
-We wrześniu 2026 roku aktualne modele to Claude Haiku 4.5, Sonnet 5 i Opus 5, a do najbardziej wymagającego rozumowania i długich zadań agentowych Anthropic oferuje ponadto Claude Fable 5.1. **Starsze modele trafiają do grupy legacy, a następnie są wycofywane z API według ogłoszonego harmonogramu, co wymusza regularną aktualizację integracji.** Przykładowo Opus 4.8 i Sonnet 4.6 mają już status legacy, a to stanowi kluczowy czynnik przy planowaniu wdrożeń produkcyjnych.
+We wrześniu 2026 roku aktualne modele to Claude Haiku 4.5, Sonnet 5 i Opus 5, a do najbardziej wymagającego rozumowania i długich zadań agentowych Anthropic oferuje ponadto Claude Fable 5.1 (w API 10 USD za milion tokenów wejściowych i 50 USD za wyjściowe, wobec 5/25 USD dla Opus 5 i 2/10 USD dla Sonnet 5). **Starsze modele trafiają do grupy legacy, a następnie są wycofywane z API według ogłoszonego harmonogramu, co wymusza regularną aktualizację integracji.** Przykładowo Opus 4.8 i Sonnet 4.6 mają już status legacy, a to stanowi kluczowy czynnik przy planowaniu wdrożeń produkcyjnych.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>W testach środowiskowych OSWorld z końca 2024 roku – oceniających zdolność autonomicznego sterowania komputerem – Claude (wówczas wersja 3.5) osiągnął 14,9% poprawnie wykonanych zadań, dwukrotnie wyprzedzając drugi model (7,7%). <strong>Od tego czasu wyniki gwałtownie wzrosły – Claude Sonnet 4.6 osiągnął już 78,5% w nowszym wariancie OSWorld-Verified.</strong> To pokazuje, jak szybko dojrzewa dziedzina, w której jeszcze niedawno autonomiczni agenci AI byli głównie eksperymentalni.</p>
+    <p>W testach środowiskowych OSWorld z końca 2024 roku – oceniających zdolność autonomicznego sterowania komputerem – Claude (wówczas wersja 3.5) osiągnął 14,9% poprawnie wykonanych zadań, dwukrotnie wyprzedzając drugi model (7,7%). <strong>Od tego czasu wyniki gwałtownie wzrosły – według zestawienia Anthropic z czerwca 2026 roku Claude Sonnet 4.6 (dziś model legacy) osiągnął 78,5% w nowszym wariancie OSWorld-Verified.</strong> To pokazuje, jak szybko dojrzewa dziedzina, w której jeszcze niedawno autonomiczni agenci AI byli głównie eksperymentalni.</p>
   </div>
 </aside>
 
@@ -183,8 +184,8 @@ Claude nie jest najlepszy we wszystkich kategoriach, a uczciwe porównanie pomag
 
 Mocne strony Claude'a wynikające z realnych testów prezentują się następująco.
 
-- **Długi kontekst z zachowaniem uwagi** – w testach MRCR v2 mierzących zdolność wydobywania szczegółów z milionowego kontekstu model Claude Opus 4.6 osiągnął 76% trafnych odpowiedzi (Sonnet 4.5 – 18,5%)
-- **Złożone rozumowanie wieloetapowe** – wyniki benchmarku Humanity's Last Exam (zestaw 2500 zadań na granicy poznania naukowego, opublikowany przez Scale AI i Center for AI Safety w czasopiśmie Nature w styczniu 2026 roku) plasują flagowe modele Anthropic w ścisłej czołówce
+- **Długi kontekst z zachowaniem uwagi** – w testach MRCR v2 mierzących zdolność wydobywania szczegółów z milionowego kontekstu model Claude Opus 4.6 osiągnął w lutym 2026 roku 76% trafnych odpowiedzi (Sonnet 4.5 – 18,5%)
+- **Złożone rozumowanie wieloetapowe** – w benchmarku Humanity's Last Exam (zestaw 2500 zadań na granicy poznania naukowego, opublikowany przez Scale AI i Center for AI Safety w czasopiśmie Nature w styczniu 2026 roku) Claude Opus 4.6 prowadził według danych Anthropic z lutego 2026 roku; ranking zmienia się jednak z każdą generacją modeli
 - **Bezpieczeństwo i transparentność** – technologia Constitutional AI redukuje fałszywe pozytywne odmowy, a firma Anthropic co 3–6 miesięcy publikuje raport o ryzykach swoich modeli
 
 Claude wypada jednak gorzej na tle konkurentów w kilku konkretnych obszarach.

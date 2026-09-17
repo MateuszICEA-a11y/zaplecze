@@ -40,6 +40,9 @@ sources:
   - title: 'The Dual LLM pattern for building AI assistants that can resist prompt injection'
     url: 'https://simonwillison.net/2023/Apr/25/dual-llm-pattern/'
     note: 'Simon Willison, 25 kwietnia 2023. Pierwotny opis wzorca: model uprzywilejowany z narzędziami operuje tylko na nazwach zmiennych, a model w kwarantannie bez narzędzi przetwarza niezaufane dane.'
+  - title: 'Models – OpenAI API'
+    url: 'https://developers.openai.com/api/docs/models'
+    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
 ---
 Prompt engineering (inżynieria podpowiedzi) to dyscyplina, która decyduje o tym, czy LLM (Large Language Model, czyli duży model językowy) wygeneruje użyteczną odpowiedź, czy bezwartościowy szum. Tu nie ma magicznych słów. Liczy się zrozumienie mechanizmów przetwarzania instrukcji i takie zaprojektowanie promptu, by model otrzymał precyzyjne wytyczne. Ten przewodnik przeprowadzi Cię od podstawowych technik, przez zaawansowane architektury wnioskowania, aż po bezpieczeństwo systemów opartych na LLM – z konkretnymi przykładami gotowymi do wdrożenia.
 
@@ -47,7 +50,7 @@ Prompt engineering (inżynieria podpowiedzi) to dyscyplina, która decyduje o ty
 
 Prompt to każda instrukcja, pytanie lub kontekst, które przekazujesz modelowi AI. Brzmi banalnie. **Jakość promptu bezpośrednio determinuje jednak jakość odpowiedzi – i to w sposób, który da się zmierzyć oraz zoptymalizować.**
 
-[Inżynieria podpowiedzi](https://pl.wikipedia.org/wiki/In%C5%BCynieria_podpowiedzi) wyrosła z obserwacji, że te same modele generują diametralnie różne odpowiedzi w zależności od sformułowania zapytania. GPT-4 poproszony o „napisz artykuł o SEO" oraz poproszony o „napisz artykuł o SEO dla dyrektora marketingu B2B SaaS, który zna podstawy pozycjonowania, ale nie zna GEO; artykuł ma zawierać 3 konkretne taktyki z wynikami badań" – to dwa zupełnie inne zadania. Dają one skrajnie różne jakościowo wyniki.
+[Inżynieria podpowiedzi](https://pl.wikipedia.org/wiki/In%C5%BCynieria_podpowiedzi) wyrosła z obserwacji, że te same modele generują diametralnie różne odpowiedzi w zależności od sformułowania zapytania. GPT-5.6 poproszony o „napisz artykuł o SEO" oraz poproszony o „napisz artykuł o SEO dla dyrektora marketingu B2B SaaS, który zna podstawy pozycjonowania, ale nie zna GEO; artykuł ma zawierać 3 konkretne taktyki z wynikami badań" – to dwa zupełnie inne zadania. Dają one skrajnie różne jakościowo wyniki.
 
 **To nie jest problem modeli, lecz problem komunikacji.** Modele językowe są ekstremalnie dosłowne. Nie domyślają się intencji. Twój prompt to jedyna specyfikacja, jaką dysponują.
 
@@ -297,7 +300,7 @@ Zestawienie kluczowych różnic między popularnymi modelami:
 
 | Model | Mocna strona | Zachowanie domyślne | Kluczowa wskazówka |
 |---|---|---|---|
-| GPT-5 / GPT-5.6 | Instrukcje złożone, formatowanie | Bezpośredni, zorientowany na zadanie | Definiuj osobowość i styl wprost |
+| GPT-5.6 | Instrukcje złożone, formatowanie | Bezpośredni, zorientowany na zadanie | Definiuj osobowość i styl wprost |
 | Claude Sonnet/Opus | Długie dokumenty, wnioskowanie | Ostrożny, zadaje pytania przy niejednoznaczności | Podawaj kontekst celu, nie tylko treści |
 | Gemini 3.1 Pro | Dane multimodalne, kod | Analityczny, struktura Markdown | Dane kontekstowe umieszczaj przed instrukcją |
 | Llama 4 (open source) | Koszt, prywatność danych | Wymaga precyzyjnych szablonów | Few-shot obowiązkowy dla niestandardowych formatów |

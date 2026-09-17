@@ -62,7 +62,10 @@ sources:
     note: 'xAI, 28 marca 2024. Zapowiedź Grok-1.5 z oknem kontekstu 128 tys. tokenów.'
   - title: 'Models'
     url: 'https://docs.x.ai/docs/models'
-    note: 'Dokumentacja xAI. Cennik API za milion tokenów: Grok 4.6 – 2 USD (wejście) i 6 USD (wyjście), okno 500 tys. tokenów; Grok 4.3 – 1,25 USD i 2,50 USD, okno 1 mln tokenów (stawki dla promptów poniżej 200 tys. tokenów).'
+    note: 'Dokumentacja xAI. Cennik API za milion tokenów: Grok 4.6 – 2 USD (wejście) i 6 USD (wyjście), okno 500 tys. tokenów, wiedza do 1 lutego 2026; Grok 4.5 – 2 USD i 6 USD, okno 500 tys.; Grok 4.3 – 1,25 USD i 2,50 USD, okno 1 mln tokenów (stawki dla promptów poniżej 200 tys. tokenów); warianty grok-4.20-0309, grok-build-0.1, Grok Imagine i Voice API.'
+  - title: 'Release notes'
+    url: 'https://docs.x.ai/docs/release-notes'
+    note: 'Dokumentacja xAI. Udostępnienie Grok 4.20 i Grok 4.20 Multi-agent w marcu oraz Grok 4.6 w API w sierpniu.'
   - title: 'What did Elon change? A comprehensive analysis of Grokipedia'
     url: 'https://arxiv.org/html/2511.09685v1'
     note: 'Harold Triedman, Alexios Mantzarlis (Cornell Tech), 12 listopada 2025. Start Grokipedii 27 października 2025 roku z 885 279 artykułami.'
@@ -108,26 +111,28 @@ xAI rozwija Groka w bardzo szybkim, choć nieoczywistym schemacie nazewnictwa. P
 | Grok 3 | luty 2025 | Tryb myślenia, trening na Colossus |
 | Grok 4 | lipiec 2025 | Wariant „Heavy", skok jakości |
 | Grok 4.1 | listopad 2025 | Lepsza inteligencja emocjonalna |
-| Grok 4.20 | początek 2026 | Warianty reasoning / multi-agent |
-| Grok 4.5 (beta) | czerwiec 2026 | Baza ok. 1,5 biliona parametrów |
-| Grok 4.6 | 2026 | Obecny flagowiec API, okno 500 tys. tokenów, rozumowanie z regulowanym wysiłkiem |
+| Grok 4.20 | marzec 2026 | Warianty reasoning / non-reasoning / multi-agent, okno 1 mln tokenów |
+| Grok 4.3 | 2026 | Tańszy model z oknem 1 mln tokenów |
+| Grok 4.5 (beta) | czerwiec 2026 | Baza ok. 1,5 biliona parametrów, okno 500 tys. tokenów |
+| Grok 4.6 | sierpień 2026 | Obecny flagowiec API, okno 500 tys. tokenów, rozumowanie z regulowanym wysiłkiem |
 
-Obecna generacja to rodzina **Grok 4.x**, która ustabilizowała pozycję modelu w ścisłej czołówce. xAI deklaruje, że w benchmarkach matematycznych i naukowych (jak AIME czy GPQA) Grok wyprzedza wcześniejsze flagowce konkurencji, a w zadaniach programistycznych plasuje się na poziomie najlepszych modeli. Ze względu na nietypowe nazewnictwo (np. „Grok 4.20") przy wdrożeniu API zawsze warto zweryfikować aktualny identyfikator modelu w dokumentacji xAI.
+Obecna generacja to rodzina **Grok 4.x**, która ustabilizowała pozycję modelu w ścisłej czołówce. Przy premierze Grok 4 w lipcu 2025 roku xAI deklarowała, że w benchmarkach matematycznych i naukowych (jak AIME czy GPQA) model wyprzedza ówczesne flagowce konkurencji. Najnowszy Grok 4.6 xAI opisuje jako swój najinteligentniejszy i najszybszy model, ale w wyścigu z nowymi modelami OpenAI i Anthropic kolejność w rankingach zmienia się co kilka miesięcy. Ze względu na nietypowe nazewnictwo (np. „Grok 4.20") przy wdrożeniu API zawsze warto zweryfikować aktualny identyfikator modelu w dokumentacji xAI.
 
 ## Możliwości i cennik API
 
-Poza czatem Grok oferuje generowanie obrazów oraz krótkich filmów (funkcja Grok Imagine), a xAI zbudowała wokół modelu szerszy ekosystem – w tym Grokipedię, generowaną przez AI alternatywę dla encyklopedii. Modele w API obsługują duże okna kontekstu, sięgające w największych wariantach 1 miliona tokenów, co pozwala analizować obszerne repozytoria kodu czy długie dokumenty.
+Poza czatem Grok oferuje generowanie obrazów oraz krótkich filmów (funkcja Grok Imagine – w API modele Grok Imagine Image 2.0 za 0,04 USD za obraz i Grok Imagine Video 1.5 za 0,08 USD za sekundę wideo), a xAI zbudowała wokół modelu szerszy ekosystem – w tym Grokipedię, generowaną przez AI alternatywę dla encyklopedii. Modele w API obsługują duże okna kontekstu, sięgające w największych wariantach 1 miliona tokenów, co pozwala analizować obszerne repozytoria kodu czy długie dokumenty.
 
 Cennik API (za 1 milion tokenów, dla promptów poniżej 200 tys. tokenów) jest konkurencyjny wobec zachodnich flagowców. Flagowym modelem w API jest Grok 4.6, a tańszą opcją z dłuższym kontekstem – Grok 4.3:
 
 | Model | Wejście | Wyjście | Okno kontekstu |
 |---|---|---|---|
 | Grok 4.6 | 2,00 USD | 6,00 USD | 500 tys. |
+| Grok 4.5 | 2,00 USD | 6,00 USD | 500 tys. |
 | Grok 4.3 | 1,25 USD | 2,50 USD | 1 mln |
 
-Powyżej 200 tys. tokenów w prompcie stawki rosną dwukrotnie.
+Powyżej 200 tys. tokenów w prompcie stawki rosną dwukrotnie (w Groku 4.6 do 4 i 12 USD), a tokeny wejściowe z pamięci podręcznej kosztują w Groku 4.6 0,50 USD za milion.
 
-xAI utrzymuje też tańsze i wyspecjalizowane warianty (m.in. reasoning oraz szybkie modele niskokosztowe), ale przy bardzo szybkim tempie zmian – starsze modele, jak Grok 4.1 Fast, zostały wygaszone i przekierowane na nowsze – aktualne stawki i identyfikatory zawsze warto zweryfikować w dokumentacji xAI. Dodatkowo firma kusi deweloperów pulą darmowych kredytów API (do ok. 175 USD miesięcznie) w ramach programu dzielenia się danymi, co wiąże się z wykorzystaniem zapytań do dalszego rozwoju modeli.
+xAI utrzymuje też wyspecjalizowane warianty – m.in. rodzinę grok-4.20-0309 (reasoning, non-reasoning i multi-agent, okno 1 mln tokenów), model grok-build-0.1 (okno 256 tys. tokenów) oraz Voice API rozliczane za minutę (0,08 USD) – ale przy bardzo szybkim tempie zmian – starsze modele, jak Grok 4.1 Fast, zostały wygaszone i przekierowane na nowsze – aktualne stawki i identyfikatory zawsze warto zweryfikować w dokumentacji xAI. Dodatkowo firma kusi deweloperów pulą darmowych kredytów API (do ok. 175 USD miesięcznie) w ramach programu dzielenia się danymi, co wiąże się z wykorzystaniem zapytań do dalszego rozwoju modeli.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>

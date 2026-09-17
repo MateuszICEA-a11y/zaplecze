@@ -43,6 +43,12 @@ sources:
   - title: 'ChemCrow: Augmenting large-language models with chemistry tools'
     url: 'https://arxiv.org/abs/2304.05376'
     note: 'Bran i in., kwiecień 2023 (wersja v5 z 2 października 2023). Agent korzysta z 18 narzędzi eksperckich; GPT-4 jako ewaluator nie odróżniał błędnych odpowiedzi GPT-4 od wyników ChemCrow, w przeciwieństwie do ekspertów.'
+  - title: 'Models – OpenAI API'
+    url: 'https://developers.openai.com/api/docs/models'
+    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
+  - title: 'Models overview – Claude Docs'
+    url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
+    note: 'Anthropic, dokumentacja, stan na 17 września 2026. Aktualne modele Claude Fable 5.1, Opus 5, Sonnet 5 i Haiku 4.5.'
 ---
 **Agent AI to nie chatbot z lepszym promptem, ale system, który planuje, wywołuje narzędzia i zapamiętuje wyniki aż do osiągnięcia celu.** Żeby ocenić, czy sprawdzi się w Twojej organizacji, musisz zrozumieć trzy filary jego architektury: narzędzia (czyli „ręce”), pamięć (czyli „kontekst operacyjny”) i pętlę decyzyjną (czyli „mózg”). Zanim powierzysz mu dostęp do CRM-u, bazy danych lub skrzynki mailowej, sprawdź mechanizmy działania pod spodem. Szerszy kontekst – czym agenci AI różnią się od klasycznych automatyzacji i kiedy warto po nie sięgać – znajdziesz w [przewodniku po agentach AI](/agenci-ai/przewodnik/).
 
@@ -58,7 +64,7 @@ Trzy główne kategorie narzędzi w produkcyjnych systemach agentowych:
 - **Zapis i modyfikacja stanu** – pisanie do baz danych, wysyłanie e-maili, tworzenie zgłoszeń (ticketów) w Jirze czy aktualizacja CRM; to operacje nieodwracalne, wymagające szczególnej ostrożności
 - **Wykonanie kodu** – uruchamianie skryptów Python, poleceń powłoki i transformacji danych; najsilniejsze, a zarazem najbardziej ryzykowne uprawnienie
 
-**Pionierski system MRKL (Modular Reasoning, Knowledge and Language) z 2022 roku pokazał, że modele o małej skali mają duże trudności z poprawną ekstrakcją argumentów do wywołań narzędzi.** Późniejszy Toolformer (Schick et al. 2023) rozwiązał ten problem przez uczenie samonadzorowane w zakresie korzystania z interfejsów programistycznych – na podstawie minimalnej liczby ludzkich przykładów. Współczesne GPT-5 czy Claude Opus 4.8 radzą sobie z tym znacznie lepiej, ale błędy w argumentach narzędziowych wciąż pozostają częstą przyczyną awarii agentów produkcyjnych.
+**Pionierski system MRKL (Modular Reasoning, Knowledge and Language) z 2022 roku pokazał, że modele o małej skali mają duże trudności z poprawną ekstrakcją argumentów do wywołań narzędzi.** Późniejszy Toolformer (Schick et al. 2023) rozwiązał ten problem przez uczenie samonadzorowane w zakresie korzystania z interfejsów programistycznych – na podstawie minimalnej liczby ludzkich przykładów. Współczesne GPT-5.6 czy Claude Opus 5 radzą sobie z tym znacznie lepiej, ale błędy w argumentach narzędziowych wciąż pozostają częstą przyczyną awarii agentów produkcyjnych.
 
 Zanim wybierzesz framework agentowy, sprawdź [przewodnik po modelach LLM](/modele-llm/przewodnik/) pokazujący, które modele najlepiej radzą sobie z precyzją wywołań narzędziowych – to kryterium często ważniejsze niż ogólne parametry w benchmarkach.
 
