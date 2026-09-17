@@ -3,6 +3,7 @@ title: 'Jak rozmawiać z zarządem o AI – argumenty i KPI'
 subtitle: 'Zamień entuzjazm technologiczny na język korzyści biznesowych, które zarząd zrozumie i zatwierdzi'
 description: 'Jak przekonać zarząd do inwestycji w AI? Poznaj framework business case, właściwe KPI, język korzyści i sposób prezentacji ryzyka oraz ROI – bez żargonu technicznego.'
 date: 2026-05-09
+updated: 2026-09-17
 image: ../../../assets/images/blog-ai-w-biznesie-jak-rozmawiac-z-zarzadem.webp
 icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
 author:
@@ -20,18 +21,24 @@ sources:
     note: 'Peter Weill, Stephanie L. Woerner, Jennifer S. Banner (MIT CISR), MIT Sloan Management Review, 8 grudnia 2025. Firmy z zarządami kompetentnymi w AI mają ROE o 10,9 pkt proc. wyższy od średniej branżowej.'
   - title: 'AI ROI: The paradox of rising investment and elusive returns'
     url: 'https://www.deloitte.com/global/en/issues/ai/ai-roi-the-paradox-of-rising-investment-and-elusive-returns.html'
-    note: 'Deloitte, 22 października 2025. Satysfakcjonujący zwrot z typowego projektu AI po 2–4 latach, tylko 6% w ciągu roku; 91% firm planuje zwiększyć inwestycje.'
+    note: 'Deloitte, 22 października 2025. Badanie 1854 menedżerów z Europy i Bliskiego Wschodu: satysfakcjonujący zwrot z typowego projektu AI po 2–4 latach, tylko 6% w ciągu roku; 15% już osiąga znaczący, mierzalny zwrot z generatywnej AI; 91% planuje zwiększyć inwestycje.'
+  - title: 'Governance of AI: A critical imperative for today’s boards (2nd edition)'
+    url: 'https://www.deloitte.com/global/en/issues/trust/progress-on-ai-in-the-boardroom-but-room-to-accelerate.html'
+    note: 'Deloitte Global Boardroom Program, 2025. Ankieta wśród 700 członków rad i menedżerów z 56 krajów: 66% ocenia wiedzę swoich rad o AI jako ograniczoną lub żadną, 31% nie ma AI w porządku obrad.'
+  - title: 'The state of AI in 2026: On the road to ROI'
+    url: 'https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai'
+    note: 'McKinsey, 25 sierpnia 2026. Prawie dziewięć na dziesięć organizacji regularnie używa AI w co najmniej jednej funkcji; ok. 6% to liderzy (AI high performers), którzy przypisują AI co najmniej 5% EBIT.'
   - title: 'AI Act'
     url: 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai'
     note: 'Komisja Europejska. Rozporządzenie (UE) 2024/1689 – zakres, poziomy ryzyka i harmonogram stosowania.'
 ---
-Badanie McKinsey State of AI (listopad 2025) ujawniło niepokojący podział. 88% organizacji używa już AI w co najmniej jednym obszarze, ale tylko 5,5% firm można nazwać prawdziwymi liderami czerpiącymi z niej wartość. To organizacje, które odnotowują ponadpięcioprocentowy wpływ AI na wynik operacyjny (EBIT). Reszta gdzieś utknęła. Najczęściej nie z powodu złej technologii, lecz dlatego, że inicjatywa nigdy nie uzyskała pełnego poparcia zarządu. **Jeśli wiesz, że AI może zmienić Twoją firmę, ale nie potrafisz przekonać do tego decydentów – ten artykuł pokaże Ci, od czego zacząć, jakiego języka użyć i jakie liczby przygotować.**
+Badanie McKinsey State of AI (sierpień 2026) ujawniło niepokojący podział. Prawie dziewięć na dziesięć organizacji używa już AI w co najmniej jednym obszarze, ale tylko około 6% firm można nazwać prawdziwymi liderami czerpiącymi z niej wartość. To organizacje, które odnotowują ponadpięcioprocentowy wpływ AI na wynik operacyjny (EBIT). Reszta gdzieś utknęła. Najczęściej nie z powodu złej technologii, lecz dlatego, że inicjatywa nigdy nie uzyskała pełnego poparcia zarządu. **Jeśli wiesz, że AI może zmienić Twoją firmę, ale nie potrafisz przekonać do tego decydentów – ten artykuł pokaże Ci, od czego zacząć, jakiego języka użyć i jakie liczby przygotować.**
 
 ## Dlaczego zarząd blokuje projekty AI?
 
 Zarząd nie odrzuca AI z niechęci do technologii. **Decydenci odrzucają projekty przez słabe uzasadnienie finansowe, nieokreślone ryzyko i plany pozbawione mierzalnych wyników.**
 
-[Globalne badanie członków rad nadzorczych przeprowadzone przez firmę McKinsey](https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/the-ai-reckoning-how-boards-can-evolve) pokazało, że 66% z nich ma „ograniczoną lub żadną wiedzę" o AI, a u co trzeciej temat ten w ogóle nie trafia do porządku obrad. Jednocześnie badanie MIT CISR z 2025 roku udokumentowało coś zupełnie innego. Firmy z radami nadzorczymi i zarządami kompetentnymi w dziedzinie AI osiągają zwrot z kapitału własnego wyższy o 10,9 punktu procentowego od średniej branżowej. Ta luka między ignorowaniem tematu a realnymi korzyściami finansowymi to Twoje pole do argumentacji.
+Globalna ankieta Deloitte z 2025 roku wśród członków rad i menedżerów pokazała, że 66% z nich ocenia wiedzę i doświadczenie swoich rad w zakresie AI jako „ograniczone lub żadne", a 31% przyznaje, że temat ten w ogóle nie trafia do porządku obrad. Jednocześnie badanie MIT CISR z 2025 roku udokumentowało coś zupełnie innego. Firmy z radami nadzorczymi i zarządami kompetentnymi w dziedzinie AI osiągają zwrot z kapitału własnego wyższy o 10,9 punktu procentowego od średniej branżowej. Ta luka między ignorowaniem tematu a realnymi korzyściami finansowymi to Twoje pole do argumentacji.
 
 Problem polega na tym, że większość osób odpowiedzialnych za temat AI w firmie przynosi na spotkanie z zarządem entuzjazm połączony z demonstracją technologii. To nie działa. **Zarząd myśli kategoriami ryzyka, kapitału i zwrotu – i dokładnie w tym języku musisz do niego mówić.**
 
@@ -45,7 +52,7 @@ Trzy powody, dla których projekty AI nie przechodzą przez zarząd:
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Tylko 21% aktywnych użytkowników AI w organizacjach przyznaje, że technologia ta przyniosła wyraźną, mierzalną wartość (Deloitte, 2025). Mimo to 91% firm planuje zwiększyć inwestycje w AI w bieżącym roku. <strong>Oznacza to, że większość organizacji wydaje więcej na coś, czego wartości jeszcze nie zmierzyła – i to jest właśnie ten argument, który przemawia do ostrożnego dyrektora finansowego (CFO).</strong></p>
+    <p>Tylko 15% menedżerów w badaniu Deloitte z 2025 roku deklaruje, że generatywna AI już przynosi ich firmom znaczący, mierzalny zwrot. Mimo to 91% planuje zwiększyć inwestycje w AI w ciągu najbliższych 12 miesięcy. <strong>Oznacza to, że większość organizacji wydaje więcej na coś, czego wartości jeszcze nie zmierzyła – i to jest właśnie ten argument, który przemawia do ostrożnego dyrektora finansowego (CFO).</strong></p>
   </div>
 </aside>
 
@@ -73,7 +80,7 @@ Konkretna struktura zdania, które działa, wygląda następująco: „Dzięki [
 
 ## Jak zbudować business case, który przeżyje salę zarządową?
 
-Uzasadnienie biznesowe (ang. *business case*) dla projektu AI nie różni się strukturą od uzasadnienia dla każdej innej inwestycji. Różni się tylko tym, że wymaga dodatkowej warstwy: analizy ryzyka specyficznego dla AI. **Vantage Point i Deloitte zgodnie wskazują, że zarządy zatwierdzają projekty AI wtedy, gdy widzą trzy rzeczy: wiarygodność założeń finansowych, jasność odpowiedzialności i zdefiniowane punkty decyzyjne.**
+Uzasadnienie biznesowe (ang. *business case*) dla projektu AI nie różni się strukturą od uzasadnienia dla każdej innej inwestycji. Różni się tylko tym, że wymaga dodatkowej warstwy: analizy ryzyka specyficznego dla AI. **Z doświadczenia wynika, że zarządy zatwierdzają projekty AI wtedy, gdy widzą trzy rzeczy: wiarygodność założeń finansowych, jasność odpowiedzialności i zdefiniowane punkty decyzyjne.**
 
 Sprawdzony szkielet business case dla AI składa się z sześciu sekcji.
 
@@ -92,7 +99,7 @@ Opisz mechanizm jednym zdaniem. Następnie natychmiast podaj zakres wdrożenia: 
 
 ### Scenariusze finansowe – trzy, nie jeden
 
-Badania McKinsey i Vantage Point wskazują, że prezentacja z pojedynczą wartością ROI to dla zarządu sygnał ostrzegawczy. Wiarygodny business case zawiera trzy scenariusze:
+Prezentacja z pojedynczą wartością ROI to dla doświadczonego zarządu sygnał ostrzegawczy. Wiarygodny business case zawiera trzy scenariusze (podane niżej horyzonty zwrotu są przykładowe):
 
 - **Ostrożny (konserwatywny)** – zakłada wolniejsze przyswajanie narzędzia przez użytkowników i wyższe niż planowane koszty integracji; tu zwrot następuje po 24–36 miesiącach.
 - **Bazowy** – opiera się na realistycznych założeniach z pilotażu; tu zwrot następuje w 12–18 miesiącach.

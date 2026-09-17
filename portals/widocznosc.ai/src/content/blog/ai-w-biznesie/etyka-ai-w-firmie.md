@@ -3,6 +3,7 @@ title: 'Etyka AI w firmie – polityki, zarządzanie, komitety'
 subtitle: 'Jak zbudować wewnętrzny system zarządzania sztuczną inteligencją, zanim zmusi Cię do tego regulator'
 description: 'Etyka AI w firmie: jak wdrożyć politykę AI, powołać komitet ds. AI, walczyć z biasem i spełnić wymagania AI Act. Ramy NIST RMF i ISO 42001.'
 date: 2026-05-12
+updated: 2026-09-17
 image: ../../../assets/images/blog-ai-w-biznesie-etyka-ai-w-firmie.webp
 icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>'
 author:
@@ -24,6 +25,21 @@ sources:
   - title: 'Responsible AI | The 2025 AI Index Report'
     url: 'https://hai.stanford.edu/ai-index/2025-ai-index-report/responsible-ai'
     note: 'Stanford HAI, 2025. Liczba zgłoszonych incydentów AI wzrosła w 2024 roku do rekordowych 233, o 56,4% rok do roku.'
+  - title: 'Gartner Says Nearly Half of CIOs Are Planning to Deploy Artificial Intelligence'
+    url: 'https://www.gartner.com/en/newsroom/press-releases/2018-02-13-gartner-says-nearly-half-of-cios-are-planning-to-deploy-artificial-intelligence'
+    note: 'Gartner, 13 lutego 2018. Prognoza: do 2022 roku 85% projektów AI przyniesie błędne wyniki z powodu stronniczości danych, algorytmów lub zespołów, które nimi zarządzają.'
+  - title: 'Incident 37: Female Applicants Down-Ranked by Amazon Recruiting Tool'
+    url: 'https://incidentdatabase.ai/cite/37/'
+    note: 'AI Incident Database. Narzędzie rekrutacyjne Amazona rozwijane w latach 2014–2017 i porzucone; Reuters opisał sprawę w październiku 2018.'
+  - title: 'Why Early Adoption of ISO 42001 Matters'
+    url: 'https://cloudsecurityalliance.org/blog/2025/06/10/why-early-adoption-of-iso-42001-matters'
+    note: 'Cloud Security Alliance, 10 czerwca 2025. Według 2025 Compliance Benchmark Report A-LIGN 76% organizacji planuje wkrótce zająć się zgodnością AI w oparciu o ramy takie jak ISO 42001.'
+  - title: 'Article 4: AI Literacy'
+    url: 'https://artificialintelligenceact.eu/article/4/'
+    note: 'Tekst art. 4 AI Act o kompetencjach w zakresie AI, stosowanego od 2 lutego 2025.'
+  - title: 'EU AI Act Omnibus Agreement: Postponed High-Risk Deadlines and Other Key Changes'
+    url: 'https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/'
+    note: 'Gibson Dunn, 2026. Digital Omnibus: systemy wysokiego ryzyka z załącznika III od 2 grudnia 2027, art. 4 złagodzony do obowiązku wspierania rozwoju kompetencji personelu.'
   - title: 'Sedgwick forecasts 2026 in new global risk study'
     url: 'https://www.sedgwick.com/press-release/sedgwick-forecasts-2026-in-new-global-risk-study/'
     note: 'Sedgwick, 16 grudnia 2025. 70% menedżerów z Fortune 500 deklaruje komitet ds. ryzyka AI, tylko 14% pełną gotowość do wdrożeń.'
@@ -39,8 +55,11 @@ sources:
   - title: 'Koniec ery nieuchwytnych algorytmów – projekt ustawy o systemach sztucznej inteligencji przyjęty przez Radę Ministrów'
     url: 'https://www.gov.pl/web/cyfryzacja/koniec-ery-nieuchwytnych-algorytmow--projekt-ustawy-o-systemach-sztucznej-inteligencji-przyjety-przez-rade-ministrow'
     note: 'Ministerstwo Cyfryzacji, 31 marca 2026. Projekt ustawy powołującej KRiBSI i jej uprawnienia, w tym nakaz wycofania systemu z użytku.'
+  - title: 'Ustawa o systemach AI – bezpieczny rozwój sztucznej inteligencji w Polsce'
+    url: 'https://www.gov.pl/web/cyfryzacja/ustawa-o-systemach-ai--bezpieczny-rozwoj-sztucznej-inteligencji-w-polsce'
+    note: 'Ministerstwo Cyfryzacji, lipiec 2026. Ustawa podpisana przez Prezydenta; KRiBSI jako niezależny organ nadzoru nad rynkiem AI.'
 ---
-99% organizacji z badania EY (2025) odnotowało straty finansowe przez ryzyka związane z AI. Prawie dwie trzecie z nich przekroczyły milion dolarów. Jednocześnie 77% firm deklaruje budowę programów zarządzania sztuczną inteligencją, ale zaledwie 36% wdrożyło sformalizowane ramy. Luka między deklaracjami a działaniem jest ogromna. Zobacz, czym jest odpowiedzialna sztuczna inteligencja (ang. *responsible AI*) w praktyce firmowej. Dowiesz się, jakie polityki musisz napisać, kto powinien za nie odpowiadać i jak AI Act wyznacza ramy, których po prostu nie możesz zignorować.
+99% organizacji z badania EY (2025) odnotowało straty finansowe przez ryzyka związane z AI. Prawie dwie trzecie z nich przekroczyły milion dolarów. Jednocześnie 77% organizacji w badaniu IAPP pracuje nad programami zarządzania sztuczną inteligencją, ale według Sedgwick tylko 14% menedżerów z Fortune 500 ocenia swoje firmy jako w pełni gotowe do wdrożeń AI. Luka między deklaracjami a działaniem jest ogromna. Zobacz, czym jest odpowiedzialna sztuczna inteligencja (ang. *responsible AI*) w praktyce firmowej. Dowiesz się, jakie polityki musisz napisać, kto powinien za nie odpowiadać i jak AI Act wyznacza ramy, których po prostu nie możesz zignorować.
 
 ## Czym jest odpowiedzialna sztuczna inteligencja i dlaczego nie jest to kwestia PR?
 
@@ -55,13 +74,13 @@ Microsoft, Google i IBM opublikowały własne zestawy zasad odpowiedzialnej AI. 
 - **Ochrona prywatności** – dane osobowe przetwarzane są zgodnie z RODO i wyłącznie w niezbędnym zakresie.
 - **Inkluzywność** – system jest zaprojektowany tak, by nie wykluczać użytkowników z powodów technicznych lub społecznych.
 
-**Gartner szacuje, że 85% projektów AI kończy się niepowodzeniem lub błędnymi wynikami – nie z powodu awarii technicznych, lecz przez problemy z etyką, transparentnością lub zarządzaniem danymi.** To oznacza jedno. Ramy etyczne są dziś równie ważne, co infrastruktura chmurowa.
+**Już w 2018 roku Gartner prognozował, że do 2022 roku 85% projektów AI przyniesie błędne wyniki z powodu stronniczości danych, algorytmów lub zespołów odpowiedzialnych za ich zarządzanie.** To była prognoza, a nie pomiar, ale wskazywała źródło problemu – ludzi i procesy, a nie samą technologię. To oznacza jedno. Ramy etyczne są dziś równie ważne, co infrastruktura chmurowa.
 
 ## Stronniczość algorytmów – gdzie tkwi ryzyko i jak je mierzyć
 
 Stronniczość algorytmiczna (ang. *algorithmic bias*) to systematyczny błąd systemu AI, który prowadzi do niesprawiedliwego traktowania określonych grup. Skąd się bierze? Pojawia się, gdy dane treningowe odzwierciedlają historyczne nierówności. Występuje też wtedy, gdy zestaw cech wejściowych zawiera zmienne zastępcze (np. kod pocztowy jako proxy statusu majątkowego) albo gdy model testowano wyłącznie na jednej grupie demograficznej.
 
-Przykłady z praktyki są dobrze udokumentowane. Algorytm rekrutacyjny Amazona, wycofany w 2018 roku, dyskryminował kobiety, bo uczył się na życiorysach historycznie zdominowanych przez mężczyzn. **Z kolei systemy oceny zdolności kredytowej w USA systematycznie gorzej wyceniały ryzyko w dzielnicach zamieszkałych przez mniejszości etniczne – nawet po usunięciu rasy z zestawu cech.**
+Przykłady z praktyki są dobrze udokumentowane. Eksperymentalne narzędzie rekrutacyjne Amazona, porzucone w 2017 roku (Reuters opisał sprawę w 2018), dyskryminowało kobiety, bo uczył się na życiorysach historycznie zdominowanych przez mężczyzn. **Z kolei systemy oceny zdolności kredytowej w USA systematycznie gorzej wyceniały ryzyko w dzielnicach zamieszkałych przez mniejszości etniczne – nawet po usunięciu rasy z zestawu cech.**
 
 Stronniczość algorytmiczna przybiera różne formy w zależności od branży. Zobacz, w jakich obszarach biznesowych to zjawisko występuje najczęściej i jakimi wskaźnikami możesz je zmierzyć.
 
@@ -81,7 +100,7 @@ Narzędzia do pomiaru stronniczości, takie jak [wyjaśnialna sztuczna inteligen
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Stanford AI Index 2025 odnotował wzrost liczby incydentów AI o 56% rok do roku – do rekordowych 233 udokumentowanych przypadków szkód. Większość z nich dotyczyła dyskryminacji algorytmicznej, prywatności lub dezinformacji. <strong>Żaden z tych incydentów nie był spowodowany awarią techniczną modelu – każdy wynikał z błędów w procesie zarządzania ryzykiem.</strong></p>
+    <p>Stanford AI Index 2025 odnotował wzrost liczby zgłoszonych incydentów AI o 56,4% rok do roku – do rekordowych 233 przypadków w 2024 roku. <strong>Incydentów przybywa szybciej, niż firmy budują procesy zarządzania ryzykiem – a to właśnie te procesy decydują, czy błąd modelu zostanie wychwycony, zanim wyrządzi szkodę.</strong></p>
   </div>
 </aside>
 
@@ -154,24 +173,24 @@ Wybór odpowiedniego standardu zależy od dojrzałości Twojej organizacji. Zoba
 | Szczegółowość wymagań | Średnia | Wysoka (wymogi dokumentacji) |
 | Optymalny dla | Organizacji startujących z zarządzaniem AI | Firm potrzebujących certyfikatu |
 
-Dla polskich firm z sektora MŚP rekomendujemy proste podejście. Zacznij od NIST RMF jako mapy myślowej i bazy dla polityki wewnętrznej. Certyfikację ISO 42001 rozważ po 12–18 miesiącach, gdy system zarządzania będzie już wdrożony i udokumentowany. **Aż 76% organizacji w badaniu CSA z 2025 roku planowało wdrożyć ramy oparte na ISO 42001.** To jasny sygnał – certyfikat staje się rynkowym standardem zaufania, a nie tylko miłym dodatkiem.
+Dla polskich firm z sektora MŚP rekomendujemy proste podejście. Zacznij od NIST RMF jako mapy myślowej i bazy dla polityki wewnętrznej. Certyfikację ISO 42001 rozważ po 12–18 miesiącach, gdy system zarządzania będzie już wdrożony i udokumentowany. **Według raportu A-LIGN z 2025 roku (przywoływanego przez Cloud Security Alliance) 76% organizacji planuje wkrótce zająć się zgodnością AI w oparciu o ramy takie jak ISO 42001.** To jasny sygnał – certyfikat staje się rynkowym standardem zaufania, a nie tylko miłym dodatkiem.
 
-## AI Act jako ramy zarządzania – co musisz wiedzieć przed sierpniem 2026
+## AI Act jako ramy zarządzania – co musisz wiedzieć
 
 AI Act (Rozporządzenie UE 2024/1689) wszedł w życie 1 sierpnia 2024 roku. To pierwsze na świecie kompleksowe prawo regulujące sztuczną inteligencję. Nie traktuj go wyłącznie jako zbioru zakazów. To gotowa instrukcja zarządzania ryzykiem AI, którą łatwo przekujesz w wewnętrzne procesy.
 
 **Harmonogram obowiązków dla zdecydowanej większości polskich firm wygląda następująco:**
 
-- **2 lutego 2025** – zakaz systemów o nieakceptowalnym ryzyku (systemy manipulacji podprogowej, scoring społeczny obywateli, systemy rozpoznawania emocji w miejscu pracy). Wchodzi też obowiązek zapewnienia kompetencji pracownikom obsługującym AI.
-- **2 sierpnia 2025** – obowiązki dla dostawców modeli ogólnego przeznaczenia (GPAI – General Purpose AI). Obejmują dokumentację techniczną, przestrzeganie prawa autorskiego i publikowanie informacji o danych treningowych. Firmy używające zewnętrznych modeli LLM jako bazy swoich produktów wchodzą w zakres regulacji.
-- **2 sierpnia 2026** – pierwotny termin pełnego stosowania przepisów dla systemów wysokiego ryzyka (rekrutacja, ocena kredytowa, diagnostyka medyczna, edukacja), przesunięty do **2 grudnia 2027** (Digital Omnibus, maj 2026). Za naruszenia wymogów grożą kary do 15 mln EUR lub 3% globalnego obrotu (35 mln EUR lub 7% w przypadku praktyk zakazanych).
+- **2 lutego 2025** – zakaz systemów o nieakceptowalnym ryzyku (systemy manipulacji podprogowej, scoring społeczny obywateli, systemy rozpoznawania emocji w miejscu pracy). Zaczyna też obowiązywać art. 4 o kompetencjach w zakresie AI – po zmianach Digital Omnibus firmy mają wspierać rozwój kompetencji pracowników korzystających z AI, a nie gwarantować określony ich poziom.
+- **2 sierpnia 2025** – obowiązki dla dostawców modeli ogólnego przeznaczenia (GPAI – General Purpose AI). Obejmują dokumentację techniczną, przestrzeganie prawa autorskiego i publikowanie informacji o danych treningowych. Dotyczą one dostawców modeli (np. OpenAI, Anthropic, Google), a nie firm, które jedynie korzystają z gotowych LLM – te podlegają obowiązkom zależnym od sposobu użycia systemu.
+- **2 sierpnia 2026** – pierwotny termin pełnego stosowania przepisów dla systemów wysokiego ryzyka (rekrutacja, ocena kredytowa, diagnostyka medyczna, edukacja), przesunięty do **2 grudnia 2027** (Digital Omnibus). Za naruszenia wymogów grożą kary do 15 mln EUR lub 3% globalnego obrotu (35 mln EUR lub 7% w przypadku praktyk zakazanych).
 
 AI Act klasyfikuje systemy sztucznej inteligencji na czterech poziomach ryzyka. Dla typowej firmy B2B kluczowe znaczenie mają dwa z nich:
 
-- **Wysokie ryzyko** – systemy w HR (automatyczna preselekcja kandydatów), ocena zdolności kredytowej oraz systemy decyzyjne w ubezpieczeniach. Wymagają oceny skutków dla praw podstawowych (FRIA – Fundamental Rights Impact Assessment), rejestracji w bazie UE i nadzoru człowieka nad każdą decyzją.
+- **Wysokie ryzyko** – systemy w HR (automatyczna preselekcja kandydatów), ocena zdolności kredytowej oraz systemy decyzyjne w ubezpieczeniach. Wymagają m.in. rejestracji w bazie UE (po stronie dostawcy), dokumentacji i nadzoru człowieka. Ocena skutków dla praw podstawowych (FRIA – Fundamental Rights Impact Assessment) jest obowiązkowa tylko dla części podmiotów stosujących – m.in. przy ocenie zdolności kredytowej, w ubezpieczeniach na życie i zdrowotnych oraz w podmiotach publicznych.
 - **Ryzyko ograniczone** – chatboty i asystenci. Nakładają obowiązek informowania użytkownika o kontakcie z AI oraz znakowania generowanych treści.
 
-W Polsce nadzór nad regulacjami AI Act ma sprawować Komisja Rozwoju i Bezpieczeństwa Sztucznej Inteligencji (KRiBSI). Jej powołanie przewiduje projekt ustawy przyjęty przez Radę Ministrów w marcu 2026 roku (obecnie w toku prac legislacyjnych). Komisja uzyska uprawnienia do prowadzenia postępowań, wydawania nakazów wycofania systemów z rynku i nakładania dotkliwych sankcji finansowych.
+W Polsce nadzór nad regulacjami AI Act ma sprawować Komisja Rozwoju i Bezpieczeństwa Sztucznej Inteligencji (KRiBSI). Powołuje ją ustawa o systemach sztucznej inteligencji, podpisana przez Prezydenta w lipcu 2026 roku. Komisja ma prowadzić postępowania, rozpatrywać skargi, wydawać nakazy wycofania systemów z użytku i nakładać sankcje finansowe.
 
 Dla firm wdrażających AI w obszarach wysokiego ryzyka minimalne wymagania AI Act to de facto instrukcja zbudowania polityki AI. **Jeśli potraktujesz wymagania AI Act jako listę kontrolną, zyskasz gotowy szkielet systemu zarządzania dla całej organizacji.**
 

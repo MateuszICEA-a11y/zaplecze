@@ -1,8 +1,9 @@
 ---
 title: 'ROI z AI – jak policzyć zwrot z inwestycji'
 subtitle: 'Sprawdzony model finansowy, który pomoże Ci udowodnić zarządowi, że inwestycja w AI ma sens ekonomiczny'
-description: 'Jak policzyć ROI z wdrożenia AI w firmie? Wzory, składniki kosztów, realne benchmarki i 3 scenariusze kalkulacji dla polskich przedsiębiorstw.'
+description: 'Jak policzyć ROI z wdrożenia AI w firmie? Wzory, składniki kosztów, dane z badań i 3 przykładowe scenariusze kalkulacji, a także ulgi podatkowe dla polskich przedsiębiorstw.'
 date: 2026-05-04
+updated: 2026-09-17
 image: ../../../assets/images/blog-ai-w-biznesie-roi-z-ai.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>'
 author:
@@ -17,10 +18,13 @@ level: 'L2'
 sources:
   - title: 'AI cost overruns are adding up – with major implications for CIOs'
     url: 'https://www.cio.com/article/4064319/ai-cost-overruns-are-adding-up-with-major-implications-for-cios.html'
-    note: 'CIO, 2 października 2025. 85% organizacji zaniża koszty AI o ponad 10%, blisko co czwarta o 50% i więcej.'
+    note: 'CIO, 2 października 2025. Badanie Benchmarkit i Mavvrik: 85% organizacji myli się w szacunku kosztów AI o ponad 10%, blisko co czwarta o 50% i więcej.'
   - title: 'IBM Study: CEOs Double Down on AI While Navigating Enterprise Hurdles'
     url: 'https://newsroom.ibm.com/2025-05-06-ibm-study-ceos-double-down-on-ai-while-navigating-enterprise-hurdles'
     note: 'IBM, 6 maja 2025. Według CEO tylko 25% inicjatyw AI przyniosło oczekiwany zwrot.'
+  - title: 'The GenAI Divide: State of AI in Business 2025'
+    url: 'https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf'
+    note: 'MIT NANDA, 2025 (kopia raportu). Mimo 30–40 mld dolarów inwestycji 95% organizacji nie uzyskuje żadnego mierzalnego zwrotu z generatywnej AI.'
   - title: 'Total cost of ownership'
     url: 'https://pl.wikipedia.org/wiki/Total_cost_of_ownership'
     note: 'Wikipedia. Definicja całkowitego kosztu posiadania.'
@@ -28,13 +32,13 @@ sources:
     url: 'https://www.forrester.com/policies/tei/'
     note: 'Forrester. Opis metodologii TEI obejmującej koszty, korzyści, elastyczność i ryzyko.'
 ---
-Kalkulacja ROI (Return on Investment, czyli wskaźnika zwrotu z inwestycji) z wdrożenia AI to jedno z najtrudniejszych wyzwań, z jakimi przychodzą do nas firmy. Jednocześnie to absolutny priorytet. Według analiz rynkowych ok. 65% organizacji notuje dodatni zwrot z generatywnej sztucznej inteligencji, ale aż 95% projektów AI bywa błędnie klasyfikowanych jako porażki z powodu złego doboru metody pomiaru. Problem nie leży w technologii. Leży w sposobie liczenia kosztów i korzyści. **Poznaj konkretne ramy analityczne: od wzoru na ROI, przez strukturę kosztów całkowitych (TCO), po trzy realistyczne scenariusze kalkulacji z polskiego rynku.**
+Kalkulacja ROI (Return on Investment, czyli wskaźnika zwrotu z inwestycji) z wdrożenia AI to jedno z najtrudniejszych wyzwań, z jakimi przychodzą do nas firmy. Jednocześnie to absolutny priorytet. Raport MIT NANDA z 2025 roku wskazuje, że mimo 30–40 mld dolarów zainwestowanych w generatywną AI aż 95% organizacji nie uzyskuje z niej żadnego mierzalnego zwrotu. Często problem nie leży w samej technologii, lecz w wyborze procesów oraz w sposobie liczenia kosztów i korzyści. **Poznaj konkretne ramy analityczne: od wzoru na ROI, przez strukturę kosztów całkowitych (TCO), po trzy przykładowe scenariusze kalkulacji.**
 
 ## Dlaczego klasyczna formuła ROI nie wystarcza?
 
 Tradycyjne podejście do oceny inwestycji IT opiera się na prostym równaniu. Liczysz korzyści netto minus koszty całkowite, dzielisz przez koszty całkowite i mnożysz przez 100%. W przypadku AI ta formuła to zaledwie punkt wyjścia, a nie gotowa odpowiedź.
 
-**Wdrożenie AI różni się od zakupu oprogramowania biurowego pod trzema kluczowymi względami.** Korzyści nie są liniowe – rosną wraz z jakością danych i adaptacją narzędzi przez pracowników, często gwałtownie przyspieszając w drugim i trzecim roku. Koszty całkowite są stale niedoszacowywane o 25–60%, bo firmy uwzględniają licencje, ale pomijają integrację, szkolenia i utrzymanie modeli. Ponadto część wartości ma charakter strategiczny i nie trafia do rachunku zysków i strat w krótkim terminie.
+**Wdrożenie AI różni się od zakupu oprogramowania biurowego pod trzema kluczowymi względami.** Korzyści nie są liniowe – rosną wraz z jakością danych i adaptacją narzędzi przez pracowników, często gwałtownie przyspieszając w drugim i trzecim roku. Szacunki kosztów całkowitych często mijają się z rzeczywistością – według badania opisanego przez CIO.com 85% organizacji myli się w nich o ponad 10%, a blisko co czwarta o 50% i więcej – bo firmy uwzględniają licencje, ale pomijają integrację, szkolenia i utrzymanie modeli. Ponadto część wartości ma charakter strategiczny i nie trafia do rachunku zysków i strat w krótkim terminie.
 
 Pełna kalkulacja ROI z AI wymaga zatem trzech warstw analizy, a nie jednej liczby. Horyzont czasowy i typ pomiaru dla każdej z nich wymagają ścisłego uporządkowania.
 
@@ -44,7 +48,7 @@ Pełna kalkulacja ROI z AI wymaga zatem trzech warstw analizy, a nie jednej licz
 | ROI trendu | 3–12 miesięcy | Czas cyklu procesu, wskaźnik adaptacji narzędzia, dokładność modeli |
 | ROI zdolności | Ciągły | Dojrzałość danych, kompetencje zespołu, redukcja długu technicznego |
 
-Tylko 25% inicjatyw AI dostarcza oczekiwany zwrot w krótkim terminie. Reszta buduje wartość, której nie widać w arkuszu kalkulacyjnym po 12 miesiącach. **Zanim więc pokażesz CFO jedną liczbę, upewnij się, że mierzysz właściwą warstwę.**
+Według badania IBM z 2025 roku tylko 25% inicjatyw AI przyniosło oczekiwany zwrot. Reszta buduje wartość, której nie widać w arkuszu kalkulacyjnym po 12 miesiącach. **Zanim więc pokażesz CFO jedną liczbę, upewnij się, że mierzysz właściwą warstwę.**
 
 ## Składniki ROI – co wchodzi do licznika i mianownika
 
@@ -60,10 +64,10 @@ Korzyści netto to suma trzech strumieni wartości:
 
 Po stronie kosztów uwzględnij pełny [całkowity koszt posiadania](https://pl.wikipedia.org/wiki/Total_cost_of_ownership) (TCO – Total Cost of Ownership). Firmy zazwyczaj biorą pod uwagę koszty licencji i infrastruktury, ale nagminnie pomijają inne aspekty:
 
-- **Integracja i wdrożenie** – połączenie z istniejącymi systemami CRM, ERP, bazami danych; to często 30–40% budżetu projektu
+- **Integracja i wdrożenie** – połączenie z istniejącymi systemami CRM, ERP, bazami danych; często jedna z największych pozycji budżetu projektu
 - **Zarządzanie danymi** – porządkowanie, oznaczanie i utrzymanie danych treningowych; bez dobrej jakości danych model nie działa
 - **Utrzymanie modeli (MLOps)** – regularne ponowne trenowanie wskutek zjawiska dryfu danych, monitoring dokładności, aktualizacje
-- **Zmiana kulturowa i szkolenia** – czas menedżerów, koszty onboardingu, opór wewnętrzny, który wydłuża zwrot o 40–70% przy automatyzacji zdezorganizowanych procesów
+- **Zmiana kulturowa i szkolenia** – czas menedżerów, koszty onboardingu, opór wewnętrzny, który wyraźnie wydłuża zwrot przy automatyzacji zdezorganizowanych procesów
 - **Kadry specjalistyczne** – zatrudnienie specjalistów (np. analityków danych, inżynierów ML) lub koszty konsultingu zewnętrznego przez cały cykl życia systemu
 
 ![Formuła ROI z AI – korzyści w liczniku (oszczędność czasu, wzrost przychodów) podzielone przez koszty w mianowniku (wdrożenie, licencje, utrzymanie)](../../../assets/images/infographic-ai-w-biznesie-roi-z-ai.png)
@@ -81,9 +85,9 @@ Następnie wybierz metodę kalkulacji. Oto cztery podejścia stosowane w praktyc
 
 **Dla projektów pilotażowych najlepsza jest analiza kosztów i korzyści z wyraźnie określonym horyzontem 18 miesięcy.** Z kolei dla strategicznych transformacji na poziomie całej firmy wybierz NPV lub TEI.
 
-## Trzy scenariusze kalkulacji z polskiego rynku
+## Trzy przykładowe scenariusze kalkulacji
 
-Teoria nabiera znaczenia dopiero przy konkretnych liczbach. Przeanalizujmy trzy realistyczne scenariusze wdrożeń, które pokazują różne profile ROI.
+Teoria nabiera znaczenia dopiero przy konkretnych liczbach. Przeanalizujmy trzy hipotetyczne scenariusze wdrożeń, które pokazują różne profile ROI. Kwoty i odsetki są ilustracyjne – służą pokazaniu sposobu liczenia, a nie są danymi z konkretnych wdrożeń.
 
 ### Predykcyjne utrzymanie ruchu – przemysł
 
@@ -107,7 +111,7 @@ ROI w pierwszym roku wynosi: (1 400 000 – 400 000) / 400 000 × 100% = 250%. U
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Benchmark</div>
-    <p>Analizy TEI Forrester Research pokazują, że dojrzałe wdrożenia AI osiągają trzyletni ROI na poziomie 313–363%. LogicMonitor Edwin AI: ROI 313% i okres zwrotu poniżej 6 miesięcy. Microsoft Foundry: ROI 327% w ciągu 3 lat, z czego główne źródło wartości to wzrost produktywności programistów. <strong>Wspólny mianownik wszystkich wdrożeń z wysokim ROI: precyzyjnie zmierzony punkt wyjściowy i jasne KPI finansowe przed startem projektu.</strong></p>
+    <p>Studia TEI (Total Economic Impact) firmy Forrester są zamawiane przez dostawców technologii i opisują wdrożenia u wybranych klientów – wysokie wartości ROI z takich raportów traktuj więc jako górną granicę, a nie średnią rynkową. <strong>Wspólny mianownik wdrożeń z wysokim ROI: precyzyjnie zmierzony punkt wyjściowy i jasne KPI finansowe przed startem projektu.</strong></p>
   </div>
 </aside>
 
@@ -115,11 +119,11 @@ ROI w pierwszym roku wynosi: (1 400 000 – 400 000) / 400 000 × 100% = 250%. U
 
 Znając ramy analityczne i przykłady, nadal łatwo wpaść w pułapki metodologiczne. Zwróć uwagę na błędy, które najczęściej fałszują kalkulacje:
 
-- **Uwzględnianie wyłącznie kosztów licencji** – pomijanie kosztów integracji, szkoleń i utrzymania modeli prowadzi do niedoszacowania TCO o 30–60%
-- **Założenie stuprocentowej automatyzacji** – systemy AI przejmują 60–85% procesu; reszta wciąż wymaga nadzoru człowieka
+- **Uwzględnianie wyłącznie kosztów licencji** – pomijanie kosztów integracji, szkoleń i utrzymania modeli prowadzi do zaniżenia TCO – nawet o kilkadziesiąt procent
+- **Założenie stuprocentowej automatyzacji** – systemy AI zwykle przejmują tylko część procesu; reszta wciąż wymaga nadzoru człowieka
 - **Brak punktu odniesienia** – bez zmierzenia stanu przed wdrożeniem nie ma dowodu na korzyści
 - **Ocena tylko po 12 miesiącach** – pierwsze miesiące to faza uczenia i integracji; wartość ujawnia się w latach 2–3
-- **Automatyzacja chaosu** – wdrożenie AI w nieuporządkowanym, niestandardowym procesie wydłuża zwrot o 40–70%
+- **Automatyzacja chaosu** – wdrożenie AI w nieuporządkowanym, niestandardowym procesie wyraźnie wydłuża zwrot
 - **Miękkie KPI bez przeliczenia** – brak satysfakcji pracowników przekłada się na realne koszty rotacji; przelicz je na złotówki lub zostaw poza kalkulacją
 - **Porównanie do zera, nie do alternatywy** – zestawienie z kosztem rekrutacji dodatkowego zespołu lub droższego oprogramowania często czyni ROI z AI oczywistym
 
@@ -150,11 +154,11 @@ Jeśli chcesz zobaczyć, jak Twoja marka jest widoczna w odpowiedziach AI – co
 
 W polskich realiach ostateczny ROI z inwestycji w AI można podnieść, korzystając z dwóch instrumentów podatkowych. Warto uwzględnić je w kalkulacji już na etapie planowania, a nie po fakcie.
 
-Ulga B+R (badawczo-rozwojowa) pozwala podatnikom PIT i CIT na odliczenie do 200% kosztów kwalifikowanych od podstawy opodatkowania. Zaliczają się do nich wynagrodzenia personelu badawczego, koszty aparatury i licencji. Co ważne, organy skarbowe konsekwentnie uznają prace nad rozwojem algorytmów uczenia maszynowego za działalność badawczo-rozwojową.
+Ulga B+R (badawczo-rozwojowa) pozwala podatnikom PIT i CIT na dodatkowe odliczenie kosztów kwalifikowanych od podstawy opodatkowania. Zaliczają się do nich m.in. wynagrodzenia personelu badawczego, koszty aparatury i licencji. Prace nad rozwojem algorytmów uczenia maszynowego mogą zostać uznane za działalność badawczo-rozwojową, jeśli mają charakter twórczy i prowadzą do nowych rozwiązań – samo wdrożenie gotowego narzędzia zwykle tego warunku nie spełnia.
 
-Preferencja IP Box umożliwia z kolei opodatkowanie dochodu z kwalifikowanego prawa własności intelektualnej (autorskie prawo do kodu źródłowego lub algorytmu) stawką 5% zamiast 19%. Warunek jest jeden. AI musi pełnić rolę narzędzia wspomagającego, a kluczowe decyzje projektowe podejmuje człowiek. Firma musi też prowadzić szczegółową dokumentację wkładu twórczego programistów.
+Preferencja IP Box umożliwia z kolei opodatkowanie dochodu z kwalifikowanego prawa własności intelektualnej (autorskie prawo do kodu źródłowego lub algorytmu) stawką 5% zamiast 19%. Kod lub algorytm musi być utworem chronionym prawem autorskim, więc AI może pełnić tylko rolę narzędzia wspomagającego, a kluczowe decyzje projektowe podejmuje człowiek. Firma musi też prowadzić szczegółową ewidencję i dokumentację wkładu twórczego programistów.
 
-**W praktyce oba instrumenty mogą obniżyć efektywny koszt wdrożenia o kilkanaście do kilkudziesięciu procent, skracając okres zwrotu nawet o kilka miesięcy.**
+**W praktyce oba instrumenty mogą wyraźnie poprawić wynik kalkulacji i skrócić okres zwrotu – ich zastosowanie w konkretnym projekcie warto potwierdzić z doradcą podatkowym.**
 
 Pełne pozycjonowanie marki w kanale AI Search – z mierzalnym wpływem na przychody – to usługa, która wychodzi poza samą kalkulację ROI. Więcej o tym, co dokładnie obejmuje, przeczytasz w opisie [pozycjonowania AI](/pozycjonowanie-ai/) oraz w artykule o [ROI z GEO](/geo/roi-z-geo/), gdzie omawiamy zwrot z optymalizacji widoczności marki w silnikach AI.
 

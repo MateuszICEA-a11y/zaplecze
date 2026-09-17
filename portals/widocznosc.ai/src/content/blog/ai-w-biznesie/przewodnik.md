@@ -3,6 +3,7 @@ title: 'Wdrożenie AI w firmie – przewodnik dla decydenta'
 subtitle: 'Jak wybrać właściwy obszar, zbudować strukturę organizacyjną i zmierzyć zwrot z inwestycji – krok po kroku'
 description: 'Praktyczny przewodnik wdrożenia AI w firmie: wybór modelu Build/Buy/Boost, przypadki użycia, ROI, AI Act, RODO i struktura CoE dla decydenta.'
 date: 2026-05-25
+updated: 2026-09-17
 image: ../../../assets/images/blog-ai-w-biznesie-przewodnik.webp
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>'
 author:
@@ -18,7 +19,7 @@ faqHeading: 'Często zadawane pytania o wdrożenie AI w firmie'
 faq:
   - q: 'Jaki budżet potrzebny jest na pierwsze wdrożenie AI?'
     a: >-
-      Zakres jest bardzo szeroki. Proste wdrożenie oparte na gotowych narzędziach SaaS (model Buy)
+      Zakres jest bardzo szeroki, a poniższe kwoty to orientacyjne szacunki rynkowe. Proste wdrożenie oparte na gotowych narzędziach SaaS (model Buy)
       kosztuje od kilkuset złotych miesięcznie w abonamencie. Projekt z własną integracją systemową
       i bazą wiedzy RAG (model Boost) dla firmy 5–30 osób to wydatek rzędu 4000–15 000 PLN
       jednorazowo plus koszt tokenów API. Wdrożenia korporacyjne z głębokimi integracjami ERP/CRM
@@ -47,10 +48,19 @@ sources:
     note: 'CIO, 25 marca 2025. Badanie IDC i Lenovo: na każde 33 projekty PoC tylko 4 trafiają do produkcji.'
   - title: 'As AI Investments Surge, CEOs Take the Lead'
     url: 'https://www.bcg.com/publications/2026/as-ai-investments-surge-ceos-take-the-lead'
-    note: 'BCG AI Radar, 15 stycznia 2026. Archetypy Followers (15%), Pragmatists (70%) i Trailblazers (15%), ok. 7 godzin tygodniowo CEO na AI, przeszkolenie blisko trzech czwartych pracowników u liderów.'
+    note: 'BCG AI Radar, 15 stycznia 2026. Archetypy CEO: Followers (ok. 15%), Pragmatists (ok. 70%, ok. 7 godzin tygodniowo na sprawy AI) i Trailblazers (ok. 15%, przeszkolone ok. 75% pracowników); wydatki na AI mają wzrosnąć z 0,8% do 1,7% przychodów.'
   - title: 'AI Adoption in 2024: 74% of Companies Struggle to Achieve and Scale Value'
     url: 'https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value'
-    note: 'BCG, 24 października 2024. Zasada 10-20-70: algorytmy, technologia i dane oraz ludzie i procesy.'
+    note: 'BCG, 24 października 2024. Liderzy AI kierują ok. 10% zasobów na algorytmy, 20% na technologię i dane, 70% na ludzi i procesy.'
+  - title: 'Rise of agentic AI: How trust is the key to human-AI collaboration'
+    url: 'https://www.capgemini.com/insights/research-library/ai-agents/'
+    note: 'Capgemini Research Institute, 2025. Badanie 1500 menedżerów z 14 krajów: tylko 2% firm wdrożyło agentów AI na dużą skalę, mniej niż co piąta ma wysoką dojrzałość danych i infrastruktury.'
+  - title: 'Article 4: AI Literacy'
+    url: 'https://artificialintelligenceact.eu/article/4/'
+    note: 'Tekst art. 4 AI Act o kompetencjach w zakresie AI, stosowanego od 2 lutego 2025.'
+  - title: 'EU AI Act Omnibus Agreement: Postponed High-Risk Deadlines and Other Key Changes'
+    url: 'https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/'
+    note: 'Gibson Dunn, 2026. Digital Omnibus: systemy wysokiego ryzyka z załącznika III od 2 grudnia 2027, art. 4 złagodzony do obowiązku wspierania rozwoju kompetencji personelu.'
   - title: 'AI Act'
     url: 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai'
     note: 'Komisja Europejska. Harmonogram stosowania rozporządzenia (UE) 2024/1689, w tym systemy wysokiego ryzyka od 2 grudnia 2027, i obowiązki przejrzystości dla chatbotów.'
@@ -60,17 +70,20 @@ sources:
   - title: 'Koniec ery nieuchwytnych algorytmów – projekt ustawy o systemach sztucznej inteligencji przyjęty przez Radę Ministrów'
     url: 'https://www.gov.pl/web/cyfryzacja/koniec-ery-nieuchwytnych-algorytmow--projekt-ustawy-o-systemach-sztucznej-inteligencji-przyjety-przez-rade-ministrow'
     note: 'Ministerstwo Cyfryzacji, 31 marca 2026. Przyjęcie projektu ustawy z KRiBSI, w tym uprawnienie do natychmiastowego nakazu wycofania systemu.'
+  - title: 'Ustawa o systemach AI – bezpieczny rozwój sztucznej inteligencji w Polsce'
+    url: 'https://www.gov.pl/web/cyfryzacja/ustawa-o-systemach-ai--bezpieczny-rozwoj-sztucznej-inteligencji-w-polsce'
+    note: 'Ministerstwo Cyfryzacji, lipiec 2026. Ustawa o systemach sztucznej inteligencji podpisana przez Prezydenta; KRiBSI jako niezależny organ nadzoru.'
   - title: 'Retrieval-augmented generation'
     url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
     note: 'Wikipedia. Definicja techniki RAG.'
 ---
-**Globalne wydatki na sztuczną inteligencję przekroczą w 2026 roku 2,52 biliona dolarów – a mimo to 56% dyrektorów generalnych przyznaje, że wdrożenia AI nie przyniosły ani wzrostu przychodów, ani redukcji kosztów (PwC Global CEO Survey, Davos 2026).** Ten rozdźwięk nie bierze się z braku ambicji. Wynika z braku planu. Zobacz, od czego zacząć, jak wybrać właściwy model pozyskania technologii, gdzie AI przynosi mierzalny zwrot i jak uniknąć prawnych pułapek – zanim podpiszesz pierwszą umowę z dostawcą.
+**Według BCG AI Radar 2026 firmy mają w tym roku podwoić wydatki na AI – z 0,8% do 1,7% przychodów – a mimo to wiele z nich wciąż nie potrafi przenieść pilotaży do codziennej pracy.** Ten rozdźwięk nie bierze się z braku ambicji. Wynika z braku planu. Zobacz, od czego zacząć, jak wybrać właściwy model pozyskania technologii, gdzie AI przynosi mierzalny zwrot i jak uniknąć prawnych pułapek – zanim podpiszesz pierwszą umowę z dostawcą.
 
 ## Dlaczego większość wdrożeń AI utknęła w pół drogi?
 
-Tylko co piąta inicjatywa AI (20%) osiąga mierzalny zwrot z inwestycji. Jedna na pięćdziesiąt (2%) przynosi wartość o charakterze naprawdę transformacyjnym. **Dane IDC są jeszcze ostrzejsze: na każde 33 zbudowane prototypy zaledwie 4 trafiają do środowiska produkcyjnego – to 88-procentowy wskaźnik porażki na etapie skalowania.**
+Mierzalny zwrot z inwestycji osiąga tylko część inicjatyw AI. **Dane IDC i Lenovo są wymowne: na każde 33 zbudowane prototypy zaledwie 4 trafiają do środowiska produkcyjnego – to 88-procentowy wskaźnik porażki na etapie skalowania.**
 
-Gartner określa ten problem jako „dolinę rozczarowania". Firmy budują pilotaż. Działa on świetnie w kontrolowanych warunkach. Potem projekt napotyka barierę organizacyjną – brakuje właściciela, procesów, danych lub zgody zarządu na kolejne nakłady. **McKinsey szacuje, że tylko 30% projektów AI przekracza fazę pilotażową.**
+To klasyczna „dolina rozczarowania". Firmy budują pilotaż. Działa on świetnie w kontrolowanych warunkach. Potem projekt napotyka barierę organizacyjną – brakuje właściciela, procesów, danych lub zgody zarządu na kolejne nakłady.
 
 Przyczyny są trzy i powtarzają się niezależnie od branży:
 
@@ -78,16 +91,16 @@ Przyczyny są trzy i powtarzają się niezależnie od branży:
 - **Nierealistyczny harmonogram ROI** – kierownictwo oczekuje efektów w 3 miesiące; rzeczywisty cykl od pilotażu do produkcji to 6–18 miesięcy
 - **Chaos danych** – firmy próbują wdrożyć AI na nieustrukturyzowanych, niespójnych danych; działa zasada *garbage in, garbage out* w każdym modelu
 
-Tę trzecią przyczynę Gartner nazywa „human mess" – nieformalnym, nieudokumentowanym środowiskiem operacyjnym. Wiedza tkwi tu w głowach pojedynczych pracowników. Procesy działają tylko dlatego, że konkretna osoba pamięta, jak to zawsze robiono. **Próba automatyzacji takiego środowiska kończy się wdrożeniem, które przyspiesza chaos zamiast go eliminować.**
+Tę trzecią przyczynę często określa się jako „ludzki chaos" (ang. *human mess*) – nieformalne, nieudokumentowane środowisko operacyjne. Wiedza tkwi tu w głowach pojedynczych pracowników. Procesy działają tylko dlatego, że konkretna osoba pamięta, jak to zawsze robiono. **Próba automatyzacji takiego środowiska kończy się wdrożeniem, które przyspiesza chaos zamiast go eliminować.**
 
 ### Profil lidera a tempo transformacji
 
-BCG AI Radar 2026 wyodrębnił trzy archetypy organizacji wdrażających AI, które dobrze porządkują skalę aspiracji wobec zasobów:
+BCG AI Radar 2026 wyodrębnił trzy archetypy prezesów (CEO) wdrażających AI, które dobrze porządkują skalę aspiracji wobec zasobów:
 
-| Profil (BCG AI Radar 2026) | Udział w rynku | Charakterystyka |
+| Profil (BCG AI Radar 2026) | Udział wśród CEO | Charakterystyka |
 |---|---|---|
 | Naśladowcy (Followers) | 15% | Ograniczone pilotaże, oczekiwanie na ruchy konkurencji, niskie poczucie własnych kompetencji |
-| Pragmatycy (Pragmatists) | 70% | Aktywne inwestycje w ludzi i technologię; CEO poświęca średnio 7 godzin tygodniowo na naukę AI |
+| Pragmatycy (Pragmatists) | 70% | Aktywne inwestycje w ludzi i technologię; CEO poświęca ok. 7 godzin tygodniowo na sprawy AI |
 | Pionierzy (Trailblazers) | 15% | Głęboka transformacja operacyjna całej organizacji; blisko trzy czwarte personelu objętego szkoleniami AI |
 
 Większość organizacji startuje jako Pragmatycy. **Kluczowe pytanie to nie „czy wdrożyć AI", lecz „od którego procesu zacząć, żeby wynik był mierzalny w 90 dni".**
@@ -112,13 +125,13 @@ Tabela decyzyjna ułatwia wybór ścieżki:
 | Struktura kosztów | Niski CapEx, stały OpEx | Średni CapEx, zmienny OpEx API | Bardzo wysoki CapEx |
 | Ryzyko uzależnienia (lock-in) | Wysokie (polityka dostawcy) | Umiarkowane | Brak zewnętrznego |
 
-McKinsey podaje, że budowa autorskiego rozwiązania zajmuje średnio 12–18 miesięcy. Niemal zawsze kończy się to tym, że gotowy system jest już technologicznie przestarzały w chwili uruchomienia. **Dla zdecydowanej większości polskich firm z sektora MŚP i średnich przedsiębiorstw (mid-market) wariant Boost daje najlepszy kompromis między unikalną wartością a czasem wdrożenia.**
+Budowa autorskiego rozwiązania trwa zwykle ponad rok. Przy obecnym tempie rozwoju modeli istnieje realne ryzyko, że gotowy system będzie już technologicznie przestarzały w chwili uruchomienia. **Dla zdecydowanej większości polskich firm z sektora MŚP i średnich przedsiębiorstw (mid-market) wariant Boost daje najlepszy kompromis między unikalną wartością a czasem wdrożenia.**
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Średni koszt uruchomienia jednej inicjatywy opartej na generatywnej AI wynosi dziś 1,9 miliona dolarów – bez kosztów stałego utrzymania infrastruktury. Mimo to tylko 7% dyrektorów finansowych deklaruje wysoki poziom zwrotu z inwestycji w swoim pionie. <strong>Firmy zaliczane do grupy „AI Vanguard" (12% rynku) łączy jedna cecha: CEO jest bezpośrednim sponsorem inicjatyw AI i poświęca temu co najmniej 7 godzin tygodniowo.</strong></p>
+    <p>W badaniu BCG AI Radar 2026 blisko trzy czwarte prezesów wskazało siebie jako głównego decydenta w sprawach AI – dwa razy więcej niż rok wcześniej. <strong>Najbardziej zdecydowani liderzy, Pionierzy (ok. 15% CEO), przeszkolili już około trzech czwartych swoich pracowników.</strong></p>
   </div>
 </aside>
 
@@ -128,27 +141,27 @@ McKinsey podaje, że budowa autorskiego rozwiązania zajmuje średnio 12–18 mi
 
 Wdrożenie AI w dowolnym obszarze to nie projekt IT – to zmiana procesu. **Dlatego punktem wyjścia nie jest „jaki model wybrać", lecz „który proces boli najbardziej i ma wystarczającą powtarzalność, żeby AI miała co optymalizować".**
 
-Badanie Capgemini z czerwca 2025 roku (1607 menedżerów, organizacje o przychodach powyżej 1 mld dolarów) pokazuje to wyraźnie. Najwyższy zwrot osiągają obszary z dużą powtarzalnością zadań i ustrukturyzowanymi danymi. Zestawienie mierzalnych efektów per obszar:
+Najlepiej sprawdzają się obszary z dużą powtarzalnością zadań i ustrukturyzowanymi danymi. Badanie Capgemini z 2025 roku (1500 menedżerów z 14 krajów) pokazuje przy tym, że dojrzałość danych to wąskie gardło – wysoką dojrzałość danych i infrastruktury deklaruje mniej niż co piąta organizacja. Zestawienie obszarów i metryk, które warto mierzyć:
 
-| Obszar | Zastosowanie AI | Kluczowa metryka |
+| Obszar | Zastosowanie AI | Metryka do mierzenia |
 |---|---|---|
-| Zarządzanie personelem | Automatyzacja preselekcji CV, spersonalizowane ścieżki szkoleń | ROI 2,1x (Capgemini 2025) |
-| Obsługa klienta | Asystenci głosowi (IVA) zintegrowani z CRM/ERP | Skrócenie czasu pierwszej odpowiedzi o 37%, czasu rozwiązania o 52% |
-| Zarządzanie zapasami | Analityka predykcyjna w prognozowaniu popytu | Wzrost dokładności prognoz o 35–42% |
-| Produkcja przemysłowa | Predykcyjne utrzymanie ruchu (Predictive Maintenance) | Redukcja nieplanowanych przestojów o 50%, spadek kosztów serwisu o 20–30% |
-| Marketing B2B | Ocena potencjału leadów (scoring), personalizacja kampanii | Wzrost konwersji na „gorące" szanse sprzedażowe |
+| Zarządzanie personelem | Automatyzacja preselekcji CV, spersonalizowane ścieżki szkoleń | Czas obsadzenia stanowiska, koszt rekrutacji |
+| Obsługa klienta | Asystenci głosowi (IVA) zintegrowani z CRM/ERP | Czas pierwszej odpowiedzi, czas rozwiązania zgłoszenia |
+| Zarządzanie zapasami | Analityka predykcyjna w prognozowaniu popytu | Dokładność prognoz, poziom zapasów |
+| Produkcja przemysłowa | Predykcyjne utrzymanie ruchu (Predictive Maintenance) | Nieplanowane przestoje, koszty serwisu |
+| Marketing B2B | Ocena potencjału leadów (scoring), personalizacja kampanii | Konwersja leadów na szanse sprzedażowe |
 
 ### Obsługa klienta – najszybszy ROI
 
-Wdrożenie zintegrowanych z systemami SAP lub Oracle asystentów konwersacyjnych w contact center pozwala na natychmiastowe pobieranie danych transakcyjnych. Automatyczna transkrypcja i analiza tonu rozmów kategoryzuje zgłoszenia pod kątem pilności. Eliminuje to błędy przy ręcznym przekazywaniu spraw między działami. **To właśnie obsługa klienta daje najkrótszy cykl zwrotu – pierwsze mierzalne efekty widać w 6–10 tygodni od wdrożenia.**
+Wdrożenie zintegrowanych z systemami SAP lub Oracle asystentów konwersacyjnych w contact center pozwala na natychmiastowe pobieranie danych transakcyjnych. Automatyczna transkrypcja i analiza tonu rozmów kategoryzuje zgłoszenia pod kątem pilności. Eliminuje to błędy przy ręcznym przekazywaniu spraw między działami. **To właśnie obsługa klienta zwykle daje najkrótszy cykl zwrotu – pierwsze mierzalne efekty często widać już w pierwszych tygodniach po wdrożeniu.**
 
 ### Produkcja – największa dźwignia
 
-**Dane Światowego Forum Ekonomicznego potwierdzają: predykcyjne utrzymanie ruchu ogranicza nieplanowane przestoje produkcyjne nawet o 50%.** Wdrożenie systemów AI przy produkcji modelu Airbus A350 zaowocowało 33-procentowym wzrostem wydajności linii i 70-procentową skutecznością automatycznego dopasowania usterek do sprawdzonych historycznie rozwiązań.
+**Predykcyjne utrzymanie ruchu pozwala wykrywać zapowiedzi awarii, zanim maszyna stanie – i ograniczać nieplanowane przestoje produkcyjne.** Systemy AI pomagają też dopasowywać zgłaszane usterki do rozwiązań, które sprawdziły się w przeszłości, co skraca diagnozę.
 
 ### Logistyka i zwroty
 
-**Koszty obsługi zwrotów pochłaniają w branży detalicznej do 7% przychodów brutto.** Agenci AI wyposażeni w moduły komputerowej analizy obrazu weryfikują stan towaru na podstawie zdjęć przesłanych przez aplikację klienta. Eliminuje to żmudną ręczną weryfikację i wychwytuje nadużycia przy zwrotach (return fraud).
+**Koszty obsługi zwrotów to w handlu detalicznym istotna pozycja w rachunku wyników.** Agenci AI wyposażeni w moduły komputerowej analizy obrazu weryfikują stan towaru na podstawie zdjęć przesłanych przez aplikację klienta. Eliminuje to żmudną ręczną weryfikację i wychwytuje nadużycia przy zwrotach (return fraud).
 
 ## Od pilotażu do produkcji – plan wdrożenia krok po kroku
 
@@ -215,11 +228,11 @@ Formuła ROI dla projektów AI powinna sumować trzy filary korzyści:
 - **Wzrost przychodów** – przyspieszona konwersja leadów, mniejszy wskaźnik odpływu klientów (churn), lepsza personalizacja oferty
 - **Mitygacja ryzyka** – ograniczenie kar z tytułu błędów regulacyjnych, mniejsze koszty zwrotów i reklamacji, szybsza reakcja na awarie maszyn
 
-Dane Capgemini wskazują na systematyczne różnice w ROI zależnie od obszaru. Zarządzanie personelem osiąga 2,1x zwrot, obsługa klienta – 1,7x, łańcuch dostaw i finanse – po 1,5x. To nie są przypadkowe liczby. **Wszystkie te obszary mają wspólną cechę – wysoki stopień powtarzalności zadań i dobrze ustrukturyzowane dane wejściowe.**
+Zwrot z AI różni się zależnie od obszaru. **Najszybciej zwracają się obszary o wspólnej cesze – wysokim stopniu powtarzalności zadań i dobrze ustrukturyzowanych danych wejściowych**, takie jak obsługa klienta, kadry czy finanse.
 
 ### Zasada 70-20-10
 
-BCG i McKinsey zgodnie wskazują na rozkład zasobów charakterystyczny dla liderów wdrożeń AI. **Aż 70% nakładów powinno trafiać na ludzi i procesy – szkolenia z zakresu kompetencji AI (AI literacy), optymalizację struktur organizacyjnych i zarządzanie zmianą.** Infrastruktura techniczna pochłania 20% budżetu. Same algorytmy i modele – zaledwie 10%.
+BCG wskazuje na rozkład zasobów charakterystyczny dla liderów wdrożeń AI. **Aż 70% zasobów trafia u nich na ludzi i procesy – szkolenia z zakresu kompetencji AI (AI literacy), optymalizację struktur organizacyjnych i zarządzanie zmianą.** Technologia i dane pochłaniają 20%. Same algorytmy i modele – zaledwie 10%.
 
 Ten rozkład jest kontrintuicyjny. Decydenci chcą wydawać na modele, bo modele są widoczne. **Tymczasem największą dźwignią jest zdolność organizacji do wchłonięcia zmiany.**
 
@@ -233,16 +246,16 @@ Ignorowanie ram prawnych naraża na kary sięgające 35 milionów euro lub 7% gl
 
 AI Act wszedł w życie 1 sierpnia 2024 roku i wprowadza stopniowy harmonogram obowiązków. Dla decydenta kluczowe daty to:
 
-- **2 lutego 2025** – zakaz systemów o nieakceptowalnym ryzyku (manipulacja podprogowa, scoring społeczny, rozpoznawanie emocji w miejscach pracy); obowiązek budowania kompetencji pracowników w zakresie AI
+- **2 lutego 2025** – zakaz systemów o nieakceptowalnym ryzyku (manipulacja podprogowa, scoring społeczny, rozpoznawanie emocji w miejscach pracy); art. 4 o kompetencjach pracowników w zakresie AI (po Digital Omnibus – obowiązek wspierania rozwoju kompetencji, a nie gwarantowania ich poziomu)
 - **2 sierpnia 2025** – obowiązki dla dostawców modeli ogólnego przeznaczenia (GPAI): dokumentacja techniczna, przestrzeganie prawa autorskiego, publikowanie podsumowań danych treningowych
 - **2 sierpnia 2026** – pełne stosowanie większości przepisów systemowych (sankcje finansowe, organy nadzoru); obowiązki dla systemów wysokiego ryzyka z Annexu III przesunięto jednak do 2 grudnia 2027 (porozumienie Digital Omnibus, maj 2026)
 
 AI Act kategoryzuje systemy AI w czterech poziomach ryzyka. Dwa z nich są krytyczne dla polskich firm:
 
-- **Wysokie ryzyko** – systemy w rekrutacji (selekcja CV), ocenie zdolności kredytowej, diagnostyce medycznej; wymagają oceny skutków dla praw podstawowych (FRIA), audytu danych treningowych i nadzoru człowieka nad każdą decyzją
+- **Wysokie ryzyko** – systemy w rekrutacji (selekcja CV), ocenie zdolności kredytowej, diagnostyce medycznej; wymagają m.in. zarządzania jakością danych treningowych, dokumentacji i nadzoru człowieka, a ocena skutków dla praw podstawowych (FRIA) dotyczy części podmiotów stosujących – m.in. przy ocenie zdolności kredytowej i w podmiotach publicznych
 - **Ryzyko ograniczone** – chatboty obsługi klienta; obowiązek poinformowania użytkownika, że rozmawia z AI, i maszynowego oznaczenia generowanych treści
 
-W Polsce nadzór nad rynkiem AI będzie sprawować Komisja Rozwoju i Bezpieczeństwa Sztucznej Inteligencji (KRiBSI), przewidziana w projekcie ustawy przyjętym przez Radę Ministrów 31 marca 2026 roku (projekt jest w toku prac legislacyjnych). **Komisja zyska uprawnienia do prowadzenia postępowań, wydawania decyzji o natychmiastowym wycofaniu systemów z rynku i nakładania sankcji finansowych.**
+W Polsce nadzór nad rynkiem AI sprawuje Komisja Rozwoju i Bezpieczeństwa Sztucznej Inteligencji (KRiBSI), powołana ustawą o systemach sztucznej inteligencji podpisaną przez Prezydenta w lipcu 2026 roku. **Komisja ma uprawnienia do prowadzenia postępowań, wydawania decyzji o natychmiastowym wycofaniu systemów z rynku i nakładania sankcji finansowych.**
 
 ### RODO a wdrożenia AI
 
@@ -251,7 +264,7 @@ Przetwarzanie danych osobowych przez systemy AI wymaga osobnej analizy prawnej. 
 1. Metryka narzędzia AI – karta informacyjna z nazwą modelu bazowego i dokumentacją techniczną
 2. Podstawa prawna przetwarzania – precyzyjne określenie, czy przetwarzanie opiera się na prawnie uzasadnionym interesie, umowie czy zgodzie
 3. Umowa z dostawcą – weryfikacja, czy dostawca ma prawo douczać model na danych wprowadzonych przez firmę; jeśli tak – wymóg testu kompatybilności i zgody administratora (wytyczne CNIL)
-4. Automatyczne podejmowanie decyzji – jeśli pracownik lub klient bezkrytycznie akceptuje wynik AI, warunki art. 22 RODO są spełnione; konieczna zgoda i prawo do interwencji człowieka
+4. Automatyczne podejmowanie decyzji – jeśli człowiek bezkrytycznie zatwierdza wynik AI, decyzja może zostać uznana za zautomatyzowaną w rozumieniu art. 22 RODO; wtedy potrzebna jest jedna z podstaw z art. 22 ust. 2 (umowa, przepis prawa lub wyraźna zgoda) i prawo do interwencji człowieka
 5. Bezpieczeństwo danych – uwierzytelnianie wieloskładnikowe (MFA), logi systemowe, odrębne konta administracyjne
 6. Ocena skutków (DPIA) – obowiązkowa przy systematycznym monitoringu pracowników, automatycznym podejmowaniu decyzji lub zastosowaniu nowych technologii; wynik trafia do Rejestru Czynności Przetwarzania
 
@@ -259,7 +272,7 @@ Szczegółowe omówienie obowiązków compliance, w tym jak zbudować wewnętrzn
 
 ## Od czego zacząć jutro rano
 
-Firmy, które skutecznie wdrożyły AI (12% rynku określanych jako „AI Vanguard"), nie zrobiły tego przez przypadek. Łączy je kilka powtarzalnych wzorców:
+Firmy, które skutecznie wdrażają AI, nie robią tego przez przypadek. Łączy je kilka powtarzalnych wzorców:
 
 - **Osobiste przywództwo CEO** – dyrektor generalny jest głównym sponsorem i buduje własne kompetencje technologiczne; to nie jest zadanie do delegowania w całości
 - **Bezwzględna priorytetyzacja** – zamiast dziesiątek rozproszonych pilotaży, koncentracja na 3–5 scenariuszach o najwyższym potencjale zwrotu i najmniejszym ryzyku regulacyjnym

@@ -3,6 +3,7 @@ title: 'AI w marketingu – praktyczne zastosowania'
 subtitle: 'Odkryj, jak silniki rekomendacyjne, analiza sentymentu i dynamiczne ceny generują mierzalne wyniki – zanim Twoja konkurencja to wdroży'
 description: 'AI w marketingu to nie tylko generowanie tekstu. Dowiedz się, jak rekomendacje, wizja komputerowa i programmatic buying realnie podnoszą wyniki sprzedaży.'
 date: 2026-05-10
+updated: 2026-09-17
 image: ../../../assets/images/blog-ai-w-biznesie-ai-w-marketingu.webp
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:
@@ -20,13 +21,19 @@ sources:
     note: 'CNET, styczeń 2018. Szef produktu YouTube Neal Mohan: rekomendacje AI odpowiadają za ok. 70% czasu oglądania.'
   - title: 'Klarna AI assistant handles two-thirds of customer service chats in its first month'
     url: 'https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/'
-    note: 'Klarna, 27 lutego 2024. Asystent AI wykonuje pracę odpowiadającą 700 pełnoetatowym agentom, a czas rozwiązania sprawy spadł z 11 do poniżej 2 minut.'
+    note: 'Klarna, 27 lutego 2024. Asystent AI w pierwszym miesiącu: 2,3 mln rozmów (dwie trzecie czatów), praca odpowiadająca 700 pełnym etatom, czas rozwiązania sprawy spadł z 11 do poniżej 2 minut; dostępny na 23 rynkach w ponad 35 językach.'
+  - title: 'Spotify Debuts a New AI DJ, Right in Your Pocket'
+    url: 'https://newsroom.spotify.com/2023-02-22/spotify-debuts-a-new-ai-dj-right-in-your-pocket/'
+    note: 'Spotify, 22 lutego 2023. AI DJ układa spersonalizowany zestaw utworów i komentuje go realistycznym głosem; start w USA i Kanadzie, później kolejne rynki.'
+  - title: 'Bezobsługowa Żabka Nano'
+    url: 'https://nano.zabka.pl/'
+    note: 'Żabka Polska. Sklepy bez kas: wejście z aplikacją Żappka lub kartą płatniczą, inteligentne kamery rozpoznają produkty brane z półek, płatność pobierana automatycznie.'
 ---
-Generowanie tekstu to zaledwie ułamek tego, co AI robi dziś w marketingu. **Algorytmy uczenia maszynowego napędzają 35% przychodów Amazona przez rekomendacje produktowe, redukują koszty obsługi klienta o równowartość 700 etatów (na przykładzie Klarny) i podnoszą konwersję kampanii wizualnych o 520% (Wickes na Pintereście).** Jeśli Twój zespół używa sztucznej inteligencji wyłącznie do pisania postów, tracisz przewagę. Konkurencja już testuje te rozwiązania. Zobacz rzeczywiste wdrożenia z konkretnymi liczbami – posegregowane według obszaru zastosowania.
+Generowanie tekstu to zaledwie ułamek tego, co AI robi dziś w marketingu. **Algorytmy uczenia maszynowego odpowiadają za ok. 70% czasu oglądania w YouTube, a asystent AI Klarny już w pierwszym miesiącu działania wykonywał pracę odpowiadającą 700 pełnym etatom.** Jeśli Twój zespół używa sztucznej inteligencji wyłącznie do pisania postów, tracisz przewagę. Konkurencja już testuje te rozwiązania. Zobacz, jak działają najważniejsze zastosowania – posegregowane według obszaru.
 
 ## Silniki rekomendacji – jak AI decyduje, co zobaczysz
 
-Personalizacja to dziś jeden z najlepiej udokumentowanych obszarów o najwyższym zwrocie z inwestycji w AI. **Amazon generuje 35% całkowitych przychodów dzięki systemowi rekomendacji opartemu na analizie wzorców przeglądania i historii transakcji.** Netflix idzie o krok dalej. Algorytm odpowiada tam za 80% odkrywanych przez użytkowników treści. Przekłada się to na oszczędności rzędu 1 mld USD rocznie dzięki zmniejszeniu odpływu subskrybentów. Z kolei Spotify AI DJ – wyspecjalizowany asystent tworzący playlisty i generujący spersonalizowany komentarz radiowy – przekroczył 50 mln użytkowników w ciągu pierwszego roku od uruchomienia na ponad 50 rynkach.
+Personalizacja to dziś jeden z najlepiej udokumentowanych obszarów o najwyższym zwrocie z inwestycji w AI. **Amazon, Netflix czy Spotify opierają na rekomendacjach znaczną część doświadczenia użytkownika – od listy produktów „kupione razem” po kolejność seriali i playlist.** Skalę zjawiska dobrze pokazuje YouTube: według szefa produktu serwisu rekomendacje AI odpowiadają tam za ok. 70% czasu oglądania. Spotify poszło o krok dalej i w 2023 roku uruchomiło AI DJ – asystenta, który układa spersonalizowaną playlistę i komentuje ją jak prezenter radiowy.
 
 Podstawą tych systemów jest [uczenie maszynowe](https://pl.wikipedia.org/wiki/Uczenie_maszynowe) – techniki, które pozwalają algorytmom doskonalić się na podstawie danych behawioralnych bez ręcznego przeprogramowywania. W praktyce oznacza to analizę setek sygnałów jednocześnie. Pora dnia, historia kliknięć, produkty porzucone w koszyku, dane demograficzne. Wszystko to buduje kontekst.
 
@@ -35,38 +42,36 @@ Dwa dominujące podejścia do budowania silników rekomendacji to:
 - **Filtrowanie kolaboratywne oparte na użytkownikach** – algorytm szuka podobieństwa między profilem aktywnego użytkownika a innymi użytkownikami. Rekomenduje to, co lubią jego „cyfrowi bliźniacy". Rozwiązanie skuteczne dla niespodziewanych odkryć, ale trudne do skalowania przy dużych bazach.
 - **Filtrowanie oparte na produktach** – bada, które produkty są często kupowane razem lub oglądane sekwencyjnie. Macierz podobieństwa produktów zmienia się wolniej niż baza klientów. Można ją przeliczać asynchronicznie – co drastycznie obniża koszty obliczeniowe w czasie rzeczywistym.
 
-**Allegro, obsługujące ponad 20 mln aktywnych kupujących, wdrożyło architekturę dwuwieżową (Two-Tower), gdzie jedna sieć neuronowa koduje kontekst użytkownika, a druga – parametry produktów.** Stopień dopasowania oblicza się jako iloczyn skalarny obu wektorów. To pozwala przeszukać setki milionów ofert w milisekundach. Podobna architektura napędza YouTube'a, gdzie algorytm odpowiada za 70% całkowitego czasu oglądania.
+**Duże platformy z milionami ofert często sięgają po architekturę dwuwieżową (Two-Tower), w której jedna sieć neuronowa koduje kontekst użytkownika, a druga – parametry produktów.** Stopień dopasowania oblicza się jako iloczyn skalarny obu wektorów. Ponieważ wektory produktów można przeliczyć z wyprzedzeniem, system przeszukuje ogromne katalogi w ułamku sekundy.
 
-Poniższa tabela zestawia wybrane wdrożenia z mierzalnymi efektami:
+Poniższa tabela zestawia typowe zastosowania rekomendacji i wskaźniki, po których warto oceniać ich efekt:
 
-| Firma | Zastosowanie AI | Mierzalny efekt |
+| Zastosowanie AI | Przykład | Co mierzyć |
 |---|---|---|
-| Amazon | Rekomendacje produktowe (item-to-item) | 35% całkowitych przychodów |
-| Netflix | Personalizacja kolejności treści + miniatur | 80% odkryć treści; ~1 mld USD oszczędności/rok |
-| Zalando | Silnik personalizacji i asystent stylizacji | +13% produktów w koszyku |
-| Spotify | AI DJ – spersonalizowane playlisty z komentarzem | 50 mln użytkowników w rok |
+| Rekomendacje produktowe (item-to-item) | „Klienci kupili również” w e-commerce | Udział przychodu z rekomendacji, wartość koszyka |
+| Personalizacja kolejności treści i miniatur | Serwisy streamingowe | Czas oglądania, odpływ subskrybentów |
+| Asystent stylizacji | Moda online | Liczba produktów w koszyku, zwroty |
+| Spersonalizowane playlisty z komentarzem | Spotify AI DJ | Czas słuchania, powroty do funkcji |
 
 Jeśli chcesz ocenić, czy Twoja marka jest gotowa do budowania takiej infrastruktury danych, [przewodnik po AI w biznesie](/ai-w-biznesie/przewodnik/) opisuje kolejne kroki od audytu po wdrożenie.
 
 ## Widzenie komputerowe w sprzedaży – od wirtualnego przymierzania do autonomicznych sklepów
 
-Systemy widzenia maszynowego skracają ścieżkę zakupową w sposób, którego żadne pole tekstowe nie zastąpi. **Sephora Virtual Artist – narzędzie do wirtualnego nakładania makijażu oparte na skanowaniu twarzy z selfie – wygenerowało wzrost konwersji o 80% wśród użytkowników funkcji try-on i ponad 200 milionów dopasowań odcieni.** ASOS Style Match pozwala wyszukiwać odzież na podstawie zdjęcia. Skróciło to czas odkrywania produktów o 35%, a zapytania wizualne odpowiadają już za ponad 10% zakupów w aplikacji. Z kolei IKEA Kreativ umożliwia skanowanie przestrzeni mieszkalnej i wstawianie modeli mebli 3D w skali. Efekt? Dwukrotne wydłużenie sesji w aplikacji mobilnej.
+Systemy widzenia maszynowego skracają ścieżkę zakupową w sposób, którego żadne pole tekstowe nie zastąpi. **Wirtualne przymierzanie – np. nakładanie makijażu na selfie – pozwala klientowi sprawdzić produkt, zanim trafi on do koszyka.** Wyszukiwanie wizualne umożliwia znalezienie odzieży na podstawie zdjęcia, bez zgadywania, jak nazwać fason. Z kolei aplikacje meblowe pozwalają zeskanować pokój i wstawić do niego modele mebli 3D w skali.
 
-Wickes, brytyjski sklep z materiałami budowlanymi, uruchomił kampanię opartą na Pinterest Performance+ – systemie automatycznie dobierającym kreacje produktowe na podstawie sygnałów wizualnych. Wynik to wzrost liczby kliknięć o 520% przy jednoczesnym spadku kosztu pozyskania o 77%.
+Wszystkie te mechanizmy skracają drogę od inspiracji do zakupu i zmniejszają niepewność, która w e-commerce kończy się porzuconym koszykiem albo zwrotem.
 
-To nie są eksperymenty. To wdrożenia produkcyjne z udokumentowanymi zwrotami z inwestycji.
+### Żabka Nano – autonomiczny sklep bez kas
 
-### Żabka Nano – autonomiczny sklep bez kas i wag
+**Żabka rozwija sieć bezobsługowych sklepów Żabka Nano, w których inteligentne kamery rozpoznają, jakie produkty klient zdejmuje z półek.** Nie ma kas ani skanowania – płatność pobierana jest automatycznie po wyjściu.
 
-**Polska Grupa Żabka uruchomiła ponad 50 w pełni bezobsługowych placówek Żabka Nano – zostając liderem tego formatu w Europie.** Zamiast czujników nacisku w półkach, technologia opracowana z firmą AiFi opiera się wyłącznie na widzeniu komputerowym zintegrowanym z chmurą Microsoft Azure.
-
-Klient wchodzi do sklepu z kartą płatniczą lub kodem z aplikacji Żappka. System generuje jego wirtualny awatar 3D i śledzi interakcje z produktami. Dane te zasilają platformę Smart Store Analytics, która dostarcza marketerom:
+Klient wchodzi do sklepu z kartą płatniczą lub kodem z aplikacji Żappka. System śledzi interakcje z produktami. Dane z takich sklepów mogą dostarczać marketerom:
 
 - **Mapy cieplne ruchu** – które strefy sklepu przyciągają uwagę i jak długo klienci zatrzymują się przy ekspozytorach
 - **Korelacje produktowe** – które produkty są oglądane sekwencyjnie, co bezpośrednio wpływa na decyzje o sąsiedztwie na półkach
-- **Prognozowanie popytu z uwzględnieniem pogody** – system nakazuje przygotowanie konkretnej liczby ciepłych przekąsek na kilka godzin przed zmianą temperatury
+- **Prognozowanie popytu z uwzględnieniem pogody** – model może podpowiadać, ile ciepłych przekąsek przygotować przed zmianą temperatury
 
-**Kluczowe: architektura Privacy-by-Design wyklucza rozpoznawanie twarzy i dane biometryczne**, dzięki czemu Żabka Nano jest w pełni zgodna zarówno z RODO, jak i unijnym aktem w sprawie sztucznej inteligencji (AI Act).
+**Kluczowe przy takich wdrożeniach jest projektowanie bez rozpoznawania twarzy i danych biometrycznych** – identyfikacja i kategoryzacja biometryczna istotnie podnoszą wymagania zarówno RODO, jak i unijnego aktu w sprawie sztucznej inteligencji (AI Act).
 
 ![Pięć zastosowań AI w marketingu – silniki rekomendacji, widzenie komputerowe, analiza wydźwięku, programmatic i dynamiczne ceny oraz przetwarzanie języka naturalnego](../../../assets/images/infographic-ai-w-biznesie-ai-w-marketingu.png)
 
@@ -74,7 +79,7 @@ Klient wchodzi do sklepu z kartą płatniczą lub kodem z aplikacji Żappka. Sys
 
 Każda rozmowa z działem obsługi to nieustrukturyzowany strumień danych. Systemy analizy wydźwięku zamieniają go w użyteczne wskaźniki w czasie rzeczywistym.
 
-**Klarna wdrożyła asystenta AI zdolnego do autonomicznej obsługi wielokanałowej, odpowiadającego pracy 700 pełnoetatowych agentów.** LPP – właściciel Reserved, Cropp i Mohito – zintegrowało platformę Genesys PureCloud z Google Dialogflow i repozytoriami danych (data lakes). Dało to działom marketingu spójny dostęp do historii interakcji konsumenta ze wszystkimi markami grupy. W efekcie wyeliminowano silosy informacyjne między sprzedażą, obsługą i logistyką.
+**Asystent AI Klarny w pierwszym miesiącu przeprowadził 2,3 mln rozmów – dwie trzecie czatów obsługi klienta – wykonując pracę odpowiadającą 700 pełnym etatom.** Duże grupy handlowe idą dalej i integrują platformy contact center z silnikami konwersacyjnymi oraz repozytoriami danych (data lakes). Dzięki temu marketing ma spójny dostęp do historii interakcji klienta ze wszystkimi markami grupy, a silosy informacyjne między sprzedażą, obsługą i logistyką znikają.
 
 Nowoczesne systemy klasy Voice Analytics wychodzą poza prostą transkrypcję. Badają parametry akustyczne wypowiedzi – nagłe skoki częstotliwości głosu jako markery stresu, przyspieszenie mowy jako sygnał narastającej irytacji. Na tej podstawie proaktywnie sugerują przekazanie rozmowy konsultantowi z pełnym kontekstem problemu.
 
@@ -82,7 +87,7 @@ Nowoczesne systemy klasy Voice Analytics wychodzą poza prostą transkrypcję. B
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Liczba do zapamiętania</div>
-    <p>Klarna ogłosiła, że ich asystent AI zastąpił pracę 700 agentów, jednocześnie skracając średni czas rozwiązania problemu z 11 do 2 minut. To nie jest eksperyment laboratoryjny – to dane operacyjne z wdrożenia produkcyjnego obsługującego kilkadziesiąt rynków.</p>
+    <p>Klarna ogłosiła, że jej asystent AI wykonuje pracę odpowiadającą 700 pełnym etatom, a średni czas rozwiązania sprawy spadł z 11 do poniżej 2 minut. To nie jest eksperyment laboratoryjny – to dane operacyjne z wdrożenia działającego całą dobę na 23 rynkach, w ponad 35 językach.</p>
   </div>
 </aside>
 
@@ -94,15 +99,15 @@ Zakup mediów w systemie RTB (ang. Real-Time Bidding, czyli licytacja reklam w c
 
 **Algorytmy bid shading (np. na platformie The Trade Desk) uczą się historycznych cen rozliczeniowych i na tej podstawie przewidują minimalną stawkę wystarczającą do wygrania danej odsłony.** Efekt to ta sama ekspozycja przy niższych kosztach. Równolegle działają algorytmy tworzenia podobnych grup odbiorców (lookalike audience expansion). Na podstawie cech 50 000 lojalnych klientów system tworzy profile statystycznie podobnych użytkowników w sieciach Google i Meta.
 
-Integracja danych pogodowych z systemem zakupowym to kolejny obszar udokumentowanych wyników. Kampania promująca meble ogrodowe automatycznie intensyfikowała zakup mediów przy nagłym wzroście temperatury, a wycofywała budżet podczas ochłodzeń. Efekt zmierzony na jednym z wdrożeń to wzrost konwersji o 45% w porównaniu do statycznych harmonogramów.
+Kolejny obszar to integracja danych pogodowych z systemem zakupowym. Kampania promująca meble ogrodowe może automatycznie zwiększać zakup mediów przy nagłym wzroście temperatury, a wycofywać budżet podczas ochłodzeń – zamiast emitować reklamy według statycznego harmonogramu.
 
-**Dynamiczne ustalanie cen (dynamic pricing) to jeden z bardziej kontrowersyjnych obszarów, ale też jeden z lepiej udokumentowanych.** Sieci handlowe raportują wzrost marży od 1,5 do 2 punktów procentowych przy wdrożeniu modeli prognozowania popytu. Jednak błędy komunikacyjne mogą zrujnować efekty. Pokazała to sieć Wendy's, kiedy w 2024 roku ogłosiła pilotaż dynamicznych cen w menu. Wystarczyło kilka dni negatywnych publikacji (w których media użyły sformułowania „surge pricing"), żeby zarząd wycofał się z niefortunnej komunikacji.
+**Dynamiczne ustalanie cen (dynamic pricing) to jeden z bardziej kontrowersyjnych obszarów, ale też jeden z lepiej udokumentowanych.** Sieci handlowe łączą je z modelami prognozowania popytu, żeby chronić marżę i ograniczać straty na niesprzedanym towarze. Jednak błędy komunikacyjne mogą zrujnować efekty. Wystarczy, że klienci i media odczytają zapowiedź zmiennych cen jako „surge pricing”, czyli podwyżki w godzinach szczytu, a firma zamiast korzyści dostaje falę negatywnych publikacji i musi prostować komunikat.
 
 Trzy zasady bezpiecznego wdrożenia dynamicznych cen to:
 
 - **Sztywne korytarze cenowe** – algorytm działa wyłącznie w granicach zdefiniowanych przez komitet ds. wycen (np. minimalna marża 20%), nigdy poza nimi
 - **Komunikacja jako rabat, nie podwyżka** – klienci akceptują wahania cen, jeśli widzą promocję w godzinach niskiego popytu, a nie dopłatę w godzinach szczytu
-- **Ceny bezwzględne zamiast mnożników** – Uber potwierdził empirycznie, że zastąpienie mnożnika (np. „opłata x2,2") konkretną kwotą w złotych znacząco redukuje frustrację użytkowników
+- **Ceny bezwzględne zamiast mnożników** – konkretna kwota w złotych podana z góry jest dla klienta czytelniejsza niż mnożnik (np. „opłata x2,2"), który trudno przeliczyć i łatwo odebrać jako karę
 
 Więcej o liczeniu zwrotu z inwestycji w te narzędzia znajdziesz w artykule o [ROI z AI](/ai-w-biznesie/roi-z-ai/) – z metodologią wyliczania efektów dla różnych typów wdrożeń.
 

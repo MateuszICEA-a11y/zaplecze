@@ -3,7 +3,7 @@ title: 'Build vs buy – własna aplikacja AI czy gotowy SaaS'
 subtitle: 'Jak policzyć pełny koszt każdego z rozwiązań i podjąć decyzję, której nie będziesz żałować za dwa lata'
 description: 'Build vs buy AI: TCO, czas wdrożenia, vendor lock-in i hybryda. Porównawcza tabela kryteriów i dane z 2025–2026 dla decydentów MŚP i enterprise.'
 date: 2026-05-15
-updated: 2026-08-28
+updated: 2026-09-17
 image: ../../../assets/images/blog-ai-w-biznesie-build-vs-buy.webp
 icon: '<path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 3v3M12 3v3M17 3v3M7 18v3M12 18v3M17 18v3"/>'
 author:
@@ -36,10 +36,10 @@ sources:
     note: 'David Klotz, arXiv, kwiecień 2026. Analiza wpływu agentowej AI na decyzję build vs buy.'
   - title: 'The GenAI Divide: State of AI in Business 2025'
     url: 'https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf'
-    note: 'MIT NANDA, 2025 (kopia raportu). Rozwiązania zewnętrzne trafiały do wdrożenia w ok. 67% przypadków, budowane wewnętrznie – w ok. 33%.'
+    note: 'MIT NANDA, 2025 (kopia raportu). Rozwiązania kupione od zewnętrznych dostawców trafiały do wdrożenia w ok. 67% przypadków, budowane wewnętrznie – w ok. 33%.'
   - title: 'Agentic AI untangled: Navigating the build, buy, or borrow decision'
     url: 'https://kpmg.com/us/en/articles/2026/agentic-ai-untangled.html'
-    note: 'KPMG, 2026. Według AI Pulse Survey 57% organizacji wybiera hybrydowe podejście do agentów AI (wzrost z 51%).'
+    note: 'KPMG, 2026. Według AI Pulse Survey (III kwartał 2025) 57% organizacji wybiera łączone podejście do agentów AI – budowę i zakup (wzrost z 51% w poprzednim kwartale).'
 ---
 Pytanie „budować czy kupić?" nigdy nie było proste. W kontekście aplikacji AI stało się jednak wyjątkowo trudne. Ukryte koszty rosną, tempo zmian modeli bazowych zaskakuje, a ryzyko uzależnienia od dostawcy (ang. [vendor lock-in](https://en.wikipedia.org/wiki/Vendor_lock-in)) boli mocniej niż w klasycznym oprogramowaniu. **Badanie Zapier z 2026 roku pokazuje, że 74% firm doświadczyłoby poważnych zakłóceń operacyjnych, gdyby ich główny dostawca AI przestał działać.** Tylko 6% deklaruje bezstratną zmianę dostawcy. Zanim podejmiesz decyzję, sprawdź, jakie pytania zadać, jak liczyć pełny koszt posiadania (TCO – Total Cost of Ownership) i kiedy najlepsza odpowiedź brzmi: „ani jedno, ani drugie".
 
@@ -47,19 +47,19 @@ Pytanie „budować czy kupić?" nigdy nie było proste. W kontekście aplikacji
 
 Przez dekady zasada była prosta. Kupuj gotowe oprogramowanie dla procesów standardowych, a buduj tylko tam, gdzie masz unikalną przewagę konkurencyjną. W świecie aplikacji AI ta reguła nadal obowiązuje – ma jednak nowe wyjątki i pułapki.
 
-Gotowe narzędzia SaaS (oprogramowanie jako usługa) wdrożysz w kilka dni, a nie miesięcy. Ceny jednak rosną. Według danych z brytyjskiego rynku oprogramowanie SaaS drożeje średnio o 11,4% rok do roku, podczas gdy ogólna inflacja wynosi 2,7%. Licencja Microsoft Copilot kosztuje 30 dolarów miesięcznie za użytkownika, a Salesforce Agentforce pobiera 2 dolary za konwersację. **Przy kilkudziesięciu użytkownikach i setkach tysięcy interakcji miesięcznie subskrypcja po prostu przestaje być tania.**
+Gotowe narzędzia SaaS (oprogramowanie jako usługa) wdrożysz w kilka dni, a nie miesięcy. Ceny jednak rosną. Według danych Vertice z 2025 roku ceny oprogramowania SaaS wzrosły średnio o 11,4% rok do roku, podczas gdy średnia inflacja w krajach G7 wynosiła 2,7%. Licencja Microsoft Copilot kosztuje 30 dolarów miesięcznie za użytkownika, a Salesforce Agentforce pobiera 2 dolary za konwersację. **Przy kilkudziesięciu użytkownikach i setkach tysięcy interakcji miesięcznie subskrypcja po prostu przestaje być tania.**
 
-Własne rozwiązanie daje pełną kontrolę. Wymaga jednak inwestycji, której skalę firmy systematycznie niedoszacowują. **Badanie portalu CIO.com z 2025 roku ujawniło, że 85% organizacji zaniża koszty projektu AI o ponad 10%, a jedna na cztery – o ponad 50%.** Wynika to nie ze złej woli, lecz z faktu, że widać licencję i serwer, ale nie widać przygotowania danych, integracji z ERP, szkoleń, monitoringu dryfu modelu i corocznych kosztów utrzymania.
+Własne rozwiązanie daje pełną kontrolę. Wymaga jednak inwestycji, której skalę firmy systematycznie niedoszacowują. **Badanie Benchmarkit i Mavvrik opisane przez CIO.com w 2025 roku pokazało, że 85% organizacji myli się w szacunku kosztów AI o ponad 10%, a blisko co czwarta – o 50% i więcej.** Wynika to nie ze złej woli, lecz z faktu, że widać licencję i serwer, ale nie widać przygotowania danych, integracji z ERP, szkoleń, monitoringu dryfu modelu i corocznych kosztów utrzymania.
 
 ### Co wchodzi w pełny TCO?
 
-Licencja lub koszt tokenów API to zwykle 20–35% całkowitego kosztu posiadania. Reszta to wydatki, które nie pojawiają się w żadnym PDF-ie od sprzedawcy:
+Licencja lub koszt tokenów API to tylko część całkowitego kosztu posiadania. Reszta to wydatki, które nie pojawiają się w żadnym PDF-ie od sprzedawcy. Podane niżej kwoty i proporcje to orientacyjne szacunki rynkowe, a nie wyniki badań – w Twoim projekcie mogą wyglądać inaczej:
 
-- **Przygotowanie danych** – strukturyzacja, czyszczenie i etykietowanie pochłaniają 30–50% budżetu wdrożeniowego w przypadku własnego projektu.
-- **Integracja systemów** – wpięcie w CRM, ERP czy bazy danych sprawia, że projekty oparte na starszych systemach kosztują 2–3 razy więcej niż instalacje budowane od zera (tzw. greenfield).
-- **Specjaliści i szkolenia** – roczna stawka inżyniera AI/ML w Polsce wynosi 480 000–720 000 PLN, a projekty własne wymagają zaangażowania minimum 2–3 takich osób.
-- **Utrzymanie i dryf modelu** – roczne koszty utrzymania to 15–30% inwestycji początkowej, a niekorygowany dryf modelu kosztuje szacunkowo 720 000 PLN rocznie na każdy wadliwy system.
-- **Zgodność prawna** – audyt RODO to wydatek rzędu 5 000–50 000 PLN, natomiast ocena ryzyka według unijnego aktu w sprawie sztucznej inteligencji (AI Act) dla systemów wysokiego ryzyka kosztuje 41 000–63 000 PLN.
+- **Przygotowanie danych** – strukturyzacja, czyszczenie i etykietowanie często pochłaniają znaczną część budżetu wdrożeniowego własnego projektu.
+- **Integracja systemów** – wpięcie w CRM, ERP czy bazy danych sprawia, że projekty oparte na starszych systemach zwykle kosztują wyraźnie więcej niż instalacje budowane od zera (tzw. greenfield).
+- **Specjaliści i szkolenia** – doświadczony inżynier AI/ML w Polsce to koszt rzędu kilkuset tysięcy złotych rocznie (szacunek orientacyjny), a projekty własne wymagają zwykle zaangażowania kilku takich osób.
+- **Utrzymanie i dryf modelu** – utrzymanie to koszt powracający co roku, a niekorygowany dryf modelu (spadek trafności wraz ze zmianą danych) obniża jakość decyzji i generuje straty trudne do zauważenia w budżecie.
+- **Zgodność prawna** – audyt RODO oraz ocena zgodności z unijnym aktem w sprawie sztucznej inteligencji (AI Act) dla systemów wysokiego ryzyka to wydatki liczone zwykle w dziesiątkach tysięcy złotych (szacunek orientacyjny).
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -83,7 +83,7 @@ Zestawienie najważniejszych wymiarów decyzji znajdziesz poniżej. Każde kryte
 | **Wymagane kompetencje** | Podstawowe (konfiguracja, prompt engineering) | Bardzo wysokie (MLOps, inżynieria danych, integracje) | Średnie (inżynierowie integracji, architekci) |
 | **Bezpieczeństwo danych** | Chmura dostawcy (ryzyko: polityka dostawcy, jurysdykcja) | Pełna kontrola (on-premise lub własna chmura) | Wysoka – własna baza danych, zewnętrzny model dostępny tylko przez API |
 
-Wskaźnik sukcesu gotowych wdrożeń wynosi 67%, podczas gdy projekty budowy własnej aplikacji od podstaw kończą się sukcesem zaledwie w 33% przypadków (badanie MIT, 2025). **Hybryda – czyli zakup standardowych komponentów i dobudowanie unikalnej warstwy logiki – zapewnia o 60% szybszy zwrot z inwestycji niż tworzenie systemu całkowicie od zera.**
+Według raportu MIT NANDA z 2025 roku narzędzia kupione od zewnętrznych dostawców trafiały do wdrożenia produkcyjnego w ok. 67% przypadków, a rozwiązania budowane wewnętrznie – w ok. 33%. **Hybryda – czyli zakup standardowych komponentów i dobudowanie unikalnej warstwy logiki – pozwala szybciej dojść do działającego wdrożenia niż tworzenie systemu całkowicie od zera.**
 
 ![Porównanie Build kontra Buy – budowa własnego rozwiązania (kontrola, brak vendor lock-in, wysoki koszt) wobec gotowego SaaS (szybkie wdrożenie, niższy koszt startu, ryzyko lock-in)](../../../assets/images/infographic-ai-w-biznesie-build-vs-buy.png)
 
@@ -107,12 +107,12 @@ Własna aplikacja AI ma sens w czterech przypadkach. Przed podjęciem decyzji sp
 
 - **Dane wrażliwe** – informacje medyczne, finansowe czy pracownicze. Regulacje RODO i AI Act mogą wykluczyć przetwarzanie na serwerach zewnętrznego dostawcy, przez co infrastruktura on-premise lub prywatna chmura stają się koniecznością.
 - **Przewaga konkurencyjna zakodowana w danych** – Twój model prognozowania popytu opiera się na 10 latach własnych danych transakcyjnych. Żaden gotowy system tego nie odtworzy.
-- **Skala ekonomicznie uzasadniająca inwestycję** – przy dziesiątkach milionów zapytań miesięcznie koszt tokenów API komercyjnego dostawcy przekroczy koszt własnej infrastruktury. Granica opłacalności jest indywidualna, ale zazwyczaj leży między 500 000 a 2 000 000 wywołań miesięcznie.
+- **Skala ekonomicznie uzasadniająca inwestycję** – przy dziesiątkach milionów zapytań miesięcznie koszt tokenów API komercyjnego dostawcy przekroczy koszt własnej infrastruktury. Granica opłacalności jest indywidualna – zależy od cen tokenów, długości zapytań i kosztu własnego zespołu.
 - **Wymogi suwerenności danych** – firmy z sektora obronnego, administracji publicznej lub usług krytycznych mają formalne obowiązki lokalizacji danych, które wykluczają korzystanie z chmury zagranicznego dostawcy.
 
 Zanim zlecisz projekt, odpowiedz na trzy pytania diagnostyczne. Czy masz gotowe, ustrukturyzowane dane? Budowanie bez nich to budowanie na piasku. Czy masz lidera projektu (opiekuna biznesowego) z uprawnieniami decyzyjnymi? Bez niego każdy projekt AI kończy się wiecznym pilotażem. I wreszcie: czy znasz miernik sukcesu, który można zweryfikować po 90 dniach od wdrożenia na produkcję?
 
-Jeśli odpowiedź na którekolwiek z tych pytań brzmi „nie" – nie zaczynaj. Wybierz gotowego SaaS-a i wróć do pomysłu budowy własnego systemu, gdy organizacja będzie na to gotowa. Sprawdź też, jak poprawnie liczyć [ROI z AI](/ai-w-biznesie/roi-z-ai/). Wiele firm myli zyski z oszczędnościami i zaniża kalkulacje nawet trzykrotnie.
+Jeśli odpowiedź na którekolwiek z tych pytań brzmi „nie" – nie zaczynaj. Wybierz gotowego SaaS-a i wróć do pomysłu budowy własnego systemu, gdy organizacja będzie na to gotowa. Sprawdź też, jak poprawnie liczyć [ROI z AI](/ai-w-biznesie/roi-z-ai/). Wiele firm myli zyski z oszczędnościami, co zniekształca całą kalkulację.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
@@ -125,7 +125,7 @@ Jeśli odpowiedź na którekolwiek z tych pytań brzmi „nie" – nie zaczynaj.
 
 ## Hybryda – najczęstsza odpowiedź dla firm z sektora MŚP i średnich przedsiębiorstw (mid-market)
 
-Czyste opcje „kup" albo „buduj" to zaledwie krańce spektrum. **57% firm wybiera dziś podejście hybrydowe – kupuje standardowe komponenty i buduje własną warstwę logiki** (dane KPMG, 2026). To nie jest zgniły kompromis. To przemyślana architektura.
+Czyste opcje „kup" albo „buduj" to zaledwie krańce spektrum. **57% organizacji łączy dziś budowę i zakup agentów AI – kupuje standardowe komponenty i buduje własną warstwę logiki** (KPMG AI Pulse Survey, III kwartał 2025). To nie jest zgniły kompromis. To przemyślana architektura.
 
 Hybryda opiera się na prostym podziale. Zewnętrzny model bazowy (OpenAI GPT-5.6, Anthropic Claude, Google Gemini) dostarcza rozumienie języka, a Twoja firma dostarcza kontekst: produkty, procedury, historię transakcji, zasady cenowe. Integracja następuje przez architekturę [RAG](/rag/przewodnik/) (generowanie wspomagane wyszukiwaniem – Retrieval-Augmented Generation). Pozwala ona modelowi korzystać z Twoich danych bez konieczności wysyłania ich na zewnątrz w surowej formie.
 
@@ -133,13 +133,13 @@ Hybryda opiera się na prostym podziale. Zewnętrzny model bazowy (OpenAI GPT-5.
 
 Wyobraź sobie kancelarię prawną. Kupuje dostęp do API Claude'a (gotowy model). Buduje własną bazę wektorową przechowującą osadzenia (ang. embeddings) dokumentów wewnętrznych – umów, orzeczeń, precedensów. Każde zapytanie prawnika trafia najpierw do bazy wektorowej, która wyciąga najbardziej pasujące fragmenty. Dopiero potem model generuje odpowiedź na ich podstawie. Dane nigdy nie opuszczają firmy w formie nieprzetworzonej, a zewnętrzny model nie „uczy się" na firmowych zasobach. Wynik jest unikalny, ponieważ unikalny jest kontekst.
 
-Koszt takiej architektury dla firmy liczącej 20–100 osób to jednorazowo 50 000–200 000 PLN na integrację i infrastrukturę, plus zmienne koszty wywołań API. **Porównaj to z budową modelu od zera, gdzie sam roczny koszt utrzymania specjalistów wynosi od 960 000 do 2 160 000 PLN.**
+Orientacyjnie koszt takiej architektury dla firmy liczącej 20–100 osób to jednorazowo 50 000–200 000 PLN na integrację i infrastrukturę, plus zmienne koszty wywołań API (to szacunek poglądowy, nie dane z badań). **Porównaj to z budową modelu od zera, gdzie sam roczny koszt utrzymania zespołu specjalistów łatwo przekracza milion złotych.**
 
 Trzy sytuacje, w których hybryda przestaje działać i warto rozważyć pełne budowanie:
 
 - **Gdy zewnętrzny model jest zbyt wolny** – aplikacje działające w czasie rzeczywistym, wymagające odpowiedzi poniżej 200 ms, mogą potrzebować modelu lokalnego.
 - **Gdy regulacje wymagają 100% suwerenności infrastruktury** – nawet wywołanie API zewnętrznego modelu bywa niedozwolone w niektórych sektorach.
-- **Gdy skala sprawia, że koszt API przewyższa koszt własnego modelu** – progi opłacalności zazwyczaj pojawiają się przy milionach wywołań miesięcznie.
+- **Gdy skala sprawia, że koszt API przewyższa koszt własnego modelu** – próg opłacalności trzeba policzyć dla własnego wolumenu i cen tokenów.
 
 ## Vendor lock-in – jak naprawdę działa i jak go ograniczyć
 
