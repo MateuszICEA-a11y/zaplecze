@@ -42,6 +42,31 @@ faq:
       cyklu aktualizacji modelu i mogą zajmować miesiące. Dlatego strategia GEO zawsze powinna obejmować
       oba wektory – zarówno optymalizację pod dynamiczne RAG, jak i budowanie obecności w źródłach
       zasilających dane treningowe.
+sources:
+  - title: 'Only 12% of AI Cited URLs Rank in Google’s Top 10 for the Original Prompt'
+    url: 'https://ahrefs.com/blog/ai-search-overlap/'
+    note: 'Ahrefs (Louise Linehan), 11 sierpnia 2025. Analiza 15 000 promptów: średnio 12% linków cytowanych przez ChatGPT, Gemini i Copilota jest w top 10 Google dla tego samego zapytania.'
+  - title: 'Retrieval-augmented generation'
+    url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
+    note: 'Wikipedia. Definicja generowania wspomaganego wyszukiwaniem (RAG).'
+  - title: 'GEO: Generative Engine Optimization'
+    url: 'https://arxiv.org/abs/2311.09735'
+    note: 'Aggarwal i in., KDD 2024. Badanie metod GEO na benchmarku GEO-bench, w tym wpływ statystyk, cytatów i powoływania się na źródła na widoczność w odpowiedziach.'
+  - title: 'Ranking for Multiple Fan-Out Queries Dramatically Increases Your Chances of Getting Cited in AIOs (173,902 URLs Studied)'
+    url: 'https://surferseo.com/blog/query-fan-out-impact/'
+    note: 'Surfer. Strony widoczne także na zapytania fan-out miały o 161% większą szansę na cytowanie w Google AI Overviews; 51,2% cytowań rankujących w wynikach organicznych dotyczyło stron widocznych na zapytanie główne i co najmniej jedno podzapytanie.'
+  - title: 'LongCite: Enabling LLMs to Generate Fine-grained Citations in Long-context QA'
+    url: 'https://arxiv.org/abs/2409.02897'
+    note: 'Zhang i in., wrzesień 2024. Proces CoF i zbiór LongCite-45k (44 600 instancji), modele z oknem kontekstu 128 000 tokenów.'
+  - title: 'Training Language Models to Generate Text with Citations via Fine-grained Rewards'
+    url: 'https://arxiv.org/abs/2402.04315'
+    note: 'Huang i in., ACL 2024. LLaMA-2-7B trenowany ze szczegółowymi nagrodami przewyższył GPT-3.5-turbo w jakości cytowań.'
+  - title: 'Cited but Not Verified: Parsing and Evaluating Source Attribution in LLM Deep Research Agents'
+    url: 'https://arxiv.org/abs/2605.06635'
+    note: 'Onweller i in., maj 2026. Ocena 14 modeli w trzech wymiarach (Link Works, Relevant Content, Fact Check) i spadek weryfikowalności faktów wraz z liczbą wywołań wyszukiwarki.'
+  - title: 'Enabling Large Language Models to Generate Text with Citations'
+    url: 'https://arxiv.org/abs/2305.14627'
+    note: 'Gao i in., EMNLP 2023. Benchmark ALCE: nawet najlepsze modele nie mają pełnego wsparcia źródłowego w około 50% przypadków (zbiór ELI5).'
 ---
 Zanim zaczniesz optymalizować treść pod kątem LLM-ów, musisz zrozumieć, jak w ogóle wybierają one źródła. Ten mechanizm różni się fundamentalnie od algorytmów Google. **Modele językowe preferują źródła o wysokiej gęstości informacji, ustrukturyzowanej architekturze i jednoznaczności semantycznej, a zaledwie 12% adresów URL cytowanych przez LLM-y pokrywa się z czołową dziesiątką organicznych wyników Google dla tego samego zapytania.** To nie jest intuicyjne. Właśnie dlatego tak wiele stron o silnym profilu SEO w ogóle nie pojawia się w odpowiedziach AI. Sprawdź, jak działają mechanizmy cytowania – od architektury RAG, przez decyzje modelu, aż po paradoks, w którym więcej wyszukiwań wcale nie oznacza rzetelniejszych przypisów.
 

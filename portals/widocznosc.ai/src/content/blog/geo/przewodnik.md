@@ -55,6 +55,28 @@ faq:
       źródłem, bloki tekstu po 200–400 słów). Zmierz swój wskaźnik Citation Rate przed
       optymalizacją i po niej. To w zupełności wystarczy, aby zobaczyć pierwsze efekty i
       uzasadnić biznesowo kolejne kroki.
+sources:
+  - title: 'GEO: Generative Engine Optimization'
+    url: 'https://arxiv.org/abs/2311.09735'
+    note: 'Aggarwal i in. (Princeton, Georgia Tech, Allen Institute for AI, IIT Delhi), KDD 2024. GEO-bench z 10 000 zapytań z 25 dziedzin, metryki Position-Adjusted Word Count i Subjective Impression oraz wyniki 9 metod optymalizacji.'
+  - title: 'Retrieval-augmented generation'
+    url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
+    note: 'Wikipedia. Definicja generowania wspomaganego wyszukiwaniem (RAG).'
+  - title: 'Overview of OpenAI Crawlers'
+    url: 'https://developers.openai.com/api/docs/bots'
+    note: 'OpenAI. Opis GPTBot, OAI-SearchBot i ChatGPT-User oraz sterowania nimi w robots.txt.'
+  - title: 'Perplexity Crawlers'
+    url: 'https://docs.perplexity.ai/guides/bots'
+    note: 'Perplexity. PerplexityBot i Perplexity-User oraz ich zachowanie wobec robots.txt.'
+  - title: 'The /llms.txt file, v2'
+    url: 'https://llmstxt.org/'
+    note: 'Jeremy Howard, propozycja z 3 września 2024. Specyfikacja pliku llms.txt w formacie Markdown.'
+  - title: 'Effective Large Language Model Adaptation for Improved Grounding and Citation Generation'
+    url: 'https://arxiv.org/abs/2311.09533'
+    note: 'Ye i in., NAACL 2024. Framework AGREE uczący modele ugruntowywania odpowiedzi i cytowania pobranych źródeł w celu ograniczenia halucynacji.'
+  - title: 'Meet your AI Marketer'
+    url: 'https://www.tryprofound.com/pricing'
+    note: 'Profound. Cennik z listą monitorowanych silników, m.in. ChatGPT, Perplexity, Gemini, Claude i Google AI Overviews.'
 ---
 GEO, czyli Generative Engine Optimization (optymalizacja pod generatywne silniki wyszukiwania), to dyscyplina, która mierzy i poprawia obecność Twojej marki w odpowiedziach ChatGPT, Perplexity, Google AI Overviews i podobnych narzędzi. To nie jest „SEO dla AI” – to osobna logika, odrębne metryki i zupełnie inne taktyki. Badanie [Aggarwal et al. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University udokumentowało po raz pierwszy, że konkretne elementy treści – statystyki, cytowania ekspertów, autorytatywny ton – podnoszą widoczność w LLM o 30–115%. Klasyczne zabiegi SEO często nie przynoszą tu żadnego efektu, a czasem wręcz szkodzą. **Jeśli Twoja marka dziś nie pojawia się w odpowiedziach AI, ten przewodnik pokaże Ci powody i konkretne rozwiązania.**
 

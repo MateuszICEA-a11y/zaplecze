@@ -40,6 +40,25 @@ faq:
       i serwisów branżowych. To, co internet mówi o Twojej marce poza Twoją domeną, realnie wpływa na odpowiedź
       modelu. Kupowanie sztucznych wzmianek nie działa, ale autentyczna obecność off-site jest mierzalnym
       sygnałem (tzw. share of voice w AI).
+sources:
+  - title: 'Optymalizacja witryny pod kątem funkcji opartych na generatywnej AI w wyszukiwarce Google'
+    url: 'https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=pl'
+    note: 'Google Search Central, aktualizacja 15 lipca 2026. Analizowany przewodnik: podstawowe systemy rankingowe, RAG oraz sekcja o mitach (llms.txt, dzielenie treści, dane strukturalne, wzmianki).'
+  - title: 'AI features and your website'
+    url: 'https://developers.google.com/search/docs/appearance/ai-features'
+    note: 'Google Search Central. Opis techniki query fan-out w AI Overviews i AI Mode.'
+  - title: 'The /llms.txt file, v2'
+    url: 'https://llmstxt.org/'
+    note: 'Jeremy Howard, propozycja z 3 września 2024. Specyfikacja pliku llms.txt.'
+  - title: 'Search Engine Market Share Worldwide'
+    url: 'https://gs.statcounter.com/search-engine-market-share'
+    note: 'StatCounter Global Stats. Udział Google w globalnym rynku wyszukiwarek na poziomie ok. 90%.'
+  - title: 'ChatGPT reaches 900M weekly active users'
+    url: 'https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users'
+    note: 'TechCrunch, 27 lutego 2026. Dane OpenAI o 900 mln tygodniowych użytkowników ChatGPT.'
+  - title: 'Department of Justice Wins Significant Remedies Against Google'
+    url: 'https://www.justice.gov/opa/pr/department-justice-wins-significant-remedies-against-google'
+    note: 'Departament Sprawiedliwości USA, 2 września 2025. Przywołuje wyrok z sierpnia 2024 roku, w którym sąd w Dystrykcie Kolumbii uznał Google za monopolistę.'
 ---
 Google opublikowało oficjalny przewodnik <strong><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=pl" target="_blank" rel="noopener noreferrer">„Optymalizacja witryny pod kątem funkcji opartych na generatywnej AI w wyszukiwarce Google"</a></strong>. Przekaz jest uspokajający: rób dobre SEO po staremu, nie daj się nabrać na „sztuczki" GEO, nie potrzebujesz llms.txt ani specjalnych zabiegów. Po lekturze przedsiębiorca ma poczuć, że nic się nie zmieniło i wszystko jest pod kontrolą. **Problem w tym, że ten dokument nie opisuje wyszukiwania AI – opisuje wyszukiwanie AI w produktach Google.** A to dziś dwie różne rzeczy, i właśnie na tej różnicy zarabia się albo traci widoczność.
 

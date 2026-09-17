@@ -49,6 +49,25 @@ faq:
       kolejne inwestycje. Pełną metodologię, którą stosujemy od audytu po
       optymalizację, opisuje nasz <a href="/geo/przewodnik/">przewodnik po
       GEO</a>.
+sources:
+  - title: 'GEO: Generative Engine Optimization'
+    url: 'https://arxiv.org/abs/2311.09735'
+    note: 'Aggarwal i in., KDD 2024. Benchmark GEO-bench (10 tys. zapytań z 25 dziedzin), dziewięć testowanych taktyk, miary PAWC i SI oraz wynik 115,1% dla stron z piątej pozycji.'
+  - title: 'Retrieval-augmented generation'
+    url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
+    note: 'Wikipedia. Definicja RAG – techniki, dzięki której model generatywny pobiera i włącza do odpowiedzi zewnętrzne informacje.'
+  - title: 'Overview of OpenAI Crawlers'
+    url: 'https://developers.openai.com/api/docs/bots'
+    note: 'OpenAI, dokumentacja. Opis GPTBota i pozostałych botów OpenAI oraz ich obsługi w robots.txt.'
+  - title: 'Does Anthropic crawl data from the web, and how can site owners block the crawler?'
+    url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
+    note: 'Anthropic, centrum pomocy. ClaudeBot respektuje dyrektywy robots.txt.'
+  - title: 'Perplexity Crawlers'
+    url: 'https://docs.perplexity.ai/guides/bots'
+    note: 'Perplexity, dokumentacja. PerplexityBot respektuje robots.txt.'
+  - title: 'The /llms.txt file, v2'
+    url: 'https://llmstxt.org/'
+    note: 'Jeremy Howard, propozycja z 3 września 2024. Specyfikacja pliku llms.txt.'
 ---
 GEO, czyli *Generative Engine Optimization* (optymalizacja pod kątem generatywnych silników wyszukiwania), to odpowiedź na palący problem współczesnego marketingu. Dlaczego Twoja marka znika z odpowiedzi ChatGPT, Perplexity czy Google AI Overviews, mimo że świetnie radzi sobie w tradycyjnym Google? Badanie [Aggarwala i in. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University jako pierwsze zmierzyło empirycznie, co dokładnie zwiększa szansę na cytowanie przez duże modele językowe. **Odpowiedź zaskoczyła branżę: klasyczne SEO tu nie działa, a upychanie słów kluczowych wręcz obniża widoczność w LLM.**
 

@@ -39,6 +39,31 @@ faq:
       (Zawartość → Pliki), skopiuj wygenerowany adres URL CDN, a następnie w Nawigacji utwórz przekierowanie
       <code>/llms.txt</code> → ten adres URL. Agenty AI odpytujące domenę główną zostaną prawidłowo przekierowane
       do zasobu.
+sources:
+  - title: 'The /llms.txt file, v2'
+    url: 'https://llmstxt.org/'
+    note: 'Jeremy Howard, propozycja z 3 września 2024. Specyfikacja formatu: wymagany tylko nagłówek H1, opcjonalny blok cytatu, sekcje H2 z listami linków i sekcja Optional.'
+  - title: 'What is llms.txt? Breaking down the skepticism'
+    url: 'https://www.mintlify.com/blog/what-is-llms-txt'
+    note: 'Mintlify. Wdrożenie llms.txt na wszystkich hostowanych dokumentacjach, m.in. Anthropic i Cursor, oraz opracowanie llms-full.txt wspólnie z Anthropic.'
+  - title: 'RFC 9309: Robots Exclusion Protocol'
+    url: 'https://www.rfc-editor.org/rfc/rfc9309.html'
+    note: 'IETF, wrzesień 2022. Formalizacja protokołu robots.txt zdefiniowanego pierwotnie przez Martijna Kostera w 1994 roku.'
+  - title: 'llms.txt and AI Visibility: Results from OtterlyAI’s GEO Study'
+    url: 'https://otterly.ai/blog/the-llms-txt-experiment/'
+    note: 'OtterlyAI. Na ponad 62 100 wizyt botów AI tylko 84 żądania (ok. 0,1%) dotyczyły pliku /llms.txt.'
+  - title: 'Google Says LLMs.Txt Comparable To Keywords Meta Tag'
+    url: 'https://www.searchenginejournal.com/google-says-llms-txt-comparable-to-keywords-meta-tag/544804/'
+    note: 'Search Engine Journal (Roger Montti), 17 kwietnia 2025. Wypowiedź Johna Muellera porównująca llms.txt do meta keywords i uwaga o ryzyku cloakingu.'
+  - title: 'Does LLMs.txt impact your AI visibility and citations? No, according to research'
+    url: 'https://seranking.com/blog/llms-txt/'
+    note: 'SE Ranking, 7 listopada 2025. Analiza ok. 300 000 domen: brak związku między obecnością llms.txt a częstotliwością cytowań.'
+  - title: 'llms.txt | Lighthouse'
+    url: 'https://developer.chrome.com/docs/lighthouse/agentic-browsing/llms-txt'
+    note: 'Chrome for Developers. Dokumentacja audytu llms.txt w kategorii Agentic Browsing w Lighthouse.'
+  - title: 'Google Lighthouse Has A New Agentic Browsing Category'
+    url: 'https://www.debugbear.com/blog/lighthouse-agentic-browsing'
+    note: 'DebugBear (Matt Zeunert), maj 2026. Kategoria Agentic Browsing w Lighthouse 13.3 i zakres jej audytów.'
 ---
 Plik `llms.txt` to lekki dokument w formacie [Markdown](https://pl.wikipedia.org/wiki/Markdown) umieszczany w katalogu głównym serwera. Wskazuje on botom AI i autonomicznym agentom, co na Twojej stronie jest najważniejsze – bez konieczności przeczesywania setek podstron i renderowania kodu JavaScript. Standard ten zaproponował we wrześniu 2024 roku Jeremy Howard, współtwórca fast.ai i Answer.AI. Prawdziwy przełom nastąpił jednak w listopadzie 2024 roku. Wtedy platforma Mintlify automatycznie wygenerowała te pliki dla tysięcy klientów, w tym dla firm takich jak Anthropic, Cursor i ElevenLabs. **Jeśli Twoja strona obsługuje programistów, oferuje API lub chce być gotowa na nadchodzący ekosystem autonomicznych agentów zakupowych, `llms.txt` to jeden z najtańszych kroków, jakie możesz dziś zrobić.**
 

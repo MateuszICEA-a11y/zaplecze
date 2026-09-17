@@ -14,6 +14,25 @@ tags: ['Topical Authority', 'Pillar Page', 'Content Strategy', 'GEO']
 pillar: 'geo'
 intent: 'INFO'
 level: 'L2'
+sources:
+  - title: 'A guide to Google Search ranking systems'
+    url: 'https://developers.google.com/search/docs/appearance/ranking-systems-guide'
+    note: 'Google Search Central. Systemy analizy linków, w tym PageRank, nadal należą do głównych systemów rankingowych.'
+  - title: 'Creating helpful, reliable, people-first content'
+    url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content'
+    note: 'Google Search Central. Definicja E-E-A-T; Google zaznacza, że samo E-E-A-T nie jest pojedynczym czynnikiem rankingowym.'
+  - title: 'Topic clusters: The next evolution of SEO'
+    url: 'https://blog.hubspot.com/marketing/topic-clusters-seo'
+    note: 'HubSpot, Mimi An i in., aktualizacja 2026. Model pillar page + cluster i jego źródła w badaniach HubSpot nad linkowaniem wewnętrznym.'
+  - title: 'The science of how AI picks its sources'
+    url: 'https://www.growth-memo.com/p/the-science-of-how-ai-picks-its-sources'
+    note: 'Kevin Indig, Growth Memo, 23 marca 2026. Analiza ok. 1,2 mln odpowiedzi ChatGPT: w porównaniach produktów top 10 domen zbiera 46% cytowań.'
+  - title: 'SEO Link Best Practices for Google'
+    url: 'https://developers.google.com/search/docs/crawling-indexing/links-crawlable'
+    note: 'Google Search Central. Zalecenia dotyczące opisowych anchorów i linkowania wewnętrznego.'
+  - title: 'Intro to How Structured Data Markup Works'
+    url: 'https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data'
+    note: 'Google Search Central. Wprowadzenie do danych strukturalnych schema.org w formacie JSON-LD.'
 ---
 **Większość stron wygrywających kiedyś w klasycznym SEO dzięki silnemu profilowi linkowemu dziś przegrywa w AI Overviews.** Powód jest bolesny dla agencji link buildingowych. LLM-y nie patrzą na linki w taki sam sposób jak klasyczny algorytm. Zwracają uwagę na to, czy domena „wie wszystko" o danej niszy – a to mierzy się głębokością pokrycia, a nie liczbą backlinków. Dlatego koncepcja topical authority, znana w SEO od kilku lat, w erze GEO przestaje być miłym dodatkiem i staje się fundamentem.
 

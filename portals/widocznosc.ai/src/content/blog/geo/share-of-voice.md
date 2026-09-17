@@ -14,6 +14,19 @@ tags: ['Pomiar AI', 'Share of Voice', 'Citation Rate', 'GEO']
 pillar: 'geo'
 intent: 'INFO'
 level: 'L2'
+sources:
+  - title: 'NEW Research: AIs are highly inconsistent when recommending brands or products; marketers should take care when tracking AI visibility'
+    url: 'https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/'
+    note: 'Rand Fishkin, SparkToro, 28 stycznia 2026. 600 ochotników, 12 promptów, 2961 uruchomień w ChatGPT, Claude i Google AI; ta sama lista marek w kolejności – ok. 1 raz na 1000.'
+  - title: 'Defeating Nondeterminism in LLM Inference'
+    url: 'https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/'
+    note: 'Horace He, Thinking Machines Lab, 10 września 2025. Wyjaśnia, dlaczego odpowiedzi LLM różnią się nawet przy temperaturze 0 (zmienny rozmiar partii, brak niezmienności względem batcha).'
+  - title: 'AI Mode in Google Search: Updates from Google I/O 2025'
+    url: 'https://blog.google/products/search/google-search-ai-mode-update/'
+    note: 'Google, 20 maja 2025. Opis techniki query fan-out – rozbijania pytania na podtematy i wiele równoległych zapytań.'
+  - title: 'AI features and your website'
+    url: 'https://developers.google.com/search/docs/appearance/ai-features'
+    note: 'Google Search Central. Ruch z AI Overviews i AI Mode jest raportowany w Search Console razem z pozostałym ruchem, w typie wyszukiwania „Internet”.'
 ---
 Klient pyta: *„Na której pozycji jesteśmy w ChatGPT?"*. **To pytanie nie ma odpowiedzi – i dlatego cały biznes klasycznego SEO zaczyna się rozsypywać przy próbie raportowania widoczności w AI.** Problem nie polega na tym, że nie potrafimy mierzyć. Ranking jako metryka po prostu przestał istnieć w sensie, w jakim znamy go z klasycznego Google.
 

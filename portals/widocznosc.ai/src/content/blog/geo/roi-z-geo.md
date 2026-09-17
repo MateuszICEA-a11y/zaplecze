@@ -45,6 +45,28 @@ faq:
       ZipTie.dev stają się jednak niezbędne, gdy monitorujesz więcej niż 5 marek
       lub potrzebujesz dowodów wizualnych (zrzutów ekranu) do profesjonalnych
       raportów klienckich.
+sources:
+  - title: 'ROI'
+    url: 'https://pl.wikipedia.org/wiki/ROI'
+    note: 'Wikipedia. Definicja wskaźnika zwrotu z inwestycji.'
+  - title: 'Overview of OpenAI Crawlers'
+    url: 'https://developers.openai.com/api/docs/bots'
+    note: 'OpenAI. Opis botów GPTBot, OAI-SearchBot i ChatGPT-User.'
+  - title: 'Does Anthropic crawl data from the web, and how can site owners block the crawler?'
+    url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
+    note: 'Anthropic, Claude Help Center. Opis botów ClaudeBot, Claude-User i Claude-SearchBot.'
+  - title: 'Perplexity Crawlers'
+    url: 'https://docs.perplexity.ai/guides/bots'
+    note: 'Perplexity. Opis botów PerplexityBot i Perplexity-User.'
+  - title: 'Custom channel groups'
+    url: 'https://support.google.com/analytics/answer/13051316?hl=en'
+    note: 'Pomoc Google Analytics. Ruch trafia do pierwszego pasującego kanału, dlatego kanał AI trzeba umieścić nad kanałem Referral.'
+  - title: 'Default channel group'
+    url: 'https://support.google.com/analytics/answer/9756891?hl=en'
+    note: 'Pomoc Google Analytics. Definicja domyślnego kanału AI Assistant (m.in. ChatGPT, Gemini, Deepseek, Copilot, Grok).'
+  - title: 'Google Analytics Adds AI Assistant As Default Channel Group'
+    url: 'https://www.searchenginejournal.com/google-analytics-adds-ai-assistant-as-default-channel-group/574974/'
+    note: 'Matt G. Southern, Search Engine Journal, 14 maja 2026. Wprowadzenie kanału AI Assistant w GA4.'
 ---
 Mierzenie [zwrotu z inwestycji](https://pl.wikipedia.org/wiki/ROI) (ROI – *Return on Investment*) z działań GEO (*Generative Engine Optimization*, czyli optymalizacji dla generatywnych silników wyszukiwania) to dziś główne wyzwanie w marketingu B2B. Klasyczne narzędzia SEO – Google Search Console czy Ahrefs – są całkowicie ślepe na cytowania w modelach LLM (ang. *Large Language Models*, czyli dużych modelach językowych). Klienci widzą rosnący ruch z domen takich jak `chatgpt.com` czy `perplexity.ai`. Nie wiedzą jednak, co z tym zrobić. **Poniżej uporządkujesz hierarchię kluczowych wskaźników efektywności (KPI) i skonfigurujesz atrybucję w Google Analytics 4.** Poznasz też gotowy schemat raportu miesięcznego, który zarząd zrozumie bez tłumaczenia.
 

@@ -37,6 +37,31 @@ faq:
       i sprawdzenie renderowania przez źródło strony – to wszystko jest możliwe bez żadnych płatnych narzędzi.
       Darmowy <a href="/narzedzia/brand-check/">Widoczność marki w AI</a> automatyzuje pierwsze odpytanie i daje
       punkt startowy w kilka minut.
+sources:
+  - title: '37% of consumers start searches with AI instead of Google: Study'
+    url: 'https://searchengineland.com/consumers-start-searches-ai-not-google-study-467159'
+    note: 'Search Engine Land, Danny Goodwin, 7 stycznia 2026. Omówienie raportu agencji Eight Oh Two o tym, jaka część konsumentów zaczyna wyszukiwanie od narzędzi AI.'
+  - title: 'Retrieval-augmented generation'
+    url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
+    note: 'Wikipedia. Definicja RAG – techniki, dzięki której model generatywny pobiera i włącza do odpowiedzi zewnętrzne informacje.'
+  - title: 'AEO/GEO Marketing Manager'
+    url: 'https://stripe.com/jobs/listing/aeo-geo-marketing-manager/7844214'
+    note: 'Stripe, oferta pracy. Widełki 143 400–215 200 USD rocznie i zadanie optymalizacji Stripe.com pod agentów AI działających w imieniu użytkowników.'
+  - title: 'NEW Research: AIs are highly inconsistent when recommending brands or products; marketers should take care when tracking AI visibility'
+    url: 'https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/'
+    note: 'SparkToro i Gumshoe.ai, styczeń 2026. Badanie 2961 odpytań pokazujące dużą zmienność list marek polecanych przez ChatGPT, Claude i Google AI.'
+  - title: 'Overview of OpenAI Crawlers'
+    url: 'https://developers.openai.com/api/docs/bots'
+    note: 'OpenAI, dokumentacja. Opis botów GPTBot, OAI-SearchBot i ChatGPT-User oraz ich obsługi w robots.txt.'
+  - title: 'Does Anthropic crawl data from the web, and how can site owners block the crawler?'
+    url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
+    note: 'Anthropic, centrum pomocy. Opis botów ClaudeBot, Claude-User i Claude-SearchBot oraz blokowania ich w robots.txt.'
+  - title: 'The rise of the AI crawler'
+    url: 'https://vercel.com/blog/the-rise-of-the-ai-crawler'
+    note: 'Vercel, 17 grudnia 2024. Analiza ruchu pokazująca, że crawlery OpenAI, Anthropic i Perplexity nie wykonują JavaScriptu.'
+  - title: 'GEO: Generative Engine Optimization'
+    url: 'https://arxiv.org/abs/2311.09735'
+    note: 'Aggarwal i in., KDD 2024. Badanie wpływu taktyk takich jak cytaty, statystyki i powołania na źródła na widoczność w odpowiedziach silników generatywnych.'
 ---
 Jeśli Twoja marka nie pojawia się w odpowiedziach ChatGPT, Gemini czy Perplexity na pytania z branży, tracisz klientów bez żadnego śladu w Google Analytics. Szacuje się, że już 37% zapytań zakupowych zaczyna się od konwersacji z modelem językowym. Tradycyjna analityka tych interakcji w ogóle nie rejestruje. **Audyt widoczności marki w silnikach generatywnych – czyli GEO (Generative Engine Optimization) – to dziś równie obowiązkowy punkt kontrolny co klasyczny audyt SEO.** Ten przewodnik przeprowadzi Cię przez cały proces krok po kroku: od przygotowania zestawu zapytań testowych, przez ocenę wyników, aż po konkretne działania optymalizacyjne.
 

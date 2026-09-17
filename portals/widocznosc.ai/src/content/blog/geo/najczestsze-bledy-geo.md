@@ -44,6 +44,25 @@ faq:
       wdrożyły statystyki i cytowania, zyskują proporcjonalnie więcej niż liderzy rynku. Więcej
       o tym mechanizmie opisuje artykuł <a href="/geo/czym-jest-geo/">czym jest GEO</a> – wraz
       z przykładami z małych nisz B2B.
+sources:
+  - title: 'GEO: Generative Engine Optimization'
+    url: 'https://arxiv.org/abs/2311.09735'
+    note: 'Aggarwal i in., KDD 2024. GEO-bench (10 000 zapytań z 25 dziedzin), 9 testowanych metod, słaby wynik keyword stuffingu i wzrosty dla cytatów, statystyk i powoływania się na źródła.'
+  - title: 'Overview of OpenAI Crawlers'
+    url: 'https://developers.openai.com/api/docs/bots'
+    note: 'OpenAI. Role OAI-SearchBot, GPTBot i ChatGPT-User; ustawienia dla każdego bota są niezależne, więc można blokować GPTBot i dopuszczać OAI-SearchBot.'
+  - title: 'Perplexity Crawlers'
+    url: 'https://docs.perplexity.ai/guides/bots'
+    note: 'Perplexity. PerplexityBot służy do wyświetlania i linkowania stron w wynikach Perplexity, a nie do trenowania modeli.'
+  - title: 'List of Google’s common crawlers'
+    url: 'https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers'
+    note: 'Google Search Central. Google-Extended kontroluje wykorzystanie treści do trenowania i ugruntowania modeli Gemini i nie wpływa na obecność w wyszukiwarce Google.'
+  - title: 'Block AI Bots'
+    url: 'https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/'
+    note: 'Cloudflare. Ustawienie blokujące w całej strefie boty klasyfikowane jako crawlery treningowe AI.'
+  - title: 'Retrieval-augmented generation'
+    url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
+    note: 'Wikipedia. Definicja generowania wspomaganego wyszukiwaniem (RAG).'
 ---
 
 Aż 73% firm nie dysponuje żadnym narzędziem do mierzenia widoczności swojej marki w odpowiedziach AI – a mimo to ich zespoły aktywnie „optymalizują pod kątem LLM-ów", kopiując reguły klasycznego SEO do zupełnie innego systemu. To prosta droga do niewidzialności. GEO (Generative Engine Optimization, czyli optymalizacja pod generatywne silniki wyszukiwania) rządzi się własną logiką: liczy się nie pozycja rankingowa, lecz to, czy Twoja treść trafia do syntezy, którą model buduje w czasie rzeczywistym. Poniżej opisuję błędy, które widzę najczęściej w audytach, wraz z konkretnymi krokami naprawczymi.

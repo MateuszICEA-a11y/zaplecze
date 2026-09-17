@@ -44,6 +44,31 @@ faq:
       inwestycje. Jeśli chcesz ocenić obecny stan widoczności swojego sklepu w AI, zacznij od
       <a href="/geo/audyt-widocznosci-marki/">audytu widoczności marki</a> – pokazuje, gdzie jesteś
       względem konkurencji.
+sources:
+  - title: 'COSMO: A large-scale e-commerce common sense knowledge generation and serving system at Amazon'
+    url: 'https://www.amazon.science/publications/cosmo-a-large-scale-e-commerce-common-sense-knowledge-generation-and-serving-system-at-amazon'
+    note: 'Amazon Science, SIGMOD 2024. Opis systemu COSMO, który buduje graf wiedzy o intencjach zakupowych dla wyszukiwarki Amazona.'
+  - title: 'Gartner Predicts Search Engine Volume Will Drop 25% by 2026, Due to AI Chatbots and Other Virtual Agents'
+    url: 'https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents'
+    note: 'Gartner, 19 lutego 2024. Prognoza spadku wolumenu tradycyjnych wyszukiwarek o 25% do 2026 roku na rzecz chatbotów AI.'
+  - title: 'The rise of the AI crawler'
+    url: 'https://vercel.com/blog/the-rise-of-the-ai-crawler'
+    note: 'Vercel, 17 grudnia 2024. Crawlery OpenAI, Anthropic i Perplexity nie renderują JavaScriptu.'
+  - title: 'GEO: Generative Engine Optimization'
+    url: 'https://arxiv.org/abs/2311.09735'
+    note: 'Aggarwal i in., KDD 2024. Wzrost widoczności do 40% po modyfikacji treści oraz 115,1% dla stron z piątej pozycji.'
+  - title: 'AI features and your website'
+    url: 'https://developers.google.com/search/docs/appearance/ai-features'
+    note: 'Google Search Central. Query fan-out w AI Overviews i AI Mode oraz zalecenie aktualnych danych w Merchant Center i zgodności danych strukturalnych z treścią strony.'
+  - title: 'Shop with AI Mode, use AI to buy and try clothes on yourself virtually'
+    url: 'https://blog.google/products-and-platforms/products/shopping/google-shopping-ai-mode-virtual-try-on-update/'
+    note: 'Google, 20 maja 2025. Shopping Graph obejmuje ponad 50 mld ofert produktowych, z czego ponad 2 mld odświeżane są co godzinę.'
+  - title: 'Ontologia (informatyka)'
+    url: 'https://pl.wikipedia.org/wiki/Ontologia_(informatyka)'
+    note: 'Wikipedia. Definicja ontologii jako formalnej reprezentacji pojęć i relacji między nimi.'
+  - title: 'Merchant listing (Product, Offer) structured data'
+    url: 'https://developers.google.com/search/docs/appearance/structured-data/merchant-listing'
+    note: 'Google Search Central. Dane strukturalne ofert sprzedażowych: Product z zagnieżdżonym Offer (price, priceCurrency, availability, shippingDetails).'
 ---
 Kiedy klient zadaje w ChatGPT pytanie: „jakie słuchawki bezprzewodowe do 400 zł są najlepsze?", model nie przegląda rankingów Google. Pobiera fragmenty stron uznane przez boty za wiarygodne, wyciąga z nich dane i skleja odpowiedź w kilka sekund. Jeśli Twój sklep nie trafi do tego zestawienia, po prostu nie istniejesz dla kupującego. **GEO (Generative Engine Optimization, czyli optymalizacja pod generatywne silniki wyszukiwania) to zestaw taktyk, dzięki którym Twoje produkty trafiają do odpowiedzi AI, a nie tylko do tradycyjnych wyników wyszukiwania.** Zobacz, co konkretnie zmienić w strukturze strony, opisach i warstwie danych, żeby wskaźnik cytowań (Citation Rate) ruszył w górę.
 

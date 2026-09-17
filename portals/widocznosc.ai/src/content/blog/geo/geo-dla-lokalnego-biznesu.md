@@ -14,6 +14,25 @@ tags: ['GEO', 'Lokalny biznes', 'Wyszukiwanie konwersacyjne', 'AI Search']
 pillar: 'geo'
 intent: 'HOWTO'
 level: 'L2'
+sources:
+  - title: 'Gartner Predicts Search Engine Volume Will Drop 25% by 2026, Due to AI Chatbots and Other Virtual Agents'
+    url: 'https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents'
+    note: 'Gartner, 19 lutego 2024. Prognoza spadku wolumenu tradycyjnych wyszukiwarek o 25% do 2026 roku na rzecz chatbotów AI.'
+  - title: 'Retrieval-augmented generation'
+    url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
+    note: 'Wikipedia. Definicja RAG – techniki, dzięki której model generatywny pobiera i włącza do odpowiedzi zewnętrzne informacje.'
+  - title: 'GEO: Generative Engine Optimization'
+    url: 'https://arxiv.org/abs/2311.09735'
+    note: 'Aggarwal i in., KDD 2024. Benchmark 10 tys. zapytań z 25 dziedzin, dziewięć taktyk i wzrost widoczności o 115,1% dla stron z piątej pozycji.'
+  - title: 'Local business (LocalBusiness) structured data'
+    url: 'https://developers.google.com/search/docs/appearance/structured-data/local-business'
+    note: 'Google Search Central. Zalecenie najbardziej precyzyjnego podtypu LocalBusiness oraz właściwości geo i openingHoursSpecification.'
+  - title: 'AI features and your website'
+    url: 'https://developers.google.com/search/docs/appearance/ai-features'
+    note: 'Google Search Central. Query fan-out w AI Overviews i AI Mode oraz zalecenie aktualnych danych w Profilu Firmy w Google.'
+  - title: 'The /llms.txt file, v2'
+    url: 'https://llmstxt.org/'
+    note: 'Jeremy Howard, propozycja z 3 września 2024. Format Markdown pliku llms.txt i konwencja sekcji Optional.'
 ---
 Gdy użytkownik pyta ChatGPT „który dentysta na Mokotowie przyjmuje w sobotę", model nie otwiera Google Maps. Syntetyzuje odpowiedź z tego, co zdążył zaindeksować i czemu ufa. Jeśli Twoja firma nie jest opisana w sposób maszynowo czytelny, po prostu znikasz z radaru. **GEO (Generative Engine Optimization, czyli optymalizacja pod generatywne silniki wyszukiwania) to zestaw konkretnych działań, które zmieniają ten stan rzeczy.** Dla biznesów lokalnych to kwestia przetrwania. Gartner prognozuje 25-procentowy spadek tradycyjnego ruchu z wyszukiwarek do końca 2026 roku na rzecz narzędzi konwersacyjnych.
 
