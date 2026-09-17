@@ -1,12 +1,5 @@
 [
   {
-    "title": "OpenAI rusza w stronę giełdy, ale bez daty",
-    "date": "2026-06-09",
-    "slug": "openai-rusza-w-strone-gieldy-ale-bez-daty",
-    "source": "rss",
-    "source_name": "The Decoder"
-  },
-  {
     "title": "Serwisy newsowe mocniej odcinają boty AI",
     "date": "2026-06-10",
     "slug": "serwisy-newsowe-mocniej-odcinaja-boty-ai",
@@ -628,5 +621,12 @@
     "slug": "openai-ma-przejac-glass-imaging-za-300-mln-dolarow",
     "source": "rss",
     "source_name": "TechCrunch AI"
+  },
+  {
+    "title": "Apple ma rozwijać serwer AI z układami M-series Ultra",
+    "date": "2026-09-17",
+    "slug": "apple-ma-rozwijac-serwer-ai-z-ukladami-m-series-ultra",
+    "source": "rss",
+    "source_name": "Ars Technica AI"
   }
 ]
