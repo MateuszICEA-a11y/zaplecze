@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>widocznosc.ai – tezy do korekty po dodaniu źródeł (2026-09-17)</title>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 60rem; margin: 2rem auto; padding: 0 1.25rem; color: #16161d; }
+  h1 { font-size: 1.8rem; margin-bottom: .25rem; }
+  h2 { margin-top: 2.5rem; border-bottom: 2px solid #5768ff; padding-bottom: .25rem; }
+  h3 { margin: 1.5rem 0 .25rem; font-size: 1.05rem; }
+  code { background: #f1f1f6; padding: 0 .3em; border-radius: 3px; font-size: .9em; }
+  .lead { color: #555; }
+  .box { background: #f6f7ff; border-left: 4px solid #5768ff; padding: .75rem 1rem; margin: 1rem 0; }
+  li { margin: .2rem 0; }
+  .u { color: #666; }
+  .hot { background: #fff1f0; border-left-color: #e5484d; }
+</style>
+</head>
+<body>
+<h1>Źródła we wpisach widocznosc.ai – tezy do korekty</h1>
+<p class="lead">17 września 2026 · 51 wpisów bazy wiedzy · 369 źródeł w polu <code>sources</code> (sekcja „Źródła” pod FAQ, nofollow). Commity: 0caacd57, 60918f6e, 820c90c8 + commit AI w biznesie – bez pusha.</p>
+
+<div class="box">
+<strong>Stan po korekcie (17.09.2026, wypchnięte):</strong> wszystkie tezy z listy poniżej zostały poprawione wg źródeł albo usunięte / uogólnione, jeśli nie dało się ich potwierdzić. 51 wpisów ma <code>updated: 2026-09-17</code>. Commity: 564b42ac (GEO), a10d61bd (modele LLM), e6d06511 (AI w biznesie), ab8525bd (agenci, prompty, RAG). Lista poniżej to już archiwum problemów.
+</div>
+
+<h2>Otwarte po korekcie</h2>
+<div class="box hot">
+<ul>
+  <li><strong>Infografiki z nieaktualną treścią</strong> (tekst poprawiony, obraz nie) – boty-ai-przewodnik (Google-NotebookLM, Claude-Web, Applebot-Extended w grupie Common Crawl), geo-dla-ecommerce (MerchantListing), claude-vs-chatgpt-programowanie (Opus 4.7, „GPT-5.5 Codex”, GPT-5.1), rag/reranking (alt i obraz: „33,5% → 49,0%”). Do przegenerowania.</li>
+  <li><strong>Tezy spoza pierwotnej listy, niezweryfikowane</strong> (wyczerpany limit wyszukiwań – 200 na sesję, można podnieść <code>CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION</code>):
+    rag/przewodnik (Recursive Split 69%, Page F1 0,92, +30–50%, hybryda +10–20%, 16 GB VRAM, 10× koszty), rag/reranking (kaskada &lt;60/200 ms),
+    ai-w-hr (hirebee 50/30%, HRstandard 58%, infeedo 45%, 82/70%, SecondTalent 34%, ROI 367/421%), ai-w-sprzedazy (15 → 45 spotkań),
+    geo-dla-ecommerce (+447%), geo-dla-lokalnego-biznesu (3× zaangażowanie, 5 s, llms.txt a opóźnienie), boty-ai-przewodnik („ponad 30 botów”, Perplexity a llms.txt),
+    przewodnik GEO (pierwsze 100–200 słów, efekty w harmonogramie, SoV 40–80%), grok (SuperGrok 30 USD, kredyty 175 USD, Grok 4.5 1,5 bln parametrów), perplexity (ARR, 7,2 min sesji).</li>
+  <li><strong>Do potwierdzenia ręcznie</strong> (paywall / 403):
+    Kevin Indig 1,2 mln odpowiedzi i 46% (Growth Memo – query-fan-out, topical-authority);
+    ceny i okna ChatGPT oparte na Digital Applied, „Free bez limitu na Luna” (openai.com 403);
+    HBR 2011 – 42 godziny (ai-w-sprzedazy); Gartner HR 2025 (ai-w-hr);
+    data podpisania ustawy o systemach AI (24 czy 27.07.2026 – we wpisach sam „lipiec”).</li>
+  <li><strong>Nowe dane wpisane z pobranych stron producentów</strong> (warto rzucić okiem): ceny Grok 4.6 / 4.3, Gemini 3.8 Flash API, DeepSeek V4.1-Flash, Microsoft 365 Premium 19,99 USD, Copilot Business 21/18 USD, GitHub Copilot Max.</li>
+  <li><strong>Aktualizacja modeli (commit 947f636b):</strong> GPT-6 Astra (API od 3.09.2026, nie w ChatGPT), GPT-5.6 Sol/Terra/Luna, Fable 5.1 / Opus 5 / Sonnet 5, Gemini 3.8 Flash, Grok 4.6, DeepSeek V4.1-Flash. Do potwierdzenia: daty w osi czasu Groka (4.20 i 4.6 – rok wywnioskowany, 4.5 „czerwiec 2026”), Llama 4 jako aktualna, Sonar oparty na Llamie. Infografika we wpisie claude.md pokazuje tylko Haiku/Sonnet/Opus (bez Fable).</li>
+  <li><strong>Build lokalnie</strong> wywraca nieśledzony szkic innej sesji <code>geo/co-google-przemilcza-o-ai-search.md</code> (brak obrazka) – na CF Pages go nie ma.</li>
+</ul>
+</div>
+
+<div class="box">
+<strong>Jak czytać:</strong> każde źródło zostało otwarte i potwierdza tezę, przy której stoi. Poniżej to, co wyszło przy okazji – tezy, którym źródła <strong>przeczą lub które są nieaktualne</strong> (do poprawy), oraz w skrócie tezy <span class="u">niepotwierdzone</span> (brak źródła – do usunięcia, złagodzenia albo podparcia danymi własnymi). Treści wpisów nie zmieniano. Agentom skończył się limit wyszukiwań, więc część „niepotwierdzonych” może mieć źródło, którego nie znaleziono.
+</div>
+
+<h2>Problemy przekrojowe (wiele wpisów)</h2>
+<div class="box hot">
+<ul>
+  <li><strong>Paper GEO (arXiv 2311.09735) cytowany błędnie</strong> – czym-jest-geo, geo-dla-ecommerce, geo-dla-lokalnego-biznesu, jak-llm-cytuja-zrodla, najczestsze-bledy-geo, przewodnik GEO, audyt, claude, perplexity. „+115% dla pozycji 5–10 / niskiego autorytetu przez statystyki i cytowania” – w paperze +115,1% dotyczy <em>strony z 5. pozycji</em> i <em>tylko taktyki Cite Sources</em> (ta sama taktyka obniżyła pozycję 1. o 30,3%). Właściwe wartości (PAWC, v3): cytaty +42,6%, statystyki +32,8%, powoływanie się na źródła +27,7%, płynność +28,7%. „5 z 9 taktyk istotnych” – niepotwierdzone. Keyword stuffing: „brak lub niewielka poprawa”, nie „−10%”. Silnik testowy: własny na GPT-3.5 + Perplexity, nie „Bing Chat”.</li>
+  <li><strong>GPTBot ≠ wyszukiwanie ChatGPT</strong> – przewodnik GEO, przewodnik modele-LLM, schema-org, audyt. O obecności w ChatGPT Search decyduje <code>OAI-SearchBot</code>; GPTBot zbiera dane treningowe. „ChatGPT korzysta z Bing” – nieaktualne (własny indeks + wielu dostawców).</li>
+  <li><strong>Stare generacje modeli</strong> – chatgpt-vs-claude, claude, claude-vs-gemini, claude-vs-chatgpt-programowanie, przewodnik modele-LLM, perplexity. Aktualne: Fable 5.1, Opus 5, Sonnet 5 (2/10 USD), Haiku 4.5; Opus 4.8 i Sonnet 4.6 są legacy. Okno Claude w czacie: 1M (nie 500K). GPT-5.6 Sol w API: 4/20 USD (promocja), nie 5/30.</li>
+  <li><strong>AI Act, art. 4</strong> – ai-act-rodo, od-czego-zaczac, przewodnik AI w biznesie: Digital Omnibus złagodził obowiązek szkoleń do „wspierania kompetencji”. <strong>FRIA (art. 27)</strong> nie dotyczy wszystkich systemów wysokiego ryzyka (ai-act-rodo, ai-w-hr).</li>
+  <li><strong>FAQPage / HowTo</strong> – schema-org: wyniki rozszerzone FAQ wygaszone 7.05.2026 (dokumentacja usunięta 15.06.2026), HowTo – wrzesień 2023. Google: „no special schema.org structured data that you need to add” dla funkcji AI.</li>
+  <li><strong>Plan Gemini AI Plus</strong> kosztuje 4,99 USD (nie 7,99), Ultra od 20 TB (nie 30) – gemini, chatgpt-vs-gemini, claude-vs-gemini.</li>
+  <li><strong>Zepsute linki w treści:</strong> <code>pl.wikipedia.org/wiki/Słowo_zanurzające</code> (404, query-fan-out), <code>pl.wikipedia.org/wiki/Schema.org</code> (404, topical-authority); „badanie” linkuje do strony głównej sparktoro.com (share-of-voice) i kevin-indig.com (query-fan-out). Niedomknięty link do grafu w anatomia-agenta – <strong>naprawiony</strong>.</li>
+</ul>
+</div>
+
+<h2>GEO</h2>
+<h3>audyt-widocznosci-marki</h3>
+<ul>
+  <li>„37% zapytań zakupowych zaczyna się od LLM” – źródło: 37% konsumentów zaczyna wyszukiwanie od AI (nie zapytania, nie zakupy).</li>
+  <li>Liczby 40/37/30% przypisane do złych taktyk paperu GEO.</li>
+  <li>Nightwatch „od 32 USD” – dziś od 79 €.</li>
+  <li class="u">Niepotwierdzone: 5W AI Visibility Index na 104 marki, „badanie Gemini 2024 – zmienność 40–60%”.</li>
+</ul>
+<h3>boty-ai-przewodnik</h3>
+<ul>
+  <li><code>Google-NotebookLM</code> → obecnie <code>Google-GeminiNotebook</code>; fetchery użytkownika (Perplexity-User, ChatGPT-User) mogą ignorować robots.txt.</li>
+  <li><code>Google-Extended</code> to token kontrolny, nie crawler (obejmuje też grounding); <code>Applebot-Extended</code> nie crawluje.</li>
+  <li>„Treści i tak trafiają przez Common Crawl” – NYT i BBC blokują też CCBot. Fortune nie wymienia BBC.</li>
+  <li>Vercel Skew Protection to nie pre-rendering; „Cloudflare Workers Bot Detection” – brak takiej usługi.</li>
+  <li class="u">Niepotwierdzone: OpenAI/Anthropic czytają llms.txt, „Google &gt;50% rynku AI search w PL”, „brak schema −15–20%”, „60% stron klientów”.</li>
+</ul>
+<h3>co-google-przemilcza</h3>
+<ul><li class="u">Teza o „reklamie tekstowej” w wyroku z 5.08.2024 potwierdzona tylko pośrednio (komunikat DOJ 2.09.2025).</li></ul>
+<h3>czym-jest-geo · geo-dla-lokalnego-biznesu · geo-dla-ecommerce</h3>
+<ul>
+  <li>Paper GEO – patrz problemy przekrojowe.</li>
+  <li>ecommerce: <code>MerchantListing</code> nie jest typem schema.org (Product + Offer); Shopping Graph to 50 mld <em>ofert</em>; Gartner – spadek wolumenu wyszukiwań, nie „ruchu organicznego”; Rufus a COSMO – brak powiązania w publikacji.</li>
+  <li class="u">ecommerce: „+447%” (najbliżej SEOBrand 474%). lokalny: „ruch z AI 3× wyższe zaangażowanie” (badania: 30–68% dłuższy czas), „bot RAG porzuca &gt;5 s”.</li>
+</ul>
+<h3>jak-llm-cytuja-zrodla</h3>
+<ul>
+  <li>161% i 51% pochodzą z analizy Surfera (tylko AI Overviews), nie z paperu Princeton.</li>
+  <li>Tabela 79% → 17% to tylko GPT-5.4, nie 14 modeli.</li>
+  <li>ALCE = „Automatic LLMs’ Citation Evaluation”.</li>
+  <li class="u">Niepotwierdzone: 2,3× i 2,5×, „66% pomyłek klasyfikacyjnych”. Sprzeczność z innymi wpisami: 50–150 vs 200–400 słów fragmentu.</li>
+</ul>
+<h3>llms-txt</h3>
+<ul>
+  <li>Specyfikacja nie zna nagłówków <code>Link: rel="llms-txt"</code>, <code>X-Llms-Txt</code> ani 406; zakres po ścieżce, nie subdomenie; sekcja nazywa się <code>## Optional</code>.</li>
+  <li>Lighthouse 13.3: brak pliku = N/A, nie błąd; „Google oficjalnie odrzucił” – to nieformalna wypowiedź Muellera; robots.txt jako standard IETF dopiero od 2022 (RFC 9309).</li>
+</ul>
+<h3>microsoft-clarity-topic-insights</h3>
+<ul><li>Profound „od 99 USD” – cennik: trial + Enterprise; Citations 13.05.2026 to GA, nie premiera; weryfikacja przez GSC/Bing WMT; Semrush – „AI Visibility Toolkit”.</li></ul>
+<h3>najczestsze-bledy-geo</h3>
+<ul>
+  <li>Cloudflare „Block AI bots” blokuje crawlery treningowe, nie wyszukiwarkowe; Google-Extended nie wpływa na AI Overviews.</li>
+  <li class="u">Niepotwierdzone: „73% firm”, „40% audytów”.</li>
+</ul>
+<h3>narzedzia-monitoring-wzmianek</h3>
+<ul>
+  <li>Hall AI przejęty przez Tracksuit (21.07.2026) – sekcja nieaktualna.</li>
+  <li>Semrush AI: samodzielnie 99 USD, bez Claude. Otterly: bez planu darmowego, 29–489 USD. Profound: brak planu 99 USD. Riff: bez Llamy.</li>
+  <li class="u">Niepotwierdzone: „261 mln promptów”, „100% dokładności”, Mangools „rocznie”, „7,2% domen”, „Copilot 17,6×”.</li>
+</ul>
+<h3>przewodnik (GEO)</h3>
+<ul>
+  <li>llms.txt jako „obowiązkowy element” – przeczą temu źródła z wpisu o llms.txt.</li>
+  <li class="u">Niepotwierdzone: Gartner −25%, WSJ 5,6%, AirOps 37%.</li>
+</ul>
+<h3>query-fan-out</h3>
+<ul>
+  <li>MUM i BERT nie opisują rozbijania zapytań. Keyword stuffing – patrz paper GEO.</li>
+  <li class="u">Niepotwierdzone: „20–30/20–40 podzapytań” i „30 zapytań” w tytule (Google nie podaje liczby), pełna lista zapytań w Perplexity Pro.</li>
+</ul>
+<h3>roi-z-geo</h3>
+<ul>
+  <li>„GSC i Ahrefs są ślepe na cytowania w LLM” – Ahrefs Brand Radar je śledzi. GA4: kanał AI Assistant bez Perplexity na liście.</li>
+  <li class="u">Niepotwierdzone: „konwersja 12,8× lepsza” (2×, w tym callout), ROAS 8–11 / 1,05, „Branded Search Lift”.</li>
+</ul>
+<h3>schema-org-dane-strukturalne</h3>
+<ul>
+  <li>FAQPage/HowTo – patrz problemy przekrojowe. Otterly „+1500%” – eksperyment na jednej witrynie, testował AI Mode (nie You.com), bez bezpośredniego związku schema–cytowania.</li>
+  <li class="u">Niepotwierdzone: „Data World 2–5×”, „3× częściej jako źródło”, Perplexity 30 dni, Wikidata zasila Knowledge Graph.</li>
+</ul>
+<h3>share-of-voice · topical-authority</h3>
+<ul>
+  <li>SoV: GSC nie wydziela wyświetleń AI Overviews (liczone w „Web”).</li>
+  <li>TA: HubSpot – badania od 2015, brak „4×”; CTR/dwell time jako filar – niepotwierdzone przez Google.</li>
+  <li class="u">Niepotwierdzone: cytat Britney Muller, SoV „lata 60.”, benchmarki w tabeli; „80% przypadków – iPullRank”, dane ICEA „+5–8 pp SoV”.</li>
+</ul>
+
+<h2>Modele LLM</h2>
+<h3>chatgpt · co-potrafi-chatgpt · jak-dziala-chatgpt</h3>
+<ul>
+  <li>GPT Image zastąpił DALL-E w marcu 2025 (nie pod koniec 2025); kara Garante – 2.11.2024, uchylona 18.03.2026; Pro to 20× limitów Plus, nie „bez limitów”.</li>
+  <li>Free: tekst bez limitu na GPT-5.6 Luna; 700 mln użytkowników nieaktualne (800 mln już w X 2025); Business 20 USD rocznie, min. 2 miejsca.</li>
+  <li>jak-dziala: „tryb ultra = Sol Pro” – niepotwierdzone.</li>
+  <li class="u">Niepotwierdzone: WSJ 5,6% (dotyczy desktopu w USA), okna kontekstu Plus/Pro, Business 25 USD, 2–3 tokeny na polskie słowo.</li>
+</ul>
+<h3>chatgpt-vs-claude · claude · claude-vs-gemini · claude-vs-chatgpt-programowanie</h3>
+<ul>
+  <li>„Claude Code nie ma odpowiednika w OpenAI” – jest Codex CLI/IDE/cloud.</li>
+  <li>claude: Artifacts są w Free; Enterprise 20 USD/miejsce + API; raport ryzyka co 3–6 mies.; opisy ASL niezgodne z RSP 3.0.</li>
+  <li>claude-vs-gemini: MRCR 76% to Opus 4.6; Max różni się limitami, nie Computer Use; sprzeczność 200K vs 500K w tekście.</li>
+  <li>programowanie: o3 69,7% (nie 71,7%); npm nie jest wycofany; BenchLM już nie listuje Mythos Preview.</li>
+  <li class="u">Niepotwierdzone: Arena 1561, SWE-bench 88,7%, Morphllm, Pecollective 70%, GPT-5.1 76,3%.</li>
+</ul>
+<h3>chatgpt-vs-gemini · gemini</h3>
+<ul>
+  <li>Sora zamknięta (aplikacja 26.04.2026, API 24.09.2026) – tekst i tabela sobie przeczą.</li>
+  <li>gemini: Free na 3.6 Flash; korelacja 0,334 to Indig, Ahrefs podaje 0,664; NotebookLM ~80 języków; Gemini w Workspace także w Business Starter.</li>
+</ul>
+<h3>copilot</h3>
+<ul>
+  <li>Funkcja <code>=COPILOT()</code> wycofana od 14.09.2026; licencja Microsoftu na modele OpenAI niewyłączna od 27.04.2026; Copilot Pro wycofany (→ M365 Premium).</li>
+  <li>GitHub Copilot: Pro 1500 kredytów, Pro+ 7000; Business 18 USD to promocja; „szyfrowanie E2E” – w dokumentacji HTTPS + at rest.</li>
+</ul>
+<h3>deepseek</h3>
+<ul><li>Tabela cen API nieaktualna (V4.1-Flash, V4-Pro-0813); <code>deepseek-chat/-reasoner</code> wycofane 24.07.2026; „&lt;1/10 mocy Llama 3.1” – brak w raporcie; ataki destylacyjne: 150 tys. wymian (24 tys. kont łącznie z Moonshot i MiniMax).</li></ul>
+<h3>grok</h3>
+<ul><li>Grok-1.5 – marzec 2024; Grok 3 – 10× compute, 200 tys. GPU dopiero przy Grok 4; „MechaHitler” – xAI: niezamierzona aktualizacja kodu.</li></ul>
+<h3>perplexity</h3>
+<ul><li>Dow Jones – decyzja o jurysdykcji, nie „sąd przysięgłych”; 100 mln użytkowników to wszystkie produkty; tabela planów ze starymi modelami.</li></ul>
+<h3>przewodnik (modele LLM)</h3>
+<ul><li>GPTBot i ceny Claude/GPT – patrz problemy przekrojowe. „80% firm” to McKinsey 2024 (2025: 88%); „Enterprise 9×” to miejsca, nie firmy.</li></ul>
+
+<h2>AI w biznesie</h2>
+<h3>ai-act-rodo</h3>
+<ul>
+  <li><strong>Ustawa o systemach AI to już nie projekt</strong> – uchwalona 3.07.2026, podpisana 24.07.2026, w Dzienniku Ustaw.</li>
+  <li>Raport UODO z 28.01 (nie 29.01); 58,5% obejmuje „nie wiem”; badani to głównie instytucje publiczne (439/492). Logi 6 mies. – art. 26 ust. 6.</li>
+  <li class="u">Niepotwierdzone: „95% użytkowników nie wyłącza trenowania”.</li>
+</ul>
+<h3>bezpieczenstwo-danych-llm</h3>
+<ul>
+  <li>Anthropic API: standardowo 30 dni retencji (nie 7); Gemini API: logi do 55 dni; kolumna OpenAI miesza plan konsumencki z API.</li>
+  <li>Samsung: zakaz tymczasowy, na urządzeniach firmowych, w maju.</li>
+  <li class="u">Niepotwierdzone: LayerX, Menlo +68%, Netskope, Reco 86%, Blackfog, kara ICO dla MediaLab, „18× taniej”.</li>
+</ul>
+<h3>ai-w-hr</h3>
+<ul>
+  <li>SHRM 2026 „69% z 51%” – brak; 2025: 43% vs 26%. Gartner wskazuje pośpiech i brak wytycznych, nie brak integracji z ATS.</li>
+  <li>Amazon – bez „90% mężczyzn”; prawo do wyjaśnienia to art. 13/15, nie 22 ust. 3; HireVue wycofało analizę twarzy w 2020.</li>
+</ul>
+<h3>ai-w-marketingu</h3>
+<ul>
+  <li>Klarna: 23 rynki, praca równoważna 700 etatom. Wpis ma tylko 2 źródła.</li>
+  <li class="u">Niepotwierdzone: Amazon 35%, Netflix 80%/1 mld, Spotify DJ, Allegro, Sephora/ASOS/IKEA, Wickes, Żabka Nano, LPP, kampania pogodowa, Wendy’s, Uber.</li>
+</ul>
+<h3>ai-w-obsludze-klienta</h3>
+<ul>
+  <li>Klarna: 2/3 czatów, nie 67% zgłoszeń; brak „drastycznie” i powrotu do hybrydy (AI dalej 2/3). DPIA tylko przy wysokim ryzyku.</li>
+  <li class="u">Niepotwierdzone: skuteczność 10–85%, CSAT 8,5/6,2, 7–10 min.</li>
+</ul>
+<h3>ai-w-sprzedazy</h3>
+<ul>
+  <li>HBR 2011: 42 godziny, nie 47 (2×). iSun: efektywność zespołu, nie konwersja +60%. Art. 50 AI Act: do 15 mln € / 3%, nie 4%. Lead scoring B2B nie jest w załączniku III.</li>
+  <li class="u">Niepotwierdzone: Demodesk 6700 h, +30% wygranych, 41% handlowców, Gong, ceny CRM, dealer −90%.</li>
+</ul>
+<h3>build-vs-buy</h3>
+<ul>
+  <li>2,7% to inflacja G7, nie UK; MIT: 67/33% to dotarcie do wdrożenia, nie sukces; KPMG 57% – Q3 2025.</li>
+  <li class="u">Niepotwierdzone: „o 60% szybszy zwrot”, stawki PLN, 720 000 PLN, progi wywołań.</li>
+</ul>
+<h3>etyka-ai-w-firmie</h3>
+<ul>
+  <li>Gartner 85% to prognoza z 2018, nie pomiar; 36% z innego badania; Amazon porzucił narzędzie w 2017; AI Index nie podaje przyczyn incydentów; „CSA 76%” to raport A-LIGN.</li>
+  <li>GPAI – obowiązki dotyczą dostawców modeli, nie firm korzystających z LLM (do sprawdzenia).</li>
+</ul>
+<h3>jak-rozmawiac-z-zarzadem · od-czego-zaczac · przewodnik · roi-z-ai</h3>
+<ul>
+  <li>zarząd: „21% (Deloitte)” – brak w raporcie; „5,5% liderów” – McKinsey ~6%.</li>
+  <li>od-czego-zaczac: BCG 10-20-70 to podział zasobów, nie „sukces w 20%”.</li>
+  <li>przewodnik: Capgemini – 1500 menedżerów, bez ROI per obszar; AI Vanguard, 1,9 mln USD, 7% CFO – brak w Accenture.</li>
+  <li>roi-z-ai: „95% projektów błędnie klasyfikowanych” – MIT NANDA mówi co innego; „niedoszacowanie 25–60%” – CIO.com: 85% myli się o &gt;10%, ~¼ o &gt;50%.</li>
+  <li class="u">Niepotwierdzone m.in.: 66% rad bez wiedzy o AI, S&amp;P 42%, Gartner 2,52 bln, PwC 56%, TEI 313%/327%, ulga B+R i IP Box (strony nie odpowiadały).</li>
+</ul>
+</body>
+</html>
