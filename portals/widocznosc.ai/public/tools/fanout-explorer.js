@@ -1140,7 +1140,7 @@
       + (s.recordedRounds ? ' · zapytania z nagrania: <span>' + s.recordedRounds + '</span> ' + plural(s.recordedRounds, 'runda', 'rundy', 'rund') : '')
       + '</p>';
     // Część rund ma zapytania w danych rozmowy, więc format jest rozpoznany: brak w pozostałych to stan danych,
-    // a nie błąd odczytu (model z rozumowaniem zapisuje zapytania tylko dla pierwszej partii wyszukiwań).
+    // a nie błąd odczytu (model z rozumowaniem zapisuje zapytania tylko na początku serii wyszukiwań).
     var partial = s.hidden && s.rounds > s.hidden && state.source !== 'zapytania nagrane w tej przeglądarce';
     if (partial) {
       var known = s.rounds - s.hidden;
