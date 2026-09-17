@@ -3,6 +3,7 @@ title: 'Czym jest GEO i czym różni się od SEO'
 subtitle: 'Zrozum, dlaczego widoczność w ChatGPT i Perplexity działa inaczej niż pozycja w Google – i co zrobić, żeby Twoja marka się tam znalazła'
 description: 'GEO (Generative Engine Optimization) to optymalizacja pod kątem wyszukiwarek AI. Sprawdź, czym różni się od SEO, co mówi badanie Princeton KDD 2024 i od czego zacząć.'
 date: 2026-05-17
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-czym-jest-geo.webp
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:
@@ -22,9 +23,10 @@ faq:
       SEO, ale obie dyscypliny wzajemnie się wzmacniają. Silna pozycja organiczna
       zwiększa szanse, że bot RAG w ogóle trafi na Twoją stronę podczas pobierania
       danych. Z drugiej strony: sama dobra pozycja w Google nie gwarantuje
-      cytowania w AI. Dobrze zoptymalizowana pod GEO treść może generować
-      cytowania nawet z pozycji 5–10 w wyszukiwarce, co potwierdza badanie z
-      Princeton.
+      cytowania w AI. Dobrze zoptymalizowana pod GEO treść może zyskać
+      widoczność także wtedy, gdy strona nie zajmuje czołowej pozycji – w badaniu z
+      Princeton strona z 5. pozycji po dodaniu powołań na źródła zwiększyła
+      widoczność o 115,1%.
   - q: 'Jak szybko widać efekty GEO?'
     a: >-
       Pierwsze efekty techniczne (odblokowanie botów, plik <code>llms.txt</code>)
@@ -52,13 +54,13 @@ faq:
 sources:
   - title: 'GEO: Generative Engine Optimization'
     url: 'https://arxiv.org/abs/2311.09735'
-    note: 'Aggarwal i in., KDD 2024. Benchmark GEO-bench (10 tys. zapytań z 25 dziedzin), dziewięć testowanych taktyk, miary PAWC i SI oraz wynik 115,1% dla stron z piątej pozycji.'
+    note: 'Aggarwal i in., KDD 2024. Benchmark GEO-bench (10 tys. zapytań z 25 dziedzin), dziewięć testowanych taktyk, miary PAWC i SI, wyniki taktyk (cytaty +42,6%, statystyki +32,8%, źródła +27,7%) oraz +115,1% dla strony z piątej pozycji przy powołaniu na źródła.'
   - title: 'Retrieval-augmented generation'
     url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
     note: 'Wikipedia. Definicja RAG – techniki, dzięki której model generatywny pobiera i włącza do odpowiedzi zewnętrzne informacje.'
   - title: 'Overview of OpenAI Crawlers'
     url: 'https://developers.openai.com/api/docs/bots'
-    note: 'OpenAI, dokumentacja. Opis GPTBota i pozostałych botów OpenAI oraz ich obsługi w robots.txt.'
+    note: 'OpenAI, dokumentacja. GPTBot zbiera dane treningowe, a o widoczności w wyszukiwaniu ChatGPT decyduje OAI-SearchBot; obsługa botów w robots.txt.'
   - title: 'Does Anthropic crawl data from the web, and how can site owners block the crawler?'
     url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
     note: 'Anthropic, centrum pomocy. ClaudeBot respektuje dyrektywy robots.txt.'
@@ -69,7 +71,7 @@ sources:
     url: 'https://llmstxt.org/'
     note: 'Jeremy Howard, propozycja z 3 września 2024. Specyfikacja pliku llms.txt.'
 ---
-GEO, czyli *Generative Engine Optimization* (optymalizacja pod kątem generatywnych silników wyszukiwania), to odpowiedź na palący problem współczesnego marketingu. Dlaczego Twoja marka znika z odpowiedzi ChatGPT, Perplexity czy Google AI Overviews, mimo że świetnie radzi sobie w tradycyjnym Google? Badanie [Aggarwala i in. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University jako pierwsze zmierzyło empirycznie, co dokładnie zwiększa szansę na cytowanie przez duże modele językowe. **Odpowiedź zaskoczyła branżę: klasyczne SEO tu nie działa, a upychanie słów kluczowych wręcz obniża widoczność w LLM.**
+GEO, czyli *Generative Engine Optimization* (optymalizacja pod kątem generatywnych silników wyszukiwania), to odpowiedź na palący problem współczesnego marketingu. Dlaczego Twoja marka znika z odpowiedzi ChatGPT, Perplexity czy Google AI Overviews, mimo że świetnie radzi sobie w tradycyjnym Google? Badanie [Aggarwala i in. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University jako pierwsze zmierzyło empirycznie, co dokładnie zwiększa szansę na cytowanie przez duże modele językowe. **Odpowiedź zaskoczyła branżę: klasyczne sztuczki SEO tu nie działają, a upychanie słów kluczowych nie daje prawie żadnej poprawy widoczności w odpowiedziach silników generatywnych.**
 
 ## Czym GEO różni się od SEO i AEO?
 
@@ -109,13 +111,13 @@ Istnieją trzy właściwości fragmentu, które drastycznie podnoszą szansę na
 
 ### Dostęp techniczny – warunek wstępny
 
-Aby w ogóle mieć szansę na widoczność, musisz sprawdzić, czy boty AI mają dostęp do Twojej strony. `GPTBot`, `ClaudeBot`, `PerplexityBot` – każdy z nich weryfikuje plik `robots.txt` przed wejściem na witrynę. **Błędy w konfiguracji firewalla lub niepoprawne reguły w `robots.txt` często blokują crawlery AI zupełnie bez wiedzy właściciela domeny.**
+Aby w ogóle mieć szansę na widoczność, musisz sprawdzić, czy boty AI mają dostęp do Twojej strony. `OAI-SearchBot`, `GPTBot`, `ClaudeBot`, `PerplexityBot` – każdy z nich weryfikuje plik `robots.txt` przed wejściem na witrynę. **Błędy w konfiguracji firewalla lub niepoprawne reguły w `robots.txt` często blokują crawlery AI zupełnie bez wiedzy właściciela domeny.**
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Badanie Princeton (Aggarwal i in., KDD 2024) przetestowało 9 taktyk optymalizacji na benchmarku GEO-bench złożonym z 10 000 zapytań z 25 dziedzin. Tradycyjne nasycanie słowami kluczowymi – standard SEO sprzed dekady – nie tylko nie pomagało, ale <strong>bezpośrednio przyczyniało się do spadku wskaźnika cytowalności o 8%, a w testach na Perplexity nawet o 10%</strong>. Modele AI klasyfikują takie teksty jako treści niskiej jakości i eliminują je z procesu generowania odpowiedzi.</p>
+    <p>Badanie Princeton (Aggarwal i in., KDD 2024) przetestowało 9 taktyk optymalizacji na benchmarku GEO-bench złożonym z 10 000 zapytań z 25 dziedzin. Tradycyjne nasycanie słowami kluczowymi – standard SEO sprzed dekady – <strong>dawało niewielką poprawę widoczności albo nie dawało jej wcale</strong>. Najlepiej wypadły taktyki, które dodają treści konkretu: cytaty, statystyki i powołania na źródła.</p>
   </div>
 </aside>
 
@@ -123,19 +125,19 @@ Aby w ogóle mieć szansę na widoczność, musisz sprawdzić, czy boty AI mają
 
 ## Co empirycznie działa według badania Princeton KDD 2024?
 
-Badanie Aggarwala i współautorów z Princeton University oraz IIT Delhi to pierwszy duży akademicki test zjawiska GEO. W jego ramach stworzono GEO-bench – zestaw 10 000 zapytań z 25 dziedzin. Przetestowano je na systemach symulujących wyszukiwarki wspomagane AI (takie jak Microsoft Copilot i Perplexity AI).
+Badanie Aggarwala i współautorów z Princeton University oraz IIT Delhi to pierwszy duży akademicki test zjawiska GEO. W jego ramach stworzono GEO-bench – zestaw 10 000 zapytań z 25 dziedzin. Taktyki przetestowano na własnym silniku generatywnym badaczy, zbudowanym na GPT-3.5 i wzorowanym na Bing Chat, a następnie na Perplexity.ai.
 
 Do pomiaru widoczności badacze użyli dwóch wskaźników. Pierwsza miara to PAWC (liczba słów ze źródła w syntezie skorygowana o pozycję). Zlicza ona słowa z Twojej strony, które znalazły się w odpowiedzi modelu, ważąc je pozycją – im wcześniej w tekście, tym wyżej. Druga miara to SI (subiektywne wrażenie), która ocenia jakościowo wpływ źródła na spójność i unikalność wygenerowanej odpowiedzi.
 
 Wyniki testowania poszczególnych taktyk przyniosły bardzo konkretne wnioski.
 
-- **Cytowania ekspertów** – wzrost PAWC o 30–41% wynika z faktu, że to gotowe, autorytatywne moduły, które model może bezpiecznie powtórzyć bez ryzyka błędu
-- **Statystyki i dane liczbowe** – wzrost o 30–31% potwierdza, że liczby są znacznie łatwiejsze do ekstrakcji przez algorytmy niż rozbudowane opisy narracyjne
-- **Linkowanie do źródeł zewnętrznych** – wzrost o 28% to efekt trenowania modeli w taki sposób, aby traktowały treści z przypisami bibliograficznymi jako bardziej wiarygodne
-- **Optymalizacja płynności tekstu** – wzrost o 28% pokazuje, że brak błędów językowych ułatwia maszynowe przetwarzanie tekstu
-- **Autorytatywny, encyklopedyczny ton** – wzrost o 10% udowadnia, że styl zbliżony do Wikipedii działa na model jak silny sygnał wiarygodności
+- **Cytaty z wiarygodnych źródeł** – wzrost PAWC o 42,6%, najwyższy spośród testowanych taktyk; to gotowe, autorytatywne fragmenty, które model może bezpiecznie powtórzyć
+- **Statystyki i dane liczbowe** – wzrost o 32,8%, co wskazuje, że liczby łatwiej przenieść do odpowiedzi niż rozbudowane opisy narracyjne
+- **Powoływanie się na źródła** – wzrost o 27,7%; treść z przywołanymi źródłami model chętniej wykorzystuje w syntezie
+- **Optymalizacja płynności tekstu** – wzrost o 28,7% pokazuje, że czytelny tekst bez błędów językowych również podnosi widoczność
+- **Autorytatywny ton** – wzrost o ok. 11,8%, wyraźnie mniejszy niż w przypadku taktyk dodających konkret
 
-**Najważniejsze odkrycie badania dotyczy mniejszych stron – witryny z pozycji 5–10 w Google, które zastosowały statystyki i cytowania, zwiększały swoją widoczność w LLM-ach nawet o 115%.** To wynik wyższy niż w przypadku liderów rankingu organicznego, którzy z tych taktyk nie skorzystali. Słabsza pozycja SEO absolutnie nie wyklucza silnej pozycji GEO.
+**Najważniejsze odkrycie badania dotyczy stron z niższych pozycji – strona z 5. miejsca w wynikach wyszukiwania po dodaniu powołań na źródła zwiększyła swoją widoczność w odpowiedzi silnika o 115,1%.** Ta sama taktyka obniżyła widoczność strony z 1. pozycji o 30,3%. Słabsza pozycja SEO absolutnie nie wyklucza silnej pozycji GEO.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
@@ -168,7 +170,7 @@ Wdrażanie GEO to proces wieloetapowy. **Zacznij od podstaw technicznych – bez
 
 Istnieją trzy fundamentalne działania, od których zaczyna się każdy [audyt widoczności marki](/geo/audyt-widocznosci-marki/) w ICEA.
 
-1. **Sprawdź dostęp dla botów AI** – przejrzyj plik `robots.txt` i upewnij się, że `GPTBot`, `ClaudeBot` oraz `PerplexityBot` nie są blokowane, ponieważ błędy w tym miejscu całkowicie wykluczają Cię z systemów RAG
+1. **Sprawdź dostęp dla botów AI** – przejrzyj plik `robots.txt` i upewnij się, że `OAI-SearchBot`, `GPTBot`, `ClaudeBot` oraz `PerplexityBot` nie są blokowane, ponieważ błędy w tym miejscu całkowicie wykluczają Cię z systemów RAG
 2. **Dodaj lub zaktualizuj `llms.txt`** – ten plik tekstowy w katalogu głównym podpowiada botom AI, co na Twojej stronie jest najważniejsze, bez konieczności indeksowania setek podstron (szczegóły implementacji opisuje nasz artykuł o [llms.txt](/geo/llms-txt/))
 3. **Przebuduj jedną kluczową stronę** – wybierz podstronę generującą największy ruch lub mającą kluczowe znaczenie biznesowe i zoptymalizuj ją poprzez sformułowanie nagłówków jako pytań, dodanie statystyk z datą i źródłem, podział tekstu na bloki po 200–400 słów oraz uwzględnienie cytowań ekspertów
 

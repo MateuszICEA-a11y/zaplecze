@@ -3,6 +3,7 @@ title: 'Topical authority pod LLM-y – pillar + cluster w erze AI Overviews'
 subtitle: 'Jak zbudować pokrycie tematyczne, które LLM-y będą cytować częściej niż treści konkurencji'
 description: 'Dlaczego LLM-y faworyzują domeny z głębokim pokryciem jednej niszy. Jak zbudować architekturę pillar + cluster, która działa w erze AI Mode i AI Overviews. Konkretny szablon implementacji – od mapy tematów po linkowanie wewnętrzne.'
 date: 2026-05-03
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-topical-authority.webp
 icon: '<circle cx="12" cy="6" r="2.5"/><circle cx="6" cy="14" r="2"/><circle cx="12" cy="14" r="2"/><circle cx="18" cy="14" r="2"/><circle cx="4" cy="20" r="1.5"/><circle cx="9" cy="20" r="1.5"/><circle cx="14" cy="20" r="1.5"/><circle cx="19" cy="20" r="1.5"/><line x1="12" y1="9" x2="6" y2="12"/><line x1="12" y1="9" x2="12" y2="12"/><line x1="12" y1="9" x2="18" y2="12"/>'
 author:
@@ -23,7 +24,7 @@ sources:
     note: 'Google Search Central. Definicja E-E-A-T; Google zaznacza, że samo E-E-A-T nie jest pojedynczym czynnikiem rankingowym.'
   - title: 'Topic clusters: The next evolution of SEO'
     url: 'https://blog.hubspot.com/marketing/topic-clusters-seo'
-    note: 'HubSpot, Mimi An i in., aktualizacja 2026. Model pillar page + cluster i jego źródła w badaniach HubSpot nad linkowaniem wewnętrznym.'
+    note: 'HubSpot, Mimi An i in., aktualizacja 2026. Model pillar page + cluster wyrósł z badań „Topics Over Keywords” z 2015 roku: więcej linków wewnętrznych między powiązanymi stronami szło w parze z wyższymi pozycjami i liczbą wyświetleń.'
   - title: 'The science of how AI picks its sources'
     url: 'https://www.growth-memo.com/p/the-science-of-how-ai-picks-its-sources'
     note: 'Kevin Indig, Growth Memo, 23 marca 2026. Analiza ok. 1,2 mln odpowiedzi ChatGPT: w porównaniach produktów top 10 domen zbiera 46% cytowań.'
@@ -38,7 +39,7 @@ sources:
 
 ## Co LLM-y rozumieją przez „autorytet"?
 
-Klasyczna wyszukiwarka Google opiera ocenę autorytetu na trzech filarach: linkach (PageRank), zachowaniu użytkowników (CTR, dwell time) i sygnałach E-E-A-T (autor, źródła, świeżość). LLM-y dodają do tego czwarty, znacznie ważniejszy filar.
+Klasyczna wyszukiwarka Google ocenia autorytet m.in. na podstawie linków (PageRank) i sygnałów składających się na E-E-A-T (doświadczenie autora, źródła, wiarygodność) – choć samo E-E-A-T nie jest pojedynczym czynnikiem rankingowym. LLM-y dodają do tego kolejny, znacznie ważniejszy filar.
 
 > **Spójność pokrycia tematycznego. Domena cytowana wielokrotnie w różnych podzapytaniach tego samego tematu jest traktowana jako autorytet w niszy.**
 
@@ -46,7 +47,7 @@ Klasyczna wyszukiwarka Google opiera ocenę autorytetu na trzech filarach: linka
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Pillar + cluster to nie wymysł ery LLM-ów. Architekturę wprowadził <strong>HubSpot w 2017 roku</strong> jako odpowiedź na semantyczne grupowanie wyników w klasycznym Google. Badacze z HubSpot pokazali, że strony zorganizowane w model pillar-cluster osiągają pozycje dla 4× więcej fraz długiego ogona niż strony zorganizowane chronologicznie po dacie publikacji. Dziewięć lat później ten sam mechanizm działa w warstwie pobierania informacji (retrieval) modeli językowych – tyle że stawka jest dużo wyższa.</p>
+    <p>Pillar + cluster to nie wymysł ery LLM-ów. Model spopularyzował <strong>HubSpot, opierając się na własnych badaniach z 2015 roku</strong> („Topics Over Keywords”). Badacze HubSpot zauważyli, że im więcej linków wewnętrznych łączyło powiązane tematycznie strony, tym wyżej te strony pojawiały się w wynikach i tym więcej miały wyświetleń. Ponad dekadę później ta sama logika powiązanych tematów przydaje się w warstwie pobierania informacji (retrieval) modeli językowych – tyle że stawka jest dużo wyższa.</p>
   </div>
 </aside>
 
@@ -58,14 +59,14 @@ LLM-y wykazują również tendencję do zaufania przez asocjację (ang. *domain 
 
 ## Pillar + cluster – architektura, która spełnia te kryteria
 
-Architektura pillar + cluster nie jest wymysłem ery GEO. Powstała w 2017 roku w HubSpot, oparta na badaniach ekspertów tej firmy, jako odpowiedź na rosnący nacisk Google na semantyczne grupowanie treści. **Choć działa od dawna w klasycznym SEO, w erze LLM-ów jej wartość rośnie nieproporcjonalnie.**
+Architektura pillar + cluster nie jest wymysłem ery GEO. Wyrosła z badań HubSpot z 2015 roku nad tematami i linkowaniem wewnętrznym, jako odpowiedź na rosnący nacisk Google na semantyczne grupowanie treści. **Choć działa od dawna w klasycznym SEO, w erze LLM-ów jej wartość rośnie nieproporcjonalnie.**
 
 | Element | Rola | Długość | Intencja | Linkowanie |
 |---|---|---|---|---|
 | **Pillar page** | centralny hub tematyczny, kompleksowy przegląd | 3000–7000 słów | informacyjna, kategorialna | linkuje do 5–8 najważniejszych stron typu cluster |
 | **Cluster pages** | szczegółowy aspekt głównego tematu | 1000–2500 słów | konkretne podzapytanie, transakcyjna | linkuje do pillara 2× + 3–5 innych stron w klastrze |
 
-Modele językowe odczytują tę strukturę jednoznacznie: „ta domena ma 10–25 artykułów silnie powiązanych tematycznie, wszystkie wskazują na centralny dokument". To niezwykle silny sygnał autorytetu tematycznego. **W starciu z domeną posiadającą jeden samotny tekst na dany temat, pillar + cluster wygrywa w ponad 80% przypadków.** Tak pokazują testy iPullRank na osadzeniach wektorowych (ang. embeddings) tekstu.
+Modele językowe odczytują tę strukturę jednoznacznie: „ta domena ma 10–25 artykułów silnie powiązanych tematycznie, wszystkie wskazują na centralny dokument". To niezwykle silny sygnał autorytetu tematycznego. **W starciu z domeną posiadającą jeden samotny tekst na dany temat, dobrze powiązany klaster ma wyraźną przewagę.**
 
 ![Pillar + cluster – architektura topical authority: centralna strona pillar, 8 cluster pages dookoła w układzie hub-and-spoke, linkowanie cluster→pillar (2×) i cluster→cluster (3-5×), top 10 domen w niszy zabiera 46% cytowań AI](../../../assets/images/infographic-geo-topical-authority.png)
 
@@ -142,11 +143,11 @@ Wdrożenie naprawcze opieramy na konkretnej kolejności działań (sprawdzona w 
 1. **Tygodnie 1–2 – audyt istniejącego contentu** – wyciągnij wszystkie artykuły z bloga i przypisz im tematy nadrzędne (pillar). Zidentyfikuj teksty naturalnie nadające się na bazę (kompleksowe, długie) oraz te stanowiące materiał na cluster.
 2. **Tygodnie 3–4 – wybór 1 pillara jako prototypu** – nie próbuj budować 5 klastrów naraz. Zacznij od jednego, najbardziej komercyjnego. Wybierz 8–12 stron typu cluster z istniejącej bazy lub zaplanuj nowe do napisania.
 3. **Tygodnie 5–8 – optymalizacja pillara i dopisanie brakujących clusterów** – główny tekst często wymaga rozbudowy do 3000–5000 słów. Zadbaj o strukturę H2/H3 zgodną z podzapytaniami oraz solidne linkowanie wewnętrzne.
-4. **Tygodnie 9–12 – linkowanie wewnętrzne i monitoring** – wdróż pełną macierz linkowania oraz dane strukturalne [schema.org](https://pl.wikipedia.org/wiki/Schema.org) dla pillara i clusterów. Następnie monitoruj wskaźniki SoV i Citation Rate przez kolejne 4–6 tygodni.
+4. **Tygodnie 9–12 – linkowanie wewnętrzne i monitoring** – wdróż pełną macierz linkowania oraz dane strukturalne schema.org dla pillara i clusterów. Następnie monitoruj wskaźniki SoV i Citation Rate przez kolejne 4–6 tygodni.
 
 ## Jak mierzyć efekty wdrożenia?
 
-Topical authority w erze LLM-ów przestało być opcją. To absolutnie minimalny wymóg dla każdej domeny, która chce pojawiać się w AI Overviews, ChatGPT czy Perplexity. **Bez 8–15 powiązanych artykułów wokół jednego pillara statystycznie nie wchodzisz do top 10 domen w swojej kategorii, a w kategoriach porównań produktów top 10 zabiera aż 46% cytowań.**
+Topical authority w erze LLM-ów przestało być opcją. To absolutnie minimalny wymóg dla każdej domeny, która chce pojawiać się w AI Overviews, ChatGPT czy Perplexity. **Bez klastra powiązanych artykułów wokół jednego pillara trudno wejść do top 10 domen w swojej kategorii – a w kategoriach porównań produktów top 10 zabiera aż 46% cytowań.**
 
 Architektura pillar + cluster to najczystsza, najprostsza i najlepiej udokumentowana metodyka budowania autorytetu tematycznego. Wdrożenie zajmuje 8–12 tygodni dla jednego klastra. Wymaga żelaznej dyscypliny w linkowaniu wewnętrznym. Jednak ostateczny efekt – mierzony przez udział w głosie (Share of Voice) i wskaźnik cytowań (Citation Rate) – jest wysoce powtarzalny.
 

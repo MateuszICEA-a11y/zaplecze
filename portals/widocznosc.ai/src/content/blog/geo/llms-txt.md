@@ -3,6 +3,7 @@ title: 'llms.txt – czy warto i jak wdrożyć'
 subtitle: 'Prosty plik tekstowy, który wskazuje botom AI, co na Twojej stronie jest najważniejsze'
 description: 'Czym jest llms.txt, jak go wdrożyć i kiedy naprawdę warto – praktyczny przewodnik z przykładową strukturą pliku dla serwisów B2B i SaaS.'
 date: 2026-05-05
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-llms-txt.webp
 icon: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>'
 author:
@@ -19,20 +20,21 @@ faq:
   - q: 'Czy <code>llms.txt</code> zastępuje <code>robots.txt</code>?'
     a: >-
       Nie. To zupełnie różne mechanizmy z różnymi odbiorcami. <code>robots.txt</code> kontroluje dostęp botów
-      indeksujących do zasobów serwera – jest standardem oficjalnym od 1994 roku, ratyfikowanym przez IETF
-      w RFC 9309. <code>llms.txt</code> dostarcza semantyczny kontekst modelom językowym i agentom AI. Oba pliki
+      indeksujących do zasobów serwera – stosowany od 1994 roku, formalnym standardem IETF (RFC 9309) stał się
+      dopiero w 2022 roku. <code>llms.txt</code> dostarcza semantyczny kontekst modelom językowym i agentom AI. Oba pliki
       powinny istnieć równolegle; jeden nie wyklucza drugiego.
-  - q: 'Co powinno znaleźć się w sekcji <code>## Opcjonalne</code>?'
+  - q: 'Co powinno znaleźć się w sekcji <code>## Optional</code>?'
     a: >-
       Linki do zasobów drugorzędnych – polityka prywatności, regulamin, changelogi, archiwa, strony czysto
-      pomocnicze. Modele operujące w trybie ograniczonego okna kontekstowego (np. podczas szybkiej analizy
-      w czasie rzeczywistym) są instruowane, żeby całkowicie pominąć linki z tej sekcji. Dzięki temu bot może
-      przetworzyć sedno oferty bez tracenia tokenów na treści nieistotne dla zadania.
+      pomocnicze. Zgodnie ze specyfikacją sekcja o nazwie „Optional” zbiera informacje drugorzędne, które
+      agent może pominąć, gdy potrzebuje krótszego kontekstu. Dzięki temu bot może przetworzyć sedno oferty
+      bez tracenia tokenów na treści nieistotne dla zadania.
   - q: 'Czy subdomeny potrzebują osobnych plików?'
     a: >-
-      Tak. Plik <code>llms.txt</code> obowiązuje wyłącznie dla domeny, na której jest umieszczony, zgodnie
-      z RFC 3986 (Host-Scoping). Plik pod <code>example.com/llms.txt</code> nie obejmuje <code>shop.example.com</code>
-      ani <code>docs.example.com</code>. Każda subdomena reprezentująca odrębny produkt powinna serwować własny plik.
+      Warto je przygotować. Specyfikacja nie reguluje subdomen – opisuje plik w katalogu głównym witryny
+      (<code>/llms.txt</code>) albo w dowolnej podścieżce (np. <code>/docs/llms.txt</code>). Plik pod
+      <code>example.com/llms.txt</code> opisuje więc tę witrynę, a nie <code>shop.example.com</code> czy
+      <code>docs.example.com</code>. Każda subdomena reprezentująca odrębny produkt powinna serwować własny plik.
   - q: 'Czy mogę wdrożyć <code>llms.txt</code> na Shopify?'
     a: >-
       Tak, ale przez przekierowanie CDN. Prześlij plik jako zasób statyczny w panelu administracyjnym
@@ -71,7 +73,7 @@ Plik `llms.txt` to lekki dokument w formacie [Markdown](https://pl.wikipedia.org
 
 Standard `robots.txt` liczy sobie trzy dekady i informuje boty indeksujące, jakich ścieżek nie odwiedzać. Plik `sitemap.xml` wskazuje z kolei, które adresy URL w ogóle istnieją. `llms.txt` robi coś zupełnie innego. Zamiast kontrolować dostęp, dostarcza kontekst semantyczny. **To mapa kluczowych zasobów witryny opisana ludzkim językiem, którą duży model językowy (LLM – *Large Language Model*) przetwarza błyskawicznie, zamiast analizować kod HTML dziesiątek podstron.**
 
-Obok pliku głównego `/llms.txt` specyfikacja przewiduje uzupełniający plik `/llms-full.txt`. To skonsolidowane repozytorium wiedzy. Łączy ono całe strony dokumentacyjne lub ofertowe w jeden liniowy dokument pozbawiony menu, CSS i reklam. **Systemy RAG (*Retrieval-Augmented Generation*, czyli generowanie wspomagane wyszukiwaniem) mogą przetworzyć takie repozytorium jednym zapytaniem HTTP zamiast kilkudziesięciu.**
+Obok pliku głównego `/llms.txt` popularność zyskał uzupełniający plik `/llms-full.txt`, opracowany przez Mintlify wspólnie z Anthropic – nie jest on częścią samej specyfikacji. To skonsolidowane repozytorium wiedzy. Łączy ono całe strony dokumentacyjne lub ofertowe w jeden liniowy dokument pozbawiony menu, CSS i reklam. **Systemy RAG (*Retrieval-Augmented Generation*, czyli generowanie wspomagane wyszukiwaniem) mogą przetworzyć takie repozytorium jednym zapytaniem HTTP zamiast kilkudziesięciu.**
 
 Zestawienie trzech standardów pokazuje ich odmienne role – warto je traktować jako uzupełniające się warstwy, a nie konkurencyjne rozwiązania.
 
@@ -109,7 +111,7 @@ Przykładowa struktura dla agencji SEO oferującej narzędzia SaaS wygląda nast
 - [Boty AI – przewodnik](https://widocznosc.ai/geo/boty-ai-przewodnik): Lista user-agentów GPTBot, ClaudeBot, PerplexityBot. Konfiguracja robots.txt i zarządzanie dostępem.
 - [llms.txt – wdrożenie](https://widocznosc.ai/geo/llms-txt): Specyfikacja formatu, przykładowa struktura, instrukcja wdrożenia na Cloudflare Pages i Nginx.
 
-## Opcjonalne
+## Optional
 
 - [Polityka prywatności](https://widocznosc.ai/polityka-prywatnosci): Informacje o przetwarzaniu danych osobowych.
 - [Changelog narzędzi](https://widocznosc.ai/changelog): Historia aktualizacji platformy.
@@ -120,8 +122,8 @@ Poznaj kilka reguł technicznych, które decydują o poprawności analizy skład
 - **Nagłówek H1** – tylko jeden, w pierwszej linii pliku, określa nazwę marki lub projektu
 - **Blok cytatu (`>`)** – bezpośrednio pod H1, syntetyczny opis bez przymiotników wartościujących
 - **Sekcje H2** – grupują linki tematycznie, a każda pozycja zawiera absolutny adres HTTPS i mikrostreszczenie
-- **Sekcja `## Opcjonalne`** – modele operujące w trybie ograniczonego okna kontekstowego pomijają linki z tej sekcji, więc trafiają tu polityki prywatności, changelogi i archiwa
-- **Host-scoping** – plik umieszczony pod `example.com/llms.txt` obejmuje wyłącznie tę domenę, dlatego subdomeny wymagają osobnych plików
+- **Sekcja `## Optional`** – to nazwa przewidziana w specyfikacji dla informacji drugorzędnych, które agent może pominąć przy krótszym kontekście, więc trafiają tu polityki prywatności, changelogi i archiwa
+- **Lokalizacja pliku** – katalog główny (`/llms.txt`) albo podścieżka (np. `/docs/llms.txt`); specyfikacja nie opisuje subdomen, dlatego subdomeny z odrębną ofertą najlepiej wyposażyć we własne pliki
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -135,22 +137,20 @@ Poznaj kilka reguł technicznych, które decydują o poprawności analizy skład
 
 To pytanie mocno dzieli rynek. Odpowiedź zależy od tego, kto jest Twoim faktycznym odbiorcą.
 
-**Google Search oficjalnie odrzucił ten standard.** John Mueller z Google wskazał na ryzyko tak zwanego *AI cloakingu* – sytuacji, w której boty otrzymują idealnie zoptymalizowany plik tekstowy, a użytkownicy końcowi widzą inną treść. Badania SE Ranking potwierdzają brak korelacji między obecnością `llms.txt` a cytowaniami w ChatGPT czy Gemini. Jeśli Twoim celem jest wyłącznie widoczność w AI Overviews od Google lub w odpowiedziach ChatGPT w trybie przeglądarkowym, ten plik nie zmieni Twoich statystyk GEO.
+**Google nie korzysta z tego standardu.** John Mueller z Google w nieformalnej wypowiedzi na Reddicie porównał go do meta keywords i wskazał na ryzyko tak zwanego *AI cloakingu* – sytuacji, w której boty otrzymują idealnie zoptymalizowany plik tekstowy, a użytkownicy końcowi widzą inną treść. Badania SE Ranking potwierdzają brak korelacji między obecnością `llms.txt` a cytowaniami w ChatGPT czy Gemini. Jeśli Twoim celem jest wyłącznie widoczność w AI Overviews od Google lub w odpowiedziach ChatGPT w trybie przeglądarkowym, ten plik nie zmieni Twoich statystyk GEO.
 
 Zupełnie inaczej sytuacja wygląda w ekosystemie deweloperskim. Środowiska takie jak Cursor, Windsurf czy Bolt.new natywnie pobierają `llms.txt` przy mapowaniu zewnętrznych bibliotek. Brak tego pliku zmusza asystentów AI do chaotycznego pobierania kodu HTML. To drastycznie zwiększa zużycie tokenów i pogarsza jakość generowanego kodu. **Jeśli Twój produkt jest biblioteką, API lub platformą dokumentacji, ten plik jest praktycznie obowiązkowy.**
 
-Najsilniejszy argument za wdrożeniem to Google Lighthouse 13.3. Ta wersja wprowadziła eksperymentalną kategorię audytów **Agentic Browsing**, która ocenia gotowość witryny do obsługi autonomicznych agentów realizujących zadania bezpośrednio na stronach. **Obecność poprawnego `llms.txt` to jeden z kluczowych czynników oceny dojrzałości agentowej serwisu.**
+Sygnałem kierunku jest Google Lighthouse 13.3. Ta wersja wprowadziła rozwijaną jeszcze kategorię audytów **Agentic Browsing**, która ocenia gotowość witryny do obsługi autonomicznych agentów realizujących zadania bezpośrednio na stronach. Jednym z jej audytów jest `llms.txt`, ale sprawdza on tylko, czy pobranie pliku nie kończy się błędem serwera. **Brak pliku oznacza wynik „nie dotyczy” (N/A), a nie błąd – `llms.txt` pozostaje opcjonalny.**
 
-Zobacz trzy scenariusze, w których wdrożenie jest opłacalne, oraz jeden, w którym możesz je pominąć.
+Zobacz dwa scenariusze, w których wdrożenie jest opłacalne, oraz jeden, w którym możesz je pominąć.
 
 - **Firma technologiczna lub dostawca API** – kosztem zbliżonym do zera drastycznie poprawiasz komfort programistów korzystających z Twojej dokumentacji w asystentach AI
-- **Platforma e-commerce z myślą o przyszłości** – autonomiczne agenty zakupowe (*shopping agents*) działające w przeglądarkach będą pobierać `llms.txt`, zanim wykonają akcję na stronie
-- **Witryna celująca w audyt Lighthouse** – każda strona, która chce pozytywnie przejść test Agentic Browsing w wersji 13.3
-- **Landing page bez komponentu technicznego** – tu możesz pominąć wdrożenie, jeśli Twoim celem jest wyłącznie widoczność w tradycyjnym SEO i AI Overviews Google
+- **Platforma e-commerce z myślą o przyszłości** – autonomiczne agenty zakupowe (*shopping agents*) działające w przeglądarkach będą pobierać `llms.txt`, zanim wykonają akcję na stronie- **Landing page bez komponentu technicznego** – tu możesz pominąć wdrożenie, jeśli Twoim celem jest wyłącznie widoczność w tradycyjnym SEO i AI Overviews Google
 
 ## Jak wdrożyć krok po kroku?
 
-Samo napisanie pliku to mniej niż połowa pracy. Serwer musi go poprawnie serwować – z właściwym typem MIME i nagłówkami ułatwiającymi wykrywanie zasobów.
+Samo napisanie pliku to mniej niż połowa pracy. Serwer musi go poprawnie serwować – z właściwym typem MIME, bez błędów serwera i opcjonalnie z nagłówkiem ułatwiającym wykrywanie zasobów.
 
 ### Krok 1 – napisz plik zgodny ze specyfikacją
 
@@ -160,12 +160,11 @@ Gotowy plik umieść jako `public/llms.txt` (Astro, Next.js, Nuxt) lub w katalog
 
 ### Krok 2 – skonfiguruj nagłówki HTTP dla wykrywania zasobów
 
-Boty AI mogą wykryć dostępność pliku bez odpytywania domeny w ciemno, jeśli serwer dołącza odpowiednie nagłówki HTTP. Konfiguracja dla Nginx wygląda następująco.
+Specyfikacja podaje przykład nagłówka HTTP `Link`, który wskazuje plik `llms.txt` relacją `rel="describedby"` – dzięki temu narzędzia nie muszą odpytywać domeny w ciemno. Konfiguracja dla Nginx wygląda następująco.
 
 ```nginx
 server {
-    add_header Link "</llms.txt>; rel=\"llms-txt\", </llms-full.txt>; rel=\"llms-full-txt\"" always;
-    add_header X-Llms-Txt "/llms.txt" always;
+    add_header Link "</llms.txt>; rel=\"describedby\"" always;
 
     location = /llms.txt {
         default_type text/plain;
@@ -178,13 +177,12 @@ Na Cloudflare Pages nagłówki konfigurujesz w pliku `_headers` w katalogu głó
 
 ```
 /*
-  Link: </llms.txt>; rel="llms-txt"
-  X-Llms-Txt: /llms.txt
+  Link: </llms.txt>; rel="describedby"
 ```
 
-### Krok 3 – zadbaj o negocjację zawartości (opcjonalnie, ale warte rozważenia)
+### Krok 3 – udostępnij wersje Markdown podstron (opcjonalnie, ale warte rozważenia)
 
-Zaawansowane podejście polega na tym, że boty mogą żądać wersji Markdown dowolnego adresu URL przez nagłówek `Accept: text/markdown`. Serwer odpowiednio kieruje żądanie i zamiast kodu HTML zwraca czysty plik `.md`. W przypadku żądań nieobsługiwanych typów dokumentów serwer zwraca kod HTTP 406 (*Not Acceptable*). To znacznie wykracza poza podstawowe wdrożenie. **Warto jednak znać ten mechanizm, jeśli budujesz architekturę pod kątem pełnej kompatybilności agentowej.**
+Specyfikacja proponuje też, by strony przydatne dla modeli miały wersję Markdown pod tym samym adresem z dopisanym rozszerzeniem `.md` (np. `/docs/page.html.md`). Bot może wtedy pobrać czysty tekst zamiast kodu HTML. Część serwisów idzie dalej i zwraca Markdown po nagłówku `Accept: text/markdown`, ale to rozwiązanie spoza specyfikacji `llms.txt`. Oba warianty wykraczają poza podstawowe wdrożenie. **Warto jednak znać ten mechanizm, jeśli budujesz architekturę pod kątem pełnej kompatybilności agentowej.**
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>
@@ -222,7 +220,7 @@ Dla projektów z dużą częstotliwością aktualizacji – takich jak dokumenta
 
 Bezpośrednio – nie, przynajmniej na razie. Badania i dane z logów serwerowych są jednoznaczne. Tradycyjne wyszukiwarki i systemy generujące AI Overviews nie pobierają tego pliku przy konstruowaniu odpowiedzi. Jeśli Twoim jedynym celem jest poprawa wskaźnika cytowań (*Citation Rate*) w ChatGPT czy Gemini, tutaj największe znaczenie mają [inne czynniki cytowalności](/geo/jak-llm-cytuja-zrodla/) – gęstość faktograficzna treści, dane strukturalne schema.org oraz spójność informacji w sieci.
 
-`llms.txt` odgrywa natomiast wyraźną rolę pośrednią. Po pierwsze, asystenci kodowania – Cursor, Copilot, Claude – mogą korzystać z tego pliku przez integracje MCP lub po ręcznym wskazaniu adresu URL przy mapowaniu Twojej biblioteki lub API. To bezpośrednio zwiększa jakość kodu generowanego przez użytkowników Twojego produktu. Po drugie, pozytywny wynik audytu Agentic Browsing w Lighthouse 13.3 zabezpiecza widoczność witryny w przeglądarkach, które w kolejnych latach będą realizowały zakupy i wyszukiwały oferty w imieniu użytkowników.
+`llms.txt` odgrywa natomiast wyraźną rolę pośrednią. Po pierwsze, asystenci kodowania – Cursor, Copilot, Claude – mogą korzystać z tego pliku przez integracje MCP lub po ręcznym wskazaniu adresu URL przy mapowaniu Twojej biblioteki lub API. To bezpośrednio zwiększa jakość kodu generowanego przez użytkowników Twojego produktu. Po drugie, obecność `llms.txt` w audytach Agentic Browsing w Lighthouse 13.3 pokazuje, że plik wchodzi do zestawu sygnałów gotowości na agentów, które w kolejnych latach mogą realizować zakupy i wyszukiwać oferty w imieniu użytkowników.
 
 **Koszt wdrożenia wynosi zaledwie kilka godzin pracy.** Bezpośrednie korzyści są na razie niszowe, ale gotowość agentowa może okazać się decydująca w perspektywie 18–24 miesięcy. To stosunek nakładu pracy do potencjalnych zysków, który warto ocenić samodzielnie.
 

@@ -3,6 +3,7 @@ title: 'Narzędzia do monitorowania wzmianek o marce w LLM-ach'
 subtitle: 'Wybierz właściwe narzędzie i dowiedz się, gdzie i jak modele AI opisują Twoją markę – zanim zrobi to konkurencja.'
 description: 'Przegląd i porównanie narzędzi do monitorowania wzmianek o marce w ChatGPT, Gemini, Perplexity i Claude. Tabela z kluczowymi cechami platform dla każdego budżetu.'
 date: 2026-05-17
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-narzedzia-monitoring-wzmianek.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>'
 author:
@@ -26,7 +27,7 @@ sources:
     note: 'Profound. Cennik: plan próbny i wycena Enterprise z monitoringiem do 9 silników odpowiedzi oraz zgodnością SOC 2.'
   - title: 'Hall is now part of Tracksuit'
     url: 'https://usehall.com/'
-    note: 'Hall. Komunikat o przejęciu i włączeniu Hall do platformy Tracksuit (lipiec 2026).'
+    note: 'Hall. Komunikat o przejęciu i włączeniu Hall do platformy Tracksuit (21 lipca 2026) i lista oczekujących na wspólną ofertę.'
   - title: 'AI-Visibility | Brand24'
     url: 'https://brand24.com/ai-visibility/'
     note: 'Brand24. Chatbeat monitoruje odpowiedzi m.in. ChatGPT, Claude, Gemini, Perplexity, AI Overviews, DeepSeek, Grok i Copilota, a Brand24 źródła kształtujące te odpowiedzi.'
@@ -50,7 +51,7 @@ Zanim przejdziemy do narzędzi, warto uporządkować terminologię. Dwa kluczowe
 
 **Cytowanie AI** (*AI Citation*) – tu leży zasadnicza różnica. Model opatruje twierdzenie o Twojej marce aktywnym odnośnikiem do konkretnego adresu URL, z którego pobrał informację. Cytowanie oznacza, że Twoja treść była bezpośrednim źródłem odpowiedzi AI.
 
-Dlaczego to takie ważne przy wyborze narzędzia? Większość tańszych platform mierzy wyłącznie wzmianki i tworzy z nich ogólny wykres widoczności. Jeśli decydujesz się na wydatek kilkuset złotych miesięcznie na monitoring, sprawdź, czy system rozróżnia te dwie formy i raportuje je osobno. **Tylko 7,2% domen internetowych potrafi jednocześnie generować cytowania w LLM-ach i w Google AI Overviews** – to dane z analizy branżowej przeprowadzonej w maju 2026 roku. Reszta ma albo jedno, albo drugie. Często nie ma nic.
+Dlaczego to takie ważne przy wyborze narzędzia? Większość tańszych platform mierzy wyłącznie wzmianki i tworzy z nich ogólny wykres widoczności. Jeśli decydujesz się na wydatek kilkuset złotych miesięcznie na monitoring, **sprawdź, czy system rozróżnia te dwie formy i raportuje je osobno.**
 
 Kilka pojęć, których będziesz używać na co dzień:
 
@@ -65,53 +66,43 @@ Technicznie nie jest to proste zadanie. [Duże modele językowe](https://pl.wiki
 Na rynku ukształtowały się dwa podejścia do zbierania danych:
 
 - **Wykorzystanie API** – narzędzie wysyła zapytania bezpośrednio do oficjalnych interfejsów programistycznych (OpenAI API, Anthropic API, Google Gemini API). Rozwiązanie to jest szybkie, tanie i skalowalne. Wadą jest to, że API zwraca surowy tekst – bez elementów dynamicznych, reklam ani wyników lokalnych, które widzi rzeczywisty użytkownik w przeglądarce.
-- **Emulacja sesji przeglądarki** – narzędzie symuluje pełną sesję użytkownika, renderuje JavaScript i przechwytuje dokładną odpowiedź z interfejsu webowego. Jest to droższe i wolniejsze, ale daje realny obraz tego, co widzi klient. Tak działają m.in. Profound, Otterly.ai i Hall AI.
+- **Emulacja sesji przeglądarki** – narzędzie symuluje pełną sesję użytkownika, renderuje JavaScript i przechwytuje dokładną odpowiedź z interfejsu webowego. Jest to droższe i wolniejsze, ale daje realny obraz tego, co widzi klient. Tak działają m.in. Profound i Otterly.ai.
 
 Dodatkowe wyzwanie to tak zwana luka atrybucyjna. Gdy ChatGPT lub Claude odsyła użytkownika na stronę docelową, usuwa nagłówki odsyłające HTTP (*referer headers*). Twoja analityka w Google Analytics 4 rejestruje ten ruch jako bezpośredni – bez żadnej informacji o AI jako źródle. **Narzędzia monitorujące rozwiązują ten problem metodami korelacyjnymi, zestawiając harmonogram zapytań próbnych z logami serwera.**
-
-<aside class="callout-fact">
-  <div class="callout-icon">✦</div>
-  <div class="callout-body">
-    <div class="callout-label">Ciekawostka</div>
-    <p>W środowisku Microsoft Copilot zaledwie 10% najlepiej pozycjonowanych domen gromadzi <strong>17,6 raza więcej cytowań niż pozostałe 90% witryn łącznie</strong>. Koncentracja widoczności w LLM-ach jest drastycznie wyższa niż w tradycyjnym SEO – i dlatego wejście do tej górnej dziesiątki wymaga aktywnego, ciągłego monitoringu, a nie jednorazowego audytu.</p>
-  </div>
-</aside>
 
 ![Wzmianka vs cytowanie – co mierzą narzędzia: wzmianka to marka wymieniona bez linku, cytowanie to marka podana jako źródło z odnośnikiem; narzędzia odpytują ChatGPT, Gemini, Perplexity i Copilota](../../../assets/images/infographic-geo-narzedzia-monitoring-wzmianek.png)
 
 ## Przegląd platform – tabela porównawcza
 
-Rynek narzędzi do monitorowania wzmianek w AI dzieli się na cztery segmenty: rozwiązania enterprise, platformy wyspecjalizowane w e-commerce i GEO, narzędzia do monitorowania mediów oraz lekkie narzędzia budżetowe. Tabela zbiera kluczowe parametry operacyjne głównych platform. Ceny podano w USD (stan na maj 2026 r.).
+Rynek narzędzi do monitorowania wzmianek w AI dzieli się na cztery segmenty: rozwiązania enterprise, platformy wyspecjalizowane w e-commerce i GEO, narzędzia do monitorowania mediów oraz lekkie narzędzia budżetowe. Tabela zbiera kluczowe parametry operacyjne głównych platform. Ceny podano w USD (Semrush, Profound, Otterly.AI i Hall – stan na wrzesień 2026 r., pozostałe – maj 2026 r.).
 
 | Narzędzie | Fokus i segment | Monitorowane modele AI | Cena od / mies. | Wyróżnik techniczny |
 |---|---|---|---|---|
-| **Semrush AIO** | Enterprise, SoV+SEO | ChatGPT, Claude, Google AIO | $99 + bazowa subskrypcja | Baza 261 mln promptów, analiza zapytań pogłębiających (follow-up queries) |
-| **Profound** | Enterprise, reputacja i bezpieczeństwo danych | ChatGPT, Claude, Google AIO, Perplexity | od $99 (enterprise – wycena indywidualna) | Citation Provenance Engine, SOC 2 Type II, emulacja sesji |
-| **Hall AI** | E-commerce, agencje SEO | 8 modeli: ChatGPT, Gemini, Claude, Perplexity, Copilot, Meta AI, DeepSeek, Google AIO | Lite gratis; płatne od $199 | Śledzenie sesji crawlerów w czasie rzeczywistym, monitoring SKU |
+| **Semrush AI Visibility Toolkit** | SoV+SEO | ChatGPT, Google AI, Gemini, Perplexity | $99 za domenę (dostępny samodzielnie) | Śledzenie własnych promptów, badanie promptów i analiza konkurencji |
+| **Profound** | Enterprise, reputacja i bezpieczeństwo danych | Do 9 silników: ChatGPT, Perplexity, Google AI Mode, Gemini, Copilot, DeepSeek, Claude, Google AIO, Exa | Plan próbny (tylko ChatGPT); Enterprise – wycena indywidualna | Citation Provenance Engine, SOC 2, SSO/SAML, emulacja sesji |
+| **Hall AI** | Przejęty przez Tracksuit (lipiec 2026) | – | Wspólna oferta z Tracksuit – lista oczekujących | Pomiar widoczności w LLM łączony z danymi o kondycji marki |
 | **Brand24 + Chatbeat** | Social listening + LLM | ChatGPT, Gemini, Claude, Perplexity, Grok, DeepSeek, Copilot, Google AIO | Zależy od pakietu Brand24 | Monitoring źródeł danych (input) i odpowiedzi AI (output), wykrywanie dezinformacji |
-| **Riff Analytics** | Agencje, marki średniej wielkości | ChatGPT, Gemini, Claude, Perplexity, Grok, DeepSeek, Llama | $49 (Starter) / $199 (Pro) | Analiza luki cytowań w 5 minut, gotowe URL-e konkurencji |
+| **Riff Analytics** | Agencje, marki średniej wielkości | ChatGPT, Gemini, Claude, Perplexity, Grok, DeepSeek | $49 (Starter) / $199 (Pro) | Analiza luki cytowań w 5 minut, gotowe URL-e konkurencji |
 | **Serpstat LLM Monitor** | Małe firmy, freelancerzy | ChatGPT, Claude, Gemini, Perplexity + ponad 100 modeli niszowych | Plan darmowy; Pro $39 | System kredytów Pay As You Go, alerty o zmianie narracji |
-| **Mangools AI Search Watcher** | Użytkownicy pakietu Mangools | ChatGPT, Gemini, Claude, Grok, Llama, Mistral | W cenie pakietu ($37,70–$97,70 rocznie) | Wielokrotna weryfikacja każdego zapytania dla dokładniejszych danych |
-| **Otterly.AI** | Targetowanie geograficzne | Google AIO, ChatGPT, Perplexity | Plan darmowy; płatne $29–$422 | Emulacja sesji webowej, precyzyjne kierowanie na lokalizację |
+| **Mangools AI Search Watcher** | Użytkownicy pakietu Mangools | ChatGPT, Google AIO, Google AI Mode, Gemini, Claude, Grok, Mistral, Llama | W ramach planów Mangools | Wielokrotna weryfikacja każdego zapytania dla dokładniejszych danych |
+| **Otterly.AI** | Targetowanie geograficzne | Google AIO, ChatGPT, Perplexity, Copilot (Claude, Gemini i AI Mode jako płatne dodatki) | Bezpłatny okres próbny; płatne $29–$489 | Emulacja sesji webowej, precyzyjne kierowanie na lokalizację |
 | **Allmond** | Agencje, SaaS, e-commerce | ChatGPT, Claude, Gemini, Perplexity (67 krajów) | $29 (Starter) / $199 (Pro) | Dane z realnych konwersacji, monitoring na poziomie konkretnych promptów |
 
 ## Narzędzia enterprise – kiedy mają sens
 
-Semrush AIO i Profound operują w zupełnie innej lidze niż reszta zestawienia. I nie chodzi tu wyłącznie o cenę. To rozwiązania przeznaczone dla marek, które muszą raportować widoczność AI zarządowi, działają w sektorach regulowanych prawnie lub zarządzają portfolio kilkudziesięciu produktów jednocześnie.
+Semrush i Profound operują w innej lidze niż reszta zestawienia. I nie chodzi tu wyłącznie o cenę. To rozwiązania przeznaczone dla marek, które muszą raportować widoczność AI zarządowi, działają w sektorach regulowanych prawnie lub zarządzają portfolio kilkudziesięciu produktów jednocześnie.
 
-**Semrush AIO wyróżnia się dostępem do bazy 261 milionów monitorowanych promptów użytkowników.** To daje kontekst statystyczny nieosiągalny dla małych platform. Narzędzie śledzi też zapytania pogłębiające (*follow-up queries*). Sprawdza, czy marka utrzymuje się w odpowiedziach AI, gdy użytkownik doprecyzowuje intencję: od ogólnego „najlepsze oprogramowanie do zarządzania projektami" do konkretnego „najlepsze dla zespołu zdalnego do 10 osób". To kluczowe. Zniknięcie marki z wyników na etapie drugiego lub trzeciego pytania to wyraźny sygnał problemu z autorytetem tematycznym.
+**Semrush AI Visibility Toolkit wyróżnia się połączeniem monitoringu AI z danymi SEO i badaniem promptów.** Dzięki temu widoczność w odpowiedziach AI możesz zestawić z danymi, które zespół SEO i tak już analizuje. Przy wyborze platformy enterprise warto też sprawdzić, czy śledzi ona zapytania pogłębiające (*follow-up queries*), czyli czy marka utrzymuje się w odpowiedziach AI, gdy użytkownik doprecyzowuje intencję: od ogólnego „najlepsze oprogramowanie do zarządzania projektami" do konkretnego „najlepsze dla zespołu zdalnego do 10 osób". To kluczowe. Zniknięcie marki z wyników na etapie drugiego lub trzeciego pytania to wyraźny sygnał problemu z autorytetem tematycznym.
 
-Profound koncentruje się na innym problemie – weryfikacji źródeł. Jego silnik Citation Provenance Engine identyfikuje ze 100-procentową dokładnością, które konkretne adresy URL posłużyły modelowi jako podstawa do opisu Twojej marki. W sektorach takich jak finanse, ubezpieczenia czy ochrona zdrowia nieprecyzyjna odpowiedź AI może naruszać przepisy. **Właśnie tam ta funkcja ma wymierną wartość prawną.**
+Profound koncentruje się na innym problemie – weryfikacji źródeł. Jego silnik Citation Provenance Engine identyfikuje, które konkretne adresy URL posłużyły modelowi jako podstawa do opisu Twojej marki. W sektorach takich jak finanse, ubezpieczenia czy ochrona zdrowia nieprecyzyjna odpowiedź AI może naruszać przepisy. **Właśnie tam ta funkcja ma wymierną wartość prawną.**
 
 Przed wyborem platformy enterprise warto najpierw zrozumieć aktualny stan widoczności. [Audyt widoczności marki](/geo/audyt-widocznosci-marki/) pokazuje, od czego zacząć i jakie dane są potrzebne, by uzasadnić zakup droższego narzędzia.
 
-## Narzędzia do e-commerce – Hall AI i jego warstwa crawlerów
+## Hall AI – przejęty przez Tracksuit
 
-Hall AI wyróżnia się jedną funkcją, której nie ma żaden inny gracz w tym zestawieniu. To moduł Agent Analytics. Śledzi on w czasie rzeczywistym sesje botów indeksujących na stronie klienta. Narzędzie rejestruje adres IP i ciąg identyfikacyjny (User-Agent) każdego bota – GPTBot, ClaudeBot, PerplexityBot. **Dzięki temu pozwala zobaczyć, które podstrony faktycznie odwiedzają modele AI, a które całkowicie pomijają.**
+Hall AI był znany z analityki wizyt botów AI na stronie oraz monitoringu produktów w odpowiedziach zakupowych chatbotów. **21 lipca 2026 roku Hall stał się częścią Tracksuit – platformy do badania kondycji marki.** Pomiar widoczności w LLM-ach ma być tam zestawiany z klasycznymi wskaźnikami świadomości i postrzegania marki wśród ludzi.
 
-Dla e-commerce dochodzi moduł Conversational Commerce. Śledzi on pozycje konkretnych jednostek produktowych (SKU) w odpowiedziach zakupowych chatbotów. **Narzędzie sprawdza nie tylko to, czy marka jest wymieniana, ale też który dystrybutor – Amazon, Allegro, sklep producenta – jest wskazywany jako zalecane miejsce zakupu.** To informacja bezpośrednio przekładająca się na decyzje handlowe.
-
-Jedynym realnym mankamentem Hall AI jest przepaść cenowa między planem Lite (gratis, 25 zapytań, raporty tygodniowe) a Starter ($199/miesiąc). Dla małej agencji lub firmy B2B bez rozbudowanego katalogu produktów ta bariera wejścia okazuje się po prostu zbyt wysoka.
+Na stronie Hall nie ma już samodzielnego cennika – zainteresowani zapisują się na listę oczekujących na wspólną ofertę. Jeśli potrzebujesz monitoringu od zaraz, wybierz inne narzędzie z zestawienia i wróć do tej opcji, gdy Tracksuit udostępni połączony produkt.
 
 ## Monitoring mediów i AI jednocześnie – Brand24 z modułem Chatbeat
 
@@ -136,8 +127,8 @@ Nie każda firma potrzebuje platformy za $500 miesięcznie. Serpstat LLM Brand M
 
 Kilka wskazówek, jak dokonać wyboru między nimi:
 
-- **Serpstat** – jeśli zależy Ci na szerokim pokryciu (ponad 100 modeli, w tym niszowe), elastyczności budżetu (model Pay As You Go) i błyskawicznym wdrożeniu. Plan Pro za $39 to najtańszy pełnopłatny monitoring na tym rynku.
-- **Mangools AI Search Watcher** – jeśli już używasz pakietu Mangools do SEO; narzędzie jest dodawane bezpłatnie. Unikalna funkcja wielokrotnej weryfikacji każdego zapytania eliminuje błędy wynikające z probabilistycznego charakteru LLM i daje statystycznie stabilne wyniki.
+- **Serpstat** – jeśli zależy Ci na szerokim pokryciu (ponad 100 modeli, w tym niszowe), elastyczności budżetu (model Pay As You Go) i błyskawicznym wdrożeniu. Plan Pro kosztuje $39.
+- **Mangools AI Search Watcher** – jeśli już używasz pakietu Mangools do SEO. Wielokrotne uruchamianie każdego zapytania eliminuje błędy wynikające z probabilistycznego charakteru LLM i daje statystycznie stabilne wyniki.
 - **Allmond** – jeśli obsługujesz klientów w wielu krajach; platforma monitoruje 67 rynków geograficznych, raportując różnice w tym, jak marka jest opisywana w poszczególnych regionach.
 - **Otterly.AI** – jeśli priorytetem są Google AI Overviews i kierowanie na lokalizację; narzędzie emuluje pełną sesję przeglądarki, więc wynik jest bliski temu, co widzi użytkownik w konkretnym mieście.
 

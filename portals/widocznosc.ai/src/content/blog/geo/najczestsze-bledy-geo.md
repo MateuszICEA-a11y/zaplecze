@@ -3,6 +3,7 @@ title: 'Najczęstsze błędy w optymalizacji pod kątem LLM-ów'
 subtitle: 'Dowiedz się, które błędy uniemożliwiają cytowanie Twojej marki w ChatGPT, Perplexity i Google AI Overviews – i jak je naprawić krok po kroku'
 description: 'Najczęstsze błędy w GEO: błędna konfiguracja robots.txt, upychanie słów kluczowych, CSR, brak danych. Dowiedz się, jak je naprawić i zwiększyć wskaźnik cytowań.'
 date: 2026-05-02
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-najczestsze-bledy-geo.webp
 icon: '<path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>'
 author:
@@ -40,8 +41,9 @@ faq:
       jednocześnie.
   - q: 'Czy GEO ma sens dla małych firm z niskim autorytetem domeny (DA)?'
     a: >-
-      Tak – i badanie Princeton pokazuje, że małe marki z niskim autorytetem domenowym, które
-      wdrożyły statystyki i cytowania, zyskują proporcjonalnie więcej niż liderzy rynku. Więcej
+      Tak – badanie Princeton pokazuje, że strony z niższych pozycji w wynikach wyszukiwania mogą zyskać
+      na optymalizacji treści więcej niż liderzy (strona z 5. pozycji po dodaniu powołań na źródła
+      zwiększyła widoczność o 115,1%). Więcej
       o tym mechanizmie opisuje artykuł <a href="/geo/czym-jest-geo/">czym jest GEO</a> – wraz
       z przykładami z małych nisz B2B.
 sources:
@@ -59,19 +61,19 @@ sources:
     note: 'Google Search Central. Google-Extended kontroluje wykorzystanie treści do trenowania i ugruntowania modeli Gemini i nie wpływa na obecność w wyszukiwarce Google.'
   - title: 'Block AI Bots'
     url: 'https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/'
-    note: 'Cloudflare. Ustawienie blokujące w całej strefie boty klasyfikowane jako crawlery treningowe AI.'
+    note: 'Cloudflare. Ustawienie blokujące w całej strefie boty klasyfikowane jako crawlery treningowe AI (bez botów mieszanych, służących też wyszukiwaniu); wycofywane od 15 września 2026 roku na rzecz osobnych ustawień dla botów treningowych, agentów i wyszukiwarek.'
   - title: 'Retrieval-augmented generation'
     url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
     note: 'Wikipedia. Definicja generowania wspomaganego wyszukiwaniem (RAG).'
 ---
 
-Aż 73% firm nie dysponuje żadnym narzędziem do mierzenia widoczności swojej marki w odpowiedziach AI – a mimo to ich zespoły aktywnie „optymalizują pod kątem LLM-ów", kopiując reguły klasycznego SEO do zupełnie innego systemu. To prosta droga do niewidzialności. GEO (Generative Engine Optimization, czyli optymalizacja pod generatywne silniki wyszukiwania) rządzi się własną logiką: liczy się nie pozycja rankingowa, lecz to, czy Twoja treść trafia do syntezy, którą model buduje w czasie rzeczywistym. Poniżej opisuję błędy, które widzę najczęściej w audytach, wraz z konkretnymi krokami naprawczymi.
+Wiele firm nie ma żadnego narzędzia do mierzenia widoczności swojej marki w odpowiedziach AI – a mimo to ich zespoły aktywnie „optymalizują pod kątem LLM-ów", kopiując reguły klasycznego SEO do zupełnie innego systemu. To prosta droga do niewidzialności. GEO (Generative Engine Optimization, czyli optymalizacja pod generatywne silniki wyszukiwania) rządzi się własną logiką: liczy się nie pozycja rankingowa, lecz to, czy Twoja treść trafia do syntezy, którą model buduje w czasie rzeczywistym. Poniżej opisuję błędy, które widzę najczęściej w audytach, wraz z konkretnymi krokami naprawczymi.
 
 ## Błąd 1 – mylenie SEO z GEO
 
 Tradycyjne SEO ocenia domeny przez pryzmat profilu linków i pozycji rankingowych. LLM-y (Large Language Models, czyli duże modele językowe) działają inaczej: analizują fragmenty tekstu, zamieniają je na reprezentacje wektorowe (tzw. osadzenia lub embeddingi – wielowymiarowe liczbowe reprezentacje znaczenia) i wyszukują te fragmenty, które semantycznie najlepiej odpowiadają na zadane pytanie. Wysoka pozycja w Google nie przekłada się automatycznie na cytowanie przez ChatGPT czy Perplexity.
 
-Badanie [Aggarwal et al. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University, przetestowane na benchmarku GEO-bench złożonym z 10 000 zapytań, pokazało wprost: **strony z niskim autorytetem domenowym, które zastosowały statystyki i cytowania źródeł, zwiększały widoczność w LLM-ach o 115% – pokonując liderów SEO, którzy tych elementów nie mieli**. To fundamentalna zmiana reguł gry.
+Badanie [Aggarwal et al. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University, przetestowane na benchmarku GEO-bench złożonym z 10 000 zapytań, pokazało wprost: **strona z 5. pozycji w wynikach wyszukiwania, która zaczęła powoływać się na źródła, zwiększyła widoczność w odpowiedzi generatywnej o 115,1%, a ta sama metoda obniżyła widoczność strony z 1. pozycji o 30,3%**. To fundamentalna zmiana reguł gry.
 
 Cztery pary pojęć, które pomagają odróżnić obie dyscypliny:
 
@@ -80,17 +82,17 @@ Cztery pary pojęć, które pomagają odróżnić obie dyscypliny:
 - **Profil linków vs wzorce cytowań** – w GEO wiarygodność buduje się przez linkowanie do zewnętrznych badań, nie tylko przez pozyskiwanie backlinków.
 - **Ruch organiczny vs Share of Voice** – wskaźnik cytowań (Citation Rate) i udział w dyskusji (Share of Voice, SoV) zastępują samą liczbę wizyt.
 
-### Upychanie słów kluczowych – efekt odwrotny do zamierzonego
+### Upychanie słów kluczowych – wysiłek bez efektu
 
-Upychanie słów kluczowych (keyword stuffing) to jedno z najcenniejszych „osiągnięć" starego SEO, które w GEO aktywnie szkodzi. Kiedy tekst wielokrotnie powtarza tę samą frazę bez budowania głębokich relacji pojęciowych, wektor (embedding) reprezentujący dany fragment kurczy się semantycznie – model traktuje go jak zduplikowany, bezużyteczny rekord. Benchmark Princeton potwierdził to empirycznie: keyword stuffing był jedną z kilku nieskutecznych taktyk obniżających wskaźnik cytowalności (obok m.in. nadmiernego rozbudowywania treści i przesadnie perswazyjnego języka).
+Upychanie słów kluczowych (keyword stuffing) to jedno z „osiągnięć" starego SEO, które w GEO nie pomaga. Kiedy tekst wielokrotnie powtarza tę samą frazę bez budowania relacji pojęciowych, fragment nie niesie dla modelu nowych informacji, które mógłby wykorzystać w odpowiedzi. Benchmark Princeton potwierdził to empirycznie: keyword stuffing dawał niewielką poprawę widoczności albo żadną – podobnie jak dosypywanie do tekstu unikalnych słów.
 
-Zamiast tego: buduj treść wokół precyzyjnych faktów, dat, liczb i relacji przyczynowo-skutkowych. Każdy fragment po 200–400 słów powinien samodzielnie odpowiadać na jedno konkretne pytanie – bez konieczności czytania reszty artykułu.
+Zamiast tego: buduj treść wokół precyzyjnych faktów, dat, liczb i relacji przyczynowo-skutkowych. Każdy zwarty fragment powinien samodzielnie odpowiadać na jedno konkretne pytanie – bez konieczności czytania reszty artykułu.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Badanie Princeton KDD 2024 przetestowało 9 taktyk optymalizacji treści. Spośród nich tylko 5 przynosiło statystycznie istotny wzrost widoczności. Keyword stuffing – standard klasycznego SEO – był jedyną taktyką, która aktywnie <strong>obniżała wskaźnik cytowalności. Cytowania ekspertów i dane liczbowe podnosiły go natomiast o 30–41%.</strong></p>
+    <p>Badanie Princeton KDD 2024 przetestowało 9 metod optymalizacji treści. Keyword stuffing – standard klasycznego SEO – dawał <strong>niewielką poprawę widoczności albo żadną. Cytaty ekspertów podnosiły ją natomiast o ok. 42,6%, a dane liczbowe o ok. 32,8%.</strong></p>
   </div>
 </aside>
 
@@ -98,20 +100,20 @@ Zamiast tego: buduj treść wokół precyzyjnych faktów, dat, liczb i relacji p
 
 ## Błąd 2 – błędna konfiguracja robots.txt i blokowanie botów AI
 
-Około 40% technicznych audytów GEO ujawnia problematyczne konfiguracje pliku `robots.txt`. Najczęstszy scenariusz: administrator, przestraszony doniesieniami o masowym pobieraniu treści przez systemy AI, blokuje wszystkich agentów zawierających w nazwie słowo „Bot" lub „AI". Skutek jest odwrotny od zamierzonego – witryna znika z odpowiedzi ChatGPT, Perplexity i Google AI Overviews.
+Problematyczne konfiguracje pliku `robots.txt` to częsty wynik technicznych audytów GEO. Typowy scenariusz: administrator, przestraszony doniesieniami o masowym pobieraniu treści przez systemy AI, blokuje wszystkich agentów zawierających w nazwie słowo „Bot" lub „AI". Skutek jest odwrotny od zamierzonego – witryna znika z odpowiedzi ChatGPT Search czy Perplexity.
 
 Boty AI dzielą się na dwie zasadniczo różne klasy, które wymagają odmiennej polityki dostępu:
 
 | Klasa bota | Przykłady | Rola | Zalecana polityka |
 |---|---|---|---|
 | Boty wyszukiwawcze i użytkownika | `OAI-SearchBot`, `PerplexityBot`, `ChatGPT-User` | Pobieranie treści w czasie rzeczywistym, prezentacja odpowiedzi z linkiem do Twojej strony | `Allow` – blokada = zero ruchu referencyjnego |
-| Boty treningowe | `GPTBot`, `ClaudeBot`, `Google-Extended`, `CCBot` | Masowe indeksowanie zasobów do budowy baz wiedzy modeli offline | `Disallow` – wysokie zużycie transferu, brak bezpośredniego ruchu |
+| Boty treningowe i tokeny kontrolne | `GPTBot`, `ClaudeBot`, `CCBot`, `Google-Extended` (token w robots.txt, nie osobny crawler) | Pobieranie zasobów do trenowania modeli; w przypadku `Google-Extended` – zgoda na użycie treści do trenowania i ugruntowania modeli Gemini | `Disallow` – wysokie zużycie transferu, brak bezpośredniego ruchu |
 
-Zablokowanie `OAI-SearchBot` eliminuje Cię z wyników ChatGPT Search. Zablokowanie `PerplexityBot` – z Perplexity AI. Obie te pomyłki często nie są widoczne w standardowych raportach analitycznych, bo nie generują błędów 4xx na poziomie serwera. Sprawdź, czy Twoje boty mają dostęp, korzystając z narzędzia [Dostęp botów AI](/narzedzia/ai-bots-check/) – weryfikuje ono konfigurację `robots.txt` i faktyczną dostępność dla poszczególnych agentów.
+Zablokowanie `OAI-SearchBot` eliminuje Cię z wyników ChatGPT Search. Zablokowanie `PerplexityBot` – z Perplexity AI. Z kolei zablokowanie `Google-Extended` nie wpływa na obecność w wyszukiwarce Google, w tym w AI Overviews. Obie te pomyłki często nie są widoczne w standardowych raportach analitycznych, bo nie generują błędów 4xx na poziomie serwera. Sprawdź, czy Twoje boty mają dostęp, korzystając z narzędzia [Dostęp botów AI](/narzedzia/ai-bots-check/) – weryfikuje ono konfigurację `robots.txt` i faktyczną dostępność dla poszczególnych agentów.
 
 ### Cloudflare i niewidzialna blokada na brzegu sieci
 
-Osobna pułapka czeka na strony hostowane za sieciami dostarczania treści (CDN), szczególnie za Cloudflare. Moduł „AI Scrapers and Crawlers" po aktywowaniu blokuje ruch botów AI bezpośrednio na brzegu sieci, zwracając błąd `403 Forbidden` – zanim bot w ogóle dotrze do serwera i przeczyta plik `robots.txt`. **Twoja poprawnie skonfigurowana reguła robots.txt staje się wówczas nieistotna – bot nigdy jej nie zobaczy.**
+Osobna pułapka czeka na strony hostowane za sieciami dostarczania treści (CDN), szczególnie za Cloudflare. Ustawienie „Block AI bots” po aktywowaniu blokuje crawlery treningowe AI bezpośrednio na brzegu sieci – zanim bot w ogóle dotrze do serwera i przeczyta plik `robots.txt`. Samo w sobie nie obejmuje botów wyszukiwawczych, ale od 15 września 2026 roku Cloudflare zastępuje je szczegółowymi ustawieniami, w których osobno blokuje się boty treningowe, agentów i boty wyszukiwawcze – nieuważna konfiguracja może więc odciąć także te ostatnie. **Twoja poprawnie skonfigurowana reguła robots.txt staje się wówczas nieistotna – zablokowany bot nigdy jej nie zobaczy.**
 
 Weryfikacja wymaga ręcznego sprawdzenia nagłówków odpowiedzi CDN dla znanych user-agentów botów, a nie samego pliku konfiguracyjnego.
 
@@ -127,7 +129,7 @@ Wymagany standard techniczny to renderowanie po stronie serwera (SSR) lub genero
 
 To najczęstszy błąd treściowy, który widzę w audytach. Strona ma dobre pozycje SEO, solidny profil linków, przyzwoity ruch – ale treść wygląda jak napisana pod algorytm Google'a sprzed 2020 roku: ogólnikowe opisy, zero liczb, zero dat, każde twierdzenie to opinia bez podstawy źródłowej.
 
-Dla modelu językowego taka strona jest bezużyteczna jako źródło cytowania. Modele są trenowane, żeby treści opatrzone przypisami do zewnętrznych źródeł traktować jako bardziej wiarygodne. Badanie Princeton zmierzyło to precyzyjnie: **dodanie cytowań źródeł i danych liczbowych podnosi wskaźnik cytowalności o 30–41%**. Autorytatywny, encyklopedyczny ton (styl zbliżony do Wikipedii) dodaje kolejne 10–20%.
+Dla modelu językowego taka strona jest bezużyteczna jako źródło cytowania. Modele są trenowane, żeby treści opatrzone przypisami do zewnętrznych źródeł traktować jako bardziej wiarygodne. Badanie Princeton zmierzyło to precyzyjnie: **powoływanie się na źródła podnosiło widoczność w odpowiedziach generatywnych o ok. 27,7%, a dodanie danych liczbowych o ok. 32,8%**. Autorytatywny ton dawał wzrost rzędu 11,8%.
 
 Trzy praktyczne działania, które możesz wdrożyć w ciągu jednego dnia roboczego:
 
@@ -148,14 +150,14 @@ Artykuł [Jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/) tłumaczy me
 
 ## Błąd 5 – brak struktury semantycznej dostępnej dla botów
 
-LLM-y nie czytają strony jak człowiek – dzielą tekst na fragmenty po 200–400 słów, konwertują je na reprezentacje wektorowe i wyszukują te, które pasują do danego podzapytania. Tekst pisany jako jeden długi ciągły blok narracyjny utrudnia ten podział i drastycznie obniża szanse na wybranie konkretnego fragmentu.
+LLM-y nie czytają strony jak człowiek – systemy RAG dzielą tekst na fragmenty (ich długość zależy od systemu), konwertują je na reprezentacje wektorowe i wyszukują te, które pasują do danego podzapytania. Tekst pisany jako jeden długi ciągły blok narracyjny utrudnia ten podział i drastycznie obniża szanse na wybranie konkretnego fragmentu.
 
 Dobre wzorce strukturyzacji treści pod GEO:
 
 - **Nagłówki jako pytania** – H2 i H3 sformułowane jak zapytanie użytkownika, a bezpośrednio pod nimi odpowiedź w pierwszym zdaniu (zasada wczesnego sygnalizowania kluczowych informacji).
 - **Tabele porównawcze** – model może wyciągnąć pojedynczy wiersz tabeli jako samodzielną, precyzyjną odpowiedź; szczególnie skuteczne dla cenników i zestawień narzędzi.
 - **Listy z definicjami** – format `**Termin** – opis` tworzy naturalną parę pojęcie-wyjaśnienie, którą parsery wektorowe łatwo ekstrahują.
-- **Bloki semantyczne** – każdy fragment po 200–400 słów powinien zawierać definicję, tezę lub dane bez konieczności czytania reszty artykułu; samodzielność to klucz.
+- **Bloki semantyczne** – każdy fragment (w praktyce redakcyjnej zwykle 200–400 słów) powinien zawierać definicję, tezę lub dane bez konieczności czytania reszty artykułu; samodzielność to klucz.
 
 ### Kluczowe informacje poza zasięgiem botów – PDF-y i obrazy z danymi
 
@@ -165,7 +167,7 @@ Standardem minimum jest czysta hierarchia HTML: tagi `<article>`, `<section>`, n
 
 ## Błąd 6 – brak pomiaru i niewidzialny ślepy punkt
 
-Ostatni błąd jest paradoksalnie najpoważniejszy: 73% organizacji w ogóle nie mierzy swojej widoczności w odpowiedziach AI. Bez tego wskaźnika każda optymalizacja to strzelanie w ciemno.
+Ostatni błąd jest paradoksalnie najpoważniejszy: wiele organizacji w ogóle nie mierzy swojej widoczności w odpowiedziach AI. Bez tego wskaźnika każda optymalizacja to strzelanie w ciemno.
 
 Trzy metryki, od których warto zacząć monitoring:
 

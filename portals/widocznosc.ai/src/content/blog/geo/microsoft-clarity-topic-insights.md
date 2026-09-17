@@ -3,6 +3,7 @@ title: 'Topic Insights w Microsoft Clarity. Zmierz, czy AI cytuje Twoje treści 
 subtitle: 'Microsoft oddaje za darmo to, za co Profound i Semrush każą płacić. Krok po kroku tłumaczę, jak wygenerować raport, prawidłowo zinterpretować dane oraz zrozumieć realne ograniczenia tego narzędzia.'
 description: 'Praktyczny przewodnik po funkcji Topic Insights w Microsoft Clarity: jak za darmo zmierzyć wkład swoich treści w odpowiedzi AI, jak czytać wymiary Visibility, Influence, Competition i Opportunities oraz gdzie to narzędzie ma realne ograniczenia.'
 date: 2026-07-17
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-clarity-topic-insights.webp
 icon: '<path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>'
 author:
@@ -19,7 +20,7 @@ faq:
   - q: 'Czym Topic Insights różni się od funkcji Citations?'
     a: 'Citations pokazuje, <strong>gdzie</strong> Twoja domena pojawia się jako źródło w odpowiedziach AI. Topic Insights idzie krok dalej: agreguje te dane na poziomie tematu i przekłada je na <strong>rekomendacje</strong> – gdzie masz luki, kto Cię wyprzedza i co napisać w następnej kolejności. Krótko – Citations to pomiar, Topic Insights to plan działania.'
   - q: 'Czy Topic Insights jest naprawdę darmowe?'
-    a: 'Tak. Funkcja jest dostępna bez opłat wewnątrz panelu Microsoft Clarity, który sam w sobie jest darmowy. Warunkiem jest utworzenie projektu w Clarity i zweryfikowanie własności domeny (kod śledzenia, Google Search Console albo Bing Webmaster Tools). Obowiązuje limit 10 raportów tygodniowo na projekt.'
+    a: 'Tak. Funkcja jest dostępna bez opłat wewnątrz panelu Microsoft Clarity, który sam w sobie jest darmowy. Warunkiem jest utworzenie projektu w Clarity i – jeśli system o to poprosi – zweryfikowanie własności domeny przez połączenie projektu z Google Search Console albo Bing Webmaster Tools. Obowiązuje limit 10 raportów tygodniowo na projekt.'
   - q: 'Czy Topic Insights pokazuje, co odpowiada ChatGPT i Google?'
     a: 'Nie wprost. Topic Insights ocenia odpowiedzi generowane przez model GPT-5.3 osadzony w wiedzy dzięki warstwie Web IQ od Microsoftu. To wiarygodne <em>przybliżenie</em> tego, jak silniki AI korzystają z Twoich treści, ale nie jest to pomiar 1:1 tego, co w danym momencie zwróci konkretnie ChatGPT, Gemini, Google AI Overviews czy Perplexity.'
   - q: 'Ile raportów Topic Insights mogę wygenerować?'
@@ -52,7 +53,7 @@ Twoja strona prawdopodobnie już teraz pojawia się w odpowiedziach, które Chat
 
 ## Czym jest Topic Insights – i czym różni się od Citations
 
-Microsoft Clarity to znane, darmowe narzędzie do analizy map ciepła. W 2026 roku jego możliwości rozszerzyły się jednak o analitykę [GEO](/geo/czym-jest-geo/). Najpierw, w maju, pojawiła się funkcja **Citations**, pokazująca, w których odpowiedziach AI Twoja domena figuruje jako źródło. Topic Insights to jej naturalne rozwinięcie. Narzędzie to analizuje surowe dane o cytowaniach i grupuje je w kategorie tematyczne kluczowe dla Twojego biznesu.
+Microsoft Clarity to znane, darmowe narzędzie do analizy map ciepła. W 2026 roku jego możliwości rozszerzyły się jednak o analitykę [GEO](/geo/czym-jest-geo/). Najpierw, po okresie wersji zapoznawczej, w maju ogólnie dostępna stała się funkcja **Citations**, pokazująca, w których odpowiedziach AI Twoja domena figuruje jako źródło. Topic Insights to jej naturalne rozwinięcie. Narzędzie to analizuje surowe dane o cytowaniach i grupuje je w kategorie tematyczne kluczowe dla Twojego biznesu.
 
 Różnicę najłatwiej ująć w ten sposób – Citations odpowiada na pytanie „czy i gdzie jestem cytowany”, podczas gdy Topic Insights podpowiada, „co z tą wiedzą zrobić”. **Zamiast prostej listy pojedynczych wzmianek otrzymujesz pełny obraz danej kategorii tematycznej – uwzględniający Twoją pozycję, działania konkurencji oraz konkretne braki w treściach.**
 
@@ -77,7 +78,7 @@ Do korzystania z Topic Insights nie potrzebujesz integracji z siecią CDN – je
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Wyspecjalizowane platformy o podobnej funkcjonalności – takie jak Profound czy Semrush AIO – kosztują od około 99 USD miesięcznie, a pakiety dla dużych firm to wydatek rzędu tysięcy dolarów. Microsoft udostępnia pomiar wkładu treści w odpowiedzi AI zupełnie za darmo, i to w narzędziu, z którego korzystają już miliony witryn. <strong>To jedno z największych obniżeń bariery wejścia do optymalizacji GEO od momentu pojawienia się AI Overviews.</strong></p>
+    <p>Wyspecjalizowane platformy o podobnej funkcjonalności są płatne – Semrush AI Visibility Toolkit kosztuje od 99 USD miesięcznie za domenę, a Profound poza ograniczonym planem próbnym oferuje wyłącznie indywidualnie wyceniany plan Enterprise. Microsoft udostępnia pomiar wkładu treści w odpowiedzi AI zupełnie za darmo, i to w narzędziu, z którego korzystają już miliony witryn. <strong>To jedno z największych obniżeń bariery wejścia do optymalizacji GEO od momentu pojawienia się AI Overviews.</strong></p>
   </div>
 </aside>
 
@@ -92,7 +93,7 @@ Topic Insights nie zadziała od razu po zalogowaniu. Ponieważ jest to funkcja o
 Na start potrzebujesz dwóch rzeczy:
 
 - **Projektu w Microsoft Clarity** – utworzonego dla domeny, którą chcesz analizować. Konto jest darmowe i nie wymaga podpinania karty płatniczej.
-- **Zweryfikowanej własności domeny** – możesz to zrobić na trzy sposoby: wklejając kod śledzenia Clarity na stronie, łącząc konto z Google Search Console (GSC) lub korzystając z Bing Webmaster Tools (BWT).
+- **Zweryfikowanej własności domeny** – jeśli Clarity o nią poprosi, połącz projekt z Google Search Console (GSC) albo Bing Webmaster Tools (BWT). Sam kod śledzenia Clarity zbiera dane, ale nie potwierdza własności domeny na potrzeby Citations.
 
 ![Ekran potwierdzenia domeny w Microsoft Clarity dla widocznosc.ai: panel informuje, że domena projektu zostanie użyta do śledzenia cytowań i nie będzie później możliwa do zmiany](../../../assets/images/blog-geo-clarity-topic-insights-real-domain-confirm.png)
 

@@ -1,8 +1,9 @@
 ---
 title: 'Share of Voice zamiast rankingu – jak naprawdę mierzyć widoczność marki w AI'
 subtitle: 'Dlaczego klasyczne śledzenie pozycji nie działa w ChatGPT, Claude i Perplexity – i co je zastępuje'
-description: 'Badanie SparkToro pokazało, że odpowiedzi LLM mają mniej niż 1% powtarzalności. Mierzenie pozycji w AI nie ma sensu. Co zamiast tego: Share of Voice, Citation Rate, Mention Rate – metryki, które naprawdę pokazują, jak Twoja marka radzi sobie w erze wyszukiwarek AI.'
+description: 'Badanie SparkToro pokazało, że szansa na tę samą listę marek w dwóch odpowiedziach AI to mniej niż 1%. Mierzenie pozycji w AI nie ma sensu. Co zamiast tego: Share of Voice, Citation Rate, Mention Rate – metryki, które naprawdę pokazują, jak Twoja marka radzi sobie w erze wyszukiwarek AI.'
 date: 2026-05-05
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-share-of-voice.webp
 icon: '<rect x="3" y="14" width="3" height="7" rx="1"/><rect x="9" y="9" width="3" height="12" rx="1"/><rect x="15" y="4" width="3" height="17" rx="1"/><rect x="20.5" y="11" width="2" height="10" rx="1"/>'
 author:
@@ -32,11 +33,11 @@ Klient pyta: *„Na której pozycji jesteśmy w ChatGPT?"*. **To pytanie nie ma 
 
 ## Dlaczego ranking w LLM-ach nie ma sensu?
 
-Rand Fishkin (SparkToro) opublikował na początku 2026 roku [badanie](https://sparktoro.com/) na 600 ochotnikach, które powinno być punktem wyjścia każdej rozmowy o pomiarze widoczności w AI. Próba objęła 2961 testów, 12 zapytań × 3 platformy AI. Wynik jest jednoznaczny.
+Rand Fishkin (SparkToro) opublikował na początku 2026 roku [badanie](https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/) na 600 ochotnikach, które powinno być punktem wyjścia każdej rozmowy o pomiarze widoczności w AI. Próba objęła 2961 testów, 12 zapytań × 3 platformy AI. Wynik jest jednoznaczny.
 
-> **Mniej niż 1% powtarzalności.** Tylko mniej więcej raz na tysiąc uruchomień zobaczysz dwie identyczne listy źródeł w tej samej kolejności.
+> **Mniej niż 1% szans na tę samą listę marek w dwóch odpowiedziach.** A żeby zobaczyć dwie listy w tej samej kolejności, trzeba średnio około tysiąca uruchomień.
 
-Powód jest techniczny i wynika wprost z natury LLM-ów. Każdy duży model językowy ma tak zwaną temperaturę – parametr decydujący o losowości wyboru kolejnych tokenów. **Nawet przy temperaturze ustawionej na 0 (deterministycznej w teorii) różnice w przetwarzaniu wsadowym i kolejności wczytywania fragmentów powodują, że odpowiedzi się różnią.** Dodatkowo każde zapytanie uruchamia rozszczepienie zapytania (ang. *query fan-out*) – generuje kilkadziesiąt podzapytań, których pula też jest niedeterministyczna.
+Powód jest techniczny i wynika wprost z natury LLM-ów. Każdy duży model językowy ma tak zwaną temperaturę – parametr decydujący o losowości wyboru kolejnych tokenów. **Nawet przy temperaturze ustawionej na 0 (deterministycznej w teorii) różnice w przetwarzaniu wsadowym i kolejności wczytywania fragmentów powodują, że odpowiedzi się różnią.** Dodatkowo każde zapytanie uruchamia rozszczepienie zapytania (ang. *query fan-out*) – generuje wiele podzapytań, których pula też jest niedeterministyczna.
 
 W efekcie sprzedawanie klientowi raportu *„na frazę X jesteśmy na pozycji 3 w ChatGPT"* przypomina raportowanie *„dziś było średnio 14 stopni na ulicy"* – formalnie poprawne, ale praktycznie bezużyteczne. Klient po trzech miesiącach zauważy losowe skoki pozycji. Ma pełne prawo się wkurzyć.
 
@@ -44,11 +45,11 @@ W efekcie sprzedawanie klientowi raportu *„na frazę X jesteśmy na pozycji 3 
 
 Branża GEO ustaliła trzy metryki probabilistyczne – stabilne na przestrzeni dziesiątek lub setek uruchomień, a nie pojedynczych testów. **Razem dają obraz znacznie bliższy temu, co klient naprawdę chce wiedzieć: *„czy ludzie szukający w AI mnie zauważają?"*.**
 
-| Metryka | Co liczy | Skąd się bierze | Dobry wynik (benchmark) |
+| Metryka | Co liczy | Skąd się bierze | Jak czytać wynik |
 |---|---|---|---|
-| **Share of Voice (SoV)** | % zapytań ze wzmianką marki vs konkurencja | Pula 30 zapytań × 4 platformy × 5 uruchomień | 15–20% w rozdrobnionej niszy |
-| **Citation Rate** | % zapytań, w których URL zacytowany jako źródło | Pobieranie (scraping) cytowanych URL-i | 12–18% (lider 25%+) |
-| **Mention Rate** | % zapytań ze wzmianką marki w tekście (bez URL) | Analiza NLP odpowiedzi LLM | 3–5× wyższy niż Citation Rate dla ugruntowanych marek |
+| **Share of Voice (SoV)** | % zapytań ze wzmianką marki vs konkurencja | Pula 30 zapytań × 4 platformy × 5 uruchomień | zawsze w relacji do liderów niszy |
+| **Citation Rate** | % zapytań, w których URL zacytowany jako źródło | Pobieranie (scraping) cytowanych URL-i | porównuj z konkurencją i w trendzie |
+| **Mention Rate** | % zapytań ze wzmianką marki w tekście (bez URL) | Analiza NLP odpowiedzi LLM | u ugruntowanych marek bywa wyższy niż Citation Rate |
 
 ### Share of Voice – relacja, nie liczba absolutna
 
@@ -64,7 +65,7 @@ Citation Rate różni się od SoV jednym szczegółem – tu liczy się tylko cy
 
 Mention Rate to procent zapytań, w których Twoja marka pojawiła się tylko w tekście odpowiedzi, bez URL. Różnica w stosunku do Citation Rate jest znacząca i mówi o dwóch zupełnie różnych mechanizmach. Wzmianka bez linku wynika z obecności marki w danych treningowych modelu. AI po prostu „pamięta", że istniejesz, ale nie wskazuje konkretnego artykułu. **Cytat z linkiem oznacza z kolei, że konkretna strona została wczytana z indeksu w czasie odpowiedzi.**
 
-Britney Muller spuentowała to lapidarnie: *„brand mentions are the new backlinks"*. Wzmianki budujesz przez PR, recenzje, zestawienia *„best of"* i cytowania w mediach – nigdy przez techniczne SEO.
+W branży mówi się wprost, że wzmianki o marce stają się nowymi linkami zwrotnymi. Wzmianki budujesz przez PR, recenzje, zestawienia *„best of"* i cytowania w mediach – nigdy przez techniczne SEO.
 
 ![Share of Voice – jak liczymy widoczność marki w AI: bar chart z procentami konkurencji, formuła SoV (47/222=21%), 30 zapytań × 4 platformy × 5 uruchomień = 600 testów](../../../assets/images/infographic-geo-share-of-voice.png)
 
@@ -72,7 +73,7 @@ Britney Muller spuentowała to lapidarnie: *„brand mentions are the new backli
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Share of Voice nie powstał w erze AI. Termin wymyśliły agencje reklamowe w latach 60., mierząc <strong>udział marki w nakładach reklamowych całej kategorii</strong>. Później przeszedł do mediów cyfrowych jako udział w zasięgu, w wyświetleniach, w wynikach wyszukiwania. Dziś trafia do GEO – i zaczyna mieć więcej wspólnego z oryginalnym znaczeniem niż jakakolwiek klasyczna metryka SEO.</p>
+    <p>Share of Voice nie powstał w erze AI. Termin wywodzi się z reklamy, gdzie oznaczał <strong>udział marki w nakładach reklamowych całej kategorii</strong>. Później przeszedł do mediów cyfrowych jako udział w zasięgu, w wyświetleniach, w wynikach wyszukiwania. Dziś trafia do GEO – i zaczyna mieć więcej wspólnego z oryginalnym znaczeniem niż jakakolwiek klasyczna metryka SEO.</p>
   </div>
 </aside>
 
@@ -91,8 +92,8 @@ W ICEA każdy audyt SoV przebiega według tego samego schematu. Każdy krok przy
 Poznaj trzy najczęstsze pułapki, w które wpadają agencje próbujące „dorobić" GEO do istniejących raportów SEO.
 
 - **Raportowanie pozycji** – klasyczne narzędzia do śledzenia rankingu zaczęły obiecywać śledzenie AI Overviews i ChatGPT. To półprawda, bo pokazują pojedynczy obraz, a nie rozkład probabilistyczny. Klient, który dostaje raport *„na frazę X jesteś w AI Overview na pozycji 2"*, przy następnym sprawdzeniu zobaczy *„nie ma Cię w ogóle"* i zupełnie nie zrozumie dlaczego.
-- **Mieszanie SoV z wyświetleniami** – Search Console pokazuje wyświetlenia w klasycznym Google. Niektórzy próbują tę metrykę przekładać na AI, twierdząc na przykład: *„mamy 10 000 wyświetleń miesięcznie z AI Overviews"*. To liczba, która nie ma żadnego znaczenia, dopóki nie zestawisz jej z wyświetleniami konkurencji. **SoV to relacja, a wyświetlenia to liczba absolutna – tylko relacja mówi coś o pozycji konkurencyjnej.**
-- **Ignorowanie Mention Rate** – większość agencji GEO skupia się tylko na Citation Rate, bo to łatwo mierzalne za pomocą scrapera. Mention Rate wymaga analizy NLP, więc zostaje pomijany. Tymczasem dla marek B2C i ugruntowanych marek B2B Mention Rate jest często 3–5× wyższy niż Citation Rate, a pomijanie go całkowicie zafałszowuje obraz.
+- **Mieszanie SoV z wyświetleniami** – Search Console nie wydziela wyświetleń z AI Overviews ani AI Mode: wlicza je do ogólnego ruchu w typie wyszukiwania „Internet". Twierdzenie *„mamy 10 000 wyświetleń miesięcznie z AI Overviews"* nie ma więc oparcia w GSC, a nawet gdyby taka liczba była dostępna, nic nie znaczy, dopóki nie zestawisz jej z konkurencją. **SoV to relacja, a wyświetlenia to liczba absolutna – tylko relacja mówi coś o pozycji konkurencyjnej.**
+- **Ignorowanie Mention Rate** – większość agencji GEO skupia się tylko na Citation Rate, bo to łatwo mierzalne za pomocą scrapera. Mention Rate wymaga analizy NLP, więc zostaje pomijany. Tymczasem dla marek B2C i ugruntowanych marek B2B Mention Rate bywa wyraźnie wyższy niż Citation Rate, a pomijanie go zafałszowuje obraz.
 
 ## Jak interpretować wyniki?
 
@@ -100,15 +101,15 @@ Pojedynczy SoV na poziomie 18% nic nie mówi. Interpretacja zależy od trzech zm
 
 ### Branża i konkurencja
 
-W niszach silnie zdominowanych przez 1–2 graczy (Stripe vs PayPal w fintechu, Salesforce vs HubSpot w CRM) SoV poniżej 10% jest realistyczny dla pretendenta i nie powinien wywoływać paniki. **W rozdrobnionych niszach (np. agencje SEO, software house'y, doradztwo) lider często ma SoV w okolicach 15–20%, więc 8% to wynik bardzo solidny.**
+W niszach silnie zdominowanych przez 1–2 graczy (Stripe vs PayPal w fintechu, Salesforce vs HubSpot w CRM) niski SoV jest realistyczny dla pretendenta i nie powinien wywoływać paniki. **W rozdrobnionych niszach (np. agencje SEO, software house'y, doradztwo) udziały rozkładają się na wielu graczy, więc nawet jednocyfrowy SoV może być wynikiem solidnym – o ile nie odstaje od lidera.**
 
 ### Charakter zapytań
 
 | Typ pytania | Przykład | Oczekiwany SoV |
 |---|---|---|
-| Brandowe | *„czy [Twoja marka] dobrze tłumaczy [coś]"* | powyżej 50% (test rozpoznawalności) |
-| Kategorialne komercyjne | *„najlepsze CRM 2026"* | 8–20% (konkurencyjność rynku) |
-| Definicyjne | *„czym jest GEO"* | 0–5% (autorytet edukacyjny) |
+| Brandowe | *„czy [Twoja marka] dobrze tłumaczy [coś]"* | wysoki (test rozpoznawalności) |
+| Kategorialne komercyjne | *„najlepsze CRM 2026"* | zależny od konkurencyjności rynku |
+| Definicyjne | *„czym jest GEO"* | zwykle niski (autorytet edukacyjny) |
 
 Mieszanie tych typów w jednej liczbie zafałszowuje obraz. **Zawsze raportujemy je oddzielnie.**
 

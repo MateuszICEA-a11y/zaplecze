@@ -3,6 +3,7 @@ title: 'Jak LLM-y wybierają i cytują źródła'
 subtitle: 'Zrozum mechanizmy wyszukiwania (retrieval) i cytowania, by Twoje treści trafiały do odpowiedzi AI'
 description: 'Jak LLM-y wybierają źródła do cytowania? Mechanizmy RAG, G-Cite vs P-Cite, paradoks głębokości wyszukiwania i co z tego wynika dla Twoich treści.'
 date: 2026-05-08
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-jak-llm-cytuja-zrodla.webp
 icon: '<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>'
 author:
@@ -25,10 +26,11 @@ faq:
       organiczny.
   - q: 'Czy długie artykuły lepiej się cytują niż krótkie?'
     a: >-
-      Nie – i wyniki badań nad paradoksem głębokości wyszukiwania to potwierdzają. Długi artykuł generuje
-      więcej fragmentów w kontekście modelu, co przy semantycznie podobnych sekcjach zwiększa ryzyko
-      błędnej atrybucji. Kilka precyzyjnych, nasyconych danymi sekcji po 100–150 słów ma wyższy wskaźnik
-      cytowań niż jeden artykuł o długości 5000 słów z ogólnikowymi opisami.
+      Nie ma takiej prostej zależności. Długi artykuł generuje więcej fragmentów w kontekście modelu, co przy
+      semantycznie podobnych sekcjach zwiększa ryzyko błędnej atrybucji – badania nad paradoksem głębokości
+      wyszukiwania pokazują, że nadmiar materiału w kontekście pogarsza zgodność cytowań z treścią. Kilka
+      precyzyjnych, nasyconych danymi sekcji daje modelowi lepszy materiał do cytowania niż jeden bardzo
+      długi artykuł z ogólnikowymi opisami.
   - q: 'Czy aktualizacja treści poprawia cytowania?'
     a: >-
       Tak, szczególnie w silnikach RAG z dynamicznym pobieraniem (Perplexity, Google AI Overviews).
@@ -92,7 +94,7 @@ Oba podejścia różnią się pod kątem kluczowych wymiarów technicznych. Wię
 
 Zanim model zdecyduje, co zacytować, musi w ogóle pobrać kandydatów do cytowania. W tym miejscu wkracza [generowanie wspomagane wyszukiwaniem](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG, ang. *Retrieval-Augmented Generation*). To architektura, w której silnik odpowiedzi dynamicznie przeczesuje zewnętrzne źródła i dostarcza wybrane fragmenty jako kontekst do generowania tekstu.
 
-**Silnik RAG nie czyta strony jak człowiek.** Dzieli tekst na fragmenty o długości 50–150 słów, zamienia je na reprezentacje wektorowe (ang. *embeddings* – liczbowe reprezentacje znaczenia tekstu) i wyszukuje te, które są semantycznie najbliższe zapytaniu. Nie ocenia „jakości artykułu" jako całości. Analizuje każdy fragment osobno. To fundamentalna różnica. Możesz mieć świetny artykuł, ale jeśli żaden jego wycinek nie odpowiada samodzielnie na konkretne pytanie, silnik po prostu go pominie.
+**Silnik RAG nie czyta strony jak człowiek.** Dzieli tekst na krótsze fragmenty (ich długość zależy od konkretnego systemu), zamienia je na reprezentacje wektorowe (ang. *embeddings* – liczbowe reprezentacje znaczenia tekstu) i wyszukuje te, które są semantycznie najbliższe zapytaniu. Nie ocenia „jakości artykułu" jako całości. Analizuje każdy fragment osobno. To fundamentalna różnica. Możesz mieć świetny artykuł, ale jeśli żaden jego wycinek nie odpowiada samodzielnie na konkretne pytanie, silnik po prostu go pominie.
 
 O wyborze konkretnego fragmentu przez RAG decydują trzy kluczowe właściwości.
 
@@ -106,23 +108,23 @@ Jeśli chcesz sprawdzić, jak Twoje konkretne adresy URL wypadają pod kątem cy
 
 To jeden z najtrudniejszych do zaakceptowania faktów dla osób, które latami inwestowały w budowanie autorytetu domeny. **Analizy porównawcze wykazują, że jedynie 12% adresów URL cytowanych przez modele językowe pokrywa się z czołową dziesiątką organicznych wyników Google dla tego samego zapytania.** Modele nie sprawdzają, ile linków zwrotnych (backlinków) ma strona. Weryfikują wyłącznie to, czy dany fragment jest jednoznaczny i nasycony danymi.
 
-Badanie [Aggarwal et al. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University zdefiniowało konkretne czynniki podnoszące widoczność źródła w odpowiedziach LLM.
+Badanie [Aggarwal et al. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University zmierzyło, jak konkretne zmiany w treści wpływają na widoczność źródła w odpowiedziach generatywnych. Testy prowadzono na własnym silniku opartym na GPT-3.5 oraz w Perplexity.ai, a poniższe wartości dotyczą metryki uwzględniającej liczbę i pozycję słów źródła w odpowiedzi (PAWC).
 
-- **Statystyki i dane liczbowe** – wzrost wskaźnika cytowań o 15–40%, ponieważ liczby są łatwiejsze do ekstrakcji przez parsery wektorowe niż opisy narracyjne
-- **Cytaty eksperckie** – wzrost o 30–40%, co wynika z faktu, że to gotowe moduły językowe o wysokim autorytecie semantycznym, które model może bezpiecznie powtórzyć
-- **Formatowanie fragmentów 50–150 słów** – 2,3-krotny wzrost prawdopodobieństwa wyboru, czyli optymalny rozmiar pod algorytmy podziału na fragmenty
-- **Trzy lub więcej punktów danych na sekcję** – 2,5-krotny wzrost liczby cytowań, co ułatwia modelowi agregację danych porównawczych
-- **Optymalizacja płynności tekstu** – wzrost o 15–30%, gdzie brak błędów językowych zmniejsza opór przetwarzania dla modelu
+- **Cytaty eksperckie** – wzrost o ok. 42,6%, bo to gotowe, autorytatywne sformułowania, które model może bezpiecznie powtórzyć
+- **Statystyki i dane liczbowe** – wzrost o ok. 32,8%, bo liczby łatwiej wyodrębnić jako weryfikowalne fakty niż opisy narracyjne
+- **Optymalizacja płynności tekstu** – wzrost o ok. 28,7%
+- **Powoływanie się na źródła** – wzrost o ok. 27,7%
+- **Upychanie słów kluczowych** – niewielka poprawa albo żadna
 
-**Strony z pozycji 5–10 w Google, które zastosowały statystyki i cytowania ekspertów, zwiększały widoczność w LLM o 115,1% – znacznie więcej niż domeny z pozycji 1–3, które tego nie zrobiły.** To empiryczne potwierdzenie. Gęstość faktograficzna bezwzględnie przebija autorytet domeny w logice cytowania przez LLM.
+**Najciekawszy wynik dotyczy stron z niższych pozycji: strona z 5. miejsca w wynikach wyszukiwania, która zaczęła powoływać się na źródła, zwiększyła widoczność o 115,1%, a ta sama metoda obniżyła widoczność strony z 1. miejsca o 30,3%.** Wysoka pozycja nie jest więc warunkiem cytowania – wiarygodność fragmentu potrafi zniwelować przewagę autorytetu domeny.
 
-W tej samej analizie opisano jeszcze jedno zjawisko. Marka lub domena pojawia się w odpowiedzi o 161% częściej, jeśli spójnie występuje w wynikach wielu podzapytań (rozszczepienie zapytania, ang. *query fan-out*) generowanych przez model na etapie dekompozycji zapytania głównego. Dokładny opis tego mechanizmu znajdziesz w artykule o [query fan-out](/geo/query-fan-out/). Zobaczysz tam na przykładzie, jak jedno złożone zapytanie B2B rozkłada się na kilkanaście podzapytań.
+Analiza Surfera (Google AI Overviews, 173 902 adresy URL) opisuje jeszcze jedno zjawisko. Strony widoczne w wynikach organicznych nie tylko na zapytanie główne, ale też na podzapytania (rozszczepienie zapytania, ang. *query fan-out*) generowane przy dekompozycji zapytania głównego, miały o 161% większą szansę na cytowanie. Dokładny opis tego mechanizmu znajdziesz w artykule o [query fan-out](/geo/query-fan-out/). Zobaczysz tam na przykładzie, jak jedno złożone zapytanie B2B rozkłada się na kilkanaście podzapytań.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Rozszczepienie zapytania (query fan-out) odpowiada za <strong>51% wszystkich cytowań generowanych w komercyjnych silnikach odpowiedzi</strong>. Oznacza to, że ponad połowa decyzji o cytowaniu zapada nie na etapie odpowiedzi na pytanie główne, ale podczas budowania odpowiedzi na podzapytania wygenerowane automatycznie przez model. Jeśli marka pojawia się spójnie we wszystkich ścieżkach podzapytań, jej przewaga nad dobrze pozycjonowaną, ale tematycznie wąską stroną jest dramatyczna.</p>
+    <p>W analizie Surfera <strong>51,2% cytowań w Google AI Overviews, które trafiły do stron rankujących organicznie, dotyczyło stron widocznych zarówno na zapytanie główne, jak i na co najmniej jedno podzapytanie (query fan-out)</strong>. Strony rankujące wyłącznie na zapytanie główne odpowiadały za 19,6% takich cytowań. Jeśli marka pojawia się spójnie w wielu ścieżkach podzapytań, zyskuje wyraźną przewagę nad dobrze pozycjonowaną, ale tematycznie wąską stroną.</p>
   </div>
 </aside>
 
@@ -142,14 +144,14 @@ Dostosowywanie modeli metodą RLHF (ang. *Reinforcement Learning from Human Feed
 
 To jeden z najważniejszych wyników badań nad agentami badawczymi, a zarazem jeden z najmniej intuicyjnych. Można by sądzić, że im więcej źródeł sprawdzi agent, tym rzetelniejsza będzie odpowiedź. Rzeczywistość jest jednak zupełnie odwrotna.
 
-Ewaluacja 14 czołowych modeli komercyjnych i otwartoźródłowych (open-source) ujawniła charakterystyczny wzorzec. Wiarygodność cytowań mierzono w trzech wymiarach. Były to poprawność linków, zgodność tematyczna i faktyczna weryfikowalność twierdzeń (Fact Check). Podczas gdy dwa pierwsze wymiary pozostają stabilne niezależnie od liczby wywołań wyszukiwarki, trzeci dramatycznie spada wraz z rosnącą głębokością wyszukiwania.
+Ewaluacja 14 czołowych modeli komercyjnych i otwartoźródłowych (open-source) ujawniła charakterystyczny wzorzec. Wiarygodność cytowań mierzono w trzech wymiarach. Były to poprawność linków, zgodność tematyczna i faktyczna weryfikowalność twierdzeń (Fact Check). Wpływ głębokości wyszukiwania autorzy sprawdzili na dwóch modelach – GPT-5.4 i Claude Opus 4.6. Dwa pierwsze wymiary pozostają stabilne niezależnie od liczby wywołań wyszukiwarki, a trzeci spada wraz z rosnącą głębokością wyszukiwania – średnio o ok. 42%. Najmocniej widać to w GPT-5.4.
 
-| Liczba wywołań wyszukiwarki | Poprawność linków | Zgodność tematyczna | Weryfikowalność faktów |
+| Liczba wywołań wyszukiwarki (GPT-5.4) | Poprawność linków | Zgodność tematyczna | Weryfikowalność faktów |
 |---|---|---|---|
 | 2 wywołania | > 92% | > 92% | 79% |
 | 150 wywołań | > 92% | > 92% | 17% |
 
-**Zwiększenie liczby przeszukiwanych stron z 2 do 150 obniża faktyczną weryfikowalność cytowań o około 62 punkty procentowe, przy niezmienionej poprawności linków.** Model nadal podaje prawidłowe adresy URL i tematycznie pasujące źródła. Niestety treść, do której się odwołuje, nie zawsze potwierdza zacytowane fakty.
+**W GPT-5.4 zwiększenie liczby wywołań wyszukiwarki z 2 do 150 obniżyło faktyczną weryfikowalność cytowań o 62 punkty procentowe, przy niezmienionej poprawności linków (Claude Opus 4.6 był odporniejszy – spadek z 80% do 58%).** Model nadal podaje prawidłowe adresy URL i tematycznie pasujące źródła. Niestety treść, do której się odwołuje, nie zawsze potwierdza zacytowane fakty.
 
 Przyczyną jest semantyczne przeciążenie kontekstu. Olbrzymia ilość pobranych danych wprowadza szum informacyjny, który rozprasza mechanizmy uwagi modelu generatora. W konsekwencji model poprawnie wnioskuje fakty ze swojej wiedzy parametrycznej, ale przypisuje je do losowych adresów URL, które znajdowały się w oknie kontekstowym. To zjawisko zwane błędną atrybucją (ang. *misattribution*).
 
@@ -168,14 +170,11 @@ Co z tego wynika w praktyce? Dla Twojej strategii GEO oznacza to jedno. **Twój 
 
 Skoro już wiesz, jak modele cytują, warto dowiedzieć się, jak mierzyć jakość tych cytowań. Standardowe metody mają istotne ograniczenia. Mogą one prowadzić do całkowicie błędnych wniosków o własnej widoczności.
 
-Platformy ewaluacyjne takie jak ALCE (Academic Long-Context Evaluation) testowały spójność modeli na wymagających zbiorach pytań. Wykazały, że **nawet najlepsze komercyjne modele nie zapewniają pełnego wsparcia źródłowego dla generowanych tez w blisko 50% przypadków.** Standard automatycznej oceny AutoAIS (opracowany przez Google, oparty na modelu T5-XXL) ocenia cytowanie binarnie. Fragment albo wspiera tezę, albo nie. Ta uproszczona logika wnioskowania naturalnego (NLI) jest całkowicie nieczuła na niuanse semantyczne.
+Platformy ewaluacyjne takie jak ALCE (Automatic LLMs’ Citation Evaluation) testowały spójność modeli na wymagających zbiorach pytań. Wykazały, że **nawet najlepsze modele nie zapewniają pełnego wsparcia źródłowego dla generowanych tez w około 50% przypadków (zbiór ELI5).** Standard automatycznej oceny AutoAIS (opracowany przez Google, oparty na modelu T5-XXL) ocenia cytowanie binarnie. Fragment albo wspiera tezę, albo nie. Ta uproszczona logika wnioskowania naturalnego (NLI) jest całkowicie nieczuła na niuanse semantyczne.
 
 Bardziej zaawansowane ramy ewaluacyjne, takie jak CiteEval (CiteBench), wprowadzają trzystopniową gradację. Obejmuje ona pełne poparcie, częściowe poparcie i brak poparcia. Uwzględniają też pełny kontekst zapytania i historię wyszukiwania. To eliminuje nadmierną penalizację modeli za trafne cytowania, które nie pasują do wąsko zdefiniowanej bazy NLI.
 
 Dla praktyka GEO ma to jedno konkretne przełożenie. Jeśli monitorujesz widoczność marki narzędziem, które mierzy tylko obecność lub nieobecność cytowania (binarnie), możesz przeoczyć ważne przypadki. Chodzi o sytuacje, w których Twoja marka jest wzmiankowana poprawnie, ale bez bezpośredniego linku. Szczegółowe podejście do pomiaru opisuje artykuł o [audycie widoczności marki](/geo/audyt-widocznosci-marki/). Znajdziesz tam wskazówkę, jak odróżnić Citation Rate od Mention Rate w praktycznym pomiarze.
-
-Warto też pamiętać, że wyniki ewaluacji zależą od struktury danych weryfikacyjnych. Analiza błędów automatycznej ewaluacji pokazuje, że **ponad 66% pomyłek klasyfikacyjnych wynika z braku wrażliwości modeli ewaluacyjnych na drobnoziarniste informacje faktograficzne.** Innymi słowy, narzędzia pomiarowe często nie wykrywają błędów, które dla ludzkiego oceniającego byłyby całkowicie oczywiste.
-
 ## Co to oznacza dla Twoich treści?
 
 Mechanizmy opisane powyżej przekładają się na konkretne decyzje redakcyjne. **Nie optymalizujesz „artykułu" – optymalizujesz każdy fragment z osobna.** RAG ocenia wycinki, a nie całe strony.
@@ -184,7 +183,7 @@ Poznaj zestaw reguł, które wynikają bezpośrednio z opisanych mechanizmów.
 
 - **Front-loading w każdej sekcji** – wczesne sygnalizowanie kluczowych informacji (ang. *front-loading*), gdzie kluczowa teza lub liczba musi pojawić się w pierwszych dwóch zdaniach pod nagłówkiem, ponieważ silnik pobiera fragment, ale nie wie, co jest na dole akapitu
 - **Dane liczbowe z datą i źródłem** – „wzrost o 30%” to konkretne dane do ekstrakcji, podczas gdy „znaczny wzrost” to szum, który model po prostu ignoruje
-- **Fragmenty 50–150 słów** – optymalny rozmiar dla algorytmów podziału na fragmenty, w którym zbyt długie bloki tracą samodzielność semantyczną, a zbyt krótkie tracą kontekst
+- **Zwarte fragmenty** – krótkie, samodzielne bloki pod jednym nagłówkiem, bo zbyt długie tracą spójność semantyczną, a zbyt krótkie tracą kontekst (optymalny rozmiar zależy od systemu i nie ma jednej potwierdzonej badaniami długości)
 - **Unikalne ujęcia tematyczne** – dwa artykuły o podobnym temacie rywalizują o ten sam slot w kontekście modelu, więc jeden wygrywa, a drugi jest ignorowany lub generuje błędną atrybucję
 - **Spójność danych w sieci** – jeśli Twoja strona i partnerski blog podają różne liczby dotyczące tej samej kwestii, model uzna tę informację za niejednoznaczną i usunie ją z syntezy
 

@@ -3,6 +3,7 @@ title: 'Google mówi: rób SEO po staremu. Czego nie dopowiada o wyszukiwaniu AI
 subtitle: 'Google wydało uspokajający przewodnik po optymalizacji pod AI. Haczyk? To perspektywa giganta, który po raz pierwszy czuje na plecach oddech konkurencji. Rozkładamy dokument na czynniki pierwsze: wskazujemy, gdzie Google ma rację, a co celowo przemilcza.'
 description: 'Analiza przewodnika Google o optymalizacji pod generatywną AI okiem specjalistów AI Search. Co jest prawdą, gdzie Google nie mówi wszystkiego o llms.txt, GEO i wzmiankach, i dlaczego jego rady są optymalne dla Google, a niekoniecznie dla Ciebie.'
 date: 2026-05-29
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-co-google-przemilcza.webp
 icon: '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>'
 author:
@@ -58,7 +59,10 @@ sources:
     note: 'TechCrunch, 27 lutego 2026. Dane OpenAI o 900 mln tygodniowych użytkowników ChatGPT.'
   - title: 'Department of Justice Wins Significant Remedies Against Google'
     url: 'https://www.justice.gov/opa/pr/department-justice-wins-significant-remedies-against-google'
-    note: 'Departament Sprawiedliwości USA, 2 września 2025. Przywołuje wyrok z sierpnia 2024 roku, w którym sąd w Dystrykcie Kolumbii uznał Google za monopolistę.'
+    note: 'Departament Sprawiedliwości USA, 2 września 2025. Przywołuje wyrok z sierpnia 2024 roku, w którym sąd w Dystrykcie Kolumbii uznał Google za monopolistę w wyszukiwaniu i reklamie w wyszukiwarce.'
+  - title: 'United States v. Google LLC (2020)'
+    url: 'https://en.wikipedia.org/wiki/United_States_v._Google_LLC_(2020)'
+    note: 'Wikipedia. Wyrok sędziego Amita Mehty z 5 sierpnia 2024 roku: nielegalne utrzymywanie monopolu w usługach wyszukiwania ogólnego i reklamie tekstowej.'
 ---
 Google opublikowało oficjalny przewodnik <strong><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=pl" target="_blank" rel="noopener noreferrer">„Optymalizacja witryny pod kątem funkcji opartych na generatywnej AI w wyszukiwarce Google"</a></strong>. Przekaz jest uspokajający: rób dobre SEO po staremu, nie daj się nabrać na „sztuczki" GEO, nie potrzebujesz llms.txt ani specjalnych zabiegów. Po lekturze przedsiębiorca ma poczuć, że nic się nie zmieniło i wszystko jest pod kontrolą. **Problem w tym, że ten dokument nie opisuje wyszukiwania AI – opisuje wyszukiwanie AI w produktach Google.** A to dziś dwie różne rzeczy, i właśnie na tej różnicy zarabia się albo traci widoczność.
 
@@ -124,7 +128,7 @@ A rynek odpowiadania na pytania użytkowników przestał być jednolity. Owszem,
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Kontekst, o którym Google nie wspomina</div>
-    <p>W sierpniu 2024 roku sąd federalny w USA (sędzia Amit Mehta) orzekł, że Google <strong>nielegalnie utrzymywał monopol</strong> w wyszukiwaniu ogólnym i reklamie tekstowej. Firma działa dziś pod presją regulacyjną i w obliczu pierwszej realnej konkurencji w historii. Przewodnik, który zapewnia „nic się nie zmienia, słuchajcie nas", warto czytać również jako komunikat broniący status quo, a nie tylko neutralny poradnik techniczny.</p>
+    <p>W sierpniu 2024 roku sąd federalny w USA (sędzia Amit Mehta) orzekł, że Google <strong>nielegalnie utrzymywał monopol</strong> w usługach wyszukiwania ogólnego i reklamie tekstowej w wyszukiwarce. Firma działa dziś pod presją regulacyjną i w obliczu pierwszej realnej konkurencji w historii. Przewodnik, który zapewnia „nic się nie zmienia, słuchajcie nas", warto czytać również jako komunikat broniący status quo, a nie tylko neutralny poradnik techniczny.</p>
   </div>
 </aside>
 

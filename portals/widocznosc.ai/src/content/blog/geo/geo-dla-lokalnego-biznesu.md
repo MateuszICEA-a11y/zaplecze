@@ -3,6 +3,7 @@ title: 'GEO dla lokalnego biznesu – widoczność w wyszukiwaniu konwersacyjnym
 subtitle: 'Dowiedz się, jak sprawić, by asystenci AI polecali właśnie Twoją firmę zamiast konkurencji'
 description: 'GEO dla lokalnego biznesu: jak zoptymalizować stronę pod ChatGPT, Perplexity i Google AI Mode. Praktyczny poradnik L2 – spójność encji, schema.org, llms.txt, pomiar cytowań.'
 date: 2026-05-01
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-geo-dla-lokalnego-biznesu.webp
 icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><circle cx="12" cy="6" r="1.5"/>'
 author:
@@ -23,7 +24,10 @@ sources:
     note: 'Wikipedia. Definicja RAG – techniki, dzięki której model generatywny pobiera i włącza do odpowiedzi zewnętrzne informacje.'
   - title: 'GEO: Generative Engine Optimization'
     url: 'https://arxiv.org/abs/2311.09735'
-    note: 'Aggarwal i in., KDD 2024. Benchmark 10 tys. zapytań z 25 dziedzin, dziewięć taktyk i wzrost widoczności o 115,1% dla stron z piątej pozycji.'
+    note: 'Aggarwal i in., KDD 2024. Benchmark 10 tys. zapytań z 25 dziedzin, dziewięć taktyk (cytaty +42,6%, statystyki +32,8%) i wzrost widoczności o 115,1% dla strony z piątej pozycji przy powołaniu na źródła.'
+  - title: 'Overview of OpenAI Crawlers'
+    url: 'https://developers.openai.com/api/docs/bots'
+    note: 'OpenAI, dokumentacja. GPTBot zbiera dane treningowe, a o widoczności w wyszukiwaniu ChatGPT decyduje OAI-SearchBot.'
   - title: 'Local business (LocalBusiness) structured data'
     url: 'https://developers.google.com/search/docs/appearance/structured-data/local-business'
     note: 'Google Search Central. Zalecenie najbardziej precyzyjnego podtypu LocalBusiness oraz właściwości geo i openingHoursSpecification.'
@@ -34,7 +38,7 @@ sources:
     url: 'https://llmstxt.org/'
     note: 'Jeremy Howard, propozycja z 3 września 2024. Format Markdown pliku llms.txt i konwencja sekcji Optional.'
 ---
-Gdy użytkownik pyta ChatGPT „który dentysta na Mokotowie przyjmuje w sobotę", model nie otwiera Google Maps. Syntetyzuje odpowiedź z tego, co zdążył zaindeksować i czemu ufa. Jeśli Twoja firma nie jest opisana w sposób maszynowo czytelny, po prostu znikasz z radaru. **GEO (Generative Engine Optimization, czyli optymalizacja pod generatywne silniki wyszukiwania) to zestaw konkretnych działań, które zmieniają ten stan rzeczy.** Dla biznesów lokalnych to kwestia przetrwania. Gartner prognozuje 25-procentowy spadek tradycyjnego ruchu z wyszukiwarek do końca 2026 roku na rzecz narzędzi konwersacyjnych.
+Gdy użytkownik pyta ChatGPT „który dentysta na Mokotowie przyjmuje w sobotę", model nie otwiera Google Maps. Syntetyzuje odpowiedź z tego, co zdążył zaindeksować i czemu ufa. Jeśli Twoja firma nie jest opisana w sposób maszynowo czytelny, po prostu znikasz z radaru. **GEO (Generative Engine Optimization, czyli optymalizacja pod generatywne silniki wyszukiwania) to zestaw konkretnych działań, które zmieniają ten stan rzeczy.** Dla biznesów lokalnych to kwestia przetrwania. Gartner prognozuje, że do 2026 roku wolumen zapytań w tradycyjnych wyszukiwarkach spadnie o 25% na rzecz chatbotów AI i innych wirtualnych agentów.
 
 ## Dlaczego lokalne SEO nie wystarcza?
 
@@ -70,13 +74,13 @@ Wolne witryny to kolejny problem. Strona ładująca się powyżej 5 sekund może
 
 ### Małe firmy mają przewagę
 
-Tu pojawia się dobra wiadomość. Badanie Princeton University (Aggarwal et al., KDD 2024, [arxiv.org/abs/2311.09735](https://arxiv.org/abs/2311.09735)) udowodniło, że witryny z pozycji 5–10 w Google, które wdrożyły statystyki i cytowania źródeł, zwiększały widoczność w LLM o 115,1%. Zyskały więcej niż domeny z pozycji 1–3, które zignorowały ten krok. **GEO to jedna z niewielu taktyk marketingowych, w której mniejszy gracz z dobrze opisanymi danymi może wyprzedzić regionalnego lidera.**
+Tu pojawia się dobra wiadomość. Badanie Princeton University (Aggarwal et al., KDD 2024, [arxiv.org/abs/2311.09735](https://arxiv.org/abs/2311.09735)) pokazało, że strona z 5. pozycji w wynikach wyszukiwania po dodaniu powołań na źródła zwiększyła widoczność w odpowiedzi silnika generatywnego o 115,1%. Ta sama zmiana obniżyła widoczność strony z 1. pozycji o 30,3%. **GEO to jedna z niewielu taktyk marketingowych, w której mniejszy gracz z dobrze opisanymi danymi może wyprzedzić regionalnego lidera.**
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Badanie Princeton (KDD 2024) przetestowało 9 taktyk optymalizacji treści na zestawie 10 000 zapytań z 25 dziedzin. Tylko 5 z 9 taktyk przyniosło istotny wzrost widoczności w LLM. Keyword stuffing – klasyczny zabieg SEO – nie tylko nie pomagał, ale aktywnie obniżał wskaźnik cytowań. <strong>Strony o niskim autorytecie domenowym, które dodały cytowania i dane liczbowe, zwiększyły widoczność w modelach AI o 115,1%.</strong></p>
+    <p>Badanie Princeton (KDD 2024) przetestowało 9 taktyk optymalizacji treści na zestawie 10 000 zapytań z 25 dziedzin. Najlepiej wypadło dodanie cytatów (+42,6%) i statystyk (+32,8%), a keyword stuffing – klasyczny zabieg SEO – dawał niewielką poprawę albo żadną. <strong>Strona z 5. pozycji w wynikach, która powołała się na źródła, zwiększyła widoczność w odpowiedzi AI o 115,1%.</strong></p>
   </div>
 </aside>
 
@@ -187,7 +191,7 @@ Jeśli chcesz zobaczyć, jak Twoja witryna jest aktualnie oceniana pod kątem st
 
 GEO dla małego biznesu lokalnego nie wymaga wielomiesięcznego projektu. **Pierwsze mierzalne efekty – wzrost Citation Rate o 10–20% – pojawiają się po 4–6 tygodniach od wdrożenia poprawek technicznych i treściowych.** Oto sekwencja, którą polecamy klientom:
 
-**Tydzień 1 – fundament danych.** Zweryfikuj i ujednolić NAP we wszystkich miejscach w sieci. Dodaj lub popraw schemat JSON-LD z pełnym `@type` i `openingHoursSpecification`. Odblokuj boty AI w `robots.txt` (sprawdź, czy `GPTBot`, `ClaudeBot` i `PerplexityBot` nie są przypadkowo blokowane).
+**Tydzień 1 – fundament danych.** Zweryfikuj i ujednolić NAP we wszystkich miejscach w sieci. Dodaj lub popraw schemat JSON-LD z pełnym `@type` i `openingHoursSpecification`. Odblokuj boty AI w `robots.txt` (sprawdź, czy `OAI-SearchBot`, `GPTBot`, `ClaudeBot` i `PerplexityBot` nie są przypadkowo blokowane).
 
 **Tydzień 2 – pliki dla modeli AI.** Stwórz `llms.txt` z opisem firmy, usługami, lokalizacją i godzinami. Wystarczy jeden plik, 30–50 linii Markdown. Dodaj `sameAs` do schematu JSON-LD, wskazując na GBP, LinkedIn i Wikidata, jeśli masz tam wpis.
 

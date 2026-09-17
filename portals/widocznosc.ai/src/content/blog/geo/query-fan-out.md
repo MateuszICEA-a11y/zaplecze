@@ -1,8 +1,9 @@
 ---
-title: 'Query fan-out w Google AI Mode – jak jeden prompt rozkłada się na 30 zapytań'
+title: 'Query fan-out w Google AI Mode – jak jeden prompt rozkłada się na wiele zapytań'
 subtitle: 'Mechanizm, dzięki któremu Google AI Mode rozumie złożone pytania – i co to znaczy dla pozycjonowania w 2026'
-description: 'Czym jest query fan-out, jak Google AI Mode dekomponuje pojedyncze pytanie na dziesiątki podzapytań, dlaczego klasyczne SEO już tu nie wystarcza i jak optymalizować content pod nową logikę pobierania danych.'
+description: 'Czym jest query fan-out, jak Google AI Mode dekomponuje pojedyncze pytanie na wiele podzapytań, dlaczego klasyczne SEO już tu nie wystarcza i jak optymalizować content pod nową logikę pobierania danych.'
 date: 2026-05-14
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-query-fan-out.webp
 icon: '<circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="19" cy="19" r="2.5"/><line x1="7.5" y1="5.5" x2="16.5" y2="5.5"/><line x1="6.5" y1="6.5" x2="16.5" y2="11.5"/><line x1="6.5" y1="6.5" x2="16.5" y2="18"/>'
 author:
@@ -26,7 +27,7 @@ sources:
     note: 'Kevin Indig, Growth Memo, 23 marca 2026. Analiza ok. 1,2 mln odpowiedzi ChatGPT: w porównaniach produktów top 10 domen zbiera 46% cytowań.'
   - title: 'GEO: Generative Engine Optimization'
     url: 'https://arxiv.org/abs/2311.09735'
-    note: 'Aggarwal i in., KDD 2024. Dodanie cytowań, cytatów i statystyk podnosi widoczność w odpowiedziach silników generatywnych o 30–40%, keyword stuffing jej nie poprawia.'
+    note: 'Aggarwal i in., KDD 2024. Dodanie cytatów (+42,6%), statystyk (+32,8%) i powołań na źródła (+27,7%) podnosi widoczność w odpowiedziach silników generatywnych; keyword stuffing daje niewielką poprawę lub żadną.'
   - title: 'Understanding searches better than ever before'
     url: 'https://blog.google/products/search/search-language-understanding-bert/'
     note: 'Google, Pandu Nayak, 25 października 2019. Wdrożenie modelu BERT w wyszukiwarce.'
@@ -40,17 +41,17 @@ sources:
     url: 'https://almcorp.com/blog/chatgpt-citations-study-44-percent-first-third-content/'
     note: 'ALM Corp, omówienie badania Kevina Indiga z lutego 2026 roku. 44,2% cytowań ChatGPT pochodzi z pierwszych 30% treści.'
 ---
-Klasyczne SEO przyzwyczaiło nas do prostego modelu: użytkownik wpisuje frazę, wyszukiwarka dopasowuje wyniki, a my optymalizujemy pod to treść. **Query fan-out (rozszczepienie zapytania) wywraca ten schemat do góry nogami.** Pomiędzy pytaniem a odpowiedzią pojawia się nowa warstwa. Rozbija ona jeden prompt na dziesiątki szczegółowych podzapytań i dopiero one trafiają do indeksu. **Jeśli Twoja strona pasuje do oryginalnej frazy, ale omija 30 wygenerowanych podzapytań, w odpowiedzi AI po prostu Cię nie ma.**
+Klasyczne SEO przyzwyczaiło nas do prostego modelu: użytkownik wpisuje frazę, wyszukiwarka dopasowuje wyniki, a my optymalizujemy pod to treść. **Query fan-out (rozszczepienie zapytania) wywraca ten schemat do góry nogami.** Pomiędzy pytaniem a odpowiedzią pojawia się nowa warstwa. Rozbija ona jeden prompt na wiele szczegółowych podzapytań i dopiero one trafiają do indeksu. **Jeśli Twoja strona pasuje do oryginalnej frazy, ale omija wygenerowane podzapytania, w odpowiedzi AI po prostu Cię nie ma.**
 
 ## Czym jest query fan-out?
 
-Query fan-out (po polsku: rozszczepienie zapytania) to proces, w którym model językowy automatycznie rozbija pojedyncze pytanie użytkownika na wiele konkretnych podzapytań. Każde z nich trafia osobno do silnika pobierającego dane (klasycznego indeksu Google). Ten zwraca pasujące fragmenty. Na końcu model łączy wszystkie wycinki w jedną spójną odpowiedź.
+Query fan-out (po polsku: rozszczepienie zapytania) to proces, w którym model językowy automatycznie rozbija pojedyncze pytanie użytkownika na wiele konkretnych podzapytań. Każde z nich trafia osobno do silnika pobierającego dane (indeksu Google lub innych źródeł danych). Ten zwraca pasujące fragmenty. Na końcu model łączy wszystkie wycinki w jedną spójną odpowiedź.
 
 Spójrz na praktyczny przykład – ktoś zadaje pytanie w Google AI Mode.
 
 > *"Jaki CRM wybrać dla 5-osobowego zespołu sprzedaży B2B SaaS?"*
 
-Model wcale nie szuka stron z tą dokładną frazą. Zamiast tego generuje 20–30 podzapytań w stylu *"najlepsze CRM-y dla małych zespołów"*, *"HubSpot vs Pipedrive cena"*, *"integracje CRM ze Slackiem"*, *"koszt CRM dla startupu"*. Każde z nich otrzymuje własną listę wyników. **Twoja strona musi pasować przynajmniej do kilku z nich, żeby algorytm uwzględnił ją w finalnej odpowiedzi.**
+Model wcale nie szuka stron z tą dokładną frazą. Zamiast tego generuje serię podzapytań w stylu *"najlepsze CRM-y dla małych zespołów"*, *"HubSpot vs Pipedrive cena"*, *"integracje CRM ze Slackiem"*, *"koszt CRM dla startupu"*. Każde z nich otrzymuje własną listę wyników. **Twoja strona musi pasować przynajmniej do kilku z nich, żeby algorytm uwzględnił ją w finalnej odpowiedzi.**
 
 ## Cztery etapy mechanizmu
 
@@ -59,7 +60,7 @@ Cały proces rozkłada się w ułamkach sekund na cztery wyraźne fazy. Każda z
 | Etap | Co się dzieje | Wpływ na content |
 |---|---|---|
 | 1. Zrozumienie intencji | Model interpretuje, czego użytkownik naprawdę chce – informacja, porównanie, decyzja zakupowa | Tytuły i wstępy muszą jasno sygnalizować typ treści |
-| 2. Generacja podzapytań | Model tworzy 20–40 wariantów, synonimów, podpytań uzupełniających i porównawczych | Trzeba opracować pełną grupę intencji wokół tematu |
+| 2. Generacja podzapytań | Model tworzy wiele wariantów, synonimów, podpytań uzupełniających i porównawczych | Trzeba opracować pełną grupę intencji wokół tematu |
 | 3. Pobranie fragmentów | Każde podzapytanie idzie osobno do indeksu, system wyciąga konkretne fragmenty, nie całe strony | Struktura tekstu z podziałem na fragmenty 3-5 zdań, unikanie ścian tekstu |
 | 4. Synteza i cytowanie | Model łączy fragmenty w odpowiedź, lista źródeł obok | Liczy się fragmentaryczna wartość, nie pozycja strony w rankingu jako całości |
 
@@ -67,7 +68,7 @@ W praktyce Twój blog może zajmować 50. miejsce w klasycznym Google na frazę 
 
 ## Konkretny przykład rozkładu
 
-Weźmy pozornie proste pytanie: *"Czy warto kupować używanego Forda Mondeo z silnikiem Diesla po 2015?"*. Model błyskawicznie rozbija je na kilkadziesiąt podzapytań. Należą do nich między innymi:
+Weźmy pozornie proste pytanie: *"Czy warto kupować używanego Forda Mondeo z silnikiem Diesla po 2015?"*. Model błyskawicznie rozbija je na wiele podzapytań. Należą do nich między innymi:
 
 - najczęstsze usterki Forda Mondeo Diesel po 2015
 - żywotność silnika TDCi 2.0 Ford
@@ -82,19 +83,19 @@ Weźmy pozornie proste pytanie: *"Czy warto kupować używanego Forda Mondeo z s
 - zużycie paliwa Mondeo TDCi w mieście
 - ceny używanych Mondeo 2015–2018 w Polsce
 
-Do tego dochodzi kolejne 10–15 wariantów. Strona walcząca o cytowanie wcale nie musi zajmować pierwszego miejsca na żadne z tych podzapytań. **Wystarczy, że dostarczy kilka fragmentów trafiających do top 5 wyników w 5–8 z nich, a AI uzna ją za wartościowe źródło i prawdopodobnie zacytuje.**
+Lista nie jest zamknięta – model może dołożyć kolejne warianty. Strona walcząca o cytowanie wcale nie musi zajmować pierwszego miejsca na żadne z tych podzapytań. **Jeśli dostarczy trafne fragmenty dla kilku z nich, rosną szanse, że AI uzna ją za wartościowe źródło i ją zacytuje.**
 
 ## Co to znaczy dla SEO i GEO?
 
 Z tego mechanizmu wynikają trzy fundamentalne zmiany w sposobie projektowania treści:
 
-- **Pokrycie tematyczne zamiast jednej frazy** – dla każdego głównego zapytania komercyjnego opracuj mapę 20–40 podzapytań, na które sztuczna inteligencja prawdopodobnie rozszczepi zapytanie, i upewnij się, że na każde z nich masz przygotowany konkretny fragment z odpowiedzią
+- **Pokrycie tematyczne zamiast jednej frazy** – dla każdego głównego zapytania komercyjnego opracuj mapę podzapytań, na które sztuczna inteligencja prawdopodobnie rozszczepi zapytanie, i upewnij się, że na każde z nich masz przygotowany konkretny fragment z odpowiedzią
 - **Fragmentaryczna wartość zamiast rankingu strony** – twoja ogólna pozycja w wynikach wyszukiwania ma drugorzędne znaczenie, bo liczy się wyłącznie to, czy konkretny akapit odpowiada na konkretne podzapytanie, najlepiej w pierwszych 30% tekstu
-- **Pokrycie tematyczne ważniejsze od linków** – domena z 30 artykułami w jednej niszy będzie cytowana częściej niż domena z 3 artykułami i 200 backlinkami, ponieważ AI ufa źródłom, które „wiedzą wszystko" o danym temacie
+- **Pokrycie tematyczne ważniejsze od linków** – domena z głębokim pokryciem jednej niszy może być cytowana częściej niż domena z kilkoma artykułami i mocnym profilem linków, ponieważ AI chętniej sięga po źródła, które „wiedzą wszystko" o danym temacie
 
-Badania twardo potwierdzają tę trzecią zmianę. Kevin Indig przeanalizował 1,2 mln cytowań ChatGPT i wykazał, że [w kategorii porównań produktów top 10 domen zabiera 46% wszystkich cytowań](https://www.kevin-indig.com/). **Reszta domen walczy wyłącznie o rynkowe resztki.**
+Dane wspierają tę trzecią zmianę. Kevin Indig przeanalizował ok. 1,2 mln odpowiedzi ChatGPT i wykazał, że [w kategorii porównań produktów top 10 domen zabiera 46% wszystkich cytowań](https://www.growth-memo.com/p/the-science-of-how-ai-picks-its-sources). **Reszta domen walczy wyłącznie o rynkowe resztki.**
 
-> **Princeton/KDD 2024 (Aggarwal et al.):** dodanie cytowań źródeł podnosi widoczność w LLM o 30–40%. Keyword stuffing obniża ją o 10% – to akademicka odwrotność klasycznego SEO.
+> **Princeton/KDD 2024 (Aggarwal et al.):** dodanie cytatów, statystyk i powołań na źródła podnosi widoczność w odpowiedziach silników generatywnych o ok. 28–43%, zależnie od taktyki. Keyword stuffing daje niewielką poprawę albo żadną – to akademicka odwrotność klasycznego SEO.
 
 ![Query fan-out – jak działa rozszczepienie zapytania: pojedyncze pytanie użytkownika rozbija się na 4 grupy intencji (porównawcze, cenowe, techniczne, opinie) i 14 konkretnych podzapytań, każde idzie osobno do indeksu](../../../assets/images/infographic-geo-query-fan-out.png)
 
@@ -102,7 +103,7 @@ Badania twardo potwierdzają tę trzecią zmianę. Kevin Indig przeanalizował 1
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Query fan-out nie pojawił się dopiero z AI Mode. Mechanizm rozszczepiania zapytania na podpytania był testowany w Google już w MUM (2021) i BERT (2019), ale wówczas wyniki łączono w klasyczną listę 10 niebieskich linków. Dopiero zastosowanie modelu LLM jako warstwy syntezy ujawniło użytkownikowi, że <strong>silniki pobierające od dawna pracują na poziomie fragmentów, a nie stron</strong>.</p>
+    <p>Query fan-out nie wziął się znikąd. Już BERT (2019) i MUM (2021) miały pomóc Google lepiej rozumieć złożone, wieloaspektowe zapytania, ale wyniki nadal trafiały na klasyczną listę 10 niebieskich linków. Dopiero w AI Mode Google otwarcie opisuje rozbijanie pytania na podtematy i wiele równoległych zapytań, a model LLM jako warstwa syntezy pokazał użytkownikowi, że <strong>w odpowiedzi liczą się fragmenty, a nie całe strony</strong>.</p>
   </div>
 </aside>
 
@@ -147,9 +148,9 @@ Sprawdź trzy darmowe lub działające w modelu freemium narzędzia, które prec
 
 - **Qforia** (iPullRank, darmowe) – narzędzie zaprojektowane wprost do inżynierii wstecznej query fan-out w Google AI Mode, gdzie wpisujesz frazę i dostajesz listę podzapytań, co stanowi najszybszą drogę do stworzenia struktury artykułu przed pisaniem
 - **Google AI Mode** (jako narzędzie badawcze) – natywny interfejs świetnie sprawdza się do testowania własnych zapytań, wystarczy wpisać pytanie, kliknąć „pokaż więcej źródeł" i analizować domeny traktowane przez AI jako autorytety
-- **Perplexity Pro w trybie badawczym (research)** – system pokazuje pełną listę zapytań wykonanych przez silnik wyszukiwania przed złożeniem odpowiedzi, co daje doskonały wgląd w logikę rozszczepienia w innym ekosystemie LLM
+- **Perplexity Pro w trybie badawczym (research)** – interfejs pokazuje kroki wyszukiwania wykonywane przed złożeniem odpowiedzi, co daje wgląd w logikę rozszczepienia w innym ekosystemie LLM
 
-Logika rozszczepienia opiera się na technologii [osadzeń wektorowych (ang. word embeddings)](https://pl.wikipedia.org/wiki/S%C5%82owo_zanurzaj%C4%85ce) – matematycznych reprezentacji tekstu, które pozwalają modelowi mierzyć semantyczne podobieństwo między pytaniem a fragmentami w indeksie. **To dokładnie ten sam mechanizm, którego od lat używają systemy rekomendacyjne i wyszukiwarki semantyczne.**
+Logika rozszczepienia opiera się na technologii [osadzeń wektorowych (ang. word embeddings)](https://pl.wikipedia.org/wiki/Osadzanie_s%C5%82%C3%B3w) – matematycznych reprezentacji tekstu, które pozwalają modelowi mierzyć semantyczne podobieństwo między pytaniem a fragmentami w indeksie. **To dokładnie ten sam mechanizm, którego od lat używają systemy rekomendacyjne i wyszukiwarki semantyczne.**
 
 ## Co query fan-out zmienia w pracy nad treścią?
 

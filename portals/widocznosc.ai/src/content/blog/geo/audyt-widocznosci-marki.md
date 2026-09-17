@@ -3,6 +3,7 @@ title: 'Audyt widoczności marki w ChatGPT, Gemini i Perplexity – krok po krok
 subtitle: 'Sprawdź, czy AI poleca Twoją markę – i dowiedz się, jak to zmienić na swoją korzyść'
 description: 'Praktyczny przewodnik po audycie widoczności marki w ChatGPT, Gemini i Perplexity. Kroki, metryki, narzędzia i plan działania na 90 dni. Dla marketerów i specjalistów SEO.'
 date: 2026-05-21
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-audyt-widocznosci-marki.webp
 icon: '<circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/>'
 author:
@@ -52,7 +53,7 @@ sources:
     note: 'SparkToro i Gumshoe.ai, styczeń 2026. Badanie 2961 odpytań pokazujące dużą zmienność list marek polecanych przez ChatGPT, Claude i Google AI.'
   - title: 'Overview of OpenAI Crawlers'
     url: 'https://developers.openai.com/api/docs/bots'
-    note: 'OpenAI, dokumentacja. Opis botów GPTBot, OAI-SearchBot i ChatGPT-User oraz ich obsługi w robots.txt.'
+    note: 'OpenAI, dokumentacja. GPTBot zbiera dane treningowe, a o obecności w wyszukiwaniu ChatGPT decyduje OAI-SearchBot; opis ChatGPT-User i obsługi robots.txt.'
   - title: 'Does Anthropic crawl data from the web, and how can site owners block the crawler?'
     url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
     note: 'Anthropic, centrum pomocy. Opis botów ClaudeBot, Claude-User i Claude-SearchBot oraz blokowania ich w robots.txt.'
@@ -61,17 +62,23 @@ sources:
     note: 'Vercel, 17 grudnia 2024. Analiza ruchu pokazująca, że crawlery OpenAI, Anthropic i Perplexity nie wykonują JavaScriptu.'
   - title: 'GEO: Generative Engine Optimization'
     url: 'https://arxiv.org/abs/2311.09735'
-    note: 'Aggarwal i in., KDD 2024. Badanie wpływu taktyk takich jak cytaty, statystyki i powołania na źródła na widoczność w odpowiedziach silników generatywnych.'
+    note: 'Aggarwal i in., KDD 2024. Badanie wpływu taktyk takich jak cytaty (+42,6%), statystyki (+32,8%) i powołania na źródła (+27,7%) na widoczność w odpowiedziach silników generatywnych (miara PAWC).'
+  - title: 'Nightwatch – Pricing'
+    url: 'https://nightwatch.io/pricing/'
+    note: 'Nightwatch, cennik. Plan Starter od 79 euro miesięcznie z monitoringiem widoczności w ChatGPT, Claude, Gemini, Perplexity i AI Mode.'
+  - title: 'OtterlyAI – Pricing'
+    url: 'https://otterly.ai/pricing'
+    note: 'OtterlyAI, cennik. Plan Lite za 29 USD miesięcznie (25 USD przy płatności rocznej) z monitoringiem widoczności marki i cytowań w odpowiedziach AI.'
 ---
-Jeśli Twoja marka nie pojawia się w odpowiedziach ChatGPT, Gemini czy Perplexity na pytania z branży, tracisz klientów bez żadnego śladu w Google Analytics. Szacuje się, że już 37% zapytań zakupowych zaczyna się od konwersacji z modelem językowym. Tradycyjna analityka tych interakcji w ogóle nie rejestruje. **Audyt widoczności marki w silnikach generatywnych – czyli GEO (Generative Engine Optimization) – to dziś równie obowiązkowy punkt kontrolny co klasyczny audyt SEO.** Ten przewodnik przeprowadzi Cię przez cały proces krok po kroku: od przygotowania zestawu zapytań testowych, przez ocenę wyników, aż po konkretne działania optymalizacyjne.
+Jeśli Twoja marka nie pojawia się w odpowiedziach ChatGPT, Gemini czy Perplexity na pytania z branży, tracisz klientów bez żadnego śladu w Google Analytics. Według badania agencji Eight Oh Two, omówionego przez Search Engine Land w styczniu 2026 roku, już 37% konsumentów zaczyna wyszukiwanie od narzędzi AI zamiast od Google. Tradycyjna analityka tych interakcji w ogóle nie rejestruje. **Audyt widoczności marki w silnikach generatywnych – czyli GEO (Generative Engine Optimization) – to dziś równie obowiązkowy punkt kontrolny co klasyczny audyt SEO.** Ten przewodnik przeprowadzi Cię przez cały proces krok po kroku: od przygotowania zestawu zapytań testowych, przez ocenę wyników, aż po konkretne działania optymalizacyjne.
 
 ## Dlaczego standardowe SEO nie pokazuje problemu?
 
 Klasyczne narzędzia monitoringu – Google Search Console, Ahrefs czy Semrush – mierzą kliknięcia z listy wyników. Tu pojawia się problem. Użytkownik pytający ChatGPT o najlepsze oprogramowanie CRM dla agencji marketingowej nigdy nie trafi do Search Console. Nie kliknie żadnego linku, jeśli odpowiedź AI wyda mu się wystarczająca.
 
-**To zjawisko nosi nazwę zero-click presence – marka jest wzmiankowana lub pomijana w syntezie AI bez żadnego ruchu rejestrowanego przez tradycyjną analitykę.** Badanie 5W AI Visibility Index z 2026 roku, analizujące 104 marki z sektora finansowego w USA, wykazało coś niepokojącego. Rekomendacje generowane przez ChatGPT, Claude, Perplexity i Gemini uległy gwałtownej standaryzacji. Wąska grupa liderów zdominowała przestrzeń rekomendacyjną, a pozostałe marki zniknęły z odpowiedzi niemal całkowicie.
+**To zjawisko nosi nazwę zero-click presence – marka jest wzmiankowana lub pomijana w syntezie AI bez żadnego ruchu rejestrowanego przez tradycyjną analitykę.**
 
-Drugi problem to sam mechanizm decydujący o cytowaniu. Modele AI korzystają z dwóch źródeł wiedzy: statycznej bazy treningowej (dane sprzed daty odcięcia) oraz dynamicznego systemu [RAG (Retrieval-Augmented Generation)](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation), czyli generowania odpowiedzi wzbogaconego o wyszukiwanie w czasie rzeczywistym. Perplexity odpytuje własny indeks, Gemini opiera się na Google, a ChatGPT z włączonym wyszukiwaniem korzysta z Bing. **Jeśli Twoja strona jest technicznie niedostępna dla botów AI albo treść jest zbyt ogólna, żeby model zacytował ją jako konkretny fakt – nie pojawisz się w żadnym z tych źródeł.**
+Drugi problem to sam mechanizm decydujący o cytowaniu. Modele AI korzystają z dwóch źródeł wiedzy: statycznej bazy treningowej (dane sprzed daty odcięcia) oraz dynamicznego systemu [RAG (Retrieval-Augmented Generation)](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation), czyli generowania odpowiedzi wzbogaconego o wyszukiwanie w czasie rzeczywistym. Perplexity odpytuje własny indeks, Gemini opiera się na Google, a ChatGPT z włączonym wyszukiwaniem łączy własny indeks (budowany m.in. przez bota OAI-SearchBot) z wynikami zewnętrznych dostawców. **Jeśli Twoja strona jest technicznie niedostępna dla botów AI albo treść jest zbyt ogólna, żeby model zacytował ją jako konkretny fakt – nie pojawisz się w żadnym z tych źródeł.**
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -100,7 +107,7 @@ Podziel gotowy zestaw na cztery kategorie intencji:
 
 ## Krok 2 – Przeprowadź właściwe odpytywanie modeli
 
-Sam zestaw pytań to za mało. Odpowiedzi modeli generatywnych cechuje wysoka zmienność – ta sama fraza wpisana dwa razy może dać dwie zupełnie różne odpowiedzi. **Badanie Gemini z 2024 roku pokazało, że wskaźnik zmienności odpowiedzi dla identycznych zapytań wynosi od 40% do 60% w skali miesięcznej.**
+Sam zestaw pytań to za mało. Odpowiedzi modeli generatywnych cechuje wysoka zmienność – ta sama fraza wpisana dwa razy może dać dwie zupełnie różne odpowiedzi. **Badanie SparkToro i Gumshoe.ai ze stycznia 2026 roku pokazało, że szansa na to, by ChatGPT lub Google AI dwa razy podały tę samą listę polecanych marek, jest mniejsza niż 1 na 100.**
 
 Żeby uzyskać stabilną miarę, każdy prompt uruchamiaj co najmniej trzy razy w różnych sesjach i dniach tygodnia. Wyczyść historię rozmów i wyloguj się z konta przed każdą serią, ponieważ personalizacja sesji mocno zaburza wyniki. Testuj na trzech silnikach: ChatGPT (z włączonym wyszukiwaniem), Gemini i Perplexity.
 
@@ -135,7 +142,7 @@ Wyniki odpytywania modeli to jedynie obraz widoczności. **Audyt techniczny wyja
 
 ### Plik robots.txt i boty AI
 
-Pierwsza i najczęstsza przyczyna niewidoczności to zablokowanie botów AI w pliku `robots.txt` – często zupełnie nieintencjonalne. Sprawdź, czy żadna z reguł `Disallow` nie dotyczy botów: `GPTBot` (OpenAI), `ChatGPT-User` (OpenAI), `PerplexityBot` (Perplexity), `Google-Extended` (Google) i `ClaudeBot` (Anthropic). Co ważne, błędy w konfiguracji zapory Cloudflare potrafią blokować część tych botów bez jakiegokolwiek wpisu w `robots.txt`.
+Pierwsza i najczęstsza przyczyna niewidoczności to zablokowanie botów AI w pliku `robots.txt` – często zupełnie nieintencjonalne. Sprawdź, czy żadna z reguł `Disallow` nie dotyczy botów: `OAI-SearchBot` (OpenAI, wyszukiwanie w ChatGPT), `GPTBot` (OpenAI, trening modeli), `ChatGPT-User` (OpenAI), `PerplexityBot` (Perplexity), `ClaudeBot` (Anthropic) ani tokenu `Google-Extended` (Google). Co ważne, błędy w konfiguracji zapory Cloudflare potrafią blokować część tych botów bez jakiegokolwiek wpisu w `robots.txt`.
 
 Narzędzie [Dostęp botów AI](/narzedzia/ai-bots-check/) błyskawicznie weryfikuje, które boty AI mają dostęp do Twojej domeny, i od razu sygnalizuje niezamierzone blokady.
 
@@ -147,13 +154,13 @@ Sprawdź, co dokładnie widzi bot. Wyświetl źródło strony przez `Ctrl+U` w p
 
 ### Logi serwera – rzeczywista aktywność botów
 
-Logi dostępu (`access.log`) w serwerze Apache lub Nginx rejestrują każdą wizytę bota AI z dokładnym adresem URL, datą i user-agentem. Regularne zliczanie wpisów `PerplexityBot`, `GPTBot` i `ClaudeBot` daje Ci jasny obraz, jak często Twoja strona jest faktycznie odpytywana jako źródło RAG. Dzieje się to nawet wtedy, gdy użytkownik końcowy nie kliknie żadnego linku.
+Logi dostępu (`access.log`) w serwerze Apache lub Nginx rejestrują każdą wizytę bota AI z dokładnym adresem URL, datą i user-agentem. Regularne zliczanie wpisów `PerplexityBot`, `OAI-SearchBot`, `ChatGPT-User`, `GPTBot` i `ClaudeBot` daje Ci jasny obraz aktywności botów AI – a wizyty botów wyszukiwania i pobierania na żądanie pokazują, jak często Twoja strona jest faktycznie odpytywana jako źródło RAG. Dzieje się to nawet wtedy, gdy użytkownik końcowy nie kliknie żadnego linku.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/piotr-wicenciak.avif" alt="Piotr Wicenciak" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
-    <p>W audytach GEO przeprowadzanych w ICEA najczęstszy problem techniczny to nieintencjonalne blokowanie GPTBot przez reguły Cloudflare WAF – właściciel strony nie wie, że to się dzieje, bo ruch botów AI nie jest widoczny w GA4. Drugi z kolei problem to treść ładowana przez JavaScript: strony wyglądają świetnie w przeglądarce, ale bot widzi szkielet HTML bez żadnych danych. <strong>Sprawdzenie robots.txt i wyłączenie blokady GPTBot to pierwsze działanie po każdym audycie – efekt w postaci pierwszych cytowań pojawia się już po 2–4 tygodniach od odblokowania.</strong></p>
+    <p>W audytach GEO przeprowadzanych w ICEA najczęstszy problem techniczny to nieintencjonalne blokowanie botów OpenAI (GPTBot, OAI-SearchBot) przez reguły Cloudflare WAF – właściciel strony nie wie, że to się dzieje, bo ruch botów AI nie jest widoczny w GA4. Drugi z kolei problem to treść ładowana przez JavaScript: strony wyglądają świetnie w przeglądarce, ale bot widzi szkielet HTML bez żadnych danych. <strong>Sprawdzenie robots.txt i wyłączenie blokady OAI-SearchBot – to on, a nie GPTBot, odpowiada za obecność w wyszukiwaniu ChatGPT – to pierwsze działanie po każdym audycie. W naszych projektach efekt w postaci pierwszych cytowań pojawia się już po 2–4 tygodniach od odblokowania.</strong></p>
     <div class="callout-author">Piotr Wicenciak · SEO Operations Manager, ICEA</div>
   </div>
 </aside>
@@ -164,7 +171,7 @@ Masz teraz dwa zestawy danych: wyniki widoczności (metryki) oraz wyniki technic
 
 **Luki techniczne** – marka w ogóle nie jest dostępna dla botów lub treść jest niemożliwa do wyodrębnienia przez modele. Naprawa przynosi efekty szybko, często w ciągu 2–4 tygodni. Do tej kategorii należą: odblokowanie botów w `robots.txt`, naprawa renderowania JS, wdrożenie `llms.txt` oraz dodanie danych strukturalnych JSON-LD.
 
-**Luki merytoryczne** – marka jest technicznie dostępna, ale treść jest zbyt ogólna, żeby model mógł ją zacytować jako konkretny fakt. Naprawa wymaga przepisania kluczowych stron. Badanie [Aggarwal et al. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University wykazało, że cytowanie autorytatywnych źródeł zewnętrznych podnosi wskaźnik cytowań o 40%, dodanie danych statystycznych o 37%, a cytowania ekspertów o 30%. **To nie są wzrosty marginalne – to różnica między pomijaną a regularnie cytowaną stroną.**
+**Luki merytoryczne** – marka jest technicznie dostępna, ale treść jest zbyt ogólna, żeby model mógł ją zacytować jako konkretny fakt. Naprawa wymaga przepisania kluczowych stron. Badanie [Aggarwal et al. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University wykazało, że dodanie cytatów z wiarygodnych źródeł podnosi widoczność strony w odpowiedziach silnika generatywnego o ok. 43%, dodanie danych statystycznych o ok. 33%, a powoływanie się na źródła o ok. 28%. **To nie są wzrosty marginalne – to różnica między pomijaną a regularnie cytowaną stroną.**
 
 Priorytety ustal według stosunku efektu do nakładu pracy:
 
@@ -178,7 +185,7 @@ Pełne omówienie strategii GEO znajdziesz w [przewodniku po Generative Engine O
 
 ## Krok 6 – Stały monitoring i harmonogram re-audytu
 
-Jednorazowy audyt daje jedynie punkt startowy. Widoczność w AI zmienia się dynamicznie – modele są aktualizowane, nowe treści konkurentów wchodzą do indeksów, a zmienność odpowiedzi sięga 40–60% miesięcznie. **Bez regularnego pomiaru po prostu nie wiesz, czy idziesz w górę, czy w dół.**
+Jednorazowy audyt daje jedynie punkt startowy. Widoczność w AI zmienia się dynamicznie – modele są aktualizowane, nowe treści konkurentów wchodzą do indeksów, a listy polecanych marek zmieniają się niemal przy każdym odpytaniu. **Bez regularnego pomiaru po prostu nie wiesz, czy idziesz w górę, czy w dół.**
 
 Ustal trzyszczeblowy rytm pomiaru:
 
@@ -188,4 +195,4 @@ Ustal trzyszczeblowy rytm pomiaru:
 
 Zmienność odpowiedzi to zjawisko całkowicie normalne, więc nie reaguj na każde wahnięcie. Reaguj na trend. Jeśli Citation Rate spada przez dwa kolejne miesiące, szukaj przyczyny. Jeśli rośnie – zidentyfikuj, która ze zmian to spowodowała, i skaluj tę taktykę.
 
-Do zautomatyzowanego monitorowania SoV warto rozważyć wyspecjalizowane platformy. Nightwatch od wersji mid-tier (od 32 USD miesięcznie) śledzi jednocześnie pozycje w LLM i wyniki tradycyjne. Otterly AI (od 29 USD miesięcznie) generuje automatyczne alerty przy negatywnym sentymencie i wykrytych halucynacjach. Jeśli szukasz czegoś prostszego do oceny, zanim zaangażujesz budżet, [Widoczność marki w AI](/narzedzia/brand-check/) pozwoli Ci zobaczyć punkt startowy bez żadnych kosztów.
+Do zautomatyzowanego monitorowania SoV warto rozważyć wyspecjalizowane platformy. Nightwatch (od 79 euro miesięcznie w planie Starter) śledzi jednocześnie widoczność w LLM i pozycje w wynikach tradycyjnych. Otterly AI (od 29 USD miesięcznie przy płatności miesięcznej) monitoruje wzmianki o marce i cytowania domeny w odpowiedziach AI. Jeśli szukasz czegoś prostszego do oceny, zanim zaangażujesz budżet, [Widoczność marki w AI](/narzedzia/brand-check/) pozwoli Ci zobaczyć punkt startowy bez żadnych kosztów.

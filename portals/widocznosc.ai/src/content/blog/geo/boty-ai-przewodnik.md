@@ -1,8 +1,9 @@
 ---
 title: 'GPTBot, ClaudeBot, PerplexityBot – co naprawdę widzą boty AI i jak im pomóc'
 subtitle: 'Techniczny przewodnik po botach indeksujących AI, robots.txt, llms.txt i schema.org dla wyszukiwarek generatywnych'
-description: 'Lista 13 botów AI, które obecnie indeksują internet. Co każdy z nich robi, jak skonfigurować robots.txt, czy llms.txt ma sens, dlaczego treści renderowane przez JavaScript są problemem dla LLM. Przewodnik dla deweloperów i SEO.'
+description: 'Lista 13 botów i tokenów AI, które decydują o dostępie do Twoich treści. Co każdy z nich robi, jak skonfigurować robots.txt, czy llms.txt ma sens, dlaczego treści renderowane przez JavaScript są problemem dla LLM. Przewodnik dla deweloperów i SEO.'
 date: 2026-05-12
+updated: 2026-09-17
 image: ../../../assets/images/blog-geo-boty-ai-przewodnik.webp
 icon: '<rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18"/><circle cx="7" cy="14" r="1"/><circle cx="12" cy="14" r="1"/><circle cx="17" cy="14" r="1"/><path d="M9 4l3-2 3 2"/>'
 author:
@@ -17,25 +18,34 @@ level: 'L3'
 sources:
   - title: 'Overview of OpenAI Crawlers'
     url: 'https://developers.openai.com/api/docs/bots'
-    note: 'OpenAI, dokumentacja. Funkcje GPTBot (trening), OAI-SearchBot (wyniki wyszukiwania w ChatGPT) i ChatGPT-User (działania na żądanie użytkownika).'
+    note: 'OpenAI, dokumentacja. Funkcje GPTBot (trening), OAI-SearchBot (wyniki wyszukiwania w ChatGPT) i ChatGPT-User (działania na żądanie użytkownika, do których reguły robots.txt mogą nie mieć zastosowania).'
   - title: 'Does Anthropic crawl data from the web, and how can site owners block the crawler?'
     url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
     note: 'Anthropic, centrum pomocy. Opis botów ClaudeBot, Claude-User i Claude-SearchBot oraz respektowania robots.txt.'
   - title: 'List of Google’s common crawlers'
     url: 'https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers'
     note: 'Google, dokumentacja. Opis GoogleOther oraz tokenu Google-Extended, który steruje wykorzystaniem treści do trenowania i ugruntowania modeli Gemini.'
+  - title: 'Google’s user-triggered fetchers'
+    url: 'https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers'
+    note: 'Google, dokumentacja. Fetcher Google-GeminiNotebook (dawny token Google-NotebookLM) i zastrzeżenie, że fetchery uruchamiane przez użytkownika zwykle ignorują robots.txt.'
+  - title: 'Optymalizacja witryny pod kątem funkcji opartych na generatywnej AI w wyszukiwarce Google'
+    url: 'https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=pl'
+    note: 'Google Search Central. Przewodnik, w którym Google uznaje pliki llms.txt za niepotrzebne do widoczności w funkcjach AI wyszukiwarki.'
   - title: 'Perplexity Crawlers'
     url: 'https://docs.perplexity.ai/guides/bots'
-    note: 'Perplexity, dokumentacja. Różnica między PerplexityBot (indeksowanie do wyników) a Perplexity-User (pobieranie na żądanie użytkownika).'
+    note: 'Perplexity, dokumentacja. Różnica między PerplexityBot (indeksowanie do wyników) a Perplexity-User (pobieranie na żądanie użytkownika, które zwykle ignoruje robots.txt).'
   - title: 'CCBot'
     url: 'https://commoncrawl.org/ccbot'
     note: 'Common Crawl. Opis crawlera CCBot, jego user-agenta i sposobu blokowania w robots.txt.'
   - title: 'About Applebot'
     url: 'https://support.apple.com/en-us/119829'
-    note: 'Apple, wsparcie. Applebot-Extended decyduje, czy treści zebrane przez Applebota mogą trenować modele Apple Intelligence.'
+    note: 'Apple, wsparcie. Applebot-Extended nie crawluje stron – decyduje, czy treści zebrane przez Applebota mogą trenować modele Apple Intelligence.'
   - title: 'Major media organizations are putting up ‘do not enter’ signs for ChatGPT'
     url: 'https://fortune.com/2023/08/25/major-media-organizations-are-blocking-openai-bot-from-scraping-content'
-    note: 'Fortune, 25 sierpnia 2023. Start GPTBota na początku sierpnia 2023 i blokady wprowadzone przez NYT, CNN i Reuters.'
+    note: 'Fortune, 25 sierpnia 2023. Start GPTBota na początku sierpnia 2023 i blokady wprowadzone m.in. przez NYT, CNN i Reuters.'
+  - title: 'robots.txt – The New York Times'
+    url: 'https://www.nytimes.com/robots.txt'
+    note: 'The New York Times, plik robots.txt (stan z 17 września 2026). Blokady m.in. dla GPTBot, OAI-SearchBot i CCBot.'
   - title: 'The /llms.txt file, v2'
     url: 'https://llmstxt.org/'
     note: 'Jeremy Howard, propozycja z 3 września 2024. Specyfikacja pliku llms.txt w formacie Markdown.'
@@ -54,18 +64,18 @@ Na rynku jest ponad 30 botów oznaczonych jako *„AI crawlers"*, ale 13 z nich 
 | User-agent | Właściciel | Funkcja | Wpływ na widoczność |
 |---|---|---|---|
 | `GPTBot` | OpenAI | trening modeli (GPT-5+) | długoterminowy – nowe wersje GPT |
-| `OAI-SearchBot` | OpenAI | crawling dla SearchGPT | bieżący – cytowania w odpowiedziach |
+| `OAI-SearchBot` | OpenAI | crawling dla wyszukiwania w ChatGPT | bieżący – cytowania w odpowiedziach |
 | `ChatGPT-User` | OpenAI | pobieranie na żądanie (browse with web) | bieżący – per zapytanie użytkownika |
 | `ClaudeBot` | Anthropic | trening Claude | długoterminowy |
 | `Claude-User` | Anthropic | pobieranie na żądanie | bieżący |
 | `Claude-SearchBot` | Anthropic | wyszukiwanie w czasie rzeczywistym w Claude | bieżący |
-| `Google-Extended` | Google | trening modeli Gemini | długoterminowy |
-| `Google-NotebookLM` | Google | NotebookLM research tool | niszowy |
+| `Google-Extended` | Google | token kontrolny, nie osobny crawler – zgoda na trening i ugruntowanie (grounding) modeli Gemini | długoterminowy + bieżący |
+| `Google-GeminiNotebook` | Google | pobieranie źródeł wskazanych przez użytkownika w Gemini Notebook (dawniej `Google-NotebookLM`) | niszowy |
 | `GoogleOther` | Google | sub-team labs, eksperymenty AI | różny |
 | `PerplexityBot` | Perplexity | indeksowanie ogólne | bieżący + długoterminowy |
 | `Perplexity-User` | Perplexity | pobieranie na żądanie (deep research) | bieżący |
 | `CCBot` | Common Crawl | dataset dla wszystkich LLM | krytyczny – większość modeli używa CC |
-| `Applebot-Extended` | Apple | Apple Intelligence (iOS 18+) | rosnący |
+| `Applebot-Extended` | Apple | token kontrolny, nie crawluje – zgoda na trening modeli Apple Intelligence | rosnący |
 
 ![13 botów AI w 4 kategoriach – TRENING (GPTBot, ClaudeBot, Google-Extended), WYSZUKIWANIE (OAI-SearchBot, PerplexityBot, Claude-SearchBot), NA ŻĄDANIE (ChatGPT-User, Claude-Web, Perplexity-User), COMMON CRAWL (CCBot, Applebot-Extended, GoogleOther, Google-NotebookLM). Pełne pokrycie: zezwolenie na wszystkie 13 w robots.txt](../../../assets/images/infographic-geo-boty-ai-przewodnik.png)
 
@@ -75,7 +85,7 @@ Na rynku jest ponad 30 botów oznaczonych jako *„AI crawlers"*, ale 13 z nich 
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>GPTBot zaczął indeksować internet dopiero <strong>w sierpniu 2023 roku</strong>. W panice po jego ogłoszeniu duże media (NYT, BBC, CNN, Reuters) i Reddit zablokowały bota w robots.txt. Dziś – ponad dwa lata później – większość z nich wciąż ma tę blokadę, mimo że ich treści i tak trafiają do modeli przez Common Crawl. Efekt – stracona widoczność w SearchGPT i ChatGPT-User, ale obecność w bazie treningowej GPT-4 i 5 (przez CCBot). <strong>Zasłanianie jednej połowy okna i otwieranie drugiej.</strong></p>
+    <p>GPTBot zaczął indeksować internet dopiero <strong>w sierpniu 2023 roku</strong>. Tuż po jego ogłoszeniu duże media (m.in. NYT, CNN i Reuters) zablokowały bota w robots.txt. Blokada GPTBota dotyczy jednak treningu modeli – o obecności w wyszukiwaniu ChatGPT decyduje osobny OAI-SearchBot. Część wydawców, w tym NYT, blokuje też CCBota, zamykając drugą drogę do danych treningowych – przez zbiory Common Crawl. <strong>Każdy bot to osobna decyzja – warto podejmować ją świadomie, a nie hurtem.</strong></p>
   </div>
 </aside>
 
@@ -123,6 +133,8 @@ Allow: /
 Sitemap: https://twojadomena.pl/sitemap.xml
 ```
 
+Pamiętaj, że `robots.txt` nie zatrzyma wszystkich. Fetchery działające na żądanie użytkownika – `ChatGPT-User`, `Perplexity-User` czy `Google-GeminiNotebook` – według dokumentacji ich właścicieli mogą nie stosować się do reguł z tego pliku, bo pobranie strony zlecił człowiek.
+
 Druga pułapka: blokowanie ścieżek dynamicznych (`/search/`, `/cart/`). Boty AI, podobnie jak Googlebot, nie powinny indeksować adresów URL z parametrami koszyka, sesji, filtrowania. Standardowe wyłączenia `/api/`, `/admin/`, `/cart/`, `/checkout/`, `/search/?q=` nadal działają.
 
 ## Czy llms.txt ma sens?
@@ -133,8 +145,8 @@ Druga pułapka: blokowanie ścieżek dynamicznych (`/search/`, `/cart/`). Boty A
 
 Poziom adaptacji w 2026 roku:
 
-- **OpenAI i Anthropic** publicznie potwierdziły, że ich crawlery zaglądają do `llms.txt`, ale nie deklarują, jak go traktują w procesie pobierania
-- **Google** nie zaimplementowało standardu, twierdząc, że klasyczny crawl wystarczy – a Google ma ponad 50% rynku wyszukiwania AI w Polsce dzięki AI Overviews
+- **OpenAI i Anthropic** – brak oficjalnego potwierdzenia, że ich crawlery uwzględniają `llms.txt` przy pobieraniu treści
+- **Google** nie zaimplementowało standardu – w przewodniku po optymalizacji pod funkcje AI w wyszukiwarce uznaje `llms.txt` za zbędny, bo wystarcza mu klasyczny crawl
 - **Perplexity** nie zajęło stanowiska, ale empirycznie pliki `llms.txt` są respektowane przez ich silnik
 - **W praktyce** efekt wdrożenia jest trudny do wyizolowania – nikt nie widział twardego testu A/B pokazującego mierzalny wzrost cytowalności wyłącznie dzięki `llms.txt`
 
@@ -183,7 +195,7 @@ Trzy standardowe rozwiązania:
 
 - **Renderowanie po stronie serwera (SSR)** – najczystsze podejście. Next.js, Nuxt, SvelteKit, Astro, Remix generują pełen HTML po stronie serwera. Bot dostaje gotowy tekst, JavaScript jest tylko warstwą interaktywności
 - **Generowanie statycznych stron (SSG)** – dla treści, które rzadko się zmieniają. Blog, dokumentacja, strony marketingowe – generujesz statyczne pliki HTML przy budowie, bot dostaje pełny tekst bez dynamiki
-- **Renderowanie wstępne / dynamiczne (pre-rendering)** – dla aplikacji SPA, których nie da się zrefaktoryzować. Cloudflare ma usługę *„Workers Bot Detection"* + pre-render, podobnie Vercel *„Skew Protection"*. Bot dostaje wyrenderowaną wersję, użytkownik z przeglądarką klasyczne SPA
+- **Renderowanie wstępne / dynamiczne (pre-rendering)** – dla aplikacji SPA, których nie da się zrefaktoryzować. Usługa pre-renderingu albo własny middleware rozpoznaje bota po user-agencie i serwuje mu wyrenderowany HTML, a użytkownik z przeglądarką dostaje klasyczne SPA
 
 ## Schema.org dla modeli LLM – cztery typy, które dają wzrost
 
@@ -191,7 +203,7 @@ Modele LLM czytają dane strukturalne (JSON-LD) i używają ich jako szybkiego s
 
 | Schema | Dla czego | Pola krytyczne | Wpływ na cytowalność |
 |---|---|---|---|
-| **Article** | każdy post blogowy | `headline`, `author`, `datePublished`, `dateModified`, `image` | brak danych strukturalnych obniża cytowalność o 15–20% |
+| **Article** | każdy post blogowy | `headline`, `author`, `datePublished`, `dateModified`, `image` | jednoznaczny autor i daty publikacji oraz aktualizacji |
 | **Person** | każdy autor bloga | `name`, `jobTitle`, `worksFor`, `sameAs` | buduje autorytet osoby (autentyczny autor) |
 | **Organization** | strona firmowa | `name`, `url`, `logo`, `sameAs`, `address`, `contactPoint` | jednoznaczna identyfikacja firmy |
 | **FAQPage** | każda sekcja FAQ | `Question`, `Answer` | gotowe fragmenty Q&A, łatwo pobierane przez silnik |
