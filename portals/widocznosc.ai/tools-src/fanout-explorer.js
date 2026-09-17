@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.5.3';
+  var VERSION = '1.5.4';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv2:'; // conv: = kopie ze starego endpointu, bez zapytań
   var QUERIES_PREFIX = NS + ':q:';
@@ -1139,7 +1139,14 @@
     h += '<p class="wf-meta">Odczyt: <span>' + esc(state.source) + '</span> · ' + esc(stamp(state.capturedAt || new Date()))
       + (s.recordedRounds ? ' · zapytania z nagrania: <span>' + s.recordedRounds + '</span> ' + plural(s.recordedRounds, 'runda', 'rundy', 'rund') : '')
       + '</p>';
-    if (s.hidden) {
+    // Część rund ma zapytania w danych rozmowy, więc format jest rozpoznany: brak w pozostałych to stan danych,
+    // a nie błąd odczytu (model z rozumowaniem zapisuje zapytania tylko dla pierwszej partii wyszukiwań).
+    var partial = s.hidden && s.rounds > s.hidden && state.source !== 'zapytania nagrane w tej przeglądarce';
+    if (partial) {
+      var known = s.rounds - s.hidden;
+      h += '<p class="wf-note">ChatGPT udostępnił treść zapytań tylko dla ' + known + ' z ' + s.rounds + ' ' + plural(s.rounds, 'rundy', 'rund', 'rund') + '. Dla '
+        + (s.hidden === 1 ? 'pozostałej rundy' : 'pozostałych ' + s.hidden + ' rund') + ' dane rozmowy zawierają same strony z wyników, bez zapytań. Liczby stron, cytowań i domen obejmują wszystkie rundy.</p>';
+    } else if (s.hidden) {
       h += '<p class="wf-note">Dla ' + s.hidden + ' ' + plural(s.hidden, 'rundy', 'rund', 'rund') + ' nie udało się odczytać treści zapytań. Widać dostępne domeny, strony i cytowania. Przyczyną może być brak nagrania, nierozpoznany format odpowiedzi albo brak zapytań w danych udostępnionych przez ChatGPT. Samo otwarcie panelu przed promptem nie gwarantuje ich odczytu.</p>';
       h += '<p class="wf-meta">Nagrywanie od uruchomienia panelu: strumienie <span>' + state.capture.streams
         + '</span> · zdarzenia <span>' + state.capture.events + '</span> · pola zapytań <span>' + state.capture.queryFields
