@@ -3,6 +3,7 @@ title: 'Embeddingi – jak komputery rozumieją znaczenie tekstu'
 subtitle: 'Zrozum, dlaczego dwa dokumenty o tym samym temacie mogą leżeć blisko siebie w przestrzeni wektorowej – i jak to decyduje o tym, czy LLM zacytuje Twoją stronę'
 description: 'Czym są embeddingi (wektory osadzone) i jak systemy RAG wykorzystują je do wyszukiwania treści. Praktyczne wyjaśnienie dla marketerów i specjalistów SEO.'
 date: 2026-05-14
+updated: 2026-09-17
 image: ../../../assets/images/blog-rag-embeddingi.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2 L12 6"/><path d="M12 18 L12 22"/><path d="M4.22 4.22 L7.05 7.05"/><path d="M16.95 16.95 L19.78 19.78"/><path d="M2 12 L6 12"/><path d="M18 12 L22 12"/><path d="M4.22 19.78 L7.05 16.95"/><path d="M16.95 7.05 L19.78 4.22"/>'
 author:
@@ -118,7 +119,7 @@ Kolejną pułapką pozostaje sarkazm i ironia. „Uwielbiam stać w korkach" i �
 Z perspektywy praktyki SEO/GEO znacznie ważniejsza jest trzecia słabość
 
 - **Terminologia wewnętrzna i skróty** – nazwy własne produktów, wewnętrzne kody projektów czy branżowe skróty bez rozwinięcia nie mają ugruntowanej reprezentacji w modelach trenowanych na ogólnym korpusie, przez co wektor skrótu „WCAG 2.2" może leżeć daleko od wektora frazy „dostępność cyfrowa"
-- **Odwrócenie relacji logicznej** – „wartość pieniądza w czasie" i „pieniężna wartość czasu" mają bardzo podobne embeddingi (podobieństwo ~0,73), choć to zupełnie różne pojęcia ekonomiczne, a modele oparte wyłącznie na wektorach często mylą je w wynikach
+- **Odwrócenie relacji logicznej** – „wartość pieniądza w czasie" i „pieniężna wartość czasu" mają bardzo podobne embeddingi (podobieństwo może wynosić np. ok. 0,7 – dokładna wartość zależy od modelu), choć to zupełnie różne pojęcia ekonomiczne, a modele oparte wyłącznie na wektorach często mylą je w wynikach
 - **Słownictwo specjalistyczne** – teksty z dziedzin słabo reprezentowanych w danych treningowych są embedowane znacznie mniej precyzyjnie niż treści z popularnych nisz
 
 Właśnie dlatego zaawansowane systemy łączą wyszukiwanie wektorowe z klasycznym dopasowaniem słów kluczowych (np. BM25). Takie podejście – znane jako wyszukiwanie hybrydowe – daje o wiele lepsze wyniki niż sama semantyka. Sprawdza się to szczególnie przy zapytaniach z unikalnymi nazwami własnymi. Mechanizm ponownego rangowania (reranking) po wstępnym wyszukiwaniu wektorowym omówimy osobno w artykule o [rerankingu w systemach RAG](/rag/reranking/).

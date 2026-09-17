@@ -3,7 +3,7 @@ title: 'Prompt engineering – kompletny przewodnik'
 subtitle: 'Naucz się pisać prompty, które dają przewidywalne, powtarzalne wyniki – od podstaw po zaawansowane techniki wnioskowania.'
 description: 'Kompletny przewodnik po prompt engineeringu: techniki zero-shot, few-shot, Chain-of-Thought, strukturyzacja, bezpieczeństwo i praktyczne przykłady dla marketerów i SEO.'
 date: 2026-05-22
-updated: 2026-08-28
+updated: 2026-09-17
 image: ../../../assets/images/blog-prompty-przewodnik.webp
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:
@@ -33,13 +33,13 @@ sources:
     note: 'Yao i in., październik 2022. Pierwotny opis paradygmatu przeplatania wnioskowania i działań.'
   - title: 'DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines'
     url: 'https://arxiv.org/abs/2310.03714'
-    note: 'Khattab i in., październik 2023. Automatyczna kompilacja promptów poprawia wyniki względem ręcznych promptów few-shot (m.in. na GSM8K z GPT-3.5).'
+    note: 'Khattab i in., październik 2023. Na GSM8K GPT-3.5 z promptem few-shot uzyskał 33,1% (zbiór deweloperski), a skompilowany program CoT z bootstrapem i ensemblem – 81,6% na zbiorze testowym (tabela 1).'
   - title: 'Fooling AI Agents: Web-Based Indirect Prompt Injection Observed in the Wild'
     url: 'https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/'
     note: 'Palo Alto Networks Unit 42, 3 marca 2026. Udokumentowane ataki pośredniego wstrzykiwania promptów przez strony internetowe.'
   - title: 'The Dual LLM pattern for building AI assistants that can resist prompt injection'
     url: 'https://simonwillison.net/2023/Apr/25/dual-llm-pattern/'
-    note: 'Simon Willison, 25 kwietnia 2023. Pierwotny opis wzorca: model uprzywilejowany z narzędziami i model w kwarantannie bez narzędzi.'
+    note: 'Simon Willison, 25 kwietnia 2023. Pierwotny opis wzorca: model uprzywilejowany z narzędziami operuje tylko na nazwach zmiennych, a model w kwarantannie bez narzędzi przetwarza niezaufane dane.'
 ---
 Prompt engineering (inżynieria podpowiedzi) to dyscyplina, która decyduje o tym, czy LLM (Large Language Model, czyli duży model językowy) wygeneruje użyteczną odpowiedź, czy bezwartościowy szum. Tu nie ma magicznych słów. Liczy się zrozumienie mechanizmów przetwarzania instrukcji i takie zaprojektowanie promptu, by model otrzymał precyzyjne wytyczne. Ten przewodnik przeprowadzi Cię od podstawowych technik, przez zaawansowane architektury wnioskowania, aż po bezpieczeństwo systemów opartych na LLM – z konkretnymi przykładami gotowymi do wdrożenia.
 
@@ -105,7 +105,7 @@ potem oceń gęstość faktograficzną treści, na końcu oceń strukturę nagł
 Dopiero po tym sformułuj ocenę końcową.
 ```
 
-Badania pokazują, że samo dołączenie frazy „przemyśl to krok po kroku" może podnieść dokładność modelu w zadaniach logicznych o 20–40%. To jedna z najlepiej udokumentowanych technik w literaturze branżowej.
+W badaniu Kojimy i in. (2022) samo dopisanie frazy „Let’s think step by step” („przemyśl to krok po kroku”) podniosło trafność modelu w zadaniach arytmetycznych z 17,7% do 78,7% na zbiorze MultiArith i z 10,4% do 40,7% na GSM8K. To jedna z najlepiej udokumentowanych technik w literaturze branżowej.
 
 Porównanie trzech podstawowych technik:
 
@@ -198,7 +198,7 @@ przez taką analizę. Potem wykonaj tę analizę korzystając z zaprojektowanego
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Badanie</div>
-    <p>Stanford DSPy (Declarative Self-improving Python, 2023) pokazał, że automatyczna optymalizacja promptów przez algorytm BootstrapFewShot podnosi jakość odpowiedzi modelu do 82% (wzrost z pułapu ok. 33%) w porównaniu do ręcznie pisanych bazowych promptów. <strong>Frameworki do automatycznej kompilacji promptów są skuteczniejsze niż ręczne majsterkowanie, gdy masz dostęp do zestawu testowego z co najmniej 20 przykładami.</strong></p>
+    <p>Stanford DSPy (Declarative Self-improving Python, 2023) pokazał, że na zadaniach matematycznych GSM8K model GPT-3.5 z prostym promptem few-shot osiągał ok. 33% trafności, a skompilowane programy DSPy złożone z kilku modułów (m.in. Chain-of-Thought z przykładami dobranymi automatycznie przez BootstrapFewShot) – ok. 82% na zbiorze testowym. <strong>Frameworki do automatycznej kompilacji promptów są skuteczniejsze niż ręczne majsterkowanie, gdy masz zestaw przykładów, na których można je trenować i oceniać.</strong></p>
   </div>
 </aside>
 
@@ -276,9 +276,9 @@ Dwa główne typy ataków, które musisz znać:
 Najskuteczniejsza obrona nie polega na dodawaniu kolejnych filtrów, lecz na separacji architektury. Wzorzec Dual-LLM fizycznie rozdziela dwa modele:
 
 - **Model uprzywilejowany** – ma dostęp do narzędzi i API, ale nigdy nie przetwarza surowych danych z niezaufanych źródeł
-- **Model w kwarantannie (izolowany)** – przetwarza zewnętrzne dane i ekstrahuje z nich ustrukturyzowane informacje w formacie JSON, ale nie ma dostępu do żadnych narzędzi
+- **Model w kwarantannie (izolowany)** – przetwarza zewnętrzne dane (np. streszcza je lub wyciąga z nich informacje), ale nie ma dostępu do żadnych narzędzi
 
-Uprzywilejowany model dostaje tylko wynik ekstrakcji od izolowanego modelu – strukturę JSON, a nie surowy tekst. Złośliwa instrukcja ukryta w zewnętrznym dokumencie pozostaje nieaktywna, ponieważ trafia wyłącznie do modelu bez uprawnień.
+Uprzywilejowany model nigdy nie widzi wyników pracy izolowanego modelu. Operuje wyłącznie na nazwach zmiennych (np. `$VAR1`), pod którymi kod sterujący zapisuje te wyniki, a ich treść podstawia dopiero ten kod – np. przy wyświetlaniu odpowiedzi użytkownikowi. Złośliwa instrukcja ukryta w zewnętrznym dokumencie pozostaje nieaktywna, ponieważ trafia wyłącznie do modelu bez uprawnień.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>

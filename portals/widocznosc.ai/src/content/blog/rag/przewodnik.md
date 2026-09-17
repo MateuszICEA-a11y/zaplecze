@@ -3,6 +3,7 @@ title: 'RAG (Retrieval-Augmented Generation) – przewodnik wdrożeniowy'
 subtitle: 'Zbuduj system, który odpowiada na pytania z własnych danych – bez halucynacji i bez zdezaktualizowanej wiedzy modelu'
 description: 'Kompletny przewodnik wdrożeniowy RAG: architektura, chunking, embeddingi, reranking, ewaluacja i bezpieczeństwo. Poziom L2 – z danymi i benchmarkami.'
 date: 2026-05-24
+updated: 2026-09-17
 image: ../../../assets/images/blog-rag-przewodnik.webp
 icon: '<path d="M4 6h16M4 10h16M4 14h10M4 18h7"/><circle cx="18" cy="16" r="3"/><line x1="21" y1="19" x2="19.5" y2="17.5"/>'
 author:
@@ -26,7 +27,7 @@ sources:
     note: 'OpenAI, dokumentacja API. Skracanie wektorów parametrem dimensions: text-embedding-3-large w 256 wymiarach wciąż przewyższa ada-002.'
   - title: 'Pgvector vs. Qdrant: Open-Source Vector Database Comparison'
     url: 'https://www.tigerdata.com/blog/pgvector-vs-qdrant'
-    note: 'Tiger Data (Timescale), kwiecień 2025. Na 50 mln wektorów przy 99% czułości: 471,57 QPS dla Postgres z pgvectorscale wobec 41,47 QPS dla Qdrant.'
+    note: 'Tiger Data (Timescale), kwiecień 2025. Na 50 mln wektorów przy 99% czułości: 471,57 QPS dla Postgres z pgvectorscale wobec 41,47 QPS dla Qdrant; Qdrant ma niższe opóźnienia p95 (36,73 wobec 60,42 ms) i p99 (38,71 wobec 74,60 ms).'
   - title: 'Precise Zero-Shot Dense Retrieval without Relevance Labels'
     url: 'https://arxiv.org/abs/2212.10496'
     note: 'Gao i in., grudzień 2022. Pierwotny opis HyDE; na TREC DL19 nDCG@10 wzrosło z 44,5 (Contriever) do 61,3.'
@@ -35,10 +36,13 @@ sources:
     note: 'Anthropic, dokumentacja Claude. Dokumenty w znacznikach XML, długie dane (20 tys.+ tokenów) na górze promptu, pytanie na końcu – do 30% lepsza jakość odpowiedzi.'
   - title: 'BadRAG: Identifying Vulnerabilities in Retrieval Augmented Generation of Large Language Models'
     url: 'https://arxiv.org/abs/2406.00083'
-    note: 'Czerwiec 2024. Zatrucie bazy 10 spreparowanymi fragmentami daje 98,2% skuteczności ich pobierania dla zapytań z wyzwalaczem.'
+    note: 'Czerwiec 2024. Zatrucie bazy 10 spreparowanymi fragmentami daje 98,2% skuteczności ich pobierania dla zapytań z wyzwalaczem, a odsetek odmów GPT-4 rośnie z 0,01% do 74,6%.'
   - title: 'PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models'
     url: 'https://arxiv.org/abs/2402.07867'
-    note: 'Luty 2024. Pięć złośliwych tekstów na pytanie w bazie z milionami tekstów daje ok. 90% skuteczności ataku.'
+    note: 'Luty 2024. Pięć złośliwych tekstów na każde pytanie docelowe w bazie z milionami tekstów daje ok. 90% skuteczności ataku.'
+  - title: 'Retrieval as a Decision: Training-Free Adaptive Gating for Efficient RAG'
+    url: 'https://arxiv.org/abs/2511.09803'
+    note: 'Listopad 2025 (wersja z 14 kwietnia 2026). TARG uruchamia wyszukiwanie tylko wtedy, gdy sygnał niepewności z krótkiego szkicu odpowiedzi (entropia, margines logitów lub wariancja) przekracza próg.'
 ---
 
 RAG, czyli Retrieval-Augmented Generation (generowanie wspomagane wyszukiwaniem), to architektura, która swoją przewagę nad czystymi modelami językowymi zawdzięcza zasilaniu promptu zewnętrznym kontekstem, pobieranym w czasie rzeczywistym. Zamiast odpowiadać z parametrycznej pamięci wytrenowanego modelu, system RAG najpierw przeczesuje bazę dokumentów, wyciąga najtrafniejsze fragmenty i dopiero wtedy generuje odpowiedź. Efekt: drastycznie mniejsza liczba halucynacji, aktualne dane i możliwość oparcia chatbota lub asystenta na wewnętrznej wiedzy firmy – bez kosztownego fine-tuningu. W tym przewodniku przejdziemy przez całą ścieżkę wdrożeniową: od wyboru architektury, przez strategię segmentacji dokumentów, optymalizację warstwy [reprezentacji wektorowych (embeddingów)](/rag/embeddingi/), po ewaluację i bezpieczeństwo systemu produkcyjnego.
@@ -49,11 +53,11 @@ Systemy RAG nie są monolitem. Przez ostatnie dwa lata przeszły ewolucję, osi�
 
 Pierwsza generacja – Naive RAG – to liniowy przepływ: zapytanie użytkownika → reprezentacja wektorowa (embedding) → wyszukiwanie na podstawie podobieństwa kosinusowego w bazie → konkatenacja fragmentów → generacja. Koszt wdrożenia jest niski, a czas do stworzenia prototypu liczony w dniach. Odbywa się to jednak kosztem niskiej precyzji wyszukiwania i braku jakichkolwiek pętli korekcyjnych. W testach produkcyjnych Naive RAG wypada dobrze tylko w domenach z jednorodną, dobrze ustrukturyzowaną bazą wiedzy.
 
-Advanced RAG dodaje dwa kluczowe etapy. Pre-retrieval – przeformułowanie zapytania, wygenerowanie zapytań pomocniczych, techniki takie jak HyDE (Hypothetical Document Embeddings). Post-retrieval – ponowne ocenianie (reranking) pobranych fragmentów modelem Cross-Encoder oraz pozycjonowanie kontekstu w oknie modelu. **Samo wdrożenie rerankingu Cross-Encoder podnosi poprawność odpowiedzi z 33,5% do 49,0% przy dodatkowym opóźnieniu rzędu 120 ms** – to jeden z najlepszych stosunków efektu do kosztu w całej inżynierii RAG. Szczegóły strategii rerankingu opisuje odrębny artykuł o [rerankingu](/rag/reranking/).
+Advanced RAG dodaje dwa kluczowe etapy. Pre-retrieval – przeformułowanie zapytania, wygenerowanie zapytań pomocniczych, techniki takie jak HyDE (Hypothetical Document Embeddings). Post-retrieval – ponowne ocenianie (reranking) pobranych fragmentów modelem Cross-Encoder oraz pozycjonowanie kontekstu w oknie modelu. **Samo wdrożenie rerankingu Cross-Encoder zwykle wyraźnie podnosi trafność kontekstu kosztem dodatkowego opóźnienia** – to jeden z najlepszych stosunków efektu do kosztu w całej inżynierii RAG. Szczegóły strategii rerankingu opisuje odrębny artykuł o [rerankingu](/rag/reranking/).
 
 Modular RAG to architektura kompozytowa, w której każdy komponent – retriever, generator, moduł trasowania – jest wymienialny bez przebudowy reszty systemu. Obejmuje zaawansowane pętle sprzężenia zwrotnego, aktywne uczenie oraz wieloagentowe trasowanie zapytań zależnie od ich złożoności. Złożoność inżynieryjna jest wysoka, ale elastyczność w zamian – niezrównana.
 
-Na czele najnowszych rozwiązań stoi Adaptive RAG z TARG (Training-free Adaptive Retrieval Gating) – bramkowanie decyduje o konieczności uruchomienia wyszukiwania na podstawie analizy opóźnień modelu bazowego, bez konieczności trenowania dodatkowej warstwy. W scenariuszach o dużej skali pojawia się też Sparse RAG – rzadka selekcja kontekstu optymalizująca balans jakości do kosztu obliczeniowego.
+Na czele najnowszych rozwiązań stoi Adaptive RAG z TARG (Training-free Adaptive Retrieval Gating) – bramkowanie decyduje o konieczności uruchomienia wyszukiwania na podstawie niepewności modelu mierzonej na krótkim szkicu odpowiedzi (np. różnicy między dwoma najbardziej prawdopodobnymi tokenami), bez konieczności trenowania dodatkowej warstwy. W scenariuszach o dużej skali pojawia się też Sparse RAG – rzadka selekcja kontekstu optymalizująca balans jakości do kosztu obliczeniowego.
 
 Poniższa tabela porównuje cztery poziomy dojrzałości w wymiarach kluczowych dla decyzji architektonicznych:
 
@@ -62,7 +66,7 @@ Poniższa tabela porównuje cztery poziomy dojrzałości w wymiarach kluczowych 
 | Złożoność wdrożenia | Niska (1–2 dni) | Średnia do wysokiej | Wysoka | Bardzo wysoka |
 | Mechanizm wyszukiwania | Jednoprzebiegowe wektorowe | Hybrydowe + reranking | Wymienne potoki | Bramkowanie (TARG) |
 | Pętle korekcyjne | Brak | Ocena i korekta zapytań | Aktywne uczenie | Autorefleksja (Self-RAG) |
-| Opóźnienie | Minimalne | +ok. 120 ms | Zmienne | Dynamicznie optymalizowane |
+| Opóźnienie | Minimalne | Wyższe (dodatkowy etap rerankingu) | Zmienne | Dynamicznie optymalizowane |
 
 ### Kiedy sięgać po Naive, a kiedy po Advanced?
 
@@ -72,14 +76,14 @@ Naive RAG wystarcza, gdy dokumenty są jednorodne, pytania proste i nie trzeba o
 
 Jakość całego systemu RAG zaczyna się od segmentacji. Modele osadzające mają twarde limity sekwencji wejściowych – przekroczenie maksymalnej długości oznacza bezpowrotne obcięcie tekstu i utratę informacji. Dobór strategii podziału przesądza o tym, czy system znajduje precyzyjne fakty, czy traci kontekst narracyjny.
 
-Wyniki testów porównawczych są jednoznaczne: zmniejszenie rozmiaru fragmentu z 1024 do 64 tokenów podnosi współczynnik czułości (recall@1) o 10–15 punktów procentowych na zbiorach bogatych w encje, bo pojedynczy wektor reprezentuje węższy, bardziej skoncentrowany koncept. Odbywa się to jednak kosztem zdolności do obsługi zapytań wymagających syntezy szerszego kontekstu. To klasyczny dylemat precyzji i pokrycia.
+Mniejsze fragmenty zwykle poprawiają precyzję dopasowania przy pytaniach o konkretne fakty i encje, bo pojedynczy wektor reprezentuje węższy, bardziej skoncentrowany koncept. Odbywa się to jednak kosztem zdolności do obsługi zapytań wymagających syntezy szerszego kontekstu. To klasyczny dylemat precyzji i pokrycia.
 
 Najefektywniejsze strategie dla systemów produkcyjnych:
 
 - **Podział stały (fixed-size chunking)** – deterministyczny i szybki, niesie ryzyko przecinania zdań w połowie myśli; dobry punkt wyjścia dla jednorodnej dokumentacji
 - **Rekurencyjny podział tekstu** – hierarchicznie stosuje separatory (akapity, zdania, słowa), zachowuje spójność gramatyczną; Recursive Split osiąga 69% dokładności generowania i Page F1 = 0,92
 - **Segmentacja Parent-Child** – małe fragmenty potomne (128–256 tokenów) do precyzyjnego wyszukiwania wektorowego, duże fragmenty nadrzędne (512–1024 tokenów) przekazywane do generatora; najlepszy balans precyzji i kontekstu
-- **Pseudo-Instruction Chunking (PIC)** – podsumowanie na poziomie dokumentu wyznacza granice segmentów bez generowania narzutu kosztowego pełnych wywołań LLM; w testach porównawczych hits@5 = 58,4 (wyższe niż fixed-size 54,5 i semantic chunking 56,0)
+- **Pseudo-Instruction Chunking (PIC)** – podsumowanie na poziomie dokumentu wyznacza granice segmentów bez generowania narzutu kosztowego pełnych wywołań LLM
 - **Segmentacja semantyczna** – grupuje zdania na podstawie odległości kosinusowej osadzeń; optymalizuje spójność granic, ale prowadzi do drastycznej fragmentacji (średnio 43 tokeny w tekstach akademickich) i załamania skuteczności wyszukiwania na poziomie dokumentu (F1 = 0,42)
 
 **Segmentacja semantyczna wygląda elegancko w teorii, ale w praktyce jest pułapką.** W produkcji preferuj Recursive Split lub Parent-Child.
@@ -104,13 +108,13 @@ Wybór modelu osadzającego to jedna z najważniejszych decyzji w całym projekc
 
 [Generowanie wspomagane wyszukiwaniem](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation) polega na tym, że zarówno zapytanie, jak i wszystkie fragmenty bazy wiedzy są zamieniane na wektory przez ten sam model osadzający, a wyszukiwanie przebiega w tej samej przestrzeni wektorowej. Różne modele osadzające tworzą różne przestrzenie – fragment indeksowany jednym modelem musi być odpytywany tym samym modelem.
 
-Benchmark MTEB (Massive Text Embedding Benchmark) to dziś standard porównania modeli osadzających. Liderem z wynikiem 70,6 jest Qwen3-Embedding-8B (open-source, wymaga GPU z min. 16 GB VRAM). Dla wdrożeń chmurowych dobry stosunek jakości do ceny oferuje Google Gemini Embedding (ok. $0,15–$0,20 za milion tokenów) lub OpenAI text-embedding-3-small (zaledwie $0,02 za milion tokenów). W środowiskach wielojęzycznych i z dokumentami PDF Cohere Embed v4 jako jeden z niewielu na rynku obsługuje osadzanie multimodalne (tekst i obrazy bezpośrednio z PDF) plus kompresję binarną dającą 90% oszczędności pamięci.
+Benchmark MTEB (Massive Text Embedding Benchmark) to dziś standard porównania modeli osadzających. W czerwcu 2025 roku liderem wielojęzycznego rankingu z wynikiem 70,6 był Qwen3-Embedding-8B (open-source, wymaga GPU z min. 16 GB VRAM). Dla wdrożeń chmurowych dobry stosunek jakości do ceny oferuje Google Gemini Embedding lub OpenAI text-embedding-3-small (zaledwie $0,02 za milion tokenów). W środowiskach wielojęzycznych i z dokumentami PDF Cohere Embed v4 jako jeden z niewielu na rynku obsługuje osadzanie multimodalne (tekst i obrazy bezpośrednio z PDF) plus kompresję binarną, która znacząco zmniejsza zapotrzebowanie na pamięć.
 
-Na uwagę zasługuje fakt, że OpenAI text-embedding-3-large obsługuje technikę Matryoshka Representation Learning – redukcję wymiarowości wektora z 3072 do 256 przy stracie dokładności zaledwie 2–3%, co drastycznie obniża koszty przechowywania w bazie.
+Na uwagę zasługuje fakt, że OpenAI text-embedding-3-large obsługuje technikę Matryoshka Representation Learning – redukcję wymiarowości wektora z 3072 do 256, co drastycznie obniża koszty przechowywania w bazie. Według OpenAI nawet tak skrócony wektor wciąż przewyższa w benchmarku MTEB starszy model text-embedding-ada-002.
 
 ### Bazy wektorowe – pgvector kontra wyspecjalizowane systemy
 
-Powszechne przekonanie o wyższości wyspecjalizowanych baz wektorowych nad systemami relacyjnymi zakwestionowały wyniki rozszerzenia pgvectorscale dla PostgreSQL. **W testach na zbiorze 50 milionów wektorów pgvectorscale osiąga 471 zapytań na sekundę przy 99% czułości, podczas gdy Qdrant w tych samych warunkach daje zaledwie 41 QPS.** Do tego dochodzi pełna spójność transakcyjna ACID i brak narzutu synchronizacji z bazą aplikacyjną.
+Powszechne przekonanie o wyższości wyspecjalizowanych baz wektorowych nad systemami relacyjnymi zakwestionowały wyniki rozszerzenia pgvectorscale dla PostgreSQL. **W testach na zbiorze 50 milionów wektorów pgvectorscale osiąga 471 zapytań na sekundę przy 99% czułości, podczas gdy Qdrant w tych samych warunkach daje zaledwie 41 QPS.** Do tego dochodzi pełna spójność transakcyjna ACID i brak narzutu synchronizacji z bazą aplikacyjną. Ten sam test pokazał jednak, że Qdrant ma niższe opóźnienia p95 i p99 – liczy się to tam, gdzie krytyczny jest czas najwolniejszych odpowiedzi.
 
 Dla systemów o masowym wolumenie i rozproszonej architekturze pozostają Milvus (akceleracja GPU) i Pinecone (w pełni zarządzane skalowanie bezserwerowe z multi-tenancy). Qdrant wyróżnia się znakomitym filtrowaniem po metadanych – przydatnym, gdy dokumenty różnią się typem lub uprawnieniami dostępu.
 
@@ -145,7 +149,7 @@ Cztery metryki tworzą standardową triadę RAG plus metrykę trafności:
 - **Context Recall** – czy system w ogóle znalazł wszystkie fakty potrzebne do odpowiedzi; niska wartość wskazuje na luki w bazie lub złą strategię segmentacji
 - **Answer Relevance** – stopień, w jakim odpowiedź odpowiada na intencję pytania; liczona przez generowanie pytań z odpowiedzi i ich porównanie kosinusowe z oryginałem
 
-Wybór narzędzia ewaluacyjnego ma znaczenie. Benchmark 1460 pytań i 14 600 kontekstów pod identycznym sędzią (GPT-4o) pokazał istotne różnice między frameworkami. **TruLens osiąga wysoki wskaźnik selektywności 4,2:1** – poprawnie odróżnia prawidłowy kontekst od niemal identycznego z podmienionymi encjami. WandB Weave daje najwyższą dokładność w porównaniach parami (ang. pairwise accuracy, 94,4%), ale operuje na binarnej skali. DeepEval mimo dobrych właściwości pozycjonowania (NDCG@5 = 0,923) drastycznie niedoszacowuje poprawnych kontekstów (średnia ocena 0,46 zamiast 0,82–0,91), co wyklucza go z pomiaru bezwzględnej jakości.
+Wybór narzędzia ewaluacyjnego ma znaczenie. Frameworki takie jak TruLens, WandB Weave czy DeepEval różnią się skalą ocen i sposobem liczenia metryk, więc **ten sam system może dostać w nich różne wyniki nawet pod identycznym modelem-sędzią**. Zanim wybierzesz narzędzie, sprawdź, czy jego oceny pokrywają się z ocenami ludzi na próbce Twoich danych, i nie porównuj wyników liczonych w różnych frameworkach.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -163,7 +167,7 @@ Każda zmiana w promptach systemowych lub strukturze dokumentów powinna wyzwala
 
 Otwarcie interfejsu LLM na dynamiczną bazę dokumentów tworzy nową powierzchnię ataku, której nie ma w klasycznych aplikacjach. Zagrożenia działają na trzech poziomach: zatruwanie danych, manipulacja promptem i wyciek informacji.
 
-Wyniki badań są niepokojące. Ataki BadRAG pokazują, że zmiana zaledwie 0,04% zawartości bazy wiedzy skutkuje 98,2% skutecznością ataku. TrojanRAG osadza backdoory bezpośrednio w wektorach modeli osadzających – omijając tradycyjne filtry. Jeszcze bardziej niepokojące są ataki pośredniego wstrzykiwania promptów (Indirect Prompt Injection): złośliwa instrukcja ukryta w dokumencie pobranym przez retriever przejmuje kontrolę nad modelem bez bezpośredniego dostępu do interfejsu. **Zaledwie 5 złośliwych dokumentów na milion rekordów wystarcza do 90% skuteczności ataku.**
+Wyniki badań są niepokojące. Ataki BadRAG pokazują, że podrzucenie zaledwie 10 spreparowanych fragmentów (0,04% bazy wiedzy) sprawia, że dla zapytań z wyzwalaczem są one pobierane w 98,2% przypadków – a odsetek odmów odpowiedzi GPT-4 rośnie z 0,01% do 74,6%. TrojanRAG osadza backdoory bezpośrednio w wektorach modeli osadzających – omijając tradycyjne filtry. Jeszcze bardziej niepokojące są ataki pośredniego wstrzykiwania promptów (Indirect Prompt Injection): złośliwa instrukcja ukryta w dokumencie pobranym przez retriever przejmuje kontrolę nad modelem bez bezpośredniego dostępu do interfejsu. **W ataku PoisonedRAG wystarczy 5 złośliwych tekstów na każde atakowane pytanie – w bazie liczącej miliony tekstów – by osiągnąć ok. 90% skuteczności.**
 
 Kluczowa zasada obrony: zabezpieczenia nie mogą działać wyłącznie na poziomie promptów systemowych – zbyt łatwo je ominąć. Twarda kontrola musi być realizowana na poziomie bazy danych:
 
@@ -171,12 +175,12 @@ Kluczowa zasada obrony: zabezpieczenia nie mogą działać wyłącznie na poziom
 - **Row-level security (RLS)** – uprawnienia weryfikowane na poziomie wiersza w bazie wektorowej, zintegrowane z middleware OAuth/JWT
 - **Provenance i WORM** – weryfikacja pochodzenia danych, kontrola wersji, zapisy niemodyfikowalne (Write Once, Read Many) jako obrona przed zatruwaniem korpusu
 - **Dual attribution logging** – rejestrowanie aktywności zarówno tożsamości użytkownika, jak i wywołującego agenta AI; *canary documents* do wykrywania nieautoryzowanego skanowania bazy
-- **SD-RAG (Selective Disclosure RAG)** – dane w postaci chronionego grafu, wyspecjalizowany moduł redagujący anonimizuje wrażliwe fragmenty przed przekazaniem do generatora; podnosi wskaźnik ochrony prywatności o 58%
+- **SD-RAG (Selective Disclosure RAG)** – dane w postaci chronionego grafu, wyspecjalizowany moduł redagujący anonimizuje wrażliwe fragmenty przed przekazaniem do generatora
 
 | Zagrożenie | Mechanizm | Skutki | Obrona |
 |---|---|---|---|
 | Pośrednie wstrzykiwanie promptów | Złośliwe instrukcje w pobranym dokumencie | Przejęcie modelu, wyciek danych | RBAC/ABAC pre-retrieval, parafrazowanie zapytania |
-| Zatruwanie korpusu (BadRAG) | Sfałszowane dokumenty (0,04% bazy) | 98,2% skuteczności ataku | Provenance, WORM, kontrola wersji |
+| Zatruwanie korpusu (BadRAG) | Sfałszowane dokumenty (0,04% bazy) | 98,2% pobrań podrzuconych fragmentów, masowe odmowy odpowiedzi | Provenance, WORM, kontrola wersji |
 | TrojanRAG | Backdoor w wektorach osadzających | Ominięcie filtrów sanitacyjnych | Walidacja integralności osadzeń |
 | Luka autoryzacyjna | Brak filtracji uprawnień w bazie wektorowej | Dostęp do poufnych danych | RLS zintegrowane z OAuth/JWT |
 

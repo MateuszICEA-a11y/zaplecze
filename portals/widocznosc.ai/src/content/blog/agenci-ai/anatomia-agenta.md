@@ -3,6 +3,7 @@ title: 'Anatomia agenta AI – narzędzia, pamięć, pętla decyzyjna'
 subtitle: 'Zrozum, co napędza agenta AI, zanim powierzysz mu zadanie w swojej firmie'
 description: 'Jak działa agent AI od środka? Narzędzia, trójwarstwowa pamięć i pętla ReAct – architektura, którą musisz znać przed wdrożeniem.'
 date: 2026-05-13
+updated: 2026-09-17
 image: ../../../assets/images/blog-agenci-ai-anatomia-agenta.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>'
 author:
@@ -33,12 +34,15 @@ sources:
   - title: 'Graphiti'
     url: 'https://github.com/getzep/graphiti'
     note: 'Zep, repozytorium open source (Apache 2.0). Temporalny graf wiedzy, w którym fakty mają okna ważności, a nieaktualne są unieważniane, nie kasowane.'
+  - title: 'langgraph'
+    url: 'https://pypi.org/project/langgraph/'
+    note: 'PyPI. Wersja 1.0.0 opublikowana 17 października 2025, najnowsza 1.2.11 z 11 sierpnia 2026.'
   - title: 'How Ramp built a full context background coding agent on Modal'
     url: 'https://modal.com/blog/how-ramp-built-a-full-context-background-coding-agent-on-modal'
     note: 'Modal, 19 lutego 2026. Agent Inspect firmy Ramp działa w izolowanych sandboksach Modal, osobnych dla każdej sesji.'
   - title: 'ChemCrow: Augmenting large-language models with chemistry tools'
     url: 'https://arxiv.org/abs/2304.05376'
-    note: 'Bran i in., kwiecień 2023. GPT-4 jako ewaluator nie odróżniał błędnych odpowiedzi GPT-4 od wyników ChemCrow, w przeciwieństwie do ekspertów.'
+    note: 'Bran i in., kwiecień 2023 (wersja v5 z 2 października 2023). Agent korzysta z 18 narzędzi eksperckich; GPT-4 jako ewaluator nie odróżniał błędnych odpowiedzi GPT-4 od wyników ChemCrow, w przeciwieństwie do ekspertów.'
 ---
 **Agent AI to nie chatbot z lepszym promptem, ale system, który planuje, wywołuje narzędzia i zapamiętuje wyniki aż do osiągnięcia celu.** Żeby ocenić, czy sprawdzi się w Twojej organizacji, musisz zrozumieć trzy filary jego architektury: narzędzia (czyli „ręce”), pamięć (czyli „kontekst operacyjny”) i pętlę decyzyjną (czyli „mózg”). Zanim powierzysz mu dostęp do CRM-u, bazy danych lub skrzynki mailowej, sprawdź mechanizmy działania pod spodem. Szerszy kontekst – czym agenci AI różnią się od klasycznych automatyzacji i kiedy warto po nie sięgać – znajdziesz w [przewodniku po agentach AI](/agenci-ai/przewodnik/).
 
@@ -77,7 +81,7 @@ Cztery wzorce kontroli przepływu, które warto rozróżniać:
 
 Wzorzec Reflexion rozwiązuje inny problem: uczenie się na błędach. Gdy agent wykryje nieefektywną pętlę – na przykład wielokrotne wywołanie tego samego narzędzia z identycznym wynikiem – resetuje środowisko, generuje autorefleksję na podstawie historii niepowodzenia i zapisuje ją do pamięci roboczej. Kolejna próba korzysta już z tej lekcji jako twardego kontekstu.
 
-LangGraph, jeden z najbardziej dojrzałych frameworków agentowych (wersja v0.4, 2026), modeluje przepływ agenta jako [grafy skierowane](https://pl.wikipedia.org/wiki/Graf_(matematyka)) – wierzchołki to stany, a krawędzie to przejścia warunkowe. Taka architektura daje pełną kontrolę nad cyklami i punktami kontrolnymi (checkpoints), w których człowiek może zatwierdzić lub zablokować kolejny krok.
+LangGraph, jeden z najbardziej dojrzałych frameworków agentowych (stabilna wersja 1.0 od października 2025 roku), modeluje przepływ agenta jako [grafy skierowane](https://pl.wikipedia.org/wiki/Graf_(matematyka)) – wierzchołki to stany, a krawędzie to przejścia warunkowe. Taka architektura daje pełną kontrolę nad cyklami i punktami kontrolnymi (checkpoints), w których człowiek może zatwierdzić lub zablokować kolejny krok.
 
 ![Anatomia agenta AI: model językowy w centrum połączony z czterema modułami – pamięcią, narzędziami, planowaniem i pętlą decyzyjną](../../../assets/images/infographic-agenci-ai-anatomia-agenta.png)
 
@@ -122,13 +126,13 @@ Skutki bywają katastrofalne. Obejmują eksfiltrację danych, modyfikację konfi
 
 Trzy warstwy ochrony, które w 2026 roku uznaje się za absolutnie obowiązkowe:
 
-- **Izolacja środowiska wykonawczego** – agent myślący działa w oddzielnym procesie od agenta wykonującego akcje; narzędzia uruchamia się w efemerycznych, jednorazowych maszynach wirtualnych bez dostępu do surowych kluczy API
+- **Izolacja środowiska wykonawczego** – narzędzia i kod uruchamia się w odizolowanych, jednorazowych środowiskach (sandboksach) oddzielonych od systemów produkcyjnych i bez dostępu do surowych kluczy API
 - **Lista dozwolonych połączeń wychodzących** – domyślne blokowanie ruchu wychodzącego z wyjątkiem zatwierdzonych domen; takie podejście uniemożliwia eksfiltrację danych przez zapytania DNS
 - **Ochrona plików konfiguracyjnych** – pliki definiujące zachowanie systemu nie mogą być modyfikowane przez agenta, nawet w jego własnym obszarze roboczym
 
 **Najniebezpieczniejszy wariant to agent działający bezpośrednio na maszynie produkcyjnej z pełnym dostępem do sieci – taki scenariusz wystawia sam proces na ryzyko przejęcia.**
 
-Firma Ramp we wdrożeniu agenta programistycznego „Inspect” rozwiązuje ten problem, wykorzystując efemeryczne maszyny wirtualne na platformie Modal. Środowisko myślenia jest tam całkowicie oddzielone od środowiska działania. To wzorzec wart powielania w każdym systemie z dostępem do danych produkcyjnych.
+Firma Ramp we wdrożeniu agenta programistycznego „Inspect” ogranicza ten problem, uruchamiając każdą sesję agenta w osobnym, izolowanym sandboksie na platformie Modal. Sesje nie współdzielą środowiska ani ze sobą, ani z komputerami programistów. To wzorzec wart powielania w każdym systemie z dostępem do danych produkcyjnych.
 
 ## Frameworki – czego używać w 2026 roku
 
@@ -156,7 +160,7 @@ Agenty nie nadają się do wszystkich zadań. Mają trzy twarde ograniczenia, kt
 
 Po pierwsze – wąskie gardło okna kontekstowego. Długa historia wywołań narzędzi zapełnia limit tokenów szybciej niż obszerny dokument. Systemy działające w trybie ciągłym przez wiele godzin wymagają aktywnego zarządzania kompresją historii.
 
-Po drugie – podatność na błędy logiczne przy długim planowaniu. ChemCrow (Bran et al. 2023), agent do syntezy chemicznej integrujący 13 wyspecjalizowanych narzędzi, ujawnił tak zwany paradoks ewaluacyjny. Automatyczna ocena oparta na LLM wykazała równoważność wyników z surowym GPT-4, ale eksperci chemicy ocenili ChemCrow drastycznie lepiej pod kątem poprawności merytorycznej. **Model po prostu nie ma wystarczającej wiedzy domenowej, żeby poprawnie oceniać jakość własnych, wysoce specjalistycznych wyników.**
+Po drugie – podatność na błędy logiczne przy długim planowaniu. ChemCrow (Bran et al. 2023), agent do syntezy chemicznej integrujący 18 wyspecjalizowanych narzędzi, ujawnił tak zwany paradoks ewaluacyjny. Automatyczna ocena oparta na LLM wykazała równoważność wyników z surowym GPT-4, ale eksperci chemicy ocenili ChemCrow drastycznie lepiej pod kątem poprawności merytorycznej. **Model po prostu nie ma wystarczającej wiedzy domenowej, żeby poprawnie oceniać jakość własnych, wysoce specjalistycznych wyników.**
 
 Po trzecie – ryzyko operacyjne przy narzędziach nieodwracalnych. Agent wysyłający e-maile lub modyfikujący bazę danych musi mieć wbudowany mechanizm zatwierdzania przez człowieka dla działań o wysokim ryzyku. To nie kwestia wygody, ale fundamentalnego bezpieczeństwa operacyjnego.
 

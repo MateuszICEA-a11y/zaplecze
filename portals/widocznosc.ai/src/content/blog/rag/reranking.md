@@ -3,6 +3,7 @@ title: 'Reranking – jak zwiększyć trafność odpowiedzi RAG'
 subtitle: 'Jeden krok między wyszukiwaniem a generowaniem, który decyduje o jakości całego systemu'
 description: 'Czym jest reranking w systemach RAG, jak działa cross-encoder i kiedy go wdrożyć. Praktyczny przewodnik po architekturze dwuetapowej i ocenie jakości.'
 date: 2026-05-09
+updated: 2026-09-17
 image: ../../../assets/images/blog-rag-reranking.webp
 icon: '<path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="17" r="3"/><path d="m20.5 19.5 1.5 1.5"/>'
 author:
@@ -29,7 +30,7 @@ sources:
     note: 'Cohere, dokumentacja. rerank-v4.0-pro: model wielojęzyczny z obsługą danych półstrukturalnych (JSON) i kontekstem 32 tys. tokenów.'
   - title: 'BAAI/bge-reranker-v2-m3'
     url: 'https://huggingface.co/BAAI/bge-reranker-v2-m3'
-    note: 'BAAI, karta modelu. Lekki, wielojęzyczny reranker (ok. 0,6 mld parametrów, Apache 2.0).'
+    note: 'BAAI, karta modelu. Lekki, łatwy we wdrożeniu i szybki wielojęzyczny reranker (ok. 0,6 mld parametrów, Apache 2.0).'
   - title: 'Qwen/Qwen3-Reranker-4B'
     url: 'https://huggingface.co/Qwen/Qwen3-Reranker-4B'
     note: 'Qwen, karta modelu. Wyniki 69,76 na MTEB-R i 81,20 na MTEB-Code.'
@@ -40,7 +41,7 @@ sources:
     url: 'https://huggingface.co/jinaai/jina-reranker-v3'
     note: 'Jina AI, karta modelu. 61,94 nDCG@10 na BEIR, do 64 dokumentów jednocześnie w oknie 131 tys. tokenów.'
 ---
-Jeśli Twój system [generowania wspomaganego wyszukiwaniem](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG – Retrieval-Augmented Generation) zwraca sensowne fragmenty tekstu, ale odpowiedzi modelu nadal mijają się z intencją zapytania, problem leży zazwyczaj w jednym miejscu. Brakuje etapu rerankingu (ponownego pozycjonowania wyników). **Testy wdrożeniowe na zbiorach rzędu 3 750 zapytań wykazały, że dodanie cross-encodera jako rerankera to najważniejszy krok podnoszący dokładność systemu – daje wzrost aż o 7,6 punktu procentowego.** Poniżej pokazujemy, jak architektura dwuetapowa działa w praktyce. Dowiesz się, czym różnią się bi-encodery od cross-encoderów, kiedy sięgnąć po gotowe API, a kiedy po model lokalny, i jak zmierzyć realny wpływ rerankera.
+Jeśli Twój system [generowania wspomaganego wyszukiwaniem](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG – Retrieval-Augmented Generation) zwraca sensowne fragmenty tekstu, ale odpowiedzi modelu nadal mijają się z intencją zapytania, problem leży zazwyczaj w jednym miejscu. Brakuje etapu rerankingu (ponownego pozycjonowania wyników). **Dodanie cross-encodera jako rerankera to często jeden z najskuteczniejszych kroków podnoszących dokładność całego systemu.** Poniżej pokazujemy, jak architektura dwuetapowa działa w praktyce. Dowiesz się, czym różnią się bi-encodery od cross-encoderów, kiedy sięgnąć po gotowe API, a kiedy po model lokalny, i jak zmierzyć realny wpływ rerankera.
 
 ## Dlaczego samo wyszukiwanie wektorowe nie wystarczy?
 
@@ -84,8 +85,8 @@ Praktyczna implementacja systemu dwuetapowego wymaga decyzji w trzech obszarach.
 
 Modele dzielą się na komercyjne API i rozwiązania lokalne.
 
-- **Cohere Rerank v4.0-pro** – komercyjne API, 32 000 tokenów kontekstu, natywne wsparcie dla JSON i ponad 100 języków. To dobry punkt startowy dla prototypów, gdzie czas wdrożenia jest ważniejszy niż koszt jednostkowy.
-- **BGE-reranker-v2-m3** – model lokalny (568 mln parametrów, Apache 2.0), okno do 8 192 tokenów (BAAI rekomenduje 1 024). Powszechny standard bazowy dla wdrożeń on-premise. Jest wolny i lekki, działa bez GPU.
+- **Cohere Rerank v4.0-pro** – komercyjne API, 32 000 tokenów kontekstu, natywne wsparcie dla danych półstrukturalnych (JSON) i dokumentów wielojęzycznych. To dobry punkt startowy dla prototypów, gdzie czas wdrożenia jest ważniejszy niż koszt jednostkowy.
+- **BGE-reranker-v2-m3** – wielojęzyczny model lokalny (ok. 0,6 mld parametrów) na otwartej licencji Apache 2.0. Powszechny standard bazowy dla wdrożeń on-premise. Według BAAI jest lekki, łatwy we wdrożeniu i szybki w działaniu.
 - **Qwen3-Reranker-4B** – osiąga wyniki 69,76 na MTEB-R i 81,20 na MTEB-Code. Świetna opcja, jeśli indeksujesz dokumentację techniczną lub kod.
 - **FlashRank** – ultralekki silnik Apache 2.0, zaprojektowany pod środowiska CPU. Idealny do wdrożeń brzegowych i mikroserwisów z ograniczoną pamięcią.
 - **Jina Reranker v3** – oferuje tryb listowy (jednoczesna analiza do 64 dokumentów w oknie 131 000 tokenów) i wynik 61,94 nDCG@10 na zbiorze BEIR.
@@ -112,14 +113,6 @@ To rozwiązanie skutecznie zapobiega uruchamianiu dużych modeli na słabo dopas
 Sama wymiana bi-encodera na cross-encoder to dopiero połowa optymalizacji. Drugą połowę daje wyszukiwanie hybrydowe (ang. *hybrid search*), które łączy dwa typy wyszukiwania o uzupełniających się właściwościach.
 
 Wyszukiwanie leksykalne i rzadkie reprezentacje wektorowe (algorytm Okapi BM25 lub SPLADE) świetnie radzą sobie z dokładnymi dopasowaniami terminów technicznych, nazw własnych i akronimów. Z kolei wyszukiwanie semantyczne (bi-encoder) wychwytuje parafrazy i synonimy. Połączone wyniki z obu systemów trafiają do algorytmu RRF (ang. *Reciprocal Rank Fusion* – fuzja odwrotności rang). Mechanizm ten scala listy kandydatów bez konieczności normalizowania skal ocen. Następnie skonsolidowana lista wędruje bezpośrednio do cross-encodera.
-
-<aside class="callout-fact">
-  <div class="callout-icon">✦</div>
-  <div class="callout-body">
-    <div class="callout-label">Dane z benchmarku</div>
-    <p>W testach NVIDIA na potoku pytanie-odpowiedź (QA), model nv-rerankqa-mistral-4b-v3 w połączeniu z NV-EmbedQA-E5-v5 osiągnął średni wskaźnik Recall@5 na poziomie 75,45%. Samo wyszukiwanie wektorowe bez rerankera zatrzymało się na poziomie około 60–65% dla analogicznych konfiguracji. <strong>Różnica 10–15 punktów procentowych to w produkcyjnym systemie biznesowym przepaść między akceptowalną a niedopuszczalną jakością odpowiedzi.</strong></p>
-  </div>
-</aside>
 
 Reranker doskonale współpracuje też z techniką HyDE (ang. *Hypothetical Document Embeddings*). W ramach tej metody model językowy najpierw generuje hipotetyczną odpowiedź na pytanie. Służy ona jako wzbogacone zapytanie do bazy wektorowej. Halucynacje w tej hipotetycznej odpowiedzi w niczym nie szkodzą. Reranker po prostu eliminuje błędne założenia HyDE na etapie końcowej selekcji.
 

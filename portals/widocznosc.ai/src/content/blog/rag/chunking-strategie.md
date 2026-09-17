@@ -3,6 +3,7 @@ title: 'Chunking – strategie dzielenia dokumentów'
 subtitle: 'Dobierz strategię podziału dokumentów, która zwiększa precyzję wyszukiwania i ogranicza halucynacje LLM'
 description: 'Chunking w RAG: porównanie strategii o stałym rozmiarze, rekurencyjnej, semantycznej i nadrzędno-podrzędnej. Dane z badań, benchmarki, kod i wskazówki dla programistów.'
 date: 2026-05-18
+updated: 2026-09-17
 image: ../../../assets/images/blog-rag-chunking-strategie.webp
 icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="9" x2="9" y2="21"/>'
 author:
@@ -26,7 +27,7 @@ sources:
     note: 'Karta modelu na Hugging Face. Tekst dłuższy niż 256 tokenów (word pieces) jest domyślnie obcinany.'
   - title: 'Long-Context Isn’t All You Need: How Retrieval & Chunking Impact Finance RAG'
     url: 'https://www.snowflake.com/en/engineering-blog/impact-retrieval-chunking-finance-rag/'
-    note: 'Snowflake, 11 marca 2025. Podział uwzględniający nagłówki Markdown wypada o 5–10 punktów procentowych lepiej niż podział stały i semantyczny (bez metadanych dokumentu).'
+    note: 'Snowflake, 11 marca 2025. Podział uwzględniający nagłówki Markdown wypada o 5–10 punktów procentowych lepiej niż podział stały i semantyczny (bez metadanych dokumentu); po dołączeniu metadanych dokumentu różnice maleją.'
   - title: 'Osadzanie słów'
     url: 'https://pl.wikipedia.org/wiki/Osadzanie_s%C5%82%C3%B3w'
     note: 'Wikipedia. Definicja osadzeń jako wektorów, w których słowa o podobnym znaczeniu leżą blisko siebie.'
@@ -37,7 +38,7 @@ sources:
     url: 'https://www.llamaindex.ai/blog/evaluating-the-ideal-chunk-size-for-a-rag-system-using-llamaindex-6207e5d3fec5'
     note: 'LlamaIndex (Ravi Theja), 5 października 2023. Ocena rozmiaru fragmentów według wierności, trafności i czasu odpowiedzi.'
 ---
-Wybór strategii chunkingu (podziału dokumentów na fragmenty) determinuje jakość całego systemu RAG (ang. *Retrieval-Augmented Generation*, czyli generowania wspomaganego wyszukiwaniem) mocniej niż dobór modelu LLM czy algorytmu wyszukiwania. **Fragment (ang. chunk) to podstawowa jednostka, którą silnik RAG indeksuje i wyszukuje – błędnie wyznaczone granice niszczą kontekst semantyczny, zanim model w ogóle zobaczy dane.** Badanie z arXiv (2603.06976) dowodzi, że prosta segmentacja znakowa osiąga metrykę Precision@1 na poziomie zaledwie 2–3%, podczas gdy metody semantyczne przekraczają 24%. Różnica powstaje na etapie podziału, a nie samego wyszukiwania (retrieval).
+Wybór strategii chunkingu (podziału dokumentów na fragmenty) determinuje jakość całego systemu RAG (ang. *Retrieval-Augmented Generation*, czyli generowania wspomaganego wyszukiwaniem) mocniej niż dobór modelu LLM czy algorytmu wyszukiwania. **Fragment (ang. chunk) to podstawowa jednostka, którą silnik RAG indeksuje i wyszukuje – błędnie wyznaczone granice niszczą kontekst semantyczny, zanim model w ogóle zobaczy dane.** Badanie z arXiv (2603.06976) dowodzi, że prosta segmentacja znakowa osiąga metrykę Precision@1 na poziomie zaledwie 2–3%, podczas gdy grupowanie akapitów (Paragraph Group Chunking) osiąga ok. 24%. Różnica powstaje na etapie podziału, a nie samego wyszukiwania (retrieval).
 
 ## Problem złotego środka – dlaczego rozmiar ma znaczenie
 
@@ -62,7 +63,7 @@ Każda strategia odpowiada zupełnie innym właściwościom dokumentów i wymaga
 
 ### Sztywna segmentacja – szybka, ale kosztowna semantycznie
 
-Podział o stałym rozmiarze (ang. *fixed-size chunking*) tnie sekwencję tokenów na równe przedziały bez uwzględniania struktury tekstu. Dla modelu `text-embedding-3-small` typowy rozmiar wynosi 512 tokenów, natomiast dla `all-MiniLM-L6-v2` – 256 tokenów.
+Podział o stałym rozmiarze (ang. *fixed-size chunking*) tnie sekwencję tokenów na równe przedziały bez uwzględniania struktury tekstu. Rozmiar trzeba dopasować do limitu modelu osadzającego – `all-MiniLM-L6-v2` domyślnie obcina tekst dłuższy niż 256 tokenów, a modele o dłuższym oknie wejściowym, jak `text-embedding-3-small`, pozwalają na większe fragmenty.
 
 ```python
 from langchain_text_splitters import TokenTextSplitter
@@ -92,7 +93,7 @@ splitter = RecursiveCharacterTextSplitter(
 chunks = splitter.split_documents(docs)
 ```
 
-To zdecydowanie najbardziej elastyczna strategia dla tekstów narracyjnych. **Gdy dokument zawiera nagłówki Markdown, analiza Snowflake wykazuje wzrost precyzji o 5–10% po dodaniu `"\n# "` i `"\n## "` na początku listy separatorów.** Fragment zaczyna się wtedy od nagłówka, co daje modelowi osadzającemu bardzo wyraźny sygnał tematyczny.
+To zdecydowanie najbardziej elastyczna strategia dla tekstów narracyjnych. **Gdy dokument zawiera nagłówki Markdown, warto dodać `"\n# "` i `"\n## "` na początku listy separatorów – w analizie Snowflake podział według nagłówków wypadł o 5–10 punktów procentowych lepiej niż podział stały i semantyczny (gdy do fragmentów nie dołączano metadanych dokumentu).** Fragment zaczyna się wtedy od nagłówka, co daje modelowi osadzającemu bardzo wyraźny sygnał tematyczny.
 
 ### Segmentacja semantyczna – gdy granice tematyczne są ważniejsze niż długość
 
@@ -101,7 +102,7 @@ Podział semantyczny (ang. *semantic chunking*) nie pyta „ile tokenów?", tylk
 Trzy metody wyznaczania progu dają zupełnie różne wyniki w zależności od analizowanej domeny.
 
 - **Metoda percentylowa** – granica leży tam, gdzie różnica odległości semantycznej przekracza 95. percentyl rozkładu (stabilna dla jednorodnych dokumentów)
-- **Metoda odchylenia standardowego** – próg µ + 3σ świetnie sprawdza się dla dokumentów prawnych i medycznych (wynik ważony 43,56 w benchmarku LangChain Semantic Chunking Arena)
+- **Metoda odchylenia standardowego** – granica leży tam, gdzie różnica przekracza średnią o trzy odchylenia standardowe (µ + 3σ), więc podział następuje tylko przy wyraźnych zmianach tematu
 - **Metoda rozstępu ćwiartkowego (IQR)** – skutecznie eliminuje wpływ wartości skrajnych i pozostaje stabilna dla dokumentów mieszanych (e-commerce, ML, historia)
 
 ```python
@@ -121,16 +122,7 @@ Osadzenia (ang. *embeddings*) – reprezentacje wektorowe tekstu – to absolutn
 
 Podział nadrzędno-podrzędny (ang. *parent-context chunking*) skutecznie rozwiązuje sprzeczność między wyszukiwaniem a generowaniem. W bazie wektorowej indeksowane są małe fragmenty podrzędne (ang. *child chunks*, np. 128–256 tokenów) dla precyzyjnego dopasowania semantycznego. Po znalezieniu trafienia system pobiera powiązany fragment nadrzędny (ang. *parent chunk*, np. 1024–2000 tokenów). Trafia on bezpośrednio do kontekstu LLM – od razu z szerokim tłem strukturalnym.
 
-Wyniki badań Stanford University (2025) jednoznacznie potwierdzają przewagę tej metody.
-
-| Metoda | Precyzja | Pełność (Recall) | F1 |
-|---|---|---|---|
-| Sztywna (512 tokenów) | 0,65 | 0,58 | 0,61 |
-| Semantyczna | 0,78 | 0,72 | 0,75 |
-| Hierarchiczna | 0,82 | 0,79 | 0,80 |
-| Parent-Context | 0,88 | 0,85 | 0,86 |
-
-**Wzrost wartości miary F1 z 0,61 do 0,86 – czyli o 0,25 – to różnica między prototypem a systemem produkcyjnym.** Kosztem jest tu zwiększona złożoność implementacji. Wymaga ona utrzymania mapowania identyfikatorów z fragmentów podrzędnych na nadrzędne oraz obsługi dwupoziomowego magazynu danych.
+**Ta metoda łączy precyzję dopasowania małych fragmentów z pełnym kontekstem dużych, dlatego dobrze sprawdza się w systemach produkcyjnych.** Kosztem jest tu zwiększona złożoność implementacji. Wymaga ona utrzymania mapowania identyfikatorów z fragmentów podrzędnych na nadrzędne oraz obsługi dwupoziomowego magazynu danych.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -144,7 +136,7 @@ Wyniki badań Stanford University (2025) jednoznacznie potwierdzają przewagę t
 
 ## Metadane i wzbogacanie fragmentów
 
-Rozmiar fragmentu to jedno. Drugą kluczową kwestią jest to, co do niego dołączasz. **Wyszukiwanie wzbogacone o metadane (ang. *metadata-enriched retrieval*) osiąga precyzję 82,5% w porównaniu do 73,3% dla wyszukiwania czysto tekstowego (badania IEEE).**
+Rozmiar fragmentu to jedno. Drugą kluczową kwestią jest to, co do niego dołączasz. **Wyszukiwanie wzbogacone o metadane (ang. *metadata-enriched retrieval*) pozwala filtrować i zawężać wyniki, zanim w ogóle zadziała podobieństwo wektorowe.**
 
 Istnieje kilka kluczowych pól metadanych, które warto dołączyć do każdego fragmentu.
 
@@ -165,7 +157,7 @@ def build_chunk_metadata(doc, chunk_text, chunk_idx, section_title=""):
     }
 ```
 
-Firma Snowflake udowodniła, że samo dodanie nagłówków Markdown jako pola metadanych podnosi precyzję o 5–10% względem podziału bez kontekstu sekcji. **Dla systemów SQL wdrożenie zarządzanych metadanych podniosło dokładność generowania zapytań aż o 38%.**
+Analiza Snowflake pokazała też, że **dołączenie do fragmentów kontekstu całego dokumentu (metadanych) wyraźnie zmniejsza różnice między strategiami podziału** – przewaga podziału według nagłówków nad podziałem stałym jest wtedy mniejsza.
 
 ## Dokumenty o złożonej strukturze – PDF-y i tabele
 

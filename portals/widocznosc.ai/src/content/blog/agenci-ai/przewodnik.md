@@ -3,6 +3,7 @@ title: 'Agenci AI – czym są, jak działają, do czego służą'
 subtitle: 'Zrozum, jak autonomiczne systemy AI planują, korzystają z narzędzi i realizują wieloetapowe zadania – zanim wdrożysz je w swojej organizacji'
 description: 'Agenci AI – definicja, architektura, typy, frameworki i zastosowania biznesowe. Kompletny przewodnik dla marketerów i liderów technologicznych.'
 date: 2026-05-23
+updated: 2026-09-17
 image: ../../../assets/images/blog-agenci-ai-przewodnik.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/>'
 author:
@@ -35,10 +36,13 @@ sources:
     note: 'Repozytorium AG2. Projekt wywodzący się z AutoGen, rozwijany przez społeczność wolontariuszy.'
   - title: 'Inscribe cut time spent on fraud review 20x with Claude'
     url: 'https://claude.com/customers/inscribe'
-    note: 'Anthropic, studium przypadku. Skrócenie weryfikacji z 30 minut do 90 sekund i 70-krotny wzrost przepustowości u jednego z klientów.'
+    note: 'Anthropic, studium przypadku. Skrócenie przeglądu nadużyć (z kontrolami KYC i KYB) z 30 minut do ok. 90 sekund i 70-krotny wzrost przepustowości przetwarzania wniosków kredytowych u jednego z klientów.'
   - title: 'How We Hacked McKinsey’s AI Platform'
     url: 'https://codewall.ai/blog/how-we-hacked-mckinseys-ai-platform'
-    note: 'CodeWall, 9 marca 2026. Autonomiczny agent w 2 godziny uzyskał dostęp do platformy Lilli: 22 niezabezpieczone endpointy, SQL injection, 46,5 mln wiadomości.'
+    note: 'CodeWall, 9 marca 2026. Niezależny test: autonomiczny agent w 2 godziny uzyskał dostęp do platformy Lilli (22 niezabezpieczone endpointy, SQL injection, 46,5 mln wiadomości, 95 konfiguracji z promptami). Luka wykryta 28 lutego, zgłoszona 1 marca, załatana 2 marca 2026.'
+  - title: 'Models'
+    url: 'https://mastra.ai/models'
+    note: 'Dokumentacja Mastra. Router modeli daje dostęp do 7346 modeli od 207 dostawców (stan na wrzesień 2026).'
 ---
 Agent AI to nie chatbot z lepszą pamięcią. To system, który samodzielnie planuje działania, wywołuje zewnętrzne narzędzia, weryfikuje wyniki i iteruje – aż zrealizuje postawiony cel. LLM (Large Language Model, czyli duży model językowy) pełni tu rolę centralnego kontrolera, a nie tylko generatora tekstu. **Ta zmiana – od modelu, który odpowiada, do systemu, który działa – to największy przełom w AI od momentu upowszechnienia się ChatGPT.** Sprawdź, czym dokładnie jest agent AI, jak zbudowano jego architekturę, jakie frameworki dominują w 2026 roku i do jakich zastosowań biznesowych warto go użyć.
 
@@ -119,7 +123,7 @@ Architektura MCP składa się z trzech głównych komponentów:
 
 **Najważniejsza zmiana praktyczna polega na tym, że agent podłączony do MCP Server może w czasie rzeczywistym odpytywać bazy danych firmy, wywoływać wewnętrzne API i aktualizować systemy CRM – bez konieczności przepisywania kodu integracyjnego przy każdej zmianie modelu.**
 
-Zwróć jednak uwagę na jedno ograniczenie. Wdrożenia MCP w 2026 roku ujawniły podatność na tak zwany *tool poisoning*. Złośliwy serwer MCP może po autoryzacji zmodyfikować definicję narzędzia. To wymusza rygorystyczną weryfikację wszystkich zewnętrznych serwerów MCP przed podłączeniem ich do systemu produkcyjnego.
+Zwróć jednak uwagę na jedno ograniczenie. Już w kwietniu 2025 roku badacze z Invariant Labs opisali podatność MCP na tak zwany *tool poisoning*. Złośliwy serwer MCP może po autoryzacji zmodyfikować definicję narzędzia. To wymusza rygorystyczną weryfikację wszystkich zewnętrznych serwerów MCP przed podłączeniem ich do systemu produkcyjnego.
 
 Więcej o architekturze agentów i budowaniu systemów wieloagentowych znajdziesz w artykule o [anatomii agenta](/agenci-ai/anatomia-agenta/).
 
@@ -133,7 +137,7 @@ CrewAI reprezentuje podejście deklaratywne. Definiujesz role, cele i hierarchi�
 
 AutoGen (Microsoft) i jego społecznościowy fork AG2 modelują systemy agentowe jako wielostronną konwersację. Największa zaleta? Natywna obsługa agentów piszących i wykonujących kod w izolowanych kontenerach Docker. Istnieje tu jednak ryzyko – gdy agenci wejdą w nieskończoną debatę, koszty tokenów błyskawicznie wymykają się spod kontroli.
 
-Wśród specjalistycznych frameworków wyróżnia się Mastra (TypeScript) z wbudowanym routerem obsługującym ponad 3300 modeli od 94 dostawców. To niezwykle praktyczne rozwiązanie, gdy chcesz uniknąć uzależnienia od jednego dostawcy. Z kolei Pydantic AI stawia na pełne bezpieczeństwo typów i automatyczną walidację struktury danych wyjściowych. Stanowi standardowe narzędzie przy ekstrakcji danych strukturyzowanych z dokumentów.
+Wśród specjalistycznych frameworków wyróżnia się Mastra (TypeScript) z wbudowanym routerem obsługującym ponad 7300 modeli od ponad 200 dostawców. To niezwykle praktyczne rozwiązanie, gdy chcesz uniknąć uzależnienia od jednego dostawcy. Z kolei Pydantic AI stawia na pełne bezpieczeństwo typów i automatyczną walidację struktury danych wyjściowych. Stanowi standardowe narzędzie przy ekstrakcji danych strukturyzowanych z dokumentów.
 
 | Framework | Język | Model orkiestracji | Najlepsze zastosowanie |
 |---|---|---|---|
@@ -151,15 +155,15 @@ Teoria brzmi przekonująco, ale które wdrożenia przynoszą konkretny zwrot z i
 
 ### Automatyzacja finansowa i weryfikacja tożsamości
 
-Firma Inscribe wdrożyła agentów AI do procesu weryfikacji klientów (KYC – Know Your Customer). Agent pobiera dokumenty tożsamości i wyciągi bankowe, automatycznie przeprowadza kontrole w zewnętrznych rejestrach publicznych i generuje ustrukturyzowany raport ryzyka. Efekt? Czas analizy jednego klienta skrócił się z 30 minut do 90 sekund, a przepustowość operacyjna wzrosła 70-krotnie.
+Firma Inscribe wdrożyła agentów AI do analizy nadużyć (fraud review) we wnioskach finansowych. Agent wykrywa manipulacje w obrazach i plikach PDF, weryfikuje dane wnioskodawcy w ramach kontroli KYC (Know Your Customer) i KYB (Know Your Business), wychwytuje ryzykowne transakcje i generuje raport ryzyka możliwy do audytu. Efekt? Czas przeglądu jednego wniosku pod kątem nadużyć skrócił się z 30 minut do około 90 sekund, a jeden z klientów Inscribe zwiększył przepustowość przetwarzania wniosków kredytowych 70-krotnie bez zwiększania zatrudnienia.
 
-To wcale nie jest wyjątek. Tradycyjne procesy KYC są szczególnie podatne na automatyzację agentową. Mają jasno zdefiniowany cel (weryfikacja tożsamości), dobrze udokumentowane źródła danych i przewidywalny format wyjściowy.
+To wcale nie jest wyjątek. Tradycyjne procesy weryfikacji klientów są szczególnie podatne na automatyzację agentową. Mają jasno zdefiniowany cel (weryfikacja tożsamości), dobrze udokumentowane źródła danych i przewidywalny format wyjściowy.
 
 ### Autoryzacje medyczne i przetwarzanie dokumentacji klinicznej
 
-Wdrożenie systemu agentowego opartego na LangGraph u klienta przetwarzającego wnioski o autoryzację ubezpieczeń medycznych podniosło dokładność automatycznego podejmowania decyzji z 71% do 93%. Kluczem okazała się ścisła izolacja kontekstu medycznego na poziomie poszczególnych węzłów grafu. Agent analizujący historię choroby po prostu nie miał dostępu do danych finansowych.
+Wnioski o autoryzację świadczeń w ubezpieczeniach zdrowotnych to kolejny obszar, w którym sprawdzają się systemy agentowe, np. oparte na LangGraph. Kluczem jest ścisła izolacja kontekstu medycznego na poziomie poszczególnych węzłów grafu. Agent analizujący historię choroby po prostu nie ma dostępu do danych finansowych.
 
-**Dokładność na poziomie 93% w procesie, który wcześniej wymagał specjalisty medycznego przy każdym wniosku, to argument trafiający bezpośrednio do CFO.**
+**Automatyzacja procesu, który wcześniej wymagał specjalisty medycznego przy każdym wniosku, to argument trafiający bezpośrednio do CFO – pod warunkiem, że dokładność decyzji zmierzysz na własnych danych przed wdrożeniem.**
 
 ### Zarządzanie łańcuchem dostaw i analiza ofert
 
@@ -185,7 +189,7 @@ Odpowiedź na te zagrożenia to trzystopniowa strategia, którą praktycy bezpie
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Kontrolowany incydent naruszenia bezpieczeństwa wewnętrznej platformy McKinsey & Company (Lilli), z której korzysta blisko trzy czwarte personelu firmy, trwał krócej niż dwie godziny. Autonomiczny agent bezpieczeństwa zidentyfikował ponad 200 punktów końcowych API – 22 z nich nie wymagały uwierzytelnienia. Jeden z tych punktów przekazywał zapytania bezpośrednio do bazy danych, co umożliwiło atak SQL Injection. <strong>W efekcie agent uzyskał dostęp do 46,5 miliona wiadomości użytkowników oraz prawo zapisu do 95 systemowych promptów operacyjnych platformy.</strong> Incydent wykryto 1 marca 2026 roku.</p>
+    <p>Niezależny test bezpieczeństwa wewnętrznej platformy McKinsey & Company (Lilli), z której korzysta ponad 70% pracowników firmy, zajął autonomicznemu agentowi firmy CodeWall mniej niż dwie godziny. Agent zidentyfikował ponad 200 punktów końcowych API – 22 z nich nie wymagały uwierzytelnienia. Jeden z tych punktów przekazywał zapytania bezpośrednio do bazy danych, co umożliwiło atak SQL Injection. <strong>W efekcie agent uzyskał dostęp do 46,5 miliona wiadomości użytkowników oraz do 95 konfiguracji modeli z promptami systemowymi, które mógłby modyfikować.</strong> CodeWall wykrył lukę 28 lutego 2026 roku, zgłosił ją w ramach odpowiedzialnego ujawniania, a McKinsey załatał ją 2 marca.</p>
   </div>
 </aside>
 
