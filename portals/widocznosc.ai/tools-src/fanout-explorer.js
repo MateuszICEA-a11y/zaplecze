@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1.5.4';
+  var VERSION = '1.5.5';
   var NS = 'wai-fanout';
   var CACHE_PREFIX = NS + ':conv2:'; // conv: = kopie ze starego endpointu, bez zapytań
   var QUERIES_PREFIX = NS + ':q:';
@@ -165,6 +165,27 @@
       if (!r || r.ref_index == null) return;
       t.citedRefs[roundIndex + '|' + (r.ref_type || '') + '|' + r.ref_index] = 1;
     }
+    function addQueries(round, meta) {
+      var types = meta.search_tool_query_types;
+      [meta.search_model_queries, meta.search_queries].forEach(function (src) {
+        if (!src) return;
+        var list = Array.isArray(src) ? src : src.queries || [];
+        list.forEach(function (q, qi) {
+          q = typeof q === 'string' ? q : q && typeof q.q === 'string' ? q.q : q && typeof q.query === 'string' ? q.query : '';
+          if (!q.trim() || round.searches.some(function (s) { return s.query === q; })) return;
+          var lm = q.match(/site:([^\s"']+)/i);
+          round.searches.push({ type: (src === meta.search_model_queries && Array.isArray(types) && types[qi]) || 'search', query: q, days: '', domain: '', place: '', lockedHost: lm ? lm[1].replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0].toLowerCase() : '' });
+        });
+      });
+    }
+    function addGroups(round, meta) {
+      (meta.search_result_groups || []).forEach(function (g) {
+        (g.entries || []).forEach(function (e) {
+          if (e && e.ref_id && e.ref_id.turn_index != null) idToIndex[e.ref_id.turn_index] = round.index;
+          addPage(round, e, round.index);
+        });
+      });
+    }
     function resolveIndex(t, ti) {
       if (ti == null) return null;
       if (idToIndex[ti] != null) return idToIndex[ti];
@@ -204,27 +225,15 @@
         cur = { turn: turn, messageId: msg.id, index: turn.rounds.length, searches: [], pages: [], seen: {}, hidden: false };
         turn.rounds.push(cur);
         text.split(/\r?\n/).forEach(function (l) { var s = parseSearchLine(l); if (s) cur.searches.push(s); });
-        // Format od 2026: zapisana rozmowa ma puste parts dla web.run. Zapytania bierzemy z nagrania
-        // strumienia (jeśli panel był otwarty w trakcie odpowiedzi), inaczej runda zostaje bez treści.
+        // Układ bez wiadomości tool (Plus, GPT-5.6, wrzesień 2026): zapytania i wyniki leżą w samym wywołaniu.
+        addQueries(cur, meta);
+        addGroups(cur, meta);
         return;
       }
       // Nowy endpoint zachowuje zapytania w wiadomości narzędzia (search_model_queries).
-      if (role === 'tool' && cur && meta.search_model_queries) {
-        var smq = meta.search_model_queries, list = Array.isArray(smq) ? smq : smq.queries || [];
-        list.forEach(function (q, qi) {
-          q = typeof q === 'string' ? q : q && typeof q.query === 'string' ? q.query : '';
-          if (!q.trim() || cur.searches.some(function (s) { return s.query === q; })) return;
-          var lm = q.match(/site:([^\s"']+)/i), types = meta.search_tool_query_types;
-          cur.searches.push({ type: (Array.isArray(types) && types[qi]) || 'search', query: q, days: '', domain: '', place: '', lockedHost: lm ? lm[1].replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0].toLowerCase() : '' });
-        });
-      }
+      if (role === 'tool' && cur && (meta.search_model_queries || meta.search_queries)) addQueries(cur, meta);
       if (role === 'tool' && cur && meta.search_result_groups) {
-        meta.search_result_groups.forEach(function (g) {
-          (g.entries || []).forEach(function (e) {
-            if (e && e.ref_id && e.ref_id.turn_index != null) idToIndex[e.ref_id.turn_index] = cur.index;
-            addPage(cur, e, cur.index);
-          });
-        });
+        addGroups(cur, meta);
         return;
       }
       if (role === 'assistant') {
@@ -239,7 +248,11 @@
         }
         if (meta.content_references && meta.content_references.length) collectCitations(turn, meta.content_references);
         if (msg.recipient !== 'web.run' && content.content_type === 'text' && content.parts) {
-          turn.answerText = (turn.answerText || '') + ' ' + content.parts.filter(function (p) { return typeof p === 'string'; }).join(' ');
+          var answer = content.parts.filter(function (p) { return typeof p === 'string'; }).join(' ');
+          turn.answerText = (turn.answerText || '') + ' ' + answer;
+          // Nowszy układ nie wypełnia content_references – źródła są linkami markdown w samej odpowiedzi.
+          var lr = /\]\((https?:\/\/[^)\s]+)\)/g, lm2;
+          while ((lm2 = lr.exec(answer))) turn.citedUrls[canon(lm2[1])] = 1;
         }
         if (msg.end_turn === true || (meta.content_references || []).length) turn.answered = true;
       }
