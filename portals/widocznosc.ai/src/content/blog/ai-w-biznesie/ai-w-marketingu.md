@@ -14,6 +14,13 @@ tags: ['AI w marketingu', 'Marketing', 'Automatyzacja', 'AI w biznesie']
 pillar: 'ai-w-biznesie'
 intent: 'INFO'
 level: 'L1'
+sources:
+  - title: 'CES 2018: YouTube’s AI recommendations drive 70 percent of viewing'
+    url: 'https://www.cnet.com/tech/services-and-software/youtube-ces-2018-neal-mohan/'
+    note: 'CNET, styczeń 2018. Szef produktu YouTube Neal Mohan: rekomendacje AI odpowiadają za ok. 70% czasu oglądania.'
+  - title: 'Klarna AI assistant handles two-thirds of customer service chats in its first month'
+    url: 'https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/'
+    note: 'Klarna, 27 lutego 2024. Asystent AI wykonuje pracę odpowiadającą 700 pełnoetatowym agentom, a czas rozwiązania sprawy spadł z 11 do poniżej 2 minut.'
 ---
 Generowanie tekstu to zaledwie ułamek tego, co AI robi dziś w marketingu. **Algorytmy uczenia maszynowego napędzają 35% przychodów Amazona przez rekomendacje produktowe, redukują koszty obsługi klienta o równowartość 700 etatów (na przykładzie Klarny) i podnoszą konwersję kampanii wizualnych o 520% (Wickes na Pintereście).** Jeśli Twój zespół używa sztucznej inteligencji wyłącznie do pisania postów, tracisz przewagę. Konkurencja już testuje te rozwiązania. Zobacz rzeczywiste wdrożenia z konkretnymi liczbami – posegregowane według obszaru zastosowania.
 

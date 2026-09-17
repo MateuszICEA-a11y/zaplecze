@@ -14,6 +14,16 @@ tags: ['Zarząd', 'Business case', 'KPI', 'AI w biznesie']
 pillar: 'ai-w-biznesie'
 intent: 'COMMERCIAL'
 level: 'L1'
+sources:
+  - title: 'AI-Savvy Boards Drive Superior Performance'
+    url: 'https://sloanreview.mit.edu/article/ai-savvy-boards-drive-superior-performance/'
+    note: 'Peter Weill, Stephanie L. Woerner, Jennifer S. Banner (MIT CISR), MIT Sloan Management Review, 8 grudnia 2025. Firmy z zarządami kompetentnymi w AI mają ROE o 10,9 pkt proc. wyższy od średniej branżowej.'
+  - title: 'AI ROI: The paradox of rising investment and elusive returns'
+    url: 'https://www.deloitte.com/global/en/issues/ai/ai-roi-the-paradox-of-rising-investment-and-elusive-returns.html'
+    note: 'Deloitte, 22 października 2025. Satysfakcjonujący zwrot z typowego projektu AI po 2–4 latach, tylko 6% w ciągu roku; 91% firm planuje zwiększyć inwestycje.'
+  - title: 'AI Act'
+    url: 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai'
+    note: 'Komisja Europejska. Rozporządzenie (UE) 2024/1689 – zakres, poziomy ryzyka i harmonogram stosowania.'
 ---
 Badanie McKinsey State of AI (listopad 2025) ujawniło niepokojący podział. 88% organizacji używa już AI w co najmniej jednym obszarze, ale tylko 5,5% firm można nazwać prawdziwymi liderami czerpiącymi z niej wartość. To organizacje, które odnotowują ponadpięcioprocentowy wpływ AI na wynik operacyjny (EBIT). Reszta gdzieś utknęła. Najczęściej nie z powodu złej technologii, lecz dlatego, że inicjatywa nigdy nie uzyskała pełnego poparcia zarządu. **Jeśli wiesz, że AI może zmienić Twoją firmę, ale nie potrafisz przekonać do tego decydentów – ten artykuł pokaże Ci, od czego zacząć, jakiego języka użyć i jakie liczby przygotować.**
 

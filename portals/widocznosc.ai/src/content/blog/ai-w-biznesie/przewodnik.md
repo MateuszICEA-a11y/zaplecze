@@ -41,6 +41,28 @@ faq:
       danych – lub dane są niespójne i nieoznaczone. Gdy w organizacji nie ma wyznaczonego
       właściciela z uprawnieniami do podejmowania decyzji o zmianie procesu. W tych warunkach
       wdrożenie AI nie przyniesie efektów i wygeneruje frustrację po obu stronach.
+sources:
+  - title: '88% of AI pilots fail to reach production – but that’s not all on IT'
+    url: 'https://www.cio.com/article/3850763/88-of-ai-pilots-fail-to-reach-production-but-thats-not-all-on-it.html'
+    note: 'CIO, 25 marca 2025. Badanie IDC i Lenovo: na każde 33 projekty PoC tylko 4 trafiają do produkcji.'
+  - title: 'As AI Investments Surge, CEOs Take the Lead'
+    url: 'https://www.bcg.com/publications/2026/as-ai-investments-surge-ceos-take-the-lead'
+    note: 'BCG AI Radar, 15 stycznia 2026. Archetypy Followers (15%), Pragmatists (70%) i Trailblazers (15%), ok. 7 godzin tygodniowo CEO na AI, przeszkolenie blisko trzech czwartych pracowników u liderów.'
+  - title: 'AI Adoption in 2024: 74% of Companies Struggle to Achieve and Scale Value'
+    url: 'https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value'
+    note: 'BCG, 24 października 2024. Zasada 10-20-70: algorytmy, technologia i dane oraz ludzie i procesy.'
+  - title: 'AI Act'
+    url: 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai'
+    note: 'Komisja Europejska. Harmonogram stosowania rozporządzenia (UE) 2024/1689, w tym systemy wysokiego ryzyka od 2 grudnia 2027, i obowiązki przejrzystości dla chatbotów.'
+  - title: 'Article 99: Penalties'
+    url: 'https://artificialintelligenceact.eu/article/99/'
+    note: 'Treść art. 99 AI Act. Kary do 35 mln euro lub 7% globalnego rocznego obrotu.'
+  - title: 'Koniec ery nieuchwytnych algorytmów – projekt ustawy o systemach sztucznej inteligencji przyjęty przez Radę Ministrów'
+    url: 'https://www.gov.pl/web/cyfryzacja/koniec-ery-nieuchwytnych-algorytmow--projekt-ustawy-o-systemach-sztucznej-inteligencji-przyjety-przez-rade-ministrow'
+    note: 'Ministerstwo Cyfryzacji, 31 marca 2026. Przyjęcie projektu ustawy z KRiBSI, w tym uprawnienie do natychmiastowego nakazu wycofania systemu.'
+  - title: 'Retrieval-augmented generation'
+    url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
+    note: 'Wikipedia. Definicja techniki RAG.'
 ---
 **Globalne wydatki na sztuczną inteligencję przekroczą w 2026 roku 2,52 biliona dolarów – a mimo to 56% dyrektorów generalnych przyznaje, że wdrożenia AI nie przyniosły ani wzrostu przychodów, ani redukcji kosztów (PwC Global CEO Survey, Davos 2026).** Ten rozdźwięk nie bierze się z braku ambicji. Wynika z braku planu. Zobacz, od czego zacząć, jak wybrać właściwy model pozyskania technologii, gdzie AI przynosi mierzalny zwrot i jak uniknąć prawnych pułapek – zanim podpiszesz pierwszą umowę z dostawcą.
 

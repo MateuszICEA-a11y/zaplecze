@@ -14,6 +14,22 @@ tags: ['AI w biznesie', 'Roadmapa', 'Wdrożenie', 'Strategia']
 pillar: 'ai-w-biznesie'
 intent: 'HOWTO'
 level: 'L1'
+sources:
+  - title: 'AI Adoption in 2024: 74% of Companies Struggle to Achieve and Scale Value'
+    url: 'https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value'
+    note: 'BCG, 24 października 2024. Liderzy AI kierują 10% zasobów na algorytmy, 20% na technologię i dane, 70% na ludzi i procesy.'
+  - title: 'AI Act'
+    url: 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai'
+    note: 'Komisja Europejska. Wejście w życie 1 sierpnia 2024, zakazy i kompetencje w zakresie AI od 2 lutego 2025, systemy wysokiego ryzyka od 2 grudnia 2027, cztery poziomy ryzyka.'
+  - title: 'EU AI Act Omnibus Agreement – Postponed High-Risk Deadlines and Other Key Changes'
+    url: 'https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/'
+    note: 'Gibson Dunn, 27 maja 2026. Porozumienie Digital Omnibus z maja 2026: przesunięcie terminu dla systemów wysokiego ryzyka z załącznika III na 2 grudnia 2027.'
+  - title: 'Article 99: Penalties'
+    url: 'https://artificialintelligenceact.eu/article/99/'
+    note: 'Treść art. 99 AI Act. Kary do 35 mln euro lub 7% obrotu za praktyki zakazane oraz do 15 mln euro lub 3% za inne naruszenia.'
+  - title: 'Koniec ery nieuchwytnych algorytmów – projekt ustawy o systemach sztucznej inteligencji przyjęty przez Radę Ministrów'
+    url: 'https://www.gov.pl/web/cyfryzacja/koniec-ery-nieuchwytnych-algorytmow--projekt-ustawy-o-systemach-sztucznej-inteligencji-przyjety-przez-rade-ministrow'
+    note: 'Ministerstwo Cyfryzacji, 31 marca 2026. Projekt ustawy wdrażającej AI Act z Komisją Rozwoju i Bezpieczeństwa Sztucznej Inteligencji jako organem nadzoru.'
 ---
 Według badań McKinsey z 2025 roku już 88% firm korzysta z AI w co najmniej jednym obszarze, ale mniej niż jedna piąta mierzy rzeczywiste efekty tych działań. Aż 42% organizacji porzuciło większość inicjatyw AI właśnie dlatego, że nie miały procesu – kupiły tylko narzędzia. **Porażka nie jest wpisana w technologię, lecz wynika z braku struktury.** Ta mapa drogowa pokazuje pięć faz, które przeprowadzą Cię od „nie wiem, od czego zacząć" do działającego systemu. Niezależnie od tego, czy prowadzisz 50-osobową firmę produkcyjną, czy 500-osobowy dział marketingu.
 

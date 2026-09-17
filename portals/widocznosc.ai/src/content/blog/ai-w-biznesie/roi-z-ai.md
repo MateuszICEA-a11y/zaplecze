@@ -14,6 +14,19 @@ tags: ['ROI', 'AI w biznesie', 'Inwestycje', 'KPI']
 pillar: 'ai-w-biznesie'
 intent: 'COMMERCIAL'
 level: 'L2'
+sources:
+  - title: 'AI cost overruns are adding up – with major implications for CIOs'
+    url: 'https://www.cio.com/article/4064319/ai-cost-overruns-are-adding-up-with-major-implications-for-cios.html'
+    note: 'CIO, 2 października 2025. 85% organizacji zaniża koszty AI o ponad 10%, blisko co czwarta o 50% i więcej.'
+  - title: 'IBM Study: CEOs Double Down on AI While Navigating Enterprise Hurdles'
+    url: 'https://newsroom.ibm.com/2025-05-06-ibm-study-ceos-double-down-on-ai-while-navigating-enterprise-hurdles'
+    note: 'IBM, 6 maja 2025. Według CEO tylko 25% inicjatyw AI przyniosło oczekiwany zwrot.'
+  - title: 'Total cost of ownership'
+    url: 'https://pl.wikipedia.org/wiki/Total_cost_of_ownership'
+    note: 'Wikipedia. Definicja całkowitego kosztu posiadania.'
+  - title: 'Total Economic Impact'
+    url: 'https://www.forrester.com/policies/tei/'
+    note: 'Forrester. Opis metodologii TEI obejmującej koszty, korzyści, elastyczność i ryzyko.'
 ---
 Kalkulacja ROI (Return on Investment, czyli wskaźnika zwrotu z inwestycji) z wdrożenia AI to jedno z najtrudniejszych wyzwań, z jakimi przychodzą do nas firmy. Jednocześnie to absolutny priorytet. Według analiz rynkowych ok. 65% organizacji notuje dodatni zwrot z generatywnej sztucznej inteligencji, ale aż 95% projektów AI bywa błędnie klasyfikowanych jako porażki z powodu złego doboru metody pomiaru. Problem nie leży w technologii. Leży w sposobie liczenia kosztów i korzyści. **Poznaj konkretne ramy analityczne: od wzoru na ROI, przez strukturę kosztów całkowitych (TCO), po trzy realistyczne scenariusze kalkulacji z polskiego rynku.**
 
