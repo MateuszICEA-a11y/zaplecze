@@ -337,7 +337,7 @@ const schema = buildGraph(
           <a href="/kontakt/">daj nam znać</a>.
         </p>
         <div class="mt-10">
-          <a href="/kontakt/" class="btn-primary"
+          <a href="/kontakt/" class="btn-primary cta-button"
             >Chcesz przełożyć fan-outy na plan treści? Porozmawiajmy</a
           >
         </div>
@@ -653,7 +653,8 @@ const schema = buildGraph(
     background: var(--bg-surface-1);
   }
 
-  .info-card-title {
+  /* .info-card w selektorze: Theme.css stawia h3 na 32px regułą (0,2,1). */
+  .info-card .info-card-title {
     margin: 0 0 14px;
     font-family: var(--font-sans);
     font-size: 19px;
@@ -753,6 +754,21 @@ const schema = buildGraph(
 
     .tool-overview-title {
       font-size: 28px;
+    }
+
+    .info-card {
+      padding: 22px 20px;
+    }
+
+    .info-card .info-card-title {
+      font-size: 17px;
+    }
+
+    .cta-button {
+      white-space: normal;
+      text-align: left;
+      line-height: 1.35;
+      padding: 12px 18px;
     }
   }
 </style>
