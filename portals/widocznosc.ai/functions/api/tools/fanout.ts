@@ -3,7 +3,7 @@
  *
  * Endpoint: POST /api/tools/fanout   Body: { query: string }
  * Wymaga: env OPENAI_API_KEY, binding KV FANOUT_RL.
- * Opcjonalne env: FANOUT_MODEL (domyślnie gpt-5.6), FANOUT_DAILY_LIMIT (0 = bez limitu).
+ * Opcjonalne env: FANOUT_MODEL (domyślnie gpt-5.6-luna), FANOUT_DAILY_LIMIT (0 = bez limitu).
  */
 import { parseResponsesOutput } from '../../_lib/fanout-parse';
 import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
@@ -19,7 +19,7 @@ type Env = {
 type FanoutRequest = { query?: string };
 
 const OPENAI_URL = 'https://api.openai.com/v1/responses';
-const DEFAULT_MODEL = 'gpt-5.6';
+const DEFAULT_MODEL = 'gpt-5.6-luna';
 const DEFAULT_LIMIT = 5;
 const LLM_TIMEOUT_MS = 45_000;
 const MIN_QUERY = 3;
