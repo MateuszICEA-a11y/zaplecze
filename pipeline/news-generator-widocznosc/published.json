@@ -1,12 +1,5 @@
 [
   {
-    "title": "Serwisy newsowe mocniej odcinają boty AI",
-    "date": "2026-06-10",
-    "slug": "serwisy-newsowe-mocniej-odcinaja-boty-ai",
-    "source": "rss",
-    "source_name": "Search Engine Journal"
-  },
-  {
     "title": "Wyjście Opendoor z Indii uruchamia debatę o AI i outsourcingu",
     "date": "2026-06-11",
     "slug": "wyjscie-opendoor-z-indii-uruchamia-debate-o-ai-i-outsourcingu",
@@ -628,5 +621,12 @@
     "slug": "apple-ma-rozwijac-serwer-ai-z-ukladami-m-series-ultra",
     "source": "rss",
     "source_name": "Ars Technica AI"
+  },
+  {
+    "title": "Anthropic zapowiada program weryfikacji dla nauk o życiu",
+    "date": "2026-09-18",
+    "slug": "anthropic-zapowiada-program-weryfikacji-dla-nauk-o-zyciu",
+    "source": "rss",
+    "source_name": "Anthropic"
   }
 ]
