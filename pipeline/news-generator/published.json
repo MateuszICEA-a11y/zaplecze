@@ -1,13 +1,5 @@
 [
   {
-    "title": "Kryzys paliw po blokadzie Ormuz – co oznaczał dla Polski i transportu dostawczego?",
-    "date": "2026-06-06",
-    "slug": "kryzys-paliw-po-blokadzie-ormuz-co-oznaczal-dla-polski-i-transportu-dostawczego",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Koniec limitu cen paliw na stacjach. Dla kierowców busów to może oznaczać wyższe koszty",
     "date": "2026-06-07",
     "slug": "koniec-limitu-cen-paliw-na-stacjach-dla-kierowcow-busow-to-moze-oznaczac-wyzsze",
@@ -717,6 +709,14 @@
     "slug": "zderzenie-busa-z-ciezarowka-na-a4-autostrada-zablokowana-ladowal-smiglowiec-lpr",
     "section": "news",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Xiaomi SkyNomad N90 Max Studio – elektryczny kamper z podnoszoną sypialnią",
+    "date": "2026-09-19",
+    "slug": "xiaomi-skynomad-n90-max-studio-elektryczny-kamper-z-podnoszona-sypialnia",
+    "section": "kampery",
+    "format": "analysis",
     "source": "rss"
   }
 ]
