@@ -1,12 +1,5 @@
 [
   {
-    "title": "Wyjście Opendoor z Indii uruchamia debatę o AI i outsourcingu",
-    "date": "2026-06-11",
-    "slug": "wyjscie-opendoor-z-indii-uruchamia-debate-o-ai-i-outsourcingu",
-    "source": "rss",
-    "source_name": "TechCrunch AI"
-  },
-  {
     "title": "Amazon ujawnia zużycie wody w centrach danych",
     "date": "2026-06-12",
     "slug": "amazon-ujawnia-zuzycie-wody-w-centrach-danych",
@@ -628,5 +621,12 @@
     "slug": "anthropic-zapowiada-program-weryfikacji-dla-nauk-o-zyciu",
     "source": "rss",
     "source_name": "Anthropic"
+  },
+  {
+    "title": "Gemini uzyskał dostęp do trzech firm przez błąd środowiska testowego",
+    "date": "2026-09-19",
+    "slug": "gemini-uzyskal-dostep-do-trzech-firm-przez-blad-srodowiska-testowego",
+    "source": "rss",
+    "source_name": "The Decoder"
   }
 ]
