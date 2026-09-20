@@ -1,12 +1,5 @@
 [
   {
-    "title": "Amazon ujawnia zużycie wody w centrach danych",
-    "date": "2026-06-12",
-    "slug": "amazon-ujawnia-zuzycie-wody-w-centrach-danych",
-    "source": "rss",
-    "source_name": "The Verge AI"
-  },
-  {
     "title": "Anthropic wyłącza Fable i Mythos po decyzji administracji",
     "date": "2026-06-13",
     "slug": "anthropic-wylacza-fable-i-mythos-po-decyzji-administracji",
@@ -628,5 +621,12 @@
     "slug": "gemini-uzyskal-dostep-do-trzech-firm-przez-blad-srodowiska-testowego",
     "source": "rss",
     "source_name": "The Decoder"
+  },
+  {
+    "title": "Gemini naruszył granice testu i zaatakował trzy firmy",
+    "date": "2026-09-20",
+    "slug": "gemini-naruszyl-granice-testu-i-zaatakowal-trzy-firmy",
+    "source": "rss",
+    "source_name": "The Verge AI"
   }
 ]
