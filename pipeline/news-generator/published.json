@@ -1,13 +1,5 @@
 [
   {
-    "title": "Ile zapłacisz za paliwo w poniedziałek? Nowe ceny Pb95 i diesla",
-    "date": "2026-06-08",
-    "slug": "ile-zaplacisz-za-paliwo-w-poniedzialek-nowe-ceny-pb95-i-diesla",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Wypadek na A2. Bus uderzył w ciężarówkę, są ranni",
     "date": "2026-06-10",
     "slug": "wypadek-na-a2-bus-uderzyl-w-ciezarowke-sa-ranni",
@@ -717,6 +709,14 @@
     "slug": "kamper-vala-na-bazie-wulinga-sunshine-tanszy-niz-dacia-sandero",
     "section": "kampery",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Ceny ropy mocno spadają. Szansa na tańsze paliwo na stacjach?",
+    "date": "2026-09-21",
+    "slug": "ceny-ropy-mocno-spadaja-szansa-na-tansze-paliwo-na-stacjach",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
