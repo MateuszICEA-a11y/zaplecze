@@ -1,12 +1,5 @@
 [
   {
-    "title": "Fałszywe studia przypadków w raporcie o AI",
-    "date": "2026-06-14",
-    "slug": "falszywe-studia-przypadkow-w-raporcie-o-ai",
-    "source": "rss",
-    "source_name": "The Decoder"
-  },
-  {
     "title": "AI, zwolnienia i rosnące napięcie",
     "date": "2026-06-15",
     "slug": "ai-zwolnienia-i-rosnace-napiecie",
@@ -628,5 +621,14 @@
     "slug": "tworcy-symulatorow-swiata-niewiele-zdradzaja",
     "source": "rss",
     "source_name": "TechCrunch AI"
+  },
+  {
+    "title": "Badanie krytycznie ocenia Google AI Mode",
+    "date": "2026-09-22",
+    "slug": "badanie-krytycznie-ocenia-google-ai-mode",
+    "source": "rss",
+    "source_title": "Research Shows Google AI Mode Sends Less Clicks & Is A Poor User Experience via @sejournal, @martinibuster",
+    "source_url": "https://www.searchenginejournal.com/research-shows-google-ai-mode-sends-less-clicks-is-a-poor-user-experience/590221/",
+    "source_name": "Search Engine Journal"
   }
 ]
