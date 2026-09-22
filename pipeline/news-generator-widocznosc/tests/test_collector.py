@@ -206,3 +206,20 @@ class TestFilterAlreadyPublished:
         result = filter_already_published(signals, history, threshold=0.7)
         assert len(result) == 1
         assert result[0].title == "Ceny paliw kwiecień"
+
+    def test_filters_by_source_title_and_url(self):
+        # Polski `title` nie łapie angielskiego sygnału – łapią go source_title i source_url.
+        now = datetime.now(timezone.utc)
+        signals = [
+            Signal(title="Google's Gemini accidentally hacked three real companies during security testing", summary="a", source="rss", category="ai", published=now, url="https://x.com/1"),
+            Signal(title="Totally different headline", summary="b", source="rss", category="ai", published=now, url="https://decoder.com/gemini"),
+            Signal(title="OpenAI ships a new model", summary="c", source="rss", category="ai", published=now, url="https://y.com/2"),
+        ]
+        history = [{
+            "title": "Gemini uzyskał dostęp do trzech firm przez błąd środowiska testowego",
+            "source_title": "Google's Gemini also accidentally hacked three real companies during security testing",
+            "source_url": "https://decoder.com/gemini",
+            "date": "2026-09-19",
+        }]
+        result = filter_already_published(signals, history, threshold=0.7)
+        assert [s.url for s in result] == ["https://y.com/2"]

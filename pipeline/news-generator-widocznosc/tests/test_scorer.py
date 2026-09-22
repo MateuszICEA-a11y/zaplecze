@@ -84,3 +84,36 @@ class TestMatchSection:
     def test_fallback_to_news_when_no_match(self):
         section = match_section("Pogoda na weekend", [])
         assert section == "news"
+
+
+class TestJudgeDuplicateVeto:
+    def _signals(self):
+        from datetime import datetime, timezone
+        now = datetime.now(timezone.utc)
+        return [Signal(title=f"t{i}", summary="s", source="rss", category="ai", published=now, url=f"https://u/{i}") for i in range(3)]
+
+    def _fake_client(self, payload, captured):
+        from unittest.mock import MagicMock
+        client = MagicMock()
+        def create(**kw):
+            captured.update(kw)
+            resp = MagicMock()
+            resp.choices[0].message.content = payload
+            return resp
+        client.chat.completions.create.side_effect = create
+        return client
+
+    def test_recent_titles_in_prompt_and_veto(self, monkeypatch):
+        import scorer
+        captured = {}
+        monkeypatch.setenv("OPENAI_API_KEY", "x")
+        monkeypatch.setattr(scorer, "OpenAI", lambda **kw: self._fake_client('{"chosen": 0}', captured))
+        idx, _ = scorer.llm_judge_and_format(self._signals(), recent_titles=["Gemini uzyskał dostęp do trzech firm"])
+        assert idx == -1
+        assert "Gemini uzyskał dostęp do trzech firm" in captured["messages"][1]["content"]
+
+    def test_select_topic_returns_none_on_veto(self, monkeypatch):
+        import scorer
+        monkeypatch.setenv("OPENAI_API_KEY", "x")
+        monkeypatch.setattr(scorer, "OpenAI", lambda **kw: self._fake_client('{"chosen": 0}', {}))
+        assert scorer.select_topic(self._signals(), [], [{"title": "x"}], {}, {}) is None

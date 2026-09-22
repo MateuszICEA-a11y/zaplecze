@@ -180,10 +180,15 @@ def llm_judge_and_format(
     model: str = "gpt-5.4",
     temperature: float = 0.3,
     max_completion_tokens: int = 500,
+    recent_titles: list[str] | None = None,
 ) -> tuple[int, str]:
     """Use GPT-5.4 to pick the best topic and decide format.
 
-    Returns: (index of chosen candidate, format_type: "short" or "analysis")
+    `recent_titles` – polskie tytuły ostatnich newsów. Ten sam temat z innego
+    portalu ma inny tytuł, więc łapie go dopiero sędzia (weto: chosen=0).
+
+    Returns: (index of chosen candidate or -1 when every candidate is a duplicate,
+    format_type: "short" or "analysis")
     """
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
@@ -191,6 +196,7 @@ def llm_judge_and_format(
         f"{i+1}. [{c.source}] {c.title} – {c.summary[:150]}"
         for i, c in enumerate(candidates)
     )
+    recent_text = "\n".join(f"- {t}" for t in (recent_titles or [])) or "(brak)"
 
     response = client.chat.completions.create(
         model=model,
@@ -212,6 +218,11 @@ def llm_judge_and_format(
                 "role": "user",
                 "content": (
                     f"Oto kandydaci na news dnia:\n\n{candidates_text}\n\n"
+                    f"Ostatnio opublikowane newsy:\n{recent_text}\n\n"
+                    "WETO DUPLIKATÓW: NIE wybieraj kandydata, który opisuje to samo wydarzenie "
+                    "co któryś z ostatnio opublikowanych newsów – także gdy pochodzi z innego "
+                    "portalu albo ma inny kąt. Jeśli wszyscy kandydaci są takimi duplikatami, "
+                    'zwróć "chosen": 0.\n\n'
                     "Odpowiedz w formacie JSON:\n"
                     '{"chosen": <numer 1-N>, "reason": "<krótkie uzasadnienie>", '
                     '"format": "<short|analysis>"}\n\n'
@@ -224,8 +235,10 @@ def llm_judge_and_format(
     )
 
     result = json.loads(response.choices[0].message.content)
-    chosen_idx = int(result.get("chosen", 1)) - 1
-    chosen_idx = max(0, min(chosen_idx, len(candidates) - 1))
+    chosen = int(result.get("chosen", 1))
+    if chosen == 0:
+        return -1, "short"
+    chosen_idx = max(0, min(chosen - 1, len(candidates) - 1))
     format_type = result.get("format", "short")
     if format_type not in ("short", "analysis"):
         format_type = "short"
@@ -269,7 +282,11 @@ def select_topic(
         model=llm_config.get("model", "gpt-5.4"),
         temperature=llm_config.get("temperature_judge", 0.3),
         max_completion_tokens=llm_config.get("max_tokens_judge", 500),
+        recent_titles=[p.get("title", "") for p in published_history[-10:] if p.get("title")],
     )
+    if chosen_idx < 0:
+        log.info("Sędzia: wszyscy kandydaci to tematy już opisane – pomijam dzień.")
+        return None
 
     chosen = top_candidates[chosen_idx]
     section = match_section(chosen.title, clusters)

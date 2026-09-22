@@ -169,6 +169,9 @@ Najważniejsza sekcja dla naszej tematyki. LLM-y generują angielskie kalki nawe
 | sample size | liczebność próby / wielkość próby | – |
 | benchmark | punkt odniesienia / wzorzec | – |
 | deep dive | pogłębiona analiza / szczegółowa analiza | – |
+| world model(s) / „model(e) świata” | model(e) symulujące świat (z ang. *world models*), dalej: symulatory świata | „Model świata” to kalka – przy pierwszym użyciu opis PL + EN w nawiasie, także w tytule i tagach |
+| frontier model(s) / „model klasy frontier” | najnowocześniejsze / najpotężniejsze modele (z ang. *frontier models*) | „Klasa frontier” to kalka |
+| (RAG) pipeline | potok RAG / potok przetwarzania | Nie „rurociąg”, nie „pipeline” w prozie |
 
 ### Terminy SEO/marketingowe
 

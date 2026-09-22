@@ -232,6 +232,9 @@ def run() -> None:
         "date": date_str,
         "slug": slug,
         "source": topic.signal.source,
+        # Oryginał źródła – filtr opublikowanych porównuje z nim angielskie tytuły z RSS.
+        "source_title": topic.signal.title,
+        "source_url": getattr(topic.signal, "url", "") or fm.get("sourceUrl", ""),
         # Nazwa wydawcy (np. „TechCrunch AI") – używana do premiowania
         # różnorodności źródeł przy kolejnych selekcjach (scorer).
         "source_name": getattr(topic.signal, "source_name", None)

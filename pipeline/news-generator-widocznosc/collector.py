@@ -338,13 +338,26 @@ def filter_already_published(
     published_history: list[dict],
     threshold: float = 0.7,
 ) -> list[Signal]:
-    """Remove signals that match already published topics."""
-    published_titles = [p.get("title", "").lower() for p in published_history]
+    """Remove signals that match already published topics.
+
+    Sygnały mają angielskie tytuły z RSS, a `title` w historii jest polski – samo
+    porównanie z nim nic nie łapie. Dlatego porównujemy też z `source_title`
+    (oryginalny tytuł źródła) i odrzucamy sygnał z tym samym `source_url`.
+    """
+    published_titles = [
+        t.lower()
+        for p in published_history
+        for t in (p.get("title", ""), p.get("source_title", ""))
+        if t
+    ]
+    published_urls = {p["source_url"] for p in published_history if p.get("source_url")}
 
     filtered: list[Signal] = []
     for signal in signals:
-        is_published = False
+        is_published = bool(signal.url) and signal.url in published_urls
         for pub_title in published_titles:
+            if is_published:
+                break
             similarity = SequenceMatcher(
                 None,
                 signal.title.lower(),
