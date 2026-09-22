@@ -1,13 +1,5 @@
 [
   {
-    "title": "Wypadek na A2. Bus uderzył w ciężarówkę, są ranni",
-    "date": "2026-06-10",
-    "slug": "wypadek-na-a2-bus-uderzyl-w-ciezarowke-sa-ranni",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Bus wypadł z DK19 i dachował w Babicy. Groźna kolizja na krajówce",
     "date": "2026-06-11",
     "slug": "bus-wypadl-z-dk19-i-dachowal-w-babicy-grozna-kolizja-na-krajowce",
@@ -715,6 +707,14 @@
     "title": "Ceny ropy mocno spadają. Szansa na tańsze paliwo na stacjach?",
     "date": "2026-09-21",
     "slug": "ceny-ropy-mocno-spadaja-szansa-na-tansze-paliwo-na-stacjach",
+    "section": "news",
+    "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Czechy regulują ceny paliw. ORLEN może zapłacić nadzwyczajny podatek",
+    "date": "2026-09-22",
+    "slug": "czechy-reguluja-ceny-paliw-orlen-moze-zaplacic-nadzwyczajny-podatek",
     "section": "news",
     "format": "analysis",
     "source": "rss"
