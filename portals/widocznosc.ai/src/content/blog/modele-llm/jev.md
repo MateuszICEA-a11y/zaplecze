@@ -209,11 +209,11 @@ Jeśli tanie i szybkie modele decyzyjne upowszechnią się w potokach RAG (a prz
 Szerzej o tym, jak modele wybierają fragmenty do cytowania, piszemy w artykule [jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/).
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>
+  <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
-    <p>Jev jest ciekawy nie dlatego, że jest „szybszy od GPT”, tylko dlatego, że zmienia rachunek dla decyzji, których dotąd nie opłacało się automatyzować. W projektach klientów widzimy mnóstwo miejsc, gdzie duży model robi robotę klasyfikatora, a pół kodu to parsowanie JSON-a i ponawianie zapytań. <strong>Tam warto testować model decyzyjny – ale zawsze na własnym zbiorze testowym i z progiem pewności, a przy polskich treściach z porównaniem do obecnego rozwiązania, bo producent sam przyznaje, że angielski działa najlepiej.</strong></p>
-    <div class="callout-author">Michał Ziach · CTO, ICEA</div>
+    <p>Z perspektywy SEO Jev jest ważny nie jako kolejny model, tylko jako zapowiedź tego, jak będzie wyglądać selekcja treści w wyszukiwaniu AI. Skoro ocena jednego fragmentu kosztuje ułamek centa, systemy mogą filtrować każdy akapit pod kątem tego, czy naprawdę odpowiada na pytanie. <strong>Przegrają strony, które tylko powtarzają frazy, a wygrają te z konkretną, aktualną odpowiedzią w jednym akapicie – dlatego w audycie treści warto dziś sprawdzać, czy każda sekcja broni się jako samodzielny, weryfikowalny fragment, a nie tylko nasycenie słowami kluczowymi.</strong></p>
+    <div class="callout-author">Tomasz Czechowski · Head of SEO, ICEA</div>
   </div>
 </aside>
 
