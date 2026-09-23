@@ -1,13 +1,5 @@
 [
   {
-    "title": "Bus wypadł z DK19 i dachował w Babicy. Groźna kolizja na krajówce",
-    "date": "2026-06-11",
-    "slug": "bus-wypadl-z-dk19-i-dachowal-w-babicy-grozna-kolizja-na-krajowce",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Orlen podniósł hurtowe ceny paliw. Na stacjach wciąż bez gwałtownych zmian",
     "date": "2026-06-12",
     "slug": "orlen-podniosl-hurtowe-ceny-paliw-na-stacjach-wciaz-bez-gwaltownych-zmian",
@@ -717,6 +709,14 @@
     "slug": "czechy-reguluja-ceny-paliw-orlen-moze-zaplacic-nadzwyczajny-podatek",
     "section": "news",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Orlen ścina ceny paliw w hurcie. Kiedy spadną na stacjach?",
+    "date": "2026-09-23",
+    "slug": "orlen-scina-ceny-paliw-w-hurcie-kiedy-spadna-na-stacjach",
+    "section": "porownania",
+    "format": "short",
     "source": "rss"
   }
 ]
