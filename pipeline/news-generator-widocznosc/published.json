@@ -1,12 +1,5 @@
 [
   {
-    "title": "Anthropic porządkuje swoje podejście do bezpieczeństwa AI",
-    "date": "2026-06-16",
-    "slug": "anthropic-porzadkuje-swoje-podejscie-do-bezpieczenstwa-ai",
-    "source": "rss",
-    "source_name": "Anthropic"
-  },
-  {
     "title": "TikTok z większym udziałem AI slop niż YouTube",
     "date": "2026-06-17",
     "slug": "tiktok-z-wiekszym-udzialem-ai-slop-niz-youtube",
@@ -632,5 +625,14 @@
     "source_title": "Introducing GPT-6 Sol and Luna",
     "source_url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
     "source_name": "OpenAI"
+  },
+  {
+    "title": "Rywalizacja z Chinami może utrudnić współpracę nad bezpieczeństwem AI",
+    "date": "2026-09-24",
+    "slug": "rywalizacja-z-chinami-moze-utrudnic-wspolprace-nad-bezpieczenstwem-ai",
+    "source": "rss",
+    "source_title": "Trump’s China rivalry and “AI race” delusion may endanger US, experts say",
+    "source_url": "https://arstechnica.com/tech-policy/2026/09/china-silent-as-us-touts-plan-for-ai-safety-alerts-that-omits-tech-experts/",
+    "source_name": "Ars Technica AI"
   }
 ]
