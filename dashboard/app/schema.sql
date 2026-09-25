@@ -191,3 +191,12 @@ CREATE TABLE IF NOT EXISTS audit_log (
 );
 
 CREATE INDEX IF NOT EXISTS audit_log_at ON audit_log (at DESC);
+
+-- Content Writer: hash tekstu wpisu zaindeksowanego w Vectorize (migracja 0012).
+CREATE TABLE IF NOT EXISTS post_vectors (
+  domain     TEXT NOT NULL,
+  post_id    INTEGER NOT NULL,
+  text_hash  TEXT NOT NULL,
+  indexed_at TEXT NOT NULL,
+  PRIMARY KEY (domain, post_id)
+);

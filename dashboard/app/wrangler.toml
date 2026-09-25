@@ -56,3 +56,17 @@ CW_DOMAINS = "grupa-icea.pl=https://www.grupa-icea.pl"
 binding = "CW_DB"
 database_name = "zaplecze-content-watcher"
 database_id = "46858a2b-898b-4414-9d92-37b02e26c14c" # utworzona 2026-07-28, region EEUR
+
+# Content Writer – „odśwież czy nowy" po znaczeniu: embeddingi wpisów (Workers AI,
+# @cf/baai/bge-m3) w Vectorize. Indeks: npx wrangler vectorize create zaplecze-posts
+# --dimensions=1024 --metric=cosine + metadata index na „domain" (filtr zapytań).
+[ai]
+binding = "AI"
+
+[[vectorize]]
+binding = "POSTS_INDEX"
+index_name = "zaplecze-posts"
+
+# Dzienna synchronizacja indeksu: collector 04:30 UTC + build ~5 min.
+[triggers]
+crons = ["20 5 * * *"]

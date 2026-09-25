@@ -50,10 +50,20 @@ const measuredAt = (details as { date?: string }).date ?? null;
       <div class="wr-section-head">
         <h2>Podpowiedzi z danych</h2>
         <span class="wr-note">
-          frazy z pozycją 11–50 bez własnego wpisu{measuredAt ? ` · dane z ${measuredAt}` : ''} · Senuto i Search Console
+          frazy z pozycją 11–50{measuredAt ? ` · dane z ${measuredAt}` : ''} · Senuto i Search Console
         </span>
       </div>
       <div class="wr-panel">
+        <div class="wr-rec-bar">
+          <div class="wr-seg" role="group" aria-label="Filtr rekomendacji" id="wr-rec-filter">
+            <button type="button" class="on" data-rec-filter="all">Wszystkie</button>
+            <button type="button" data-rec-filter="new">Do napisania</button>
+            <button type="button" data-rec-filter="refresh">Do odświeżenia</button>
+            <button type="button" data-rec-filter="check">Do sprawdzenia</button>
+          </div>
+          <span class="wr-note" id="wr-index-state">sprawdzam indeks wpisów…</span>
+          <button class="wr-btn small" type="button" id="wr-reindex">Przelicz indeks</button>
+        </div>
         {
           suggestions.length ? (
             <div class="wr-table-wrap">
@@ -64,13 +74,14 @@ const measuredAt = (details as { date?: string }).date ?? null;
                     <th class="num">Wyszukiwania</th>
                     <th class="num">Wyświetlenia</th>
                     <th class="num">Nasza poz.</th>
-                    <th>Dziś rankuje przy okazji</th>
+                    <th>Dziś rankuje</th>
+                    <th>Rekomendacja</th>
                     <th />
                   </tr>
                 </thead>
                 <tbody>
                   {suggestions.map((row) => (
-                    <tr>
+                    <tr data-phrase={row.keyword}>
                       <td>{row.keyword}</td>
                       <td class="num">{row.searches !== null ? fmtInt(row.searches) : '–'}</td>
                       <td class="num">{row.impressions !== null ? fmtInt(row.impressions) : '–'}</td>
@@ -84,6 +95,7 @@ const measuredAt = (details as { date?: string }).date ?? null;
                           row.sources.join(' + ')
                         )}
                       </td>
+                      <td class="wr-rec" data-rec><span class="muted">…</span></td>
                       <td class="num">
                         <button class="wr-btn small" type="button" data-pick={row.keyword}>Wybierz</button>
                       </td>
@@ -97,8 +109,9 @@ const measuredAt = (details as { date?: string }).date ?? null;
           )
         }
         <p class="wr-msg">
-          To heurystyka: fraza bez wpisu z nią w tytule, na którą stoi dziś strona poboczna. Przed założeniem projektu
-          sprawdź ostrzeżenie o kanibalizacji pod polem frazy.
+          Rekomendacja łączy podobieństwo znaczeniowe frazy do wpisów bloga (embeddingi tytułu, opisu i nagłówków)
+          z tym, co dziś na nią rankuje. Strona łapiąca frazę przy okazji nie blokuje nowego tekstu – blokuje go wpis
+          o tym samym temacie.
         </p>
       </div>
     </section>
@@ -175,16 +188,79 @@ const measuredAt = (details as { date?: string }).date ?? null;
     }
   });
 
-  /* Kontrola kanibalizacji: czy fraza ma już wpis albo stronę w TOP 20.
-     Wtedy właściwą drogą jest odświeżenie w Content Watcherze. */
+  /* „Odśwież czy nowy": decyzja z Workera (embeddingi wpisów + ranking).
+     Gdy indeks jest pusty albo Worker nie odpowiada – dawna kontrola po
+     słowach (tytuły wpisów i frazy w TOP 20). */
   const check = document.getElementById('wr-check')!;
   let writerData: any = null;
   let checkTimer: number | undefined;
+  let checkSeq = 0;
   const editorUrl = (id: string) => `/${domain}/content-watcher/edytor/?id=${encodeURIComponent(id)}`;
+  const pct = (score: number | null | undefined) => (typeof score === 'number' ? `${Math.round(score * 100)}%` : '–');
+  const REC_LABEL: Record<string, string> = { new: 'Napisz nowy', refresh: 'Odśwież', check: 'Sprawdź' };
+  const REC_TONE: Record<string, string> = { new: 'ok', refresh: 'warn', check: 'mid' };
+
+  async function classify(phrases: string[]) {
+    const { data } = await api<{ results: any[] }>('/api/cw/writer/classify', { method: 'POST', body: { domain, phrases } });
+    return data.results ?? [];
+  }
+
+  const targetLink = (target: any) => target?.catalog_id
+    ? `<a href="${editorUrl(target.catalog_id)}">${esc(target.title)}</a>`
+    : target?.url ? `<a href="${esc(target.url)}" target="_blank" rel="noopener">${esc(target.title ?? target.url)}</a>` : '';
+
+  function recCell(result: any) {
+    const badge = `<span class="wr-status ${REC_TONE[result.action] ?? 'idle'}">${REC_LABEL[result.action] ?? result.action}</span>`;
+    if (result.action === 'new') {
+      const why = result.ranking
+        ? `rankuje ${result.ranking.score === null ? 'strona spoza bloga' : `wpis o innym temacie (${pct(result.ranking.score)})`}`
+        : 'brak bliskiego wpisu';
+      const near = result.candidates?.[0] ? ` · najbliżej: ${esc(result.candidates[0].title)} (${pct(result.candidates[0].score)})` : '';
+      return `${badge}<small>${why}${near}</small>`;
+    }
+    return `${badge}<small>${targetLink(result.target)} · ${pct(result.target?.score)}</small>`;
+  }
 
   async function runCheck() {
     const keyword = input.value.trim();
+    const seq = ++checkSeq;
     if (keyword.length < 3) { check.hidden = true; return; }
+    try {
+      const [result] = await classify([keyword]);
+      if (seq !== checkSeq || !result) return;
+      if (result.action === 'new') {
+        const near = result.candidates?.[0]
+          ? ` – najbliżej jest „${esc(result.candidates[0].title)}" (${pct(result.candidates[0].score)})`
+          : '';
+        const ranks = result.ranking
+          ? `, a na frazę rankuje dziś ${result.ranking.score === null ? 'strona spoza bloga' : 'wpis o innym temacie'} (pozycja ${esc(result.ranking.position)})`
+          : '';
+        check.className = 'wr-alert ok';
+        check.innerHTML = `<strong>Nowy temat.</strong> <span>Na blogu nie ma wpisu bliskiego tej frazie${near}${ranks}.</span>`;
+      } else {
+        const refresh = result.action === 'refresh';
+        const ranksHere = result.ranking?.post_id && result.ranking.post_id === result.target?.post_id
+          ? `, rankuje na pozycji ${esc(result.ranking.position)}`
+          : '';
+        const others = (result.candidates ?? []).slice(1)
+          .map((row: any) => `<li class="muted">${targetLink(row)} – ${pct(row.score)}</li>`).join('');
+        check.className = 'wr-alert';
+        check.innerHTML = `<strong>${refresh ? 'Ten temat ma już wpis – odśwież go zamiast pisać od nowa.' : 'Jest wpis o pokrewnym temacie.'}</strong>
+          <ul>
+            <li>${targetLink(result.target)} – podobieństwo ${pct(result.target?.score)}${ranksHere} <span class="muted">– otwórz w Content Watcherze</span></li>
+            ${others}
+          </ul>
+          <span>${refresh
+            ? 'Nowy tekst na ten sam temat będzie konkurował z istniejącym. Załóż projekt tylko, jeśli celujesz w inną intencję.'
+            : 'Sprawdź, czy wystarczy dopisać sekcję do istniejącego wpisu – jeśli intencja jest inna, pisz nowy.'}</span>`;
+      }
+      check.hidden = false;
+    } catch {
+      if (seq === checkSeq) await lexicalCheck(keyword);
+    }
+  }
+
+  async function lexicalCheck(keyword: string) {
     if (!writerData) {
       try {
         writerData = await (await fetch(`/${domain}/content-writer/data.json`)).json();
@@ -203,12 +279,12 @@ const measuredAt = (details as { date?: string }).date ?? null;
         ${result.pages.map((row: any) => `<li>Wpis z tą frazą w tytule: ${link(row)}</li>`).join('')}
         ${result.rankings.map((row: any) => `<li>„${esc(row.keyword)}" – pozycja ${esc(row.position)}: ${link(row)}</li>`).join('')}
       </ul>
-      <span>Nowy tekst na tę samą frazę będzie konkurował z istniejącym. Załóż projekt tylko, jeśli celujesz w inną intencję.</span>`;
+      <span>Kontrola po słowach – indeks znaczeniowy jest niedostępny. Nowy tekst na tę samą frazę będzie konkurował z istniejącym.</span>`;
     check.hidden = false;
   }
   input.addEventListener('input', () => {
     clearTimeout(checkTimer);
-    checkTimer = window.setTimeout(runCheck, 250);
+    checkTimer = window.setTimeout(runCheck, 600);
   });
   document.querySelectorAll<HTMLButtonElement>('[data-pick]').forEach((button) => button.addEventListener('click', () => {
     input.value = button.dataset.pick ?? '';
@@ -217,5 +293,72 @@ const measuredAt = (details as { date?: string }).date ?? null;
     runCheck();
   }));
 
+  /* Rekomendacje dla podpowiedzi – jedno wywołanie na całą listę. */
+  const rows = [...document.querySelectorAll<HTMLTableRowElement>('#wr-suggestions tr[data-phrase]')];
+  const indexState = document.getElementById('wr-index-state')!;
+  const filterLabels = new Map<string, string>();
+  let activeFilter = 'all';
+
+  function applyFilter() {
+    for (const row of rows) row.hidden = activeFilter !== 'all' && row.dataset.action !== activeFilter;
+  }
+  document.querySelectorAll<HTMLButtonElement>('[data-rec-filter]').forEach((button) => {
+    filterLabels.set(button.dataset.recFilter!, button.textContent ?? '');
+    button.addEventListener('click', () => {
+      activeFilter = button.dataset.recFilter ?? 'all';
+      document.querySelectorAll('[data-rec-filter]').forEach((item) => item.classList.toggle('on', item === button));
+      applyFilter();
+    });
+  });
+
+  async function loadRecommendations() {
+    try {
+      const { data: state } = await api<{ indexed: number; indexed_at: string | null }>(`/api/cw/writer/index/${domain}`);
+      indexState.textContent = state.indexed
+        ? `indeks: ${state.indexed} wpisów · ${fmtDateTime(state.indexed_at)}`
+        : 'indeks wpisów jest pusty';
+      if (!state.indexed || !rows.length) {
+        rows.forEach((row) => { row.querySelector('[data-rec]')!.innerHTML = '<span class="muted">–</span>'; });
+        return;
+      }
+      const results = await classify(rows.map((row) => row.dataset.phrase!));
+      const byPhrase = new Map(results.map((result) => [result.phrase, result]));
+      const counts: Record<string, number> = { new: 0, refresh: 0, check: 0 };
+      for (const row of rows) {
+        const result = byPhrase.get(row.dataset.phrase!);
+        if (!result) continue;
+        row.dataset.action = result.action;
+        counts[result.action] = (counts[result.action] ?? 0) + 1;
+        row.querySelector('[data-rec]')!.innerHTML = recCell(result);
+      }
+      document.querySelectorAll<HTMLButtonElement>('[data-rec-filter]').forEach((button) => {
+        const key = button.dataset.recFilter!;
+        if (key !== 'all') button.textContent = `${filterLabels.get(key)} ${counts[key] ?? 0}`;
+      });
+      applyFilter();
+    } catch (error) {
+      indexState.textContent = (error as Error).message;
+    }
+  }
+
+  document.getElementById('wr-reindex')!.addEventListener('click', async (event) => {
+    const button = event.currentTarget as HTMLButtonElement;
+    button.disabled = true;
+    indexState.textContent = 'przeliczam indeks…';
+    try {
+      // Pierwsze pełne przeliczenie idzie porcjami – wołamy, aż nic nie zostanie.
+      for (let round = 0; round < 5; round++) {
+        const { data } = await api<{ embedded: number; remaining: number }>('/api/cw/writer/reindex', { method: 'POST', body: { domain } });
+        if (!data.remaining) break;
+      }
+      await loadRecommendations();
+    } catch (error) {
+      indexState.textContent = (error as Error).message;
+    } finally {
+      button.disabled = false;
+    }
+  });
+
   loadProjects();
+  loadRecommendations();
 </script>

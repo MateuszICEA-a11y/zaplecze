@@ -1,7 +1,8 @@
 import { parseBingAiCsv } from './bing-import.js';
-import { routeContentWatcher, timingSafeEqual, verifySignature } from './cw-api.js';
+import { checkMutationOrigin, contentDomains, routeContentWatcher, timingSafeEqual, verifySignature } from './cw-api.js';
 import { getSenutoToken, jwtExpiry, saveSenutoToken } from './senuto-token.js';
 import { routeWriter } from './cw-writer.js';
+import { routeSemantic, scheduledSync } from './cw-semantic.js';
 
 /**
  * Worker dashboardu: cała aplikacja za Basic Auth (dashboard zawiera dane
@@ -138,6 +139,13 @@ export default {
     // `ctx` niesie waitUntil – analiza SERP kończy się po odesłaniu odpowiedzi.
     // Content Writer (/api/cw/writer/*) przed Content Watcherem – ten drugi
     // odpowiada 404 na każdą nieznaną ścieżkę pod /api/cw/.
+    // „Odśwież czy nowy" (embeddingi) – przed routerem Content Writera, który
+    // odpowiada 404 na nieznane ścieżki pod /api/cw/writer/.
+    const semantic = await routeSemantic(request, env, {
+      checkOrigin: checkMutationOrigin,
+      domains: contentDomains(env),
+    });
+    if (semantic) return semantic;
     const writer = await routeWriter(request, env, { ctx });
     if (writer) return writer;
     const contentWatcher = await routeContentWatcher(request, env, { ctx });
@@ -155,5 +163,11 @@ export default {
     const guarded = new Response(response.body, response);
     guarded.headers.set('X-Robots-Tag', 'noindex');
     return guarded;
+  },
+
+  // Cron (wrangler.toml → [triggers]): indeks znaczeniowy wpisów po dziennym
+  // przebiegu collectora i buildzie – przelicza tylko zmienione wpisy.
+  async scheduled(_event, env, ctx) {
+    ctx.waitUntil(scheduledSync(env, [...contentDomains(env).keys()]));
   },
 };

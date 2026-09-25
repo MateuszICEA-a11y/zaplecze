@@ -169,7 +169,9 @@ export function writerData(details, { excludePaths = [] } = {}) {
     own_keywords: keywords.map((row) => ({ keyword: row.keyword, position: row.position })),
     pages: pageIndex(sources.wordpress?.items).map(({ id, url, title }) => ({ id, url, title })),
     rankings: keywords
-      .filter((row) => Number(row.position) <= CANNIBAL_POSITION_MAX && !excluded(normPath(row.url), excludePaths))
+      // Do TOP 50: decyzja „odśwież czy nowy" (Worker, cw-semantic) patrzy też
+      // na strony, które łapią frazę daleko – kontrola kanibalizacji tnie do 20.
+      .filter((row) => Number(row.position) <= GAP_MAX_POSITION && !excluded(normPath(row.url), excludePaths))
       .map((row) => ({ keyword: row.keyword, position: row.position, path: normPath(row.url) })),
   };
 }
@@ -181,18 +183,10 @@ export function writerData(details, { excludePaths = [] } = {}) {
 export function cannibalization(keyword, data) {
   const needle = phraseStems(keyword);
   if (!needle.length) return { pages: [], rankings: [] };
-  const key = phraseKey(keyword);
   const pages = (data.pages ?? []).map((page) => ({ ...page, tokens: tokens(page.title), path: normPath(page.url) }));
   const byPath = new Map(pages.map((page) => [page.path, page]));
   const titled = pages.filter((page) => matchTokens(page.tokens, needle).length > 0).slice(0, 5);
-  const rankings = (data.rankings ?? [])
-    // Ta sama fraza albo wariant z jednym słowem więcej („audyt seo sklepu").
-    .filter((row) => {
-      if (phraseKey(row.keyword) === key) return true;
-      const stems = new Set(phraseStems(row.keyword));
-      return matchTokens(tokens(row.keyword), needle).length > 0 && stems.size <= new Set(needle).size + 1;
-    })
-    .sort((a, b) => a.position - b.position)
+  const rankings = rankingsFor(keyword, data.rankings ?? [], CANNIBAL_POSITION_MAX)
     .slice(0, 5)
     .map((row) => ({ ...row, page: byPath.get(row.path) ?? null }));
   return {
@@ -201,4 +195,20 @@ export function cannibalization(keyword, data) {
       keyword: phrase, position, path, id: page?.id ?? null, title: page?.title ?? null, url: page?.url ?? null,
     })),
   };
+}
+
+/** Wiersze rankingu dla frazy: ta sama fraza albo wariant z jednym słowem więcej. */
+export function rankingsFor(keyword, rankings, maxPosition = GAP_MAX_POSITION) {
+  const needle = phraseStems(keyword);
+  if (!needle.length) return [];
+  const key = phraseKey(keyword);
+  return rankings
+    .filter((row) => Number(row.position) <= maxPosition)
+    // Ta sama fraza albo wariant z jednym słowem więcej („audyt seo sklepu").
+    .filter((row) => {
+      if (phraseKey(row.keyword) === key) return true;
+      const stems = new Set(phraseStems(row.keyword));
+      return matchTokens(tokens(row.keyword), needle).length > 0 && stems.size <= new Set(needle).size + 1;
+    })
+    .sort((a, b) => a.position - b.position);
 }
