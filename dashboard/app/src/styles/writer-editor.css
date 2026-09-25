@@ -275,9 +275,11 @@ html.we-open, html.we-open body { overflow: hidden; }
 .we-gauge { position: relative; width: 150px; }
 .we-gauge-svg { width: 100%; display: block; }
 .we-gauge-svg line { stroke: var(--hairline); stroke-width: 2.4; stroke-linecap: square; }
-.we-gauge-svg line.on { stroke: var(--accent-blue); }
-.we-gauge.low .we-gauge-svg line.on { stroke: var(--status-err-fg); }
-.we-gauge.mid .we-gauge-svg line.on { stroke: var(--status-warn-fg); }
+/* Kreska świeci kolorem strefy, w której leży na łuku: czerwień do 50,
+   bursztyn do 75, zieleń wyżej – łuk czyta się jak skala przyrządu. */
+.we-gauge-svg line.on.z-low { stroke: var(--status-err-fg); }
+.we-gauge-svg line.on.z-mid { stroke: var(--status-warn-fg); }
+.we-gauge-svg line.on.z-ok { stroke: var(--status-ok); }
 .we-gauge-num {
   position: absolute;
   inset: 34px 0 auto;
@@ -290,8 +292,14 @@ html.we-open, html.we-open body { overflow: hidden; }
 .we-parts { display: grid; gap: 9px; }
 .we-part-head { display: flex; justify-content: space-between; font-size: 0.86rem; }
 .we-part-head .v { color: var(--ink-muted); }
-.we-part-bar { height: 3px; background: var(--hairline-soft); margin-top: 4px; }
-.we-part-bar span { display: block; height: 100%; background: var(--ink-muted); }
+.we-part-bar { height: 4px; background: var(--hairline-soft); margin-top: 5px; border-radius: 2px; overflow: hidden; }
+.we-part-bar span { display: block; height: 100%; border-radius: 2px; }
+.we-part.z-ok .we-part-bar span { background: var(--status-ok); }
+.we-part.z-mid .we-part-bar span { background: var(--status-warn-fg); }
+.we-part.z-low .we-part-bar span { background: var(--status-err-fg); }
+.we-part.z-ok .we-part-head .v { color: var(--status-ok); }
+.we-part.z-mid .we-part-head .v { color: var(--status-warn-fg); }
+.we-part.z-low .we-part-head .v { color: var(--status-err-fg); }
 .we-part-hint { font-size: 0.76rem; color: var(--ink-faint); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .we-tabs { display: flex; border-bottom: 1px solid var(--hairline-soft); padding: 0 12px; }

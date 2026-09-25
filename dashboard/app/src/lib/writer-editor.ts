@@ -263,6 +263,9 @@ export function createEditor(host: EditorHost) {
     return { total, parts, words, target, mainInHead, titleHas };
   }
 
+  /** Strefa wyniku 0–1: te same progi dla łuku, pasków i liczby. */
+  const zone = (value: number) => (value >= 0.75 ? 'z-ok' : value >= 0.5 ? 'z-mid' : 'z-low');
+
   /** Łuk z 41 kresek – przyrząd, nie wykres; zapalone kreski = ocena. */
   function gauge(total: number) {
     const ticks = 41;
@@ -277,7 +280,7 @@ export function createEditor(host: EditorHost) {
       const y1 = 80 - r1 * Math.cos(angle);
       const x2 = 80 + r2 * Math.sin(angle);
       const y2 = 80 - r2 * Math.cos(angle);
-      lines.push(`<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" class="${i < lit ? 'on' : ''}" />`);
+      lines.push(`<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" class="${i < lit ? `on ${zone(i / (ticks - 1))}` : ''}" />`);
     }
     return `<svg viewBox="0 0 160 124" class="we-gauge-svg" aria-hidden="true">${lines.join('')}</svg>`;
   }
@@ -288,7 +291,7 @@ export function createEditor(host: EditorHost) {
     const result = score();
     const tone = result.total >= 75 ? 'ok' : result.total >= 50 ? 'mid' : 'low';
     const bar = (label: string, value: number, hint: string) => `
-      <div class="we-part">
+      <div class="we-part ${zone(value)}">
         <div class="we-part-head"><span>${label}</span><span class="v">${Math.round(value * 100)}%</span></div>
         <div class="we-part-bar"><span style="width:${Math.round(value * 100)}%"></span></div>
         <div class="we-part-hint">${hint}</div>
