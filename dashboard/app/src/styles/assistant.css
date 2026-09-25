@@ -104,6 +104,14 @@
 .as-item-main strong a:hover { text-decoration: underline; }
 .as-why { color: var(--ink-muted); font-size: 0.88rem; line-height: 1.45; }
 .as-ours { color: var(--ink-faint); font-size: 0.86rem; }
+.as-kind {
+  padding: 0 6px;
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+.as-kind.off { color: var(--status-warn-fg); border-color: var(--status-warn-bg); }
 .as-ours a { color: var(--ink-muted); }
 .as-item-actions { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
 .as-item .wr-btn { text-decoration: none; display: inline-flex; align-items: center; white-space: nowrap; }

@@ -154,11 +154,21 @@ const payload = {
     };
     const cutoff = new Date(Date.now() - NEW_DAYS * 86_400_000).toISOString().slice(0, 10);
     const isFresh = (item: Any) => !item.baseline && String(item.first_seen ?? '') >= cutoff;
-    const KIND: Record<string, { label: string; test: (item: Any) => boolean }> = {
-      new: { label: 'Tematy, których nie mamy', test: (item) => item.action === 'new' },
-      check: { label: 'Tematy, które mamy tylko częściowo', test: (item) => item.action === 'check' },
-      fresh: { label: `Nowe wpisy konkurencji (${NEW_DAYS} dni)`, test: isFresh },
+    /* Typ strony z klasyfikatora. Do luk tematycznych tylko treści ponadczasowe –
+       news, relacja z eventu czy case study konkurenta to nie temat na nasz wpis.
+       Strona jeszcze bez oceny przechodzi (lista nie może być pusta przed klasyfikacją). */
+    const CONTENT = ['poradnik', 'slownik'];
+    const PAGE_KIND: Record<string, string> = {
+      poradnik: 'poradnik', slownik: 'słownik', news: 'news', firmowe: 'o agencji',
+      case_study: 'case study', oferta: 'oferta', niepewne: 'niepewne',
     };
+    const isContent = (item: Any) => !item.kind || CONTENT.includes(item.kind);
+    const KIND: Record<string, { label: string; test: (item: Any) => boolean; contentOnly: boolean }> = {
+      new: { label: 'Tematy, których nie mamy', test: (item) => item.action === 'new', contentOnly: true },
+      check: { label: 'Tematy, które mamy tylko częściowo', test: (item) => item.action === 'check', contentOnly: true },
+      fresh: { label: `Nowe wpisy konkurencji (${NEW_DAYS} dni)`, test: isFresh, contentOnly: false },
+    };
+    const inKind = (kind: string, item: Any) => KIND[kind].test(item) && (!KIND[kind].contentOnly || isContent(item));
     const hostsOf = (q: URLSearchParams) => (q.get('h') && q.get('h') !== 'all' ? q.get('h')!.split(',') : null);
 
     /* ---------- ekrany ---------- */
@@ -171,7 +181,7 @@ const payload = {
           { href: link('konkurencja'), title: 'Sprawdzić, czego nam brakuje', desc: 'Porównamy wpisy konkurencji z naszymi i znajdziemy tematy, których nie mamy.', meta: 'liczę…' },
         ]);
         loadCompetitors().then((data) => {
-          const gaps = (data.items ?? []).filter(KIND.new.test).length;
+          const gaps = (data.items ?? []).filter((item: Any) => inKind('new', item)).length;
           const meta = screen.querySelector<HTMLElement>('[data-key="3"] [data-meta]');
           if (meta) meta.textContent = `${fmtInt(gaps)} tematów, których nie mamy · ${fmtInt((data.sites ?? []).length)} konkurentów`;
         }).catch(() => {
@@ -320,7 +330,7 @@ const payload = {
         const preset = new Set(hostsOf(q) ?? []);
         const rows = (data.sites ?? []).map((site: Any) => {
           const items = (data.items ?? []).filter((item: Any) => item.host === site.host);
-          return { host: site.host, total: items.length, gaps: items.filter(KIND.new.test).length, fresh: items.filter(isFresh).length };
+          return { host: site.host, total: items.length, gaps: items.filter((item: Any) => inKind('new', item)).length, fresh: items.filter(isFresh).length };
         });
         screen.innerHTML = back(link('konkurencja')) + question('Których konkurentów?', 'Zaznacz jednego albo kilku.') + `
           <form id="as-hosts" class="as-checks">${rows.map((row: Any) => `
@@ -348,7 +358,7 @@ const payload = {
         screen.innerHTML = back(backHref) + question('Czego szukamy?', '') + loading('Liczę…');
         const data = await loadCompetitors();
         const items = (data.items ?? []).filter((item: Any) => !hosts || hosts.includes(item.host));
-        const count = (kind: string) => items.filter(KIND[kind].test).length;
+        const count = (kind: string) => items.filter((item: Any) => inKind(kind, item)).length;
         const h = q.get('h') ?? 'all';
         screen.innerHTML = back(backHref) + question('Czego szukamy?', `Porównanie: <b>${esc(who)}</b> – ${fmtInt(items.length)} wpisów.`) + choices([
           { href: link('konkurencja/lista', { h, co: 'new' }), title: 'Tematów, których nie mamy', desc: 'Konkurent ma wpis, a my nie mamy nic bliskiego. Kandydaci na nowe teksty.', meta: `${fmtInt(count('new'))} tematów` },
@@ -366,8 +376,15 @@ const payload = {
         const data = await loadCompetitors();
         const query = q.get('s') ?? '';
         const words = fold(query).split(/\s+/).filter(Boolean);
-        const pool = (data.items ?? [])
-          .filter((item: Any) => (!hosts || hosts.includes(item.host)) && KIND[kind].test(item))
+        const everything = q.get('wszystko') === '1';
+        const matching = (data.items ?? []).filter((item: Any) => (!hosts || hosts.includes(item.host)) && KIND[kind].test(item));
+        const hidden = KIND[kind].contentOnly && !everything ? matching.filter((item: Any) => !isContent(item)) : [];
+        const hiddenNote = hidden.length ? Object.entries(hidden.reduce((acc: Record<string, number>, item: Any) => {
+          acc[item.kind] = (acc[item.kind] ?? 0) + 1;
+          return acc;
+        }, {})).sort((a, b) => b[1] - a[1]).map(([key, value]) => `${fmtInt(value)} ${PAGE_KIND[key] ?? key}`).join(', ') : '';
+        const pool = matching
+          .filter((item: Any) => everything || !KIND[kind].contentOnly || isContent(item))
           .filter((item: Any) => words.every((word) => fold(item.title).includes(word)))
           // Najpierw prawdziwe tytuły i najnowsze – tytuł ze sluga bywa urwany.
           .sort((a: Any, b: Any) => Number(b.title_from === 'page') - Number(a.title_from === 'page')
@@ -380,6 +397,7 @@ const payload = {
           fresh: 'Świeże wpisy konkurencji i ocena, czy mamy odpowiednik.',
         }[kind];
         screen.innerHTML = back(backHref) + question(KIND[kind].label, `${lede} <span class="as-count">${fmtInt(pool.length)} pozycji${hosts ? ` · ${esc(hosts.join(', '))}` : ''}</span>`) + `
+          ${hiddenNote ? `<p class="as-hint">Pominięte strony, które nie są poradnikami ani hasłami słownika: ${hiddenNote}. <a href="${link('konkurencja/lista', { h: q.get('h') ?? 'all', co: kind, wszystko: '1' })}">Pokaż też je</a></p>` : ''}
           <form class="as-form" id="as-filter"><input class="wr-input as-search" type="search" name="s" value="${esc(query)}" placeholder="Zawęź po słowie, np. allegro" aria-label="Zawęź listę" /></form>
           ${pool.length ? `<ol class="as-list">${pool.slice(0, shown).map((item: Any) => competitorItem(item)).join('')}</ol>
             ${pool.length > shown ? `<a class="as-more" href="${link('konkurencja/lista', { h: q.get('h') ?? 'all', co: kind, ...(query ? { s: query } : {}), n: String(shown + PAGE) })}">Pokaż kolejne (${fmtInt(pool.length - shown)})</a>` : ''}`
@@ -395,7 +413,8 @@ const payload = {
     const URGENCY: Record<string, string> = { critical: 'krytyczny', high: 'wysoki', normal: 'normalny', low: 'niski', none: 'bez oceny' };
 
     function competitorItem(item: Any) {
-      const ours = item.target
+      // Przy „nie mamy” najbliższy wpis jest z definicji daleki – pokazywanie go to szum.
+      const ours = item.target && item.action !== 'new'
         ? `<span class="as-ours">Nasz najbliższy: <a href="${item.target.catalog_id ? editorUrl(item.target.catalog_id) : esc(item.target.url)}">${esc(item.target.title)}</a> · ${pct(item.score)} podobieństwa</span>`
         : '';
       const write = `<a class="wr-btn ${item.action === 'new' || !item.action ? 'primary ' : ''}small" href="${link('nowy/fraza', { q: item.title, z: item.url })}">Napisz nasz tekst</a>`;
@@ -404,7 +423,7 @@ const payload = {
       return `<li class="as-item">
         <div class="as-item-main">
           <strong><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.title)}</a></strong>
-          <span class="as-why">${esc(item.host)} · ${item.baseline ? 'w sitemapie od początku śledzenia' : `pojawił się ${esc(item.first_seen)}`}${item.title_from === 'slug' ? ' · tytuł z adresu' : ''}</span>
+          <span class="as-why">${item.kind ? `<span class="as-kind ${CONTENT.includes(item.kind) ? '' : 'off'}" title="${esc(item.kind_basis ?? '')}">${esc(PAGE_KIND[item.kind] ?? item.kind)}</span> ` : ''}${esc(item.host)} · ${item.baseline ? 'w sitemapie od początku śledzenia' : `pojawił się ${esc(item.first_seen)}`}${item.title_from === 'slug' ? ' · tytuł z adresu' : ''}</span>
           ${ours}
         </div>
         <div class="as-item-actions">${item.action === 'refresh' ? refresh + write.replace('primary ', '') : write + refresh}</div>
