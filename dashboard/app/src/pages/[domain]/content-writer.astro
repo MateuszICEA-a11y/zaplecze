@@ -82,8 +82,8 @@ const measuredAt = (details as { date?: string }).date ?? null;
                     <th class="num">Wyszukiwań / mies.</th>
                     <th class="num">Wyświetleń / 28 dni</th>
                     <th class="num">Nasza pozycja</th>
-                    <th>Nasza strona na tę frazę</th>
-                    <th>Rekomendacja</th>
+                    <th data-grid-flex="1.4">Nasza strona na tę frazę</th>
+                    <th data-grid-grow data-grid-min="380">Rekomendacja</th>
                     <th />
                   </tr>
                 </thead>
@@ -145,6 +145,8 @@ const measuredAt = (details as { date?: string }).date ?? null;
 
 <script>
   import { api, esc, fmtDateTime, STATUS_LABEL, STATUS_TONE } from '../../lib/writer-client';
+  import { hasGrid } from '../../lib/grid';
+  import { mirrorTable } from '../../lib/grid-mirror';
   import { cannibalization } from '../../lib/writer-gaps.js';
   import { mountCompetitors } from '../../lib/writer-competitors';
 
@@ -157,7 +159,15 @@ const measuredAt = (details as { date?: string }).date ?? null;
   const message = document.getElementById('wr-new-msg')!;
   const projectUrl = (id: number) => `/${domain}/content-writer/projekt/?id=${id}`;
 
+  // Lista projektów jako AG Grid – przy każdym odczycie nowa siatka.
+  let projectsMirror: ReturnType<typeof mirrorTable> = null;
+  const projectsHost = document.createElement('div');
+  list.after(projectsHost);
   async function loadProjects() {
+    projectsMirror?.destroy();
+    projectsMirror = null;
+    projectsHost.replaceChildren();
+    list.hidden = false;
     try {
       const { data } = await api<{ projects: any[] }>(`/api/cw/writer/projects?domain=${encodeURIComponent(domain)}`);
       const rows = data.projects ?? [];
@@ -175,6 +185,8 @@ const measuredAt = (details as { date?: string }).date ?? null;
           <td>${row.wp_draft_url ? `<a href="${esc(row.wp_draft_url)}" target="_blank" rel="noopener">podgląd</a>` : '<span class="muted">–</span>'}</td>
           <td class="num muted">${fmtDateTime(row.updated_at)}</td>
         </tr>`).join('')}</tbody></table>`;
+      const table = list.querySelector('table');
+      if (table && hasGrid()) projectsMirror = mirrorTable(table, projectsHost, { stateKey: 'content-writer:projekty', pageSize: 10 });
     } catch (error) {
       list.innerHTML = `<p class="wr-msg err">${esc((error as Error).message)}</p>`;
     }
@@ -435,7 +447,22 @@ const measuredAt = (details as { date?: string }).date ?? null;
     }
   });
 
-  loadProjects();
-  loadRecommendations();
-  mountCompetitors(document.getElementById('wr-competitors')!, { domain, pick: pickPhrase });
+  // Podpowiedzi jako AG Grid: filtr rekomendacji (row.hidden) i przemalowane
+  // komórki (werdykty) odświeżają siatkę same, kliknięcia wracają do oryginału.
+  const suggestionsTable = document.getElementById('wr-suggestions') as HTMLTableElement | null;
+  const mountSuggestions = () => {
+    if (!suggestionsTable || !hasGrid()) return;
+    const gridHost = document.createElement('div');
+    suggestionsTable.closest('.wr-table-wrap')?.after(gridHost);
+    mirrorTable(suggestionsTable, gridHost, { stateKey: 'content-writer:podpowiedzi', pageSize: 25 });
+  };
+  // Rozruch po załadowaniu AG Grid (defer w <head>) – inaczej tabele wyszłyby bez siatki.
+  const boot = () => {
+    mountSuggestions();
+    loadProjects();
+    loadRecommendations();
+    mountCompetitors(document.getElementById('wr-competitors')!, { domain, pick: pickPhrase });
+  };
+  if (hasGrid()) boot();
+  else document.addEventListener('DOMContentLoaded', boot, { once: true });
 </script>

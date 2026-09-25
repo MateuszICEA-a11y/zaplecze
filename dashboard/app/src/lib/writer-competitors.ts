@@ -3,6 +3,8 @@
    + zapisany werdykt z D1), porównanie brakujących: POST …/sync w pętli. */
 
 import { api, esc, fmtDateTime, fmtInt } from './writer-client';
+import { hasGrid } from './grid';
+import { mirrorTable } from './grid-mirror';
 
 type Any = Record<string, any>;
 type View = 'new' | 'gap' | 'all';
@@ -21,6 +23,8 @@ export function mountCompetitors(root: HTMLElement, { domain, pick }: { domain: 
   let host = 'all';
   let query = '';
   let shown = PAGE;
+  // Z AG Grid wszystkie wiersze idą do tabeli – stronicuje i sortuje siatka.
+  let mirror: ReturnType<typeof mirrorTable> = null;
   let syncing = false;
 
   const since = new Date(Date.now() - NEW_DAYS * 86_400_000).toISOString().slice(0, 10);
@@ -45,6 +49,8 @@ export function mountCompetitors(root: HTMLElement, { domain, pick }: { domain: 
     const rows = filtered();
     const pending = data.pending as number;
 
+    mirror?.destroy();
+    mirror = null;
     root.innerHTML = `
       <div class="wr-tiles">
         ${sites.map((site) => {
@@ -79,7 +85,7 @@ export function mountCompetitors(root: HTMLElement, { domain, pick }: { domain: 
             : 'Wszystkie wpisy z sitemap z oceną, czy mamy odpowiednik.'}</p>
         ${rows.length ? `<div class="wr-table-wrap"><table class="wr-table wr-comp">
           <thead><tr><th>Temat u konkurencji</th><th>Konkurent</th><th>Pojawił się</th><th>Czy mamy</th><th>Nasz najbliższy wpis</th><th></th></tr></thead>
-          <tbody>${rows.slice(0, shown).map((item) => {
+          <tbody>${rows.slice(0, hasGrid() ? rows.length : shown).map((item) => {
             const rec = item.action ? REC[item.action] : null;
             return `<tr>
               <td class="t"><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.title)}</a>
@@ -92,7 +98,7 @@ export function mountCompetitors(root: HTMLElement, { domain, pick }: { domain: 
             </tr>`;
           }).join('')}</tbody>
         </table></div>
-        ${rows.length > shown ? `<div class="wr-actions"><button class="wr-btn small" type="button" data-more>Pokaż kolejne ${Math.min(PAGE, rows.length - shown)} z ${fmtInt(rows.length - shown)}</button></div>` : ''}`
+        ${rows.length > shown && !hasGrid() ? `<div class="wr-actions"><button class="wr-btn small" type="button" data-more>Pokaż kolejne ${Math.min(PAGE, rows.length - shown)} z ${fmtInt(rows.length - shown)}</button></div>` : ''}`
         : `<p class="wr-empty">${view === 'new' ? `Od początku śledzenia (${esc(data.generated_at ? fmtDateTime(data.generated_at) : '–')}) konkurenci nie dodali nowych wpisów.` : 'Nic w tym widoku.'}</p>`}
       </div>`;
     bind();
@@ -112,6 +118,12 @@ export function mountCompetitors(root: HTMLElement, { domain, pick }: { domain: 
     root.querySelector<HTMLElement>('[data-more]')?.addEventListener('click', () => { shown += PAGE; render(); });
     root.querySelectorAll<HTMLElement>('[data-pick]').forEach((button) => button.addEventListener('click', () => pick(button.dataset.pick!)));
     root.querySelector<HTMLElement>('[data-sync]')?.addEventListener('click', sync);
+    const table = root.querySelector<HTMLTableElement>('table.wr-comp');
+    if (table && hasGrid()) {
+      const gridHost = document.createElement('div');
+      table.closest('.wr-table-wrap')?.after(gridHost);
+      mirror = mirrorTable(table, gridHost, { stateKey: 'content-writer:konkurencja', pageSize: 25 });
+    }
     const search = root.querySelector<HTMLInputElement>('[data-search]');
     search?.addEventListener('input', () => {
       query = search.value;
