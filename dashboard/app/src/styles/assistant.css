@@ -23,7 +23,7 @@
   grid-template-columns: 232px minmax(0, 1fr);
   column-gap: 56px;
   align-items: start;
-  max-width: 1180px;
+  max-width: none;
 }
 :root[data-theme='light'] .as-page { --k-firmowe: #64748b; }
 
@@ -99,7 +99,7 @@
 
 .as-q h2 {
   margin: 0;
-  max-width: 22ch;
+  max-width: 32ch;
   font-size: clamp(2rem, 3.4vw, 2.85rem);
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -115,42 +115,44 @@
   line-height: 1.55;
 }
 
-/* ---------- karty wyboru ---------- */
-.as-choices { display: grid; gap: 12px; }
+/* ---------- karty wyboru: jak katalog w scrape300 (/co-mierzymy) ---------- */
+.as-page a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.as-choices { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; max-width: 1240px; }
 .as-choice {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 24px;
-  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 20px;
   border: 1px solid var(--hairline);
-  border-radius: 10px;
+  border-radius: 3px;
   background: var(--bg-surface-1);
-  box-shadow: inset 4px 0 0 var(--tone);
   color: var(--ink);
   text-decoration: none;
   transition: border-color 0.15s, background-color 0.15s;
 }
-.as-choice:hover,
-.as-choice:focus-visible {
-  border-color: var(--tone);
-  background: color-mix(in srgb, var(--tone) 7%, var(--bg-surface-1));
+.as-page a.as-choice:hover,
+.as-page a.as-choice:focus-visible,
+.as-page .as-check:has(input:checked) {
+  border-color: color-mix(in srgb, var(--tone) 55%, var(--hairline));
+  background: color-mix(in srgb, var(--tone) 5%, var(--bg-surface-1));
+  text-decoration: none;
   outline: none;
 }
-.as-choice-text { display: grid; gap: 6px; }
-.as-choice strong { font-size: 1.28rem; font-weight: 600; letter-spacing: -0.01em; }
-.as-desc { color: var(--ink-muted); line-height: 1.5; }
-.as-desc .as-fav { margin-right: 4px; }
-.as-num { display: grid; justify-items: end; gap: 4px; text-align: right; }
-.as-num b {
+.as-choice-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.as-choice strong { font-size: 1.05rem; font-weight: 500; line-height: 1.3; }
+.as-badge {
+  flex: none;
+  padding: 5px 8px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--tone) 13%, transparent);
   color: var(--tone);
-  font-size: 2.7rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-size: 0.76rem;
   line-height: 1;
-  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
-.as-num small { max-width: 13ch; color: var(--ink-faint); font-size: 0.8rem; line-height: 1.3; }
+.as-desc { color: var(--ink-muted); font-size: 0.92rem; line-height: 1.5; }
+.as-choice-meta { display: grid; gap: 4px; margin-top: auto; color: var(--ink-faint); font-size: 0.82rem; line-height: 1.4; }
+.as-choice-meta .as-fav { margin-right: 2px; }
 
 /* ---------- pasek filtrów listy ---------- */
 .as-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
@@ -241,27 +243,9 @@
 .as-form .wr-btn { height: 48px; padding: 0 20px; }
 .as-search { width: 100%; height: 44px; font-size: 1rem; }
 
-.as-checks { display: grid; gap: 10px; }
-.as-check {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: center;
-  gap: 6px 14px;
-  padding: 18px 20px;
-  border: 1px solid var(--hairline);
-  border-radius: 10px;
-  background: var(--bg-surface-1);
-  cursor: pointer;
-}
-.as-check:has(input:checked) {
-  border-color: var(--tone);
-  background: color-mix(in srgb, var(--tone) 7%, var(--bg-surface-1));
-  box-shadow: inset 4px 0 0 var(--tone);
-}
-.as-check input { grid-row: span 2; width: 18px; height: 18px; accent-color: var(--tone); }
-.as-check-name { display: inline-flex; align-items: center; gap: 8px; font-size: 1.1rem; }
-.as-check-stats { display: flex; flex-wrap: wrap; gap: 4px 18px; color: var(--ink-muted); font-size: 0.88rem; }
-.as-check-stats b { color: var(--ink); }
+.as-check { cursor: pointer; }
+.as-check-name { display: inline-flex; align-items: center; gap: 8px; }
+.as-check input { width: 16px; height: 16px; margin: 0; accent-color: var(--tone); }
 .as-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 4px; }
 
 /* ---------- werdykt „odśwież czy nowy” ---------- */
@@ -322,18 +306,39 @@
   .as-filter .wr-input { width: 100%; }
 }
 
-/* Przycisk w wierszu listy: obrys w kolorze intencji, wypełnienie dopiero przy
-   wierszu pod kursorem – pełny kolor w każdym wierszu zlewał listę w pasy. */
-.as-item .wr-btn.primary {
+/* ---------- siatki AG Grid ---------- */
+.as-grid-wrap { display: grid; gap: 12px; min-width: 0; }
+.as-grid { width: 100%; }
+.as-reset {
+  margin-left: auto;
+  border: 0;
+  background: none;
+  color: var(--ink-faint);
+  font: inherit;
+  font-size: 0.84rem;
+  cursor: pointer;
+}
+.as-reset:hover { color: var(--ink); }
+.as-grid .as-cell-title { color: var(--ink); font-weight: 500; text-decoration: none; }
+.as-grid a.as-cell-title:hover { text-decoration: underline; }
+.as-grid .as-soft { color: var(--ink-faint); }
+.as-grid .as-num-cell { font-variant-numeric: tabular-nums; text-align: right; }
+.as-grid .as-fav { margin-right: 4px; }
+.as-grid .as-tag { display: inline-block; line-height: 1.5; }
+.as-cell-actions { display: inline-flex; align-items: center; gap: 6px; height: 100%; }
+.as-grid .wr-btn { text-decoration: none; display: inline-flex; align-items: center; white-space: nowrap; }
+/* Przycisk w wierszu: obrys w kolorze intencji, pełny kolor dopiero na wierszu pod kursorem –
+   wypełniony w każdym wierszu zlewał tabelę w pasy. */
+.as-grid .wr-btn.primary {
   background: transparent;
   border-color: color-mix(in srgb, var(--tone) 55%, transparent);
   color: var(--tone);
 }
-.as-item:hover .wr-btn.primary,
-.as-item .wr-btn.primary:focus-visible {
+.as-grid .ag-row-hover .wr-btn.primary,
+.as-grid .wr-btn.primary:focus-visible {
   background: var(--tone);
   border-color: var(--tone);
   color: var(--on-accent);
 }
-.as-item:hover { border-color: color-mix(in srgb, var(--kind) 45%, var(--hairline)); }
-.as-screen:not([data-tone]) .as-item, .as-screen[data-tone=''] .as-item { --tone: var(--accent-blue); }
+.as-screen[data-tone=''] { --tone: var(--accent-blue); }
+.as-skipped { --kind: var(--ink-faint); }
