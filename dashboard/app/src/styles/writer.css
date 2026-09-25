@@ -347,3 +347,6 @@
 .wr-fact-src:hover { color: var(--accent-blue); text-decoration: underline; }
 .wr-facts li > span:first-child { flex: 1 1 auto; min-width: 0; }
 .wr-panel > .wr-seg { width: fit-content; }
+.wr-serp .bar.ok > span { background: var(--status-ok); }
+.wr-serp .bar.mid > span { background: var(--status-warn-fg); }
+.wr-serp .bar.low > span { background: var(--status-err-fg); }

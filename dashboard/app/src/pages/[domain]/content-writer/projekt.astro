@@ -184,6 +184,14 @@ const latest = latestSnapshot(domain!);
   };
   let gapFilter: 'all' | 'missing' | 'weak' | 'covered' = 'all';
 
+  /** Długość tekstu wobec mediany czołówki: krótszy o ponad 40% to „za krótko”,
+      o 15–40% – „krócej”, bliżej mediany lub dłużej – w normie. */
+  const lengthTone = (words: number, median: number | null) => {
+    if (!median) return '';
+    const ratio = words / median;
+    return ratio < 0.6 ? 'low' : ratio < 0.85 ? 'mid' : 'ok';
+  };
+
   const shortUrl = (url: string) => String(url ?? '').replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
 
   function renderResearch() {
@@ -232,7 +240,7 @@ const latest = latestSnapshot(domain!);
       </div>`}
 
       ${competitors.length ? `<div class="wr-panel">
-        <div class="wr-section-head"><h3>Czołówka wyników</h3><span class="wr-note">${pages.size ? 'pasek = długość tekstu, kreska = typowa długość w czołówce' : 'przeczytaj teksty, żeby zobaczyć ich długość'}</span></div>
+        <div class="wr-section-head"><h3>Czołówka wyników</h3><span class="wr-note">${pages.size ? 'pasek = długość tekstu, kreska = typowa długość w czołówce; zielony – w normie, bursztynowy – krótszy, czerwony – dużo krótszy' : 'przeczytaj teksty, żeby zobaczyć ich długość'}</span></div>
         <ol class="wr-serp">
           ${competitors.map((row) => {
             const page = pages.get(row.url);
@@ -245,7 +253,7 @@ const latest = latestSnapshot(domain!);
               </div>
               <div class="len">
                 ${words ? `<span class="n">${fmtInt(words)} słów</span>
-                  <span class="bar"><span style="width:${Math.round((words / maxWords) * 100)}%"></span>${median ? `<i style="left:${Math.round((median / maxWords) * 100)}%"></i>` : ''}</span>`
+                  <span class="bar ${lengthTone(words, median)}"><span style="width:${Math.round((words / maxWords) * 100)}%"></span>${median ? `<i style="left:${Math.round((median / maxWords) * 100)}%"></i>` : ''}</span>`
                   : `<span class="n muted">${page?.error ? 'nie udało się przeczytać' : '–'}</span>`}
               </div>
             </li>`;
