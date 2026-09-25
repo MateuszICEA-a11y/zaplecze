@@ -266,7 +266,7 @@ const compareModes = (
       const cards = document.querySelectorAll<HTMLElement>('.table-card');
       const esc = (s: string) =>
         s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
-      const fi = (n: number | null | undefined) => (typeof n === 'number' ? n.toLocaleString('pl-PL') : '–');
+      const fi = (n: number | null | undefined) => (typeof n === 'number' ? n.toLocaleString('pl-PL', { useGrouping: 'always' }) : '–');
       const fp = (v: number | null) =>
         typeof v === 'number' ? `${v.toLocaleString('pl-PL', { maximumFractionDigits: 2 })}%` : '–';
       const f1 = (v: number | null) =>
@@ -341,7 +341,7 @@ const compareModes = (
             ? rows.map((r) => pageRowHtml(r, max)).join('')
             : withOpp(rows).map((r) => qRowHtml(r, max)).join('');
           const countEl = card.querySelector('.table-head h3 .table-meta');
-          if (countEl) countEl.textContent = ` · ${rows.length.toLocaleString('pl-PL')}`;
+          if (countEl) countEl.textContent = ` · ${rows.length.toLocaleString('pl-PL', { useGrouping: 'always' })}`;
           const metaEl = card.querySelector('.table-head > .table-meta');
           if (metaEl) metaEl.textContent = `okno ${dateRange(win.start, win.end)}`;
           card.querySelectorAll<HTMLTableCellElement>('thead th').forEach((th) => {
@@ -373,7 +373,7 @@ const compareModes = (
         window: { start: string; end: string };
         series: Record<string, [string, number][]>;
       } | null = histEl ? JSON.parse(histEl.textContent ?? 'null') : null;
-      const fiL = (n: number) => n.toLocaleString('pl-PL');
+      const fiL = (n: number) => n.toLocaleString('pl-PL', { useGrouping: 'always' });
 
       const sparkSvg = (key: string): string => {
         const raw = history?.series?.[key];

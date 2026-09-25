@@ -24,7 +24,7 @@ const hasActions = Astro.slots.has('actions');
   <div class="table-head">
     <h3>
       {title}
-      {typeof count === 'number' && <span class="table-meta"> · {count.toLocaleString('pl-PL')}</span>}
+      {typeof count === 'number' && <span class="table-meta"> · {count.toLocaleString('pl-PL', { useGrouping: 'always' })}</span>}
     </h3>
     {meta && <span class="table-meta">{meta}</span>}
     {hasActions && <slot name="actions" />}
@@ -141,7 +141,7 @@ const hasActions = Astro.slots.has('actions');
         const from = matched.length === 0 ? 0 : page * pageSize + 1;
         const to = Math.min((page + 1) * pageSize, matched.length);
         info.textContent = matched.length
-          ? `${from.toLocaleString('pl-PL')}–${to.toLocaleString('pl-PL')} z ${matched.length.toLocaleString('pl-PL')}`
+          ? `${from.toLocaleString('pl-PL', { useGrouping: 'always' })}–${to.toLocaleString('pl-PL', { useGrouping: 'always' })} z ${matched.length.toLocaleString('pl-PL', { useGrouping: 'always' })}`
           : '0 z 0';
         prevBtn.disabled = page === 0;
         nextBtn.disabled = page >= pages - 1;

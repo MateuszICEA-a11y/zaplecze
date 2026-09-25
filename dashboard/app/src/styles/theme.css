@@ -1,147 +1,170 @@
 /* ============================================================
-   Dashboard zaplecza – NVIDIA-style design system
-   Jednoakcentowy (NVIDIA Green #76b900), 2px radius, hairline
-   borders, zero elevation. Dark = default, light przez [data-theme].
+   Dashboard zaplecza – system wizualny (2026-09-25)
+   Paleta z panelu scrape300 (kolory openrouter.ai): ciemny = limonka,
+   jasny = fiolet. Jeden akcent – tylko główne przyciski, stany aktywne
+   i kluczowe liczby. Stany (ok, uwaga, błąd) mają osobną paletę i zawsze
+   idą w parze z tekstem. Włosowe linie zamiast cieni, Roobert 400/500,
+   cyfry tabelaryczne. Nazwy tokenów zostały z poprzedniego systemu
+   (--accent-blue to po prostu „akcent”), żeby strony nie wymagały zmian.
    ============================================================ */
 
+@font-face {
+  font-family: 'Roobert';
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Roobert-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Roobert';
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Roobert-Medium.woff2') format('woff2');
+}
+
 :root {
-  /* Typografia: Inter (body, zamiennik NVIDIA-EMEA) + Space Grotesk (display/liczby) */
-  --font-body: 'Inter Variable', system-ui, -apple-system, sans-serif;
-  --font-display: 'Space Grotesk Variable', 'Inter Variable', system-ui, sans-serif;
+  --font-body: 'Roobert', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Roobert', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Surface ladder — NVIDIA dark */
-  --bg-canvas: #000000;
-  --bg-rail: #0a0a0a;
-  --bg-surface-1: #1a1a1a;
-  --bg-surface-2: #242424;
-  --bg-surface-3: #2e2e2e;
+  /* Powierzchnie – ciemny */
+  --bg-canvas: #03080a;
+  --bg-rail: #03080a;
+  --bg-surface-1: #0a0e11;
+  --bg-surface-2: #10151a;
+  --bg-surface-3: #151a1f;
 
-  /* Hairlines */
-  --hairline: #5e5e5e;
-  --hairline-soft: rgba(255, 255, 255, 0.06);
+  /* Linie */
+  --hairline: #1f252b;
+  --hairline-soft: rgba(255, 255, 255, 0.05);
 
-  /* Ink */
-  --ink: #ffffff;
-  --ink-muted: rgba(255, 255, 255, 0.7);
-  --ink-faint: #898989;
+  /* Tekst */
+  --ink: #fafafa;
+  --ink-muted: #a0a0a4;
+  --ink-faint: #6f7277;
 
-  /* Accent — NVIDIA Green (jedyny akcent w systemie) */
-  --accent-blue: #76b900;
-  --accent-blue-soft: rgba(118, 185, 0, 0.14);
+  /* Akcent (jedyny) i tekst na akcencie */
+  --accent-blue: #c4f800;
+  --accent-strong: #a3d100;
+  --accent-blue-soft: rgba(196, 248, 0, 0.1);
+  --on-accent: #03080a;
+  --info: #4cc3f5;
+  --info-soft: rgba(76, 195, 245, 0.14);
 
-  /* Statusy źródeł */
-  --status-ok: #76b900;
-  --status-ok-bg: rgba(118, 185, 0, 0.14);
-  /* Stopień pośredni między OK a ostrzeżeniem (skala pilności: zielony →
-     żółty → pomarańczowy → czerwony). */
-  --status-mid-fg: #e3c400;
-  --status-mid-bg: rgba(227, 196, 0, 0.14);
-  --status-warn-fg: #ef9100;
-  --status-warn-bg: rgba(239, 145, 0, 0.12);
-  --status-err-fg: #e52020;
-  --status-err-bg: rgba(229, 32, 32, 0.12);
+  /* Stany: ok → pośredni → uwaga → błąd */
+  --status-ok: #3ccf7a;
+  --status-ok-bg: rgba(60, 207, 122, 0.14);
+  --status-mid-fg: #f5b82e;
+  --status-mid-bg: rgba(245, 184, 46, 0.15);
+  --status-warn-fg: #ff9147;
+  --status-warn-bg: rgba(255, 145, 71, 0.14);
+  --status-err-fg: #ff5c4d;
+  --status-err-bg: rgba(255, 92, 77, 0.14);
 
-  /* Paleta serii wykresów — monochromatyczna z akcentem */
-  --series-1: #76b900;
-  --series-2: #ef9100;
-  --series-3: #bff230;
+  /* Serie wykresów: akcent + dwa kolory kategoryczne */
+  --series-1: #c4f800;
+  --series-2: #4cc3f5;
+  --series-3: #b69cff;
 
-  /* Kolory źródeł */
-  --ch-direct: #4a7dff;
-  --sen: #952fc6;
+  /* Kolory źródeł (identyfikacja narzędzia, nie stan) */
+  --ch-direct: #4cc3f5;
+  --sen: #b69cff;
   --gsc: var(--accent-blue);
-  --ga4: var(--series-3);
-  --ahrefs: var(--series-2);
-  --bing: #17c3b2;
-  --bing-soft: rgba(23, 195, 178, 0.12);
+  --ga4: #4cc3f5;
+  --ahrefs: #ff9f6b;
+  --bing: #2dd4bf;
+  --bing-soft: rgba(45, 212, 191, 0.12);
 
   /* Sygnały frustracji Clarity */
-  --rage: #e52020;
-  --dead: #ef9100;
-  --quick: #df6500;
+  --rage: #ff5c4d;
+  --dead: #ff9147;
+  --quick: #f5b82e;
 
   /* Akcenty sekcji */
-  --ahrefs-soft: rgba(239, 145, 0, 0.12);
-  --lead: #76b900;
-  --lead-soft: rgba(118, 185, 0, 0.12);
+  --ahrefs-soft: rgba(255, 159, 107, 0.12);
+  --lead: #3ccf7a;
+  --lead-soft: rgba(60, 207, 122, 0.12);
 
   /* Dostawcy botów AI */
-  --v-anthropic: #d97757;
-  --v-openai: #76b900;
-  --v-perplexity: #0046a4;
-  --v-apple: #a7a7a7;
-  --v-bytedance: #952fc6;
-  --v-mistral: #17c3b2;
-  --v-common: #ef9100;
-  --v-other: #898989;
+  --v-anthropic: #e08a66;
+  --v-openai: #3ccf7a;
+  --v-perplexity: #4cc3f5;
+  --v-apple: #a0a0a4;
+  --v-bytedance: #b69cff;
+  --v-mistral: #2dd4bf;
+  --v-common: #f5b82e;
+  --v-other: #6f7277;
 
-  /* NVIDIA: zero elevation — flat + hairline */
+  /* Bez cieni na płaszczyznach; cień tylko dla warstw pływających */
   --shadow-card: none;
+  --shadow-float: 0 12px 32px rgba(0, 0, 0, 0.4);
+  --radius: 3px;
   --container: 1280px;
   --gutter: 24px;
 
-  /* Corner square motyw dekoracyjny */
-  --corner-square-size: 12px;
+  /* Kwadrat w rogu karty – wyłączony (kolor niesie kropka przy etykiecie) */
+  --corner-square-size: 0px;
   --corner-square-color: var(--accent-blue);
+
+  color-scheme: dark;
 }
 
 :root[data-theme='light'] {
-  /* Surface ladder — NVIDIA light (paper white) */
-  --bg-canvas: #ffffff;
-  --bg-rail: #f7f7f7;
+  --bg-canvas: #fcf8fe;
+  --bg-rail: #fcf8fe;
   --bg-surface-1: #ffffff;
-  --bg-surface-2: #f7f7f7;
-  --bg-surface-3: #eeeeee;
+  --bg-surface-2: #f8f4fb;
+  --bg-surface-3: #f1edf5;
 
-  /* Hairlines */
-  --hairline: #cccccc;
-  --hairline-soft: rgba(0, 0, 0, 0.06);
+  --hairline: #e8e4ec;
+  --hairline-soft: rgba(3, 8, 10, 0.05);
 
-  /* Ink */
-  --ink: #000000;
-  --ink-muted: #1a1a1a;
-  --ink-faint: #757575;
+  --ink: #03080a;
+  --ink-muted: #505054;
+  --ink-faint: #85838a;
 
-  /* Accent — ten sam NVIDIA Green */
-  --accent-blue: #76b900;
-  --accent-blue-soft: rgba(118, 185, 0, 0.1);
+  --accent-blue: #7018f0;
+  --accent-strong: #5a0fcc;
+  --accent-blue-soft: rgba(112, 24, 240, 0.09);
+  --on-accent: #ffffff;
+  --info: #1f8fc4;
+  --info-soft: rgba(31, 143, 196, 0.12);
 
-  /* Statusy */
-  --status-ok: #3f8500;
-  --status-ok-bg: rgba(63, 133, 0, 0.1);
-  --status-mid-fg: #9a7b00;
-  --status-mid-bg: rgba(154, 123, 0, 0.1);
-  --status-warn-fg: #df6500;
-  --status-warn-bg: rgba(223, 101, 0, 0.08);
-  --status-err-fg: #e52020;
-  --status-err-bg: rgba(229, 32, 32, 0.08);
+  --status-ok: #1f9d55;
+  --status-ok-bg: rgba(31, 157, 85, 0.12);
+  --status-mid-fg: #a87700;
+  --status-mid-bg: rgba(224, 161, 0, 0.16);
+  --status-warn-fg: #d4620b;
+  --status-warn-bg: rgba(212, 98, 11, 0.12);
+  --status-err-fg: #d93a2b;
+  --status-err-bg: rgba(217, 58, 43, 0.1);
 
-  /* Serie */
-  --series-1: #5a8d00;
-  --series-2: #df6500;
-  --series-3: #3f8500;
+  --series-1: #7018f0;
+  --series-2: #1f8fc4;
+  --series-3: #d4620b;
 
-  /* Źródła */
-  --sen: #4d1368;
+  --ch-direct: #1f8fc4;
+  --sen: #b5179e;
+  --ga4: #1f8fc4;
+  --ahrefs: #d4620b;
   --bing: #0d9488;
   --bing-soft: rgba(13, 148, 136, 0.1);
-  --rage: #650b0b;
-  --dead: #df6500;
-  --quick: #df6500;
-  --ahrefs-soft: rgba(223, 101, 0, 0.1);
-  --lead: #3f8500;
-  --lead-soft: rgba(63, 133, 0, 0.1);
+  --rage: #d93a2b;
+  --dead: #d4620b;
+  --quick: #a87700;
+  --ahrefs-soft: rgba(212, 98, 11, 0.1);
+  --lead: #1f9d55;
+  --lead-soft: rgba(31, 157, 85, 0.1);
   --v-anthropic: #c2410c;
-  --v-openai: #3f8500;
-  --v-perplexity: #0046a4;
-  --v-apple: #757575;
-  --v-bytedance: #4d1368;
+  --v-openai: #1f9d55;
+  --v-perplexity: #1f8fc4;
+  --v-apple: #85838a;
+  --v-bytedance: #b5179e;
   --v-mistral: #0d9488;
-  --v-common: #df6500;
-  --v-other: #757575;
+  --v-common: #a87700;
+  --v-other: #85838a;
 
-  /* Zero elevation */
-  --shadow-card: none;
+  --shadow-float: 0 12px 32px rgba(3, 8, 10, 0.14);
+
+  color-scheme: light;
 }
 
 * {
@@ -153,7 +176,11 @@ html {
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  /* Roobert ma tylko 400 i 500 – bez sztucznego pogrubiania 600/700. */
+  font-synthesis: none;
+  font-variant-numeric: tabular-nums;
 }
 
 body {
@@ -166,6 +193,22 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
 
 a {
@@ -174,6 +217,36 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+/* Wstęp strony: jedno-dwa zdania pod tytułem, bez ramki i tła. */
+.page-lede {
+  max-width: 78ch;
+  margin: 10px 0 22px;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.page-lede p {
+  margin: 0;
+}
+.lede-more {
+  margin-top: 6px;
+}
+.lede-more summary {
+  cursor: pointer;
+  width: fit-content;
+  color: var(--ink-faint);
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-decoration-color: var(--hairline);
+  text-underline-offset: 3px;
+}
+.lede-more summary:hover {
+  color: var(--ink);
+}
+.lede-more[open] summary {
+  margin-bottom: 6px;
 }
 
 .container {
@@ -275,8 +348,6 @@ table.data-table {
   color: var(--ink-faint);
   font-size: 0.72rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   padding: 8px 12px;
   border-bottom: 1px solid var(--hairline);
   white-space: nowrap;
@@ -413,7 +484,7 @@ table.data-table {
 .pager .pages button.active {
   background: var(--accent-blue);
   border-color: var(--accent-blue);
-  color: #05121f;
+  color: var(--on-accent);
   font-weight: 700;
 }
 /* pasek wielkości w komórce (magnituda vs max kolumny) */
@@ -673,7 +744,7 @@ table.data-table {
 .spark-empty { color: var(--ink-faint); font-size: 0.82rem; padding: 10px 0; }
 .q-drawer .facts { display: flex; gap: 6px 26px; flex-wrap: wrap; margin: 0; }
 .q-drawer .facts div { display: flex; flex-direction: column; gap: 2px; }
-.q-drawer .facts dt { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-faint); }
+.q-drawer .facts dt { font-size: 0.7rem; color: var(--ink-faint); }
 .q-drawer .facts dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ink); }
 /* ============================================================
    ICEA Dashboard — lifting wizualny (2026-07-22)
@@ -696,7 +767,7 @@ table.data-table {
   transition: border-color .16s ease;
 }
 .k:hover { border-color: var(--accent-blue); }
-.k .lbl { color: var(--ink-faint); font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .09em; display: flex; align-items: center; gap: 7px; }
+.k .lbl { color: var(--ink-faint); font-size: .7rem; font-weight: 600; display: flex; align-items: center; gap: 7px; }
 .k .lbl .ic { width: 13px; height: 13px; opacity: .8; flex: none; }
 .k .val { font-family: var(--font-display); font-weight: 600; letter-spacing: -.025em; line-height: 1; font-variant-numeric: tabular-nums; margin-top: 12px; font-size: 1.9rem; white-space: nowrap; }
 .k.hero::before { content: ''; position: absolute; bottom: 0; left: 0; width: var(--corner-square-size, 12px); height: var(--corner-square-size, 12px); background: var(--accent-blue); }
@@ -708,7 +779,7 @@ table.data-table {
 .rtrend svg { width: 12px; height: 12px; flex: none; }
 .rtrend.up   { color: var(--status-ok);      background: color-mix(in srgb, var(--status-ok) 13%, transparent); }
 .rtrend.down { color: var(--status-err-fg);  background: var(--status-err-bg); }
-.rtrend.flat { color: var(--ink-faint);       background: var(--bg-surface-3); }
+.rtrend.flat { color: var(--ink-faint); background: none; padding-left: 0; padding-right: 0; font-weight: 400; }
 .rtrend .per { color: var(--ink-faint); font-weight: 500; }
 .rspark { width: 108px; height: 34px; flex: none; }
 
@@ -733,10 +804,10 @@ table.data-table {
 
 /* status źródła — kropka zamiast pełnego chipa */
 .rstat { display: inline-flex; align-items: center; gap: 8px; font-size: .82rem; color: var(--ink-muted); }
-.rstat .d { width: 8px; height: 8px; border-radius: 50%; flex: none; }
-.rstat .d.ok   { background: var(--status-ok);      box-shadow: 0 0 0 3px color-mix(in srgb, var(--status-ok) 20%, transparent); }
-.rstat .d.warn { background: var(--status-warn-fg); box-shadow: 0 0 0 3px var(--status-warn-bg); }
-.rstat .d.err  { background: var(--status-err-fg);  box-shadow: 0 0 0 3px var(--status-err-bg); }
+.rstat .d { width: 8px; height: 8px; border-radius: 1px; flex: none; }
+.rstat .d.ok   { background: var(--status-ok);      box-shadow: none; }
+.rstat .d.warn { background: var(--status-warn-fg); box-shadow: none; }
+.rstat .d.err  { background: var(--status-err-fg);  box-shadow: none; }
 .rstat .d.off  { background: transparent;           box-shadow: inset 0 0 0 1.5px var(--ink-faint); }
 
 /* chip (delty/liczniki) */
@@ -759,6 +830,7 @@ table.data-table {
 .rchart .cap { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
 .rchart .cap h4 { font-size: .98rem; letter-spacing: -.01em; margin: 0; font-family: var(--font-display); }
 .rchart .cap .side { display: inline-flex; gap: 4px; background: var(--bg-surface-2); border: 1px solid var(--hairline); border-radius: 2px; padding: 3px; }
+.rchart .cap .side:not(:has(*)) { display: none; }
 .rchart .cap .side button { appearance: none; border: none; background: none; color: var(--ink-faint); font: inherit; font-size: .72rem; font-weight: 600; padding: 4px 9px; border-radius: 2px; cursor: pointer; }
 .rchart .cap .side button.on { background: var(--bg-surface-1); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.3); }
 /* własna legenda (uPlot legend: {show:false}) */
@@ -784,7 +856,7 @@ table.data-table {
 .down-card .hd { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--status-warn-bg); color: var(--status-warn-fg); font-size: .84rem; font-weight: 500; }
 .down-card .hd svg { width: 15px; height: 15px; flex: none; }
 .down-card .bd { padding: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 12px; }
-.down-card .mini .l { color: var(--ink-faint); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; }
+.down-card .mini .l { color: var(--ink-faint); font-size: .7rem; }
 .down-card .mini .v { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--ink-muted); font-variant-numeric: tabular-nums; margin-top: 3px; }
 .down-card .mini .v small { font-size: .6em; color: var(--ink-faint); font-weight: 500; margin-left: 6px; }
 
@@ -859,7 +931,7 @@ table.data-table {
 .seg-card .idxbar { margin-top: 10px; height: 6px; }
 .seg-card .cov { color: var(--ink-faint); font-size: .72rem; margin-top: 5px; }
 .seg-card .mgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; margin-top: 13px; }
-.seg-card .mm .l { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-faint); font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; }
+.seg-card .mm .l { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-faint); font-size: .68rem; }
 .seg-card .mm .v { font-family: var(--font-display); font-weight: 600; font-variant-numeric: tabular-nums; font-size: 1.05rem; margin-top: 2px; }
 .src { width: 7px; height: 7px; border-radius: 50%; flex: none; display: inline-block; }
 .src.sen { background: var(--sen); } .src.gsc { background: var(--gsc); } .src.ga4 { background: var(--ga4); } .src.ahrefs { background: var(--ahrefs); }
@@ -903,14 +975,15 @@ table.data-table {
 /* ── Układy wg handoffu 2026-07-22: Przegląd / GA4 / Bing ────────────── */
 
 /* Przegląd: pasek zdrowia źródeł */
-.health { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
-.hchip { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-surface-1); border: 1px solid var(--hairline); border-radius: 999px; padding: 6px 13px; font-size: .82rem; color: var(--ink-muted); }
-.hchip .d { width: 8px; height: 8px; border-radius: 50%; flex: none; }
-.hchip .d.ok { background: var(--status-ok); box-shadow: 0 0 0 3px color-mix(in srgb, var(--status-ok) 18%, transparent); }
-.hchip .d.warn { background: var(--status-warn-fg); box-shadow: 0 0 0 3px var(--status-warn-bg); }
-.hchip .d.err { background: var(--status-err-fg); box-shadow: 0 0 0 3px var(--status-err-bg); }
-.hchip b { color: var(--ink); font-weight: 600; }
-.hchip .when { color: var(--ink-faint); font-size: .76rem; font-variant-numeric: tabular-nums; }
+.health { display: flex; flex-wrap: wrap; margin-top: 4px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+.hchip { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; font-size: .84rem; color: var(--ink-muted); border-left: 1px solid var(--hairline); }
+.hchip:first-child { border-left: 0; padding-left: 0; }
+.hchip .d { width: 8px; height: 8px; border-radius: 1px; flex: none; }
+.hchip .d.ok { background: var(--status-ok); box-shadow: none; }
+.hchip .d.warn { background: var(--status-warn-fg); box-shadow: none; }
+.hchip .d.err { background: var(--status-err-fg); box-shadow: none; }
+.hchip b { color: var(--ink); font-weight: 500; }
+.hchip .when { color: var(--ink-faint); font-size: .78rem; font-variant-numeric: tabular-nums; }
 
 /* Przegląd: KPI wielo-źródłowe (3 kolumny, hero = 1 kafel) */
 .kwrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 18px; }
@@ -935,7 +1008,7 @@ table.data-table {
 /* GA4: pasek drugorzędnych mikro-metryk */
 .micro { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
 .micro .m { flex: 1; min-width: 150px; border: 1px solid var(--hairline); border-radius: 12px; padding: 12px 14px; background: var(--bg-surface-1); }
-.micro .m .l { color: var(--ink-faint); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; }
+.micro .m .l { color: var(--ink-faint); font-size: .7rem; }
 .micro .m .v { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; font-variant-numeric: tabular-nums; margin-top: 4px; }
 
 /* Techniczne wartości ((not set), Unassigned…) – wyciszone kursywą */
@@ -958,7 +1031,7 @@ table.data-table {
 .acard a { font-size: .82rem; font-weight: 600; margin-top: auto; }
 
 /* Bing: tag „wyróżnik" przy nagłówku sekcji */
-.tagx { font-family: var(--font-body); font-size: .66rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--bing); background: var(--bing-soft); padding: 3px 8px; border-radius: 2px; margin-left: 9px; vertical-align: middle; }
+.tagx { font-family: var(--font-body); font-size: .66rem; font-weight: 700; color: var(--bing); background: var(--bing-soft); padding: 3px 8px; border-radius: 2px; margin-left: 9px; vertical-align: middle; }
 
 /* Bing: pasmo-bohater AI Performance */
 .ai-sum { border: 1px solid color-mix(in srgb, var(--bing) 30%, var(--hairline)); border-radius: 18px; padding: 20px 24px; display: grid; grid-template-columns: 250px 1fr; gap: 30px; align-items: center; margin-bottom: 16px;
@@ -966,7 +1039,7 @@ table.data-table {
     radial-gradient(120% 120% at 0% 0%, var(--bing-soft), transparent 45%),
     linear-gradient(180deg, color-mix(in srgb, var(--bing) 6%, var(--bg-surface-1)), var(--bg-surface-1) 70%); }
 @media (max-width: 720px) { .ai-sum { grid-template-columns: 1fr; gap: 18px; } }
-.ai-sum .cap { display: inline-flex; align-items: center; gap: 8px; color: var(--bing); font-size: .74rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.ai-sum .cap { display: inline-flex; align-items: center; gap: 8px; color: var(--bing); font-size: .74rem; font-weight: 700; }
 .ai-sum .cap svg { width: 15px; height: 15px; flex: none; }
 .ai-sum .big { font-family: var(--font-display); font-size: 3.1rem; font-weight: 600; letter-spacing: -.03em; line-height: 1; margin: 12px 0 4px; font-variant-numeric: tabular-nums; }
 .ai-sum .sub { color: var(--ink-muted); font-size: .85rem; line-height: 1.5; }
@@ -1036,7 +1109,7 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 .scroll-meter .t { flex: 1; height: 24px; border-radius: 2px; background: var(--bg-surface-3); overflow: hidden; }
 .scroll-meter .t > i { display: block; height: 100%; border-radius: 2px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 55%, var(--series-3)), var(--accent-blue)); }
 .eng-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
-.eng-stats .s .l { color: var(--ink-faint); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; }
+.eng-stats .s .l { color: var(--ink-faint); font-size: .72rem; }
 .eng-stats .s .v { font-family: var(--font-display); font-weight: 600; font-size: 1.6rem; font-variant-numeric: tabular-nums; margin-top: 4px; }
 .eng-stats .s .v small { font-size: .5em; color: var(--ink-faint); font-weight: 500; margin-left: 5px; }
 /* tablica frustracji: rage / dead / quick-back */
@@ -1062,7 +1135,7 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 .donut::after { content: ''; position: absolute; inset: 26px; border-radius: 50%; background: var(--bg-surface-1); }
 .donut .c { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1; }
 .donut .c b { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; }
-.donut .c span { color: var(--ink-faint); font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; }
+.donut .c span { color: var(--ink-faint); font-size: .68rem; }
 .devleg { display: flex; flex-direction: column; gap: 10px; min-width: 180px; flex: 1; }
 .devleg .r { display: flex; align-items: center; gap: 10px; font-size: .86rem; }
 .devleg .r .dot { width: 10px; height: 10px; border-radius: 3px; flex: none; }
@@ -1231,7 +1304,7 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
   left: 16px;
   z-index: 9999;
   background: var(--accent-blue);
-  color: #fff;
+  color: var(--on-accent);
   padding: 8px 16px;
   border-radius: 2px;
   font-weight: 600;
@@ -1618,8 +1691,6 @@ html.theme-transition *::after {
   font-family: var(--font-display);
   font-style: normal;
   font-size: .72rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
   color: var(--ink-faint);
 }
 .prose blockquote.expert footer::before { content: '– '; }

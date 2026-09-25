@@ -2,8 +2,6 @@
 /* App-shell: stały lewy sidebar (desktop) / górny pasek (mobile).
    Sidebar sam wykrywa kontekst z Astro.url.pathname (build time):
    strona domeny → sekcje ze status-dotami; strona główna → lista domen. */
-import '@fontsource-variable/inter';
-import '@fontsource-variable/space-grotesk';
 import '../styles/theme.css';
 import { loadConfig, latestSnapshot, sectionsFor } from '../lib/data';
 
@@ -60,6 +58,8 @@ const SECTION_ICONS: Record<string, string> = {
     <meta name="robots" content="noindex" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/Roobert-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Roobert-Medium.woff2" as="font" type="font/woff2" crossorigin />
     <title>{title}</title>
     <script is:inline>
       // Motyw i collapse przed renderem – zero FOUC.
@@ -259,8 +259,6 @@ const SECTION_ICONS: Record<string, string> = {
         font-size: 0.68rem;
         font-weight: 500;
         color: var(--ink-faint);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
       }
       .collapse-btn {
         flex: none;
@@ -329,8 +327,6 @@ const SECTION_ICONS: Record<string, string> = {
         color: var(--ink-faint);
         font-size: 0.7rem;
         font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.09em;
         padding: 4px 10px 8px;
         white-space: nowrap;
         overflow: hidden;
@@ -342,7 +338,7 @@ const SECTION_ICONS: Record<string, string> = {
         gap: 10px;
         color: var(--ink-muted);
         font-size: 0.9rem;
-        font-weight: 500;
+        font-weight: 400;
         padding: 8px 10px;
         border-radius: 2px;
         border: 1px solid transparent;
@@ -356,9 +352,9 @@ const SECTION_ICONS: Record<string, string> = {
       .nav-item.active {
         color: var(--ink);
         background: var(--bg-surface-2);
-        border-color: var(--hairline);
-        font-weight: 600;
-        box-shadow: inset 2px 0 0 var(--accent-blue);
+        border-color: transparent;
+        font-weight: 500;
+        box-shadow: inset 3px 0 0 var(--accent-blue);
       }
       .nav-icon {
         width: 17px;
@@ -379,16 +375,17 @@ const SECTION_ICONS: Record<string, string> = {
         overflow: hidden;
         text-overflow: ellipsis;
       }
+      /* Kropka tylko przy problemie – siedem zielonych kropek to szum,
+         a pojedyncza pomarańczowa albo czerwona od razu rzuca się w oczy. */
       .dot {
         width: 7px;
         height: 7px;
-        border-radius: 50%;
+        border-radius: 1px;
         background: var(--ink-faint);
         flex: none;
       }
       .dot.ok {
-        background: var(--status-ok);
-        box-shadow: 0 0 6px color-mix(in srgb, var(--status-ok) 60%, transparent);
+        visibility: hidden;
       }
       .dot.warn {
         background: var(--status-warn-fg);

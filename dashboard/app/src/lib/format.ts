@@ -1,10 +1,10 @@
 /* Helpery formatowania (build time). */
 
 export const fmtInt = (v: number | null | undefined): string =>
-  typeof v === 'number' ? v.toLocaleString('pl-PL') : '–';
+  typeof v === 'number' ? v.toLocaleString('pl-PL', { useGrouping: 'always' }) : '–';
 
 export const fmtNum = (v: number | null | undefined, precision = 2): string =>
-  typeof v === 'number' ? v.toLocaleString('pl-PL', { maximumFractionDigits: precision }) : '–';
+  typeof v === 'number' ? v.toLocaleString('pl-PL', { maximumFractionDigits: precision, useGrouping: 'always' }) : '–';
 
 export const fmtPct = (v: number | null | undefined): string =>
   typeof v === 'number' ? `${v.toLocaleString('pl-PL', { maximumFractionDigits: 2 })}%` : '–';

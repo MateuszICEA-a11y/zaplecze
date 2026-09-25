@@ -363,7 +363,7 @@ const shareClass = (share: number | null): string =>
       /learn|solve/i.test(value) ? 'learn' : /inform/i.test(value) ? 'info' : /compar/i.test(value) ? 'cmp' : 'other';
     const escapeHtml = (value: string): string =>
       value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
-    const formatInt = (value: number): string => value.toLocaleString('pl-PL');
+    const formatInt = (value: number): string => value.toLocaleString('pl-PL', { useGrouping: 'always' });
     const formatPercent = (value: number | null): string =>
       typeof value === 'number'
         ? `${value.toLocaleString('pl-PL', { maximumFractionDigits: 2 })}%`
@@ -550,7 +550,7 @@ const shareClass = (share: number | null): string =>
       const esc = (s: string) =>
         s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
       const fi = (n: number | null | undefined) =>
-        typeof n === 'number' ? n.toLocaleString('pl-PL') : '–';
+        typeof n === 'number' ? n.toLocaleString('pl-PL', { useGrouping: 'always' }) : '–';
       const f1 = (v: number | null) =>
         typeof v === 'number' ? v.toLocaleString('pl-PL', { maximumFractionDigits: 1 }) : '–';
       const posCls = (p: number | null) =>
@@ -579,7 +579,7 @@ const shareClass = (share: number | null): string =>
         const max = Math.max(...win.queries.map((r) => r.impressions ?? 0), 0);
         body.innerHTML = win.queries.map((r) => rowHtml(r, max)).join('');
         const countEl = card.querySelector('.table-head h3 .table-meta');
-        if (countEl) countEl.textContent = ` · ${win.queries.length.toLocaleString('pl-PL')}`;
+        if (countEl) countEl.textContent = ` · ${win.queries.length.toLocaleString('pl-PL', { useGrouping: 'always' })}`;
         const metaEl = card.querySelector('.table-head > .table-meta');
         if (metaEl)
           metaEl.textContent =
