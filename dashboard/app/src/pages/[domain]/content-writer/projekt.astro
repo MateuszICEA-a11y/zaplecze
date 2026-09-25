@@ -53,6 +53,7 @@ const latest = latestSnapshot(domain!);
 <script>
   import { api, esc, fmtDateTime, fmtInt, sleep, STATUS_LABEL, STATUS_TONE } from '../../../lib/writer-client';
   import { createEditor } from '../../../lib/writer-editor';
+  import { phraseKey } from '../../../lib/phrase-match.js';
 
   const page = document.querySelector<HTMLElement>('.wr-page')!;
   const domain = page.dataset.domain!;
@@ -175,51 +176,113 @@ const latest = latestSnapshot(domain!);
 
   /* ---------- research ---------- */
 
-  const GAP_LABEL: Record<string, string> = { missing: 'brak', weak: 'słabo', covered: 'mamy' };
+  /* Status frazy wobec nas – słowami, nie skrótami. */
+  const GAP_STATE: Record<string, { label: string; hint: string }> = {
+    missing: { label: 'Do zdobycia', hint: 'nie wyświetlamy się na tę frazę' },
+    weak: { label: 'Słabo', hint: 'jesteśmy poza TOP 10' },
+    covered: { label: 'Mamy', hint: 'jesteśmy w TOP 10' },
+  };
+  let gapFilter: 'all' | 'missing' | 'weak' | 'covered' = 'all';
+
+  const shortUrl = (url: string) => String(url ?? '').replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
 
   function renderResearch() {
     const box = el('wr-research');
     const project = state.project!;
     box.hidden = false;
-    const competitors = ((state.serp?.queries ?? [])[0]?.competitors ?? []) as Any[];
+    const queries = (state.serp?.queries ?? []) as Any[];
+    const query = queries.find((row) => row.kind === 'title') ?? queries[0];
+    const competitors = (query?.competitors ?? []) as Any[];
+    const ours = (query?.ours ?? null) as Any | null;
     const gap = (state.serp?.gap ?? []) as Any[];
     const facts = (state.rivals?.facts ?? []) as Any[];
+    const pages = new Map(((state.rivals?.rivals ?? []) as Any[]).map((row) => [row.url, row]));
+    const median = (state.rivals?.median_words ?? null) as number | null;
+    const maxWords = Math.max(median ?? 0, ...[...pages.values()].map((row) => row.words ?? 0), 1);
+    const briefKeys = new Set(((project.brief?.keywords_to_cover ?? []) as Any[]).map((row) => phraseKey(row.keyword)));
+    const maxSearches = Math.max(...gap.map((row) => row.searches ?? 0), 1);
+    const count = (status: string) => gap.filter((row) => row.status === status).length;
     const serpBusy = state.serpStatus === 'running' || state.busy.has('serp');
     const rivalsBusy = state.rivalsStatus === 'running' || state.busy.has('rivals');
     const canBrief = ['research', 'brief_ready', 'failed'].includes(project.status);
+    const shownGap = gap.filter((row) => gapFilter === 'all' || row.status === gapFilter);
+
+    const tile = (value: string, label: string, tone = '') => `<div class="wr-tile ${tone}"><span class="v">${value}</span><span class="l">${label}</span></div>`;
+
     box.innerHTML = `
       <div class="wr-section-head">
         <h2>Konkurencja w wynikach wyszukiwania</h2>
-        <span class="wr-note">SerpData + Senuto, treści przez Jina Reader · wynik zapamiętany na tydzień</span>
+        <span class="wr-note">dane z SerpData i Senuto, zapamiętane na tydzień</span>
       </div>
-      <div class="wr-panel">
-        <div class="wr-actions">
-          <button class="wr-btn" type="button" id="wr-serp-run" ${serpBusy ? 'disabled' : ''}>${serpBusy ? 'Sprawdzam SERP…' : state.serp ? 'Sprawdź SERP ponownie' : 'Sprawdź SERP'}</button>
-          <button class="wr-btn" type="button" id="wr-rivals-run" ${!competitors.length || rivalsBusy ? 'disabled' : ''}>${rivalsBusy ? 'Czytam treści konkurentów…' : state.rivals ? 'Pobierz treści ponownie' : 'Pobierz treści konkurentów'}</button>
-          ${canBrief ? `<button class="wr-btn primary" type="button" id="wr-brief-run">${state.project!.brief || state.briefJob ? 'Przygotuj brief od nowa' : 'Przygotuj brief'}</button>` : ''}
-        </div>
-        ${!state.serp ? '<p class="wr-empty">Research jest opcjonalny, ale bez niego brief i ocena pokrycia fraz nie mają listy fraz konkurencji.</p>' : ''}
-        ${competitors.length ? `<div class="wr-table-wrap"><table class="wr-table">
-          <thead><tr><th class="num">Poz.</th><th>Konkurent</th><th>Adres</th></tr></thead>
-          <tbody>${competitors.map((row) => `<tr><td class="num">${esc(row.position ?? '–')}</td><td>${esc(row.host)}</td>
-            <td><a href="${esc(row.url)}" target="_blank" rel="noopener noreferrer">${esc(String(row.url).replace(/^https?:\/\/(www\.)?/, '').slice(0, 80))}</a></td></tr>`).join('')}</tbody>
-        </table></div>` : ''}
-        ${gap.length ? `<div class="wr-table-wrap"><table class="wr-table">
-          <thead><tr><th>Fraza konkurencji</th><th class="num">Wyszukiwania</th><th class="num">Poz. rywala</th><th>U nas</th></tr></thead>
-          <tbody>${gap.map((row) => `<tr><td>${esc(row.keyword)}</td><td class="num">${fmtInt(row.searches)}</td>
-            <td class="num">${esc(row.rival_position ?? '–')}</td>
-            <td><span class="wr-tag ${esc(row.status)}">${GAP_LABEL[row.status] ?? row.status}${row.our_position ? ` · poz. ${esc(row.our_position)}` : ''}</span></td></tr>`).join('')}</tbody>
-        </table></div>` : ''}
-        ${state.rivals ? `<div class="wr-kpis">
-            <div class="wr-kpi"><span class="v">${fmtInt(state.rivals.median_words)}</span><span class="l">mediana słów w TOP</span></div>
-            <div class="wr-kpi"><span class="v">${fmtInt(facts.length)}</span><span class="l">konkretów do wykorzystania</span></div>
-          </div>
-          ${facts.length ? `<ul class="wr-list">${facts.map((row) => `<li><span>${esc(row.fact)} <span class="muted">– ${esc(String(row.source ?? '').replace(/^https?:\/\/(www\.)?/, '').split('/')[0])}</span></span></li>`).join('')}</ul>` : ''}` : ''}
+      <p class="wr-lede">Kto jest w czołówce Google na „${esc(project.keyword)}”, ile piszą i na jakie frazy się wyświetlają. Z tego powstaje brief: plan sekcji i frazy, które tekst ma pokryć.</p>
+
+      <div class="wr-actions">
+        <button class="wr-btn" type="button" id="wr-serp-run" ${serpBusy ? 'disabled' : ''}>${serpBusy ? 'Sprawdzam wyniki Google…' : state.serp ? 'Sprawdź wyniki Google ponownie' : 'Sprawdź wyniki Google'}</button>
+        <button class="wr-btn" type="button" id="wr-rivals-run" ${!competitors.length || rivalsBusy ? 'disabled' : ''}>${rivalsBusy ? 'Czytam teksty konkurentów…' : state.rivals ? 'Przeczytaj teksty ponownie' : 'Przeczytaj teksty konkurentów'}</button>
+        ${canBrief ? `<button class="wr-btn primary" type="button" id="wr-brief-run">${project.brief || state.briefJob ? 'Przygotuj brief od nowa' : 'Przygotuj brief'}</button>` : ''}
         <p class="wr-msg" id="wr-research-msg" role="status"></p>
-      </div>`;
+      </div>
+
+      ${!state.serp ? '<p class="wr-empty">Research jest opcjonalny, ale bez niego brief nie zna fraz konkurencji, a edytor nie pokaże, ile razy użyć każdej frazy.</p>' : `
+      <div class="wr-tiles">
+        ${tile(ours?.position ? `${ours.position}.` : 'poza TOP 10', 'nasza pozycja na tę frazę', ours?.position ? (ours.position <= 3 ? 'ok' : 'mid') : 'low')}
+        ${tile(median ? fmtInt(median) : '–', median ? 'słów ma typowy tekst z czołówki' : 'długość poznasz po przeczytaniu tekstów')}
+        ${tile(String(count('missing')), 'fraz konkurencji, na które nas nie ma', count('missing') ? 'low' : 'ok')}
+        ${tile(String(count('weak')), 'fraz, na których jesteśmy poza TOP 10', count('weak') ? 'mid' : 'ok')}
+      </div>`}
+
+      ${competitors.length ? `<div class="wr-panel">
+        <div class="wr-section-head"><h3>Czołówka wyników</h3><span class="wr-note">${pages.size ? 'pasek = długość tekstu, kreska = typowa długość w czołówce' : 'przeczytaj teksty, żeby zobaczyć ich długość'}</span></div>
+        <ol class="wr-serp">
+          ${competitors.map((row) => {
+            const page = pages.get(row.url);
+            const words = page?.words ?? null;
+            return `<li>
+              <span class="pos">${esc(row.position ?? '–')}</span>
+              <div class="who">
+                <a href="${esc(row.url)}" target="_blank" rel="noopener noreferrer">${esc(row.title || page?.title || row.host)}</a>
+                <span class="url">${esc(shortUrl(row.url))}</span>
+              </div>
+              <div class="len">
+                ${words ? `<span class="n">${fmtInt(words)} słów</span>
+                  <span class="bar"><span style="width:${Math.round((words / maxWords) * 100)}%"></span>${median ? `<i style="left:${Math.round((median / maxWords) * 100)}%"></i>` : ''}</span>`
+                  : `<span class="n muted">${page?.error ? 'nie udało się przeczytać' : '–'}</span>`}
+              </div>
+            </li>`;
+          }).join('')}
+          ${ours ? `<li class="ours"><span class="pos">${esc(ours.position)}</span><div class="who"><a href="${esc(ours.url)}" target="_blank" rel="noopener">${esc(ours.title || ours.host)}</a><span class="url">nasza strona: ${esc(shortUrl(ours.url))}</span></div><div class="len"></div></li>` : ''}
+        </ol>
+      </div>` : ''}
+
+      ${gap.length ? `<div class="wr-panel">
+        <div class="wr-section-head"><h3>Frazy, na które wyświetla się konkurencja</h3><span class="wr-note">i gdzie jesteśmy na nie my</span></div>
+        <div class="wr-seg" role="group" aria-label="Filtr fraz">
+          <button type="button" data-gap="all" class="${gapFilter === 'all' ? 'on' : ''}">Wszystkie ${gap.length}</button>
+          ${['missing', 'weak', 'covered'].map((status) => `<button type="button" data-gap="${status}" class="${gapFilter === status ? 'on' : ''}">${GAP_STATE[status].label} ${count(status)}</button>`).join('')}
+        </div>
+        <div class="wr-table-wrap"><table class="wr-table wr-gap">
+          <thead><tr><th>Fraza</th><th>Wyszukiwań miesięcznie</th><th>Kto jest wysoko</th><th>My</th>${project.brief ? '<th>W briefie</th>' : ''}</tr></thead>
+          <tbody>${shownGap.map((row) => `<tr>
+            <td class="kw">${esc(row.keyword)}</td>
+            <td><span class="wr-vol"><span class="n">${fmtInt(row.searches)}</span><span class="bar"><span style="width:${Math.round(((row.searches ?? 0) / maxSearches) * 100)}%"></span></span></span></td>
+            <td>${row.rival_host ? `${esc(row.rival_host)}, ` : ''}${row.rival_position ? `${esc(row.rival_position)}. miejsce` : '–'}</td>
+            <td><span class="wr-state ${esc(row.status)}"><strong>${GAP_STATE[row.status]?.label ?? esc(row.status)}</strong><span>${row.our_position ? `${esc(row.our_position)}. miejsce` : GAP_STATE[row.status]?.hint ?? ''}</span></span></td>
+            ${project.brief ? `<td>${briefKeys.has(phraseKey(row.keyword)) ? '<span class="wr-status ok">tak</span>' : '<span class="wr-status idle">nie</span>'}</td>` : ''}
+          </tr>`).join('')}</tbody>
+        </table></div>
+      </div>` : ''}
+
+      ${facts.length ? `<div class="wr-panel">
+        <div class="wr-section-head"><h3>Konkrety z tekstów konkurencji</h3><span class="wr-note">liczby i fakty, które brief przekazuje do tekstu</span></div>
+        <ul class="wr-facts">${facts.map((row) => `<li><span>${esc(row.fact)}</span><span class="wr-fact-src">${esc(String(row.source ?? '').replace(/^https?:\/\/(www\.)?/, '').split('/')[0])}</span></li>`).join('')}</ul>
+      </div>` : ''}`;
     el('wr-serp-run').addEventListener('click', () => runResearch('serp'));
     box.querySelector('#wr-rivals-run')?.addEventListener('click', () => runResearch('rivals'));
     box.querySelector('#wr-brief-run')?.addEventListener('click', () => startStage('brief'));
+    box.querySelectorAll<HTMLButtonElement>('[data-gap]').forEach((button) => button.addEventListener('click', () => {
+      gapFilter = button.dataset.gap as typeof gapFilter;
+      renderResearch();
+    }));
   }
 
   /** Analiza idzie krokami (SerpData ~20 s na zapytanie) – ponawiamy POST, aż dojdzie do końca. */
