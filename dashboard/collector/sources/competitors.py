@@ -7,8 +7,10 @@ w `data/<domena>/competitors.json` razem z datą pierwszego zobaczenia.
 Tytuł:
 - ze sluga zawsze („co-to-jest-adres-url" → „co to jest adres url") – bge-m3
   porównuje go z naszymi tytułami bez polskich znaków bez problemu,
-- z `<title>` strony tylko dla NOWYCH adresów (limit na przebieg): slugi bywają
-  ucięte albo mają identyfikatory, a nowe wpisy to kilka–kilkanaście dziennie.
+- prawdziwy tytuł strony (og:title → <title> → <h1>) dociągany porcjami:
+  najpierw nowe adresy, potem zaległe (limit per host na przebieg, tempo wg
+  Crawl-delay z robots.txt). Jednorazowe dociągnięcie całości robi
+  competitor_titles.py.
 
 Pierwszy przebieg dla konkurenta to punkt odniesienia: wszystkie adresy
 dostają `baseline: true` i nie są pokazywane jako „nowe” – trafiają tylko do
@@ -19,10 +21,15 @@ import gzip
 import html
 import json
 import re
+import threading
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
+import urllib.robotparser
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from . import SourceError
@@ -32,10 +39,19 @@ DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 TIMEOUT_S = 30
 MAX_SITEMAPS = 40  # bezpiecznik na indeksy sitemap
 MAX_URLS_PER_SITE = 6000
-TITLE_FETCH_LIMIT = 40  # nowe adresy z prawdziwym <title> na przebieg
+TITLE_FETCH_PER_HOST = 30  # tytuły stron na hosta na przebieg collectora
+TITLE_RETRY_DAYS = 7  # po błędzie pobrania próbujemy ponownie po tygodniu
+HEAD_MAX_BYTES = 64 * 1024
+MIN_INTERVAL_S = 0.5  # max 2 żądania/s na hosta, chyba że robots.txt każe wolniej
 # Typowe śmieci w sitemapach wpisów – niezależnie od wzorców konkurenta.
 NOISE = re.compile(r"/(page|tag|tagi|kategoria|category|autor|author|feed)/|/wp-content/|\?", re.I)
-TITLE_SUFFIX = re.compile(r"\s*[|–—-]\s*[^|–—-]{2,40}$")
+# Doklejona nazwa serwisu – per host, bo ogólna reguła „ostatni człon po
+# myślniku” ucinała też prawdziwe podtytuły („SEO – poradnik”).
+SITE_SUFFIX = {
+    "widoczni.com": re.compile(r"\s*[|–—-]\s*widoczni(\.com)?\s*$", re.I),
+    "delante.pl": re.compile(r"\s*[|–—-]\s*(blog\s+|agencja\s+seo\s*/\s*sem:\s*)?delante(\.pl)?\s*$", re.I),
+    "traffictrends.pl": re.compile(r"\s*[|–—-]\s*traffic\s*trends(\.pl)?\s*$", re.I),
+}
 
 
 def _get(url: str) -> bytes:
@@ -106,19 +122,139 @@ def slug_title(path: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def page_title(url: str) -> str | None:
-    """<title> (albo og:title) strony, bez doklejonej nazwy serwisu."""
+def _head_html(url: str) -> str:
+    """Początek strony do `</head>` (max 64 KB) – tytuł jest zawsze w nagłówku."""
+    req = urllib.request.Request(url, headers={**DEFAULT_HEADERS, "Accept": "text/html,*/*"})
+    with urllib.request.urlopen(req, timeout=TIMEOUT_S) as resp:
+        charset = resp.headers.get_content_charset() or "utf-8"
+        chunks, size = [], 0
+        while size < HEAD_MAX_BYTES:
+            chunk = resp.read(8192)
+            if not chunk:
+                break
+            chunks.append(chunk)
+            size += len(chunk)
+            if b"</head>" in chunk.lower():
+                break
+    return b"".join(chunks)[:HEAD_MAX_BYTES].decode(charset, errors="replace")
+
+
+def _clean(text: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", text)
+    return re.sub(r"\s+", " ", html.unescape(text)).strip()
+
+
+def extract_title(page: str, host: str) -> str | None:
+    """og:title → <title> → <h1>, bez doklejonej nazwy serwisu."""
+    host = host.removeprefix("www.")
+    suffix = SITE_SUFFIX.get(host)
+    site_name = re.sub(r"[^a-z]", "", host.split(".")[0].lower())
+    patterns = (
+        r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\']+)',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:title["\']',
+        r"<title[^>]*>(.*?)</title>",
+        r"<h1[^>]*>(.*?)</h1>",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, page, re.I | re.S)
+        if not match:
+            continue
+        title = _clean(match.group(1))
+        if suffix:
+            title = suffix.sub("", title).strip()
+        # Sama nazwa serwisu (strona bez własnego tytułu) – szukamy dalej.
+        if title and re.sub(r"[^a-z]", "", title.lower()) != site_name:
+            return title[:200]
+    return None
+
+
+def page_title(url: str, host: str) -> tuple[str | None, str | None]:
+    """(tytuł, błąd) jednej strony."""
     try:
-        body = _get(url)[:200_000].decode("utf-8", errors="replace")
-    except Exception:  # noqa: BLE001 – brak tytułu nie przerywa przebiegu
+        title = extract_title(_head_html(url), host)
+    except urllib.error.HTTPError as err:
+        return None, f"HTTP {err.code}"
+    except Exception as err:  # noqa: BLE001 – brak tytułu nie przerywa przebiegu
+        return None, str(err)[:120] or type(err).__name__
+    return (title, None) if title else (None, "brak tytułu")
+
+
+def _robots(host: str) -> urllib.robotparser.RobotFileParser | None:
+    parser = urllib.robotparser.RobotFileParser()
+    try:
+        req = urllib.request.Request(f"https://{host}/robots.txt", headers=DEFAULT_HEADERS)
+        with urllib.request.urlopen(req, timeout=TIMEOUT_S) as resp:
+            parser.parse(resp.read().decode("utf-8", errors="replace").splitlines())
+    except Exception:  # noqa: BLE001 – brak robots.txt = brak ograniczeń
         return None
-    match = re.search(r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\']+)', body, re.I) \
-        or re.search(r"<title[^>]*>(.*?)</title>", body, re.I | re.S)
-    if not match:
-        return None
-    title = html.unescape(re.sub(r"\s+", " ", match.group(1))).strip()
-    title = TITLE_SUFFIX.sub("", title).strip()
-    return title[:200] or None
+    return parser
+
+
+def needs_title(item: dict, now: datetime) -> bool:
+    if item.get("title"):
+        return False
+    if not item.get("title_error"):
+        return True
+    try:
+        at = datetime.strptime(item.get("title_fetched_at") or "", "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    except ValueError:
+        return True
+    return now - at >= timedelta(days=TITLE_RETRY_DAYS)
+
+
+def fetch_titles(items: list[dict], per_host: int | None, deadline: float | None = None,
+                 workers_per_host: int = 3, log=None) -> dict:
+    """Uzupełnia `title`/`title_error`/`title_fetched_at` w miejscu.
+
+    Hosty idą równolegle, w obrębie hosta kilka wątków pod wspólnym limiterem
+    (odstęp między startami żądań = max(0,5 s, Crawl-delay)). `deadline`
+    (time.monotonic()) przerywa pracę – niepobrane adresy zostają na kolejny raz.
+    Zwraca liczniki per host.
+    """
+    by_host: dict[str, list[dict]] = {}
+    for item in items:
+        by_host.setdefault(item["host"], []).append(item)
+
+    def run_host(host: str, queue: list[dict]) -> tuple[str, dict]:
+        robots = _robots(host.removeprefix("www."))
+        agent = DEFAULT_HEADERS["User-Agent"]
+        delay = max(MIN_INTERVAL_S, float(robots.crawl_delay(agent) or 0) if robots else 0)
+        queue = queue[:per_host] if per_host else queue
+        lock, next_at = threading.Lock(), [time.monotonic()]
+        stats = {"ok": 0, "error": 0, "robots": 0, "skipped": 0, "delay_s": delay}
+
+        def one(item: dict) -> None:
+            if robots and not robots.can_fetch(agent, item["url"]):
+                with lock:
+                    stats["robots"] += 1
+                return
+            with lock:
+                start = max(next_at[0], time.monotonic())
+                if deadline and start > deadline:
+                    stats["skipped"] += 1
+                    return
+                next_at[0] = start + delay
+            time.sleep(max(0.0, start - time.monotonic()))
+            title, error = page_title(item["url"], host)
+            item["title_fetched_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+            with lock:
+                if title:
+                    item["title"] = title
+                    item.pop("title_error", None)
+                    stats["ok"] += 1
+                else:
+                    item["title_error"] = error
+                    stats["error"] += 1
+                done = stats["ok"] + stats["error"]
+            if log and done % 100 == 0:
+                log(f"{host}: {stats['ok']} ok, {stats['error']} błędów")
+
+        with ThreadPoolExecutor(max_workers=workers_per_host) as pool:
+            list(pool.map(one, queue))
+        return host, stats
+
+    with ThreadPoolExecutor(max_workers=max(1, len(by_host))) as pool:
+        return dict(pool.map(lambda pair: run_host(*pair), by_host.items()))
 
 
 def fetch(cfg: dict, env: dict) -> dict:
@@ -157,29 +293,29 @@ def fetch(cfg: dict, env: dict) -> dict:
             if kept >= MAX_URLS_PER_SITE:
                 break
             kept += 1
-            old = known.get(url)
+            old = known.get(url) or {}
             item = {
                 "url": url,
                 "host": host,
                 "path": page_path,
                 "slug_title": slug_title(page_path),
-                "title": old.get("title") if old else None,
+                "title": old.get("title"),
                 "lastmod": page.get("lastmod"),
-                "first_seen": old["first_seen"] if old else today,
+                "first_seen": old.get("first_seen") or today,
                 "baseline": old["baseline"] if old else baseline,
             }
+            for key in ("title_fetched_at", "title_error"):
+                if old.get(key):
+                    item[key] = old[key]
             if not old and not baseline:
                 fresh.append(item)
             items.append(item)
         site_rows.append({"host": host, "status": "ok", "count": kept, "baseline": baseline})
 
-    # Prawdziwe tytuły dla nowych adresów (najświeższe pierwsze, z limitem).
-    fetched = 0
-    for item in sorted(fresh, key=lambda row: row.get("lastmod") or "", reverse=True)[:TITLE_FETCH_LIMIT]:
-        title = page_title(item["url"])
-        if title:
-            item["title"] = title
-            fetched += 1
+    # Prawdziwe tytuły: nowe adresy pierwsze, potem zaległe (limit per host).
+    todo = sorted((item for item in items if needs_title(item, now)),
+                  key=lambda row: (row["first_seen"], row.get("lastmod") or ""), reverse=True)
+    title_stats = fetch_titles(todo, TITLE_FETCH_PER_HOST, deadline=time.monotonic() + 8 * 60)
 
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps({
@@ -197,7 +333,8 @@ def fetch(cfg: dict, env: dict) -> dict:
             "sites_ok": sum(1 for row in site_rows if row["status"] == "ok"),
             "urls": len(items),
             "new_today": len(fresh),
-            "titles_fetched": fetched,
+            "titles_fetched": sum(row["ok"] for row in title_stats.values()),
+            "titles_missing": sum(1 for item in items if not item.get("title")),
         },
         "details": None,
     }

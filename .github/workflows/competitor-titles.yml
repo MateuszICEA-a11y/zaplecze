@@ -1,0 +1,51 @@
+name: Competitor Titles (jednorazowo)
+
+# Jednorazowe dociągnięcie prawdziwych tytułów wpisów konkurencji do
+# dashboard/data/grupa-icea.pl/competitors.json. Codzienny collector bierze
+# tylko 30 na hosta. Start = push zmiany tego pliku (gh workflow run → 403).
+# widoczni.com ma w robots.txt Crawl-delay 10 s → ~1850 adresów ≈ 5 h.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/competitor-titles.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  # Wspólna z collectorem – oba zapisują competitors.json.
+  group: dashboard-collector
+  cancel-in-progress: false
+
+jobs:
+  titles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Czeka w kolejce za collectorem (push collectora odpala oba) –
+          # bierzemy świeży main, nie SHA z triggera, żeby nie było konfliktu.
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch titles
+        run: python dashboard/collector/competitor_titles.py --max-minutes 330
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dashboard/data/grupa-icea.pl/competitors.json
+          git diff --cached --quiet && exit 0
+          git commit -m "dashboard: tytuły wpisów konkurencji"
+          git pull --rebase origin main
+          git push

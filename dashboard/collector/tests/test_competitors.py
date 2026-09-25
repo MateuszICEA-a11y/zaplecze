@@ -1,10 +1,11 @@
-"""Źródło `competitors`: filtr ścieżek, tytuł ze sluga, punkt odniesienia i nowe adresy.
+"""Źródło `competitors`: filtr ścieżek, tytuły (slug i strona), punkt odniesienia i nowe adresy.
 
 Uruchomienie: python -m pytest dashboard/collector/tests
 """
 import json
 import sys
 from pathlib import Path
+from datetime import datetime, timezone
 from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -27,6 +28,24 @@ def test_keep_wzorce_i_szum():
     assert not competitors.keep("/oferta/seo/", include, exclude)
 
 
+def test_extract_title_kolejnosc_i_sufiksy():
+    e = competitors.extract_title
+    assert e('<meta property="og:title" content="A &amp; B - widoczni"><title>X</title>', "widoczni.com") == "A & B"
+    assert e("<title>Relacja: Delante 2026: AI | Agencja SEO / SEM: Delante</title>", "delante.pl") == "Relacja: Delante 2026: AI"
+    assert e("<title>Sukcesy Delante w branży - Blog Delante</title>", "delante.pl") == "Sukcesy Delante w branży"
+    assert e("<title>SEO – poradnik</title>", "rywal.pl") == "SEO – poradnik"  # obcy host: bez obcinania
+    assert e("<title>widoczni</title><h1>Słow<b>nik</b></h1>", "widoczni.com") == "Słow nik"
+    assert e("<p>bez tytułu</p>", "rywal.pl") is None
+
+
+def test_needs_title_ponawia_blad_po_tygodniu():
+    now = datetime(2026, 9, 25, tzinfo=timezone.utc)
+    assert competitors.needs_title({}, now)
+    assert not competitors.needs_title({"title": "T"}, now)
+    assert not competitors.needs_title({"title_error": "HTTP 404", "title_fetched_at": "2026-09-20T00:00:00Z"}, now)
+    assert competitors.needs_title({"title_error": "HTTP 404", "title_fetched_at": "2026-09-17T00:00:00Z"}, now)
+
+
 def run(tmp_path, pages, previous=None):
     domain_dir = tmp_path / "grupa-icea.pl"
     domain_dir.mkdir(parents=True, exist_ok=True)
@@ -35,7 +54,7 @@ def run(tmp_path, pages, previous=None):
     cfg = {"domain": "grupa-icea.pl", "sites": [{"host": "rywal.pl", "sitemaps": ["x"], "include": [r"^/blog/"]}]}
     with mock.patch.object(competitors, "DATA_DIR", tmp_path), \
             mock.patch.object(competitors, "sitemap_urls", return_value=pages), \
-            mock.patch.object(competitors, "page_title", return_value="Prawdziwy tytuł"):
+            mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "MIN_INTERVAL_S", 0),             mock.patch.object(competitors, "page_title", return_value=("Prawdziwy tytuł", None)):
         summary = competitors.fetch(cfg, {})["summary"]
     return summary, json.loads((domain_dir / "competitors.json").read_text(encoding="utf-8"))
 
@@ -45,7 +64,9 @@ def test_pierwszy_odczyt_to_punkt_odniesienia(tmp_path):
     summary, data = run(tmp_path, pages)
     assert summary["new_today"] == 0
     assert data["items"][0]["baseline"] is True
-    assert data["items"][0]["title"] is None  # bez pobierania stron przy punkcie odniesienia
+    # Punkt odniesienia nie jest „nowy”, ale tytuł i tak dociągamy (zaległe).
+    assert data["items"][0]["title"] == "Prawdziwy tytuł"
+    assert summary["titles_missing"] == 0
 
 
 def test_kolejny_odczyt_oznacza_nowe_i_pobiera_tytul(tmp_path):
@@ -64,7 +85,7 @@ def test_awaria_sitemapy_zachowuje_wczorajsze_adresy(tmp_path):
     domain_dir = tmp_path / "grupa-icea.pl"
     cfg = {"domain": "grupa-icea.pl", "sites": [{"host": "rywal.pl", "sitemaps": ["x"]}]}
     with mock.patch.object(competitors, "DATA_DIR", tmp_path), \
-            mock.patch.object(competitors, "sitemap_urls", side_effect=OSError("403")):
+            mock.patch.object(competitors, "sitemap_urls", side_effect=OSError("403")),             mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "page_title", return_value=(None, "HTTP 403")):
         try:
             competitors.fetch(cfg, {})
         except competitors.SourceError:
@@ -72,3 +93,11 @@ def test_awaria_sitemapy_zachowuje_wczorajsze_adresy(tmp_path):
     data = json.loads((domain_dir / "competitors.json").read_text(encoding="utf-8"))
     assert [item["url"] for item in data["items"]] == ["https://rywal.pl/blog/a/"]
     assert data["sites"][0]["status"] == "error"
+
+
+def test_limit_per_host_i_blad_zapisany(tmp_path):
+    items = [{"url": f"https://rywal.pl/blog/{n}/", "host": "rywal.pl"} for n in range(5)]
+    with mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "MIN_INTERVAL_S", 0),             mock.patch.object(competitors, "page_title", return_value=(None, "HTTP 404")):
+        stats = competitors.fetch_titles(items, per_host=2)
+    assert stats["rywal.pl"]["error"] == 2
+    assert [bool(item.get("title_error")) for item in items] == [True, True, False, False, False]
