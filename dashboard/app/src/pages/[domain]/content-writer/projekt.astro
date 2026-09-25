@@ -7,6 +7,7 @@ import Layout from '../../../layouts/Layout.astro';
 import DomainHeader from '../../../components/DomainHeader.astro';
 import { loadConfig, latestSnapshot } from '../../../lib/data';
 import '../../../styles/writer.css';
+import '../../../styles/writer-editor.css';
 
 export function getStaticPaths() {
   return loadConfig()
@@ -40,28 +41,24 @@ const latest = latestSnapshot(domain!);
     <section class="wr-section" id="wr-research" hidden></section>
     <section class="wr-section" id="wr-brief" hidden></section>
 
-    <div class="wr-layout" id="wr-text-layout" hidden>
-      <section class="wr-section" id="wr-text"></section>
-      <aside class="wr-side" id="wr-side" aria-label="Dopracowanie i publikacja"></aside>
-    </div>
+    <section class="wr-section" id="wr-text" hidden></section>
 
     <div class="wr-actions">
       <button class="wr-btn small danger" type="button" id="wr-close" hidden>Zamknij projekt</button>
     </div>
   </div>
+  <div class="we" id="we" hidden></div>
 </Layout>
 
 <script>
   import { api, esc, fmtDateTime, fmtInt, sleep, STATUS_LABEL, STATUS_TONE } from '../../../lib/writer-client';
+  import { createEditor } from '../../../lib/writer-editor';
 
   const page = document.querySelector<HTMLElement>('.wr-page')!;
   const domain = page.dataset.domain!;
   const projectId = Number.parseInt(new URLSearchParams(location.search).get('id') ?? '', 10);
   const base = `/api/cw/writer/projects/${projectId}`;
   const el = (id: string) => document.getElementById(id)!;
-  const CTA_MARKER = 'kontakt/#cw-cta';
-  const FAQ_BASE = 100;
-  const SOURCES_SLOT = 200;
 
   type Any = Record<string, any>;
   const state: {
@@ -74,8 +71,6 @@ const latest = latestSnapshot(domain!);
     authors: [], categories: [], ownKeywords: [], busy: new Set(),
   };
 
-  const words = (html: string) => String(html ?? '').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
-  const kindOf = (slot: number) => (slot === SOURCES_SLOT ? 'sources' : slot > FAQ_BASE ? 'faq' : 'section');
   const say = (text: string, tone = '') => {
     const box = el('wr-global-msg');
     box.className = `wr-msg ${tone}`;
@@ -485,332 +480,43 @@ const latest = latestSnapshot(domain!);
     }
   }
 
-  /* ---------- tekst ---------- */
+  /* ---------- tekst: pełnoekranowy edytor ---------- */
 
-  function orderedSections(): Any[] {
-    const rows = [...((state.writeJob?.sections ?? []) as Any[])];
-    const rank = (slot: number) => (kindOf(slot) === 'section' ? 0 : kindOf(slot) === 'faq' ? 1 : 2);
-    return rows.sort((a, b) => rank(a.slot) - rank(b.slot) || a.slot - b.slot);
+  const editorRoot = el('we');
+  const editor = createEditor({
+    base,
+    domain,
+    root: editorRoot,
+    data: () => ({ project: state.project!, job: state.writeJob!, authors: state.authors, categories: state.categories }),
+    refresh: () => refresh(),
+    exit: () => { history.replaceState(null, '', '#etapy'); showEditor(false); },
+  });
+
+  const textReady = () => state.project?.status === 'written' && state.writeJob?.status === 'done';
+
+  function showEditor(open: boolean) {
+    editorRoot.hidden = !open;
+    document.documentElement.classList.toggle('we-open', open);
+    if (open) editor.render().catch((error) => say((error as Error).message, 'err'));
   }
 
   function renderText() {
-    const layout = el('wr-text-layout');
-    const project = state.project!;
-    const job = state.writeJob;
-    layout.hidden = !(project.status === 'written' && job?.status === 'done');
-    if (layout.hidden) return;
-    const sections = orderedSections();
-    const writeStep = (job.steps ?? []).find((step: Any) => step.step === 'write')?.payload ?? {};
-    const coverage = (job.steps ?? []).find((step: Any) => step.step === 'coverage')?.payload ?? null;
-    const expert = job.expert?.status === 'done' ? job.expert : null;
-    const images = new Map(((job.images ?? []) as Any[]).map((row) => [row.slot, row]));
-    const total = words(project.lead ?? '') + sections.filter((row) => kindOf(row.slot) !== 'sources')
-      .reduce((sum, row) => sum + words(row.text_after), 0);
-
-    el('wr-text').innerHTML = `
-      <div class="wr-section-head">
-        <h2>${esc(project.title || project.keyword)}</h2>
-        <span class="wr-note">kliknij w tekst, żeby go poprawić</span>
-      </div>
-      <div class="wr-kpis">
-        <div class="wr-kpi"><span class="v">${fmtInt(total)}</span><span class="l">słów${writeStep.target_words ? ` / cel ${fmtInt(writeStep.target_words)}` : ''}</span></div>
-        <div class="wr-kpi"><span class="v">${sections.filter((row) => kindOf(row.slot) === 'section').length}</span><span class="l">sekcji</span></div>
-        ${coverage?.targets ? `<div class="wr-kpi"><span class="v">${(coverage.covered ?? []).length}/${(coverage.targets ?? []).length}</span><span class="l">fraz pokrytych</span></div>` : ''}
-      </div>
-      ${(coverage?.missing ?? []).length ? `<p class="wr-msg">Niepokryte frazy: ${(coverage.missing as string[]).map(esc).join(', ')}</p>` : ''}
-      ${(writeStep.unsupported ?? []).length ? `<div class="wr-alert"><strong>Model nie miał materiału na:</strong>
-        <ul>${(writeStep.unsupported as string[]).map((row) => `<li>${esc(row)}</li>`).join('')}</ul></div>` : ''}
-      <div class="wr-doc">
-        <div class="wr-doc-section">
-          <span class="kind">wstęp (przed pierwszym nagłówkiem)</span>
-          <div class="wr-editable" contenteditable="true" data-lead>${project.lead ?? ''}</div>
-          <div class="wr-actions"><button class="wr-btn small" type="button" data-save-lead hidden>Zapisz wstęp</button></div>
-        </div>
-        ${sections.map((row) => {
-          const kind = kindOf(row.slot);
-          const image = images.get(row.slot);
-          const hasCta = String(row.text_after ?? '').includes(CTA_MARKER);
-          return `<div class="wr-doc-section ${row.decision === 'rejected' ? 'rejected' : ''}" data-slot="${row.slot}">
-            <span class="kind">${kind === 'faq' ? 'FAQ' : kind === 'sources' ? 'Źródła (lista za FAQ)' : `sekcja ${row.slot}`}${row.decision === 'rejected' ? ' · pominięta w szkicu' : ''}</span>
-            <h3>${esc(row.title_after)}</h3>
-            <div class="wr-editable" ${kind === 'sources' ? '' : 'contenteditable="true"'} data-text>${row.text_after ?? ''}</div>
-            ${expert && expert.slot === row.slot ? `<div class="wr-quote">„${esc(expert.quote)}" – ${esc(expert.expert)}, ${esc(expert.role)}</div>` : ''}
-            <div class="wr-actions">
-              <button class="wr-btn small" type="button" data-save hidden>Zapisz zmiany</button>
-              ${kind === 'section' ? `
-                <button class="wr-btn small" type="button" data-image>${image ? 'Infografika…' : 'Dodaj infografikę'}</button>
-                <button class="wr-btn small" type="button" data-cta="${hasCta ? 'drop' : 'insert'}">${hasCta ? 'Usuń CTA' : 'Wstaw CTA'}</button>` : ''}
-              <button class="wr-btn small link" type="button" data-decision="${row.decision === 'rejected' ? 'restore' : 'reject'}">${row.decision === 'rejected' ? 'Przywróć do szkicu' : 'Pomiń w szkicu'}</button>
-            </div>
-            <div data-image-panel hidden></div>
-          </div>`;
-        }).join('')}
+    const box = el('wr-text');
+    box.hidden = !textReady();
+    if (box.hidden) { showEditor(false); return; }
+    const words = ((state.writeJob.sections ?? []) as Any[]).length;
+    box.innerHTML = `
+      <div class="wr-section-head"><h2>Tekst</h2></div>
+      <div class="wr-panel wr-open">
+        <p>${esc(state.project!.title || state.project!.keyword)}</p>
+        <span class="wr-note">${words} bloków treści${state.project!.wp_draft_url ? ` · szkic w WordPressie z ${fmtDateTime(state.project!.wp_saved_at)}` : ''}</span>
+        <div class="wr-actions"><button class="wr-btn primary" type="button" id="wr-open-editor">Otwórz edytor</button></div>
       </div>`;
-    bindText();
-  }
-
-  function bindText() {
-    const job = state.writeJob!;
-    const lead = el('wr-text').querySelector<HTMLElement>('[data-lead]')!;
-    const saveLead = el('wr-text').querySelector<HTMLButtonElement>('[data-save-lead]')!;
-    lead.addEventListener('input', () => { saveLead.hidden = false; });
-    saveLead.addEventListener('click', async () => {
-      saveLead.disabled = true;
-      try {
-        const { data } = await api<Any>(base, { method: 'PATCH', body: { lead: lead.innerHTML } });
-        state.project = data.project;
-        saveLead.hidden = true;
-      } catch (error) {
-        say((error as Error).message, 'err');
-      } finally {
-        saveLead.disabled = false;
-      }
-    });
-
-    el('wr-text').querySelectorAll<HTMLElement>('.wr-doc-section[data-slot]').forEach((section) => {
-      const slot = Number(section.dataset.slot);
-      const text = section.querySelector<HTMLElement>('[data-text]')!;
-      const save = section.querySelector<HTMLButtonElement>('[data-save]')!;
-      text.addEventListener('input', () => { save.hidden = false; });
-      save.addEventListener('click', async () => {
-        save.disabled = true;
-        try {
-          await api(`/api/cw/jobs/${job.id}/sections/${slot}`, { method: 'PATCH', body: { text_after: text.innerHTML } });
-          await refresh();
-        } catch (error) {
-          say((error as Error).message, 'err');
-          save.disabled = false;
-        }
-      });
-      section.querySelector<HTMLButtonElement>('[data-decision]')?.addEventListener('click', async (event) => {
-        const restore = (event.currentTarget as HTMLElement).dataset.decision === 'restore';
-        try {
-          await api(`/api/cw/jobs/${job.id}/sections/${slot}`, { method: 'PATCH', body: { decision: restore ? null : 'rejected' } });
-          await refresh();
-        } catch (error) {
-          say((error as Error).message, 'err');
-        }
-      });
-      section.querySelector<HTMLButtonElement>('[data-cta]')?.addEventListener('click', async (event) => {
-        const step = (event.currentTarget as HTMLElement).dataset.cta;
-        try {
-          await api(`/api/cw/jobs/${job.id}/cta/${slot}`, { method: 'POST', body: { step } });
-          await refresh();
-        } catch (error) {
-          say((error as Error).message, 'err');
-        }
-      });
-      section.querySelector<HTMLButtonElement>('[data-image]')?.addEventListener('click', () => {
-        const panel = section.querySelector<HTMLElement>('[data-image-panel]')!;
-        panel.hidden = !panel.hidden;
-        if (!panel.hidden) renderImagePanel(panel, slot);
-      });
-    });
-  }
-
-  /** Infografika: opis → obraz (kie.ai, 30–180 s) → biblioteka mediów WP i blok w sekcji. */
-  async function renderImagePanel(panel: HTMLElement, slot: number) {
-    const job = state.writeJob!;
-    const path = `/api/cw/jobs/${job.id}/infographic/${slot}`;
-    const draw = (image: Any | null, note = '') => {
-      panel.className = 'wr-panel';
-      if (!image) {
-        panel.innerHTML = `<p class="wr-msg">Model zaproponuje opis grafiki na podstawie treści sekcji.</p>
-          <div class="wr-actions"><button class="wr-btn small" type="button" data-step="brief">Zaproponuj opis grafiki</button></div>
-          <p class="wr-msg">${esc(note)}</p>`;
-      } else {
-        const editable = ['brief', 'failed'].includes(image.status);
-        panel.innerHTML = `
-          <label class="wr-label">Opis grafiki<textarea class="wr-textarea wr-img-brief" rows="5" data-brief ${editable ? '' : 'disabled'}>${esc(image.brief ?? '')}</textarea></label>
-          <label class="wr-label">Tekst alternatywny<input class="wr-input" data-alt value="${esc(image.alt ?? '')}" ${editable ? '' : 'disabled'} /></label>
-          <label class="wr-label">Podpis<input class="wr-input" data-caption value="${esc(image.caption ?? '')}" ${editable ? '' : 'disabled'} /></label>
-          ${image.image_url && image.status !== 'inserted' ? `<img class="wr-img-preview" src="${esc(image.image_url)}" alt="" />` : ''}
-          <div class="wr-actions">
-            ${editable ? '<button class="wr-btn small primary" type="button" data-step="generate">Generuj obraz</button>' : ''}
-            ${image.status === 'generating' ? '<span class="wr-msg">Generuję obraz – to trwa do trzech minut…</span>' : ''}
-            ${image.status === 'ready' ? '<button class="wr-btn small primary" type="button" data-step="insert">Wstaw do sekcji</button>' : ''}
-            ${image.status === 'inserted' ? '<span class="wr-status ok">w sekcji</span>' : ''}
-            <button class="wr-btn small danger" type="button" data-step="drop">Usuń</button>
-          </div>
-          <p class="wr-msg ${image.error ? 'err' : ''}">${esc(image.error ?? note)}</p>`;
-      }
-      panel.querySelectorAll<HTMLButtonElement>('[data-step]').forEach((button) => button.addEventListener('click', () => act(button.dataset.step!)));
-    };
-    const act = async (step: string) => {
-      const body: Any = { step };
-      if (step === 'generate') {
-        body.brief = panel.querySelector<HTMLTextAreaElement>('[data-brief]')?.value ?? '';
-        body.alt = panel.querySelector<HTMLInputElement>('[data-alt]')?.value ?? '';
-        body.caption = panel.querySelector<HTMLInputElement>('[data-caption]')?.value ?? '';
-      }
-      panel.querySelectorAll('button').forEach((button) => { button.disabled = true; });
-      try {
-        const { data } = await api<Any>(path, { method: 'POST', body });
-        if (step === 'insert' || step === 'drop') { await refresh(); return; }
-        draw(data.image ?? null);
-        if (data.image?.status === 'generating') poll();
-      } catch (error) {
-        draw((await api<Any>(path).catch(() => ({ data: { image: null } }))).data.image, (error as Error).message);
-      }
-    };
-    const poll = async () => {
-      for (let attempt = 0; attempt < 40; attempt++) {
-        await sleep(6000);
-        if (panel.hidden) return;
-        const { data } = await api<Any>(path);
-        if (data.image?.status !== 'generating') { draw(data.image); return; }
-      }
-    };
-    const { data } = await api<Any>(path).catch(() => ({ data: { image: null } }));
-    draw(data.image ?? null);
-    if (data.image?.status === 'generating') poll();
-  }
-
-  /* ---------- kolumna boczna: ekspert, styl, publikacja ---------- */
-
-  function renderSide() {
-    const side = el('wr-side');
-    const project = state.project!;
-    const job = state.writeJob;
-    if (!job || job.status !== 'done' || project.status !== 'written') { side.innerHTML = ''; return; }
-    const contentSections = orderedSections().filter((row) => kindOf(row.slot) === 'section');
-    const expert = job.expert as Any | null;
-    const style = job.style as Any | null;
-    const pendingStyle = ((job.style_sections ?? []) as Any[]).filter((row) => !row.decision);
-    const candidates = state.authors.filter((row) => row.name !== project.author_name);
-    const strip = (html: string) => String(html ?? '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-
-    side.innerHTML = `
-      <div class="wr-panel">
-        <h3>Publikacja · WordPress</h3>
-        <label class="wr-label">Tytuł<input class="wr-input" id="wr-p-title" maxlength="200" value="${esc(project.title ?? '')}" /></label>
-        <label class="wr-label">Autor wpisu
-          <select class="wr-select" id="wr-p-author"><option value="">– wybierz –</option>
-            ${state.authors.map((row) => `<option value="${row.id}" ${row.id === project.author_id ? 'selected' : ''}>${esc(row.name)}</option>`).join('')}
-          </select></label>
-        <label class="wr-label">Kategoria
-          <select class="wr-select" id="wr-p-category"><option value="">– wybierz –</option>
-            ${state.categories.map((row) => `<option value="${row.id}" ${row.id === project.category_id ? 'selected' : ''}>${esc(row.name)}</option>`).join('')}
-          </select></label>
-        <div class="wr-actions">
-          <button class="wr-btn primary" type="button" id="wr-p-save">${project.wp_post_id ? 'Zapisz szkic ponownie' : 'Zapisz szkic w WordPressie'}</button>
-        </div>
-        ${project.wp_draft_url ? `<p class="wr-msg">Szkic zapisany ${fmtDateTime(project.wp_saved_at)} · <a href="${esc(project.wp_draft_url)}" target="_blank" rel="noopener">podgląd</a></p>` : ''}
-        <p class="wr-msg" id="wr-p-msg" role="status"></p>
-      </div>
-
-      <div class="wr-panel">
-        <h3>Wypowiedź eksperta</h3>
-        ${expert?.status === 'done' ? `<div class="wr-quote">„${esc(expert.quote)}"<br /><span class="muted">– ${esc(expert.expert)}, ${esc(expert.role)} · sekcja ${esc(expert.slot)}</span></div>
-          <div class="wr-actions"><button class="wr-btn small danger" type="button" id="wr-e-reject">Odrzuć cytat</button></div>` : ''}
-        <label class="wr-label">Ekspert (inna osoba niż autor)
-          <select class="wr-select" id="wr-e-person">${candidates.map((row) => `<option value="${esc(row.name)}">${esc(row.name)}${row.role ? ` – ${esc(row.role)}` : ''}</option>`).join('')}</select></label>
-        <label class="wr-label">Sekcja
-          <select class="wr-select" id="wr-e-slot">${contentSections.map((row) => `<option value="${row.slot}">${esc(row.title_after)}</option>`).join('')}</select></label>
-        <div class="wr-actions"><button class="wr-btn" type="button" id="wr-e-run" ${!candidates.length ? 'disabled' : ''}>${expert?.status === 'done' ? 'Wygeneruj inny cytat' : 'Wygeneruj cytat'}</button></div>
-        <p class="wr-msg" id="wr-e-msg" role="status">${expert?.status === 'failed' ? esc(expert.error) : ''}</p>
-      </div>
-
-      <div class="wr-panel">
-        <h3>Styl i fleksja</h3>
-        <p class="wr-msg">Jeden przejazd redaktorski na cały tekst: odmiana fraz, powtórzenia, interpunkcja, weryfikacja faktów w sieci.</p>
-        <div class="wr-actions"><button class="wr-btn" type="button" id="wr-s-run">${style?.status === 'done' ? 'Popraw styl ponownie' : 'Popraw styl i fleksję'}</button></div>
-        ${style?.status === 'done' ? `<p class="wr-msg">Zmienione sekcje: ${fmtInt(style.changed)} z ${fmtInt(style.sections_total)}</p>` : ''}
-        ${pendingStyle.map((row) => `<div class="wr-diff" data-style-slot="${row.slot}">
-          <strong>${esc(row.title_after ?? row.title_before ?? `sekcja ${row.slot}`)}</strong>
-          ${(row.issues ?? []).length ? `<ul class="wr-list">${(row.issues as Any[]).map((issue) => `<li><span>${esc(typeof issue === 'string' ? issue : issue.note ?? issue.fix ?? JSON.stringify(issue))}</span></li>`).join('')}</ul>` : ''}
-          ${(row.warnings ?? []).length ? `<p class="wr-msg err">${(row.warnings as Any[]).map((w) => esc(typeof w === 'string' ? w : JSON.stringify(w))).join(' · ')}</p>` : ''}
-          <span class="before">${esc(strip(row.text_before).slice(0, 280))}</span>
-          <span>${esc(strip(row.text_after).slice(0, 280))}</span>
-          <div class="wr-actions">
-            <button class="wr-btn small primary" type="button" data-style="accepted">Przyjmij</button>
-            <button class="wr-btn small" type="button" data-style="rejected">Odrzuć</button>
-          </div></div>`).join('')}
-        <p class="wr-msg" id="wr-s-msg" role="status">${style?.status === 'failed' ? esc(style.error) : ''}</p>
-      </div>`;
-    bindSide();
-  }
-
-  function bindSide() {
-    const job = state.writeJob!;
-    const message = (id: string, text: string, tone = '') => {
-      const box = document.getElementById(id);
-      if (box) { box.className = `wr-msg ${tone}`; box.textContent = text; }
-    };
-    const busy = (button: HTMLButtonElement, label: string) => { button.disabled = true; button.textContent = label; };
-
-    el('wr-p-save').addEventListener('click', async (event) => {
-      const button = event.currentTarget as HTMLButtonElement;
-      const title = (el('wr-p-title') as HTMLInputElement).value.trim();
-      const authorId = Number.parseInt((el('wr-p-author') as HTMLSelectElement).value, 10);
-      const categoryId = Number.parseInt((el('wr-p-category') as HTMLSelectElement).value, 10);
-      if (!title || !authorId || !categoryId) { message('wr-p-msg', 'Uzupełnij tytuł, autora i kategorię.', 'err'); return; }
-      busy(button, 'Zapisuję…');
-      try {
-        await api(base, { method: 'PATCH', body: { title, author_id: authorId, category_id: categoryId } });
-        let saved;
-        try {
-          saved = await api<Any>(`${base}/wp-draft`, { method: 'POST', body: {} });
-        } catch (error) {
-          const err = error as Error & { code?: string };
-          if (err.code !== 'edited_in_wp' || !confirm(`${err.message} Zapisać mimo to?`)) throw err;
-          saved = await api<Any>(`${base}/wp-draft`, { method: 'POST', body: { force: true } });
-        }
-        await refresh();
-        message('wr-p-msg', `Szkic zapisany (ID ${saved.data.draft_id}).`, 'ok');
-      } catch (error) {
-        await refresh().catch(() => {});
-        message('wr-p-msg', (error as Error).message, 'err');
-      }
-    });
-
-    el('wr-e-run').addEventListener('click', async (event) => {
-      const button = event.currentTarget as HTMLButtonElement;
-      busy(button, 'Generuję…');
-      try {
-        await api(`/api/cw/jobs/${job.id}/expert`, {
-          method: 'POST',
-          body: {
-            expert: (el('wr-e-person') as HTMLSelectElement).value,
-            slot: Number.parseInt((el('wr-e-slot') as HTMLSelectElement).value, 10),
-          },
-        });
-        await refresh();
-      } catch (error) {
-        await refresh().catch(() => {});
-        message('wr-e-msg', (error as Error).message, 'err');
-      }
-    });
-    document.getElementById('wr-e-reject')?.addEventListener('click', async () => {
-      try {
-        await api(`/api/cw/jobs/${job.id}/expert`, { method: 'PATCH', body: { rejected: true } });
-        await refresh();
-      } catch (error) {
-        message('wr-e-msg', (error as Error).message, 'err');
-      }
-    });
-
-    el('wr-s-run').addEventListener('click', async (event) => {
-      const button = event.currentTarget as HTMLButtonElement;
-      busy(button, 'Czytam cały tekst – do dwóch minut…');
-      try {
-        await api(`/api/cw/jobs/${job.id}/style`, { method: 'POST', body: {} });
-        await refresh();
-      } catch (error) {
-        await refresh().catch(() => {});
-        message('wr-s-msg', (error as Error).message, 'err');
-      }
-    });
-    el('wr-side').querySelectorAll<HTMLElement>('[data-style-slot]').forEach((row) => {
-      row.querySelectorAll<HTMLButtonElement>('[data-style]').forEach((button) => button.addEventListener('click', async () => {
-        try {
-          await api(`/api/cw/jobs/${job.id}/style/${row.dataset.styleSlot}`, { method: 'PATCH', body: { decision: button.dataset.style } });
-          await refresh();
-        } catch (error) {
-          message('wr-s-msg', (error as Error).message, 'err');
-        }
-      }));
-    });
+    el('wr-open-editor').addEventListener('click', () => { history.replaceState(null, '', '#edytor'); showEditor(true); });
+    // Gotowy tekst otwiera się od razu w edytorze, chyba że redaktor świadomie
+    // wrócił do etapów (#etapy).
+    if (location.hash !== '#etapy') showEditor(true);
+    else if (!editorRoot.hidden) editor.render().catch((error) => say((error as Error).message, 'err'));
   }
 
   /* ---------- cykl ---------- */
@@ -828,7 +534,6 @@ const latest = latestSnapshot(domain!);
     renderResearch();
     renderBrief();
     renderText();
-    renderSide();
     if (pollTimer) clearTimeout(pollTimer);
     if (['brief_running', 'writing'].includes(state.project!.status)) {
       pollTimer = window.setTimeout(() => refresh().catch((error) => say((error as Error).message, 'err')), 8000);

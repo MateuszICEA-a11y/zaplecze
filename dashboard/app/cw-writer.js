@@ -28,9 +28,10 @@ import {
   sanitizeSectionHtml,
 } from './cw-api.js';
 import { wpAuthors } from './cw-expert.js';
-import { handleRivals, rivalsSummary } from './cw-rivals.js';
+import { handleRivals, rivalMarkdowns, rivalsSummary, termRanges } from './cw-rivals.js';
 import { gapSummary, handleSerpGap, normalizeKeyword, serpCompetitorsSummary } from './cw-serp.js';
 import { acfFieldPayload, postUrl, wpAuth, wpFetch } from './cw-wp.js';
+import { phraseKey } from './src/lib/phrase-match.js';
 
 export const WRITER_KINDS = { brief: 'writer_brief', text: 'writer_text' };
 export const WRITER_EVENT = 'content-write';
@@ -369,6 +370,40 @@ async function patchProject(request, env, id, { fetchImpl = fetch } = {}) {
  * SERP-gap i treści konkurencji – bez własnej logiki: przepinamy żądanie na
  * handlery edytora z tematem = fraza projektu i kluczem = -id projektu.
  */
+/**
+ * Frazy do panelu edytora z zakresem wystąpień wg czołówki SERP-a.
+ * Kolejność grup: fraza główna, frazy z briefu (z sekcją „where"), potem luka
+ * SERP-a, której brief nie wziął – te redaktor widzi jako podpowiedź, nie normę.
+ */
+async function projectTerms(env, id) {
+  const project = await db(env).prepare('SELECT * FROM writer_projects WHERE id = ?').bind(id).first();
+  if (!project) return json({ error: 'Nie ma takiego projektu.' }, 404);
+  const brief = parse(project.brief, null) ?? {};
+  const key = projectPostId(project.id);
+  const seen = new Set();
+  const rows = [];
+  const add = (keyword, extra) => {
+    const phrase = String(keyword ?? '').trim();
+    const unique = phraseKey(phrase);
+    if (!phrase || !unique || seen.has(unique)) return;
+    seen.add(unique);
+    rows.push({ keyword: phrase, ...extra });
+  };
+  add(brief.main_keyword || project.keyword, { group: 'main', volume: null, where: null });
+  for (const row of brief.keywords_to_cover ?? []) add(row.keyword, { group: 'brief', volume: row.volume ?? null, where: row.where ?? null });
+  const gap = await gapSummary(env, project.domain, key, 40).catch(() => null);
+  for (const row of gap?.keywords ?? []) add(row.keyword, { group: 'gap', volume: row.searches ?? null, where: null });
+
+  const targetWords = Number(brief.target_words) || null;
+  const markdowns = await rivalMarkdowns(env, project.domain, key).catch(() => []);
+  const ranges = termRanges(markdowns, rows.map((row) => row.keyword), targetWords);
+  return json({
+    target_words: targetWords,
+    rivals: markdowns.length,
+    terms: rows.map((row, index) => ({ ...row, ...ranges[index] })),
+  });
+}
+
 async function projectResearch(request, env, id, kind, ctx, fetchImpl = fetch) {
   const project = await db(env).prepare('SELECT * FROM writer_projects WHERE id = ?').bind(id).first();
   if (!project) return json({ error: 'Nie ma takiego projektu.' }, 404);
@@ -692,7 +727,7 @@ export async function routeWriter(request, env, { ctx = null, fetchImpl } = {}) 
     return handleCategories(env, categories[1], options);
   }
 
-  const match = url.pathname.match(/^\/api\/cw\/writer\/projects\/(\d{1,9})(?:\/(serp|rivals|brief|write|wp-draft))?\/?$/);
+  const match = url.pathname.match(/^\/api\/cw\/writer\/projects\/(\d{1,9})(?:\/(serp|rivals|brief|write|wp-draft|terms))?\/?$/);
   if (!match) return json({ error: 'Nieznana trasa Content Writera.' }, 404);
   const id = Number.parseInt(match[1], 10);
   const action = match[2];
@@ -704,6 +739,10 @@ export async function routeWriter(request, env, { ctx = null, fetchImpl } = {}) 
   if (action === 'brief' || action === 'write') {
     if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
     return startRun(request, env, id, action);
+  }
+  if (action === 'terms') {
+    if (request.method !== 'GET') return json({ error: 'Dozwolona metoda: GET.' }, 405);
+    return projectTerms(env, id);
   }
   if (action === 'wp-draft') {
     if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);

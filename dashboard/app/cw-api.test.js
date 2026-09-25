@@ -549,6 +549,25 @@ test('sections PATCH: text_after sanityzowany serwerowo, limit rozmiaru', async 
   assert.equal(empty.status, 400);
 });
 
+test('sections PATCH: nagłówek z edytora jako czysty tekst, 1–200 znaków', async () => {
+  const titles = [];
+  const db = fakeDb({
+    'SET title_after = ?, edited = 1': (args) => { titles.push(args[0]); return 1; },
+  });
+  const patch = (body) => new Request('https://dash.example/api/cw/jobs/job-abcdef12/sections/3', {
+    method: 'PATCH',
+    headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+
+  const ok = await routeContentWatcher(patch({ title_after: '  Jak <b>działa</b>\n adres URL? ' }), { CW_DB: db });
+  assert.equal(ok.status, 200);
+  assert.equal(titles[0], 'Jak działa adres URL?');
+
+  assert.equal((await routeContentWatcher(patch({ title_after: '   ' }), { CW_DB: db })).status, 400);
+  assert.equal((await routeContentWatcher(patch({ title_after: 'x'.repeat(201) }), { CW_DB: db })).status, 400);
+});
+
 test('sections PATCH: decyzja trójstanowa trzyma accepted w parze', async () => {
   const writes = [];
   const db = fakeDb({

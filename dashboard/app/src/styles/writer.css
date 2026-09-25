@@ -62,8 +62,7 @@
 .wr-input:focus-visible,
 .wr-textarea:focus-visible,
 .wr-select:focus-visible,
-.wr-btn:focus-visible,
-.wr-editable:focus-visible {
+.wr-btn:focus-visible {
   outline: 2px solid var(--accent-blue);
   outline-offset: 1px;
 }
@@ -201,40 +200,6 @@
 .wr-list li { display: flex; gap: 8px; align-items: flex-start; font-size: 0.93rem; }
 .wr-list li > span { flex: 1 1 auto; min-width: 0; }
 
-/* Tekst + kolumna boczna */
-.wr-layout { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr); }
-@media (min-width: 1400px) {
-  .wr-layout { grid-template-columns: minmax(0, 1fr) 380px; align-items: start; }
-  .wr-side { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow-y: auto; }
-}
-.wr-doc { display: grid; gap: 0; max-width: 49rem; }
-.wr-doc-section { border-top: 1px solid var(--hairline-soft); padding: 18px 0; display: grid; gap: 8px; }
-.wr-doc-section.rejected { opacity: 0.5; }
-.wr-doc-section h3 { margin: 0; font-size: 1.15rem; font-weight: 600; }
-.wr-doc-section .kind { font-size: 0.8rem; color: var(--ink-faint); }
-.wr-editable {
-  line-height: 1.65;
-  font-size: 1.05rem;
-  padding: 2px 4px;
-  margin: 0 -4px;
-  border-radius: 2px;
-}
-.wr-editable:hover { background: var(--bg-surface-2); }
-.wr-editable p { margin: 0 0 0.8em; }
-.wr-editable img { max-width: 100%; height: auto; }
-.wr-side { display: grid; gap: 16px; }
-.wr-side .wr-panel h3 { margin: 0; font-size: 1.03rem; font-weight: 600; }
-.wr-quote {
-  border-left: 3px solid var(--accent-blue);
-  padding: 8px 12px;
-  font-style: italic;
-  font-size: 0.97rem;
-  background: var(--bg-surface-2);
-}
-.wr-diff { display: grid; gap: 6px; font-size: 0.91rem; }
-.wr-diff .before { color: var(--ink-faint); text-decoration: line-through; }
-.wr-img-brief { font-size: 0.91rem; }
-.wr-img-preview { max-width: 100%; border: 1px solid var(--hairline-soft); }
 
 .wr-input:disabled,
 .wr-textarea:disabled { color: var(--ink-muted); background: transparent; }
@@ -276,3 +241,6 @@
 .wr-judge { font-style: italic; }
 .wr-alert .wr-judge { display: block; color: var(--ink-muted); font-size: 0.86rem; }
 .wr-rec-bar .wr-note { color: var(--ink-faint); font-size: 0.86rem; }
+
+/* Gotowy tekst w widoku etapów – skrót do edytora pełnoekranowego. */
+.wr-open p { margin: 0; font-size: 1.1rem; font-weight: 500; }

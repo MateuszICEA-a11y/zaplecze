@@ -748,6 +748,21 @@ async function patchSection(request, env, id, slot) {
     return json({ error: 'Przekazano nieprawidłowe dane (błąd formatu lub zbyt duży rozmiar).' }, 400);
   }
 
+  // Nagłówek sekcji z edytora – czysty tekst, bez znaczników.
+  if (typeof body?.title_after === 'string') {
+    const title = body.title_after.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+    if (!title || title.length > 200) return json({ error: 'Nagłówek musi mieć od 1 do 200 znaków.' }, 400);
+    const result = await db(env)
+      .prepare('UPDATE job_sections SET title_after = ?, edited = 1 WHERE job_id = ? AND slot = ?')
+      .bind(title, id, slot)
+      .run();
+    if ((result.meta?.changes ?? 0) === 0) return json({ error: 'Nie ma takiej sekcji.' }, 404);
+    await audit(env, 'section.title', id, { slot });
+    if (typeof body?.text_after !== 'string' && body?.accepted === undefined && body?.decision === undefined) {
+      return json({ ok: true, title_after: title });
+    }
+  }
+
   if (typeof body?.text_after === 'string') {
     if (body.text_after.length > MAX_SECTION_BYTES) {
       return json({ error: 'Poprawiona treść jest za duża.' }, 413);

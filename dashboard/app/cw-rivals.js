@@ -21,6 +21,8 @@
  * Sekrety: JINA_API_KEY (odczyt stron), OPENROUTER_API_KEY (wypis faktów).
  */
 
+import { matchTokens, phraseStems, tokens } from './src/lib/phrase-match.js';
+
 const READER = 'https://r.jina.ai/';
 // Tyle samo, co COMPETITOR_LIMIT w pipeline (config.py) – edytor i przejazd
 // mają patrzeć na ten sam zestaw stron. Koszt: ~6 odczytów Jina na analizę.
@@ -59,12 +61,18 @@ const snapshotId = (domain, postId) => `rivals:${domain}:${postId}`;
  * ale liczymy tak samo dla wszystkich, więc porównanie jest uczciwe.
  */
 export function proseWords(markdown) {
-  let total = 0;
+  return proseLines(markdown).reduce((sum, line) => sum + line.split(/\s+/).filter(Boolean).length, 0);
+}
+
+/** Linie „prozy" jako czysty tekst (bez składni markdownu) – wg reguły z proseWords. */
+export function proseLines(markdown) {
+  const out = [];
   for (const raw of String(markdown ?? '').split('\n')) {
     const line = raw.trim();
     if (!line) continue;
     if (line.startsWith('#')) {
-      total += line.replace(/[#*_`]/g, ' ').split(/\s+/).filter(Boolean).length;
+      const heading = line.replace(/[#*_`]/g, ' ').replace(/\s+/g, ' ').trim();
+      if (heading) out.push(heading);
       continue;
     }
     const withoutImages = line.replace(/!\[[^\]]*\]\([^)]*\)/g, ' ');
@@ -72,12 +80,51 @@ export function proseWords(markdown) {
       .reduce((sum, match) => sum + match[1].split(/\s+/).filter(Boolean).length, 0);
     const text = withoutImages
       .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
-      .replace(/[*_`>#|-]/g, ' ');
-    const words = text.split(/\s+/).filter(Boolean).length;
+      .replace(/[*_`>#|-]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const words = text.split(' ').filter(Boolean).length;
     if (words < 8 || linkWords / Math.max(words, 1) > 0.4) continue;
-    total += words;
+    out.push(text);
   }
-  return total;
+  return out;
+}
+
+/**
+ * Ile razy czołówka używa frazy – zakres do panelu edytora („3 / 2–4").
+ *
+ * Liczymy w prozie każdego konkurenta tym samym matcherem co edytor (odmiana,
+ * przyimki), przeliczamy na długość naszego tekstu i bierzemy przedział
+ * międzykwartylowy: skrajny konkurent z 5000 słów nie ma dyktować normy.
+ * Minimum to zawsze 1 – fraza z briefu ma paść choć raz, nawet gdy rywale
+ * jej nie używają (to często właśnie luka, którą chcemy zająć).
+ */
+export function termRanges(rivalMarkdowns, phrases, targetWords) {
+  const docs = rivalMarkdowns
+    .map((markdown) => proseLines(markdown).join('\n'))
+    .map((text) => ({ hay: tokens(text), words: text.split(/\s+/).filter(Boolean).length }))
+    .filter((doc) => doc.words >= 150);
+  const quantile = (rows, q) => {
+    const position = (rows.length - 1) * q;
+    const low = Math.floor(position);
+    return rows[low] + (rows[Math.ceil(position)] - rows[low]) * (position - low);
+  };
+  return phrases.map((phrase) => {
+    const needle = phraseStems(phrase);
+    if (!docs.length || !needle.length || !targetWords) return { keyword: phrase, min: 1, max: 2, rivals_using: null };
+    const counts = docs.map((doc) => matchTokens(doc.hay, needle).length);
+    const scaled = docs.map((doc, index) => (counts[index] * targetWords) / doc.words).sort((a, b) => a - b);
+    const min = Math.max(1, Math.round(quantile(scaled, 0.25)));
+    const max = Math.max(min, Math.round(quantile(scaled, 0.75)), min === 1 ? 2 : min);
+    return { keyword: phrase, min, max, rivals_using: counts.filter((count) => count > 0).length };
+  });
+}
+
+/** Treści konkurentów z zapisanej analizy – tylko strony pobrane bez błędu. */
+export async function rivalMarkdowns(env, domain, postId) {
+  const snapshot = await readSnapshot(env, domain, postId);
+  if (snapshot?.status !== 'done' || !snapshot.payload) return [];
+  return (snapshot.payload.rivals ?? []).filter((row) => !row.error && row.markdown).map((row) => row.markdown);
 }
 
 /** Nagłówki H2/H3 z markdownu – struktura tekstu konkurenta. */

@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { buildFactsPrompt, handleRivals, markdownHeadings, median, proseWords, publicView, readPage, rivalsSummary, runRivalsStep } from './cw-rivals.js';
+import { buildFactsPrompt, handleRivals, markdownHeadings, median, proseWords, publicView, readPage, rivalsSummary, runRivalsStep, termRanges } from './cw-rivals.js';
 
 const NAV_NOISE = `[](https://example.pl/)
 
@@ -205,4 +205,26 @@ test('buildFactsPrompt: niesie naszą treść i wszystkie adresy konkurentów', 
   assert.match(prompt, /https:\/\/a\.pl/);
   assert.match(prompt, /https:\/\/b\.pl/);
   assert.match(prompt, /wyłącznie JSON/);
+});
+
+test('termRanges: przedział międzykwartylowy przeliczony na długość naszego tekstu', () => {
+  const sentence = 'Adres URL wskazuje stronę w sieci i pomaga ją odnaleźć bez problemu. ';
+  const filler = 'To zdanie opisuje zupełnie inny temat bez żadnej szukanej frazy w środku. ';
+  const doc = (hits, rest) => `${sentence.repeat(hits)}\n${filler.repeat(rest)}`;
+  // Cztery strony po ~260–300 słów, fraza pada 2, 4, 6 i 8 razy.
+  const rivals = [doc(2, 20), doc(4, 20), doc(6, 20), doc(8, 20)];
+  const [url, missing] = termRanges(rivals, ['adresy url', 'protokół https'], 1000);
+  assert.equal(url.rivals_using, 4);
+  assert.ok(url.min >= 1 && url.max > url.min, JSON.stringify(url));
+  assert.deepEqual({ min: missing.min, max: missing.max, rivals_using: missing.rivals_using }, { min: 1, max: 2, rivals_using: 0 });
+});
+
+test('termRanges: bez treści konkurentów zakres domyślny 1–2', () => {
+  const [row] = termRanges([], ['adres url'], 1500);
+  assert.deepEqual(row, { keyword: 'adres url', min: 1, max: 2, rivals_using: null });
+});
+
+test('proseWords liczy tak samo jak przed wydzieleniem proseLines', () => {
+  const markdown = '# Tytuł strony\n[Menu](/a) [Kontakt](/b)\nTo jest pełne zdanie artykułu, które ma więcej niż osiem słów.\nkrótka linia';
+  assert.equal(proseWords(markdown), 2 + 11);
 });
