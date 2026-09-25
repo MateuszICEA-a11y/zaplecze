@@ -43,7 +43,7 @@ function watchTheme() {
   if (observing) return;
   observing = true;
   new MutationObserver(() => live.forEach((grid) => { if (!grid.isDestroyed()) grid.setGridOption('theme', gridTheme()); }))
-    .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'data-skin'] });
 }
 
 /* Siatka z ustawieniami domyślnymi dashboardu. `stateKey` = zapamiętany układ

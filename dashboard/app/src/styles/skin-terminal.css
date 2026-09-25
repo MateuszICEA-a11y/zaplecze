@@ -1,0 +1,94 @@
+/* Skórka „Terminal” – wariant wyglądu do porównania z klasycznym.
+   Źródła (Refero Styles, DESIGN.md): Basedash (karty metryk, kolory danych
+   tylko na wykresach), Linear (gęsta skala szarości, promienie 12/6/4 px),
+   Mercury (karty oddzielone tonem, bez ramek i cieni), Coinbase (jasny
+   wariant: chłodne szarości, semantyczna zieleń/czerwień).
+   Włączana atrybutem <html data-skin="terminal"> – same tokeny + kształt kart,
+   żadna reguła klasycznego motywu nie jest ruszana. Marka zostaje: akcent
+   ICEA (limonka / fiolet) to jedyny kolor akcji. */
+
+:root[data-skin='terminal'] {
+  /* Powierzchnie: każdy poziom o jeden krok jaśniejszy (Linear/Mercury). */
+  --bg-canvas: #08090a;
+  --bg-rail: #08090a;
+  --bg-surface-1: #0f1011;
+  --bg-surface-2: #161718;
+  --bg-surface-3: #1c1e21;
+  --hairline: #1f2124;
+  --hairline-soft: rgba(255, 255, 255, 0.035);
+  /* Tekst w złamanej bieli – nigdy czysta biel (Linear „Bone”). */
+  --ink: #e5e5e6;
+  --ink-muted: #8a8f98;
+  --ink-faint: #62666d;
+  /* Dane: fiolet i mięta tylko na wykresach (Basedash), trzecia seria – teal. */
+  --series-1: #9984d8;
+  --series-2: #3fcb7f;
+  --series-3: #02b8cc;
+  --ga4: #02b8cc;
+  --info: #02b8cc;
+  --info-soft: rgba(2, 184, 204, 0.12);
+  /* Statusy stonowane, bez neonów. */
+  --status-ok: #3fcb7f;
+  --status-ok-bg: rgba(63, 203, 127, 0.12);
+  --status-mid-fg: #e2b93b;
+  --status-mid-bg: rgba(226, 185, 59, 0.12);
+  --status-warn-fg: #f0a04b;
+  --status-warn-bg: rgba(240, 160, 75, 0.12);
+  --status-err-fg: #eb5757;
+  --status-err-bg: rgba(235, 87, 87, 0.12);
+  --radius: 6px;
+  --sk-card-radius: 12px;
+}
+
+/* Jasny wariant – chłodne szarości Coinbase, karta biała na szarym tle. */
+:root[data-skin='terminal'][data-theme='light'] {
+  --bg-canvas: #f4f5f7;
+  --bg-rail: #f4f5f7;
+  --bg-surface-1: #ffffff;
+  --bg-surface-2: #f7f8f9;
+  --bg-surface-3: #eef0f3;
+  --hairline: #e6e8eb;
+  --hairline-soft: rgba(10, 11, 13, 0.04);
+  --ink: #0a0b0d;
+  --ink-muted: #5b616e;
+  --ink-faint: #8a919e;
+  --series-1: #7018f0;
+  --series-2: #27ad75;
+  --series-3: #0b8fa3;
+  --ga4: #0b8fa3;
+  --info: #0b8fa3;
+  --info-soft: rgba(11, 143, 163, 0.1);
+  --status-ok: #27ad75;
+  --status-ok-bg: rgba(39, 173, 117, 0.1);
+  --status-mid-fg: #a87700;
+  --status-mid-bg: rgba(224, 161, 0, 0.12);
+  --status-warn-fg: #d4620b;
+  --status-warn-bg: rgba(212, 98, 11, 0.1);
+  --status-err-fg: #e0404f;
+  --status-err-bg: rgba(224, 64, 79, 0.09);
+}
+
+/* Karty: oddzielone tonem tła, bez ramek i cieni, promień 12 px (Mercury/Basedash). */
+:root[data-skin='terminal'] :is(
+  .stat-card, .chart-card, .table-card, .seg-card, .down-card, .acard, .fcard, .vcard,
+  .feed-card, .bcard, .beh-card, .placeholder-card, .wr-panel, .as-choice, .as-verdict
+) {
+  border-color: transparent;
+  border-radius: var(--sk-card-radius);
+  box-shadow: none;
+  background: var(--bg-surface-1);
+}
+:root[data-skin='terminal'] :is(.stat-card, .as-choice):hover { border-color: var(--hairline); }
+:root[data-skin='terminal'] .table-card { overflow: hidden; }
+/* Karty wykresów mają w theme.css regułę .chart-card.rchart – dorównujemy specyficznością. */
+:root[data-skin='terminal'] .chart-card.rchart { border-color: transparent; border-radius: var(--sk-card-radius); background: var(--bg-surface-1); }
+:root[data-skin='terminal'] .table-card .tc-grid { border-top: 1px solid var(--hairline-soft); }
+
+/* Typografia: nagłówki bez pogrubień (Mercury „weight 480”), ciaśniejszy tracking (Basedash). */
+:root[data-skin='terminal'] body { letter-spacing: -0.005em; }
+:root[data-skin='terminal'] :is(h1, h2, h3) { font-weight: 500; letter-spacing: -0.02em; }
+:root[data-skin='terminal'] .stat-value { font-weight: 500; letter-spacing: -0.03em; }
+
+/* Kontrolki: 6 px przyciski i pola, 4 px plakietki (Linear). */
+:root[data-skin='terminal'] :is(.wr-btn, .wr-input, .table-filter, .table-export, .as-reset, .seg button) { border-radius: 6px; }
+:root[data-skin='terminal'] :is(.as-tag, .as-badge, .wr-status, .pos-badge, .rbadge) { border-radius: 4px; }

@@ -3,6 +3,7 @@
    Sidebar sam wykrywa kontekst z Astro.url.pathname (build time):
    strona domeny → sekcje ze status-dotami; strona główna → lista domen. */
 import '../styles/theme.css';
+import '../styles/skin-terminal.css';
 import { loadConfig, latestSnapshot, sectionsFor } from '../lib/data';
 
 interface Props {
@@ -69,6 +70,10 @@ const SECTION_ICONS: Record<string, string> = {
       if (saved === 'light') document.documentElement.dataset.theme = 'light';
       if (localStorage.getItem('icea-collapsed') === '1')
         document.documentElement.classList.add('collapsed');
+      // Skórka „Terminal” (wariant do porównania): ?skin=terminal|classic zapisuje wybór.
+      const skinParam = new URLSearchParams(location.search).get('skin');
+      if (skinParam) localStorage.setItem('dash-skin', skinParam === 'terminal' ? 'terminal' : '');
+      if (localStorage.getItem('dash-skin') === 'terminal') document.documentElement.dataset.skin = 'terminal';
     </script>
     <!-- AG Grid Community 36.2 (MIT, licencja w /vendor) – wszystkie tabele dashboardu. defer:
          gotowy przed skryptami modułów stron (te też są odroczone, w kolejności dokumentu). -->
@@ -151,6 +156,12 @@ const SECTION_ICONS: Record<string, string> = {
             </svg>
             <span>Motyw</span>
           </button>
+          <button id="skin-toggle" type="button" aria-label="Przełącz wygląd: klasyczny / Terminal" title="Wygląd: klasyczny / Terminal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="16" rx="3" /><path d="M7 9l3 3-3 3M13 15h4" />
+            </svg>
+            <span data-skin-label>Wygląd</span>
+          </button>
           <span class="side-meta">cron 6:30</span>
         </div>
       </aside>
@@ -180,6 +191,21 @@ const SECTION_ICONS: Record<string, string> = {
       document.getElementById('collapse-btn')?.addEventListener('click', () => {
         const collapsed = document.documentElement.classList.toggle('collapsed');
         localStorage.setItem('icea-collapsed', collapsed ? '1' : '0');
+      });
+      const skinButton = document.getElementById('skin-toggle');
+      const paintSkin = () => {
+        const label = skinButton?.querySelector('[data-skin-label]');
+        if (label) label.textContent = document.documentElement.dataset.skin === 'terminal' ? 'Terminal' : 'Klasyczny';
+      };
+      paintSkin();
+      skinButton?.addEventListener('click', () => {
+        const root = document.documentElement;
+        root.classList.add('theme-transition');
+        if (root.dataset.skin === 'terminal') delete root.dataset.skin; else root.dataset.skin = 'terminal';
+        localStorage.setItem('dash-skin', root.dataset.skin ?? '');
+        paintSkin();
+        window.dispatchEvent(new CustomEvent('themechange'));
+        setTimeout(() => root.classList.remove('theme-transition'), 300);
       });
       document.getElementById('theme-toggle')?.addEventListener('click', () => {
         const root = document.documentElement;
@@ -295,7 +321,7 @@ const SECTION_ICONS: Record<string, string> = {
       :global(html.collapsed) .nav-text,
       :global(html.collapsed) .nav-label,
       :global(html.collapsed) .back-link,
-      :global(html.collapsed) #theme-toggle span,
+      :global(html.collapsed) :is(#theme-toggle, #skin-toggle) span,
       :global(html.collapsed) .side-meta,
       :global(html.collapsed) .nav-item .dot {
         display: none;
@@ -311,7 +337,7 @@ const SECTION_ICONS: Record<string, string> = {
       :global(html.collapsed) .side-footer {
         justify-content: center;
       }
-      :global(html.collapsed) #theme-toggle {
+      :global(html.collapsed) :is(#theme-toggle, #skin-toggle) {
         padding: 7px;
       }
       .side-nav {
@@ -408,10 +434,11 @@ const SECTION_ICONS: Record<string, string> = {
         align-items: center;
         justify-content: space-between;
         gap: 8px;
+        flex-wrap: wrap;
         padding: 10px 6px 0;
         border-top: 1px solid var(--hairline-soft);
       }
-      #theme-toggle {
+      :is(#theme-toggle, #skin-toggle) {
         display: flex;
         align-items: center;
         gap: 7px;
@@ -424,11 +451,11 @@ const SECTION_ICONS: Record<string, string> = {
         padding: 6px 10px;
         cursor: pointer;
       }
-      #theme-toggle:hover {
+      :is(#theme-toggle, #skin-toggle):hover {
         color: var(--ink);
         border-color: var(--ink-faint);
       }
-      #theme-toggle svg {
+      :is(#theme-toggle, #skin-toggle) svg {
         width: 14px;
         height: 14px;
       }
@@ -466,7 +493,7 @@ const SECTION_ICONS: Record<string, string> = {
         }
         :global(html.collapsed) .brand-text,
         :global(html.collapsed) .nav-text,
-        :global(html.collapsed) .side-footer #theme-toggle {
+        :global(html.collapsed) .side-footer :is(#theme-toggle, #skin-toggle) {
           display: revert;
         }
         :global(html.collapsed) .nav-item {
@@ -521,7 +548,7 @@ const SECTION_ICONS: Record<string, string> = {
         .side-meta {
           display: none;
         }
-        #theme-toggle span {
+        :is(#theme-toggle, #skin-toggle) span {
           display: none;
         }
         main {
