@@ -3,7 +3,7 @@ title: 'ChatGPT vs Gemini – porównanie funkcji i cen'
 subtitle: 'Sprawdź, który model pasuje do Twojego ekosystemu i sposobu pracy, zanim zapłacisz abonament'
 description: 'ChatGPT vs Gemini 2026: porównanie funkcji, planów, cen i zastosowań. Tabela, werdykt i praktyczne wskazówki dla zespołów Google i OpenAI.'
 date: 2026-05-13
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-modele-llm-chatgpt-vs-gemini.webp
 icon: '<path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 6v12M17 6v12"/>'
 author:
@@ -33,13 +33,16 @@ sources:
     note: 'MacRumors, 22 kwietnia 2026. Premiera modelu ChatGPT Images 2.0 dostępnego w ChatGPT, Codex i API.'
   - title: 'Models | OpenAI API'
     url: 'https://developers.openai.com/api/docs/models'
-    note: 'OpenAI, dokumentacja API. GPT-6 Astra jako najmocniejszy model OpenAI (okno 1,05 mln tokenów, 10/50 USD za milion tokenów).'
+    note: 'OpenAI, dokumentacja API. GPT-6 Astra jako najmocniejszy model OpenAI (okno 1,05 mln tokenów, 10/50 USD za milion tokenów) oraz GPT-6 Sol i Luna od 22 września 2026.'
   - title: 'Changelog | OpenAI API'
     url: 'https://developers.openai.com/api/docs/changelog'
     note: 'OpenAI. Ogólna dostępność GPT-6 Astra w API od 3 września 2026.'
   - title: 'Model Release Notes'
     url: 'https://help.openai.com/en/articles/9624314-model-release-notes'
-    note: 'OpenAI Help Center. GPT-5.6 Sol w płatnych planach ChatGPT od 9 lipca 2026 i wycofanie o3 z ChatGPT 26 sierpnia 2026; brak GPT-6 Astra w ChatGPT.'
+    note: 'OpenAI Help Center. GPT-5.6 Sol w płatnych planach ChatGPT od 9 lipca 2026 i wycofanie o3 z ChatGPT 26 sierpnia 2026.'
+  - title: 'GPT-5.6 and GPT-6 Pro in ChatGPT'
+    url: 'https://help.openai.com/en/articles/20001354-gpt-56-in-chatgpt'
+    note: 'OpenAI Help Center. GPT-6 Pro oparty na GPT-6 Astra w planach Pro, Business i Enterprise.'
   - title: 'Gemini models'
     url: 'https://ai.google.dev/gemini-api/docs/models'
     note: 'Google AI for Developers. Gemini 3.8 Flash jako najnowszy stabilny model Flash (po 3.7, 3.6 i 3.5 Flash) oraz Gemini 3.1 Pro w wersji preview.'
@@ -65,7 +68,7 @@ ChatGPT i Gemini to dziś dwa najpopularniejsze interfejsy konwersacyjne oparte 
 
 OpenAI i Google od 2023 roku przyspieszyły tempo aktualizacji do niemal kwartalnego rytmu. Każda generacja drastycznie poszerza możliwości. Przy porównaniu liczy się więc nie tylko nazwa modelu, ale i konkretna data.
 
-**ChatGPT w planie Plus (20 USD/mies.) daje dziś dostęp do GPT-5.6 Sol – flagowego modelu z rodziny GPT-5.6, dostępnej ogólnie od 9 lipca 2026 roku (zastąpiła GPT-5.5 z kwietnia).** Plan Pro za 100 USD/mies., uruchomiony 9 kwietnia 2026 roku, stanowi bezpośrednią konkurencję dla planu Claude Max. Pro daje 5× (100 USD) lub 20× (200 USD) wyższe limity niż Plus oraz większe okno kontekstowe – do 400 tysięcy tokenów w trybie rozumowania (nowe zapisy na wariant za 200 USD są obecnie wstrzymane). Najmocniejszy model OpenAI – GPT-6 Astra, ogólnie dostępny od 3 września 2026 roku – działa na razie wyłącznie przez API i nie figuruje w notatkach wydań ChatGPT. Plan Free pozostaje bezpłatny, choć dostaje się w nim lżejszy wariant GPT-5.6 Luna z limitami. Warto też wspomnieć o tanim pakiecie Go za 8 USD/mies.
+**ChatGPT w planie Plus (20 USD/mies.) daje dziś dostęp do GPT-5.6 Sol – flagowego modelu z rodziny GPT-5.6, dostępnej ogólnie od 9 lipca 2026 roku (zastąpiła GPT-5.5 z kwietnia).** Plan Pro za 100 USD/mies., uruchomiony 9 kwietnia 2026 roku, stanowi bezpośrednią konkurencję dla planu Claude Max. Pro daje 5× (100 USD) lub 20× (200 USD) wyższe limity niż Plus oraz większe okno kontekstowe – do 400 tysięcy tokenów w trybie rozumowania. Najmocniejszy model OpenAI – GPT-6 Astra, dostępny od 3 września 2026 roku – działa w API, a w ChatGPT napędza GPT-6 Pro w planach Pro (100 i 200 USD), Business i Enterprise. 22 września 2026 roku doszły GPT-6 Sol i GPT-6 Luna, dostępne w ChatGPT Work i Codex dla planów Plus, Pro, Business, Enterprise i Edu; w zwykłym czacie domyślnie nadal działają modele GPT-5.6. Plan Free pozostaje bezpłatny, choć dostaje się w nim lżejszy wariant GPT-5.6 Luna z limitami. Warto też wspomnieć o tanim pakiecie Go za 8 USD/mies.
 
 Po stronie Google obraz jest nieco bardziej skomplikowany. Model Gemini 3.1 Pro – z oknem kontekstowym 1 miliona tokenów i natywnym przetwarzaniem tekstu, obrazów, audio i wideo w jednym prompcie – jest dostępny w planie AI Pro (wcześniej Gemini Advanced / Google One AI Premium) za 19,99 USD/mies. (w API ma nadal status preview). Google oferuje również plan AI Ultra (od 99,99 USD/mies.) z priorytetowym dostępem do asystenta Gemini Spark. Najniższy płatny próg to AI Plus za 4,99 USD/mies. Zapewnia on dwukrotnie wyższe limity niż plan Free (oparty na Gemini 3.6 Flash) i 400 GB przestrzeni w Google Drive.
 
@@ -75,7 +78,7 @@ Na konferencji I/O 2026 (maj 2026) zapowiedziano nową generację modeli Gemini 
 
 Okno kontekstowe decyduje o jednym. Określa, jak dużo materiału możesz wrzucić do zapytania bez dzielenia go na części.
 
-- **ChatGPT Plus** – 54 000 tokenów w trybie Instant i 256 000 w trybie rozumowania; plan Pro rozszerza je do 128 000 i 400 000 tokenów (modele GPT-5.6 Sol i GPT-6 Astra w API obsługują 1,05 mln)
+- **ChatGPT Plus** – 54 000 tokenów w trybie Instant i 256 000 w trybie rozumowania; plan Pro rozszerza je do 128 000 i 400 000 tokenów (modele GPT-5.6 i GPT-6 – Astra, Sol i Luna – w API obsługują 1,05 mln)
 - **Gemini 3.1 Pro** – 1 milion tokenów w planie AI Pro
 - **Gemini 3.6 Flash** – model planu Free, szybki i tańszy w przeliczeniu na token (w API dostępny jest już nowszy Gemini 3.8 Flash)
 
@@ -143,13 +146,13 @@ Poniżej znajdziesz zestawienie kluczowych parametrów dla obu platform. Dane od
 | **Plan Free** | GPT-5.6 Luna z limitami, bez generowania wideo | Gemini 3.6 Flash, ograniczony dostęp do 3.1 Pro |
 | **Plan podstawowy płatny** | Plus – 20 USD/mies. | AI Pro – 19,99 USD/mies. |
 | **Tani plan wejściowy** | Go – 8 USD/mies. | AI Plus – 4,99 USD/mies. |
-| **Plan zaawansowany** | Pro – 100–200 USD/mies. (nowe zapisy na wariant 200 USD wstrzymane) | AI Ultra – od 99,99 USD/mies. |
-| **Flagowy model w aplikacji (wrzesień 2026)** | GPT-5.6 Sol (plany płatne) | Gemini 3.1 Pro |
-| **Najmocniejszy / najnowszy model w API** | GPT-6 Astra (tylko API) | Gemini 3.1 Pro (preview); najnowszy Flash – Gemini 3.8 Flash |
+| **Plan zaawansowany** | Pro – 100–200 USD/mies. | AI Ultra – od 99,99 USD/mies. |
+| **Flagowy model w aplikacji (wrzesień 2026)** | GPT-5.6 Sol w czacie (Plus i wyżej); GPT-6 Pro (Astra) w planach Pro, Business i Enterprise | Gemini 3.1 Pro |
+| **Najmocniejszy / najnowszy model w API** | GPT-6 Astra; najnowsze GPT-6 Sol i Luna (22.09.2026) | Gemini 3.1 Pro (preview); najnowszy Flash – Gemini 3.8 Flash |
 | **Okno kontekstowe (Plus/Pro)** | 54 tys. / 256 tys. tokenów (Plus); 128 tys. / 400 tys. (Pro) | 1 mln tokenów (AI Pro i wyżej) |
 | **Multimodalność** | Tekst + obraz | Tekst + obraz + audio + wideo (natywnie) |
 | **Generowanie wideo** | Brak (aplikacja Sora zamknięta w kwietniu 2026) | Veo (od planu AI Plus; pełny dostęp do Veo 3.1 w Ultra) |
-| **Generowanie obrazów** | ChatGPT Images 2.0 | Imagen (wbudowany) |
+| **Generowanie obrazów** | ChatGPT Images 2.0 | Nano Banana (modele Gemini Image) |
 | **Tryb głosowy** | Advanced Voice Mode, desktop + mobile | Gemini Live; asystent Spark |
 | **Integracja biurowa** | Przez Microsoft 365 Copilot | Natywna (Workspace: Gmail, Docs, Drive, Sheets) |
 | **Deep Research** | Tak (pełny zakres od planu Plus) | Tak (integracja z Drive/Gmail) |
@@ -161,7 +164,7 @@ Poniżej znajdziesz zestawienie kluczowych parametrów dla obu platform. Dane od
 
 [Przetwarzanie języka naturalnego](https://pl.wikipedia.org/wiki/Przetwarzanie_j%C4%99zyka_naturalnego) (NLP – *Natural Language Processing*) to wspólny fundament obu modeli. Mimo to każdy z nich wypracował zupełnie inne mocne strony w praktycznych zastosowaniach.
 
-GPT-5.6 Sol, najmocniejszy w API GPT-6 Astra i wcześniejsze modele rozumujące OpenAI (jak wycofany z ChatGPT 26 sierpnia 2026 roku o3) są szczególnie mocne w zadaniach matematycznych oraz kodowaniu sekwencyjnym. To zadania, w których wieloetapowe wnioskowanie krok po kroku jest absolutnie kluczowe. Modele te są również niezmiennie oceniane wyżej w zadaniach kreatywnych – generowaniu wariantów tekstów, strukturyzowaniu argumentacji czy pracy z briefami.
+GPT-5.6 Sol, najmocniejszy dziś GPT-6 Astra i wcześniejsze modele rozumujące OpenAI (jak wycofany z ChatGPT 26 sierpnia 2026 roku o3) są szczególnie mocne w zadaniach matematycznych oraz kodowaniu sekwencyjnym. To zadania, w których wieloetapowe wnioskowanie krok po kroku jest absolutnie kluczowe. Modele te są również niezmiennie oceniane wyżej w zadaniach kreatywnych – generowaniu wariantów tekstów, strukturyzowaniu argumentacji czy pracy z briefami.
 
 Gemini 3.1 Pro z kolei mocno wyróżnia się w zadaniach długokontekstowych. Błyszczy tam, gdzie analiza wymaga utrzymania uwagi przez milion tokenów bez „zapominania” wcześniejszych fragmentów dokumentu. Natywne przetwarzanie wideo i audio oznacza, że możesz wrzucić nagranie spotkania, transkrypcję rozmowy z klientem lub film instruktażowy, a model wygeneruje streszczenie bez konwersji formatu.
 Istnieje tu prosta, praktyczna reguła. Jeśli Twoja praca to głównie pisanie, programowanie i analityka tekstowa – GPT-5.6 będzie bezpieczniejszym wyborem. Jeśli jednak regularnie pracujesz z dużymi dokumentami, nagraniami lub potrzebujesz modelu zintegrowanego z Google Workspace, to Gemini 3.1 Pro wykona to zadanie szybciej i bez dodatkowej konfiguracji.

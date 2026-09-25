@@ -1,6 +1,6 @@
 ---
 title: Norwegia blokuje generatywne AI w szkołach podstawowych
-lead: Norwegia wprowadza zakaz używania narzędzi generatywnej AI w szkołach podstawowych. W szkołach średnich takie systemy będą dozwolone tylko pod nadzorem.
+lead: Norwegia wprowadza zakaz używania narzędzi generatywnej AI w szkołach podstawowych. W klasach 8–10 (uczniowie w wieku 14–16 lat) takie systemy będą dozwolone tylko pod nadzorem.
 date: '2026-06-20'
 sourceName: The Decoder
 sourceUrl: https://the-decoder.com/norway-bans-generative-ai-tools-in-elementary-schools-to-protect-kids-basic-learning-skills/
@@ -15,7 +15,7 @@ image: ../../assets/images/news-2026-06-20-norwegia-blokuje-generatywne-ai-w-szk
 
 ## Pełny zakaz w klasach 1–7, ograniczone użycie później
 
-Norwegia od końca sierpnia zakaże korzystania z narzędzi generatywnej AI w szkołach podstawowych. Oznacza to, że uczniowie od 1 do 7 klasy nie będą mogli używać takich systemów w ogóle. W szkołach średnich podejście będzie łagodniejsze, ale nadal wyraźnie ograniczające – AI ma być dopuszczona wyłącznie pod nadzorem.
+Norwegia od końca sierpnia zakaże korzystania z narzędzi generatywnej AI w szkołach podstawowych. Oznacza to, że uczniowie od 1 do 7 klasy nie będą mogli używać takich systemów w ogóle. W klasach 8–10 (uczniowie w wieku 14–16 lat) podejście będzie łagodniejsze, ale nadal wyraźnie ograniczające – AI ma być dopuszczona wyłącznie pod nadzorem.
 
 Według przywołanej wypowiedzi premiera priorytetem jest to, by dzieci najpierw opanowały podstawowe kompetencje: czytanie, pisanie i matematykę. To ustawia całą decyzję nie jako spór o samą technologię, ale jako próbę ochrony fundamentów edukacji na najwcześniejszym etapie nauki.
 
@@ -40,5 +40,5 @@ Uważamy też, że takie decyzje będą wpływać na sposób wdrażania AI w sek
 ## W skrócie
 
 - Norwegia od końca sierpnia zakaże generatywnej AI w szkołach podstawowych, obejmując klasy 1–7.
-- W szkołach średnich AI będzie dozwolona tylko pod nadzorem.
+- W klasach 8–10 (uczniowie w wieku 14–16 lat) AI będzie dozwolona tylko pod nadzorem.
 - Naszym zdaniem to ważny precedens pokazujący, że w edukacji kluczowe staje się nie samo wdrożenie AI, lecz moment i warunki jej użycia.

@@ -3,7 +3,7 @@ title: 'ChatGPT vs Claude – które AI wybrać'
 subtitle: 'Sprawdź, który model pasuje do Twojej pracy – na podstawie rzeczywistych testów, cen i mocnych stron'
 description: 'ChatGPT vs Claude – porównanie cen, możliwości, jakości pisania i kodowania. Dowiedz się, który model LLM wybrać do swojej pracy.'
 date: 2026-05-16
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-modele-llm-chatgpt-vs-claude.webp
 icon: '<path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 0 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 0-2-2V9m0 0h18"/>'
 author:
@@ -18,22 +18,22 @@ level: 'L1'
 sources:
   - title: 'Plans & Pricing | Claude by Anthropic'
     url: 'https://claude.com/pricing'
-    note: 'Anthropic. Cennik planów Free, Pro, Max, Team i Enterprise oraz stawki API modeli Claude, w tym Opus 5 (5/25 USD za milion tokenów).'
+    note: 'Anthropic. Cennik planów Free, Pro, Max, Team i Enterprise oraz stawki API modeli Claude, w tym Opus 5.5 (4/20 USD za milion tokenów).'
   - title: 'OpenAI starts testing ads in free version of ChatGPT'
     url: 'https://www.cbsnews.com/news/chatgpt-ads-openai-ai-artificial-intelligence/'
     note: 'CBS News, 9 lutego 2026. Test reklam w planach Free i Go (8 USD/mies.) w USA; Plus, Pro, Business i Enterprise bez reklam.'
   - title: 'Pricing | OpenAI API'
     url: 'https://developers.openai.com/api/docs/pricing'
-    note: 'OpenAI. Aktualne stawki API: GPT-5.6 Sol 4/20 USD (cena promocyjna co najmniej do 21 listopada 2026), Terra 2/12 USD, Luna 0,20/1,20 USD za milion tokenów.'
+    note: 'OpenAI. Aktualne stawki API: GPT-6 Astra 10/50, GPT-6 Sol 2/10, GPT-6 Luna 0,10/0,50 USD; GPT-5.6 Sol 4/20 USD (promocja co najmniej do 21 listopada 2026), Terra 2/12, Luna 0,20/1,20 USD za milion tokenów.'
   - title: 'Models | OpenAI API'
     url: 'https://developers.openai.com/api/docs/models'
-    note: 'OpenAI, dokumentacja API. GPT-6 Astra jako najmocniejszy model OpenAI: okno 1,05 mln tokenów, cena 10/50 USD za milion tokenów; ogólna dostępność w API od 3 września 2026 (changelog).'
+    note: 'OpenAI, dokumentacja API. GPT-6 Astra jako najmocniejszy model OpenAI (10/50 USD, od 3 września 2026) oraz GPT-6 Sol (2/10 USD) i GPT-6 Luna (0,10/0,50 USD) od 22 września 2026; okno 1,05 mln tokenów.'
   - title: 'Model Release Notes'
     url: 'https://help.openai.com/en/articles/9624314-model-release-notes'
-    note: 'OpenAI Help Center. GPT-5.6 Sol w płatnych planach ChatGPT od 9 lipca 2026; GPT-6 Astra nie jest wymieniony wśród modeli ChatGPT.'
+    note: 'OpenAI Help Center. GPT-5.6 Sol w płatnych planach ChatGPT od 9 lipca 2026; GPT-6 Pro (GPT-6 Astra) w planach Pro, Business i Enterprise.'
   - title: 'Models overview'
     url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
-    note: 'Anthropic, dokumentacja API. Aktualne modele (Fable 5.1, Opus 5, Sonnet 5, Haiku 4.5), ich ceny i okna kontekstowe; Opus 4.8 i Sonnet 4.6 jako modele legacy.'
+    note: 'Anthropic, dokumentacja API. Aktualne modele (Fable 5.1, Opus 5.5, Sonnet 5, Haiku 4.5), ich ceny i okna kontekstowe; Opus 5, Fable 5, Opus 4.8 i Sonnet 4.6 jako modele legacy.'
   - title: 'OpenAI Launches ChatGPT Images 2.0'
     url: 'https://www.macrumors.com/2026/04/22/openai-chatgpt-images-2-0/'
     note: 'MacRumors, 22 kwietnia 2026. Premiera modelu ChatGPT Images 2.0 dostępnego w ChatGPT, Codex i API.'
@@ -51,7 +51,7 @@ sources:
     note: 'Anthropic. Opis agenta programistycznego działającego w terminalu, IDE, aplikacji desktopowej i przeglądarce oraz planów, które go obejmują (Pro, Max, Team, Enterprise).'
   - title: 'How large is the context window on paid Claude plans?'
     url: 'https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans'
-    note: 'Claude Help Center. Okno 1 mln tokenów w czacie dla Fable 5.1, Opus 5 i Sonnet 5 na planach płatnych; 500 tys. dla Opus 4.8 i Sonnet 4.6.'
+    note: 'Claude Help Center. Okno 1 mln tokenów w czacie dla Fable 5.1, Opus 5.5, Opus 5 i Sonnet 5 na planach płatnych; 500 tys. m.in. dla Fable 5, Opus 4.8 i Sonnet 4.6.'
   - title: 'ChatGPT Plans Compared: Every Tier, August 2026 Edition'
     url: 'https://www.digitalapplied.com/blog/chatgpt-plans-compared-august-2026-guide'
     note: 'Digital Applied, 7 sierpnia 2026. Plany ChatGPT z oknami kontekstowymi (Free 27 tys., Plus 54/256 tys., Pro 128/400 tys.), limitami Pro (5× lub 20× Plus) i ceną Business (20 USD rocznie, 25 USD miesięcznie, min. 2 osoby).'
@@ -71,14 +71,14 @@ Zestawienie planów konsumenckich i biznesowych obu platform na wrzesień 2026 r
 |---|---|---|
 | **Bezpłatny** | GPT‑5.6 Luna, okno 27 K tokenów (Instant), reklamy | Claude Sonnet 5 z limitami, wyszukiwanie w sieci, Artifacts, brak reklam |
 | **Podstawowy (~8 USD)** | Go – 8 USD/mies., wyższe limity niż w planie Free, reklamy | – (brak odpowiednika) |
-| **Standard (20 USD/mies.)** | Plus – GPT‑5.6 Sol, Terra i Luna, ChatGPT Images 2.0, tryb głosowy | Pro – Claude Sonnet + Opus, Claude Code, projekty, Google Workspace |
-| **Premium (100–200 USD/mies.)** | Pro – GPT‑5.6 Sol Pro, 5× lub 20× wyższe limity niż Plus, okno do 400 K tokenów (nowe zapisy na wariant 200 USD wstrzymane) | Max – 5× lub 20× wyższe limity niż Pro |
+| **Standard (20 USD/mies.)** | Plus – GPT‑5.6 Sol, Terra i Luna w czacie, GPT‑6 Sol i Luna w ChatGPT Work i Codex, ChatGPT Images 2.0, tryb głosowy | Pro – Claude Sonnet + Opus, Claude Code, projekty, Google Workspace |
+| **Premium (100–200 USD/mies.)** | Pro – GPT‑6 Pro (GPT‑6 Astra) i GPT‑5.6 Sol Pro, 5× lub 20× wyższe limity niż Plus, okno do 400 K tokenów | Max – 5× lub 20× wyższe limity niż Pro |
 | **Zespołowy** | Business – 20 USD/os./mies. rocznie (25 USD miesięcznie), min. 2 osoby | Team Standard – 20 USD/os./mies. rocznie (25 USD miesięcznie), 2–150 osób |
 | **Enterprise** | Cena na żądanie, SOC 2, SSO, bez trenowania na danych | 20 USD/miejsce rocznie + zużycie według stawek API, SCIM, logi audytowe |
 
-**Plan ChatGPT Go (oraz Free) od 2026 roku wyświetla reklamy użytkownikom w USA, podczas gdy Claude w darmowej wersji tego unika.** To drobna, ale odczuwalna różnica w codziennej pracy. Przy tej samej kwocie 20 dolarów za Plus/Pro dostajesz od ChatGPT wbudowane generowanie obrazów oraz tryb głosowy. Claude w tej cenie oferuje głębszą integrację z IDE i Claude Code.
+**Plan ChatGPT Go (oraz Free) od 2026 roku wyświetla reklamy – najpierw w USA, od sierpnia 2026 także m.in. w Wielkiej Brytanii, Meksyku, Brazylii, Japonii i Korei Płd. – podczas gdy Claude w darmowej wersji tego unika.** To drobna, ale odczuwalna różnica w codziennej pracy. Przy tej samej kwocie 20 dolarów za Plus/Pro dostajesz od ChatGPT wbudowane generowanie obrazów oraz tryb głosowy. Claude w tej cenie oferuje głębszą integrację z IDE i Claude Code.
 
-Różnice w API uległy wyraźnemu spłaszczeniu. Claude Opus 5 kosztuje 5 USD za milion tokenów wejściowych i 25 USD za milion tokenów wyjściowych (najmocniejszy Claude Fable 5.1 – 10/50 USD, Sonnet 5 – 2/10 USD). Konkurencyjny GPT‑5.6 Sol to wydatek rzędu odpowiednio 4 USD i 20 USD w cenie promocyjnej obowiązującej co najmniej do 21 listopada 2026 roku (tańsze warianty: Terra 2/12 USD, Luna 0,20/1,20 USD). Najmocniejszy model OpenAI, GPT‑6 Astra, jest od 3 września 2026 roku dostępny w API za 10/50 USD – tyle samo co Claude Fable 5.1 – ale nie trafił do ChatGPT. **Ceny w 2026 roku są do siebie bardzo zbliżone, więc decyzja zależy głównie od preferowanego ekosystemu.**
+Różnice w API uległy wyraźnemu spłaszczeniu. Claude Opus 5.5 (od 22 września 2026) kosztuje 4 USD za milion tokenów wejściowych i 20 USD za milion tokenów wyjściowych (najmocniejszy Claude Fable 5.1 – 10/50 USD, Sonnet 5 – 2/10 USD). Po stronie OpenAI od 22 września działa GPT‑6 Sol za 2/10 USD i GPT‑6 Luna za 0,10/0,50 USD, a starsze GPT‑5.6 Sol kosztuje 4/20 USD w cenie promocyjnej (co najmniej do 21 listopada 2026). Najmocniejszy GPT‑6 Astra kosztuje w API 10/50 USD – tyle samo co Claude Fable 5.1 – a w ChatGPT działa jako GPT‑6 Pro w planach Pro, Business i Enterprise. **Ceny w 2026 roku są do siebie bardzo zbliżone, więc decyzja zależy głównie od preferowanego ekosystemu.**
 
 ## Pisanie i styl – gdzie jakość tekstu ma znaczenie
 
@@ -98,7 +98,7 @@ Zwróć uwagę na kilka konkretnych obserwacji z codziennych zastosowań pisarsk
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Już w marcu 2025 roku generowanie obrazów w ChatGPT przestało opierać się na DALL-E 3, a w kwietniu 2026 roku OpenAI udostępniło model ChatGPT Images 2.0. W tym samym czasie firma wygaszała Sorę – aplikacja do generowania wideo została zamknięta 26 kwietnia 2026 roku, a API ma działać do 24 września 2026 roku. <strong>ChatGPT stracił możliwość generowania wideo, ale oferuje coraz lepsze generowanie obrazów bez przełączania narzędzi.</strong></p>
+    <p>Już w marcu 2025 roku generowanie obrazów w ChatGPT przestało opierać się na DALL-E 3, a w kwietniu 2026 roku OpenAI udostępniło model ChatGPT Images 2.0. W tym samym czasie firma wygaszała Sorę – aplikacja do generowania wideo została zamknięta 26 kwietnia 2026 roku, a API (Sora 2) wyłączono 24 września 2026 roku. <strong>ChatGPT stracił możliwość generowania wideo, ale oferuje coraz lepsze generowanie obrazów bez przełączania narzędzi.</strong></p>
   </div>
 </aside>
 
@@ -106,7 +106,7 @@ Zwróć uwagę na kilka konkretnych obserwacji z codziennych zastosowań pisarsk
 
 ## Programowanie – kto pisze lepszy kod
 
-W tym obszarze różnica jest wyraźnie zauważalna. **W zestawieniu z maja 2026 roku Claude Opus 4.8 rozwiązywał 69,2% zadań trudnego benchmarku SWE-bench Pro, a GPT‑5.5 – 58,6%.** Od tego czasu obie firmy wydały nowsze modele (Claude Opus 5 i Fable 5.1 oraz rodzinę GPT‑5.6 i GPT‑6 Astra), więc warto traktować ten wynik jako punkt odniesienia, a nie stałą przewagę.
+W tym obszarze różnica jest wyraźnie zauważalna. **W zestawieniu z maja 2026 roku Claude Opus 4.8 rozwiązywał 69,2% zadań trudnego benchmarku SWE-bench Pro, a GPT‑5.5 – 58,6%.** Od tego czasu obie firmy wydały nowsze modele (Claude Opus 5, Fable 5.1 i Opus 5.5 oraz rodziny GPT‑5.6 i GPT‑6: Astra, Sol i Luna), więc warto traktować ten wynik jako punkt odniesienia, a nie stałą przewagę.
 
 Claude nie zawsze jednak wygrywa. Istnieje kilka obszarów, w których to ChatGPT radzi sobie zdecydowanie lepiej.
 
@@ -120,7 +120,7 @@ Claude Code to narzędzie CLI pozwalające modelowi czytać i pisać pliki bezpo
 
 To jeden z obszarów, w których Claude zyskał wyraźną przewagę techniczną.
 
-**Okno kontekstowe Claude w czacie na planach płatnych (Pro, Max, Team, Enterprise) wynosi 1 milion tokenów dla modeli Fable 5.1, Opus 5 i Sonnet 5.** To samo okno jest dostępne w Claude Code i przez API. Z kolei ChatGPT Plus operuje na 54 000 tokenów w trybie Instant (lub 256 000 tokenów w trybie rozumowania). Okno 400 000 tokenów pojawia się tam dopiero w planie Pro (od 100 USD miesięcznie).
+**Okno kontekstowe Claude w czacie na planach płatnych (Pro, Max, Team, Enterprise) wynosi 1 milion tokenów dla modeli Fable 5.1, Opus 5.5 i Sonnet 5.** To samo okno jest dostępne w Claude Code i przez API. Z kolei ChatGPT Plus operuje na 54 000 tokenów w trybie Instant (lub 256 000 tokenów w trybie rozumowania). Okno 400 000 tokenów pojawia się tam dopiero w planie Pro (od 100 USD miesięcznie).
 
 W praktyce oznacza to ogromną różnicę przy wczytywaniu obszernych umów, raportów finansowych czy wielostronicowych specyfikacji technicznych. **Claude w planie Pro za 20 USD bez problemu obsłuży zadania, które w ChatGPT wymagałyby znacznie droższej subskrypcji.**
 
@@ -161,12 +161,12 @@ Poniżej znajdziesz syntetyczne zestawienie kluczowych kryteriów. Gwiazdką ✦
 
 | Kryterium | ChatGPT (OpenAI) | Claude (Anthropic) |
 |---|---|---|
-| **Cena Free** | 0 USD, reklamy (USA) | 0 USD, bez reklam ✦ |
+| **Cena Free** | 0 USD, reklamy (USA i kolejne kraje) | 0 USD, bez reklam ✦ |
 | **Plan Standard** | Plus – 20 USD/mies. | Pro – 20 USD/mies. |
 | **Okno kontekstowe (Standard)** | 54 K (Instant) / 256 K (rozumowanie) | 1 mln tokenów (czat) ✦ |
 | **Okno kontekstowe (Premium)** | 128 K (Instant) / 400 K (rozumowanie) w planie Pro | 1 mln tokenów (czat, Claude Code, API) ✦ |
 | **Generowanie obrazów** | ChatGPT Images 2.0, wbudowane ✦ | Brak |
-| **Generowanie wideo** | Brak (aplikacja Sora zamknięta w kwietniu 2026) | Brak |
+| **Generowanie wideo** | Brak (aplikacja Sora zamknięta w kwietniu 2026, API – 24 września 2026) | Brak |
 | **Tryb głosowy** | Tak, pełnofunkcyjny ✦ | Ograniczony |
 | **Jakość kodowania (SWE-bench Pro, maj 2026)** | 58,6% (GPT‑5.5) | 69,2% (Opus 4.8) ✦ |
 | **Jakość stylistyki (niezależne testy)** | Poprawna, schematyczna | Bardziej zróżnicowana ✦ |
@@ -175,8 +175,8 @@ Poniżej znajdziesz syntetyczne zestawienie kluczowych kryteriów. Gwiazdką ✦
 | **Integracje enterprise** | Microsoft 365, Copilot ✦ | Google Workspace |
 | **Agent kodujący** | Codex – CLI, IDE, chmura (limitowany także w Free) | Claude Code – terminal, IDE, web (plany płatne) |
 | **Filozofia bezpieczeństwa** | RLHF + moderacja | Constitutional AI ✦ |
-| **Koszt API (flagship)** | 4 / 20 USD / 1 M tokenów (GPT‑5.6 Sol, cena promocyjna) ✦ | 5 / 25 USD / 1 M tokenów (Opus 5) |
-| **Koszt API (najmocniejszy model)** | 10 / 50 USD / 1 M tokenów (GPT‑6 Astra, tylko API) | 10 / 50 USD / 1 M tokenów (Fable 5.1) |
+| **Koszt API (flagship)** | 2 / 10 USD / 1 M tokenów (GPT‑6 Sol) ✦ | 4 / 20 USD / 1 M tokenów (Opus 5.5) |
+| **Koszt API (najmocniejszy model)** | 10 / 50 USD / 1 M tokenów (GPT‑6 Astra; w ChatGPT jako GPT‑6 Pro) | 10 / 50 USD / 1 M tokenów (Fable 5.1) |
 | **Ekosystem wtyczek / GPTs** | Szeroki, GPT Store ✦ | Ograniczony |
 
 **Z powyższego zestawienia płynie jeden kluczowy wniosek, ponieważ żaden z modeli nie dominuje w więcej niż połowie kategorii.** Ostateczny wybór zależy od Twoich priorytetów, które będą zupełnie inne dla programisty, marketera czy analityka danych.
@@ -193,7 +193,7 @@ Odpowiedź na pytanie „ChatGPT czy Claude" sprowadza się do tego, do czego ko
 
 **Do codziennego użytku z różnorodnymi zadaniami rozważ ChatGPT Plus, jeśli zależy Ci na wielofunkcyjności (obrazy, zaawansowany głos, integracje).** Wybierz z kolei Claude Pro, jeśli Twoim priorytetem pozostaje najwyższa jakość odpowiedzi tekstowych oraz precyzja w kodowaniu.
 
-**Do budowania produktów przez API dobierz model pod swój ekosystem.** Koszty generowania tokenów we flagowych modelach obu dostawców (GPT-5.6 Sol oraz Claude Opus 5) są obecnie bardzo podobne, a najmocniejsze GPT-6 Astra i Claude Fable 5.1 kosztują dokładnie tyle samo. Przy projektach wymagających przetwarzania dużych wolumenów danych warto rozważyć tańsze warianty obu firm (np. GPT-5.6 Luna czy Claude Haiku 4.5).
+**Do budowania produktów przez API dobierz model pod swój ekosystem.** Koszty generowania tokenów we flagowych modelach obu dostawców (GPT-6 Sol oraz Claude Opus 5.5) są obecnie zbliżone, a najmocniejsze GPT-6 Astra i Claude Fable 5.1 kosztują dokładnie tyle samo. Przy projektach wymagających przetwarzania dużych wolumenów danych warto rozważyć tańsze warianty obu firm (np. GPT-6 Luna czy Claude Haiku 4.5).
 
 Jeśli chcesz sprawdzić, jak Twoja marka pojawia się w odpowiedziach obu modeli, [Widoczność marki w AI](/narzedzia/brand-check/) odpyta ChatGPT, Claude i inne silniki AI jednocześnie. Zrobisz to szybko i bez konieczności ręcznego testowania każdego z nich.
 

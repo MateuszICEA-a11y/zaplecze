@@ -35,6 +35,8 @@ W naszej ocenie kilka rzeczy jest tu istotnych:
 
 Uważamy, że dla osób planujących wdrożenia AI ważniejsze od samego rankingu jest to, że granica między modelem tanim a modelem najlepszym wyraźnie się zaciera. To zmienia sposób, w jaki warto dobierać model do konkretnego zadania.
 
+> **Aktualizacja (25.09.2026):** 10 sierpnia 2026 r. Anthropic zrezygnował z zapowiadanej podwyżki – cena 2 USD za milion tokenów wejściowych i 10 USD za milion wyjściowych stała się stałą ceną Claude Sonnet 5.
+
 ## W skrócie
 
 - Anthropic wypuścił 30 czerwca Claude Sonnet 5 – najbardziej agentowy model z linii Sonnet, wydajnością zbliżony do Opusa 4.8.

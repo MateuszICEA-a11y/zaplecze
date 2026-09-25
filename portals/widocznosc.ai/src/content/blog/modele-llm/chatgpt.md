@@ -3,7 +3,7 @@ title: 'ChatGPT i ekosystem OpenAI – kompletny przewodnik'
 subtitle: 'Zrozum, jak działa ChatGPT i cały ekosystem OpenAI, żeby świadomie używać go w pracy'
 description: 'Czym jest ChatGPT, jak działa architektura GPT, co potrafi ekosystem OpenAI i jak używać go efektywnie – kompletny przewodnik po modelu i platformie.'
 date: 2026-05-20
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-modele-llm-chatgpt.webp
 icon: '<path d="M12 2a5 5 0 0 1 5 5c0 1.4-.6 2.7-1.5 3.6A5 5 0 0 1 17 15v1h-2v-1a3 3 0 0 0-6 0v1H7v-1a5 5 0 0 1 1.5-3.4A5 5 0 0 1 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="2"/>'
 author:
@@ -28,8 +28,9 @@ faq:
       Data odcięcia różni się między wersjami z rodziny GPT-5. GPT-5.4 ma datę odcięcia danych
       treningowych ustawioną na sierpień 2025 roku, GPT-5.5 (kwiecień 2026) na grudzień 2025
       roku, a aktualna rodzina GPT-5.6 (Sol, Terra, Luna – premiera 9 lipca 2026) na
-      16 lutego 2026 roku. Najnowszy model OpenAI, GPT-6 Astra (w API od 3 września 2026 roku),
-      ma datę odcięcia 30 kwietnia 2026 roku. Oznacza to, że „z pamięci" model nie zna wydarzeń późniejszych.
+      16 lutego 2026 roku. Najmocniejszy model OpenAI, GPT-6 Astra (od 3 września 2026 roku),
+      ma datę odcięcia 30 kwietnia 2026 roku, a wydane 22 września GPT-6 Sol i GPT-6 Luna –
+      odpowiednio 20 kwietnia i 18 maja 2026 roku. Oznacza to, że „z pamięci" model nie zna wydarzeń późniejszych.
       Przy włączonym wyszukiwaniu to ograniczenie nie ma znaczenia dla bieżących informacji,
       ale model nadal może prezentować starsze dane jako aktualne.
   - q: 'Czy rozmowy z ChatGPT są używane do trenowania modelu?'
@@ -63,9 +64,12 @@ sources:
   - title: 'Changelog'
     url: 'https://developers.openai.com/api/docs/changelog'
     note: 'OpenAI, dokumentacja API. Udostępnienie GPT-6 Astra w API 3 września 2026 roku.'
+  - title: 'GPT-6 Sol'
+    url: 'https://developers.openai.com/api/docs/models/gpt-6-sol'
+    note: 'OpenAI, dokumentacja API. GPT-6 Sol (22 września 2026): okno 1,05 mln tokenów, data odcięcia 20 kwietnia 2026, 2/10 USD za milion tokenów.'
   - title: 'Model Release Notes'
     url: 'https://help.openai.com/en/articles/9624314-model-release-notes'
-    note: 'OpenAI Help Center. Modele w ChatGPT: GPT-5.6 Sol w planach płatnych od 9 lipca 2026 (bez planów Free i Go), wstrzymanie nowych zapisów na Pro za 200 USD; GPT-6 Astra nie występuje w ChatGPT.'
+    note: 'OpenAI Help Center. Modele w ChatGPT: GPT-5.6 Sol w planach płatnych od 9 lipca 2026 (bez planów Free i Go); GPT-6 Pro napędzany GPT-6 Astra w planach Pro, Business i Enterprise.'
   - title: 'ChatGPT finally offers $100/month Pro plan'
     url: 'https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/'
     note: 'TechCrunch, 9 kwietnia 2026. Plany Free, Go (8 USD), Plus (20 USD) oraz Pro za 100 i 200 USD miesięcznie.'
@@ -96,7 +100,7 @@ OpenAI to laboratorium badań nad sztuczną inteligencją założone w 2015 roku
 
 Uporządkujmy te pojęcia na samym wstępie:
 
-- **GPT** – seria modeli językowych (GPT-3, GPT-4, rodzina GPT-5 – od lipca 2026 w ChatGPT flagowa generacja to GPT-5.6 w trzech wariantach: Sol, Terra i Luna – a od 3 września 2026 roku w API także GPT-6 Astra, najmocniejszy model OpenAI); sam model to „silnik", który przetwarza tekst
+- **GPT** – seria modeli językowych (GPT-3, GPT-4, rodzina GPT-5 – od lipca 2026 w ChatGPT flagowa generacja to GPT-5.6 w trzech wariantach: Sol, Terra i Luna – a od września 2026 roku generacja GPT-6: najmocniejszy GPT-6 Astra (w API i w ChatGPT jako GPT-6 Pro) oraz GPT-6 Sol i GPT-6 Luna (w API, ChatGPT Work i Codex)); sam model to „silnik", który przetwarza tekst
 - **ChatGPT** – produkt konsumencki, interfejs czatu dostępny pod adresem chatgpt.com, napędzany aktualnym modelem GPT
 - **OpenAI API** – programistyczny dostęp do modeli GPT, modeli obrazowych i innych, używany przez deweloperów do budowy własnych aplikacji
 - **ChatGPT Images** – generowanie obrazów z opisu tekstowego wbudowane w ChatGPT (DALL-E zastąpiono w marcu 2025 roku, a od kwietnia 2026 roku działa model ChatGPT Images 2.0)
@@ -136,16 +140,16 @@ ChatGPT jest dostępny w kilku planach subskrypcyjnych. Zestawienie kluczowych r
 
 | Plan | Cena | Dostęp do modeli | Kluczowe funkcje |
 |---|---|---|---|
-| Free | 0 USD/mies. | GPT-5.6 Luna | Czat tekstowy na Luna bez limitu wiadomości, limitowane generowanie obrazów, pliki i Deep Research; w niektórych krajach z reklamami |
-| Go | 8 USD/mies. | GPT-5.6 Luna | Plan dla codziennych użytkowników, wyższe limity niż Free |
-| Plus | 20 USD/mies. | GPT-5.6 Sol, Terra i Luna, ChatGPT Images 2.0 | Wyższe limity, Deep Research, Codex, okno 54 tys. / 256 tys. tokenów (Instant / rozumowanie) |
-| Business | 20 USD/os./mies. rocznie (25 USD miesięcznie), min. 2 osoby | Konfigurowalne w przestrzeni roboczej | Przestrzeń zespołowa, izolacja danych od trenowania |
-| Pro | 100 USD/mies. (nowe zapisy na wariant 200 USD wstrzymane) | GPT-5.6 Sol Pro, Codex | 5× lub 20× wyższe limity niż Plus, okno 128 tys. / 400 tys. tokenów |
-| Enterprise | Negocjowane | Konfigurowalne | SOC 2 Type II, SSO, niestandardowe retencje danych |
+| Free | 0 USD/mies. | GPT-5.6 Luna (GPT-6 Luna w aplikacji desktopowej) | Czat tekstowy na Luna, limitowane generowanie obrazów, pliki i Deep Research; w niektórych krajach z reklamami |
+| Go | 8 USD/mies. | GPT-5.6 Luna (GPT-6 Luna w aplikacji desktopowej) | Plan dla codziennych użytkowników, wyższe limity niż Free |
+| Plus | 20 USD/mies. | GPT-5.6 Sol, Terra i Luna; GPT-6 Sol i Luna w ChatGPT Work i Codex; ChatGPT Images 2.0 | Wyższe limity, Deep Research, Codex, okno 54 tys. / 256 tys. tokenów (Instant / rozumowanie) |
+| Business | 20 USD/os./mies. rocznie (25 USD miesięcznie), min. 2 osoby | Konfigurowalne; m.in. GPT-6 Pro (Astra), GPT-6 Sol i Luna | Przestrzeń zespołowa, izolacja danych od trenowania |
+| Pro | 100 lub 200 USD/mies. | GPT-6 Pro (GPT-6 Astra), GPT-5.6 Sol Pro, GPT-6 Sol i Luna w Work i Codex | 5× lub 20× wyższe limity niż Plus, okno 128 tys. / 400 tys. tokenów |
+| Enterprise | Negocjowane | Konfigurowalne, w tym GPT-6 Pro | SOC 2 Type II, SSO, niestandardowe retencje danych |
 
-**Plan Free wystarczy do testowania i zadań sporadycznych.** Do regularnej pracy – szczególnie gdy liczy się jakość i wyższe limity w dostępie do asystentów AI (tzw. copilotów) – Plus pozostaje standardowym wyborem. Daje dostęp do flagowego GPT-5.6 Sol – rodzina GPT-5.6 trafiła do ogólnej dostępności 9 lipca 2026 roku (Sol nie jest dostępny w planach Free i Go). Plany Pro (warianty 100 i 200 USD, przy czym nowe zapisy na droższy wariant są wstrzymane) celują w zaawansowanych profesjonalistów i programistów. Dają 5× lub 20× wyższe limity niż Plus, rozszerzają okno kontekstowe w czacie do 400 tysięcy tokenów i odblokowują GPT-5.6 Sol Pro z najwyższym budżetem wnioskowania.
+**Plan Free wystarczy do testowania i zadań sporadycznych.** Do regularnej pracy – szczególnie gdy liczy się jakość i wyższe limity w dostępie do asystentów AI (tzw. copilotów) – Plus pozostaje standardowym wyborem. Daje dostęp do flagowego GPT-5.6 Sol – rodzina GPT-5.6 trafiła do ogólnej dostępności 9 lipca 2026 roku (Sol nie jest dostępny w planach Free i Go). Plany Pro (warianty 100 i 200 USD) celują w zaawansowanych profesjonalistów i programistów. Dają 5× lub 20× wyższe limity niż Plus, rozszerzają okno kontekstowe w czacie do 400 tysięcy tokenów i odblokowują GPT-6 Pro (napędzany GPT-6 Astra) oraz GPT-5.6 Sol Pro z najwyższym budżetem wnioskowania.
 
-Najnowszy i najmocniejszy model OpenAI – GPT-6 Astra – trafił 3 września 2026 roku wyłącznie do API (okno 1,05 mln tokenów, do 128 tys. tokenów wyjścia, data odcięcia wiedzy 30 kwietnia 2026, 10 USD za milion tokenów wejściowych i 50 USD za wyjściowe). W ChatGPT flagowcem pozostaje GPT-5.6 Sol.
+Najmocniejszy model OpenAI – GPT-6 Astra – zadebiutował 3 września 2026 roku (okno 1,05 mln tokenów, do 128 tys. tokenów wyjścia, data odcięcia wiedzy 30 kwietnia 2026, w API 10 USD za milion tokenów wejściowych i 50 USD za wyjściowe). W ChatGPT działa jako GPT-6 Pro w planach Pro, Business i Enterprise. 22 września dołączyły GPT-6 Sol (2/10 USD) i GPT-6 Luna (0,10/0,50 USD) – w API oraz w ChatGPT Work i Codex dla planów Plus i wyższych. Domyślny czat nadal działa na GPT-5.6.
 
 ## Do czego używać ChatGPT – zastosowania w praktyce
 

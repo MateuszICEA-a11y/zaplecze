@@ -3,7 +3,7 @@ title: 'Co potrafi ChatGPT – przegląd funkcji dla początkujących'
 subtitle: 'Poznaj konkretne zastosowania ChatGPT, które od razu możesz wdrożyć w pracy i codziennych zadaniach'
 description: 'ChatGPT potrafi pisać, analizować, tłumaczyć i kodować. Sprawdź przegląd głównych funkcji dla początkujących z przykładami zastosowań.'
 date: 2026-05-01
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-modele-llm-co-potrafi-chatgpt.webp
 icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 9h8M8 12h5M8 15h6"/>'
 author:
@@ -53,10 +53,13 @@ sources:
     note: 'Digital Applied, 7 sierpnia 2026. Plany Free i Go (GPT-5.6 Luna), Plus (Sol, Terra, Luna), Pro od 100 USD (5× lub 20× limitów Plus) i Business (20 USD za stanowisko rocznie, 25 USD miesięcznie, min. 2 użytkowników, bez trenowania na danych firmowych).'
   - title: 'Model Release Notes'
     url: 'https://help.openai.com/en/articles/9624314-model-release-notes'
-    note: 'OpenAI Help Center. GPT-5.6 Sol w płatnych planach ChatGPT od 9 lipca 2026 (bez planów Free i Go) oraz wstrzymanie nowych zapisów na plan Pro za 200 USD.'
+    note: 'OpenAI Help Center. GPT-5.6 Sol w płatnych planach ChatGPT od 9 lipca 2026 (bez planów Free i Go); GPT-6 Pro (GPT-6 Astra) w planach Pro, Business i Enterprise.'
   - title: 'GPT-6 Astra'
     url: 'https://developers.openai.com/api/docs/models/gpt-6-astra'
     note: 'OpenAI, dokumentacja API. Najmocniejszy model OpenAI, dostępny w API od 3 września 2026; cena 10/50 USD za milion tokenów.'
+  - title: 'GPT-6 Sol'
+    url: 'https://developers.openai.com/api/docs/models/gpt-6-sol'
+    note: 'OpenAI, dokumentacja API. GPT-6 Sol (22 września 2026): okno 1,05 mln tokenów, data odcięcia 20 kwietnia 2026, 2/10 USD za milion tokenów.'
   - title: 'ChatGPT sets record for fastest-growing user base - analyst note'
     url: 'https://finance.yahoo.com/news/chatgpt-sets-record-fastest-growing-190911828.html'
     note: 'Reuters, 2 lutego 2023. Analiza UBS: 100 mln aktywnych użytkowników miesięcznie dwa miesiące po premierze, najszybciej rosnąca aplikacja konsumencka.'
@@ -104,11 +107,11 @@ OpenAI oferuje kilka poziomów dostępu, a różnice są kluczowe w codziennej p
 
 | Plan | Koszt/miesiąc | Dostęp do modeli | Kluczowe cechy i limity |
 |---|---|---|---|
-| Free | 0 USD | GPT-5.6 Luna | Podstawowy dostęp, limity plików, obrazów i Deep Research; w niektórych krajach reklamy |
-| Go | 8 USD | GPT-5.6 Luna (wyższe limity) | Dla codziennych użytkowników, w niektórych krajach zawiera reklamy |
-| Plus | 20 USD | GPT-5.6 Sol, Terra i Luna | Zaawansowane funkcje (Deep Research, Codex), wyższe limity |
-| Business | 20 USD/stanowisko rocznie (25 USD miesięcznie), min. 2 stanowiska | Konfigurowalne w przestrzeni roboczej | Przestrzeń zespołowa, dane nie służą do trenowania modeli |
-| Pro | 100 USD (nowe zapisy na wariant 200 USD wstrzymane) | GPT-5.6 Sol Pro, Codex | 5× lub 20× wyższe limity niż Plus, dla zaawansowanych profesjonalistów i programistów |
+| Free | 0 USD | GPT-5.6 Luna (GPT-6 Luna w aplikacji desktopowej) | Podstawowy dostęp, limity plików, obrazów i Deep Research; w niektórych krajach reklamy |
+| Go | 8 USD | GPT-5.6 Luna (wyższe limity; GPT-6 Luna w aplikacji desktopowej) | Dla codziennych użytkowników, w niektórych krajach zawiera reklamy |
+| Plus | 20 USD | GPT-5.6 Sol, Terra i Luna; GPT-6 Sol i Luna w ChatGPT Work i Codex | Zaawansowane funkcje (Deep Research, Codex), wyższe limity |
+| Business | 20 USD/stanowisko rocznie (25 USD miesięcznie), min. 2 stanowiska | Konfigurowalne; m.in. GPT-6 Pro (Astra), GPT-6 Sol i Luna | Przestrzeń zespołowa, dane nie służą do trenowania modeli |
+| Pro | 100 lub 200 USD | GPT-6 Pro (Astra), GPT-5.6 Sol Pro, Codex | 5× lub 20× wyższe limity niż Plus, dla zaawansowanych profesjonalistów i programistów |
 
 **Dla większości użytkowników plan Plus zwraca się, jeśli ChatGPT oszczędza im co najmniej godzinę pracy tygodniowo.** Plan Free wystarcza do poznania możliwości narzędzia. Do regularnej pracy to jednak za mało.
 
@@ -159,7 +162,7 @@ Plan Plus otwiera dostęp do zestawu narzędzi, które całkowicie zmieniają ja
 
 ### Integracja z aplikacjami i API
 
-ChatGPT działa nie tylko przez przeglądarkę i aplikację mobilną. OpenAI udostępnia API, które pozwala wbudować możliwości modelu w dowolną aplikację – formularz na stronie, wewnętrzny helpdesk czy skrypt automatyzacyjny. Koszt API zależy od liczby tokenów (jednostka tekstu – mniej więcej trzy czwarte słowa). To czyni go opłacalnym dla zastosowań biznesowych na dużą skalę. Właśnie w API dostępny jest od 3 września 2026 roku najnowszy i najmocniejszy model OpenAI – GPT-6 Astra (10 USD za milion tokenów wejściowych i 50 USD za wyjściowe); w samym ChatGPT flagowcem pozostaje GPT-5.6 Sol.
+ChatGPT działa nie tylko przez przeglądarkę i aplikację mobilną. OpenAI udostępnia API, które pozwala wbudować możliwości modelu w dowolną aplikację – formularz na stronie, wewnętrzny helpdesk czy skrypt automatyzacyjny. Koszt API zależy od liczby tokenów (jednostka tekstu – mniej więcej trzy czwarte słowa). To czyni go opłacalnym dla zastosowań biznesowych na dużą skalę. W API dostępna jest generacja GPT-6: najmocniejszy GPT-6 Astra (10 USD za milion tokenów wejściowych i 50 USD za wyjściowe, od 3 września 2026) oraz tańsze GPT-6 Sol (2/10 USD) i GPT-6 Luna (0,10/0,50 USD, od 22 września 2026). W ChatGPT Astra działa jako GPT-6 Pro w planach Pro, Business i Enterprise, a domyślny czat nadal korzysta z GPT-5.6.
 
 Na rynku znajdziesz też dziesiątki narzędzi no-code integrujących ChatGPT z popularnymi platformami: Notion, Slackiem, Google Docs czy Zapierem. **Jeśli chcesz zautomatyzować konkretny proces bez pisania kodu, sprawdź najpierw gotowe integracje.**
 
@@ -190,8 +193,8 @@ Na rynku działają inne duże modele językowe (LLM – Large Language Model) o
 
 | Model | Producent | Mocne strony | Typowe zastosowanie |
 |---|---|---|---|
-| ChatGPT (GPT-5.6; w API także GPT-6 Astra) | OpenAI | Ekosystem narzędzi, generowanie obrazów, Code Interpreter | Wszechstronne; copywriting, analiza, kod |
-| Claude (Sonnet 5 / Opus 5 / Fable 5.1) | Anthropic | Długie dokumenty (do 1M tokenów), precyzyjna instrukcja | Analiza obszernych raportów, pisanie złożone |
+| ChatGPT (GPT-5.6 w czacie; GPT-6 Astra, Sol i Luna w API i wybranych planach) | OpenAI | Ekosystem narzędzi, generowanie obrazów, Code Interpreter | Wszechstronne; copywriting, analiza, kod |
+| Claude (Sonnet 5 / Opus 5.5 / Fable 5.1) | Anthropic | Długie dokumenty (do 1M tokenów), precyzyjna instrukcja | Analiza obszernych raportów, pisanie złożone |
 | Gemini | Google | Integracja z Google Workspace, wyszukiwanie w czasie rzeczywistym | Analiza danych z arkuszy, research |
 | Copilot | Microsoft | Wbudowany w Microsoft 365 i Edge | Praca w środowisku MS |
 

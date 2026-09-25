@@ -3,7 +3,7 @@ title: 'GPTBot, ClaudeBot, PerplexityBot – co naprawdę widzą boty AI i jak i
 subtitle: 'Techniczny przewodnik po botach indeksujących AI, robots.txt, llms.txt i schema.org dla wyszukiwarek generatywnych'
 description: 'Lista 13 botów i tokenów AI, które decydują o dostępie do Twoich treści. Co każdy z nich robi, jak skonfigurować robots.txt, czy llms.txt ma sens, dlaczego treści renderowane przez JavaScript są problemem dla LLM. Przewodnik dla deweloperów i SEO.'
 date: 2026-05-12
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-boty-ai-przewodnik.webp
 icon: '<rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18"/><circle cx="7" cy="14" r="1"/><circle cx="12" cy="14" r="1"/><circle cx="17" cy="14" r="1"/><path d="M9 4l3-2 3 2"/>'
 author:
@@ -18,7 +18,7 @@ level: 'L3'
 sources:
   - title: 'Overview of OpenAI Crawlers'
     url: 'https://developers.openai.com/api/docs/bots'
-    note: 'OpenAI, dokumentacja. Funkcje GPTBot (trening), OAI-SearchBot (wyniki wyszukiwania w ChatGPT) i ChatGPT-User (działania na żądanie użytkownika, do których reguły robots.txt mogą nie mieć zastosowania).'
+    note: 'OpenAI, dokumentacja. Funkcje GPTBot (trening), OAI-SearchBot (wyniki wyszukiwania w ChatGPT), ChatGPT-User (działania na żądanie użytkownika, do których reguły robots.txt mogą nie mieć zastosowania) i OAI-AdsBot (weryfikacja stron docelowych reklam).'
   - title: 'Does Anthropic crawl data from the web, and how can site owners block the crawler?'
     url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
     note: 'Anthropic, centrum pomocy. Opis botów ClaudeBot, Claude-User i Claude-SearchBot oraz respektowania robots.txt.'
@@ -27,7 +27,10 @@ sources:
     note: 'Google, dokumentacja. Opis GoogleOther oraz tokenu Google-Extended, który steruje wykorzystaniem treści do trenowania i ugruntowania modeli Gemini.'
   - title: 'Google’s user-triggered fetchers'
     url: 'https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers'
-    note: 'Google, dokumentacja. Fetcher Google-GeminiNotebook (dawny token Google-NotebookLM) i zastrzeżenie, że fetchery uruchamiane przez użytkownika zwykle ignorują robots.txt.'
+    note: 'Google, dokumentacja. Fetcher Google-GeminiNotebook (dawny token Google-NotebookLM), fetcher Google-Agent i zastrzeżenie, że fetchery uruchamiane przez użytkownika zwykle ignorują robots.txt.'
+  - title: 'Search generative AI control'
+    url: 'https://support.google.com/webmasters/answer/16908024'
+    note: 'Pomoc Google Search Console. Przełącznik wyłączający witrynę z AI Overviews, AI Mode i funkcji AI w Discover; globalnie od 31 sierpnia 2026 roku, bez wpływu na ranking w pozostałej części wyszukiwarki.'
   - title: 'Optymalizacja witryny pod kątem funkcji opartych na generatywnej AI w wyszukiwarce Google'
     url: 'https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=pl'
     note: 'Google Search Central. Przewodnik, w którym Google uznaje pliki llms.txt za niepotrzebne do widoczności w funkcjach AI wyszukiwarki.'
@@ -77,7 +80,9 @@ Na rynku jest ponad 30 botów oznaczonych jako *„AI crawlers"*, ale 13 z nich 
 | `CCBot` | Common Crawl | dataset dla wszystkich LLM | krytyczny – większość modeli używa CC |
 | `Applebot-Extended` | Apple | token kontrolny, nie crawluje – zgoda na trening modeli Apple Intelligence | rosnący |
 
-![13 botów AI w 4 kategoriach – TRENING (GPTBot, ClaudeBot, Google-Extended), WYSZUKIWANIE (OAI-SearchBot, PerplexityBot, Claude-SearchBot), NA ŻĄDANIE (ChatGPT-User, Claude-Web, Perplexity-User), COMMON CRAWL (CCBot, Applebot-Extended, GoogleOther, Google-NotebookLM). Pełne pokrycie: zezwolenie na wszystkie 13 w robots.txt](../../../assets/images/infographic-geo-boty-ai-przewodnik.png)
+Poza tą listą zostawiamy boty, które nie decydują o widoczności w odpowiedziach AI. OpenAI ma nowego `OAI-AdsBot`, który sprawdza bezpieczeństwo stron docelowych reklam w ChatGPT (zebrane dane nie trafiają do treningu), a Google opisuje fetcher `Google-Agent`, używany przez agentów działających na infrastrukturze Google. Aktualne wersje user-agentów OpenAI to `GPTBot/1.4`, `OAI-SearchBot/1.4` i `ChatGPT-User/1.0`.
+
+![13 botów AI w 4 kategoriach – TRENING (GPTBot, ClaudeBot, Google-Extended), WYSZUKIWANIE (OAI-SearchBot, PerplexityBot, Claude-SearchBot), NA ŻĄDANIE (ChatGPT-User, Claude-User, Perplexity-User, Google-GeminiNotebook), POZOSTAŁE (CCBot, Applebot-Extended, GoogleOther)](../../../assets/images/infographic-geo-boty-ai-przewodnik.png)
 
 > **Częsty błąd:** blokowanie tylko niektórych botów OpenAI lub Anthropic. Jeśli blokujesz `GPTBota`, ale dopuszczasz `OAI-SearchBota`, sygnał jest mieszany – Twoja strona nie trafi do treningu, ale może być cytowana w czasie rzeczywistym. To może być świadoma decyzja, ale częściej wynika z niewiedzy.
 
@@ -137,6 +142,8 @@ Pamiętaj, że `robots.txt` nie zatrzyma wszystkich. Fetchery działające na ż
 
 Druga pułapka: blokowanie ścieżek dynamicznych (`/search/`, `/cart/`). Boty AI, podobnie jak Googlebot, nie powinny indeksować adresów URL z parametrami koszyka, sesji, filtrowania. Standardowe wyłączenia `/api/`, `/admin/`, `/cart/`, `/checkout/`, `/search/?q=` nadal działają.
 
+Trzecia pułapka dotyczy Google. Token `Google-Extended` nie wyłącza Twojej strony z AI Overviews ani AI Mode – steruje tylko trenowaniem i uziemianiem modeli Gemini. Od 31 sierpnia 2026 roku do rezygnacji z funkcji generatywnych wyszukiwarki służy przełącznik Search generative AI control w Google Search Console. Wyłączenie nie wpływa na ranking w zwykłych wynikach, ale oznacza zero wyświetleń i ruchu z AI Overviews, AI Mode i funkcji AI w Discover.
+
 ## Czy llms.txt ma sens?
 
 `llms.txt` to **propozycja** standardu z 2024 roku (autor: Jeremy Howard), podobna do [robots.txt](https://pl.wikipedia.org/wiki/Robots_Exclusion_Protocol), ale przeznaczona stricte dla modeli LLM. Plik leży w katalogu głównym domeny i zawiera hierarchiczną mapę najważniejszych zasobów na stronie z opisami w naturalnym języku. Idea: zamiast pozwalać modelowi LLM przeczesywać całą stronę, dajesz mu kuratorską listę treści, którą chcesz, żeby model znał najlepiej.
@@ -147,7 +154,7 @@ Poziom adaptacji w 2026 roku:
 
 - **OpenAI i Anthropic** – brak oficjalnego potwierdzenia, że ich crawlery uwzględniają `llms.txt` przy pobieraniu treści
 - **Google** nie zaimplementowało standardu – w przewodniku po optymalizacji pod funkcje AI w wyszukiwarce uznaje `llms.txt` za zbędny, bo wystarcza mu klasyczny crawl
-- **Perplexity** nie zajęło stanowiska, ale empirycznie pliki `llms.txt` są respektowane przez ich silnik
+- **Perplexity** – brak oficjalnej deklaracji, że silnik korzysta z `llms.txt`; publicznie dostępne analizy logów nie pokazują, by boty AI regularnie pobierały ten plik
 - **W praktyce** efekt wdrożenia jest trudny do wyizolowania – nikt nie widział twardego testu A/B pokazującego mierzalny wzrost cytowalności wyłącznie dzięki `llms.txt`
 
 Praktyczna rekomendacja: tak, możesz wdrożyć `llms.txt` jako dodatek, ale **nie kosztem prawidłowej struktury technicznej strony** (SSR, schema.org, poprawny plik `robots.txt`). Plik powinien zawierać 5–15 najważniejszych zasobów, opisanych zwięźle w naturalnym języku. Kolejność priorytetów: `robots.txt` → schema.org → SSR/SSG → dopiero potem `llms.txt`.
@@ -234,4 +241,4 @@ Po 30 dniach robisz re-test: `curl -A "GPTBot"` zwraca pełny tekst, schema.org 
 
 Konfiguracja botów AI to zadanie, które najlepiej wykonać raz a dobrze. **Większość problemów technicznej widoczności w AI sprowadza się do prostych list kontrolnych: które boty dopuszczam, czy mam SSR, czy mam wdrożone dane strukturalne.** Zaniedbanie tych podstaw oznacza, że nawet najlepsza strategia contentowa nie zadziała – bo model LLM po prostu Twojej strony nie widzi.
 
-W audycie technicznym widoczności AI w ICEA pierwsza godzina to weryfikacja, czy boty AI fizycznie dostają tekst. Jeśli nie, cała reszta jest budowaniem na piasku. Jeśli chcesz sprawdzić, czy boty AI mają dostęp do Twojej strony, [Dostęp botów AI](/narzedzia/ai-bots-check/) odpyta robots.txt o 13 botów AI i da Ci tabelę allowed/disallowed plus listę najważniejszych zmian do wdrożenia – w 30 sekund, bez logowania.
+W audycie technicznym widoczności AI w ICEA pierwsza godzina to weryfikacja, czy boty AI fizycznie dostają tekst. Jeśli nie, cała reszta jest budowaniem na piasku. Jeśli chcesz sprawdzić, czy boty AI mają dostęp do Twojej strony, [Dostęp botów AI](/narzedzia/ai-bots-check/) odpyta robots.txt o 14 botów AI (13 z tej listy plus OAI-AdsBot) i da Ci tabelę allowed/disallowed plus listę najważniejszych zmian do wdrożenia – w 30 sekund, bez logowania.

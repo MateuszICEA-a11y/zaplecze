@@ -3,7 +3,7 @@ title: 'Audyt widoczności marki w ChatGPT, Gemini i Perplexity – krok po krok
 subtitle: 'Sprawdź, czy AI poleca Twoją markę – i dowiedz się, jak to zmienić na swoją korzyść'
 description: 'Praktyczny przewodnik po audycie widoczności marki w ChatGPT, Gemini i Perplexity. Kroki, metryki, narzędzia i plan działania na 90 dni. Dla marketerów i specjalistów SEO.'
 date: 2026-05-21
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-audyt-widocznosci-marki.webp
 icon: '<circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/>'
 author:
@@ -57,6 +57,12 @@ sources:
   - title: 'Does Anthropic crawl data from the web, and how can site owners block the crawler?'
     url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
     note: 'Anthropic, centrum pomocy. Opis botów ClaudeBot, Claude-User i Claude-SearchBot oraz blokowania ich w robots.txt.'
+  - title: 'Search generative AI control'
+    url: 'https://support.google.com/webmasters/answer/16908024'
+    note: 'Pomoc Google Search Console. Przełącznik wyłączający witrynę z AI Overviews, AI Mode i funkcji AI w Discover; globalnie od 31 sierpnia 2026 roku.'
+  - title: 'Generative AI performance report'
+    url: 'https://support.google.com/webmasters/answer/16984139'
+    note: 'Pomoc Google Search Console. Wyświetlenia stron w AI Overviews i AI Mode, z podziałem na strony, kraje i daty.'
   - title: 'The rise of the AI crawler'
     url: 'https://vercel.com/blog/the-rise-of-the-ai-crawler'
     note: 'Vercel, 17 grudnia 2024. Analiza ruchu pokazująca, że crawlery OpenAI, Anthropic i Perplexity nie wykonują JavaScriptu.'
@@ -74,7 +80,7 @@ Jeśli Twoja marka nie pojawia się w odpowiedziach ChatGPT, Gemini czy Perplexi
 
 ## Dlaczego standardowe SEO nie pokazuje problemu?
 
-Klasyczne narzędzia monitoringu – Google Search Console, Ahrefs czy Semrush – mierzą kliknięcia z listy wyników. Tu pojawia się problem. Użytkownik pytający ChatGPT o najlepsze oprogramowanie CRM dla agencji marketingowej nigdy nie trafi do Search Console. Nie kliknie żadnego linku, jeśli odpowiedź AI wyda mu się wystarczająca.
+Klasyczne narzędzia monitoringu – Google Search Console, Ahrefs czy Semrush – zostały zbudowane wokół kliknięć z listy wyników. Search Console pokazuje co prawda od 2026 roku wyświetlenia w AI Overviews i AI Mode, ale nie widzi ChatGPT ani Perplexity. Użytkownik pytający ChatGPT o najlepsze oprogramowanie CRM dla agencji marketingowej nigdy nie trafi do Search Console. Nie kliknie żadnego linku, jeśli odpowiedź AI wyda mu się wystarczająca.
 
 **To zjawisko nosi nazwę zero-click presence – marka jest wzmiankowana lub pomijana w syntezie AI bez żadnego ruchu rejestrowanego przez tradycyjną analitykę.**
 
@@ -145,6 +151,10 @@ Wyniki odpytywania modeli to jedynie obraz widoczności. **Audyt techniczny wyja
 Pierwsza i najczęstsza przyczyna niewidoczności to zablokowanie botów AI w pliku `robots.txt` – często zupełnie nieintencjonalne. Sprawdź, czy żadna z reguł `Disallow` nie dotyczy botów: `OAI-SearchBot` (OpenAI, wyszukiwanie w ChatGPT), `GPTBot` (OpenAI, trening modeli), `ChatGPT-User` (OpenAI), `PerplexityBot` (Perplexity), `ClaudeBot` (Anthropic) ani tokenu `Google-Extended` (Google). Co ważne, błędy w konfiguracji zapory Cloudflare potrafią blokować część tych botów bez jakiegokolwiek wpisu w `robots.txt`.
 
 Narzędzie [Dostęp botów AI](/narzedzia/ai-bots-check/) błyskawicznie weryfikuje, które boty AI mają dostęp do Twojej domeny, i od razu sygnalizuje niezamierzone blokady.
+
+### Search Console – ustawienia i raport AI
+
+Zajrzyj też do Google Search Console. Od 31 sierpnia 2026 roku każda witryna ma tam przełącznik Search generative AI control – sprawdź, czy nie wyklucza on strony z AI Overviews i AI Mode. Przy okazji zapisz punkt startowy z raportu Generative AI performance: wyświetlenia stron w funkcjach generatywnych Google, na razie bez kliknięć.
 
 ### Renderowanie JavaScript i dostępność treści
 

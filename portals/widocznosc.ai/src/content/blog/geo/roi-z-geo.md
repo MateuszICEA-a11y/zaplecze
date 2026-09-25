@@ -3,7 +3,7 @@ title: 'Mierzenie ROI w GEO – KPI, metryki i raportowanie'
 subtitle: 'Naucz się udowadniać wartość GEO liczbami, zanim klient sam zacznie pytać'
 description: 'Jak mierzyć ROI z działań GEO? Poznaj kluczowe KPI, metryki cytowań i sprawdzone wzorce raportowania wyników AI Search do klienta i zarządu.'
 date: 2026-05-11
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-roi-z-geo.webp
 icon: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'
 author:
@@ -72,8 +72,11 @@ sources:
   - title: 'Ahrefs Brand Radar'
     url: 'https://ahrefs.com/brand-radar'
     note: 'Ahrefs. Monitoring wzmianek i cytowań marki w odpowiedziach AI (m.in. AI Overviews, AI Mode, ChatGPT, Perplexity, Gemini, Copilot) oraz AI Share of Voice.'
+  - title: 'Generative AI performance report'
+    url: 'https://support.google.com/webmasters/answer/16984139'
+    note: 'Pomoc Google Search Console. Wyświetlenia stron w AI Overviews i AI Mode; od 31 sierpnia 2026 roku dla wszystkich witryn na świecie.'
 ---
-Mierzenie [zwrotu z inwestycji](https://pl.wikipedia.org/wiki/ROI) (ROI – *Return on Investment*) z działań GEO (*Generative Engine Optimization*, czyli optymalizacji dla generatywnych silników wyszukiwania) to dziś główne wyzwanie w marketingu B2B. Klasyczne raporty SEO nie pokazują cytowań w modelach LLM (ang. *Large Language Models*, czyli dużych modelach językowych) – Google Search Console ich nie wydziela, a w narzędziach takich jak Ahrefs trzeba sięgnąć po osobny moduł (Brand Radar). Klienci widzą rosnący ruch z domen takich jak `chatgpt.com` czy `perplexity.ai`. Nie wiedzą jednak, co z tym zrobić. **Poniżej uporządkujesz hierarchię kluczowych wskaźników efektywności (KPI) i skonfigurujesz atrybucję w Google Analytics 4.** Poznasz też gotowy schemat raportu miesięcznego, który zarząd zrozumie bez tłumaczenia.
+Mierzenie [zwrotu z inwestycji](https://pl.wikipedia.org/wiki/ROI) (ROI – *Return on Investment*) z działań GEO (*Generative Engine Optimization*, czyli optymalizacji dla generatywnych silników wyszukiwania) to dziś główne wyzwanie w marketingu B2B. Klasyczne raporty SEO pokazują tylko wycinek widoczności w modelach LLM (ang. *Large Language Models*, czyli dużych modelach językowych). Google Search Console od 2026 roku ma raport Generative AI performance z wyświetleniami w AI Overviews i AI Mode, ale bez kliknięć i bez danych o ChatGPT czy Perplexity. W narzędziach takich jak Ahrefs trzeba z kolei sięgnąć po osobny moduł (Brand Radar). Klienci widzą rosnący ruch z domen takich jak `chatgpt.com` czy `perplexity.ai`. Nie wiedzą jednak, co z tym zrobić. **Poniżej uporządkujesz hierarchię kluczowych wskaźników efektywności (KPI) i skonfigurujesz atrybucję w Google Analytics 4.** Poznasz też gotowy schemat raportu miesięcznego, który zarząd zrozumie bez tłumaczenia.
 
 ## Dlaczego stare KPI nie pasują do GEO?
 
@@ -121,6 +124,7 @@ Każda metryka z kolumny „jak mierzyć" wymaga konkretnego narzędzia lub proc
 | Mention Rate | % zapytań, w których marka pojawia się z nazwy (bez linku) | Platformy monitoringu AI, np. Blazly GEO |
 | Share of Voice (SoV) | Udział cytowań marki względem sumy cytowań konkurentów | Zestaw 20–50 zapytań, odpytywanych co 2 tygodnie |
 | Sentiment Score | Wydźwięk wzmianek: pozytywny / neutralny / negatywny | Evertune, Profound.ai lub ręczna analiza próby |
+| Wyświetlenia w AI Google | Wyświetlenia stron w AI Overviews i AI Mode (bez kliknięć) | Google Search Console – raport Generative AI performance |
 | AI traffic (sesje) | Liczba sesji z domen AI w GA4 | GA4 – niestandardowa grupa kanałów `AI Search` |
 | AECR | Konwersje przypisane do sesji z AI / wszystkie sesje z AI | GA4 – cel konwersji + filtr kanału AI |
 | Branded Search Lift | Wzrost % zapytań brandowych w GSC po wzroście SoV | Google Search Console – zestawienie tygodniowe |

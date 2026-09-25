@@ -3,7 +3,7 @@ title: 'Google mówi: rób SEO po staremu. Czego nie dopowiada o wyszukiwaniu AI
 subtitle: 'Google wydało uspokajający przewodnik po optymalizacji pod AI. Haczyk? To perspektywa giganta, który po raz pierwszy czuje na plecach oddech konkurencji. Rozkładamy dokument na czynniki pierwsze: wskazujemy, gdzie Google ma rację, a co celowo przemilcza.'
 description: 'Analiza przewodnika Google o optymalizacji pod generatywną AI okiem specjalistów AI Search. Co jest prawdą, gdzie Google nie mówi wszystkiego o llms.txt, GEO i wzmiankach, i dlaczego jego rady są optymalne dla Google, a niekoniecznie dla Ciebie.'
 date: 2026-05-29
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-co-google-przemilcza.webp
 icon: '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>'
 author:
@@ -48,6 +48,15 @@ sources:
   - title: 'AI features and your website'
     url: 'https://developers.google.com/search/docs/appearance/ai-features'
     note: 'Google Search Central. Opis techniki query fan-out w AI Overviews i AI Mode.'
+  - title: 'Search generative AI control'
+    url: 'https://support.google.com/webmasters/answer/16908024'
+    note: 'Pomoc Google Search Console. Przełącznik wyłączający witrynę z AI Overviews, AI Mode i funkcji AI w Discover; globalnie od 31 sierpnia 2026 roku.'
+  - title: 'Generative AI performance report'
+    url: 'https://support.google.com/webmasters/answer/16984139'
+    note: 'Pomoc Google Search Console. Wyświetlenia stron w AI Overviews i AI Mode; kliknięć raport nie pokazuje.'
+  - title: 'Claude can now search the web'
+    url: 'https://claude.com/blog/web-search'
+    note: 'Anthropic. Wyszukiwanie w sieci w aplikacji Claude dostępne na wszystkich planach, także darmowym, od maja 2025 roku.'
   - title: 'The /llms.txt file, v2'
     url: 'https://llmstxt.org/'
     note: 'Jeremy Howard, propozycja z 3 września 2024. Specyfikacja pliku llms.txt.'
@@ -120,7 +129,7 @@ A rynek odpowiadania na pytania użytkowników przestał być jednolity. Owszem,
 - **ChatGPT z wyszukiwaniem w sieci** – prawie miliard użytkowników tygodniowo (900 mln, dane OpenAI z lutego 2026), dla których to pierwszy punkt kontaktu z pytaniem.
 - **Perplexity** – wyszukiwarka odpowiedzi zbudowana od zera wokół cytowań źródeł.
 - **Microsoft Copilot** – wbudowany w Windows, Edge i Microsoft 365, czyli w narzędzia, których ludzie używają w pracy codziennie.
-- **Google oraz Claude z dostępem do sieci** – kolejne kanały, w których zapada decyzja, czy Twoja marka zostanie wymieniona.
+- **Claude z dostępem do sieci** – od 2025 roku wyszukiwanie w sieci jest dostępne na wszystkich planach, także darmowym; to kolejny kanał, w którym zapada decyzja, czy Twoja marka zostanie wymieniona.
 
 Żaden z tych systemów nie działa na „podstawowych systemach rankingowych Google", do których przewodnik sprowadza całe wyszukiwanie AI. Mają własne crawlery, własne źródła, własną logikę cytowania. Optymalizacja wyłącznie pod reguły Google oznacza, że jesteś niewidoczny dokładnie tam, gdzie Twoi klienci coraz częściej pytają.
 
@@ -133,6 +142,8 @@ A rynek odpowiadania na pytania użytkowników przestał być jednolity. Owszem,
 </aside>
 
 Nie twierdzimy, że Google działa w złej wierze. Twierdzimy, że pisze szczerze ze swojej perspektywy – a jego perspektywą jest świat, w którym wyszukiwanie zaczyna się i kończy na Google. Przez dwie dekady było to wystarczająco bliskie prawdy, by traktować rady Google jako uniwersalne. Dziś już nie jest.
+
+Trzeba też oddać Google, że pod presją regulacyjną dał wydawcom nowe narzędzia. Od 31 sierpnia 2026 roku każda witryna może w Search Console wyłączyć swoje treści z AI Overviews, AI Mode i funkcji AI w Discover bez wpływu na zwykłe wyniki, a raport Generative AI performance pokazuje wyświetlenia w AI Overviews i AI Mode. Kliknięć jednak w nim nie ma – więc nadal nie wiesz, ile ruchu przynosi obecność w odpowiedziach AI.
 
 ## Co to znaczy dla Twojej firmy?
 

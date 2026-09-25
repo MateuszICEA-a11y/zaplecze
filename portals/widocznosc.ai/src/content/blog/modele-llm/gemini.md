@@ -3,7 +3,7 @@ title: 'Gemini od Google – kompletny przewodnik'
 subtitle: 'Zrozum cały ekosystem Google AI – od modeli po Workspace – żeby skutecznie budować widoczność marki tam, gdzie szukają Twoi klienci'
 description: 'Czym jest Gemini, jak działają modele Flash i Pro, co oferuje Google AI Studio, Gems, Deep Research i NotebookLM – kompletny przewodnik po ekosystemie Google AI.'
 date: 2026-05-11
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-modele-llm-gemini.webp
 icon: '<path d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" stroke-linecap="round" stroke-linejoin="round"/>'
 author:
@@ -22,7 +22,7 @@ faq:
       Gemini Flash to model strukturalnie zoptymalizowany stricte pod kątem szybkości i kosztów – potrafi odpowiadać w ułamkach sekundy i kosztuje wielokrotnie mniej za przeliczony token niż flagowa edycja Pro. Wersja Gemini Pro z kolei operuje na dużo wyższym poziomie, oferując użytkownikom znacznie głębsze, wieloetapowe wnioskowanie logiczne, domyślną obsługę okna kontekstowego sięgającego równo 1 miliona tokenów oraz niezrównane zdolności ścisłe i analityczne. Architektura Flash kapitalnie sprawdza się w przypadku masowych, automatycznych procesów w firmie oraz w responsywnych interfejsach wymagających skrajnie niskiego opóźnienia; tymczasem edycja Pro dominuje w żmudnej i trudnej analizie złożonych pakietów dokumentów czy profesjonalnych i skomplikowanych zadaniach badawczych.
   - q: 'Czy modele Gemini dysponują dostępem do internetu w czasie rzeczywistym?'
     a: >-
-      Tak – natywna aplikacja Gemini oraz funkcja Google AI Mode operują na wbudowanym dostępie do danych Google Search, dlatego stale i regularnie pobierają jak najbardziej aktualne i prawdziwe w danym momencie informacje ze świata. Kategorycznie odróżnia to technologię od popularnych modeli działających zasadniczo w trybie offline (takich jak chociażby podstawowa wersja LLM Claude bez żadnych dodanych rozszerzeń i asystentów). Potężne modele z linii Gemini Pro, korzystając ze zintegrowanego silnika wyszukiwarki internetowej Google, funkcjonują bezpośrednio w architekturze RAG (czyli Retrieval-Augmented Generation – mowa tu o generowaniu treści wspomaganym inteligentnym wyszukiwaniem zewnętrznym). Model w czasie ułamków sekund pobiera adekwatne fragmenty zaindeksowanych stron www, analizuje je i wyłącznie na ich autentycznej podstawie generuje wiarygodną oraz merytoryczną odpowiedź w oknie chatu.
+      Tak – natywna aplikacja Gemini oraz funkcja Google AI Mode operują na wbudowanym dostępie do danych Google Search, dlatego stale i regularnie pobierają jak najbardziej aktualne i prawdziwe w danym momencie informacje ze świata. Kategorycznie odróżnia to Gemini od modeli używanych przez API bez narzędzia wyszukiwania, które opierają się wyłącznie na danych treningowych (aplikacje konkurencji, np. Claude czy ChatGPT, też mają dziś wbudowane wyszukiwanie w sieci, ale korzystają z własnych indeksów, a nie z Google Search). Potężne modele z linii Gemini Pro, korzystając ze zintegrowanego silnika wyszukiwarki internetowej Google, funkcjonują bezpośrednio w architekturze RAG (czyli Retrieval-Augmented Generation – mowa tu o generowaniu treści wspomaganym inteligentnym wyszukiwaniem zewnętrznym). Model w czasie ułamków sekund pobiera adekwatne fragmenty zaindeksowanych stron www, analizuje je i wyłącznie na ich autentycznej podstawie generuje wiarygodną oraz merytoryczną odpowiedź w oknie chatu.
   - q: 'Jak obecność modeli Gemini ma się docelowo do ogólnej strategii pozycjonowania (SEO)?'
     a: >-
       Infrastruktura modelu Gemini napędza funkcjonalność Google AI Mode, która od zeszłego (2025) roku powoli i systematycznie zastępuje stary interfejs i klasyczne listy wyników organicznych przy rozbudowanych, bardziej złożonych pytaniach zadawanych w głównej wyszukiwarce. Warto pamiętać, że proces optymalizacji witryny pod boty z rodziny Gemini wymusza zdecydowanie inne podejście z perspektywy marki niż staroszkolne zasady klasycznego, tekstowego SEO: w realiach wyszukiwania za pomocą AI kluczowa jest m.in. nienaganna gęstość faktograficzna udostępnianej treści, powszechność cytowania Twoich branżowych źródeł, logicznie ustrukturyzowane bloki danych semantycznych (struktura dokumentu na portalu) oraz niepodważalna weryfikowalność i obiektywna spójność danych o samej marce rozproszonych na zaufanych stronach w sieci. Badanie Ahrefs z 2025 roku (75 tys. marek) pokazało, że marki z czołowych 25% pod względem wzmianek w sieci pojawiają się w AI Overviews średnio ponad 10 razy częściej niż marki z kolejnego kwartyla.
@@ -60,6 +60,9 @@ sources:
   - title: 'An Analysis of AI Overview Brand Visibility Factors (75K Brands Studied)'
     url: 'https://ahrefs.com/blog/ai-overview-brand-correlation/'
     note: 'Ahrefs, Louise Linehan, 26 maja 2025. Wzmianki o marce korelują z widocznością w AI Overviews na poziomie 0,664 (linki zwrotne – 0,218); marki z górnego kwartyla wzmianek pojawiają się w AI Overviews ponad 10 razy częściej niż marki z kolejnego kwartyla.'
+  - title: 'Search generative AI control'
+    url: 'https://support.google.com/webmasters/answer/16908024'
+    note: 'Google, Search Console Help. Przełącznik obecności w AI Overviews, AI Mode i generatywnych funkcjach Discover, dostępny dla wszystkich witryn od 31 sierpnia 2026; nie jest sygnałem rankingowym i nie dotyczy trenowania (do tego służy Google-Extended).'
 ---
 Gemini to rodzina dużych modeli językowych (LLM – Large Language Model) opracowana przez Google DeepMind. Napędza asystenta na gemini.google.com oraz setki funkcji AI wbudowanych w Gmail, Dokumenty, Arkusze, Prezentacje, Dysk i Meet. Google zadebiutowało z Gemini w grudniu 2023 roku, zastępując linię PaLM 2. Od tamtej pory ekosystem rozrósł się do kilkunastu wariantów modeli, czterech planów konsumenckich i głębokiej integracji z Workspace. Klienci coraz częściej zadają pytania w Google AI Mode, zamiast wpisywać frazy w tradycyjną wyszukiwarkę. Jeśli Twoja marka działa w tej przestrzeni, ten przewodnik wyjaśni Ci mechanizmy, możliwości i praktyczne implikacje Gemini w kontekście biznesowym.
 
@@ -69,7 +72,7 @@ Gemini to równocześnie nazwa rodziny modeli, aplikacji konsumenckiej i zestawu
 
 Trzy poziomy ekosystemu Gemini:
 
-- **Modele bazowe** – seria Gemini Flash, Pro i Ultra, trenowane przez Google DeepMind; stanowią fundament wszystkich produktów Gemini; dostępne przez Gemini API i Google AI Studio
+- **Modele bazowe** – seria Gemini Flash-Lite, Flash i Pro (nazwa Ultra oznaczała flagowca pierwszej generacji, dziś – najwyższy plan), trenowane przez Google DeepMind; stanowią fundament wszystkich produktów Gemini; dostępne przez Gemini API i Google AI Studio
 - **Aplikacja Gemini** – interfejs konwersacyjny dostępny pod adresem gemini.google.com i jako aplikacja mobilna; odpowiednik ChatGPT czy Claude w modelu B2C; plany: Free, AI Plus, AI Pro, AI Ultra
 - **Gemini w Workspace** – warstwa AI zintegrowana z aplikacjami Gmail, Dokumenty, Arkusze, Prezentacje, Dysk i Meet; dostępna w planach Business Starter i wyższych bez dopłaty; w 2025 roku Google przestało sprzedawać Gemini jako osobny dodatek i wbudowało go w każdy plan Workspace
 
@@ -96,7 +99,7 @@ Google dzieli swoje modele na trzy klasy, różnicując je pod względem szybko�
 
 Aktualna generacja nosi oznaczenie 3.x (po debiucie Gemini 3 Pro w listopadzie 2025 roku i Gemini 3 Flash w grudniu 2025). We wrześniu 2026 roku najnowszym stabilnym modelem Flash jest Gemini 3.8 Flash, który Google opisuje jako najinteligentniejszy model Flash, przeznaczony m.in. do długich zadań programistycznych i autonomicznych agentów. W API dostępne są też Gemini 3.7 Flash, 3.6 Flash, 3.5 Flash oraz lżejsze 3.5 Flash-Lite i 3.1 Flash-Lite, a linię Pro reprezentuje Gemini 3.1 Pro (w wersji preview). Starsze modele znikają z API – wyłączono już m.in. Gemini 2.0 Flash, 2.0 Flash-Lite i 3 Pro Preview – co wymusza ciągłą aktualizację integracji.
 
-**Gemini Flash Lite to najtańszy model w koszyku Google: przy cenach API rzędu ułamka dolara za milion tokenów obsługuje masowe przepływy pracy przy minimalnym koszcie jednostkowym.** To właśnie on zasila większość automatyzacji w środowisku Workspace.
+**Gemini Flash Lite to najtańszy model w koszyku Google: przy cenach API rzędu ułamka dolara za milion tokenów obsługuje masowe przepływy pracy przy minimalnym koszcie jednostkowym.** Dobrze sprawdza się w automatyzacjach o dużym wolumenie, takich jak klasyfikacja czy ekstrakcja danych.
 
 ### Okno kontekstowe 1 miliona tokenów
 
@@ -188,11 +191,11 @@ NotebookLM ma doskonałe zastosowanie w content marketingu i procesach SEO:
 
 ## Veo i generowanie wideo w ekosystemie Gemini
 
-Veo to rodzina modeli przeznaczonych do generowania wideo wysokiej jakości z opisu tekstowego lub zestawu obrazów. Veo jest dostępna w planach AI Ultra oraz z poziomu API dla zewnętrznych deweloperów. Nowsze modele Veo 3.1 i Veo 3.1 Fast (wydane pod koniec 2025 roku) dają m.in. możliwość rozszerzenia raz wygenerowanego klipu. Pozwalają też użyć aż trzech obrazów referencyjnych jako wizualnych punktów odniesienia dla AI.
+Veo to rodzina modeli przeznaczonych do generowania wideo wysokiej jakości z opisu tekstowego lub zestawu obrazów. Generowanie wideo jest dostępne od planu AI Plus (w AI Pro – ograniczony dostęp próbny do Veo 3.1 Lite, w AI Ultra – pełny dostęp do Veo 3.1) oraz z poziomu API dla zewnętrznych deweloperów. Nowsze modele Veo 3.1 i Veo 3.1 Fast (wydane pod koniec 2025 roku) dają m.in. możliwość rozszerzenia raz wygenerowanego klipu. Pozwalają też użyć aż trzech obrazów referencyjnych jako wizualnych punktów odniesienia dla AI.
 
 W marketingu Veo ma potężne zastosowanie przy produkcji krótkich formatów do mediów społecznościowych, animacji produktowych i zajawek kampanii. **Osiągasz to bez angażowania pełnego studia produkcyjnego przy niskich wolumenach treści.**
 
-Z kolei środowisko Gemini Live API, uruchomione w marcu 2026 roku wraz z wersją Gemini 3.1 Flash Live, to równoległa warstwa technologiczna. Obecnie najnowsze modele tej linii to Gemini 3.8 Live oraz Gemini 3.8 Live Extended Thinking. Służy do budowania aplikacji obsługujących rozmowy głosowe w czasie rzeczywistym z niezwykle niskim opóźnieniem. Model na bieżąco przetwarza ciągły strumień audio i wideo. Obsługuje naturalne przerwania rozmowy i odpowiada głosem w ułamku sekundy. Deweloperzy wykorzystują to API do konstruowania interfejsów głosowych nowej generacji, inteligentnych asystentów sprzedażowych czy autonomicznych systemów obsługi klienta.
+Z kolei środowisko Gemini Live API, uruchomione w marcu 2026 roku wraz z wersją Gemini 3.1 Flash Live, to równoległa warstwa technologiczna. Obecnie najnowsze modele tej linii to Gemini 3.8 Live oraz Gemini 3.8 Live Extended Thinking. We wrześniu 2026 roku Google dodał też modele syntezy mowy Gemini 3.8 Flash TTS i Flash-Lite TTS oraz model do rozmów z animowanym awatarem, a pod koniec sierpnia udostępnił ogólnie multimodalny Gemini Omni Flash. Służy do budowania aplikacji obsługujących rozmowy głosowe w czasie rzeczywistym z niezwykle niskim opóźnieniem. Model na bieżąco przetwarza ciągły strumień audio i wideo. Obsługuje naturalne przerwania rozmowy i odpowiada głosem w ułamku sekundy. Deweloperzy wykorzystują to API do konstruowania interfejsów głosowych nowej generacji, inteligentnych asystentów sprzedażowych czy autonomicznych systemów obsługi klienta.
 
 ## Google AI Studio – platforma deweloperska
 
@@ -207,6 +210,8 @@ Samo Gemini API wyceniono klasycznie w oparciu o model pay-per-token. Najnowszy 
 Rosnący globalny udział Google AI Mode – mechanizmu odpowiedzi generatywnych zastępujących tradycyjne listy linków – bezpowrotnie zmienia reguły gry. Według danych branżowych z 2025 roku organiczny współczynnik klikalności (CTR) dla zapytań generujących moduł AI Overviews spadł od czerwca 2024 do września 2025 roku o 61% (z 1,76% do zaledwie 0,61%). W praktyce oznacza to jedno. **Marka, która nie pojawi się w syntezie przygotowanej przez Gemini, drastycznie traci widoczność, pomimo świetnej pozycji w tradycyjnym SEO.**
 
 Badania wykazują, że większą siłę predykcyjną dla widoczności w AI ma wcale nie gigantyczny profil linków zwrotnych, lecz liczba wzmianek o marce w sieci. **W analizie Ahrefs obejmującej 75 tys. marek korelacja wzmianek z widocznością w AI Overviews wyniosła 0,664, podczas gdy dla liczby linków zwrotnych – zaledwie 0,218.**
+
+Od 31 sierpnia 2026 roku właściciele witryn mają w Google Search Console przełącznik „Search generative AI control”. Decyduje on, czy strona może pojawiać się w AI Overviews, AI Mode i generatywnych funkcjach Discover oraz być w nich źródłem odpowiedzi. Wyłączenie nie wpływa na ranking w klasycznych wynikach, ale oznacza zero wyświetleń i ruchu z tych funkcji. Nie dotyczy też trenowania modeli, którym steruje osobny token Google-Extended.
 
 Strukturalna optymalizacja pod Gemini oraz samo Google AI Mode to obecnie trzon GEO (Generative Engine Optimization – optymalizacji pod generatywne silniki wyszukiwania). Mechanizmy oceny cytowania, twarde wymagania techniczne i taktyki podnoszące wskaźnik uwzględnień szczegółowo opisuje [przewodnik po strategiach GEO](/geo/przewodnik/). Skuteczna strategia pozycjonowania dla konkretnego modelu, w tym przypadku rodziny Gemini, czeka na Ciebie na stronie [pozycjonowanie AI – Gemini](/pozycjonowanie-ai/gemini/).
 

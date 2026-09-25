@@ -3,6 +3,7 @@ title: 'Jev – model AI, który nie pisze tekstu, tylko podejmuje decyzje'
 subtitle: 'Nowy model od TypeSafe AI zamiast odpowiedzi zwraca typowane decyzje z prawdopodobieństwem – sprawdzamy, jak działa, ile kosztuje, gdzie się myli i co oznacza dla wyszukiwania AI'
 description: 'Jev firmy TypeSafe AI – czym jest model „System One”, jak działają pytania Choice, Score i Noul, kalibrowana pewność, cennik 0,042 USD za milion tokenów, benchmarki, ograniczenia i zastosowania w RAG.'
 date: 2026-09-22
+updated: 2026-09-25
 image: ../../../assets/images/blog-modele-llm-jev.webp
 icon: '<path d="M6 3v6a6 6 0 0 0 12 0V3"/><line x1="12" y1="15" x2="12" y2="21"/><circle cx="12" cy="21" r="0.6"/><line x1="4" y1="3" x2="8" y2="3"/><line x1="16" y1="3" x2="20" y2="3"/>'
 author:

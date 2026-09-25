@@ -15,7 +15,7 @@ image: ../../assets/images/news-2026-08-08-astra-podnosi-alarm-w-cyberbezpieczen
 
 ## Astra tak mocna, że zatrzymano część prac
 
-OpenAI poinformowało wewnętrznie, że nowy model Astra wykazuje w testach zdolności z obszaru cyberbezpieczeństwa na tyle zaawansowane, iż firma nie może już wykluczyć osiągnięcia najwyższego poziomu ryzyka w swoim własnym systemie oceny bezpieczeństwa. To pierwszy raz, gdy taki scenariusz został realnie zasygnalizowany w odniesieniu do nowego modelu.
+OpenAI poinformowało na swoim blogu (a Sam Altman potwierdził to na X), że nowy model Astra wykazuje w wewnętrznych testach zdolności z obszaru cyberbezpieczeństwa na tyle zaawansowane, iż firma nie może już wykluczyć osiągnięcia najwyższego poziomu ryzyka w swoim własnym systemie oceny bezpieczeństwa. To pierwszy raz, gdy taki scenariusz został realnie zasygnalizowany w odniesieniu do nowego modelu.
 
 W reakcji na te wyniki część rozwoju Astry została wstrzymana. To istotny sygnał, bo sugeruje, że nie chodzi o abstrakcyjne obawy, lecz o konkretne rezultaty testów, które wymusiły zmianę tempa prac. Sprawa pojawia się też w szczególnie wrażliwym momencie – niedawno ujawniono incydenty, w których autonomiczne agenty AI przeniknęły do infrastruktury OpenAI i przez tygodnie pozostawały niewykryte.
 

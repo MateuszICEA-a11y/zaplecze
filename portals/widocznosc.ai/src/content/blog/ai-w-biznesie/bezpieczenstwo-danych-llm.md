@@ -3,7 +3,7 @@ title: 'Bezpieczeństwo danych w pracy z LLM'
 subtitle: 'Jak chronić dane firmowe, gdy korzystasz z ChatGPT, Claude i podobnych narzędzi'
 description: 'Shadow AI, wycieki danych, retencja promptów, umowy DPA i wybór między chmurą a wdrożeniem lokalnym – kompletny przewodnik bezpieczeństwa LLM dla firm.'
 date: 2026-05-18
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-ai-w-biznesie-bezpieczenstwo-danych-llm.webp
 icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>'
 author:
@@ -60,10 +60,10 @@ sources:
     note: 'Tekst RODO w serwisie gdpr-info.eu. Administrator zgłasza naruszenie organowi nadzorczemu w ciągu 72 godzin, procesor informuje administratora bez zbędnej zwłoki.'
   - title: 'Models – OpenAI API'
     url: 'https://developers.openai.com/api/docs/models'
-    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
+    note: 'OpenAI, dokumentacja API, stan na 25 września 2026. Aktualne modele API: GPT-6 Astra, GPT-6 Sol i GPT-6 Luna; w ChatGPT domyślnie GPT-5.6 Luna (Free, Go) i GPT-5.6 Sol (Plus, Pro).'
   - title: 'Models overview – Claude Docs'
     url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
-    note: 'Anthropic, dokumentacja, stan na 17 września 2026. Aktualne modele Claude Fable 5.1, Opus 5, Sonnet 5 i Haiku 4.5.'
+    note: 'Anthropic, dokumentacja, stan na 25 września 2026. Aktualne modele Claude Fable 5.1, Opus 5.5, Sonnet 5 i Haiku 4.5.'
 ---
 Każdy prompt, który Twój pracownik wkleja do ChatGPT, wędruje na serwery OpenAI – i domyślnie może tam zostać przez 30 dni. **Raport LayerX z 2025 roku wskazuje, że 77% pracowników wkleja dane do promptów generatywnej AI, a 82% takich operacji odbywa się z kont niezarządzanych przez firmę.** Do tego dochodzi tzw. shadow AI (nieautoryzowane narzędzia AI, po polsku: ukryta sztuczna inteligencja). Ten artykuł wyjaśnia, gdzie naprawdę leżą ryzyka, jak działają polityki retencji danych u głównych dostawców, kiedy wybrać wdrożenie lokalne zamiast chmury i co powinna zawierać umowa DPA (Data Processing Agreement, czyli umowa o powierzeniu przetwarzania danych).
 
@@ -165,7 +165,7 @@ Porównanie najważniejszych wymiarów:
 
 - **Suwerenność danych** – modele lokalne (np. Llama, Mistral, Qwen) przetwarzają dane wyłącznie w infrastrukturze firmy, a żaden prompt nie opuszcza sieci wewnętrznej.
 - **Koszt tokenów** – przy dużej i stałej skali uruchomienie modelu z otwartymi wagami (open-weight) lokalnie może obniżyć koszt miliona tokenów względem komercyjnego API, ale opłaca się dopiero po uwzględnieniu kosztu sprzętu i utrzymania.
-- **Jakość modelu** – modele open-source nadal ustępują flagowcom pokroju GPT-5.6 Sol czy Claude Opus 5 w zadaniach wymagających złożonego wnioskowania (luka maleje, ale wciąż istnieje).
+- **Jakość modelu** – modele open-source nadal ustępują flagowcom pokroju GPT-6 Astra czy Claude Fable 5.1 w zadaniach wymagających złożonego wnioskowania (luka maleje, ale wciąż istnieje).
 - **Infrastruktura** – wdrożenie on-premise wymaga znaczących nakładów, takich jak serwery GPU (np. NVIDIA A100 lub H100), MLOps i zarządzanie aktualizacjami modeli.
 - **Zgodność z przepisami (compliance)** – rozwiązanie on-premise naturalnie spełnia wymogi art. 25 RODO (privacy by design), a zgodność z RODO obejmuje tu przede wszystkim lokalizację przetwarzania i dostęp do danych.
 

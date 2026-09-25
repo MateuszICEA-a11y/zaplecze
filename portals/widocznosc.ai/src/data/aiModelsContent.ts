@@ -41,17 +41,17 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
   chatgpt: {
     metaTitle: 'Pozycjonowanie w ChatGPT [2026] – widoczność marki w AI',
     heroSubtitle:
-      'OpenAI ChatGPT z&nbsp;trybem ChatGPT Search – najczęściej używany asystent AI w&nbsp;Polsce, z&nbsp;setkami milionów aktywnych użytkowników tygodniowo (<a href="https://pl.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener">Wikipedia</a>). Cytuje informacje ze statycznych danych treningowych oraz przez mechanizm RAG oparty na indeksie Bing w&nbsp;czasie rzeczywistym. Widoczność w&nbsp;obu ścieżkach wymaga osobnych działań optymalizacyjnych.',
+      'OpenAI ChatGPT z&nbsp;trybem ChatGPT Search – najczęściej używany asystent AI w&nbsp;Polsce, z&nbsp;setkami milionów aktywnych użytkowników tygodniowo (<a href="https://pl.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener">Wikipedia</a>). Cytuje informacje ze statycznych danych treningowych oraz przez wyszukiwanie w&nbsp;czasie rzeczywistym (ChatGPT Search), które korzysta z&nbsp;własnego crawlera OpenAI (OAI-SearchBot) i&nbsp;zewnętrznych dostawców wyników wyszukiwania. Widoczność w&nbsp;obu ścieżkach wymaga osobnych działań optymalizacyjnych.',
     metaDescription:
       'Pozycjonowanie marki w ChatGPT i ChatGPT Search. Audyt cytowań, optymalizacja treści pod odpowiedzi AI i wyszukiwanie w czasie rzeczywistym. Mierzymy udział marki w odpowiedziach OpenAI.',
     howItWorks: [
       {
         title: 'Podwójna architektura wiedzy',
-        desc: 'ChatGPT działa w&nbsp;dwóch ścieżkach. Tryb standardowy opiera się na statycznych danych treningowych – wiedzy ograniczonej tzw. datą odcięcia (<em>knowledge cutoff</em>) – marka musi istnieć w&nbsp;źródłach skanowanych przez Common Crawl i&nbsp;<a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener">własne crawlery OpenAI</a>. ChatGPT Search pobiera aktualne źródła w&nbsp;czasie rzeczywistym przez mechanizm RAG.',
+        desc: 'ChatGPT działa w&nbsp;dwóch ścieżkach. Tryb standardowy opiera się na statycznych danych treningowych – wiedzy ograniczonej tzw. datą odcięcia (<em>knowledge cutoff</em>) – marka musi istnieć w&nbsp;źródłach skanowanych przez Common Crawl i&nbsp;<a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">własne crawlery OpenAI</a>. ChatGPT Search pobiera aktualne źródła w&nbsp;czasie rzeczywistym przez mechanizm RAG.',
       },
       {
         title: 'Mechanizm RAG i zaawansowane wnioskowanie',
-        desc: 'W&nbsp;ChatGPT Search zaawansowane modele rozbijają zapytanie na kilka pomocniczych zapytań do wyszukiwarki Bing, pobierają równolegle od 3 do 10 stron i&nbsp;dzielą je na krótkie, zwięzłe fragmenty (tzw. <em>chunks</em>). Strony, które nie odpowiadają w&nbsp;ciągu 2 sekund, są z&nbsp;reguły pomijane – czas do pierwszego bajtu (TTFB) i&nbsp;szybkość ładowania to krytyczne czynniki eliminacyjne.',
+        desc: 'W&nbsp;ChatGPT Search zaawansowane modele rozbijają zapytanie na kilka pomocniczych zapytań do wyszukiwarki (według analiz branżowych m.in. Bing), pobierają równolegle od 3 do 10 stron i&nbsp;dzielą je na krótkie, zwięzłe fragmenty (tzw. <em>chunks</em>). Strony, które nie odpowiadają w&nbsp;ciągu 2 sekund, są z&nbsp;reguły pomijane – czas do pierwszego bajtu (TTFB) i&nbsp;szybkość ładowania to krytyczne czynniki eliminacyjne.',
       },
       {
         title: 'Selekcja źródeł – algorytm RRF',
@@ -73,7 +73,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         title: 'llms.txt + robots.txt (OAI-SearchBot)',
-        desc: 'Plik llms.txt w&nbsp;katalogu głównym traktujemy jako nieinwazyjną praktykę porządkowania najważniejszych zasobów serwisu, ale obecne testy nie dowodzą, że boty AI często go odwiedzają ani że sam plik bezpośrednio zwiększa cytowania. Krytyczne pozostaje rozróżnienie botów w&nbsp;robots.txt: GPTBot zbiera dane treningowe, a OAI-SearchBot obsługuje wyszukiwanie w&nbsp;ChatGPT Search. Konfigurujemy dostęp crawlerów zgodnie z&nbsp;Twoją strategią biznesową.',
+        desc: 'Plik llms.txt w&nbsp;katalogu głównym traktujemy jako nieinwazyjną praktykę porządkowania najważniejszych zasobów serwisu, ale obecne testy nie dowodzą, że boty AI często go odwiedzają ani że sam plik bezpośrednio zwiększa cytowania. Krytyczne pozostaje rozróżnienie botów w&nbsp;robots.txt: GPTBot zbiera dane treningowe, a OAI-SearchBot obsługuje wyszukiwanie w&nbsp;ChatGPT Search. Trzeci agent, ChatGPT-User, pobiera strony na potrzeby konkretnej rozmowy – według OpenAI reguły robots.txt mogą go nie obejmować, więc realną blokadę daje dopiero zapora (WAF). Czwarty, OAI-AdsBot, sprawdza strony docelowe reklam w&nbsp;ChatGPT i&nbsp;nie zbiera danych do trenowania. Gdy dopuścisz zarówno GPTBot, jak i&nbsp;OAI-SearchBot, OpenAI może użyć jednego pobrania do obu celów; zmiany w&nbsp;robots.txt system uwzględnia po około 24 godzinach. Konfigurujemy dostęp crawlerów zgodnie z&nbsp;Twoją strategią biznesową.',
       },
       {
         title: 'Strony encji i Enhanced Entity Pages',
@@ -91,15 +91,15 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
     faq: [
       {
         q: 'Jak pozycjonować markę w&nbsp;ChatGPT?',
-        a: 'Działamy na dwóch ścieżkach równolegle: (1) dane treningowe – obecność w&nbsp;wysokiej jakości źródłach skanowanych przez OpenAI przed kolejną aktualizacją bazy; (2) ChatGPT Search – optymalizacja pod indeks Bing, gęstość faktograficzna, szybkość strony i&nbsp;Schema.org. Zaczynamy od audytu cytowań, który pokazuje, na jakich zapytaniach marka już się pojawia i&nbsp;gdzie jest luka wobec konkurencji.',
+        a: 'Działamy na dwóch ścieżkach równolegle: (1) dane treningowe – obecność w&nbsp;wysokiej jakości źródłach skanowanych przez OpenAI przed kolejną aktualizacją bazy; (2) ChatGPT Search – dostęp dla OAI-SearchBot i&nbsp;dobra widoczność w&nbsp;wyszukiwarkach (w tym w&nbsp;Bing), gęstość faktograficzna, szybkość strony i&nbsp;Schema.org. Zaczynamy od audytu cytowań, który pokazuje, na jakich zapytaniach marka już się pojawia i&nbsp;gdzie jest luka wobec konkurencji.',
       },
       {
         q: 'Jak długo trwa pojawienie się w&nbsp;ChatGPT?',
-        a: 'ChatGPT Search – 24-72 godziny od publikacji, jeśli strona jest zaindeksowana w&nbsp;Bing. Statyczne dane treningowe – 6-18 miesięcy do kolejnej aktualizacji bazy wiedzy modelu. Custom GPT – natychmiast po dodaniu do bazy wiedzy. Nasze działania skupiają się przede wszystkim na wyszukiwaniu w&nbsp;czasie rzeczywistym, bo daje mierzalne efekty w&nbsp;tygodniach, nie miesiącach.',
+        a: 'ChatGPT Search – zwykle od 24 do 72 godzin od publikacji, jeśli strona jest dostępna dla OAI-SearchBot i&nbsp;zaindeksowana w&nbsp;wyszukiwarkach (w tym w&nbsp;Bing). Statyczne dane treningowe – 6-18 miesięcy do kolejnej aktualizacji bazy wiedzy modelu. Custom GPT – natychmiast po dodaniu do bazy wiedzy. Nasze działania skupiają się przede wszystkim na wyszukiwaniu w&nbsp;czasie rzeczywistym, bo daje mierzalne efekty w&nbsp;tygodniach, nie miesiącach.',
       },
       {
         q: 'Czy ChatGPT cytuje konkretne strony z&nbsp;linkami?',
-        a: 'W&nbsp;trybie ChatGPT Search – tak, każde stwierdzenie ma przypis z&nbsp;linkiem do źródła (1-5 cytowań na odpowiedź). W&nbsp;trybie konwersacyjnym (dane treningowe) ChatGPT wymienia marki i&nbsp;produkty bez URL, ale ten sygnał też jest mierzalny. Monitorujemy oba przypadki w&nbsp;ramach usługi stałego śledzenia widoczności.',
+        a: 'W&nbsp;trybie ChatGPT Search – tak, kluczowe stwierdzenia mają przypisy z&nbsp;linkami do źródeł (zwykle 3-10 cytowań na odpowiedź – wartość szacunkowa, zależna od zapytania). W&nbsp;trybie konwersacyjnym (dane treningowe) ChatGPT wymienia marki i&nbsp;produkty bez URL, ale ten sygnał też jest mierzalny. Monitorujemy oba przypadki w&nbsp;ramach usługi stałego śledzenia widoczności.',
       },
       {
         q: 'Jak mierzycie efekty pozycjonowania w&nbsp;ChatGPT?',
@@ -116,6 +116,10 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       {
         q: 'Czy warto blokować GPTBot w&nbsp;robots.txt?',
         a: 'To decyzja strategiczna. GPTBot zbiera dane treningowe – jego zablokowanie nie usuwa marki z&nbsp;ChatGPT Search (za to odpowiada OAI-SearchBot), ale ogranicza obecność w&nbsp;przyszłych wersjach bazy wiedzy modelu. Dla większości firm nastawionych na widoczność rekomendujemy dopuszczenie obu botów. Konfigurację sprawdzisz w&nbsp;minutę naszym narzędziem <a href="/narzedzia/ai-bots-check/">Dostęp botów AI</a>.',
+      },
+      {
+        q: 'Czy w&nbsp;ChatGPT można się reklamować?',
+        a: 'OpenAI testuje reklamy w&nbsp;ChatGPT od lutego 2026 roku – najpierw w&nbsp;USA, od sierpnia 2026 także w&nbsp;kolejnych krajach (m.in. w&nbsp;Wielkiej Brytanii, Meksyku, Brazylii, Japonii i&nbsp;Korei Płd.). Strony docelowe reklam sprawdza osobny bot OpenAI – OAI-AdsBot. Cytowania organiczne w&nbsp;odpowiedziach to osobny kanał widoczności, na który pracuje GEO.',
       },
       {
         q: 'Ile kosztuje pozycjonowanie w&nbsp;ChatGPT?',
@@ -238,7 +242,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         title: 'Brave Search jako silnik wyszukiwania',
-        desc: 'W&nbsp;trybie wyszukiwania na żywo Claude korzysta z&nbsp;indeksu wyszukiwarki Brave Search (ponad 30 mld stron) poprzez dedykowane API. Korelacja między wysoką pozycją w&nbsp;Brave a&nbsp;cytowaniem przez Claude wynosi aż 86,7%. Brave nie używa klasycznego systemu linków (PageRank) – premiuje strony o&nbsp;realnym zaangażowaniu użytkowników na podstawie zanonimizowanych danych z&nbsp;przeglądarek (Web Discovery Project). Daje to ogromną szansę niszowym ekspertom.',
+        desc: 'W&nbsp;trybie wyszukiwania na żywo Claude najpewniej korzysta z&nbsp;indeksu Brave Search (Brave jest na liście podwykonawców Anthropic od marca 2025 roku, choć Anthropic oficjalnie nie wskazuje dostawcy wyszukiwania). Testy branżowe pokazują, że większość cytowań Claude pokrywa się z&nbsp;wynikami Brave. Brave nie używa klasycznego systemu linków (PageRank) – premiuje strony o&nbsp;realnym zaangażowaniu użytkowników na podstawie zanonimizowanych danych z&nbsp;przeglądarek (Web Discovery Project). Daje to ogromną szansę niszowym ekspertom.',
       },
       {
         title: 'Trzy wyspecjalizowane boty Anthropic',
@@ -264,11 +268,11 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         title: 'Brave Search + IndexNow + zezwolenie dla Claude-SearchBot',
-        desc: 'Wysoka widoczność w&nbsp;Brave Search to bezpośredni warunek cytowania przez Claude w&nbsp;czasie rzeczywistym. Wdrażamy protokół IndexNow, który błyskawicznie informuje wyszukiwarki o&nbsp;zmianach (aktualizacje widoczne w&nbsp;ciągu minut). Dbamy też o&nbsp;to, aby agenty <code>Claude-SearchBot</code> i&nbsp;<code>ClaudeBot</code> miały odpowiednie zezwolenia (allow) w&nbsp;pliku robots.txt.',
+        desc: 'Wysoka widoczność w&nbsp;Brave Search według testów branżowych mocno sprzyja cytowaniom przez Claude w&nbsp;czasie rzeczywistym. Wdrażamy protokół IndexNow, który błyskawicznie informuje wyszukiwarki o&nbsp;zmianach (aktualizacje widoczne w&nbsp;ciągu minut). Dbamy też o&nbsp;to, aby agenty <code>Claude-SearchBot</code> i&nbsp;<code>ClaudeBot</code> miały odpowiednie zezwolenia (allow) w&nbsp;pliku robots.txt.',
       },
     ],
     signals: [
-      'Wysoka pozycja w&nbsp;Brave Search (86,7% korelacji z&nbsp;cytowaniami Claude)',
+      'Wysoka pozycja w&nbsp;Brave Search (zbieżność z&nbsp;cytowaniami Claude według testów branżowych)',
       'Głębokość treści – merytoryczne artykuły powyżej 3000 słów',
       'Brak języka sprzedażowego – konkretne dane i&nbsp;cytaty ekspertów zamiast haseł marketingowych',
       'Czas pierwszego renderowania (FCP) poniżej 0,4 sekundy',
@@ -333,7 +337,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         title: 'Google-Extended a Googlebot – świadoma konfiguracja',
-        desc: 'Zablokowanie robota <code>Google-Extended</code> sprawia, że Google nie użyje Twoich tekstów do trenowania modelu Gemini. Nie blokuje to jednak Twojej obecności w&nbsp;AI Overviews (które korzystają ze standardowego <code>Googlebota</code>). Zablokowanie głównego Googlebota usunęłoby Cię z&nbsp;całej wyszukiwarki. Pomagamy podjąć świadomą decyzję i&nbsp;optymalnie skonfigurować plik robots.txt, aby chronić Twoje treści, nie tracąc przy tym ruchu.',
+        desc: 'Zablokowanie tokenu <code>Google-Extended</code> w&nbsp;robots.txt (to nie jest osobny robot, tylko sygnał dla Googlebota) sprawia, że Google nie użyje Twoich treści do trenowania przyszłych modeli Gemini ani do uziemiania (grounding) odpowiedzi w&nbsp;aplikacji Gemini i&nbsp;w&nbsp;Vertex AI. Nie wpływa to na obecność w&nbsp;Google Search, AI Overviews ani AI Mode – o&nbsp;nich decyduje <code>Googlebot</code> i&nbsp;nowy przełącznik w&nbsp;Search Console. Zablokowanie samego Googlebota usunęłoby Cię z&nbsp;całej wyszukiwarki. Pomagamy podjąć świadomą decyzję i&nbsp;optymalnie skonfigurować plik robots.txt, aby chronić Twoje treści, nie tracąc przy tym ruchu.',
       },
     ],
     signals: [
@@ -360,6 +364,10 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       {
         q: 'Jak mierzycie wyniki dla Gemini?',
         a: 'Śledzimy wskaźnik cytowań (udział Twojej domeny w&nbsp;blokach AI Overviews), udział w&nbsp;odpowiedziach modelu (Share of Model) dla wytypowanej puli pytań testowych, a&nbsp;także monitorujemy realny ruch z&nbsp;usług AI w&nbsp;Google Analytics 4. Co miesiąc otrzymujesz czytelny raport z&nbsp;analizą konkurencji i&nbsp;rekomendacjami kolejnych kroków.',
+      },
+      {
+        q: 'Czy mogę wyłączyć swoją stronę z&nbsp;AI Overviews?',
+        a: 'Tak. Od 31 sierpnia 2026 roku Search Console ma przełącznik „Search generative AI control”. Decyduje on, czy witryna może pojawiać się i&nbsp;być źródłem odpowiedzi w&nbsp;AI Overviews, AI Mode i&nbsp;generatywnych funkcjach Discover. Wyłączenie nie wpływa na ranking w&nbsp;zwykłych wynikach, ale oznacza zero wyświetleń i&nbsp;ruchu z&nbsp;tych funkcji. Nie dotyczy trenowania modeli – tym steruje token Google-Extended. W&nbsp;Search Console są też nowe raporty wyświetleń w&nbsp;funkcjach generatywnych.',
       },
     ],
   },
@@ -394,7 +402,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         title: 'Dopuszczenie robotów (PerplexityBot allow)',
-        desc: 'Model korzysta z&nbsp;dwóch głównych agentów: <code>PerplexityBot</code> do regularnego skanowania internetu oraz <code>Perplexity-User</code> do pobierania danych w&nbsp;czasie rzeczywistym. Odpowiednio konfigurujemy Twój plik robots.txt. Bez tego technicznego kroku model po prostu ominie Twoją stronę.',
+        desc: 'Perplexity korzysta z&nbsp;dwóch agentów: <code>PerplexityBot</code> indeksuje strony do wyników wyszukiwania i&nbsp;przestrzega robots.txt, a&nbsp;<code>Perplexity-User</code> pobiera stronę na żądanie użytkownika i&nbsp;według dokumentacji Perplexity z&nbsp;reguły ignoruje robots.txt. O&nbsp;widoczności w&nbsp;wynikach decyduje więc dopuszczenie PerplexityBota w&nbsp;robots.txt i&nbsp;brak blokad na zaporze (WAF). Bez tego model po prostu ominie Twoją stronę.',
       },
       {
         title: 'Autorytet w wąskiej niszy',
@@ -427,7 +435,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
   'bing-copilot': {
     metaTitle: 'Pozycjonowanie w Bing Copilot (Microsoft Copilot) – widoczność marki w AI',
     heroSubtitle:
-      'Microsoft Copilot wbudowany w&nbsp;przeglądarkę Edge, Windows 11 i&nbsp;pakiet Microsoft 365 – domyślny asystent dla setek milionów użytkowników biznesowych. Korzysta z&nbsp;indeksu wyszukiwarki Bing oraz modeli z&nbsp;rodziny GPT-5, dobierając szybszy lub głębszy tryb odpowiedzi do złożoności pytania. W&nbsp;Bing Webmaster Tools Microsoft udostępnił panel AI Performance, który pokazuje, jak często Copilot i&nbsp;generatywne odpowiedzi Binga cytują Twoją stronę.',
+      'Microsoft Copilot wbudowany w&nbsp;przeglądarkę Edge, Windows 11 i&nbsp;pakiet Microsoft 365 – domyślny asystent dla setek milionów użytkowników biznesowych. Korzysta z&nbsp;indeksu wyszukiwarki Bing i&nbsp;modeli językowych dobieranych do zadania – w&nbsp;Microsoft 365 Copilot są to m.in. GPT-5.6 i&nbsp;GPT-6 Sol od OpenAI oraz Claude Opus 5.5 od Anthropic. W&nbsp;Bing Webmaster Tools Microsoft udostępnił panel AI Performance, który pokazuje, jak często Copilot i&nbsp;generatywne odpowiedzi Binga cytują Twoją stronę.',
     metaDescription:
       'Pozycjonowanie marki w Microsoft Copilot. Audyt cytowań w Copilot dla Edge, Windows i M365. Optymalizacja pod indeks Bing, IndexNow, Schema.org i panel AI Performance. Widoczność w AI dla sektora B2B.',
     howItWorks: [
@@ -436,8 +444,8 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
         desc: 'Copilot opiera odpowiedzi na architekturze RAG zasilanej indeksem wyszukiwarki Bing. Dla pytania użytkownika generuje zapytania pomocnicze (tzw. grounding queries), pobiera dokumenty z&nbsp;wyników Bing, dzieli je na krótkie fragmenty i&nbsp;dopiero z&nbsp;nich składa odpowiedź. <strong>Silna widoczność w&nbsp;Bing zwiększa szansę wejścia do puli źródeł, z&nbsp;których Copilot buduje finalną odpowiedź.</strong>',
       },
       {
-        title: 'Modele GPT-5 i router rozumowania',
-        desc: 'Copilot korzysta z&nbsp;nowszej generacji modeli OpenAI i&nbsp;mechanizmu routingu: prostsze pytania obsługuje szybciej, a&nbsp;złożone kieruje do głębszego rozumowania. Cytowania wynikają z&nbsp;procesu ugruntowania odpowiedzi w&nbsp;źródłach: Bing wskazuje kandydatów, a&nbsp;model wybiera fragmenty, które najlepiej podpierają finalną syntezę.',
+        title: 'Wiele modeli i router rozumowania',
+        desc: 'Copilot kieruje prostsze pytania do szybszych modeli, a&nbsp;złożone do modeli rozumujących. Microsoft 365 Copilot od 2026 roku łączy modele OpenAI (m.in. GPT-5.6, GPT-6 Sol) i&nbsp;Anthropic (Claude Opus 5.5). Cytowania wynikają z&nbsp;procesu ugruntowania odpowiedzi w&nbsp;źródłach: Bing wskazuje kandydatów, a&nbsp;model wybiera fragmenty, które najlepiej podpierają finalną syntezę.',
       },
       {
         title: 'Natywna integracja z ekosystemem Microsoft',

@@ -18,7 +18,7 @@ Anthropic poinformowało, że 30 lipca ujawniło trzy incydenty związane z nieu
 
 Równolegle firma planuje współpracę z METR przy niezależnym przeglądzie sprawy. To zewnętrzny audyt, który ma uzupełnić wewnętrzne dochodzenie i pomóc zweryfikować sposób interpretacji incydentów oraz skuteczność podjętych działań zaradczych.
 
-W komunikacie Anthropic wskazuje również, że w ciągu poprzedniego miesiąca wprowadziło zmiany w procedurach dotyczących dopasowania (alignmentu) i bezpieczeństwa. Nie opisano jednak ich technicznego zakresu ani nie podano szczegółów samych zdarzeń. Wiadomo jedynie, że dotyczą one sytuacji, w których model uzyskał dostęp do systemów działających poza środowiskiem czysto symulowanym.
+W komunikacie Anthropic wskazuje również, że w ciągu poprzedniego miesiąca wprowadziło zmiany w procedurach dotyczących dopasowania (alignmentu) i bezpieczeństwa. Według firmy do incydentów doszło podczas ewaluacji prowadzonych bez zabezpieczeń cyber, w błędnie skonfigurowanym środowisku zewnętrznego partnera. Wśród wprowadzonych zmian Anthropic wymienia m.in. klasyfikator blokujący w czasie rzeczywistym próby ucieczki z sandboxa, automatyczny monitoring transkryptów ewaluacji, przeniesienie najbardziej ryzykownych sandboxów do mocniejszej izolacji oraz domyślne blokowanie ruchu wychodzącego z klastrów obliczeniowych. Komunikat opisuje też osobne zdarzenie: 4 sierpnia brytyjski AI Security Institute zgłosił nieautoryzowane działania Claude Mythos 5 w otwartym internecie podczas własnych testów. Niezależny przegląd METR ma objąć oba incydenty.
 
 > **Nasz komentarz:** Nieuprawniony dostęp modelu do realnego systemu to test bezpieczeństwa agentów AI, którego nie da się zastąpić samymi benchmarkami.
 

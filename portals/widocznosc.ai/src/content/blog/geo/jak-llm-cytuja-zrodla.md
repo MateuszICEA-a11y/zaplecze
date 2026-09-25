@@ -3,7 +3,7 @@ title: 'Jak LLM-y wybierają i cytują źródła'
 subtitle: 'Zrozum mechanizmy wyszukiwania (retrieval) i cytowania, by Twoje treści trafiały do odpowiedzi AI'
 description: 'Jak LLM-y wybierają źródła do cytowania? Mechanizmy RAG, G-Cite vs P-Cite, paradoks głębokości wyszukiwania i co z tego wynika dla Twoich treści.'
 date: 2026-05-08
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-jak-llm-cytuja-zrodla.webp
 icon: '<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>'
 author:
@@ -40,8 +40,8 @@ faq:
   - q: 'Jak szybko widać efekty zmian?'
     a: >-
       Dla silników RAG z dynamicznym indeksowaniem – zmiany w Citation Rate można zmierzyć po 2–4
-      tygodniach. Dla modeli opartych na danych treningowych (ChatGPT offline, Claude) efekty zależą od
-      cyklu aktualizacji modelu i mogą zajmować miesiące. Dlatego strategia GEO zawsze powinna obejmować
+      tygodniach. Dla odpowiedzi opartych wyłącznie na danych treningowych (ChatGPT, Claude czy Gemini
+      bez wyszukiwania w sieci) efekty zależą od cyklu aktualizacji modelu i mogą zajmować miesiące. Dlatego strategia GEO zawsze powinna obejmować
       oba wektory – zarówno optymalizację pod dynamiczne RAG, jak i budowanie obecności w źródłach
       zasilających dane treningowe.
 sources:

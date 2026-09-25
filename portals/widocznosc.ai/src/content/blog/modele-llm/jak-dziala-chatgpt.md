@@ -3,7 +3,7 @@ title: 'Jak działa ChatGPT? Od tokenu do odpowiedzi – wyjaśnienie krok po kr
 subtitle: 'Co naprawdę dzieje się między wpisaniem pytania a wygenerowaną odpowiedzią – tokeny, mechanizm uwagi, RLHF, wyszukiwanie i pamięć'
 description: 'Jak działa ChatGPT? Wyjaśniamy krok po kroku: tokenizacja, embeddingi, transformer i mechanizm uwagi, przewidywanie kolejnego tokenu, trening RLHF, tryb rozumowania, wyszukiwanie w sieci i skąd biorą się halucynacje.'
 date: 2026-08-28
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-modele-llm-jak-dziala-chatgpt.webp
 icon: '<path d="M4 12a8 8 0 0 1 8-8h1a7 7 0 0 1 7 7v1a8 8 0 0 1-8 8H8l-4 3z"/><path d="M8 11h8M8 14h5"/>'
 author:
@@ -77,6 +77,9 @@ sources:
   - title: 'Changelog'
     url: 'https://developers.openai.com/api/docs/changelog'
     note: 'OpenAI, dokumentacja API. Udostępnienie GPT-6 Astra w API 3 września 2026 roku.'
+  - title: 'GPT-6 Sol'
+    url: 'https://developers.openai.com/api/docs/models/gpt-6-sol'
+    note: 'OpenAI, dokumentacja API. GPT-6 Sol i GPT-6 Luna (22 września 2026): okno 1,05 mln tokenów, daty odcięcia 20 kwietnia i 18 maja 2026, wysiłek rozumowania od none do max.'
   - title: 'tiktoken'
     url: 'https://github.com/openai/tiktoken'
     note: 'OpenAI, GitHub. Tokenizer BPE używany w modelach OpenAI, w tym kodowanie o200k_base ze słownikiem około 200 tys. tokenów.'
@@ -108,7 +111,7 @@ To rozróżnienie ma praktyczne znaczenie. Ten sam model GPT jest dostępny prze
 - **Jak model nauczył się odpowiadać jak asystent** – pre-training, fine-tuning, RLHF
 - **Jak działa produkt wokół modelu** – okno kontekstowe, pamięć, wyszukiwanie, narzędzia, tryb rozumowania
 
-Przejdziemy przez wszystkie trzy warstwy po kolei. W ChatGPT flagową generacją jest obecnie GPT-5.6. Zadebiutowała ona 26 czerwca 2026 roku w zamkniętym podglądzie (ze względu na restrykcje rządu USA związane z bezpieczeństwem cybernetycznym), a ogólnie dostępna stała się 9 lipca 2026 roku. Występuje w trzech wariantach: Sol (flagowy), Terra (zbalansowany) i Luna (najszybszy i najtańszy). Wszystkie mają okno kontekstowe 1,05 mln tokenów, do 128 tys. tokenów wyjścia i datę odcięcia wiedzy 16 lutego 2026. Różnią się rozmiarem i ilością obliczeń, jaką mogą poświęcić na jedną odpowiedź – do tego wrócimy. Najnowszym i najmocniejszym modelem OpenAI jest jednak GPT-6 Astra, udostępniony 3 września 2026 roku wyłącznie w API (okno 1,05 mln tokenów, do 128 tys. tokenów wyjścia, data odcięcia wiedzy 30 kwietnia 2026) – w ChatGPT go nie ma. Przegląd całego ekosystemu OpenAI, planów i cen znajdziesz w osobnym artykule o [ChatGPT i ekosystemie OpenAI](/modele-llm/chatgpt/).
+Przejdziemy przez wszystkie trzy warstwy po kolei. W ChatGPT flagową generacją jest obecnie GPT-5.6. Zadebiutowała ona 26 czerwca 2026 roku w zamkniętym podglądzie (ze względu na restrykcje rządu USA związane z bezpieczeństwem cybernetycznym), a ogólnie dostępna stała się 9 lipca 2026 roku. Występuje w trzech wariantach: Sol (flagowy), Terra (zbalansowany) i Luna (najszybszy i najtańszy). Wszystkie mają okno kontekstowe 1,05 mln tokenów, do 128 tys. tokenów wyjścia i datę odcięcia wiedzy 16 lutego 2026. Różnią się rozmiarem i ilością obliczeń, jaką mogą poświęcić na jedną odpowiedź – do tego wrócimy. Najmocniejszym modelem OpenAI jest jednak GPT-6 Astra, udostępniony 3 września 2026 roku (okno 1,05 mln tokenów, do 128 tys. tokenów wyjścia, data odcięcia wiedzy 30 kwietnia 2026) – w ChatGPT działa jako GPT-6 Pro w planach Pro, Business i Enterprise. 22 września 2026 roku dołączyły GPT-6 Sol i GPT-6 Luna, dostępne w API oraz w ChatGPT Work i Codex; zwykły czat ChatGPT nadal działa na GPT-5.6. Przegląd całego ekosystemu OpenAI, planów i cen znajdziesz w osobnym artykule o [ChatGPT i ekosystemie OpenAI](/modele-llm/chatgpt/).
 
 ## Krok 1: tokenizacja – model nie widzi słów
 
@@ -218,7 +221,7 @@ Przebieg w uproszczeniu wygląda tak:
 - **Wybór fragmentów** – strony są dzielone na krótkie fragmenty; do okna kontekstowego trafiają te, które najlepiej pasują do zapytań, z preferencją dla źródeł powtarzających się przy różnych wariantach pytania
 - **Generowanie z przypisami** – model pisze odpowiedź, mając w oknie kontekstowym wybrane fragmenty, i oznacza, z którego źródła pochodzi które zdanie
 
-Ten schemat to praktyczne wdrożenie generowania wspomaganego wyszukiwaniem (RAG, Retrieval-Augmented Generation): zamiast liczyć na pamięć modelu, podsuwa mu się aktualny materiał źródłowy i każe streścić. Za pobieranie stron na potrzeby wyszukiwania odpowiada robot OAI-SearchBot – inny niż GPTBot, który zbiera dane treningowe. Strona może być zablokowana dla jednego, a otwarta dla drugiego; więcej o tym w [przewodniku po botach AI](/geo/boty-ai-przewodnik/).
+Ten schemat to praktyczne wdrożenie generowania wspomaganego wyszukiwaniem (RAG, Retrieval-Augmented Generation): zamiast liczyć na pamięć modelu, podsuwa mu się aktualny materiał źródłowy i każe streścić. Za pobieranie stron na potrzeby wyszukiwania odpowiada robot OAI-SearchBot – inny niż GPTBot, który zbiera dane treningowe. Strona może być zablokowana dla jednego, a otwarta dla drugiego. Jeśli oba boty mają dostęp, OpenAI może wykorzystać jedno pobranie strony do obu celów. Osobny przypadek to ChatGPT-User – bot działający na prośbę użytkownika, do którego według OpenAI reguły robots.txt mogą nie mieć zastosowania. Więcej o tym w [przewodniku po botach AI](/geo/boty-ai-przewodnik/).
 
 Dla widoczności marki to kanał kluczowy, bo działa w dniach, nie w miesiącach. Aby firma pojawiła się w odpowiedzi z wyszukiwaniem, jej strona musi: być dobrze widoczna w wyszukiwarkach, ładować się szybko, mieć treść, która da się wyciąć jako samodzielny, faktograficzny fragment, i nie blokować OAI-SearchBota. Jak to zrobić krok po kroku, opisuje strona o [pozycjonowaniu w ChatGPT](/pozycjonowanie-ai/chatgpt/).
 

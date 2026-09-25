@@ -19,7 +19,7 @@ export const homepageFaq: HomepageFAQ[] = [
   },
   {
     q: 'Kiedy AI zacznie mnie cytować? Jak szybko widać efekty GEO?',
-    a: 'To zależy od&nbsp;cyklu aktualizacji wiedzy przez modele (tzw. training data) oraz szybkości działania crawlerów AI (np. GPTBot). W&nbsp;przypadku silników działających w&nbsp;czasie rzeczywistym, jak Perplexity czy SearchGPT, zmiany mogą być widoczne już po&nbsp;kilku dniach od&nbsp;reindeksacji strony. SEO buduje trwałość, GEO zapewnia natychmiastową obecność w&nbsp;kontekście zapytania.',
+    a: 'To zależy od&nbsp;cyklu aktualizacji wiedzy przez modele (tzw. training data) oraz szybkości działania crawlerów AI (np. GPTBot). W&nbsp;przypadku silników działających w&nbsp;czasie rzeczywistym, jak Perplexity czy wyszukiwanie w&nbsp;ChatGPT (ChatGPT Search), zmiany mogą być widoczne już po&nbsp;kilku dniach od&nbsp;reindeksacji strony. SEO buduje trwałość, GEO zapewnia natychmiastową obecność w&nbsp;kontekście zapytania.',
   },
   {
     q: 'Jak mierzycie efekty, skoro odpowiedzi AI za każdym razem mogą wyglądać inaczej?',

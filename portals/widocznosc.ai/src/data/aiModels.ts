@@ -77,7 +77,7 @@ export const AI_MODELS: AIModel[] = [
     keyword: 'pozycjonowanie w bing copilot',
     keywordVolume: 20,
     shortDesc:
-      'Połączenie modeli rodziny GPT-5 z indeksem Binga. Mniejszy udział w rynku, ale asystent jest domyślnie wbudowany w przeglądarkę Edge i system Windows. Silnik ten priorytetyzuje strony zoptymalizowane pod Bing Webmaster Tools.',
+      'Połączenie modeli OpenAI i Anthropic z indeksem Binga. Mniejszy udział w rynku, ale asystent jest domyślnie wbudowany w przeglądarkę Edge i system Windows. Silnik ten priorytetyzuje strony zoptymalizowane pod Bing Webmaster Tools.',
     symbol: '∴',
   },
 ];

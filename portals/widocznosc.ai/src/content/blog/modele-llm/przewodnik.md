@@ -3,7 +3,7 @@ title: 'Modele językowe (LLM) – przewodnik po ekosystemie'
 subtitle: 'Poznaj różnice między ChatGPT, Claude, Gemini, Copilotem a modelami open source, żeby wybrać właściwy model do swojej strategii AI'
 description: 'Przewodnik po ekosystemie dużych modeli językowych (LLM): ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot i open source. Który model wybrać i dlaczego.'
 date: 2026-05-26
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-modele-llm-przewodnik.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3M6.34 6.34l2.12 2.12M15.54 15.54l2.12 2.12M6.34 17.66l2.12-2.12M15.54 8.46l2.12-2.12"/>'
 author:
@@ -22,7 +22,7 @@ faq:
       To zależy od przypadku użycia. Do pisania treści i analizy dokumentów – Claude Sonnet 5 lub GPT-5.6 (oba dostępne w planie freemium – w ChatGPT Free jako lżejszy wariant Luna). Do wyszukiwania z aktualnymi danymi i cytowaniami – Perplexity. Do zadań wymagających pełnej kontroli nad danymi – model open source jak Mistral lub Bielik uruchomiony lokalnie.
   - q: 'Czy blokowanie botów AI w robots.txt zaszkodzi mojej stronie?'
     a: >-
-      Tak, jeśli zależy Ci na widoczności w AI. Zablokowanie <code>OAI-SearchBot</code> wyłącza stronę z odpowiedzi wyszukiwania w ChatGPT (<code>GPTBot</code> zbiera natomiast dane treningowe). Zablokowanie <code>PerplexityBot</code> eliminuje ją z cytowań Perplexity. Zablokowanie <code>Claude-SearchBot</code> i <code>Claude-User</code> oznacza, że Claude nie pobierze aktualnych danych o Twojej marce przy wyszukiwaniu (<code>ClaudeBot</code> służy do zbierania danych treningowych). Każdy z tych botów blokujesz oddzielną dyrektywą w <code>robots.txt</code>.
+      Tak, jeśli zależy Ci na widoczności w AI. Zablokowanie <code>OAI-SearchBot</code> wyłącza stronę z odpowiedzi wyszukiwania w ChatGPT (<code>GPTBot</code> zbiera natomiast dane treningowe). Zablokowanie <code>PerplexityBot</code> eliminuje ją z cytowań Perplexity. Zablokowanie <code>Claude-SearchBot</code> i <code>Claude-User</code> oznacza, że Claude nie pobierze aktualnych danych o Twojej marce przy wyszukiwaniu (<code>ClaudeBot</code> służy do zbierania danych treningowych). Każdy z tych botów blokujesz oddzielną dyrektywą w <code>robots.txt</code>. Uwaga: boty działające na żądanie użytkownika – <code>ChatGPT-User</code> i <code>Perplexity-User</code> – według dokumentacji dostawców mogą nie stosować się do reguł robots.txt. OpenAI ma też nowego bota <code>OAI-AdsBot</code>, który sprawdza strony docelowe reklam w ChatGPT.
   - q: 'Czym różni się LLM od tradycyjnej wyszukiwarki?'
     a: >-
       Tradycyjna wyszukiwarka tworzy ranking stron i pokazuje listę linków. LLM generuje syntetyczną odpowiedź, która może – ale nie musi – zawierać link do Twojej strony. Użytkownik dostaje gotową odpowiedź, nie listę stron do kliknięcia. <strong>Dla marketerów oznacza to, że samo bycie na pierwszej stronie Google nie gwarantuje już obecności w odpowiedzi, którą zobaczy użytkownik.</strong>
@@ -42,15 +42,18 @@ sources:
   - title: 'GPT-6 Astra'
     url: 'https://developers.openai.com/api/docs/models/gpt-6-astra'
     note: 'OpenAI, dokumentacja API. Najmocniejszy model OpenAI, dostępny w API od 3 września 2026: okno 1,05 mln tokenów, 128 tys. tokenów wyjścia, cena 10/50 USD za milion tokenów.'
+  - title: 'GPT-6 Sol'
+    url: 'https://developers.openai.com/api/docs/models/gpt-6-sol'
+    note: 'OpenAI, dokumentacja API. GPT-6 Sol i GPT-6 Luna (22 września 2026): okno 1,05 mln tokenów, ceny 2/10 i 0,10/0,50 USD za milion tokenów.'
   - title: 'API Pricing'
     url: 'https://developers.openai.com/api/docs/pricing'
-    note: 'OpenAI, dokumentacja API. Ceny modeli GPT-5.6 Sol, Terra i Luna za milion tokenów wejściowych i wyjściowych.'
+    note: 'OpenAI, dokumentacja API. Ceny modeli GPT-6 (Astra, Sol, Luna) oraz GPT-5.6 Sol, Terra i Luna za milion tokenów wejściowych i wyjściowych.'
   - title: 'Overview of OpenAI Crawlers'
     url: 'https://developers.openai.com/api/docs/bots'
     note: 'OpenAI, dokumentacja. Role botów GPTBot (dane treningowe) i OAI-SearchBot (widoczność w wyszukiwaniu ChatGPT).'
   - title: 'Models overview'
     url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
-    note: 'Anthropic, dokumentacja. Aktualne modele Claude (Fable 5.1, Opus 5, Sonnet 5 za 2/10 USD, Haiku 4.5), ich okna kontekstowe (1 mln tokenów) i ceny API; Opus 4.8 i Sonnet 4.6 jako modele legacy.'
+    note: 'Anthropic, dokumentacja. Aktualne modele Claude (Fable 5.1, Opus 5.5, Sonnet 5 za 2/10 USD, Haiku 4.5), ich okna kontekstowe (1 mln tokenów) i ceny API; Opus 5, Fable 5, Opus 4.8 i Sonnet 4.6 jako modele legacy.'
   - title: 'Does Anthropic crawl data from the web, and how can site owners block the crawler?'
     url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
     note: 'Anthropic, centrum pomocy. Role botów ClaudeBot (dane treningowe), Claude-User (pobieranie stron na prośbę użytkownika) i Claude-SearchBot (jakość wyników wyszukiwania).'
@@ -65,7 +68,7 @@ sources:
     note: 'Google, dokumentacja Gemini API. Gemini 3.1 Pro w wersji preview i Gemini 3.8 Flash jako najnowszy model z linii Flash.'
   - title: 'Models'
     url: 'https://docs.x.ai/docs/models'
-    note: 'xAI, dokumentacja API. Grok 4.6 jako flagowy model xAI (okno 500 tys. tokenów, 2/6 USD za milion tokenów).'
+    note: 'SpaceXAI, dokumentacja API. Grok 4.7 (premiera 21 września 2026) jako flagowy model – okno 500 tys. tokenów, 2/6 USD za milion tokenów.'
   - title: 'Perplexity Crawlers'
     url: 'https://docs.perplexity.ai/guides/bots'
     note: 'Perplexity, dokumentacja. Rola PerplexityBot i sterowanie jego dostępem przez robots.txt.'
@@ -91,7 +94,7 @@ Kluczowe pojęcia, których będziesz używać w każdej rozmowie o LLM-ach:
 
 ### Co odróżnia modele podstawowe od asystentów AI?
 
-W rozmowach o LLM-ach regularnie myli się dwie warstwy produktowe. Model podstawowy (np. GPT-5.6, Claude Sonnet, Gemini Pro) to sama warstwa językowa. Przetwarza tekst i generuje odpowiedź. Z kolei asystent AI (ChatGPT, Claude.ai, Gemini.com, Copilot w przeglądarce) to produkt konsumencki zbudowany na modelu. Posiada interfejs, historię rozmów, integracje narzędziowe i własną politykę dotyczącą cytowań. **Dla widoczności marki w AI ważniejszy jest asystent, bo to z nim rozmawiają Twoi klienci – ale to model decyduje, co zostanie zacytowane.**
+W rozmowach o LLM-ach regularnie myli się dwie warstwy produktowe. Model podstawowy (np. GPT-5.6, Claude Sonnet, Gemini Pro) to sama warstwa językowa. Przetwarza tekst i generuje odpowiedź. Z kolei asystent AI (ChatGPT, Claude.ai, aplikacja Gemini, Copilot w przeglądarce) to produkt konsumencki zbudowany na modelu. Posiada interfejs, historię rozmów, integracje narzędziowe i własną politykę dotyczącą cytowań. **Dla widoczności marki w AI ważniejszy jest asystent, bo to z nim rozmawiają Twoi klienci – ale to model decyduje, co zostanie zacytowane.**
 
 ## Przegląd głównych modeli – tabela porównawcza
 
@@ -99,12 +102,12 @@ Poniższa tabela zestawia osiem najważniejszych ekosystemów w jednym miejscu. 
 
 | Model / ekosystem | Twórca | Dostęp dla użytkownika | Mocna strona | Klucz dla widoczności marki |
 |---|---|---|---|---|
-| ChatGPT (GPT-5.6; w API także GPT-6 Astra) | OpenAI | Freemium + API | Szeroki korpus treningowy, wyszukiwanie w ChatGPT | Dostęp OAI-SearchBot; wyszukiwanie cytuje na żywo |
-| Claude (Fable 5.1 / Opus 5 / Sonnet 5) | Anthropic | Freemium + API | Długi kontekst, analiza dokumentów | Claude-SearchBot; silna w analizie B2B |
+| ChatGPT (czat: GPT-5.6; GPT-6 Sol/Luna w ChatGPT Work i Codex; GPT-6 Pro na Astrze w planach Pro/Business/Enterprise) | OpenAI | Freemium + API | Szeroki korpus treningowy, wyszukiwanie w ChatGPT | Dostęp OAI-SearchBot; wyszukiwanie cytuje na żywo |
+| Claude (Fable 5.1 / Opus 5.5 / Sonnet 5) | Anthropic | Freemium + API | Długi kontekst, analiza dokumentów | Claude-SearchBot; silna w analizie B2B |
 | Gemini (3.1 Pro / 3.8 Flash) | Google | Freemium + API | Integracja z Google Search, AI Overviews | Bezpośrednie powiązanie z indeksem Google |
 | Copilot | Microsoft | Wbudowany w Windows/Edge + API | Integracja z Bing, Microsoft 365 | BingBot + Bing Search jako źródło |
 | Perplexity AI | Perplexity | Freemium + API | RAG w czasie rzeczywistym z linkami źródłowymi | PerplexityBot; cytuje URL bezpośrednio |
-| [Grok](/modele-llm/grok/) (4.6) | xAI (Elon Musk) | X Premium + API | Dostęp do X w czasie rzeczywistym | Wzmianki i dyskusje na X zasilają odpowiedzi |
+| [Grok](/modele-llm/grok/) (4.7) | SpaceXAI (dawniej xAI, Elon Musk) | X Premium + API | Dostęp do X w czasie rzeczywistym | Wzmianki i dyskusje na X zasilają odpowiedzi |
 | [DeepSeek](/modele-llm/deepseek/) (V4.1-Flash / V4-Pro) | High-Flyer (Chiny) | Freemium + API + otwarte wagi (MIT) | Bardzo niski koszt, model open source | Brak własnego bota; wiedza z danych treningowych |
 | Modele open source | Meta, Mistral AI i in. | Pobieranie + API | Suwerenność danych, dostosowywalność | Brak własnego bota; używają cudzych indeksów |
 
@@ -116,20 +119,20 @@ Każdy z tych ekosystemów ma inny mechanizm pobierania informacji o Twojej marc
 
 ChatGPT jest punktem startowym dla zdecydowanej większości firm wchodzących w temat AI. To z nim rozmawiają Twoi klienci, kiedy pytają „który dostawca X jest najlepszy" albo „porównaj Y i Z". **Według danych OpenAI z początku 2026 roku liczba stanowisk (licencji) w ChatGPT Enterprise była dziewięciokrotnie większa niż rok wcześniej.**
 
-Główny flagowiec dostępny obecnie w ChatGPT to GPT-5.6 Sol (rodzina GPT-5.6: Sol, Terra i Luna, ogólnie dostępna od 9 lipca 2026) – multimodalny system przetwarzający tekst, obraz i dźwięk. W wariancie z włączonym wyszukiwaniem (ChatGPT Search) model w chwili zapytania przeszukuje internet. Pobiera aktualne fragmenty i generuje odpowiedź z przypisami. To oznacza, że strony, do których ma dostęp `OAI-SearchBot`, mogą być cytowane w czasie rzeczywistym. Najnowszym i najmocniejszym modelem OpenAI jest od 3 września 2026 roku GPT-6 Astra, dostępny jednak tylko w API – w ChatGPT flagowcem pozostaje GPT-5.6 Sol.
+Główny flagowiec dostępny obecnie w ChatGPT to GPT-5.6 Sol (rodzina GPT-5.6: Sol, Terra i Luna, ogólnie dostępna od 9 lipca 2026) – multimodalny system przetwarzający tekst, obraz i dźwięk. W wariancie z włączonym wyszukiwaniem (ChatGPT Search) model w chwili zapytania przeszukuje internet. Pobiera aktualne fragmenty i generuje odpowiedź z przypisami. To oznacza, że strony, do których ma dostęp `OAI-SearchBot`, mogą być cytowane w czasie rzeczywistym. Najmocniejszym modelem OpenAI jest od 3 września 2026 roku GPT-6 Astra – w API i w ChatGPT jako GPT-6 Pro (plany Pro, Business, Enterprise). 22 września dołączyły tańsze GPT-6 Sol i GPT-6 Luna, dostępne w API oraz w ChatGPT Work i Codex. W zwykłym czacie ChatGPT domyślnie nadal działa GPT-5.6 (Sol w planach płatnych, Luna w Free i Go).
 
 Kluczowe aspekty dla strategii widoczności:
 
 - **`OAI-SearchBot`** – bot wyszukiwania OpenAI. Jego dostęp do Twojej strony warunkuje pojawienie się w odpowiedziach wyszukiwania ChatGPT. Sprawdź plik `robots.txt` i upewnij się, że nie jest blokowany. `GPTBot` to osobny bot zbierający dane treningowe – można go zablokować bez wpływu na widoczność w wyszukiwaniu.
 - **Tryb offline** – zapytania bez wyszukiwania korzystają wyłącznie z danych treningowych (do tzw. daty odcięcia, ang. *cutoff*). Marka, która nie była wzmiankowana przed tą datą, może w ogóle nie istnieć dla modelu.
 - **Kontekst 1,05 mln tokenów** – w GPT-5.6 i GPT-6 Astra (128 000 tokenów wyjścia) pozwala na przetworzenie bardzo długich dokumentów; w planach konsumenckich limit jest niższy. Pamiętaj jednak, że dla B2B ważniejsza jest jakość fragmentów niż sama ich objętość.
-- **API OpenAI** – najpopularniejsze narzędzie do budowy własnych aplikacji AI. Najmocniejszy GPT-6 Astra kosztuje 10,00 USD za milion tokenów wejściowych (50,00 USD za wyjściowe), a GPT-5.6 Sol – 4,00 USD w cenie promocyjnej (Terra – 2,00 USD, Luna – 0,20 USD).
+- **API OpenAI** – najpopularniejsze narzędzie do budowy własnych aplikacji AI. Najmocniejszy GPT-6 Astra kosztuje 10,00 USD za milion tokenów wejściowych (50,00 USD za wyjściowe), GPT-6 Sol – 2,00 USD (10,00 USD), a GPT-6 Luna – 0,10 USD (0,50 USD). Starsze GPT-5.6 Sol kosztuje 4,00 USD w cenie promocyjnej (Terra – 2,00 USD, Luna – 0,20 USD).
 
 Szczegółowe omówienie możliwości i ograniczeń znajdziesz w artykule o [ChatGPT](/modele-llm/chatgpt/) oraz o tym, [co potrafi ChatGPT](/modele-llm/co-potrafi-chatgpt/) w kontekście codziennej pracy marketera.
 
 ## Claude – model Anthropic
 
-Claude to bezpośredni rywal ChatGPT. Projektowano go z naciskiem na bezpieczeństwo, interpretację długich dokumentów i precyzję w analizach B2B. Najmocniejszym modelem Anthropic jest obecnie Claude Fable 5.1, a modelem rekomendowanym do większości zadań – Claude Opus 5. Jednak to Claude Sonnet 5 pozostaje wyborem większości firm potrzebujących modelu do automatyzacji procesów. Przy koszcie 2 USD za milion tokenów wejściowych (10 USD za wyjściowe) oferuje doskonały stosunek jakości do ceny.
+Claude to bezpośredni rywal ChatGPT. Projektowano go z naciskiem na bezpieczeństwo, interpretację długich dokumentów i precyzję w analizach B2B. Najmocniejszym modelem Anthropic jest obecnie Claude Fable 5.1, a modelem rekomendowanym do większości zadań – Claude Opus 5.5 (premiera 22 września 2026, 4 USD za milion tokenów wejściowych i 20 USD za wyjściowe). Jednak to Claude Sonnet 5 pozostaje wyborem większości firm potrzebujących modelu do automatyzacji procesów. Przy koszcie 2 USD za milion tokenów wejściowych (10 USD za wyjściowe) oferuje doskonały stosunek jakości do ceny.
 
 Wyróżniki architektury Anthropic:
 
@@ -145,7 +148,7 @@ Pełny przegląd modeli Anthropic i ich zastosowań znajdziesz w artykule o [Cla
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Protokół bezpieczeństwa Anthropic – Constitutional AI – rozrósł się z dokumentu liczącego <strong>2 700 słów w 2023 roku do ponad 23 000 słów w 2026 roku.</strong> Modele klasy Opus potrafią autonomicznie zerwać rozmowę w przypadku wykrycia złośliwych instrukcji. To najdłuższy publiczny zbiór reguł bezpieczeństwa spośród wszystkich głównych dostawców LLM.</p>
+    <p>Protokół bezpieczeństwa Anthropic – Constitutional AI – rozrósł się z dokumentu liczącego <strong>2 700 słów w 2023 roku do ponad 23 000 słów w 2026 roku.</strong> Modele klasy Opus potrafią autonomicznie zerwać rozmowę w przypadku wykrycia złośliwych instrukcji. To jeden z najobszerniejszych publicznych dokumentów tego typu.</p>
   </div>
 </aside>
 
@@ -157,15 +160,15 @@ Gemini 3.1 Pro (w API wciąż w wersji preview) obsługuje okno kontekstowe do 1
 
 Dla widoczności marki kluczowe są trzy mechanizmy Gemini:
 
-- **AI Overviews w Google Search** – odpowiedź generowana przez Gemini bezpośrednio w wynikach wyszukiwania. Cytuje strony z indeksu Google. Twoja strona nie musi robić nic specjalnego poza byciem dostępną dla bota Google.
-- **Gemini.com** – osobny asystent z RAG w czasie rzeczywistym. Szuka aktualnych danych przez Google Search API.
+- **AI Overviews w Google Search** – odpowiedź generowana przez Gemini bezpośrednio w wynikach wyszukiwania. Cytuje strony z indeksu Google. Twoja strona nie musi robić nic specjalnego poza byciem dostępną dla bota Google. Od 31 sierpnia 2026 roku właściciel witryny może w Search Console wyłączyć jej udział w AI Overviews, AI Mode i funkcjach generatywnych Discover – bez wpływu na zwykłe wyniki wyszukiwania.
+- **Aplikacja Gemini (gemini.google.com)** – osobny asystent z RAG w czasie rzeczywistym. Szuka aktualnych danych przez Google Search API.
 - **Vertex AI** – platforma dla deweloperów. Firmy budują na niej własne aplikacje korzystające z modeli Gemini za pośrednictwem infrastruktury Google Cloud.
 
 Jeśli Twoja strategia treści skupia się na [pozycjonowaniu AI](/pozycjonowanie-ai/), Gemini jest modelem, którego nie możesz ignorować. To Google decyduje, co trafi do AI Overviews dla Twoich potencjalnych klientów.
 
 ## Microsoft Copilot i Bing
 
-Copilot to produkt Microsoftu zbudowany na dużych modelach językowych – historycznie przede wszystkim od OpenAI, a w części usług dla firm także od Anthropic – i zintegrowany z wyszukiwarką Bing. Jest wbudowany w Windows, Edge, pakiet Microsoft 365 i Teams. Dla B2B to ważny ekosystem. Użytkownicy korporacyjni spotykają się z nim codziennie – bez aktywnego wyboru, po prostu jako część środowiska pracy.
+Copilot to produkt Microsoftu zbudowany na dużych modelach językowych – historycznie przede wszystkim od OpenAI, a w części usług dla firm także od Anthropic – i zintegrowany z wyszukiwarką Bing. We wrześniu 2026 roku Microsoft 365 Copilot dodał Claude Opus 5.5 i GPT-6 Sol, a w Copilot Cowork i Copilot Studio – także GPT-6 Astra i Claude Fable 5.1. Copilot jest wbudowany w Windows, Edge, pakiet Microsoft 365 i Teams. Dla B2B to ważny ekosystem. Użytkownicy korporacyjni spotykają się z nim codziennie – bez aktywnego wyboru, po prostu jako część środowiska pracy.
 
 Architektura Copilot różni się od ChatGPT jednym kluczowym elementem. Każda odpowiedź generowana przez Copilot z włączoną funkcją wyszukiwania korzysta z indeksu Bing. To oznacza, że `BingBot` musi mieć dostęp do Twojej strony. Firmy, które blokują Binga w `robots.txt`, nieświadomie wycinają się z odpowiedzi Copilot dla milionów użytkowników korporacyjnych.
 
@@ -199,9 +202,9 @@ Strategicznie: jeśli chcesz, żeby Twoja marka pojawiała się z linkiem w odpo
 
 Obok pięciu dominujących graczy rośnie kilka ekosystemów, których nie sposób pominąć przy pełnym przeglądzie.
 
-**[Grok](/modele-llm/grok/)** (xAI, Elon Musk) to model zintegrowany z platformą X (dawniej Twitter). Jego unikalna cecha to dostęp do strumienia w czasie rzeczywistym. Grok czyta tweety, posty i trendy na X w momencie zadawania pytania. Dla marek aktywnych na X i tematów, które „dzieją się teraz" – to niszowy, ale istotny kanał. Pełny obraz jego możliwości i ryzyk znajdziesz w przewodniku o [Groku](/modele-llm/grok/).
+**[Grok](/modele-llm/grok/)** (SpaceXAI, dawniej xAI, Elon Musk) to model zintegrowany z platformą X (dawniej Twitter). Jego unikalna cecha to dostęp do strumienia w czasie rzeczywistym. Grok czyta tweety, posty i trendy na X w momencie zadawania pytania. Dla marek aktywnych na X i tematów, które „dzieją się teraz" – to niszowy, ale istotny kanał. Pełny obraz jego możliwości i ryzyk znajdziesz w przewodniku o [Groku](/modele-llm/grok/).
 
-**Meta AI / Llama** to ekosystem open source opublikowany przez Meta. Modele z rodziny Llama 4 są dostępne do pobrania i uruchomienia lokalnie lub przez API. Meta AI jako asystent jest wbudowany w Instagram, WhatsApp i Messenger. Dla firm kierujących marketing do konsumentów przez te platformy to istotne środowisko. Z perspektywy B2B – jego znaczenie jest marginalne.
+**Meta AI** to asystent wbudowany w Instagram, WhatsApp i Messenger. Od kwietnia 2026 roku napędza go nowa rodzina modeli Muse (Muse Spark, obecnie w wersji 1.3), a nie Llama. Otwarte modele Meta to Llama 4 (Scout, Maverick) oraz Muse Glimmer do uruchamiania lokalnie. Dla firm kierujących marketing do konsumentów przez te platformy to istotne środowisko. Z perspektywy B2B – jego znaczenie jest marginalne.
 
 Kilka ekosystemów specjalistycznych warto znać z nazwy:
 
@@ -221,9 +224,9 @@ Kiedy wybór modelu open source ma sens:
 
 Najpopularniejsze otwarte modele na 2026 rok to:
 
-- **Meta Llama 4 (Scout i Maverick)** – najchętniej pobierane modele open source. Oferują rewolucyjne okno kontekstowe i świetne wyniki w wielu językach.
+- **Meta Llama 4 (Scout i Maverick)** – otwarte modele Meta z bardzo dużym oknem kontekstowym; od 2026 roku Meta udostępnia też otwarty model Muse Glimmer do uruchamiania lokalnie.
 - **Mistral Large 2512** – europejski standard, świetna wielojęzyczność, okno 262 000 tokenów.
-- **Bielik-2.1** – najlepszy otwarty model dla języka polskiego. Osiąga wyniki w testach językowych porównywalne z GPT-4.
+- **Bielik** – najlepszy otwarty model dla języka polskiego. Osiąga wyniki w testach językowych porównywalne z GPT-4.
 - **Phi-4-mini (Microsoft)** – działa na urządzeniach brzegowych. To dobry wybór do prostych zadań bez połączenia z chmurą.
 
 Ważne zastrzeżenie: modele open source nie mają własnych botów indeksujących. Ich wiedza pochodzi z danych treningowych, a nie z indeksowania na żywo. Widoczność marki w modelach open source wdrożonych przez klientów zależy od tego, czy Twoje treści trafiły do zbiorów treningowych (np. Common Crawl). To zupełnie inny mechanizm niż w wyszukiwaniu ChatGPT czy Perplexity.

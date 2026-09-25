@@ -3,7 +3,7 @@ title: 'Microsoft Copilot – kompletny przewodnik'
 subtitle: 'Poznaj ekosystem Copilota i naucz się go efektywnie wdrożyć w swojej organizacji'
 description: 'Kompletny przewodnik po Microsoft Copilot: architektura, Copilot for Microsoft 365, Windows, GitHub Copilot, Copilot Studio i koszty wdrożenia w 2026 roku.'
 date: 2026-05-04
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-modele-llm-copilot.webp
 icon: '<rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><circle cx="17" cy="17" r="4"/><line x1="17" y1="14" x2="17" y2="20"/><line x1="14" y1="17" x2="20" y2="17"/>'
 author:
@@ -51,7 +51,7 @@ sources:
     note: 'Microsoft Learn, aktualizacja z września 2026. Wybór modelu w Copilot (Auto, Quick response, Think deeper) z automatycznym routerem modeli oraz modele Anthropic jako podprocesor w wybranych usługach Microsoft 365.'
   - title: 'Supported AI models in GitHub Copilot'
     url: 'https://docs.github.com/en/copilot/reference/ai-models/supported-models'
-    note: 'GitHub Docs. Modele dostępne w GitHub Copilot, m.in. GPT-6 Astra i GPT-5.6 (OpenAI), Claude Fable 5.1 i Opus 5 (Anthropic), Gemini 3.8 Flash (Google), Grok 4.6 (xAI), Kimi K3 (Moonshot AI) i MAI-Code-1.1-Flash (Microsoft).'
+    note: 'GitHub Docs. Modele dostępne w GitHub Copilot, m.in. GPT-6 Astra, GPT-6 Sol i GPT-6 Luna (OpenAI), Claude Fable 5.1 i Opus 5.5 (Anthropic), Gemini 3.8 Flash (Google), Grok 4.7 (xAI), Kimi K3 (Moonshot AI) i MAI-Code-1.1-Flash (Microsoft).'
   - title: 'Semantic indexing for Microsoft Copilot'
     url: 'https://learn.microsoft.com/en-us/microsoftsearch/semantic-index-for-copilot'
     note: 'Microsoft Learn. Indeks semantyczny budowany z danych Microsoft Graph na wektorach, z poszanowaniem uprawnień użytkownika (RBAC).'
@@ -87,7 +87,7 @@ Microsoft Copilot nie jest prostym chatbotem doklejonym do pakietu biurowego. To
 
 ## Czym jest Microsoft Copilot i jak działa jego architektura?
 
-Copilot to marka parasolowa, pod którą Microsoft zebrał kilka powiązanych, ale odrębnych produktów opartych na sztucznej inteligencji. Historycznie wspólnym mianownikiem były modele z rodziny GPT od OpenAI (Microsoft jest jednym z największych udziałowców tej firmy). Dziś Microsoft nie wiąże się z jednym dostawcą: w Microsoft 365 Copilot domyślny tryb „Auto” sam dobiera model do zapytania, w części usług dla firm dostępne są modele Anthropic, a GitHub Copilot oferuje modele OpenAI, Anthropic, Google, xAI i Moonshot AI oraz własny model Microsoftu.
+Copilot to marka parasolowa, pod którą Microsoft zebrał kilka powiązanych, ale odrębnych produktów opartych na sztucznej inteligencji. Historycznie wspólnym mianownikiem były modele z rodziny GPT od OpenAI (Microsoft jest jednym z największych udziałowców tej firmy). Dziś Microsoft nie wiąże się z jednym dostawcą: w Microsoft 365 Copilot domyślny tryb „Auto” sam dobiera model do zapytania, a w selektorze modeli są modele OpenAI i Anthropic. Od lipca 2026 roku preferowanym modelem jest GPT-5.6, a od 22 września 2026 roku Microsoft wprowadza w Wordzie, Excelu, PowerPoincie, czacie, Cowork i Copilot Studio także Claude Opus 5.5 i GPT-6 Sol (dostępność zależy od licencji i regionu). GitHub Copilot oferuje modele OpenAI, Anthropic, Google, xAI i Moonshot AI oraz własny model Microsoftu.
 
 **Kluczowym elementem architektury jest Indeks Semantyczny (Semantic Index for Copilot) – wektorowa reprezentacja wiedzy korporacyjnej budowana na bazie usługi Microsoft Graph.** Zamiast klasycznego wyszukiwania po słowach kluczowych, system generuje wielowymiarowe osadzenia wektorowe (ang. *embeddings*) dla dokumentów, wiadomości e-mail i spotkań. Obiekty o zbliżonym znaczeniu trafiają do sąsiadujących klastrów wektorowych. Dzięki temu model rozumie intencję pytania, nawet jeśli nie znasz dokładnej nazwy pliku.
 
@@ -132,6 +132,8 @@ Poniższa tabela porównuje główne zastosowania usługi Copilot w poszczególn
 ### Cennik i wymagania licencyjne
 
 Model biznesowy usługi Copilot for Microsoft 365 wymaga posiadania bazowej licencji Microsoft 365 (Business Standard, Business Premium lub Enterprise E3/E5). Sama usługa kosztuje 30 USD za użytkownika miesięcznie w wariancie Enterprise. Dla mniejszych firm (do 300 użytkowników) dostępny jest plan Business za 21 USD miesięcznie przy zobowiązaniu rocznym – do końca 2026 roku w promocji za 18 USD w pierwszym roku.
+
+Microsoft rozróżnia dziś trzy poziomy: Copilot Chat (Basic) – czat oparty na danych z sieci, Microsoft 365 Copilot (Basic) – standardowy dostęp do Copilota w Wordzie, Excelu, PowerPoincie i OneNote bez dodatkowej licencji oraz Microsoft 365 Copilot (Premium) – płatny dodatek z priorytetowym dostępem, pracą na danych firmowych (Microsoft Graph, Work IQ) i agentem Cowork rozliczanym za zużycie. Podane wyżej ceny dotyczą właśnie tego płatnego dodatku.
 
 **Bez bazowej licencji M365 nie można dokupić usługi Copilot – jest to twarde wymaganie techniczne**, a nie wyłącznie handlowe. Indeks Semantyczny potrzebuje danych z Microsoft Graph, który jest dostępny tylko w ramach subskrypcji M365.
 

@@ -35,6 +35,8 @@ W naszej ocenie z tej premiery płyną trzy obserwacje:
 
 Uważamy, że przy cenie 2/6 dolarów za milion tokenów Grok 4.6 celuje w tę samą półkę, o którą walczy Google tanimi modelami Flash – i to właśnie na niej, a nie wśród flagowców, rozstrzygnie się, kto obsłuży masowe wdrożenia agentów.
 
+> **Aktualizacja (25.09.2026):** Firma xAI od 6 lipca 2026 r. – a więc jeszcze przed premierą Groka 4.6 – działa pod nazwą SpaceXAI i to pod tą nazwą wydała opisywany model.
+
 ## W skrócie
 
 - xAI wydał Grok 4.6 – model projektowany pod długo działających agentów, z samotestowaniem wyników na dłuższych zadaniach.

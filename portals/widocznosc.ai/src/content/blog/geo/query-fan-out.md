@@ -3,7 +3,7 @@ title: 'Query fan-out w Google AI Mode – jak jeden prompt rozkłada się na wi
 subtitle: 'Mechanizm, dzięki któremu Google AI Mode rozumie złożone pytania – i co to znaczy dla pozycjonowania w 2026'
 description: 'Czym jest query fan-out, jak Google AI Mode dekomponuje pojedyncze pytanie na wiele podzapytań, dlaczego klasyczne SEO już tu nie wystarcza i jak optymalizować content pod nową logikę pobierania danych.'
 date: 2026-05-14
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-query-fan-out.webp
 icon: '<circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="19" cy="19" r="2.5"/><line x1="7.5" y1="5.5" x2="16.5" y2="5.5"/><line x1="6.5" y1="6.5" x2="16.5" y2="11.5"/><line x1="6.5" y1="6.5" x2="16.5" y2="18"/>'
 author:
@@ -42,7 +42,7 @@ sources:
     note: 'ALM Corp, omówienie badania Kevina Indiga z lutego 2026 roku. 44,2% cytowań ChatGPT pochodzi z pierwszych 30% treści.'
   - title: 'Models – OpenAI API'
     url: 'https://developers.openai.com/api/docs/models'
-    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
+    note: 'OpenAI, dokumentacja API, stan na 25 września 2026. Aktualna rodzina GPT-6: Astra (od 3 września 2026) oraz Sol i Luna (od 22 września 2026).'
 ---
 Klasyczne SEO przyzwyczaiło nas do prostego modelu: użytkownik wpisuje frazę, wyszukiwarka dopasowuje wyniki, a my optymalizujemy pod to treść. **Query fan-out (rozszczepienie zapytania) wywraca ten schemat do góry nogami.** Pomiędzy pytaniem a odpowiedzią pojawia się nowa warstwa. Rozbija ona jeden prompt na wiele szczegółowych podzapytań i dopiero one trafiają do indeksu. **Jeśli Twoja strona pasuje do oryginalnej frazy, ale omija wygenerowane podzapytania, w odpowiedzi AI po prostu Cię nie ma.**
 

@@ -3,7 +3,7 @@ title: 'Topical authority pod LLM-y – pillar + cluster w erze AI Overviews'
 subtitle: 'Jak zbudować pokrycie tematyczne, które LLM-y będą cytować częściej niż treści konkurencji'
 description: 'Dlaczego LLM-y faworyzują domeny z głębokim pokryciem jednej niszy. Jak zbudować architekturę pillar + cluster, która działa w erze AI Mode i AI Overviews. Konkretny szablon implementacji – od mapy tematów po linkowanie wewnętrzne.'
 date: 2026-05-03
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-topical-authority.webp
 icon: '<circle cx="12" cy="6" r="2.5"/><circle cx="6" cy="14" r="2"/><circle cx="12" cy="14" r="2"/><circle cx="18" cy="14" r="2"/><circle cx="4" cy="20" r="1.5"/><circle cx="9" cy="20" r="1.5"/><circle cx="14" cy="20" r="1.5"/><circle cx="19" cy="20" r="1.5"/><line x1="12" y1="9" x2="6" y2="12"/><line x1="12" y1="9" x2="12" y2="12"/><line x1="12" y1="9" x2="18" y2="12"/>'
 author:
@@ -36,7 +36,7 @@ sources:
     note: 'Google Search Central. Wprowadzenie do danych strukturalnych schema.org w formacie JSON-LD.'
   - title: 'Models – OpenAI API'
     url: 'https://developers.openai.com/api/docs/models'
-    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
+    note: 'OpenAI, dokumentacja API, stan na 25 września 2026. Aktualna rodzina GPT-6: Astra (od 3 września 2026) oraz Sol i Luna (od 22 września 2026).'
 ---
 **Większość stron wygrywających kiedyś w klasycznym SEO dzięki silnemu profilowi linkowemu dziś przegrywa w AI Overviews.** Powód jest bolesny dla agencji link buildingowych. LLM-y nie patrzą na linki w taki sam sposób jak klasyczny algorytm. Zwracają uwagę na to, czy domena „wie wszystko" o danej niszy – a to mierzy się głębokością pokrycia, a nie liczbą backlinków. Dlatego koncepcja topical authority, znana w SEO od kilku lat, w erze GEO przestaje być miłym dodatkiem i staje się fundamentem.
 

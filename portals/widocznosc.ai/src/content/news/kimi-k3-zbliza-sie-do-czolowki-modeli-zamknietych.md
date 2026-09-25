@@ -1,6 +1,6 @@
 ---
 title: Kimi K3 zbliża się do czołówki modeli zamkniętych
-lead: Kimi zapowiada otwartowagowy model K3, który według firmowych benchmarków osiąga wyniki bliskie najmocniejszym systemom zamkniętym. Jednocześnie nowy model ma być wyraźnie droższy od poprzednika, co może sygnalizować zmianę w ekonomii chińskiego AI.
+lead: Moonshot AI (marka Kimi) zapowiada otwartowagowy model K3, który według firmowych benchmarków osiąga wyniki bliskie najmocniejszym systemom zamkniętym. Jednocześnie nowy model ma być wyraźnie droższy od poprzednika, co może sygnalizować zmianę w ekonomii chińskiego AI.
 date: '2026-07-17'
 sourceName: The Decoder
 sourceUrl: https://the-decoder.com/kimis-open-model-k3-nears-gpt-5-6-sol-and-fable-5-while-signaling-the-end-of-super-cheap-chinese-ai/
@@ -15,7 +15,7 @@ image: ../../assets/images/news-2026-07-17-kimi-k3-zbliza-sie-do-czolowki-modeli
 
 ## K3 – otwarty model o ogromnej skali i ambicjach zbliżonych do liderów
 
-Kimi ogłosiło model K3 – multimodalny system open-weight o skali 2,8 biliona parametrów i kontekście sięgającym miliona tokenów. To połączenie dwóch cech, które same w sobie przyciągają uwagę – bardzo dużej skali oraz otwartego udostępnienia wag.
+Moonshot AI (marka Kimi) ogłosiło model K3 – multimodalny system open-weight o skali 2,8 biliona parametrów i kontekście sięgającym miliona tokenów. To połączenie dwóch cech, które same w sobie przyciągają uwagę – bardzo dużej skali oraz otwartego udostępnienia wag.
 
 Według benchmarków prezentowanych przez samą firmę K3 zbliża się poziomem do Claude Fable 5 i GPT 5.6 Sol. Jednocześnie ma przewyższać Opus 4.8 oraz GLM 5.2, a w części testów przewaga ma być wyraźna. Trzeba przy tym pamiętać, że są to wyniki pochodzące od producenta modelu, więc na pełną ocenę trzeba poczekać do momentu szerszej weryfikacji przez społeczność i niezależnych badaczy.
 
@@ -39,6 +39,6 @@ Uważamy też, że publikacja pełnych wag będzie tu kluczowym momentem. Dopier
 
 ## W skrócie
 
-- Kimi zapowiedziało multimodalny model open-weight K3 o 2,8 biliona parametrów i kontekście miliona tokenów.
+- Moonshot AI (marka Kimi) zapowiedziało multimodalny model open-weight K3 o 2,8 biliona parametrów i kontekście miliona tokenów.
 - Według benchmarków firmy model zbliża się do czołowych systemów zamkniętych i przewyższa część konkurencji.
 - Nowy model ma być wyraźnie droższy od poprzednika, co może oznaczać koniec epoki skrajnie taniego chińskiego AI.

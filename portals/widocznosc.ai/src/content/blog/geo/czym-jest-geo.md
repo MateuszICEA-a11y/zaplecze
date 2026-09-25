@@ -3,7 +3,7 @@ title: 'Czym jest GEO i czym różni się od SEO'
 subtitle: 'Zrozum, dlaczego widoczność w ChatGPT i Perplexity działa inaczej niż pozycja w Google – i co zrobić, żeby Twoja marka się tam znalazła'
 description: 'GEO (Generative Engine Optimization) to optymalizacja pod kątem wyszukiwarek AI. Sprawdź, czym różni się od SEO, co mówi badanie Princeton KDD 2024 i od czego zacząć.'
 date: 2026-05-17
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-czym-jest-geo.webp
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:
@@ -97,7 +97,7 @@ Zanim zaczniesz optymalizować stronę pod kątem GEO, musisz zrozumieć jeden k
 
 Większość nowoczesnych silników AI – Perplexity, Google AI Overviews, Microsoft Copilot – opiera się na architekturze RAG. [Generowanie wspomagane wyszukiwaniem](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation) (ang. *Retrieval-Augmented Generation*) polega na tym, że model w momencie zapytania dynamicznie przeszukuje sieć. Pobiera fragmenty stron i na ich podstawie generuje spójną odpowiedź. **Twoja witryna musi być technicznie dostępna dla botów AI i zawierać treść łatwą do wyekstrahowania.**
 
-Drugi mechanizm to dane treningowe. ChatGPT bez dostępu do wyszukiwarki (w trybie bazowym) oraz Claude opierają wiedzę na tym, co przyswoiły przed datą graniczną wiedzy (ang. *cutoff date*). Liczy się to, co algorytm uznał za wiarygodne źródło. Tutaj Twoja obecność zależy od tego, czy markę cytowano, linkowano i wzmiankowano w tekstach z korpusu treningowego.
+Drugi mechanizm to dane treningowe. Gdy model odpowiada bez wyszukiwania w sieci – w ChatGPT, Claude czy Gemini – opiera się na tym, co przyswoił przed datą graniczną wiedzy (ang. *cutoff date*). Liczy się to, co algorytm uznał za wiarygodne źródło. Tutaj Twoja obecność zależy od tego, czy markę cytowano, linkowano i wzmiankowano w tekstach z korpusu treningowego.
 
 ### Jak model wybiera fragment do zacytowania?
 
@@ -150,7 +150,7 @@ Wyniki testowania poszczególnych taktyk przyniosły bardzo konkretne wnioski.
 
 ## Jakimi metrykami mierzyć widoczność w AI?
 
-Klasyczne narzędzia SEO – Google Search Console, Ahrefs, Semrush – nie mierzą widoczności w LLM-ach. Do GEO potrzebujesz innych danych i zupełnie nowego podejścia do analityki.
+Klasyczne narzędzia SEO mierzą widoczność w LLM-ach tylko fragmentarycznie. Google Search Console pokazuje wyświetlenia w AI Overviews i AI Mode, a Ahrefs i Semrush mają osobne, płatne moduły AI. Do pełnego obrazu GEO nadal potrzebujesz innych danych i nowego podejścia do analityki.
 
 W ICEA stosujemy trzy metryki, które stanowią punkt wyjścia każdego audytu.
 

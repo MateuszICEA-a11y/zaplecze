@@ -3,7 +3,7 @@ title: 'llms.txt – czy warto i jak wdrożyć'
 subtitle: 'Prosty plik tekstowy, który wskazuje botom AI, co na Twojej stronie jest najważniejsze'
 description: 'Czym jest llms.txt, jak go wdrożyć i kiedy naprawdę warto – praktyczny przewodnik z przykładową strukturą pliku dla serwisów B2B i SaaS.'
 date: 2026-05-05
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-llms-txt.webp
 icon: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>'
 author:
@@ -57,6 +57,9 @@ sources:
   - title: 'Google Says LLMs.Txt Comparable To Keywords Meta Tag'
     url: 'https://www.searchenginejournal.com/google-says-llms-txt-comparable-to-keywords-meta-tag/544804/'
     note: 'Search Engine Journal (Roger Montti), 17 kwietnia 2025. Wypowiedź Johna Muellera porównująca llms.txt do meta keywords i uwaga o ryzyku cloakingu.'
+  - title: 'AI features and your website'
+    url: 'https://developers.google.com/search/docs/appearance/ai-features'
+    note: 'Google Search Central. Do pojawienia się w AI Overviews i AI Mode nie są potrzebne nowe pliki czytelne dla maszyn, pliki tekstowe dla AI ani specjalne znaczniki.'
   - title: 'Does LLMs.txt impact your AI visibility and citations? No, according to research'
     url: 'https://seranking.com/blog/llms-txt/'
     note: 'SE Ranking, 7 listopada 2025. Analiza ok. 300 000 domen: brak związku między obecnością llms.txt a częstotliwością cytowań.'
@@ -137,7 +140,7 @@ Poznaj kilka reguł technicznych, które decydują o poprawności analizy skład
 
 To pytanie mocno dzieli rynek. Odpowiedź zależy od tego, kto jest Twoim faktycznym odbiorcą.
 
-**Google nie korzysta z tego standardu.** John Mueller z Google w nieformalnej wypowiedzi na Reddicie porównał go do meta keywords i wskazał na ryzyko tak zwanego *AI cloakingu* – sytuacji, w której boty otrzymują idealnie zoptymalizowany plik tekstowy, a użytkownicy końcowi widzą inną treść. Badania SE Ranking potwierdzają brak korelacji między obecnością `llms.txt` a cytowaniami w ChatGPT czy Gemini. Jeśli Twoim celem jest wyłącznie widoczność w AI Overviews od Google lub w odpowiedziach ChatGPT w trybie przeglądarkowym, ten plik nie zmieni Twoich statystyk GEO.
+**Google nie korzysta z tego standardu.** Oficjalna dokumentacja Google Search Central stwierdza, że do pojawienia się w funkcjach AI wyszukiwarki nie trzeba tworzyć nowych plików czytelnych dla maszyn ani plików tekstowych dla AI. Wcześniej John Mueller w nieformalnej wypowiedzi na Reddicie porównał `llms.txt` do meta keywords i wskazał na ryzyko tak zwanego *AI cloakingu* – sytuacji, w której boty otrzymują idealnie zoptymalizowany plik tekstowy, a użytkownicy końcowi widzą inną treść. Badania SE Ranking potwierdzają brak korelacji między obecnością `llms.txt` a cytowaniami w ChatGPT czy Gemini. Jeśli Twoim celem jest wyłącznie widoczność w AI Overviews od Google lub w odpowiedziach ChatGPT w trybie przeglądarkowym, ten plik nie zmieni Twoich statystyk GEO.
 
 Zupełnie inaczej sytuacja wygląda w ekosystemie deweloperskim. Środowiska takie jak Cursor, Windsurf czy Bolt.new natywnie pobierają `llms.txt` przy mapowaniu zewnętrznych bibliotek. Brak tego pliku zmusza asystentów AI do chaotycznego pobierania kodu HTML. To drastycznie zwiększa zużycie tokenów i pogarsza jakość generowanego kodu. **Jeśli Twój produkt jest biblioteką, API lub platformą dokumentacji, ten plik jest praktycznie obowiązkowy.**
 
@@ -146,7 +149,8 @@ Sygnałem kierunku jest Google Lighthouse 13.3. Ta wersja wprowadziła rozwijan�
 Zobacz dwa scenariusze, w których wdrożenie jest opłacalne, oraz jeden, w którym możesz je pominąć.
 
 - **Firma technologiczna lub dostawca API** – kosztem zbliżonym do zera drastycznie poprawiasz komfort programistów korzystających z Twojej dokumentacji w asystentach AI
-- **Platforma e-commerce z myślą o przyszłości** – autonomiczne agenty zakupowe (*shopping agents*) działające w przeglądarkach będą pobierać `llms.txt`, zanim wykonają akcję na stronie- **Landing page bez komponentu technicznego** – tu możesz pominąć wdrożenie, jeśli Twoim celem jest wyłącznie widoczność w tradycyjnym SEO i AI Overviews Google
+- **Platforma e-commerce z myślą o przyszłości** – autonomiczne agenty zakupowe (*shopping agents*) działające w przeglądarkach będą pobierać `llms.txt`, zanim wykonają akcję na stronie
+- **Landing page bez komponentu technicznego** – tu możesz pominąć wdrożenie, jeśli Twoim celem jest wyłącznie widoczność w tradycyjnym SEO i AI Overviews Google
 
 ## Jak wdrożyć krok po kroku?
 

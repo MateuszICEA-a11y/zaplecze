@@ -3,7 +3,7 @@ title: 'Generative Engine Optimization (GEO) – kompletny przewodnik'
 subtitle: 'Wszystko, co musisz wiedzieć o optymalizacji pod AI, by Twoja marka była cytowana – nie pomijana'
 description: 'Kompletny przewodnik po GEO (Generative Engine Optimization): czym jest, jak działają LLM-y, co mówi badanie Princeton KDD 2024 i jak wdrożyć optymalizację krok po kroku.'
 date: 2026-05-27
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-przewodnik.webp
 icon: '<circle cx="12" cy="12" r="9"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3 Q18 7 18 12 Q18 17 12 21 Q6 17 6 12 Q6 7 12 3"/>'
 author:
@@ -108,7 +108,7 @@ Zanim zaczniesz optymalizować, musisz zrozumieć sam mechanizm. Istnieją dwa g
 
 Pierwszy z nich to [generowanie wspierane wyszukiwaniem](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG – Retrieval-Augmented Generation). Silniki takie jak Perplexity AI czy Google AI Overviews w momencie zapytania dynamicznie przeczesują internet, pobierają fragmenty stron i na ich podstawie generują odpowiedź. **Twoja witryna musi być technicznie dostępna dla botów AI i zawierać treść łatwą do szybkiego wyodrębnienia.**
 
-Drugi mechanizm to dane treningowe. ChatGPT w wariancie offline i Claude opierają wiedzę na tym, co model zobaczył przed datą odcięcia (cutoff date) – i co uznał za wiarygodne źródło. W tym przypadku obecność w odpowiedziach zależy wyłącznie od tego, czy Twoja marka była cytowana, linkowana i wspominana w treściach zasilających zbiór treningowy.
+Drugi mechanizm to dane treningowe. Gdy wyszukiwanie w sieci jest wyłączone albo model uzna je za zbędne, ChatGPT, Claude czy Gemini opierają wiedzę na tym, co zobaczyły przed datą odcięcia (cutoff date) – i co uznały za wiarygodne źródło. W tym przypadku obecność w odpowiedziach zależy wyłącznie od tego, czy Twoja marka była cytowana, linkowana i wspominana w treściach zasilających zbiór treningowy.
 
 W praktyce obie ścieżki wymagają tego samego fundamentu. Treści gęstej od danych, ustrukturyzowanej i bezwzględnie wiarygodnej.
 
@@ -220,7 +220,7 @@ W praktyce oznacza to, że każda liczba powinna mieć swoje źródło. Każde t
 
 ## Jakimi metrykami GEO mierzyć widoczność w AI?
 
-Klasyczne raporty SEO – takie jak Google Search Console czy standardowe śledzenie pozycji – nie mierzą widoczności w LLM. Ahrefs i Semrush oferują ją w osobnych modułach, a do GEO potrzebne są zupełnie inne dane niż pozycje w rankingu.
+Klasyczne raporty SEO mierzą widoczność w LLM tylko częściowo. Google Search Console pokazuje od 2026 roku wyświetlenia w AI Overviews i AI Mode (raport Generative AI performance, bez kliknięć), ale nie obejmuje ChatGPT, Perplexity ani Claude. Ahrefs i Semrush oferują pomiar AI w osobnych modułach, a do GEO potrzebne są zupełnie inne dane niż pozycje w rankingu.
 
 Trzy główne metryki stosowane w ICEA to:
 

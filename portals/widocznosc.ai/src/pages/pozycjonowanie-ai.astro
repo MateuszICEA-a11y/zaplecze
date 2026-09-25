@@ -101,7 +101,7 @@ const processSteps = [
   {
     phase: 'Tydzień 2–3',
     title: 'Dostęp dla botów i encja marki',
-    desc: 'Odblokowanie GPTBota, OAI-SearchBota, ClaudeBota, PerplexityBota i Google-Extended w robots.txt oraz na firewallu, wdrożenie Schema.org Organization i Person z sameAs, uspójnienie danych o firmie w sieci. Bez tego kroku reszta prac nie ma jak zadziałać.',
+    desc: 'Odblokowanie GPTBota, OAI-SearchBota, ClaudeBota, Claude-SearchBota, Claude-User, PerplexityBota i tokenu Google-Extended w robots.txt oraz na firewallu, wdrożenie Schema.org Organization i Person z sameAs, uspójnienie danych o firmie w sieci. Bez tego kroku reszta prac nie ma jak zadziałać.',
   },
   {
     phase: 'Tydzień 3–6',
@@ -157,7 +157,7 @@ const proofPlatforms = [
 const faqItems = [
   {
     q: 'Jak pozycjonować stronę w AI?',
-    a: 'Pozycjonowanie w AI opiera się na trzech grupach działań. Po pierwsze, dostęp: modele muszą móc pobrać stronę, więc GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot i Google-Extended nie mogą być blokowane. Po drugie, cytowalność: treść musi zawierać fakty, liczby i definicje w pierwszych akapitach oraz dać się wyciąć jako samodzielny fragment. Po trzecie, encja: spójne dane o firmie, Schema.org i wzmianki marki w źródłach zewnętrznych, z których modele budują wiedzę o marce.',
+    a: 'Pozycjonowanie w AI opiera się na trzech grupach działań. Po pierwsze, dostęp: modele muszą móc pobrać stronę, więc w robots.txt i na zaporze nie mogą być blokowane OAI-SearchBot i GPTBot (OpenAI), Claude-SearchBot, Claude-User i ClaudeBot (Anthropic) oraz PerplexityBot, a token Google-Extended warto zostawić dopuszczony, jeśli zależy Ci na cytowaniach w aplikacji Gemini. Po drugie, cytowalność: treść musi zawierać fakty, liczby i definicje w pierwszych akapitach oraz dać się wyciąć jako samodzielny fragment. Po trzecie, encja: spójne dane o firmie, Schema.org i wzmianki marki w źródłach zewnętrznych, z których modele budują wiedzę o marce.',
   },
   {
     q: 'Czym pozycjonowanie AI różni się od klasycznego SEO?',
@@ -384,7 +384,7 @@ const serviceSchema = {
             <ul class="llm-list">
               <li>Cytowalność treści – fakty, liczby, definicje w pierwszych 200 słowach</li>
               <li>Encja marki – spójne dane, Schema.org Organization + Person + sameAs</li>
-              <li>Dostęp botów – GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended</li>
+              <li>Dostęp botów – GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, Claude-User, PerplexityBot, Google-Extended</li>
               <li>Wzmianki marki – obecność w mediach, katalogach i źródłach cytowanych przez modele</li>
               <li>Pomiar – powtarzalne testy promptów i monitoring udziału w odpowiedziach</li>
             </ul>

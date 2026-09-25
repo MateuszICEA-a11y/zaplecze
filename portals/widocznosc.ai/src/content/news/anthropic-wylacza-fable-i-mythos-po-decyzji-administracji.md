@@ -37,6 +37,8 @@ Uważamy też, że to ważny sygnał dla użytkowników i badaczy. Im bardziej z
 
 W szerszym sensie widzimy tu także zmianę relacji między państwem a twórcami modeli. Gdy AI wchodzi w obszar bezpieczeństwa narodowego, margines na eksperymenty i „naprawianie po fakcie” wyraźnie się kurczy. To może przyspieszyć rozwój bardziej restrykcyjnych procedur testowania, ale też zwiększyć napięcie między tempem innowacji a wymogami kontroli.
 
+> **Aktualizacja (25.09.2026):** Wyłączenie okazało się tymczasowe. 30 czerwca 2026 r. Departament Handlu USA wycofał ograniczenia eksportowe – dostęp do Mythos 5 częściowo przywrócono już wcześniej, a Claude Fable 5 wrócił do globalnej dostępności 1 lipca.
+
 ## W skrócie
 
 - Anthropic wyłączył modele Fable i Mythos po dyrektywie administracji Trumpa.

@@ -14,7 +14,7 @@ image: ../../assets/images/news-2026-06-05-claude-pisze-juz-wiekszosc-kodu-anthr
 ---
 ## Claude przyspiesza rozwój własnej firmy
 
-Anthropic ujawnił wewnętrzne dane o tym, jak Claude napędza rozwój kolejnych systemów AI. **Według firmy ponad 80 proc. kodu produkcyjnego powstaje dziś przy udziale tego modelu.** Inżynierowie dostarczają osiem razy więcej kodu dziennie niż w 2024 roku.
+Anthropic ujawnił wewnętrzne dane o tym, jak Claude napędza rozwój kolejnych systemów AI. **Według firmy ponad 80 proc. kodu produkcyjnego powstaje dziś przy udziale tego modelu.** Inżynierowie dostarczają osiem razy więcej kodu dziennie niż w 2024 roku. Sama firma zastrzega jednak, że ośmiokrotny wzrost niemal na pewno zawyża realny przyrost produktywności – w wewnętrznej ankiecie pracownicy szacowali go raczej na około czterokrotny.
 
 Sednem tej zmiany nie jest jednak zwykła automatyzacja programowania. Chodzi o kierunek, w którym zmierza branża. **Celem staje się stworzenie AI, która coraz skuteczniej ulepsza samą siebie.** Jeśli taki mechanizm zadziała w praktyce na dużą skalę, tempo rozwoju gwałtownie wzrośnie.
 
@@ -40,6 +40,6 @@ To jeden z najwyraźniejszych sygnałów, że debata o AI przestaje dotyczyć po
 
 ## W skrócie
 
-- **Dominacja w kodzie produkcyjnym** – Anthropic twierdzi, że Claude odpowiada już za ponad 80 proc. kodu i drastycznie zwiększył tempo pracy inżynierów.
+- **Dominacja w kodzie produkcyjnym** – Anthropic twierdzi, że Claude odpowiada już za ponad 80 proc. kodu i wyraźnie zwiększył tempo pracy inżynierów.
 - **Samodoskonalenie AI** – firma wiąże ten skok wydajności z celem budowy sztucznej inteligencji, która potrafi coraz skuteczniej ulepszać samą siebie.
 - **Globalna pauza** – równolegle pojawia się postulat weryfikowalnego wstrzymania rozwoju, pod warunkiem, że inne czołowe laboratoria zrobią to samo.

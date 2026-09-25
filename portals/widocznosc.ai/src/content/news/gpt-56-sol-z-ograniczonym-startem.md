@@ -1,6 +1,6 @@
 ---
 title: GPT-5.6 Sol z ograniczonym startem
-lead: OpenAI pokazało nowy model GPT-5.6 Sol, który według podanego opisu wypada lepiej od Claude Mythos 5 w benchmarkach programistycznych. Jednocześnie jego wdrożenie odbywa się w warunkach kontrolowanego dostępu narzuconego przez rząd USA, co firma określa jako nie do utrzymania.
+lead: OpenAI pokazało nowy model GPT-5.6 Sol, który według podanego opisu wypada lepiej od Claude Mythos 5 w programistycznym benchmarku Terminal-Bench 2.1. Jednocześnie jego wdrożenie odbywa się w warunkach kontrolowanego dostępu narzuconego przez rząd USA, co firma określa jako nie do utrzymania.
 date: '2026-06-27'
 sourceName: The Decoder
 sourceUrl: https://the-decoder.com/openais-claude-mythos-competitor-gpt-5-6-sol-launches-under-government-controlled-access-it-calls-unsustainable/
@@ -15,7 +15,7 @@ image: ../../assets/images/news-2026-06-27-gpt-56-sol-z-ograniczonym-startem.web
 
 ## GPT-5.6 Sol mocniejszy w kodowaniu, ale z politycznym hamulcem
 
-OpenAI uruchomiło nowy flagowy model GPT-5.6 Sol. Z udostępnionego opisu wynika, że model osiąga lepsze wyniki od Claude Mythos 5 w benchmarkach związanych z programowaniem, więc pozycjonowany jest jako bezpośredni konkurent dla najmocniejszych systemów tej klasy.
+OpenAI udostępniło nowy flagowy model GPT-5.6 Sol w ograniczonym podglądzie – na polecenie rządu USA tylko wybranym partnerom, przez API i Codex. W benchmarku Terminal-Bench 2.1 model uzyskał 88,8% (wariant Sol Ultra – 91,9%) wobec 88,0% dla Claude Mythos 5, więc pozycjonowany jest jako bezpośredni konkurent dla najmocniejszych systemów tej klasy.
 
 Najciekawsza część tej historii nie dotyczy jednak samych testów, tylko sposobu wdrożenia. Start modelu ma odbywać się z ograniczonym dostępem kontrolowanym przez rząd USA. OpenAI wyraźnie sygnalizuje, że nie jest z tego zadowolone i określa taki tryb jako nie do utrzymania. To ważne, bo pokazuje napięcie między tempem rozwoju modeli a zewnętrzną kontrolą nad ich udostępnianiem.
 
@@ -39,6 +39,6 @@ Uważamy też, że warto ostrożnie podchodzić do samego komunikatu o przewadze
 
 ## W skrócie
 
-- OpenAI uruchomiło GPT-5.6 Sol i według opisu model przewyższa Claude Mythos 5 w benchmarkach kodowania.
+- OpenAI udostępniło GPT-5.6 Sol w ograniczonym podglądzie; model przewyższa Claude Mythos 5 w benchmarku kodowania Terminal-Bench 2.1 (88,8% wobec 88,0%).
 - Wdrożenie odbywa się w formule ograniczonego dostępu kontrolowanego przez rząd USA, czemu OpenAI się sprzeciwia.
 - Naszym zdaniem to sygnał, że w AI coraz większe znaczenie ma nie tylko moc modelu, ale również polityka dostępu do niego.

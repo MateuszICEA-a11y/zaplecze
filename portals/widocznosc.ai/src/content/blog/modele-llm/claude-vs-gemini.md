@@ -3,7 +3,7 @@ title: 'Claude vs Gemini – który model jest lepszy do pracy'
 subtitle: 'Konkretne werdykty dla pięciu scenariuszy zawodowych, żebyś przestał zgadywać i zaczął wybierać świadomie'
 description: 'Claude czy Gemini? Porównanie modeli AI dla pracy: dokumenty, kod, długi kontekst, ekosystem Google, ceny. Werdykt dla poszczególnych zastosowań.'
 date: 2026-05-07
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-modele-llm-claude-vs-gemini.webp
 icon: '<path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 0 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 0-2-2V9m0 0h18"/>'
 author:
@@ -18,10 +18,10 @@ level: 'L1'
 sources:
   - title: 'How large is the context window on paid Claude plans?'
     url: 'https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans'
-    note: 'Claude Help Center. Okno 1 mln tokenów w czacie dla Fable 5.1, Opus 5 i Sonnet 5 na planach płatnych (500 tys. dla Opus 4.8 i Sonnet 4.6) oraz 1 mln tokenów w Claude Code.'
+    note: 'Claude Help Center. Okno 1 mln tokenów w czacie dla Fable 5.1, Opus 5.5, Opus 5 i Sonnet 5 na planach płatnych (500 tys. dla Opus 4.8 i Sonnet 4.6) oraz 1 mln tokenów w Claude Code.'
   - title: 'Models overview'
     url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
-    note: 'Anthropic, dokumentacja API. Aktualne modele: Fable 5.1 (10/50 USD), Opus 5 (5/25 USD), Sonnet 5 (2/10 USD), Haiku 4.5 (1/5 USD); okno 1 mln tokenów dla Fable 5.1, Opus 5 i Sonnet 5; Opus 4.8 i Sonnet 4.6 jako legacy.'
+    note: 'Anthropic, dokumentacja API. Aktualne modele: Fable 5.1 (10/50 USD), Opus 5.5 (4/20 USD), Sonnet 5 (2/10 USD), Haiku 4.5 (1/5 USD); okno 1 mln tokenów dla Fable 5.1, Opus 5.5 i Sonnet 5; Opus 5, Opus 4.8 i Sonnet 4.6 jako legacy.'
   - title: 'Gemini models'
     url: 'https://ai.google.dev/gemini-api/docs/models'
     note: 'Google AI for Developers. Gemini 3.8 Flash jako najnowszy stabilny model Flash oraz Gemini 3.1 Pro w wersji preview.'
@@ -45,7 +45,7 @@ sources:
     note: 'Anthropic, 17 lutego 2026. Wynik 79,6% w SWE-bench Verified.'
   - title: 'Pricing'
     url: 'https://platform.claude.com/docs/en/about-claude/pricing'
-    note: 'Anthropic, dokumentacja API. Cennik modeli Claude, w tym Opus 5 (5/25 USD) i Sonnet 5 (2/10 USD) za milion tokenów; pełne okno 1 mln tokenów bez dopłat za długi kontekst.'
+    note: 'Anthropic, dokumentacja API. Cennik modeli Claude, w tym Opus 5.5 (4/20 USD) i Sonnet 5 (2/10 USD) za milion tokenów; pełne okno 1 mln tokenów bez dopłat za długi kontekst.'
   - title: 'Gemini Developer API pricing'
     url: 'https://ai.google.dev/gemini-api/docs/pricing'
     note: 'Google AI for Developers. Cena Gemini 3.1 Pro: 2/12 USD do 200 tys. tokenów promptu, 4/18 USD powyżej; Gemini 3.1 Flash-Lite 0,25/1,50 USD.'
@@ -62,14 +62,14 @@ Claude i Gemini to dziś dwie najpoważniejsze alternatywy dla ChatGPT w codzien
 
 Zanim przejdziesz do szczegółów, rzuć okiem na przekrój przez obie platformy. Dane są aktualne na wrzesień 2026 r. według oficjalnych cenników Anthropic i Google (wyniki SWE-bench – ostatnie opublikowane dla danej rodziny).
 
-| Kryterium | Claude (Sonnet 5 / Opus 5) | Gemini (3.1 Pro) |
+| Kryterium | Claude (Sonnet 5 / Opus 5.5) | Gemini (3.1 Pro) |
 |---|---|---|
 | Producent | Anthropic | Google DeepMind |
 | Najmocniejszy model | Claude Fable 5.1 ($10/$50 w API) | Gemini 3.1 Pro (w API w wersji preview) |
 | Najnowszy szybki model | Claude Haiku 4.5 | Gemini 3.8 Flash |
 | Okno kontekstowe | 1M tokenów (Fable, Sonnet i Opus, także w czacie) | 1M tokenów |
 | SWE-bench Verified | 79,6% (Sonnet 4.6), 88,6% (Opus 4.8) | 80,6% (3.1 Pro) |
-| Cena API (input/output) | $2/$10 (Sonnet 5), $5/$25 (Opus 5) | $2/$12 (3.1 Pro, ≤200K) |
+| Cena API (input/output) | $2/$10 (Sonnet 5), $4/$20 (Opus 5.5) | $2/$12 (3.1 Pro, ≤200K) |
 | Plan dla osób prywatnych | Claude.ai Pro – $20/mies. | Google AI Pro – $19,99/mies. |
 | Plan premium | Claude.ai Max – $100–200/mies. | Google AI Ultra – od $99,99/mies. |
 | Integracja z Google Workspace | Brak natywnej | Natywna (Gmail, Docs, Drive) |
@@ -109,7 +109,7 @@ Gemini ma na tym polu jedną konkretną przewagę. Natywny dostęp do wyszukiwar
 
 To obszar, w którym dane są najbardziej jednoznaczne. SWE-bench Verified to branżowy punkt odniesienia do pomiaru zdolności modeli w rozwiązywaniu rzeczywistych zgłoszeń błędów (bugów) w repozytoriach GitHub. Nie mówimy tu o zadaniach syntetycznych, ale o pracy na prawdziwym kodzie produkcyjnym.
 
-**Claude Opus 4.8 (wydany 28 maja 2026) uzyskał 88,6% na SWE-bench Verified, wyprzedzając Gemini 3.1 Pro (80,6%) o ok. 8 punktów.** W klasie średniej Claude Sonnet 4.6 (79,6%) wypadał niemal równo z Gemini 3.1 Pro. Decydująca przewaga Claude leżała więc w modelu flagowym. Następcy – Opus 5 (lipiec 2026) i Sonnet 5 (czerwiec 2026), a także Fable 5.1 – mają już status aktualnych modeli, a Opus 4.8 i Sonnet 4.6 są modelami legacy. Po stronie Google flagowy Gemini 3.1 Pro nadal ma w API status preview, a linię szybkich modeli zamyka dziś Gemini 3.8 Flash. Dla nowych modeli obu firm nie zestawiamy wyników SWE-bench, więc powyższe liczby opisują stan z połowy 2026 roku.
+**Claude Opus 4.8 (wydany 28 maja 2026) uzyskał 88,6% na SWE-bench Verified, wyprzedzając Gemini 3.1 Pro (80,6%) o ok. 8 punktów.** W klasie średniej Claude Sonnet 4.6 (79,6%) wypadał niemal równo z Gemini 3.1 Pro. Decydująca przewaga Claude leżała więc w modelu flagowym. Następcy – Sonnet 5 (czerwiec 2026), Opus 5 (lipiec 2026) i Opus 5.5 (22 września 2026), a także Fable 5.1 – zastąpili te modele; aktualne są dziś Sonnet 5, Opus 5.5 i Fable 5.1, a Opus 5, Opus 4.8 i Sonnet 4.6 mają status legacy. Po stronie Google flagowy Gemini 3.1 Pro nadal ma w API status preview, a linię szybkich modeli zamyka dziś Gemini 3.8 Flash. Dla nowych modeli obu firm nie zestawiamy wyników SWE-bench, więc powyższe liczby opisują stan z połowy 2026 roku.
 
 W praktyce ta różnica oznacza mniej iteracji przy debugowaniu i znacznie większą szansę na poprawne działanie kodu już za pierwszym razem. Przy stawce programisty seniorskiego czas to pieniądz. Jeden zaoszczędzony cykl poprawek potrafi z nawiązką uzasadnić wyższy koszt tokenów.
 
@@ -119,7 +119,7 @@ Narzędzie Claude Code (interfejs wiersza poleceń, czyli CLI) idzie krok dalej 
 
 ## Długi kontekst – kiedy masz 200 stron do przejrzenia
 
-Okno kontekstowe decyduje o tym, ile danych możesz podać modelowi w jednym zapytaniu. Claude Sonnet 5, Claude Opus 5 i Claude Fable 5.1 obsługują 1 milion tokenów zarówno w interfejsie czatu na planach płatnych, jak i przez API oraz w Claude Code. Poprzednia generacja (Opus 4.8, Sonnet 4.6) miała w czacie 500 tysięcy tokenów.
+Okno kontekstowe decyduje o tym, ile danych możesz podać modelowi w jednym zapytaniu. Claude Sonnet 5, Claude Opus 5.5 i Claude Fable 5.1 obsługują 1 milion tokenów zarówno w interfejsie czatu na planach płatnych, jak i przez API oraz w Claude Code. Poprzednia generacja (Opus 4.8, Sonnet 4.6) miała w czacie 500 tysięcy tokenów.
 
 Gemini 3.1 Pro oferuje 1 milion tokenów w planie AI Pro i wyższych.
 
@@ -166,11 +166,11 @@ Claude.ai Max zaczyna się od $100 i sięga $200 miesięcznie, w zależności od
 Na poziomie API ceny modeli średniej klasy są dziś zbliżone:
 
 - **Claude Sonnet 5** – $2 za milion tokenów wejściowych / $10 za milion tokenów wyjściowych
-- **Claude Opus 5** – $5 / $25 za milion tokenów
+- **Claude Opus 5.5** – $4 / $20 za milion tokenów
 - **Claude Fable 5.1** – $10 / $50 za milion tokenów
 - **Gemini 3.1 Pro (preview)** – $2 / $12 za milion tokenów (dla kontekstu do 200K; powyżej $4 / $18)
 
-Sonnet 5 i Gemini 3.1 Pro kosztują tyle samo na wejściu, a Sonnet jest nieco tańszy na wyjściu. Wyraźnie droższe są dopiero Opus 5 i najmocniejszy Fable 5.1. Przy wolumenach produkcyjnych – tysiące zapytań dziennie, przetwarzanie masowych zbiorów danych – różnice szybko rosną. Dla aplikacji masowych najtańsze warianty Gemini Flash-Lite (np. 3.1 Flash-Lite za $0,25/$1,50) są znacznie tańsze niż najtańszy Claude Haiku 4.5 ($1/$5).
+Sonnet 5 i Gemini 3.1 Pro kosztują tyle samo na wejściu, a Sonnet jest nieco tańszy na wyjściu. Wyraźnie droższe są dopiero Opus 5.5 i najmocniejszy Fable 5.1. Przy wolumenach produkcyjnych – tysiące zapytań dziennie, przetwarzanie masowych zbiorów danych – różnice szybko rosną. Dla aplikacji masowych najtańsze warianty Gemini Flash-Lite (np. 3.1 Flash-Lite za $0,25/$1,50) są znacznie tańsze niż najtańszy Claude Haiku 4.5 ($1/$5).
 
 Jeśli chcesz sprawdzić, jak Twoja obecna widoczność w modelach AI wygląda jeszcze zanim zdecydujesz o strategii contentowej, [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę. Pokaże Ci dokładnie, gdzie jesteś cytowany, a gdzie w ogóle Cię nie ma.
 

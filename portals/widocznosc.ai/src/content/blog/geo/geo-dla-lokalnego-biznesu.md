@@ -3,7 +3,7 @@ title: 'GEO dla lokalnego biznesu – widoczność w wyszukiwaniu konwersacyjnym
 subtitle: 'Dowiedz się, jak sprawić, by asystenci AI polecali właśnie Twoją firmę zamiast konkurencji'
 description: 'GEO dla lokalnego biznesu: jak zoptymalizować stronę pod ChatGPT, Perplexity i Google AI Mode. Praktyczny poradnik L2 – spójność encji, schema.org, llms.txt, pomiar cytowań.'
 date: 2026-05-01
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-geo-dla-lokalnego-biznesu.webp
 icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><circle cx="12" cy="6" r="1.5"/>'
 author:
@@ -37,6 +37,12 @@ sources:
   - title: 'The /llms.txt file, v2'
     url: 'https://llmstxt.org/'
     note: 'Jeremy Howard, propozycja z 3 września 2024. Format Markdown pliku llms.txt i konwencja sekcji Optional.'
+  - title: 'llms.txt and AI Visibility: Results from OtterlyAI’s GEO Study'
+    url: 'https://otterly.ai/blog/the-llms-txt-experiment/'
+    note: 'OtterlyAI. Na ponad 62 100 wizyt botów AI tylko ok. 0,1% żądań dotyczyło pliku /llms.txt.'
+  - title: 'Does LLMs.txt impact your AI visibility and citations? No, according to research'
+    url: 'https://seranking.com/blog/llms-txt/'
+    note: 'SE Ranking, 7 listopada 2025. Analiza ok. 300 000 domen: brak związku między obecnością llms.txt a częstotliwością cytowań.'
 ---
 Gdy użytkownik pyta ChatGPT „który dentysta na Mokotowie przyjmuje w sobotę", model nie otwiera Google Maps. Syntetyzuje odpowiedź z tego, co zdążył zaindeksować i czemu ufa. Jeśli Twoja firma nie jest opisana w sposób maszynowo czytelny, po prostu znikasz z radaru. **GEO (Generative Engine Optimization, czyli optymalizacja pod generatywne silniki wyszukiwania) to zestaw konkretnych działań, które zmieniają ten stan rzeczy.** Dla biznesów lokalnych to kwestia przetrwania. Gartner prognozuje, że do 2026 roku wolumen zapytań w tradycyjnych wyszukiwarkach spadnie o 25% na rzecz chatbotów AI i innych wirtualnych agentów.
 
@@ -142,7 +148,7 @@ Jeśli chcesz sprawdzić, jak Twoja witryna wypada pod kątem cytowalności w mo
 
 ## Plik `llms.txt` – instrukcja dla agentów AI
 
-Standard `llms.txt` to prosty plik tekstowy w formacie Markdown, umieszczany w katalogu głównym domeny. Modele AI i agenty RAG mogą go odczytać, żeby zrozumieć strukturę oferty bez konieczności indeksowania setek podstron. Dla lokalnego biznesu to rozwiązanie szczególnie cenne. Redukuje szum i zapobiega halucynacjom na temat zakresu usług.
+Standard `llms.txt` to prosty plik tekstowy w formacie Markdown, umieszczany w katalogu głównym domeny. Modele AI i agenty RAG mogą go odczytać, żeby zrozumieć strukturę oferty bez konieczności indeksowania setek podstron. Dla lokalnego biznesu to prosty sposób, by zebrać w jednym miejscu opis oferty, lokalizacji i godzin pracy.
 
 Plik powinien zawierać:
 
@@ -160,13 +166,13 @@ Porównanie ekosystemu plików konfiguracyjnych pokazuje, że `llms.txt` wypełn
 | `sitemap.xml` | Pełna mapa URL serwisu | XML | Wyszukiwarki indeksujące |
 | `llms.txt` | Skondensowany kontekst marki | Markdown | Modele LLM, agenty RAG, asystenci AI |
 
-Analiza logów serwerowych pokazuje, że wdrożenie `llms.txt` nie podnosi natychmiast pozycji w klasycznych wyszukiwarkach. Zmniejsza jednak opóźnienie odpytywania przez systemy AI i eliminuje błędy atrybucji. Model, który przeczytał Twój plik `llms.txt`, wie, że jesteś hydraulikiem z Pragi, a nie fryzjerem z Woli.
+Dotychczasowe analizy logów serwerowych pokazują, że boty AI rzadko pobierają `llms.txt`, a badania nie wykazały jego wpływu na cytowania. Plik warto traktować jako tani dodatek porządkujący opis firmy, a nie jako sposób na lepszą widoczność – ważniejsze są spójne dane NAP, schemat `LocalBusiness` i treść strony.
 
 Pełny [przewodnik po GEO](/geo/przewodnik/) opisuje szerszy kontekst techniczny i strategię 6-miesięczną.
 
 ## Jak mierzyć widoczność w wyszukiwaniu konwersacyjnym?
 
-Klasyczne narzędzia SEO – Google Search Console, Ahrefs, Semrush – nie mierzą widoczności w LLM. Do tego potrzebujesz zupełnie innego zestawu danych i nowej metodyki.
+Klasyczne narzędzia SEO mierzą widoczność w LLM tylko fragmentarycznie. Google Search Console pokazuje wyświetlenia w AI Overviews i AI Mode, a Ahrefs i Semrush mają osobne, płatne moduły AI. Do pomiaru w ChatGPT i Perplexity nadal potrzebujesz własnego zestawu zapytań testowych.
 
 Oto trzy metryki, które wdrożyliśmy w ICEA jako podstawę pomiaru dla lokalnych klientów:
 

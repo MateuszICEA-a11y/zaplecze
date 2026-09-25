@@ -3,7 +3,7 @@ title: 'Share of Voice zamiast rankingu – jak naprawdę mierzyć widoczność 
 subtitle: 'Dlaczego klasyczne śledzenie pozycji nie działa w ChatGPT, Claude i Perplexity – i co je zastępuje'
 description: 'Badanie SparkToro pokazało, że szansa na tę samą listę marek w dwóch odpowiedziach AI to mniej niż 1%. Mierzenie pozycji w AI nie ma sensu. Co zamiast tego: Share of Voice, Citation Rate, Mention Rate – metryki, które naprawdę pokazują, jak Twoja marka radzi sobie w erze wyszukiwarek AI.'
 date: 2026-05-05
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-share-of-voice.webp
 icon: '<rect x="3" y="14" width="3" height="7" rx="1"/><rect x="9" y="9" width="3" height="12" rx="1"/><rect x="15" y="4" width="3" height="17" rx="1"/><rect x="20.5" y="11" width="2" height="10" rx="1"/>'
 author:
@@ -27,7 +27,10 @@ sources:
     note: 'Google, 20 maja 2025. Opis techniki query fan-out – rozbijania pytania na podtematy i wiele równoległych zapytań.'
   - title: 'AI features and your website'
     url: 'https://developers.google.com/search/docs/appearance/ai-features'
-    note: 'Google Search Central. Ruch z AI Overviews i AI Mode jest raportowany w Search Console razem z pozostałym ruchem, w typie wyszukiwania „Internet”.'
+    note: 'Google Search Central. Opis AI Overviews i AI Mode; osobne wyświetlenia w funkcjach generatywnych pokazuje raport Generative AI performance w Search Console.'
+  - title: 'Generative AI performance report'
+    url: 'https://support.google.com/webmasters/answer/16984139'
+    note: 'Pomoc Google Search Console. Raport wyświetleń stron w AI Overviews i AI Mode z podziałem na strony, kraje, daty i urządzenia; od 31 sierpnia 2026 roku dostępny dla wszystkich witryn na świecie.'
 ---
 Klient pyta: *„Na której pozycji jesteśmy w ChatGPT?"*. **To pytanie nie ma odpowiedzi – i dlatego cały biznes klasycznego SEO zaczyna się rozsypywać przy próbie raportowania widoczności w AI.** Problem nie polega na tym, że nie potrafimy mierzyć. Ranking jako metryka po prostu przestał istnieć w sensie, w jakim znamy go z klasycznego Google.
 
@@ -92,7 +95,7 @@ W ICEA każdy audyt SoV przebiega według tego samego schematu. Każdy krok przy
 Poznaj trzy najczęstsze pułapki, w które wpadają agencje próbujące „dorobić" GEO do istniejących raportów SEO.
 
 - **Raportowanie pozycji** – klasyczne narzędzia do śledzenia rankingu zaczęły obiecywać śledzenie AI Overviews i ChatGPT. To półprawda, bo pokazują pojedynczy obraz, a nie rozkład probabilistyczny. Klient, który dostaje raport *„na frazę X jesteś w AI Overview na pozycji 2"*, przy następnym sprawdzeniu zobaczy *„nie ma Cię w ogóle"* i zupełnie nie zrozumie dlaczego.
-- **Mieszanie SoV z wyświetleniami** – Search Console nie wydziela wyświetleń z AI Overviews ani AI Mode: wlicza je do ogólnego ruchu w typie wyszukiwania „Internet". Twierdzenie *„mamy 10 000 wyświetleń miesięcznie z AI Overviews"* nie ma więc oparcia w GSC, a nawet gdyby taka liczba była dostępna, nic nie znaczy, dopóki nie zestawisz jej z konkurencją. **SoV to relacja, a wyświetlenia to liczba absolutna – tylko relacja mówi coś o pozycji konkurencyjnej.**
+- **Mieszanie SoV z wyświetleniami** – od 2026 roku Search Console ma osobny raport Generative AI performance, który pokazuje wyświetlenia stron w AI Overviews i AI Mode, ale bez kliknięć, CTR i pozycji. Liczba *„10 000 wyświetleń miesięcznie z AI Overviews"* jest więc dostępna, lecz nic nie znaczy, dopóki nie zestawisz jej z konkurencją. **SoV to relacja, a wyświetlenia to liczba absolutna – tylko relacja mówi coś o pozycji konkurencyjnej.**
 - **Ignorowanie Mention Rate** – większość agencji GEO skupia się tylko na Citation Rate, bo to łatwo mierzalne za pomocą scrapera. Mention Rate wymaga analizy NLP, więc zostaje pomijany. Tymczasem dla marek B2C i ugruntowanych marek B2B Mention Rate bywa wyraźnie wyższy niż Citation Rate, a pomijanie go zafałszowuje obraz.
 
 ## Jak interpretować wyniki?

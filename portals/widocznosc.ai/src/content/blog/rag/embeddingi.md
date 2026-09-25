@@ -3,7 +3,7 @@ title: 'Embeddingi – jak komputery rozumieją znaczenie tekstu'
 subtitle: 'Zrozum, dlaczego dwa dokumenty o tym samym temacie mogą leżeć blisko siebie w przestrzeni wektorowej – i jak to decyduje o tym, czy LLM zacytuje Twoją stronę'
 description: 'Czym są embeddingi (wektory osadzone) i jak systemy RAG wykorzystują je do wyszukiwania treści. Praktyczne wyjaśnienie dla marketerów i specjalistów SEO.'
 date: 2026-05-14
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-rag-embeddingi.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2 L12 6"/><path d="M12 18 L12 22"/><path d="M4.22 4.22 L7.05 7.05"/><path d="M16.95 16.95 L19.78 19.78"/><path d="M2 12 L6 12"/><path d="M18 12 L22 12"/><path d="M4.22 19.78 L7.05 16.95"/><path d="M16.95 7.05 L19.78 4.22"/>'
 author:
@@ -36,7 +36,7 @@ sources:
     note: 'OpenAI, dokumentacja API. Wymiarowość text-embedding-3-small (1536) i -large (3072), zalecane podobieństwo kosinusowe, wektory znormalizowane do długości 1.'
   - title: 'Models – OpenAI API'
     url: 'https://developers.openai.com/api/docs/models'
-    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
+    note: 'OpenAI, dokumentacja API, stan na 25 września 2026. Aktualne modele API: GPT-6 Astra, GPT-6 Sol i GPT-6 Luna; w ChatGPT domyślnie GPT-5.6 Luna (Free, Go) i GPT-5.6 Sol (Plus, Pro).'
 ---
 Kiedy system RAG (Retrieval-Augmented Generation, czyli generowanie wspomagane wyszukiwaniem) odpowiada na zapytanie użytkownika, nie przeszukuje tekstu jak klasyczna wyszukiwarka. Zamienia zapytanie oraz każdy fragment dokumentu na ciąg liczb – wektor osadzony (embedding). Następnie szuka wektorów leżących najbliżej siebie w matematycznej przestrzeni. To właśnie ten moment decyduje o być albo nie być Twojej strony w odpowiedzi LLM-a. **Zrozumienie embeddingów nie jest wyłącznie sprawą inżynierów – każdy, kto tworzy treści pod AI Search, powinien wiedzieć, jak komputery mierzą znaczenie.**
 

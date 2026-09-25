@@ -3,7 +3,7 @@ title: 'GEO dla e-commerce – jak pokazać produkty w odpowiedziach AI'
 subtitle: 'Dowiedz się, jak zoptymalizować strony produktowe i kategorie sklepu, żeby ChatGPT, Perplexity i Google AI Overviews cytowały Twoją ofertę – nie konkurencji'
 description: 'GEO dla e-commerce: jak zoptymalizować opisy produktów, dane strukturalne i zewnętrzny autorytet, by ChatGPT i Perplexity polecały właśnie Twój sklep.'
 date: 2026-05-02
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-geo-dla-ecommerce.webp
 icon: '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h2v4H7zM11 7h6M11 10h6"/>'
 author:
@@ -64,7 +64,13 @@ sources:
     note: 'Aggarwal i in., KDD 2024. Wzrost widoczności do 40% po modyfikacji treści, wyniki taktyk (cytaty +42,6%, statystyki +32,8%, źródła +27,7%) oraz +115,1% dla strony z piątej pozycji przy powołaniu na źródła.'
   - title: 'AI features and your website'
     url: 'https://developers.google.com/search/docs/appearance/ai-features'
-    note: 'Google Search Central. Query fan-out w AI Overviews i AI Mode oraz zalecenie aktualnych danych w Merchant Center i zgodności danych strukturalnych z treścią strony.'
+    note: 'Google Search Central. Query fan-out w AI Overviews i AI Mode, brak wymogu specjalnych danych strukturalnych do obecności w tych funkcjach oraz zalecenie aktualnych danych w Merchant Center i zgodności danych strukturalnych z treścią strony.'
+  - title: 'Latest Google Search Documentation Updates'
+    url: 'https://developers.google.com/search/updates'
+    note: 'Google Search Central. Wyniki rozszerzone HowTo usunięte w 2023 roku, wyniki FAQ przestały się wyświetlać od 7 maja 2026 roku.'
+  - title: 'Schema Markup’s Real Impact on AI Search | OtterlyAI Experiment'
+    url: 'https://otterly.ai/blog/schema-markup-real-impact-ai-search/'
+    note: 'Otterly.ai, aktualizacja 23 marca 2026. Eksperyment na 7 platformach AI: 6 z 7 nie odczytało JSON-LD (poprawnie zrobił to tylko Gemini); wniosek autorów: schema nie jest bezpośrednim sygnałem cytowań w AI.'
   - title: 'Shop with AI Mode, use AI to buy and try clothes on yourself virtually'
     url: 'https://blog.google/products-and-platforms/products/shopping/google-shopping-ai-mode-virtual-try-on-update/'
     note: 'Google, 20 maja 2025. Shopping Graph obejmuje ponad 50 mld ofert produktowych, z czego ponad 2 mld odświeżane są co godzinę.'
@@ -89,7 +95,7 @@ Gartner prognozuje, że do 2026 roku wolumen zapytań w tradycyjnych wyszukiwark
 
 Modele językowe weryfikują każde źródło dwuetapowo, zanim włączą je do odpowiedzi:
 
-- **Etap pobierania danych** – bot AI (OAI-SearchBot, ClaudeBot, PerplexityBot) musi technicznie dostać się do strony, pobrać treść i uznać ją za indeksowalną. Witryny oparte wyłącznie na dynamicznym JavaScripcie są dla tych crawlerów całkowicie niewidoczne.
+- **Etap pobierania danych** – bot AI (OAI-SearchBot, Claude-SearchBot, PerplexityBot) musi technicznie dostać się do strony, pobrać treść i uznać ją za indeksowalną. Witryny oparte wyłącznie na dynamicznym JavaScripcie są dla tych crawlerów całkowicie niewidoczne.
 - **Etap syntezy** – model decyduje, czy strona jest wystarczająco wiarygodna, żeby zacytować jej fragment. Kluczową rolę odgrywa tu gęstość faktów, spójność danych i zewnętrzny autorytet encji.
 
 Pokonanie obu barier wymaga zupełnie innych działań. Wiele sklepów odpada już na starcie. Sprawdź, czy Twoje strony produktowe są poprawnie indeksowane przez boty AI, wykorzystując narzędzie [Ocena cytowalności strony](/narzedzia/url-check/). Narzędzie to w 30 sekund ocenia cytowalność pod kątem najważniejszych czynników technicznych.
@@ -132,16 +138,16 @@ Zmień ten sam nagłówek na „Które słuchawki bezprzewodowe do 400 zł mają
 
 Wyniki Google AI Overviews dla zapytań zakupowych zasila Shopping Graph, obejmujący ponad 50 miliardów ofert produktowych. Dane spływają do niego dwoma kanałami. Pierwszy to Google Merchant Center, drugi to znaczniki JSON-LD w kodzie witryny. Jakakolwiek rozbieżność między nimi – inna cena na stronie, inny stan magazynowy w GMC – bezwzględnie wyklucza ofertę z rekomendacji AI.
 
-**Dane strukturalne JSON-LD to nie opcjonalny dodatek, ale warunek konieczny, żeby Google AI w ogóle rozważyło Twój produkt jako kandydata do odpowiedzi.** Modele AI opierają się na [ontologiach informatycznych](https://pl.wikipedia.org/wiki/Ontologia_(informatyka)) – formalnych reprezentacjach pojęć i relacji między nimi. Standard schema.org pełni funkcję takiej właśnie ontologii dla całej sieci.
+**Dane strukturalne JSON-LD nie są warunkiem obecności w AI Overviews ani AI Mode – Google wprost tego nie wymaga – ale w e-commerce to najprostszy sposób, by przekazać cenę, dostępność i parametry produktu spójnie z Merchant Center.** Modele AI opierają się na [ontologiach informatycznych](https://pl.wikipedia.org/wiki/Ontologia_(informatyka)) – formalnych reprezentacjach pojęć i relacji między nimi. Standard schema.org pełni funkcję takiej właśnie ontologii dla całej sieci.
 
-Każdy typ schematu odpowiada na zupełnie inne zapytanie użytkownika. Wdrożenie samego `Product` bez zagnieżdżonego `Offer` i `FAQPage` oznacza optymalizację zaledwie połowy potencjału sklepu.
+Każdy typ schematu odpowiada na zupełnie inne zapytanie użytkownika. Wdrożenie samego `Product` bez zagnieżdżonego `Offer` oznacza optymalizację zaledwie połowy potencjału sklepu.
 
 | Typ schematu JSON-LD | Kluczowe właściwości | Wpływ na widoczność AI |
 |---|---|---|
 | `Product` | `brand`, `gtin`, `model`, `aggregateRating`, `color`, `material` | Definiuje encję produktu w grafie wiedzy; umożliwia dopasowanie do zapytań o cechy fizyczne. |
 | `Offer` (zagnieżdżony w `Product`) | `price`, `priceCurrency`, `availability`, `shippingDetails` | Przekazuje dane handlowe (dane strukturalne ofert sprzedażowych Google); muszą być zgodne z Merchant Center i treścią strony. |
-| `FAQPage` | `mainEntity`, `Question`, `acceptedAnswer` | Umożliwia ekstrakcję odpowiedzi definicyjnych bezpośrednio w wynikach AI. |
-| `HowTo` | `step`, `tool`, `totalTime` | Pozycjonuje produkt w zapytaniach „jak użyć", „jak zainstalować", „jak dobrać". |
+| `FAQPage` | `mainEntity`, `Question`, `acceptedAnswer` | Porządkuje widoczną sekcję FAQ; od maja 2026 Google nie pokazuje wyników rozszerzonych FAQ, a większość platform AI nie odczytuje samego schematu przy generowaniu odpowiedzi. |
+| `HowTo` | `step`, `tool`, `totalTime` | Porządkuje instrukcję widoczną na stronie; wyniki rozszerzone HowTo Google wycofał w 2023 roku. |
 | `Organization` | `legalName`, `logo`, `sameAs`, `contactPoint` | Łączy sklep ze zweryfikowaną encją biznesową; podnosi zaufanie modelu do źródła. |
 
 Szczegółowy przewodnik po implementacji JSON-LD wraz z przykładami dla różnych typów podstron znajdziesz w artykule o [schema.org i danych strukturalnych](/geo/schema-org-dane-strukturalne/).
@@ -189,7 +195,7 @@ Zapytanie „które słuchawki bezprzewodowe poleca ChatGPT?" rzadko prowadzi do
 Wzorcowe wdrożenie to strona kategorii, która nie tylko listuje asortyment, ale proaktywnie odpowiada na dylematy kupującego poprzez:
 
 - **Tabelę porównawczą** – minimum 3 modele z kolumnami określającymi cenę, kluczowy parametr i grupę docelową. W komórkach umieszczaj twarde dane, a nie marketingowe hasła.
-- **Sekcję FAQ** – 4–5 pytań w formie nagłówków H3 z bezpośrednią odpowiedzią w pierwszym zdaniu (zasada BLUF). Format `FAQPage` w JSON-LD pozwala na ekstrakcję tych odpowiedzi wprost do wyników AI.
+- **Sekcję FAQ** – 4–5 pytań w formie nagłówków H3 z bezpośrednią odpowiedzią w pierwszym zdaniu (zasada BLUF). Oznacz ją `FAQPage` w JSON-LD, ale traktuj schemat jako opis widocznej treści – to tekst na stronie, nie znacznik, trafia do odpowiedzi AI.
 - **Bloki użycia** – konkretne scenariusze zakupowe. Przykład: „Jeśli szukasz słuchawek do biegania z GPS, wybierz modele X lub Y, bo mają certyfikat IPX5 i ważą poniżej 32 g".
 
 Więcej o budowaniu takiej struktury treści na poziomie całego sklepu dowiesz się z [przewodnik GEO](/geo/przewodnik/). Znajdziesz tam omówienie mechanizmu rozszczepienia zapytania oraz strategię budowania autorytetu tematycznego.
@@ -204,7 +210,7 @@ Zacznij od śledzenia trzech podstawowych wskaźników:
 - **Share of Voice (udział w widoczności)** – odsetek wszystkich cytowań AI w kategorii produktowej, który trafia do Ciebie w porównaniu do konkurencji. To bezpośredni wskaźnik pozycji marki w ekosystemie AI.
 - **Mention Rate (wskaźnik wzmianek)** – liczba wystąpień nazwy sklepu lub produktu w odpowiedziach AI bez aktywnego linka. To niezwykle ważny sygnał budowania rozpoznawalności w modelach LLM.
 
-Wyspecjalizowane narzędzia do monitoringu GEO dla e-commerce to między innymi Azoma (Amazon Rufus, ChatGPT, Gemini), Profound (ponad 10 silników AI, głęboka analiza autorytetu encji) oraz Goodie AI (automatyczna korekcja halucynacji modeli, generator schematu). Przy wyborze platformy zweryfikuj jedno kluczowe kryterium. Czy system odróżnia cytowania (link do strony) od wzmianek (sama nazwa)? **To fundamentalna różnica, która decyduje o trafności całego pomiaru.**
+Wyspecjalizowane narzędzia do monitoringu GEO dla e-commerce to między innymi Azoma (Amazon Rufus, ChatGPT, Gemini), Profound (do 9 silników AI, głęboka analiza autorytetu encji) oraz Goodie AI (automatyczna korekcja halucynacji modeli, generator schematu). Przy wyborze platformy zweryfikuj jedno kluczowe kryterium. Czy system odróżnia cytowania (link do strony) od wzmianek (sama nazwa)? **To fundamentalna różnica, która decyduje o trafności całego pomiaru.**
 
 Niezależnie od wybranej platformy, zacznij od pomiaru manualnego. Wybierz 20 pytań, które Twoi klienci wpisują w ChatGPT lub Perplexity. Odpytaj je w trybie incognito (bez personalizacji) i zanotuj, ile odpowiedzi uwzględnia Twój sklep. Ten punkt startowy da Ci solidną bazę do oceny późniejszych efektów optymalizacji.
 

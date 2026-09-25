@@ -3,7 +3,7 @@ title: 'Narzędzia do monitorowania wzmianek o marce w LLM-ach'
 subtitle: 'Wybierz właściwe narzędzie i dowiedz się, gdzie i jak modele AI opisują Twoją markę – zanim zrobi to konkurencja.'
 description: 'Przegląd i porównanie narzędzi do monitorowania wzmianek o marce w ChatGPT, Gemini, Perplexity i Claude. Tabela z kluczowymi cechami platform dla każdego budżetu.'
 date: 2026-05-17
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-narzedzia-monitoring-wzmianek.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>'
 author:
@@ -40,6 +40,12 @@ sources:
   - title: 'Pricing of OtterlyAI'
     url: 'https://otterly.ai/pricing'
     note: 'OtterlyAI. Plany od 29 USD miesięcznie, śledzenie ChatGPT, Google AI Overviews, Perplexity i Copilota, obsługa ponad 50 krajów.'
+  - title: 'Publishers and Developers – FAQ'
+    url: 'https://help.openai.com/en/articles/12627856-publishers-and-developers-faq'
+    note: 'OpenAI, centrum pomocy. ChatGPT dodaje parametr utm_source=chatgpt.com do linków prowadzących do stron wydawców.'
+  - title: 'Default channel group'
+    url: 'https://support.google.com/analytics/answer/9756891'
+    note: 'Pomoc Google Analytics. Definicja domyślnego kanału AI Assistant w GA4.'
 ---
 Twoja marka prawdopodobnie już teraz pojawia się w odpowiedziach ChatGPT, Gemini czy Perplexity. I prawie na pewno nie wiesz, co tam jest napisane. To nie jest abstrakcyjny scenariusz. [Duże modele językowe](https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy) (LLM, z ang. *Large Language Models*) odpowiadają na dziesiątki milionów pytań zakupowych dziennie, rekomendując produkty, porównując dostawców i opisując marki własnymi słowami. **Monitoring tych wzmianek to dziś tak samo podstawowy obowiązek jak śledzenie recenzji w Google Maps.** Rynek narzędzi do tego celu rozwinął się błyskawicznie – od prostych skanerów po platformy klasy korporacyjnej (enterprise). Sprawdź, jak uporządkować tę przestrzeń i wybrać rozwiązanie odpowiednie do Twojej skali oraz budżetu.
 
@@ -68,7 +74,7 @@ Na rynku ukształtowały się dwa podejścia do zbierania danych:
 - **Wykorzystanie API** – narzędzie wysyła zapytania bezpośrednio do oficjalnych interfejsów programistycznych (OpenAI API, Anthropic API, Google Gemini API). Rozwiązanie to jest szybkie, tanie i skalowalne. Wadą jest to, że API zwraca surowy tekst – bez elementów dynamicznych, reklam ani wyników lokalnych, które widzi rzeczywisty użytkownik w przeglądarce.
 - **Emulacja sesji przeglądarki** – narzędzie symuluje pełną sesję użytkownika, renderuje JavaScript i przechwytuje dokładną odpowiedź z interfejsu webowego. Jest to droższe i wolniejsze, ale daje realny obraz tego, co widzi klient. Tak działają m.in. Profound i Otterly.ai.
 
-Dodatkowe wyzwanie to tak zwana luka atrybucyjna. Gdy ChatGPT lub Claude odsyła użytkownika na stronę docelową, usuwa nagłówki odsyłające HTTP (*referer headers*). Twoja analityka w Google Analytics 4 rejestruje ten ruch jako bezpośredni – bez żadnej informacji o AI jako źródle. **Narzędzia monitorujące rozwiązują ten problem metodami korelacyjnymi, zestawiając harmonogram zapytań próbnych z logami serwera.**
+Dodatkowe wyzwanie to tak zwana luka atrybucyjna. ChatGPT oznacza linki parametrem `utm_source=chatgpt.com`, a GA4 część ruchu z asystentów przypisuje do kanału AI Assistant. Nie wszystkie platformy i aplikacje przekazują jednak źródło – część wejść trafia do ruchu bezpośredniego, a wzmianka bez kliknięcia w ogóle nie zostawia śladu. **Narzędzia monitorujące uzupełniają tę lukę metodami korelacyjnymi, zestawiając harmonogram zapytań próbnych z logami serwera.**
 
 ![Wzmianka vs cytowanie – co mierzą narzędzia: wzmianka to marka wymieniona bez linku, cytowanie to marka podana jako źródło z odnośnikiem; narzędzia odpytują ChatGPT, Gemini, Perplexity i Copilota](../../../assets/images/infographic-geo-narzedzia-monitoring-wzmianek.png)
 

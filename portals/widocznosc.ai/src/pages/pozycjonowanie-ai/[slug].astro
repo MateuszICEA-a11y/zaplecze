@@ -20,8 +20,8 @@ const content = MODEL_CONTENT[model.slug];
 const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
 
 const modelDifferentiators: Record<string, string> = {
-  chatgpt: '5-10 cytowań na odpowiedź',
-  claude: '86,7% korelacji z Brave',
+  chatgpt: 'zwykle 3-10 cytowań na odpowiedź',
+  claude: 'zbieżność z wynikami Brave',
   gemini: 'AI Overviews + Search',
   perplexity: 'odpowiedzi oparte o źródła',
   'bing-copilot': 'indeks Bing + Edge',
@@ -38,7 +38,7 @@ const comparisonModels = [
 const comparisonRows = [
   {
     label: 'Cytaty na odpowiedź',
-    chatgpt: '5-10',
+    chatgpt: '3-10',
     claude: '1-3',
     gemini: '3-5',
     perplexity: '1-10',
@@ -46,7 +46,7 @@ const comparisonRows = [
   },
   {
     label: 'Dostęp do aktualnych informacji',
-    chatgpt: 'Bing / ChatGPT Search',
+    chatgpt: 'ChatGPT Search (OAI-SearchBot)',
     claude: 'Claude Web Search',
     gemini: 'Google Search / AI Mode',
     perplexity: 'własne wyszukiwanie',

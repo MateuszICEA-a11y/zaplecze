@@ -3,7 +3,7 @@ title: 'Perplexity – wyszukiwarka AI'
 subtitle: 'Dowiedz się, jak Perplexity pobiera i cytuje źródła oraz dlaczego to właśnie w niej Twoja marka musi być widoczna'
 description: 'Perplexity AI – czym jest, jak działa architektura RAG, plany Pro/Max, Spaces, Comet i dlaczego to kluczowy kanał cytowań dla GEO.'
 date: 2026-05-07
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-modele-llm-perplexity.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>'
 author:
@@ -21,7 +21,7 @@ faq:
     a: >-
       Tak – plan Free daje dostęp do podstawowego wyszukiwania z przypisami bez limitu.
       Limitem jest liczba zapytań w trybie Pro (zaawansowane modele, wgrywanie plików),
-      która w planie darmowym wynosi ok. 5 dziennie. Plan Pro kosztuje 20 USD miesięcznie
+      która w planie darmowym wynosi zwykle kilka dziennie. Plan Pro kosztuje 20 USD miesięcznie
       i znosi ten limit.
   - q: 'Czy Perplexity cytuje strony po polsku?'
     a: >-
@@ -55,7 +55,7 @@ sources:
     note: 'Wikipedia. Definicja architektury RAG i jej etapów.'
   - title: 'Perplexity Crawlers'
     url: 'https://docs.perplexity.ai/guides/bots'
-    note: 'Perplexity, dokumentacja. Rola PerplexityBot i sterowanie jego dostępem przez robots.txt.'
+    note: 'Perplexity, dokumentacja. Dwa boty: PerplexityBot (indeksowanie na potrzeby wyników, respektuje robots.txt) i Perplexity-User (pobieranie stron na żądanie użytkownika, zwykle ignoruje robots.txt); żaden nie służy do trenowania modeli.'
   - title: 'Perplexity launches a $200 monthly subscription plan'
     url: 'https://www.techcrunch.com/2025/07/02/perplexity-launches-a-200-monthly-subscription-plan/'
     note: 'TechCrunch, 2 lipca 2025. Start planu Max za 200 USD i cena planu Pro (20 USD).'
@@ -105,9 +105,11 @@ Kiedy wpisujesz zapytanie, pod maską dzieje się kilka rzeczy naraz. Mniejszy m
 
 ### Jakie modele LLM wykorzystuje Perplexity
 
-Perplexity nie jest pojedynczym modelem. To warstwa nadrzędna zarządzająca kilkoma zewnętrznymi modelami językowymi. W zależności od planu i trybu użytkownik może korzystać z modeli rodziny GPT (OpenAI), Claude (Anthropic), Gemini (Google) oraz autorskich modeli Perplexity z serii Sonar. Te ostatnie bazują na architekturze open-source Llama od Meta, ale zespół Perplexity dostroił je ściśle pod kątem odpowiedzi opartych na danych z sieci.
+Perplexity nie jest pojedynczym modelem. To warstwa nadrzędna zarządzająca wieloma modelami językowymi. Domyślny tryb „Best” sam dobiera model do zapytania, a w planach Pro i Max użytkownik może wybrać m.in. modele rodziny GPT (OpenAI), Claude (Anthropic) i Gemini (Google), modele innych dostawców oraz autorskie modele Perplexity z serii Sonar, dostrojone do odpowiedzi opartych na danych z sieci. Lista dostępnych modeli zmienia się co kilka tygodni.
 
 Dla marketerów i specjalistów SEO płynie stąd ważny wniosek. **Ta sama marka może być cytowana lub pomijana przez różne modele pracujące w tym samym interfejsie, ponieważ każdy z nich ma inne wzorce selekcji źródeł.** Widoczność w Perplexity to w istocie widoczność w kilku silnikach jednocześnie.
+
+Deweloperzy korzystają z Perplexity przez API. 27 września 2026 roku firma wyłącza dotychczasowe Sonar API – zastępuje je Agent API, które łączy wyszukiwanie w sieci z wieloetapowym researchem, narzędziami i dostępem do wielu modeli (we wrześniu doszły m.in. GPT-6 Sol i Luna, Claude Opus 5.5 oraz Grok 4.7). Dotychczasowe modele Sonar mają odpowiedniki w postaci presetów Agent API.
 
 ## Plany i funkcje – czym się różni Free od Pro i Max
 
@@ -115,7 +117,7 @@ Perplexity oferuje trzy główne poziomy dostępu. Poniższe zestawienie pokazuj
 
 | Plan | Cena (mies.) | Główne możliwości | Limit zapytań Pro |
 |---|---|---|---|
-| Free | 0 USD | Standardowe wyszukiwanie z przypisami, wybrane modele | ~5 zapytań Pro dziennie |
+| Free | 0 USD | Standardowe wyszukiwanie z przypisami, wybrane modele | Kilka zapytań Pro dziennie |
 | Pro | 20 USD | Nieograniczone zapytania, wybór czołowych modeli OpenAI, Anthropic i Google, wgrywanie plików PDF | Bez limitu |
 | Max | 200 USD | Model Council, Deep Research bez limitu, priorytetowy dostęp | Bez limitu + kredyty compute |
 | Enterprise | Kontakt | RAG na prywatnych danych firmowych, prywatność danych, SSO | Indywidualny |
@@ -139,6 +141,8 @@ Perplexity dynamicznie ewoluuje w kierunku platformy agentowej. Dwa elementy są
 - **Współpracować zespołowo** – Spaces udostępnisz bez problemu innym członkom zespołu
 
 **Comet** to przeglądarka webowa zbudowana przez Perplexity do obsługi zadań agentowych. Zamiast szukać informacji i czekać na polecenie, Comet potrafi autonomicznie nawigować po stronach, wypełniać formularze i wykonywać sekwencje działań w imieniu użytkownika. W lutym 2026 roku Perplexity uruchomiło środowisko Computer. To głębsza integracja asystenta z systemami operacyjnymi urządzeń mobilnych i desktopowych, wzbogacona o wielomodalną analizę otoczenia przez kamerę i zarządzanie zadaniami między aplikacjami.
+
+We wrześniu 2026 roku Perplexity udostępniło też Fast Search – szybki tryb Search API dla agentów AI, działający na nowym silniku wyszukiwania i rankingu Photon. To sygnał, że indeks Perplexity coraz częściej zasila nie tylko własną aplikację, ale też cudze agenty i narzędzia.
 
 Dla specjalistów SEO ten kierunek oznacza jedno. **Perplexity przestaje być wyłącznie kanałem informacyjnym, a staje się kanałem wykonawczym.** Marki cytowane w Spaces i agentowych przepływach pracy zyskają obecność na samym etapie decyzji zakupowej, a nie tylko w fazie researchu.
 
@@ -175,7 +179,7 @@ Perplexity stanowi naturalny most do GEO (Generative Engine Optimization, optyma
 
 Zastosuj cztery kroki do lepszej widoczności w Perplexity:
 
-- **Dostęp techniczny** – sprawdź, czy `PerplexityBot` nie jest blokowany przez `robots.txt` ani przez reguły zapory sieciowej Cloudflare; zweryfikujesz to w [Dostęp botów AI](/narzedzia/ai-bots-check/) w zaledwie kilka sekund
+- **Dostęp techniczny** – sprawdź, czy `PerplexityBot` nie jest blokowany przez `robots.txt` ani przez reguły zapory sieciowej Cloudflare; zweryfikujesz to w [Dostęp botów AI](/narzedzia/ai-bots-check/) w zaledwie kilka sekund. Pamiętaj, że drugi bot, `Perplexity-User`, pobiera strony na żądanie użytkownika i zwykle ignoruje reguły `robots.txt` – żeby go zatrzymać, potrzebna jest reguła zapory sieciowej (WAF), np. po user-agencie lub po adresach IP (lista: perplexity.com/perplexity-user.json)
 - **Struktura fragmentów** – podziel treść na samodzielne bloki o długości 200–400 słów, z których każdy ma nagłówek w formie pytania i odpowiedź w pierwszym zdaniu; pamiętaj, że silnik RAG ocenia każdy fragment oddzielnie
 - **Gęstość faktograficzna** – dodaj do każdej sekcji H2 co najmniej jedną liczbę z datą i źródłem; fragmenty nasycone danymi liczbowymi mają wyższy priorytet przy selekcji wektorowej
 - **Wzajemne wzmianki** – buduj obecność w miejscach, z których Perplexity chętnie czerpie wiedzę, takich jak branżowe raporty, Wikipedia, fora Reddit czy media B2B; to silny sygnał autorytetu dla algorytmu selekcji

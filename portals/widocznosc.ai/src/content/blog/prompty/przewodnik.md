@@ -3,7 +3,7 @@ title: 'Prompt engineering – kompletny przewodnik'
 subtitle: 'Naucz się pisać prompty, które dają przewidywalne, powtarzalne wyniki – od podstaw po zaawansowane techniki wnioskowania.'
 description: 'Kompletny przewodnik po prompt engineeringu: techniki zero-shot, few-shot, Chain-of-Thought, strukturyzacja, bezpieczeństwo i praktyczne przykłady dla marketerów i SEO.'
 date: 2026-05-22
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-prompty-przewodnik.webp
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:
@@ -42,7 +42,7 @@ sources:
     note: 'Simon Willison, 25 kwietnia 2023. Pierwotny opis wzorca: model uprzywilejowany z narzędziami operuje tylko na nazwach zmiennych, a model w kwarantannie bez narzędzi przetwarza niezaufane dane.'
   - title: 'Models – OpenAI API'
     url: 'https://developers.openai.com/api/docs/models'
-    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
+    note: 'OpenAI, dokumentacja API, stan na 25 września 2026. Aktualne modele API: GPT-6 Astra, GPT-6 Sol i GPT-6 Luna; w ChatGPT domyślnie GPT-5.6 Luna (Free, Go) i GPT-5.6 Sol (Plus, Pro).'
 ---
 Prompt engineering (inżynieria podpowiedzi) to dyscyplina, która decyduje o tym, czy LLM (Large Language Model, czyli duży model językowy) wygeneruje użyteczną odpowiedź, czy bezwartościowy szum. Tu nie ma magicznych słów. Liczy się zrozumienie mechanizmów przetwarzania instrukcji i takie zaprojektowanie promptu, by model otrzymał precyzyjne wytyczne. Ten przewodnik przeprowadzi Cię od podstawowych technik, przez zaawansowane architektury wnioskowania, aż po bezpieczeństwo systemów opartych na LLM – z konkretnymi przykładami gotowymi do wdrożenia.
 
@@ -300,10 +300,10 @@ Zestawienie kluczowych różnic między popularnymi modelami:
 
 | Model | Mocna strona | Zachowanie domyślne | Kluczowa wskazówka |
 |---|---|---|---|
-| GPT-5.6 | Instrukcje złożone, formatowanie | Bezpośredni, zorientowany na zadanie | Definiuj osobowość i styl wprost |
-| Claude Sonnet/Opus | Długie dokumenty, wnioskowanie | Ostrożny, zadaje pytania przy niejednoznaczności | Podawaj kontekst celu, nie tylko treści |
+| GPT-5.6 / GPT-6 (Sol, Luna, Astra) | Instrukcje złożone, formatowanie | Bezpośredni, zorientowany na zadanie | Definiuj osobowość i styl wprost |
+| Claude (Fable 5.1, Opus 5.5, Sonnet 5) | Długie dokumenty, wnioskowanie | Ostrożny, zadaje pytania przy niejednoznaczności | Podawaj kontekst celu, nie tylko treści |
 | Gemini 3.1 Pro | Dane multimodalne, kod | Analityczny, struktura Markdown | Dane kontekstowe umieszczaj przed instrukcją |
-| Llama 4 (open source) | Koszt, prywatność danych | Wymaga precyzyjnych szablonów | Few-shot obowiązkowy dla niestandardowych formatów |
+| Llama 4 (open-weight) | Koszt, prywatność danych | Wymaga precyzyjnych szablonów | Few-shot obowiązkowy dla niestandardowych formatów |
 
 Szczegółowe porównanie możliwości tych modeli, w tym parametry techniczne i okna kontekstowe, zawiera artykuł o [modelach LLM](/modele-llm/przewodnik/). Dla codziennej pracy z ChatGPT konkretny poradnik znajdziesz w artykule o [ChatGPT dla SEO](/modele-llm/chatgpt/).
 

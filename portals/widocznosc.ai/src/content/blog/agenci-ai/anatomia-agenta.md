@@ -3,7 +3,7 @@ title: 'Anatomia agenta AI – narzędzia, pamięć, pętla decyzyjna'
 subtitle: 'Zrozum, co napędza agenta AI, zanim powierzysz mu zadanie w swojej firmie'
 description: 'Jak działa agent AI od środka? Narzędzia, trójwarstwowa pamięć i pętla ReAct – architektura, którą musisz znać przed wdrożeniem.'
 date: 2026-05-13
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-agenci-ai-anatomia-agenta.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>'
 author:
@@ -45,10 +45,10 @@ sources:
     note: 'Bran i in., kwiecień 2023 (wersja v5 z 2 października 2023). Agent korzysta z 18 narzędzi eksperckich; GPT-4 jako ewaluator nie odróżniał błędnych odpowiedzi GPT-4 od wyników ChemCrow, w przeciwieństwie do ekspertów.'
   - title: 'Models – OpenAI API'
     url: 'https://developers.openai.com/api/docs/models'
-    note: 'OpenAI, dokumentacja API, stan na 17 września 2026. Aktualna rodzina GPT-5.6 (Sol, Terra, Luna) i GPT-6 Astra.'
+    note: 'OpenAI, dokumentacja API, stan na 25 września 2026. Aktualne modele API: GPT-6 Astra, GPT-6 Sol i GPT-6 Luna; w ChatGPT domyślnie GPT-5.6 Luna (Free, Go) i GPT-5.6 Sol (Plus, Pro).'
   - title: 'Models overview – Claude Docs'
     url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
-    note: 'Anthropic, dokumentacja, stan na 17 września 2026. Aktualne modele Claude Fable 5.1, Opus 5, Sonnet 5 i Haiku 4.5.'
+    note: 'Anthropic, dokumentacja, stan na 25 września 2026. Aktualne modele Claude Fable 5.1, Opus 5.5, Sonnet 5 i Haiku 4.5.'
 ---
 **Agent AI to nie chatbot z lepszym promptem, ale system, który planuje, wywołuje narzędzia i zapamiętuje wyniki aż do osiągnięcia celu.** Żeby ocenić, czy sprawdzi się w Twojej organizacji, musisz zrozumieć trzy filary jego architektury: narzędzia (czyli „ręce”), pamięć (czyli „kontekst operacyjny”) i pętlę decyzyjną (czyli „mózg”). Zanim powierzysz mu dostęp do CRM-u, bazy danych lub skrzynki mailowej, sprawdź mechanizmy działania pod spodem. Szerszy kontekst – czym agenci AI różnią się od klasycznych automatyzacji i kiedy warto po nie sięgać – znajdziesz w [przewodniku po agentach AI](/agenci-ai/przewodnik/).
 

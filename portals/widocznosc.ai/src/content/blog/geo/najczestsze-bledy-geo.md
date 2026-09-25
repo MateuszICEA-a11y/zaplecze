@@ -3,7 +3,7 @@ title: 'Najczęstsze błędy w optymalizacji pod kątem LLM-ów'
 subtitle: 'Dowiedz się, które błędy uniemożliwiają cytowanie Twojej marki w ChatGPT, Perplexity i Google AI Overviews – i jak je naprawić krok po kroku'
 description: 'Najczęstsze błędy w GEO: błędna konfiguracja robots.txt, upychanie słów kluczowych, CSR, brak danych. Dowiedz się, jak je naprawić i zwiększyć wskaźnik cytowań.'
 date: 2026-05-02
-updated: 2026-09-17
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-najczestsze-bledy-geo.webp
 icon: '<path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>'
 author:
@@ -59,9 +59,12 @@ sources:
   - title: 'List of Google’s common crawlers'
     url: 'https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers'
     note: 'Google Search Central. Google-Extended kontroluje wykorzystanie treści do trenowania i ugruntowania modeli Gemini i nie wpływa na obecność w wyszukiwarce Google.'
+  - title: 'Search generative AI control'
+    url: 'https://support.google.com/webmasters/answer/16908024'
+    note: 'Pomoc Google Search Console. Przełącznik wyłączający witrynę z AI Overviews, AI Mode i funkcji AI w Discover; globalnie od 31 sierpnia 2026 roku.'
   - title: 'Block AI Bots'
     url: 'https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/'
-    note: 'Cloudflare. Ustawienie blokujące w całej strefie boty klasyfikowane jako crawlery treningowe AI (bez botów mieszanych, służących też wyszukiwaniu); wycofywane od 15 września 2026 roku na rzecz osobnych ustawień dla botów treningowych, agentów i wyszukiwarek.'
+    note: 'Cloudflare. Ustawienie blokujące w całej strefie boty klasyfikowane jako crawlery treningowe AI (bez botów mieszanych, służących też wyszukiwaniu); wycofane 15 września 2026 roku na rzecz osobnych ustawień dla botów treningowych, agentów i wyszukiwarek; dla nowych domen boty Training i Agent są domyślnie blokowane na stronach z reklamami.'
   - title: 'Retrieval-augmented generation'
     url: 'https://pl.wikipedia.org/wiki/Retrieval-augmented_generation'
     note: 'Wikipedia. Definicja generowania wspomaganego wyszukiwaniem (RAG).'
@@ -111,9 +114,11 @@ Boty AI dzielą się na dwie zasadniczo różne klasy, które wymagają odmienne
 
 Zablokowanie `OAI-SearchBot` eliminuje Cię z wyników ChatGPT Search. Zablokowanie `PerplexityBot` – z Perplexity AI. Z kolei zablokowanie `Google-Extended` nie wpływa na obecność w wyszukiwarce Google, w tym w AI Overviews. Obie te pomyłki często nie są widoczne w standardowych raportach analitycznych, bo nie generują błędów 4xx na poziomie serwera. Sprawdź, czy Twoje boty mają dostęp, korzystając z narzędzia [Dostęp botów AI](/narzedzia/ai-bots-check/) – weryfikuje ono konfigurację `robots.txt` i faktyczną dostępność dla poszczególnych agentów.
 
+Nowa pułapka pojawiła się 31 sierpnia 2026 roku: przełącznik Search generative AI control w Google Search Console. Jego wyłączenie usuwa stronę z AI Overviews, AI Mode i funkcji AI w Discover, choć zwykłe wyniki zostają bez zmian – i, podobnie jak blokada bota, nie generuje żadnych błędów po stronie serwera. Sprawdź to ustawienie podczas audytu.
+
 ### Cloudflare i niewidzialna blokada na brzegu sieci
 
-Osobna pułapka czeka na strony hostowane za sieciami dostarczania treści (CDN), szczególnie za Cloudflare. Ustawienie „Block AI bots” po aktywowaniu blokuje crawlery treningowe AI bezpośrednio na brzegu sieci – zanim bot w ogóle dotrze do serwera i przeczyta plik `robots.txt`. Samo w sobie nie obejmuje botów wyszukiwawczych, ale od 15 września 2026 roku Cloudflare zastępuje je szczegółowymi ustawieniami, w których osobno blokuje się boty treningowe, agentów i boty wyszukiwawcze – nieuważna konfiguracja może więc odciąć także te ostatnie. **Twoja poprawnie skonfigurowana reguła robots.txt staje się wówczas nieistotna – zablokowany bot nigdy jej nie zobaczy.**
+Osobna pułapka czeka na strony hostowane za sieciami dostarczania treści (CDN), szczególnie za Cloudflare. Ustawienie „Block AI bots” po aktywowaniu blokuje crawlery treningowe AI bezpośrednio na brzegu sieci – zanim bot w ogóle dotrze do serwera i przeczyta plik `robots.txt`. Samo w sobie nie obejmuje botów wyszukiwawczych, ale 15 września 2026 roku Cloudflare zastąpił je osobnymi ustawieniami dla trzech kategorii: Training, Agent i Search. Każdą można zablokować na wszystkich stronach, tylko na stronach z reklamami albo dopuścić. Dla nowych domen domyślnie blokowane są boty Training i Agent na stronach z reklamami, a Search pozostaje dozwolony – sprawdź więc, czy blokada agentów nie odcina pobierania stron na żądanie użytkowników ChatGPT czy Perplexity. **Twoja poprawnie skonfigurowana reguła robots.txt staje się wówczas nieistotna – zablokowany bot nigdy jej nie zobaczy.**
 
 Weryfikacja wymaga ręcznego sprawdzenia nagłówków odpowiedzi CDN dla znanych user-agentów botów, a nie samego pliku konfiguracyjnego.
 

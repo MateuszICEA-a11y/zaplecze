@@ -3,6 +3,7 @@ title: 'Czego ChatGPT szuka w sieci, zanim Ci odpowie – Fan-out Explorer na po
 subtitle: 'Darmowy bookmarklet, który pokazuje każde wyszukiwanie ChatGPT, strony, które zostały zwrócone, i te, które trafiły do odpowiedzi. Sześć polskich promptów i to, co z nich wynika dla marki'
 description: 'Fan-out Explorer to bookmarklet widocznosc.ai do chatgpt.com. Zobacz zapytania o kredyt, agencję SEO i laptop oraz wyniki i cytowania z sześciu polskich promptów.'
 date: 2026-09-16
+updated: 2026-09-25
 image: ../../../assets/images/blog-geo-fanout-explorer-chat.webp
 icon: '<circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/>'
 author:
@@ -81,7 +82,7 @@ Po kliknięciu zakładki w oknie czatu, z prawej strony otwiera się panel. Na g
 - **wyniki** – ile stron zostało zwróconych. Wyniki są zapisywane raz na rundę, więc zapytania z jednej partii bez ograniczenia domeny dzielą wspólną pulę.
 - **cytowane** – ile stron z puli przypisanej do wiersza zostało oznaczonych jako cytowane w odpowiedzi. Zero oznacza brak cytowania; obecność strony w wynikach nie dowodzi przeczytania jej pełnej treści.
 
-Przy `site:` panel filtruje pulę rundy po domenie. Te same strony i cytowania mogą pojawiać się w kilku wierszach — nie sumuj ich, aby obliczyć liczbę unikalnych stron w czacie.
+Przy `site:` panel filtruje pulę rundy po domenie. Te same strony i cytowania mogą pojawiać się w kilku wierszach – nie sumuj ich, aby obliczyć liczbę unikalnych stron w czacie.
 
 Ikona plusa przy wierszu rozwija listę stron pogrupowaną według witryny, ze znacznikiem wyboru (ang. check mark) przy każdej zacytowanej. Kolumny, których w danym czacie nie ma (np. okno czasowe w dniach, którego ChatGPT już nie podaje), panel ukrywa automatycznie. Cztery przyciski eksportu pozwalają wyeksportować zapytania do narzędzi słów kluczowych, pobrać tabelę do arkusza kalkulacyjnego oraz wygenerować pliki CSV z wyszukiwaniami i źródłami (z informacją o cytowaniu). Wszystkie dane pozostają w Twojej przeglądarce.
 
@@ -173,7 +174,7 @@ To ważna obserwacja z tej sesji. **W drugiej rundzie model zaczął szukać kon
 
 Prompt produktowy pokazał inną kolejność: już pierwsze zapytania zawierały trzy konkretne modele laptopów. Sam fan-out nie wyjaśnia, na jakiej podstawie model je wybrał. Pierwsza runda to trzy zapytania: „Lenovo IdeaPad Slim 5 … cena Polska wrzesień 2026” i analogiczne dla Asusa oraz Acera, bez ani jednego cytowania. Druga runda zawęziła wyszukiwanie do trzech sklepów: `site:x-kom.pl`, `site:morele.net` i `site:mediaexpert.pl`. Cytowane zostały strony z Morele i Media Expert; z x-kom w wynikach było dziesięć stron, ale żadna nie została zacytowana.
 
-W tej sesji osobne zapytania z operatorem `site:` dotyczyły trzech sklepów. **Kolumna „domena” pokazuje, gdzie model sprawdzał ofertę tych laptopów — to punkt wyjścia do analizy obecności produktów w sklepach.** Nie dowodzi, że inne sklepy nie mogą pojawić się w kolejnej odpowiedzi.
+W tej sesji osobne zapytania z operatorem `site:` dotyczyły trzech sklepów. **Kolumna „domena” pokazuje, gdzie model sprawdzał ofertę tych laptopów – to punkt wyjścia do analizy obecności produktów w sklepach.** Nie dowodzi, że inne sklepy nie mogą pojawić się w kolejnej odpowiedzi.
 
 ### Czy warto pozycjonować stronę pod ChatGPT
 
@@ -191,10 +192,10 @@ W tej próbie Reddit był cytowany w odpowiedzi o CRM, a nie o kredycie czy agen
 
 Sześć promptów to za mało na pełną statystykę, ale wystarczająco dużo, by wypracować metodę. Oto, co uwzględniamy w audytach widoczności w AI (GEO):
 
-1. **Sprawdzaj, jak zapytania zmieniają się między rundami.** W przykładzie agencji druga runda zawierała nazwy marek z dopiskiem „opinie”, a w przykładzie laptopów — domeny sklepów. Cytowania mogą pochodzić również z pierwszej rundy.
+1. **Sprawdzaj, jak zapytania zmieniają się między rundami.** W przykładzie agencji druga runda zawierała nazwy marek z dopiskiem „opinie”, a w przykładzie laptopów – domeny sklepów. Cytowania mogą pochodzić również z pierwszej rundy.
 2. **Kolumna „domena” pokazuje witryny wskazane operatorem `site:`.** W naszych przykładach były to sklepy dla laptopów, fora dla kredytów i dokumentacja producentów dla pytań o AI. Obecność konkurencji może wskazywać obszar do analizy, ale brak Twojej domeny w tej kolumnie nie wyklucza jej z wyników. Panel nie identyfikuje dostawcy wyszukiwania ani indeksu, z którego pochodzi dany wynik.
 3. **Obecność w wynikach i cytowanie to dwa różne sygnały.** Jeśli strona pojawia się w wynikach bez cytowania, sprawdź jej dopasowanie do pytania oraz źródła wybrane w odpowiedzi. Jeśli nie pojawia się wcale, zbadaj też indeksowanie i dostęp dla botów. Fan-out Explorer pokazuje te sytuacje, ale sam nie ustala przyczyny ani nie potwierdza przeczytania pełnej strony.
-4. **Sprawdzaj różne warianty promptu.** W naszych przykładach prośby o opinie wiązały się z obecnością forów i serwisów opinii, a pytania o ceny — ze sklepami i producentami. Monitoring powinien uwzględniać oba warianty; ta próba nie dowodzi, że model zawsze zachowa się tak samo.
+4. **Sprawdzaj różne warianty promptu.** W naszych przykładach prośby o opinie wiązały się z obecnością forów i serwisów opinii, a pytania o ceny – ze sklepami i producentami. Monitoring powinien uwzględniać oba warianty; ta próba nie dowodzi, że model zawsze zachowa się tak samo.
 5. **Ten sam prompt za miesiąc może wygenerować inny fan-out.** Eksport zawiera datę i identyfikator czatu, więc porównanie dwóch sesji sprowadza się do zestawienia dwóch plików.
 
 Warto też wiedzieć, czego w danych nie ma. W sprawdzonych nowych czatach nie były dostępne typ wyszukiwania ani parametr przedziału czasowego w dniach; w starszych rozmowach panel nadal może je pokazać. Dostępne są wyniki dla każdej rundy oraz treść zapytania i domena z operatora `site:`. W porównawczej sesji z trybem Thinking ten sam prompt o CRM wygenerował na koncie Business 11 rund i 230 stron, a na koncie Free – 2 rundy i 100 stron. To porównanie dwóch sesji na różnych kontach, więc nie izoluje wpływu samego trybu Thinking.
