@@ -38,9 +38,12 @@ class LlmError(RuntimeError):
     pass
 
 
-def load_prompt(name: str) -> tuple[str, str]:
-    """Zwraca (treść promptu, wersja). Wersja z nagłówka `<!-- version: X -->`."""
-    path = PROMPTS_DIR / f"{name}.md"
+def load_prompt(name: str, directory: Path | None = None) -> tuple[str, str]:
+    """Zwraca (treść promptu, wersja). Wersja z nagłówka `<!-- version: X -->`.
+
+    `directory` – katalog promptów innego pipeline'u, który korzysta z tego
+    modułu (content-writer-wp trzyma własne prompty obok swojego kodu)."""
+    path = (directory or PROMPTS_DIR) / f"{name}.md"
     text = path.read_text(encoding="utf-8")
     match = re.search(r"<!--\s*version:\s*([\w.\-]+)\s*-->", text)
     return text, (match.group(1) if match else "0")

@@ -86,7 +86,7 @@ def catalog(domain: str, exclude_url: str = "", limit: int = 400) -> list[dict]:
     if not path.is_file():
         return []
     try:
-        payload = json.loads(path.read_text())
+        payload = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return []
     items = ((payload.get("sources") or {}).get("wordpress") or {}).get("items") or []
@@ -104,7 +104,7 @@ def domain_config(domain: str) -> dict:
     """Wpis domeny z domains.yaml – base_url, pola treści CPT, property GSC."""
     import yaml
 
-    config = yaml.safe_load((COLLECTOR.parent / "domains.yaml").read_text())
+    config = yaml.safe_load((COLLECTOR.parent / "domains.yaml").read_text(encoding="utf-8"))
     for entry in config.get("domains") or []:
         if entry.get("id") == domain:
             return entry

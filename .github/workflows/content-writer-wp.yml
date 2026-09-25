@@ -1,0 +1,100 @@
+name: Content Writer (grupa-icea.pl)
+
+# Nowy artykuł od zera: etap `brief` (research + plan do akceptacji) albo
+# `write` (tekst według zatwierdzonego briefu). Uruchamiany z dashboardu
+# (repository_dispatch z Content Writera) albo ręcznie do testów.
+# Nie zapisuje niczego do WordPressa – szkic zakłada dashboard.
+
+on:
+  repository_dispatch:
+    types: [content-write]
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: 'Identyfikator przebiegu z dashboardu'
+        required: true
+      domain:
+        description: 'Domena (id z domains.yaml)'
+        required: true
+        default: grupa-icea.pl
+      stage:
+        description: 'Etap: brief albo write'
+        required: true
+        default: brief
+      project_id:
+        description: 'ID projektu Content Writera'
+        required: true
+      keyword:
+        description: 'Fraza główna'
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  # Jeden przebieg na projekt – brief i tekst tego samego artykułu nie idą naraz.
+  group: content-write-${{ github.event.client_payload.project_id || inputs.project_id }}
+  cancel-in-progress: false
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        # Silnik (llm, research, coverage, Źródła, linki) jest wspólny z Content Refresherem.
+        run: pip install -r pipeline/content-refresher/requirements.txt
+
+      - name: Run Content Writer
+        env:
+          DASHBOARD_URL: ${{ secrets.DASHBOARD_URL }}
+          CW_CALLBACK_SECRET: ${{ secrets.CW_CALLBACK_SECRET }}
+          SENUTO_API_KEY: ${{ secrets.SENUTO_API_KEY }}
+          SERPDATA_API_KEY: ${{ secrets.SERPDATA_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || secrets.OPENROUTER_KEY }}
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+          # Research z dashboardu (SERP-gap i fakty konkurencji) oraz zatwierdzony
+          # brief – przez env, nie argumenty: w treści bywają cudzysłowy i znaki shella.
+          RIVALS_JSON: ${{ toJSON(github.event.client_payload.research.rivals) }}
+          GAP_JSON: ${{ toJSON(github.event.client_payload.research.gap) }}
+          BRIEF_JSON: ${{ toJSON(github.event.client_payload.brief) }}
+          # Fraza i tytuł wpisuje człowiek – WYŁĄCZNIE przez env, `${{ }}` wklejone
+          # w skrypt wykonałoby `$(…)` z frazy w shellu runnera z sekretami.
+          ARG_JOB: ${{ github.event.client_payload.job_id || inputs.job_id }}
+          ARG_DOMAIN: ${{ github.event.client_payload.domain || inputs.domain }}
+          ARG_STAGE: ${{ github.event.client_payload.stage || inputs.stage }}
+          ARG_PROJECT_ID: ${{ github.event.client_payload.project_id || inputs.project_id }}
+          ARG_KEYWORD: ${{ github.event.client_payload.keyword || inputs.keyword }}
+          ARG_TITLE: ${{ github.event.client_payload.title || '' }}
+          ARG_AUTHOR: ${{ github.event.client_payload.author || '' }}
+          ARG_MODEL_RESEARCH: ${{ github.event.client_payload.models.research || '' }}
+          ARG_MODEL_WRITER: ${{ github.event.client_payload.models.writer || '' }}
+        run: |
+          python pipeline/content-writer-wp/write.py \
+            --job "$ARG_JOB" \
+            --domain "$ARG_DOMAIN" \
+            --stage "$ARG_STAGE" \
+            --project-id "$ARG_PROJECT_ID" \
+            --keyword "$ARG_KEYWORD" \
+            --title "$ARG_TITLE" \
+            --author "$ARG_AUTHOR" \
+            --model-research "$ARG_MODEL_RESEARCH" \
+            --model-writer "$ARG_MODEL_WRITER"
+
+      - name: Report failure
+        # Padnięty runner nie może zostawić przebiegu w stanie „running".
+        if: failure() || cancelled()
+        env:
+          DASHBOARD_URL: ${{ secrets.DASHBOARD_URL }}
+          CW_CALLBACK_SECRET: ${{ secrets.CW_CALLBACK_SECRET }}
+          JOB_ID: ${{ github.event.client_payload.job_id || inputs.job_id }}
+          JOB_STATUS: ${{ job.status }}
+        run: python pipeline/content-refresher/report_failure.py
