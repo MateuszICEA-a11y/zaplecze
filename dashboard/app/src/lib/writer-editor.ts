@@ -790,6 +790,14 @@ export function createEditor(host: EditorHost) {
     return rows.sort((a, b) => rank(a.slot) - rank(b.slot) || a.slot - b.slot);
   }
 
+  const svg = (path: string) => `<svg viewBox="0 0 20 20" aria-hidden="true">${path}</svg>`;
+  const ICON = {
+    image: svg('<rect x="3" y="4" width="14" height="12" rx="1.5"/><circle cx="7.5" cy="8.5" r="1.4"/><path d="m4 15 4.5-4.5 3 3 2-2L17 15"/>'),
+    cta: svg('<path d="M3 8v4h3l5 4V4L6 8H3ZM14 7.5a3.5 3.5 0 0 1 0 5"/>'),
+    skip: svg('<path d="M3 10s2.6-5 7-5 7 5 7 5-2.6 5-7 5-7-5-7-5Z"/><circle cx="10" cy="10" r="2"/><path d="M4 16 16 4"/>'),
+    restore: svg('<path d="M4 9a6 6 0 1 1 1.5 5M4 4v5h5"/>'),
+  };
+
   function documentHtml(project: Any, job: Any) {
     const expert = job.expert?.status === 'done' ? job.expert : null;
     const images = new Map(((job.images ?? []) as Any[]).map((row) => [row.slot, row]));
@@ -803,10 +811,10 @@ export function createEditor(host: EditorHost) {
         const hasCta = String(row.text_after ?? '').includes(CTA_MARKER);
         const image = images.get(row.slot);
         const rejected = row.decision === 'rejected';
-        const tools = kind === 'sources' ? '' : `<div class="we-sec-tools">
-            ${kind === 'section' ? `<button type="button" data-sec="image">${image ? 'Infografika' : 'Dodaj infografikę'}</button>
-            <button type="button" data-sec="${hasCta ? 'cta-drop' : 'cta-insert'}">${hasCta ? 'Usuń CTA' : 'Wstaw CTA'}</button>` : ''}
-            <button type="button" data-sec="${rejected ? 'restore' : 'reject'}">${rejected ? 'Przywróć do szkicu' : 'Pomiń w szkicu'}</button>
+        const tools = kind === 'sources' ? '' : `<div class="we-sec-tools" role="group" aria-label="Akcje sekcji">
+            ${kind === 'section' ? `<button type="button" data-sec="image">${ICON.image}${image ? 'Infografika' : 'Dodaj infografikę'}</button>
+            <button type="button" data-sec="${hasCta ? 'cta-drop' : 'cta-insert'}" class="${hasCta ? 'on' : ''}">${ICON.cta}${hasCta ? 'Usuń CTA' : 'Wstaw CTA'}</button>` : ''}
+            <button type="button" data-sec="${rejected ? 'restore' : 'reject'}" class="${rejected ? 'on' : 'quiet'}">${rejected ? ICON.restore : ICON.skip}${rejected ? 'Przywróć do szkicu' : 'Pomiń w szkicu'}</button>
           </div>`;
         return `
           ${row.slot === faqStart ? '<div class="we-divider"><span>Najczęstsze pytania</span></div>' : ''}

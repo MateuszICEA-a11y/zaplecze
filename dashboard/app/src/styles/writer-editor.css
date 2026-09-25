@@ -152,7 +152,7 @@ html.we-open, html.we-open body { overflow: hidden; }
 .we-text blockquote { margin: 1em 0; padding-left: 14px; border-left: 2px solid var(--hairline); color: var(--ink-muted); }
 .we-lead { font-size: 1.12rem; color: var(--ink); padding-bottom: 8px; }
 
-.we-sec { position: relative; padding-top: 30px; }
+.we-sec { position: relative; padding-top: 58px; }
 .we-h {
   font-family: var(--font-display);
   font-size: 1.45rem;
@@ -161,38 +161,64 @@ html.we-open, html.we-open body { overflow: hidden; }
   letter-spacing: -0.01em;
   margin: 0 0 12px;
 }
-.we-sec.faq { padding-top: 18px; }
+.we-sec.faq { padding-top: 50px; }
 .we-sec.faq .we-h { font-size: 1.12rem; margin-bottom: 6px; }
 .we-sec.sources .we-text { font-size: 0.93rem; color: var(--ink-muted); }
 .we-sec.rejected > .we-h,
 .we-sec.rejected > .we-text { opacity: 0.4; }
 .we-flag { margin: 0 0 6px; font-size: 0.84rem; color: var(--status-warn-fg); }
 
-/* Akcje sekcji: w marginesie nad nagłówkiem, widoczne przy najechaniu lub pracy w sekcji. */
+/* Akcje sekcji: grupa przycisków nad nagłówkiem. Przygaszona w spoczynku,
+   pełna przy najechaniu lub pracy w sekcji – widać, że są, ale nie konkurują
+   z tekstem. */
 .we-sec-tools {
   position: absolute;
-  top: 4px;
+  top: 14px;
   right: 0;
   display: flex;
-  gap: 2px;
-  opacity: 0;
-  transition: opacity 120ms ease;
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+  background: var(--bg-surface-1);
+  opacity: 0.55;
+  transition: opacity 120ms ease, border-color 120ms ease;
 }
 .we-sec:hover > .we-sec-tools,
-.we-sec:focus-within > .we-sec-tools { opacity: 1; }
+.we-sec:focus-within > .we-sec-tools { opacity: 1; border-color: var(--ink-faint); }
 @media (hover: none) { .we-sec-tools { opacity: 1; } }
 .we-sec-tools button {
   appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   border: 0;
+  border-left: 1px solid var(--hairline);
   background: none;
   font: inherit;
-  font-size: 0.8rem;
-  color: var(--ink-faint);
-  padding: 3px 7px;
-  border-radius: 2px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--ink);
+  padding: 6px 11px;
   cursor: pointer;
+  white-space: nowrap;
 }
-.we-sec-tools button:hover { color: var(--ink); background: var(--bg-surface-2); }
+.we-sec-tools button:first-child { border-left: 0; }
+.we-sec-tools svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--accent-blue);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.we-sec-tools button:hover { background: var(--accent-blue); color: var(--on-accent); }
+.we-sec-tools button:hover svg { stroke: currentColor; }
+/* Stan „włączony" (CTA w sekcji, sekcja pominięta) – akcent na stałe. */
+.we-sec-tools button.on { box-shadow: inset 0 -2px 0 var(--accent-blue); }
+.we-sec-tools button.quiet { color: var(--ink-muted); }
+.we-sec-tools button.quiet svg { stroke: var(--ink-muted); }
+.we-sec-tools button.quiet:hover { background: var(--status-err-bg); color: var(--status-err-fg); }
+.we-sec-tools button.quiet:hover svg { stroke: currentColor; }
 
 .we-divider {
   display: flex;
