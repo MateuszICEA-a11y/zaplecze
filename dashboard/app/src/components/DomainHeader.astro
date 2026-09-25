@@ -10,6 +10,9 @@ interface Props {
   name: string;
   active: string; // slug aktywnej sekcji ('' = przegląd)
   latest: Snapshot | null;
+  /* Bez działania – przełącznik motywu jest tylko w sidebarze, a eyebrow nie
+     przyjmuje koloru źródła (jeden akcent w systemie). Zostają dla zgodności
+     wywołań na stronach. */
   themeToggle?: boolean;
   accent?: string;
   measurementLabel?: string;
@@ -19,8 +22,6 @@ const {
   name,
   active,
   latest,
-  themeToggle = false,
-  accent,
   measurementLabel,
   measurementStatus = 'ok',
 } = Astro.props;
@@ -42,7 +43,7 @@ const title = TITLES[active] ?? DOMAIN_SECTIONS.find((s) => s.slug === active)?.
 ---
 
 <header class="page-header">
-  <div class="eyebrow" style={accent ? `color:${accent}` : undefined}>{name}</div>
+  <div class="eyebrow">{name}</div>
   <div class="title-row">
     <h1>{title}</h1>
     <div class="header-actions">
@@ -50,45 +51,19 @@ const title = TITLES[active] ?? DOMAIN_SECTIONS.find((s) => s.slug === active)?.
         <i aria-hidden="true"></i>
         {measurementLabel ?? (latest?.date ? fmtDate(latest.date) : 'brak pomiaru')}
       </span>
-      {themeToggle && (
-        <button class="header-theme-toggle" type="button" aria-label="Przełącz motyw">
-          <span aria-hidden="true" data-header-theme-icon>☀</span>
-          <span data-header-theme-label>Jasny</span>
-        </button>
-      )}
     </div>
   </div>
 </header>
 
-{themeToggle && (
-  <script>
-    const headerThemeButton = document.querySelector<HTMLButtonElement>('.header-theme-toggle');
-    const syncHeaderTheme = () => {
-      const light = document.documentElement.dataset.theme === 'light';
-      const icon = headerThemeButton?.querySelector<HTMLElement>('[data-header-theme-icon]');
-      const label = headerThemeButton?.querySelector<HTMLElement>('[data-header-theme-label]');
-      if (icon) icon.textContent = light ? '☾' : '☀';
-      if (label) label.textContent = light ? 'Ciemny' : 'Jasny';
-    };
-    headerThemeButton?.addEventListener('click', () => {
-      document.getElementById('theme-toggle')?.click();
-      syncHeaderTheme();
-    });
-    window.addEventListener('themechange', syncHeaderTheme);
-    syncHeaderTheme();
-  </script>
-)}
 
 <style>
   .page-header {
     margin-bottom: 6px;
   }
   .eyebrow {
-    color: var(--accent-blue);
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+    font-weight: 400;
     margin-bottom: 6px;
   }
   .title-row {
@@ -99,9 +74,10 @@ const title = TITLES[active] ?? DOMAIN_SECTIONS.find((s) => s.slug === active)?.
     flex-wrap: wrap;
   }
   h1 {
-    font-size: clamp(1.5rem, 2.6vw, 2rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.6rem, 2.6vw, 2rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
     margin: 0;
   }
   .header-actions {
@@ -124,30 +100,10 @@ const title = TITLES[active] ?? DOMAIN_SECTIONS.find((s) => s.slug === active)?.
   .measured i {
     width: 6px;
     height: 6px;
-    border-radius: 50%;
+    border-radius: 1px;
     background: var(--status-ok);
-    box-shadow: 0 0 6px color-mix(in srgb, var(--status-ok) 60%, transparent);
   }
   .measured.warn i {
     background: var(--status-warn-fg);
-    box-shadow: 0 0 6px color-mix(in srgb, var(--status-warn-fg) 60%, transparent);
-  }
-  .header-theme-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    background: var(--bg-surface-1);
-    border: 1px solid var(--hairline);
-    border-radius: 2px;
-    color: var(--ink-muted);
-    font: inherit;
-    font-size: 0.82rem;
-    padding: 7px 12px;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  .header-theme-toggle:hover {
-    color: var(--ink);
-    border-color: var(--ink-faint);
   }
 </style>

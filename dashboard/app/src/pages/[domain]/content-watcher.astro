@@ -357,21 +357,21 @@ const baseline = items.filter((item) => item.hash_baseline).length;
 <Layout title={`${name} – Content Watcher`}>
   <DomainHeader domain={domain!} name={name} active="content-watcher" latest={latest} themeToggle />
 
-  <div class="cw-note">
+  <div class="page-lede">
     <p>
-      Moduł Content Watcher łączy metadane artykułów ze statusem indeksacji oraz danymi z GSC, GA4 i Senuto.
-      Wskaźnik priorytetu podpowiada, które teksty warto zweryfikować ręcznie przed ich ponowną optymalizacją
-      (integrację z n8n dodamy w kolejnym etapie).
-      {fromCms && <> Baza artykułów pochodzi z WordPressa (treści opieramy na polach ACF).</>}
+      Artykuły z danymi o indeksacji, ruchu z GSC i GA4 oraz frazach z Senuto. Pilność i wynik podpowiadają,
+      które teksty odświeżyć najpierw.
     </p>
     {fromCms && (
-      <p>
-        Co ważne, „Data aktualizacji” odzwierciedla rzeczywistą zmianę tekstu weryfikowaną na podstawie sumy
-        kontrolnej. Dzięki temu omijamy systemową datę modyfikacji, która zmienia się przy każdym kliknięciu
-        „Zapisz” w CMS-ie.
-        {baseline > 0 && <> Dla {fmtInt(baseline)} wpisów zebraliśmy dopiero punkt odniesienia – do czasu ich
-        pierwszej edycji wyświetlamy domyślną datę modyfikacji z systemu.</>}
-      </p>
+      <details class="lede-more">
+        <summary>Skąd bierzemy treść i datę aktualizacji</summary>
+        <p>
+          Treść pochodzi z WordPressa (pola ACF). „Data aktualizacji” to data rzeczywistej zmiany tekstu,
+          a nie systemowa data modyfikacji, która zmienia się przy każdym kliknięciu „Zapisz” w CMS-ie.
+          {baseline > 0 && <> Dla {fmtInt(baseline)} wpisów mamy dopiero punkt odniesienia – do ich pierwszej
+          edycji pokazujemy datę modyfikacji z systemu.</>}
+        </p>
+      </details>
     )}
   </div>
 
@@ -780,17 +780,6 @@ const baseline = items.filter((item) => item.hash_baseline).length;
 </Layout>
 
 <style>
-  .cw-note {
-    margin: 18px 0 24px;
-    padding: 14px 18px;
-    border-left: 2px solid var(--accent-blue);
-    background: var(--accent-blue-soft);
-    color: var(--ink-muted);
-    font-size: .86rem;
-    line-height: 1.55;
-  }
-  .cw-note p { margin: 0; }
-  .cw-note p + p { margin-top: 10px; }
   .cw-kpis { grid-template-columns: 1.35fr repeat(4, 1fr); margin-bottom: 28px; }
   .cw-kpis-urgency { grid-template-columns: repeat(5, 1fr); }
   /* Karta KPI jako przycisk filtra: `all: unset` zdejmuje wygląd buttona,
@@ -807,7 +796,6 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   .cw-kpi[data-tone='warn'] { --tone-fg: var(--status-warn-fg); --tone-bg: var(--status-warn-bg); }
   .cw-kpi[data-tone='err'] { --tone-fg: var(--status-err-fg); --tone-bg: var(--status-err-bg); }
   .cw-kpi[data-tone='muted'] { --tone-fg: var(--ink-faint); --tone-bg: var(--bg-surface-3); }
-  .cw-kpi[data-tone] > :global(.stat-card) { border-left: 3px solid var(--tone-fg); }
   .cw-kpi[data-tone] :global(.stat-value) { color: var(--tone-fg); }
   .cw-list-head { align-items: flex-end; }
   .cw-list-head > div:first-child { display: flex; flex-direction: column; gap: 5px; }

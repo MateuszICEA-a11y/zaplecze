@@ -183,12 +183,10 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
 <Layout title={`${name} – dashboard`}>
   <DomainHeader domain={domain!} name={name} active="" latest={latest} themeToggle />
 
-  <div class="overview-note">
-    Widok Przeglądu gromadzi dane z wielu źródeł. Wyświetla statusy połączeń, wskaźniki KPI w kolorach odpowiadających narzędziom
-    (<b class="gsc">GSC</b>, <b class="sen">Senuto</b>, <b class="ahrefs">Ahrefs</b>, <b class="clarity">Clarity</b>),
-    a także dane historyczne i ostatnie pobrane wartości (w przypadku braku połączenia ze źródłem).
-    Na dole ekranu znajdują się automatyczne powiadomienia o wykrytych problemach.
-  </div>
+  <p class="page-lede">
+    Stan źródeł, najważniejsze wskaźniki z ostatnich 7 dni i trendy z 3 miesięcy. Gdy źródło nie odpowiada,
+    karta pokazuje ostatni udany pomiar. Wykryte problemy są na dole strony.
+  </p>
 
   {
     health.length > 0 && (
@@ -358,21 +356,6 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
 </Layout>
 
 <style>
-  .overview-note {
-    border-left: 2px solid var(--accent-blue);
-    background: color-mix(in srgb, var(--accent-blue) 6%, transparent);
-    color: var(--ink-muted);
-    font-size: 0.84rem;
-    line-height: 1.5;
-    padding: 10px 14px;
-    border-radius: 0 10px 10px 0;
-    margin: 16px 0 4px;
-  }
-  .overview-note b { font-weight: 700; }
-  .overview-note .sen { color: var(--sen); }
-  .overview-note .gsc { color: var(--gsc); }
-  .overview-note .ahrefs { color: var(--ahrefs); }
-  .overview-note .clarity { color: var(--series-3); }
   .overview-charts {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

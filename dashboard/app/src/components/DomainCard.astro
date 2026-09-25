@@ -1,5 +1,6 @@
 ---
 import SourceStatus from './SourceStatus.astro';
+import { fmtDate } from '../lib/format';
 import type { Snapshot } from '../lib/data';
 import { loadConfig, loadSnapshots, latestWithDelta, latestWithDeltaFrom, sectionEnabled } from '../lib/data';
 
@@ -17,7 +18,7 @@ const refDomains = latestWithDeltaFrom(snapshots, [
   ['ahrefs', 'referring_domains'],
   ['backlinks', 'referring_domains'],
 ]);
-const fmt = (v: number | null) => (v === null ? '–' : v.toLocaleString('pl-PL'));
+const fmt = (v: number | null) => (v === null ? '–' : v.toLocaleString('pl-PL', { useGrouping: 'always' }));
 const domainCfg = loadConfig().domains.find((d) => d.id === id);
 const SECTION_LINKS = (
   [
@@ -61,7 +62,7 @@ const SECTION_LINKS = (
     </div>
     <div>
       <span class="mini-label">Ostatni pomiar</span>
-      <span class="mini-value">{latest?.date ?? '–'}</span>
+      <span class="mini-value">{latest?.date ? fmtDate(latest.date) : '–'}</span>
     </div>
   </div>
   <div class="badges">
@@ -118,8 +119,6 @@ const SECTION_LINKS = (
     display: block;
     color: var(--ink-faint);
     font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
   }
   .mini-value {
     font-size: 1.15rem;
