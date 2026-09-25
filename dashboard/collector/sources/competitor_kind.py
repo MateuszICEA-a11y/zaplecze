@@ -4,7 +4,9 @@ Sitemapy blogów agencji mieszają poradniki z relacjami z eventów, przeglądam
 nowinek i ogłoszeniami. Do „tematów, których nie mamy” nadają się tylko treści
 ponadczasowe (poradnik, słownik) – reszta to szum w podpowiedziach.
 
-Model dostaje ścieżkę adresu i tytuł (prawdziwy albo ze sluga), paczkami.
+Najpierw reguły deterministyczne po adresie (sekcja serwisu, słowa w slugu) –
+pewne, darmowe i stabilne między przebiegami; na próbie 3563 stron zgodne z
+modelem w 97–99%. Model dostaje tylko resztę: ścieżkę i tytuł, paczkami.
 Wynik: `kind`, `kind_basis` (krótkie uzasadnienie) i `kind_title` – tytuł, na
 którym oceniono. Zmiana tytułu (np. prawdziwy zamiast sluga) = ocena od nowa.
 """
@@ -20,6 +22,30 @@ TIMEOUT_S = 120
 KINDS = ("poradnik", "slownik", "news", "firmowe", "case_study", "oferta", "niepewne")
 # Do luk tematycznych – treści, które mają sens jako nasz wpis.
 CONTENT_KINDS = ("poradnik", "slownik")
+
+MONTHS = ("styczen|styczniu|luty|lutym|marzec|marcu|kwiecien|kwietniu|maj|maju|czerwiec|czerwcu|lipiec|lipcu|"
+          "sierpien|sierpniu|wrzesien|wrzesniu|pazdziernik|pazdzierniku|listopad|listopadzie|grudzien|grudniu")
+# Kolejność ma znaczenie: relacja z konferencji z datą w slugu to „firmowe”, nie „news”.
+RULES = (
+    ("slownik", re.compile(r"^/slownik(-pojec)?/"), "sekcja słownika pojęć"),
+    ("case_study", re.compile(r"case-study|historia-sukcesu"), "case study w adresie"),
+    ("firmowe", re.compile(r"relacja|prelegen|patroni|traffic-day|madtechcommerce|brighton|festiwal|targach|wosp"
+                           r"|urodzin|lat-z-nami|nominac|(^|[-/])nagrod(a|y|zeni)|jubileusz|kariera|rekrutac"),
+     "wydarzenie lub sprawy agencji w adresie"),
+    ("news", re.compile(r"przeglad-nowinek|tygodniowy-przeglad|seo-newsy|newsy-seo|prasowka|core-update|spam-update"
+                        rf"|aktualizacja-algorytmu|({MONTHS})-20\d\d|20\d\d-({MONTHS})"),
+     "przegląd nowości lub data w adresie"),
+)
+
+
+def rule_kind(path: str) -> tuple[str, str] | None:
+    """(typ, uzasadnienie) z samego adresu albo None, gdy adres nic nie przesądza."""
+    lowered = (path or "").lower()
+    for kind, pattern, basis in RULES:
+        if pattern.search(lowered):
+            return kind, f"reguła: {basis}"
+    return None
+
 
 PROMPT = """Klasyfikujesz podstrony z blogów polskich agencji marketingu internetowego (SEO, SEM, social media, e-commerce).
 Dla każdej pozycji (ścieżka adresu + tytuł) wybierz dokładnie jeden typ:
@@ -47,12 +73,28 @@ def item_text(item: dict) -> str:
 
 
 def needs_kind(item: dict) -> bool:
-    """Ocena brakuje albo była na innym tytule. Na tytuł czekamy, dopóki go nie
-    pobrano ani nie zapisano błędu – inaczej model ocenia slug, a za dzień
-    i tak trzeba by oceniać drugi raz."""
+    """Ocena modelu brakuje albo była na innym tytule. Na tytuł czekamy, dopóki
+    go nie pobrano ani nie zapisano błędu – inaczej model ocenia slug, a za dzień
+    i tak trzeba by oceniać drugi raz. Strony z reguły nie potrzebują modelu."""
+    if item.get("kind_source") == "rule" or rule_kind(item.get("path", "")):
+        return False
     if not item.get("title") and not item.get("title_error"):
         return False
     return item.get("kind_title") != item_text(item) or item.get("kind") not in KINDS
+
+
+def apply_rules(items: list[dict]) -> int:
+    """Typ z adresu dla wszystkich pasujących stron (także bez tytułu). Zwraca liczbę."""
+    applied = 0
+    for item in items:
+        verdict = rule_kind(item.get("path", ""))
+        if not verdict:
+            continue
+        item["kind"], item["kind_basis"] = verdict
+        item["kind_source"] = "rule"
+        item["kind_title"] = item_text(item)
+        applied += 1
+    return applied
 
 
 def _call(api_key: str, batch: list[dict]) -> dict[int, dict]:
@@ -107,10 +149,11 @@ def _call_split(api_key: str, batch: list[dict], log=None, depth: int = 0) -> di
 def classify(items: list[dict], api_key: str, limit: int | None = None, log=None) -> dict:
     """Uzupełnia `kind`/`kind_basis`/`kind_title` w miejscu. Paczka, która padła,
     zostaje bez oceny do następnego przebiegu. Zwraca liczniki."""
+    ruled = apply_rules(items)
     todo = [item for item in items if needs_kind(item)]
     if limit is not None:
         todo = todo[:limit]
-    stats = {"classified": 0, "failed": 0, "todo": len(todo)}
+    stats = {"classified": 0, "failed": 0, "todo": len(todo), "rules": ruled}
     for start in range(0, len(todo), BATCH):
         batch = todo[start:start + BATCH]
         result = _call_split(api_key, batch, log)
@@ -121,6 +164,7 @@ def classify(items: list[dict], api_key: str, limit: int | None = None, log=None
                 continue
             item["kind"] = verdict["kind"]
             item["kind_basis"] = verdict["basis"]
+            item["kind_source"] = "llm"
             item["kind_title"] = item_text(item)
             stats["classified"] += 1
         if log:

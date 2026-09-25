@@ -113,9 +113,9 @@ def test_tytul_wspolny_dla_wielu_stron_wraca_do_sluga():
 
 
 def test_needs_kind_czeka_na_tytul_i_ocenia_ponownie_po_zmianie():
-    assert not competitor_kind.needs_kind({"slug_title": "seo"})  # tytuł jeszcze niepobrany
-    assert competitor_kind.needs_kind({"slug_title": "seo", "title_error": "HTTP 404"})
-    done = {"slug_title": "seo", "title": "SEO", "kind": "poradnik", "kind_title": "SEO"}
+    assert not competitor_kind.needs_kind({"path": "/blog/seo/", "slug_title": "seo"})  # tytuł jeszcze niepobrany
+    assert competitor_kind.needs_kind({"path": "/blog/seo/", "slug_title": "seo", "title_error": "HTTP 404"})
+    done = {"path": "/blog/seo/", "slug_title": "seo", "title": "SEO", "kind": "poradnik", "kind_title": "SEO"}
     assert not competitor_kind.needs_kind(done)
     assert competitor_kind.needs_kind({**done, "title": "SEO – nowy tytuł"})
 
@@ -134,3 +134,26 @@ def test_zla_paczka_idzie_polowkami():
         result = competitor_kind._call_split("k", batch)
     assert calls == [4, 2, 2]
     assert sorted(result) == [1, 2, 3, 4]
+
+
+def test_reguly_z_adresu():
+    rule = competitor_kind.rule_kind
+    assert rule("/slownik-pojec/html/")[0] == "slownik"
+    assert rule("/tygodniowy-przeglad-nowinek-ppc-3-wrzesien-2024/")[0] == "news"
+    assert rule("/brighton-seo-kwiecien-2024-podsumowanie-konferencji/")[0] == "firmowe"  # nie news mimo daty
+    assert rule("/blog/case-study-branza-odziezowa/")[0] == "case_study"
+    assert rule("/seo-wynagrodzenia-w-europie-porownanie-2025/") is None  # „wynagrodzenia” ≠ nagroda
+    assert rule("/blog/jak-pisac-opisy-produktow/") is None
+
+
+def test_reguly_nie_ida_do_modelu():
+    items = [
+        {"path": "/slownik-pojec/html/", "slug_title": "html"},  # bez tytułu – reguła i tak działa
+        {"path": "/blog/jak-pisac/", "slug_title": "jak pisac", "title": "Jak pisać?"},
+    ]
+    with mock.patch.object(competitor_kind, "_call", return_value={1: {"kind": "poradnik", "basis": "b"}}) as call:
+        stats = competitor_kind.classify(items, "k")
+    assert stats["rules"] == 1 and stats["classified"] == 1
+    assert items[0]["kind"] == "slownik" and items[0]["kind_source"] == "rule"
+    assert items[1]["kind_source"] == "llm"
+    assert len(call.call_args[0][1]) == 1  # do modelu poszła tylko jedna strona
