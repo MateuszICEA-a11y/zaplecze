@@ -590,6 +590,7 @@ export const DOMAIN_SECTIONS: readonly DomainSection[] = [
   { slug: 'boty-ai', label: 'Boty AI', source: 'cloudflare_ai' },
   { slug: 'matrix', label: 'Matrix', source: 'indexing' },
   { slug: 'content-watcher', label: 'Content Watcher', source: null, config: 'content_watcher' },
+  { slug: 'content-writer', label: 'Content Writer', source: null, config: 'content_writer' },
   { slug: 'leady', label: 'Leady', source: 'leads' },
 ];
 

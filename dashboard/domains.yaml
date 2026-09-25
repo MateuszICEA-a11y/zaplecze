@@ -100,6 +100,10 @@ domains:
       # Okres ochronny po realnej zmianie treści. Rok był przesadą – wpis wraca
       # do oceny po kwartale, a o pilności decyduje wiek × wyniki (klik./wyśw.).
       min_age_days: 90
+    content_writer:
+      # Nowe artykuły od zera: fraza → research → brief → tekst → szkic w WP.
+      # Wymaga domeny w CW_DOMAINS (wrangler.toml) i migracji D1 0011.
+      enabled: true
 
 # Źródła per konto (nie per domena) – salda kredytów.
 global:

@@ -1,0 +1,115 @@
+---
+/* Content Writer – lista projektów nowych artykułów i formularz frazy.
+   Projekty żyją w D1 (Worker, /api/cw/writer/*), więc lista ładuje się
+   w przeglądarce; strona z buildu daje tylko szkielet. */
+import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
+import { loadConfig, latestSnapshot } from '../../lib/data';
+import '../../styles/writer.css';
+
+export function getStaticPaths() {
+  return loadConfig()
+    .domains.filter((domain) => (domain.content_writer as { enabled?: boolean } | undefined)?.enabled === true)
+    .map((domain) => ({ params: { domain: domain.id }, props: { name: domain.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+const latest = latestSnapshot(domain!);
+---
+
+<Layout title={`${name} – Content Writer`}>
+  <DomainHeader domain={domain!} name={name} active="content-writer" latest={latest} themeToggle />
+
+  <div class="wr-page" data-domain={domain}>
+    <p class="wr-lede">
+      Nowy artykuł od frazy do szkicu w WordPressie: sprawdzamy konkurencję w wynikach wyszukiwania, przygotowujemy brief
+      do akceptacji, piszemy tekst i dopracowujemy go w edytorze.
+    </p>
+
+    <section class="wr-section">
+      <div class="wr-section-head"><h2>Nowy artykuł</h2></div>
+      <div class="wr-panel">
+        <form class="wr-form" id="wr-new" autocomplete="off">
+          <input class="wr-input" id="wr-keyword" name="keyword" maxlength="120" required
+            placeholder="Fraza główna, np. audyt seo sklepu internetowego" aria-label="Fraza główna" />
+          <button class="wr-btn primary" type="submit" id="wr-create">Załóż projekt</button>
+        </form>
+        <div id="wr-check" hidden></div>
+        <p class="wr-msg" id="wr-new-msg" role="status"></p>
+      </div>
+    </section>
+
+    <section class="wr-section">
+      <div class="wr-section-head">
+        <h2>Projekty</h2>
+        <span class="wr-note" id="wr-count"></span>
+      </div>
+      <div class="wr-panel">
+        <div class="wr-table-wrap" id="wr-projects"><p class="wr-empty">Wczytuję projekty…</p></div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  import { api, esc, fmtDateTime, STATUS_LABEL, STATUS_TONE } from '../../lib/writer-client';
+
+  const root = document.querySelector<HTMLElement>('.wr-page')!;
+  const domain = root.dataset.domain!;
+  const list = document.getElementById('wr-projects')!;
+  const count = document.getElementById('wr-count')!;
+  const form = document.getElementById('wr-new') as HTMLFormElement;
+  const input = document.getElementById('wr-keyword') as HTMLInputElement;
+  const message = document.getElementById('wr-new-msg')!;
+  const projectUrl = (id: number) => `/${domain}/content-writer/projekt/?id=${id}`;
+
+  async function loadProjects() {
+    try {
+      const { data } = await api<{ projects: any[] }>(`/api/cw/writer/projects?domain=${encodeURIComponent(domain)}`);
+      const rows = data.projects ?? [];
+      count.textContent = rows.length ? `${rows.length} w toku i gotowych` : '';
+      if (!rows.length) {
+        list.innerHTML = '<p class="wr-empty">Nie ma jeszcze projektów. Wpisz frazę powyżej.</p>';
+        return;
+      }
+      list.innerHTML = `<table class="wr-table">
+        <thead><tr><th>Fraza</th><th>Tytuł roboczy</th><th>Stan</th><th>Szkic w WP</th><th class="num">Ostatnia zmiana</th></tr></thead>
+        <tbody>${rows.map((row) => `<tr>
+          <td><a href="${projectUrl(row.id)}">${esc(row.keyword)}</a></td>
+          <td class="muted">${esc(row.title || '–')}</td>
+          <td><span class="wr-status ${STATUS_TONE[row.status] ?? 'idle'}">${esc(STATUS_LABEL[row.status] ?? row.status)}</span></td>
+          <td>${row.wp_draft_url ? `<a href="${esc(row.wp_draft_url)}" target="_blank" rel="noopener">podgląd</a>` : '<span class="muted">–</span>'}</td>
+          <td class="num muted">${fmtDateTime(row.updated_at)}</td>
+        </tr>`).join('')}</tbody></table>`;
+    } catch (error) {
+      list.innerHTML = `<p class="wr-msg err">${esc((error as Error).message)}</p>`;
+    }
+  }
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const keyword = input.value.trim();
+    if (!keyword) return;
+    const button = document.getElementById('wr-create') as HTMLButtonElement;
+    button.disabled = true;
+    message.className = 'wr-msg';
+    message.textContent = 'Zakładam projekt…';
+    try {
+      const { data } = await api<{ project: { id: number } }>('/api/cw/writer/projects', {
+        method: 'POST',
+        body: { domain, keyword },
+      });
+      location.href = projectUrl(data.project.id);
+    } catch (error) {
+      const err = error as Error & { code?: string; data?: any };
+      message.className = 'wr-msg err';
+      message.innerHTML = err.code === 'duplicate' && err.data?.project_id
+        ? `Ta fraza ma już projekt – <a href="${projectUrl(err.data.project_id)}">otwórz go</a>.`
+        : esc(err.message);
+      button.disabled = false;
+    }
+  });
+
+  loadProjects();
+</script>

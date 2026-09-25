@@ -1,0 +1,855 @@
+---
+/* Content Writer – projekt jednego artykułu: research → brief → tekst → szkic.
+   Jedna strona na domenę, projekt wskazuje parametr `?id=`. Narzędzia etapu
+   końcowego (ekspert, styl i fleksja, infografiki, CTA) wołają te same trasy
+   co edytor Content Watchera (/api/cw/jobs/:id/*) – na przebiegu z tekstem. */
+import Layout from '../../../layouts/Layout.astro';
+import DomainHeader from '../../../components/DomainHeader.astro';
+import { loadConfig, latestSnapshot } from '../../../lib/data';
+import '../../../styles/writer.css';
+
+export function getStaticPaths() {
+  return loadConfig()
+    .domains.filter((domain) => (domain.content_writer as { enabled?: boolean } | undefined)?.enabled === true)
+    .map((domain) => ({ params: { domain: domain.id }, props: { name: domain.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+const latest = latestSnapshot(domain!);
+---
+
+<Layout title={`${name} – projekt artykułu`}>
+  <DomainHeader domain={domain!} name={name} active="content-writer" latest={latest} themeToggle />
+
+  <div class="wr-page" data-domain={domain}>
+    <div class="wr-actions">
+      <a href={`/${domain}/content-writer/`}>← wszystkie projekty</a>
+    </div>
+
+    <section class="wr-section">
+      <div class="wr-section-head">
+        <h2 id="wr-keyword">Wczytuję projekt…</h2>
+        <span id="wr-status"></span>
+      </div>
+      <nav class="wr-steps" id="wr-steps" aria-label="Etapy"></nav>
+      <p class="wr-msg" id="wr-global-msg" role="status"></p>
+    </section>
+
+    <section class="wr-section" id="wr-run" hidden></section>
+    <section class="wr-section" id="wr-research" hidden></section>
+    <section class="wr-section" id="wr-brief" hidden></section>
+
+    <div class="wr-layout" id="wr-text-layout" hidden>
+      <section class="wr-section" id="wr-text"></section>
+      <aside class="wr-side" id="wr-side" aria-label="Dopracowanie i publikacja"></aside>
+    </div>
+
+    <div class="wr-actions">
+      <button class="wr-btn small danger" type="button" id="wr-close" hidden>Zamknij projekt</button>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { api, esc, fmtDateTime, fmtInt, sleep, STATUS_LABEL, STATUS_TONE } from '../../../lib/writer-client';
+
+  const page = document.querySelector<HTMLElement>('.wr-page')!;
+  const domain = page.dataset.domain!;
+  const projectId = Number.parseInt(new URLSearchParams(location.search).get('id') ?? '', 10);
+  const base = `/api/cw/writer/projects/${projectId}`;
+  const el = (id: string) => document.getElementById(id)!;
+  const CTA_MARKER = 'kontakt/#cw-cta';
+  const FAQ_BASE = 100;
+  const SOURCES_SLOT = 200;
+
+  type Any = Record<string, any>;
+  const state: {
+    project: Any | null; briefJob: Any | null; writeJob: Any | null;
+    serp: Any | null; serpStatus: string; rivals: Any | null; rivalsStatus: string;
+    authors: Any[]; categories: Any[]; ownKeywords: Any[]; busy: Set<string>;
+  } = {
+    project: null, briefJob: null, writeJob: null,
+    serp: null, serpStatus: 'idle', rivals: null, rivalsStatus: 'idle',
+    authors: [], categories: [], ownKeywords: [], busy: new Set(),
+  };
+
+  const words = (html: string) => String(html ?? '').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+  const kindOf = (slot: number) => (slot === SOURCES_SLOT ? 'sources' : slot > FAQ_BASE ? 'faq' : 'section');
+  const say = (text: string, tone = '') => {
+    const box = el('wr-global-msg');
+    box.className = `wr-msg ${tone}`;
+    box.textContent = text;
+  };
+
+  /* ---------- dane ---------- */
+
+  async function loadProject() {
+    const { data } = await api<Any>(base);
+    state.project = data.project;
+    state.briefJob = data.brief_job;
+    state.writeJob = data.write_job;
+  }
+
+  async function loadOwnKeywords() {
+    // Nasze frazy z katalogu (Senuto, build) – po nich luka SERP-a mówi, co już pokrywamy.
+    try {
+      const response = await fetch(`/${domain}/content-writer/data.json`);
+      if (response.ok) state.ownKeywords = (await response.json()).own_keywords ?? [];
+    } catch {
+      state.ownKeywords = [];
+    }
+  }
+
+  async function loadResearch() {
+    const [serp, rivals] = await Promise.all([
+      api<Any>(`${base}/serp`).catch(() => ({ data: { status: 'idle' } })),
+      api<Any>(`${base}/rivals`).catch(() => ({ data: { status: 'idle' } })),
+    ]);
+    state.serpStatus = serp.data.status;
+    state.serp = serp.data.analysis ?? null;
+    state.rivalsStatus = rivals.data.status;
+    state.rivals = rivals.data.analysis ?? null;
+  }
+
+  async function loadPublishing() {
+    const [authors, categories] = await Promise.all([
+      api<Any>(`/api/cw/authors/${domain}`).catch(() => ({ data: { authors: [] } })),
+      api<Any>(`/api/cw/writer/categories/${domain}`).catch(() => ({ data: { categories: [] } })),
+    ]);
+    state.authors = authors.data.authors ?? [];
+    state.categories = categories.data.categories ?? [];
+  }
+
+  /* ---------- nagłówek i kroki ---------- */
+
+  function stepIndex(status: string) {
+    if (status === 'research') return 0;
+    if (status === 'brief_running' || status === 'brief_ready') return 1;
+    if (status === 'writing') return 2;
+    if (status === 'written') return state.project?.wp_post_id ? 4 : 3;
+    return state.writeJob ? 2 : state.briefJob ? 1 : 0;
+  }
+
+  function renderHeader() {
+    const project = state.project!;
+    el('wr-keyword').textContent = project.keyword;
+    el('wr-status').innerHTML = `<span class="wr-status ${STATUS_TONE[project.status] ?? 'idle'}">${esc(STATUS_LABEL[project.status] ?? project.status)}</span>`;
+    const current = stepIndex(project.status);
+    const steps = ['Konkurencja w wynikach', 'Brief', 'Tekst', 'Szkic w WordPressie'];
+    el('wr-steps').innerHTML = steps.map((title, index) => `
+      <div class="wr-step ${index < current ? 'done' : ''} ${index === Math.min(current, 3) ? 'current' : ''}">
+        <span class="n">${index + 1}</span><span class="t">${title}</span>
+      </div>`).join('');
+    el('wr-close').hidden = ['brief_running', 'writing'].includes(project.status);
+    if (project.status === 'failed' && project.error) say(`Przebieg przerwany: ${project.error}`, 'err');
+  }
+
+  /* ---------- przebieg w toku ---------- */
+
+  function renderRun() {
+    const box = el('wr-run');
+    const project = state.project!;
+    const job = project.status === 'writing' ? state.writeJob : project.status === 'brief_running' ? state.briefJob : null;
+    box.hidden = !job;
+    if (!job) return;
+    const steps = (job.steps ?? []) as Any[];
+    box.innerHTML = `
+      <div class="wr-section-head">
+        <h2>${project.status === 'writing' ? 'Piszę tekst' : 'Przygotowuję brief'}</h2>
+        <span class="wr-note">odświeżam co kilka sekund${job.run_url ? ` · <a href="${esc(job.run_url)}" target="_blank" rel="noopener">log przebiegu</a>` : ''}</span>
+      </div>
+      <div class="wr-panel">
+        ${steps.length ? `<ul class="wr-list">${steps.map((step) => `<li>
+          <span class="wr-status ${step.status === 'done' ? 'ok' : step.status === 'failed' ? 'err' : step.status === 'skipped' ? 'idle' : 'mid'}">${esc(step.step)}</span>
+          <span class="muted">${esc(step.error ?? '')}</span></li>`).join('')}</ul>` : '<p class="wr-empty">Czekam na start przebiegu w GitHub Actions…</p>'}
+        <div class="wr-actions"><button class="wr-btn small danger" type="button" data-cancel="${esc(job.id)}">Zatrzymaj przebieg</button></div>
+      </div>`;
+    box.querySelector<HTMLButtonElement>('[data-cancel]')?.addEventListener('click', async (event) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      button.disabled = true;
+      try {
+        await api(`/api/cw/jobs/${job.id}/cancel`, { method: 'POST', body: {} });
+        await refresh();
+      } catch (error) {
+        say((error as Error).message, 'err');
+        button.disabled = false;
+      }
+    });
+  }
+
+  /* ---------- research ---------- */
+
+  const GAP_LABEL: Record<string, string> = { missing: 'brak', weak: 'słabo', covered: 'mamy' };
+
+  function renderResearch() {
+    const box = el('wr-research');
+    const project = state.project!;
+    box.hidden = false;
+    const competitors = ((state.serp?.queries ?? [])[0]?.competitors ?? []) as Any[];
+    const gap = (state.serp?.gap ?? []) as Any[];
+    const facts = (state.rivals?.facts ?? []) as Any[];
+    const serpBusy = state.serpStatus === 'running' || state.busy.has('serp');
+    const rivalsBusy = state.rivalsStatus === 'running' || state.busy.has('rivals');
+    const canBrief = ['research', 'brief_ready', 'failed'].includes(project.status);
+    box.innerHTML = `
+      <div class="wr-section-head">
+        <h2>Konkurencja w wynikach wyszukiwania</h2>
+        <span class="wr-note">SerpData + Senuto, treści przez Jina Reader · wynik zapamiętany na tydzień</span>
+      </div>
+      <div class="wr-panel">
+        <div class="wr-actions">
+          <button class="wr-btn" type="button" id="wr-serp-run" ${serpBusy ? 'disabled' : ''}>${serpBusy ? 'Sprawdzam SERP…' : state.serp ? 'Sprawdź SERP ponownie' : 'Sprawdź SERP'}</button>
+          <button class="wr-btn" type="button" id="wr-rivals-run" ${!competitors.length || rivalsBusy ? 'disabled' : ''}>${rivalsBusy ? 'Czytam treści konkurentów…' : state.rivals ? 'Pobierz treści ponownie' : 'Pobierz treści konkurentów'}</button>
+          ${canBrief ? `<button class="wr-btn primary" type="button" id="wr-brief-run">${state.project!.brief || state.briefJob ? 'Przygotuj brief od nowa' : 'Przygotuj brief'}</button>` : ''}
+        </div>
+        ${!state.serp ? '<p class="wr-empty">Research jest opcjonalny, ale bez niego brief i ocena pokrycia fraz nie mają listy fraz konkurencji.</p>' : ''}
+        ${competitors.length ? `<div class="wr-table-wrap"><table class="wr-table">
+          <thead><tr><th class="num">Poz.</th><th>Konkurent</th><th>Adres</th></tr></thead>
+          <tbody>${competitors.map((row) => `<tr><td class="num">${esc(row.position ?? '–')}</td><td>${esc(row.host)}</td>
+            <td><a href="${esc(row.url)}" target="_blank" rel="noopener noreferrer">${esc(String(row.url).replace(/^https?:\/\/(www\.)?/, '').slice(0, 80))}</a></td></tr>`).join('')}</tbody>
+        </table></div>` : ''}
+        ${gap.length ? `<div class="wr-table-wrap"><table class="wr-table">
+          <thead><tr><th>Fraza konkurencji</th><th class="num">Wyszukiwania</th><th class="num">Poz. rywala</th><th>U nas</th></tr></thead>
+          <tbody>${gap.map((row) => `<tr><td>${esc(row.keyword)}</td><td class="num">${fmtInt(row.searches)}</td>
+            <td class="num">${esc(row.rival_position ?? '–')}</td>
+            <td><span class="wr-tag ${esc(row.status)}">${GAP_LABEL[row.status] ?? row.status}${row.our_position ? ` · poz. ${esc(row.our_position)}` : ''}</span></td></tr>`).join('')}</tbody>
+        </table></div>` : ''}
+        ${state.rivals ? `<div class="wr-kpis">
+            <div class="wr-kpi"><span class="v">${fmtInt(state.rivals.median_words)}</span><span class="l">mediana słów w TOP</span></div>
+            <div class="wr-kpi"><span class="v">${fmtInt(facts.length)}</span><span class="l">konkretów do wykorzystania</span></div>
+          </div>
+          ${facts.length ? `<ul class="wr-list">${facts.map((row) => `<li><span>${esc(row.fact)} <span class="muted">– ${esc(String(row.source ?? '').replace(/^https?:\/\/(www\.)?/, '').split('/')[0])}</span></span></li>`).join('')}</ul>` : ''}` : ''}
+        <p class="wr-msg" id="wr-research-msg" role="status"></p>
+      </div>`;
+    el('wr-serp-run').addEventListener('click', () => runResearch('serp'));
+    box.querySelector('#wr-rivals-run')?.addEventListener('click', () => runResearch('rivals'));
+    box.querySelector('#wr-brief-run')?.addEventListener('click', () => startStage('brief'));
+  }
+
+  /** Analiza idzie krokami (SerpData ~20 s na zapytanie) – ponawiamy POST, aż dojdzie do końca. */
+  async function runResearch(kind: 'serp' | 'rivals') {
+    state.busy.add(kind);
+    renderResearch();
+    const message = () => document.getElementById('wr-research-msg');
+    const competitors = ((state.serp?.queries ?? [])[0]?.competitors ?? []) as Any[];
+    const body = kind === 'serp'
+      ? { own_keywords: state.ownKeywords }
+      : { rivals: competitors.map((row) => row.url).slice(0, 5) };
+    let force = Boolean(kind === 'serp' ? state.serp : state.rivals);
+    try {
+      for (let attempt = 0; attempt < 40; attempt++) {
+        const { status, data } = await api<Any>(`${base}/${kind}${force ? '?force=1' : ''}`, { method: 'POST', body });
+        force = false;
+        if (data.status === 'done') {
+          if (kind === 'serp') { state.serp = data.analysis; state.serpStatus = 'done'; }
+          else { state.rivals = data.analysis; state.rivalsStatus = 'done'; }
+          break;
+        }
+        if (status !== 202 && data.status !== 'running') throw new Error(data.error ?? 'Analiza nie doszła do końca.');
+        const box = message();
+        if (box) box.textContent = data.stage_label ?? 'Analiza w toku…';
+        await sleep(5000);
+      }
+    } catch (error) {
+      const box = message();
+      if (box) { box.className = 'wr-msg err'; box.textContent = (error as Error).message; }
+    } finally {
+      state.busy.delete(kind);
+      renderResearch();
+    }
+  }
+
+  /* ---------- brief ---------- */
+
+  const lines = (value: string) => value.split('\n').map((line) => line.trim()).filter(Boolean);
+  const commaList = (value: string) => value.split(',').map((item) => item.trim()).filter(Boolean);
+
+  function renderBrief() {
+    const box = el('wr-brief');
+    const project = state.project!;
+    const brief = project.brief as Any | null;
+    box.hidden = !brief;
+    if (!brief) return;
+    const editable = ['brief_ready', 'failed', 'written'].includes(project.status);
+    const locked = !editable || project.status === 'written';
+
+    if (brief.skip) {
+      box.innerHTML = `
+        <div class="wr-section-head"><h2>Brief</h2></div>
+        <div class="wr-panel">
+          <div class="wr-alert"><strong>Model nie przygotował planu.</strong><span>${esc(brief.reason || 'Brak uzasadnienia.')}</span></div>
+          <div class="wr-actions">
+            <button class="wr-btn" type="button" id="wr-brief-manual">Uzupełnij plan ręcznie</button>
+          </div>
+        </div>`;
+      el('wr-brief-manual').addEventListener('click', () => {
+        state.project!.brief = { ...brief, skip: false, reason: '', outline: [{ heading: '', points: [], keywords: [], words: 300, basis: 'plan ręczny' }] };
+        renderBrief();
+      });
+      return;
+    }
+
+    const outline = (brief.outline ?? []) as Any[];
+    box.innerHTML = `
+      <div class="wr-section-head">
+        <h2>Brief</h2>
+        <span class="wr-note">${project.brief_accepted_at ? `zatwierdzony ${fmtDateTime(project.brief_accepted_at)}` : 'popraw plan i zatwierdź – z tej wersji pisze model'}</span>
+      </div>
+      <div class="wr-panel">
+        <label class="wr-label">Tytuł artykułu (H1)
+          <input class="wr-input" id="wr-b-title" maxlength="200" value="${esc(project.title ?? brief.title ?? '')}" ${locked ? 'disabled' : ''} />
+        </label>
+        <div class="wr-kpis">
+          <div class="wr-kpi"><span class="v">${esc(brief.main_keyword || project.keyword)}</span><span class="l">fraza główna</span></div>
+          <div class="wr-kpi"><span class="v">${fmtInt(brief.target_words)}</span><span class="l">docelowo słów</span></div>
+          <div class="wr-kpi"><span class="v">${outline.length}</span><span class="l">sekcji</span></div>
+          <div class="wr-kpi"><span class="v">${(brief.faq ?? []).length}</span><span class="l">pytań FAQ</span></div>
+        </div>
+        ${brief.intent ? `<p class="wr-msg"><strong>Intencja:</strong> ${esc(brief.intent)}</p>` : ''}
+        <label class="wr-label">Czym tekst ma się wyróżnić
+          <textarea class="wr-textarea" id="wr-b-angle" rows="2" ${locked ? 'disabled' : ''}>${esc(brief.angle ?? '')}</textarea>
+        </label>
+      </div>
+
+      <div class="wr-panel">
+        <div class="wr-section-head"><h2>Plan sekcji</h2><span class="wr-note">kolejność = kolejność w artykule</span></div>
+        <div class="wr-outline" id="wr-outline">${outline.map((row, index) => `
+          <div class="wr-outline-row" data-index="${index}">
+            <div class="wr-outline-body">
+              <div class="wr-grid2">
+                <input class="wr-input" data-f="heading" placeholder="Nagłówek H2" value="${esc(row.heading)}" ${locked ? 'disabled' : ''} />
+                <input class="wr-input" data-f="words" type="number" min="50" max="1500" step="50" value="${esc(row.words ?? '')}" aria-label="Liczba słów" ${locked ? 'disabled' : ''} />
+              </div>
+              <textarea class="wr-textarea" data-f="points" rows="2" placeholder="Co ma paść w sekcji – jeden punkt w wierszu" ${locked ? 'disabled' : ''}>${esc((row.points ?? []).join('\n'))}</textarea>
+              <input class="wr-input" data-f="keywords" placeholder="Frazy w tej sekcji, po przecinku" value="${esc((row.keywords ?? []).join(', '))}" ${locked ? 'disabled' : ''} />
+              ${row.basis ? `<span class="wr-basis">Podstawa: ${esc(row.basis)}</span>` : ''}
+            </div>
+            ${locked ? '<span></span>' : `<div class="wr-row-tools">
+              <button class="wr-btn small" type="button" data-move="-1" aria-label="W górę" ${index === 0 ? 'disabled' : ''}>↑</button>
+              <button class="wr-btn small" type="button" data-move="1" aria-label="W dół" ${index === outline.length - 1 ? 'disabled' : ''}>↓</button>
+              <button class="wr-btn small danger" type="button" data-remove aria-label="Usuń sekcję">✕</button>
+            </div>`}
+          </div>`).join('')}
+        </div>
+        ${locked ? '' : '<div class="wr-actions"><button class="wr-btn small" type="button" id="wr-add-section">Dodaj sekcję</button></div>'}
+      </div>
+
+      <div class="wr-panel">
+        <div class="wr-section-head"><h2>Pytania FAQ</h2></div>
+        <ul class="wr-list" id="wr-faq">${(brief.faq ?? []).map((row: Any, index: number) => `
+          <li data-index="${index}"><input class="wr-input" data-f="question" style="flex:1" value="${esc(row.question)}" ${locked ? 'disabled' : ''} />
+          ${locked ? '' : '<button class="wr-btn small danger" type="button" data-remove aria-label="Usuń pytanie">✕</button>'}</li>`).join('')}
+        </ul>
+        ${locked ? '' : '<div class="wr-actions"><button class="wr-btn small" type="button" id="wr-add-faq">Dodaj pytanie</button></div>'}
+      </div>
+
+      <div class="wr-panel">
+        <div class="wr-section-head"><h2>Frazy do pokrycia</h2><span class="wr-note">po nich liczymy pokrycie gotowego tekstu</span></div>
+        ${(brief.keywords_to_cover ?? []).length ? `<div class="wr-table-wrap"><table class="wr-table">
+          <thead><tr><th>Fraza</th><th class="num">Wyszukiwania</th><th>Gdzie</th><th></th></tr></thead>
+          <tbody>${(brief.keywords_to_cover as Any[]).map((row, index) => `<tr data-index="${index}"><td>${esc(row.keyword)}</td>
+            <td class="num">${fmtInt(row.volume)}</td><td class="muted">${esc(row.where)}</td>
+            <td class="num">${locked ? '' : '<button class="wr-btn small danger" type="button" data-remove-kw aria-label="Usuń frazę">✕</button>'}</td></tr>`).join('')}</tbody>
+        </table></div>` : '<p class="wr-empty">Brief nie wskazał fraz.</p>'}
+        ${(brief.keywords_rejected ?? []).length ? `<p class="wr-msg">Odrzucone: ${(brief.keywords_rejected as Any[]).map((row) => `${esc(row.keyword)} <span class="muted">(${esc(row.why)})</span>`).join(', ')}</p>` : ''}
+        ${(brief.facts_to_use ?? []).length ? `<div class="wr-section-head"><h2>Konkrety do wykorzystania</h2></div>
+          <ul class="wr-list">${(brief.facts_to_use as Any[]).map((row) => `<li><span>${esc(row.fact)}</span></li>`).join('')}</ul>` : ''}
+      </div>
+
+      ${locked ? '' : `<div class="wr-actions">
+        <button class="wr-btn" type="button" id="wr-brief-save">Zapisz brief</button>
+        <button class="wr-btn primary" type="button" id="wr-write-run">Zatwierdź i napisz tekst</button>
+        <span class="wr-msg" id="wr-brief-msg" role="status"></span>
+      </div>`}
+      ${project.status === 'written' ? `<div class="wr-actions"><button class="wr-btn small" type="button" id="wr-write-again">Napisz tekst od nowa z tego briefu</button></div>` : ''}`;
+
+    if (project.status === 'written') {
+      el('wr-write-again').addEventListener('click', () => startStage('write'));
+      return;
+    }
+    if (locked) return;
+    const outlineBox = el('wr-outline');
+    outlineBox.addEventListener('click', (event) => {
+      const target = event.target as HTMLElement;
+      const row = target.closest<HTMLElement>('.wr-outline-row');
+      if (!row) return;
+      const draft = collectBrief();
+      const index = Number(row.dataset.index);
+      if (target.matches('[data-remove]')) draft.outline.splice(index, 1);
+      const move = Number(target.getAttribute('data-move'));
+      if (move) {
+        const [item] = draft.outline.splice(index, 1);
+        draft.outline.splice(index + move, 0, item);
+      }
+      if (target.matches('[data-remove], [data-move]')) { state.project!.brief = draft; renderBrief(); }
+    });
+    el('wr-faq').addEventListener('click', (event) => {
+      const target = event.target as HTMLElement;
+      if (!target.matches('[data-remove]')) return;
+      const draft = collectBrief();
+      draft.faq.splice(Number(target.closest<HTMLElement>('li')!.dataset.index), 1);
+      state.project!.brief = draft;
+      renderBrief();
+    });
+    box.querySelectorAll<HTMLElement>('[data-remove-kw]').forEach((button) => button.addEventListener('click', () => {
+      const draft = collectBrief();
+      draft.keywords_to_cover.splice(Number(button.closest<HTMLElement>('tr')!.dataset.index), 1);
+      state.project!.brief = draft;
+      renderBrief();
+    }));
+    el('wr-add-section').addEventListener('click', () => {
+      const draft = collectBrief();
+      draft.outline.push({ heading: '', points: [], keywords: [], words: 300, basis: 'dodane przez redaktora' });
+      state.project!.brief = draft;
+      renderBrief();
+    });
+    el('wr-add-faq').addEventListener('click', () => {
+      const draft = collectBrief();
+      draft.faq.push({ question: '', basis: 'dodane przez redaktora' });
+      state.project!.brief = draft;
+      renderBrief();
+    });
+    el('wr-brief-save').addEventListener('click', () => saveBrief());
+    el('wr-write-run').addEventListener('click', async () => {
+      if (await saveBrief()) startStage('write');
+    });
+  }
+
+  /** Stan formularza briefu → obiekt w kontrakcie normalizeBrief (cw-writer.js). */
+  function collectBrief(): Any {
+    const brief = { ...(state.project!.brief as Any) };
+    brief.title = (document.getElementById('wr-b-title') as HTMLInputElement | null)?.value.trim() ?? brief.title;
+    brief.angle = (document.getElementById('wr-b-angle') as HTMLTextAreaElement | null)?.value.trim() ?? brief.angle;
+    brief.outline = [...document.querySelectorAll<HTMLElement>('#wr-outline .wr-outline-row')].map((row) => {
+      const previous = (state.project!.brief.outline ?? [])[Number(row.dataset.index)] ?? {};
+      const value = (field: string) => (row.querySelector<HTMLInputElement>(`[data-f="${field}"]`)?.value ?? '').trim();
+      return {
+        ...previous,
+        heading: value('heading'),
+        words: Number.parseInt(value('words'), 10) || null,
+        points: lines(value('points')),
+        keywords: commaList(value('keywords')),
+      };
+    });
+    brief.faq = [...document.querySelectorAll<HTMLElement>('#wr-faq li')].map((row) => ({
+      ...((state.project!.brief.faq ?? [])[Number(row.dataset.index)] ?? {}),
+      question: (row.querySelector<HTMLInputElement>('[data-f="question"]')?.value ?? '').trim(),
+    }));
+    brief.keywords_to_cover = [...(brief.keywords_to_cover ?? [])];
+    return brief;
+  }
+
+  async function saveBrief() {
+    const message = document.getElementById('wr-brief-msg');
+    const brief = collectBrief();
+    brief.outline = brief.outline.filter((row: Any) => row.heading);
+    brief.faq = brief.faq.filter((row: Any) => row.question);
+    if (!brief.outline.length) {
+      if (message) { message.className = 'wr-msg err'; message.textContent = 'Plan musi mieć co najmniej jedną sekcję z nagłówkiem.'; }
+      return false;
+    }
+    try {
+      const body: Any = { brief };
+      if (brief.title) body.title = brief.title;
+      const { data } = await api<Any>(base, { method: 'PATCH', body });
+      state.project = data.project;
+      if (message) { message.className = 'wr-msg ok'; message.textContent = 'Zapisano.'; }
+      return true;
+    } catch (error) {
+      if (message) { message.className = 'wr-msg err'; message.textContent = (error as Error).message; }
+      return false;
+    }
+  }
+
+  async function startStage(stage: 'brief' | 'write') {
+    const project = state.project!;
+    if (stage === 'brief' && (project.brief || state.writeJob)
+      && !confirm('Nowy brief zastąpi obecny razem z Twoimi poprawkami i tekstem, który z niego powstał. Kontynuować?')) return;
+    if (stage === 'write' && state.writeJob
+      && !confirm('Nowy tekst zastąpi obecny razem z poprawkami z edytora. Kontynuować?')) return;
+    say(stage === 'brief' ? 'Uruchamiam przygotowanie briefu…' : 'Uruchamiam pisanie tekstu…');
+    try {
+      await api(`${base}/${stage}`, { method: 'POST', body: {} });
+      say('');
+      await refresh();
+    } catch (error) {
+      say((error as Error).message, 'err');
+    }
+  }
+
+  /* ---------- tekst ---------- */
+
+  function orderedSections(): Any[] {
+    const rows = [...((state.writeJob?.sections ?? []) as Any[])];
+    const rank = (slot: number) => (kindOf(slot) === 'section' ? 0 : kindOf(slot) === 'faq' ? 1 : 2);
+    return rows.sort((a, b) => rank(a.slot) - rank(b.slot) || a.slot - b.slot);
+  }
+
+  function renderText() {
+    const layout = el('wr-text-layout');
+    const project = state.project!;
+    const job = state.writeJob;
+    layout.hidden = !(project.status === 'written' && job?.status === 'done');
+    if (layout.hidden) return;
+    const sections = orderedSections();
+    const writeStep = (job.steps ?? []).find((step: Any) => step.step === 'write')?.payload ?? {};
+    const coverage = (job.steps ?? []).find((step: Any) => step.step === 'coverage')?.payload ?? null;
+    const expert = job.expert?.status === 'done' ? job.expert : null;
+    const images = new Map(((job.images ?? []) as Any[]).map((row) => [row.slot, row]));
+    const total = words(project.lead ?? '') + sections.filter((row) => kindOf(row.slot) !== 'sources')
+      .reduce((sum, row) => sum + words(row.text_after), 0);
+
+    el('wr-text').innerHTML = `
+      <div class="wr-section-head">
+        <h2>${esc(project.title || project.keyword)}</h2>
+        <span class="wr-note">kliknij w tekst, żeby go poprawić</span>
+      </div>
+      <div class="wr-kpis">
+        <div class="wr-kpi"><span class="v">${fmtInt(total)}</span><span class="l">słów${writeStep.target_words ? ` / cel ${fmtInt(writeStep.target_words)}` : ''}</span></div>
+        <div class="wr-kpi"><span class="v">${sections.filter((row) => kindOf(row.slot) === 'section').length}</span><span class="l">sekcji</span></div>
+        ${coverage?.targets ? `<div class="wr-kpi"><span class="v">${(coverage.covered ?? []).length}/${(coverage.targets ?? []).length}</span><span class="l">fraz pokrytych</span></div>` : ''}
+      </div>
+      ${(coverage?.missing ?? []).length ? `<p class="wr-msg">Niepokryte frazy: ${(coverage.missing as string[]).map(esc).join(', ')}</p>` : ''}
+      ${(writeStep.unsupported ?? []).length ? `<div class="wr-alert"><strong>Model nie miał materiału na:</strong>
+        <ul>${(writeStep.unsupported as string[]).map((row) => `<li>${esc(row)}</li>`).join('')}</ul></div>` : ''}
+      <div class="wr-doc">
+        <div class="wr-doc-section">
+          <span class="kind">wstęp (przed pierwszym nagłówkiem)</span>
+          <div class="wr-editable" contenteditable="true" data-lead>${project.lead ?? ''}</div>
+          <div class="wr-actions"><button class="wr-btn small" type="button" data-save-lead hidden>Zapisz wstęp</button></div>
+        </div>
+        ${sections.map((row) => {
+          const kind = kindOf(row.slot);
+          const image = images.get(row.slot);
+          const hasCta = String(row.text_after ?? '').includes(CTA_MARKER);
+          return `<div class="wr-doc-section ${row.decision === 'rejected' ? 'rejected' : ''}" data-slot="${row.slot}">
+            <span class="kind">${kind === 'faq' ? 'FAQ' : kind === 'sources' ? 'Źródła (lista za FAQ)' : `sekcja ${row.slot}`}${row.decision === 'rejected' ? ' · pominięta w szkicu' : ''}</span>
+            <h3>${esc(row.title_after)}</h3>
+            <div class="wr-editable" ${kind === 'sources' ? '' : 'contenteditable="true"'} data-text>${row.text_after ?? ''}</div>
+            ${expert && expert.slot === row.slot ? `<div class="wr-quote">„${esc(expert.quote)}" – ${esc(expert.expert)}, ${esc(expert.role)}</div>` : ''}
+            <div class="wr-actions">
+              <button class="wr-btn small" type="button" data-save hidden>Zapisz zmiany</button>
+              ${kind === 'section' ? `
+                <button class="wr-btn small" type="button" data-image>${image ? 'Infografika…' : 'Dodaj infografikę'}</button>
+                <button class="wr-btn small" type="button" data-cta="${hasCta ? 'drop' : 'insert'}">${hasCta ? 'Usuń CTA' : 'Wstaw CTA'}</button>` : ''}
+              <button class="wr-btn small link" type="button" data-decision="${row.decision === 'rejected' ? 'restore' : 'reject'}">${row.decision === 'rejected' ? 'Przywróć do szkicu' : 'Pomiń w szkicu'}</button>
+            </div>
+            <div data-image-panel hidden></div>
+          </div>`;
+        }).join('')}
+      </div>`;
+    bindText();
+  }
+
+  function bindText() {
+    const job = state.writeJob!;
+    const lead = el('wr-text').querySelector<HTMLElement>('[data-lead]')!;
+    const saveLead = el('wr-text').querySelector<HTMLButtonElement>('[data-save-lead]')!;
+    lead.addEventListener('input', () => { saveLead.hidden = false; });
+    saveLead.addEventListener('click', async () => {
+      saveLead.disabled = true;
+      try {
+        const { data } = await api<Any>(base, { method: 'PATCH', body: { lead: lead.innerHTML } });
+        state.project = data.project;
+        saveLead.hidden = true;
+      } catch (error) {
+        say((error as Error).message, 'err');
+      } finally {
+        saveLead.disabled = false;
+      }
+    });
+
+    el('wr-text').querySelectorAll<HTMLElement>('.wr-doc-section[data-slot]').forEach((section) => {
+      const slot = Number(section.dataset.slot);
+      const text = section.querySelector<HTMLElement>('[data-text]')!;
+      const save = section.querySelector<HTMLButtonElement>('[data-save]')!;
+      text.addEventListener('input', () => { save.hidden = false; });
+      save.addEventListener('click', async () => {
+        save.disabled = true;
+        try {
+          await api(`/api/cw/jobs/${job.id}/sections/${slot}`, { method: 'PATCH', body: { text_after: text.innerHTML } });
+          await refresh();
+        } catch (error) {
+          say((error as Error).message, 'err');
+          save.disabled = false;
+        }
+      });
+      section.querySelector<HTMLButtonElement>('[data-decision]')?.addEventListener('click', async (event) => {
+        const restore = (event.currentTarget as HTMLElement).dataset.decision === 'restore';
+        try {
+          await api(`/api/cw/jobs/${job.id}/sections/${slot}`, { method: 'PATCH', body: { decision: restore ? null : 'rejected' } });
+          await refresh();
+        } catch (error) {
+          say((error as Error).message, 'err');
+        }
+      });
+      section.querySelector<HTMLButtonElement>('[data-cta]')?.addEventListener('click', async (event) => {
+        const step = (event.currentTarget as HTMLElement).dataset.cta;
+        try {
+          await api(`/api/cw/jobs/${job.id}/cta/${slot}`, { method: 'POST', body: { step } });
+          await refresh();
+        } catch (error) {
+          say((error as Error).message, 'err');
+        }
+      });
+      section.querySelector<HTMLButtonElement>('[data-image]')?.addEventListener('click', () => {
+        const panel = section.querySelector<HTMLElement>('[data-image-panel]')!;
+        panel.hidden = !panel.hidden;
+        if (!panel.hidden) renderImagePanel(panel, slot);
+      });
+    });
+  }
+
+  /** Infografika: opis → obraz (kie.ai, 30–180 s) → biblioteka mediów WP i blok w sekcji. */
+  async function renderImagePanel(panel: HTMLElement, slot: number) {
+    const job = state.writeJob!;
+    const path = `/api/cw/jobs/${job.id}/infographic/${slot}`;
+    const draw = (image: Any | null, note = '') => {
+      panel.className = 'wr-panel';
+      if (!image) {
+        panel.innerHTML = `<p class="wr-msg">Model zaproponuje opis grafiki na podstawie treści sekcji.</p>
+          <div class="wr-actions"><button class="wr-btn small" type="button" data-step="brief">Zaproponuj opis grafiki</button></div>
+          <p class="wr-msg">${esc(note)}</p>`;
+      } else {
+        const editable = ['brief', 'failed'].includes(image.status);
+        panel.innerHTML = `
+          <label class="wr-label">Opis grafiki<textarea class="wr-textarea wr-img-brief" rows="5" data-brief ${editable ? '' : 'disabled'}>${esc(image.brief ?? '')}</textarea></label>
+          <label class="wr-label">Tekst alternatywny<input class="wr-input" data-alt value="${esc(image.alt ?? '')}" ${editable ? '' : 'disabled'} /></label>
+          <label class="wr-label">Podpis<input class="wr-input" data-caption value="${esc(image.caption ?? '')}" ${editable ? '' : 'disabled'} /></label>
+          ${image.image_url && image.status !== 'inserted' ? `<img class="wr-img-preview" src="${esc(image.image_url)}" alt="" />` : ''}
+          <div class="wr-actions">
+            ${editable ? '<button class="wr-btn small primary" type="button" data-step="generate">Generuj obraz</button>' : ''}
+            ${image.status === 'generating' ? '<span class="wr-msg">Generuję obraz – to trwa do trzech minut…</span>' : ''}
+            ${image.status === 'ready' ? '<button class="wr-btn small primary" type="button" data-step="insert">Wstaw do sekcji</button>' : ''}
+            ${image.status === 'inserted' ? '<span class="wr-status ok">w sekcji</span>' : ''}
+            <button class="wr-btn small danger" type="button" data-step="drop">Usuń</button>
+          </div>
+          <p class="wr-msg ${image.error ? 'err' : ''}">${esc(image.error ?? note)}</p>`;
+      }
+      panel.querySelectorAll<HTMLButtonElement>('[data-step]').forEach((button) => button.addEventListener('click', () => act(button.dataset.step!)));
+    };
+    const act = async (step: string) => {
+      const body: Any = { step };
+      if (step === 'generate') {
+        body.brief = panel.querySelector<HTMLTextAreaElement>('[data-brief]')?.value ?? '';
+        body.alt = panel.querySelector<HTMLInputElement>('[data-alt]')?.value ?? '';
+        body.caption = panel.querySelector<HTMLInputElement>('[data-caption]')?.value ?? '';
+      }
+      panel.querySelectorAll('button').forEach((button) => { button.disabled = true; });
+      try {
+        const { data } = await api<Any>(path, { method: 'POST', body });
+        if (step === 'insert' || step === 'drop') { await refresh(); return; }
+        draw(data.image ?? null);
+        if (data.image?.status === 'generating') poll();
+      } catch (error) {
+        draw((await api<Any>(path).catch(() => ({ data: { image: null } }))).data.image, (error as Error).message);
+      }
+    };
+    const poll = async () => {
+      for (let attempt = 0; attempt < 40; attempt++) {
+        await sleep(6000);
+        if (panel.hidden) return;
+        const { data } = await api<Any>(path);
+        if (data.image?.status !== 'generating') { draw(data.image); return; }
+      }
+    };
+    const { data } = await api<Any>(path).catch(() => ({ data: { image: null } }));
+    draw(data.image ?? null);
+    if (data.image?.status === 'generating') poll();
+  }
+
+  /* ---------- kolumna boczna: ekspert, styl, publikacja ---------- */
+
+  function renderSide() {
+    const side = el('wr-side');
+    const project = state.project!;
+    const job = state.writeJob;
+    if (!job || job.status !== 'done' || project.status !== 'written') { side.innerHTML = ''; return; }
+    const contentSections = orderedSections().filter((row) => kindOf(row.slot) === 'section');
+    const expert = job.expert as Any | null;
+    const style = job.style as Any | null;
+    const pendingStyle = ((job.style_sections ?? []) as Any[]).filter((row) => !row.decision);
+    const candidates = state.authors.filter((row) => row.name !== project.author_name);
+    const strip = (html: string) => String(html ?? '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
+    side.innerHTML = `
+      <div class="wr-panel">
+        <h3>Publikacja · WordPress</h3>
+        <label class="wr-label">Tytuł<input class="wr-input" id="wr-p-title" maxlength="200" value="${esc(project.title ?? '')}" /></label>
+        <label class="wr-label">Autor wpisu
+          <select class="wr-select" id="wr-p-author"><option value="">– wybierz –</option>
+            ${state.authors.map((row) => `<option value="${row.id}" ${row.id === project.author_id ? 'selected' : ''}>${esc(row.name)}</option>`).join('')}
+          </select></label>
+        <label class="wr-label">Kategoria
+          <select class="wr-select" id="wr-p-category"><option value="">– wybierz –</option>
+            ${state.categories.map((row) => `<option value="${row.id}" ${row.id === project.category_id ? 'selected' : ''}>${esc(row.name)}</option>`).join('')}
+          </select></label>
+        <div class="wr-actions">
+          <button class="wr-btn primary" type="button" id="wr-p-save">${project.wp_post_id ? 'Zapisz szkic ponownie' : 'Zapisz szkic w WordPressie'}</button>
+        </div>
+        ${project.wp_draft_url ? `<p class="wr-msg">Szkic zapisany ${fmtDateTime(project.wp_saved_at)} · <a href="${esc(project.wp_draft_url)}" target="_blank" rel="noopener">podgląd</a></p>` : ''}
+        <p class="wr-msg" id="wr-p-msg" role="status"></p>
+      </div>
+
+      <div class="wr-panel">
+        <h3>Wypowiedź eksperta</h3>
+        ${expert?.status === 'done' ? `<div class="wr-quote">„${esc(expert.quote)}"<br /><span class="muted">– ${esc(expert.expert)}, ${esc(expert.role)} · sekcja ${esc(expert.slot)}</span></div>
+          <div class="wr-actions"><button class="wr-btn small danger" type="button" id="wr-e-reject">Odrzuć cytat</button></div>` : ''}
+        <label class="wr-label">Ekspert (inna osoba niż autor)
+          <select class="wr-select" id="wr-e-person">${candidates.map((row) => `<option value="${esc(row.name)}">${esc(row.name)}${row.role ? ` – ${esc(row.role)}` : ''}</option>`).join('')}</select></label>
+        <label class="wr-label">Sekcja
+          <select class="wr-select" id="wr-e-slot">${contentSections.map((row) => `<option value="${row.slot}">${esc(row.title_after)}</option>`).join('')}</select></label>
+        <div class="wr-actions"><button class="wr-btn" type="button" id="wr-e-run" ${!candidates.length ? 'disabled' : ''}>${expert?.status === 'done' ? 'Wygeneruj inny cytat' : 'Wygeneruj cytat'}</button></div>
+        <p class="wr-msg" id="wr-e-msg" role="status">${expert?.status === 'failed' ? esc(expert.error) : ''}</p>
+      </div>
+
+      <div class="wr-panel">
+        <h3>Styl i fleksja</h3>
+        <p class="wr-msg">Jeden przejazd redaktorski na cały tekst: odmiana fraz, powtórzenia, interpunkcja, weryfikacja faktów w sieci.</p>
+        <div class="wr-actions"><button class="wr-btn" type="button" id="wr-s-run">${style?.status === 'done' ? 'Popraw styl ponownie' : 'Popraw styl i fleksję'}</button></div>
+        ${style?.status === 'done' ? `<p class="wr-msg">Zmienione sekcje: ${fmtInt(style.changed)} z ${fmtInt(style.sections_total)}</p>` : ''}
+        ${pendingStyle.map((row) => `<div class="wr-diff" data-style-slot="${row.slot}">
+          <strong>${esc(row.title_after ?? row.title_before ?? `sekcja ${row.slot}`)}</strong>
+          ${(row.issues ?? []).length ? `<ul class="wr-list">${(row.issues as Any[]).map((issue) => `<li><span>${esc(typeof issue === 'string' ? issue : issue.note ?? issue.fix ?? JSON.stringify(issue))}</span></li>`).join('')}</ul>` : ''}
+          ${(row.warnings ?? []).length ? `<p class="wr-msg err">${(row.warnings as Any[]).map((w) => esc(typeof w === 'string' ? w : JSON.stringify(w))).join(' · ')}</p>` : ''}
+          <span class="before">${esc(strip(row.text_before).slice(0, 280))}</span>
+          <span>${esc(strip(row.text_after).slice(0, 280))}</span>
+          <div class="wr-actions">
+            <button class="wr-btn small primary" type="button" data-style="accepted">Przyjmij</button>
+            <button class="wr-btn small" type="button" data-style="rejected">Odrzuć</button>
+          </div></div>`).join('')}
+        <p class="wr-msg" id="wr-s-msg" role="status">${style?.status === 'failed' ? esc(style.error) : ''}</p>
+      </div>`;
+    bindSide();
+  }
+
+  function bindSide() {
+    const job = state.writeJob!;
+    const message = (id: string, text: string, tone = '') => {
+      const box = document.getElementById(id);
+      if (box) { box.className = `wr-msg ${tone}`; box.textContent = text; }
+    };
+    const busy = (button: HTMLButtonElement, label: string) => { button.disabled = true; button.textContent = label; };
+
+    el('wr-p-save').addEventListener('click', async (event) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      const title = (el('wr-p-title') as HTMLInputElement).value.trim();
+      const authorId = Number.parseInt((el('wr-p-author') as HTMLSelectElement).value, 10);
+      const categoryId = Number.parseInt((el('wr-p-category') as HTMLSelectElement).value, 10);
+      if (!title || !authorId || !categoryId) { message('wr-p-msg', 'Uzupełnij tytuł, autora i kategorię.', 'err'); return; }
+      busy(button, 'Zapisuję…');
+      try {
+        await api(base, { method: 'PATCH', body: { title, author_id: authorId, category_id: categoryId } });
+        let saved;
+        try {
+          saved = await api<Any>(`${base}/wp-draft`, { method: 'POST', body: {} });
+        } catch (error) {
+          const err = error as Error & { code?: string };
+          if (err.code !== 'edited_in_wp' || !confirm(`${err.message} Zapisać mimo to?`)) throw err;
+          saved = await api<Any>(`${base}/wp-draft`, { method: 'POST', body: { force: true } });
+        }
+        await refresh();
+        message('wr-p-msg', `Szkic zapisany (ID ${saved.data.draft_id}).`, 'ok');
+      } catch (error) {
+        await refresh().catch(() => {});
+        message('wr-p-msg', (error as Error).message, 'err');
+      }
+    });
+
+    el('wr-e-run').addEventListener('click', async (event) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      busy(button, 'Generuję…');
+      try {
+        await api(`/api/cw/jobs/${job.id}/expert`, {
+          method: 'POST',
+          body: {
+            expert: (el('wr-e-person') as HTMLSelectElement).value,
+            slot: Number.parseInt((el('wr-e-slot') as HTMLSelectElement).value, 10),
+          },
+        });
+        await refresh();
+      } catch (error) {
+        await refresh().catch(() => {});
+        message('wr-e-msg', (error as Error).message, 'err');
+      }
+    });
+    document.getElementById('wr-e-reject')?.addEventListener('click', async () => {
+      try {
+        await api(`/api/cw/jobs/${job.id}/expert`, { method: 'PATCH', body: { rejected: true } });
+        await refresh();
+      } catch (error) {
+        message('wr-e-msg', (error as Error).message, 'err');
+      }
+    });
+
+    el('wr-s-run').addEventListener('click', async (event) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      busy(button, 'Czytam cały tekst – do dwóch minut…');
+      try {
+        await api(`/api/cw/jobs/${job.id}/style`, { method: 'POST', body: {} });
+        await refresh();
+      } catch (error) {
+        await refresh().catch(() => {});
+        message('wr-s-msg', (error as Error).message, 'err');
+      }
+    });
+    el('wr-side').querySelectorAll<HTMLElement>('[data-style-slot]').forEach((row) => {
+      row.querySelectorAll<HTMLButtonElement>('[data-style]').forEach((button) => button.addEventListener('click', async () => {
+        try {
+          await api(`/api/cw/jobs/${job.id}/style/${row.dataset.styleSlot}`, { method: 'PATCH', body: { decision: button.dataset.style } });
+          await refresh();
+        } catch (error) {
+          message('wr-s-msg', (error as Error).message, 'err');
+        }
+      }));
+    });
+  }
+
+  /* ---------- cykl ---------- */
+
+  let pollTimer: number | null = null;
+
+  async function refresh() {
+    await loadProject();
+    render();
+  }
+
+  function render() {
+    renderHeader();
+    renderRun();
+    renderResearch();
+    renderBrief();
+    renderText();
+    renderSide();
+    if (pollTimer) clearTimeout(pollTimer);
+    if (['brief_running', 'writing'].includes(state.project!.status)) {
+      pollTimer = window.setTimeout(() => refresh().catch((error) => say((error as Error).message, 'err')), 8000);
+    }
+  }
+
+  el('wr-close').addEventListener('click', async () => {
+    if (!confirm('Zamknąć projekt? Fraza wróci do puli, szkic w WordPressie zostanie bez zmian.')) return;
+    try {
+      await api(base, { method: 'PATCH', body: { cancel: true } });
+      location.href = `/${domain}/content-writer/`;
+    } catch (error) {
+      say((error as Error).message, 'err');
+    }
+  });
+
+  (async () => {
+    if (!Number.isInteger(projectId) || projectId <= 0) {
+      el('wr-keyword').textContent = 'Brak projektu';
+      say('Adres nie wskazuje projektu – wróć do listy.', 'err');
+      return;
+    }
+    try {
+      await Promise.all([loadProject(), loadResearch(), loadOwnKeywords(), loadPublishing()]);
+      render();
+    } catch (error) {
+      el('wr-keyword').textContent = 'Nie udało się wczytać projektu';
+      say((error as Error).message, 'err');
+    }
+  })();
+</script>
