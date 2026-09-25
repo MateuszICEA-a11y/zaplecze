@@ -1,6 +1,6 @@
 {
  "date": "2026-09-25",
- "collected_at": "2026-09-25T12:09:47Z",
+ "collected_at": "2026-09-25T17:36:16Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -21645,25 +21645,13 @@
        "position": null
       },
       {
-       "query": "copilot specyfikacja",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "jak llm.txt",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "systemu rag z autorskim mechanizmem chunkingu dokumentów iso - coto za system",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "jak nie embeddingi do rag to co ?",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "jakie modele llm napędzają perplexity w porównaniu do groka",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -21675,7 +21663,31 @@
        "position": null
       },
       {
+       "query": "systemu rag z autorskim mechanizmem chunkingu dokumentów iso - coto za system",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "copilot rejestracja jakie dane są potrzebne",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "jak llm.txt",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "copilot specyfikacja",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "chcę zwiększyć widoczność marki w claude i perplexity",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -21693,67 +21705,13 @@
        "position": null
       },
       {
-       "query": "jakie modele llm napędzają perplexity w porównaniu do groka",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "chcę zwiększyć widoczność marki w claude i perplexity",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "audyt widoczności marki w ai overviews chatgpt perplexity polska",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak sprawdzic czy mam copilot studio",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "zweryfikuj dokładnie czy perplexity nie dolicza nic do kredytów perplexity computer w różnych modelach llm.",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czym się różni llm np gemini od api ai?",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "napisz prompt do consensus na temat llm do liczb a nie tekstu",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak sprawdzić share of voice w wyszukiwarkach ai",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "konta-dla-firm.pl version: llms.txt",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "czy dobrze jest mieć pliki llms.txt na stronach deweloperów ze swoją ofertą? czy to pomaga przy wyszukiwaniu, czy też wręcz przeciwnie? czy dużo deweloperów posiada stronę llms.txt i czy jest ona otwarta dla przeglądarki?",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "claude czy gemini",
+       "query": "z jakiego dokładnie modelu ai korzysta copilot microsoft?",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -21777,25 +21735,7 @@
        "position": null
       },
       {
-       "query": "jakie są dostępne produkty antropic wykorzystujące model llm. podaj główne cechy i ich zastosowania.",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jakie są w czacie for i claude najmocniejsze modele",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "za pomoicą jakiej ai (modelu), jakiego sprzetu moge stworzyc wlasny llm z dokumentami, regulaminami, ktory bedzie odpowiadal na moje pytania?",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "skoro jesteś perplexity to po co tutaj na dole mam wybór róznych modeli? sonnet, chatpgpt, gemini.... to jakiś pic na wode?",
+       "query": "rozpisz mi proszę cpecyfikacje modeli językowych claude. do czego wykorzystywać który, od haiku do fable",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -21807,19 +21747,61 @@
        "position": null
       },
       {
+       "query": "audyt widoczności marki w ai overviews chatgpt perplexity polska",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "rag wyszukiwanie wprowadzenie",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "z jakiego dokładnie modelu ai korzysta copilot microsoft?",
+       "query": "jakie są w czacie for i claude najmocniejsze modele",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "rozpisz mi proszę cpecyfikacje modeli językowych claude. do czego wykorzystywać który, od haiku do fable",
+       "query": "skoro jesteś perplexity to po co tutaj na dole mam wybór róznych modeli? sonnet, chatpgpt, gemini.... to jakiś pic na wode?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jaki model llm jest używany w em client, bo słabiutko sobie radzi?czy mogę coś innego tu podpiąć?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "napisz prompt do consensus na temat llm do liczb a nie tekstu",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak sprawdzić share of voice w wyszukiwarkach ai",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak copilot przetwarza promoty?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "za pomoicą jakiej ai (modelu), jakiego sprzetu moge stworzyc wlasny llm z dokumentami, regulaminami, ktory bedzie odpowiadal na moje pytania?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "czym się różni llm np gemini od api ai?",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -21855,13 +21837,31 @@
        "position": null
       },
       {
-       "query": "jak copilot przetwarza promoty?",
+       "query": "konta-dla-firm.pl version: llms.txt",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "jaki model llm jest używany w em client, bo słabiutko sobie radzi?czy mogę coś innego tu podpiąć?",
+       "query": "claude czy gemini",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "zweryfikuj dokładnie czy perplexity nie dolicza nic do kredytów perplexity computer w różnych modelach llm.",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak sprawdzic czy mam copilot studio",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jakie są dostępne produkty antropic wykorzystujące model llm. podaj główne cechy i ich zastosowania.",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -21897,7 +21897,7 @@
        "position": null
       },
       {
-       "query": "udostępnić rag",
+       "query": "co to za platforma anthropic i co to za plan",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -21909,7 +21909,7 @@
        "position": null
       },
       {
-       "query": "co to za platforma anthropic i co to za plan",
+       "query": "udostępnić rag",
        "clicks": 1,
        "impressions": 1,
        "position": null
@@ -21981,13 +21981,13 @@
        "position": null
       },
       {
-       "query": "podstawy generatywnej ai i promptingu z wykorzystaniem microsoft 365 copilot chat i gemini",
+       "query": "mam copliota premium, jak użyć go w api?",
        "clicks": 0,
        "impressions": 3,
        "position": null
       },
       {
-       "query": "mam copliota premium, jak użyć go w api?",
+       "query": "podstawy generatywnej ai i promptingu z wykorzystaniem microsoft 365 copilot chat i gemini",
        "clicks": 0,
        "impressions": 3,
        "position": null
@@ -22000,12 +22000,6 @@
       },
       {
        "query": "czy w claude warto walczyc o widocznosc",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "embedowane",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -22029,13 +22023,19 @@
        "position": null
       },
       {
+       "query": "embedowane",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "co to są agenci ai",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "czy jest coś lepszego od claude do programowania aplikacji web",
+       "query": "agenci ki co to jest",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -22047,7 +22047,7 @@
        "position": null
       },
       {
-       "query": "ai rag budowa własnego systemu wiedzy",
+       "query": "czy jest coś lepszego od claude do programowania aplikacji web",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -22065,13 +22065,7 @@
        "position": null
       },
       {
-       "query": "agenci ki co to jest",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "co to jest algorytm copilot",
+       "query": "ai rag budowa własnego systemu wiedzy",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -22095,19 +22089,13 @@
        "position": null
       },
       {
-       "query": "copilot specyfikacja",
+       "query": "co to jest algorytm copilot",
        "clicks": 0,
        "impressions": 2,
        "position": null
       },
       {
-       "query": "jak llm.txt",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "systemu rag z autorskim mechanizmem chunkingu dokumentów iso - coto za system",
+       "query": "jakie modele llm napędzają perplexity w porównaniu do groka",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -22119,7 +22107,31 @@
        "position": null
       },
       {
+       "query": "systemu rag z autorskim mechanizmem chunkingu dokumentów iso - coto za system",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
        "query": "copilot rejestracja jakie dane są potrzebne",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "jak llm.txt",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "copilot specyfikacja",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "chcę zwiększyć widoczność marki w claude i perplexity",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -22137,31 +22149,7 @@
        "position": null
       },
       {
-       "query": "jakie modele llm napędzają perplexity w porównaniu do groka",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "chcę zwiększyć widoczność marki w claude i perplexity",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "jak zrozumiale przekazano podstawy microsoft copilot",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "generatory w systemach rag",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jakie są dostępne wersję claude",
+       "query": "copilot cyz to llm",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22173,13 +22161,7 @@
        "position": null
       },
       {
-       "query": "ja pytam ciebie copilot kto jest twoim twórcą myślę ze zrozumiałeś pytanie",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jakie modele ai wspiera copilot?",
+       "query": "google jaki to model jezykowy ti b=ni ezgykłe gemini",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22191,19 +22173,13 @@
        "position": null
       },
       {
-       "query": "google jaki to model jezykowy ti b=ni ezgykłe gemini",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "od czego zależy ilość tłumaczonej treści przez chatgpt?",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "gemini czy to jest model czy to jest klient dla modelu",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jakie modele ai wspiera copilot?",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22215,25 +22191,19 @@
        "position": null
       },
       {
-       "query": "claude ai jak wykorzystywac, mozna wybierac jezyk, ktora wersja jest najlepsza",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czym sa aganty w ai",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "zestawienie któy model językowy używan przez copilot jakie generuje koszty per token",
+       "query": "jakie są dostępne wersję claude",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
        "query": "klienci ai",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "zestawienie któy model językowy używan przez copilot jakie generuje koszty per token",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22263,19 +22233,43 @@
        "position": null
       },
       {
-       "query": "copilot cyz to llm",
+       "query": "czym sa aganty w ai",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "llm w ccpilot co to",
+       "query": "claude ai jak wykorzystywac, mozna wybierac jezyk, ktora wersja jest najlepsza",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "do czego użyć konkretnego agenta ai",
+       "query": "generatory w systemach rag",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "ja pytam ciebie copilot kto jest twoim twórcą myślę ze zrozumiałeś pytanie",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak zrozumiale przekazano podstawy microsoft copilot",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "od czego zależy ilość tłumaczonej treści przez chatgpt?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "copilot jaki to llm",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22287,7 +22281,19 @@
        "position": null
       },
       {
+       "query": "priorytety rag",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "gdzie w agencie copilot jest sekcja capabilities",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "al claude jaka firma",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22299,7 +22305,19 @@
        "position": null
       },
       {
-       "query": "al claude jaka firma",
+       "query": "agent it do czego służą i jak korzystać",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "copilot chat jak opisac usluge",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "copilot automatic llm",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22317,43 +22335,13 @@
        "position": null
       },
       {
-       "query": "copilot chat jak opisac usluge",
+       "query": "llm w ccpilot co to",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "agent it do czego służą i jak korzystać",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "copilot jaki to llm",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "priorytety rag",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "copilot automatic llm",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czy grok ma dostęp do x",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "co to wywerny chatgpt",
+       "query": "do czego użyć konkretnego agenta ai",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22365,13 +22353,19 @@
        "position": null
       },
       {
-       "query": "ile jest modeli llm - mam na mysli openai czy gemini od googla",
+       "query": "rag schemat",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
        "query": "pamięc krótkoterminowa agent ai",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jaki model claude pod prezentacje",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22389,31 +22383,19 @@
        "position": null
       },
       {
-       "query": "rag schemat",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "w 2024 wrzesień jaki byt model claud",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "claude od anthropic co to",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "co ten model potrafi iw czym jest dobry",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "srodowisko rag",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "ile jest modeli llm - mam na mysli openai czy gemini od googla",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "duży model llm z najniższym czasem oczekiwania na pierwszy token",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22431,31 +22413,37 @@
        "position": null
       },
       {
-       "query": "jaki model claude pod prezentacje",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "duży model llm z najniższym czasem oczekiwania na pierwszy token",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "najczęściej używane modele językowe 2026",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "czym jest https://platform.experientiallabs.ai/models i czy może mi to zastąpić plan perplexity pro?",
+       "query": "w 2024 wrzesień jaki byt model claud",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "jak copilot chat różni się od tradycyjnej wyszukiwarki?  pytanie 2odpowiedz  a. nie ma dostępu do internetu   b. zamiast zwracać linki, generuje odpowiedzi w języku naturalnym, często z analizą i kontekstem   c. działa tylko w trybie offline",
+       "query": "co ten model potrafi iw czym jest dobry",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "co to wywerny chatgpt",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "czy grok ma dostęp do x",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "claude od anthropic co to",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22467,37 +22455,13 @@
        "position": null
       },
       {
-       "query": "jak firma powinna ocenić gotowość do ai i policzyć zwrot z inwestycji przed sfinansowaniem wdrożenia?",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
        "query": "chat gpt co naprawde potrafi",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "porównanie czatów gemini i cztgtp",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jeśli chcecie pogadać o tym, co autonomiczny agent ai robi z kluczami do repozytoriów, gdy nikt nie patrzy - koniecznie wpadnijcie po swoją przepustkę na nasz elitarny warsztat techniczny „licencja na dostęp: agent, który mnie zdradził” (10 września, warszawa).",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak llm jest najlepszy do nauki języków",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak wylączyć doskonalenie modelu  claude",
+       "query": "czy claude lepiej sobie radzi z excelem niz gemini",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22509,7 +22473,25 @@
        "position": null
       },
       {
-       "query": "inżynieria promptów",
+       "query": "jeśli chcecie pogadać o tym, co autonomiczny agent ai robi z kluczami do repozytoriów, gdy nikt nie patrzy - koniecznie wpadnijcie po swoją przepustkę na nasz elitarny warsztat techniczny „licencja na dostęp: agent, który mnie zdradził” (10 września, warszawa).",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak wylączyć doskonalenie modelu  claude",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak llm jest najlepszy do nauki języków",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "zewnetrzne zrodla llm",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22533,6 +22515,12 @@
        "position": null
       },
       {
+       "query": "inżynieria promptów",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "agenci ai detertymistyczni",
        "clicks": 0,
        "impressions": 1,
@@ -22545,25 +22533,7 @@
        "position": null
       },
       {
-       "query": "zewnetrzne zrodla llm",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "interesuje mnie dostęp do modelu grok ai i jego subskrypcja",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak najlepiej programować z gpt astra czy sol na vsc na claude są pliki skills claude.md itd a tutaj jak? i co jak mam projekt gdzie jest tworzony za pomocą claude",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "różnice między gemini a claude",
+       "query": "jak sprawdzić, co ai mówi o mojej marce?",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22575,25 +22545,13 @@
        "position": null
       },
       {
-       "query": "jakie sa obecnie najlepsze modele jezykowe (llm)?",
+       "query": "czego lepiej uzywac do rozmow codex czy chatgpt",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "czy plik llms.txt jest potrzebny i czy warto go wdrożyć?",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "porównanie czatów gemini i czagtp który lepszy do analizy kryptowalut",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czy claude lepiej sobie radzi z excelem niz gemini",
+       "query": "najtańsze modele językowe w chmurze 2026",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22605,25 +22563,25 @@
        "position": null
       },
       {
-       "query": "jaki model ai wykorzystuje chatgpt?",
+       "query": "porównanie czatów gemini i cztgtp",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "jak sprawdzić, co ai mówi o mojej marce?",
+       "query": "interesuje mnie dostęp do modelu grok ai i jego subskrypcja",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "teraz sprawdź jak ekspert ai geo kwestie sposobu opisow pod produktami. co ułatwia ai rekomendację tych produktów w chatach i rozmowach prowadzonych przez użytkowników w trybie ai",
+       "query": "jak copilot chat różni się od tradycyjnej wyszukiwarki?  pytanie 2odpowiedz  a. nie ma dostępu do internetu   b. zamiast zwracać linki, generuje odpowiedzi w języku naturalnym, często z analizą i kontekstem   c. działa tylko w trybie offline",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "modele językowe generowanie głosu audio openai gemini claude",
+       "query": "jakie otwarte modele llm są preferowane przez zespoły programistów przy przesiadce z claude i claude code",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22647,67 +22605,67 @@
        "position": null
       },
       {
+       "query": "jakie sa obecnie najlepsze modele jezykowe (llm)?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "czy plik llms.txt jest potrzebny i czy warto go wdrożyć?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "porównanie czatów gemini i czagtp który lepszy do analizy kryptowalut",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "teraz sprawdź jak ekspert ai geo kwestie sposobu opisow pod produktami. co ułatwia ai rekomendację tych produktów w chatach i rozmowach prowadzonych przez użytkowników w trybie ai",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "modele językowe generowanie głosu audio openai gemini claude",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak firma powinna ocenić gotowość do ai i policzyć zwrot z inwestycji przed sfinansowaniem wdrożenia?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jaki model ai wykorzystuje chatgpt?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "czym jest https://platform.experientiallabs.ai/models i czy może mi to zastąpić plan perplexity pro?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "ale to jest ten sam grok co na twitterze?",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "czego lepiej uzywac do rozmow codex czy chatgpt",
+       "query": "jak najlepiej programować z gpt astra czy sol na vsc na claude są pliki skills claude.md itd a tutaj jak? i co jak mam projekt gdzie jest tworzony za pomocą claude",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "najtańsze modele językowe w chmurze 2026",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jakie otwarte modele llm są preferowane przez zespoły programistów przy przesiadce z claude i claude code",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "audyt widoczności marki w ai overviews chatgpt perplexity polska",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak sprawdzic czy mam copilot studio",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "zweryfikuj dokładnie czy perplexity nie dolicza nic do kredytów perplexity computer w różnych modelach llm.",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "czym się różni llm np gemini od api ai?",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "napisz prompt do consensus na temat llm do liczb a nie tekstu",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jak sprawdzić share of voice w wyszukiwarkach ai",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "konta-dla-firm.pl version: llms.txt",
+       "query": "różnice między gemini a claude",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22719,7 +22677,7 @@
        "position": null
       },
       {
-       "query": "claude czy gemini",
+       "query": "z jakiego dokładnie modelu ai korzysta copilot microsoft?",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22743,25 +22701,7 @@
        "position": null
       },
       {
-       "query": "jakie są dostępne produkty antropic wykorzystujące model llm. podaj główne cechy i ich zastosowania.",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "jakie są w czacie for i claude najmocniejsze modele",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "za pomoicą jakiej ai (modelu), jakiego sprzetu moge stworzyc wlasny llm z dokumentami, regulaminami, ktory bedzie odpowiadal na moje pytania?",
-       "clicks": 0,
-       "impressions": 1,
-       "position": null
-      },
-      {
-       "query": "skoro jesteś perplexity to po co tutaj na dole mam wybór róznych modeli? sonnet, chatpgpt, gemini.... to jakiś pic na wode?",
+       "query": "rozpisz mi proszę cpecyfikacje modeli językowych claude. do czego wykorzystywać który, od haiku do fable",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22773,19 +22713,61 @@
        "position": null
       },
       {
+       "query": "audyt widoczności marki w ai overviews chatgpt perplexity polska",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
        "query": "rag wyszukiwanie wprowadzenie",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "z jakiego dokładnie modelu ai korzysta copilot microsoft?",
+       "query": "jakie są w czacie for i claude najmocniejsze modele",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "rozpisz mi proszę cpecyfikacje modeli językowych claude. do czego wykorzystywać który, od haiku do fable",
+       "query": "skoro jesteś perplexity to po co tutaj na dole mam wybór róznych modeli? sonnet, chatpgpt, gemini.... to jakiś pic na wode?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jaki model llm jest używany w em client, bo słabiutko sobie radzi?czy mogę coś innego tu podpiąć?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "napisz prompt do consensus na temat llm do liczb a nie tekstu",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak sprawdzić share of voice w wyszukiwarkach ai",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak copilot przetwarza promoty?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "za pomoicą jakiej ai (modelu), jakiego sprzetu moge stworzyc wlasny llm z dokumentami, regulaminami, ktory bedzie odpowiadal na moje pytania?",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "czym się różni llm np gemini od api ai?",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22821,13 +22803,31 @@
        "position": null
       },
       {
-       "query": "jak copilot przetwarza promoty?",
+       "query": "konta-dla-firm.pl version: llms.txt",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "jaki model llm jest używany w em client, bo słabiutko sobie radzi?czy mogę coś innego tu podpiąć?",
+       "query": "claude czy gemini",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "zweryfikuj dokładnie czy perplexity nie dolicza nic do kredytów perplexity computer w różnych modelach llm.",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jak sprawdzic czy mam copilot studio",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
+      },
+      {
+       "query": "jakie są dostępne produkty antropic wykorzystujące model llm. podaj główne cechy i ich zastosowania.",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -22861,7 +22861,7 @@
      "position": null
     },
     {
-     "query": "udostępnić rag",
+     "query": "co to za platforma anthropic i co to za plan",
      "clicks": 1,
      "impressions": 1,
      "position": null
@@ -22873,7 +22873,7 @@
      "position": null
     },
     {
-     "query": "co to za platforma anthropic i co to za plan",
+     "query": "udostępnić rag",
      "clicks": 1,
      "impressions": 1,
      "position": null
@@ -22945,13 +22945,13 @@
      "position": null
     },
     {
-     "query": "podstawy generatywnej ai i promptingu z wykorzystaniem microsoft 365 copilot chat i gemini",
+     "query": "mam copliota premium, jak użyć go w api?",
      "clicks": 0,
      "impressions": 3,
      "position": null
     },
     {
-     "query": "mam copliota premium, jak użyć go w api?",
+     "query": "podstawy generatywnej ai i promptingu z wykorzystaniem microsoft 365 copilot chat i gemini",
      "clicks": 0,
      "impressions": 3,
      "position": null
@@ -22964,12 +22964,6 @@
     },
     {
      "query": "czy w claude warto walczyc o widocznosc",
-     "clicks": 0,
-     "impressions": 2,
-     "position": null
-    },
-    {
-     "query": "embedowane",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -22993,13 +22987,19 @@
      "position": null
     },
     {
+     "query": "embedowane",
+     "clicks": 0,
+     "impressions": 2,
+     "position": null
+    },
+    {
      "query": "co to są agenci ai",
      "clicks": 0,
      "impressions": 2,
      "position": null
     },
     {
-     "query": "czy jest coś lepszego od claude do programowania aplikacji web",
+     "query": "agenci ki co to jest",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -23011,7 +23011,7 @@
      "position": null
     },
     {
-     "query": "ai rag budowa własnego systemu wiedzy",
+     "query": "czy jest coś lepszego od claude do programowania aplikacji web",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -23029,13 +23029,7 @@
      "position": null
     },
     {
-     "query": "agenci ki co to jest",
-     "clicks": 0,
-     "impressions": 2,
-     "position": null
-    },
-    {
-     "query": "co to jest algorytm copilot",
+     "query": "ai rag budowa własnego systemu wiedzy",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -23059,19 +23053,13 @@
      "position": null
     },
     {
-     "query": "copilot specyfikacja",
+     "query": "co to jest algorytm copilot",
      "clicks": 0,
      "impressions": 2,
      "position": null
     },
     {
-     "query": "jak llm.txt",
-     "clicks": 0,
-     "impressions": 2,
-     "position": null
-    },
-    {
-     "query": "systemu rag z autorskim mechanizmem chunkingu dokumentów iso - coto za system",
+     "query": "jakie modele llm napędzają perplexity w porównaniu do groka",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -23083,7 +23071,31 @@
      "position": null
     },
     {
+     "query": "systemu rag z autorskim mechanizmem chunkingu dokumentów iso - coto za system",
+     "clicks": 0,
+     "impressions": 2,
+     "position": null
+    },
+    {
      "query": "copilot rejestracja jakie dane są potrzebne",
+     "clicks": 0,
+     "impressions": 2,
+     "position": null
+    },
+    {
+     "query": "jak llm.txt",
+     "clicks": 0,
+     "impressions": 2,
+     "position": null
+    },
+    {
+     "query": "copilot specyfikacja",
+     "clicks": 0,
+     "impressions": 2,
+     "position": null
+    },
+    {
+     "query": "chcę zwiększyć widoczność marki w claude i perplexity",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -23101,31 +23113,7 @@
      "position": null
     },
     {
-     "query": "jakie modele llm napędzają perplexity w porównaniu do groka",
-     "clicks": 0,
-     "impressions": 2,
-     "position": null
-    },
-    {
-     "query": "chcę zwiększyć widoczność marki w claude i perplexity",
-     "clicks": 0,
-     "impressions": 2,
-     "position": null
-    },
-    {
-     "query": "jak zrozumiale przekazano podstawy microsoft copilot",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "generatory w systemach rag",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jakie są dostępne wersję claude",
+     "query": "copilot cyz to llm",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23137,13 +23125,7 @@
      "position": null
     },
     {
-     "query": "ja pytam ciebie copilot kto jest twoim twórcą myślę ze zrozumiałeś pytanie",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jakie modele ai wspiera copilot?",
+     "query": "google jaki to model jezykowy ti b=ni ezgykłe gemini",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23155,19 +23137,13 @@
      "position": null
     },
     {
-     "query": "google jaki to model jezykowy ti b=ni ezgykłe gemini",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "od czego zależy ilość tłumaczonej treści przez chatgpt?",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
      "query": "gemini czy to jest model czy to jest klient dla modelu",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jakie modele ai wspiera copilot?",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23179,25 +23155,19 @@
      "position": null
     },
     {
-     "query": "claude ai jak wykorzystywac, mozna wybierac jezyk, ktora wersja jest najlepsza",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "czym sa aganty w ai",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "zestawienie któy model językowy używan przez copilot jakie generuje koszty per token",
+     "query": "jakie są dostępne wersję claude",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
      "query": "klienci ai",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "zestawienie któy model językowy używan przez copilot jakie generuje koszty per token",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23227,19 +23197,43 @@
      "position": null
     },
     {
-     "query": "copilot cyz to llm",
+     "query": "czym sa aganty w ai",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "llm w ccpilot co to",
+     "query": "claude ai jak wykorzystywac, mozna wybierac jezyk, ktora wersja jest najlepsza",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "do czego użyć konkretnego agenta ai",
+     "query": "generatory w systemach rag",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "ja pytam ciebie copilot kto jest twoim twórcą myślę ze zrozumiałeś pytanie",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jak zrozumiale przekazano podstawy microsoft copilot",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "od czego zależy ilość tłumaczonej treści przez chatgpt?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "copilot jaki to llm",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23251,7 +23245,19 @@
      "position": null
     },
     {
+     "query": "priorytety rag",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "gdzie w agencie copilot jest sekcja capabilities",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "al claude jaka firma",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23263,7 +23269,19 @@
      "position": null
     },
     {
-     "query": "al claude jaka firma",
+     "query": "agent it do czego służą i jak korzystać",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "copilot chat jak opisac usluge",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "copilot automatic llm",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23281,43 +23299,13 @@
      "position": null
     },
     {
-     "query": "copilot chat jak opisac usluge",
+     "query": "llm w ccpilot co to",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "agent it do czego służą i jak korzystać",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "copilot jaki to llm",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "priorytety rag",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "copilot automatic llm",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "czy grok ma dostęp do x",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "co to wywerny chatgpt",
+     "query": "do czego użyć konkretnego agenta ai",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23329,13 +23317,19 @@
      "position": null
     },
     {
-     "query": "ile jest modeli llm - mam na mysli openai czy gemini od googla",
+     "query": "rag schemat",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
      "query": "pamięc krótkoterminowa agent ai",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jaki model claude pod prezentacje",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23353,31 +23347,19 @@
      "position": null
     },
     {
-     "query": "rag schemat",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "w 2024 wrzesień jaki byt model claud",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "claude od anthropic co to",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "co ten model potrafi iw czym jest dobry",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
      "query": "srodowisko rag",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "ile jest modeli llm - mam na mysli openai czy gemini od googla",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "duży model llm z najniższym czasem oczekiwania na pierwszy token",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23395,31 +23377,37 @@
      "position": null
     },
     {
-     "query": "jaki model claude pod prezentacje",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "duży model llm z najniższym czasem oczekiwania na pierwszy token",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
      "query": "najczęściej używane modele językowe 2026",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "czym jest https://platform.experientiallabs.ai/models i czy może mi to zastąpić plan perplexity pro?",
+     "query": "w 2024 wrzesień jaki byt model claud",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "jak copilot chat różni się od tradycyjnej wyszukiwarki?  pytanie 2odpowiedz  a. nie ma dostępu do internetu   b. zamiast zwracać linki, generuje odpowiedzi w języku naturalnym, często z analizą i kontekstem   c. działa tylko w trybie offline",
+     "query": "co ten model potrafi iw czym jest dobry",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "co to wywerny chatgpt",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "czy grok ma dostęp do x",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "claude od anthropic co to",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23431,37 +23419,13 @@
      "position": null
     },
     {
-     "query": "jak firma powinna ocenić gotowość do ai i policzyć zwrot z inwestycji przed sfinansowaniem wdrożenia?",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
      "query": "chat gpt co naprawde potrafi",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "porównanie czatów gemini i cztgtp",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jeśli chcecie pogadać o tym, co autonomiczny agent ai robi z kluczami do repozytoriów, gdy nikt nie patrzy - koniecznie wpadnijcie po swoją przepustkę na nasz elitarny warsztat techniczny „licencja na dostęp: agent, który mnie zdradził” (10 września, warszawa).",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jak llm jest najlepszy do nauki języków",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jak wylączyć doskonalenie modelu  claude",
+     "query": "czy claude lepiej sobie radzi z excelem niz gemini",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23473,7 +23437,25 @@
      "position": null
     },
     {
-     "query": "inżynieria promptów",
+     "query": "jeśli chcecie pogadać o tym, co autonomiczny agent ai robi z kluczami do repozytoriów, gdy nikt nie patrzy - koniecznie wpadnijcie po swoją przepustkę na nasz elitarny warsztat techniczny „licencja na dostęp: agent, który mnie zdradził” (10 września, warszawa).",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jak wylączyć doskonalenie modelu  claude",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jak llm jest najlepszy do nauki języków",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "zewnetrzne zrodla llm",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23497,6 +23479,12 @@
      "position": null
     },
     {
+     "query": "inżynieria promptów",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "agenci ai detertymistyczni",
      "clicks": 0,
      "impressions": 1,
@@ -23509,25 +23497,7 @@
      "position": null
     },
     {
-     "query": "zewnetrzne zrodla llm",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "interesuje mnie dostęp do modelu grok ai i jego subskrypcja",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jak najlepiej programować z gpt astra czy sol na vsc na claude są pliki skills claude.md itd a tutaj jak? i co jak mam projekt gdzie jest tworzony za pomocą claude",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "różnice między gemini a claude",
+     "query": "jak sprawdzić, co ai mówi o mojej marce?",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23539,25 +23509,13 @@
      "position": null
     },
     {
-     "query": "jakie sa obecnie najlepsze modele jezykowe (llm)?",
+     "query": "czego lepiej uzywac do rozmow codex czy chatgpt",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "czy plik llms.txt jest potrzebny i czy warto go wdrożyć?",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "porównanie czatów gemini i czagtp który lepszy do analizy kryptowalut",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "czy claude lepiej sobie radzi z excelem niz gemini",
+     "query": "najtańsze modele językowe w chmurze 2026",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23569,25 +23527,25 @@
      "position": null
     },
     {
-     "query": "jaki model ai wykorzystuje chatgpt?",
+     "query": "porównanie czatów gemini i cztgtp",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "jak sprawdzić, co ai mówi o mojej marce?",
+     "query": "interesuje mnie dostęp do modelu grok ai i jego subskrypcja",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "teraz sprawdź jak ekspert ai geo kwestie sposobu opisow pod produktami. co ułatwia ai rekomendację tych produktów w chatach i rozmowach prowadzonych przez użytkowników w trybie ai",
+     "query": "jak copilot chat różni się od tradycyjnej wyszukiwarki?  pytanie 2odpowiedz  a. nie ma dostępu do internetu   b. zamiast zwracać linki, generuje odpowiedzi w języku naturalnym, często z analizą i kontekstem   c. działa tylko w trybie offline",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "modele językowe generowanie głosu audio openai gemini claude",
+     "query": "jakie otwarte modele llm są preferowane przez zespoły programistów przy przesiadce z claude i claude code",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23611,67 +23569,67 @@
      "position": null
     },
     {
+     "query": "jakie sa obecnie najlepsze modele jezykowe (llm)?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "czy plik llms.txt jest potrzebny i czy warto go wdrożyć?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "porównanie czatów gemini i czagtp który lepszy do analizy kryptowalut",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "teraz sprawdź jak ekspert ai geo kwestie sposobu opisow pod produktami. co ułatwia ai rekomendację tych produktów w chatach i rozmowach prowadzonych przez użytkowników w trybie ai",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "modele językowe generowanie głosu audio openai gemini claude",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jak firma powinna ocenić gotowość do ai i policzyć zwrot z inwestycji przed sfinansowaniem wdrożenia?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jaki model ai wykorzystuje chatgpt?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "czym jest https://platform.experientiallabs.ai/models i czy może mi to zastąpić plan perplexity pro?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "ale to jest ten sam grok co na twitterze?",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "czego lepiej uzywac do rozmow codex czy chatgpt",
+     "query": "jak najlepiej programować z gpt astra czy sol na vsc na claude są pliki skills claude.md itd a tutaj jak? i co jak mam projekt gdzie jest tworzony za pomocą claude",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "najtańsze modele językowe w chmurze 2026",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jakie otwarte modele llm są preferowane przez zespoły programistów przy przesiadce z claude i claude code",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "audyt widoczności marki w ai overviews chatgpt perplexity polska",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jak sprawdzic czy mam copilot studio",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "zweryfikuj dokładnie czy perplexity nie dolicza nic do kredytów perplexity computer w różnych modelach llm.",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "czym się różni llm np gemini od api ai?",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "napisz prompt do consensus na temat llm do liczb a nie tekstu",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jak sprawdzić share of voice w wyszukiwarkach ai",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "konta-dla-firm.pl version: llms.txt",
+     "query": "różnice między gemini a claude",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23683,7 +23641,7 @@
      "position": null
     },
     {
-     "query": "claude czy gemini",
+     "query": "z jakiego dokładnie modelu ai korzysta copilot microsoft?",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23707,25 +23665,7 @@
      "position": null
     },
     {
-     "query": "jakie są dostępne produkty antropic wykorzystujące model llm. podaj główne cechy i ich zastosowania.",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "jakie są w czacie for i claude najmocniejsze modele",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "za pomoicą jakiej ai (modelu), jakiego sprzetu moge stworzyc wlasny llm z dokumentami, regulaminami, ktory bedzie odpowiadal na moje pytania?",
-     "clicks": 0,
-     "impressions": 1,
-     "position": null
-    },
-    {
-     "query": "skoro jesteś perplexity to po co tutaj na dole mam wybór róznych modeli? sonnet, chatpgpt, gemini.... to jakiś pic na wode?",
+     "query": "rozpisz mi proszę cpecyfikacje modeli językowych claude. do czego wykorzystywać który, od haiku do fable",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23737,19 +23677,61 @@
      "position": null
     },
     {
+     "query": "audyt widoczności marki w ai overviews chatgpt perplexity polska",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
      "query": "rag wyszukiwanie wprowadzenie",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "z jakiego dokładnie modelu ai korzysta copilot microsoft?",
+     "query": "jakie są w czacie for i claude najmocniejsze modele",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "rozpisz mi proszę cpecyfikacje modeli językowych claude. do czego wykorzystywać który, od haiku do fable",
+     "query": "skoro jesteś perplexity to po co tutaj na dole mam wybór róznych modeli? sonnet, chatpgpt, gemini.... to jakiś pic na wode?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jaki model llm jest używany w em client, bo słabiutko sobie radzi?czy mogę coś innego tu podpiąć?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "napisz prompt do consensus na temat llm do liczb a nie tekstu",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jak sprawdzić share of voice w wyszukiwarkach ai",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jak copilot przetwarza promoty?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "za pomoicą jakiej ai (modelu), jakiego sprzetu moge stworzyc wlasny llm z dokumentami, regulaminami, ktory bedzie odpowiadal na moje pytania?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "czym się różni llm np gemini od api ai?",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -23785,13 +23767,31 @@
      "position": null
     },
     {
-     "query": "jak copilot przetwarza promoty?",
+     "query": "konta-dla-firm.pl version: llms.txt",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "jaki model llm jest używany w em client, bo słabiutko sobie radzi?czy mogę coś innego tu podpiąć?",
+     "query": "claude czy gemini",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "zweryfikuj dokładnie czy perplexity nie dolicza nic do kredytów perplexity computer w różnych modelach llm.",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jak sprawdzic czy mam copilot studio",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jakie są dostępne produkty antropic wykorzystujące model llm. podaj główne cechy i ich zastosowania.",
      "clicks": 0,
      "impressions": 1,
      "position": null
