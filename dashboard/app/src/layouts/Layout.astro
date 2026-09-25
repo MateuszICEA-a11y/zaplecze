@@ -3,7 +3,7 @@
    Sidebar sam wykrywa kontekst z Astro.url.pathname (build time):
    strona domeny → sekcje ze status-dotami; strona główna → lista domen. */
 import '../styles/theme.css';
-import '../styles/skin-terminal.css';
+import '../styles/skin-coinbase.css';
 import { loadConfig, latestSnapshot, sectionsFor } from '../lib/data';
 
 interface Props {
@@ -70,10 +70,10 @@ const SECTION_ICONS: Record<string, string> = {
       if (saved === 'light') document.documentElement.dataset.theme = 'light';
       if (localStorage.getItem('icea-collapsed') === '1')
         document.documentElement.classList.add('collapsed');
-      // Skórka „Terminal” (wariant do porównania): ?skin=terminal|classic zapisuje wybór.
+      // Skórka „Coinbase” (pełny design system do porównania): ?skin=coinbase|classic zapisuje wybór.
       const skinParam = new URLSearchParams(location.search).get('skin');
-      if (skinParam) localStorage.setItem('dash-skin', skinParam === 'terminal' ? 'terminal' : '');
-      if (localStorage.getItem('dash-skin') === 'terminal') document.documentElement.dataset.skin = 'terminal';
+      if (skinParam) localStorage.setItem('dash-skin', skinParam === 'coinbase' ? 'coinbase' : '');
+      if (localStorage.getItem('dash-skin') === 'coinbase') document.documentElement.dataset.skin = 'coinbase';
     </script>
     <!-- AG Grid Community 36.2 (MIT, licencja w /vendor) – wszystkie tabele dashboardu. defer:
          gotowy przed skryptami modułów stron (te też są odroczone, w kolejności dokumentu). -->
@@ -156,7 +156,7 @@ const SECTION_ICONS: Record<string, string> = {
             </svg>
             <span>Motyw</span>
           </button>
-          <button id="skin-toggle" type="button" aria-label="Przełącz wygląd: klasyczny / Terminal" title="Wygląd: klasyczny / Terminal">
+          <button id="skin-toggle" type="button" aria-label="Przełącz wygląd: klasyczny / Coinbase" title="Wygląd: klasyczny / Coinbase">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
               <rect x="3" y="4" width="18" height="16" rx="3" /><path d="M7 9l3 3-3 3M13 15h4" />
             </svg>
@@ -195,13 +195,13 @@ const SECTION_ICONS: Record<string, string> = {
       const skinButton = document.getElementById('skin-toggle');
       const paintSkin = () => {
         const label = skinButton?.querySelector('[data-skin-label]');
-        if (label) label.textContent = document.documentElement.dataset.skin === 'terminal' ? 'Terminal' : 'Klasyczny';
+        if (label) label.textContent = document.documentElement.dataset.skin === 'coinbase' ? 'Coinbase' : 'Klasyczny';
       };
       paintSkin();
       skinButton?.addEventListener('click', () => {
         const root = document.documentElement;
         root.classList.add('theme-transition');
-        if (root.dataset.skin === 'terminal') delete root.dataset.skin; else root.dataset.skin = 'terminal';
+        if (root.dataset.skin === 'coinbase') delete root.dataset.skin; else root.dataset.skin = 'coinbase';
         localStorage.setItem('dash-skin', root.dataset.skin ?? '');
         paintSkin();
         window.dispatchEvent(new CustomEvent('themechange'));

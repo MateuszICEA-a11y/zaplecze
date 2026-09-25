@@ -23,7 +23,8 @@ export const GRID_LOCALE = {
 /* Kolory z tokenów theme.css – przy zmianie motywu siatki dostają nowy motyw. */
 export function gridTheme() {
   const css = (name: string) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-  const dark = document.documentElement.dataset.theme !== 'light';
+  const coinbase = document.documentElement.dataset.skin === 'coinbase';
+  const dark = !coinbase && document.documentElement.dataset.theme !== 'light';
   return agGrid.themeQuartz.withParams({
     accentColor: css('--accent-blue'), backgroundColor: css('--bg-surface-1'), foregroundColor: css('--ink'), textColor: css('--ink'),
     borderColor: css('--hairline'), chromeBackgroundColor: css('--bg-surface-2'), headerBackgroundColor: css('--bg-surface-2'),
@@ -34,6 +35,14 @@ export function gridTheme() {
     inputBorderRadius: 3, borderRadius: 3, wrapperBorderRadius: 3, wrapperBorder: false,
     fontFamily: 'Roobert, Arial, sans-serif', fontSize: 13, headerFontSize: 12, headerFontWeight: 400, spacing: 7,
     browserColorScheme: dark ? 'dark' : 'light',
+    // Skórka Coinbase: Inter, bez linii podziału (głębia z tła), nagłówek na bieli, wiersze Frost.
+    ...(coinbase ? {
+      fontFamily: "'Inter Variable', Inter, system-ui, sans-serif", fontSize: 14, headerFontSize: 13, headerFontWeight: 600,
+      headerTextColor: css('--cb-slate'), headerBackgroundColor: css('--cb-frost'), backgroundColor: css('--cb-frost'),
+      oddRowBackgroundColor: css('--cb-frost'), rowHoverColor: css('--cb-cloud'), chromeBackgroundColor: css('--cb-frost'),
+      rowBorder: false, headerRowBorder: false, columnBorder: false, headerColumnBorder: false, wrapperBorder: false,
+      inputBorderRadius: 8, borderRadius: 8, spacing: 8, browserColorScheme: 'light',
+    } : {}),
   });
 }
 
