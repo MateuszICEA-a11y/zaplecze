@@ -132,12 +132,64 @@ const latest = latestSnapshot(domain!);
     el('wr-keyword').textContent = project.keyword;
     el('wr-status').innerHTML = `<span class="wr-status ${STATUS_TONE[project.status] ?? 'idle'}">${esc(STATUS_LABEL[project.status] ?? project.status)}</span>`;
     const current = stepIndex(project.status);
-    const steps = ['Konkurencja w wynikach', 'Brief', 'Tekst', 'Szkic w WordPressie'];
-    el('wr-steps').innerHTML = steps.map((title, index) => `
-      <div class="wr-step ${index < current ? 'done' : ''} ${index === Math.min(current, 3) ? 'current' : ''}">
-        <span class="n">${index + 1}</span><span class="t">${title}</span>
-      </div>`).join('');
-    el('wr-close').hidden = ['brief_running', 'writing'].includes(project.status);
+    const brief = project.brief as Any | null;
+    const queries = (state.serp?.queries ?? []) as Any[];
+    const competitors = ((queries.find((row) => row.kind === 'title') ?? queries[0])?.competitors ?? []).length;
+    const gapCount = (state.serp?.gap ?? []).length;
+    // Tak samo jak licznik edytora: wstęp + sekcje + FAQ, bez listy źródeł.
+    const count = (html: unknown) => String(html ?? '').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+    const words = count(project.lead) + ((state.writeJob?.sections ?? []) as Any[])
+      .filter((row) => row.slot < 200)
+      .reduce((sum, row) => sum + count(row.text_after), 0);
+    const running = ['brief_running', 'writing'].includes(project.status);
+
+    /* Każdy etap: stan słowami + jedno zdanie o tym, co w nim jest. */
+    const steps: { title: string; target: string; done: string; todo: string }[] = [
+      {
+        title: 'Konkurencja w wynikach',
+        target: 'research',
+        done: state.serp ? `${competitors} stron z czołówki, ${gapCount} fraz${state.rivals ? `, teksty przeczytane` : ''}` : 'pominięty',
+        todo: 'sprawdź, kto jest w czołówce Google',
+      },
+      {
+        title: 'Brief',
+        target: 'brief',
+        done: brief ? `${(brief.outline ?? []).length} sekcji, ${(brief.faq ?? []).length} pytań FAQ${project.brief_accepted_at ? `, zatwierdzony ${fmtDateTime(project.brief_accepted_at)}` : ''}` : '',
+        todo: project.status === 'brief_running' ? 'model przygotowuje plan…' : project.status === 'brief_ready' ? 'popraw plan i zatwierdź' : 'plan sekcji i fraz',
+      },
+      {
+        title: 'Tekst',
+        target: 'text',
+        done: `${fmtInt(words)} słów`,
+        todo: project.status === 'writing' ? 'model pisze tekst…' : 'powstaje z zatwierdzonego briefu',
+      },
+      {
+        title: 'Szkic w WordPressie',
+        target: 'text',
+        done: project.wp_saved_at ? `zapisany ${fmtDateTime(project.wp_saved_at)}` : '',
+        todo: 'wybierz autora i kategorię, zapisz szkic',
+      },
+    ];
+    el('wr-steps').innerHTML = steps.map((step, index) => {
+      const stage = index < current ? 'done' : index === current ? (running ? 'running' : project.status === 'failed' ? 'failed' : 'current') : 'todo';
+      const label = { done: 'Gotowe', running: 'W toku', current: 'Teraz', failed: 'Przerwany', todo: 'Później' }[stage];
+      const mark = stage === 'done'
+        ? '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10.5 3.2 3L15 6.5"/></svg>'
+        : stage === 'failed' ? '!' : String(index + 1);
+      return `<button type="button" class="wr-step ${stage}" data-step-target="${step.target}">
+        <span class="mark">${mark}</span>
+        <span class="body">
+          <span class="t">${step.title}</span>
+          <span class="s"><strong>${label}</strong>${(stage === 'done' ? step.done : step.todo) ? ` – ${esc(stage === 'done' ? step.done : step.todo)}` : ''}</span>
+        </span>
+      </button>`;
+    }).join('');
+    el('wr-steps').querySelectorAll<HTMLElement>('[data-step-target]').forEach((button) => button.addEventListener('click', () => {
+      const target = button.dataset.stepTarget;
+      if (target === 'text' && textReady()) { history.replaceState(null, '', '#edytor'); showEditor(true); return; }
+      document.getElementById(`wr-${target}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }));
+    el('wr-close').hidden = running;
     if (project.status === 'failed' && project.error) say(`Przebieg przerwany: ${project.error}`, 'err');
   }
 
@@ -240,7 +292,13 @@ const latest = latestSnapshot(domain!);
       </div>`}
 
       ${competitors.length ? `<div class="wr-panel">
-        <div class="wr-section-head"><h3>Czołówka wyników</h3><span class="wr-note">${pages.size ? 'pasek = długość tekstu, kreska = typowa długość w czołówce; zielony – w normie, bursztynowy – krótszy, czerwony – dużo krótszy' : 'przeczytaj teksty, żeby zobaczyć ich długość'}</span></div>
+        <div class="wr-section-head"><h3>Czołówka wyników</h3><span class="wr-note">${pages.size ? 'długość tekstu każdej strony wobec typowej długości w czołówce' : 'przeczytaj teksty, żeby zobaczyć ich długość'}</span></div>
+        ${pages.size && median ? `<ul class="wr-legend" aria-label="Legenda">
+          <li><i class="sw ok"></i>w normie – co najmniej 85% typowej długości</li>
+          <li><i class="sw mid"></i>krótszy – 60–85%</li>
+          <li><i class="sw low"></i>dużo krótszy – poniżej 60%</li>
+          <li><i class="tick"></i>typowa długość: ${fmtInt(median)} słów</li>
+        </ul>` : ''}
         <ol class="wr-serp">
           ${competitors.map((row) => {
             const page = pages.get(row.url);
