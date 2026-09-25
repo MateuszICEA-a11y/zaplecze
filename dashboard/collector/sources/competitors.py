@@ -191,22 +191,31 @@ def _robots(host: str) -> urllib.robotparser.RobotFileParser | None:
     return parser
 
 
-GENERIC_TITLE_MIN = 3  # ten sam tytuł na tylu stronach hosta = tytuł serwisu, nie wpisu
+GENERIC_TITLE_MIN = 2  # ten sam tytuł z nazwą marki na tylu stronach hosta = tytuł serwisu
 GENERIC_ERROR = "tytuł wspólny dla wielu stron"
 
 
 def drop_generic_titles(items: list[dict]) -> int:
     """Część stron (traffictrends.pl) ma w <title>/og:title nazwę i hasło serwisu
     zamiast tytułu wpisu. Taki tytuł porównany z naszymi wpisami to szum –
-    wracamy do sluga i nie pobieramy go ponownie. Zwraca liczbę odrzuconych."""
+    wracamy do sluga i nie pobieramy go ponownie. Zwraca liczbę odrzuconych.
+
+    Powtórzenie bez nazwy marki to co innego: stare adresy z sitemapy
+    przekierowują na ten sam wpis (widoczni.com: „Jak wybrać agencję SEO?”
+    pod 5 adresami) – to prawdziwy tytuł, zostaje."""
     seen: dict[tuple[str, str], int] = {}
     for item in items:
         if item.get("title"):
             key = (item["host"], item["title"].strip().lower())
             seen[key] = seen.get(key, 0) + 1
+    def branded(host: str, title: str) -> bool:
+        brand = re.sub(r"[^a-z]", "", host.removeprefix("www.").split(".")[0].lower())
+        return brand in re.sub(r"[^a-z]", "", title.lower())
+
     dropped = 0
     for item in items:
-        if item.get("title") and seen[(item["host"], item["title"].strip().lower())] >= GENERIC_TITLE_MIN:
+        title = item.get("title")
+        if title and seen[(item["host"], title.strip().lower())] >= GENERIC_TITLE_MIN and branded(item["host"], title):
             item["title"] = None
             item["title_error"] = GENERIC_ERROR
             dropped += 1
@@ -245,7 +254,7 @@ def fetch_titles(items: list[dict], per_host: int | None, deadline: float | None
         agent = DEFAULT_HEADERS["User-Agent"]
         delay = max(MIN_INTERVAL_S, float(robots.crawl_delay(agent) or 0) if robots else 0)
         queue = queue[:per_host] if per_host else queue
-        lock, next_at = threading.Lock(), [time.monotonic()]
+        lock, next_at, pace = threading.Lock(), [time.monotonic()], [delay]
         stats = {"ok": 0, "error": 0, "robots": 0, "skipped": 0, "delay_s": delay}
 
         def one(item: dict) -> None:
@@ -258,7 +267,7 @@ def fetch_titles(items: list[dict], per_host: int | None, deadline: float | None
                 if deadline and start > deadline:
                     stats["skipped"] += 1
                     return
-                next_at[0] = start + delay
+                next_at[0] = start + pace[0]
             time.sleep(max(0.0, start - time.monotonic()))
             title, error = page_title(item["url"], host)
             item["title_fetched_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -270,6 +279,10 @@ def fetch_titles(items: list[dict], per_host: int | None, deadline: float | None
                 else:
                     item["title_error"] = error
                     stats["error"] += 1
+                    # 429 = serwer prosi o wolniej (delante.pl: 143 blokady przy 2 req/s) – zwalniamy do 10 s.
+                    if error == "HTTP 429":
+                        pace[0] = min(10.0, pace[0] * 2)
+                        stats["delay_s"] = pace[0]
                 done = stats["ok"] + stats["error"]
             if log and done % 100 == 0:
                 log(f"{host}: {stats['ok']} ok, {stats['error']} błędów")

@@ -12,7 +12,9 @@ którym oceniono. Zmiana tytułu (np. prawdziwy zamiast sluga) = ocena od nowa.
 """
 import json
 import re
+import threading
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 
 from ._http import DEFAULT_HEADERS
 
@@ -146,27 +148,34 @@ def _call_split(api_key: str, batch: list[dict], log=None, depth: int = 0) -> di
     return {**left, **{index + half: verdict for index, verdict in right.items()}}
 
 
-def classify(items: list[dict], api_key: str, limit: int | None = None, log=None) -> dict:
-    """Uzupełnia `kind`/`kind_basis`/`kind_title` w miejscu. Paczka, która padła,
+def classify(items: list[dict], api_key: str, limit: int | None = None, log=None, workers: int = 4) -> dict:
+    """Uzupełnia `kind`/`kind_basis`/`kind_title`/`kind_source` w miejscu: najpierw
+    reguły po adresie, potem model (paczki równolegle). Paczka, która padła,
     zostaje bez oceny do następnego przebiegu. Zwraca liczniki."""
     ruled = apply_rules(items)
     todo = [item for item in items if needs_kind(item)]
     if limit is not None:
         todo = todo[:limit]
     stats = {"classified": 0, "failed": 0, "todo": len(todo), "rules": ruled}
-    for start in range(0, len(todo), BATCH):
-        batch = todo[start:start + BATCH]
+    batches = [todo[start:start + BATCH] for start in range(0, len(todo), BATCH)]
+    lock = threading.Lock()
+
+    def run(batch: list[dict]) -> None:
         result = _call_split(api_key, batch, log)
-        for index, item in enumerate(batch, 1):
-            verdict = result.get(index)
-            if not verdict:
-                stats["failed"] += 1
-                continue
-            item["kind"] = verdict["kind"]
-            item["kind_basis"] = verdict["basis"]
-            item["kind_source"] = "llm"
-            item["kind_title"] = item_text(item)
-            stats["classified"] += 1
-        if log:
-            log(f"sklasyfikowano {stats['classified']}/{len(todo)}")
+        with lock:
+            for index, item in enumerate(batch, 1):
+                verdict = result.get(index)
+                if not verdict:
+                    stats["failed"] += 1
+                    continue
+                item["kind"] = verdict["kind"]
+                item["kind_basis"] = verdict["basis"]
+                item["kind_source"] = "llm"
+                item["kind_title"] = item_text(item)
+                stats["classified"] += 1
+            if log:
+                log(f"sklasyfikowano {stats['classified']}/{len(todo)}")
+
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+        list(pool.map(run, batches))
     return stats

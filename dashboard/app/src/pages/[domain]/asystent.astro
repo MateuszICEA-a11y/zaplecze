@@ -235,7 +235,17 @@ const payload = {
     /* ---------- konkurencja: jedno pobranie na wizytę ---------- */
     let competitors: Promise<Any> | null = null;
     const loadCompetitors = (force = false) => {
-      if (!competitors || force) competitors = api<Any>(`/api/cw/writer/competitors/${domain}`).then((res) => res.data);
+      if (!competitors || force) competitors = api<Any>(`/api/cw/writer/competitors/${domain}`).then((res) => {
+        // Stare adresy z sitemapy przekierowują na ten sam wpis (ten sam tytuł) – jeden temat raz.
+        const seen = new Set<string>();
+        const items = (res.data.items ?? []).filter((item: Any) => {
+          const key = `${item.host}|${String(item.title).toLowerCase()}`;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+        return { ...res.data, items };
+      });
       return competitors;
     };
 

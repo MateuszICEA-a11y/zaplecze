@@ -105,9 +105,10 @@ def test_limit_per_host_i_blad_zapisany(tmp_path):
 
 def test_tytul_wspolny_dla_wielu_stron_wraca_do_sluga():
     items = [{"url": f"https://rywal.pl/blog/{n}/", "host": "rywal.pl", "title": "Rywal – Zwiększamy przychody"} for n in range(3)]
-    items.append({"url": "https://rywal.pl/blog/x/", "host": "rywal.pl", "title": "Jak pisać opisy"})
+    # Przekierowania na jeden wpis: powtórzony tytuł bez marki zostaje.
+    items += [{"url": f"https://rywal.pl/blog/stary-{n}/", "host": "rywal.pl", "title": "Jak pisać opisy"} for n in range(3)]
     assert competitors.drop_generic_titles(items) == 3
-    assert [item["title"] for item in items] == [None, None, None, "Jak pisać opisy"]
+    assert [item["title"] for item in items] == [None, None, None, "Jak pisać opisy", "Jak pisać opisy", "Jak pisać opisy"]
     now = datetime(2026, 9, 25, tzinfo=timezone.utc)
     assert not competitors.needs_title({**items[0], "title_fetched_at": "2020-01-01T00:00:00Z"}, now)
 
@@ -157,3 +158,10 @@ def test_reguly_nie_ida_do_modelu():
     assert items[0]["kind"] == "slownik" and items[0]["kind_source"] == "rule"
     assert items[1]["kind_source"] == "llm"
     assert len(call.call_args[0][1]) == 1  # do modelu poszła tylko jedna strona
+
+
+def test_429_zwalnia_tempo():
+    items = [{"url": f"https://rywal.pl/blog/{n}/", "host": "rywal.pl"} for n in range(3)]
+    with mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "MIN_INTERVAL_S", 0.001),             mock.patch.object(competitors, "page_title", return_value=(None, "HTTP 429")):
+        stats = competitors.fetch_titles(items, per_host=None, workers_per_host=1)
+    assert stats["rywal.pl"]["delay_s"] == 0.008  # 0,001 × 2 × 2 × 2
