@@ -267,3 +267,5 @@
 .wr-rec { min-width: 220px; }
 .wr-rec small { display: block; margin-top: 3px; color: var(--ink-faint); font-size: 0.76rem; line-height: 1.4; }
 .wr-rec small a { color: var(--ink-muted); }
+.wr-judge { font-style: italic; }
+.wr-alert .wr-judge { display: block; color: var(--ink-muted); font-size: 0.8rem; }

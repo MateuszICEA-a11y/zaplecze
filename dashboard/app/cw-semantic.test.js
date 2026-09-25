@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { classifyPhrases, cosine, decide, postText, syncIndex, THRESHOLDS } from './cw-semantic.js';
+import { applyVerdict, classifyPhrases, cosine, decide, pathTopic, postText, syncIndex, THRESHOLDS } from './cw-semantic.js';
 import { sqliteD1 } from './test-d1.js';
 
 /* Model „embeddingów" do testów: wektor słów z małego słownika – podobne
@@ -61,9 +61,24 @@ function env(catalog = CATALOG, data = { rankings: [] }) {
   };
 }
 
-test('postText: tytuł, opis i nagłówki H2 – bez pustych części', () => {
-  assert.equal(postText({ title: 'A', meta_description: null, h2: ['B', 'C'] }), 'A\nB; C');
-  assert.equal(postText({ title: 'A', h2: [] }), 'A');
+test('postText: sam tytuł (kalibracja – opis rozmywał podobieństwo)', () => {
+  assert.equal(postText({ title: ' Co to jest adres IP? ', meta_description: 'Opis | ICEA', h2: ['B'] }), 'Co to jest adres IP?');
+  assert.equal(postText({}), '');
+});
+
+test('pathTopic: temat strony spoza katalogu z adresu, strona główna bez tematu', () => {
+  assert.equal(pathTopic('/slownik/cross-selling'), 'slownik cross selling');
+  assert.equal(pathTopic('/'), '');
+});
+
+test('decide: wpis rankujący i umiarkowanie bliski → sprawdź, z nim jako celem', () => {
+  const ranking = { path: '/blog/wayback-machine', position: 16, score: 0.53, post_id: 7 };
+  const out = decide([{ post_id: 9, score: 0.58 }], ranking);
+  assert.equal(out.action, 'check');
+  assert.equal(out.target.post_id, 7);
+  assert.equal(out.reason, 'ranking_related');
+  // Bez rankingu 0,53 to już „nowy".
+  assert.equal(decide([{ post_id: 7, score: 0.53 }], null).action, 'new');
 });
 
 test('decide: rankujący wpis o tym samym temacie → odśwież właśnie jego', () => {
@@ -125,4 +140,39 @@ test('classifyPhrases: rankujący wpis spoza TOP 5 dostaje własną ocenę podob
   const [result] = await classifyPhrases(environment, 'grupa-icea.pl', ['kawa seo'], data.rankings);
   assert.equal(result.ranking.post_id, 3);
   assert.equal(typeof result.ranking.score, 'number');
+});
+
+test('applyVerdict: same → odśwież wskazany wpis, different → nowy, skip → bez zmian', () => {
+  const base = { phrase: 'x', action: 'check', target: { path: '/a' }, reason: 'related_post' };
+  const options = [{ n: 1, row: { path: '/a', title: 'A' } }, { n: 2, row: { path: '/b', title: 'B' } }];
+  const same = applyVerdict(base, options, { verdict: 'same', pick: 2, basis: 'to samo' });
+  assert.equal(same.action, 'refresh');
+  assert.equal(same.target.path, '/b');
+  assert.equal(same.judge.basis, 'to samo');
+  assert.equal(applyVerdict(base, options, { verdict: 'different', pick: null, basis: '' }).action, 'new');
+  assert.equal(applyVerdict(base, options, { verdict: 'skip', pick: null, basis: '' }), base);
+  assert.equal(applyVerdict(base, options, undefined), base);
+});
+
+test('classifyPhrases: „Sprawdź" idzie do sędziego jednym wywołaniem i dostaje jego werdykt', async () => {
+  // Dwa z czterech słów wspólne z „Audyt SEO strony" – cosinus ~0,71, pasmo niepewności.
+  const data = { rankings: [] };
+  const environment = { ...env(CATALOG, data), OPENROUTER_API_KEY: 'k' };
+  await syncIndex(environment, 'grupa-icea.pl');
+  const prompts = [];
+  const fetchImpl = async (url, init) => {
+    const body = JSON.parse(init.body);
+    prompts.push(body.messages[0].content);
+    return new Response(JSON.stringify({
+      choices: [{ message: { content: JSON.stringify({ results: [{ id: 1, verdict: 'same', pick: 1, basis: 'ten sam temat' }] }) } }],
+    }));
+  };
+  const [result] = await classifyPhrases(environment, 'grupa-icea.pl', ['audyt seo link url'], data.rankings, {
+    fetchImpl,
+    thresholds: THRESHOLDS,
+  });
+  assert.equal(prompts.length, 1);
+  assert.match(prompts[0], /„audyt seo link url"/);
+  assert.equal(result.action, 'refresh');
+  assert.equal(result.reason, 'judge_same');
 });

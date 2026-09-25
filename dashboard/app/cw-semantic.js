@@ -27,27 +27,38 @@ const json = (value, status = 200) =>
   });
 
 export const EMBED_MODEL = '@cf/baai/bge-m3';
+const CALIBRATION_MODELS = ['@cf/baai/bge-m3', '@cf/qwen/qwen3-embedding-0.6b', '@cf/google/embeddinggemma-300m'];
 /* Zmiana sposobu składania tekstu = nowa wersja → przeliczenie całego indeksu. */
-export const EMBED_VERSION = 1;
+export const EMBED_VERSION = 2;
 const EMBED_BATCH = 50;
 const TOP_K = 5;
 const MAX_PHRASES = 60;
 
 /*
- * Progi podobieństwa (cosinus bge-m3). Skalibrowane na parach z grupa-icea.pl
- * 2026-09-25 – patrz testy i docs. REFRESH: wpis jest o tym samym temacie.
- * CHECK: temat pokrewny – może wystarczy nowa sekcja w istniejącym wpisie.
+ * Progi (cosinus bge-m3, fraza ↔ tytuł wpisu), kalibracja 2026-09-25 na 13
+ * parach z grupa-icea.pl – docs/dashboard-ocena-i-content-writer-2026-09-25.html:
+ *   ten sam temat: 0,53–0,81 (śr. 0,67; dół to literówki: „webmachine", „fanpejdża"),
+ *   temat pokrewny: 0,56–0,74 („co to jest adres url" ↔ „przyjazne adresy URL" 0,68).
+ * Pasma się nakładają i ranking ich nie rozdziela (pokrewne wpisy też rankują),
+ * więc „Odśwież" tylko przy wysokim podobieństwie, a wszystko pomiędzy to
+ * „Sprawdź" z dowodami (pozycja, podobieństwo) – decyzja redaktora.
  */
-export const THRESHOLDS = { refresh: 0.72, check: 0.62 };
+export const THRESHOLDS = { refresh: 0.75, check: 0.6, rankedCheck: 0.5 };
 
-/** Tekst wpisu do embeddingu: to, co mówi o zakresie tematu, bez treści. */
+/*
+ * Tekst wpisu do embeddingu: sam tytuł. Kalibracja: dołożenie meta description
+ * obniżało podobieństwo trafnych par z 0,67 do 0,53 (opisy są ogólnikowe,
+ * „| ICEA", CTA), a krótka fraza najlepiej porównuje się z krótkim tytułem.
+ * Nagłówki H2 zbiera collector – do ewentualnej drugiej reprezentacji.
+ */
 export function postText(item) {
-  const parts = [
-    item.title,
-    item.meta_description,
-    Array.isArray(item.h2) && item.h2.length ? item.h2.join('; ') : null,
-  ];
-  return parts.filter((part) => typeof part === 'string' && part.trim()).join('\n').slice(0, 2000);
+  return typeof item.title === 'string' ? item.title.trim().slice(0, 300) : '';
+}
+
+/** Temat strony spoza katalogu (słownik, oferta) z jej ścieżki: „/slownik/cross-selling/" → „slownik cross selling". */
+export function pathTopic(path) {
+  const text = decodeURIComponent(String(path ?? '')).replace(/[-_/]+/g, ' ').trim();
+  return text.length >= 3 ? text : '';
 }
 
 async function sha1(text) {
@@ -157,12 +168,18 @@ export async function syncIndex(env, domain, { limit = 400 } = {}) {
  */
 export function decide(candidates, ranking, thresholds = THRESHOLDS) {
   const best = candidates[0] ?? null;
-  const rankingOnTopic = ranking && ranking.score !== null && ranking.score >= thresholds.refresh && ranking.post_id;
-  if (rankingOnTopic) {
+  const rankScore = ranking && typeof ranking.score === 'number' ? ranking.score : null;
+  // Wpis, który Google pokazuje na tę frazę i który jest o tym samym temacie.
+  if (rankScore !== null && rankScore >= thresholds.refresh) {
     return { action: 'refresh', target: ranking, reason: 'ranking_on_topic' };
   }
   if (best && best.score >= thresholds.refresh) {
     return { action: 'refresh', target: best, reason: ranking ? 'close_post_other_ranks' : 'close_post' };
+  }
+  // Rankujący wpis umiarkowanie bliski: ten sam temat innymi słowami albo
+  // temat pokrewny – ranking tego nie rozstrzyga, pokazujemy dowody.
+  if (rankScore !== null && rankScore >= thresholds.rankedCheck) {
+    return { action: 'check', target: ranking, reason: 'ranking_related' };
   }
   if (best && best.score >= thresholds.check) {
     return { action: 'check', target: best, reason: 'related_post' };
@@ -174,11 +191,11 @@ export function decide(candidates, ranking, thresholds = THRESHOLDS) {
  * Klasyfikacja listy fraz jednym wywołaniem modelu. `rankings` = wiersze
  * {keyword, position, path} z data.json (Senuto, TOP 50, bez stron ofertowych).
  */
-export async function classifyPhrases(env, domain, phrases, rankings) {
+export async function classifyPhrases(env, domain, phrases, rankings, options = {}) {
   const vectors = await embed(env, phrases);
-  const results = [];
-  for (let i = 0; i < phrases.length; i++) {
-    const phrase = phrases[i];
+  // Frazy równolegle – każda to zapytanie do Vectorize (+ ewentualnie wektor
+  // rankującej strony); po kolei 22 frazy liczyły się ~12 s.
+  const results = await Promise.all(phrases.map(async (phrase, i) => {
     const vector = vectors[i];
     const found = await env.POSTS_INDEX.query(vector, {
       topK: TOP_K,
@@ -195,8 +212,7 @@ export async function classifyPhrases(env, domain, phrases, rankings) {
       let meta = known ?? null;
       if (!known) {
         // Rankującej strony nie ma w TOP 5 – dociągamy jej wektor, żeby
-        // wiedzieć, czy jest o tym (wpis łapiący frazę przy okazji), czy to
-        // strona spoza katalogu (główna, oferta) – wtedy score zostaje null.
+        // wiedzieć, czy jest o tym, czy łapie frazę przy okazji.
         const postId = await postIdForPath(env, domain, best.path);
         if (postId !== null) {
           const [stored] = await env.POSTS_INDEX.getByIds([vectorId(domain, postId)]);
@@ -204,6 +220,12 @@ export async function classifyPhrases(env, domain, phrases, rankings) {
             score = round(cosine(vector, stored.values));
             meta = stored.metadata ?? null;
           }
+        } else if (pathTopic(best.path)) {
+          // Strona spoza katalogu wpisów (słownik, oferta): temat z adresu.
+          // Strona główna ma pustą ścieżkę – zostaje null i nie blokuje.
+          const [pathVector] = await embed(env, [pathTopic(best.path)]);
+          score = round(cosine(vector, pathVector));
+          meta = { url: `https://${domain}${best.path}/`, title: best.path, post_id: null, catalog_id: null };
         }
       }
       ranking = {
@@ -217,23 +239,174 @@ export async function classifyPhrases(env, domain, phrases, rankings) {
         title: meta?.title ?? null,
       };
     }
-    results.push({ phrase, ...decide(candidates, ranking), ranking, candidates: candidates.slice(0, 3) });
-  }
+    return { phrase, ...decide(candidates, ranking), ranking, candidates: candidates.slice(0, 3) };
+  }));
+
+  const unsure = results.map((result, index) => ({ result, index })).filter(({ result }) => result.action === 'check');
+  if (!unsure.length || options.judge === false) return results;
+  const catalog = await catalogByPath(env, domain);
+  const cases = unsure.map(({ result }, i) => {
+    const seen = new Set();
+    const rows = [result.target, result.ranking, ...result.candidates]
+      .filter((row) => row?.path && row.title && !seen.has(row.path) && seen.add(row.path))
+      .slice(0, 4);
+    return {
+      id: i + 1,
+      phrase: result.phrase,
+      options: rows.map((row, n) => ({
+        n: n + 1,
+        row,
+        title: row.title,
+        path: row.path,
+        position: result.ranking?.path === row.path ? result.ranking.position : null,
+        description: catalog.get(row.path)?.meta_description ?? null,
+        h2: catalog.get(row.path)?.h2 ?? [],
+      })),
+    };
+  });
+  const verdicts = await judgeCases(env, cases, options);
+  cases.forEach((item, i) => {
+    const { index } = unsure[i];
+    results[index] = applyVerdict(results[index], item.options, verdicts.get(item.id));
+  });
   return results;
 }
 
 const round = (value) => Math.round(value * 1000) / 1000;
 
-/* Mapa ścieżka → numer wpisu z metadanych indeksu byłaby droga (brak listowania
-   w Vectorize), więc bierzemy ją z katalogu – raz na żądanie. */
+/* Mapa ścieżka → wpis katalogu (listowania w Vectorize nie ma) – raz na
+   żądanie; daje numer wpisu i opis z nagłówkami dla sędziego. */
 const pathCache = new WeakMap();
-async function postIdForPath(env, domain, path) {
-  let map = pathCache.get(env);
-  if (!map) {
-    map = new Map((await catalogItems(env, domain)).map((item) => [normPath(item.url), item.post_id]));
-    pathCache.set(env, map);
+function catalogByPath(env, domain) {
+  // Cache obietnicy, nie wyniku – frazy idą równolegle i każda pobierałaby katalog.
+  let pending = pathCache.get(env);
+  if (!pending) {
+    pending = catalogItems(env, domain).then((items) => new Map(items.map((item) => [normPath(item.url), item])));
+    pathCache.set(env, pending);
   }
-  return map.get(path) ?? null;
+  return pending;
+}
+async function postIdForPath(env, domain, path) {
+  return (await catalogByPath(env, domain)).get(path)?.post_id ?? null;
+}
+
+/* ---------- sędzia w paśmie niepewności ---------- */
+
+/*
+ * Embeddingi dobrze znajdują kandydata (właściwy wpis jest pierwszy prawie
+ * zawsze), ale w paśmie 0,5–0,75 nie rozstrzygają, czy to ten sam temat
+ * („ghostwriting co to" ↔ „Kim jest ghostwriter?" 0,65) czy pokrewny
+ * („historia stron internetowych" ↔ „weryfikacja historii domeny" 0,75).
+ * Dlatego frazy z wynikiem „check" idą do jednego wywołania modelu z tytułem,
+ * opisem i nagłówkami kandydatów. Model musi podać podstawę i może odmówić
+ * (`skip`) – wtedy zostaje „Sprawdź".
+ */
+export const JUDGE_MODEL = 'google/gemini-3.7-flash';
+const JUDGE_TIMEOUT_MS = 25_000;
+
+export function buildJudgePrompt(cases) {
+  const blocks = cases.map((item) => {
+    const options = item.options.map((option) => [
+      `  [${option.n}] ${option.title} (${option.path})${option.position ? ` – rankuje na tę frazę, pozycja ${option.position}` : ''}`,
+      option.description ? `      opis: ${option.description}` : null,
+      option.h2?.length ? `      nagłówki: ${option.h2.slice(0, 12).join(' | ')}` : null,
+    ].filter(Boolean).join('\n')).join('\n');
+    return `#${item.id} fraza: „${item.phrase}"\n${options}`;
+  }).join('\n\n');
+  return `Oceniasz, czy na blogu agencji marketingowej istnieje już strona na temat frazy z wyszukiwarki.
+Dla każdej frazy masz kandydatów (tytuł, adres, opis i nagłówki, jeśli są). Rozstrzygnij:
+- "same" – kandydat odpowiada na tę samą intencję wyszukiwania. Nowy artykuł na tę frazę konkurowałby z nim
+  w Google (kanibalizacja). Literówki, odmiana, synonimy, skróty i nazwy potoczne to wciąż ten sam temat
+  („fanpejdża" = fanpage, „webmachine" = Wayback Machine, „sprzedaż krzyżowa" = cross-selling).
+- "related" – temat pokrewny: kandydat dotyka frazy, ale jest o czymś innym lub szerszym/węższym,
+  a fraza zasługuje na własny tekst albo najwyżej sekcję („historia stron internetowych" ≠ „jak sprawdzić historię domeny").
+- "different" – żaden kandydat nie jest o tym temacie.
+- "skip" – nie da się rozstrzygnąć z podanych danych.
+Nie zgaduj ponad to, co widać w tytułach, opisach i nagłówkach. Podstawę opisz jednym zdaniem po polsku.
+
+${blocks}
+
+Odpowiedz wyłącznie JSON-em:
+{"results":[{"id":1,"verdict":"same|related|different|skip","pick":1,"basis":"…"}]}
+"pick" = numer kandydata dla "same" i "related", null dla "different" i "skip".`;
+}
+
+function extractJson(text) {
+  const raw = String(text ?? '').trim().replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '');
+  try {
+    return JSON.parse(raw);
+  } catch {
+    const match = raw.match(/\{[\s\S]*\}/);
+    if (!match) return null;
+    try {
+      return JSON.parse(match[0]);
+    } catch {
+      return null;
+    }
+  }
+}
+
+export async function judgeCases(env, cases, { fetchImpl = fetch } = {}) {
+  const apiKey = (env.OPENROUTER_API_KEY || '').trim();
+  if (!apiKey || !cases.length) return new Map();
+  let response;
+  try {
+    response = await fetchImpl('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': 'https://zaplecze-dashboard.m-wisniewski.workers.dev',
+        'X-Title': 'Content Writer - odswiez czy nowy',
+      },
+      body: JSON.stringify({
+        model: (env.CW_JUDGE_MODEL || '').trim() || JUDGE_MODEL,
+        messages: [{ role: 'user', content: buildJudgePrompt(cases) }],
+        temperature: 0,
+        // Zapas na tokeny rozumowania (Gemini potrafi zjeść większość limitu).
+        max_tokens: 6000,
+        response_format: { type: 'json_object' },
+      }),
+      signal: AbortSignal.timeout(JUDGE_TIMEOUT_MS),
+    });
+  } catch (error) {
+    console.error('cw judge', error instanceof Error ? error.message : error);
+    return new Map();
+  }
+  if (!response.ok) {
+    console.error('cw judge openrouter', response.status, (await response.text().catch(() => '')).slice(0, 300));
+    return new Map();
+  }
+  const payload = await response.json().catch(() => null);
+  const data = extractJson(payload?.choices?.[0]?.message?.content);
+  const out = new Map();
+  for (const row of Array.isArray(data?.results) ? data.results : []) {
+    const verdict = ['same', 'related', 'different', 'skip'].includes(row?.verdict) ? row.verdict : null;
+    if (!verdict || !Number.isInteger(row.id)) continue;
+    out.set(row.id, {
+      verdict,
+      pick: Number.isInteger(row.pick) ? row.pick : null,
+      basis: String(row.basis ?? '').trim().slice(0, 300),
+    });
+  }
+  return out;
+}
+
+/** Werdykt sędziego → decyzja. Bez werdyktu albo przy `skip` zostaje „Sprawdź". */
+export function applyVerdict(result, options, verdict) {
+  if (!verdict || verdict.verdict === 'skip') return result;
+  const picked = options.find((option) => option.n === verdict.pick) ?? null;
+  const judge = { verdict: verdict.verdict, basis: verdict.basis };
+  if (verdict.verdict === 'same' && picked) {
+    return { ...result, action: 'refresh', target: picked.row, reason: 'judge_same', judge };
+  }
+  if (verdict.verdict === 'related') {
+    return { ...result, action: 'check', target: picked?.row ?? result.target, reason: 'judge_related', judge };
+  }
+  if (verdict.verdict === 'different') {
+    return { ...result, action: 'new', target: null, reason: 'judge_different', judge };
+  }
+  return result;
 }
 
 /* ---------- trasy ---------- */
@@ -250,6 +423,22 @@ export async function routeSemantic(request, env, { checkOrigin, domains }) {
     const row = await env.CW_DB.prepare('SELECT COUNT(*) AS n, MAX(indexed_at) AS at FROM post_vectors WHERE domain = ?')
       .bind(index[1]).first();
     return json({ indexed: row?.n ?? 0, indexed_at: row?.at ?? null });
+  }
+  // Kalibracja: cosinus par tekstów dla wybranego modelu (za hasłem dashboardu).
+  if (url.pathname === '/api/cw/writer/similarity' && request.method === 'POST') {
+    if (!checkOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
+    const body = (await request.json().catch(() => null)) ?? {};
+    const model = CALIBRATION_MODELS.includes(body.model) ? body.model : EMBED_MODEL;
+    const pairs = (Array.isArray(body.pairs) ? body.pairs : []).slice(0, 40)
+      .filter((pair) => Array.isArray(pair) && pair.length === 2).map(([a, b]) => [String(a), String(b)]);
+    const texts = pairs.flat();
+    if (!texts.length) return json({ results: [] });
+    const result = await env.AI.run(model, { text: texts });
+    const data = result?.data ?? [];
+    return json({
+      model,
+      results: pairs.map(([a, b], i) => ({ a, b, score: round(cosine(data[2 * i], data[2 * i + 1])) })),
+    });
   }
   const action = url.pathname.match(/^\/api\/cw\/writer\/(classify|reindex)\/?$/)?.[1];
   if (!action) return null;
