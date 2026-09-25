@@ -1,6 +1,6 @@
 ---
-title: 'GPT-6 Sol i Luna: dwa modele, dwa kompromisy'
-lead: OpenAI zapowiedziało modele GPT-6 Sol i GPT-6 Luna. Oba mają przenosić inteligencję na poziomie najnowocześniejszych modeli do codziennej pracy, ale różnią się układem możliwości i kosztów.
+title: 'GPT-6 Sol i Luna: OpenAI tnie ceny API o połowę'
+lead: OpenAI dołożyło do rodziny GPT-6 dwa tańsze modele – Sol i Lunę. Zastępują one odpowiedniki z generacji 5.6 i kosztują w API o połowę mniej. OpenAI zapewnia, że to ceny stałe, a nie promocja na start. Na razie działają w API, Codexie i trybie Work, ale nie w głównym interfejsie ChatGPT.
 date: '2026-09-23'
 sourceName: OpenAI
 sourceUrl: https://openai.com/index/introducing-gpt-6-sol-and-luna
@@ -12,32 +12,60 @@ tags:
 author: Redakcja widocznosc.ai
 image: ../../assets/images/news-2026-09-23-gpt-6-sol-i-luna-dwa-modele-dwa-kompromisy.webp
 ---
-## Sol i Luna rozdzielają możliwości od kosztu użycia
+## Tańsze modele oparte na fundamentach Astry
 
-OpenAI zaprezentowało dwa nowe modele: GPT-6 Sol oraz GPT-6 Luna. Według zapowiedzi mają one zapewniać w codziennej pracy inteligencję na poziomie najpotężniejszych modeli (ang. frontier intelligence), lecz przy odmiennym kompromisie między zakresem możliwości a kosztem korzystania.
+OpenAI zaprezentowało 22 września modele GPT-6 Sol i GPT-6 Luna. Rodzina GPT-6 obejmuje teraz trzy warianty: flagową Astrę (w API od 3 września), zbalansowanego Sola i najtańszą Lunę. Według OpenAI Sol i Luna powstały przy użyciu tych samych metod treningowych co Astra, ale działają szybciej i kosztują mniej – firma przypisuje to optymalizacji pamięci podręcznej (cache) i procesu wnioskowania (inferencji). Wariantu Terra, znanego z generacji 5.6, w GPT-6 nie ma.
 
-Najważniejszym elementem tej informacji nie jest samo dodanie dwóch nazw do rodziny GPT-6. OpenAI wyraźnie komunikuje podział oferty na modele zaprojektowane z myślą o odmiennych priorytetach. Sol i Luna nie są więc przedstawiane jako dwa identyczne warianty, lecz jako narzędzia o odmiennych profilach ekonomiczno-technicznych.
+Najbardziej widoczna zmiana to cennik. Sol zastępuje model GPT-5.6 Sol, a Luna – GPT-5.6 Lunę. W obu przypadkach mówimy o obniżce rzędu 50 proc. względem dotychczasowych stawek:
 
-Źródło nie precyzuje, który z modeli stawia na większe możliwości, a który na niższy koszt, ani nie opisuje ich parametrów, dostępności czy wyników testów. Wiemy natomiast, że wspólnym celem obu ma być wykorzystanie zaawansowanej AI w zadaniach wykonywanych na co dzień.
+<div class="bench-table">
 
-> **Nasz komentarz:** Sam podział GPT-6 na Sol i Lunę sugeruje, że koszt wnioskowania staje się równie istotnym elementem produktu AI jak maksymalna jakość odpowiedzi.
+| Model (API) | Wejście | Wyjście | Odczyt z cache | Poprzednik (wejście / wyjście) |
+| --- | --- | --- | --- | --- |
+| GPT-6 Astra | 10,00 USD | 50,00 USD | 1,00 USD | – |
+| GPT-6 Sol | 2,00 USD | 10,00 USD | 0,20 USD | GPT-5.6 Sol: 4,00 / 20,00 USD |
+| GPT-6 Luna | 0,10 USD | 0,50 USD | 0,01 USD | GPT-5.6 Luna: 0,20 / 1,20 USD |
 
-## Dlaczego dwa profile GPT-6 mają znaczenie dla rynku modeli
+</div>
 
-Naszym zdaniem ta zapowiedź dobrze pokazuje dojrzałość rynku modeli językowych. W początkowej fazie rywalizacji główny nacisk kładziono zwykle na osiąganie coraz większych możliwości. Dziś sama przewaga jakościowa nie rozstrzyga już o użyteczności systemu. Model może mieć bardzo duże możliwości, ale jeśli jego użycie jest zbyt kosztowne, trudno wdrażać go szeroko w powtarzalnych procesach.
+**Metodologia:** ceny za milion tokenów według cennika OpenAI dla programistów. Tryby Batch i Flex kosztują połowę tych stawek, tryb Fast – dwukrotność. Dla GPT-5.6 Sol podano cenę promocyjną obowiązującą co najmniej do 21 listopada 2026 r.
 
-Rozdzielenie modeli według relacji możliwości do kosztu może ułatwić dobór narzędzia do rodzaju zadania. Nie każda operacja wymaga najwyższego poziomu wnioskowania czy najbardziej rozbudowanej odpowiedzi. Z drugiej strony zadania o większej złożoności mogą uzasadniać wybór wariantu, który zużywa więcej zasobów, ale oferuje wyższą jakość wykonania.
+Rzecznik OpenAI zapewnił serwis VentureBeat, że nowe stawki są stałe, a nie promocyjne. Oba modele mają okno kontekstowe o wielkości 1,05 mln tokenów i generują do 128 tys. tokenów odpowiedzi. Data odcięcia wiedzy (knowledge cutoff) dla Sola to 20 kwietnia 2026 r., a dla Luny – 18 maja 2026 r. Intensywność rozumowania (reasoning effort) można ustawić na jednym z sześciu poziomów: od none, przez low, medium (domyślny), high i xhigh, aż po max. OpenAI zmieniło też mechanizm działania cache: odsetek trafień (cache hits) jest wyższy, a zmiana poziomu rozumowania lub zestawu narzędzi nie unieważnia już zapisanego kontekstu.
 
-W naszej ocenie istotne jest też to, że OpenAI mówi o codziennej pracy, a nie wyłącznie o demonstracjach technologicznych. Przesuwa to punkt ciężkości z pojedynczego, imponującego wyniku na przewidywalność działania w regularnych zastosowaniach. Dla użytkowników kluczowe stają się wtedy nie tylko odpowiedzi modelu, lecz także możliwość świadomego zarządzania kompromisem między jakością a kosztem.
+## Tańsze nie znaczy lepsze w każdym teście
 
-- **Segmentacja modeli** – jeden system nie musi być optymalny dla każdego zadania, nawet jeśli należy do tej samej generacji.
-- **Koszt jako cecha techniczna** – koszt użycia nie jest wyłącznie kwestią rozliczeń, lecz wpływa na to, jakie zastosowania AI stają się praktyczne.
-- **Kierunek rozwoju** – rynek może coraz częściej premiować zestawy modeli o wyraźnie rozdzielonych rolach zamiast jednego uniwersalnego wariantu.
+W benchmarkach OpenAI nowe modele zwykle wyprzedzają poprzedników z generacji 5.6, choć nie wszędzie. W programowaniu i obsłudze komputera najlepszy wynik GPT-5.6 Sol bywa wyższy od wyniku nowego Sola:
 
-Uważamy, że o realnym znaczeniu Sol i Luny zdecydują dopiero szczegóły dotyczące ich faktycznych możliwości, ograniczeń i kosztów. Sama koncepcja dwóch odmiennych profili wskazuje jednak, że twórcy modeli traktują efektywność użycia jako kluczowe wyzwanie kolejnej fazy rozwoju AI.
+<div class="bench-table">
+
+| Benchmark (najlepszy wynik) | GPT-6 Sol | GPT-6 Luna | GPT-5.6 Sol | GPT-6 Astra |
+| --- | --- | --- | --- | --- |
+| Automatyzacja procesów – AutomationBench 1.0.6 | 33,2% | 20,7% | 28,8% | **41,4%** |
+| Zadania agentowe – Agents' Last Exam V1 | 56,4% | 50,9% | 53,6% | **59,3%** |
+| Programowanie agentowe – FrontierCode 1.1 | 49,3% | 42,4% | 47,5% | **53,3%** |
+| Inżynieria oprogramowania – DeepSWE 1.1 | 68,8% | 66,6% | 72,7% | **74,1%** |
+| Obsługa komputera – OSWorld 2.0 | 64,4% | 52,7% | 66,2% | **73,5%** |
+| Odsetek błędów faktograficznych (mniej = lepiej) | 4,5% | 7,6% | 8,4% | **3,9%** |
+
+</div>
+
+**Metodologia:** najlepsze wyniki z wykresów OpenAI, przy różnych poziomach rozumowania (najczęściej max lub xhigh), w zestawieniu serwisu ComputingForGeeks.
+
+Kluczowy jest jednak koszt jednego zadania. W AutomationBench Sol uzyskał 33,2 proc. przy koszcie ok. 0,27 dolara za zadanie, podczas gdy GPT-5.6 Sol osiągał 28,8 proc. za 0,67 dolara, a Astra – 41,4 proc. za 1,73 dolara. OpenAI twierdzi, że w tym teście Sol pokonuje model Claude Opus 5 za około 9 proc. jego kosztu. Porównanie szybko się jednak zestarzało: firma Anthropic wydała model Claude Opus 5.5 około półtorej godziny przed zapowiedzią OpenAI (według Anthropic typowe zadania kosztują na nim o 40 proc. mniej niż na Opusie 5, a jakością dorównuje on modelowi Fable 5.1).
+
+Wyraźna jest też poprawa w testach bezpieczeństwa. Odsetek zwodniczych zachowań przy programowaniu spadł u Sola z 10,4 do 1,3 proc., a u Luny z 9,5 do 2,8 proc.
+
+> **Nasz komentarz:** OpenAI nie ściga się tu na rekordy – od tego jest Astra. Sol i Luna to modele przeznaczone do zadań realizowanych na masową skalę, a cena Luny (0,50 dolara za milion tokenów wyjścia) czyni ją jedną z najtańszych opcji wśród modeli dużych laboratoriów. Premiera tego samego dnia co Opus 5.5 pokazuje, że rywalizacja przeniosła się z pytania, kto ma najlepszy model, na to, kto zaoferuje optymalny stosunek jakości do ceny za pojedyncze zadanie.
+
+## Gdzie działają nowe modele
+
+- **API** – od dnia premiery jako `gpt-6-sol` i `gpt-6-luna`, także przez OpenRouter po cenach katalogowych.
+- **ChatGPT** – w trybie Work i w Codexie dla planów Plus, Pro, Business, Enterprise i Edu. Użytkownicy Free i Go dostają Lunę w aplikacji desktopowej.
+- **Standardowy ChatGPT** – jeszcze nie. Codzienna rozmowa w głównym interfejsie ChatGPT dalej opiera się na modelach z generacji 5.6.
+- **GitHub Copilot** – oba modele w planach Pro+, Max, Business i Enterprise.
 
 ## W skrócie
 
-- OpenAI zapowiedziało dwa modele: GPT-6 Sol i GPT-6 Luna.
-- Modele mają różnić się równowagą między możliwościami a kosztem korzystania.
-- Zapowiedź wzmacnia trend projektowania AI z myślą o konkretnych kompromisach użyteczności, a nie wyłącznie o maksymalnej jakości.
+- OpenAI wprowadziło modele GPT-6 Sol (2/10 USD za milion tokenów) i GPT-6 Luna (0,10/0,50 USD) – to o połowę mniej niż za warianty 5.6, które zastępują. Według OpenAI ceny są stałe.
+- Oba mają okno kontekstowe o wielkości 1,05 mln tokenów i sześć poziomów rozumowania. W testach zwykle wyprzedzają poprzedników, ale nie dorównują flagowej Astrze.
+- Modele działają w API, Codexie i trybie Work w ChatGPT, na razie nie znajdziemy ich w standardowym czacie.
