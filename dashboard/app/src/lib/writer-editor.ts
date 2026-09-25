@@ -60,6 +60,13 @@ export function createEditor(host: EditorHost) {
   let recountTimer: number | null = null;
   let savedRange: Range | null = null;
   let drawerOpen = false;
+  /* Przejazd stylu idzie jednym żądaniem (do ~2 min). Trzymamy jego stan
+     lokalnie, żeby panel pokazał „Zatrzymaj” i nie dał odpalić drugiego. */
+  let styleRun: { abort: AbortController; started: number; model: string } | null = null;
+  let styleModels: string[] = [];
+  let stylePoll: number | null = null;
+  const STYLE_DEFAULT = 'google/gemini-3.7-flash:online';
+  const savedStyleModel = () => { try { return localStorage.getItem('cw-style-model') ?? ''; } catch { return ''; } };
 
   const q = <T extends HTMLElement = HTMLElement>(selector: string) => host.root.querySelector<T>(selector);
 
@@ -461,6 +468,8 @@ export function createEditor(host: EditorHost) {
     const sections = ordered(job);
     const current = new Map(sections.map((row) => [row.slot, row.text_after ?? '']));
     const pendingStyle = ((job.style_sections ?? []) as Any[]).filter((row) => !row.decision);
+    const isStale = (row: Any) => current.has(row.slot) && current.get(row.slot) !== (row.text_before ?? '');
+    const staleCount = pendingStyle.filter(isStale).length;
     const candidates = authors.filter((row) => row.name !== project.author_name);
     const content = sections.filter((row) => kindOf(row.slot) === 'section');
     return `
@@ -471,10 +480,27 @@ export function createEditor(host: EditorHost) {
       <div class="we-block">
         <h3>Styl i fleksja</h3>
         <p class="we-foot">Jeden przejazd redaktorski na cały tekst: odmiana fraz, powtórzenia, interpunkcja, fakty sprawdzane w sieci.</p>
-        <div class="we-row"><button class="wr-btn" type="button" data-act="style">${style?.status === 'done' ? 'Popraw styl ponownie' : 'Popraw styl i fleksję'}</button>
-          ${style?.status === 'done' ? `<span class="we-foot">zmienione sekcje: ${fmtInt(style.changed)} z ${fmtInt(style.sections_total)}</span>` : ''}</div>
+        ${styleRun || style?.status === 'running' ? `
+          <div class="we-running">
+            <span class="we-spinner" aria-hidden="true"></span>
+            <span>Model czyta cały tekst – to trwa do dwóch minut.<small>${esc(styleRun?.model ?? style?.model ?? STYLE_DEFAULT)}</small></span>
+            <button class="wr-btn small danger" type="button" data-act="style-stop">Zatrzymaj</button>
+          </div>` : `
+          <label class="wr-label">Model
+            <input class="wr-input" data-f="style-model" list="we-style-models" placeholder="${STYLE_DEFAULT}" value="${esc(savedStyleModel())}" spellcheck="false" autocomplete="off" />
+            <datalist id="we-style-models">${styleModels.map((id) => `<option value="${esc(id)}"></option>`).join('')}</datalist>
+            <span class="we-foot">puste = domyślny ${STYLE_DEFAULT}; dopisek :online włącza sprawdzanie faktów w sieci</span>
+          </label>
+          <div class="we-row"><button class="wr-btn" type="button" data-act="style">${style?.status === 'done' ? 'Popraw styl ponownie' : 'Popraw styl i fleksję'}</button>
+            ${style?.status === 'done' ? `<span class="we-foot">ostatnio zmienione sekcje: ${fmtInt(style.changed)} z ${fmtInt(style.sections_total)}${style.model ? `, ${esc(style.model)}` : ''}</span>` : ''}
+            ${style?.status === 'cancelled' ? '<span class="we-foot">ostatni przejazd przerwany</span>' : ''}</div>`}
+        ${pendingStyle.length ? `<div class="we-bulk">
+          <span><strong>${pendingStyle.length}</strong> ${pendingStyle.length === 1 ? 'propozycja czeka' : 'propozycji czeka'} na decyzję${staleCount ? `, ${staleCount} nieaktualnych` : ''}</span>
+          <button class="wr-btn small primary" type="button" data-act="style-all" data-decision="accepted" ${pendingStyle.length === staleCount ? 'disabled' : ''}>Przyjmij wszystkie${staleCount ? ' aktualne' : ''}</button>
+          <button class="wr-btn small" type="button" data-act="style-all" data-decision="rejected">Odrzuć wszystkie</button>
+        </div>` : ''}
         ${pendingStyle.map((row) => {
-          const stale = current.has(row.slot) && current.get(row.slot) !== (row.text_before ?? '');
+          const stale = isStale(row);
           return `<div class="we-diff ${stale ? 'stale' : ''}" data-style-slot="${row.slot}">
             <button type="button" class="we-diff-title" data-goto="sec-${row.slot}">${esc(row.title_after ?? row.title_before ?? `sekcja ${row.slot}`)}</button>
             ${(row.issues ?? []).length ? `<ul>${(row.issues as Any[]).map((issue) => `<li>${esc(typeof issue === 'string' ? issue : issue.note ?? issue.fix ?? JSON.stringify(issue))}</li>`).join('')}</ul>` : ''}
@@ -528,6 +554,14 @@ export function createEditor(host: EditorHost) {
     // Nie przerysowuj pod otwartą listą wyboru – zamknęłaby się w pół kliknięcia.
     if (pane.contains(document.activeElement) && document.activeElement?.matches('select, input, textarea')) return;
     pane.innerHTML = tab === 'frazy' ? paneTerms() : tab === 'plan' ? panePlan() : tab === 'dopracowanie' ? paneRefine() : panePublish();
+    // Przejazd stylu trwa na serwerze, ale nie z tej karty (np. po przeładowaniu) –
+    // odpytujemy, aż się skończy, żeby panel sam pokazał wynik.
+    if (!styleRun && host.data().job.style?.status === 'running' && !stylePoll) {
+      stylePoll = window.setTimeout(async () => {
+        stylePoll = null;
+        await host.refresh().catch(() => {});
+      }, 8000);
+    }
     host.root.querySelectorAll<HTMLElement>('.we-tab').forEach((button) => {
       const on = button.dataset.tab === tab;
       button.classList.toggle('on', on);
@@ -607,10 +641,11 @@ export function createEditor(host: EditorHost) {
     }
     const act = target.dataset.act;
     if (act === 'style') {
-      await guarded('style', target as HTMLButtonElement, 'Czytam cały tekst – do dwóch minut…', async () => {
-        await api(`/api/cw/jobs/${job.id}/style`, { method: 'POST', body: {} });
-        await host.refresh();
-      });
+      await runStylePass();
+    } else if (act === 'style-stop') {
+      await stopStylePass();
+    } else if (act === 'style-all') {
+      await decideAllStyle(target.dataset.decision as 'accepted' | 'rejected', target as HTMLButtonElement);
     } else if (act === 'expert') {
       await guarded('expert', target as HTMLButtonElement, 'Generuję…', async () => {
         await api(`/api/cw/jobs/${job.id}/expert`, {
@@ -630,6 +665,97 @@ export function createEditor(host: EditorHost) {
     } else if (act === 'wp') {
       await saveDraft(target as HTMLButtonElement);
     }
+  }
+
+  /* ---------- styl i fleksja: przejazd, przerwanie, decyzje zbiorcze ---------- */
+
+  async function loadStyleModels() {
+    if (styleModels.length) return;
+    try {
+      const response = await fetch('https://openrouter.ai/api/v1/models');
+      if (!response.ok) return;
+      const data = await response.json();
+      styleModels = (data?.data ?? []).map((row: Any) => row?.id).filter(Boolean).sort();
+      if (tab === 'dopracowanie' && !styleRun) paintPane();
+    } catch { /* lista to tylko podpowiedź – ID można wpisać ręcznie */ }
+  }
+
+  async function runStylePass() {
+    const { job } = host.data();
+    const model = q<HTMLInputElement>('[data-f="style-model"]')?.value.trim() ?? '';
+    try { localStorage.setItem('cw-style-model', model); } catch { /* bez pamięci wyboru */ }
+    try {
+      await flush();
+    } catch (error) {
+      message('style', (error as Error).message, 'err');
+      return;
+    }
+    const abort = new AbortController();
+    styleRun = { abort, started: Date.now(), model: model || STYLE_DEFAULT };
+    paintPane();
+    try {
+      const response = await fetch(`/api/cw/jobs/${job.id}/style`, {
+        method: 'POST',
+        headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json' },
+        body: JSON.stringify(model ? { model } : {}),
+        signal: abort.signal,
+      });
+      const data = await response.json().catch(() => ({}));
+      styleRun = null;
+      await host.refresh();
+      if (!response.ok && data?.code !== 'style_cancelled') message('style', data?.error ?? `Błąd ${response.status}`, 'err');
+    } catch (error) {
+      styleRun = null;
+      // Przerwane przez „Zatrzymaj” – komunikat daje stopStylePass.
+      if ((error as Error).name !== 'AbortError') {
+        await host.refresh().catch(() => {});
+        message('style', (error as Error).message, 'err');
+      }
+    }
+  }
+
+  async function stopStylePass() {
+    const { job } = host.data();
+    styleRun?.abort.abort();
+    styleRun = null;
+    try {
+      await api(`/api/cw/jobs/${job.id}/style`, { method: 'DELETE' });
+    } catch { /* przejazd mógł się właśnie skończyć – odświeżenie pokaże wynik */ }
+    await host.refresh().catch(() => {});
+    message('style', 'Przejazd zatrzymany. Poprzednie propozycje zostały bez zmian.', 'ok');
+  }
+
+  /** Decyzja dla wszystkich propozycji po kolei. Przyjęcie pomija nieaktualne
+      (sekcja zmieniona po propozycji) – te zostają do ręcznej decyzji. */
+  async function decideAllStyle(decision: 'accepted' | 'rejected', button: HTMLButtonElement) {
+    const { job } = host.data();
+    const current = new Map(ordered(job).map((row) => [row.slot, row.text_after ?? '']));
+    const rows = ((job.style_sections ?? []) as Any[])
+      .filter((row) => !row.decision)
+      .filter((row) => decision === 'rejected' || !(current.has(row.slot) && current.get(row.slot) !== (row.text_before ?? '')));
+    if (!rows.length) return;
+    try {
+      await flush();
+    } catch (error) {
+      message('style', (error as Error).message, 'err');
+      return;
+    }
+    host.root.querySelectorAll<HTMLButtonElement>('[data-act="style-all"], [data-style]').forEach((item) => { item.disabled = true; });
+    let done = 0;
+    const failed: string[] = [];
+    for (const row of rows) {
+      button.textContent = `${decision === 'accepted' ? 'Przyjmuję' : 'Odrzucam'} ${done + 1} z ${rows.length}…`;
+      try {
+        await api(`/api/cw/jobs/${job.id}/style/${row.slot}`, { method: 'PATCH', body: { decision } });
+        done += 1;
+      } catch (error) {
+        failed.push(`${row.title_after ?? row.title_before ?? `sekcja ${row.slot}`}: ${(error as Error).message}`);
+      }
+    }
+    await host.refresh().catch(() => {});
+    message('style', failed.length
+      ? `${decision === 'accepted' ? 'Przyjęto' : 'Odrzucono'} ${done} z ${rows.length}. Nie udało się: ${failed.join('; ')}`
+      : `${decision === 'accepted' ? 'Przyjęto' : 'Odrzucono'} ${done} ${done === 1 ? 'propozycję' : 'propozycji'}.`, failed.length ? 'err' : 'ok');
   }
 
   function goTo(anchor: string) {
@@ -953,6 +1079,7 @@ export function createEditor(host: EditorHost) {
     host.root.querySelectorAll<HTMLElement>('.we-tab').forEach((button) => button.addEventListener('click', () => {
       tab = button.dataset.tab as typeof tab;
       paintPane();
+      if (tab === 'dopracowanie') loadStyleModels();
     }));
     q('#we-pane')!.addEventListener('click', onPaneClick);
     q('#we-paper')!.addEventListener('click', (event) => {

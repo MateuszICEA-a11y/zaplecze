@@ -892,6 +892,27 @@ test('style POST: bez nagłówka dashboardu to 403; GET to 405', async () => {
   assert.equal((await routeContentWatcher(get, env)).status, 405);
 });
 
+test('style POST: model z edytora musi mieć format ID z OpenRouter', async () => {
+  const db = fakeDb({ 'SELECT * FROM jobs': { id: 'job-abcdef12', status: 'done' } });
+  const request = new Request('https://dash.example/api/cw/jobs/job-abcdef12/style', {
+    method: 'POST',
+    headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model: 'zły model; drop table' }),
+  });
+  const response = await routeContentWatcher(request, { CW_DB: db });
+  assert.equal(response.status, 400);
+  assert.ok(!db.calls.some((call) => call.sql.includes('UPDATE jobs SET style')), 'bez blokady przy złym modelu');
+});
+
+test('style DELETE: przerywa tylko trwający przejazd', async () => {
+  const cancel = (changes) => routeContentWatcher(
+    new Request('https://dash.example/api/cw/jobs/job-abcdef12/style', { method: 'DELETE', headers: { 'X-CW-Request': '1' } }),
+    { CW_DB: fakeDb({ "json_extract(style, '$.status') = 'running'": changes }) },
+  );
+  assert.equal((await cancel(1)).status, 200);
+  assert.equal((await cancel(0)).status, 409);
+});
+
 const STYLE_ROW = {
   job_id: 'job-abcdef12',
   slot: 4,

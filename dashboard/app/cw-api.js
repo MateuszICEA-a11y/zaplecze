@@ -962,6 +962,12 @@ async function runStyle(request, env, id, { fetchImpl } = {}) {
     return json({ error: 'Przejazd redaktorski będzie dostępny po zakończeniu analizy.' }, 409);
   }
 
+  // Model z edytora (opcjonalny) – ten sam format ID co w pozostałych trasach.
+  const body = await request.json().catch(() => ({}));
+  const model = typeof body?.model === 'string' ? body.model.trim() : '';
+  if (model && !MODEL_ID.test(model)) return json({ error: 'Nieprawidłowy identyfikator modelu.' }, 400);
+  const startedAt = nowIso();
+
   // Blokada podwójnego kliknięcia – jak przy ekspercie (json_extract z JSON1),
   // z tym samym odwieszaniem martwej blokady po oknie staleCutoff.
   const lock = await db(env)
@@ -970,16 +976,26 @@ async function runStyle(request, env, id, { fetchImpl } = {}) {
          AND (style IS NULL OR json_extract(style, '$.status') != 'running'
               OR coalesce(json_extract(style, '$.started_at'), '') < ?)`,
     )
-    .bind(JSON.stringify({ status: 'running', started_at: nowIso() }), nowIso(), id, staleCutoff())
+    .bind(JSON.stringify({ status: 'running', started_at: startedAt, model: model || null }), nowIso(), id, staleCutoff())
     .run();
   if ((lock.meta?.changes ?? 0) === 0) return json({ error: 'Przejazd redaktorski właśnie trwa.' }, 409);
 
+  // Zapis wyniku tylko wtedy, gdy to wciąż NASZ przejazd – redaktor mógł go
+  // w międzyczasie przerwać (DELETE), a wtedy odpowiedź modelu ląduje w koszu.
+  const finish = async (record) => {
+    const result = await db(env)
+      .prepare(
+        `UPDATE jobs SET style = ?, updated_at = ? WHERE id = ?
+           AND json_extract(style, '$.status') = 'running' AND json_extract(style, '$.started_at') = ?`,
+      )
+      .bind(JSON.stringify(record), nowIso(), id, startedAt)
+      .run();
+    return (result.meta?.changes ?? 0) > 0;
+  };
+
   const fail = async (message, status = 502) => {
     const record = { status: 'failed', error: message, created_at: nowIso() };
-    await db(env)
-      .prepare('UPDATE jobs SET style = ?, updated_at = ? WHERE id = ?')
-      .bind(JSON.stringify(record), nowIso(), id)
-      .run();
+    if (!(await finish(record))) return json({ error: 'Przejazd redaktorski został przerwany.', code: 'style_cancelled' }, 409);
     await audit(env, 'style.run', id, { error: message });
     return json({ error: message, style: record }, status);
   };
@@ -992,10 +1008,9 @@ async function runStyle(request, env, id, { fetchImpl } = {}) {
   const doc = await styleDocument(env, job, sections.results ?? [], fetchImpl ?? fetch);
   if (doc.error) return fail(doc.error, doc.status ?? 502);
 
-  const result = await runStylePass(env, job, doc.rows, { ...(fetchImpl ? { fetchImpl } : {}) });
+  const result = await runStylePass(env, job, doc.rows, { ...(fetchImpl ? { fetchImpl } : {}), ...(model ? { model } : {}) });
   if (!result.ok) return fail(result.error);
 
-  await saveStyleRows(env, id, result.data.sections);
   const record = {
     status: 'done',
     model: result.model,
@@ -1009,12 +1024,27 @@ async function runStyle(request, env, id, { fetchImpl } = {}) {
     sections_total: doc.rows.length,
     created_at: nowIso(),
   };
-  await db(env)
-    .prepare('UPDATE jobs SET style = ?, updated_at = ? WHERE id = ?')
-    .bind(JSON.stringify(record), nowIso(), id)
-    .run();
+  if (!(await finish(record))) return json({ error: 'Przejazd redaktorski został przerwany.', code: 'style_cancelled' }, 409);
+  await saveStyleRows(env, id, result.data.sections);
   await audit(env, 'style.run', id, { changed: record.changed, model: record.model });
   return json({ job: await readJob(env, id) });
+}
+
+/** DELETE /api/cw/jobs/:id/style – przerwanie trwającego przejazdu. Wywołanie
+    modelu dobiegnie końca w tle, ale jego wynik nie zostanie zapisany
+    (warunek w `finish`), a poprzednie propozycje zostają nietknięte. */
+async function cancelStyle(request, env, id) {
+  if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
+  const result = await db(env)
+    .prepare(
+      `UPDATE jobs SET style = ?, updated_at = ? WHERE id = ?
+         AND json_extract(style, '$.status') = 'running'`,
+    )
+    .bind(JSON.stringify({ status: 'cancelled', created_at: nowIso() }), nowIso(), id)
+    .run();
+  if ((result.meta?.changes ?? 0) === 0) return json({ error: 'Nie ma trwającego przejazdu.' }, 409);
+  await audit(env, 'style.cancel', id, null);
+  return json({ ok: true });
 }
 
 /** PATCH /api/cw/jobs/:id/style/:slot – decyzja o poprawce stylistycznej.
@@ -1471,7 +1501,8 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
       return handleInfographic(request, env, id, Number.parseInt(imageSlot, 10));
     }
     if (action?.toLowerCase() === 'style') {
-      if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
+      if (request.method === 'DELETE') return cancelStyle(request, env, id);
+      if (request.method !== 'POST') return json({ error: 'Dozwolone metody: POST, DELETE.' }, 405);
       return runStyle(request, env, id);
     }
     if (slot) {

@@ -474,3 +474,39 @@ html.we-open, html.we-open body { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .we-side, .we-sec-tools { transition: none; }
 }
+
+/* Styl i fleksja: przejazd w toku i decyzje zbiorcze */
+.we-running {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--accent-blue);
+  background: var(--bg-surface-1);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.we-running > span:nth-child(2) { flex: 1; }
+.we-running small { display: block; color: var(--ink-faint); font-size: 0.8rem; }
+.we-spinner {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--hairline);
+  border-top-color: var(--accent-blue);
+  animation: we-spin 0.9s linear infinite;
+}
+@keyframes we-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .we-spinner { animation-duration: 3s; } }
+.we-bulk {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--bg-surface-2);
+  font-size: 0.88rem;
+}
+.we-bulk > span { flex: 1 1 100%; }
+.we-bulk strong { font-weight: 500; }
