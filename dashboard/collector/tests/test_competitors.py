@@ -165,3 +165,11 @@ def test_429_zwalnia_tempo():
     with mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "MIN_INTERVAL_S", 0.001),             mock.patch.object(competitors, "page_title", return_value=(None, "HTTP 429")):
         stats = competitors.fetch_titles(items, per_host=None, workers_per_host=1)
     assert stats["rywal.pl"]["delay_s"] == 0.008  # 0,001 × 2 × 2 × 2
+
+
+def test_typ_strony_przechodzi_miedzy_przebiegami(tmp_path):
+    _, first = run(tmp_path, [{"url": "https://rywal.pl/blog/a/", "lastmod": None}])
+    first["items"][0].update({"kind": "news", "kind_basis": "b", "kind_title": "Prawdziwy tytuł", "kind_source": "llm"})
+    _, data = run(tmp_path, [{"url": "https://rywal.pl/blog/a/", "lastmod": None}], first)
+    item = data["items"][0]
+    assert (item["kind"], item["kind_source"], item["kind_title"]) == ("news", "llm", "Prawdziwy tytuł")

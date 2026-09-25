@@ -342,7 +342,9 @@ def fetch(cfg: dict, env: dict) -> dict:
                 "first_seen": old.get("first_seen") or today,
                 "baseline": old["baseline"] if old else baseline,
             }
-            for key in ("title_fetched_at", "title_error"):
+            # Pola liczone osobno (tytuł strony, typ z reguł/modelu) przechodzą między
+            # przebiegami – bez tego każdy przebieg kasował typy (2026-09-25: 2503 strony).
+            for key in ("title_fetched_at", "title_error", "kind", "kind_basis", "kind_title", "kind_source"):
                 if old.get(key):
                     item[key] = old[key]
             if not old and not baseline:
