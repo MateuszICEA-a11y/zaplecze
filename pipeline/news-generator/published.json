@@ -1,13 +1,5 @@
 [
   {
-    "title": "Pożar auta dostawczego w Bierutowie. Ogień zagroził pobliskim zabudowaniom",
-    "date": "2026-06-13",
-    "slug": "pozar-auta-dostawczego-w-bierutowie-ogien-zagrozil-pobliskim-zabudowaniom",
-    "section": "modele",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Koniec programu CPN. Tanie paliwo ma zniknąć, a kierowcy i firmy odczują to przy dystrybutorach",
     "date": "2026-06-14",
     "slug": "koniec-programu-cpn-tanie-paliwo-ma-zniknac-a-kierowcy-i-firmy-odczuja-to-przy",
@@ -716,6 +708,14 @@
     "date": "2026-09-24",
     "slug": "thaco-wprowadza-elektrycznego-dostawczaka-towner-e-do-logistyki-miejskiej",
     "section": "porownania",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Chciał kupić kampera z Niemiec. Stracił prawie 115 tys. zł",
+    "date": "2026-09-25",
+    "slug": "chcial-kupic-kampera-z-niemiec-stracil-prawie-115-tys-zl",
+    "section": "kampery",
     "format": "short",
     "source": "rss"
   }
