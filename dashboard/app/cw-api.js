@@ -664,7 +664,7 @@ async function createJob(request, env) {
   return json({ job: await readJob(env, id) }, 201);
 }
 
-async function readJob(env, id) {
+export async function readJob(env, id) {
   const job = await db(env).prepare('SELECT * FROM jobs WHERE id = ?').bind(id).first();
   if (!job) return null;
   const steps = await db(env)
@@ -722,15 +722,17 @@ async function readJob(env, id) {
   };
 }
 
+/** Lista przebiegów Content Watchera. Przebiegi Content Writera (kind
+    writer_*) mają ujemne post_id i własną listę projektów, więc tu ich nie ma. */
 async function listJobs(env, url) {
   const domain = url.searchParams.get('domain');
   const limit = Math.min(100, Math.max(1, Number.parseInt(url.searchParams.get('limit') ?? '50', 10) || 50));
   const query = domain
     ? db(env)
-        .prepare('SELECT id, domain, post_id, url, title, status, created_at, updated_at, finished_at FROM jobs WHERE domain = ? ORDER BY created_at DESC LIMIT ?')
+        .prepare(`SELECT id, domain, post_id, url, title, status, created_at, updated_at, finished_at FROM jobs WHERE domain = ? AND kind = 'refresh' ORDER BY created_at DESC LIMIT ?`)
         .bind(domain, limit)
     : db(env)
-        .prepare('SELECT id, domain, post_id, url, title, status, created_at, updated_at, finished_at FROM jobs ORDER BY created_at DESC LIMIT ?')
+        .prepare(`SELECT id, domain, post_id, url, title, status, created_at, updated_at, finished_at FROM jobs WHERE kind = 'refresh' ORDER BY created_at DESC LIMIT ?`)
         .bind(limit);
   const rows = await query.all();
   return json({ jobs: rows.results ?? [] });

@@ -86,6 +86,11 @@ export async function wpFetch(env, url, { method = 'GET', body = null } = {}, fe
   return { status: response.status, ok: response.ok, data };
 }
 
+/** Zadanie Content Writera: nowy artykuł, którego jeszcze nie ma w CMS-ie.
+    `post_id` to wtedy -id projektu (migracja 0011) – nie ma oryginału do
+    pobrania, skopiowania ani nadpisania. */
+export const isNewArticleJob = (job) => Number(job?.post_id) < 0;
+
 export const postUrl = (base, postType, postId = null) =>
   // Końcowy ukośnik jest obowiązkowy – bez niego WP robi 301 (gotcha z wp.py).
   `${base.replace(/\/$/, '')}/wp-json/wp/v2/${postType}/${postId ? `${postId}/` : ''}`;
@@ -206,6 +211,11 @@ export async function requestedAuthorId(request) {
   return Number.isInteger(id) && id > 0 ? id : null;
 }
 
+/** Szkic i wdrożenie nowego artykułu idą przez Content Writera – tu nie ma
+    oryginału, którego kopią miałby być szkic. */
+const NEW_ARTICLE_REFUSAL = () =>
+  json({ error: 'Nowy artykuł zapisujesz w WordPressie z modułu Content Writer.', code: 'new_article' }, 409);
+
 /** POST /api/cw/jobs/:id/wp-draft – szkic podglądowy (utworzenie albo aktualizacja). */
 export async function handleWpDraft(request, env, id, { fetchImpl = fetch } = {}) {
   if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
@@ -215,6 +225,7 @@ export async function handleWpDraft(request, env, id, { fetchImpl = fetch } = {}
   const ctx = await loadJobContext(env, id);
   if (ctx.error) return ctx.error;
   const { job, base, sections } = ctx;
+  if (isNewArticleJob(job)) return NEW_ARTICLE_REFUSAL();
 
   const { fields, slots } = acfFieldPayload(job, sections);
   if (!slots.length) return json({ error: 'Brak propozycji do zapisania w szkicu.' }, 400);
@@ -281,6 +292,7 @@ export async function handleWpApply(request, env, id, { fetchImpl = fetch } = {}
   const ctx = await loadJobContext(env, id);
   if (ctx.error) return ctx.error;
   const { job, base, sections } = ctx;
+  if (isNewArticleJob(job)) return NEW_ARTICLE_REFUSAL();
   const force = new URL(request.url).searchParams.get('force') === '1';
   const authorId = await requestedAuthorId(request);
 

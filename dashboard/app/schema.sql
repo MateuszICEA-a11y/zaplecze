@@ -34,7 +34,8 @@ CREATE TABLE IF NOT EXISTS jobs (
   error             TEXT,
   wp_draft_id       INTEGER,                     -- ID wpisu-szkicu w WP (migracja 0008)
   wp_draft_url      TEXT,                        -- link podglądu szkicu (?p=ID&preview=true)
-  applied_at        TEXT                         -- ISO; kiedy zmiany weszły na oryginał
+  applied_at        TEXT,                        -- ISO; kiedy zmiany weszły na oryginał
+  kind              TEXT NOT NULL DEFAULT 'refresh' -- refresh | writer_brief | writer_text (migracja 0011)
 );
 
 CREATE INDEX IF NOT EXISTS jobs_domain_created ON jobs (domain, created_at DESC);
@@ -75,6 +76,7 @@ CREATE TABLE IF NOT EXISTS job_sections (
   accepted         INTEGER NOT NULL DEFAULT 0,
   accepted_at      TEXT,
   edited           INTEGER NOT NULL DEFAULT 0,  -- text_after poprawiony ręcznie w edytorze
+  decision         TEXT,   -- NULL | accepted | rejected (migracja 0006)
 
   PRIMARY KEY (job_id, slot)
 );
@@ -123,6 +125,52 @@ CREATE TABLE IF NOT EXISTS job_images (
 
   PRIMARY KEY (job_id, slot)
 );
+
+-- Cache analizy SERP-gap i treści konkurencji (migracje 0004/0005). Klucz
+-- "<domena>:<post_id>" (SERP) albo "rivals:<domena>:<post_id>"; Content Writer
+-- używa ujemnego post_id = -id projektu.
+CREATE TABLE IF NOT EXISTS serp_snapshots (
+  id         TEXT PRIMARY KEY,
+  domain     TEXT NOT NULL,
+  post_id    INTEGER NOT NULL,
+  payload    TEXT NOT NULL,
+  status     TEXT NOT NULL DEFAULT 'done',
+  error      TEXT,
+  created_at TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS serp_snapshots_domain ON serp_snapshots (domain, created_at DESC);
+
+-- Content Writer: projekt nowego artykułu (migracja 0011). Przebiegi to wiersze
+-- `jobs` z kind = writer_brief | writer_text i post_id = -id projektu.
+CREATE TABLE IF NOT EXISTS writer_projects (
+  id                INTEGER PRIMARY KEY AUTOINCREMENT,
+  domain            TEXT NOT NULL,
+  keyword           TEXT NOT NULL,
+  keyword_norm      TEXT NOT NULL,
+  title             TEXT,
+  status            TEXT NOT NULL DEFAULT 'research',
+  brief             TEXT,
+  brief_accepted_at TEXT,
+  brief_job_id      TEXT,
+  write_job_id      TEXT,
+  author_id         INTEGER,
+  author_name       TEXT,
+  category_id       INTEGER,
+  lead              TEXT,
+  wp_post_id        INTEGER,
+  wp_draft_url      TEXT,
+  wp_modified       TEXT,
+  wp_saved_at       TEXT,
+  error             TEXT,
+  created_by        TEXT,
+  created_at        TEXT NOT NULL,
+  updated_at        TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS writer_projects_domain ON writer_projects (domain, created_at DESC);
+CREATE UNIQUE INDEX IF NOT EXISTS writer_projects_keyword
+  ON writer_projects (domain, keyword_norm) WHERE status != 'cancelled';
 
 -- Zużyte podpisy callbacków – ochrona przed replayem w oknie ważności.
 CREATE TABLE IF NOT EXISTS callback_nonces (

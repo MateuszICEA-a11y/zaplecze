@@ -22,7 +22,7 @@
 
 import { contentDomains, mapAcfFaq, mapAcfSections, sanitizeSectionHtml, SOURCES_SLOT } from './cw-api.js';
 import { extractJson } from './cw-expert.js';
-import { contentHash, postUrl, wpFetch } from './cw-wp.js';
+import { contentHash, isNewArticleJob, postUrl, wpFetch } from './cw-wp.js';
 
 export const STYLE_PROMPT_VERSION = '1.0.0';
 
@@ -54,19 +54,23 @@ export async function styleDocument(env, job, sections, fetchImpl = fetch) {
   const base = contentDomains(env).get(String(job.domain).toLowerCase());
   if (!base) return { error: 'Edytor nie obsługuje tej domeny.', status: 400 };
 
-  const post = await wpFetch(
-    env,
-    `${postUrl(base, job.post_type, job.post_id)}?acf_format=standard&_fields=id,acf`,
-    {},
-    fetchImpl,
-  );
-  if (!post.ok) {
-    return { error: `Nie udało się pobrać treści wpisu (HTTP ${post.status}).`, status: 502 };
-  }
-  const acf = post.data?.acf && typeof post.data.acf === 'object' ? post.data.acf : {};
+  // Nowy artykuł (Content Writer) nie ma jeszcze wersji w CMS-ie – dokumentem
+  // jest wyłącznie to, co napisał przebieg i poprawił redaktor.
   const live = new Map();
-  for (const row of mapAcfSections(acf).sections) live.set(row.slot, row);
-  for (const row of mapAcfFaq(acf).items) live.set(row.slot, row);
+  if (!isNewArticleJob(job)) {
+    const post = await wpFetch(
+      env,
+      `${postUrl(base, job.post_type, job.post_id)}?acf_format=standard&_fields=id,acf`,
+      {},
+      fetchImpl,
+    );
+    if (!post.ok) {
+      return { error: `Nie udało się pobrać treści wpisu (HTTP ${post.status}).`, status: 502 };
+    }
+    const acf = post.data?.acf && typeof post.data.acf === 'object' ? post.data.acf : {};
+    for (const row of mapAcfSections(acf).sections) live.set(row.slot, row);
+    for (const row of mapAcfFaq(acf).items) live.set(row.slot, row);
+  }
 
   // Blok Źródeł (slot 200) to lista linków, nie proza – nie wchodzi do dokumentu
   // redaktorskiego ani pod infografikę/cytat (zapis do WP idzie z job_sections).

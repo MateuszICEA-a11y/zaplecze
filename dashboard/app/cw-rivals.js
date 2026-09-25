@@ -130,6 +130,7 @@ export function buildFactsPrompt(ours, rivals) {
   const rivalBlocks = rivals
     .map((row, index) => `### Konkurent ${index + 1}: ${row.url}\n\n${row.markdown}`)
     .join('\n\n---\n\n');
+  if (ours?.new_article) return buildNewArticleFactsPrompt(ours.title, rivalBlocks);
   return `Porównujesz artykuł z tekstami konkurencji, które stoją nad nim w wynikach Google. Szukasz KONKRETÓW, których w naszym tekście brakuje: liczb, dat, nazw narzędzi, warunków brzegowych, definicji, przykładów, kroków procedury.
 
 ## Nasz artykuł
@@ -162,6 +163,43 @@ Zasady:
 - Maksymalnie 8 faktów, uporządkowane od najważniejszego.
 - „fact" to jedno zdanie, „why" najwyżej kilkanaście słów – zwięźle, bez wstępów.
 - Tylko to, czego NIE MA w naszym artykule – jeśli piszemy o czymś innymi słowami, pomiń.
+- Przepisuj liczby i nazwy dokładnie tak, jak stoją u konkurenta; niczego nie zaokrąglaj ani nie zmyślaj.
+- Pomijaj treści marketingowe konkurenta (oferta, cennik usług, formularze kontaktowe).
+- Pisz po polsku, półpauzą (–), nie myślnikiem em.`;
+}
+
+/**
+ * Wariant dla nowego artykułu (Content Writer): naszego tekstu jeszcze nie ma,
+ * więc zamiast „czego u nas brakuje" pytamy, jakie konkrety musi zawierać
+ * tekst na ten temat, żeby nie był słabszy od stron z TOP-u. Kontrakt JSON ten
+ * sam – dalej jadą te same `facts` i `topics`.
+ */
+export function buildNewArticleFactsPrompt(topic, rivalBlocks) {
+  return `Przygotowujemy NOWY artykuł na temat „${topic}". Poniżej teksty, które dziś stoją najwyżej w wynikach Google dla tej frazy. Wypisz KONKRETY, bez których nasz tekst byłby słabszy od nich: liczby, daty, nazwy narzędzi, warunki brzegowe, definicje, przykłady, kroki procedury.
+
+## Teksty konkurencji
+
+${rivalBlocks}
+
+## Zadanie
+
+Zwróć wyłącznie JSON:
+
+{
+  "facts": [
+    {
+      "fact": "jedno zdanie – konkret, który powinien paść w naszym tekście",
+      "why": "dlaczego jest potrzebny (maksymalnie jedno zdanie)",
+      "source": "adres konkurenta, u którego to stoi",
+      "kind": "liczba | definicja | proces | przykład | narzędzie | ryzyko"
+    }
+  ],
+  "topics": ["wątek, który konkurencja porusza i który czytelnik tego tematu spodziewa się znaleźć"]
+}
+
+Zasady:
+- Maksymalnie 10 faktów, uporządkowane od najważniejszego.
+- Każdy fakt musi stać w którymś z tekstów powyżej – pole „source" to adres tego tekstu. Nie dopisuj niczego z własnej wiedzy.
 - Przepisuj liczby i nazwy dokładnie tak, jak stoją u konkurenta; niczego nie zaokrąglaj ani nie zmyślaj.
 - Pomijaj treści marketingowe konkurenta (oferta, cennik usług, formularze kontaktowe).
 - Pisz po polsku, półpauzą (–), nie myślnikiem em.`;
@@ -429,11 +467,14 @@ export async function handleRivals(request, env, domain, postId, ctx, fetchImpl 
     return json({ error: 'Przekazano nieprawidłowe dane (błąd formatu lub zbyt duży rozmiar).' }, 400);
   }
   const ourUrl = String(body.our_url ?? '').trim();
+  // Nowy artykuł (Content Writer): naszego tekstu nie ma, porównujemy temat.
+  const topic = String(body.topic ?? '').trim().slice(0, 200);
+  const newArticle = !ourUrl && Boolean(topic);
   const rivalUrls = (Array.isArray(body.rivals) ? body.rivals : [])
     .map((row) => String(row ?? '').trim())
     .filter((row) => /^https?:\/\//i.test(row))
     .slice(0, RIVALS_LIMIT);
-  if (!/^https?:\/\//i.test(ourUrl)) return json({ error: 'Wymagane pole: our_url.' }, 400);
+  if (!newArticle && !/^https?:\/\//i.test(ourUrl)) return json({ error: 'Wymagane pole: our_url.' }, 400);
   if (!rivalUrls.length) return json({ error: 'Najpierw sprawdź SERP – nie ma adresów konkurentów.' }, 400);
   if (!env.JINA_API_KEY) return json({ error: 'Brak sekretu JINA_API_KEY w Workerze.' }, 503);
 
@@ -459,7 +500,16 @@ export async function handleRivals(request, env, domain, postId, ctx, fetchImpl 
     && isFresh(snapshot.created_at, 0.25);
   const state = resumable
     ? { ...snapshot.payload, busy_since: undefined }
-    : { our_url: ourUrl, queue: rivalUrls, rivals: [], ours: null, model, stage: 'ours' };
+    : newArticle
+      ? {
+          our_url: '',
+          queue: rivalUrls,
+          rivals: [],
+          ours: { url: '', title: topic, words: null, headings: [], markdown: '', new_article: true },
+          model,
+          stage: 'rivals',
+        }
+      : { our_url: ourUrl, queue: rivalUrls, rivals: [], ours: null, model, stage: 'ours' };
 
   // Znacznik „pracuję" gasi równoległe kroki z kolejnych odpytań klienta.
   await writeSnapshot(env, domain, postId, {

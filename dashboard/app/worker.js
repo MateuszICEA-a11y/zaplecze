@@ -1,6 +1,7 @@
 import { parseBingAiCsv } from './bing-import.js';
 import { routeContentWatcher, timingSafeEqual, verifySignature } from './cw-api.js';
 import { getSenutoToken, jwtExpiry, saveSenutoToken } from './senuto-token.js';
+import { routeWriter } from './cw-writer.js';
 
 /**
  * Worker dashboardu: cała aplikacja za Basic Auth (dashboard zawiera dane
@@ -135,6 +136,10 @@ export default {
     }
 
     // `ctx` niesie waitUntil – analiza SERP kończy się po odesłaniu odpowiedzi.
+    // Content Writer (/api/cw/writer/*) przed Content Watcherem – ten drugi
+    // odpowiada 404 na każdą nieznaną ścieżkę pod /api/cw/.
+    const writer = await routeWriter(request, env, { ctx });
+    if (writer) return writer;
     const contentWatcher = await routeContentWatcher(request, env, { ctx });
     if (contentWatcher) return contentWatcher;
 
