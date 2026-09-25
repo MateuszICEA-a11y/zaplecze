@@ -10,7 +10,7 @@ from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from sources import competitors  # noqa: E402
+from sources import competitor_kind, competitors  # noqa: E402
 
 
 def test_slug_title_zamienia_slug_na_slowa():
@@ -101,3 +101,36 @@ def test_limit_per_host_i_blad_zapisany(tmp_path):
         stats = competitors.fetch_titles(items, per_host=2)
     assert stats["rywal.pl"]["error"] == 2
     assert [bool(item.get("title_error")) for item in items] == [True, True, False, False, False]
+
+
+def test_tytul_wspolny_dla_wielu_stron_wraca_do_sluga():
+    items = [{"url": f"https://rywal.pl/blog/{n}/", "host": "rywal.pl", "title": "Rywal – Zwiększamy przychody"} for n in range(3)]
+    items.append({"url": "https://rywal.pl/blog/x/", "host": "rywal.pl", "title": "Jak pisać opisy"})
+    assert competitors.drop_generic_titles(items) == 3
+    assert [item["title"] for item in items] == [None, None, None, "Jak pisać opisy"]
+    now = datetime(2026, 9, 25, tzinfo=timezone.utc)
+    assert not competitors.needs_title({**items[0], "title_fetched_at": "2020-01-01T00:00:00Z"}, now)
+
+
+def test_needs_kind_czeka_na_tytul_i_ocenia_ponownie_po_zmianie():
+    assert not competitor_kind.needs_kind({"slug_title": "seo"})  # tytuł jeszcze niepobrany
+    assert competitor_kind.needs_kind({"slug_title": "seo", "title_error": "HTTP 404"})
+    done = {"slug_title": "seo", "title": "SEO", "kind": "poradnik", "kind_title": "SEO"}
+    assert not competitor_kind.needs_kind(done)
+    assert competitor_kind.needs_kind({**done, "title": "SEO – nowy tytuł"})
+
+
+def test_zla_paczka_idzie_polowkami():
+    batch = [{"path": f"/blog/{n}/", "title": f"T{n}"} for n in range(4)]
+    calls = []
+
+    def fake(api_key, rows):
+        calls.append(len(rows))
+        if len(rows) == 4:
+            raise ValueError("Unterminated string")
+        return {index: {"kind": "poradnik", "basis": ""} for index in range(1, len(rows) + 1)}
+
+    with mock.patch.object(competitor_kind, "_call", side_effect=fake):
+        result = competitor_kind._call_split("k", batch)
+    assert calls == [4, 2, 2]
+    assert sorted(result) == [1, 2, 3, 4]

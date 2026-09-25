@@ -1,0 +1,128 @@
+"""Typ strony konkurenta (LLM): poradnik, słownik, news, firmowe, case study, oferta.
+
+Sitemapy blogów agencji mieszają poradniki z relacjami z eventów, przeglądami
+nowinek i ogłoszeniami. Do „tematów, których nie mamy” nadają się tylko treści
+ponadczasowe (poradnik, słownik) – reszta to szum w podpowiedziach.
+
+Model dostaje ścieżkę adresu i tytuł (prawdziwy albo ze sluga), paczkami.
+Wynik: `kind`, `kind_basis` (krótkie uzasadnienie) i `kind_title` – tytuł, na
+którym oceniono. Zmiana tytułu (np. prawdziwy zamiast sluga) = ocena od nowa.
+"""
+import json
+import re
+import urllib.request
+
+from ._http import DEFAULT_HEADERS
+
+MODEL = "google/gemini-3.8-flash"
+BATCH = 40
+TIMEOUT_S = 120
+KINDS = ("poradnik", "slownik", "news", "firmowe", "case_study", "oferta", "niepewne")
+# Do luk tematycznych – treści, które mają sens jako nasz wpis.
+CONTENT_KINDS = ("poradnik", "slownik")
+
+PROMPT = """Klasyfikujesz podstrony z blogów polskich agencji marketingu internetowego (SEO, SEM, social media, e-commerce).
+Dla każdej pozycji (ścieżka adresu + tytuł) wybierz dokładnie jeden typ:
+
+- poradnik – artykuł edukacyjny, ponadczasowy: jak coś zrobić, czym jest, porównanie, lista porad, analiza zjawiska
+- slownik – hasło słownikowe / definicja jednego pojęcia (zwykle ścieżka ze słownikiem pojęć)
+- news – treść związana z datą: przegląd nowinek (np. „SEO Newsy Listopad 2024”, „Tygodniowy przegląd PPC”), zapowiedź albo relacja ze zmiany w Google/Meta, aktualizacja algorytmu, raport z danego roku
+- firmowe – o samej agencji: jej eventy, konferencje, relacje, prelegenci, własne webinary i kursy, rekrutacja, nagrody, akcje charytatywne, zespół, jubileusze
+- case_study – opis realizacji dla klienta, wyniki kampanii konkretnej firmy
+- oferta – strona usługowa lub sprzedażowa, cennik, landing
+- niepewne – z tytułu i adresu nie da się tego rozstrzygnąć
+
+Tytuł bywa odtworzony ze sluga (małe litery, bez polskich znaków) – oceniaj treść, nie formę.
+Nie zgaduj: gdy brakuje podstaw, wybierz „niepewne”.
+
+Zwróć wyłącznie JSON: {"items": [{"i": <numer>, "kind": "<typ>", "basis": "<max 12 słów po polsku, bez cudzysłowów: co w tytule/adresie przesądza>"}]}
+Każdy numer z wejścia dokładnie raz.
+
+Pozycje:
+"""
+
+
+def item_text(item: dict) -> str:
+    return (item.get("title") or item.get("slug_title") or "").strip()
+
+
+def needs_kind(item: dict) -> bool:
+    """Ocena brakuje albo była na innym tytule. Na tytuł czekamy, dopóki go nie
+    pobrano ani nie zapisano błędu – inaczej model ocenia slug, a za dzień
+    i tak trzeba by oceniać drugi raz."""
+    if not item.get("title") and not item.get("title_error"):
+        return False
+    return item.get("kind_title") != item_text(item) or item.get("kind") not in KINDS
+
+
+def _call(api_key: str, batch: list[dict]) -> dict[int, dict]:
+    lines = "\n".join(f"{n}. {item['path']} | {item_text(item)}" for n, item in enumerate(batch, 1))
+    body = json.dumps({
+        "model": MODEL,
+        "messages": [{"role": "user", "content": PROMPT + lines}],
+        "response_format": {"type": "json_object"},
+        "temperature": 0,
+        # Klasyfikacja nie potrzebuje myślenia – reasoning zjadał limit tokenów (gotcha 2026-09).
+        "reasoning": {"effort": "minimal", "exclude": True},
+        "max_tokens": 6000,
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        "https://openrouter.ai/api/v1/chat/completions",
+        data=body,
+        headers={**DEFAULT_HEADERS, "Content-Type": "application/json", "Authorization": f"Bearer {api_key}",
+                 "X-Title": "zaplecze-dashboard competitor kinds"},
+    )
+    with urllib.request.urlopen(req, timeout=TIMEOUT_S) as resp:
+        data = json.loads(resp.read().decode("utf-8"))
+    content = data["choices"][0]["message"]["content"] or ""
+    content = re.sub(r"^```(?:json)?\s*|\s*```$", "", content.strip())
+    out = {}
+    for row in json.loads(content).get("items", []):
+        try:
+            index = int(row.get("i"))
+        except (TypeError, ValueError):
+            continue
+        kind = str(row.get("kind", "")).strip().lower().replace(" ", "_")
+        if 1 <= index <= len(batch) and kind in KINDS:
+            out[index] = {"kind": kind, "basis": str(row.get("basis", ""))[:160]}
+    return out
+
+
+def _call_split(api_key: str, batch: list[dict], log=None, depth: int = 0) -> dict[int, dict]:
+    """Paczka z zepsutym JSON-em (np. cudzysłów w uzasadnieniu) idzie drugi raz
+    połówkami – jedna zła pozycja nie kosztuje oceny czterdziestu."""
+    try:
+        return _call(api_key, batch)
+    except Exception as err:  # noqa: BLE001 – jedna paczka nie przerywa reszty
+        if log:
+            log(f"paczka {len(batch)} poz. (poziom {depth}): {str(err)[:120]}")
+        if depth >= 2 or len(batch) < 2:
+            return {}
+    half = len(batch) // 2
+    left = _call_split(api_key, batch[:half], log, depth + 1)
+    right = _call_split(api_key, batch[half:], log, depth + 1)
+    return {**left, **{index + half: verdict for index, verdict in right.items()}}
+
+
+def classify(items: list[dict], api_key: str, limit: int | None = None, log=None) -> dict:
+    """Uzupełnia `kind`/`kind_basis`/`kind_title` w miejscu. Paczka, która padła,
+    zostaje bez oceny do następnego przebiegu. Zwraca liczniki."""
+    todo = [item for item in items if needs_kind(item)]
+    if limit is not None:
+        todo = todo[:limit]
+    stats = {"classified": 0, "failed": 0, "todo": len(todo)}
+    for start in range(0, len(todo), BATCH):
+        batch = todo[start:start + BATCH]
+        result = _call_split(api_key, batch, log)
+        for index, item in enumerate(batch, 1):
+            verdict = result.get(index)
+            if not verdict:
+                stats["failed"] += 1
+                continue
+            item["kind"] = verdict["kind"]
+            item["kind_basis"] = verdict["basis"]
+            item["kind_title"] = item_text(item)
+            stats["classified"] += 1
+        if log:
+            log(f"sklasyfikowano {stats['classified']}/{len(todo)}")
+    return stats

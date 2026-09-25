@@ -20,6 +20,8 @@ export const GET: APIRoute = ({ params }) => {
     first_seen: item.first_seen ?? null,
     lastmod: item.lastmod ?? null,
     baseline: item.baseline ?? false,
+    kind: item.kind ?? null,
+    kind_basis: item.kind_basis ?? null,
   }));
   return new Response(JSON.stringify({ generated_at: data.generated_at ?? null, sites: data.sites, items }), {
     headers: { 'Content-Type': 'application/json; charset=utf-8' },

@@ -139,6 +139,9 @@ export async function competitorView(env, domain) {
       host: item.host,
       title: itemText(item),
       title_from: item.title ? 'page' : 'slug',
+      // Typ strony z collectora (LLM): poradnik, slownik, news, firmowe, case_study, oferta, niepewne.
+      kind: item.kind ?? null,
+      kind_basis: item.kind_basis ?? null,
       first_seen: item.first_seen ?? null,
       lastmod: item.lastmod ?? null,
       baseline: Boolean(item.baseline),

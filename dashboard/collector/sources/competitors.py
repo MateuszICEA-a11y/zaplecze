@@ -32,7 +32,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from . import SourceError
+from . import SourceError, competitor_kind
 from ._http import DEFAULT_HEADERS
 
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
@@ -40,6 +40,7 @@ TIMEOUT_S = 30
 MAX_SITEMAPS = 40  # bezpiecznik na indeksy sitemap
 MAX_URLS_PER_SITE = 6000
 TITLE_FETCH_PER_HOST = 30  # tytuły stron na hosta na przebieg collectora
+KIND_LIMIT = 400  # stron do klasyfikacji typu na przebieg (paczki po 40)
 TITLE_RETRY_DAYS = 7  # po błędzie pobrania próbujemy ponownie po tygodniu
 HEAD_MAX_BYTES = 64 * 1024
 MIN_INTERVAL_S = 0.5  # max 2 żądania/s na hosta, chyba że robots.txt każe wolniej
@@ -190,11 +191,35 @@ def _robots(host: str) -> urllib.robotparser.RobotFileParser | None:
     return parser
 
 
+GENERIC_TITLE_MIN = 3  # ten sam tytuł na tylu stronach hosta = tytuł serwisu, nie wpisu
+GENERIC_ERROR = "tytuł wspólny dla wielu stron"
+
+
+def drop_generic_titles(items: list[dict]) -> int:
+    """Część stron (traffictrends.pl) ma w <title>/og:title nazwę i hasło serwisu
+    zamiast tytułu wpisu. Taki tytuł porównany z naszymi wpisami to szum –
+    wracamy do sluga i nie pobieramy go ponownie. Zwraca liczbę odrzuconych."""
+    seen: dict[tuple[str, str], int] = {}
+    for item in items:
+        if item.get("title"):
+            key = (item["host"], item["title"].strip().lower())
+            seen[key] = seen.get(key, 0) + 1
+    dropped = 0
+    for item in items:
+        if item.get("title") and seen[(item["host"], item["title"].strip().lower())] >= GENERIC_TITLE_MIN:
+            item["title"] = None
+            item["title_error"] = GENERIC_ERROR
+            dropped += 1
+    return dropped
+
+
 def needs_title(item: dict, now: datetime) -> bool:
     if item.get("title"):
         return False
     if not item.get("title_error"):
         return True
+    if item["title_error"] == GENERIC_ERROR:
+        return False
     try:
         at = datetime.strptime(item.get("title_fetched_at") or "", "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
     except ValueError:
@@ -316,6 +341,13 @@ def fetch(cfg: dict, env: dict) -> dict:
     todo = sorted((item for item in items if needs_title(item, now)),
                   key=lambda row: (row["first_seen"], row.get("lastmod") or ""), reverse=True)
     title_stats = fetch_titles(todo, TITLE_FETCH_PER_HOST, deadline=time.monotonic() + 8 * 60)
+    drop_generic_titles(items)
+
+    # Typ strony (poradnik / news / firmowe…) – tylko z kluczem, porcja na przebieg.
+    kind_stats = {"classified": 0, "failed": 0, "todo": 0}
+    api_key = (env or {}).get("OPENROUTER_API_KEY")
+    if api_key:
+        kind_stats = competitor_kind.classify(items, api_key, limit=KIND_LIMIT)
 
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps({
@@ -335,6 +367,8 @@ def fetch(cfg: dict, env: dict) -> dict:
             "new_today": len(fresh),
             "titles_fetched": sum(row["ok"] for row in title_stats.values()),
             "titles_missing": sum(1 for item in items if not item.get("title")),
+            "kinds_classified": kind_stats["classified"],
+            "kinds_missing": sum(1 for item in items if not item.get("kind")),
         },
         "details": None,
     }
