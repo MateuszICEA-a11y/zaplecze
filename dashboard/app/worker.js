@@ -1,5 +1,5 @@
 import { parseBingAiCsv } from './bing-import.js';
-import { routeContentWatcher, verifySignature } from './cw-api.js';
+import { routeContentWatcher, timingSafeEqual, verifySignature } from './cw-api.js';
 import { getSenutoToken, jwtExpiry, saveSenutoToken } from './senuto-token.js';
 
 /**
@@ -114,7 +114,7 @@ export default {
       );
     }
     const given = passwordFromHeader(request.headers.get('Authorization'));
-    if (given !== expected) return unauthorized();
+    if (!timingSafeEqual(given ?? '', expected)) return unauthorized();
 
     // Zapis tokenu wklejonego na /system/ (za bramką hasła).
     if (url.pathname === '/api/senuto-token' && request.method === 'POST') {

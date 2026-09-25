@@ -80,18 +80,31 @@ jobs:
           GAP_JSON: ${{ toJSON(github.event.client_payload.research.gap) }}
           # Ekstrakcja treści konkurencji przez Jina Reader (fallback: trafilatura).
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+          # Wartości z payloadu idą przez env, nie wklejone w skrypt: tytuł
+          # i autor pochodzą z WordPressa, a `"` albo `$(…)` w tytule
+          # wykonałyby się w shellu runnera (z dostępem do sekretów).
+          ARG_JOB: ${{ github.event.client_payload.job_id || inputs.job_id }}
+          ARG_DOMAIN: ${{ github.event.client_payload.domain || inputs.domain }}
+          ARG_POST_ID: ${{ github.event.client_payload.post_id || inputs.post_id }}
+          ARG_POST_TYPE: ${{ github.event.client_payload.post_type || 'posts' }}
+          ARG_URL: ${{ github.event.client_payload.url || inputs.url }}
+          ARG_TITLE: ${{ github.event.client_payload.title || '' }}
+          ARG_AUTHOR: ${{ github.event.client_payload.author || '' }}
+          ARG_IMPROVEMENTS: ${{ join(github.event.client_payload.improvements, ',') || inputs.improvements }}
+          ARG_MODEL_RESEARCH: ${{ github.event.client_payload.models.research || inputs.model_research || '' }}
+          ARG_MODEL_WRITER: ${{ github.event.client_payload.models.writer || inputs.model_writer || '' }}
         run: |
           python pipeline/content-refresher/run.py \
-            --job "${{ github.event.client_payload.job_id || inputs.job_id }}" \
-            --domain "${{ github.event.client_payload.domain || inputs.domain }}" \
-            --post-id "${{ github.event.client_payload.post_id || inputs.post_id }}" \
-            --post-type "${{ github.event.client_payload.post_type || 'posts' }}" \
-            --url "${{ github.event.client_payload.url || inputs.url }}" \
-            --title "${{ github.event.client_payload.title || '' }}" \
-            --author "${{ github.event.client_payload.author || '' }}" \
-            --improvements "${{ join(github.event.client_payload.improvements, ',') || inputs.improvements }}" \
-            --model-research "${{ github.event.client_payload.models.research || inputs.model_research || '' }}" \
-            --model-writer "${{ github.event.client_payload.models.writer || inputs.model_writer || '' }}"
+            --job "$ARG_JOB" \
+            --domain "$ARG_DOMAIN" \
+            --post-id "$ARG_POST_ID" \
+            --post-type "$ARG_POST_TYPE" \
+            --url "$ARG_URL" \
+            --title "$ARG_TITLE" \
+            --author "$ARG_AUTHOR" \
+            --improvements "$ARG_IMPROVEMENTS" \
+            --model-research "$ARG_MODEL_RESEARCH" \
+            --model-writer "$ARG_MODEL_WRITER"
 
       - name: Report failure
         # Bez tego padnięty runner zostawiłby zadanie w stanie „running" aż do
