@@ -104,6 +104,9 @@ domains:
       # Nowe artykuły od zera: fraza → research → brief → tekst → szkic w WP.
       # Wymaga domeny w CW_DOMAINS (wrangler.toml) i migracji D1 0011.
       enabled: true
+      # Strony usługowe – frazy, na które stoją, nie są tematami na bloga
+      # (podpowiedzi luk i kontrola kanibalizacji je pomijają).
+      exclude_paths: [/oferta/]
 
 # Źródła per konto (nie per domena) – salda kredytów.
 global:

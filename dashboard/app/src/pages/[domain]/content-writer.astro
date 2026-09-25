@@ -4,7 +4,9 @@
    w przeglądarce; strona z buildu daje tylko szkielet. */
 import Layout from '../../layouts/Layout.astro';
 import DomainHeader from '../../components/DomainHeader.astro';
-import { loadConfig, latestSnapshot } from '../../lib/data';
+import { loadConfig, loadDetails, latestSnapshot } from '../../lib/data';
+import { fmtInt } from '../../lib/format';
+import { suggestGaps } from '../../lib/writer-gaps.js';
 import '../../styles/writer.css';
 
 export function getStaticPaths() {
@@ -16,6 +18,10 @@ export function getStaticPaths() {
 const { domain } = Astro.params;
 const { name } = Astro.props;
 const latest = latestSnapshot(domain!);
+const cfg = (loadConfig().domains.find((item) => item.id === domain)?.content_writer ?? {}) as { exclude_paths?: string[] };
+const details = loadDetails(domain!);
+const suggestions = suggestGaps(details, { excludePaths: cfg.exclude_paths ?? [] });
+const measuredAt = (details as { date?: string }).date ?? null;
 ---
 
 <Layout title={`${name} – Content Writer`}>
@@ -42,6 +48,63 @@ const latest = latestSnapshot(domain!);
 
     <section class="wr-section">
       <div class="wr-section-head">
+        <h2>Podpowiedzi z danych</h2>
+        <span class="wr-note">
+          frazy z pozycją 11–50 bez własnego wpisu{measuredAt ? ` · dane z ${measuredAt}` : ''} · Senuto i Search Console
+        </span>
+      </div>
+      <div class="wr-panel">
+        {
+          suggestions.length ? (
+            <div class="wr-table-wrap">
+              <table class="wr-table" id="wr-suggestions">
+                <thead>
+                  <tr>
+                    <th>Fraza</th>
+                    <th class="num">Wyszukiwania</th>
+                    <th class="num">Wyświetlenia</th>
+                    <th class="num">Nasza poz.</th>
+                    <th>Dziś rankuje przy okazji</th>
+                    <th />
+                  </tr>
+                </thead>
+                <tbody>
+                  {suggestions.map((row) => (
+                    <tr>
+                      <td>{row.keyword}</td>
+                      <td class="num">{row.searches !== null ? fmtInt(row.searches) : '–'}</td>
+                      <td class="num">{row.impressions !== null ? fmtInt(row.impressions) : '–'}</td>
+                      <td class="num">{row.position}</td>
+                      <td class="muted">
+                        {row.ranking_url ? (
+                          <a href={row.ranking_url} target="_blank" rel="noopener">
+                            {row.ranking_title ?? (row.ranking_url.replace(/^https?:\/\/(www\.)?[^/]+/, '').replace(/^\/$/, 'strona główna'))}
+                          </a>
+                        ) : (
+                          row.sources.join(' + ')
+                        )}
+                      </td>
+                      <td class="num">
+                        <button class="wr-btn small" type="button" data-pick={row.keyword}>Wybierz</button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <p class="wr-empty">Brak podpowiedzi – w danych nie ma fraz z pozycją 11–50 bez własnego wpisu.</p>
+          )
+        }
+        <p class="wr-msg">
+          To heurystyka: fraza bez wpisu z nią w tytule, na którą stoi dziś strona poboczna. Przed założeniem projektu
+          sprawdź ostrzeżenie o kanibalizacji pod polem frazy.
+        </p>
+      </div>
+    </section>
+
+    <section class="wr-section">
+      <div class="wr-section-head">
         <h2>Projekty</h2>
         <span class="wr-note" id="wr-count"></span>
       </div>
@@ -54,6 +117,7 @@ const latest = latestSnapshot(domain!);
 
 <script>
   import { api, esc, fmtDateTime, STATUS_LABEL, STATUS_TONE } from '../../lib/writer-client';
+  import { cannibalization } from '../../lib/writer-gaps.js';
 
   const root = document.querySelector<HTMLElement>('.wr-page')!;
   const domain = root.dataset.domain!;
@@ -110,6 +174,48 @@ const latest = latestSnapshot(domain!);
       button.disabled = false;
     }
   });
+
+  /* Kontrola kanibalizacji: czy fraza ma już wpis albo stronę w TOP 20.
+     Wtedy właściwą drogą jest odświeżenie w Content Watcherze. */
+  const check = document.getElementById('wr-check')!;
+  let writerData: any = null;
+  let checkTimer: number | undefined;
+  const editorUrl = (id: string) => `/${domain}/content-watcher/edytor/?id=${encodeURIComponent(id)}`;
+
+  async function runCheck() {
+    const keyword = input.value.trim();
+    if (keyword.length < 3) { check.hidden = true; return; }
+    if (!writerData) {
+      try {
+        writerData = await (await fetch(`/${domain}/content-writer/data.json`)).json();
+      } catch {
+        return;
+      }
+    }
+    const result = cannibalization(keyword, writerData);
+    if (!result.pages.length && !result.rankings.length) { check.hidden = true; return; }
+    const link = (row: any) => row.id
+      ? `<a href="${editorUrl(row.id)}">${esc(row.title)}</a> <span class="muted">– odśwież w Content Watcherze</span>`
+      : esc(row.path);
+    check.className = 'wr-alert';
+    check.innerHTML = `<strong>Ta fraza może mieć już swoją stronę.</strong>
+      <ul>
+        ${result.pages.map((row: any) => `<li>Wpis z tą frazą w tytule: ${link(row)}</li>`).join('')}
+        ${result.rankings.map((row: any) => `<li>„${esc(row.keyword)}" – pozycja ${esc(row.position)}: ${link(row)}</li>`).join('')}
+      </ul>
+      <span>Nowy tekst na tę samą frazę będzie konkurował z istniejącym. Załóż projekt tylko, jeśli celujesz w inną intencję.</span>`;
+    check.hidden = false;
+  }
+  input.addEventListener('input', () => {
+    clearTimeout(checkTimer);
+    checkTimer = window.setTimeout(runCheck, 250);
+  });
+  document.querySelectorAll<HTMLButtonElement>('[data-pick]').forEach((button) => button.addEventListener('click', () => {
+    input.value = button.dataset.pick ?? '';
+    input.focus();
+    input.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    runCheck();
+  }));
 
   loadProjects();
 </script>

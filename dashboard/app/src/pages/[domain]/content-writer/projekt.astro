@@ -365,6 +365,13 @@ const latest = latestSnapshot(domain!);
       ${project.status === 'written' ? `<div class="wr-actions"><button class="wr-btn small" type="button" id="wr-write-again">Napisz tekst od nowa z tego briefu</button></div>` : ''}`;
 
     if (project.status === 'written') {
+      // Przy gotowym tekście brief to już tylko ślad decyzji – zwinięty,
+      // żeby pierwszy ekran należał do tekstu.
+      const details = document.createElement('details');
+      details.className = 'wr-details';
+      details.innerHTML = `<summary>Brief, z którego powstał tekst · ${outline.length} sekcji, ${(brief.faq ?? []).length} pytań FAQ</summary>`;
+      [...box.children].forEach((child) => details.appendChild(child));
+      box.appendChild(details);
       el('wr-write-again').addEventListener('click', () => startStage('write'));
       return;
     }
