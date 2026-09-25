@@ -198,3 +198,37 @@ class TestHelpers(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestSerpFallback(unittest.TestCase):
+    """Awaria SerpData: brief idzie na konkurentach z dashboardu (SERP_JSON)."""
+
+    def pipeline(self):
+        args = write.parse_args([
+            "--job", "job-1", "--domain", "grupa-icea.pl", "--stage", "brief",
+            "--keyword", "co to jest adres url", "--dry-run",
+        ])
+        pipeline = write.WriterPipeline(args)
+        pipeline.context = {"title": "co to jest adres url"}
+        return pipeline
+
+    def test_503_z_zapasem_z_dashboardu(self):
+        serp_json = json.dumps({"keyword": "co to jest adres url", "competitors": [
+            {"position": 1, "url": "https://www.lh.pl/pomoc/adres-url-co-to-jest/", "title": "Adres URL"},
+        ]})
+        pipeline = self.pipeline()
+        with mock.patch.dict("os.environ", {"SERP_JSON": serp_json}), \
+                mock.patch.object(write.refresher.research, "serp",
+                                  side_effect=RuntimeError("serpdata: HTTP Error 503")):
+            result = pipeline.step_serp()
+        self.assertEqual(result["payload"]["source"], "dashboard")
+        self.assertEqual(pipeline.context["competitors"][0]["url"], "https://www.lh.pl/pomoc/adres-url-co-to-jest/")
+        self.assertEqual(pipeline.context["serp"], {})
+
+    def test_503_bez_zapasu_przerywa_jak_dotad(self):
+        pipeline = self.pipeline()
+        with mock.patch.dict("os.environ", {"SERP_JSON": "null"}), \
+                mock.patch.object(write.refresher.research, "serp",
+                                  side_effect=RuntimeError("serpdata: HTTP Error 503")):
+            with self.assertRaises(RuntimeError):
+                pipeline.step_serp()

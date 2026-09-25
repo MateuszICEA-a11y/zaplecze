@@ -65,6 +65,8 @@ jobs:
           # brief – przez env, nie argumenty: w treści bywają cudzysłowy i znaki shella.
           RIVALS_JSON: ${{ toJSON(github.event.client_payload.research.rivals) }}
           GAP_JSON: ${{ toJSON(github.event.client_payload.research.gap) }}
+          # Konkurenci z SERP-u policzonego w dashboardzie – zapas na awarię SerpData.
+          SERP_JSON: ${{ toJSON(github.event.client_payload.research.serp) }}
           BRIEF_JSON: ${{ toJSON(github.event.client_payload.brief) }}
           # Fraza i tytuł wpisuje człowiek – WYŁĄCZNIE przez env, `${{ }}` wklejone
           # w skrypt wykonałoby `$(…)` z frazy w shellu runnera z sekretami.

@@ -29,7 +29,7 @@ import {
 } from './cw-api.js';
 import { wpAuthors } from './cw-expert.js';
 import { handleRivals, rivalsSummary } from './cw-rivals.js';
-import { gapSummary, handleSerpGap, normalizeKeyword } from './cw-serp.js';
+import { gapSummary, handleSerpGap, normalizeKeyword, serpCompetitorsSummary } from './cw-serp.js';
 import { acfFieldPayload, postUrl, wpAuth, wpFetch } from './cw-wp.js';
 
 export const WRITER_KINDS = { brief: 'writer_brief', text: 'writer_text' };
@@ -525,6 +525,7 @@ async function startRun(request, env, id, stage) {
   const research = {
     rivals: await rivalsSummary(env, project.domain, key).catch(() => null),
     gap: await gapSummary(env, project.domain, key).catch(() => null),
+    serp: await serpCompetitorsSummary(env, project.domain, key).catch(() => null),
   };
   // Nowy brief zastępuje stary razem z tekstem, który z niego powstał (status
   // projektu idzie za najnowszym przebiegiem). Nowy tekst zeruje wstęp – ten

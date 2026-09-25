@@ -75,6 +75,21 @@ def related_articles(catalog: list[dict], keyword: str, limit: int = RELATED_ART
     return [{"title": row["title"], "url": row["url"]} for _, row in scored[:limit]]
 
 
+def dashboard_serp() -> dict | None:
+    """Konkurenci z SERP-u policzonego w dashboardzie (env SERP_JSON) albo None."""
+    raw = os.environ.get("SERP_JSON", "").strip()
+    if not raw or raw == "null":
+        return None
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        return None
+    rows = [row for row in (data or {}).get("competitors") or [] if isinstance(row, dict) and row.get("url")]
+    if not rows:
+        return None
+    return {"keyword": data.get("keyword"), "competitors": rows}
+
+
 class WriterPipeline(refresher.Pipeline):
     def __init__(self, args):
         super().__init__(args)
@@ -138,6 +153,31 @@ class WriterPipeline(refresher.Pipeline):
             "content": {"hash": "", "text": ""},
         }
         return {"payload": {"keyword": keyword, "stage": self.args.stage, "project_id": self.args.project_id}}
+
+    def step_serp(self):
+        """SERP z SerpData (konkurenci + PAA, AI Overview, frazy powiązane).
+
+        Przy awarii SerpData (503 „DataProxy service is unavailable" potrafi
+        trwać dłużej niż ponowienia w research.serp) brief idzie na konkurentach
+        z analizy policzonej w dashboardzie (SERP_JSON) – bez PAA, ale bez
+        przerywania przebiegu. Brak zapasu = błąd jak dotąd.
+        """
+        try:
+            return super().step_serp()
+        except Exception as err:  # noqa: BLE001
+            fallback = dashboard_serp()
+            if not fallback:
+                raise
+            print(f"  [serp] SerpData niedostępne ({err}) – konkurenci z analizy w dashboardzie")
+            topic = fallback.get("keyword") or self.context["title"]
+            self.context["main_keyword"] = topic
+            self.context["own_keyword"] = None
+            self.context["competitors"] = [{**row, "from_query": "title"} for row in fallback["competitors"]]
+            self.context["serp_drift"] = []
+            self.context["serp"] = {}
+            return {"payload": {"source": "dashboard", "keyword": topic,
+                                "competitors": self.context["competitors"],
+                                "warning": f"SerpData niedostępne: {err}"}}
 
     def step_competitors(self):
         # Odtworzenie z pliku researchu nie może sięgać do sieci po treści.
