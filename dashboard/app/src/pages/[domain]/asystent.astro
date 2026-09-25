@@ -71,14 +71,12 @@ const payload = {
   </div>
 
   <script id="as-data" type="application/json" set:html={JSON.stringify(payload).replace(/</g, '\\u003c')} />
-  <!-- AG Grid Community 36.2 (MIT) – ta sama kopia co w scrape300, licencja obok pliku. -->
-  <script is:inline src="/vendor/ag-grid-community.min.js"></script>
 
   <script>
     import { api, esc, fmtInt } from '../../lib/writer-client';
+    import { createGrid, hasGrid } from '../../lib/grid';
 
     type Any = any;
-    declare const agGrid: Any;
     const root = document.querySelector<HTMLElement>('.as-page')!;
     const domain = root.dataset.domain!;
     const screen = document.getElementById('as-screen')!;
@@ -205,60 +203,13 @@ const payload = {
     const loading = (text: string) => `<p class="as-loading"><span class="as-spin" aria-hidden="true"></span>${text}</p>`;
     const fail = (error: unknown) => `<p class="wr-msg err">${esc((error as Error)?.message ?? String(error))}</p>`;
 
-    /* ---------- AG Grid: motyw z tokenów dashboardu, układ kolumn zapamiętany ---------- */
-    const LOCALE = {
-      page: 'Strona', of: 'z', to: '–', more: 'więcej', pageSizeSelectorLabel: 'Wierszy:', noRowsToShow: 'Brak wierszy – zmień filtry',
-      filterOoo: 'Filtruj…', contains: 'Zawiera', notContains: 'Nie zawiera', equals: 'Równe', notEqual: 'Różne',
-      startsWith: 'Zaczyna się', endsWith: 'Kończy się', blank: 'Puste', notBlank: 'Niepuste', lessThan: 'Mniej niż',
-      greaterThan: 'Więcej niż', lessThanOrEqual: 'Najwyżej', greaterThanOrEqual: 'Co najmniej', inRange: 'W zakresie',
-      thousandSeparator: ' ', decimalSeparator: ',',
-      andCondition: 'ORAZ', orCondition: 'LUB', pinColumn: 'Przypnij kolumnę', pinLeft: 'Do lewej', pinRight: 'Do prawej', noPin: 'Odepnij',
-      autosizeThisColumn: 'Dopasuj szerokość', autosizeAllColumns: 'Dopasuj wszystkie', resetColumns: 'Przywróć kolumny',
-      sortAscending: 'Sortuj rosnąco', sortDescending: 'Sortuj malejąco', sortUnSort: 'Bez sortowania', columnFilter: 'Filtr kolumny', columnChooser: 'Wybierz kolumny',
-    };
-    function gridTheme() {
-      const css = (name: string) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-      const dark = document.documentElement.dataset.theme !== 'light';
-      return agGrid.themeQuartz.withParams({
-        accentColor: css('--accent-blue'), backgroundColor: css('--bg-surface-1'), foregroundColor: css('--ink'), textColor: css('--ink'),
-        borderColor: css('--hairline'), chromeBackgroundColor: css('--bg-surface-2'), headerBackgroundColor: css('--bg-surface-2'),
-        headerTextColor: css('--ink-muted'), headerColumnResizeHandleColor: css('--hairline'), headerColumnBorder: { color: css('--hairline') },
-        rowHoverColor: css('--bg-surface-2'), selectedRowBackgroundColor: css('--accent-blue-soft'), oddRowBackgroundColor: css('--bg-surface-1'),
-        inputBackgroundColor: css('--bg-surface-1'), checkboxCheckedBackgroundColor: css('--accent-blue'), checkboxCheckedBorderColor: css('--accent-blue'),
-        checkboxCheckedShapeColor: css('--on-accent'), checkboxUncheckedBorderColor: css('--ink-faint'), checkboxBorderRadius: 2,
-        inputBorderRadius: 3, borderRadius: 3, wrapperBorderRadius: 3, fontFamily: 'Roobert, Arial, sans-serif', fontSize: 13,
-        headerFontSize: 12, headerFontWeight: 400, spacing: 7, browserColorScheme: dark ? 'dark' : 'light',
-      });
-    }
-    const grids = new Set<Any>();
-    // Przełącznik motywu w nagłówku zmienia data-theme – siatki dostają nowe kolory.
-    new MutationObserver(() => grids.forEach((grid) => grid.setGridOption('theme', gridTheme())))
-      .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-
+    /* ---------- AG Grid (lib/grid.ts): motyw z tokenów, układ kolumn zapamiętany ---------- */
+    const grids = new Set<{ destroy: () => void }>();
     function mountGrid(el: HTMLElement, key: string, options: Any) {
-      const stateKey = `as-grid:${key}`;
-      const save = () => { try { localStorage.setItem(stateKey, JSON.stringify(grid.getColumnState())); } catch { /* prywatny tryb */ } };
-      const grid = agGrid.createGrid(el, {
-        theme: gridTheme(),
-        defaultColDef: { sortable: true, resizable: true, filter: 'agTextColumnFilter', floatingFilter: true, minWidth: 80, suppressHeaderMenuButton: false },
-        rowHeight: 52, headerHeight: 40, floatingFiltersHeight: 36,
-        pagination: true, paginationPageSize: 25, paginationPageSizeSelector: [25, 50, 100, 500],
-        domLayout: 'autoHeight', enableCellTextSelection: true, ensureDomOrder: true, suppressNoRowsOverlay: false,
-        localeText: LOCALE,
-        onColumnMoved: save, onSortChanged: save, onColumnPinned: save, onColumnVisible: save,
-        onColumnResized: (event: Any) => { if (event.finished) save(); },
-        ...options,
-      });
-      try {
-        const saved = JSON.parse(localStorage.getItem(stateKey) ?? 'null');
-        if (Array.isArray(saved)) grid.applyColumnState({ state: saved, applyOrder: true });
-      } catch { /* zepsuty zapis – zostaje układ domyślny */ }
-      grids.add(grid);
-      el.closest('.as-grid-wrap')?.querySelector('[data-reset]')?.addEventListener('click', () => {
-        localStorage.removeItem(stateKey);
-        grid.resetColumnState();
-      });
-      return grid;
+      const handle = createGrid(el, { rowHeight: 52, paginationPageSizeSelector: [25, 50, 100, 500], ...options }, `asystent:${key}`);
+      grids.add(handle);
+      el.closest('.as-grid-wrap')?.querySelector('[data-reset]')?.addEventListener('click', handle.resetLayout);
+      return handle.grid;
     }
     const gridShell = (id: string, chips: string) => `
       <div class="as-grid-wrap">
@@ -665,6 +616,7 @@ const payload = {
       if (/^[1-9]$/.test(event.key)) screen.querySelector<HTMLAnchorElement>(`a.as-choice[data-key="${event.key}"]`)?.click();
       if (event.key === 'Escape') screen.querySelector<HTMLAnchorElement>('.as-back')?.click();
     });
-    render();
+    if (hasGrid()) render();
+    else document.addEventListener('DOMContentLoaded', () => render(), { once: true });
   </script>
 </Layout>

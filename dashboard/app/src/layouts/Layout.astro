@@ -70,6 +70,9 @@ const SECTION_ICONS: Record<string, string> = {
       if (localStorage.getItem('icea-collapsed') === '1')
         document.documentElement.classList.add('collapsed');
     </script>
+    <!-- AG Grid Community 36.2 (MIT, licencja w /vendor) – wszystkie tabele dashboardu. defer:
+         gotowy przed skryptami modułów stron (te też są odroczone, w kolejności dokumentu). -->
+    <script is:inline defer src="/vendor/ag-grid-community.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Przejdź do treści</a>
