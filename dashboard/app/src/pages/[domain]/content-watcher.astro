@@ -799,25 +799,25 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   .cw-kpi[data-tone] :global(.stat-value) { color: var(--tone-fg); }
   .cw-list-head { align-items: flex-end; }
   .cw-list-head > div:first-child { display: flex; flex-direction: column; gap: 5px; }
-  .cw-automation { display: flex; align-items: center; gap: 9px; color: var(--ink-faint); font-size: .76rem; }
+  .cw-automation { display: flex; align-items: center; gap: 9px; color: var(--ink-faint); font-size: .82rem; }
   .cw-automation b { padding: 4px 9px; border-radius: 999px; background: var(--bg-surface-3); color: var(--ink-faint); }
   .cw-controls {
     display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
     margin: 12px 0 10px;
   }
   .fchip span { color: var(--ink-faint); margin-left: 3px; }
-  .cw-pillar { display: flex; align-items: center; gap: 8px; color: var(--ink-faint); font-size: .76rem; }
+  .cw-pillar { display: flex; align-items: center; gap: 8px; color: var(--ink-faint); font-size: .82rem; }
   .cw-pillar select {
     border: 1px solid var(--hairline); border-radius: 2px; padding: 6px 28px 6px 9px;
     background: var(--bg-surface-1); color: var(--ink); font: inherit;
   }
   .cw-table { min-width: 980px; }
   .cw-table td { vertical-align: middle; }
-  .cw-table small { display: block; color: var(--ink-faint); font-size: .69rem; margin-top: 4px; white-space: nowrap; }
+  .cw-table small { display: block; color: var(--ink-faint); font-size: .76rem; margin-top: 4px; white-space: nowrap; }
   .cw-score-cell { text-align: left; }
   .cw-urgency {
     display: inline-flex; padding: 4px 9px; border-radius: 999px; background: var(--bg-surface-3);
-    color: var(--ink-muted); font-size: .72rem; font-weight: 600; white-space: nowrap;
+    color: var(--ink-muted); font-size: .78rem; font-weight: 600; white-space: nowrap;
   }
   .cw-urgency.critical { color: var(--status-err-fg); background: var(--status-err-bg); }
   .cw-urgency.high { color: var(--status-warn-fg); background: var(--status-warn-bg); }
@@ -829,23 +829,23 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   .cw-title-row > a:hover { color: var(--accent-blue); }
   .cw-title-row button {
     border: 0; border-bottom: 1px solid var(--hairline); padding: 1px 0; background: none;
-    color: var(--ink-faint); font: inherit; font-size: .68rem; cursor: pointer; white-space: nowrap;
+    color: var(--ink-faint); font: inherit; font-size: .76rem; cursor: pointer; white-space: nowrap;
   }
   .cw-title-row button:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
   /* Reguła `.cw-title-row > a { flex: 1 }` dotyczy tytułu wpisu – link do
      edytora musi się z niej wypisać, inaczej rozpycha wiersz. */
   .cw-title-row > a.cw-editor-link {
     flex: 0 0 auto; border-bottom: 1px solid var(--hairline); padding: 1px 0;
-    color: var(--ink-faint); font-size: .68rem; font-weight: 600; white-space: nowrap;
+    color: var(--ink-faint); font-size: .76rem; font-weight: 600; white-space: nowrap;
   }
   .cw-title-row > a.cw-editor-link:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
-  .cw-content > span { display: block; color: var(--ink-faint); font-size: .7rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cw-content > span { display: block; color: var(--ink-faint); font-size: .76rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   /* Daty w dwóch osobnych, sortowalnych kolumnach. Chip aktualizacji nosi
      kolor kubełka wieku – ten sam podział, co karty u góry strony. */
   .cw-date-th, .cw-date { text-align: left; }
   .cw-date small { white-space: nowrap; }
   .cw-chip {
-    display: inline-block; padding: 4px 9px; border-radius: 2px; font-size: .74rem;
+    display: inline-block; padding: 4px 9px; border-radius: 2px; font-size: .8rem;
     font-variant-numeric: tabular-nums; white-space: nowrap;
   }
   .cw-chip.pub { background: var(--bg-surface-3); color: var(--ink-muted); }
@@ -858,13 +858,13 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   .cw-delta.good { color: var(--status-ok); font-weight: 600; }
   .cw-status {
     display: inline-flex; padding: 4px 9px; border-radius: 999px; background: var(--bg-surface-3);
-    color: var(--ink-muted); font-size: .72rem; font-weight: 600; white-space: nowrap;
+    color: var(--ink-muted); font-size: .78rem; font-weight: 600; white-space: nowrap;
   }
   .cw-status.not-indexed { color: var(--status-err-fg); background: var(--status-err-bg); }
   .cw-status.no-data { color: var(--ink-faint); background: var(--bg-surface-3); }
   .cw-next button {
     border: 1px solid var(--hairline); border-radius: 2px; background: var(--bg-surface-2); color: var(--ink);
-    font: inherit; font-size: .74rem; font-weight: 600; padding: 6px 10px; cursor: pointer; white-space: nowrap;
+    font: inherit; font-size: .8rem; font-weight: 600; padding: 6px 10px; cursor: pointer; white-space: nowrap;
   }
   .cw-dialog {
     width: min(1000px, calc(100vw - 32px)); max-height: min(800px, calc(100vh - 32px)); padding: 0;
@@ -872,40 +872,40 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   }
   .cw-dialog::backdrop { background: rgba(0, 0, 0, .7); backdrop-filter: blur(2px); }
   .cw-dialog-head { display: flex; justify-content: space-between; gap: 20px; padding: 22px 24px; border-bottom: 1px solid var(--hairline); }
-  .cw-dialog-head span { color: var(--accent-blue); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+  .cw-dialog-head span { color: var(--accent-blue); font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
   .cw-dialog-head h2 { margin: 4px 0; font: 600 1.35rem var(--font-display); }
-  .cw-dialog-head a { color: var(--ink-faint); font-size: .75rem; }
+  .cw-dialog-head a { color: var(--ink-faint); font-size: .81rem; }
   .cw-dialog-head button { align-self: flex-start; border: 0; background: transparent; color: var(--ink-faint); font-size: 1.7rem; cursor: pointer; }
   .cw-dialog-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 28px; padding: 24px; overflow-y: auto; }
-  .cw-dialog h3 { margin: 0 0 12px; font-size: .84rem; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-faint); }
+  .cw-dialog h3 { margin: 0 0 12px; font-size: .91rem; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-faint); }
   .cw-dialog h3:not(:first-child) { margin-top: 24px; }
   .cw-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin: 0; }
   .cw-facts div { padding: 10px 12px; background: var(--bg-surface-2); min-width: 0; }
-  .cw-facts dt { color: var(--ink-faint); font-size: .68rem; }
-  .cw-facts dd { margin: 4px 0 0; color: var(--ink); font-size: .79rem; overflow-wrap: anywhere; }
-  .cw-facts code { font-size: .68rem; color: var(--ink-muted); }
-  .cw-reasons { margin: 0; padding-left: 20px; color: var(--ink-muted); font-size: .82rem; line-height: 1.65; }
+  .cw-facts dt { color: var(--ink-faint); font-size: .76rem; }
+  .cw-facts dd { margin: 4px 0 0; color: var(--ink); font-size: .85rem; overflow-wrap: anywhere; }
+  .cw-facts code { font-size: .76rem; color: var(--ink-muted); }
+  .cw-reasons { margin: 0; padding-left: 20px; color: var(--ink-muted); font-size: .89rem; line-height: 1.65; }
   .cw-keywords { display: flex; flex-direction: column; gap: 1px; }
   .cw-keywords :global(.cw-kw) {
     display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: baseline;
-    padding: 7px 10px; background: var(--bg-surface-2); font-size: .79rem;
+    padding: 7px 10px; background: var(--bg-surface-2); font-size: .85rem;
   }
   .cw-keywords :global(.cw-kw span) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .cw-keywords :global(.cw-kw b) { color: var(--ink-muted); font-size: .72rem; font-weight: 600; white-space: nowrap; }
+  .cw-keywords :global(.cw-kw b) { color: var(--ink-muted); font-size: .78rem; font-weight: 600; white-space: nowrap; }
   /* Pozycje 11–30 to cel reoptymalizacji – wyróżnione, reszta jest kontekstem. */
   .cw-keywords :global(.cw-kw b.near) { color: var(--status-warn-fg); }
-  .cw-keywords :global(.cw-kw small) { color: var(--ink-faint); font-size: .69rem; white-space: nowrap; min-width: 92px; text-align: right; }
-  .cw-keywords :global(.cw-kw-empty) { margin: 8px 0 0; color: var(--ink-faint); font-size: .74rem; }
+  .cw-keywords :global(.cw-kw small) { color: var(--ink-faint); font-size: .76rem; white-space: nowrap; min-width: 92px; text-align: right; }
+  .cw-keywords :global(.cw-kw-empty) { margin: 8px 0 0; color: var(--ink-faint); font-size: .8rem; }
   .cw-score-large { display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px; }
   .cw-score-note {
     margin: 0 0 18px; padding-bottom: 14px; border-bottom: 1px solid var(--hairline);
-    color: var(--ink-faint); font-size: .72rem; line-height: 1.5;
+    color: var(--ink-faint); font-size: .78rem; line-height: 1.5;
   }
   .cw-score-large b { font: 600 3.5rem/1 var(--font-display); }
   .cw-score-large span { color: var(--ink-faint); }
   .cw-breakdown { display: flex; flex-direction: column; gap: 16px; }
   .cw-next { margin-top: 26px; padding: 16px; border: 1px dashed var(--hairline); }
-  .cw-next p { color: var(--ink-faint); font-size: .76rem; line-height: 1.5; }
+  .cw-next p { color: var(--ink-faint); font-size: .82rem; line-height: 1.5; }
   .cw-next button { width: 100%; opacity: .5; cursor: not-allowed; }
   @media (max-width: 1100px) {
     .cw-kpis { grid-template-columns: repeat(2, 1fr); }
@@ -938,16 +938,16 @@ const baseline = items.filter((item) => item.hash_baseline).length;
 <!-- Rozbicie wyniku buduje JS przy otwarciu dialogu, więc te węzły nie mają
      `data-astro-cid` i scoped style ich nie łapie – stąd `is:global`. -->
 <style is:global>
-  .cw-part { display: flex; flex-direction: column; gap: 6px; font-size: .76rem; }
+  .cw-part { display: flex; flex-direction: column; gap: 6px; font-size: .82rem; }
   .cw-part.unavailable { opacity: .5; }
   .cw-part-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
   .cw-part-head span { color: var(--ink); font-weight: 600; }
-  .cw-part-head strong { color: var(--ink-muted); font-size: .72rem; font-weight: 600; white-space: nowrap; }
+  .cw-part-head strong { color: var(--ink-muted); font-size: .78rem; font-weight: 600; white-space: nowrap; }
   .cw-part i { height: 7px; overflow: hidden; background: var(--bg-surface-3); border-radius: 2px; }
   .cw-part i b { display: block; height: 100%; background: var(--accent-blue); }
-  .cw-part small { color: var(--ink-faint); font-size: .69rem; line-height: 1.45; }
+  .cw-part small { color: var(--ink-faint); font-size: .76rem; line-height: 1.45; }
   /* Dialog scrolluje się w pionie, więc dymek wyrównany do środka badge'a
      wychodziłby poza krawędź i zostałby przycięty – rozwijamy go w prawo. */
-  .cw-part .info-tip { left: 0; transform: none; max-width: 300px; font-size: .72rem; }
+  .cw-part .info-tip { left: 0; transform: none; max-width: 300px; font-size: .78rem; }
   .cw-part .info-tip::after { left: 8px; transform: none; }
 </style>

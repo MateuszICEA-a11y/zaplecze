@@ -86,7 +86,7 @@ const measuredAt = (details as { date?: string }).date ?? null;
                       <td class="num">{row.searches !== null ? fmtInt(row.searches) : '–'}</td>
                       <td class="num">{row.impressions !== null ? fmtInt(row.impressions) : '–'}</td>
                       <td class="num">{row.position}</td>
-                      <td class="muted">
+                      <td>
                         {row.ranking_url ? (
                           <a href={row.ranking_url} target="_blank" rel="noopener">
                             {row.ranking_title ?? (row.ranking_url.replace(/^https?:\/\/(www\.)?[^/]+/, '').replace(/^\/$/, 'strona główna'))}
@@ -210,7 +210,7 @@ const measuredAt = (details as { date?: string }).date ?? null;
     ? `<a href="${editorUrl(target.catalog_id)}">${esc(target.title)}</a>`
     : target?.url ? `<a href="${esc(target.url)}" target="_blank" rel="noopener">${esc(target.title ?? target.url)}</a>` : '';
 
-  const judgeNote = (result: any) => result.judge?.basis ? `<small class="wr-judge">${esc(result.judge.basis)}</small>` : '';
+  const judgeNote = (result: any) => result.judge?.basis ? `<small class="wr-judge" title="${esc(result.judge.basis)}">${esc(result.judge.basis)}</small>` : '';
 
   function recCell(result: any) {
     const badge = `<span class="wr-status ${REC_TONE[result.action] ?? 'idle'}">${REC_LABEL[result.action] ?? result.action}</span>`;
