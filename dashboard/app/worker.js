@@ -3,6 +3,7 @@ import { checkMutationOrigin, contentDomains, routeContentWatcher, timingSafeEqu
 import { getSenutoToken, jwtExpiry, saveSenutoToken } from './senuto-token.js';
 import { routeWriter } from './cw-writer.js';
 import { routeSemantic, scheduledSync } from './cw-semantic.js';
+import { routeCompetitors, syncCompetitors } from './cw-competitors.js';
 
 /**
  * Worker dashboardu: cała aplikacja za Basic Auth (dashboard zawiera dane
@@ -146,6 +147,11 @@ export default {
       domains: contentDomains(env),
     });
     if (semantic) return semantic;
+    const competitors = await routeCompetitors(request, env, {
+      checkOrigin: checkMutationOrigin,
+      domains: contentDomains(env),
+    });
+    if (competitors) return competitors;
     const writer = await routeWriter(request, env, { ctx });
     if (writer) return writer;
     const contentWatcher = await routeContentWatcher(request, env, { ctx });
@@ -168,6 +174,24 @@ export default {
   // Cron (wrangler.toml → [triggers]): indeks znaczeniowy wpisów po dziennym
   // przebiegu collectora i buildzie – przelicza tylko zmienione wpisy.
   async scheduled(_event, env, ctx) {
-    ctx.waitUntil(scheduledSync(env, [...contentDomains(env).keys()]));
+    const domains = [...contentDomains(env).keys()];
+    ctx.waitUntil((async () => {
+      await scheduledSync(env, domains);
+      // Po indeksie naszych wpisów – porównanie konkurencji z aktualnym stanem.
+      for (const domain of domains) {
+        // Kilka porcji po SYNC_LIMIT – nowe wpisy konkurencji to kilka–kilkanaście
+        // dziennie, więc zwykle kończy się na pierwszej.
+        for (let round = 0; round < 4; round++) {
+          try {
+            const result = await syncCompetitors(env, domain);
+            console.log('competitors sync', domain, JSON.stringify(result));
+            if (!result.remaining) break;
+          } catch (error) {
+            console.log('competitors sync', domain, error instanceof Error ? error.message : String(error));
+            break;
+          }
+        }
+      }
+    })());
   },
 };

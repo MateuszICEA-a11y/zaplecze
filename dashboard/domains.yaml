@@ -100,6 +100,23 @@ domains:
       # Okres ochronny po realnej zmianie treści. Rok był przesadą – wpis wraca
       # do oceny po kwartale, a o pilności decyduje wiek × wyniki (klik./wyśw.).
       min_age_days: 90
+    competitors:
+      # Treści konkurencji z sitemap – nowe wpisy i tematy, których nie mamy
+      # (porównanie z naszymi wpisami po embeddingach robi Worker).
+      # include/exclude = wyrażenia regularne na ścieżce adresu.
+      enabled: true
+      sites:
+        - host: widoczni.com
+          sitemaps: [https://widoczni.com/sitemap.xml/]
+          include: ['^/blog/[^/]+/?$', '^/slownik-pojec/[^/]+/?$']
+        - host: delante.pl
+          sitemaps: [https://delante.pl/post-sitemap.xml, https://delante.pl/post-sitemap2.xml]
+          include: ['^/[^/]+/?$']
+          # ogłoszenia agencji, oferty pracy i cotygodniowe „aktualności SEM”
+          exclude: ['^/blog/?$', '^/praca', '^/aktualnosci-', '^/delante-']
+        - host: traffictrends.pl
+          sitemaps: [https://traffictrends.pl/sitemap.xml]
+          include: ['^/blog/[^/]+/?$']
     content_writer:
       # Nowe artykuły od zera: fraza → research → brief → tekst → szkic w WP.
       # Wymaga domeny w CW_DOMAINS (wrangler.toml) i migracji D1 0011.

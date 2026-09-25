@@ -116,13 +116,19 @@ const measuredAt = (details as { date?: string }).date ?? null;
             <p class="wr-empty">Brak podpowiedzi – w danych nie ma fraz z pozycją 11–50 bez własnego wpisu.</p>
           )
         }
-        <p class="wr-msg">
-          Rekomendacja łączy podobieństwo znaczeniowe frazy do tytułów wpisów (embeddingi) z tym, co dziś na nią
-          rankuje. „Odśwież” – wpis o tym samym temacie (podobieństwo od 75%). „Sprawdź” – wpis rankujący albo
-          pokrewny: ten sam temat innymi słowami albo inna intencja, decyduje redaktor. Strona główna łapiąca frazę
-          przy okazji nie blokuje nowego tekstu.
-        </p>
       </div>
+    </section>
+
+    <section class="wr-section">
+      <div class="wr-section-head">
+        <h2>Konkurencja</h2>
+        <span class="wr-note">sitemapy odczytywane codziennie rano</span>
+      </div>
+      <p class="wr-lede">
+        Wpisy z sitemap konkurentów, porównane z naszymi wpisami po znaczeniu tytułu (embeddingi, te same progi co wyżej).
+        Tytuł bierzemy z adresu, a dla nowych wpisów – ze strony. Kliknij konkurenta, żeby zawęzić listę.
+      </p>
+      <div id="wr-competitors"><p class="wr-empty">Wczytuję wpisy konkurencji…</p></div>
     </section>
 
     <section class="wr-section">
@@ -140,6 +146,7 @@ const measuredAt = (details as { date?: string }).date ?? null;
 <script>
   import { api, esc, fmtDateTime, STATUS_LABEL, STATUS_TONE } from '../../lib/writer-client';
   import { cannibalization } from '../../lib/writer-gaps.js';
+  import { mountCompetitors } from '../../lib/writer-competitors';
 
   const root = document.querySelector<HTMLElement>('.wr-page')!;
   const domain = root.dataset.domain!;
@@ -299,12 +306,13 @@ const measuredAt = (details as { date?: string }).date ?? null;
     clearTimeout(checkTimer);
     checkTimer = window.setTimeout(runCheck, 600);
   });
-  document.querySelectorAll<HTMLButtonElement>('[data-pick]').forEach((button) => button.addEventListener('click', () => {
-    input.value = button.dataset.pick ?? '';
+  const pickPhrase = (phrase: string) => {
+    input.value = phrase;
     input.focus();
     input.scrollIntoView({ block: 'center', behavior: 'smooth' });
     runCheck();
-  }));
+  };
+  document.querySelectorAll<HTMLButtonElement>('#wr-suggestions [data-pick]').forEach((button) => button.addEventListener('click', () => pickPhrase(button.dataset.pick ?? '')));
 
   /* Rekomendacje dla podpowiedzi – jedno wywołanie na całą listę. */
   const rows = [...document.querySelectorAll<HTMLTableRowElement>('#wr-suggestions tr[data-phrase]')];
@@ -374,4 +382,5 @@ const measuredAt = (details as { date?: string }).date ?? null;
 
   loadProjects();
   loadRecommendations();
+  mountCompetitors(document.getElementById('wr-competitors')!, { domain, pick: pickPhrase });
 </script>

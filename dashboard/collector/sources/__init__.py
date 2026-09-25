@@ -17,7 +17,7 @@ class SourceError(Exception):
         self.message = message
 
 
-from . import senuto, dataforseo_backlinks, ahrefs, gsc, ga4, bing, smsapi, openrouter, clarity, leads, cloudflare_ai, indexing, wordpress  # noqa: E402
+from . import senuto, dataforseo_backlinks, ahrefs, gsc, ga4, bing, smsapi, openrouter, clarity, leads, cloudflare_ai, indexing, wordpress, competitors  # noqa: E402
 
 # Źródła per domena (klucz = sekcja w domains.yaml i w snapshotcie)
 DOMAIN_SOURCES = {
@@ -32,6 +32,7 @@ DOMAIN_SOURCES = {
     "indexing": indexing.fetch,
     "leads": leads.fetch,
     "wordpress": wordpress.fetch,
+    "competitors": competitors.fetch,
 }
 
 # Źródła per konto (sekcja `global` w domains.yaml, zapis do data/_global/)

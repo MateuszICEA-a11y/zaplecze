@@ -350,6 +350,17 @@ export function loadDetails(dirId: string): DomainDetails {
   }
 }
 
+/** Wpisy konkurencji z sitemap (źródło `competitors` collectora). */
+export function loadCompetitors(dirId: string): { generated_at?: string; sites: unknown[]; items: Record<string, unknown>[] } {
+  const path = resolve(DATA_DIR, dirId, 'competitors.json');
+  if (!existsSync(path)) return { sites: [], items: [] };
+  try {
+    return JSON.parse(readFileSync(path, 'utf8'));
+  } catch {
+    return { sites: [], items: [] };
+  }
+}
+
 /* ---------- Content Watcher – katalog treści z repozytorium ---------- */
 
 export interface ContentCatalogItem {
