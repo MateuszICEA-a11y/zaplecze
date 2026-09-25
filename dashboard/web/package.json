@@ -1,0 +1,38 @@
+{
+  "name": "dashboard-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dashboard zaplecza – nowy front (Next.js + TailAdmin), statyczny eksport do out/",
+  "scripts": {
+    "dev": "next dev -p 4410",
+    "build": "next build && node scripts/flatten-segments.mjs",
+    "preview": "node scripts/preview.mjs",
+    "typecheck": "tsc --noEmit",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "dependencies": {
+    "@ag-grid-community/locale": "^36.2.0",
+    "ag-grid-community": "^36.2.0",
+    "ag-grid-react": "^36.2.0",
+    "apexcharts": "^7.6.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.48.0",
+    "next": "^16.3.6",
+    "react": "^19.3.0",
+    "react-apexcharts": "^2.1.1",
+    "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^3.7.0",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "playwright-core": "^1.63.0",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.9.3"
+  }
+}
