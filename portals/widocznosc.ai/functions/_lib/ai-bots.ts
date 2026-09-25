@@ -1,5 +1,6 @@
 /**
- * 13 botów AI indeksujących, podzielonych na 4 kategorie funkcjonalne.
+ * 14 botów AI (user-agentów i tokenów robots.txt), podzielonych na 4 kategorie funkcjonalne.
+ * Stan dokumentacji dostawców: 2026-09-25.
  * Źródło: artykuł GPTBot/ClaudeBot/PerplexityBot Michała Ziacha + dokumentacje
  * OpenAI / Anthropic / Google / Perplexity / Apple / Common Crawl.
  *
@@ -8,13 +9,30 @@
 
 export type BotCategory = 'training' | 'search' | 'on-demand' | 'common-crawl';
 
+/**
+ * Czy bot według dokumentacji dostawcy stosuje się do robots.txt.
+ * - `honored` – tak (domyślnie),
+ * - `may-ignore` – dostawca pisze, że reguły robots.txt mogą go nie obejmować
+ *   (ChatGPT-User: „robots.txt rules may not apply”, Perplexity-User:
+ *   „generally ignores robots.txt rules”) – realną blokadę daje dopiero WAF,
+ * - `undeclared` – dostawca nie deklaruje.
+ */
+export type RobotsTxtCompliance = 'honored' | 'may-ignore' | 'undeclared';
+
 export type BotDefinition = {
   /** Nazwa wyświetlana */
   name: string;
   /** Główny token user-agent w robots.txt (case-insensitive matching) */
   userAgent: string;
-  /** Alternatywne tokeny (np. ClaudeBot ma `anthropic-ai`) */
+  /** Alternatywne tokeny, które dostawca nadal honoruje – liczone jako reguła dla bota */
   aliases?: string[];
+  /**
+   * Przestarzałe tokeny (legacy) – dostawca już ich nie używa, więc NIE są liczone
+   * jako reguła dla bota. Służą tylko do wykrycia i ostrzeżenia w raporcie.
+   */
+  legacyTokens?: string[];
+  /** Zgodność z robots.txt wg dokumentacji dostawcy (domyślnie `honored`) */
+  robotsTxt?: RobotsTxtCompliance;
   owner: string;
   category: BotCategory;
   /** Krótki opis funkcji (bezokolicznik PL) */
@@ -37,7 +55,7 @@ export const CATEGORY_DESCRIPTIONS: Record<BotCategory, string> = {
   search:
     'Indeksują stronę na żywo. Jeśli je zablokujesz, znikniesz z gotowych odpowiedzi wyszukiwarek AI.',
   'on-demand':
-    'Pobierają dane w czasie rzeczywistym tylko wtedy, gdy użytkownik wpisze zapytanie zawierające link do Twojej strony.',
+    'Pobierają stronę na potrzeby konkretnej rozmowy lub akcji użytkownika (albo, jak OAI-AdsBot, sprawdzają stronę docelową reklamy). Uwaga: według dokumentacji OpenAI i Perplexity ich boty ChatGPT-User i Perplexity-User mogą nie stosować się do robots.txt – realnie zatrzyma je dopiero reguła na zaporze (WAF). Claude-User respektuje robots.txt.',
   'common-crawl':
     'Zbierają dane do potężnego, otwartego archiwum (Common Crawl), z którego korzysta większość twórców dużych modeli AI na świecie.',
 };
@@ -48,14 +66,14 @@ export const AI_BOTS: BotDefinition[] = [
     userAgent: 'GPTBot',
     owner: 'OpenAI',
     category: 'training',
-    purpose: 'Trening modeli GPT-5+',
+    purpose: 'Trening modeli bazowych OpenAI (GPT-6 i kolejnych)',
     impact: 'Długoterminowy – nowe wersje GPT',
     critical: true,
   },
   {
     name: 'ClaudeBot',
     userAgent: 'ClaudeBot',
-    aliases: ['anthropic-ai'],
+    legacyTokens: ['anthropic-ai'],
     owner: 'Anthropic',
     category: 'training',
     purpose: 'Trening modeli Claude',
@@ -102,25 +120,36 @@ export const AI_BOTS: BotDefinition[] = [
     userAgent: 'ChatGPT-User',
     owner: 'OpenAI',
     category: 'on-demand',
-    purpose: 'Fetch on-demand (browse with web)',
-    impact: 'Bieżący – per fetch użytkownika',
+    purpose: 'Pobieranie strony na potrzeby rozmowy lub akcji użytkownika (ChatGPT, GPT-y)',
+    impact: 'Bieżący – robots.txt może go nie obejmować, blokada tylko przez WAF',
+    robotsTxt: 'may-ignore',
   },
   {
     name: 'Claude-User',
     userAgent: 'Claude-User',
-    aliases: ['Claude-Web'],
+    legacyTokens: ['Claude-Web'],
     owner: 'Anthropic',
     category: 'on-demand',
-    purpose: 'Fetch on-demand w Claude',
-    impact: 'Bieżący',
+    purpose: 'Pobieranie strony na żądanie użytkownika Claude',
+    impact: 'Bieżący – respektuje robots.txt',
   },
   {
     name: 'Perplexity-User',
     userAgent: 'Perplexity-User',
     owner: 'Perplexity',
     category: 'on-demand',
-    purpose: 'Fetch on-demand (deep research)',
-    impact: 'Bieżący',
+    purpose: 'Pobieranie strony na żądanie użytkownika Perplexity',
+    impact: 'Bieżący – z reguły ignoruje robots.txt, blokada tylko przez WAF',
+    robotsTxt: 'may-ignore',
+  },
+  {
+    name: 'OAI-AdsBot',
+    userAgent: 'OAI-AdsBot',
+    owner: 'OpenAI',
+    category: 'on-demand',
+    purpose: 'Weryfikacja stron docelowych reklam w ChatGPT',
+    impact: 'Dotyczy tylko reklamodawców; dane nie służą do trenowania',
+    robotsTxt: 'undeclared',
   },
   {
     name: 'CCBot',

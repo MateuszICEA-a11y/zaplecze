@@ -14,12 +14,12 @@ const aiBotsSchema = buildGraph(
     slug: 'ai-bots-check',
     name: 'Dostęp botów AI – widocznosc.ai',
     description:
-      'Bezpłatne narzędzie widocznosc.ai sprawdzające, które z 13 robotów AI (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot i inne) mają dostęp do strony. Diagnoza pliku robots.txt, nagłówka X-Robots-Tag, meta robots oraz blokad WAF/CDN po User-Agencie.',
+      `Bezpłatne narzędzie widocznosc.ai sprawdzające, które z ${AI_BOTS.length} robotów AI (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot i inne) mają dostęp do strony. Diagnoza pliku robots.txt, nagłówka X-Robots-Tag, meta robots oraz blokad WAF/CDN po User-Agencie.`,
     featureList: [
       `Weryfikacja ${AI_BOTS.length} botów AI`,
       'Boty trenujące modele (GPTBot, ClaudeBot, Google-Extended)',
       'Boty wyszukiwarek AI (OAI-SearchBot, PerplexityBot, Claude-SearchBot)',
-      'Boty on-demand (ChatGPT-User, Claude-User, Perplexity-User)',
+      'Boty na żądanie (ChatGPT-User, Claude-User, Perplexity-User, OAI-AdsBot)',
       'Common Crawl + inne crawlery (CCBot, Applebot-Extended, GoogleOther)',
       'Wykrywanie blokad WAF/CDN po User-Agencie bota',
       'Kontrola nagłówka X-Robots-Tag i meta robots (noindex, noai)',
@@ -36,7 +36,7 @@ const aiBotsSchema = buildGraph(
 
 <Layout
   title="Dostęp botów AI – robots.txt, nagłówki i blokady WAF"
-  description="Sprawdź, które z 13 robotów AI (m.in. GPTBot, ClaudeBot, PerplexityBot, Google-Extended) mają dostęp do Twojej strony. Diagnoza robots.txt, nagłówka X-Robots-Tag, meta robots i blokad WAF/CDN. Darmowe, bez logowania."
+  description={`Sprawdź, które z ${AI_BOTS.length} robotów AI (m.in. GPTBot, ClaudeBot, PerplexityBot, Google-Extended) mają dostęp do Twojej strony. Diagnoza robots.txt, nagłówka X-Robots-Tag, meta robots i blokad WAF/CDN. Darmowe, bez logowania.`}
 >
   <script type="application/ld+json" is:inline set:html={aiBotsSchema} />
 
@@ -57,7 +57,7 @@ const aiBotsSchema = buildGraph(
             Czy <span class="tool-hero-accent">boty AI</span> mają dostęp do Twojej strony?
           </h1>
           <p class="tool-hero-copy">
-            Sprawdzamy Twój plik <code class="font-mono text-sm">robots.txt</code> pod kątem 13 najważniejszych
+            Sprawdzamy Twój plik <code class="font-mono text-sm">robots.txt</code> pod kątem {AI_BOTS.length} najważniejszych
             robotów skanujących sztucznej inteligencji (m.in. GPTBot, ClaudeBot, PerplexityBot, Google-Extended,
             CCBot), a dodatkowo samą stronę – nagłówki, meta robots i to, czy zapora WAF nie odrzuca ruchu
             botów. Odbierz wynik bez konieczności logowania.
@@ -106,7 +106,7 @@ const aiBotsSchema = buildGraph(
     <!-- Default bots overview – pokazane PRZED submit -->
     <section id="default-overview" class="tool-overview">
       <div class="content-container">
-        <h2 class="display-xl tool-overview-title">13 botów AI w 4 kategoriach funkcjonalnych</h2>
+        <h2 class="display-xl tool-overview-title">{AI_BOTS.length} botów AI w 4 kategoriach funkcjonalnych</h2>
         <p class="text-ink tool-overview-copy mt-6 max-w-3xl text-lg leading-relaxed">
           Każdy z robotów AI ma własny identyfikator sieciowy (tzw. <code class="font-mono text-sm"
             >User-agent</code
@@ -811,6 +811,7 @@ const aiBotsSchema = buildGraph(
       purpose: string;
       impact: string;
       critical: boolean;
+      robotsTxt?: 'honored' | 'may-ignore' | 'undeclared';
       allowed: boolean;
       matchedUserAgent: string | null;
       probe?: { verdict: ProbeVerdict; status: number | null; note: string };
@@ -989,12 +990,17 @@ const aiBotsSchema = buildGraph(
               Serwer: ${escapeHtml(VERDICT_LABEL[bot.probe.verdict])}${bot.probe.status ? ` (HTTP ${bot.probe.status})` : ''}
             </div>`
           : '';
+        const robotsNoteHtml =
+          !bot.allowed && bot.robotsTxt === 'may-ignore'
+            ? `<div class="bot-result-probe is-unknown">Reguła w robots.txt może nie zadziałać – ten bot według dostawcy nie zawsze stosuje się do robots.txt.</div>`
+            : '';
         return `
           <div class="bot-result-row ${rowClass}">
             <div class="bot-result-status ${statusClass}">${statusSym}</div>
             <div>
               <div class="bot-result-name">${escapeHtml(bot.name)}${bot.critical ? ' <span style="color:#ef4444;font-size:10px;font-weight:600">★ KRYT.</span>' : ''}</div>
               <div class="bot-result-owner">${escapeHtml(bot.owner)} · robots.txt: ${escapeHtml(matched)}</div>
+              ${robotsNoteHtml}
               ${probeHtml}
             </div>
             <span class="bot-result-tag">${escapeHtml(bot.categoryLabel)}</span>

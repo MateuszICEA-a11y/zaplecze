@@ -1,5 +1,5 @@
 /**
- * AI Bots Check – sprawdza, które z 13 botów AI mają dostęp do strony.
+ * AI Bots Check – sprawdza, które z 14 botów AI mają dostęp do strony.
  *
  * Dwie warstwy, bo robots.txt jest tylko deklaracją:
  *   1. robots.txt – parsowanie dyrektyw dla każdego bota,
@@ -9,13 +9,18 @@
  * Endpoint: POST /api/tools/ai-bots-check
  * Body: { url: "domena.pl" } | { url: "https://domena.pl" }
  *
- * Response: pełna mapa 13 botów + summary + action items + warstwa `page`.
+ * Response: pełna mapa 14 botów + summary + action items + warstwa `page`.
  *
  * Pages Function – deployowane razem z Astro przez Cloudflare Pages.
  */
 
-import { AI_BOTS, CATEGORY_LABELS, type BotCategory } from '../../_lib/ai-bots';
-import { checkBotAccess } from '../../_lib/robots-parser';
+import {
+  AI_BOTS,
+  CATEGORY_LABELS,
+  type BotCategory,
+  type RobotsTxtCompliance,
+} from '../../_lib/ai-bots';
+import { checkBotAccess, parseRobotsTxt } from '../../_lib/robots-parser';
 import {
   analyzePageAccess,
   buildPageActionItems,
@@ -45,6 +50,8 @@ type BotResult = {
   purpose: string;
   impact: string;
   critical: boolean;
+  /** Zgodność bota z robots.txt wg dostawcy – `may-ignore` = reguła może nie zadziałać. */
+  robotsTxt: RobotsTxtCompliance;
   allowed: boolean;
   matchedUserAgent: string | null;
   /** Wynik sondy HTTP dla tego bota – tylko dla podzbioru z PROBE_BOTS. */
@@ -188,10 +195,37 @@ async function readBodyCapped(response: Response, maxBytes: number): Promise<str
   return new TextDecoder('utf-8', { fatal: false }).decode(merged);
 }
 
-function buildActionItems(bots: BotResult[]): ActionItem[] {
+const MAY_IGNORE_NOTE =
+  'Reguła w robots.txt może nie zadziałać – ten bot według dostawcy nie zawsze stosuje się do robots.txt.';
+
+/**
+ * Wykrywa reguły dla przestarzałych tokenów (np. `anthropic-ai`, `Claude-Web`).
+ * Nie są liczone jako reguła dla bota, ale warto o nich powiedzieć – właściciel strony
+ * zwykle myśli, że nimi steruje obecnym botem.
+ */
+function findLegacyTokens(robotsText: string): Array<{ token: string; bot: string }> {
+  const declared = new Set(parseRobotsTxt(robotsText).flatMap((g) => g.userAgents));
+  const found: Array<{ token: string; bot: string }> = [];
+  for (const bot of AI_BOTS) {
+    for (const token of bot.legacyTokens ?? []) {
+      if (declared.has(token.toLowerCase())) found.push({ token, bot: bot.name });
+    }
+  }
+  return found;
+}
+
+function buildActionItems(
+  bots: BotResult[],
+  legacy: Array<{ token: string; bot: string }> = []
+): ActionItem[] {
   const items: ActionItem[] = [];
   const blockedCritical = bots.filter((b) => !b.allowed && b.critical);
-  const blockedNonCritical = bots.filter((b) => !b.allowed && !b.critical);
+  const blockedMayIgnore = bots.filter(
+    (b) => !b.allowed && !b.critical && b.robotsTxt === 'may-ignore'
+  );
+  const blockedNonCritical = bots.filter(
+    (b) => !b.allowed && !b.critical && b.robotsTxt !== 'may-ignore'
+  );
 
   if (blockedCritical.length > 0) {
     const names = blockedCritical.map((b) => b.name).join(', ');
@@ -203,7 +237,7 @@ function buildActionItems(bots: BotResult[]): ActionItem[] {
         .filter((v, i, arr) => arr.indexOf(v) === i)
         .join(
           ', '
-        )}. Sprawdź, czy to świadoma decyzja. Jeśli celem jest widoczność w wyszukiwaniu AI, dodaj Allow dla botów wyszukiwawczych i user-triggered.`,
+        )}. Sprawdź, czy to świadoma decyzja. Jeśli celem jest widoczność w wyszukiwaniu AI, dodaj Allow dla botów wyszukiwawczych (OAI-SearchBot, Claude-SearchBot, PerplexityBot) i dla Claude-User. ChatGPT-User i Perplexity-User według dostawców mogą nie stosować się do robots.txt – o ich dostępie decyduje zapora (WAF).`,
     });
   }
 
@@ -213,11 +247,29 @@ function buildActionItems(bots: BotResult[]): ActionItem[] {
       priority: 'P1',
       title: `Pomniejsze boty zablokowane: ${names}`,
       description:
-        'Te boty nie są krytyczne (on-demand fetch lub niszowe), ale dopuszczenie ich rozszerza widoczność w mniej popularnych ścieżkach AI search.',
+        'Te boty nie są krytyczne (pobieranie na żądanie lub niszowe), ale dopuszczenie ich rozszerza widoczność w mniej popularnych ścieżkach wyszukiwania AI. OAI-AdsBot ma znaczenie tylko wtedy, gdy prowadzisz reklamy w ChatGPT.',
     });
   }
 
-  if (items.length === 0) {
+  if (blockedMayIgnore.length > 0) {
+    const names = blockedMayIgnore.map((b) => b.name).join(', ');
+    items.push({
+      priority: 'P2',
+      title: `Reguła w robots.txt może nie zadziałać: ${names}`,
+      description: `${MAY_IGNORE_NOTE} Według dokumentacji OpenAI (ChatGPT-User) i Perplexity (Perplexity-User) te boty pobierają stronę na żądanie użytkownika i mogą pominąć robots.txt. Jeśli chcesz je naprawdę zatrzymać, potrzebna jest reguła na zaporze (WAF). Jeśli zależy Ci na widoczności – nie blokuj ich także na zaporze.`,
+    });
+  }
+
+  if (legacy.length > 0) {
+    const tokens = legacy.map((l) => `${l.token} (dawniej ${l.bot})`).join(', ');
+    items.push({
+      priority: 'P1',
+      title: `Reguły dla przestarzałych tokenów: ${legacy.map((l) => l.token).join(', ')}`,
+      description: `W robots.txt są reguły dla tokenów legacy: ${tokens}. Anthropic już ich nie używa, więc nie sterują obecnymi botami. Dodaj reguły dla ClaudeBot, Claude-User lub Claude-SearchBot.`,
+    });
+  }
+
+  if (blockedCritical.length === 0 && blockedNonCritical.length === 0 && blockedMayIgnore.length === 0) {
     items.push({
       priority: 'P2',
       title: `Wszystkie ${bots.length} botów AI ma dostęp – poprawnie skonfigurowane`,
@@ -281,6 +333,7 @@ function buildBotsWithAccess(allowed: boolean): BotResult[] {
     purpose: bot.purpose,
     impact: bot.impact,
     critical: bot.critical ?? false,
+    robotsTxt: bot.robotsTxt ?? 'honored',
     allowed,
     matchedUserAgent: null,
   }));
@@ -448,7 +501,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return finalize(response, pageAnalysis);
   }
 
-  // Sprawdzamy każdy bot przez parser robots.txt
+  // Sprawdzamy każdy bot przez parser robots.txt.
+  // Tokeny legacy (bot.legacyTokens) świadomie pomijamy – nie sterują obecnymi botami.
   const bots: BotResult[] = AI_BOTS.map((bot) => {
     const tokens = [bot.userAgent, ...(bot.aliases ?? [])];
     const access = checkBotAccess(robotsText, tokens, checkedPath);
@@ -461,6 +515,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       purpose: bot.purpose,
       impact: bot.impact,
       critical: bot.critical ?? false,
+      robotsTxt: bot.robotsTxt ?? 'honored',
       allowed: access.allowed,
       matchedUserAgent: access.matchedUserAgent,
     };
@@ -484,7 +539,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       total: bots.length,
     },
     bots,
-    actionItems: buildActionItems(bots),
+    actionItems: buildActionItems(bots, findLegacyTokens(robotsText)),
   };
 
   return finalize(response, pageAnalysis);

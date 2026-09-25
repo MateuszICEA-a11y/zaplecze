@@ -32,12 +32,12 @@ export const PROBE_BOTS: Array<{ name: string; userAgent: string; ua: string }> 
   {
     name: 'GPTBot',
     userAgent: 'GPTBot',
-    ua: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.2; +https://openai.com/gptbot',
+    ua: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.4; +https://openai.com/gptbot',
   },
   {
     name: 'OAI-SearchBot',
     userAgent: 'OAI-SearchBot',
-    ua: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot',
+    ua: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot',
   },
   {
     name: 'ClaudeBot',

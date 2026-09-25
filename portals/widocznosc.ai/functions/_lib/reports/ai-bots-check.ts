@@ -4,7 +4,7 @@ import { heading, paragraph, section, statGrid, list, actionItems } from './comp
 type BotsResult = {
   domain: string;
   summary: { allowed: number; blocked: number; criticalBlocked: number; total: number };
-  bots: Array<{ name: string; allowed: boolean; critical: boolean }>;
+  bots: Array<{ name: string; allowed: boolean; critical: boolean; robotsTxt?: string }>;
   actionItems: Array<{ priority: string; title: string; description: string }>;
   page?: {
     edge: { cloudflare: boolean; server: string | null } | null;
@@ -66,6 +66,7 @@ export function renderReport(
         `<div style="padding:6px 0;border-bottom:1px solid #e2e8f0;font-size:14px;color:#0f172a;">` +
         `${b.allowed ? '✅' : '⛔'} ${escapeHtml(b.name)}` +
         `${b.critical ? ' <span style="color:#64748b;font-size:12px;">(krytyczny)</span>' : ''}` +
+        `${!b.allowed && b.robotsTxt === 'may-ignore' ? ' <span style="color:#64748b;font-size:12px;">(reguła w robots.txt może nie zadziałać – ten bot według dostawcy nie zawsze stosuje się do robots.txt)</span>' : ''}` +
         `</div>`
     )
     .join('');

@@ -102,12 +102,27 @@ const FETCH_TIMEOUT_MS = 10_000;
 const LLM_TIMEOUT_MS = 45_000;
 const MAX_HTML_BYTES = 900_000;
 
-const MODEL_PROVIDERS = [
+// fallbackModels – OpenRouter przełącza się na kolejny model, gdy główny zwróci błąd.
+// Perplexity wygasza Sonar API 27.09.2026; sonar-pro może przestać być routowalny,
+// a sonar przechodzi na Agent API i ma działać dalej.
+const MODEL_PROVIDERS: readonly {
+  id: 'chatgpt' | 'claude' | 'gemini' | 'perplexity';
+  label: string;
+  model: string;
+  fallbackModels?: readonly string[];
+  useOpenRouterSearch: boolean;
+}[] = [
   { id: 'chatgpt', label: 'ChatGPT', model: 'openai/gpt-5-mini', useOpenRouterSearch: true },
   { id: 'claude', label: 'Claude', model: 'anthropic/claude-haiku-4.5', useOpenRouterSearch: true },
   { id: 'gemini', label: 'Gemini', model: 'google/gemini-3-flash-preview', useOpenRouterSearch: true },
-  { id: 'perplexity', label: 'Perplexity', model: 'perplexity/sonar-pro', useOpenRouterSearch: false },
-] as const;
+  {
+    id: 'perplexity',
+    label: 'Perplexity',
+    model: 'perplexity/sonar-pro',
+    fallbackModels: ['perplexity/sonar'],
+    useOpenRouterSearch: false,
+  },
+];
 
 const FALLBACK_RESULT = (provider: (typeof MODEL_PROVIDERS)[number], error: string): ModelResult => ({
   id: provider.id,
@@ -329,6 +344,7 @@ async function callOpenRouter(
       signal: controller.signal,
       body: JSON.stringify({
         model: provider.model,
+        ...(provider.fallbackModels?.length ? { models: [provider.model, ...provider.fallbackModels] } : {}),
         messages: [
           {
             role: 'system',
@@ -369,6 +385,7 @@ async function callOpenRouter(
   }
 
   const body = (await response.json()) as {
+    model?: string;
     choices?: {
       message?: {
         content?: string;
@@ -399,7 +416,7 @@ async function callOpenRouter(
   return {
     id: provider.id,
     label: provider.label,
-    model: provider.model,
+    model: body.model || provider.model,
     status: 'ok',
     knowsBrand,
     sentiment,
