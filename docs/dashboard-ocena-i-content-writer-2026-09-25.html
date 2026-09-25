@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard zaplecza – ocena i nowy moduł</title>
+<style>
+  @font-face { font-family: "Roobert"; font-weight: 400; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Regular.otf"); }
+  @font-face { font-family: "Roobert"; font-weight: 500; font-display: swap; src: url("https://www.grupa-icea.pl/wp-content/themes/knight-theme/fonts/Roobert-Medium.otf"); }
+  :root { --midnight:#000623; --blue:#5768ff; --orange:#f6704c; --off:#f9f9f9; --soft:rgba(0,6,35,.66); --line:rgba(0,6,35,.14); --blue-soft:rgba(87,104,255,.10); }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--midnight); background:var(--off); font-family:"Roobert",Arial,sans-serif; font-size:16px; line-height:1.5; }
+  h1,h2,h3,h4 { font-weight:500; margin:0 0 .4em; line-height:1.15; }
+  h1 { font-size:clamp(28px,3vw,36px); line-height:1.15; }
+  h2 { font-size:clamp(22px,2.4vw,28px); }
+  h3 { font-size:19px; }
+  h4 { font-size:17px; margin-bottom:.2em; }
+  p, li { color:var(--midnight); }
+  .wrap { width:min(calc(100% - 48px),1280px); margin-inline:auto; }
+  .narrow { max-width:760px; }
+  .bar { position:sticky; top:0; z-index:10; background:rgba(249,249,249,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+  .bar-in { display:flex; align-items:center; gap:24px; min-height:64px; }
+  .bar strong { font-weight:500; }
+  .bar .sp { flex:1; }
+  .btn { min-height:40px; padding:8px 14px; border:1px solid var(--midnight); border-radius:3px; background:transparent; color:var(--midnight); font:inherit; cursor:pointer; }
+  .logo { display:block; height:28px; width:auto; color:var(--off); margin-bottom:28px; }
+  .bar .logo { height:20px; margin:0; color:var(--midnight); }
+  .hero { background:var(--midnight); color:var(--off); padding:72px 0 56px; }
+  .hero p { color:rgba(249,249,249,.72); max-width:900px; font-size:15px; }
+  .hero .thesis { color:var(--off); font-size:clamp(17px,1.6vw,20px); line-height:1.35; max-width:1000px; margin:0 0 14px; }
+  .hero .lbl { color:var(--blue); font-weight:500; margin-bottom:14px; }
+  .hero h1 { max-width:1100px; }
+  .hero .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:40px; border:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div { padding:18px 20px; border-left:1px solid rgba(249,249,249,.18); }
+  .hero .kpis div:first-child { border-left:0; }
+  .hero .kpis b { display:block; font-size:26px; font-weight:500; line-height:1.1; color:var(--off); }
+  .hero .kpis span { font-size:13px; color:rgba(249,249,249,.72); }
+  section.sec { padding:56px 0; border-top:1px solid var(--line); }
+  .lead { font-size:16px; color:var(--soft); }
+  .summary { background:#fff; border:1px solid var(--line); padding:28px; }
+  .summary ol { margin:0; padding-left:20px; }
+  .summary li { margin:8px 0; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin:12px 0 28px; background:#fff; }
+  th { background:var(--midnight); color:var(--off); text-align:left; padding:10px 12px; font-weight:400; font-size:12px; }
+  td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  td.num, th.num { text-align:right; white-space:nowrap; }
+  tr.sum td { font-weight:500; border-top:2px solid var(--midnight); }
+  tr.sub td { background:var(--blue-soft); font-weight:500; }
+  .tag { display:inline-block; padding:1px 8px; border:1px solid var(--midnight); border-radius:3px; font-size:12px; white-space:nowrap; }
+  .tag.ok { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:500; }
+  .tag.no { background:var(--midnight); color:var(--off); }
+  .tag.kb { border-color:var(--blue); background:var(--blue-soft); color:var(--midnight); }
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); margin:20px 0; }
+  .card { padding:22px; border-left:1px solid var(--line); background:#fff; }
+  .card:first-child { border-left:0; }
+  .card p { font-size:14px; color:var(--soft); margin:6px 0 0; }
+  .card .n { display:block; font-size:26px; font-weight:500; color:var(--blue); line-height:1.1; margin-bottom:6px; }
+  .card.dark { background:var(--midnight); color:var(--off); }
+  .card.dark h4, .card.dark p { color:var(--off); }
+  .card.dark p { opacity:.75; }
+  .callout { border-left:4px solid var(--orange); background:#fff; padding:16px 20px; margin:20px 0; }
+  .callout b { font-weight:500; }
+  .callout.blue { border-left-color:var(--blue); }
+  .step { display:grid; grid-template-columns:56px minmax(0,1fr) 220px; gap:20px; padding:20px 0; border-top:1px solid var(--line); }
+  .step:first-of-type { border-top:0; }
+  .step .no { font-size:26px; font-weight:500; color:var(--blue); line-height:1; }
+  .step .meta { font-size:13px; color:var(--soft); }
+  .step .meta em { display:block; font-style:normal; color:var(--midnight); font-weight:500; }
+  .step p { margin:4px 0 0; font-size:15px; }
+  ul.plain { padding-left:20px; }
+  .sm { font-size:13px; color:var(--soft); }
+  code { padding:1px 5px; background:var(--blue-soft); font-family:ui-monospace,Consolas,monospace; font-size:.9em; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+  @media (max-width:1000px) { .hero .kpis, .cards, .two { grid-template-columns:1fr; } .card { border-left:0; border-top:1px solid var(--line); } .hero .kpis div { border-left:0; border-top:1px solid rgba(249,249,249,.18); } .step { grid-template-columns:44px 1fr; } .step .meta { grid-column:2; } }
+
+
+  @media print { .bar { display:none; } body { background:#fff; } table, .step, .callout { break-inside:avoid; } }
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap bar-in"><strong>Dashboard zaplecza – ocena i zmiany</strong><span class="sm">stan 25.09.2026, po wdrożeniu · zaplecze-dashboard, grupa-icea.pl</span><span class="sp"></span><button class="btn" onclick="pobierzMd()">Pobierz .md</button><button class="btn" onclick="print()">Drukuj / PDF</button></div></div>
+
+<header class="hero"><div class="wrap">
+  <svg class="logo" role="img" aria-label="iCEA" height="34" viewBox="0 0 186 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1437_16974)">
+<path d="M0 0.350281H10.1556V39.9221H0V0.350281Z" fill="currentColor"/>
+<path d="M0 0.332703H10.3132V10.3132H0V0.332703Z" fill="currentColor"/>
+<path d="M60.02 15.2941C60.0224 14.7134 59.9095 14.0459 59.6885 13.5089C59.4666 12.9525 59.1277 12.4502 58.6948 12.0363C58.2259 11.597 57.6761 11.2531 57.0759 11.024C56.3653 10.7539 55.6096 10.6227 54.8496 10.6375H32.5857C31.8231 10.6321 31.0669 10.7759 30.3594 11.0608C29.6719 11.3233 29.0457 11.7244 28.5194 12.239C27.988 12.7588 27.5736 13.3864 27.3048 14.0795C27.0215 14.8005 26.878 15.5687 26.8816 16.3434V23.8709C26.8762 24.6338 27.02 25.3907 27.3048 26.0983C27.5715 26.7926 27.9862 27.4206 28.5194 27.9389C29.0457 28.4534 29.6719 28.8542 30.3594 29.1166C31.0669 29.4015 31.8231 29.5453 32.5857 29.5399H54.8496C55.5218 29.5343 56.1859 29.3902 56.8 29.1166C57.4068 28.8701 57.9667 28.5214 58.4558 28.0858C58.919 27.6414 59.2988 27.1181 59.578 26.5401C59.8646 25.9686 60.0161 25.3388 60.02 24.6995H70.3977V25.8036C70.3931 27.5456 70.0748 29.2725 69.4588 30.9019C68.8633 32.5559 67.9852 34.0941 66.8642 35.448C65.7437 36.7864 64.3681 37.8877 62.8168 38.6874C61.2029 39.5223 59.4083 39.9462 57.5916 39.9208H28.851C27.2077 39.9324 25.5793 39.6067 24.0669 38.9637C21.0933 37.7309 18.731 35.3674 17.4985 32.3929C16.8558 30.88 16.5301 29.2511 16.5417 27.6073V12.6623C16.5245 11.0061 16.8503 9.36398 17.4985 7.83985C18.1286 6.38862 19.0199 5.06614 20.1291 3.93813C21.2638 2.82016 22.6001 1.92724 24.0669 1.30628C25.5793 0.663348 27.2077 0.33757 28.851 0.349158H57.5916C59.4083 0.323811 61.2029 0.747248 62.8168 1.58218C64.3633 2.38137 65.7379 3.47558 66.8642 4.80313C67.9841 6.12368 68.8626 7.63134 69.4588 9.2571C70.0709 10.83 70.3894 12.5023 70.3977 14.1901V15.2941L60.02 15.2941Z" fill="currentColor"/>
+<path d="M181.349 39.8294H169.444L165.322 33.0743H137.116L133.049 39.8294H121.071L144.53 0.257751H157.889L181.349 39.8294ZM150.51 10.6382L143.15 22.6754H159.416L151.946 10.6382H150.51Z" fill="currentColor"/>
+<path d="M113.178 29.6704H77.8135V39.8302H113.178V29.6704Z" fill="currentColor"/>
+<path d="M119.029 15.092H77.8135V24.7364H119.029V15.092Z" fill="currentColor"/>
+<path d="M129.774 0.240967H77.8135V10.4008H129.774V0.240967Z" fill="currentColor"/>
+<path d="M176.914 0V1.49095H173.859V5.66902H172.369V1.49095H169.443V0H176.914Z" fill="currentColor"/>
+<path d="M185.69 0V5.66902H184.218V2.28226L181.716 5.66902L179.231 2.30068V5.66902H177.741V0H179.471L181.771 3.09244L184.071 0H185.69Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_1437_16974">
+<rect width="185.69" height="40" fill="currentColor"/>
+</clipPath>
+</defs>
+</svg>
+  <p class="lbl">Dashboard zaplecza · Ocena mechanizmu i wdrożone zmiany · Wdrożone na produkcję 25.09.2026</p>
+  <h1>Dashboard zaplecza – ocena i nowy moduł</h1>
+  <p class="thesis">Mechanizm danych jest solidny. Słabe punkty to bezpieczeństwo workflowu, monolityczny edytor i brak testów w CI. Wygląd przeszedł na system panelu scrape300, a Content Writer dla grupa-icea.pl czeka tylko na migrację bazy i deploy.</p>
+  <p>Ocena obejmuje collector z 13 źródłami, Workera z bazą D1, Content Watchera i pipeline’y w GitHub Actions. Zmiany leżą w 8 commitach na lokalnym main. Każda paczka to osobny commit, więc da się ją cofnąć jednym revertem.</p>
+  <div class="kpis">
+    <div><b>8</b><span>commitów na main (bez pusha)</span></div>
+    <div><b>1976 → 1696</b><span>linii theme.css po usunięciu martwych motywów</span></div>
+    <div><b>215 + 116</b><span>testów JS + pytest, wszystkie zielone</span></div>
+    <div><b>3</b><span>kroki ręczne przed startem Content Writera</span></div>
+  </div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <h2>Najważniejsze wnioski</h2>
+  <div class="summary"><ol>
+    <li><b>Przepływ danych działa i jest odporny.</b> Każde źródło ma osobny <code>try</code> i status w snapshocie. Karta z ostatnim udanym pomiarem pokazuje, kiedy źródło leży. Callbacki HMAC z oknem czasowym i nonce są zrobione porządnie.</li>
+    <li><b>Była realna luka w workflowie Content Watchera.</b> Tytuł wpisu z WordPressa trafiał wprost do skryptu shella na runnerze z sekretami. Cudzysłów w tytule wywracał przebieg, a <code>$(…)</code> by się wykonał. Poprawione (<code>ebcb2ba0</code>).</li>
+    <li><b>Dług siedzi w trzech plikach.</b> <code>edytor.astro</code> ma 4964 linie, w tym ok. 3900 linii jednego skryptu, <code>cw-api.js</code> ma 1471, a <code>run.py</code> 1106. Stemming, shortcode eksperta i domyślne modele są zduplikowane w trzech miejscach, z rozjechanymi listami.</li>
+    <li><b>Testy istnieją, ale nic ich nie uruchamia.</b> Jest 215 testów JS i ponad 100 w pytest, a żaden workflow nie odpala <code>npm test</code> ani <code>pytest</code>.</li>
+    <li><b>Wygląd był warstwą nadpisań.</b> W arkuszu stylów siedziały dwa martwe motywy (PlayStation, Dell ’96) i „mostki” nadpisujące stare klasy. W interfejsie było pięć kolorów akcentu naraz, wersaliki i dwa przełączniki motywu.</li>
+  </ol></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Ocena mechanizmu</h2>
+  <p class="lead">Priorytet oznacza kolejność naprawy. Status mówi, co zrobiłem w tej sesji, a co zostaje na kolejną.</p>
+  <table>
+    <tr><th>Obszar</th><th>Co jest nie tak</th><th>Priorytet</th><th>Status po sesji</th></tr>
+    <tr class="sub"><td colspan="4">Bezpieczeństwo</td></tr>
+    <tr><td>Workflow <code>content-refresher.yml</code></td><td>Wartości z <code>client_payload</code> (tytuł, autor) wklejone w <code>run:</code>, co otwiera wstrzyknięcie poleceń</td><td>wysoki</td><td><span class="tag ok">naprawione</span></td></tr>
+    <tr><td>Basic Auth w <code>worker.js</code></td><td>Hasło porównywane zwykłym <code>!==</code></td><td>niski</td><td><span class="tag ok">naprawione</span></td></tr>
+    <tr><td>Sekrety</td><td>Jeden <code>CW_CALLBACK_SECRET</code> chroni callbacki i wydawanie tokenu Senuto; jeden PAT do dispatchu</td><td>średni</td><td><span class="tag no">do zrobienia</span></td></tr>
+    <tr class="sub"><td colspan="4">Niezawodność</td></tr>
+    <tr><td>Sprzątanie D1</td><td><code>callback_nonces</code> i <code>audit_log</code> nigdy nie są czyszczone; <code>sweepStale</code> działa tylko przy otwarciu listy</td><td>średni</td><td><span class="tag no">do zrobienia</span></td></tr>
+    <tr><td>Dane w gicie</td><td>Codzienny commit <code>details.json</code> (5,2 MB dla grupa-icea.pl) puchnie historię; <code>pull --rebase</code> bywa w konflikcie z botami newsów</td><td>średni</td><td><span class="tag no">do zrobienia</span></td></tr>
+    <tr><td><code>schema.sql</code></td><td>Brakowało <code>serp_snapshots</code> i <code>job_sections.decision</code>; świeża baza z samego schematu była niekompletna</td><td>średni</td><td><span class="tag ok">naprawione</span></td></tr>
+    <tr class="sub"><td colspan="4">Utrzymanie</td></tr>
+    <tr><td>Testy w CI</td><td>Żaden workflow nie uruchamia <code>npm test</code> ani <code>pytest</code></td><td>wysoki</td><td><span class="tag no">do zrobienia</span></td></tr>
+    <tr><td>Monolity</td><td><code>edytor.astro</code> (4964 l.), <code>cw-api.js</code> (1471), <code>run.py</code> (1106)</td><td>średni</td><td><span class="tag no">do zrobienia</span></td></tr>
+    <tr><td>Duplikacja</td><td>Stemming ×3, shortcode eksperta ×3, <code>DEFAULT_MODELS</code> ×3, <code>audit()</code> ×4, pięć osobnych wywołań OpenRoutera bez wspólnego retry</td><td>średni</td><td><span class="tag no">do zrobienia</span></td></tr>
+    <tr><td>Build</td><td><code>details.json</code> parsowany dla każdej strony. Przy 3,8 s na 25 stron to nie problem, memoizację świadomie pominąłem (sortowanie w miejscu przeciekałoby między stronami)</td><td>niski</td><td><span class="tag kb">bez zmian</span></td></tr>
+  </table>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Nowy wygląd – system z panelu scrape300</h2>
+  <div class="two">
+    <div>
+      <p class="lead">Przeniosłem zasady, które w scrape300 dają wygląd raportu, a nie szablonu SaaS. Jest jeden akcent, osobna paleta stanów, linie włosowe zamiast ciężkich kart i cyfry tabelaryczne.</p>
+      <ul class="plain">
+        <li><b>Paleta ról</b> – ciemny motyw z limonką <code>#c4f800</code> na <code>#03080a</code>, jasny z fioletem <code>#7018f0</code> na <code>#fcf8fe</code>. Stany ok, pośredni, uwaga i błąd mają osobną paletę, a kolory źródeł są stonowane.</li>
+        <li><b>Roobert 400/500</b> – font z polskimi znakami, co sprawdziłem fontTools. Zastąpił Inter i Space Grotesk, jest ładowany lokalnie jako woff2 z preloadem.</li>
+        <li><b>Zwykła wielkość liter</b> – wersaliki zdjęte z 16 reguł, bez sztucznego pogrubiania.</li>
+        <li><b>Mniej szumu</b> – w menu kropka pojawia się tylko przy problemie ze źródłem. Z kart zniknęły kolorowe kwadraty w rogach, z nagłówka drugi przełącznik motywu, a boksy-wstępy zastąpiło jedno-dwa zdania.</li>
+        <li><b>Liczby</b> – „8 569” zamiast „8569” obok „19 079”, także na osiach wykresów.</li>
+        <li><b>Poprawki treści</b> – źródła mają ludzkie nazwy („Boty AI” zamiast <code>cloudflare_ai</code>), wzrost wydatków OpenRoutera jest na czerwono, a z etykiety zniknął fragment klucza API.</li>
+      </ul>
+    </div>
+    <div>
+      <table>
+        <tr><th>Paczka</th><th>Commit</th></tr>
+        <tr><td>Martwe motywy PlayStation i Dell ’96 (351 linii)</td><td><code>d405d4a9</code></td></tr>
+        <tr><td>Paleta, Roobert, typografia, znaczniki stanu, <code>--on-accent</code>, grupowanie cyfr</td><td><code>9c65d8d6</code></td></tr>
+        <tr><td>Wstępy, nagłówek, pasek źródeł, karty CW, strona główna</td><td><code>d4d1a8f1</code></td></tr>
+      </table>
+      <div class="callout blue"><b>Nazwy tokenów bez zmian.</b> <code>--accent-blue</code> itd. zostały, więc żadna strona nie wymagała przepisania, a revert paczki przywraca poprzedni wygląd w całości.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Content Writer dla grupa-icea.pl</h2>
+  <p class="lead">Nowa pozycja w menu obok Content Watchera. Prowadzi od frazy do nowego szkicu w WordPressie i wykorzystuje moduły, które już działają w Content Watcherze.</p>
+  <div class="step"><div class="no">1</div><div><h4>Fraza albo podpowiedź</h4><p>Redaktor wpisuje frazę albo wybiera ją z listy podpowiedzi. Lista to frazy z Senuto i GSC na pozycjach 11–50, dla których nie ma własnego wpisu. Jeśli wpis na frazę już istnieje, moduł ostrzega o kanibalizacji i kieruje do edytora Content Watchera.</p></div><div class="meta"><em>Dane</em>liczone w buildzie z collectora, bez kosztu API</div></div>
+  <div class="step"><div class="no">2</div><div><h4>Konkurencja i brief</h4><p>SERP z SerpData, frazy z Senuto (nie z Ahrefs), treść konkurencji przez Jina z faktami. Każdy punkt briefu ma podstawę w materiale, a model może odmówić, zamiast konfabulować. Redaktor akceptuje albo poprawia brief.</p></div><div class="meta"><em>GitHub Actions</em><code>content-writer-wp.yml</code></div></div>
+  <div class="step"><div class="no">3</div><div><h4>Tekst w sekcjach</h4><p>Tekst powstaje w slotach ACF 1–30, z FAQ (101+), źródłami (slot 200), linkami wewnętrznymi z katalogu WP i kontrolą pokrycia fraz. Ekspert, styl i fleksja, infografiki oraz CTA działają tak jak w Content Watcherze.</p></div><div class="meta"><em>Pipeline</em><code>pipeline/content-writer-wp/</code></div></div>
+  <div class="step"><div class="no">4</div><div><h4>Nowy szkic w WordPressie</h4><p>Szkic zapisuje się z tym samym mapowaniem ACF i shortcodami motywu co w Content Watcherze. Autor i kategoria są wymagane, lista kategorii pochodzi z REST WordPressa. Opublikowanego wpisu moduł nie rusza.</p></div><div class="meta"><em>Worker</em><code>cw-writer.js</code></div></div>
+
+  <h3 style="margin-top:40px">Wdrożenie i pierwszy przebieg (25.09.2026)</h3>
+  <div class="callout blue"><b>Działa na produkcji.</b> Migracja 0011 weszła na zdalne D1 przed deployem (11 starych zadań dostało <code>kind = refresh</code>), push i deploy Workera przeszły. Projekt #1 „co to jest adres url” przeszedł cały obieg: research (5 konkurentów, 10 fraz luki, 8 faktów), brief (10 sekcji, 8 FAQ, każdy punkt z podstawą), tekst (ok. 1700 słów, 5 linków wewnętrznych, 8 źródeł nofollow w bloku Źródeł, zero em-dashy), styl i fleksja (3 sekcje), szkic w WP nr 42240 – <a href="https://www.grupa-icea.pl/?p=42240&amp;preview=true">podgląd</a>.</div>
+  <table>
+    <tr><th>Co wyszło w pierwszym przebiegu</th><th>Co zrobiłem</th><th>Commit</th></tr>
+    <tr><td>Analiza SERP „wisiała” w stanie running: klient odpytuje co 5 s, krok SerpData trwa ~20 s, spóźniony krok nadpisał gotowy wynik – do pipeline'u poszedł pusty GAP_JSON (dotyczyło też edytora Content Watchera i podwójnie płaciło za SerpData)</td><td>Dzierżawa kroku (45 s) i zapis warunkowy po etapie; testy na SQLite</td><td><code>57f4dbe6</code></td></tr>
+    <tr><td>Brief przerwany przez 503 z SerpData po trzech ponowieniach</td><td>Worker dosyła konkurentów z własnej analizy (<code>SERP_JSON</code>), pipeline używa ich przy awarii SerpData</td><td><code>0a2ee8d9</code></td></tr>
+    <tr><td>Bramka pokrycia fraz wymusiła zdania typu „Odpowiadając na pytanie url co to jest”, błąd „konkretny podstronę”; dwa twierdzenia nieprawdziwe (SMTP/IMAP/POP3 jako schematy URL, „GET lub POST” z paska adresu)</td><td>Przejazd „styl i fleksja” wyłapał wszystkie – 3 poprawki przyjęte, zdanie o protokołach pocztowych przepisane ręcznie</td><td>–</td></tr>
+  </table>
+  <h3 style="margin-top:32px">„Odśwież czy napisz nowy” – embeddingi i ranking</h3>
+  <p class="lead">Podpowiedzi dostały rekomendację opartą na znaczeniu, nie na słowach. Z 30 podpowiedzi tylko 4 okazały się tematami do napisania od zera – 17 to kandydaci do odświeżenia w Content Watcherze, 9 wymaga decyzji redaktora.</p>
+  <table>
+    <tr><th>Krok</th><th>Jak działa</th><th>Z kalibracji na 13 parach</th></tr>
+    <tr><td>Indeks wpisów</td><td>Tytuł każdego z 605 wpisów jako embedding bge-m3 (Workers AI) w Vectorize; cron 05:20 UTC przelicza tylko zmienione</td><td>Sam tytuł: trafne pary śr. 0,67; z meta description 0,53 – opisy rozmywały temat</td></tr>
+    <tr><td>Ranking</td><td>Nasza strona w TOP 50 na frazę (Senuto) i jej podobieństwo do frazy; słownik i branże oceniane po adresie, strona główna nie blokuje</td><td>„sprzedaż krzyżowa” ↔ /slownik/cross-selling 0,75</td></tr>
+    <tr><td>Progi</td><td>Odśwież ≥ 0,75; Sprawdź ≥ 0,60 albo rankujący wpis ≥ 0,50; poniżej – Napisz nowy</td><td>Pasma „ten sam temat” (0,53–0,81) i „pokrewny” (0,56–0,74) się nakładają – jeden próg ich nie rozdzieli</td></tr>
+    <tr><td>Sędzia</td><td>Frazy z „Sprawdź” jednym wywołaniem gemini-3.7-flash z tytułem, opisem i H2 kandydatów: ten sam / pokrewny / inny / nie wiem, zawsze z uzasadnieniem</td><td>22 frazy testowe: 12 Odśwież, 8 Sprawdź, 2 Napisz nowy – zgodnie z ręczną oceną; ~10 s na listę</td></tr>
+  </table>
+  <div class="callout blue"><b>Do obserwacji.</b> Sędzia nie jest w pełni deterministyczny (ta sama fraza w innej paczce potrafi dostać „Sprawdź” zamiast „Napisz nowy”), dlatego uzasadnienie jest zawsze widoczne. Część celów „Odśwież” to strony spoza bloga (/branze/, /zapytaj-o-seo/) – Content Watcher ich nie edytuje, odświeżenie jest ręczne. Nagłówki H2 dochodzą do katalogu od jutrzejszego przebiegu collectora – trafią do sędziego, nie do embeddingu.</div>
+  <h3 style="margin-top:32px">Przed pierwszym uruchomieniem (zrobione)</h3>
+  <div class="callout" style="display:none"><b>Kolejność ma znaczenie.</b> Migracja D1 musi wejść przed deployem Workera. Content Watcher po nowej wersji filtruje zadania po <code>jobs.kind</code>, więc bez migracji jego lista przestanie działać.</div>
+  <ul class="plain">
+    <li><b>Migracja</b> – <code>npx wrangler d1 execute zaplecze-content-watcher --file=migrations/0011-content-writer.sql --remote</code></li>
+    <li><b>Push na GitHub</b> – workflow <code>content-writer-wp.yml</code> musi być na GitHubie, zanim Worker wyśle zdarzenie <code>content-write</code>. Sekrety są te same co w content-refresherze.</li>
+    <li><b>Deploy Workera</b> – idzie z pushem na main (Workers Builds).</li>
+  </ul>
+
+  <h3 style="margin-top:32px">Znane ograniczenia</h3>
+  <ul class="plain">
+    <li><b>Podpowiedzi</b> – to heurystyka z szumem. Na liście trafiają się frazy, pod które już istnieje wpis na pozycji 20+ (np. „adblocka”), a to są kandydaci do odświeżenia, nie do nowego tekstu.</li>
+    <li><b>Nagłówki sekcji</b> – nie da się ich edytować ręcznie, zmienia je tylko przejazd „styl i fleksja”.</li>
+    <li><b>Ponowny brief</b> – kasuje poprawki redaktora i tekst, który z niego powstał (wcześniej pyta o potwierdzenie).</li>
+    <li><b>Test</b> – nie było przebiegu na prawdziwych API ani zapisu do WP. Sprawdzone są testy (215 JS, 11 + 105 pytest), build i widoki na lokalnym Workerze z lokalną D1.</li>
+  </ul>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Plan na kolejną sesję</h2>
+  <div class="step"><div class="no">1</div><div><h4>Przegląd szkicu 42240 i filtr podpowiedzi</h4><p>Ocena szkicu w WordPressie (autor, kategoria, wygląd ACF). Z podpowiedzi odfiltrować frazy, pod które istnieje już wpis na pozycji 20+ – to kandydaci do Content Watchera. Rozważyć łagodniejszą bramkę pokrycia fraz, bo wymusza nienaturalne zdania.</p></div><div class="meta"><em>Mateusz</em>ocena szkicu, potem Claude</div></div>
+  <div class="step"><div class="no">2</div><div><h4>Testy w CI</h4><p>Krok z <code>npm test</code> i <code>pytest</code> w workflowie przy każdym pushu do <code>dashboard/</code> i <code>pipeline/content-*</code>.</p></div><div class="meta"><em>Claude</em>jedna paczka</div></div>
+  <div class="step"><div class="no">3</div><div><h4>Sprzątanie D1</h4><p>Cron Workera, który czyści stare <code>callback_nonces</code> i <code>audit_log</code> oraz zamyka wiszące zadania bez czekania na otwarcie listy.</p></div><div class="meta"><em>Claude</em>jedna paczka</div></div>
+  <div class="step"><div class="no">4</div><div><h4>Rozbicie edytora i wspólne moduły</h4><p>Wydzielenie skryptu <code>edytor.astro</code> do <code>src/lib/</code>, jeden stemming i jeden shortcode eksperta dla Workera i pipeline’u, wspólny klient OpenRoutera z retry.</p></div><div class="meta"><em>Claude</em>kilka paczek, bez zmian w działaniu</div></div>
+  <h3 style="margin-top:40px">Do rozstrzygnięcia w kolejnym etapie</h3>
+  <ul class="plain">
+    <li><b>Dane poza gitem</b> – czy <code>details.json</code> przenieść do R2 albo KV, żeby historia repo przestała puchnąć o kilka MB dziennie.</li>
+    <li><b>Osobne sekrety</b> – rozdzielenie sekretu callbacków i sekretu tokenu Senuto.</li>
+  </ul>
+</div></section>
+
+<script>
+function pobierzMd(){
+  const t=(el)=>el.textContent.replace(/\s+/g,' ').trim();
+  const inline=(el)=>{let o='';el.childNodes.forEach(n=>{if(n.nodeType===3)o+=n.textContent.replace(/\s+/g,' ');else if(n.tagName==='B'||n.tagName==='STRONG')o+='**'+inline(n).trim()+'**';else if(n.tagName==='CODE')o+='`'+t(n)+'`';else if(n.tagName==='BR')o+='\n';else o+=inline(n);});return o;};
+  const table=(tb)=>{const rows=[...tb.querySelectorAll('tr')];let out=[];rows.forEach((r,i)=>{const cells=[...r.children];const isHead=cells[0].tagName==='TH';if(cells.length===1&&cells[0].colSpan>1){out.push('| **'+t(cells[0])+'** |'+' |'.repeat(0));return;}
+    out.push('| '+cells.map(c=>t(c).replace(/\|/g,'\\|')).join(' | ')+' |');if(isHead)out.push('|'+cells.map(()=>' --- ').join('|')+'|');});return out.join('\n');};
+  const lsp=(box)=>{let o=[];box.querySelectorAll('.sec').forEach(sec=>{o.push('### '+t(sec.querySelector('h4')).replace(/NOWA SEKCJA/,'(nowa sekcja)'));const h=sec.querySelector('.hint');if(h)o.push('_'+t(h)+'_');
+    sec.querySelectorAll('.f').forEach(f=>{const l=f.querySelector('label');const v=f.querySelector('.in,.ta,.sel,.tg');if(!l||!v)return;const lab=t(l).replace(/\*/,'').replace(/NOWE/,'(nowe)').trim();let val=t(v).replace(/⌄$/,'').trim();if(v.classList.contains('empty'))val='— ('+val+')';o.push('- **'+lab+'**: '+val);});
+    sec.querySelectorAll('.sl').forEach(sl=>o.push('- **'+t(sl.querySelector('b'))+'** ('+t(sl.querySelector('small'))+'): '+t(sl.querySelector('.val'))));
+    const cond=sec.querySelector('.cond');if(cond){o.push('- **'+t(cond.querySelector('.ph')).replace(/NOWE/,'(nowe)')+'**');cond.querySelectorAll('.tg').forEach(g=>o.push('  - '+(g.classList.contains('on')?'[x] ':'[ ] ')+t(g)));}
+    o.push('');});return o.join('\n');};
+  let md=[];
+  md.push('# '+t(document.querySelector('h1')));md.push('');md.push('_'+t(document.querySelector('.hero .lbl'))+' · '+t(document.querySelector('.bar .sm'))+'_');md.push('');
+  document.querySelectorAll('.hero p:not(.lbl)').forEach(p=>{md.push(inline(p).trim());md.push('');});
+  document.querySelectorAll('.hero .kpis div').forEach(d=>md.push('- **'+t(d.querySelector('b'))+'** '+t(d.querySelector('span'))));md.push('');
+  document.querySelectorAll('section.sec').forEach(sec=>{
+    [...sec.querySelector('.wrap').children].forEach(walk);
+    function walk(el){
+      if(el.tagName==='H2'){md.push('## '+t(el));md.push('');}
+      else if(el.tagName==='H3'){md.push('### '+t(el));md.push('');}
+      else if(el.tagName==='P'){md.push(inline(el).trim());md.push('');}
+      else if(el.tagName==='TABLE'){md.push(table(el));md.push('');}
+      else if(el.tagName==='OL'||el.tagName==='UL'){[...el.children].forEach((li,i)=>md.push((el.tagName==='OL'?(i+1)+'. ':'- ')+inline(li).trim()));md.push('');}
+      else if(el.classList.contains('callout')){md.push('> '+inline(el).trim().replace(/\n/g,'\n> '));md.push('');}
+      else if(el.classList.contains('cards')){el.querySelectorAll('.card').forEach(c=>{const n=c.querySelector('.n');md.push('- **'+(n?t(n)+' – ':'')+t(c.querySelector('h4'))+'**: '+t(c.querySelector('p')));});md.push('');}
+      else if(el.classList.contains('step')){const no=t(el.querySelector('.no'));const h=t(el.querySelector('h4'));const p=el.querySelector('p');const meta=el.querySelector('.meta');md.push(no+'. **'+h+'** – '+(p?inline(p).trim():'')+(meta?' _('+t(meta.querySelector('em'))+'; '+t(meta).replace(t(meta.querySelector('em')),'').trim()+')_':''));md.push('');}
+      else if(el.classList.contains('lsp')){md.push(lsp(el));}
+      else if(el.classList.contains('summary')||el.classList.contains('two')||el.tagName==='DIV'){[...el.children].forEach(walk);}
+    }
+  });
+  const blob=new Blob([md.join('\n').replace(/\n{3,}/g,'\n\n')],{type:'text/markdown;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(document.title||'dokument').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').toLowerCase()+'.md';a.click();URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>
