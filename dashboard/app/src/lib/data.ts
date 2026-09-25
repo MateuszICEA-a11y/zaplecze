@@ -332,6 +332,7 @@ export interface DomainDetails {
         external_links?: number;
         meta_title?: string | null;
         meta_description?: string | null;
+        h2?: string[];
         robots_index?: string | null;
         canonical?: string | null;
       }[];
@@ -374,6 +375,8 @@ export interface ContentCatalogItem {
   meta_title?: string | null;
   meta_description?: string | null;
   robots_index?: string | null;
+  /** Nagłówki H2 (tekst) – do embeddingów Content Writera. */
+  h2?: string[];
 }
 
 interface ContentWatcherConfig {
@@ -413,6 +416,7 @@ function loadCmsCatalog(dirId: string): ContentCatalogItem[] {
         meta_title: item.meta_title ?? null,
         meta_description: item.meta_description ?? null,
         robots_index: item.robots_index ?? null,
+        h2: Array.isArray(item.h2) ? item.h2 : [],
       }];
     })
     .sort((a, b) => a.title.localeCompare(b.title, 'pl'));

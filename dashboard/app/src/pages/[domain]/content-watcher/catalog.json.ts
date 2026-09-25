@@ -57,6 +57,8 @@ export const GET: APIRoute = ({ params }) => {
         internal_links: item.internal_links,
         external_links: item.external_links,
         content_path: item.content_path,
+        meta_description: item.meta_description ?? null,
+        h2: item.h2 ?? [],
         senuto_keywords: (senutoByPath.get(normPath(item.url)) ?? [])
           .sort((a, b) => a.position - b.position)
           .slice(0, 60),

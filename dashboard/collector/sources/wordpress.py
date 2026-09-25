@@ -85,6 +85,23 @@ _TAG_RE = re.compile(r"<[^>]+>")
 _SCRIPT_RE = re.compile(r"<(script|style)[^>]*>.*?</\1>", re.I | re.S)
 _HREF_RE = re.compile(r"""<a\b[^>]*\bhref\s*=\s*["']([^"']+)["']""", re.I)
 _HEADING_RE = re.compile(r"<h([2-6])\b", re.I)
+_H2_RE = re.compile(r"<h2[^>]*>(.*?)</h2>", re.IGNORECASE | re.DOTALL)
+H2_LIMIT = 30
+
+
+def _h2_titles(body: str) -> list[str]:
+    """Nagłówki H2 wpisu (tekst) – zakres tematu do embeddingów Content Writera."""
+    out = []
+    for raw in _H2_RE.findall(body or ""):
+        # <br> = odstęp, pozostałe znaczniki (<strong>, <a>) znikają bez spacji,
+        # żeby „<strong>URL</strong>?" nie dawało „URL ?".
+        plain = re.sub(r"<[^>]+>", "", re.sub(r"<br\s*/?>", " ", raw, flags=re.I))
+        title = re.sub(r"\s+", " ", html.unescape(plain)).strip()
+        if title:
+            out.append(title[:160])
+        if len(out) >= H2_LIMIT:
+            break
+    return out
 
 
 def _text(raw: str) -> str:
@@ -288,6 +305,7 @@ def fetch(cfg: dict, env: dict) -> dict:
                 "content_mode": mode,
                 "word_count": _words(text),
                 "headings": headings or len(_HEADING_RE.findall(body)),
+                "h2": _h2_titles(body),
                 "sections": len(_sections(post.get("acf") or {})),
                 "internal_links": internal,
                 "external_links": external,
