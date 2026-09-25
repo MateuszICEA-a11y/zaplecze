@@ -280,17 +280,53 @@ async function readSnapshot(env, domain, postId) {
   return { status: row.status ?? 'done', error: row.error ?? null, created_at: row.created_at, analysis };
 }
 
-async function writeSnapshot(env, domain, postId, { status, analysis = null, error = null }) {
-  await env.CW_DB.prepare(
+/*
+ * Zapis stanu. Kroki idą w tle (waitUntil), a klient odpytuje co kilka sekund,
+ * więc bez zabezpieczeń dwa kroki tego samego etapu potrafiły biec naraz
+ * (podwójne zapytania do SerpData), a spóźniony krok nadpisywał gotowy wynik
+ * stanem „running" – analiza wisiała, a do pipeline'u szedł pusty GAP_JSON.
+ * `expectStage` = zapis warunkowy: tylko gdy w bazie wciąż jest etap, od
+ * którego krok ruszył. `step_at` (dzierżawa kroku) nie przechodzi dalej.
+ */
+async function writeSnapshot(env, domain, postId, { status, analysis = null, error = null, expectStage = null }) {
+  let stored = analysis;
+  if (stored && typeof stored === 'object' && 'step_at' in stored) {
+    const { step_at: _lease, ...rest } = stored;
+    stored = rest;
+  }
+  const guard = expectStage
+    ? ` WHERE serp_snapshots.status = 'running' AND json_extract(serp_snapshots.payload, '$.stage') = ?8`
+    : '';
+  const args = [cacheKey(domain, postId), domain, postId, JSON.stringify(stored ?? null), status, error, nowIso()];
+  if (expectStage) args.push(expectStage);
+  const result = await env.CW_DB.prepare(
     `INSERT INTO serp_snapshots (id, domain, post_id, payload, status, error, created_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?)
+     VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)
      ON CONFLICT(id) DO UPDATE SET payload = excluded.payload, status = excluded.status,
-       error = excluded.error, created_at = excluded.created_at`,
+       error = excluded.error, created_at = excluded.created_at${guard}`,
   )
     // `payload` jest NOT NULL, a stan „running" nie ma jeszcze wyniku – idzie
     // wtedy literał JSON-owego null, nie wartość NULL kolumny.
-    .bind(cacheKey(domain, postId), domain, postId, JSON.stringify(analysis ?? null), status, error, nowIso())
+    .bind(...args)
     .run();
+  return (result?.meta?.changes ?? 1) > 0;
+}
+
+/* Krok trwa najwyżej tyle, ile żyje waitUntil (~30 s); starsza dzierżawa to
+   krok, który padł razem z Workerem. */
+const STEP_LEASE_MS = 45_000;
+
+/** Dzierżawa kroku: true = ten request liczy etap, false = krok już biegnie. */
+async function claimStep(env, domain, postId, stage) {
+  const now = Date.now();
+  const result = await env.CW_DB.prepare(
+    `UPDATE serp_snapshots SET payload = json_set(payload, '$.step_at', ?1)
+     WHERE id = ?2 AND status = 'running' AND json_extract(payload, '$.stage') = ?3
+       AND (json_extract(payload, '$.step_at') IS NULL OR json_extract(payload, '$.step_at') < ?4)`,
+  )
+    .bind(new Date(now).toISOString(), cacheKey(domain, postId), stage, new Date(now - STEP_LEASE_MS).toISOString())
+    .run();
+  return (result?.meta?.changes ?? 1) > 0;
 }
 
 const isFresh = (createdAt, maxAgeHours = SERP_CACHE_HOURS) => {
@@ -319,7 +355,7 @@ export async function runStep(env, domain, postId, state, fetchImpl = fetch) {
       queries: [{ kind: 'title', keyword: topic, competitors, ours, results_checked: checked }],
       stage: ownKeyword ? 'serp_own' : 'keywords',
     };
-    await writeSnapshot(env, domain, postId, { status: 'running', analysis: next });
+    await writeSnapshot(env, domain, postId, { status: 'running', analysis: next, expectStage: stage });
     return next;
   }
 
@@ -330,7 +366,7 @@ export async function runStep(env, domain, postId, state, fetchImpl = fetch) {
       queries: [...queries, { kind: 'own', keyword: ownKeyword, competitors, ours, results_checked: checked }],
       stage: 'keywords',
     };
-    await writeSnapshot(env, domain, postId, { status: 'running', analysis: next });
+    await writeSnapshot(env, domain, postId, { status: 'running', analysis: next, expectStage: stage });
     return next;
   }
 
@@ -360,7 +396,7 @@ export async function runStep(env, domain, postId, state, fetchImpl = fetch) {
     stage: 'done',
     generated_at: nowIso(),
   };
-  await writeSnapshot(env, domain, postId, { status: 'done', analysis });
+  await writeSnapshot(env, domain, postId, { status: 'done', analysis, expectStage: stage });
   return analysis;
 }
 
@@ -390,6 +426,24 @@ export async function gapSummary(env, domain, postId, limit = 12) {
   return { keywords: rows, generated_at: snapshot.analysis?.generated_at ?? null };
 }
 
+/**
+ * Konkurenci z SERP-u tematu z zapisanej analizy. Pipeline Content Writera
+ * pyta SerpData sam (potrzebuje PAA i AI Overview), a ta lista to zapas:
+ * przy chwilowej awarii SerpData brief idzie na konkurentach, za których
+ * już zapłaciliśmy, zamiast przerywać cały przebieg.
+ */
+export async function serpCompetitorsSummary(env, domain, postId, limit = 8) {
+  const snapshot = await readSnapshot(env, domain, postId);
+  if (snapshot?.status !== 'done') return null;
+  const title = (snapshot.analysis?.queries ?? []).find((row) => row.kind === 'title');
+  const rows = (title?.competitors ?? [])
+    .filter((row) => row?.url)
+    .slice(0, limit)
+    .map((row) => ({ position: row.position ?? null, url: row.url, title: row.title ?? null }));
+  if (!rows.length) return null;
+  return { keyword: title.keyword ?? null, competitors: rows };
+}
+
 /** Wykonanie kroku z zapisem błędu – wywoływane zawsze przez ctx.waitUntil. */
 async function stepSafely(env, domain, postId, state, fetchImpl) {
   try {
@@ -398,6 +452,7 @@ async function stepSafely(env, domain, postId, state, fetchImpl) {
     await writeSnapshot(env, domain, postId, {
       status: 'error',
       error: error instanceof Error ? error.message : 'Nieznany błąd analizy SERP.',
+      expectStage: state?.stage ?? null,
     });
     return null;
   }
@@ -453,8 +508,19 @@ export async function handleSerpGap(request, env, domain, postId, ctx, fetchImpl
   // dłuższa cisza znaczy, że krok padł razem z Workerem.
   const resumable =
     !force && snapshot?.status === 'running' && snapshot.analysis?.stage && isFresh(snapshot.created_at, 0.25);
-  const state = resumable ? snapshot.analysis : { input, stage: 'serp_title', queries: [] };
-  if (!resumable) await writeSnapshot(env, domain, postId, { status: 'running', analysis: state });
+  let state;
+  if (resumable) {
+    // Poprzedni krok jeszcze biegnie – nie odpalamy drugiego (płacilibyśmy
+    // dwa razy za ten sam SERP, a wolniejszy nadpisałby wynik szybszego).
+    if (!(await claimStep(env, domain, postId, snapshot.analysis.stage))) {
+      return json({ status: 'running', stage: snapshot.analysis.stage, analysis: null }, 202);
+    }
+    state = snapshot.analysis;
+  } else {
+    state = { input, stage: 'serp_title', queries: [] };
+    await writeSnapshot(env, domain, postId, { status: 'running', analysis: state });
+    await claimStep(env, domain, postId, state.stage);
+  }
 
   const work = stepSafely(env, domain, postId, state, fetchImpl);
   if (ctx?.waitUntil) {

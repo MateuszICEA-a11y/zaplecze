@@ -1,3 +1,4 @@
+import { sqliteD1 } from './test-d1.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
@@ -520,4 +521,61 @@ test('gapSummary: brak analizy albo same frazy pokryte = null, nie pusta lista',
     status: 'done', error: null, created_at: '2026-08-06T09:00:00.000Z',
   });
   assert.equal(await gapSummary(environment, 'grupa-icea.pl', 20811), null);
+});
+
+/* ---------- współbieżność kroków (prawdziwy SQLite) ---------- */
+
+const sqliteEnv = () => ({
+  CW_DB: sqliteD1(),
+  SERPDATA_API_KEY: 'serp-key',
+  SENUTO_API_KEY: 'senuto-key',
+  CW_DOMAINS: 'grupa-icea.pl',
+});
+
+const readRow = (environment) =>
+  environment.CW_DB.prepare('SELECT payload, status FROM serp_snapshots WHERE id = ?').bind('grupa-icea.pl:-1').first();
+
+test('runStep: spóźniony krok nie nadpisuje gotowej analizy', async () => {
+  const environment = sqliteEnv();
+  const input = { title: 'co to jest adres url', url: 'https://www.grupa-icea.pl/', ownKeywords: [] };
+  const serpFetch = async () => new Response(JSON.stringify(serpResponse(['a.pl', 'b.pl'])), { status: 200 });
+  // Stan początkowy – dwa requesty dostały ten sam etap serp_title.
+  const start = { input, stage: 'serp_title', queries: [] };
+  await environment.CW_DB.prepare(
+    "INSERT INTO serp_snapshots (id, domain, post_id, payload, status, created_at) VALUES (?, ?, ?, ?, 'running', ?)",
+  ).bind('grupa-icea.pl:-1', 'grupa-icea.pl', -1, JSON.stringify(start), new Date().toISOString()).run();
+  // Szybszy doprowadza analizę do końca…
+  let state = await runStep(environment, 'grupa-icea.pl', -1, start, serpFetch);
+  state = await runStep(environment, 'grupa-icea.pl', -1, state, async () =>
+    new Response(JSON.stringify(senutoResponse([])), { status: 200 }));
+  assert.equal((await readRow(environment)).status, 'done');
+  // …a wolniejszy kończy swój serp_title dopiero teraz.
+  await runStep(environment, 'grupa-icea.pl', -1, start, serpFetch);
+  const row = await readRow(environment);
+  assert.equal(row.status, 'done');
+  assert.equal(JSON.parse(row.payload).stage, 'done');
+});
+
+test('handleSerpGap: drugi request w trakcie kroku nie odpala kolejnego zapytania', async () => {
+  const environment = sqliteEnv();
+  const body = { title: 'co to jest adres url', url: 'https://www.grupa-icea.pl/', own_keywords: [] };
+  const calls = [];
+  const pending = [];
+  let release;
+  const gate = new Promise((resolve) => { release = resolve; });
+  const fetchImpl = async (url) => {
+    calls.push(String(url));
+    await gate; // SerpData „myśli" – krok trwa
+    return new Response(JSON.stringify(serpResponse(['a.pl'])), { status: 200 });
+  };
+  const ctx = { waitUntil: (promise) => pending.push(promise) };
+  await handleSerpGap(postRequest(body), environment, 'grupa-icea.pl', -1, ctx, fetchImpl);
+  await new Promise((resolve) => setTimeout(resolve, 10));
+  const second = await handleSerpGap(postRequest(body), environment, 'grupa-icea.pl', -1, ctx, fetchImpl);
+  assert.equal(second.status, 202);
+  release();
+  await Promise.all(pending);
+  assert.equal(calls.filter((url) => url.includes('serpdata')).length, 1);
+  // Po zakończeniu kroku dzierżawa znika – następny etap może ruszyć od razu.
+  assert.equal(JSON.parse((await readRow(environment)).payload).step_at, undefined);
 });
