@@ -49,20 +49,28 @@ const measuredAt = (details as { date?: string }).date ?? null;
     <section class="wr-section">
       <div class="wr-section-head">
         <h2>Podpowiedzi z danych</h2>
-        <span class="wr-note">
-          frazy z pozycją 11–50{measuredAt ? ` · dane z ${measuredAt}` : ''} · Senuto i Search Console
-        </span>
+        <span class="wr-note">{measuredAt ? `dane z ${measuredAt}` : ''}</span>
       </div>
+      <p class="wr-lede">
+        Frazy, na które {domain} wyświetla się w Google, ale dopiero na pozycjach 11–50 – czyli bez realnego ruchu.
+        Źródła: Senuto (frazy z co najmniej 30 wyszukiwaniami miesięcznie) i Search Console (pytania z co najmniej
+        100 wyświetleniami w 28 dni). Odpadają frazy, które już mają wpis z tą frazą w tytule, oraz frazy z nazwą marki.
+      </p>
       <div class="wr-panel">
+        <ul class="wr-rec-legend" aria-label="Co oznaczają rekomendacje">
+          <li><span class="wr-status ok">Napisz nowy</span>blog nie ma wpisu o tym temacie – żaden tytuł nie jest wystarczająco podobny</li>
+          <li><span class="wr-status warn">Odśwież</span>jest już wpis o tym samym temacie – rozbuduj go w Content Watcherze zamiast pisać drugi</li>
+          <li><span class="wr-status mid">Sprawdź</span>jest wpis pokrewny – model ocenił, czy to ten sam temat; uzasadnienie pod rekomendacją</li>
+        </ul>
         <div class="wr-rec-bar">
           <div class="wr-seg" role="group" aria-label="Filtr rekomendacji" id="wr-rec-filter">
             <button type="button" class="on" data-rec-filter="all">Wszystkie</button>
-            <button type="button" data-rec-filter="new">Do napisania</button>
-            <button type="button" data-rec-filter="refresh">Do odświeżenia</button>
-            <button type="button" data-rec-filter="check">Do sprawdzenia</button>
+            <button type="button" data-rec-filter="new">Napisz nowy</button>
+            <button type="button" data-rec-filter="refresh">Odśwież</button>
+            <button type="button" data-rec-filter="check">Sprawdź</button>
           </div>
           <span class="wr-note" id="wr-index-state">sprawdzam indeks wpisów…</span>
-          <button class="wr-btn small" type="button" id="wr-reindex">Przelicz indeks</button>
+          <button class="wr-btn small" type="button" id="wr-reindex" title="Tytuły wpisów zamieniane są na wektory (bge-m3) raz dziennie o 5:20 UTC. Przelicz, jeśli właśnie dodano wpisy.">Przelicz indeks</button>
         </div>
         {
           suggestions.length ? (
@@ -71,10 +79,10 @@ const measuredAt = (details as { date?: string }).date ?? null;
                 <thead>
                   <tr>
                     <th>Fraza</th>
-                    <th class="num">Wyszukiwania</th>
-                    <th class="num">Wyświetlenia</th>
-                    <th class="num">Nasza poz.</th>
-                    <th>Dziś rankuje</th>
+                    <th class="num">Wyszukiwań / mies.</th>
+                    <th class="num">Wyświetleń / 28 dni</th>
+                    <th class="num">Nasza pozycja</th>
+                    <th>Nasza strona na tę frazę</th>
                     <th>Rekomendacja</th>
                     <th />
                   </tr>
@@ -320,8 +328,8 @@ const measuredAt = (details as { date?: string }).date ?? null;
     try {
       const { data: state } = await api<{ indexed: number; indexed_at: string | null }>(`/api/cw/writer/index/${domain}`);
       indexState.textContent = state.indexed
-        ? `indeks: ${state.indexed} wpisów · ${fmtDateTime(state.indexed_at)}`
-        : 'indeks wpisów jest pusty';
+        ? `porównano z ${state.indexed} wpisami bloga (indeks z ${fmtDateTime(state.indexed_at)})`
+        : 'indeks wpisów jest pusty – kliknij „Przelicz indeks”';
       if (!state.indexed || !rows.length) {
         rows.forEach((row) => { row.querySelector('[data-rec]')!.innerHTML = '<span class="muted">–</span>'; });
         return;
