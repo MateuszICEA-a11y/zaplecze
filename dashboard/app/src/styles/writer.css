@@ -246,7 +246,19 @@
 .wr-open p { margin: 0; font-size: 1.1rem; font-weight: 500; }
 
 /* Research: kafelki podsumowania, czołówka z długością tekstów, frazy luki. */
-.wr-panel h3 { margin: 0; font-size: 1.05rem; font-weight: 500; }
+.wr-panel h3 { margin: 0; font-size: 1.22rem; font-weight: 500; letter-spacing: -0.01em; }
+/* Nagłówek panelu oddzielony od treści linią – tytuł, pod nim opis, niżej dane. */
+.wr-panel > .wr-section-head:first-child {
+  display: grid;
+  gap: 4px;
+  padding-bottom: 14px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--hairline);
+}
+.wr-panel > .wr-section-head:first-child .wr-note { font-size: 0.9rem; color: var(--ink-muted); }
+#wr-research { gap: 20px; }
+#wr-research .wr-panel { padding: 22px 24px; gap: 16px; }
+.wr-seg b { font-weight: 500; color: var(--ink); margin-left: 4px; }
 .wr-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 12px; }
 .wr-tile {
   display: grid;
@@ -313,25 +325,25 @@
 .wr-state.covered { border-left-color: var(--status-ok); }
 .wr-state.covered strong { color: var(--status-ok); }
 
-.wr-facts { list-style: none; margin: 0; padding: 0; display: grid; }
+.wr-facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
+  gap: 12px;
+}
 .wr-facts li {
-  display: flex;
-  gap: 16px;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 10px 0;
-  border-top: 1px solid var(--hairline-soft);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  display: grid;
+  gap: 10px;
+  align-content: space-between;
+  padding: 14px 16px;
+  border: 1px solid var(--hairline-soft);
+  border-left: 3px solid var(--accent-blue);
+  background: var(--bg-surface-2);
 }
-.wr-facts li:first-child { border-top: 0; }
-.wr-fact-src {
-  flex: none;
-  font-size: 0.8rem;
-  color: var(--ink-muted);
-  background: var(--bg-surface-3);
-  padding: 1px 7px;
-  border-radius: 2px;
-}
+.wr-facts p { margin: 0; font-size: 0.95rem; line-height: 1.55; }
+.wr-fact-src { font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; }
+.wr-fact-src:hover { color: var(--accent-blue); text-decoration: underline; }
 .wr-facts li > span:first-child { flex: 1 1 auto; min-width: 0; }
 .wr-panel > .wr-seg { width: fit-content; }

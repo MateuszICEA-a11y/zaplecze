@@ -178,9 +178,9 @@ const latest = latestSnapshot(domain!);
 
   /* Status frazy wobec nas – słowami, nie skrótami. */
   const GAP_STATE: Record<string, { label: string; hint: string }> = {
-    missing: { label: 'Do zdobycia', hint: 'nie wyświetlamy się na tę frazę' },
-    weak: { label: 'Słabo', hint: 'jesteśmy poza TOP 10' },
-    covered: { label: 'Mamy', hint: 'jesteśmy w TOP 10' },
+    missing: { label: 'Nie ma nas', hint: 'nie wyświetlamy się w wynikach' },
+    weak: { label: 'Poza TOP 10', hint: 'za daleko, żeby dostawać ruch' },
+    covered: { label: 'W TOP 10', hint: 'już się wyświetlamy' },
   };
   let gapFilter: 'all' | 'missing' | 'weak' | 'covered' = 'all';
 
@@ -255,26 +255,26 @@ const latest = latestSnapshot(domain!);
       </div>` : ''}
 
       ${gap.length ? `<div class="wr-panel">
-        <div class="wr-section-head"><h3>Frazy, na które wyświetla się konkurencja</h3><span class="wr-note">i gdzie jesteśmy na nie my</span></div>
+        <div class="wr-section-head"><h3>Frazy, na które wyświetla się konkurencja</h3><span class="wr-note">frazy, na które strony z czołówki są wysoko w Google, i nasze miejsce na każdą z nich</span></div>
         <div class="wr-seg" role="group" aria-label="Filtr fraz">
-          <button type="button" data-gap="all" class="${gapFilter === 'all' ? 'on' : ''}">Wszystkie ${gap.length}</button>
-          ${['missing', 'weak', 'covered'].map((status) => `<button type="button" data-gap="${status}" class="${gapFilter === status ? 'on' : ''}">${GAP_STATE[status].label} ${count(status)}</button>`).join('')}
+          <button type="button" data-gap="all" class="${gapFilter === 'all' ? 'on' : ''}">Wszystkie <b>${gap.length}</b></button>
+          ${['missing', 'weak', 'covered'].map((status) => `<button type="button" data-gap="${status}" class="${gapFilter === status ? 'on' : ''}">${GAP_STATE[status].label} <b>${count(status)}</b></button>`).join('')}
         </div>
         <div class="wr-table-wrap"><table class="wr-table wr-gap">
-          <thead><tr><th>Fraza</th><th>Wyszukiwań miesięcznie</th><th>Kto jest wysoko</th><th>My</th>${project.brief ? '<th>W briefie</th>' : ''}</tr></thead>
+          <thead><tr><th>Fraza</th><th>Wyszukiwań miesięcznie</th><th>Najwyżej z konkurencji</th><th>Nasze miejsce</th>${project.brief ? '<th>W briefie</th>' : ''}</tr></thead>
           <tbody>${shownGap.map((row) => `<tr>
             <td class="kw">${esc(row.keyword)}</td>
             <td><span class="wr-vol"><span class="n">${fmtInt(row.searches)}</span><span class="bar"><span style="width:${Math.round(((row.searches ?? 0) / maxSearches) * 100)}%"></span></span></span></td>
             <td>${row.rival_host ? `${esc(row.rival_host)}, ` : ''}${row.rival_position ? `${esc(row.rival_position)}. miejsce` : '–'}</td>
-            <td><span class="wr-state ${esc(row.status)}"><strong>${GAP_STATE[row.status]?.label ?? esc(row.status)}</strong><span>${row.our_position ? `${esc(row.our_position)}. miejsce` : GAP_STATE[row.status]?.hint ?? ''}</span></span></td>
+            <td><span class="wr-state ${esc(row.status)}"><strong>${GAP_STATE[row.status]?.label ?? esc(row.status)}</strong><span>${row.our_position ? `jesteśmy na ${esc(row.our_position)}. miejscu` : GAP_STATE[row.status]?.hint ?? ''}</span></span></td>
             ${project.brief ? `<td>${briefKeys.has(phraseKey(row.keyword)) ? '<span class="wr-status ok">tak</span>' : '<span class="wr-status idle">nie</span>'}</td>` : ''}
           </tr>`).join('')}</tbody>
         </table></div>
       </div>` : ''}
 
       ${facts.length ? `<div class="wr-panel">
-        <div class="wr-section-head"><h3>Konkrety z tekstów konkurencji</h3><span class="wr-note">liczby i fakty, które brief przekazuje do tekstu</span></div>
-        <ul class="wr-facts">${facts.map((row) => `<li><span>${esc(row.fact)}</span><span class="wr-fact-src">${esc(String(row.source ?? '').replace(/^https?:\/\/(www\.)?/, '').split('/')[0])}</span></li>`).join('')}</ul>
+        <div class="wr-section-head"><h3>Konkrety z tekstów konkurencji</h3><span class="wr-note">liczby i fakty z czołówki – brief przekazuje je modelowi, który pisze tekst</span></div>
+        <ul class="wr-facts">${facts.map((row) => `<li><p>${esc(row.fact)}</p>${row.source ? `<a class="wr-fact-src" href="${esc(row.source)}" target="_blank" rel="noopener noreferrer">źródło: ${esc(String(row.source).replace(/^https?:\/\/(www\.)?/, '').split('/')[0])}</a>` : ''}</li>`).join('')}</ul>
       </div>` : ''}`;
     el('wr-serp-run').addEventListener('click', () => runResearch('serp'));
     box.querySelector('#wr-rivals-run')?.addEventListener('click', () => runResearch('rivals'));
