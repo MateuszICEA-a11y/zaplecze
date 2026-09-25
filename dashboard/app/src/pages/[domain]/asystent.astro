@@ -1,0 +1,541 @@
+---
+/* Asystent treści – kreator „co chcesz zrobić?”. Zamiast tabel z danymi
+   prowadzi redaktora pytaniami do jednej decyzji: nowy tekst (projekt w
+   Content Writerze), odświeżenie (edytor Content Watchera) albo luka względem
+   konkurencji. Dane: scoring Content Watchera i podpowiedzi fraz z buildu,
+   konkurencja i „odśwież czy nowy” z API Workera (jak na stronach modułów). */
+import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
+import { loadConfig, loadDetails, loadContentCatalog, latestSnapshot } from '../../lib/data';
+import { scoreContent } from '../../lib/watcher-scoring';
+import { suggestGaps } from '../../lib/writer-gaps.js';
+import '../../styles/writer.css';
+import '../../styles/assistant.css';
+
+export function getStaticPaths() {
+  const on = (feature: unknown) => (feature as { enabled?: boolean } | undefined)?.enabled === true;
+  return loadConfig()
+    .domains.filter((domain) => on(domain.content_watcher) && on(domain.content_writer))
+    .map((domain) => ({ params: { domain: domain.id }, props: { name: domain.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+const domainConfig = loadConfig().domains.find((item) => item.id === domain)!;
+const latest = latestSnapshot(domain!);
+const details = loadDetails(domain!);
+const asOf = latest?.date ?? new Date().toISOString().slice(0, 10);
+const { sortedItems, byUrgency } = scoreContent({
+  domainConfig,
+  details,
+  catalog: loadContentCatalog(domainConfig),
+  asOf,
+});
+const writerCfg = (domainConfig.content_writer ?? {}) as { exclude_paths?: string[] };
+const ideas = suggestGaps(details, { excludePaths: writerCfg.exclude_paths ?? [] });
+
+// Do przeglądarki tylko to, co pokazuje kreator – pełny payload listy CW to megabajty.
+const payload = {
+  asOf,
+  urgency: byUrgency,
+  posts: sortedItems.map((item) => ({
+    id: item.id,
+    title: item.title,
+    url: item.url,
+    urgency: item.urgency,
+    age_days: item.age_days,
+    clicks: item.clicks,
+    impressions: item.impressions,
+    reasons: item.reasons.slice(0, 3),
+    keyword: item.senuto_top_keywords[0]?.keyword ?? null,
+  })),
+  ideas: ideas.map((row) => ({
+    keyword: row.keyword,
+    searches: row.searches,
+    impressions: row.impressions,
+    position: row.position,
+    ranking_title: row.ranking_title,
+  })),
+};
+---
+
+<Layout title={`${name} – Asystent treści`}>
+  <DomainHeader domain={domain!} name={name} active="asystent" latest={latest} themeToggle />
+
+  <div class="as-page wr-page" data-domain={domain}>
+    <nav class="as-crumbs" id="as-crumbs" aria-label="Gdzie jesteś"></nav>
+    <section class="as-screen" id="as-screen" aria-live="polite"></section>
+  </div>
+
+  <script id="as-data" type="application/json" set:html={JSON.stringify(payload).replace(/</g, '\\u003c')} />
+
+  <script>
+    import { api, esc, fmtInt } from '../../lib/writer-client';
+
+    type Any = any;
+    const root = document.querySelector<HTMLElement>('.as-page')!;
+    const domain = root.dataset.domain!;
+    const screen = document.getElementById('as-screen')!;
+    const crumbs = document.getElementById('as-crumbs')!;
+    const DATA = JSON.parse(document.getElementById('as-data')!.textContent!);
+    const PAGE = 10;
+    const NEW_DAYS = 30;
+
+    const editorUrl = (id: string) => `/${domain}/content-watcher/edytor/?id=${encodeURIComponent(id)}`;
+    const projectUrl = (id: number) => `/${domain}/content-writer/projekt/?id=${id}`;
+    const pct = (score: unknown) => (typeof score === 'number' ? `${Math.round(score * 100)}%` : '–');
+    const fold = (text: string) => text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ł/g, 'l');
+
+    /* ---------- trasa w #hash: „konkurencja/lista?h=delante.pl&co=new” ---------- */
+    type Route = { path: string; q: URLSearchParams };
+    const route = (): Route => {
+      const [path, query] = decodeURIComponent(location.hash.slice(1)).split('?');
+      return { path: (path ?? '').replace(/^\/+|\/+$/g, ''), q: new URLSearchParams(query ?? '') };
+    };
+    const go = (path: string, params: Record<string, string> = {}) => {
+      const query = new URLSearchParams(params).toString();
+      location.hash = `${path}${query ? `?${query}` : ''}`;
+    };
+    const link = (path: string, params: Record<string, string> = {}) => {
+      const query = new URLSearchParams(params).toString();
+      return `#${path}${query ? `?${query}` : ''}`;
+    };
+
+    const CRUMB: Record<string, string> = {
+      '': 'Co chcesz zrobić?',
+      nowy: 'Nowa treść',
+      'nowy/fraza': 'Sprawdzenie tematu',
+      'nowy/propozycje': 'Propozycje tematów',
+      odswiez: 'Odświeżenie',
+      'odswiez/pilne': 'Najpilniejsze wpisy',
+      'odswiez/szukaj': 'Wybrany wpis',
+      konkurencja: 'Konkurencja',
+      'konkurencja/wybierz': 'Wybór konkurentów',
+      'konkurencja/co': 'Co sprawdzamy',
+      'konkurencja/lista': 'Wpisy konkurencji',
+    };
+    /* Okruszki niosą parametry kroków (wybrani konkurenci), żeby „wstecz” nie gubił wyboru. */
+    function paintCrumbs({ path, q }: Route) {
+      // Rodzic kroku wg przebiegu kreatora, nie wg ścieżki (lista → „co sprawdzamy” → wybór konkurentów).
+      const parent = (key: string): string | null => {
+        if (!key) return null;
+        if (key === 'konkurencja/lista') return 'konkurencja/co';
+        if (key === 'konkurencja/co') return hostsOf(q) ? 'konkurencja/wybierz' : 'konkurencja';
+        return key.includes('/') ? key.slice(0, key.lastIndexOf('/')) : '';
+      };
+      const trail: string[] = [];
+      for (let key: string | null = path; key !== null; key = parent(key)) trail.unshift(key);
+      const keep = (key: string): Record<string, string> => (key.startsWith('konkurencja/') && q.get('h') ? { h: q.get('h')!, ...(key === 'konkurencja/lista' && q.get('co') ? { co: q.get('co')! } : {}) } : {});
+      crumbs.innerHTML = trail.map((key, index) => index === trail.length - 1
+        ? `<span aria-current="step">${esc(CRUMB[key] ?? key)}</span>`
+        : `<a href="${link(key, keep(key))}">${esc(CRUMB[key] ?? key)}</a>`).join('<span class="as-sep" aria-hidden="true">›</span>');
+    }
+
+    /* ---------- klocki ekranu ---------- */
+    type Choice = { href: string; title: string; desc: string; meta?: string; tone?: string };
+    const question = (title: string, lede: string) =>
+      `<header class="as-q"><h2 tabindex="-1">${title}</h2>${lede ? `<p>${lede}</p>` : ''}</header>`;
+    const choices = (items: Choice[]) => `<div class="as-choices" data-count="${items.length}">${items.map((item, index) => `
+      <a class="as-choice" href="${item.href}" data-key="${index + 1}">
+        <span class="as-key" aria-hidden="true">${index + 1}</span>
+        <strong>${item.title}</strong>
+        <span class="as-desc">${item.desc}</span>
+        ${item.meta !== undefined ? `<span class="as-meta ${item.tone ?? ''}" data-meta>${item.meta}</span>` : ''}
+      </a>`).join('')}</div>`;
+    const back = (href: string, label = 'Wróć') => `<a class="as-back" href="${href}">← ${label}</a>`;
+    const loading = (text: string) => `<p class="as-loading"><span class="as-spin" aria-hidden="true"></span>${text}</p>`;
+    const fail = (error: unknown) => `<p class="wr-msg err">${esc((error as Error)?.message ?? String(error))}</p>`;
+
+    /* ---------- konkurencja: jedno pobranie na wizytę ---------- */
+    let competitors: Promise<Any> | null = null;
+    const loadCompetitors = (force = false) => {
+      if (!competitors || force) competitors = api<Any>(`/api/cw/writer/competitors/${domain}`).then((res) => res.data);
+      return competitors;
+    };
+    const cutoff = new Date(Date.now() - NEW_DAYS * 86_400_000).toISOString().slice(0, 10);
+    const isFresh = (item: Any) => !item.baseline && String(item.first_seen ?? '') >= cutoff;
+    const KIND: Record<string, { label: string; test: (item: Any) => boolean }> = {
+      new: { label: 'Tematy, których nie mamy', test: (item) => item.action === 'new' },
+      check: { label: 'Tematy, które mamy tylko częściowo', test: (item) => item.action === 'check' },
+      fresh: { label: `Nowe wpisy konkurencji (${NEW_DAYS} dni)`, test: isFresh },
+    };
+    const hostsOf = (q: URLSearchParams) => (q.get('h') && q.get('h') !== 'all' ? q.get('h')!.split(',') : null);
+
+    /* ---------- ekrany ---------- */
+    const SCREENS: Record<string, (r: Route) => void | Promise<void>> = {
+      '': () => {
+        const urgent = (DATA.urgency.critical ?? 0) + (DATA.urgency.high ?? 0);
+        screen.innerHTML = question('Co chcesz dziś zrobić?', 'Wybierz jedną rzecz – przeprowadzę Cię przez kolejne kroki.') + choices([
+          { href: link('nowy'), title: 'Napisać nową treść', desc: 'Od tematu do szkicu w WordPressie. Najpierw sprawdzimy, czy nie mamy już takiego wpisu.', meta: `${fmtInt(DATA.ideas.length)} propozycji tematów z danych` },
+          { href: link('odswiez'), title: 'Odświeżyć istniejący wpis', desc: 'Wskażę wpisy, które tracą ruch albo stoją tuż za TOP 10, i powiem dlaczego.', meta: `${fmtInt(urgent)} wpisów pilnych`, tone: urgent ? 'warn' : '' },
+          { href: link('konkurencja'), title: 'Sprawdzić, czego nam brakuje', desc: 'Porównamy wpisy konkurencji z naszymi i znajdziemy tematy, których nie mamy.', meta: 'liczę…' },
+        ]);
+        loadCompetitors().then((data) => {
+          const gaps = (data.items ?? []).filter(KIND.new.test).length;
+          const meta = screen.querySelector<HTMLElement>('[data-key="3"] [data-meta]');
+          if (meta) meta.textContent = `${fmtInt(gaps)} tematów, których nie mamy · ${fmtInt((data.sites ?? []).length)} konkurentów`;
+        }).catch(() => {
+          const meta = screen.querySelector<HTMLElement>('[data-key="3"] [data-meta]');
+          if (meta) meta.textContent = 'dane konkurencji niedostępne';
+        });
+      },
+
+      /* ===== Nowa treść ===== */
+      nowy: () => {
+        screen.innerHTML = back(link('')) + question('Masz już temat?', 'Jeśli tak – sprawdzimy, czy nie piszemy drugi raz o tym samym. Jeśli nie – zaproponuję tematy z danych.') + choices([
+          { href: link('nowy/fraza'), title: 'Tak, podam frazę', desc: 'Wpiszesz frazę, pod którą tekst ma być widoczny w Google.' },
+          { href: link('nowy/propozycje'), title: 'Nie, zaproponuj temat', desc: 'Frazy, na które już się wyświetlamy, ale dopiero na pozycjach 11–50 – bez ruchu.', meta: `${fmtInt(DATA.ideas.length)} propozycji` },
+          { href: link('konkurencja'), title: 'Pokaż, co piszą konkurenci', desc: 'Tematy z blogów konkurencji, których u nas nie ma.' },
+        ]);
+      },
+
+      'nowy/fraza': async ({ q }) => {
+        const phrase = q.get('q') ?? '';
+        const from = q.get('z');
+        screen.innerHTML = back(history.length > 1 ? 'javascript:history.back()' : link('nowy')) +
+          question('Jaka fraza?', 'Jedna fraza główna – tak, jak wpisałby ją czytelnik w Google.') + `
+          <form class="as-form" id="as-phrase" autocomplete="off">
+            <input class="wr-input" name="q" maxlength="120" required value="${esc(phrase)}" placeholder="np. audyt seo sklepu internetowego" aria-label="Fraza główna" />
+            <button class="wr-btn primary" type="submit">Sprawdź</button>
+          </form>
+          ${from ? `<p class="as-hint">To tytuł wpisu konkurenta (<a href="${esc(from)}" target="_blank" rel="noopener noreferrer">zobacz</a>). Skróć go do frazy, pod którą chcesz być widoczny.</p>` : ''}
+          <div id="as-verdict"></div>`;
+        const form = document.getElementById('as-phrase') as HTMLFormElement;
+        const input = form.elements.namedItem('q') as HTMLInputElement;
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const value = input.value.trim();
+          if (value) go('nowy/fraza', { q: value, ...(from ? { z: from } : {}) });
+        });
+        if (!phrase) {
+          input.focus();
+          return;
+        }
+        if (from) {
+          input.focus();
+          input.select();
+          return; // tytuł konkurenta najpierw do skrócenia – sprawdzamy dopiero po „Sprawdź”
+        }
+        await verdict(phrase);
+      },
+
+      'nowy/propozycje': ({ q }) => {
+        const shown = Number(q.get('n') ?? PAGE);
+        const rows = DATA.ideas.slice(0, shown);
+        screen.innerHTML = back(link('nowy')) + question('Który temat bierzemy?',
+          'Na te frazy Google już pokazuje nasze strony, ale na pozycjach 11–50. Osobny tekst ma szansę wejść do TOP 10. Najpierw największy popyt.') +
+          (rows.length ? `<ol class="as-list">${rows.map((row: Any) => `
+            <li class="as-item">
+              <div class="as-item-main">
+                <strong>${esc(row.keyword)}</strong>
+                <span class="as-why">${row.searches ? `${fmtInt(row.searches)} wyszukiwań/mies.` : `${fmtInt(row.impressions)} wyświetleń w 28 dni`}
+                  · dziś pozycja ${Math.round(row.position)}${row.ranking_title ? ` na wpisie „${esc(row.ranking_title)}”` : ''}</span>
+              </div>
+              <a class="wr-btn primary small" href="${link('nowy/fraza', { q: row.keyword })}">Wybieram</a>
+            </li>`).join('')}</ol>
+            ${DATA.ideas.length > shown ? `<a class="as-more" href="${link('nowy/propozycje', { n: String(shown + PAGE) })}">Pokaż kolejne</a>` : ''}`
+            : '<p class="as-empty">Brak propozycji w danych z ostatniego pomiaru.</p>');
+      },
+
+      /* ===== Odświeżenie ===== */
+      odswiez: () => {
+        screen.innerHTML = back(link('')) + question('Który wpis odświeżamy?', '') + choices([
+          { href: link('odswiez/pilne'), title: 'Pokaż najpilniejsze', desc: 'Wpisy ze słabym ruchem, dawno nieaktualizowane albo tuż za TOP 10 – od najpilniejszego.', meta: `${fmtInt(DATA.urgency.critical ?? 0)} krytycznych · ${fmtInt(DATA.urgency.high ?? 0)} o wysokiej pilności`, tone: 'warn' },
+          { href: link('odswiez/szukaj'), title: 'Mam konkretny wpis', desc: 'Znajdź go po tytule.' },
+        ]);
+      },
+
+      'odswiez/pilne': ({ q }) => {
+        const skipped = new Set<string>(JSON.parse(localStorage.getItem(`as-skip:${domain}`) ?? '[]'));
+        const showSkipped = q.get('pominiete') === '1';
+        const pool = DATA.posts.filter((post: Any) => ['critical', 'high', 'normal'].includes(post.urgency) && showSkipped === skipped.has(post.id));
+        const shown = Number(q.get('n') ?? PAGE);
+        screen.innerHTML = back(link('odswiez')) + question(showSkipped ? 'Pominięte wpisy' : 'Te wpisy warto odświeżyć najpierw',
+          showSkipped ? 'Odłożone na później. Możesz je przywrócić na listę.' : 'Kolejność z Content Watchera: pilność (wyniki × wiek), potem wynik. Przy każdym – dlaczego.') +
+          (pool.length ? `<ol class="as-list">${pool.slice(0, shown).map((post: Any) => `
+            <li class="as-item" data-id="${esc(post.id)}">
+              <div class="as-item-main">
+                <span class="as-badge ${post.urgency}">${URGENCY[post.urgency]}</span>
+                <strong><a href="${esc(post.url)}" target="_blank" rel="noopener">${esc(post.title)}</a></strong>
+                <span class="as-why">${post.reasons.length ? esc(post.reasons.join(' · ')) : 'słaby ruch względem reszty bloga'}</span>
+              </div>
+              <div class="as-item-actions">
+                <a class="wr-btn primary small" href="${editorUrl(post.id)}">Odśwież w edytorze</a>
+                <button class="wr-btn small" type="button" data-skip="${esc(post.id)}">${showSkipped ? 'Przywróć' : 'Nie teraz'}</button>
+              </div>
+            </li>`).join('')}</ol>
+            ${pool.length > shown ? `<a class="as-more" href="${link('odswiez/pilne', { n: String(shown + PAGE), ...(showSkipped ? { pominiete: '1' } : {}) })}">Pokaż kolejne (${fmtInt(pool.length - shown)})</a>` : ''}`
+            : `<p class="as-empty">${showSkipped ? 'Nic nie jest pominięte.' : 'Brak pilnych wpisów – wszystko świeże albo z dobrym ruchem.'}</p>`) +
+          (!showSkipped && skipped.size ? `<p class="as-hint"><a href="${link('odswiez/pilne', { pominiete: '1' })}">Pominięte (${fmtInt(skipped.size)})</a></p>` : '');
+        screen.querySelectorAll<HTMLButtonElement>('[data-skip]').forEach((button) => button.addEventListener('click', () => {
+          const id = button.dataset.skip!;
+          if (skipped.has(id)) skipped.delete(id); else skipped.add(id);
+          localStorage.setItem(`as-skip:${domain}`, JSON.stringify([...skipped]));
+          button.closest('li')!.remove();
+        }));
+      },
+
+      'odswiez/szukaj': () => {
+        screen.innerHTML = back(link('odswiez')) + question('Który wpis?', 'Zacznij pisać tytuł.') + `
+          <input class="wr-input as-search" type="search" id="as-find" placeholder="np. linkowanie wewnętrzne" aria-label="Szukaj wpisu po tytule" />
+          <ol class="as-list" id="as-found"></ol>`;
+        const input = document.getElementById('as-find') as HTMLInputElement;
+        const out = document.getElementById('as-found')!;
+        const paint = () => {
+          const words = fold(input.value).split(/\s+/).filter(Boolean);
+          const hits = words.length ? DATA.posts.filter((post: Any) => words.every((word) => fold(post.title).includes(word))).slice(0, 12) : [];
+          out.innerHTML = words.length && !hits.length ? '<li class="as-empty">Nie ma wpisu z takim tytułem.</li>' : hits.map((post: Any) => `
+            <li class="as-item">
+              <div class="as-item-main">
+                <span class="as-badge ${post.urgency}">${URGENCY[post.urgency]}</span>
+                <strong>${esc(post.title)}</strong>
+                <span class="as-why">${post.reasons.length ? esc(post.reasons.join(' · ')) : `bez zmian od ${fmtInt(post.age_days)} dni`}</span>
+              </div>
+              <a class="wr-btn primary small" href="${editorUrl(post.id)}">Odśwież w edytorze</a>
+            </li>`).join('');
+        };
+        input.addEventListener('input', paint);
+        input.focus();
+      },
+
+      /* ===== Konkurencja ===== */
+      konkurencja: async () => {
+        screen.innerHTML = back(link('')) + question('Z kim się porównujemy?', '') + loading('Wczytuję wpisy konkurencji…');
+        try {
+          const data = await loadCompetitors();
+          const sites = data.sites ?? [];
+          screen.innerHTML = back(link('')) + question('Z kim się porównujemy?', 'Wpisy z blogów konkurencji zestawione z naszymi po tytułach.') + choices([
+            { href: link('konkurencja/co', { h: 'all' }), title: 'Ze wszystkimi naraz', desc: sites.map((site: Any) => esc(site.host)).join(', '), meta: `${fmtInt((data.items ?? []).length)} wpisów` },
+            { href: link('konkurencja/wybierz'), title: 'Z wybranymi', desc: 'Zaznaczysz konkretnych konkurentów z listy.' },
+          ]) + pendingNote(data);
+          bindSync();
+        } catch (error) {
+          screen.insertAdjacentHTML('beforeend', fail(error));
+        }
+      },
+
+      'konkurencja/wybierz': async ({ q }) => {
+        screen.innerHTML = back(link('konkurencja')) + question('Których konkurentów?', '') + loading('Wczytuję…');
+        const data = await loadCompetitors();
+        const preset = new Set(hostsOf(q) ?? []);
+        const rows = (data.sites ?? []).map((site: Any) => {
+          const items = (data.items ?? []).filter((item: Any) => item.host === site.host);
+          return { host: site.host, total: items.length, gaps: items.filter(KIND.new.test).length, fresh: items.filter(isFresh).length };
+        });
+        screen.innerHTML = back(link('konkurencja')) + question('Których konkurentów?', 'Zaznacz jednego albo kilku.') + `
+          <form id="as-hosts" class="as-checks">${rows.map((row: Any) => `
+            <label class="as-check">
+              <input type="checkbox" name="h" value="${esc(row.host)}" ${preset.has(row.host) ? 'checked' : ''} />
+              <img src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(row.host)}&sz=32" alt="" width="20" height="20" loading="lazy" />
+              <span><strong>${esc(row.host)}</strong>
+                <small>${fmtInt(row.total)} wpisów · ${fmtInt(row.gaps)} tematów, których nie mamy${row.fresh ? ` · ${fmtInt(row.fresh)} nowych w ${NEW_DAYS} dni` : ''}</small></span>
+            </label>`).join('')}
+            <div class="as-actions"><button class="wr-btn primary" type="submit" disabled>Dalej</button></div>
+          </form>`;
+        const form = document.getElementById('as-hosts') as HTMLFormElement;
+        const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+        const picked = () => [...form.querySelectorAll<HTMLInputElement>('input:checked')].map((box) => box.value);
+        const sync = () => { submit.disabled = !picked().length; };
+        form.addEventListener('change', sync);
+        form.addEventListener('submit', (event) => { event.preventDefault(); go('konkurencja/co', { h: picked().join(',') }); });
+        sync();
+      },
+
+      'konkurencja/co': async ({ q }) => {
+        const hosts = hostsOf(q);
+        const who = hosts ? hosts.join(', ') : 'wszyscy konkurenci';
+        const backHref = hosts ? link('konkurencja/wybierz', { h: hosts.join(',') }) : link('konkurencja');
+        screen.innerHTML = back(backHref) + question('Czego szukamy?', '') + loading('Liczę…');
+        const data = await loadCompetitors();
+        const items = (data.items ?? []).filter((item: Any) => !hosts || hosts.includes(item.host));
+        const count = (kind: string) => items.filter(KIND[kind].test).length;
+        const h = q.get('h') ?? 'all';
+        screen.innerHTML = back(backHref) + question('Czego szukamy?', `Porównanie: <b>${esc(who)}</b> – ${fmtInt(items.length)} wpisów.`) + choices([
+          { href: link('konkurencja/lista', { h, co: 'new' }), title: 'Tematów, których nie mamy', desc: 'Konkurent ma wpis, a my nie mamy nic bliskiego. Kandydaci na nowe teksty.', meta: `${fmtInt(count('new'))} tematów` },
+          { href: link('konkurencja/lista', { h, co: 'check' }), title: 'Tematów, które mamy tylko częściowo', desc: 'Mamy wpis pokrewny – zdecydujesz, czy go rozbudować, czy napisać osobny.', meta: `${fmtInt(count('check'))} tematów` },
+          { href: link('konkurencja/lista', { h, co: 'fresh' }), title: 'Co nowego u konkurencji', desc: `Wpisy, które pojawiły się w ich sitemapach w ostatnich ${NEW_DAYS} dniach.`, meta: `${fmtInt(count('fresh'))} wpisów` },
+        ]) + pendingNote(data);
+        bindSync();
+      },
+
+      'konkurencja/lista': async ({ q }) => {
+        const hosts = hostsOf(q);
+        const kind = KIND[q.get('co') ?? 'new'] ? q.get('co') ?? 'new' : 'new';
+        const backHref = link('konkurencja/co', { h: q.get('h') ?? 'all' });
+        screen.innerHTML = back(backHref) + question(KIND[kind].label, '') + loading('Wczytuję…');
+        const data = await loadCompetitors();
+        const query = q.get('s') ?? '';
+        const words = fold(query).split(/\s+/).filter(Boolean);
+        const pool = (data.items ?? [])
+          .filter((item: Any) => (!hosts || hosts.includes(item.host)) && KIND[kind].test(item))
+          .filter((item: Any) => words.every((word) => fold(item.title).includes(word)))
+          // Najpierw prawdziwe tytuły i najnowsze – tytuł ze sluga bywa urwany.
+          .sort((a: Any, b: Any) => Number(b.title_from === 'page') - Number(a.title_from === 'page')
+            || String(b.first_seen ?? '').localeCompare(String(a.first_seen ?? ''))
+            || String(b.lastmod ?? '').localeCompare(String(a.lastmod ?? '')));
+        const shown = Number(q.get('n') ?? PAGE);
+        const lede = {
+          new: 'Wybierz temat, który chcesz napisać u nas. Na kolejnym kroku skrócisz tytuł do frazy i sprawdzimy go jeszcze raz.',
+          check: 'Przy każdym temacie nasz najbliższy wpis. Zdecyduj: rozbudować nasz czy napisać osobny tekst.',
+          fresh: 'Świeże wpisy konkurencji i ocena, czy mamy odpowiednik.',
+        }[kind];
+        screen.innerHTML = back(backHref) + question(KIND[kind].label, `${lede} <span class="as-count">${fmtInt(pool.length)} pozycji${hosts ? ` · ${esc(hosts.join(', '))}` : ''}</span>`) + `
+          <form class="as-form" id="as-filter"><input class="wr-input as-search" type="search" name="s" value="${esc(query)}" placeholder="Zawęź po słowie, np. allegro" aria-label="Zawęź listę" /></form>
+          ${pool.length ? `<ol class="as-list">${pool.slice(0, shown).map((item: Any) => competitorItem(item)).join('')}</ol>
+            ${pool.length > shown ? `<a class="as-more" href="${link('konkurencja/lista', { h: q.get('h') ?? 'all', co: kind, ...(query ? { s: query } : {}), n: String(shown + PAGE) })}">Pokaż kolejne (${fmtInt(pool.length - shown)})</a>` : ''}`
+            : '<p class="as-empty">Nic tu nie ma.</p>'}`;
+        document.getElementById('as-filter')!.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const value = ((event.target as HTMLFormElement).elements.namedItem('s') as HTMLInputElement).value.trim();
+          go('konkurencja/lista', { h: q.get('h') ?? 'all', co: kind, ...(value ? { s: value } : {}) });
+        });
+      },
+    };
+
+    const URGENCY: Record<string, string> = { critical: 'krytyczny', high: 'wysoki', normal: 'normalny', low: 'niski', none: 'bez oceny' };
+
+    function competitorItem(item: Any) {
+      const ours = item.target
+        ? `<span class="as-ours">Nasz najbliższy: <a href="${item.target.catalog_id ? editorUrl(item.target.catalog_id) : esc(item.target.url)}">${esc(item.target.title)}</a> · ${pct(item.score)} podobieństwa</span>`
+        : '';
+      const write = `<a class="wr-btn ${item.action === 'new' || !item.action ? 'primary ' : ''}small" href="${link('nowy/fraza', { q: item.title, z: item.url })}">Napisz nasz tekst</a>`;
+      const refresh = item.target?.catalog_id && item.action !== 'new'
+        ? `<a class="wr-btn ${item.action === 'refresh' ? 'primary ' : ''}small" href="${editorUrl(item.target.catalog_id)}">Rozbuduj nasz wpis</a>` : '';
+      return `<li class="as-item">
+        <div class="as-item-main">
+          <strong><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.title)}</a></strong>
+          <span class="as-why">${esc(item.host)} · ${item.baseline ? 'w sitemapie od początku śledzenia' : `pojawił się ${esc(item.first_seen)}`}${item.title_from === 'slug' ? ' · tytuł z adresu' : ''}</span>
+          ${ours}
+        </div>
+        <div class="as-item-actions">${item.action === 'refresh' ? refresh + write.replace('primary ', '') : write + refresh}</div>
+      </li>`;
+    }
+
+    /* Wpisy bez porównania (nowe adresy, zmienione tytuły) – dokończenie na żądanie. */
+    function pendingNote(data: Any) {
+      const pending = (data.items ?? []).filter((item: Any) => !item.action).length;
+      return pending ? `<div class="as-note">${fmtInt(pending)} wpisów czeka na porównanie z naszymi (idzie samo co rano).
+        <button class="wr-btn small" type="button" data-sync>Porównaj teraz</button> <span data-sync-msg></span></div>` : '';
+    }
+    function bindSync() {
+      const button = screen.querySelector<HTMLButtonElement>('[data-sync]');
+      if (!button) return;
+      button.addEventListener('click', async () => {
+        const msg = screen.querySelector<HTMLElement>('[data-sync-msg]')!;
+        button.disabled = true;
+        try {
+          for (let round = 0; round < 60; round += 1) {
+            const { data } = await api<Any>(`/api/cw/writer/competitors/${domain}/sync`, { method: 'POST', body: {} });
+            msg.textContent = data.remaining ? `zostało ${fmtInt(data.remaining)}…` : 'gotowe';
+            if (!data.remaining) break;
+          }
+          await loadCompetitors(true);
+          render();
+        } catch (error) {
+          msg.textContent = (error as Error).message;
+          button.disabled = false;
+        }
+      });
+    }
+
+    /* „Odśwież czy nowy” dla frazy i jedna decyzja na końcu. */
+    async function verdict(phrase: string) {
+      const box = document.getElementById('as-verdict')!;
+      box.innerHTML = loading('Sprawdzam, czy mamy już wpis na ten temat…');
+      let result: Any = null;
+      try {
+        const { data } = await api<Any>('/api/cw/writer/classify', { method: 'POST', body: { domain, phrases: [phrase] } });
+        result = data.results?.[0] ?? null;
+      } catch (error) {
+        box.innerHTML = `<div class="as-verdict mid"><h3>Nie udało się sprawdzić bloga</h3><p>${esc((error as Error).message)}</p>
+          <div class="as-actions"><button class="wr-btn primary" type="button" data-create>Załóż projekt mimo to</button></div></div>`;
+        bindCreate(phrase, null);
+        return;
+      }
+      const target = result?.target ?? null;
+      const nearest = target ?? result?.candidates?.[0] ?? null;
+      const ourLink = (post: Any) => post?.catalog_id
+        ? `<a href="${editorUrl(post.catalog_id)}">${esc(post.title)}</a>`
+        : `<a href="${esc(post?.url)}" target="_blank" rel="noopener">${esc(post?.title ?? post?.url)}</a>`;
+      const basis = result?.judge?.basis ? `<p class="as-basis">${esc(result.judge.basis)}</p>` : '';
+      const action = result?.editor?.verdict === 'different' ? 'new' : result?.action ?? 'new';
+
+      if (action === 'new') {
+        box.innerHTML = `<div class="as-verdict ok">
+          <h3>Nie mamy wpisu na ten temat – możesz pisać</h3>
+          <p>${nearest ? `Najbliższy nasz wpis: ${ourLink(nearest)} (${pct(nearest.score)} podobieństwa) – to inny temat.` : 'Na blogu nie ma nic bliskiego.'}</p>${basis}
+          <div class="as-actions"><button class="wr-btn primary" type="button" data-create>Załóż projekt „${esc(phrase)}”</button></div>
+          <p class="as-hint">Dalej: analiza wyników Google i brief do akceptacji w Content Writerze.</p></div>`;
+      } else if (action === 'refresh') {
+        box.innerHTML = `<div class="as-verdict warn">
+          <h3>Ten temat już mamy</h3>
+          <p>${ourLink(target)}${typeof target?.score === 'number' ? ` · ${pct(target.score)} podobieństwa` : ''}${target?.position ? ` · rankuje na #${esc(target.position)}` : ''}</p>${basis}
+          <p>Drugi tekst o tym samym konkurowałby z pierwszym o tę samą frazę. Lepiej rozbudować istniejący.</p>
+          <div class="as-actions">
+            ${target?.catalog_id ? `<a class="wr-btn primary" href="${editorUrl(target.catalog_id)}">Rozbuduj istniejący wpis</a>` : ''}
+            <button class="wr-btn" type="button" data-create data-verdict="different">To jednak inny temat – napisz nowy</button>
+          </div></div>`;
+      } else {
+        box.innerHTML = `<div class="as-verdict mid">
+          <h3>Mamy wpis pokrewny – to ten sam temat?</h3>
+          <p>${ourLink(nearest)}${typeof nearest?.score === 'number' ? ` · ${pct(nearest.score)} podobieństwa` : ''}</p>${basis}
+          <div class="as-actions">
+            <button class="wr-btn primary" type="button" data-same>Tak, ten sam – rozbuduję istniejący</button>
+            <button class="wr-btn" type="button" data-create data-verdict="different">Nie, to inny temat – napisz nowy</button>
+          </div>
+          <p class="as-hint">Twoja odpowiedź zostanie zapamiętana dla tej frazy.</p></div>`;
+        box.querySelector<HTMLButtonElement>('[data-same]')?.addEventListener('click', async (event) => {
+          (event.currentTarget as HTMLButtonElement).disabled = true;
+          await saveVerdict(phrase, 'same', nearest);
+          location.href = nearest?.catalog_id ? editorUrl(nearest.catalog_id) : nearest?.url;
+        });
+      }
+      bindCreate(phrase, nearest);
+    }
+
+    const saveVerdict = (phrase: string, choice: string, target: Any) =>
+      api('/api/cw/writer/verdict', { method: 'POST', body: { domain, phrase, verdict: choice, target: choice === 'same' ? target : undefined } })
+        .catch(() => null); // decyzja to pomoc na przyszłość – jej brak nie blokuje pracy
+
+    function bindCreate(phrase: string, _nearest: Any) {
+      document.querySelectorAll<HTMLButtonElement>('#as-verdict [data-create]').forEach((button) => button.addEventListener('click', async () => {
+        button.disabled = true;
+        button.textContent = 'Zakładam projekt…';
+        if (button.dataset.verdict) await saveVerdict(phrase, button.dataset.verdict, null);
+        try {
+          const { data } = await api<{ project: { id: number } }>('/api/cw/writer/projects', { method: 'POST', body: { domain, keyword: phrase } });
+          location.href = projectUrl(data.project.id);
+        } catch (error) {
+          const err = error as Error & { code?: string; data?: Any };
+          button.insertAdjacentHTML('afterend', err.code === 'duplicate' && err.data?.project_id
+            ? ` <span class="wr-msg">Ta fraza ma już projekt – <a href="${projectUrl(err.data.project_id)}">otwórz go</a>.</span>`
+            : ` <span class="wr-msg err">${esc(err.message)}</span>`);
+        }
+      }));
+    }
+
+    /* ---------- pętla ---------- */
+    async function render() {
+      const current = route();
+      paintCrumbs(current);
+      const draw = SCREENS[current.path] ?? SCREENS[''];
+      try {
+        await draw(current);
+      } catch (error) {
+        screen.insertAdjacentHTML('beforeend', fail(error));
+      }
+      screen.querySelector<HTMLElement>('h2')?.focus({ preventScroll: true });
+      window.scrollTo({ top: 0 });
+    }
+    window.addEventListener('hashchange', render);
+
+    /* Skróty: 1–3 wybierają kartę, Esc cofa o krok. */
+    document.addEventListener('keydown', (event) => {
+      const typing = (event.target as HTMLElement).closest('input, textarea, select');
+      if (typing || event.metaKey || event.ctrlKey || event.altKey) return;
+      if (/^[1-9]$/.test(event.key)) screen.querySelector<HTMLAnchorElement>(`.as-choice[data-key="${event.key}"]`)?.click();
+      if (event.key === 'Escape') screen.querySelector<HTMLAnchorElement>('.as-back')?.click();
+    });
+    render();
+  </script>
+</Layout>

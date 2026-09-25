@@ -1,0 +1,200 @@
+/* Asystent treści – kreator pytań. Globalne z prefiksem .as-, bo ekrany
+   powstają w JS (innerHTML). Jedna kolumna czytelnej szerokości, jedno
+   pytanie na ekran, duże pola wyboru. Tylko tokeny z theme.css. */
+
+.as-page {
+  max-width: 820px;
+  gap: 20px;
+}
+
+.as-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.86rem;
+  color: var(--ink-faint);
+}
+.as-crumbs a { color: var(--ink-muted); text-decoration: none; }
+.as-crumbs a:hover { color: var(--ink); text-decoration: underline; }
+.as-crumbs [aria-current] { color: var(--ink); }
+.as-sep { color: var(--ink-faint); }
+
+.as-screen { display: grid; gap: 18px; min-width: 0; }
+
+.as-back {
+  justify-self: start;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.as-back:hover { color: var(--ink); }
+
+.as-q h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.as-q h2:focus { outline: none; }
+.as-q p {
+  margin: 8px 0 0;
+  max-width: 64ch;
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+.as-count { color: var(--ink-faint); white-space: nowrap; }
+
+/* ---------- karty wyboru ---------- */
+.as-choices { display: grid; gap: 12px; }
+.as-choice {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px 18px 60px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--bg-surface-1);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+.as-choice:hover,
+.as-choice:focus-visible {
+  border-color: var(--accent-blue);
+  background: var(--bg-surface-2);
+  outline: none;
+}
+.as-choice strong { font-size: 1.12rem; font-weight: 600; }
+.as-desc { color: var(--ink-muted); line-height: 1.5; }
+.as-key {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  color: var(--ink-faint);
+  font-size: 0.82rem;
+}
+.as-choice:hover .as-key { border-color: var(--accent-blue); color: var(--accent-blue); }
+.as-meta { color: var(--ink-faint); font-size: 0.88rem; }
+.as-meta.warn { color: var(--status-warn-fg); }
+
+/* ---------- listy do wyboru ---------- */
+.as-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.as-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--hairline-soft);
+  border-top-color: var(--hairline);
+  border-radius: var(--radius);
+  background: var(--bg-surface-1);
+}
+.as-item-main { display: grid; gap: 4px; min-width: 0; }
+.as-item-main strong { font-weight: 600; line-height: 1.35; }
+.as-item-main strong a { color: var(--ink); text-decoration: none; }
+.as-item-main strong a:hover { text-decoration: underline; }
+.as-why { color: var(--ink-muted); font-size: 0.88rem; line-height: 1.45; }
+.as-ours { color: var(--ink-faint); font-size: 0.86rem; }
+.as-ours a { color: var(--ink-muted); }
+.as-item-actions { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+.as-item .wr-btn { text-decoration: none; display: inline-flex; align-items: center; white-space: nowrap; }
+
+.as-badge {
+  justify-self: start;
+  padding: 1px 7px;
+  border-radius: 2px;
+  font-size: 0.76rem;
+  background: var(--bg-surface-3);
+  color: var(--ink-muted);
+}
+.as-badge.critical { background: var(--status-err-bg); color: var(--status-err-fg); }
+.as-badge.high { background: var(--status-warn-bg); color: var(--status-warn-fg); }
+.as-badge.normal { background: var(--status-mid-bg); color: var(--status-mid-fg); }
+.as-badge.low { background: var(--status-ok-bg); color: var(--status-ok); }
+
+.as-more {
+  justify-self: start;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+.as-empty { color: var(--ink-faint); padding: 12px 0; }
+.as-hint { margin: 0; color: var(--ink-faint); font-size: 0.88rem; }
+.as-hint a { color: var(--ink-muted); }
+
+/* ---------- formularze ---------- */
+.as-form { display: flex; gap: 8px; flex-wrap: wrap; }
+.as-form .wr-input { flex: 1 1 320px; height: 44px; font-size: 1rem; }
+.as-form .wr-btn { height: 44px; }
+.as-search { width: 100%; height: 40px; }
+
+.as-checks { display: grid; gap: 8px; }
+.as-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--bg-surface-1);
+  cursor: pointer;
+}
+.as-check:has(input:checked) { border-color: var(--accent-blue); background: var(--bg-surface-2); }
+.as-check input { width: 18px; height: 18px; accent-color: var(--accent-blue); }
+.as-check span { display: grid; gap: 2px; }
+.as-check small { color: var(--ink-muted); }
+.as-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 4px; }
+.as-actions .wr-btn { text-decoration: none; display: inline-flex; align-items: center; }
+
+/* ---------- werdykt „odśwież czy nowy” ---------- */
+.as-verdict {
+  display: grid;
+  gap: 8px;
+  padding: 18px 20px;
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--ink-faint);
+  border-radius: var(--radius);
+  background: var(--bg-surface-1);
+}
+.as-verdict.ok { border-left-color: var(--status-ok); }
+.as-verdict.warn { border-left-color: var(--status-warn-fg); }
+.as-verdict.mid { border-left-color: var(--status-mid-fg); }
+.as-verdict h3 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+.as-verdict p { margin: 0; color: var(--ink-muted); line-height: 1.5; }
+.as-verdict a { color: var(--ink); }
+.as-basis { font-size: 0.88rem; font-style: italic; }
+
+.as-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+
+.as-loading { display: flex; align-items: center; gap: 10px; color: var(--ink-muted); }
+.as-spin {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--hairline);
+  border-top-color: var(--accent-blue);
+  border-radius: 50%;
+  animation: as-spin 0.8s linear infinite;
+}
+@keyframes as-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 640px) {
+  .as-item { flex-direction: column; align-items: stretch; }
+  .as-item-actions { justify-content: flex-start; }
+  .as-choice { padding-left: 52px; }
+  .as-key { left: 14px; }
+}
