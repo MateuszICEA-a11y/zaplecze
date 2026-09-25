@@ -198,17 +198,33 @@ export function cannibalization(keyword, data) {
 }
 
 /** Wiersze rankingu dla frazy: ta sama fraza albo wariant z jednym słowem więcej. */
+/* Wiersze rankingu z policzonymi raz tokenami. Bez tego każda fraza tokenizowała
+   od nowa ~3200 wierszy – 30 fraz to było ~500 ms CPU i Worker padał (1102). */
+const preparedRankings = new WeakMap();
+function prepareRankings(rankings) {
+  let prepared = preparedRankings.get(rankings);
+  if (!prepared) {
+    prepared = rankings.map((row) => ({
+      row,
+      key: phraseKey(row.keyword),
+      stems: new Set(phraseStems(row.keyword)),
+      hay: tokens(row.keyword),
+    }));
+    preparedRankings.set(rankings, prepared);
+  }
+  return prepared;
+}
+
 export function rankingsFor(keyword, rankings, maxPosition = GAP_MAX_POSITION) {
   const needle = phraseStems(keyword);
   if (!needle.length) return [];
   const key = phraseKey(keyword);
-  return rankings
-    .filter((row) => Number(row.position) <= maxPosition)
+  const limit = new Set(needle).size + 1;
+  return prepareRankings(rankings)
+    .filter(({ row }) => Number(row.position) <= maxPosition)
     // Ta sama fraza albo wariant z jednym słowem więcej („audyt seo sklepu").
-    .filter((row) => {
-      if (phraseKey(row.keyword) === key) return true;
-      const stems = new Set(phraseStems(row.keyword));
-      return matchTokens(tokens(row.keyword), needle).length > 0 && stems.size <= new Set(needle).size + 1;
-    })
+    .filter(({ key: rowKey, stems, hay }) => rowKey === key
+      || (stems.has(needle[0]) && stems.size <= limit && matchTokens(hay, needle).length > 0))
+    .map(({ row }) => row)
     .sort((a, b) => a.position - b.position);
 }

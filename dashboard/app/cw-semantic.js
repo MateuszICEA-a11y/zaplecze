@@ -19,6 +19,7 @@
  * z crona Workera (raz dziennie po collectorze) i z przycisku w UI.
  */
 import { normPath, rankingsFor } from './src/lib/writer-gaps.js';
+import { phraseKey } from './src/lib/phrase-match.js';
 
 const json = (value, status = 200) =>
   new Response(JSON.stringify(value), {
@@ -242,6 +243,13 @@ export async function classifyPhrases(env, domain, phrases, rankings, options = 
     return { phrase, ...decide(candidates, ranking), ranking, candidates: candidates.slice(0, 3) };
   }));
 
+  // Decyzja redaktora wygrywa z embeddingami i z sędzią – i nie wygasa.
+  const stored = options.db === false ? new Map() : await storedVerdicts(env, domain, results.map((result) => result.phrase));
+  results.forEach((result, index) => {
+    const editor = stored.get(`${phraseKey(result.phrase)}|editor`);
+    if (editor) results[index] = applyEditor(result, editor);
+  });
+
   const unsure = results.map((result, index) => ({ result, index })).filter(({ result }) => result.action === 'check');
   if (!unsure.length || options.judge === false) return results;
   const catalog = await catalogByPath(env, domain);
@@ -264,12 +272,123 @@ export async function classifyPhrases(env, domain, phrases, rankings, options = 
       })),
     };
   });
-  const verdicts = await judgeCases(env, cases, options);
-  cases.forEach((item, i) => {
-    const { index } = unsure[i];
-    results[index] = applyVerdict(results[index], item.options, verdicts.get(item.id));
-  });
+  // Zapamiętany werdykt sędziego, jeśli oparł się na tych samych kandydatach.
+  const cutoff = new Date(Date.now() - VERDICT_TTL_DAYS * 86_400_000).toISOString();
+  const pending = [];
+  for (let i = 0; i < cases.length; i++) {
+    const item = cases[i];
+    item.hash = await casesHash(item);
+    const row = stored.get(`${phraseKey(item.phrase)}|judge`);
+    if (row && row.cases_hash === item.hash && row.created_at >= cutoff) {
+      const pick = item.options.find((option) => option.path === row.pick_path)?.n ?? null;
+      const applied = applyVerdict(results[unsure[i].index], item.options, { verdict: row.verdict, pick, basis: row.basis ?? '' });
+      results[unsure[i].index] = applied.judge ? { ...applied, judge: { ...applied.judge, cached: true, at: row.created_at } } : applied;
+    } else {
+      pending.push(i);
+    }
+  }
+  if (!pending.length) return results;
+
+  const verdicts = await judgeCases(env, pending.map((i) => cases[i]), options);
+  const now = new Date().toISOString();
+  const writes = [];
+  for (const i of pending) {
+    const item = cases[i];
+    const verdict = verdicts.get(item.id);
+    results[unsure[i].index] = applyVerdict(results[unsure[i].index], item.options, verdict);
+    if (verdict && options.db !== false) {
+      const picked = item.options.find((option) => option.n === verdict.pick) ?? null;
+      writes.push(env.CW_DB.prepare(
+        `INSERT INTO phrase_verdicts (domain, phrase_key, source, phrase, verdict, cases_hash, pick_path, target, basis, created_at)
+         VALUES (?, ?, 'judge', ?, ?, ?, ?, NULL, ?, ?)
+         ON CONFLICT(domain, phrase_key, source) DO UPDATE SET phrase = excluded.phrase, verdict = excluded.verdict,
+           cases_hash = excluded.cases_hash, pick_path = excluded.pick_path, basis = excluded.basis, created_at = excluded.created_at`,
+      ).bind(domain, phraseKey(item.phrase), item.phrase, verdict.verdict, item.hash, picked?.path ?? null, verdict.basis, now));
+    }
+  }
+  if (writes.length) await env.CW_DB.batch(writes);
   return results;
+}
+
+/* ---------- zapamiętane werdykty (migracja 0014) ---------- */
+
+/* Werdykt sędziego jest ważny, dopóki opiera się na tych samych kandydatach
+   (hash), ale nie dłużej niż tyle dni – żeby stare oceny nie wisiały wiecznie. */
+export const VERDICT_TTL_DAYS = 60;
+export const JUDGE_PROMPT_VERSION = 1;
+
+/** Hash tego, co sędzia widział: fraza, kandydaci (ścieżka + tytuł), prompt i model. */
+export async function casesHash(item, model = JUDGE_MODEL) {
+  const text = [
+    `v${JUDGE_PROMPT_VERSION}`, model, phraseKey(item.phrase),
+    ...item.options.map((option) => `${option.path}|${option.title}`).sort(),
+  ].join('\n');
+  const digest = await crypto.subtle.digest('SHA-1', new TextEncoder().encode(text));
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('').slice(0, 20);
+}
+
+/** Werdykty z bazy dla listy fraz: Map „klucz|źródło" → wiersz. */
+async function storedVerdicts(env, domain, phrases) {
+  const keys = [...new Set(phrases.map(phraseKey).filter(Boolean))];
+  const out = new Map();
+  if (!keys.length || !env.CW_DB) return out;
+  try {
+    const rows = (await env.CW_DB.prepare(
+      `SELECT * FROM phrase_verdicts WHERE domain = ? AND phrase_key IN (${keys.map(() => '?').join(',')})`,
+    ).bind(domain, ...keys).all()).results ?? [];
+    for (const row of rows) out.set(`${row.phrase_key}|${row.source}`, row);
+  } catch (error) {
+    // Brak tabeli (migracja nie wykonana) nie może wyłączyć rekomendacji.
+    console.error('phrase_verdicts', error instanceof Error ? error.message : error);
+  }
+  return out;
+}
+
+/** Decyzja redaktora → wynik: „ten sam temat" = odśwież wskazany wpis, „inny" = napisz nowy. */
+export function applyEditor(result, row) {
+  const editor = { verdict: row.verdict, at: row.created_at };
+  if (row.verdict === 'same') {
+    let target = null;
+    try { target = row.target ? JSON.parse(row.target) : null; } catch { target = null; }
+    return { ...result, action: 'refresh', target: target ?? result.target, reason: 'editor_same', judge: null, editor };
+  }
+  if (row.verdict === 'different') {
+    return { ...result, action: 'new', target: null, reason: 'editor_different', judge: null, editor };
+  }
+  return result;
+}
+
+/** POST /api/cw/writer/verdict {domain, phrase, verdict: same|different|null, target?} */
+async function saveEditorVerdict(env, domain, body) {
+  const phrase = String(body.phrase ?? '').trim().slice(0, 120);
+  const key = phraseKey(phrase);
+  if (!key) return json({ error: 'Pusta fraza.' }, 400);
+  if (body.verdict === null) {
+    await env.CW_DB.prepare("DELETE FROM phrase_verdicts WHERE domain = ? AND phrase_key = ? AND source = 'editor'")
+      .bind(domain, key).run();
+    return json({ ok: true, verdict: null });
+  }
+  if (!['same', 'different'].includes(body.verdict)) return json({ error: 'Pole „verdict" przyjmuje: same, different albo null.' }, 400);
+  let target = null;
+  if (body.verdict === 'same') {
+    const raw = body.target ?? {};
+    if (!raw.title || !(raw.url || raw.path)) return json({ error: 'Wskaż wpis, który jest o tym samym temacie.' }, 400);
+    target = {
+      title: String(raw.title).slice(0, 300),
+      url: raw.url ? String(raw.url).slice(0, 500) : null,
+      path: raw.path ? String(raw.path).slice(0, 300) : null,
+      catalog_id: raw.catalog_id ? String(raw.catalog_id).slice(0, 80) : null,
+      post_id: Number.isInteger(raw.post_id) ? raw.post_id : null,
+      score: typeof raw.score === 'number' ? raw.score : null,
+    };
+  }
+  await env.CW_DB.prepare(
+    `INSERT INTO phrase_verdicts (domain, phrase_key, source, phrase, verdict, cases_hash, pick_path, target, basis, created_at)
+     VALUES (?, ?, 'editor', ?, ?, NULL, ?, ?, NULL, ?)
+     ON CONFLICT(domain, phrase_key, source) DO UPDATE SET phrase = excluded.phrase, verdict = excluded.verdict,
+       pick_path = excluded.pick_path, target = excluded.target, created_at = excluded.created_at`,
+  ).bind(domain, key, phrase, body.verdict, target?.path ?? null, target ? JSON.stringify(target) : null, new Date().toISOString()).run();
+  return json({ ok: true, verdict: body.verdict });
 }
 
 const round = (value) => Math.round(value * 1000) / 1000;
@@ -440,7 +559,7 @@ export async function routeSemantic(request, env, { checkOrigin, domains }) {
       results: pairs.map(([a, b], i) => ({ a, b, score: round(cosine(data[2 * i], data[2 * i + 1])) })),
     });
   }
-  const action = url.pathname.match(/^\/api\/cw\/writer\/(classify|reindex)\/?$/)?.[1];
+  const action = url.pathname.match(/^\/api\/cw\/writer\/(classify|reindex|verdict)\/?$/)?.[1];
   if (!action) return null;
   if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
   if (!checkOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
@@ -451,6 +570,7 @@ export async function routeSemantic(request, env, { checkOrigin, domains }) {
 
   try {
     if (action === 'reindex') return json(await syncIndex(env, domain));
+    if (action === 'verdict') return await saveEditorVerdict(env, domain, body);
     const phrases = [...new Set((Array.isArray(body.phrases) ? body.phrases : [])
       .map((phrase) => String(phrase ?? '').trim().slice(0, 120))
       .filter((phrase) => phrase.length >= 3))].slice(0, MAX_PHRASES);

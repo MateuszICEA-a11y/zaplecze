@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { applyVerdict, classifyPhrases, cosine, decide, pathTopic, postText, syncIndex, THRESHOLDS } from './cw-semantic.js';
+import { applyVerdict, casesHash, classifyPhrases, cosine, decide, pathTopic, postText, syncIndex, THRESHOLDS } from './cw-semantic.js';
+import { phraseKey } from './src/lib/phrase-match.js';
 import { sqliteD1 } from './test-d1.js';
 
 /* Model „embeddingów" do testów: wektor słów z małego słownika – podobne
@@ -175,4 +176,47 @@ test('classifyPhrases: „Sprawdź" idzie do sędziego jednym wywołaniem i dost
   assert.match(prompts[0], /„audyt seo link url"/);
   assert.equal(result.action, 'refresh');
   assert.equal(result.reason, 'judge_same');
+});
+
+test('classifyPhrases: werdykt sędziego zapamiętany – drugie wejście bez wywołania modelu', async () => {
+  const data = { rankings: [] };
+  const environment = { ...env(CATALOG, data), OPENROUTER_API_KEY: 'k' };
+  await syncIndex(environment, 'grupa-icea.pl');
+  let calls = 0;
+  const fetchImpl = async () => {
+    calls += 1;
+    return new Response(JSON.stringify({
+      choices: [{ message: { content: JSON.stringify({ results: [{ id: 1, verdict: 'different', pick: null, basis: 'inny temat' }] }) } }],
+    }));
+  };
+  const first = await classifyPhrases(environment, 'grupa-icea.pl', ['audyt seo link url'], data.rankings, { fetchImpl });
+  const second = await classifyPhrases(environment, 'grupa-icea.pl', ['audyt seo link url'], data.rankings, { fetchImpl });
+  assert.equal(calls, 1);
+  assert.equal(first[0].action, 'new');
+  assert.equal(second[0].action, 'new');
+  assert.equal(second[0].judge.cached, true);
+});
+
+test('classifyPhrases: decyzja redaktora wygrywa z modelem', async () => {
+  const data = { rankings: [] };
+  const environment = { ...env(CATALOG, data), OPENROUTER_API_KEY: 'k' };
+  await syncIndex(environment, 'grupa-icea.pl');
+  await environment.CW_DB.prepare(
+    `INSERT INTO phrase_verdicts (domain, phrase_key, source, phrase, verdict, target, created_at)
+     VALUES ('grupa-icea.pl', ?, 'editor', 'audyt seo link url', 'same', ?, '2026-09-25T10:00:00Z')`,
+  ).bind(phraseKey('audyt seo link url'), JSON.stringify({ title: 'Audyt SEO strony', url: 'https://x/b/', path: '/b' })).run();
+  let calls = 0;
+  const fetchImpl = async () => { calls += 1; return new Response('{}'); };
+  const [result] = await classifyPhrases(environment, 'grupa-icea.pl', ['audyt seo link url'], data.rankings, { fetchImpl });
+  assert.equal(calls, 0);
+  assert.equal(result.action, 'refresh');
+  assert.equal(result.reason, 'editor_same');
+  assert.equal(result.target.title, 'Audyt SEO strony');
+});
+
+test('casesHash: zmiana kandydatów unieważnia werdykt, kolejność nie', async () => {
+  const item = { phrase: 'audyt seo', options: [{ path: '/a', title: 'A' }, { path: '/b', title: 'B' }] };
+  const same = await casesHash({ ...item, options: [...item.options].reverse() });
+  assert.equal(await casesHash(item), same);
+  assert.notEqual(await casesHash({ ...item, options: [{ path: '/a', title: 'A' }] }), same);
 });

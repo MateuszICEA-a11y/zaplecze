@@ -227,17 +227,38 @@ const measuredAt = (details as { date?: string }).date ?? null;
 
   const judgeNote = (result: any) => result.judge?.basis ? `<small class="wr-judge" title="${esc(result.judge.basis)}">${esc(result.judge.basis)}</small>` : '';
 
-  function recCell(result: any) {
+  /* Kto zdecydował: redaktor (na stałe), model (zapamiętany) albo same embeddingi. */
+  function decidedBy(result: any) {
+    if (result.editor) return `<small class="wr-decided">Twoja decyzja z ${esc(fmtDateTime(result.editor.at))} · <button type="button" class="wr-link" data-verdict="clear">cofnij</button></small>`;
+    if (result.judge?.cached) return `<small class="wr-decided">ocena modelu z ${esc(fmtDateTime(result.judge.at))}</small>`;
+    return '';
+  }
+
+  /* Korekta redaktora: zapisuje się na stałe i wygrywa z modelem. */
+  function verdictButtons(result: any, withButtons: boolean) {
+    if (!withButtons || result.editor) return '';
+    const nearest = result.target ?? result.candidates?.[0] ?? null;
+    return `<span class="wr-verdict">
+      ${nearest && result.action !== 'refresh' ? `<button type="button" class="wr-btn small" data-verdict="same" title="Temat jest już na blogu: ${esc(nearest.title)}">To ten sam temat</button>` : ''}
+      ${result.action !== 'new' ? '<button type="button" class="wr-btn small" data-verdict="different" title="Fraza zasługuje na własny tekst">To inny temat</button>' : ''}
+    </span>`;
+  }
+
+  function recCell(result: any, withButtons = false) {
     const badge = `<span class="wr-status ${REC_TONE[result.action] ?? 'idle'}">${REC_LABEL[result.action] ?? result.action}</span>`;
+    const tail = `${judgeNote(result)}${decidedBy(result)}${verdictButtons(result, withButtons)}`;
     if (result.action === 'new') {
-      const why = result.ranking
-        ? `rankuje ${result.ranking.score === null ? 'strona spoza bloga' : `wpis o innym temacie (${pct(result.ranking.score)})`}`
-        : 'brak bliskiego wpisu';
-      const near = result.candidates?.[0] ? ` · najbliżej: ${esc(result.candidates[0].title)} (${pct(result.candidates[0].score)})` : '';
-      return `${badge}<small>${why}${near}</small>${judgeNote(result)}`;
+      const why = result.editor
+        ? 'uznany za osobny temat'
+        : result.ranking
+          ? `rankuje ${result.ranking.score === null ? 'strona spoza bloga' : `wpis o innym temacie (${pct(result.ranking.score)})`}`
+          : 'brak bliskiego wpisu';
+      const near = !result.editor && result.candidates?.[0] ? ` · najbliżej: ${esc(result.candidates[0].title)} (${pct(result.candidates[0].score)})` : '';
+      return `${badge}<small>${why}${near}</small>${tail}`;
     }
     const ranked = String(result.reason ?? '').startsWith('ranking') ? ` · rankuje #${esc(result.target?.position)}` : '';
-    return `${badge}<small>${targetLink(result.target)} · ${pct(result.target?.score)}${ranked}</small>${judgeNote(result)}`;
+    const score = typeof result.target?.score === 'number' ? ` · ${pct(result.target.score)}` : '';
+    return `${badge}<small>${targetLink(result.target)}${score}${ranked}</small>${tail}`;
   }
 
   async function runCheck() {
@@ -332,6 +353,50 @@ const measuredAt = (details as { date?: string }).date ?? null;
     });
   });
 
+  const recByPhrase = new Map<string, any>();
+
+  function paintRec(row: HTMLTableRowElement) {
+    const result = recByPhrase.get(row.dataset.phrase!);
+    if (!result) return;
+    row.dataset.action = result.action;
+    row.querySelector('[data-rec]')!.innerHTML = recCell(result, true);
+  }
+
+  function paintCounts() {
+    const counts: Record<string, number> = { new: 0, refresh: 0, check: 0 };
+    for (const row of rows) if (row.dataset.action) counts[row.dataset.action] = (counts[row.dataset.action] ?? 0) + 1;
+    document.querySelectorAll<HTMLButtonElement>('[data-rec-filter]').forEach((button) => {
+      const key = button.dataset.recFilter!;
+      if (key !== 'all') button.innerHTML = `${esc(filterLabels.get(key) ?? '')} <b>${counts[key] ?? 0}</b>`;
+    });
+  }
+
+  /* Klik w „To ten sam temat” / „To inny temat” / „cofnij” w kolumnie Rekomendacja. */
+  document.getElementById('wr-suggestions')?.addEventListener('click', async (event) => {
+    const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-verdict]');
+    if (!button) return;
+    const row = button.closest<HTMLTableRowElement>('tr[data-phrase]')!;
+    const phrase = row.dataset.phrase!;
+    const result = recByPhrase.get(phrase);
+    const choice = button.dataset.verdict;
+    const nearest = result?.target ?? result?.candidates?.[0] ?? null;
+    row.querySelectorAll<HTMLButtonElement>('[data-verdict]').forEach((item) => { item.disabled = true; });
+    try {
+      await api('/api/cw/writer/verdict', {
+        method: 'POST',
+        body: { domain, phrase, verdict: choice === 'clear' ? null : choice, target: choice === 'same' ? nearest : undefined },
+      });
+      const [fresh] = await classify([phrase]);
+      if (fresh) recByPhrase.set(phrase, fresh);
+      paintRec(row);
+      paintCounts();
+      applyFilter();
+    } catch (error) {
+      row.querySelector('[data-rec]')!.insertAdjacentHTML('beforeend', `<small class="wr-msg err">${esc((error as Error).message)}</small>`);
+      row.querySelectorAll<HTMLButtonElement>('[data-verdict]').forEach((item) => { item.disabled = false; });
+    }
+  });
+
   async function loadRecommendations() {
     try {
       const { data: state } = await api<{ indexed: number; indexed_at: string | null }>(`/api/cw/writer/index/${domain}`);
@@ -343,19 +408,9 @@ const measuredAt = (details as { date?: string }).date ?? null;
         return;
       }
       const results = await classify(rows.map((row) => row.dataset.phrase!));
-      const byPhrase = new Map(results.map((result) => [result.phrase, result]));
-      const counts: Record<string, number> = { new: 0, refresh: 0, check: 0 };
-      for (const row of rows) {
-        const result = byPhrase.get(row.dataset.phrase!);
-        if (!result) continue;
-        row.dataset.action = result.action;
-        counts[result.action] = (counts[result.action] ?? 0) + 1;
-        row.querySelector('[data-rec]')!.innerHTML = recCell(result);
-      }
-      document.querySelectorAll<HTMLButtonElement>('[data-rec-filter]').forEach((button) => {
-        const key = button.dataset.recFilter!;
-        if (key !== 'all') button.textContent = `${filterLabels.get(key)} ${counts[key] ?? 0}`;
-      });
+      for (const result of results) recByPhrase.set(result.phrase, result);
+      for (const row of rows) paintRec(row);
+      paintCounts();
       applyFilter();
     } catch (error) {
       indexState.textContent = (error as Error).message;

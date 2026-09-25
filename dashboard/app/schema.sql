@@ -200,3 +200,33 @@ CREATE TABLE IF NOT EXISTS post_vectors (
   indexed_at TEXT NOT NULL,
   PRIMARY KEY (domain, post_id)
 );
+
+-- Content Writer: wpisy konkurencji porównane z naszymi (migracja 0013).
+CREATE TABLE IF NOT EXISTS competitor_matches (
+  domain         TEXT NOT NULL,
+  url            TEXT NOT NULL,
+  text_hash      TEXT NOT NULL,
+  action         TEXT NOT NULL,           -- new | refresh | check
+  score          REAL,                    -- podobieństwo do najbliższego naszego wpisu
+  target_post_id INTEGER,
+  target_catalog_id TEXT,
+  target_title   TEXT,
+  target_url     TEXT,
+  classified_at  TEXT NOT NULL,
+  PRIMARY KEY (domain, url)
+);
+
+-- Content Writer: werdykty sędziego i decyzje redaktora „odśwież czy nowy” (migracja 0014).
+CREATE TABLE IF NOT EXISTS phrase_verdicts (
+  domain      TEXT NOT NULL,
+  phrase_key  TEXT NOT NULL,
+  source      TEXT NOT NULL,            -- judge | editor
+  phrase      TEXT NOT NULL,
+  verdict     TEXT NOT NULL,            -- same | related | different | skip
+  cases_hash  TEXT,                     -- tylko judge
+  pick_path   TEXT,                     -- wskazany wpis (ścieżka)
+  target      TEXT,                     -- editor: JSON wpisu {path,title,url,catalog_id,post_id}
+  basis       TEXT,
+  created_at  TEXT NOT NULL,
+  PRIMARY KEY (domain, phrase_key, source)
+);
