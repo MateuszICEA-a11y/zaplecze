@@ -199,7 +199,7 @@ export function parseCallback(input) {
 
 export const MAX_SECTION_BYTES = 64 * 1024;
 
-// Ta sama whitelista co sanitizeInto w edytor.astro (komentarz krzyżowy).
+// Ta sama whitelista co sanitizeInto w dashboard/web/src/lib/cw-editor/sanitize.ts (komentarz krzyżowy).
 const SANITIZE_ALLOWED = new Set(['p', 'br', 'ul', 'ol', 'li', 'strong', 'b', 'em', 'i', 'a',
   'h2', 'h3', 'h4', 'blockquote', 'footer', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span',
   // `figure`/`figcaption` niosą infografikę wstawioną do sekcji (cw-infographic.js).

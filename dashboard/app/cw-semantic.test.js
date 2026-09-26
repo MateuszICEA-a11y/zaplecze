@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { applyVerdict, casesHash, classifyPhrases, cosine, decide, pathTopic, postText, syncIndex, THRESHOLDS } from './cw-semantic.js';
-import { phraseKey } from './src/lib/phrase-match.js';
+import { phraseKey } from './lib/phrase-match.js';
 import { sqliteD1 } from './test-d1.js';
 
 /* Model „embeddingów" do testów: wektor słów z małego słownika – podobne

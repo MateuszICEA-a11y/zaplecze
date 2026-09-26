@@ -1,8 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { findPhrase, hasPhrase, phraseKey } from './src/lib/phrase-match.js';
-import { cannibalization, normPath, suggestGaps, writerData } from './src/lib/writer-gaps.js';
+import { findPhrase, hasPhrase, phraseKey } from './lib/phrase-match.js';
+import { cannibalization, normPath, suggestGaps, writerData } from './lib/writer-gaps.js';
 
 /* Lustro pipeline/content-refresher/tests/test_matching.py – te same przypadki. */
 const TEXT = 'Ciepłe leady na fotowoltaikę są najcenniejsze. Jak pozyskać klientów na fotowoltaikę '

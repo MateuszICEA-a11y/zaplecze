@@ -1,7 +1,7 @@
 """Dopasowanie fraz kluczowych w tekście – z odmianą i przyimkami.
 
-Lustro matchera z edytora (`dashboard/app/src/pages/[domain]/content-watcher/
-edytor.astro`: `stem`, `fold`, `tokens`, `findPhrase`). To musi być ta sama
+Lustro matchera z edytora (`dashboard/web/src/lib/phrase-match.js`, ta sama
+kopia w `dashboard/app/lib/` dla Workera: `stem`, `fold`, `tokens`, `findPhrase`). To musi być ta sama
 heurystyka po obu stronach: edytor liczy „pokrycie fraz" z gotowego dokumentu,
 a pipeline sprawdza je przed oddaniem propozycji. Rozjazd oznaczałby, że
 pipeline melduje 7/7, a użytkownik widzi 3/7.

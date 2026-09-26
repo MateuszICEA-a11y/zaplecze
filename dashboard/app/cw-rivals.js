@@ -21,7 +21,7 @@
  * Sekrety: JINA_API_KEY (odczyt stron), OPENROUTER_API_KEY (wypis faktów).
  */
 
-import { matchTokens, phraseStems, tokens } from './src/lib/phrase-match.js';
+import { matchTokens, phraseStems, tokens } from './lib/phrase-match.js';
 
 const READER = 'https://r.jina.ai/';
 // Tyle samo, co COMPETITOR_LIMIT w pipeline (config.py) – edytor i przejazd

@@ -11,7 +11,7 @@
  * psuje analityki (w przeciwieństwie do utm_* na linku wewnętrznym, które
  * ucinałyby sesję GA4).
  *
- * Świadomy duplikat: podgląd bloku w edytorze (edytor.astro, CTA_PREVIEW) –
+ * Świadomy duplikat: podgląd bloku w edytorze (dashboard/web …/edytor/DocSection.tsx, CTA_PREVIEW) –
  * ten sam HTML po obu stronach.
  */
 

@@ -31,7 +31,7 @@ import { wpAuthors } from './cw-expert.js';
 import { handleRivals, rivalMarkdowns, rivalsSummary, termRanges } from './cw-rivals.js';
 import { gapSummary, handleSerpGap, normalizeKeyword, serpCompetitorsSummary } from './cw-serp.js';
 import { acfFieldPayload, postUrl, wpAuth, wpFetch } from './cw-wp.js';
-import { phraseKey } from './src/lib/phrase-match.js';
+import { phraseKey } from './lib/phrase-match.js';
 
 export const WRITER_KINDS = { brief: 'writer_brief', text: 'writer_text' };
 export const WRITER_EVENT = 'content-write';

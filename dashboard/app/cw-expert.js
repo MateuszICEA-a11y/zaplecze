@@ -312,7 +312,7 @@ export function extractJson(text) {
    konto `redaktor` ma rolę editor, a arkusz motywu wymaga FTP albo admina.
    Kolory z palety serwisu: #000623 (--main-color), #5768ff (--second-color),
    #f0f1ff (--selected-color). Świadomy duplikat: EXPERT_STYLE w edytorze
-   (edytor.astro) – „kopiuj cytat” i zapis do WP dają ten sam HTML. */
+   (dashboard/web/src/lib/cw-editor/expert.ts) – „kopiuj cytat” i zapis do WP dają ten sam HTML. */
 export const EXPERT_STYLE = {
   quote: 'margin:28px 0;padding:24px 28px;background:#eef0ff;border:1px solid #dfe2fb;'
     + 'border-left:4px solid #5768ff;border-radius:12px;box-shadow:0 1px 2px #00062314',

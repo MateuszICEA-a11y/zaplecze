@@ -18,8 +18,8 @@
  * `post_vectors` (migracja 0012) i liczy tylko to, co się zmieniło. Idzie
  * z crona Workera (raz dziennie po collectorze) i z przycisku w UI.
  */
-import { normPath, rankingsFor } from './src/lib/writer-gaps.js';
-import { phraseKey } from './src/lib/phrase-match.js';
+import { normPath, rankingsFor } from './lib/writer-gaps.js';
+import { phraseKey } from './lib/phrase-match.js';
 
 const json = (value, status = 200) =>
   new Response(JSON.stringify(value), {

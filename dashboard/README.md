@@ -45,10 +45,13 @@ statycznym buildzie.
 # collector (klucze z env albo .env w repo root)
 python3 dashboard/collector/main.py
 
-# frontend
-pnpm install
-pnpm --filter dashboard dev      # dev server
-pnpm --filter dashboard build    # → dashboard/app/dist
+# frontend (Next.js, dashboard/web) – szczegóły w dashboard/web/README.md
+cd dashboard/web && npm ci
+npm run dev                      # dev server :4410
+npm run build                    # → dashboard/web/out (statyczny eksport)
+
+# produkcja: Worker (dashboard/app) serwuje dashboard/web/out jako assets
+cd dashboard/app && npm run build && npx wrangler deploy   # ręcznie, push nie wdraża
 ```
 
 ## Konfiguracja jednorazowa (kroki manualne)

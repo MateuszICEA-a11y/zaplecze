@@ -1,5 +1,5 @@
 /* Build-time odczyt danych collectora: dashboard/domains.yaml + data/…/snapshots.jsonl.
-   Port 1:1 z dashboard/app/src/lib/data.ts – działa wyłącznie w trakcie `next build`
+   Port z dawnego frontu Astro – działa wyłącznie w trakcie `next build`
    (Server Components, node:fs); nic z tego nie trafia do bundle klienta. */
 import 'server-only';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';

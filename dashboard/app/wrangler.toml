@@ -8,7 +8,7 @@ compatibility_date = "2026-05-06"
 main = "worker.js"
 
 # Front: Next.js ze statycznym eksportem (dashboard/web → out/). `npm run build`
-# w tym katalogu buduje właśnie go; stary front Astro: `npm run build:astro` (dist/).
+# w tym katalogu buduje właśnie go (front Astro usunięty 27.09.2026).
 [assets]
 directory = "../web/out"
 binding = "ASSETS"

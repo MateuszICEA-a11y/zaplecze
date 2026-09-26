@@ -96,10 +96,12 @@ src/components/
   grid/DataGrid.tsx       AG Grid w karcie: filtr, CSV, stronicowanie, motyw
   grid/cells.tsx          plakietki pozycji, paski, trudność, kropki potencjału
 src/lib/
-  data.ts                 port 1:1 z dashboard/app/src/lib/data.ts (server-only)
-  format.ts               kopia z dashboard/app/src/lib/format.ts
+  data.ts                 odczyt danych collectora w trakcie buildu (server-only)
+  format.ts               formatowanie liczb i dat
   metrics.ts, nav.ts, palette.ts, gsc.ts
 ```
 
-`data.ts` i `format.ts` są kopiami z `dashboard/app` – zmiany w modelu danych
-trzeba na razie nanieść w obu miejscach (do czasu wygaszenia Astro).
+Stary front Astro jest usunięty (27.09.2026). Jedyna podwójna kopia to
+`src/lib/phrase-match.js` i `src/lib/writer-gaps.js` – te same pliki leżą
+w `dashboard/app/lib/` dla Workera (`cw-rivals`, `cw-semantic`, `cw-writer`); zmiany
+nanoś w obu miejscach (`diff` ma nie pokazywać różnic).
