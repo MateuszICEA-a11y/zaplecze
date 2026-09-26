@@ -10,20 +10,23 @@ statyczne pliki. Wygląd bazuje na [TailAdmin Free](https://github.com/TailAdmin
 - ikony: lucide-react, font Outfit (latin-ext – polskie znaki)
 - motyw jasny/ciemny (klasa `dark` na `<html>`, pamiętany w `localStorage`)
 
-## Co jest przeniesione (etap 1)
+## Co jest przeniesione
 
-| Widok | Ścieżka | Uwagi |
-|---|---|---|
-| Domeny i kredyty | `/` | karty domen, salda SMSAPI / OpenRouter |
-| Przegląd domeny | `/<domena>/` | zdrowie źródeł, KPI 7 dni, trendy 3 mies., „Co wymaga uwagi" |
-| Senuto | `/<domena>/senuto/` | karty TOP 3/10/50 filtrują tabelę fraz |
-| GSC | `/<domena>/gsc/` | „Co spadło" kw/kw i r/r, okna 7d–16m, szczegóły frazy po kliknięciu |
-| GA4 | `/<domena>/ga4/` | nowi/powracający, trendy miesięczne, kanały/źródła/strony, landing pages |
+Wszystkie sekcje poza dwoma edytorami:
 
-Pozostałe sekcje (Bing, Ahrefs, Clarity, Boty AI, Matrix, Asystent, Content
-Watcher, Content Writer, Leady, System) są w menu z dopiskiem „stara ↗” i
-otwierają obecny dashboard. Przycisk „Ten widok w starej wersji” w nagłówku
-prowadzi do odpowiednika bieżącej strony.
+- `/` – domeny i kredyty, `/system/` – salda, alerty, kwoty API, pipeline, rotacja tokenu Senuto
+- per domena: przegląd, Senuto, GSC (frazy i strony w jednej tabeli), GA4, Bing (z importem
+  CSV AI Performance), Ahrefs, Clarity, Boty AI, Matrix, Leady
+- Asystent treści (kreator w `#hash`), Content Watcher (lista), Content Writer (lista,
+  podpowiedzi, konkurencja, projekty)
+
+**Jeszcze w Astro:** edytor wpisu Content Watchera (`/content-watcher/edytor/`) i projekt
+artykułu Content Writera (`/content-writer/projekt/`) – ok. 6 tys. linii logiki z zapisem do
+WordPressa. Linki z nowego frontu otwierają je w obecnym dashboardzie (`LEGACY_URL`).
+
+Worker czyta z buildu frontu pliki `/<domena>/content-watcher/catalog.json`,
+`/<domena>/content-writer/data.json` i `competitors.json` (ASSETS) – route handlery
+w `src/app/[domain]/…` odtwarzają je 1:1 (sprawdzone porównaniem z buildem Astro).
 
 Duże listy (frazy Senuto, okna GSC, historia fraz) nie są wklejane w HTML –
 build zapisuje je jako osobne pliki JSON (`senuto/frazy.json`,
@@ -36,7 +39,7 @@ cd dashboard/web
 npm install
 npm run dev          # http://127.0.0.1:4410 (hot reload)
 npm run build        # → out/ (+ scripts/flatten-segments.mjs)
-npm run preview      # podgląd out/ na http://127.0.0.1:4410
+npm run preview      # podgląd out/ na http://127.0.0.1:4410, /api/* → produkcyjny worker (DASH_PASSWORD z .env)
 npm run screenshots  # zrzuty wszystkich stron (wymaga preview i Chrome) → screenshots/
 ```
 

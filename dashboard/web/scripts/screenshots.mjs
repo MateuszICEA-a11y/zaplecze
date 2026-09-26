@@ -24,6 +24,9 @@ const PAGES = [
   ["system", "/system/"],
   ["content-watcher", "/grupa-icea.pl/content-watcher/"],
   ["content-writer", "/grupa-icea.pl/content-writer/"],
+  ["asystent", "/grupa-icea.pl/asystent/"],
+  ["asystent-pilne", "/grupa-icea.pl/asystent/#odswiez/pilne"],
+  ["asystent-konkurencja", "/grupa-icea.pl/asystent/#konkurencja/lista?h=all&co=new"],
 ];
 const VIEWPORTS = [
   ["desktop", { width: 1440, height: 900 }],
