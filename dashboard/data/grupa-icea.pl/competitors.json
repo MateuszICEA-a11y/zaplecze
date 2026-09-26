@@ -1,5 +1,5 @@
 {
-"generated_at": "2026-09-25T17:44:59Z",
+"generated_at": "2026-09-26T09:31:28Z",
 "sites": [
 {
 "host": "widoczni.com",
@@ -10,7 +10,7 @@
 {
 "host": "delante.pl",
 "status": "ok",
-"count": 1314,
+"count": 1315,
 "baseline": false
 },
 {
@@ -44470,21 +44470,6 @@
 "kind_source": "llm"
 },
 {
-"url": "https://delante.pl/czy-google-ads-beda-drozsze-w-2026/",
-"host": "delante.pl",
-"path": "/czy-google-ads-beda-drozsze-w-2026/",
-"slug_title": "czy google ads beda drozsze w 2026",
-"title": "Czy Google Ads będą droższe w 2026? Analiza kosztów i jak zabezpieczyć budżet",
-"lastmod": "2025-12-11T14:49:25+00:00",
-"first_seen": "2026-09-25",
-"baseline": true,
-"title_fetched_at": "2026-09-25T12:27:42Z",
-"kind": "poradnik",
-"kind_basis": "analiza kosztów oraz poradnik zabezpieczenia budżetu",
-"kind_title": "Czy Google Ads będą droższe w 2026? Analiza kosztów i jak zabezpieczyć budżet",
-"kind_source": "llm"
-},
-{
 "url": "https://delante.pl/czy-ai-odwiedza-twoja-strone-i-jak-to-sprawdzic/",
 "host": "delante.pl",
 "path": "/czy-ai-odwiedza-twoja-strone-i-jak-to-sprawdzic/",
@@ -46033,21 +46018,6 @@
 "kind_source": "llm"
 },
 {
-"url": "https://delante.pl/tresci-seo-b2b-w-2026-najlepsze-praktyki/",
-"host": "delante.pl",
-"path": "/tresci-seo-b2b-w-2026-najlepsze-praktyki/",
-"slug_title": "tresci seo b2b w 2026 najlepsze praktyki",
-"title": "Treści SEO B2B w 2026: najlepsze praktyki - przewodnik dla marketing managerów",
-"lastmod": "2026-05-28T15:05:01+00:00",
-"first_seen": "2026-09-25",
-"baseline": true,
-"title_fetched_at": "2026-09-25T12:28:42Z",
-"kind": "poradnik",
-"kind_basis": "najlepsze praktyki przewodnik dla marketing managerów",
-"kind_title": "Treści SEO B2B w 2026: najlepsze praktyki - przewodnik dla marketing managerów",
-"kind_source": "llm"
-},
-{
 "url": "https://delante.pl/dwa-odcinki-podcastu-forward-thinking-juz-dostepne/",
 "host": "delante.pl",
 "path": "/dwa-odcinki-podcastu-forward-thinking-juz-dostepne/",
@@ -46546,21 +46516,6 @@
 "kind": "poradnik",
 "kind_basis": "analiza trendu biznesowego i inwestycji w wyszukiwarki AI",
 "kind_title": "Dlaczego duże firmy już inwestują w działania AI Search (AISO, GEO, AEO)?",
-"kind_source": "llm"
-},
-{
-"url": "https://delante.pl/dlaczego-ai-search-to-must-have-w-budzetach-marketingowych-na-2026/",
-"host": "delante.pl",
-"path": "/dlaczego-ai-search-to-must-have-w-budzetach-marketingowych-na-2026/",
-"slug_title": "dlaczego ai search to must have w budzetach marketingowych na 2026",
-"title": "Dlaczego AI Search to must-have w budżetach marketingowych na 2026",
-"lastmod": "2026-07-24T06:50:56+00:00",
-"first_seen": "2026-09-25",
-"baseline": true,
-"title_fetched_at": "2026-09-25T12:29:01Z",
-"kind": "poradnik",
-"kind_basis": "artykuł doradczy o planowaniu budżetów na AI Search",
-"kind_title": "Dlaczego AI Search to must-have w budżetach marketingowych na 2026",
 "kind_source": "llm"
 },
 {
@@ -47497,6 +47452,66 @@
 "kind_basis": "reguła: przegląd nowości lub data w adresie",
 "kind_title": "Google September 2026 Spam Update już trwa. Co oznacza dla SEO?",
 "kind_source": "rule"
+},
+{
+"url": "https://delante.pl/ai-content-gap-jak-sprawdzic-gdzie-ai-poleca-konkurencje/",
+"host": "delante.pl",
+"path": "/ai-content-gap-jak-sprawdzic-gdzie-ai-poleca-konkurencje/",
+"slug_title": "ai content gap jak sprawdzic gdzie ai poleca konkurencje",
+"title": "AI Content Gap - jak sprawdzić, gdzie AI poleca konkurencję?",
+"lastmod": "2026-09-26T07:26:59+00:00",
+"first_seen": "2026-09-26",
+"baseline": false,
+"title_fetched_at": "2026-09-26T09:31:54Z",
+"kind": "poradnik",
+"kind_basis": "Sformułowanie jak sprawdzić wskazuje na artykuł instruktażowy",
+"kind_source": "llm",
+"kind_title": "AI Content Gap - jak sprawdzić, gdzie AI poleca konkurencję?"
+},
+{
+"url": "https://delante.pl/dlaczego-ai-search-to-must-have-w-budzetach-marketingowych/",
+"host": "delante.pl",
+"path": "/dlaczego-ai-search-to-must-have-w-budzetach-marketingowych/",
+"slug_title": "dlaczego ai search to must have w budzetach marketingowych",
+"title": "Dlaczego AI Search to must-have w budżetach marketingowych na 2027",
+"lastmod": "2026-09-26T08:40:38+00:00",
+"first_seen": "2026-09-26",
+"baseline": false,
+"title_fetched_at": "2026-09-26T09:31:54Z",
+"kind": "poradnik",
+"kind_basis": "Analiza zjawiska i argumentacja dlaczego warto uwzględnić technologię",
+"kind_source": "llm",
+"kind_title": "Dlaczego AI Search to must-have w budżetach marketingowych na 2027"
+},
+{
+"url": "https://delante.pl/tresci-seo-b2b-najlepsze-praktyki/",
+"host": "delante.pl",
+"path": "/tresci-seo-b2b-najlepsze-praktyki/",
+"slug_title": "tresci seo b2b najlepsze praktyki",
+"title": "Treści SEO B2B w 2027: najlepsze praktyki - przewodnik dla marketing managerów",
+"lastmod": "2026-09-26T08:58:35+00:00",
+"first_seen": "2026-09-26",
+"baseline": false,
+"title_fetched_at": "2026-09-26T09:31:53Z",
+"kind": "poradnik",
+"kind_basis": "Najlepsze praktyki oraz przewodnik wskazują na artykuł edukacyjny",
+"kind_source": "llm",
+"kind_title": "Treści SEO B2B w 2027: najlepsze praktyki - przewodnik dla marketing managerów"
+},
+{
+"url": "https://delante.pl/czy-google-ads-beda-drozsze-w-przyszlym-roku/",
+"host": "delante.pl",
+"path": "/czy-google-ads-beda-drozsze-w-przyszlym-roku/",
+"slug_title": "czy google ads beda drozsze w przyszlym roku",
+"title": "Czy Google Ads będą droższe w 2027? Analiza kosztów i jak zabezpieczyć budżet",
+"lastmod": "2026-09-26T09:31:00+00:00",
+"first_seen": "2026-09-26",
+"baseline": false,
+"title_fetched_at": "2026-09-26T09:31:52Z",
+"kind": "poradnik",
+"kind_basis": "Analiza kosztów oraz porady jak zabezpieczyć budżet",
+"kind_source": "llm",
+"kind_title": "Czy Google Ads będą droższe w 2027? Analiza kosztów i jak zabezpieczyć budżet"
 },
 {
 "url": "https://traffictrends.pl/blog/jak-wypromowac-sklep-internetowy",
