@@ -42,8 +42,10 @@ Plan etapami, każdy zamknięty **własnym testem w przeglądarce** na prawdziwy
    (`docSection`, `renderDoc`), edycja w miejscu (`enableEditing`, `formatToolbar`,
    szkice w `localStorage` – `readDraft/writeDraft`), podświetlanie fraz (CSS Custom
    Highlight API: `highlightKeywords`, `focusKeyword`), statystyki.
-3. **Pipeline i karty końcowe** (do zrobienia: belka pipeline'u, wytyczne, karta
-   eksperta, karta stylu z raportem, karta WordPressa – reszta legacy/edytor-script.ts) – uruchomienie (`runPipeline`, modele z OpenRouter
+3. ✅ **Pipeline i karty końcowe** (zrobione 26.09, `PipelinePanel.tsx`, `EndCards.tsx`,
+   `src/lib/cw-editor/jobs.ts`; legacy/edytor-script.ts i znaczniki edytor-*.html usunięte.
+   Następne: przepisać `legacy/writer-editor.ts` i przenieść style edytorów z legacy.css
+   na Tailwind) – uruchomienie (`runPipeline`, modele z OpenRouter
    `setupCombo/loadModels`, ulepszenia gaps/sources/internal_links), postęp
    (`renderProgress`, `renderSteps`, `schedulePoll`), wytyczne (`renderBrief`), diff inline
    (`renderInlineDiff`, `wordDiff`, decyzje per sekcja), ekspert (`renderExpert`,

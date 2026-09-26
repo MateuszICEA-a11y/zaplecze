@@ -1,6 +1,4 @@
-/* Edytor wpisu Content Watchera – panele React (PostEditor) i przenoszona
-   etapami logika starego frontu (src/legacy/). Wpis wskazuje `?id=`. */
-import { editorMarkup } from "@/legacy/markup";
+/* Edytor wpisu Content Watchera (PostEditor). Wpis wskazuje `?id=`. */
 import { loadConfig } from "@/lib/data";
 import { titleFor, type DomainProps } from "@/lib/pages";
 import PostEditor from "./PostEditor";
@@ -18,5 +16,5 @@ export const generateMetadata = titleFor("edytor wpisu");
 
 export default async function EditorPage({ params }: DomainProps) {
   const { domain } = await params;
-  return <PostEditor domain={domain} markup={editorMarkup(domain)} />;
+  return <PostEditor domain={domain} />;
 }

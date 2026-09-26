@@ -1,13 +1,13 @@
-/* Wspólny stan edytora wpisu: panele React (nagłówek, analizy, ocena,
-   dokument, podgląd) i moduł legacy/edytor-script.ts, który do czasu
-   przepisania trzyma belkę pipeline'u i karty etapów końcowych.
-
-   Zadanie (`job`) zmienia się tylko przez set() z nowym obiektem – legacy
-   subskrybuje stan i odmalowuje swoje panele, React renderuje dokument.
-   Ocena treści i podświetlenia fraz liczą się z DOM-u dokumentu po sygnale
-   touchDoc(). Każda zmiana podmienia obiekt stanu (useSyncExternalStore). */
+/* Wspólny stan edytora wpisu – panele Reacta (PostEditor.tsx i spółka)
+   i czyste funkcje z lib/cw-editor/. Zadanie (`job`) zmienia się tylko przez
+   set() z nowym obiektem. Ocena treści i podświetlenia fraz liczą się z DOM-u
+   dokumentu po sygnale touchDoc(). Każda zmiana podmienia obiekt stanu
+   (useSyncExternalStore). */
 import { useSyncExternalStore } from "react";
 import type { Content, Entry, Job, RivalsAnalysis, SerpAnalysis, Section } from "./types";
+
+/** Lustro DEFAULT_MODELS z cw-api.js / config.py. */
+export const DEFAULT_MODELS = { research: "perplexity/sonar-pro", writer: "anthropic/claude-sonnet-5" };
 
 export type EditorState = {
   entry: Entry | null;
@@ -24,6 +24,10 @@ export type EditorState = {
   /** Autor po wdrożeniu z podmianą autora – nadpisuje ten z katalogu. */
   authorName: string | null;
   previewOpen: boolean;
+  /** Komunikat błędu pod belką pipeline'u. */
+  error: string | null;
+  /** Modele przebiegu (OpenRouter) – belka pipeline'u i odczyt konkurencji. */
+  models: { research: string; writer: string };
 };
 
 const INITIAL: EditorState = {
@@ -37,6 +41,8 @@ const INITIAL: EditorState = {
   docVersion: 0,
   authorName: null,
   previewOpen: false,
+  error: null,
+  models: DEFAULT_MODELS,
 };
 
 let state = INITIAL;
@@ -71,11 +77,5 @@ export const editorStore = {
 
 export const useEditor = () => useSyncExternalStore(editorStore.subscribe, editorStore.get, () => INITIAL);
 
-/** Komunikat błędu pod belką pipeline'u (znacznik legacy [data-ed-error],
-    do czasu przepisania belki). */
-export function showEditorError(message: string) {
-  const node = document.querySelector<HTMLElement>("[data-ed-error]");
-  if (!node) return;
-  node.textContent = message;
-  node.hidden = false;
-}
+/** Komunikat błędu pod belką pipeline'u. */
+export const showEditorError = (message: string) => editorStore.set({ error: message });

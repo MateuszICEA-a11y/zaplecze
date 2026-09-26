@@ -1,34 +1,37 @@
 "use client";
 
-/* Edytor wpisu Content Watchera. Przepisywany na React etapami:
-   - React: nagłówek wpisu, rozpoznanie SERP, treść konkurencji, ocena treści
-     z frazami, dokument (edycja, szkice, propozycje przebiegu, decyzje,
-     korekta stylu, infografiki, CTA) i podgląd całości z eksportem,
-   - jeszcze vanilla (legacy/edytor-script.ts, znaczniki edytor-*.html):
-     belka pipeline'u z wytycznymi oraz karty eksperta, stylu i WordPressa.
-   Obie strony dzielą stan przez lib/cw-editor/store.ts. Wpis wskazuje `?id=`. */
+/* Edytor wpisu Content Watchera: nagłówek, rozpoznanie SERP i treść
+   konkurencji, belka pipeline'u z wytycznymi, dokument z propozycjami
+   przebiegu, ocena treści z frazami, karty etapów końcowych i podgląd
+   całości. Panele dzielą stan przez lib/cw-editor/store.ts, czyste funkcje
+   są w lib/cw-editor/. Wpis wskazuje `?id=`.
+
+   Style dokumentu, belki i kart idą jeszcze z legacy.css (kontenery .legacy)
+   – klasy są te same co w dawnym edytorze. */
 import { Status } from "@/components/kit";
 import { Card } from "@/components/ui";
 import { editorStore, useEditor } from "@/lib/cw-editor/store";
 import type { Entry } from "@/lib/cw-editor/types";
 import { fmtDate } from "@/lib/format";
 import { api } from "@/lib/writer-client";
-import type { EditorMarkup } from "@/legacy/markup";
-import { ensureHighlights, LegacyChunk, useReloadOnLeave } from "@/legacy/LegacyHost";
+import { loadLatestJob, schedulePoll, stopPolling } from "@/lib/cw-editor/jobs";
+import { ensureHighlights } from "@/legacy/LegacyHost";
 import { ArrowLeft } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { RivalsPanel, SerpPanel } from "./AnalysisPanels";
 import DocPanel from "./DocPanel";
+import EndCards from "./EndCards";
+import PipelinePanel from "./PipelinePanel";
 import PreviewDialog from "./PreviewDialog";
 import ScorePanel from "./ScorePanel";
 
 const pl = new Intl.NumberFormat("pl-PL");
 
-export default function PostEditor({ domain, markup }: { domain: string; markup: EditorMarkup }) {
+export default function PostEditor({ domain }: { domain: string }) {
   const [state, setState] = useState<"loading" | "missing" | "error" | "ready">("loading");
   const [loadError, setLoadError] = useState("");
   const { entry } = useEditor();
-  useReloadOnLeave();
 
   useEffect(() => {
     editorStore.reset();
@@ -46,23 +49,25 @@ export default function PostEditor({ domain, markup }: { domain: string; markup:
       });
   }, [domain]);
 
-  // Moduł vanilla startuje dopiero, gdy jego znaczniki stoją w DOM-ie.
-  const mounted = useRef(false);
+  // Ostatni przebieg wpisu i odpytywanie Workera, dopóki trwa. Po powrocie
+  // na kartę odpytujemy od razu, z krótkim odstępem.
   useEffect(() => {
-    if (state !== "ready" || !entry || mounted.current) return;
-    mounted.current = true;
+    if (state !== "ready" || !entry) return;
     ensureHighlights();
-    import("@/legacy/edytor-script")
-      .then((mod) => mod.mount(entry))
-      .catch((error) => console.error("[legacy:edytor]", error));
-  }, [state, entry]);
+    loadLatestJob(domain, entry);
+    const onVisible = () => document.visibilityState === "visible" && schedulePoll(true);
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisible);
+      stopPolling();
+    };
+  }, [state, entry, domain]);
 
   return (
     <>
-      {/* Zwykły odnośnik, nie <Link>: moduł vanilla i tak wymusza pełne przeładowanie. */}
-      <a href={`/${domain}/content-watcher/`} className="mb-4 inline-flex items-center gap-1.5 text-theme-sm text-gray-500 hover:text-brand-600 dark:text-gray-400">
+      <Link href={`/${domain}/content-watcher/`} className="mb-4 inline-flex items-center gap-1.5 text-theme-sm text-gray-500 hover:text-brand-600 dark:text-gray-400">
         <ArrowLeft className="size-4" /> wróć do listy priorytetów
-      </a>
+      </Link>
 
       {state === "loading" && <p className="text-theme-sm text-gray-500">wczytywanie wpisu…</p>}
       {state === "missing" && (
@@ -82,14 +87,18 @@ export default function PostEditor({ domain, markup }: { domain: string; markup:
           <EntryHeader entry={entry} />
           <SerpPanel domain={domain} entry={entry} />
           <RivalsPanel domain={domain} entry={entry} />
-          <LegacyChunk html={markup.top} />
+          <div className="legacy">
+            <PipelinePanel domain={domain} />
+          </div>
           {/* Na szerokim ekranie ocena z frazami i narzędzia końcowe jadą w
               przypiętej kolumnie obok dokumentu (ocenianie sekcji bez
               przewijania do góry); na węższym stoją nad dokumentem. */}
           <div className="mt-6 flex flex-col gap-6 min-[1500px]:flex-row-reverse min-[1500px]:items-start">
             <aside className="flex flex-col gap-4 min-[1500px]:sticky min-[1500px]:top-24 min-[1500px]:max-h-[calc(100vh-7rem)] min-[1500px]:w-[400px] min-[1500px]:shrink-0 min-[1500px]:overflow-y-auto">
               <ScorePanel />
-              <LegacyChunk className="ed-side-tools" html={markup.side} />
+              <div className="legacy ed-side-tools">
+                <EndCards domain={domain} />
+              </div>
             </aside>
             <div className="legacy ed-docwrap min-w-0 flex-1">
               <DocPanel domain={domain} />

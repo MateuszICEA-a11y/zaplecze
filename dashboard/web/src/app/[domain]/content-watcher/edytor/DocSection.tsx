@@ -11,6 +11,7 @@ import { sanitizeInto, markBlocks } from "@/lib/cw-editor/sanitize";
 import { changeRatio, sectionLinkDiff, wordDiff, type Opcode } from "@/lib/cw-editor/diff";
 import type { SectionBlock } from "@/lib/cw-editor/doc";
 import { expertBlockquote, sectionCopyText } from "@/lib/cw-editor/expert";
+import { refreshJob } from "@/lib/cw-editor/jobs";
 import { editorStore, showEditorError } from "@/lib/cw-editor/store";
 import type { ImageRow, Job, Section, StyleRow } from "@/lib/cw-editor/types";
 import { api } from "@/lib/writer-client";
@@ -618,11 +619,6 @@ function SectionPanels({ slot, html }: { slot: number; html: string | null }) {
     </>
   );
 }
-
-const refreshJob = async (jobId: string) => {
-  const { data } = await api<any>(`/api/cw/jobs/${jobId}`);
-  editorStore.set({ job: data.job });
-};
 
 /* Infografika: cztery kroki po stronie Workera (opis → zlecenie → obraz →
    wstawienie), bo kie.ai oddaje obraz po 30–180 s, czyli po końcu żądania. */

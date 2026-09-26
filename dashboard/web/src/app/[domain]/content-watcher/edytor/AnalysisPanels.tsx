@@ -346,9 +346,8 @@ function rivalUrls(serp: SerpAnalysis | null): string[] {
   return (query?.competitors ?? []).map((row) => row.url).filter(Boolean);
 }
 
-/** Model pisania z konfiguracji przebiegu (pole w belce pipeline'u – do
-    czasu jej przepisania czytane wprost z DOM-u). */
-const writerModel = () => document.querySelector<HTMLInputElement>("[data-ed-model-writer]")?.value.trim() || undefined;
+/** Model pisania z konfiguracji przebiegu (belka pipeline'u). */
+const writerModel = () => editorStore.get().models.writer.trim() || undefined;
 
 export function RivalsPanel({ domain, entry }: { domain: string; entry: Entry }) {
   const { serp, rivals } = useEditor();

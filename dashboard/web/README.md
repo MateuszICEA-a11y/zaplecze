@@ -20,14 +20,13 @@ Wszystkie sekcje starego dashboardu:
 - Asystent treści (kreator w `#hash`) oraz sekcja **Treści** – zakładki „Odświeżanie wpisów”
   (Content Watcher) i „Nowe teksty” (Content Writer); adresy stron zostały osobne
 
-**Edytor wpisu** (`/content-watcher/edytor/`) jest prawie cały w React (`PostEditor.tsx`):
-nagłówek, SERP, treść konkurencji, ocena treści z frazami, dokument (`DocPanel.tsx`,
-`DocSection.tsx` – edycja, szkice, diff, decyzje, korekta stylu, infografiki, CTA)
-i podgląd całości. W `src/legacy/edytor-script.ts` (znaczniki `edytor-{top,side}.html`)
-zostały belka pipeline'u z wytycznymi oraz karty eksperta, stylu i WordPressa.
-Wspólny stan: `src/lib/cw-editor/store.ts` – zadanie zmienia się tylko przez `set()`
-z nowym obiektem, legacy subskrybuje stan i odmalowuje swoje karty. Czyste funkcje
-(układ dokumentu, diff, frazy, migawka, sanityzacja) w `src/lib/cw-editor/`.
+**Edytor wpisu** (`/content-watcher/edytor/`) jest w React (`PostEditor.tsx` i panele
+obok: `AnalysisPanels`, `PipelinePanel`, `DocPanel`/`DocSection`, `ScorePanel`,
+`EndCards`, `PreviewDialog`). Wspólny stan: `src/lib/cw-editor/store.ts` – zadanie
+zmienia się tylko przez `set()` z nowym obiektem; odpytywanie Workera w `jobs.ts`;
+czyste funkcje (układ dokumentu, diff, frazy, migawka, sanityzacja) obok. Style
+dokumentu, belki i kart idą jeszcze z `legacy.css` (kontenery `.legacy`, te same klasy
+co w dawnym edytorze) – do przeniesienia na Tailwind.
 
 **Edytor tekstu projektu** (`/content-writer/projekt/`) to nadal moduł vanilla
 `src/legacy/writer-editor.ts` podpięty w `ProjectWorkspace.tsx`. Style legacy są zawężone
