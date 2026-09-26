@@ -1,8 +1,8 @@
 "use client";
 
 /* Szkielet TailAdmina: zwijany pasek boczny + nagłówek + treść. Pasek pokazuje
-   przełącznik domen i sekcje wybranej domeny; sekcje jeszcze nieprzeniesione
-   prowadzą do obecnego dashboardu (ikona ↗). */
+   przełącznik domen i sekcje wybranej domeny (Content Watcher i Writer jako
+   jedna pozycja „Treści"). */
 import IceaLogo from "@/components/shell/IceaLogo";
 import { useSidebar } from "@/context/SidebarContext";
 import { useTheme } from "@/context/ThemeContext";
@@ -128,12 +128,11 @@ function Sidebar({ nav }: { nav: NavDomain[] }) {
           <ul className="flex flex-col gap-1">
             {current.sections.map((item) => {
               const Icon = ICONS[item.slug] ?? LayoutDashboard;
-              const active = item.ported && domain?.id === current.id && section === item.slug;
+              const active = domain?.id === current.id && section !== null && item.match.includes(section);
               return (
                 <li key={item.slug}>
-                  <NavLink
+                  <Link
                     href={item.href}
-                    external={!item.ported}
                     title={wide ? undefined : item.label}
                     className={cn(
                       "group menu-item",
@@ -147,17 +146,9 @@ function Sidebar({ nav }: { nav: NavDomain[] }) {
                     {wide && (
                       <>
                         <span className="menu-item-text">{item.label}</span>
-                        {!item.ported && (
-                          <span
-                            className="ms-auto flex items-center gap-1 text-theme-xs text-gray-500"
-                            title="Otwiera obecny dashboard – sekcja jeszcze nie przeniesiona"
-                          >
-                            stara <ExternalLink className="size-3.5" />
-                          </span>
-                        )}
                       </>
                     )}
-                  </NavLink>
+                  </Link>
                 </li>
               );
             })}
@@ -217,18 +208,6 @@ function Sidebar({ nav }: { nav: NavDomain[] }) {
   );
 }
 
-function NavLink({
-  href,
-  external,
-  ...props
-}: { href: string; external: boolean } & Omit<React.ComponentProps<"a">, "href">) {
-  return external ? (
-    <a href={href} target="_blank" rel="noopener" {...props} />
-  ) : (
-    <Link href={href} {...props} />
-  );
-}
-
 /* Przełącznik domen – przenosi na tę samą sekcję drugiej domeny, jeśli ją ma. */
 function DomainSwitcher({
   nav,
@@ -252,7 +231,7 @@ function DomainSwitcher({
   }, []);
 
   const target = (domain: NavDomain) => {
-    const same = domain.sections.find((s) => s.ported && s.slug === (section ?? ""));
+    const same = domain.sections.find((s) => s.match.includes(section ?? ""));
     return same?.href ?? `/${domain.id}/`;
   };
 
@@ -313,7 +292,7 @@ function Header({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
   const { isMobileOpen, toggleSidebar, toggleMobileSidebar } = useSidebar();
   const { theme, toggleTheme } = useTheme();
   const { pathname, domain, section } = useLocation(nav);
-  const sectionLabel = domain?.sections.find((s) => s.slug === section)?.label;
+  const sectionLabel = domain?.sections.find((s) => s.match.includes(section ?? ""))?.label;
 
   return (
     <header className="sticky top-0 z-30 flex w-full border-b border-gray-200 bg-white/90 backdrop-blur dark:border-gray-800 dark:bg-gray-900/90">

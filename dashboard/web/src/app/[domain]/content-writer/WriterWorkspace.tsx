@@ -467,7 +467,7 @@ function Suggestions({
           <Status tone="ok">Napisz nowy</Status> blog nie ma wpisu o tym temacie
         </li>
         <li className="flex items-center gap-2">
-          <Status tone="warn">Odśwież</Status> jest wpis o tym samym temacie – rozbuduj go w Content Watcherze
+          <Status tone="warn">Odśwież</Status> jest wpis o tym samym temacie – rozbuduj go w zakładce „Odświeżanie wpisów”
         </li>
         <li className="flex items-center gap-2">
           <Status tone="mid">Sprawdź</Status> jest wpis pokrewny – model ocenił, czy to ten sam temat

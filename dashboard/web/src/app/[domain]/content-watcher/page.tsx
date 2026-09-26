@@ -1,7 +1,9 @@
 /* Content Watcher – port dashboard/app/src/pages/[domain]/content-watcher.astro:
    katalog treści z oceną (wiek × wyniki), filtry kartami i szczegóły wpisu.
    Scoring (lib/watcher-scoring.ts) jest wspólny z Asystentem. */
-import { Note, PageTitle } from "@/components/ui";
+import ContentTabs from "@/components/ContentTabs";
+import { Note } from "@/components/ui";
+import { contentViews } from "@/lib/content";
 import { latestSnapshot, loadConfig, loadContentCatalog, loadDetails } from "@/lib/data";
 import { fmtDate, fmtInt } from "@/lib/format";
 import { titleFor, type DomainProps } from "@/lib/pages";
@@ -13,7 +15,7 @@ export const generateStaticParams = () =>
   loadConfig()
     .domains.filter((d) => (d.content_watcher as { enabled?: boolean } | undefined)?.enabled === true)
     .map((d) => ({ domain: d.id }));
-export const generateMetadata = titleFor("Content Watcher");
+export const generateMetadata = titleFor("Treści – odświeżanie wpisów");
 
 export default async function ContentWatcherPage({ params }: DomainProps) {
   const { domain } = await params;
@@ -29,10 +31,10 @@ export default async function ContentWatcherPage({ params }: DomainProps) {
 
   return (
     <>
-      <PageTitle title="Content Watcher" meta={`Katalog i ocena z ${fmtDate(asOf)}`} />
+      <ContentTabs domain={domain} active="content-watcher" enabled={contentViews(domainConfig)} />
       <Note>
         Artykuły z danymi o indeksacji, ruchu z GSC i GA4 oraz frazach z Senuto. <b>Pilność</b> i <b>wynik</b> podpowiadają,
-        które teksty odświeżyć najpierw.
+        które teksty odświeżyć najpierw. Katalog i ocena z {fmtDate(asOf)}.
         {fromCms && (
           <>
             {" "}
