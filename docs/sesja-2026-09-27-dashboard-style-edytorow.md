@@ -3,12 +3,12 @@
 Zadanie: przenieść style obu edytorów z `dashboard/web/src/legacy/legacy.css` na Tailwind
 (TailAdmin + paleta iCEA, jak reszta dashboardu) i usunąć katalog `src/legacy/`.
 
-## Wynik (26.09.2026, wieczór) – ZROBIONE, NIEWDROŻONE
+## Wynik (26.09.2026, wieczór) – ZROBIONE I WDROŻONE
 
 - Commity `f63b8e8e` (edytor wpisu CW) i `a011894f` (edytor tekstu CWr + usunięcie
   `src/legacy/` i `scripts/build-legacy-css.mjs`), wypchnięte na `main`.
-- **Produkcja nadal na `1269c580`** – wdrożenie czeka na zgodę usera:
-  `cd dashboard/app && npm run build && npx wrangler deploy`.
+- Produkcja: wersja `bc4bd2cc` (poprzednia `1269c580` do `npx wrangler rollback`),
+  sprawdzona w przeglądarce na workers.dev.
 - Style: utility Tailwinda w komponentach (nowe klocki w `kit.tsx`: `checkChip`,
   `btnSmallPrimary`, `Waiting`); typografia HTML z WP/modeli – `.doc-prose` i rynienka
   `.doc-gutter` w `src/app/editor-content.css`; `::highlight()` – `src/lib/highlights.ts`.
