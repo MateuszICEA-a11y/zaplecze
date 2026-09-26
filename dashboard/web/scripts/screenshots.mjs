@@ -15,13 +15,18 @@ const PAGES = [
   ["gsc", "/grupa-icea.pl/gsc/"],
   ["ga4", "/grupa-icea.pl/ga4/"],
   ["przeglad-widocznosc", "/widocznosc.ai/"],
+  ["ahrefs", "/grupa-icea.pl/ahrefs/"],
+  ["clarity", "/grupa-icea.pl/clarity/"],
+  ["boty-ai", "/widocznosc.ai/boty-ai/"],
+  ["bing", "/grupa-icea.pl/bing/"],
+  ["leady", "/widocznosc.ai/leady/"],
 ];
 const VIEWPORTS = [
   ["desktop", { width: 1440, height: 900 }],
   ["mobile", { width: 390, height: 844 }],
 ];
 
-const pick = (env, all) => (process.env[env] ? all.filter((x) => process.env[env].split(",").includes(x[0] ?? x)) : all);
+const pick = (env, all) => (process.env[env] ? all.filter((x) => process.env[env].split(",").includes(Array.isArray(x) ? x[0] : x)) : all);
 
 mkdirSync(OUT, { recursive: true });
 const browser = await chromium.launch({ channel: "chrome" });

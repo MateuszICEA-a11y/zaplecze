@@ -138,6 +138,8 @@ export interface StatCardProps {
   deltaUnit?: string;
   deltaLabel?: string;
   unit?: string;
+  /** Mianownik skali pokazywany mniejszym stopniem, np. DR 68 / 100. */
+  max?: number;
   precision?: number;
   goodWhen?: "up" | "down";
   trend?: (number | null)[];
@@ -160,6 +162,7 @@ export function StatCard({
   deltaUnit = "",
   deltaLabel = "7 dni",
   unit = "",
+  max,
   precision = 0,
   goodWhen = "up",
   trend,
@@ -188,6 +191,7 @@ export function StatCard({
           >
             {fmtValue(value, precision)}
             {value !== null && unit && <span className="ms-1 text-lg font-medium text-gray-500">{unit}</span>}
+            {value !== null && max !== undefined && <span className="ms-1 text-lg text-gray-400">/ {max}</span>}
           </div>
           <div className="mt-2 flex min-h-6 flex-wrap items-center gap-2">
             {staleDate ? (

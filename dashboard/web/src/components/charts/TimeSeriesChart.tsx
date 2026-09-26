@@ -146,13 +146,22 @@ export default function TimeSeriesChart({
     };
   }, [theme, series, precision, secondaryAxis, invert, unit, monthly]);
 
+  /* Oś zaczyna się od pierwszego pomiaru – pusty okres przed startem źródła
+     (np. Ahrefs, boty AI) spłaszczał wykres do wąskiego paska po prawej. */
+  const start = useMemo(() => {
+    const first = timestamps.findIndex((_, i) => series.some((s) => typeof s.values[i] === "number"));
+    return Math.max(0, first);
+  }, [series, timestamps]);
+
   const apexSeries = useMemo(
     () =>
       series.map((s) => ({
         name: s.label,
-        data: timestamps.map((ts, i) => [ts * 1000, s.values[i] ?? null] as [number, number | null]),
+        data: timestamps
+          .slice(start)
+          .map((ts, i) => [ts * 1000, s.values[start + i] ?? null] as [number, number | null]),
       })),
-    [series, timestamps],
+    [series, timestamps, start],
   );
 
   return (
