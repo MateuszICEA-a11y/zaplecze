@@ -28,10 +28,13 @@ czyste funkcje (układ dokumentu, diff, frazy, migawka, sanityzacja) obok. Style
 dokumentu, belki i kart idą jeszcze z `legacy.css` (kontenery `.legacy`, te same klasy
 co w dawnym edytorze) – do przeniesienia na Tailwind.
 
-**Edytor tekstu projektu** (`/content-writer/projekt/`) to nadal moduł vanilla
-`src/legacy/writer-editor.ts` podpięty w `ProjectWorkspace.tsx`. Style legacy są zawężone
-do `.legacy` (`node scripts/build-legacy-css.mjs` po zmianie `src/legacy/css/*`), kolory
-z mostka tokenów na paletę iCEA (`tokens.css`).
+**Edytor tekstu projektu** (`/content-writer/projekt/`, pełny ekran) to `WriterEditor.tsx`:
+pola `contentEditable` są niekontrolowane (rejestr bloków w refie, autozapis ~1,5 s po
+zmianie, `flush()` przed każdą akcją czytającą treść z bazy), panel boczny odświeża się
+licznikiem. Oba edytory biorą style z `src/legacy/legacy.css` (klasy zawężone do
+`.legacy`; `node scripts/build-legacy-css.mjs` po zmianie `src/legacy/css/*`) i kolory
+z mostka tokenów (`tokens.css`) – do przeniesienia na Tailwind. W `src/legacy/` nie ma
+już logiki, tylko style i reguły `::highlight()`.
 
 Worker czyta z buildu frontu pliki `/<domena>/content-watcher/catalog.json`,
 `/<domena>/content-writer/data.json` i `competitors.json` (ASSETS) – route handlery

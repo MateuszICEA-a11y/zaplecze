@@ -1,16 +1,14 @@
 "use client";
 
 /* Projekt artykułu Content Writera w React: etapy, przebieg w toku, research
-   (SERP i teksty konkurencji), brief do akceptacji i wejście do edytora tekstu.
-   Logika i kontrakty API 1:1 z dawnego projekt.astro. Pełnoekranowy edytor
-   tekstu (legacy/writer-editor.ts) jest podpięty jako gotowy moduł – do
-   przepisania osobno. */
+   (SERP i teksty konkurencji), brief do akceptacji i wejście do pełnoekranowego
+   edytora tekstu (WriterEditor.tsx). Logika i kontrakty API 1:1 z dawnego
+   projekt.astro. */
 import DataGrid from "@/components/grid/DataGrid";
 import Segmented from "@/components/Segmented";
 import { btn, btnDanger, btnPrimary, input, inlineLink, Status, type Tone } from "@/components/kit";
 import { Card, SectionHead } from "@/components/ui";
 import { ensureHighlights } from "@/legacy/LegacyHost";
-import { createEditor } from "@/legacy/writer-editor";
 import { cn } from "@/lib/cn";
 import { fmtInt } from "@/lib/format";
 import { phraseKey } from "@/lib/phrase-match.js";
@@ -19,6 +17,7 @@ import type { ColDef } from "ag-grid-community";
 import { ArrowDown, ArrowLeft, ArrowUp, Check, Loader2, Plus, X } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import WriterEditor from "./WriterEditor";
 import "@/legacy/legacy.css";
 import "@/legacy/tokens.css";
 
@@ -89,10 +88,6 @@ export default function ProjectWorkspace({ domain }: { domain: string }) {
   const [message, setMessage] = useState<{ text: string; tone?: "err" | "ok" } | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const base = projectId ? `/api/cw/writer/projects/${projectId}` : "";
-
-  // Aktualny stan dla edytora (czyta go przez data() w chwili renderu).
-  const live = useRef({ project, writeJob, ...publishing });
-  live.current = { project, writeJob, ...publishing };
 
   const loadProject = useCallback(async (id: number) => {
     const { data } = await api<Any>(`/api/cw/writer/projects/${id}`);
@@ -167,43 +162,25 @@ export default function ProjectWorkspace({ domain }: { domain: string }) {
     }
   };
 
-  /* ---------- pełnoekranowy edytor tekstu (moduł z legacy/) ---------- */
-  const editorRef = useRef<HTMLDivElement>(null);
-  const editor = useRef<ReturnType<typeof createEditor> | null>(null);
+  /* ---------- pełnoekranowy edytor tekstu (WriterEditor) ---------- */
   const [editorOpen, setEditorOpen] = useState(false);
   const textReady = project?.status === "written" && writeJob?.status === "done";
-
-  useEffect(() => {
-    if (!base || !editorRef.current || editor.current) return;
-    ensureHighlights();
-    editor.current = createEditor({
-      base,
-      domain,
-      root: editorRef.current,
-      data: () => ({ project: live.current.project, job: live.current.writeJob, authors: live.current.authors, categories: live.current.categories }),
-      refresh: () => refresh(),
-      exit: () => {
-        history.replaceState(null, "", "#etapy");
-        setEditorOpen(false);
-      },
-    });
-  }, [base, domain, refresh]);
 
   // Gotowy tekst otwiera się od razu w edytorze, chyba że redaktor świadomie wrócił do etapów (#etapy).
   const autoOpened = useRef(false);
   useEffect(() => {
-    if (textReady && !autoOpened.current && editor.current) {
+    if (textReady && !autoOpened.current) {
       autoOpened.current = true;
+      ensureHighlights();
       if (location.hash !== "#etapy") setEditorOpen(true);
     }
     if (!textReady) setEditorOpen(false);
-  }, [textReady, editor.current]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [textReady]);
 
   useEffect(() => {
     document.documentElement.classList.toggle("we-open", editorOpen);
-    if (editorOpen) editor.current?.render().catch((e: Error) => setMessage({ text: e.message, tone: "err" }));
     return () => document.documentElement.classList.remove("we-open");
-  }, [editorOpen, project, writeJob]);
+  }, [editorOpen]);
 
   const openEditor = () => {
     history.replaceState(null, "", "#edytor");
@@ -265,9 +242,23 @@ export default function ProjectWorkspace({ domain }: { domain: string }) {
         </>
       )}
 
-      <div className="legacy">
-        <div className="we" ref={editorRef} hidden={!editorOpen} />
-      </div>
+      {textReady && base && (
+        <div className="legacy">
+          <WriterEditor
+            base={base}
+            project={project}
+            job={writeJob}
+            authors={publishing.authors}
+            categories={publishing.categories}
+            open={editorOpen}
+            refresh={refresh}
+            exit={() => {
+              history.replaceState(null, "", "#etapy");
+              setEditorOpen(false);
+            }}
+          />
+        </div>
+      )}
     </>
   );
 }
