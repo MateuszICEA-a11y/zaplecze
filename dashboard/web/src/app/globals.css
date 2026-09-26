@@ -4,6 +4,7 @@
    (manual: 0–4 px, bez pigułek). Kolory sukces/błąd/ostrzeżenie – wyłącznie
    funkcjonalne stany, nie akcenty marki. */
 @import "tailwindcss";
+@import "./editor-content.css";
 
 @custom-variant dark (&:is(.dark *));
 

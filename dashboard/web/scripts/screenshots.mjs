@@ -7,7 +7,7 @@ import { resolve } from "node:path";
 import { chromium } from "playwright-core";
 
 const BASE = process.env.BASE_URL ?? "http://127.0.0.1:4410";
-const OUT = resolve(import.meta.dirname, "..", "screenshots");
+const OUT = resolve(import.meta.dirname, "..", process.env.OUT ?? "screenshots");
 const PAGES = [
   ["domeny", "/"],
   ["przeglad", "/grupa-icea.pl/"],
@@ -26,6 +26,7 @@ const PAGES = [
   ["content-writer", "/grupa-icea.pl/content-writer/"],
   ["asystent", "/grupa-icea.pl/asystent/"],
   ["edytor", "/grupa-icea.pl/content-watcher/edytor/?id=posts-36767"],
+  ["edytor-przebieg", "/grupa-icea.pl/content-watcher/edytor/?id=posts-20811"],
   ["projekt", "/grupa-icea.pl/content-writer/projekt/?id=1"],
   ["projekt-etapy", "/grupa-icea.pl/content-writer/projekt/?id=1#etapy"],
   ["asystent-pilne", "/grupa-icea.pl/asystent/#odswiez/pilne"],

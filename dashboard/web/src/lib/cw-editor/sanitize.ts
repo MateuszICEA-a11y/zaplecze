@@ -150,7 +150,7 @@ export function markBlocks(host: HTMLElement) {
 /** Blok treści dokumentu (sanityzowany HTML + rynienka z typami bloków). */
 export function docProse(html: string | null, className = '') {
   const body = document.createElement('div');
-  body.className = `prose ed-doc-body ${className}`.trim();
+  body.className = `doc-prose ed-doc-body ${className}`.trim();
   sanitizeInto(body, html);
   markBlocks(body);
   return body;

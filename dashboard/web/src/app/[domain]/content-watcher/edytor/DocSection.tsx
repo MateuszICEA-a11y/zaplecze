@@ -5,8 +5,11 @@
    widoku (zmiany / wersja po / oryginał), raport linków, korekta
    redaktorska, infografika, CTA i cytat eksperta.
 
-   Znaczniki i klasy 1:1 z dawnego edytora (style z legacy.css), bo ocena
-   treści, podgląd i karty legacy czytają dokument po tych klasach. */
+   Klasy ed-doc-section, ed-sec-head, ed-doc-body i ed-doc-expert nie niosą
+   stylu – to znaczniki, po których migawka (snapshot.ts) czyta dokument dla
+   oceny treści i podglądu. Typografia treści: .doc-prose (editor-content.css). */
+import { btnSmall, btnSmallPrimary, input, Status, Waiting, type Tone } from "@/components/kit";
+import { cn } from "@/lib/cn";
 import { sanitizeInto, markBlocks } from "@/lib/cw-editor/sanitize";
 import { changeRatio, sectionLinkDiff, wordDiff, type Opcode } from "@/lib/cw-editor/diff";
 import type { SectionBlock } from "@/lib/cw-editor/doc";
@@ -58,7 +61,12 @@ export function Prose({
   return (
     <div
       ref={ref}
-      className={`prose ${className}${editable ? " ed-editable" : ""}`}
+      className={cn(
+        "doc-prose",
+        className,
+        editable &&
+          "-m-1.5 cursor-text rounded p-1.5 outline-none transition-colors hover:bg-brand-500/4 focus:bg-gray-50 focus:shadow-[inset_0_0_0_1px_var(--color-gray-200)] dark:focus:bg-white/3 dark:focus:shadow-[inset_0_0_0_1px_var(--color-gray-800)]",
+      )}
       contentEditable={editable || undefined}
       suppressContentEditableWarning
       onInput={onInput}
@@ -69,7 +77,7 @@ export function Prose({
 /* Pasek formatowania działa na zaznaczeniu (execCommand – jedyne API
    contentEditable dostępne bez zewnętrznej biblioteki). */
 const FORMAT_BUTTONS: { label: string; title: string; run: () => void; className?: string }[] = [
-  { label: "B", title: "Pogrubienie (Ctrl+B)", className: "bold", run: () => document.execCommand("bold") },
+  { label: "B", title: "Pogrubienie (Ctrl+B)", className: "font-medium", run: () => document.execCommand("bold") },
   { label: "I", title: "Kursywa (Ctrl+I)", className: "italic", run: () => document.execCommand("italic") },
   { label: "H2", title: "Nagłówek H2", run: () => document.execCommand("formatBlock", false, "h2") },
   { label: "H3", title: "Nagłówek H3", run: () => document.execCommand("formatBlock", false, "h3") },
@@ -87,14 +95,17 @@ const FORMAT_BUTTONS: { label: string; title: string; run: () => void; className
   { label: "wyczyść", title: "Usuń formatowanie zaznaczenia", run: () => document.execCommand("removeFormat") },
 ];
 
+/** Pasek pokazuje się dopiero przy edycji (fokus w treści sekcji) – dziewięć
+    identycznych pasków nad sekcjami to szum, nie narzędzie. mousedown na
+    przyciskach ma preventDefault, więc fokus zostaje w treści. */
 function FormatBar() {
   return (
-    <div className="ed-format">
+    <div className="mb-2.5 hidden flex-wrap gap-1 rounded border border-gray-200 bg-gray-50 px-1.5 py-1 group-focus-within/sec:flex dark:border-gray-800 dark:bg-white/3">
       {FORMAT_BUTTONS.map((item) => (
         <button
           key={item.label}
           type="button"
-          className={`ed-format-btn ${item.className ?? ""}`.trim()}
+          className={cn("rounded px-2.5 py-1 text-theme-xs text-gray-600 hover:bg-gray-200/70 hover:text-gray-800 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-white/90", item.className)}
           title={item.title}
           // mousedown zamiast click – kliknięcie gubiłoby zaznaczenie w tekście.
           onMouseDown={(event) => {
@@ -111,16 +122,20 @@ function FormatBar() {
 
 /** Diff renderowany wyłącznie jako tekst – w treści siedzą fragmenty obcych
     stron i HTML z modelu, traktujemy je jak dane, nie markup. */
-function Opcodes({ opcodes }: { opcodes: Opcode[] }) {
+function Opcodes({ opcodes, className }: { opcodes: Opcode[]; className?: string }) {
+  // Dopisane na zielono, usunięte przekreślone i wyciszone: jedno spojrzenie
+  // wystarcza, żeby zobaczyć, co model zrobił z akapitem.
   return (
-    <div className="ed-diff">
+    <div className={cn("max-w-(--doc-measure) text-base/[1.75] whitespace-pre-wrap text-gray-600 dark:text-gray-300", className)}>
       {opcodes.map((op, i) =>
         op.op === "equal" ? (
           <span key={i}>{op.before}</span>
         ) : (
           <span key={i}>
-            {op.before && <del>{op.before}</del>}
-            {op.after && <ins>{op.after}</ins>}
+            {op.before && <del className="text-gray-400 decoration-1 opacity-75 dark:text-gray-500">{op.before}</del>}
+            {op.after && (
+              <ins className="rounded-sm bg-success-500/20 text-gray-800 no-underline shadow-[0_0_0_1px] shadow-success-500/20 box-decoration-clone dark:text-white/90">{op.after}</ins>
+            )}
           </span>
         ),
       )}
@@ -133,6 +148,7 @@ function CopyButton({ label, value }: { label: string; value: () => string }) {
   return (
     <button
       type="button"
+      className={btnSmall}
       onClick={async () => {
         await navigator.clipboard.writeText(value());
         setDone(true);
@@ -178,16 +194,40 @@ export default function DocSection(props: SectionProps) {
 const HEADING_FALLBACK = (block: SectionBlock) =>
   block.kind === "faq" ? `Pytanie ${block.slot - 100}` : block.kind === "sources" ? "Źródła" : `Sekcja ${block.slot}`;
 
+/** Sekcja dokumentu: po lewej rynienka na typy bloków i przyciski decyzji,
+    wszystko poza rynienką trzyma jedną miarę z tekstem (49rem ≈ 78 znaków) –
+    pasek na całą szerokość nad wąskim łamem wyglądał jak drugi dokument. */
+export const SECTION_CLS =
+  "doc-gutter group/sec relative border-b border-gray-100 pt-6.5 pr-7 pb-7.5 pl-19 [--doc-measure:49rem] last:border-b-0 max-md:px-4 max-md:pt-5 max-md:pb-6 dark:border-gray-800 [&>:not([data-gutter])]:max-w-(--doc-measure)";
+
+/* FAQ: węższe odstępy (pytania pod wspólnym nagłówkiem bloku); Źródła stoją
+   na stronie za FAQ – odcięte kreską. Klasy ed-* to znaczniki dla snapshot.ts. */
 function sectionClass(block: SectionBlock) {
-  return block.kind === "faq" ? "ed-doc-section ed-doc-faq" : block.kind === "sources" ? "ed-doc-section ed-doc-sources" : "ed-doc-section";
+  return cn(
+    "ed-doc-section",
+    SECTION_CLS,
+    block.kind === "faq" && "ed-doc-faq pt-4.5 pb-5",
+    block.kind === "sources" && "ed-doc-sources border-t border-t-gray-200 dark:border-t-gray-800",
+  );
 }
+
+/** Kolorowa krawędź po lewej mówi, co się dzieje z sekcją po przebiegu. */
+const edge = (color: string) => cn("after:absolute after:inset-y-0 after:left-0 after:w-[3px]", color);
+
+const HEAD_CLS = "ed-sec-head mb-3.5 flex flex-wrap items-baseline gap-x-3.5 gap-y-1.5";
+const TOOLS_CLS = "mb-3.5 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-theme-xs text-gray-500 dark:text-gray-400";
+const Spacer = () => <span className="flex-1" />;
 
 /** Heading sekcji: pytanie FAQ to na stronie H3 pod wspólnym H2 bloku –
     renderujemy tak samo, żeby liczba nagłówków zgadzała się z tym, co widzi Google. */
 function Heading({ block, text, className, title }: { block: SectionBlock; text: string; className?: string; title?: string }) {
   const H = block.kind === "faq" ? "h3" : "h2";
   return (
-    <H data-block={H} className={className} title={title}>
+    <H
+      data-block={H}
+      className={cn("leading-tight font-medium text-gray-800 dark:text-white/90", H === "h3" ? "text-base" : "text-xl", className)}
+      title={title}
+    >
       {text || HEADING_FALLBACK(block)}
     </H>
   );
@@ -196,7 +236,7 @@ function Heading({ block, text, className, title }: { block: SectionBlock; text:
 /** Bibliografia stoi na stronie pod FAQ, przed boksem autora – etykieta, żeby
     nikt nie szukał jej wśród sekcji treści. */
 const SourcesTag = ({ block }: { block: SectionBlock }) =>
-  block.kind === "sources" ? <span className="ed-sec-tag">blok za FAQ · page_sources_text</span> : null;
+  block.kind === "sources" ? <Status tone="idle">blok za FAQ · page_sources_text</Status> : null;
 
 /** Sekcja bez propozycji: treść z WordPressa (albo lokalny szkic) do poprawy w miejscu. */
 function PlainSection({ block, domain, postId, job, expert, styleRow, imageRow, hidden }: SectionProps) {
@@ -238,31 +278,31 @@ function PlainSection({ block, domain, postId, job, expert, styleRow, imageRow, 
   useEffect(() => editorStore.touchDoc(), [draft]);
 
   return (
-    <section className={`${sectionClass(block)}${unchanged ? " is-unchanged" : ""}`} data-slot={block.slot} data-kind={block.kind} data-dirty={dirty ? "1" : undefined} hidden={hidden}>
+    <section className={cn(sectionClass(block), unchanged && "opacity-72 hover:opacity-100")} data-slot={block.slot} data-kind={block.kind} data-dirty={dirty ? "1" : undefined} hidden={hidden}>
       {!block.bare && (
-        <div className="ed-sec-head">
+        <div className={HEAD_CLS}>
           <Heading block={block} text={block.title} />
           <SourcesTag block={block} />
-          {draft !== null && <span className="ed-sec-tag warn">szkic roboczy</span>}
+          {draft !== null && <Status tone="warn">szkic roboczy</Status>}
           {/* Wyciszenie samą przezroczystością myliło się z odrzuconą
               propozycją – etykieta mówi wprost, czemu sekcja wygląda inaczej. */}
-          {unchanged && <span className="ed-sec-tag ed-unchanged-tag">bez zmian</span>}
+          {unchanged && <Status tone="idle">bez zmian</Status>}
         </div>
       )}
       {!block.bare && (
-        <div className="ed-sec-tools">
-          <span className="ed-sec-spacer" />
+        <div className={TOOLS_CLS}>
+          <Spacer />
           {dirty && (
-            <button type="button" className="ed-save" onClick={save}>
+            <button type="button" className={btnSmallPrimary} onClick={save}>
               zapisz szkic
             </button>
           )}
           {draft !== null && (
-            <button type="button" onClick={drop}>
+            <button type="button" className={btnSmall} onClick={drop}>
               odrzuć szkic
             </button>
           )}
-          <button type="button" onClick={() => (editing ? body.current?.focus() : setEditing(true))}>
+          <button type="button" className={btnSmall} onClick={() => (editing ? body.current?.focus() : setEditing(true))}>
             edytuj tekst
           </button>
           {/* Infografika i CTA to narzędzia sekcji treści – w FAQ i w
@@ -335,29 +375,47 @@ function ChangedSection({ block, job, mode: storedMode, expert, styleRow, imageR
 
   return (
     <section
-      className={`${sectionClass(block)} ${section.operation === "insert" ? "is-new" : "is-changed"}`}
+      className={cn(
+        sectionClass(block),
+        section.decision === "rejected"
+          ? cn(edge("after:bg-gray-200 dark:after:bg-gray-700"), "opacity-50 hover:opacity-100")
+          : edge(section.decision === "accepted" || section.operation === "insert" ? "after:bg-success-500" : "after:bg-brand-500"),
+      )}
       data-slot={block.slot}
       data-kind={block.kind}
       data-decision={section.decision ?? ""}
       hidden={hidden}
     >
       {job && <DecideGutter section={section} job={job} />}
-      <div className="ed-sec-head">
-        <Heading block={block} text={title} className={retitled ? "is-retitled" : undefined} title={retitled ? `poprzednio: ${section.title_before}` : undefined} />
+      <div className={HEAD_CLS}>
+        {/* Rynienkę zajmują tu przyciski decyzji – etykieta nagłówka wpadłaby pod nie. */}
+        <Heading
+          block={block}
+          text={title}
+          className={cn(job && "before:hidden", retitled && "underline decoration-brand-500 underline-offset-5")}
+          title={retitled ? `poprzednio: ${section.title_before}` : undefined}
+        />
         <SourcesTag block={block} />
         <SectionTags section={section} kind={block.kind} />
       </div>
-      <div className="ed-sec-tools">
-        <span className="ed-view-seg">
+      <div className={TOOLS_CLS}>
+        <span className="inline-flex">
           {modes.map(([value, label]) => (
-            <button key={value} type="button" className={value === mode ? "active" : undefined} data-mode={value} onClick={() => editorStore.setMode(section.slot, value)}>
+            <button
+              key={value}
+              type="button"
+              className={cn(
+                "-ml-px h-8 border border-gray-300 px-2.5 text-theme-xs font-medium text-gray-600 first:ml-0 first:rounded-l last:rounded-r hover:text-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:text-white/90",
+                value === mode && "relative z-1 border-brand-500 bg-brand-50 text-gray-800 dark:border-brand-500 dark:bg-brand-500/15 dark:text-white/90",
+              )}
+              data-mode={value} onClick={() => editorStore.setMode(section.slot, value)}>
               {label}
             </button>
           ))}
         </span>
-        <span className="ed-sec-spacer" />
+        <Spacer />
         {dirty && (
-          <button type="button" className="ed-save" disabled={saving} onClick={saveEdits}>
+          <button type="button" className={btnSmallPrimary} disabled={saving} onClick={saveEdits}>
             zapisz poprawki
           </button>
         )}
@@ -368,7 +426,7 @@ function ChangedSection({ block, job, mode: storedMode, expert, styleRow, imageR
       <SectionPanels slot={section.slot} html={section.text_after} />
       <LinkDiff section={section} />
       {styleRow && job && <StyleBlock row={styleRow} job={job} />}
-      <div className="ed-sec-body">
+      <div>
         {mode === "diff" ? (
           <Opcodes opcodes={section.diff?.opcodes ?? []} />
         ) : mode === "before" ? (
@@ -398,7 +456,7 @@ function ChangedSection({ block, job, mode: storedMode, expert, styleRow, imageR
 
 /** Cytat eksperta wpięty na końcu sekcji (sanityzowany jak reszta treści). */
 function ExpertQuote({ expert }: { expert: any }) {
-  return <Prose html={expertBlockquote(expert)} className="ed-doc-expert" blocks={false} />;
+  return <Prose html={expertBlockquote(expert)} className="ed-doc-expert mt-3.5" blocks={false} />;
 }
 
 /* ---------- decyzje i etykiety ---------- */
@@ -420,7 +478,13 @@ function DecideGutter({ section, job }: { section: Section; job: Job }) {
   const button = (kind: "accepted" | "rejected", glyph: string, title: string) => (
     <button
       type="button"
-      className={`ed-decide-btn ${kind === "accepted" ? "ok" : "no"}${section.decision === kind ? " active" : ""}`}
+      className={cn(
+        "grid size-7.5 place-items-center rounded-full border border-gray-300 bg-white text-theme-sm leading-none text-gray-500 transition-colors hover:border-gray-500 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400 dark:hover:text-white/90",
+        section.decision === kind &&
+          (kind === "accepted"
+            ? "border-success-500 bg-success-500 text-white hover:border-success-500 hover:text-white dark:border-success-500 dark:bg-success-500 dark:text-gray-950"
+            : "border-gray-500 bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white/90"),
+      )}
       data-decision={kind}
       title={title}
       aria-label={title}
@@ -430,7 +494,7 @@ function DecideGutter({ section, job }: { section: Section; job: Job }) {
     </button>
   );
   return (
-    <div className="ed-decide">
+    <div data-gutter className="absolute top-6 left-4 grid gap-2 max-md:static max-md:mb-3 max-md:flex">
       {button("accepted", "✓", "Zatwierdź propozycję dla tej sekcji")}
       {button("rejected", "✕", "Odrzuć propozycję dla tej sekcji")}
     </div>
@@ -439,30 +503,30 @@ function DecideGutter({ section, job }: { section: Section; job: Job }) {
 
 /** Etykiety przy nagłówku: rozmiar zmiany, ostrzeżenia, stan decyzji. */
 function SectionTags({ section, kind }: { section: Section; kind: string }) {
-  const tags: [string, string][] = [];
+  const tags: [string, Tone][] = [];
   const stats = section.diff?.stats;
   const words = () => `+${pl.format(stats!.added)} / −${pl.format(stats!.removed)} słów`;
   // Nazywamy rzecz po imieniu: w bloku FAQ dochodzi pytanie, nie sekcja.
-  if (section.operation === "insert") tags.push([kind === "sources" ? "nowy blok Źródła (za FAQ)" : kind === "faq" ? "nowe pytanie FAQ" : "nowa sekcja", "new"]);
+  if (section.operation === "insert") tags.push([kind === "sources" ? "nowy blok Źródła (za FAQ)" : kind === "faq" ? "nowe pytanie FAQ" : "nowa sekcja", "mid"]);
   else if (section.operation === "move") {
     // Renumeracja układu: treść przyszła z innego slotu. Diff liczony jest
     // względem źródła, więc statystyki pokazujemy tylko przy realnej zmianie.
-    tags.push([`przesunięta z sekcji ${section.moved_from ?? "?"}`, "new"]);
-    if (stats && (stats.added || stats.removed)) tags.push([words(), ""]);
-  } else if (stats) tags.push([words(), ""]);
-  else tags.push(["aktualizacja", ""]);
+    tags.push([`przesunięta z sekcji ${section.moved_from ?? "?"}`, "mid"]);
+    if (stats && (stats.added || stats.removed)) tags.push([words(), "idle"]);
+  } else if (stats) tags.push([words(), "idle"]);
+  else tags.push(["aktualizacja", "idle"]);
   if (stats?.shrunk) tags.push(["model wyciął więcej, niż dopisał", "warn"]);
   const removed = sectionLinkDiff(section).removed.length;
   if (removed) tags.push([removed === 1 ? "zniknął 1 link" : `zniknęły ${removed} linki`, "warn"]);
-  if (section.edited) tags.push(["ręcznie poprawiona", ""]);
+  if (section.edited) tags.push(["ręcznie poprawiona", "idle"]);
   if (section.decision === "accepted") tags.push(["zatwierdzone", "ok"]);
-  if (section.decision === "rejected") tags.push(["odrzucone", "no"]);
+  if (section.decision === "rejected") tags.push(["odrzucone", "idle"]);
   return (
-    <span className="ed-sec-tags">
-      {tags.map(([text, cls]) => (
-        <span key={text} className={`ed-sec-tag ${cls}`.trim()}>
+    <span className="inline-flex flex-wrap gap-1.5">
+      {tags.map(([text, tone]) => (
+        <Status key={text} tone={tone}>
           {text}
-        </span>
+        </Status>
       ))}
     </span>
   );
@@ -472,19 +536,19 @@ function SectionTags({ section, kind }: { section: Section; kind: string }) {
 function LinkDiff({ section }: { section: Section }) {
   const { added, removed } = sectionLinkDiff(section);
   if (!added.length && !removed.length) return null;
-  const row = (sign: string, cls: string, link: { href: string; text: string }, i: number) => (
-    <div key={`${cls}${i}`} className={`ed-linkdiff-row ${cls}`}>
-      <b>{sign}</b>
-      <span>{link.text ? `„${link.text}"` : "(bez anchora)"}</span>
+  const row = (sign: string, cls: "added" | "removed", link: { href: string; text: string }, i: number) => (
+    <div key={`${cls}${i}`} className="flex min-w-0 flex-wrap items-baseline gap-1.5">
+      <b className={cn("font-medium", cls === "added" ? "text-success-600 dark:text-success-400" : "text-error-600 dark:text-error-400")}>{sign}</b>
+      <span className={cn(cls === "removed" && "text-gray-500 line-through dark:text-gray-400")}>{link.text ? `„${link.text}"` : "(bez anchora)"}</span>
       {" → "}
-      <a href={link.href} target="_blank" rel="noopener">
+      <a className="text-gray-500 [overflow-wrap:anywhere] hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-400" href={link.href} target="_blank" rel="noopener">
         {link.href}
       </a>
     </div>
   );
   return (
-    <div className="ed-linkdiff">
-      <span className="ed-linkdiff-head">{`Linki: ${added.length ? `+${added.length} ` : ""}${removed.length ? `−${removed.length} usunięte` : ""}`.trim()}</span>
+    <div className="mb-3 grid gap-1 rounded border border-gray-100 bg-gray-50 px-3 py-2 text-theme-xs text-gray-600 dark:border-gray-800 dark:bg-white/3 dark:text-gray-300">
+      <span className="font-medium tracking-wide text-gray-600 uppercase dark:text-gray-300">{`Linki: ${added.length ? `+${added.length} ` : ""}${removed.length ? `−${removed.length} usunięte` : ""}`.trim()}</span>
       {removed.map((link, i) => row("−", "removed", link, i))}
       {added.map((link, i) => row("+", "added", link, i))}
     </div>
@@ -511,22 +575,29 @@ function StyleBlock({ row, job }: { row: StyleRow; job: Job }) {
     }
   };
   const action = (label: string, decision: "accepted" | "rejected" | null, cls: string) => (
-    <button type="button" className={`ed-style-btn ${cls}`} disabled={busy} onClick={() => decide(decision)}>
+    <button type="button" className={cn(btnSmall, cls === "ok" && "hover:border-success-500 hover:text-success-700 dark:hover:text-success-400")} disabled={busy} onClick={() => decide(decision)}>
       {label}
     </button>
   );
   return (
-    <div className="ed-style-prop" data-decision={row.decision ?? ""}>
-      <div className="ed-style-prop-head">
-        <span className="ed-style-prop-label">
+    // Propozycja korekty to komentarz redakcyjny do tekstu – własna ramka, nie wygląd bloku treści.
+    <div
+      className={cn(
+        CARD_CLS,
+        row.decision === "accepted" ? "border-l-success-500" : row.decision === "rejected" ? "border-l-gray-300 opacity-60 dark:border-l-gray-700" : "border-l-brand-500",
+      )}
+      data-decision={row.decision ?? ""}
+    >
+      <div className={CARD_HEAD_CLS}>
+        <span className={CARD_LABEL_CLS}>
           {row.decision === "accepted" ? "korekta redaktorska · zastosowana" : row.decision === "rejected" ? "korekta redaktorska · odrzucona" : "korekta redaktorska"}
         </span>
         {(row.warnings ?? []).map((warning) => (
-          <span key={warning.label} className="ed-sec-tag warn">
+          <Status key={warning.label} tone="warn">
             {warning.label}
-          </span>
+          </Status>
         ))}
-        <span className="ed-sec-spacer" />
+        <Spacer />
         {row.decision === "accepted" ? (
           action("cofnij", null, "undo")
         ) : row.decision === "rejected" ? (
@@ -539,12 +610,13 @@ function StyleBlock({ row, job }: { row: StyleRow; job: Job }) {
         )}
       </div>
       {row.title_after && row.title_after !== row.title_before && (
-        <p className="ed-style-titlediff">
-          nagłówek: <del>{row.title_before ?? ""}</del> <ins>{row.title_after}</ins>
+        <p className="mb-2 text-theme-sm text-gray-600 dark:text-gray-300">
+          nagłówek: <del className="text-gray-400 opacity-75">{row.title_before ?? ""}</del>{" "}
+          <ins className="font-medium text-gray-800 no-underline dark:text-white/90">{row.title_after}</ins>
         </p>
       )}
       {row.issues?.length > 0 && (
-        <ul className="ed-style-issues">
+        <ul className="mb-2 list-disc pl-4.5 text-theme-sm/relaxed text-gray-600 dark:text-gray-300">
           {row.issues.map((issue, i) => (
             <li key={i}>{issue}</li>
           ))}
@@ -553,8 +625,8 @@ function StyleBlock({ row, job }: { row: StyleRow; job: Job }) {
       {/* Zatwierdzona korekta jest już treścią sekcji – diff zostaje zwinięty,
           żeby dokument nie zamienił się w ścianę przekreśleń. */}
       <details open={!row.decision}>
-        <summary>co się zmienia w treści</summary>
-        <Opcodes opcodes={wordDiff(row.text_before, row.text_after)} />
+        <summary className="cursor-pointer text-theme-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">co się zmienia w treści</summary>
+        <Opcodes className="mt-2" opcodes={wordDiff(row.text_before, row.text_after)} />
       </details>
     </div>
   );
@@ -564,6 +636,13 @@ function StyleBlock({ row, job }: { row: StyleRow; job: Job }) {
    Przyciski w pasku narzędzi otwierają panele pod paskiem. Stan paneli per
    slot trzymamy w module – przyciski i panele siedzą w różnych miejscach
    sekcji, a obie strony muszą go widzieć. */
+
+/** Ramka paneli w sekcji (korekta, infografika, CTA) – kolor lewej krawędzi dokłada wywołujący. */
+const CARD_CLS = "mb-4 rounded border border-l-3 border-y-gray-200 border-r-gray-200 bg-gray-50 px-3.5 py-3 dark:border-y-gray-800 dark:border-r-gray-800 dark:bg-white/3";
+const CARD_HEAD_CLS = "mb-2 flex flex-wrap items-center gap-2";
+const CARD_LABEL_CLS = "text-theme-xs font-medium tracking-wider text-gray-600 uppercase dark:text-gray-300";
+const NOTE_CLS = "mt-1.5 text-theme-xs text-gray-500 dark:text-gray-400";
+const ERROR_CLS = "mt-2.5 text-theme-sm text-error-600 dark:text-error-400";
 
 type PanelState = { image: boolean; cta: boolean };
 const panelListeners = new Map<number, Set<() => void>>();
@@ -599,10 +678,10 @@ function SectionExtras({ job, slot, imageRow }: { job: Job | null; slot: number;
   if (job?.status !== "done") return null;
   return (
     <>
-      <button type="button" className="ed-img-open" title="Wygeneruj infografikę do tej sekcji" onClick={() => setPanels(slot, { image: !panels.image })}>
+      <button type="button" className={btnSmall} title="Wygeneruj infografikę do tej sekcji" onClick={() => setPanels(slot, { image: !panels.image })}>
         infografika
       </button>
-      <button type="button" className="ed-img-open" title="Wstaw blok CTA na koniec tej sekcji" onClick={() => setPanels(slot, { cta: !panels.cta })}>
+      <button type="button" className={btnSmall} title="Wstaw blok CTA na koniec tej sekcji" onClick={() => setPanels(slot, { cta: !panels.cta })}>
         CTA
       </button>
     </>
@@ -675,22 +754,18 @@ function ImagePanel({ slot }: { slot: number }) {
     return () => window.clearTimeout(timer);
   }, [row?.status, job.id, slot]);
 
-  const button = (text: string, onClick: () => void, cls = "") => (
-    <button type="button" className={`ed-style-btn ${cls}`.trim()} onClick={onClick}>
-      {text}
-    </button>
-  );
+  const button = (text: string, onClick: () => void, cls = "") => <PanelButton text={text} onClick={onClick} primary={cls === "ok"} />;
   const close = button("zwiń", () => setPanels(slot, { image: false }));
   const head = (children: React.ReactNode) => (
-    <div className="ed-img-head">
-      <span className="ed-img-label">infografika</span>
-      <span className="ed-sec-spacer" />
+    <div className={cn(CARD_HEAD_CLS, "mb-0")}>
+      <span className={CARD_LABEL_CLS}>infografika</span>
+      <Spacer />
       {children}
     </div>
   );
 
   let content: React.ReactNode;
-  if (busy) content = head(<span className="ed-expert-wait">pracuję…</span>);
+  if (busy) content = head(<Waiting>pracuję…</Waiting>);
   else if (!row)
     content = (
       <>
@@ -700,7 +775,7 @@ function ImagePanel({ slot }: { slot: number }) {
             {close}
           </>,
         )}
-        <p className="ed-style-note">Model przeczyta tę sekcję i zaproponuje treść grafiki. Styl (paleta ICEA, format 16:9, polskie etykiety) jest stały i nie podlega edycji.</p>
+        <p className={NOTE_CLS}>Model przeczyta tę sekcję i zaproponuje treść grafiki. Styl (paleta ICEA, format 16:9, polskie etykiety) jest stały i nie podlega edycji.</p>
       </>
     );
   else if (row.status === "inserted")
@@ -712,7 +787,7 @@ function ImagePanel({ slot }: { slot: number }) {
             {close}
           </>,
         )}
-        <p className="ed-style-note">
+        <p className={NOTE_CLS}>
           Grafika stoi na końcu sekcji i jest w bibliotece mediów (ID {row.media_id ?? "?"}). Usunięcie zdejmuje ją z treści, plik w bibliotece zostaje.
         </p>
       </>
@@ -720,7 +795,7 @@ function ImagePanel({ slot }: { slot: number }) {
   else if (row.status === "generating")
     content = head(
       <>
-        <span className="ed-expert-wait">obraz się generuje… (do trzech minut)</span>
+        <Waiting>obraz się generuje… (do trzech minut)</Waiting>
         {close}
       </>,
     );
@@ -735,8 +810,8 @@ function ImagePanel({ slot }: { slot: number }) {
           </>,
         )}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="ed-img-preview" src={row.image_url} alt={row.alt ?? ""} loading="lazy" />
-        <p className="ed-style-note">
+        <img className="mt-2.5 mb-1.5 block h-auto w-full max-w-180 rounded border border-gray-200 dark:border-gray-800" src={row.image_url} alt={row.alt ?? ""} loading="lazy" />
+        <p className={NOTE_CLS}>
           {[row.caption ? `Podpis: ${row.caption}` : null, row.credits ? `kredyty kie.ai: ${row.credits}` : null, 'Adres z kie.ai jest tymczasowy – „wstaw do sekcji” wgrywa plik do biblioteki mediów.']
             .filter(Boolean)
             .join(" · ")}
@@ -748,20 +823,20 @@ function ImagePanel({ slot }: { slot: number }) {
     content = (
       <>
         {head(close)}
-        <div className="ed-img-form">
-          <textarea className="ed-img-brief" rows={6} spellCheck={false} value={form.brief} onChange={(e) => setForm({ ...form, brief: e.target.value })} />
-          <input type="text" placeholder="tekst alternatywny (alt)" maxLength={300} value={form.alt} onChange={(e) => setForm({ ...form, alt: e.target.value })} />
-          <input type="text" placeholder="podpis pod grafiką" maxLength={300} value={form.caption} onChange={(e) => setForm({ ...form, caption: e.target.value })} />
-          {button("wygeneruj obraz", () => call({ step: "generate", ...form }), "ok")}
+        <div className="mt-2.5 mb-1.5 flex flex-col gap-2">
+          <textarea className={cn(input, "min-h-28 resize-y leading-relaxed")} rows={6} spellCheck={false} value={form.brief} onChange={(e) => setForm({ ...form, brief: e.target.value })} />
+          <input className={input} type="text" placeholder="tekst alternatywny (alt)" maxLength={300} value={form.alt} onChange={(e) => setForm({ ...form, alt: e.target.value })} />
+          <input className={input} type="text" placeholder="podpis pod grafiką" maxLength={300} value={form.caption} onChange={(e) => setForm({ ...form, caption: e.target.value })} />
+          <span>{button("wygeneruj obraz", () => call({ step: "generate", ...form }), "ok")}</span>
         </div>
-        <p className="ed-style-note">Opis po angielsku, etykiety na grafice po polsku – model graficzny psuje napisy dłuższe niż cztery słowa.</p>
+        <p className={NOTE_CLS}>Opis po angielsku, etykiety na grafice po polsku – model graficzny psuje napisy dłuższe niż cztery słowa.</p>
       </>
     );
 
   return (
-    <div className="ed-img">
+    <div className={cn(CARD_CLS, "border-l-orange-500")}>
       {content}
-      {(error || (!busy && row?.error && row.status === "failed")) && <p className="ed-error">{error ?? row?.error}</p>}
+      {(error || (!busy && row?.error && row.status === "failed")) && <p className={ERROR_CLS}>{error ?? row?.error}</p>}
     </div>
   );
 }
@@ -795,18 +870,14 @@ function CtaPanel({ slot, inserted }: { slot: number; inserted: boolean }) {
       setBusy(false);
     }
   };
-  const button = (text: string, onClick: () => void, cls = "") => (
-    <button type="button" className={`ed-style-btn ${cls}`.trim()} onClick={onClick}>
-      {text}
-    </button>
-  );
+  const button = (text: string, onClick: () => void, cls = "") => <PanelButton text={text} onClick={onClick} primary={cls === "ok"} />;
   return (
-    <div className="ed-cta">
-      <div className="ed-img-head">
-        <span className="ed-img-label">CTA</span>
-        <span className="ed-sec-spacer" />
+    <div className={cn(CARD_CLS, "border-l-orange-500")}>
+      <div className={CARD_HEAD_CLS}>
+        <span className={CARD_LABEL_CLS}>CTA</span>
+        <Spacer />
         {busy ? (
-          <span className="ed-expert-wait">zapisuję…</span>
+          <Waiting>zapisuję…</Waiting>
         ) : (
           <>
             {inserted ? button("usuń z sekcji", () => call("drop")) : button("wstaw na koniec sekcji", () => call("insert"), "ok")}
@@ -816,15 +887,23 @@ function CtaPanel({ slot, inserted }: { slot: number; inserted: boolean }) {
       </div>
       {!busy &&
         (inserted ? (
-          <p className="ed-style-note">Blok CTA stoi na końcu tej sekcji. Usunięcie zdejmuje go z treści.</p>
+          <p className={NOTE_CLS}>Blok CTA stoi na końcu tej sekcji. Usunięcie zdejmuje go z treści.</p>
         ) : (
           <>
             <div dangerouslySetInnerHTML={{ __html: CTA_PREVIEW }} />
-            <p className="ed-style-note">Gotowa wstawka – ten sam blok na każdej stronie, przycisk prowadzi na /kontakt/.</p>
+            <p className={NOTE_CLS}>Gotowa wstawka – ten sam blok na każdej stronie, przycisk prowadzi na /kontakt/.</p>
           </>
         ))}
-      {error && <p className="ed-error">{error}</p>}
+      {error && <p className={ERROR_CLS}>{error}</p>}
     </div>
+  );
+}
+
+function PanelButton({ text, onClick, primary }: { text: string; onClick: () => void; primary: boolean }) {
+  return (
+    <button type="button" className={primary ? btnSmallPrimary : btnSmall} onClick={onClick}>
+      {text}
+    </button>
   );
 }
 

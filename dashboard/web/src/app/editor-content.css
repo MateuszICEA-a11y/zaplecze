@@ -1,0 +1,99 @@
+/* Treść artykułów w edytorach (edytor wpisu CW, podgląd całości, edytor tekstu
+   projektu CWr). To HTML z WordPressa i z modeli – bez klas Tailwinda – więc
+   typografia idzie selektorami potomków. Wszystko inne w edytorach to utility
+   w komponentach. Importowany z globals.css (działa @apply i wariant dark). */
+
+@layer components {
+  /* Czytelna miara i rytm tekstu – dokument, nie zrzut danych. */
+  .doc-prose {
+    @apply max-w-(--doc-measure,72ch) text-base/[1.75] text-gray-600 dark:text-gray-300;
+  }
+  .doc-prose > * + * {
+    @apply mt-[1em];
+  }
+  /* Podgląd całości zdejmuje klasy z bloków sekcji (previewSnapshot), więc
+     rytm musi działać też w zagnieżdżonych, gołych <div>. */
+  .doc-prose :where(p, ul, ol, table, blockquote) {
+    @apply mb-[.9em] last:mb-0;
+  }
+  .doc-prose :where(h2, h3, h4) {
+    @apply leading-[1.3] font-medium text-gray-800 dark:text-white/90;
+  }
+  .doc-prose h1 {
+    @apply text-2xl font-medium text-gray-800 dark:text-white/90;
+  }
+  .doc-prose h2 {
+    @apply mt-[1.6em] text-lg;
+  }
+  .doc-prose :where(h3, h4) {
+    @apply mt-[1.4em] text-base;
+  }
+  .doc-prose :where(ul, ol) {
+    @apply grid gap-[.4em] pl-[1.4em];
+  }
+  .doc-prose ul {
+    @apply list-disc;
+  }
+  .doc-prose ol {
+    @apply list-decimal;
+  }
+  .doc-prose li::marker {
+    @apply text-brand-500;
+  }
+  .doc-prose a {
+    @apply text-gray-800 underline decoration-brand-500 underline-offset-2 hover:text-brand-600 dark:text-white/90 dark:hover:text-brand-400;
+  }
+  .doc-prose :where(strong, b) {
+    @apply font-medium text-gray-800 dark:text-white/90;
+  }
+  .doc-prose table {
+    @apply w-full border-collapse text-[.95rem];
+  }
+  .doc-prose :where(th, td) {
+    @apply border border-gray-200 px-2.5 py-1.5 text-left dark:border-gray-800;
+  }
+  .doc-prose th {
+    @apply bg-gray-50 font-medium text-gray-800 dark:bg-white/3 dark:text-white/90;
+  }
+  .doc-prose blockquote {
+    @apply border-l-2 border-gray-300 px-4 py-2.5 text-gray-500 dark:border-gray-700 dark:text-gray-400;
+  }
+  /* Cytat eksperta (shortcode k_quote_box i finalny etap pipeline'u). */
+  .doc-prose blockquote.expert {
+    @apply border-brand-500 bg-brand-25 px-4.5 py-3.5 text-gray-600 dark:bg-brand-500/10 dark:text-gray-300;
+  }
+  .doc-prose blockquote.expert p {
+    @apply italic;
+  }
+  .doc-prose blockquote.expert footer {
+    @apply mt-2 text-theme-xs text-gray-500 not-italic before:content-['–_'] dark:text-gray-400;
+  }
+  /* Grafiki: sanitizer zdejmuje style inline (docelowy wygląd widać w szkicu
+     WordPressa), więc rozmiar pilnujemy tutaj. */
+  .doc-prose figure {
+    @apply my-5;
+  }
+  .doc-prose img {
+    @apply block h-auto w-full max-w-160 rounded;
+  }
+  .doc-prose figcaption {
+    @apply mt-2 text-theme-sm text-gray-500 dark:text-gray-400;
+  }
+  /* Etykieta shortcode'u bez własnego podglądu (np. karta „Zobacz również”). */
+  .doc-prose .ed-shortcode {
+    @apply inline-block rounded border border-dashed border-gray-300 px-2 text-theme-sm text-gray-500 dark:border-gray-700 dark:text-gray-400;
+  }
+
+  /* Rynienka dokumentu: etykieta typu bloku (h2, p, ul…) przy każdym bloku
+     treści – czytelnik widzi strukturę, a nie samą ścianę tekstu. Na wąskim
+     ekranie znika, żeby nie zjadać szerokości tekstu. */
+  .doc-gutter [data-block] {
+    @apply relative;
+  }
+  .doc-gutter [data-block]::before {
+    @apply pointer-events-none absolute top-[.35em] -left-13.5 w-8.5 text-right text-[.66rem] leading-normal font-medium tracking-wide text-gray-400 opacity-60 select-none content-[attr(data-block)] max-md:hidden dark:text-gray-500;
+  }
+  .doc-gutter:hover [data-block]::before {
+    @apply opacity-100;
+  }
+}

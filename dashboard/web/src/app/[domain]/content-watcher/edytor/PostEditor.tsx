@@ -4,10 +4,7 @@
    konkurencji, belka pipeline'u z wytycznymi, dokument z propozycjami
    przebiegu, ocena treści z frazami, karty etapów końcowych i podgląd
    całości. Panele dzielą stan przez lib/cw-editor/store.ts, czyste funkcje
-   są w lib/cw-editor/. Wpis wskazuje `?id=`.
-
-   Style dokumentu, belki i kart idą jeszcze z legacy.css (kontenery .legacy)
-   – klasy są te same co w dawnym edytorze. */
+   są w lib/cw-editor/. Wpis wskazuje `?id=`. */
 import { Status } from "@/components/kit";
 import { Card } from "@/components/ui";
 import { editorStore, useEditor } from "@/lib/cw-editor/store";
@@ -15,7 +12,7 @@ import type { Entry } from "@/lib/cw-editor/types";
 import { fmtDate } from "@/lib/format";
 import { api } from "@/lib/writer-client";
 import { loadLatestJob, schedulePoll, stopPolling } from "@/lib/cw-editor/jobs";
-import { ensureHighlights } from "@/legacy/LegacyHost";
+import { ensureHighlights } from "@/lib/highlights";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -87,7 +84,7 @@ export default function PostEditor({ domain }: { domain: string }) {
           <EntryHeader entry={entry} />
           <SerpPanel domain={domain} entry={entry} />
           <RivalsPanel domain={domain} entry={entry} />
-          <div className="legacy">
+          <div className="mt-6">
             <PipelinePanel domain={domain} />
           </div>
           {/* Na szerokim ekranie ocena z frazami i narzędzia końcowe jadą w
@@ -96,11 +93,9 @@ export default function PostEditor({ domain }: { domain: string }) {
           <div className="mt-6 flex flex-col gap-6 min-[1500px]:flex-row-reverse min-[1500px]:items-start">
             <aside className="flex flex-col gap-4 min-[1500px]:sticky min-[1500px]:top-24 min-[1500px]:max-h-[calc(100vh-7rem)] min-[1500px]:w-[400px] min-[1500px]:shrink-0 min-[1500px]:overflow-y-auto">
               <ScorePanel />
-              <div className="legacy ed-side-tools">
-                <EndCards domain={domain} />
-              </div>
+              <EndCards domain={domain} />
             </aside>
-            <div className="legacy ed-docwrap min-w-0 flex-1">
+            <div className="min-w-0 flex-1">
               <DocPanel domain={domain} />
             </div>
           </div>

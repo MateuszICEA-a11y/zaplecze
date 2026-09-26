@@ -2,8 +2,10 @@
 
 /* Karty etapów końcowych w kolumnie bocznej: wypowiedź ekspercka, przejazd
    redaktorski (styl i fleksja) i zapis do WordPressa. Dostępne po
-   zakończonym przebiegu. Klasy z dawnego edytora (legacy.css, kontener
-   .legacy.ed-side-tools w PostEditor). */
+   zakończonym przebiegu. */
+import { btnPrimary, btnSmall, inlineLink, input, Status, Waiting } from "@/components/kit";
+import { Card } from "@/components/ui";
+import { cn } from "@/lib/cn";
 import { isSourcesTitle, layoutDoc, type SectionBlock } from "@/lib/cw-editor/doc";
 import { activeExpert, expertBlockquote, expertShortcode } from "@/lib/cw-editor/expert";
 import { refreshJob } from "@/lib/cw-editor/jobs";
@@ -27,10 +29,28 @@ const RUNNING_STALE_MS = 3 * 60_000;
 const staleRunning = (state: any) => state?.status === "running" && (!state.started_at || Date.now() - Date.parse(state.started_at) > RUNNING_STALE_MS);
 
 const Button = ({ label, onClick, primary = false }: { label: string; onClick: () => void; primary?: boolean }) => (
-  <button type="button" className={primary ? "ed-expert-run" : "ed-expert-secondary"} onClick={onClick}>
+  <button type="button" className={primary ? btnPrimary : btnSmall} onClick={onClick}>
     {label}
   </button>
 );
+
+const META_CLS = "basis-full text-theme-xs text-gray-500 dark:text-gray-400";
+const ACTIONS_CLS = "flex flex-wrap items-center gap-2.5";
+const ERROR_CLS = "mt-2.5 text-theme-sm text-error-600 dark:text-error-400";
+const FIELD_CLS = "grid gap-1 text-theme-sm text-gray-600 dark:text-gray-300";
+
+/** Karta etapu: nagłówek z etykietą i opisem, pod nim treść. */
+function StageCard({ label, note, children }: { label: string; note: string; children: React.ReactNode }) {
+  return (
+    <Card className="p-5">
+      <div className="mb-3 grid gap-0.5">
+        <span className="text-theme-xs font-medium tracking-wider text-gray-800 uppercase dark:text-white/90">{label}</span>
+        <span className="text-theme-xs text-gray-500 dark:text-gray-400">{note}</span>
+      </div>
+      {children}
+    </Card>
+  );
+}
 
 export default function EndCards({ domain }: { domain: string }) {
   const { job } = useEditor();
@@ -140,17 +160,19 @@ function ExpertCard({ job, authors }: { job: Job; authors: Author[] }) {
   const state = job.expert;
   let actions: React.ReactNode;
   if (busy || (state?.status === "running" && !staleRunning(state))) {
-    actions = <span className="ed-expert-wait">generowanie cytatu… (model rozumujący, do dwóch minut)</span>;
+    actions = <Waiting>generowanie cytatu… (model rozumujący, do dwóch minut)</Waiting>;
   } else if (expert) {
     actions = (
       <>
-        {staleRunning(state) && <span className="ed-expert-meta">poprzednia próba została przerwana i nie zwróciła cytatu</span>}
-        <Prose html={expertBlockquote(expert)} className="ed-expert-preview" blocks={false} />
-        <small className="ed-expert-meta">{[expert.slot ? `sekcja ${expert.slot}` : null, expert.placement || null, expert.model || null].filter(Boolean).join(" · ")}</small>
+        {staleRunning(state) && <span className={META_CLS}>poprzednia próba została przerwana i nie zwróciła cytatu</span>}
+        {/* Podgląd cytatu w wąskiej kolumnie: mniejsza czcionka (style cytatu są
+            inline, bo motyw WP ich nie ostyluje – stąd wymuszenie). */}
+        <Prose html={expertBlockquote(expert)} className="basis-full text-[.89rem] [&_*]:[font-size:inherit]! [&_*]:leading-[1.55]!" blocks={false} />
+        <small className={META_CLS}>{[expert.slot ? `sekcja ${expert.slot}` : null, expert.placement || null, expert.model || null].filter(Boolean).join(" · ")}</small>
         {/* Na czym stoi cytat: pozycja z materiału przebiegu wskazana przez
             model – bez tego nie da się sprawdzić, czy wypowiedź nazwiskiem
             realnej osoby opiera się na danych. */}
-        {expert.basis && <small className="ed-expert-meta ed-expert-basis">podstawa: {expert.basis}</small>}
+        {expert.basis && <small className={cn(META_CLS, "text-gray-600 italic dark:text-gray-300")}>podstawa: {expert.basis}</small>}
         <Button label="kopiuj cytat" onClick={() => navigator.clipboard.writeText(expertShortcode(expert))} />
         <Button label="wygeneruj ponownie" onClick={() => call("POST", choice())} />
         <Button label="odrzuć" onClick={() => call("PATCH", { rejected: true })} />
@@ -159,28 +181,25 @@ function ExpertCard({ job, authors }: { job: Job; authors: Author[] }) {
   } else {
     actions = (
       <>
-        {staleRunning(state) && <span className="ed-expert-meta">poprzednia próba została przerwana i nie zwróciła cytatu</span>}
-        {state?.status === "failed" && state?.error && <span className="ed-expert-meta">{state.error}</span>}
+        {staleRunning(state) && <span className={META_CLS}>poprzednia próba została przerwana i nie zwróciła cytatu</span>}
+        {state?.status === "failed" && state?.error && <span className={META_CLS}>{state.error}</span>}
         {/* Po odrzuceniu „spróbuj ponownie" brzmiało jak obsługa błędu –
             nazywamy rzecz po imieniu. */}
-        {state?.status === "rejected" && <span className="ed-expert-meta">poprzedni cytat odrzucony – wybierz miejsce i wygeneruj nowy</span>}
+        {state?.status === "rejected" && <span className={META_CLS}>poprzedni cytat odrzucony – wybierz miejsce i wygeneruj nowy</span>}
         <Button label={state ? "wygeneruj nowy cytat" : "Dodaj poradę eksperta"} onClick={() => call("POST", choice())} primary />
       </>
     );
   }
 
   return (
-    <div className="ed-expert">
-      <div className="ed-expert-head">
-        <span className="ed-expert-label">Etap końcowy · wypowiedź ekspercka</span>
-        <span className="ed-expert-note">komentarz budowany z materiału przebiegu (SERP, konkurenci, brief) – wymaga tych analiz</span>
-      </div>
+    <StageCard label="Etap końcowy · wypowiedź ekspercka" note="komentarz budowany z materiału przebiegu (SERP, konkurenci, brief) – wymaga tych analiz">
       {/* Kogo podpisujemy: autorzy portalu z WordPressa. Rola idzie z osobnej
           listy, bo WP stanowisk nie trzyma – dla znanych osób podstawia się sama. */}
-      <div className="ed-expert-who">
-        <label>
+      <div className="mb-3 grid gap-2">
+        <label className={FIELD_CLS}>
           <span>Ekspert</span>
           <select
+            className={input}
             value={who}
             onChange={(e) => {
               setWho(e.target.value);
@@ -195,9 +214,10 @@ function ExpertCard({ job, authors }: { job: Job; authors: Author[] }) {
             ))}
           </select>
         </label>
-        <label>
+        <label className={FIELD_CLS}>
           <span>Stanowisko</span>
           <select
+            className={input}
             value={role}
             onChange={(e) => {
               setRole(e.target.value);
@@ -213,10 +233,10 @@ function ExpertCard({ job, authors }: { job: Job; authors: Author[] }) {
             <option value={ROLE_OTHER}>inne (wpisz…)</option>
           </select>
         </label>
-        {role === ROLE_OTHER && <input type="text" value={customRole} onChange={(e) => setCustomRole(e.target.value)} placeholder="np. specjalistka SEO" maxLength={120} autoFocus />}
-        <label>
+        {role === ROLE_OTHER && <input className={input} type="text" value={customRole} onChange={(e) => setCustomRole(e.target.value)} placeholder="np. specjalistka SEO" maxLength={120} autoFocus />}
+        <label className={FIELD_CLS}>
           <span>Miejsce cytatu</span>
-          <select value={slots.some((row) => String(row.slot) === slot) ? slot : ""} onChange={(e) => setSlot(e.target.value)}>
+          <select className={input} value={slots.some((row) => String(row.slot) === slot) ? slot : ""} onChange={(e) => setSlot(e.target.value)}>
             <option value="">koniec artykułu – model dobiera</option>
             {slots.map((row) => (
               <option key={row.slot} value={row.slot}>
@@ -226,9 +246,9 @@ function ExpertCard({ job, authors }: { job: Job; authors: Author[] }) {
           </select>
         </label>
       </div>
-      <div className="ed-expert-actions">{actions}</div>
-      {error && <p className="ed-error">{error}</p>}
-    </div>
+      <div className={ACTIONS_CLS}>{actions}</div>
+      {error && <p className={ERROR_CLS}>{error}</p>}
+    </StageCard>
   );
 }
 
@@ -259,13 +279,13 @@ function StyleCard({ job }: { job: Job }) {
   let actions: React.ReactNode;
   let report: React.ReactNode = null;
   if (busy || (style?.status === "running" && !staleRunning(style))) {
-    actions = <span className="ed-expert-wait">przejazd redaktorski… (weryfikacja faktów w sieci, do dwóch minut)</span>;
+    actions = <Waiting>przejazd redaktorski… (weryfikacja faktów w sieci, do dwóch minut)</Waiting>;
   } else if (style?.status === "done") {
     const decided = rows.filter((row) => row.decision).length;
     actions = (
       <>
-        {staleRunning(style) && <span className="ed-expert-meta">poprzedni przejazd został przerwany – spróbuj ponownie</span>}
-        <small className="ed-expert-meta">
+        {staleRunning(style) && <span className={META_CLS}>poprzedni przejazd został przerwany – spróbuj ponownie</span>}
+        <small className={META_CLS}>
           {[
             rows.length
               ? `${pl.format(rows.length)} ${rows.length === 1 ? "sekcja z korektą" : "sekcji z korektą"} na ${pl.format(style.sections_total ?? rows.length)}`
@@ -283,23 +303,19 @@ function StyleCard({ job }: { job: Job }) {
   } else {
     actions = (
       <>
-        {staleRunning(style) && <span className="ed-expert-meta">poprzedni przejazd został przerwany – spróbuj ponownie</span>}
-        {style?.status === "failed" && style?.error && <span className="ed-expert-meta">{style.error}</span>}
+        {staleRunning(style) && <span className={META_CLS}>poprzedni przejazd został przerwany – spróbuj ponownie</span>}
+        {style?.status === "failed" && style?.error && <span className={META_CLS}>{style.error}</span>}
         <Button label={style ? "spróbuj ponownie" : "Popraw styl i fleksję"} onClick={runPass} primary />
       </>
     );
   }
 
   return (
-    <div className="ed-expert ed-style">
-      <div className="ed-expert-head">
-        <span className="ed-expert-label">Etap końcowy · styl i fleksja</span>
-        <span className="ed-expert-note">kalki, żargon, odmiana nazw własnych i weryfikacja faktów w sieci</span>
-      </div>
-      <div className="ed-expert-actions">{actions}</div>
+    <StageCard label="Etap końcowy · styl i fleksja" note="kalki, żargon, odmiana nazw własnych i weryfikacja faktów w sieci">
+      <div className={ACTIONS_CLS}>{actions}</div>
       {report}
-      {error && <p className="ed-error">{error}</p>}
-    </div>
+      {error && <p className={ERROR_CLS}>{error}</p>}
+    </StageCard>
   );
 }
 
@@ -310,7 +326,7 @@ function SlotJump({ slot }: { slot: number }) {
   return (
     <a
       href={`#sekcja-${slot}`}
-      className="ed-style-jump"
+      className={cn(inlineLink, "ml-1 text-theme-xs")}
       onClick={(event) => {
         event.preventDefault();
         document.querySelector(`.ed-doc-section[data-slot="${slot}"]`)?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -342,15 +358,15 @@ function StyleReport({ style, rows, onInsert }: { style: any; rows: StyleRow[]; 
   const additions = Array.isArray(style.additions) ? style.additions : [];
   if (!facts.length && !additions.length && !rows.length) return null;
   return (
-    <div className="ed-style-report">
+    <div className="mt-3 border-t border-gray-100 pt-2.5 dark:border-gray-800">
       {facts.length > 0 && (
         <>
-          <h4>Fakty do sprawdzenia</h4>
-          <ul className="ed-style-facts">
+          <h4 className={REPORT_HEAD_CLS}>Fakty do sprawdzenia</h4>
+          <ul className={REPORT_LIST_CLS}>
             {facts.map((fact: any, i: number) => (
               <li key={i}>
-                <span className={`ed-sec-tag ${fact.status === "potwierdzone" ? "ok" : "warn"}`}>{fact.status}</span> <b>{fact.claim}</b>
-                {fact.note && <span className="ed-style-note"> – {fact.note}</span>}
+                <Status tone={fact.status === "potwierdzone" ? "ok" : "warn"}>{fact.status}</Status> <b className="font-medium text-gray-800 dark:text-white/90">{fact.claim}</b>
+                {fact.note && <span className="text-theme-xs text-gray-500 dark:text-gray-400"> – {fact.note}</span>}
                 {fact.slot && (
                   <>
                     {" "}
@@ -364,16 +380,16 @@ function StyleReport({ style, rows, onInsert }: { style: any; rows: StyleRow[]; 
       )}
       {additions.length > 0 && (
         <>
-          <h4>Proponowane uzupełnienia</h4>
-          <p className="ed-style-note">Model nie wstawia ich sam – „wstaw do sekcji” tworzy propozycję z diffem do oceny przy sekcji.</p>
-          <ul className="ed-style-facts">
+          <h4 className={REPORT_HEAD_CLS}>Proponowane uzupełnienia</h4>
+          <p className="mb-1.5 text-theme-xs text-gray-500 dark:text-gray-400">Model nie wstawia ich sam – „wstaw do sekcji” tworzy propozycję z diffem do oceny przy sekcji.</p>
+          <ul className={REPORT_LIST_CLS}>
             {additions.map((row: any, index: number) => (
               <li key={index}>
                 {row.fact}
                 {!row.certain && (
                   <>
                     {" "}
-                    <span className="ed-sec-tag warn">do weryfikacji</span>
+                    <Status tone="warn">do weryfikacji</Status>
                   </>
                 )}
                 {row.slot && (
@@ -385,13 +401,13 @@ function StyleReport({ style, rows, onInsert }: { style: any; rows: StyleRow[]; 
                 {row.inserted ? (
                   <>
                     {" "}
-                    <span className="ed-sec-tag ok">wstawione – oceń przy sekcji</span>
+                    <Status tone="ok">wstawione – oceń przy sekcji</Status>
                   </>
                 ) : (
                   row.slot && (
                     <>
                       {" "}
-                      <button type="button" className="ed-style-btn ok" title="Model wplecie ten fakt w treść sekcji – zmiana czeka na Twoje ✓" onClick={() => onInsert(index)}>
+                      <button type="button" className={btnSmall} title="Model wplecie ten fakt w treść sekcji – zmiana czeka na Twoje ✓" onClick={() => onInsert(index)}>
                         wstaw do sekcji
                       </button>
                     </>
@@ -405,6 +421,9 @@ function StyleReport({ style, rows, onInsert }: { style: any; rows: StyleRow[]; 
     </div>
   );
 }
+
+const REPORT_HEAD_CLS = "mt-2.5 mb-1.5 text-theme-xs font-medium text-gray-800 dark:text-white/90";
+const REPORT_LIST_CLS = "list-disc pl-4.5 text-theme-sm/relaxed text-gray-600 dark:text-gray-300 [&>li]:mb-1.5";
 
 /* ---------- zapis do WordPressa (szkic + wdrożenie) ----------
    Szkic to osobny wpis draft do podglądu na szablonie strony; wdrożenie
@@ -480,15 +499,11 @@ function WpCard({ job, authors }: { job: Job; authors: Author[] }) {
 
   const note = message?.text ?? (applied ? `wdrożono ${fmtDate(job.applied_at!.slice(0, 10))}` : "");
   return (
-    <div className="ed-expert ed-wp-card">
-      <div className="ed-expert-head">
-        <span className="ed-expert-label">Publikacja · WordPress</span>
-        <span className="ed-expert-note">szkic do podglądu na szablonie strony; wdrożenie podmienia treść oryginału</span>
-      </div>
-      <div className="ed-wp">
-        <label className="ed-wp-author">
+    <StageCard label="Publikacja · WordPress" note="szkic do podglądu na szablonie strony; wdrożenie podmienia treść oryginału">
+      <div className={ACTIONS_CLS}>
+        <label className={cn(FIELD_CLS, "basis-full")}>
           <span>Autor wpisu</span>
-          <select value={value} onChange={(e) => setPicked(e.target.value)}>
+          <select className={input} value={value} onChange={(e) => setPicked(e.target.value)}>
             {!known && <option value="">{entry?.author ? `${entry.author} (bez zmian)` : "bez zmian"}</option>}
             {listed.map((row) => (
               <option key={row.id} value={String(row.id)}>
@@ -497,19 +512,23 @@ function WpCard({ job, authors }: { job: Job; authors: Author[] }) {
             ))}
           </select>
         </label>
-        <button type="button" disabled={busy || applied} onClick={draft}>
+        <button type="button" className={btnSmall} disabled={busy || applied} onClick={draft}>
           {busy ? "zapisuję w WP…" : job.wp_draft_id ? "odśwież szkic w WP" : "szkic w WordPressie"}
         </button>
         {job.wp_draft_url && (
-          <a href={job.wp_draft_url} target="_blank" rel="noopener">
+          <a className={cn(inlineLink, "text-theme-xs")} href={job.wp_draft_url} target="_blank" rel="noopener">
             otwórz szkic ↗
           </a>
         )}
-        <button type="button" className="ed-wp-apply" disabled={busy || applied} onClick={() => apply()}>
+        {/* Wdrożenie podmienia treść na żywej stronie – akcent odróżnia je od bezpiecznych akcji podglądowych. */}
+        <button
+          type="button"
+          className={cn(btnSmall, "border-brand-500 text-brand-600 hover:bg-brand-500 hover:text-gray-950 dark:border-brand-500 dark:text-brand-400 dark:hover:bg-brand-500 dark:hover:text-gray-950")}
+          disabled={busy || applied} onClick={() => apply()}>
           wdróż na stronie
         </button>
-        {note && <span className={`ed-wp-note${message?.error ? " is-error" : ""}`}>{note}</span>}
+        {note && <span className={cn(META_CLS, message?.error && "text-error-600 dark:text-error-400")}>{note}</span>}
       </div>
-    </div>
+    </StageCard>
   );
 }

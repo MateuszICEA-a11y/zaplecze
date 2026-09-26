@@ -3,8 +3,10 @@
 /* Dokument edytora wpisu: treść z WordPressa z nałożonymi propozycjami
    przebiegu, pasek ze statystykami i decyzjami zbiorczymi. Układ sekcji
    liczy lib/cw-editor/doc.ts, pojedynczą sekcję renderuje DocSection.tsx.
-   Cały blok siedzi w kontenerze .legacy – style dokumentu (rynienka typów
-   bloków, diff, karty) idą jeszcze z legacy.css. */
+   Klasy ed-doc-*, ed-sec-head i ed-faq-head nie niosą stylu – to znaczniki,
+   po których migawka dokumentu (snapshot.ts) czyta treść. */
+import { btnSmall } from "@/components/kit";
+import { SectionHead } from "@/components/ui";
 import { isSourcesTitle, layoutDoc, type SectionBlock } from "@/lib/cw-editor/doc";
 import { activeExpert, sectionCopyText } from "@/lib/cw-editor/expert";
 import { docSnapshot, countWords } from "@/lib/cw-editor/snapshot";
@@ -12,7 +14,7 @@ import { editorStore, showEditorError, useEditor } from "@/lib/cw-editor/store";
 import type { Content, ImageRow, Job, StyleRow } from "@/lib/cw-editor/types";
 import { api } from "@/lib/writer-client";
 import { useEffect, useMemo, useState } from "react";
-import DocSection, { Prose } from "./DocSection";
+import DocSection, { Prose, SECTION_CLS } from "./DocSection";
 
 const pl = new Intl.NumberFormat("pl-PL");
 
@@ -60,54 +62,59 @@ export default function DocPanel({ domain }: { domain: string }) {
 
   return (
     <>
-      <div className="section-head ed-doc-head">
-        <h2>Dokument</h2>
-        <span className="section-meta">{meta}</span>
-      </div>
+      <SectionHead title="Dokument" meta={meta} />
 
       {/* Pasek dokumentu trzyma się górnej krawędzi – przy długim wpisie widać,
-          ile propozycji jeszcze czeka na ocenę. */}
-      <div className="ed-docbar">
+          ile propozycji jeszcze czeka na ocenę (top-19 = wysokość nagłówka aplikacji). */}
+      <div className="sticky top-19 z-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 rounded-t-2xl border border-b-0 border-gray-200 bg-gray-50 px-4 py-2.5 max-md:static dark:border-gray-800 dark:bg-gray-900">
         <DocStats job={job} blocks={sections} />
-        <div className="ed-docbar-right">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2.5">
           {done && proposals.length > 0 && <DecideAll job={job!} />}
           {done && proposals.length > 0 && (
-            <label className="ed-only-changed">
-              <input type="checkbox" checked={onlyChanged} onChange={(e) => setOnlyChanged(e.target.checked)} />
+            <label className="inline-flex cursor-pointer items-center gap-2 text-theme-xs text-gray-500 select-none dark:text-gray-400">
+              <input className="m-0 accent-brand-500" type="checkbox" checked={onlyChanged} onChange={(e) => setOnlyChanged(e.target.checked)} />
               tylko zmienione sekcje
             </label>
           )}
-          <button type="button" className="ed-preview-open" onClick={() => editorStore.set({ previewOpen: true })}>
+          <button type="button" className={btnSmall} onClick={() => editorStore.set({ previewOpen: true })}>
             podgląd całości
           </button>
         </div>
       </div>
 
-      <div className="ed-doc" data-ed-doc>
+      <div className="rounded-b-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/3" data-ed-doc>
         {!content && !contentError ? (
-          <p className="ed-doc-loading">wczytywanie treści…</p>
+          <p className="px-5.5 py-4.5 text-theme-sm text-gray-500 dark:text-gray-400">wczytywanie treści…</p>
         ) : (
           blocks.map((block, index) => {
             if (block.type === "note")
               return (
-                <p key={`note${index}`} className="ed-doc-error">
+                <p key={`note${index}`} className="px-5.5 py-4.5 text-theme-sm text-gray-500 dark:text-gray-400">
                   {block.text}
                 </p>
               );
             if (block.type === "intro")
               return (
-                <section key="intro" className="ed-doc-section ed-doc-intro" data-slot="0" hidden={onlyChanged && done}>
-                  <div className="ed-sec-head">
-                    <h1 data-block="h1">{block.title}</h1>
+                <section key="intro" className={`ed-doc-section ed-doc-intro ${SECTION_CLS} bg-gray-50/60 dark:bg-white/2`} data-slot="0" hidden={onlyChanged && done}>
+                  <div className="ed-sec-head mb-3.5">
+                    <h1 data-block="h1" className="text-2xl/tight font-medium text-gray-800 dark:text-white/90">
+                      {block.title}
+                    </h1>
                   </div>
                   {block.lead && <Prose html={block.lead} />}
                 </section>
               );
             if (block.type === "faqHead")
               return (
-                <div key="faqhead" className="ed-faq-head" hidden={onlyChanged && done && !faqVisible}>
-                  <h2 data-block="h2">{block.title}</h2>
-                  <span>{block.schema ? "blok FAQ · mikrodane FAQPage" : "blok FAQ · bez mikrodanych"}</span>
+                <div
+                  key="faqhead"
+                  className="ed-faq-head doc-gutter flex flex-wrap items-baseline gap-x-3.5 gap-y-1.5 border-t border-gray-200 pt-6.5 pr-7 pl-19 max-md:px-4 dark:border-gray-800"
+                  hidden={onlyChanged && done && !faqVisible}
+                >
+                  <h2 data-block="h2" className="text-xl font-medium text-gray-800 dark:text-white/90">
+                    {block.title}
+                  </h2>
+                  <span className="text-theme-xs text-gray-500 dark:text-gray-400">{block.schema ? "blok FAQ · mikrodane FAQPage" : "blok FAQ · bez mikrodanych"}</span>
                 </div>
               );
             return (
@@ -153,11 +160,11 @@ function DocStats({ job, blocks }: { job: Job | null; blocks: SectionBlock[] }) 
     setStats(rows);
   }, [docVersion, job, blocks]);
   return (
-    <div className="ed-docstats">
+    <div className="flex flex-wrap gap-x-5.5 gap-y-1.5">
       {stats.map(([value, label]) => (
-        <div key={label} className="ed-docstat">
-          <b>{value}</b>
-          <span>{label}</span>
+        <div key={label} className="inline-flex items-baseline gap-1.5">
+          <b className="text-theme-sm font-medium text-gray-800 tabular-nums dark:text-white/90">{value}</b>
+          <span className="text-theme-xs text-gray-500 dark:text-gray-400">{label}</span>
         </div>
       ))}
     </div>
@@ -198,17 +205,17 @@ function DecideAll({ job }: { job: Job }) {
   };
 
   return (
-    <div className="ed-decide-all">
+    <div className="inline-flex flex-wrap items-center gap-2.5 text-theme-xs text-gray-600 dark:text-gray-300">
       <span>
         {left ? `${pl.format(left)} ${left === 1 ? "propozycja czeka" : "propozycji czeka"} na decyzję` : `wszystko ocenione · ${pl.format(accepted)} do wdrożenia`}
       </span>
       {left > 0 && (
-        <button type="button" disabled={busy} onClick={acceptAll}>
+        <button type="button" className={btnSmall} disabled={busy} onClick={acceptAll}>
           zatwierdź wszystkie
         </button>
       )}
       {accepted > 0 && (
-        <button type="button" onClick={copyAll}>
+        <button type="button" className={btnSmall} onClick={copyAll}>
           {copied ? "skopiowano" : "kopiuj zatwierdzone"}
         </button>
       )}

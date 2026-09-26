@@ -1,9 +1,10 @@
 "use client";
 
 /* Belka pipeline'u: konfiguracja (zakres, modele) → postęp → podsumowanie
-   albo karta błędu, oś przebiegu i wytyczne z analizy. Znaczniki i klasy
-   z dawnego edytora (style z legacy.css, kontener .legacy w PostEditor). */
-import { Status } from "@/components/kit";
+   albo karta błędu, oś przebiegu i wytyczne z analizy. */
+import { btnPrimary, btnSmall, checkChip, inlineLink, Status } from "@/components/kit";
+import { Card } from "@/components/ui";
+import { cn } from "@/lib/cn";
 import { isRunning, schedulePoll } from "@/lib/cw-editor/jobs";
 import { DEFAULT_MODELS, editorStore, showEditorError, useEditor } from "@/lib/cw-editor/store";
 import type { Job, Step } from "@/lib/cw-editor/types";
@@ -75,18 +76,20 @@ export default function PipelinePanel({ domain }: { domain: string }) {
 
   return (
     <>
-      <div className="ed-pipebar">
+      <Card className="p-5">
         {showSetup && <Setup domain={domain} setupRef={setupRef} />}
         {job && running && <Progress job={job} />}
         {job && !running && !failed && !setupOpen && <Summary job={job} onRerun={backToSetup} />}
         {job && failed && !setupOpen && <Failure job={job} onRerun={backToSetup} />}
         {job && job.steps?.length > 0 && (
-          <div className="ed-timeline-wrap">
+          // Kolumna ma stałą szerokość: rozciągnięta lista kroków to kilometry
+          // pustki między nazwą a kosztem.
+          <div className="mt-4 max-w-xl">
             <Steps job={job} />
           </div>
         )}
-        {error && <p className="ed-error">{error}</p>}
-      </div>
+        {error && <p className="mt-3 text-theme-sm text-error-600 dark:text-error-400">{error}</p>}
+      </Card>
       {job && entry && <Brief job={job} />}
     </>
   );
@@ -189,11 +192,12 @@ function Setup({ domain, setupRef }: { domain: string; setupRef: React.RefObject
 
   return (
     <div ref={setupRef}>
-      <div className="ed-setup-row">
-        <div className="ed-improvements" role="group" aria-label="Zakres optymalizacji">
+      <div className="flex flex-wrap items-start justify-between gap-x-7 gap-y-3.5">
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Zakres optymalizacji">
           {IMPROVEMENTS.map((row) => (
-            <label key={row.value} className="fchip ed-improvement" title={row.title}>
+            <label key={row.value} className={checkChip} title={row.title}>
               <input
+                className="m-0 accent-brand-500"
                 type="checkbox"
                 checked={improvements.has(row.value)}
                 onChange={(e) => {
@@ -209,17 +213,17 @@ function Setup({ domain, setupRef }: { domain: string; setupRef: React.RefObject
         </div>
         {/* Lista modeli z OpenRoutera ma kilkaset pozycji, więc zamiast
             natywnego datalisty stoi tu własny combobox z filtrowaniem. */}
-        <div className="ed-models">
+        <div className="flex flex-wrap items-end gap-x-3.5 gap-y-2.5">
           <ModelCombo label="Model analizy" value={models.research} ids={modelIds} onChange={(research) => editorStore.set({ models: { ...editorStore.get().models, research } })} />
           <ModelCombo label="Model pisania" value={models.writer} ids={modelIds} onChange={(writer) => editorStore.set({ models: { ...editorStore.get().models, writer } })} />
-          <small className="ed-models-note">{note}</small>
+          <small className="basis-full text-theme-xs text-gray-500 dark:text-gray-400">{note}</small>
         </div>
       </div>
-      <div className="ed-actions">
-        <button type="button" className="ed-run" disabled={busy || isRunning(job)} onClick={run}>
+      <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3">
+        <button type="button" className={btnPrimary} disabled={busy || isRunning(job)} onClick={run}>
           Rozpocznij optymalizację
         </button>
-        <span className="ed-hint">
+        <span className="flex-[1_1_260px] text-theme-xs text-gray-500 dark:text-gray-400">
           Zużycie zasobów: zapytanie do wyszukiwarki (SerpData), pobranie fraz z Senuto i kilkadziesiąt tysięcy tokenów. Ten sam wpis maksymalnie raz na 30 dni. Wynik to
           propozycja – nic nie trafia do WordPressa automatycznie.
         </span>
@@ -254,10 +258,11 @@ function ModelCombo({ label, value, ids, onChange }: { label: string; value: str
   }, [active]);
 
   return (
-    <label className="ed-combo">
-      <span>{label}</span>
-      <div className="ed-combo-box">
+    <label className="grid gap-1">
+      <span className="text-theme-xs text-gray-500 dark:text-gray-400">{label}</span>
+      <div className="relative w-60">
         <input
+          className="h-9 w-full rounded border border-gray-300 bg-transparent py-1.5 pr-7 pl-2.5 text-theme-xs text-gray-800 focus:border-brand-500 focus:outline-hidden dark:border-gray-700 dark:text-white/90"
           value={value}
           spellCheck={false}
           autoComplete="off"
@@ -284,7 +289,7 @@ function ModelCombo({ label, value, ids, onChange }: { label: string; value: str
         />
         <button
           type="button"
-          className="ed-combo-toggle"
+          className="absolute inset-y-px right-px w-6 text-theme-xs text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white/90"
           aria-label="Pokaż listę modeli"
           // mousedown, bo click po blurze inputa nie zdąży się wykonać.
           onMouseDown={(e) => {
@@ -299,12 +304,21 @@ function ModelCombo({ label, value, ids, onChange }: { label: string; value: str
           ▾
         </button>
         {open && (
-          <ul className="ed-combo-list" ref={list}>
+          <ul
+            ref={list}
+            className="absolute top-[calc(100%+3px)] right-0 left-0 z-20 max-h-64 min-w-75 overflow-y-auto rounded border border-gray-200 bg-white p-1 shadow-theme-lg dark:border-gray-800 dark:bg-gray-900"
+          >
             {matches.map((id, i) => (
               <li
                 key={id}
                 data-id={id}
-                className={[id === value ? "current" : "", i === active ? "active" : ""].filter(Boolean).join(" ") || undefined}
+                // Identyfikatory modeli są długie i mają dywizy – bez nowrap
+                // łamałyby się w połowie.
+                className={cn(
+                  "cursor-pointer truncate rounded px-2 py-1 text-theme-xs text-gray-600 hover:bg-gray-100 hover:text-gray-800 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-white/90",
+                  i === active && "bg-gray-100 text-gray-800 dark:bg-white/5 dark:text-white/90",
+                  id === value && "font-medium text-brand-600 dark:text-brand-400",
+                )}
                 onMouseDown={(e) => {
                   e.preventDefault();
                   choose(id);
@@ -313,7 +327,7 @@ function ModelCombo({ label, value, ids, onChange }: { label: string; value: str
                 {id}
               </li>
             ))}
-            {!matches.length && <li className="empty">{ids?.length ? "brak modelu o takiej nazwie" : "lista modeli niedostępna"}</li>}
+            {!matches.length && <li className="px-2 py-1 text-theme-xs text-gray-500 dark:text-gray-400">{ids?.length ? "brak modelu o takiej nazwie" : "lista modeli niedostępna"}</li>}
           </ul>
         )}
       </div>
@@ -348,18 +362,18 @@ function Progress({ job }: { job: Job }) {
 
   return (
     <div>
-      <div className="ed-progress-head">
-        <span className="ed-progress-label">{active ? (STEP_LABELS[active] ?? active) : (STATUS_LABEL[job.status] ?? job.status)}</span>
-        <span className="ed-progress-meta">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-3.5 gap-y-2">
+        <span className="text-theme-sm font-medium text-gray-800 dark:text-white/90">{active ? (STEP_LABELS[active] ?? active) : (STATUS_LABEL[job.status] ?? job.status)}</span>
+        <span className="inline-flex items-baseline gap-3.5 text-theme-xs text-gray-500 tabular-nums dark:text-gray-400">
           <span>{`krok ${Math.min(finished.length + 1, planned.length)} z ${planned.length}`}</span>
           <span>{clock(seconds)}</span>
-          <button type="button" className="ed-cancel" onClick={cancel}>
+          <button type="button" className={cn(btnSmall, "hover:border-error-400 hover:text-error-600 dark:hover:text-error-400")} onClick={cancel}>
             anuluj
           </button>
         </span>
       </div>
-      <div className="ed-progress">
-        <i style={{ width: `${Math.max(3, percent)}%` }} />
+      <div className="mt-2.5 h-2 overflow-hidden rounded-sm bg-gray-100 dark:bg-white/5">
+        <i className="block h-full rounded-sm bg-brand-500 transition-[width] duration-500" style={{ width: `${Math.max(3, percent)}%` }} />
       </div>
     </div>
   );
@@ -375,13 +389,13 @@ function Summary({ job, onRerun }: { job: Job; onRerun: () => void }) {
     .filter(Boolean)
     .join(" · ");
   return (
-    <div data-ed-summary>
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-2.5">
       <Status tone={job.status === "done" ? "ok" : "idle"}>{STATUS_LABEL[job.status] ?? job.status}</Status>
-      <span className="ed-summary-cost">{cost}</span>
+      <span className="text-theme-xs text-gray-500 dark:text-gray-400">{cost}</span>
       {/* Po zakończonym przebiegu konfiguracja jest schowana – bez tego
           przycisku nie dałoby się puścić wpisu ponownie. */}
       {["cancelled", "done"].includes(job.status) && (
-        <button type="button" className="ed-rerun" onClick={onRerun}>
+        <button type="button" className={btnSmall} onClick={onRerun}>
           {job.status === "done" ? "uruchom ponownie (zmień modele i zakres)" : "uruchom ponownie"}
         </button>
       )}
@@ -393,18 +407,18 @@ function Summary({ job, onRerun }: { job: Job; onRerun: () => void }) {
 function Failure({ job, onRerun }: { job: Job; onRerun: () => void }) {
   const broken = job.steps?.find((step) => step.status === "failed");
   return (
-    <div className="ed-fail">
-      <div className="ed-fail-head">
-        <span className="ed-fail-badge">proces nieudany</span>
+    <div className="mt-3 max-w-3xl rounded border border-l-3 border-error-300 bg-error-50 px-3.5 py-3 dark:border-error-500/40 dark:bg-error-500/10">
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 text-theme-xs text-gray-600 dark:text-gray-300">
+        <span className="rounded bg-error-600 px-2 py-0.5 text-theme-xs font-medium text-white">proces nieudany</span>
         <span>{broken ? `krok: ${STEP_LABELS[broken.step] ?? broken.step}` : (STATUS_LABEL[job.status] ?? job.status)}</span>
       </div>
-      <p className="ed-fail-msg">{broken?.error || job.error || "Proces zakończył się bez podania przyczyny."}</p>
-      <div className="ed-fail-actions">
-        <button type="button" className="ed-rerun" onClick={onRerun}>
+      <p className="mt-2 text-theme-sm break-words text-gray-800 dark:text-white/90">{broken?.error || job.error || "Proces zakończył się bez podania przyczyny."}</p>
+      <div className="mt-2.5 flex flex-wrap items-center gap-x-3.5 gap-y-2.5">
+        <button type="button" className={btnSmall} onClick={onRerun}>
           uruchom ponownie
         </button>
         {job.run_url && (
-          <a className="ed-fail-log" href={job.run_url} target="_blank" rel="noopener">
+          <a className={cn(inlineLink, "text-theme-xs")} href={job.run_url} target="_blank" rel="noopener">
             szczegóły błędu ↗
           </a>
         )}
@@ -446,18 +460,43 @@ function stepCost(step: Step | undefined) {
 function Steps({ job }: { job: Job }) {
   const byName = new Map(job.steps.map((step) => [step.step, step]));
   return (
-    <ol className="ed-steps">
+    <ol className="grid">
       {plannedSteps(job).map((name) => {
         const step = byName.get(name);
         const status = step?.status ?? "pending";
         const spent = (step?.cost?.tokens_in ?? 0) + (step?.cost?.tokens_out ?? 0);
         return (
-          <li key={name} className={`ed-step ${status}`}>
-            <span className="ed-step-mark">{status === "done" ? "✓" : status === "failed" ? "✕" : status === "skipped" ? "–" : ""}</span>
-            <div className="ed-step-body">
-              <span className="ed-step-name">{STEP_LABELS[name] ?? name}</span>
+          <li
+            key={name}
+            className={cn(
+              // Pionowa nić łącząca znaczniki – bez niej to zwykła lista, nie przebieg.
+              "relative grid grid-cols-[22px_minmax(0,1fr)] gap-3 py-1.5 pl-0.5 not-last:before:absolute not-last:before:top-6.5 not-last:before:-bottom-1 not-last:before:left-2.5 not-last:before:w-px not-last:before:bg-gray-200 dark:not-last:before:bg-gray-800",
+              (status === "skipped" || status === "pending") && "opacity-45",
+            )}
+          >
+            <span
+              className={cn(
+                "mt-px grid size-5 place-items-center rounded-full border border-gray-300 bg-white text-theme-xs leading-none text-gray-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400",
+                status === "done" && "border-success-500 text-success-600 dark:text-success-400",
+                status === "failed" && "border-error-500 bg-error-50 text-error-600 dark:bg-error-500/15 dark:text-error-400",
+                // Krok w toku: kółko kręci się, dopóki trwa – widać, że przebieg żyje.
+                status === "running" && "animate-spin border-t-brand-500 border-r-brand-500 [animation-duration:.9s]",
+              )}
+            >
+              {status === "done" ? "✓" : status === "failed" ? "✕" : status === "skipped" ? "–" : ""}
+            </span>
+            <div className="grid min-w-0 gap-px">
               <span
-                className={`ed-step-info${spent > STEP_TOKENS_WARN ? " is-costly" : ""}`}
+                className={cn(
+                  "text-theme-sm text-gray-600 dark:text-gray-300",
+                  ["done", "failed", "running"].includes(status) && "text-gray-800 dark:text-white/90",
+                  status === "running" && "font-medium",
+                )}
+              >
+                {STEP_LABELS[name] ?? name}
+              </span>
+              <span
+                className={cn("text-theme-xs text-gray-500 tabular-nums dark:text-gray-400", spent > STEP_TOKENS_WARN && "text-orange-600 dark:text-orange-400")}
                 title={
                   spent > STEP_TOKENS_WARN
                     ? "Nietypowo drogi krok – zwykle to model, który przy wyszukiwaniu w sieci wciąga do kontekstu całe strony. Warto zmienić model analizy."
@@ -466,7 +505,7 @@ function Steps({ job }: { job: Job }) {
               >
                 {status === "skipped" ? "pominięty" : [stepDuration(step), stepCost(step), step?.model].filter(Boolean).join(" · ")}
               </span>
-              {step?.error && <span className="ed-step-error">{step.error}</span>}
+              {step?.error && <span className="text-theme-xs text-error-600 dark:text-error-400">{step.error}</span>}
             </div>
           </li>
         );
@@ -489,17 +528,17 @@ function Brief({ job }: { job: Job }) {
 
   const blocks: [string, React.ReactNode][] = [];
   const list = (items: string[]) => (
-    <ul>
+    <ul className="grid list-disc gap-1 pl-4.5 text-theme-sm text-gray-600 dark:text-gray-300">
       {items.map((item, i) => (
         <li key={i}>{item}</li>
       ))}
     </ul>
   );
-  if (brief.summary) blocks.push(["Podsumowanie", <p key="s">{brief.summary}</p>]);
+  if (brief.summary) blocks.push(["Podsumowanie", <p key="s" className="text-theme-sm text-gray-600 dark:text-gray-300">{brief.summary}</p>]);
   if (brief.content_truncated)
     blocks.push([
       "Zbyt długi tekst",
-      <p key="t" className="ed-brief-warn">
+      <p key="t" className="text-theme-sm text-orange-600 dark:text-orange-400">
         Uwaga: wpis jest bardzo obfity, dlatego analiza objęła tylko jego początek. Końcowe sekcje mogły zostać pominięte w wytycznych.
       </p>,
     ]);
@@ -546,7 +585,7 @@ function Brief({ job }: { job: Job }) {
 
   return (
     <details
-      className="ed-brief"
+      className="mt-4 rounded-2xl border border-gray-200 bg-white px-5 py-4 dark:border-gray-800 dark:bg-white/3"
       open={open}
       onToggle={(e) => {
         const next = (e.currentTarget as HTMLDetailsElement).open;
@@ -556,13 +595,13 @@ function Brief({ job }: { job: Job }) {
         }
       }}
     >
-      <summary>
-        Wytyczne z analizy <span className="section-meta">luki wobec konkurencji i frazy do pokrycia</span>
+      <summary className="cursor-pointer text-theme-sm font-medium text-gray-800 dark:text-white/90">
+        Wytyczne z analizy <span className="ml-2.5 font-normal text-gray-500 dark:text-gray-400">luki wobec konkurencji i frazy do pokrycia</span>
       </summary>
       <div>
         {blocks.map(([title, body], i) => (
-          <div key={i} className="ed-brief-block">
-            <h3>{title}</h3>
+          <div key={i} className="mt-3">
+            <h3 className="mb-1 text-theme-xs text-gray-500 uppercase dark:text-gray-400">{title}</h3>
             {body}
           </div>
         ))}

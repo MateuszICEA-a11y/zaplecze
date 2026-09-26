@@ -1,5 +1,5 @@
 /* Migawki treści dokumentu edytora wpisu – czytane z DOM-u dokumentu
-   ([data-ed-doc]), który do czasu przepisania buduje legacy/edytor-script.ts. */
+   ([data-ed-doc], buduje go DocPanel.tsx). */
 import { docProse } from "./sanitize";
 import type { Entry, Job } from "./types";
 

@@ -2,7 +2,7 @@
 
 /* Ocena treści liczona na żywo z dokumentu: objętość, struktura, linkowanie,
    świeżość i pokrycie fraz, których szuka konkurencja. Dokument buduje
-   (jeszcze) legacy/edytor-script.ts – po każdej zmianie podbija docVersion,
+   DocPanel.tsx – po każdej zmianie podbija docVersion,
    a my czytamy migawkę z DOM-u i przeliczamy wynik oraz podświetlenia fraz. */
 import { Card } from "@/components/ui";
 import { cn } from "@/lib/cn";

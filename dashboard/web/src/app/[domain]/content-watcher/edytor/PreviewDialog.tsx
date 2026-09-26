@@ -103,10 +103,7 @@ export default function PreviewDialog() {
             </button>
           </div>
         </header>
-        {/* Typografia artykułu ze starego frontu (.legacy .prose). */}
-        <div className="legacy flex min-h-0 flex-1 flex-col">
-          <div ref={body} className="ed-preview-body prose" />
-        </div>
+        <div ref={body} className="doc-prose min-h-0 max-w-none flex-1 overflow-y-auto px-7.5 pt-2 pb-9 [&_h1]:mt-4 [&_h1]:text-2xl" />
       </div>
     </div>
   );
