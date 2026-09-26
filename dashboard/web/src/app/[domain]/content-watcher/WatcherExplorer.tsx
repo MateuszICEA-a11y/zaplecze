@@ -10,7 +10,7 @@ import { cn } from "@/lib/cn";
 import { fmtDate, fmtInt, fmtNum, fmtPct } from "@/lib/format";
 import type { ScoredItem } from "@/lib/watcher-scoring";
 import type { ColDef } from "ag-grid-community";
-import { ExternalLink, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type Bucket = { key: string; label: string; hint: string; range: string; tone: string };
@@ -141,12 +141,9 @@ export default function WatcherExplorer({
                 {editorBase && (
                   <a
                     href={`${editorBase}${data.id}`}
-                    target="_blank"
-                    rel="noopener"
-                    className="inline-flex shrink-0 items-center gap-0.5 text-theme-xs text-gray-500 underline decoration-gray-300 underline-offset-2 hover:text-brand-600 dark:text-gray-400"
-                    title="Edytor otwiera się w obecnym dashboardzie"
+                    className="shrink-0 text-theme-xs text-gray-500 underline decoration-gray-300 underline-offset-2 hover:text-brand-600 dark:text-gray-400"
                   >
-                    Edytor <ExternalLink className="size-3" />
+                    Edytor
                   </a>
                 )}
               </span>

@@ -4,7 +4,6 @@
 import { Note, PageTitle } from "@/components/ui";
 import { loadConfig, loadDetails } from "@/lib/data";
 import { fmtDate } from "@/lib/format";
-import { LEGACY_URL } from "@/lib/nav";
 import { titleFor, type DomainProps } from "@/lib/pages";
 import { suggestGaps } from "@/lib/writer-gaps.js";
 import WriterWorkspace from "./WriterWorkspace";
@@ -27,13 +26,13 @@ export default async function ContentWriterPage({ params }: DomainProps) {
       <PageTitle title="Content Writer" meta="Nowy artykuł od frazy do szkicu w WordPressie" />
       <Note>
         Sprawdzamy konkurencję w wynikach wyszukiwania, przygotowujemy <b>brief do akceptacji</b>, piszemy tekst i
-        dopracowujemy go w edytorze. Projekt otwiera się na razie w obecnej wersji dashboardu.
+        dopracowujemy go w edytorze.
       </Note>
       <WriterWorkspace
         domain={domain}
         suggestions={suggestions}
         measuredAt={details.date ? fmtDate(details.date) : null}
-        legacyBase={`${LEGACY_URL}/${domain}`}
+        base={`/${domain}`}
       />
     </>
   );

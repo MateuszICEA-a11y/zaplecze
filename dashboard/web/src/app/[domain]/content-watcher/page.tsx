@@ -4,7 +4,6 @@
 import { Note, PageTitle } from "@/components/ui";
 import { latestSnapshot, loadConfig, loadContentCatalog, loadDetails } from "@/lib/data";
 import { fmtDate, fmtInt } from "@/lib/format";
-import { LEGACY_URL } from "@/lib/nav";
 import { titleFor, type DomainProps } from "@/lib/pages";
 import { scoreContent } from "@/lib/watcher-scoring";
 import WatcherExplorer from "./WatcherExplorer";
@@ -44,7 +43,7 @@ export default async function ContentWatcherPage({ params }: DomainProps) {
       </Note>
       <WatcherExplorer
         domain={domain}
-        editorBase={fromCms ? `${LEGACY_URL}/${domain}/content-watcher/edytor/?id=` : null}
+        editorBase={fromCms ? `/${domain}/content-watcher/edytor/?id=` : null}
         items={scored.sortedItems}
         ageBuckets={scored.AGE_BUCKETS.map(({ key, label, hint, range, tone }) => ({ key, label, hint, range, tone }))}
         byAge={scored.byAge}

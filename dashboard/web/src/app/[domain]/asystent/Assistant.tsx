@@ -94,22 +94,22 @@ function useHashRoute(): Route {
 
 export default function Assistant({
   domain,
-  legacyBase,
+  base,
   competitorHosts,
   urgency,
   posts,
   ideas,
 }: {
   domain: string;
-  legacyBase: string;
+  base: string;
   competitorHosts: string[];
   urgency: Record<string, number>;
   posts: Post[];
   ideas: Idea[];
 }) {
   const route = useHashRoute();
-  const editorUrl = useCallback((id: string) => `${legacyBase}/content-watcher/edytor/?id=${encodeURIComponent(id)}`, [legacyBase]);
-  const projectUrl = useCallback((id: number) => `${legacyBase}/content-writer/projekt/?id=${id}`, [legacyBase]);
+  const editorUrl = useCallback((id: string) => `${base}/content-watcher/edytor/?id=${encodeURIComponent(id)}`, [base]);
+  const projectUrl = useCallback((id: number) => `${base}/content-writer/projekt/?id=${id}`, [base]);
   const [freshCutoff] = useState(() => new Date(Date.now() - NEW_DAYS * 86_400_000).toISOString().slice(0, 10));
   const isFresh = useCallback((item: Any) => !item.baseline && String(item.first_seen ?? "") >= freshCutoff, [freshCutoff]);
   const SEEK = useMemo(

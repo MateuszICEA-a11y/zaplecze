@@ -4,7 +4,6 @@
    Watchera i podpowiedzi fraz z buildu, konkurencja i werdykty z Workera. */
 import { PageTitle } from "@/components/ui";
 import { latestSnapshot, loadConfig, loadContentCatalog, loadDetails } from "@/lib/data";
-import { LEGACY_URL } from "@/lib/nav";
 import { titleFor, type DomainProps } from "@/lib/pages";
 import { scoreContent } from "@/lib/watcher-scoring";
 import { suggestGaps } from "@/lib/writer-gaps.js";
@@ -34,7 +33,7 @@ export default async function AssistantPage({ params }: DomainProps) {
       <PageTitle title="Asystent treści" meta="Kilka pytań i jedna decyzja: nowy tekst, odświeżenie albo luka względem konkurencji" />
       <Assistant
         domain={domain}
-        legacyBase={`${LEGACY_URL}/${domain}`}
+        base={`/${domain}`}
         competitorHosts={competitorHosts}
         urgency={byUrgency}
         posts={sortedItems.map((item) => ({

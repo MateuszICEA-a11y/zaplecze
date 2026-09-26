@@ -25,6 +25,8 @@ const PAGES = [
   ["content-watcher", "/grupa-icea.pl/content-watcher/"],
   ["content-writer", "/grupa-icea.pl/content-writer/"],
   ["asystent", "/grupa-icea.pl/asystent/"],
+  ["edytor", "/grupa-icea.pl/content-watcher/edytor/?id=posts-36767"],
+  ["projekt", "/grupa-icea.pl/content-writer/projekt/?id=1"],
   ["asystent-pilne", "/grupa-icea.pl/asystent/#odswiez/pilne"],
   ["asystent-konkurencja", "/grupa-icea.pl/asystent/#konkurencja/lista?h=all&co=new"],
 ];

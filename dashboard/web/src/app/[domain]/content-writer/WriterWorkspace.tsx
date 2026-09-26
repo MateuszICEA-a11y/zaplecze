@@ -38,17 +38,17 @@ export default function WriterWorkspace({
   domain,
   suggestions,
   measuredAt,
-  legacyBase,
+  base,
 }: {
   domain: string;
   suggestions: GapSuggestion[];
   measuredAt: string | null;
-  legacyBase: string;
+  base: string;
 }) {
   const [keyword, setKeyword] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
-  const projectUrl = useCallback((id: number) => `${legacyBase}/content-writer/projekt/?id=${id}`, [legacyBase]);
-  const editorUrl = useCallback((id: string) => `${legacyBase}/content-watcher/edytor/?id=${encodeURIComponent(id)}`, [legacyBase]);
+  const projectUrl = useCallback((id: number) => `${base}/content-writer/projekt/?id=${id}`, [base]);
+  const editorUrl = useCallback((id: string) => `${base}/content-watcher/edytor/?id=${encodeURIComponent(id)}`, [base]);
 
   const pick = (phrase: string) => {
     setKeyword(phrase);
@@ -64,7 +64,7 @@ export default function WriterWorkspace({
   const Target = useCallback(
     ({ target }: { target: Any }) =>
       target?.catalog_id ? (
-        <a className={link} href={editorUrl(target.catalog_id)} target="_blank" rel="noopener">
+        <a className={link} href={editorUrl(target.catalog_id)}>
           {target.title}
         </a>
       ) : target?.url ? (
@@ -623,7 +623,7 @@ function Competitors({ domain, editorUrl, pick }: { domain: string; editorUrl: (
         cellRenderer: ({ data: item }: { data?: Any }) =>
           item?.target ? (
             <span className="truncate">
-              <a className={link} href={item.target.catalog_id ? editorUrl(item.target.catalog_id) : item.target.url} target="_blank" rel="noopener">
+              <a className={link} href={item.target.catalog_id ? editorUrl(item.target.catalog_id) : item.target.url} target={item.target.catalog_id ? undefined : "_blank"} rel="noopener">
                 {item.target.title}
               </a>{" "}
               <small className="text-gray-500">{pct(item.score)}</small>
@@ -757,7 +757,7 @@ function Projects({ domain, projectUrl }: { domain: string; projectUrl: (id: num
         width: 260,
         cellRenderer: ({ data }: { data?: Any }) =>
           data && (
-            <a className={cn(link, "font-medium")} href={projectUrl(data.id)} target="_blank" rel="noopener">
+            <a className={cn(link, "font-medium")} href={projectUrl(data.id)}>
               {data.keyword}
             </a>
           ),

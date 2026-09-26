@@ -1,0 +1,332 @@
+<div class="ed-back"><a href="/__DOMAIN__/content-watcher/">← wróć do listy priorytetów</a></div>
+
+  <div data-ed-missing class="cw-note" hidden>
+    Nie wskazano wpisu. Wejdź tu z listy priorytetów, klikając „Edytor” przy wybranym artykule.
+  </div>
+
+  <section data-ed-main hidden>
+    <header class="ed-head">
+      <div class="ed-head-title">
+        <span class="ed-pillar" data-ed-pillar></span>
+        <h2 data-ed-title></h2>
+        <a class="ed-url" data-ed-url href="#" target="_blank" rel="noopener"></a>
+      </div>
+      <dl class="ed-meta">
+        <div><dt>Publikacja</dt><dd data-ed-published>—</dd></div>
+        <div><dt>Zmiana treści</dt><dd data-ed-updated>—</dd></div>
+        <div><dt>Objętość</dt><dd data-ed-size>—</dd></div>
+        <div><dt>Autor</dt><dd data-ed-author>—</dd></div>
+      </dl>
+    </header>
+
+    <!-- Rozpoznanie SERP przed pipeline'em: wpis może rankować na frazy obok
+         tematu, a temat trzymać konkurencja z innym zestawem słów. -->
+    <section class="ed-serp" data-ed-serp>
+      <div class="ed-serp-head">
+        <div class="ed-serp-title">
+          <h3>Konkurencja w wynikach wyszukiwania</h3>
+          <p class="ed-serp-lead">
+            Dwa zapytania do Google – tytuł wpisu i nasza najlepsza fraza. Widać, kto stoi w czołówce
+            i na której pozycji jesteśmy my.
+          </p>
+        </div>
+        <div class="ed-serp-actions">
+          <span class="ed-serp-stamp" data-ed-serp-stamp></span>
+          <button type="button" class="ed-serp-run" data-ed-serp-run>Sprawdź SERP</button>
+          <button type="button" class="ed-serp-fold" title="Zwiń / rozwiń sekcję">zwiń</button>
+        </div>
+      </div>
+      <p class="ed-error" data-ed-serp-error hidden></p>
+      <div data-ed-serp-result hidden></div>
+    </section>
+
+    <!-- Treść konkurentów czytana przez Jina Reader: ile realnie piszą i jakie
+         konkrety mają w tekście. Osobny przycisk, bo to kilka pobrań stron
+         plus jedno wywołanie modelu. -->
+    <section class="ed-serp ed-rivals" data-ed-rivals>
+      <div class="ed-serp-head">
+        <div class="ed-serp-title">
+          <h3>Co mają konkurenci</h3>
+          <p class="ed-serp-lead">
+            Czytamy pięć tekstów z czołówki i nasz wpis, porównujemy długość i wypisujemy konkrety,
+            których u nas brakuje.
+          </p>
+        </div>
+        <div class="ed-serp-actions">
+          <span class="ed-serp-stamp" data-ed-rivals-stamp></span>
+          <button type="button" class="ed-serp-run" data-ed-rivals-run disabled>Pobierz treści konkurentów</button>
+          <button type="button" class="ed-serp-fold" title="Zwiń / rozwiń sekcję">zwiń</button>
+        </div>
+      </div>
+      <p class="ed-error" data-ed-rivals-error hidden></p>
+      <div data-ed-rivals-result hidden></div>
+    </section>
+
+    <!-- Belka pipeline: konfiguracja → postęp → podsumowanie (jeden element,
+         trzy stany sterowane z JS) -->
+    <div class="ed-pipebar">
+      <div data-ed-setup>
+        <div class="ed-setup-row">
+          <div class="ed-improvements" role="group" aria-label="Zakres optymalizacji">
+                          <label class="fchip ed-improvement" title="analiza wyników Google → wytyczne → przeredagowanie sekcji">
+                <input type="checkbox" name="improvement" value="gaps" checked />
+                Uzupełnienie braków w treści
+              </label>
+              <label class="fchip ed-improvement" title="sekcja Źródła (nofollow) na końcu + jedna definicja z Wikipedii w treści">
+                <input type="checkbox" name="improvement" value="sources" checked />
+                Źródła
+              </label>
+              <label class="fchip ed-improvement" title="dopasowanie z katalogu treści serwisu">
+                <input type="checkbox" name="improvement" value="internal_links" checked />
+                Linki wewnętrzne
+              </label>
+          </div>
+          <!-- Lista modeli z OpenRoutera ma kilkaset pozycji, więc zamiast
+               natywnego datalisty stoi tu własny combobox z filtrowaniem. -->
+          <div class="ed-models">
+            <label class="ed-combo">
+              <span>Model analizy</span>
+              <div class="ed-combo-box">
+                <input data-ed-model-research value="perplexity/sonar-pro" spellcheck="false"
+                  autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" />
+                <button type="button" class="ed-combo-toggle" aria-label="Pokaż listę modeli">▾</button>
+                <ul class="ed-combo-list" hidden></ul>
+              </div>
+            </label>
+            <label class="ed-combo">
+              <span>Model pisania</span>
+              <div class="ed-combo-box">
+                <input data-ed-model-writer value="anthropic/claude-sonnet-5" spellcheck="false"
+                  autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" />
+                <button type="button" class="ed-combo-toggle" aria-label="Pokaż listę modeli">▾</button>
+                <ul class="ed-combo-list" hidden></ul>
+              </div>
+            </label>
+            <small class="ed-models-note" data-ed-models-note>modele przez OpenRouter</small>
+          </div>
+        </div>
+        <div class="ed-actions">
+          <button type="button" class="ed-run" data-ed-run>Rozpocznij optymalizację</button>
+          <span class="ed-hint">
+            Zużycie zasobów: zapytanie do wyszukiwarki (SerpData), pobranie fraz
+            z Senuto i kilkadziesiąt tysięcy tokenów. Ten sam wpis maksymalnie raz
+            na 30 dni. Wynik to propozycja – nic nie trafia do WordPressa automatycznie.
+          </span>
+        </div>
+      </div>
+
+      <div data-ed-progress hidden>
+        <div class="ed-progress-head">
+          <span class="ed-progress-label" data-ed-progress-label>uruchamianie…</span>
+          <span class="ed-progress-meta">
+            <span data-ed-progress-count></span>
+            <span data-ed-progress-time></span>
+            <button type="button" class="ed-cancel" data-ed-cancel>anuluj</button>
+          </span>
+        </div>
+        <div class="ed-progress"><i data-ed-progress-fill style="width:0%"></i></div>
+      </div>
+
+      <div data-ed-summary hidden>
+        <span class="cw-status" data-ed-summary-status></span>
+        <span class="ed-summary-cost" data-ed-summary-cost></span>
+        <button type="button" class="ed-rerun" data-ed-rerun hidden>uruchom ponownie</button>
+      </div>
+
+      <!-- Komunikat błędu osobno: przy nieudanym przebiegu to jedyna rzecz,
+           którą człowiek naprawdę chce przeczytać. -->
+      <div class="ed-fail" data-ed-fail hidden>
+        <div class="ed-fail-head">
+          <span class="ed-fail-badge">proces nieudany</span>
+          <span data-ed-fail-step></span>
+        </div>
+        <p class="ed-fail-msg" data-ed-fail-msg></p>
+        <div class="ed-fail-actions">
+          <button type="button" class="ed-rerun" data-ed-fail-rerun>uruchom ponownie</button>
+          <a class="ed-fail-log" data-ed-fail-log target="_blank" rel="noopener" hidden>szczegóły błędu ↗</a>
+        </div>
+      </div>
+
+      <!-- Oś przebiegu: co poszło, co idzie teraz, co czeka. Kolumna ma stałą
+           szerokość – rozciągnięta na całą stronę lista była nieczytelna. -->
+      <div class="ed-timeline-wrap" data-ed-steps-details hidden>
+        <ol class="ed-steps" data-ed-steps></ol>
+      </div>
+
+      <p class="ed-error" data-ed-error hidden></p>
+    </div>
+
+    <details class="ed-brief" data-ed-brief-details hidden>
+      <summary>Wytyczne z analizy <span class="section-meta">luki wobec konkurencji i frazy do pokrycia</span></summary>
+      <div data-ed-brief></div>
+    </details>
+
+    <!-- Dokument i ocena treści w jednym wrapperze: na szerokim ekranie ocena
+         z frazami jedzie do przypiętej kolumny obok dokumentu (ocenianie
+         sekcji bez scrollowania do góry), na węższym zostaje nad dokumentem. -->
+    <div class="ed-workspace">
+    <aside class="ed-side">
+    <!-- Ocena treści liczona na żywo z dokumentu: objętość, struktura,
+         linkowanie, świeżość i pokrycie fraz, których szuka konkurencja. -->
+    <div class="section-head ed-score-head">
+      <h2>Ocena treści</h2>
+      <span class="section-meta">liczona z aktualnej treści w edytorze</span>
+    </div>
+    <div class="ed-score" data-ed-score>
+      <div class="ed-score-main">
+        <div class="ed-score-dial" data-ed-score-dial>
+          <b data-ed-score-value>–</b>
+          <span>na 100</span>
+        </div>
+        <div class="ed-score-parts" data-ed-score-parts></div>
+      </div>
+      <div class="ed-score-keywords">
+        <div class="ed-score-kwhead">
+          <h3>Frazy do pokrycia</h3>
+          <span data-ed-score-kwmeta>sprawdź wyniki wyszukiwania, aby zobaczyć listę</span>
+        </div>
+        <ul class="ed-score-kwlist" data-ed-score-kwlist></ul>
+        <p class="ed-kw-legend">
+          W dokumencie zaznaczamy każde wystąpienie – także w nagłówku i w odmienionej formie.
+          <span class="ed-kw-swatch was"></span> było w tekście
+          <span class="ed-kw-swatch new"></span> dopisane w tym przebiegu
+        </p>
+      </div>
+    </div>
+
+    <!-- Etapy końcowe i publikacja w kolumnie bocznej: przy szerokim ekranie
+         są pod ręką przez cały czas czytania dokumentu, a nie w belce
+         pipeline'u nad nim. Ukryte do czasu zakończenia przebiegu. -->
+    <div class="ed-side-tools">
+    <!-- Etap finalny: porada eksperta – dostępna po zakończeniu pipeline'u,
+         generowana z Workera przez OpenRouter (sekundy, nie minuty). -->
+    <div class="ed-expert" data-ed-expert hidden>
+      <div class="ed-expert-head">
+        <span class="ed-expert-label">Etap końcowy · wypowiedź ekspercka</span>
+        <span class="ed-expert-note">
+          komentarz budowany z materiału przebiegu (SERP, konkurenci, brief) – wymaga tych analiz
+        </span>
+      </div>
+      <!-- Kogo podpisujemy: lista autorów portalu prosto z WordPressa. Rola
+           idzie z osobnej listy, bo WP stanowisk nie trzyma – dla znanych osób
+           podstawia się sama, dla reszty redaktor wybiera ją tutaj. -->
+      <div class="ed-expert-who">
+        <label>
+          <span>Ekspert</span>
+          <select data-ed-expert-who>
+            <option value="">dobierz automatycznie</option>
+          </select>
+        </label>
+        <label>
+          <span>Stanowisko</span>
+          <select data-ed-expert-role-select>
+            <option value="">bez stanowiska</option>
+          </select>
+        </label>
+        <input type="text" data-ed-expert-role placeholder="np. specjalistka SEO" maxlength="120" hidden />
+        <label>
+          <span>Miejsce cytatu</span>
+          <select data-ed-expert-slot>
+            <option value="">koniec artykułu – model dobiera</option>
+          </select>
+        </label>
+      </div>
+      <div class="ed-expert-actions" data-ed-expert-actions></div>
+      <p class="ed-error" data-ed-expert-error hidden></p>
+    </div>
+
+    <!-- Etap końcowy: przejazd redaktorski. Jedno wywołanie modelu na CAŁY
+         wpis – prompt wymaga spójności terminologii, więc sekcja po sekcji
+         tę regułę wyłącza. Wynik to propozycja per sekcja, nie podmiana. -->
+    <div class="ed-expert ed-style" data-ed-style hidden>
+      <div class="ed-expert-head">
+        <span class="ed-expert-label">Etap końcowy · styl i fleksja</span>
+        <span class="ed-expert-note" data-ed-style-note>
+          kalki, żargon, odmiana nazw własnych i weryfikacja faktów w sieci
+        </span>
+      </div>
+      <div class="ed-expert-actions" data-ed-style-actions></div>
+      <div class="ed-style-report" data-ed-style-report hidden></div>
+      <p class="ed-error" data-ed-style-error hidden></p>
+    </div>
+
+
+    <!-- Zapis do WordPressa jako karta: :has() chowa ją razem z modułem,
+         gdy przebieg jeszcze nie dał treści do publikacji. -->
+    <div class="ed-expert ed-wp-card">
+      <div class="ed-expert-head">
+        <span class="ed-expert-label">Publikacja · WordPress</span>
+        <span class="ed-expert-note">szkic do podglądu na szablonie strony; wdrożenie podmienia treść oryginału</span>
+      </div>
+      <!-- Zapis do WordPressa: szkic (osobny wpis draft) do podglądu na
+           szablonie strony; wdrożenie podmienia treść oryginału i kasuje
+           szkic. Hasło aplikacji zna wyłącznie Worker. -->
+      <div class="ed-wp" data-ed-wp hidden>
+        <!-- Autor wpisu: zaciągnięty z WP, do podmiany z listy redakcji.
+             Idzie razem ze szkicem i wdrożeniem (pole `author` w REST). -->
+        <label class="ed-wp-author">
+          <span>Autor wpisu</span>
+          <select data-ed-wp-author>
+            <option value="">bez zmian</option>
+          </select>
+        </label>
+        <button type="button" data-ed-wp-draft>szkic w WordPressie</button>
+        <a data-ed-wp-preview href="#" target="_blank" rel="noopener" hidden>otwórz szkic ↗</a>
+        <button type="button" class="ed-wp-apply" data-ed-wp-apply>wdróż na stronie</button>
+        <span class="ed-wp-note" data-ed-wp-note hidden></span>
+      </div>
+    </div>
+    </div>
+    </aside>
+
+    <div class="ed-docwrap">
+    <div class="section-head ed-doc-head">
+      <h2>Dokument</h2>
+      <span class="section-meta" data-ed-doc-meta>treść wpisu z WordPressa</span>
+    </div>
+
+    <!-- Pasek dokumentu: statystyki wpisu i – po pipelinie – stan decyzji.
+         Trzyma się przy górnej krawędzi, żeby przy długim wpisie było widać,
+         ile propozycji jeszcze czeka na ocenę. -->
+    <div class="ed-docbar" data-ed-docbar>
+      <div class="ed-docstats" data-ed-docstats></div>
+      <div class="ed-docbar-right">
+        <div class="ed-decide-all" data-ed-decide-all hidden>
+          <span data-ed-decide-count></span>
+          <button type="button" data-ed-accept-all>zatwierdź wszystkie</button>
+          <button type="button" data-ed-copy-all>kopiuj zatwierdzone</button>
+        </div>
+        <label class="ed-only-changed" data-ed-only-changed-wrap hidden>
+          <input type="checkbox" data-ed-only-changed />
+          tylko zmienione sekcje
+        </label>
+        <button type="button" class="ed-preview-open" data-ed-preview-open>podgląd całości</button>
+      </div>
+    </div>
+
+    <div class="ed-doc" data-ed-doc>
+      <p class="ed-doc-loading">wczytywanie treści…</p>
+    </div>
+
+    <!-- Podgląd całości: docelowa treść wpisu jednym ciągiem, bez podziału na
+         sekcje i bez interfejsu decyzji – do przeczytania i do zabrania
+         (schowek z formatowaniem pod Google Docs albo plik .doc). -->
+    <div class="ed-preview" data-ed-preview hidden>
+      <div class="ed-preview-panel" role="dialog" aria-modal="true" aria-label="Podgląd całości wpisu">
+        <header class="ed-preview-head">
+          <div class="ed-preview-title">
+            <h3>Podgląd całości</h3>
+            <span class="ed-preview-note" data-ed-preview-note></span>
+          </div>
+          <div class="ed-preview-actions">
+            <button type="button" data-ed-preview-copy>kopiuj do Google Docs</button>
+            <button type="button" data-ed-preview-doc>pobierz .doc</button>
+            <button type="button" data-ed-preview-close>zamknij</button>
+          </div>
+        </header>
+        <div class="ed-preview-body prose" data-ed-preview-body></div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
