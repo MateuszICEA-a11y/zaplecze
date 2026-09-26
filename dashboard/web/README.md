@@ -12,17 +12,19 @@ statyczne pliki. Wygląd bazuje na [TailAdmin Free](https://github.com/TailAdmin
 
 ## Co jest przeniesione
 
-Wszystkie sekcje poza dwoma edytorami:
+Wszystkie sekcje starego dashboardu:
 
 - `/` – domeny i kredyty, `/system/` – salda, alerty, kwoty API, pipeline, rotacja tokenu Senuto
 - per domena: przegląd, Senuto, GSC (frazy i strony w jednej tabeli), GA4, Bing (z importem
   CSV AI Performance), Ahrefs, Clarity, Boty AI, Matrix, Leady
-- Asystent treści (kreator w `#hash`), Content Watcher (lista), Content Writer (lista,
-  podpowiedzi, konkurencja, projekty)
+- Asystent treści (kreator w `#hash`) oraz sekcja **Treści** – zakładki „Odświeżanie wpisów”
+  (Content Watcher) i „Nowe teksty” (Content Writer); adresy stron zostały osobne
 
-**Jeszcze w Astro:** edytor wpisu Content Watchera (`/content-watcher/edytor/`) i projekt
-artykułu Content Writera (`/content-writer/projekt/`) – ok. 6 tys. linii logiki z zapisem do
-WordPressa. Linki z nowego frontu otwierają je w obecnym dashboardzie (`LEGACY_URL`).
+**Edytory** (edytor wpisu `/content-watcher/edytor/`, projekt artykułu
+`/content-writer/projekt/`) działają przez `src/legacy/`: znaczniki i logika 1:1 ze starego
+frontu (`mount()`), host `LegacyHost`, style zawężone do `.legacy`
+(`node scripts/build-legacy-css.mjs` po zmianie `src/legacy/css/*`) i mostek tokenów na
+paletę iCEA (`tokens.css`). Do przepisania na React po kawałku.
 
 Worker czyta z buildu frontu pliki `/<domena>/content-watcher/catalog.json`,
 `/<domena>/content-writer/data.json` i `competitors.json` (ASSETS) – route handlery
