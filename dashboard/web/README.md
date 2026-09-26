@@ -65,21 +65,15 @@ kopie. Bez tego nawigacja działa, ale sypie 404 w konsoli.
 
 ## Wdrożenie
 
-Nic nie jest wdrożone. Przygotowany jest **osobny** worker podglądu
-`zaplecze-dashboard-next` (`wrangler.toml` + `worker.js`: Basic Auth tym samym
-hasłem `DASH_PASSWORD` co obecny dashboard, potem pliki z `out/`). Produkcyjny
-`zaplecze-dashboard` zostaje nietknięty.
+Front serwuje produkcyjny Worker `zaplecze-dashboard` (`dashboard/app`): w jego
+`wrangler.toml` `assets.directory` wskazuje `../web/out`, a `worker.js` obsługuje
+`/api/*` (D1, KV, Vectorize) i Basic Auth. Wdrożenie jest ręczne – push go nie uruchamia:
 
 ```bash
-npm run build
-npx wrangler secret put DASH_PASSWORD   # tylko za pierwszym razem
-npx wrangler deploy
+cd dashboard/app
+npm run build          # npm ci + build w dashboard/web
+npx wrangler deploy    # cofnięcie: npx wrangler rollback <id wersji>
 ```
-
-Docelowo, gdy front pokryje wszystkie sekcje: `dashboard/app/wrangler.toml`
-wskazuje `assets.directory` na `../web/out`, build Workers Builds przechodzi na
-`dashboard/web`, a `worker.js` z API (`/api/*`, D1, KV, Vectorize) zostaje bez
-zmian.
 
 ## Struktura
 
