@@ -34,11 +34,16 @@ Plan etapami, każdy zamknięty **własnym testem w przeglądarce** na prawdziwy
    `renderScore`), SERP (`renderSerp`, `loadSerp/pollSerp/runSerp`), treść konkurencji
    (`renderRivals`, `loadRivals/pollRivals/runRivals`), podgląd całości + eksport
    (`openPreview`, kopiuj do Google Docs, pobierz .doc).
-2. **Dokument** – wczytanie treści z WP (`loadCatalog`, `loadContent`), sekcje
+2. ✅ **Dokument** (zrobione 26.09, `edytor/DocPanel.tsx`, `DocSection.tsx`,
+   `src/lib/cw-editor/doc.ts`, `diff.ts`, `expert.ts`; razem z nakładką przebiegu
+   w sekcjach – diff inline, decyzje, korekta stylu, infografiki, CTA, cytat eksperta –
+   bo żyje w DOM-ie sekcji i nie da się jej zostawić staremu skryptowi. Nie
+   przetestowane: generowanie/wstawienie obrazu – kie.ai zwróciło brak kredytów) – wczytanie treści z WP (`loadCatalog`, `loadContent`), sekcje
    (`docSection`, `renderDoc`), edycja w miejscu (`enableEditing`, `formatToolbar`,
    szkice w `localStorage` – `readDraft/writeDraft`), podświetlanie fraz (CSS Custom
    Highlight API: `highlightKeywords`, `focusKeyword`), statystyki.
-3. **Pipeline i akcje zapisujące** – uruchomienie (`runPipeline`, modele z OpenRouter
+3. **Pipeline i karty końcowe** (do zrobienia: belka pipeline'u, wytyczne, karta
+   eksperta, karta stylu z raportem, karta WordPressa – reszta legacy/edytor-script.ts) – uruchomienie (`runPipeline`, modele z OpenRouter
    `setupCombo/loadModels`, ulepszenia gaps/sources/internal_links), postęp
    (`renderProgress`, `renderSteps`, `schedulePoll`), wytyczne (`renderBrief`), diff inline
    (`renderInlineDiff`, `wordDiff`, decyzje per sekcja), ekspert (`renderExpert`,

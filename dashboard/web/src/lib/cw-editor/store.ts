@@ -1,16 +1,22 @@
-/* Wspólny stan edytora wpisu: panele React (nagłówek, ocena, SERP,
-   konkurencja, podgląd) i moduł legacy/edytor-script.ts, który do czasu
-   przepisania trzyma dokument, pipeline i akcje zapisujące.
+/* Wspólny stan edytora wpisu: panele React (nagłówek, analizy, ocena,
+   dokument, podgląd) i moduł legacy/edytor-script.ts, który do czasu
+   przepisania trzyma belkę pipeline'u i karty etapów końcowych.
 
-   Legacy pisze tu zadanie (`job`) i sygnał zmiany dokumentu (`touchDoc`) –
-   ocena treści i podświetlenia fraz liczą się po stronie React z DOM-u
-   dokumentu. Każda zmiana podmienia obiekt stanu (useSyncExternalStore). */
+   Zadanie (`job`) zmienia się tylko przez set() z nowym obiektem – legacy
+   subskrybuje stan i odmalowuje swoje panele, React renderuje dokument.
+   Ocena treści i podświetlenia fraz liczą się z DOM-u dokumentu po sygnale
+   touchDoc(). Każda zmiana podmienia obiekt stanu (useSyncExternalStore). */
 import { useSyncExternalStore } from "react";
-import type { Entry, Job, RivalsAnalysis, SerpAnalysis } from "./types";
+import type { Content, Entry, Job, RivalsAnalysis, SerpAnalysis, Section } from "./types";
 
 export type EditorState = {
   entry: Entry | null;
+  /** Treść wpisu z WordPressa; contentError, gdy nie dało się jej wczytać. */
+  content: Content | null;
+  contentError: string | null;
   job: Job | null;
+  /** Tryb widoku sekcji z propozycją (diff / after / before) – po slocie. */
+  modes: Record<number, string>;
   serp: SerpAnalysis | null;
   rivals: RivalsAnalysis | null;
   /** Rośnie przy każdej zmianie treści dokumentu (edycja, przebudowa, tryb widoku). */
@@ -22,7 +28,10 @@ export type EditorState = {
 
 const INITIAL: EditorState = {
   entry: null,
+  content: null,
+  contentError: null,
   job: null,
+  modes: {},
   serp: null,
   rivals: null,
   docVersion: 0,
@@ -42,6 +51,15 @@ export const editorStore = {
   touchDoc() {
     editorStore.set({ docVersion: state.docVersion + 1 });
   },
+  /** Podmiana jednej sekcji zadania (decyzja, ręczna poprawka) – nowy obiekt zadania. */
+  patchSection(slot: number, patch: Partial<Section>) {
+    const job = state.job;
+    if (!job) return;
+    editorStore.set({ job: { ...job, sections: job.sections.map((row) => (row.slot === slot ? { ...row, ...patch } : row)) } });
+  },
+  setMode(slot: number, mode: string) {
+    editorStore.set({ modes: { ...state.modes, [slot]: mode } });
+  },
   reset() {
     state = INITIAL;
   },
@@ -52,3 +70,12 @@ export const editorStore = {
 };
 
 export const useEditor = () => useSyncExternalStore(editorStore.subscribe, editorStore.get, () => INITIAL);
+
+/** Komunikat błędu pod belką pipeline'u (znacznik legacy [data-ed-error],
+    do czasu przepisania belki). */
+export function showEditorError(message: string) {
+  const node = document.querySelector<HTMLElement>("[data-ed-error]");
+  if (!node) return;
+  node.textContent = message;
+  node.hidden = false;
+}

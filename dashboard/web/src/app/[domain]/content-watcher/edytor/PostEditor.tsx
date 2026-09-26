@@ -2,10 +2,10 @@
 
 /* Edytor wpisu Content Watchera. Przepisywany na React etapami:
    - React: nagłówek wpisu, rozpoznanie SERP, treść konkurencji, ocena treści
-     z frazami, podgląd całości z eksportem,
+     z frazami, dokument (edycja, szkice, propozycje przebiegu, decyzje,
+     korekta stylu, infografiki, CTA) i podgląd całości z eksportem,
    - jeszcze vanilla (legacy/edytor-script.ts, znaczniki edytor-*.html):
-     belka pipeline'u z wytycznymi, dokument z edycją i decyzjami, ekspert,
-     styl, infografiki, CTA i zapis do WordPressa.
+     belka pipeline'u z wytycznymi oraz karty eksperta, stylu i WordPressa.
    Obie strony dzielą stan przez lib/cw-editor/store.ts. Wpis wskazuje `?id=`. */
 import { Status } from "@/components/kit";
 import { Card } from "@/components/ui";
@@ -18,6 +18,7 @@ import { ensureHighlights, LegacyChunk, useReloadOnLeave } from "@/legacy/Legacy
 import { ArrowLeft } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { RivalsPanel, SerpPanel } from "./AnalysisPanels";
+import DocPanel from "./DocPanel";
 import PreviewDialog from "./PreviewDialog";
 import ScorePanel from "./ScorePanel";
 
@@ -90,7 +91,9 @@ export default function PostEditor({ domain, markup }: { domain: string; markup:
               <ScorePanel />
               <LegacyChunk className="ed-side-tools" html={markup.side} />
             </aside>
-            <LegacyChunk className="ed-docwrap min-w-0 flex-1" html={markup.doc} />
+            <div className="legacy ed-docwrap min-w-0 flex-1">
+              <DocPanel domain={domain} />
+            </div>
           </div>
           <PreviewDialog />
         </>

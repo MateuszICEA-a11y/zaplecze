@@ -112,3 +112,43 @@ export type RivalsAnalysis = {
   model?: string | null;
   generated_at?: string;
 };
+
+/** Treść wpisu z WordPressa (GET /api/cw/content/…). */
+export type Content = {
+  title?: string;
+  author_id?: number | null;
+  lead?: string;
+  no_section?: string;
+  sections: { slot: number; title: string; text: string }[];
+  faq?: { title: string; schema: boolean; items: { slot: number; title: string; text: string }[] };
+  /** Blok Źródeł z pól page_sources_* (null, gdy wpis go nie ma). */
+  sources?: { slot: number; title: string; text: string } | null;
+};
+
+/** Propozycja przejazdu redaktorskiego dla jednej sekcji (tabela job_style).
+    Diff liczymy w przeglądarce – Worker oddaje oba brzmienia, nie opcode'y. */
+export type StyleRow = {
+  slot: number;
+  title_before: string | null;
+  title_after: string | null;
+  text_before: string | null;
+  text_after: string | null;
+  issues: string[];
+  warnings: { kind: string; label: string }[];
+  decision: "accepted" | "rejected" | null;
+  applied_at?: string | null;
+};
+
+/** Infografika sekcji (tabela job_images). */
+export type ImageRow = {
+  slot: number;
+  status: string;
+  brief: string | null;
+  alt: string | null;
+  caption: string | null;
+  image_url: string | null;
+  media_id: number | null;
+  media_url: string | null;
+  credits: string | null;
+  error: string | null;
+};

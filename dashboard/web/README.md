@@ -20,12 +20,14 @@ Wszystkie sekcje starego dashboardu:
 - Asystent treści (kreator w `#hash`) oraz sekcja **Treści** – zakładki „Odświeżanie wpisów”
   (Content Watcher) i „Nowe teksty” (Content Writer); adresy stron zostały osobne
 
-**Edytor wpisu** (`/content-watcher/edytor/`) jest w połowie w React (`PostEditor.tsx`):
-nagłówek, SERP, treść konkurencji, ocena treści z frazami i podgląd całości. Belka
-pipeline'u, dokument, ekspert, styl, infografiki, CTA i zapis do WP to jeszcze
-`src/legacy/edytor-script.ts` ze znacznikami `edytor-{top,side,doc}.html`. Obie strony
-dzielą stan przez `src/lib/cw-editor/store.ts` (legacy pisze `job` i `touchDoc()`,
-React czyta DOM dokumentu – `snapshot.ts`, `keywords.ts`).
+**Edytor wpisu** (`/content-watcher/edytor/`) jest prawie cały w React (`PostEditor.tsx`):
+nagłówek, SERP, treść konkurencji, ocena treści z frazami, dokument (`DocPanel.tsx`,
+`DocSection.tsx` – edycja, szkice, diff, decyzje, korekta stylu, infografiki, CTA)
+i podgląd całości. W `src/legacy/edytor-script.ts` (znaczniki `edytor-{top,side}.html`)
+zostały belka pipeline'u z wytycznymi oraz karty eksperta, stylu i WordPressa.
+Wspólny stan: `src/lib/cw-editor/store.ts` – zadanie zmienia się tylko przez `set()`
+z nowym obiektem, legacy subskrybuje stan i odmalowuje swoje karty. Czyste funkcje
+(układ dokumentu, diff, frazy, migawka, sanityzacja) w `src/lib/cw-editor/`.
 
 **Edytor tekstu projektu** (`/content-writer/projekt/`) to nadal moduł vanilla
 `src/legacy/writer-editor.ts` podpięty w `ProjectWorkspace.tsx`. Style legacy są zawężone
