@@ -3,6 +3,7 @@
 /* Szkielet TailAdmina: zwijany pasek boczny + nagłówek + treść. Pasek pokazuje
    przełącznik domen i sekcje wybranej domeny; sekcje jeszcze nieprzeniesione
    prowadzą do obecnego dashboardu (ikona ↗). */
+import IceaLogo from "@/components/shell/IceaLogo";
 import { useSidebar } from "@/context/SidebarContext";
 import { useTheme } from "@/context/ThemeContext";
 import type { NavDomain } from "@/lib/nav";
@@ -97,7 +98,7 @@ function Sidebar({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
   return (
     <aside
       className={cn(
-        "fixed top-0 left-0 z-50 flex h-full flex-col border-r border-gray-200 bg-white px-4 text-gray-900 transition-all duration-300 ease-in-out dark:border-gray-800 dark:bg-gray-900",
+        "fixed top-0 left-0 z-50 flex h-full flex-col border-r border-white/5 bg-gray-950 px-4 text-white/90 transition-all duration-300 ease-in-out",
         wide ? "w-72.5" : "w-22.5",
         isMobileOpen ? "translate-x-0" : "-translate-x-full",
         "xl:translate-x-0",
@@ -106,16 +107,9 @@ function Sidebar({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className={cn("flex items-center gap-3 py-7", !wide && "xl:justify-center")}>
-        <Link href="/" className="flex items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-500 text-lg font-semibold text-white shadow-theme-xs">
-            Z
-          </span>
-          {wide && (
-            <span className="leading-tight">
-              <span className="block text-lg font-semibold text-gray-800 dark:text-white/90">Zaplecze</span>
-              <span className="block text-theme-xs text-gray-500 dark:text-gray-400">dashboard SEO · iCEA</span>
-            </span>
-          )}
+        <Link href="/" className="flex flex-col gap-2 text-gray-50" aria-label="Dashboard zaplecza – strona główna">
+          <IceaLogo className={wide ? "h-6 w-auto" : "h-3 w-auto"} />
+          {wide && <span className="text-theme-sm text-gray-400">Dashboard zaplecza SEO</span>}
         </Link>
       </div>
 
@@ -125,11 +119,11 @@ function Sidebar({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
         <nav className="mt-5">
           <h2
             className={cn(
-              "mb-3 flex text-xs leading-5 font-medium tracking-wide text-gray-400 uppercase",
+              "mb-3 flex text-theme-xs leading-5 text-gray-400",
               !wide && "xl:justify-center",
             )}
           >
-            {wide ? current.name : "•••"}
+            {wide ? `Sekcje · ${current.name}` : "•••"}
           </h2>
           <ul className="flex flex-col gap-1">
             {current.sections.map((item) => {
@@ -155,7 +149,7 @@ function Sidebar({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
                         <span className="menu-item-text">{item.label}</span>
                         {!item.ported && (
                           <span
-                            className="ms-auto flex items-center gap-1 text-theme-xs text-gray-400"
+                            className="ms-auto flex items-center gap-1 text-theme-xs text-gray-500"
                             title="Otwiera obecny dashboard – sekcja jeszcze nie przeniesiona"
                           >
                             stara <ExternalLink className="size-3.5" />
@@ -171,7 +165,7 @@ function Sidebar({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
 
           <h2
             className={cn(
-              "mt-7 mb-3 flex text-xs leading-5 font-medium tracking-wide text-gray-400 uppercase",
+              "mt-7 mb-3 flex text-theme-xs leading-5 text-gray-400",
               !wide && "xl:justify-center",
             )}
           >
@@ -209,7 +203,7 @@ function Sidebar({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
                 {wide && (
                   <>
                     <span className="menu-item-text">System</span>
-                    <span className="ms-auto flex items-center gap-1 text-theme-xs text-gray-400">
+                    <span className="ms-auto flex items-center gap-1 text-theme-xs text-gray-500">
                       stara <ExternalLink className="size-3.5" />
                     </span>
                   </>
@@ -267,17 +261,17 @@ function DomainSwitcher({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-left transition hover:border-gray-300 dark:border-gray-800 dark:bg-white/3 dark:hover:border-gray-700"
+        className="flex w-full items-center gap-3 rounded border border-white/10 bg-white/5 px-3 py-2.5 text-left transition hover:border-white/20"
       >
         <DomainAvatar id={current.id} />
         <span className="min-w-0 flex-1">
-          <span className="block text-theme-xs text-gray-500 dark:text-gray-400">Domena</span>
-          <span className="block truncate text-sm font-medium text-gray-800 dark:text-white/90">{current.name}</span>
+          <span className="block text-theme-xs text-gray-400">Domena</span>
+          <span className="block truncate text-sm font-medium text-white">{current.name}</span>
         </span>
-        <ChevronDown className={cn("size-4 text-gray-500 transition-transform", open && "rotate-180")} />
+        <ChevronDown className={cn("size-4 text-gray-400 transition-transform", open && "rotate-180")} />
       </button>
       {open && (
-        <ul className="absolute inset-x-0 top-full z-10 mt-2 rounded-xl border border-gray-200 bg-white p-1.5 shadow-theme-lg dark:border-gray-800 dark:bg-gray-900">
+        <ul className="absolute inset-x-0 top-full z-10 mt-2 rounded border border-white/10 bg-gray-900 p-1.5 shadow-theme-lg">
           {nav.map((domain) => (
             <li key={domain.id}>
               <button
@@ -288,9 +282,7 @@ function DomainSwitcher({
                 }}
                 className={cn(
                   "flex w-full items-center gap-3 rounded-lg px-2.5 py-2 text-left text-sm",
-                  domain.id === current.id
-                    ? "bg-brand-50 text-brand-600 dark:bg-brand-500/12 dark:text-brand-400"
-                    : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5",
+                  domain.id === current.id ? "bg-white/8 text-white" : "text-gray-300 hover:bg-white/5 hover:text-white",
                 )}
               >
                 <DomainAvatar id={domain.id} small />
@@ -305,13 +297,10 @@ function DomainSwitcher({
 }
 
 function DomainAvatar({ id, small = false }: { id: string; small?: boolean }) {
-  const palette = ["bg-brand-500", "bg-blue-light-500", "bg-orange-500", "bg-success-500", "bg-theme-pink-500"];
-  const hash = [...id].reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
   return (
     <span
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-lg font-semibold text-white uppercase",
-        palette[hash % palette.length],
+        "flex shrink-0 items-center justify-center rounded bg-brand-500 font-medium text-gray-950 uppercase",
         small ? "size-6 text-xs" : "size-8 text-sm",
       )}
     >
@@ -376,7 +365,7 @@ function Header({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
           type="button"
           onClick={toggleTheme}
           aria-label={theme === "dark" ? "Włącz jasny motyw" : "Włącz ciemny motyw"}
-          className="flex size-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+          className="flex size-11 items-center justify-center rounded border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
         >
           {theme === "dark" ? <Sun className="size-5" /> : <Moon className="size-5" />}
         </button>

@@ -3,10 +3,18 @@ import { SidebarProvider } from "@/context/SidebarContext";
 import { THEME_INIT_SCRIPT, ThemeProvider } from "@/context/ThemeContext";
 import { LEGACY_URL, loadNav } from "@/lib/nav";
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const outfit = Outfit({ subsets: ["latin", "latin-ext"], variable: "--font-outfit-next" });
+/* Roobert – jedyny krój identyfikacji iCEA: 400 tekst, 500 nagłówki i liczby. */
+const roobert = localFont({
+  src: [
+    { path: "../fonts/Roobert-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/Roobert-Medium.woff2", weight: "500", style: "normal" },
+  ],
+  variable: "--font-roobert",
+  fallback: ["Arial", "sans-serif"],
+});
 
 export const metadata: Metadata = {
   title: { default: "Dashboard zaplecza", template: "%s · Dashboard zaplecza" },
@@ -19,7 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
-      <body className={`${outfit.className} bg-gray-50 dark:bg-gray-950`}>
+      <body className={`${roobert.variable} bg-gray-50 text-gray-800 dark:bg-gray-950 dark:text-white/90`}>
         <ThemeProvider>
           <SidebarProvider>
             <AppShell nav={loadNav()} legacyUrl={LEGACY_URL}>

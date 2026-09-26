@@ -34,30 +34,30 @@ const baseParams = {
   wrapperBorderRadius: 0,
   columnBorder: false,
   cellHorizontalPadding: 14,
-  accentColor: "#465fff",
+  accentColor: "#5768ff",
 } as const;
 
 const lightTheme = themeQuartz.withPart(colorSchemeLight).withParams({
   ...baseParams,
   backgroundColor: "#ffffff",
-  foregroundColor: "#344054",
-  headerBackgroundColor: "#f9fafb",
-  headerTextColor: "#667085",
-  borderColor: "#f2f4f7",
-  rowHoverColor: "#f9fafb",
-  selectedRowBackgroundColor: "#ecf3ff",
+  foregroundColor: "#1b2143",
+  headerBackgroundColor: "#f9f9f9",
+  headerTextColor: "#666c8a",
+  borderColor: "#f0f1f5",
+  rowHoverColor: "#f9f9f9",
+  selectedRowBackgroundColor: "#eff0ff",
 });
 
 const darkTheme = themeQuartz.withPart(colorSchemeDarkBlue).withParams({
   ...baseParams,
-  backgroundColor: "#131a2a",
-  foregroundColor: "#d0d5dd",
-  headerBackgroundColor: "#171f2f",
-  headerTextColor: "#98a2b3",
-  borderColor: "#1d2939",
-  rowHoverColor: "#1a2335",
-  selectedRowBackgroundColor: "#1e2a4a",
-  chromeBackgroundColor: "#131a2a",
+  backgroundColor: "#080e2c",
+  foregroundColor: "#c9ccd9",
+  headerBackgroundColor: "#0b1131",
+  headerTextColor: "#9a9fb5",
+  borderColor: "#1b2143",
+  rowHoverColor: "#0f1638",
+  selectedRowBackgroundColor: "#161b4a",
+  chromeBackgroundColor: "#080e2c",
 });
 
 export interface DataGridProps<T> {
@@ -135,7 +135,7 @@ export default function DataGrid<T>({
     <Card className={cn("overflow-hidden", className)}>
       <div className="flex flex-wrap items-center gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800">
         <div className="min-w-0 flex-1">
-          <h3 className="flex items-baseline gap-2 text-base font-semibold text-gray-800 dark:text-white/90">
+          <h3 className="flex items-baseline gap-2 text-base font-medium text-gray-800 dark:text-white/90">
             {title}
             <span className="text-theme-sm font-normal text-gray-500 tabular-nums dark:text-gray-400">
               {shown !== null && shown !== total

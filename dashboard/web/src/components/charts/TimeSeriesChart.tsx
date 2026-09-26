@@ -96,9 +96,9 @@ export default function TimeSeriesChart({
         opacity: series.map((s) => (s.fill ? 1 : 0)),
         gradient: { opacityFrom: 0.35, opacityTo: 0, stops: [0, 95] },
       },
-      markers: { size: monthly ? 3.5 : 0, strokeWidth: 2, strokeColors: theme === "dark" ? "#101828" : "#fff", hover: { size: 5 } },
+      markers: { size: monthly ? 3.5 : 0, strokeWidth: 2, strokeColors: theme === "dark" ? "#000623" : "#fff", hover: { size: 5 } },
       grid: {
-        borderColor: theme === "dark" ? "#1d2939" : "#f2f4f7",
+        borderColor: theme === "dark" ? "#1b2143" : "#f0f1f5",
         xaxis: { lines: { show: false } },
         yaxis: { lines: { show: true } },
         padding: { left: 4, right: 8 },
@@ -158,7 +158,7 @@ export default function TimeSeriesChart({
   return (
     <Card className="flex min-w-0 flex-col px-5 pt-5 pb-3">
       <div className="mb-1 flex items-baseline justify-between gap-3">
-        <h3 className="text-base font-semibold text-gray-800 dark:text-white/90">{title}</h3>
+        <h3 className="text-base font-medium text-gray-800 dark:text-white/90">{title}</h3>
         {meta && <span className="text-theme-xs text-gray-500 dark:text-gray-400">{meta}</span>}
       </div>
       <div style={{ height }} className="-mx-2">

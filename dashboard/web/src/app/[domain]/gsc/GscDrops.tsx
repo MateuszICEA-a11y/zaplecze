@@ -47,17 +47,17 @@ export default function GscDrops({ modes }: { modes: DropMode[] }) {
         ).map(([title, panel]) => (
           <Card key={title} className="p-5">
             <header className="mb-3 flex items-center justify-between gap-3">
-              <h3 className="text-base font-semibold text-gray-800 dark:text-white/90">{title}</h3>
+              <h3 className="text-base font-medium text-gray-800 dark:text-white/90">{title}</h3>
               <div className="flex gap-2 text-theme-xs font-medium">
                 <span
-                  className="inline-flex items-center gap-1 rounded-full bg-error-50 px-2.5 py-0.5 text-error-600 dark:bg-error-500/15 dark:text-error-500"
+                  className="inline-flex items-center gap-1 rounded bg-error-50 px-2.5 py-0.5 text-error-600 dark:bg-error-500/15 dark:text-error-500"
                   title="Liczba spadków wyświetleń"
                 >
                   <ArrowDown className="size-3" />
                   {panel.dropCount.toLocaleString("pl-PL")}
                 </span>
                 <span
-                  className="inline-flex items-center gap-1 rounded-full bg-success-50 px-2.5 py-0.5 text-success-600 dark:bg-success-500/15 dark:text-success-500"
+                  className="inline-flex items-center gap-1 rounded bg-success-50 px-2.5 py-0.5 text-success-600 dark:bg-success-500/15 dark:text-success-500"
                   title="Liczba wzrostów wyświetleń"
                 >
                   <ArrowUp className="size-3" />
@@ -73,7 +73,7 @@ export default function GscDrops({ modes }: { modes: DropMode[] }) {
               <ol className="divide-y divide-gray-100 dark:divide-gray-800">
                 {panel.rows.map((row, i) => (
                   <li key={row.name} className="flex items-center gap-3 py-2.5">
-                    <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-gray-100 text-theme-xs font-medium text-gray-600 dark:bg-white/5 dark:text-gray-400">
+                    <span className="flex size-6 shrink-0 items-center justify-center rounded bg-gray-100 text-theme-xs font-medium text-gray-600 dark:bg-white/5 dark:text-gray-400">
                       {i + 1}
                     </span>
                     <span className="min-w-0 flex-1 truncate text-theme-sm text-gray-700 dark:text-gray-300" title={row.name}>

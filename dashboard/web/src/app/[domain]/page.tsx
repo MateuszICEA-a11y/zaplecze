@@ -18,7 +18,7 @@ import { fmtDate, fmtInt } from "@/lib/format";
 import { LEGACY_URL } from "@/lib/nav";
 import { cutoffFor, deltaPct, fmtShort, lastOk, plural, stripOrigin, trimTo } from "@/lib/metrics";
 import { C, SOURCE_COLOR } from "@/lib/palette";
-import { CircleCheck, Search, TriangleAlert } from "lucide-react";
+import { CircleCheck, ExternalLink, Search, TriangleAlert } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -155,7 +155,7 @@ export default async function DomainOverview({ params }: Props) {
             {health.map((h) => (
               <span
                 key={h.label}
-                className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-theme-xs dark:border-gray-800 dark:bg-white/3"
+                className="inline-flex items-center gap-2 rounded border border-gray-200 bg-white px-3 py-1.5 text-theme-xs dark:border-gray-800 dark:bg-white/3"
               >
                 <span
                   className={cn(
@@ -240,7 +240,7 @@ export default async function DomainOverview({ params }: Props) {
           meta="Senuto"
           timestamps={trend(top10).timestamps}
           series={[
-            { label: "TOP 3", values: trend(top3).values, color: C.success },
+            { label: "TOP 3", values: trend(top3).values, color: C.brandDark },
             { label: "TOP 10", values: trend(top10).values, color: C.brand, fill: true },
             { label: "TOP 50", values: trend(top50).values, color: C.gray, dashed: true },
           ]}
@@ -352,13 +352,13 @@ function AttentionCard({
         <span className={cn("flex size-10 items-center justify-center rounded-xl", TONES[tone])}>{icon}</span>
         <span className="text-theme-sm font-medium text-gray-500 dark:text-gray-400">{title}</span>
       </div>
-      <div className="mt-4 text-title-sm font-semibold text-gray-800 dark:text-white/90">{big}</div>
+      <div className="mt-4 text-title-sm font-medium text-gray-800 dark:text-white/90">{big}</div>
       <p className="mt-2 flex-1 text-theme-sm text-gray-600 dark:text-gray-400 [&_b]:font-medium [&_b]:text-gray-800 dark:[&_b]:text-white/90">
         {children}
       </p>
       {link.external ? (
         <a href={link.href} target="_blank" rel="noopener" className="mt-4 text-theme-sm font-medium text-brand-500 hover:text-brand-600">
-          {link.label} ↗
+          {link.label} <ExternalLink className="inline size-3.5 align-[-2px]" />
         </a>
       ) : (
         <Link href={link.href} className="mt-4 text-theme-sm font-medium text-brand-500 hover:text-brand-600">

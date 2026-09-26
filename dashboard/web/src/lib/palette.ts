@@ -1,26 +1,31 @@
 /* Kolory serii i źródeł (hex – ApexCharts wpisuje je w atrybuty SVG, gdzie
-   zmienne CSS nie działają). Wartości z palety TailAdmina (globals.css). */
+   zmienne CSS nie działają). Paleta iCEA: Blue jako główna seria, Orange jako
+   seria porównawcza / alarmowa, odcienie Blue i szarości Midnight dla reszty.
+   Zielony/czerwony tylko tam, gdzie znaczą „dobrze/źle" (stany, nie marka). */
 export const C = {
-  brand: "#465fff",
-  brandLight: "#9cb9ff",
-  sky: "#0ba5ec",
-  violet: "#7a5af8",
-  orange: "#fb6514",
+  brand: "#5768ff",
+  brandDark: "#3540c2",
+  brandLight: "#a3abff",
+  sky: "#8b95ff",
+  orange: "#f6704c",
+  gray: "#9a9fb5",
+  grayDark: "#666c8a",
   success: "#12b76a",
   warning: "#f79009",
   error: "#f04438",
-  pink: "#ee46bc",
-  teal: "#15b79e",
-  gray: "#98a2b3",
+  /* Zgodność z wcześniejszymi nazwami serii – mapowane na paletę marki. */
+  violet: "#3540c2",
+  teal: "#666c8a",
+  pink: "#f6704c",
 } as const;
 
 /** Kolor przypisany źródłu danych – kropki na kartach, sparkline'y. */
 export const SOURCE_COLOR = {
-  senuto: C.violet,
+  senuto: C.brandDark,
   gsc: C.brand,
   ga4: C.sky,
   ahrefs: C.orange,
-  bing: C.teal,
-  clarity: C.pink,
-  leads: C.success,
+  bing: C.grayDark,
+  clarity: C.brandLight,
+  leads: C.orange,
 } as const;

@@ -1,10 +1,20 @@
+/* Motyw iCEA na bazie TailAdmin Free (MIT). Paleta z brand manuala:
+   Midnight Blue #000623, Blue #5768FF, Orange #F6704C, Off White #F9F9F9.
+   Font Roobert 400/500 (bez sztucznego pogrubienia), małe promienie narożników
+   (manual: 0–4 px, bez pigułek). Kolory sukces/błąd/ostrzeżenie – wyłącznie
+   funkcjonalne stany, nie akcenty marki. */
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 6px;
+
   --font-*: initial;
-  --font-outfit: Outfit, sans-serif;
+  --font-outfit: var(--font-roobert), "Roobert", Arial, sans-serif;
 
   --breakpoint-*: initial;
   --breakpoint-2xsm: 375px;
@@ -36,60 +46,60 @@
   --color-current: currentColor;
   --color-transparent: transparent;
   --color-white: #ffffff;
-  --color-black: #101828;
+  --color-black: #000623;
 
-  --color-brand-25: #f2f7ff;
-  --color-brand-50: #ecf3ff;
-  --color-brand-100: #dde9ff;
-  --color-brand-200: #c2d6ff;
-  --color-brand-300: #9cb9ff;
-  --color-brand-400: #7592ff;
-  --color-brand-500: #465fff;
-  --color-brand-600: #3641f5;
-  --color-brand-700: #2a31d8;
-  --color-brand-800: #252dae;
-  --color-brand-900: #262e89;
-  --color-brand-950: #161950;
+  --color-brand-25: #f6f7ff;
+  --color-brand-50: #eff0ff;
+  --color-brand-100: #e0e3ff;
+  --color-brand-200: #c6cbff;
+  --color-brand-300: #a3abff;
+  --color-brand-400: #7c87ff;
+  --color-brand-500: #5768ff;
+  --color-brand-600: #4250e8;
+  --color-brand-700: #3540c2;
+  --color-brand-800: #2c359b;
+  --color-brand-900: #252d7a;
+  --color-brand-950: #161b4a;
 
-  --color-blue-light-25: #f5fbff;
-  --color-blue-light-50: #f0f9ff;
-  --color-blue-light-100: #e0f2fe;
-  --color-blue-light-200: #b9e6fe;
-  --color-blue-light-300: #7cd4fd;
-  --color-blue-light-400: #36bffa;
-  --color-blue-light-500: #0ba5ec;
-  --color-blue-light-600: #0086c9;
-  --color-blue-light-700: #026aa2;
-  --color-blue-light-800: #065986;
-  --color-blue-light-900: #0b4a6f;
-  --color-blue-light-950: #062c41;
+  --color-blue-light-25: #f6f7ff;
+  --color-blue-light-50: #eff0ff;
+  --color-blue-light-100: #e0e3ff;
+  --color-blue-light-200: #c6cbff;
+  --color-blue-light-300: #a3abff;
+  --color-blue-light-400: #8b95ff;
+  --color-blue-light-500: #8b95ff;
+  --color-blue-light-600: #5768ff;
+  --color-blue-light-700: #3540c2;
+  --color-blue-light-800: #2c359b;
+  --color-blue-light-900: #252d7a;
+  --color-blue-light-950: #161b4a;
 
   --color-gray-25: #fcfcfd;
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f2f4f7;
-  --color-gray-200: #e4e7ec;
-  --color-gray-300: #d0d5dd;
-  --color-gray-400: #98a2b3;
-  --color-gray-500: #667085;
-  --color-gray-600: #475467;
-  --color-gray-700: #344054;
-  --color-gray-800: #1d2939;
-  --color-gray-900: #101828;
-  --color-gray-950: #0c111d;
+  --color-gray-50: #f9f9f9;
+  --color-gray-100: #f0f1f5;
+  --color-gray-200: #e2e4ec;
+  --color-gray-300: #c9ccd9;
+  --color-gray-400: #9a9fb5;
+  --color-gray-500: #666c8a;
+  --color-gray-600: #4b5172;
+  --color-gray-700: #353b5c;
+  --color-gray-800: #1b2143;
+  --color-gray-900: #0b1131;
+  --color-gray-950: #000623;
   --color-gray-dark: #1a2231;
 
-  --color-orange-25: #fffaf5;
-  --color-orange-50: #fff6ed;
-  --color-orange-100: #ffead5;
-  --color-orange-200: #fddcab;
-  --color-orange-300: #feb273;
-  --color-orange-400: #fd853a;
-  --color-orange-500: #fb6514;
-  --color-orange-600: #ec4a0a;
-  --color-orange-700: #c4320a;
-  --color-orange-800: #9c2a10;
-  --color-orange-900: #7e2410;
-  --color-orange-950: #511c10;
+  --color-orange-25: #fffaf8;
+  --color-orange-50: #fff3ef;
+  --color-orange-100: #ffe4db;
+  --color-orange-200: #fdc9b8;
+  --color-orange-300: #fba58c;
+  --color-orange-400: #f88a6a;
+  --color-orange-500: #f6704c;
+  --color-orange-600: #e2532d;
+  --color-orange-700: #bb3f1f;
+  --color-orange-800: #94331b;
+  --color-orange-900: #782d1b;
+  --color-orange-950: #41150b;
 
   --color-success-25: #f6fef9;
   --color-success-50: #ecfdf3;
@@ -199,11 +209,11 @@
 }
 
 @utility menu-item-active {
-  @apply bg-brand-50 text-brand-500 dark:bg-brand-500/[0.12] dark:text-brand-400;
+  @apply bg-white/8 text-white before:absolute before:inset-y-2 before:left-0 before:w-0.5 before:rounded-full before:bg-brand-500;
 }
 
 @utility menu-item-inactive {
-  @apply text-gray-700 group-hover:text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-gray-300;
+  @apply text-gray-300 hover:bg-white/5 hover:text-white;
 }
 
 @utility menu-item-icon {
@@ -211,11 +221,11 @@
 }
 
 @utility menu-item-icon-active {
-  @apply text-brand-500 dark:text-brand-400;
+  @apply text-brand-400;
 }
 
 @utility menu-item-icon-inactive {
-  @apply text-gray-500 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300;
+  @apply text-gray-400 group-hover:text-gray-200;
 }
 
 @utility menu-item-arrow {

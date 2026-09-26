@@ -190,7 +190,7 @@ export default async function Ga4Page({ params }: Props) {
         ).map(([label, value]) => (
           <div key={label} className="px-5 py-4">
             <div className="text-theme-xs text-gray-500 dark:text-gray-400">{label}</div>
-            <div className="mt-1 text-xl font-semibold text-gray-800 tabular-nums dark:text-white/90">{value}</div>
+            <div className="mt-1 text-xl font-medium text-gray-800 tabular-nums dark:text-white/90">{value}</div>
           </div>
         ))}
       </Card>

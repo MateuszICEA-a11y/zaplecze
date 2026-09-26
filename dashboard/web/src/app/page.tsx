@@ -37,7 +37,7 @@ function StatusChips({ sources }: { sources: Record<string, { status: string; er
             key={key}
             title={r.error}
             className={cn(
-              "inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-theme-xs font-medium",
+              "inline-flex items-center gap-1.5 rounded px-2.5 py-0.5 text-theme-xs font-medium",
               r.status === "ok"
                 ? "bg-success-50 text-success-700 dark:bg-success-500/15 dark:text-success-400"
                 : r.status === "token_expired"
@@ -82,25 +82,25 @@ export default function Home() {
               <Card className="h-full p-6 transition group-hover:border-brand-300 group-hover:shadow-theme-md dark:group-hover:border-brand-500/40">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h2 className="text-xl font-semibold text-gray-800 dark:text-white/90">{d.name}</h2>
+                    <h2 className="text-xl font-medium text-gray-800 dark:text-white/90">{d.name}</h2>
                     <p className="mt-1 text-theme-sm text-gray-500 dark:text-gray-400">
                       {latest ? `pomiar z ${fmtDate(latest.date)}` : "brak pomiarów"}
                     </p>
                   </div>
-                  <span className="flex size-10 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition group-hover:bg-brand-500 group-hover:text-white dark:bg-white/5">
+                  <span className="flex size-10 items-center justify-center rounded bg-gray-100 text-gray-500 transition group-hover:bg-brand-500 group-hover:text-white dark:bg-white/5">
                     <ArrowRight className="size-5" />
                   </span>
                 </div>
                 <dl className="mt-6 grid grid-cols-2 gap-4">
                   <div>
                     <dt className="text-theme-xs text-gray-500 dark:text-gray-400">Frazy w TOP 10</dt>
-                    <dd className="mt-1 text-2xl font-semibold text-gray-800 tabular-nums dark:text-white/90">
+                    <dd className="mt-1 text-2xl font-medium text-gray-800 tabular-nums dark:text-white/90">
                       {top10.value?.toLocaleString("pl-PL") ?? "–"}
                     </dd>
                   </div>
                   <div>
                     <dt className="text-theme-xs text-gray-500 dark:text-gray-400">Kliknięcia / dzień (GSC)</dt>
-                    <dd className="mt-1 text-2xl font-semibold text-gray-800 tabular-nums dark:text-white/90">
+                    <dd className="mt-1 text-2xl font-medium text-gray-800 tabular-nums dark:text-white/90">
                       {clicks.value?.toLocaleString("pl-PL") ?? "–"}
                     </dd>
                   </div>
@@ -118,12 +118,12 @@ export default function Home() {
         <StatusChips sources={globalLatest?.sources ?? {}} />
       </SectionHead>
       <StatGrid cols={5}>
-        <StatCard label="SMSAPI – punkty" value={smsPoints.value} delta={smsPoints.delta} precision={2} color={C.success} />
+        <StatCard label="SMSAPI – punkty" value={smsPoints.value} delta={smsPoints.delta} precision={2} color={C.brand} />
         <StatCard
           label={`SMSAPI – zostało ok. SMS-ów${smsCost.value ? ` (${smsCost.value.toLocaleString("pl-PL")} zł/szt.)` : ""}`}
           value={smsRemaining.value}
           delta={smsRemaining.delta}
-          color={C.success}
+          color={C.brand}
         />
         <StatCard
           label="OpenRouter – pozostało"
@@ -157,7 +157,7 @@ export default function Home() {
           title="SMSAPI – saldo punktów"
           meta="dziennie"
           timestamps={smsSeries.timestamps}
-          series={[{ label: "Punkty", values: smsSeries.values, color: C.success, fill: true }]}
+          series={[{ label: "Punkty", values: smsSeries.values, color: C.brandDark, fill: true }]}
           precision={2}
         />
         <TimeSeriesChart

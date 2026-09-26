@@ -1,6 +1,6 @@
 "use client";
 
-/* Frazy i strony GSC z przełącznikiem okresu. Każde okno to osobny plik JSON
+/* Frazy i strony GSC w jednej tabeli (przełącznik Frazy/Strony) z przełącznikiem okresu. Każde okno to osobny plik JSON
    (dane/<okno>.json), dociągany przy pierwszym wyborze. Kliknięcie frazy
    otwiera kartę szczegółów z wyświetleniami z ostatnich 14 dni. */
 import DataGrid from "@/components/grid/DataGrid";
@@ -61,6 +61,7 @@ export default function GscTables({ domain, windows }: { domain: string; windows
   // undefined = jeszcze nie pobierana, "loading" = w drodze, null = brak / błąd.
   const [history, setHistory] = useState<History | null | "loading" | undefined>(undefined);
   const [helpOpen, setHelpOpen] = useState(false);
+  const [kind, setKind] = useState<"frazy" | "strony">("frazy");
 
   useEffect(() => {
     if (active in cache) return;
@@ -176,6 +177,17 @@ export default function GscTables({ domain, windows }: { domain: string; windows
   );
 
   const meta = `okno ${option.range}`;
+  const kindSwitch = (
+    <Segmented
+      label="Rodzaj listy"
+      value={kind}
+      onChange={setKind}
+      options={[
+        { value: "frazy", label: `Frazy · ${(queries?.length ?? option.queries).toLocaleString("pl-PL")}` },
+        { value: "strony", label: `Strony · ${(pages?.length ?? option.pages).toLocaleString("pl-PL")}` },
+      ]}
+    />
+  );
 
   return (
     <>
@@ -193,29 +205,53 @@ export default function GscTables({ domain, windows }: { domain: string; windows
         )}
       </SectionHead>
 
-      {selected && <QueryDetail row={selected} history={history} onClose={() => setSelected(null)} />}
+      {kind === "frazy" && selected && (
+        <QueryDetail row={selected} history={history} onClose={() => setSelected(null)} />
+      )}
 
-      <DataGrid<QueryRow>
-        title="Frazy w Google"
-        meta={
-          <span className="inline-flex items-center gap-1">
-            {meta} · kliknij frazę, żeby zobaczyć szczegóły ·
-            <button type="button" onClick={() => setHelpOpen((v) => !v)} className="inline-flex items-center gap-1 text-brand-500 hover:text-brand-600">
-              <Info className="size-3.5" /> jak liczymy potencjał?
-            </button>
-          </span>
-        }
-        rows={queries}
-        columns={queryColumns}
-        filter
-        filterPlaceholder="Szukaj frazy…"
-        rowKey={(q) => q.key}
-        selectedKey={selected?.key ?? null}
-        onRowClicked={openQuery}
-        csvName={`${domain}-gsc-frazy-${active}`}
-        empty="Lista fraz pojawi się po najbliższym przebiegu collectora (codziennie 6:30)."
-      />
-      {helpOpen && (
+      {kind === "frazy" ? (
+        <DataGrid<QueryRow>
+          key="frazy"
+          title="Frazy w Google"
+          meta={
+            <span className="inline-flex flex-wrap items-center gap-1">
+              {meta} · kliknij frazę, żeby zobaczyć szczegóły ·
+              <button
+                type="button"
+                onClick={() => setHelpOpen((v) => !v)}
+                className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 dark:text-brand-400"
+              >
+                <Info className="size-3.5" /> jak liczymy potencjał?
+              </button>
+            </span>
+          }
+          rows={queries}
+          columns={queryColumns}
+          actions={kindSwitch}
+          filter
+          filterPlaceholder="Szukaj frazy…"
+          rowKey={(q) => q.key}
+          selectedKey={selected?.key ?? null}
+          onRowClicked={openQuery}
+          csvName={`${domain}-gsc-frazy-${active}`}
+          empty="Lista fraz pojawi się po najbliższym przebiegu collectora (codziennie 6:30)."
+        />
+      ) : (
+        <DataGrid<GscRow>
+          key="strony"
+          title="Strony w Google"
+          meta={meta}
+          rows={pages}
+          columns={pageColumns}
+          actions={kindSwitch}
+          filter
+          filterPlaceholder="Szukaj adresu…"
+          rowKey={(p) => p.key}
+          csvName={`${domain}-gsc-strony-${active}`}
+          empty="Lista stron pojawi się po najbliższym przebiegu collectora."
+        />
+      )}
+      {kind === "frazy" && helpOpen && (
         <Card className="mt-3 p-5 text-theme-sm text-gray-600 dark:text-gray-400 [&_b]:font-medium [&_b]:text-gray-800 dark:[&_b]:text-white/90">
           <p>
             <b>Wynik bazowy</b> to liczba wyświetleń pomnożona przez wagę pozycji: TOP 3 × 0,35; pozycje 4–20 × 1; 21–50 ×
@@ -227,20 +263,6 @@ export default function GscTables({ domain, windows }: { domain: string; windows
           </p>
         </Card>
       )}
-
-      <div className="mt-5">
-        <DataGrid<GscRow>
-          title="Strony w Google"
-          meta={meta}
-          rows={pages}
-          columns={pageColumns}
-          filter
-          filterPlaceholder="Szukaj adresu…"
-          rowKey={(p) => p.key}
-          csvName={`${domain}-gsc-strony-${active}`}
-          empty="Lista stron pojawi się po najbliższym przebiegu collectora."
-        />
-      </div>
     </>
   );
 }
@@ -280,7 +302,7 @@ function QueryDetail({
       <div className="mb-4 flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-theme-xs text-gray-500 dark:text-gray-400">Szczegóły frazy</p>
-          <h3 className="truncate text-lg font-semibold text-gray-800 dark:text-white/90">{row.key}</h3>
+          <h3 className="truncate text-lg font-medium text-gray-800 dark:text-white/90">{row.key}</h3>
         </div>
         <button
           type="button"
@@ -308,7 +330,7 @@ function QueryDetail({
           {facts.map(([label, value]) => (
             <div key={label}>
               <dt className="text-theme-xs text-gray-500 dark:text-gray-400">{label}</dt>
-              <dd className="text-base font-semibold text-gray-800 tabular-nums dark:text-white/90">{value}</dd>
+              <dd className="text-base font-medium text-gray-800 tabular-nums dark:text-white/90">{value}</dd>
             </div>
           ))}
         </dl>

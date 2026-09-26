@@ -15,7 +15,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 type Stat = { value: number | null; delta: number | null };
 
 const TIERS = [3, 10, 50] as const;
-const TIER_COLOR = { 3: C.success, 10: C.brand, 50: C.gray } as const;
+const TIER_COLOR = { 3: C.brandDark, 10: C.brand, 50: C.gray } as const;
 
 export default function SenutoExplorer({
   domain,

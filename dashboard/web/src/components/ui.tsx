@@ -24,7 +24,7 @@ export function PageTitle({ title, meta, children }: { title: string; meta?: Rea
   return (
     <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
       <div>
-        <h1 className="text-title-sm font-semibold text-gray-800 dark:text-white/90">{title}</h1>
+        <h1 className="text-title-sm font-medium text-gray-800 dark:text-white/90">{title}</h1>
         {meta && <p className="mt-1 text-theme-sm text-gray-500 dark:text-gray-400">{meta}</p>}
       </div>
       {children}
@@ -36,7 +36,7 @@ export function SectionHead({ title, meta, children }: { title: string; meta?: R
   return (
     <div className="mt-8 mb-4 flex flex-wrap items-center justify-between gap-3">
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">{title}</h2>
+        <h2 className="text-lg font-medium text-gray-800 dark:text-white/90">{title}</h2>
         {meta && <span className="text-theme-sm text-gray-500 dark:text-gray-400">{meta}</span>}
       </div>
       {children}
@@ -81,7 +81,7 @@ export function DeltaBadge({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-theme-xs font-medium whitespace-nowrap",
+        "inline-flex items-center gap-1 rounded px-2.5 py-0.5 text-theme-xs font-medium whitespace-nowrap",
         direction === "flat"
           ? "bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80"
           : good
@@ -101,7 +101,7 @@ export function DeltaBadge({
 /** Sparkline z ostatnich `last` niepustych punktów – czysty SVG, zero JS. */
 export function Sparkline({
   values,
-  color = "var(--color-brand-500)",
+  color = "#5768ff",
   last = 12,
   className = "h-10 w-28",
 }: {
@@ -181,7 +181,7 @@ export function StatCard({
         <div className="min-w-0">
           <div
             className={cn(
-              "font-semibold tracking-tight text-gray-800 tabular-nums dark:text-white/90",
+              "font-medium tracking-tight text-gray-800 tabular-nums dark:text-white/90",
               hero ? "text-title-md" : "text-title-sm",
               staleDate && "text-gray-400 dark:text-gray-500",
             )}
@@ -191,7 +191,7 @@ export function StatCard({
           </div>
           <div className="mt-2 flex min-h-6 flex-wrap items-center gap-2">
             {staleDate ? (
-              <span className="inline-flex items-center gap-1 rounded-full bg-warning-50 px-2.5 py-0.5 text-theme-xs font-medium text-warning-700 dark:bg-warning-500/15 dark:text-warning-400">
+              <span className="inline-flex items-center gap-1 rounded bg-warning-50 px-2.5 py-0.5 text-theme-xs font-medium text-warning-700 dark:bg-warning-500/15 dark:text-warning-400">
                 <TriangleAlert className="size-3" />
                 dane z {staleDate}
                 {staleReason && ` · ${staleReason}`}

@@ -18,7 +18,7 @@ export function PositionBadge({ value, precision = 0 }: { value: number | null |
   return (
     <span
       className={cn(
-        "inline-flex min-w-10 justify-center rounded-full px-2 py-0.5 text-theme-xs leading-5 font-medium tabular-nums",
+        "inline-flex min-w-10 justify-center rounded px-2 py-0.5 text-theme-xs leading-5 font-medium tabular-nums",
         POS_STYLES[posClass(value)],
       )}
     >

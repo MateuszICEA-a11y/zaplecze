@@ -89,7 +89,7 @@ export default async function SenutoPage({ params }: Props) {
             title="Frazy w TOP 3 / 10 / 50"
             timestamps={trend(top10).timestamps}
             series={[
-              { label: "TOP 3", values: trend(top3).values, color: C.success },
+              { label: "TOP 3", values: trend(top3).values, color: C.brandDark },
               { label: "TOP 10", values: trend(top10).values, color: C.brand, fill: true },
               { label: "TOP 50", values: trend(top50).values, color: C.gray, dashed: true },
             ]}
