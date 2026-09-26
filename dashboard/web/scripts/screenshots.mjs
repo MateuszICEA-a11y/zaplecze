@@ -22,6 +22,7 @@ const PAGES = [
   ["leady", "/widocznosc.ai/leady/"],
   ["matrix", "/grupa-icea.pl/matrix/"],
   ["system", "/system/"],
+  ["content-watcher", "/grupa-icea.pl/content-watcher/"],
 ];
 const VIEWPORTS = [
   ["desktop", { width: 1440, height: 900 }],
