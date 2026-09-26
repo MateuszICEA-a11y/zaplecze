@@ -6,7 +6,7 @@ import { loadConfig, sectionsFor } from './data';
 export const LEGACY_URL = 'https://zaplecze-dashboard.m-wisniewski.workers.dev';
 
 /** Sekcje przeniesione do Next.js (etap 1). */
-const PORTED = new Set(['', 'senuto', 'gsc', 'ga4', 'bing', 'ahrefs', 'clarity', 'boty-ai', 'matrix', 'content-watcher', 'leady']);
+const PORTED = new Set(['', 'senuto', 'gsc', 'ga4', 'bing', 'ahrefs', 'clarity', 'boty-ai', 'matrix', 'content-watcher', 'content-writer', 'leady']);
 
 export interface NavSection {
   slug: string;

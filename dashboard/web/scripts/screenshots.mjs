@@ -23,6 +23,7 @@ const PAGES = [
   ["matrix", "/grupa-icea.pl/matrix/"],
   ["system", "/system/"],
   ["content-watcher", "/grupa-icea.pl/content-watcher/"],
+  ["content-writer", "/grupa-icea.pl/content-writer/"],
 ];
 const VIEWPORTS = [
   ["desktop", { width: 1440, height: 900 }],
@@ -40,7 +41,7 @@ for (const theme of pick("THEMES", ["jasny", "ciemny"])) {
     const page = await context.newPage();
     for (const [name, path] of pick("ONLY", PAGES)) {
       await page.goto(BASE + path, { waitUntil: "networkidle" });
-      await page.waitForTimeout(1200); // ApexCharts i AG Grid renderują się po hydratacji
+      await page.waitForTimeout(Number(process.env.WAIT ?? 1200)); // ApexCharts i AG Grid renderują się po hydratacji
       const file = resolve(OUT, `${name}-${theme}-${screen}.png`);
       await page.screenshot({ path: file, fullPage: true });
       console.log(file);

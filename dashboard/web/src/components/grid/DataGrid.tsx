@@ -78,6 +78,8 @@ export interface DataGridProps<T> {
   rowKey?: (row: T) => string;
   pageSize?: number;
   rowHeight?: number;
+  /** Wiersze o zmiennej wysokości (autoHeight kolumn) – siatka rośnie z treścią. */
+  fitContent?: boolean;
   csvName?: string;
   empty?: string;
   className?: string;
@@ -97,6 +99,7 @@ export default function DataGrid<T>({
   rowKey,
   pageSize = 25,
   rowHeight = 42,
+  fitContent = false,
   csvName,
   empty = "Brak danych.",
   className,
@@ -177,7 +180,7 @@ export default function DataGrid<T>({
       {rows !== null && total === 0 ? (
         <p className="px-5 py-10 text-center text-theme-sm text-gray-500 dark:text-gray-400">{empty}</p>
       ) : (
-        <div style={{ height: gridHeight }}>
+        <div style={fitContent ? undefined : { height: gridHeight }}>
           <AgGridReact<T>
             theme={theme === "dark" ? darkTheme : lightTheme}
             rowData={rows ?? undefined}
@@ -189,6 +192,7 @@ export default function DataGrid<T>({
             paginationPageSize={pageSize}
             paginationPageSizeSelector={[25, 50, 100, 500]}
             rowHeight={rowHeight}
+            domLayout={fitContent ? "autoHeight" : "normal"}
             headerHeight={44}
             animateRows={false}
             suppressCellFocus
