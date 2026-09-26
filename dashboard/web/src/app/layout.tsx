@@ -1,7 +1,7 @@
 import AppShell from "@/components/shell/AppShell";
 import { SidebarProvider } from "@/context/SidebarContext";
 import { THEME_INIT_SCRIPT, ThemeProvider } from "@/context/ThemeContext";
-import { LEGACY_URL, loadNav } from "@/lib/nav";
+import { loadNav } from "@/lib/nav";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${roobert.variable} bg-gray-50 text-gray-800 dark:bg-gray-950 dark:text-white/90`}>
         <ThemeProvider>
           <SidebarProvider>
-            <AppShell nav={loadNav()} legacyUrl={LEGACY_URL}>
+            <AppShell nav={loadNav()}>
               {children}
             </AppShell>
           </SidebarProvider>

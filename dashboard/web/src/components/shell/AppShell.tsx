@@ -13,7 +13,6 @@ import {
   ChartNoAxesColumn,
   ChartPie,
   ChevronDown,
-  ExternalLink,
   Eye,
   Grid3x3,
   LayoutDashboard,
@@ -58,15 +57,7 @@ function useLocation(nav: NavDomain[]) {
   return { pathname, domain, section: domain ? second : null };
 }
 
-export default function AppShell({
-  nav,
-  legacyUrl,
-  children,
-}: {
-  nav: NavDomain[];
-  legacyUrl: string;
-  children: React.ReactNode;
-}) {
+export default function AppShell({ nav, children }: { nav: NavDomain[]; children: React.ReactNode }) {
   const { isExpanded, isHovered, isMobileOpen, toggleMobileSidebar } = useSidebar();
   const wide = isExpanded || isHovered || isMobileOpen;
 
@@ -82,7 +73,7 @@ export default function AppShell({
           wide && !isMobileOpen ? "xl:ml-72.5" : "xl:ml-22.5",
         )}
       >
-        <Header nav={nav} legacyUrl={legacyUrl} />
+        <Header nav={nav} />
         <main className="mx-auto max-w-(--breakpoint-2xl) p-4 md:p-6">{children}</main>
       </div>
     </div>
@@ -288,10 +279,10 @@ function DomainAvatar({ id, small = false }: { id: string; small?: boolean }) {
   );
 }
 
-function Header({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
+function Header({ nav }: { nav: NavDomain[] }) {
   const { isMobileOpen, toggleSidebar, toggleMobileSidebar } = useSidebar();
   const { theme, toggleTheme } = useTheme();
-  const { pathname, domain, section } = useLocation(nav);
+  const { domain, section } = useLocation(nav);
   const sectionLabel = domain?.sections.find((s) => s.match.includes(section ?? ""))?.label;
 
   return (
@@ -332,14 +323,6 @@ function Header({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
           </ol>
         </nav>
 
-        <a
-          href={`${legacyUrl}${pathname}`}
-          target="_blank"
-          rel="noopener"
-          className="hidden items-center gap-2 rounded-lg border border-gray-200 px-3.5 py-2.5 text-theme-sm font-medium text-gray-700 hover:bg-gray-50 sm:flex dark:border-gray-800 dark:text-gray-300 dark:hover:bg-white/3"
-        >
-          Ten widok w starej wersji <ExternalLink className="size-4" />
-        </a>
         <button
           type="button"
           onClick={toggleTheme}

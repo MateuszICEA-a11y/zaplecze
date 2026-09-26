@@ -3,9 +3,6 @@
    adresy zostają osobne, bo Worker czyta spod nich pliki JSON. */
 import { loadConfig, sectionsFor } from './data';
 
-/** Obecny dashboard (Astro) – przycisk „Ten widok w starej wersji" do czasu jego wygaszenia. */
-export const LEGACY_URL = 'https://zaplecze-dashboard.m-wisniewski.workers.dev';
-
 /** Sekcje łączone w pozycję „Treści" – kolejność = kolejność zakładek. */
 export const CONTENT_SLUGS = ['content-watcher', 'content-writer'] as const;
 

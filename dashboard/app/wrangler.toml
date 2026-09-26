@@ -1,16 +1,19 @@
 # Cloudflare Workers (static assets) – projekt "zaplecze-dashboard".
-# Deploy przez Workers Builds (git integration): build `pnpm install && pnpm build`,
-# deploy command: `npx wrangler deploy`. Podgląd lokalny: pnpm build && npx wrangler dev
+# Wdrożenie: `npm run build && npx wrangler deploy` w dashboard/app (build = nowy front
+# z dashboard/web). Podgląd lokalny: npm run build && npx wrangler dev
 name = "zaplecze-dashboard"
 compatibility_date = "2026-05-06"
 # Worker (worker.js) robi Basic Auth na CAŁEJ aplikacji – sekret DASH_PASSWORD
 # ustawiany w Workers → Settings → Variables and Secrets (login dowolny).
 main = "worker.js"
 
+# Front: Next.js ze statycznym eksportem (dashboard/web → out/). `npm run build`
+# w tym katalogu buduje właśnie go; stary front Astro: `npm run build:astro` (dist/).
 [assets]
-directory = "./dist"
+directory = "../web/out"
 binding = "ASSETS"
 run_worker_first = true
+not_found_handling = "404-page"
 
 # Ręczne importy CSV z Bing AI Performance. Worker zapisuje najnowszy
 # eksport per domena, więc aktualizacja danych nie wymaga commita ani buildu.
