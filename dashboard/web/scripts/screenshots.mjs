@@ -20,6 +20,8 @@ const PAGES = [
   ["boty-ai", "/widocznosc.ai/boty-ai/"],
   ["bing", "/grupa-icea.pl/bing/"],
   ["leady", "/widocznosc.ai/leady/"],
+  ["matrix", "/grupa-icea.pl/matrix/"],
+  ["system", "/system/"],
 ];
 const VIEWPORTS = [
   ["desktop", { width: 1440, height: 900 }],

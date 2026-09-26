@@ -14,6 +14,7 @@ import {
   ModuleRegistry,
   themeQuartz,
   type ColDef,
+  type ColGroupDef,
   type GridApi,
   type IRowNode,
   type RowClickedEvent,
@@ -64,7 +65,7 @@ export interface DataGridProps<T> {
   title: string;
   meta?: React.ReactNode;
   rows: T[] | null;
-  columns: ColDef<T>[];
+  columns: (ColDef<T> | ColGroupDef<T>)[];
   /** Pole z szybkim filtrem tekstowym (po wszystkich kolumnach tekstowych). */
   filter?: boolean;
   filterPlaceholder?: string;
@@ -129,7 +130,8 @@ export default function DataGrid<T>({
 
   const total = rows?.length ?? 0;
   const heightRows = Math.min(Math.max(total, 4), pageSize);
-  const gridHeight = 44 + heightRows * rowHeight + (total > pageSize ? 49 : 2);
+  const grouped = columns.some((c) => "children" in c);
+  const gridHeight = (grouped ? 88 : 44) + heightRows * rowHeight + (total > pageSize ? 49 : 2);
 
   return (
     <Card className={cn("overflow-hidden", className)}>

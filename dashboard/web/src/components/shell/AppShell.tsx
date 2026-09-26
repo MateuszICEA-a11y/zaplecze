@@ -72,7 +72,7 @@ export default function AppShell({
 
   return (
     <div className="min-h-screen xl:flex">
-      <Sidebar nav={nav} legacyUrl={legacyUrl} />
+      <Sidebar nav={nav} />
       {isMobileOpen && (
         <div className="fixed inset-0 z-40 bg-gray-900/50 xl:hidden" onClick={toggleMobileSidebar} />
       )}
@@ -89,7 +89,7 @@ export default function AppShell({
   );
 }
 
-function Sidebar({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
+function Sidebar({ nav }: { nav: NavDomain[] }) {
   const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
   const { pathname, domain, section } = useLocation(nav);
   const current = domain ?? nav[0];
@@ -192,23 +192,23 @@ function Sidebar({ nav, legacyUrl }: { nav: NavDomain[]; legacyUrl: string }) {
               </Link>
             </li>
             <li>
-              <a
-                href={`${legacyUrl}/system/`}
-                target="_blank"
-                rel="noopener"
-                title={wide ? undefined : "System"}
-                className={cn("group menu-item menu-item-inactive", !wide && "xl:justify-center")}
-              >
-                <Settings className="menu-item-icon-inactive size-5 shrink-0" />
-                {wide && (
-                  <>
-                    <span className="menu-item-text">System</span>
-                    <span className="ms-auto flex items-center gap-1 text-theme-xs text-gray-500">
-                      stara <ExternalLink className="size-3.5" />
-                    </span>
-                  </>
+              <Link
+                href="/system/"
+                title={wide ? undefined : "System i limity"}
+                className={cn(
+                  "group menu-item",
+                  pathname === "/system/" || pathname === "/system" ? "menu-item-active" : "menu-item-inactive",
+                  !wide && "xl:justify-center",
                 )}
-              </a>
+              >
+                <Settings
+                  className={cn(
+                    "size-5 shrink-0",
+                    pathname.startsWith("/system") ? "menu-item-icon-active" : "menu-item-icon-inactive",
+                  )}
+                />
+                {wide && <span className="menu-item-text">System i limity</span>}
+              </Link>
             </li>
           </ul>
         </nav>

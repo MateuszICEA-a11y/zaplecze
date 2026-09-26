@@ -15,7 +15,6 @@ import {
   sourceStatuses,
 } from "@/lib/data";
 import { fmtDate, fmtInt } from "@/lib/format";
-import { LEGACY_URL } from "@/lib/nav";
 import { cutoffFor, deltaPct, fmtShort, lastOk, plural, stripOrigin, trimTo } from "@/lib/metrics";
 import { C, SOURCE_COLOR } from "@/lib/palette";
 import { CircleCheck, ExternalLink, Search, TriangleAlert } from "lucide-react";
@@ -145,7 +144,6 @@ export default async function DomainOverview({ params }: Props) {
   const kpiCols = kpiCount === 5 ? 5 : kpiCount === 6 ? 3 : 4;
 
   const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.length > 0;
-  const legacy = (section: string) => `${LEGACY_URL}/${domain}/${section}/`;
 
   return (
     <>
@@ -279,7 +277,7 @@ export default async function DomainOverview({ params }: Props) {
                 icon={<TriangleAlert className="size-5" />}
                 title="Spadki ruchu"
                 big={`${fmtInt(pageDrops.length)} ${plural(pageDrops.length, "strona", "strony", "stron")}`}
-                link={{ href: legacy("matrix"), label: "Otwórz dekodowanie spadków", external: true }}
+                link={{ href: `/${domain}/matrix/`, label: "Otwórz dekodowanie spadków" }}
               >
                 Straciły łącznie <b>{fmtInt(Math.abs(dropsTotal))} kliknięć</b> {cmpKind}.
                 {topDrop && (
@@ -307,7 +305,7 @@ export default async function DomainOverview({ params }: Props) {
                 icon={<CircleCheck className="size-5" />}
                 title="Indeksacja"
                 big={`${idxPct}%`}
-                link={{ href: legacy("matrix"), label: "Otwórz Matrix", external: true }}
+                link={{ href: `/${domain}/matrix/`, label: "Otwórz Matrix" }}
               >
                 {fmtInt(idxDone)} z {fmtInt(idxRows.length)} adresów w indeksie Google.
                 {notIndexed.length > 0 && topMissSeg && (
