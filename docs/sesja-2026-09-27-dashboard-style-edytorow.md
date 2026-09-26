@@ -3,6 +3,25 @@
 Zadanie: przenieść style obu edytorów z `dashboard/web/src/legacy/legacy.css` na Tailwind
 (TailAdmin + paleta iCEA, jak reszta dashboardu) i usunąć katalog `src/legacy/`.
 
+## Wynik (26.09.2026, wieczór) – ZROBIONE, NIEWDROŻONE
+
+- Commity `f63b8e8e` (edytor wpisu CW) i `a011894f` (edytor tekstu CWr + usunięcie
+  `src/legacy/` i `scripts/build-legacy-css.mjs`), wypchnięte na `main`.
+- **Produkcja nadal na `1269c580`** – wdrożenie czeka na zgodę usera:
+  `cd dashboard/app && npm run build && npx wrangler deploy`.
+- Style: utility Tailwinda w komponentach (nowe klocki w `kit.tsx`: `checkChip`,
+  `btnSmallPrimary`, `Waiting`); typografia HTML z WP/modeli – `.doc-prose` i rynienka
+  `.doc-gutter` w `src/app/editor-content.css`; `::highlight()` – `src/lib/highlights.ts`.
+- Klasy `ed-doc-section`, `ed-sec-head`, `ed-doc-body`, `ed-doc-expert`, `ed-faq-head`,
+  `ed-doc-intro`, `ed-doc-faq` zostały jako znaczniki bez stylu (czyta je `snapshot.ts`).
+- Test w przeglądarce (jasny/ciemny, 1600 px i 390 px): belka, combobox modeli, oś kroków,
+  dokument (diff, edycja z paskiem formatowania, FAQ, CTA, korekta stylu), kolumna boczna,
+  podgląd całości; edytor CWr – frazy z podświetleniem, zakładki, szuflada mobilna, wyjście.
+  Bez akcji zapisujących. Skrypty testów: `dashboard/web/.scratch/{edytor,writer}-test.mjs`
+  (nieśledzone), `npm run screenshots` ma nową stronę `edytor-przebieg` (posts-20811).
+- Uwaga techniczna: `sed -i` w Git Bash zamienia CRLF na LF – przy edycji plików CRLF
+  (część TSX) używaj Pythona albo narzędzia Edit.
+
 ## Stan na koniec 26.09.2026
 
 - Produkcja: wersja `1269c580` (commit `f7644b1c` na `main`). Wdrożenie ręczne:
