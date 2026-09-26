@@ -1173,14 +1173,14 @@
 
 /* ---------- §4. Smooth theme transition ---------- */
 /* Tylko tła i bordery – BEZ color (mruganie liczb/tekstu). */
-.legacy.theme-transition, .legacy.theme-transition *, .legacy.theme-transition *::before, .legacy.theme-transition *::after {
+html.theme-transition, html.theme-transition *, html.theme-transition *::before, html.theme-transition *::after {
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
     box-shadow 0.2s ease !important;
 }
 @media (prefers-reduced-motion: reduce) {
-  .legacy.theme-transition, .legacy.theme-transition *, .legacy.theme-transition *::before, .legacy.theme-transition *::after {
+  html.theme-transition, html.theme-transition *, html.theme-transition *::before, html.theme-transition *::after {
     transition: none !important;
   }
 }
@@ -1906,7 +1906,7 @@ html:not(.dark) .legacy .seg button.active {
   font-variant-numeric: tabular-nums;
 }
 .legacy .we[hidden] { display: none; }
-.legacy.we-open, .legacy.we-open body { overflow: hidden; }
+html.we-open, html.we-open body { overflow: hidden; }
 
 /* ---------- górny pasek ---------- */
 .legacy .we-bar {

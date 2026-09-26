@@ -22,6 +22,8 @@ function scopeSelector(selector) {
       if (!s) return s;
       // Stary motyw: ciemny domyślnie, jasny pod [data-theme='light'] – u nas odwrotnie (.dark).
       if (s.startsWith(":root[data-theme='light'] ")) return s.replace(":root[data-theme='light'] ", `html:not(.dark) ${SCOPE} `);
+      // Stan całej strony (html.we-open – edytor na pełny ekran blokuje przewijanie) zostaje globalny.
+      if (/^html[.:[]/.test(s)) return s;
       if (/^(html|body|:root)\b/.test(s)) return s.replace(/^(html|body|:root)(\[[^\]]*\])?/, SCOPE);
       if (s.startsWith("::backdrop") || s.startsWith("dialog::backdrop")) return s;
       return `${SCOPE} ${s}`;

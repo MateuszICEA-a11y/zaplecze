@@ -1,9 +1,8 @@
-/* Projekt artykułu Content Writera – logika i znaczniki 1:1 ze starego frontu
-   (src/legacy/), w nowej powłoce i kolorach iCEA. Projekt wskazuje `?id=`. */
-import LegacyHost from "@/legacy/LegacyHost";
-import { legacyMarkup } from "@/legacy/markup";
+/* Projekt artykułu Content Writera: research → brief → tekst → szkic w WP.
+   Jedna strona na domenę, projekt wskazuje parametr `?id=`. */
 import { loadConfig } from "@/lib/data";
 import { titleFor, type DomainProps } from "@/lib/pages";
+import ProjectWorkspace from "./ProjectWorkspace";
 
 export const dynamicParams = false;
 export const generateStaticParams = () =>
@@ -14,5 +13,5 @@ export const generateMetadata = titleFor("projekt artykułu");
 
 export default async function ProjectPage({ params }: DomainProps) {
   const { domain } = await params;
-  return <LegacyHost module="projekt" html={legacyMarkup("projekt", domain)} />;
+  return <ProjectWorkspace domain={domain} />;
 }

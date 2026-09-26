@@ -15,8 +15,13 @@ import "./tokens.css";
 
 const MODULES = {
   edytor: () => import("./edytor-script"),
-  projekt: () => import("./projekt-script"),
 } as const;
+
+/** Reguły ::highlight() (podświetlenia fraz) – raz na stronę. */
+export function ensureHighlights() {
+  if (document.getElementById("legacy-highlights")) return;
+  document.head.append(Object.assign(document.createElement("style"), { id: "legacy-highlights", textContent: HIGHLIGHT_CSS }));
+}
 
 export default function LegacyHost({ html, module }: { html: string; module: keyof typeof MODULES }) {
   const mounted = useRef(false);
@@ -25,10 +30,7 @@ export default function LegacyHost({ html, module }: { html: string; module: key
     const path = location.pathname;
     if (!mounted.current) {
       mounted.current = true;
-      if (!document.getElementById("legacy-highlights")) {
-        const style = Object.assign(document.createElement("style"), { id: "legacy-highlights", textContent: HIGHLIGHT_CSS });
-        document.head.append(style);
-      }
+      ensureHighlights();
       MODULES[module]()
         .then((mod) => mod.mount())
         .catch((error) => console.error(`[legacy:${module}]`, error));
