@@ -13,9 +13,14 @@
    przy zmianie treści z bazy i tylko wtedy, gdy blok nie czeka na zapis –
    inaczej każde przerysowanie przesuwałoby kursor w trakcie pisania. Stan
    bloków (tekst, tokeny, zapis) trzyma rejestr w refie, a panel boczny
-   odświeża się licznikiem `version`. Klasy z dawnego modułu (legacy.css). */
+   odświeża się licznikiem `version`. Typografia tekstu: .doc-prose
+   (editor-content.css), reszta to utility Tailwinda. */
+import { btn, btnPrimary, btnSmall, btnSmallPrimary, input, Status } from "@/components/kit";
+import Segmented from "@/components/Segmented";
+import { cn } from "@/lib/cn";
 import { matchTokens, phraseStems, tokens } from "@/lib/phrase-match.js";
 import { api, fmtDateTime, fmtInt, sleep, type ApiError } from "@/lib/writer-client";
+import { ArrowLeft, Loader2 } from "lucide-react";
 import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -41,6 +46,17 @@ const savedStyleModel = () => {
     return "";
   }
 };
+
+/* Klasy wspólne edytora. */
+const BTN = cn(btn, "h-9 whitespace-nowrap");
+const BTN_SMALL_DANGER = cn(btnSmall, "text-error-600 dark:text-error-400");
+const LABEL = "grid gap-1 text-theme-sm text-gray-600 dark:text-gray-300";
+const FOOT = "text-theme-sm/normal text-gray-500 dark:text-gray-400 [&_a]:text-gray-600 [&_a]:underline dark:[&_a]:text-gray-300";
+const ERR = "text-theme-sm text-error-600 dark:text-error-400";
+const ROW = "flex flex-wrap items-center gap-2";
+const HAIR = "border-gray-100 dark:border-gray-800";
+/** Tekst artykułu: typografia treści, ale ciemniejsza i większa niż w dokumencie CW. */
+const TEXT = "doc-prose max-w-none text-[1.07rem]/[1.72] text-gray-800 dark:text-white/90";
 
 type BlockKind = "title" | "lead" | "head" | "text";
 type Block = {
@@ -481,7 +497,7 @@ export default function WriterEditor({ base, project, job, authors, categories, 
   };
 
   const goTo = (anchor: string) => {
-    const node = document.querySelector<HTMLElement>(anchor === "lead" ? '.we [data-block="lead"]' : `#we-${anchor}`);
+    const node = document.querySelector<HTMLElement>(anchor === "lead" ? '[data-we] [data-block="lead"]' : `#we-${anchor}`);
     node?.scrollIntoView({ block: "start", behavior: reducedMotion() ? "auto" : "smooth" });
     if (window.matchMedia("(max-width: 1099px)").matches) setDrawerOpen(false);
   };
@@ -580,7 +596,6 @@ export default function WriterEditor({ base, project, job, authors, categories, 
   /* ---------- render ---------- */
 
   const result = score();
-  const tone = result.total >= 75 ? "ok" : result.total >= 50 ? "mid" : "low";
   const failed = [...blocks.values()].find((block) => block.error);
   const saving = [...blocks.values()].some((block) => block.saving);
   const dirty = [...blocks.values()].some((block) => block.dirty);
@@ -600,11 +615,15 @@ export default function WriterEditor({ base, project, job, authors, categories, 
   const faqStart = rows.find((row) => kindOf(row.slot) === "faq")?.slot;
 
   return (
-    <div className={`we${drawerOpen ? " drawer-open" : ""}`} hidden={!open}>
-      <header className="we-bar">
+    <div
+      data-we
+      className="fixed inset-0 z-[300] grid grid-rows-[auto_minmax(0,1fr)] bg-white text-gray-800 tabular-nums dark:bg-gray-900 dark:text-white/90 [&_:is(button,a,select,input):focus-visible]:outline-2 [&_:is(button,a,select,input):focus-visible]:outline-offset-1 [&_:is(button,a,select,input):focus-visible]:outline-brand-500"
+      hidden={!open}
+    >
+      <header className="flex min-w-0 items-center gap-4 border-b border-gray-200 bg-gray-50 px-5 py-2.5 max-md:flex-wrap max-md:px-3 max-md:py-2 dark:border-gray-800 dark:bg-gray-950">
         <button
           type="button"
-          className="we-back"
+          className={BTN}
           onClick={async () => {
             try {
               await flush();
@@ -615,12 +634,18 @@ export default function WriterEditor({ base, project, job, authors, categories, 
             exit();
           }}
         >
+          <ArrowLeft className="size-4" />
           Research i brief
         </button>
-        <div className="we-id">
-          <strong>{project.keyword}</strong>
+        <div className="mr-auto grid min-w-0 gap-px">
+          <strong className="truncate text-base font-medium">{project.keyword}</strong>
           <span
-            className={`we-save ${saveState.cls}`}
+            className={cn(
+              "inline-flex items-center gap-1.5 text-theme-xs text-gray-500 before:size-[7px] before:rounded-[1px] dark:text-gray-400",
+              saveState.cls === "ok" && "before:bg-success-500",
+              saveState.cls === "busy" && "before:bg-warning-500",
+              saveState.cls === "err" && "cursor-pointer text-error-600 before:bg-error-500 dark:text-error-400",
+            )}
             aria-live="polite"
             role={failed ? "button" : undefined}
             tabIndex={failed ? 0 : undefined}
@@ -632,28 +657,39 @@ export default function WriterEditor({ base, project, job, authors, categories, 
             {saveState.text}
           </span>
         </div>
-        <div className="we-bar-actions">
-          <button type="button" className="we-drawer-toggle" aria-expanded={drawerOpen} aria-controls="we-side" onClick={() => setDrawerOpen(!drawerOpen)}>
-            Ocena <strong>{result.total}</strong>
+        <div className="flex items-center gap-2 max-md:w-full max-md:flex-wrap">
+          <button type="button" className={cn(BTN, "min-[1100px]:hidden")} aria-expanded={drawerOpen} aria-controls="we-side" onClick={() => setDrawerOpen(!drawerOpen)}>
+            Ocena <strong className="font-medium">{result.total}</strong>
           </button>
           {project.wp_draft_url && (
-            <a className="wr-btn" href={project.wp_draft_url} target="_blank" rel="noopener">
+            <a className={BTN} href={project.wp_draft_url} target="_blank" rel="noopener">
               Podgląd szkicu
             </a>
           )}
-          <button type="button" className="wr-btn primary" disabled={busy === "Zapisuję szkic…"} onClick={saveDraft}>
+          <button type="button" className={cn(btnPrimary, "h-9 whitespace-nowrap max-md:ml-auto")} disabled={busy === "Zapisuję szkic…"} onClick={saveDraft}>
             {busy === "Zapisuję szkic…" ? busy : project.wp_post_id ? "Zapisz szkic ponownie" : "Zapisz szkic w WordPressie"}
           </button>
         </div>
       </header>
 
-      <div className="we-body">
-        <div className="we-main">
+      <div className="grid min-h-0 grid-cols-[minmax(0,1fr)_clamp(360px,27vw,440px)] max-[1099px]:grid-cols-1">
+        <div className="grid min-h-0 min-w-0 grid-rows-[auto_minmax(0,1fr)]">
           <Toolbar rich={rich} onTool={runTool} words={result.words} link={link} setLink={setLink} applyLink={applyLink} cancelLink={() => ((savedRange.current = null), setLink(null))} />
-          <div className="we-scroll" ref={scroller}>
-            <article className="we-paper">
-              <Editable blockKey="title" kind="title" slot={null} value={project.title || project.keyword || ""} rich={false} tag="h1" className="we-h1" label="Tytuł artykułu (H1)" api={blockApi} />
-              <Editable blockKey="lead" kind="lead" slot={null} value={project.lead ?? ""} rich className="we-text we-lead" label="Wstęp" api={blockApi} />
+          <div className="scroll-pt-6 overflow-y-auto bg-gray-100 px-8 pt-10 pb-[30vh] max-md:px-0 max-md:pt-4 dark:bg-gray-950" ref={scroller}>
+            {/* Kartka dokumentu na blacie. */}
+            <article className="mx-auto max-w-[46rem] border border-gray-200 bg-white px-16 pt-14 pb-18 max-md:border-x-0 max-md:px-5 max-md:pt-7 max-md:pb-12 dark:border-gray-800 dark:bg-gray-900 [&_[contenteditable]]:rounded-sm [&_[contenteditable]]:outline-none [&_[contenteditable]:focus-visible]:shadow-[0_0_0_3px_var(--color-brand-100)] dark:[&_[contenteditable]:focus-visible]:shadow-[0_0_0_3px_var(--color-brand-900)]">
+              <Editable
+                blockKey="title"
+                kind="title"
+                slot={null}
+                value={project.title || project.keyword || ""}
+                rich={false}
+                tag="h1"
+                className="mb-5.5 text-[2.05rem]/[1.2] font-medium tracking-[-0.015em] empty:before:text-gray-400 empty:before:content-['Tytuł_artykułu'] max-md:text-[1.6rem]"
+                label="Tytuł artykułu (H1)"
+                api={blockApi}
+              />
+              <Editable blockKey="lead" kind="lead" slot={null} value={project.lead ?? ""} rich className={cn(TEXT, "pb-2 text-[1.12rem]")} label="Wstęp" api={blockApi} />
               {rows.map((row) => {
                 const kind = kindOf(row.slot);
                 const hasCta = String(row.text_after ?? "").includes(CTA_MARKER);
@@ -680,9 +716,18 @@ export default function WriterEditor({ base, project, job, authors, categories, 
           </div>
         </div>
 
-        <aside className="we-side" id="we-side" aria-label="Ocena i frazy">
-          <ScoreBox result={result} tone={tone} termsLoaded={termsLoaded} inNorm={terms.filter((t) => t.group !== "gap" && stateOf(termCount(t), rangeOf(t)) === "ok").length} scoredTerms={terms.filter((t) => t.group !== "gap").length} />
-          <div className="we-tabs" role="tablist">
+        {/* Na węższym ekranie panel wysuwa się jako szuflada z prawej. */}
+        <aside
+          className={cn(
+            "grid min-h-0 grid-rows-[auto_auto_minmax(0,1fr)] border-l border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950",
+            "max-[1099px]:fixed max-[1099px]:top-[55px] max-[1099px]:right-0 max-[1099px]:bottom-0 max-[1099px]:z-2 max-[1099px]:w-[min(420px,100vw)] max-[1099px]:shadow-theme-xl max-[1099px]:transition-transform max-md:top-0 motion-reduce:transition-none",
+            !drawerOpen && "max-[1099px]:translate-x-full",
+          )}
+          id="we-side"
+          aria-label="Ocena i frazy"
+        >
+          <ScoreBox result={result} termsLoaded={termsLoaded} inNorm={terms.filter((t) => t.group !== "gap" && stateOf(termCount(t), rangeOf(t)) === "ok").length} scoredTerms={terms.filter((t) => t.group !== "gap").length} />
+          <div className={cn("flex border-b px-3", HAIR)} role="tablist">
             {(
               [
                 ["frazy", "Frazy"],
@@ -691,12 +736,20 @@ export default function WriterEditor({ base, project, job, authors, categories, 
                 ["publikacja", "Publikacja"],
               ] as [Tab, string][]
             ).map(([value, label]) => (
-              <button key={value} type="button" role="tab" className={`we-tab${tab === value ? " on" : ""}`} aria-selected={tab === value} onClick={() => setTab(value)}>
+              <button
+                key={value}
+                type="button"
+                role="tab"
+                className={cn(
+                  "px-2.5 pt-3 pb-2.5 text-theme-sm text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white/90",
+                  tab === value && "text-gray-800 shadow-[inset_0_-2px_0_var(--color-brand-500)] dark:text-white/90",
+                )}
+                aria-selected={tab === value} onClick={() => setTab(value)}>
                 {label}
               </button>
             ))}
           </div>
-          <div className="we-pane" role="tabpanel">
+          <div className="grid content-start gap-4 overflow-y-auto px-5 pt-4 pb-10" role="tabpanel">
             {tab === "frazy" && (
               <TermsPane
                 terms={terms}
@@ -733,10 +786,10 @@ export default function WriterEditor({ base, project, job, authors, categories, 
               />
             )}
             {tab === "publikacja" && (
-              <div className="we-block">
-                <label className="wr-label">
+              <div className={BLOCK}>
+                <label className={LABEL}>
                   Autor wpisu
-                  <select className="wr-select" value={author} onChange={(e) => setAuthor(e.target.value)}>
+                  <select className={input} value={author} onChange={(e) => setAuthor(e.target.value)}>
                     <option value="">– wybierz –</option>
                     {authors.map((row) => (
                       <option key={row.id} value={row.id}>
@@ -745,9 +798,9 @@ export default function WriterEditor({ base, project, job, authors, categories, 
                     ))}
                   </select>
                 </label>
-                <label className="wr-label">
+                <label className={LABEL}>
                   Kategoria
-                  <select className="wr-select" value={category} onChange={(e) => setCategory(e.target.value)}>
+                  <select className={input} value={category} onChange={(e) => setCategory(e.target.value)}>
                     <option value="">– wybierz –</option>
                     {categories.map((row) => (
                       <option key={row.id} value={row.id}>
@@ -756,14 +809,14 @@ export default function WriterEditor({ base, project, job, authors, categories, 
                     ))}
                   </select>
                 </label>
-                <p className="we-foot">Tytuł wpisu to nagłówek H1 z dokumentu. Szkic zakładamy w WordPressie od nowa przy każdym zapisie – poprzedni zostaje w koszu.</p>
-                <div className="we-row">
-                  <button className="wr-btn primary" type="button" disabled={Boolean(busy)} onClick={saveDraft}>
+                <p className={FOOT}>Tytuł wpisu to nagłówek H1 z dokumentu. Szkic zakładamy w WordPressie od nowa przy każdym zapisie – poprzedni zostaje w koszu.</p>
+                <div className={ROW}>
+                  <button className={cn(btnPrimary, "h-9")} type="button" disabled={Boolean(busy)} onClick={saveDraft}>
                     {busy === "Zapisuję szkic…" ? busy : project.wp_post_id ? "Zapisz szkic ponownie" : "Zapisz szkic w WordPressie"}
                   </button>
                 </div>
                 {project.wp_draft_url && (
-                  <p className="we-foot">
+                  <p className={FOOT}>
                     Ostatni zapis {fmtDateTime(project.wp_saved_at)} ·{" "}
                     <a href={project.wp_draft_url} target="_blank" rel="noopener">
                       podgląd szkicu
@@ -782,7 +835,14 @@ export default function WriterEditor({ base, project, job, authors, categories, 
 
 function Msg({ value, role }: { value?: { text: string; tone: string }; role?: string }) {
   return (
-    <p className={`wr-msg ${value?.tone ?? ""}`.trim()} role={role}>
+    <p
+      className={cn(
+        "text-theme-sm text-gray-600 empty:hidden dark:text-gray-300",
+        value?.tone === "err" && "text-error-600 dark:text-error-400",
+        value?.tone === "ok" && "text-success-600 dark:text-success-400",
+      )}
+      role={role}
+    >
       {value?.text ?? ""}
     </p>
   );
@@ -790,7 +850,11 @@ function Msg({ value, role }: { value?: { text: string; tone: string }; role?: s
 
 /* ---------- pasek narzędzi ---------- */
 
-const svgIcon = (d: React.ReactNode) => <svg viewBox="0 0 20 20">{d}</svg>;
+const svgIcon = (d: React.ReactNode) => (
+  <svg viewBox="0 0 20 20" className="size-4.5 fill-none stroke-current stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round] [&_circle]:fill-current [&_circle]:stroke-none">
+    {d}
+  </svg>
+);
 const TOOLS: [string, string, React.ReactNode][] = [
   ["bold", "Pogrubienie (Ctrl+B)", <b key="b">B</b>],
   ["italic", "Kursywa (Ctrl+I)", <i key="i">I</i>],
@@ -833,13 +897,14 @@ function Toolbar({
   cancelLink: () => void;
 }) {
   return (
-    <div className="we-tools" role="toolbar" aria-label="Formatowanie">
+    <div className={cn("flex flex-wrap items-center gap-0.5 border-b bg-white px-5 py-1.5 max-md:px-2 max-md:py-1 dark:bg-gray-900", HAIR)} role="toolbar" aria-label="Formatowanie">
       {TOOLS.map(([tool, label, icon], index) => (
         <span key={tool} style={{ display: "contents" }}>
-          {[2, 5, 8].includes(index) && <span className="sep" />}
+          {[2, 5, 8].includes(index) && <span className="mx-1.5 h-4.5 w-px bg-gray-200 dark:bg-gray-800" />}
           <button
             type="button"
             data-tool={tool}
+            className="grid h-8 w-8.5 place-items-center rounded text-[.95rem] text-gray-600 hover:not-disabled:bg-gray-100 hover:not-disabled:text-gray-800 disabled:opacity-35 dark:text-gray-300 dark:hover:not-disabled:bg-white/5 dark:hover:not-disabled:text-white/90"
             title={label}
             aria-label={label}
             disabled={!rich && !["undo", "redo"].includes(tool)}
@@ -853,22 +918,26 @@ function Toolbar({
       ))}
       {link !== null && (
         <form
-          className="we-link"
+          className="ml-2 flex items-center gap-1.5"
           onSubmit={(e) => {
             e.preventDefault();
             applyLink(link.trim());
           }}
         >
-          <input type="url" aria-label="Adres linku" value={link} onChange={(e) => setLink(e.target.value)} autoFocus />
-          <button type="submit" className="wr-btn small primary">
+          <input
+            className="h-7 w-70 rounded border border-brand-500 bg-white px-2 text-theme-sm text-gray-800 focus:outline-hidden dark:bg-gray-950 dark:text-white/90"
+            type="url"
+            aria-label="Adres linku"
+            value={link} onChange={(e) => setLink(e.target.value)} autoFocus />
+          <button type="submit" className={btnSmallPrimary}>
             Wstaw
           </button>
-          <button type="button" className="wr-btn small" onClick={cancelLink}>
+          <button type="button" className={btnSmall} onClick={cancelLink}>
             Anuluj
           </button>
         </form>
       )}
-      <span className="we-words">{fmtInt(words)} słów</span>
+      <span className="ml-auto text-theme-sm text-gray-500 dark:text-gray-400">{fmtInt(words)} słów</span>
     </div>
   );
 }
@@ -876,7 +945,7 @@ function Toolbar({
 /* ---------- sekcja dokumentu ---------- */
 
 const icon = (d: React.ReactNode) => (
-  <svg viewBox="0 0 20 20" aria-hidden="true">
+  <svg viewBox="0 0 20 20" aria-hidden="true" className="size-4 fill-none stroke-[1.6] [stroke-linecap:round] [stroke-linejoin:round]">
     {d}
   </svg>
 );
@@ -927,58 +996,88 @@ function SectionView({
   refresh: () => Promise<void>;
 }) {
   const [imageOpen, setImageOpen] = useState(false);
+  const divider =
+    "mt-11 flex items-center gap-3 text-theme-sm text-gray-500 before:h-px before:flex-1 before:bg-gray-200 after:h-px after:flex-1 after:bg-gray-200 dark:text-gray-400 dark:before:bg-gray-800 dark:after:bg-gray-800";
   return (
     <>
       {faqStart && (
-        <div className="we-divider">
+        <div className={divider}>
           <span>Najczęstsze pytania</span>
         </div>
       )}
       {kind === "sources" && (
-        <div className="we-divider">
+        <div className={divider}>
           <span>Źródła – lista pod FAQ, bez edycji</span>
         </div>
       )}
-      <section className={`we-sec ${kind}${rejected ? " rejected" : ""}`} id={`we-sec-${row.slot}`} data-slot={row.slot}>
+      <section className={cn("group/sec relative", kind === "faq" ? "pt-12.5" : "pt-14.5")} id={`we-sec-${row.slot}`} data-slot={row.slot}>
+        {/* Akcje sekcji przygaszone w spoczynku, pełne przy najechaniu lub
+            pracy w sekcji – widać, że są, ale nie konkurują z tekstem. */}
         {kind !== "sources" && (
-          <div className="we-sec-tools" role="group" aria-label="Akcje sekcji">
+          <div
+            className="absolute top-3.5 right-0 flex rounded-[3px] border border-gray-200 bg-white opacity-55 transition-[opacity,border-color] group-focus-within/sec:border-gray-400 group-focus-within/sec:opacity-100 group-hover/sec:border-gray-400 group-hover/sec:opacity-100 motion-reduce:transition-none [@media(hover:none)]:opacity-100 dark:border-gray-800 dark:bg-gray-900 dark:group-hover/sec:border-gray-600"
+            role="group"
+            aria-label="Akcje sekcji"
+          >
             {kind === "section" && (
               <>
-                <button type="button" onClick={() => setImageOpen(!imageOpen)}>
+                <button type="button" className={SEC_BTN} onClick={() => setImageOpen(!imageOpen)}>
                   {ICON.image}
                   {image ? "Infografika" : "Dodaj infografikę"}
                 </button>
-                <button type="button" className={hasCta ? "on" : undefined} onClick={() => onAction(hasCta ? "cta-drop" : "cta-insert")}>
+                <button type="button" className={cn(SEC_BTN, hasCta && SEC_BTN_ON)} onClick={() => onAction(hasCta ? "cta-drop" : "cta-insert")}>
                   {ICON.cta}
                   {hasCta ? "Usuń CTA" : "Wstaw CTA"}
                 </button>
               </>
             )}
-            <button type="button" className={rejected ? "on" : "quiet"} onClick={() => onAction(rejected ? "restore" : "reject")}>
+            <button type="button" className={cn(SEC_BTN, rejected ? SEC_BTN_ON : SEC_BTN_QUIET)} onClick={() => onAction(rejected ? "restore" : "reject")}>
               {rejected ? ICON.restore : ICON.skip}
               {rejected ? "Przywróć do szkicu" : "Pomiń w szkicu"}
             </button>
           </div>
         )}
-        {rejected && <p className="we-flag">Pominięta – nie trafi do szkicu</p>}
+        {rejected && <p className="mb-1.5 text-theme-sm text-orange-600 dark:text-orange-400">Pominięta – nie trafi do szkicu</p>}
         {kind !== "sources" && (
-          <Editable blockKey={`head:${row.slot}`} kind="head" slot={row.slot} value={row.title_after ?? ""} rich={false} tag={kind === "faq" ? "h3" : "h2"} className="we-h" api={blockApi} />
+          <Editable
+            blockKey={`head:${row.slot}`}
+            kind="head"
+            slot={row.slot}
+            value={row.title_after ?? ""}
+            rich={false}
+            tag={kind === "faq" ? "h3" : "h2"}
+            className={cn("font-medium tracking-[-0.01em]", kind === "faq" ? "mb-1.5 text-[1.12rem]/[1.3]" : "mb-3 text-[1.45rem]/[1.3]", rejected && "opacity-40")}
+            api={blockApi}
+          />
         )}
         {kind === "sources" ? (
-          <div className="we-text" data-block="sources" dangerouslySetInnerHTML={{ __html: row.text_after ?? "" }} />
+          <div className={cn(TEXT, "text-[.93rem] text-gray-600 dark:text-gray-300")} data-block="sources" dangerouslySetInnerHTML={{ __html: row.text_after ?? "" }} />
         ) : (
-          <Editable blockKey={`text:${row.slot}`} kind="text" slot={row.slot} value={row.text_after ?? ""} rich className="we-text" api={blockApi} />
+          <Editable blockKey={`text:${row.slot}`} kind="text" slot={row.slot} value={row.text_after ?? ""} rich className={cn(TEXT, rejected && "opacity-40")} api={blockApi} />
         )}
-        {expert && (
-          <blockquote className="we-quote">
-            „{expert.quote}”<footer>{`${expert.expert}, ${expert.role}`}</footer>
-          </blockquote>
-        )}
+        {expert && <Quote expert={expert} />}
         {imageOpen && <ImagePanel jobId={jobId} slot={row.slot} flush={flush} refresh={refresh} />}
       </section>
     </>
   );
 }
+
+const SEC_BTN =
+  "inline-flex items-center gap-1.5 border-l border-gray-200 px-2.75 py-1.5 text-theme-sm font-medium whitespace-nowrap text-gray-800 first:border-l-0 hover:bg-brand-500 hover:text-gray-950 dark:border-gray-800 dark:text-white/90 [&_svg]:stroke-brand-500 hover:[&_svg]:stroke-current";
+/** Stan „włączony” (CTA w sekcji, sekcja pominięta) – akcent na stałe. */
+const SEC_BTN_ON = "shadow-[inset_0_-2px_0_var(--color-brand-500)]";
+const SEC_BTN_QUIET =
+  "text-gray-600 hover:bg-error-50 hover:text-error-600 dark:text-gray-300 dark:hover:bg-error-500/15 dark:hover:text-error-400 [&_svg]:stroke-gray-500";
+
+function Quote({ expert }: { expert: Any }) {
+  return (
+    <blockquote className="mt-4 mb-1 border-l-2 border-brand-500 bg-gray-50 px-4 py-3 text-base/[1.6] dark:bg-white/3">
+      „{expert.quote}”<footer className="mt-1.5 text-theme-sm text-gray-600 dark:text-gray-300">{`${expert.expert}, ${expert.role}`}</footer>
+    </blockquote>
+  );
+}
+
+const IMAGE_BOX = "mt-3 grid gap-2.5 border border-gray-100 bg-gray-50 px-4 py-3.5 dark:border-gray-800 dark:bg-white/3";
 
 /** Infografika: opis → obraz (kie.ai, 30–180 s) → biblioteka mediów WP i blok w sekcji. */
 function ImagePanel({ jobId, slot, flush, refresh }: { jobId: string; slot: number; flush: () => Promise<void>; refresh: () => Promise<void> }) {
@@ -1034,69 +1133,75 @@ function ImagePanel({ jobId, slot, flush, refresh }: { jobId: string; slot: numb
     }
   };
 
-  if (image === undefined) return <div className="we-image" />;
+  if (image === undefined) return <div className={IMAGE_BOX} />;
   if (!image)
     return (
-      <div className="we-image">
-        <p className="we-foot">Model zaproponuje opis grafiki na podstawie treści sekcji.</p>
-        <div className="we-row">
-          <button className="wr-btn small" type="button" disabled={busy} onClick={() => act("brief")}>
+      <div className={IMAGE_BOX}>
+        <p className={FOOT}>Model zaproponuje opis grafiki na podstawie treści sekcji.</p>
+        <div className={ROW}>
+          <button className={btnSmall} type="button" disabled={busy} onClick={() => act("brief")}>
             Zaproponuj opis grafiki
           </button>
         </div>
-        <p className="wr-msg">{note}</p>
+        <Msg value={{ text: note, tone: "" }} />
       </div>
     );
   const editable = ["brief", "failed"].includes(image.status);
   return (
-    <div className="we-image">
-      <label className="wr-label">
+    <div className={IMAGE_BOX}>
+      <label className={LABEL}>
         Opis grafiki
-        <textarea className="wr-textarea" rows={4} disabled={!editable} value={form.brief} onChange={(e) => setForm({ ...form, brief: e.target.value })} />
+        <textarea className={cn(input, "resize-y leading-normal")} rows={4} disabled={!editable} value={form.brief} onChange={(e) => setForm({ ...form, brief: e.target.value })} />
       </label>
-      <label className="wr-label">
+      <label className={LABEL}>
         Tekst alternatywny
-        <input className="wr-input" disabled={!editable} value={form.alt} onChange={(e) => setForm({ ...form, alt: e.target.value })} />
+        <input className={input} disabled={!editable} value={form.alt} onChange={(e) => setForm({ ...form, alt: e.target.value })} />
       </label>
-      <label className="wr-label">
+      <label className={LABEL}>
         Podpis
-        <input className="wr-input" disabled={!editable} value={form.caption} onChange={(e) => setForm({ ...form, caption: e.target.value })} />
+        <input className={input} disabled={!editable} value={form.caption} onChange={(e) => setForm({ ...form, caption: e.target.value })} />
       </label>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      {image.image_url && image.status !== "inserted" && <img className="we-image-preview" src={image.image_url} alt="" />}
-      <div className="we-row">
+      {image.image_url && image.status !== "inserted" && <img className="max-w-full border border-gray-100 dark:border-gray-800" src={image.image_url} alt="" />}
+      <div className={ROW}>
         {editable && (
-          <button className="wr-btn small primary" type="button" disabled={busy} onClick={() => act("generate")}>
+          <button className={btnSmallPrimary} type="button" disabled={busy} onClick={() => act("generate")}>
             Generuj obraz
           </button>
         )}
-        {image.status === "generating" && <span className="we-foot">Generuję obraz – to trwa do trzech minut…</span>}
+        {image.status === "generating" && <span className={FOOT}>Generuję obraz – to trwa do trzech minut…</span>}
         {image.status === "ready" && (
-          <button className="wr-btn small primary" type="button" disabled={busy} onClick={() => act("insert")}>
+          <button className={btnSmallPrimary} type="button" disabled={busy} onClick={() => act("insert")}>
             Wstaw do sekcji
           </button>
         )}
-        {image.status === "inserted" && <span className="wr-status ok">w sekcji</span>}
-        <button className="wr-btn small danger" type="button" disabled={busy} onClick={() => act("drop")}>
+        {image.status === "inserted" && <Status tone="ok">w sekcji</Status>}
+        <button className={BTN_SMALL_DANGER} type="button" disabled={busy} onClick={() => act("drop")}>
           Usuń
         </button>
       </div>
-      <p className={`wr-msg${image.error ? " err" : ""}`}>{image.error ?? note}</p>
+      <Msg value={{ text: image.error ?? note, tone: image.error ? "err" : "" }} />
     </div>
   );
 }
 
 /* ---------- panel boczny ---------- */
 
-/** Strefa wyniku 0–1: te same progi dla łuku, pasków i liczby. */
-const zone = (value: number) => (value >= 0.75 ? "z-ok" : value >= 0.5 ? "z-mid" : "z-low");
+/** Strefa wyniku 0–1: te same progi dla łuku, pasków i liczby – czerwień do
+    50, oranż do 75, zieleń wyżej. */
+const ZONES = {
+  ok: { text: "text-success-600 dark:text-success-400", bg: "bg-success-500", stroke: "stroke-success-500" },
+  mid: { text: "text-orange-600 dark:text-orange-400", bg: "bg-orange-500", stroke: "stroke-orange-500" },
+  low: { text: "text-error-600 dark:text-error-400", bg: "bg-error-500", stroke: "stroke-error-500" },
+};
+const zone = (value: number) => ZONES[value >= 0.75 ? "ok" : value >= 0.5 ? "mid" : "low"];
 
 /** Łuk z 41 kresek – przyrząd, nie wykres; zapalone kreski = ocena. */
 function Gauge({ total }: { total: number }) {
   const ticks = 41;
   const lit = Math.round((total / 100) * ticks);
   return (
-    <svg viewBox="0 0 160 124" className="we-gauge-svg" aria-hidden="true">
+    <svg viewBox="0 0 160 124" className="block w-full" aria-hidden="true">
       {Array.from({ length: ticks }, (_, i) => {
         const angle = (-120 + (240 * i) / (ticks - 1)) * (Math.PI / 180);
         const r1 = i % 10 === 0 ? 58 : 61;
@@ -1107,7 +1212,9 @@ function Gauge({ total }: { total: number }) {
             y1={(80 - r1 * Math.cos(angle)).toFixed(1)}
             x2={(80 + 70 * Math.sin(angle)).toFixed(1)}
             y2={(80 - 70 * Math.cos(angle)).toFixed(1)}
-            className={i < lit ? `on ${zone(i / (ticks - 1))}` : ""}
+            strokeWidth={2.4}
+            strokeLinecap="square"
+            className={i < lit ? zone(i / (ticks - 1)).stroke : "stroke-gray-200 dark:stroke-gray-800"}
           />
         );
       })}
@@ -1115,29 +1222,29 @@ function Gauge({ total }: { total: number }) {
   );
 }
 
-function ScoreBox({ result, tone, termsLoaded, inNorm, scoredTerms }: { result: Any; tone: string; termsLoaded: boolean; inNorm: number; scoredTerms: number }) {
+function ScoreBox({ result, termsLoaded, inNorm, scoredTerms }: { result: Any; termsLoaded: boolean; inNorm: number; scoredTerms: number }) {
   const bar = (label: string, value: number, hint: string) => (
-    <div className={`we-part ${zone(value)}`}>
-      <div className="we-part-head">
+    <div>
+      <div className="flex justify-between text-theme-sm">
         <span>{label}</span>
-        <span className="v">{Math.round(value * 100)}%</span>
+        <span className={zone(value).text}>{Math.round(value * 100)}%</span>
       </div>
-      <div className="we-part-bar">
-        <span style={{ width: `${Math.round(value * 100)}%` }} />
+      <div className="mt-1.25 h-1 overflow-hidden rounded-sm bg-gray-100 dark:bg-white/5">
+        <span className={cn("block h-full rounded-sm", zone(value).bg)} style={{ width: `${Math.round(value * 100)}%` }} />
       </div>
-      <div className="we-part-hint">{hint}</div>
+      <div className="mt-0.75 truncate text-theme-xs text-gray-500 dark:text-gray-400">{hint}</div>
     </div>
   );
   return (
-    <div className="we-score">
-      <div className={`we-gauge ${tone}`}>
+    <div className={cn("grid grid-cols-[150px_minmax(0,1fr)] items-center gap-4.5 border-b px-5 pt-4.5 pb-3.5", HAIR)}>
+      <div className="relative w-37.5">
         <Gauge total={result.total} />
-        <div className="we-gauge-num">
-          <strong>{result.total}</strong>
-          <span>ocena treści</span>
+        <div className="absolute inset-x-0 top-8.5 grid justify-items-center">
+          <strong className="text-[2.5rem] leading-none font-medium tracking-[-0.02em]">{result.total}</strong>
+          <span className="mt-1 text-theme-xs text-gray-500 dark:text-gray-400">ocena treści</span>
         </div>
       </div>
-      <div className="we-parts">
+      <div className="grid gap-2.25">
         {bar("Frazy", result.parts.terms, termsLoaded ? `${inNorm} z ${scoredTerms} w normie` : "wczytuję…")}
         {bar("Długość", result.parts.length, `${fmtInt(result.words)} słów${result.target ? ` z ${fmtInt(result.target)}` : ""}`)}
         {bar("Nagłówki", result.parts.heads, result.mainInHead ? "fraza główna jest w śródtytule" : "fraza główna nie pada w żadnym H2")}
@@ -1170,8 +1277,8 @@ function TermsPane({
   stateOf: (count: number, range: { min: number; max: number }) => TermState;
   onTerm: (keyword: string) => void;
 }) {
-  if (!termsLoaded) return <p className="we-empty">Wczytuję frazy…</p>;
-  if (!terms.length) return <p className="we-empty">Brief nie wskazał fraz, a analiza wyników wyszukiwania nie była uruchamiana.</p>;
+  if (!termsLoaded) return <p className={FOOT}>Wczytuję frazy…</p>;
+  if (!terms.length) return <p className={FOOT}>Brief nie wskazał fraz, a analiza wyników wyszukiwania nie była uruchamiana.</p>;
   const rows = terms.map((term) => {
     const range = rangeOf(term);
     const n = count(term);
@@ -1189,29 +1296,28 @@ function TermsPane({
   ];
   return (
     <>
-      <div className="we-filter" role="group" aria-label="Filtr fraz">
-        {(
-          [
-            ["all", `Wszystkie ${rows.length}`],
-            ["todo", `Do dopisania ${todo}`],
-            ["over", `Za często ${over}`],
-          ] as ["all" | "todo" | "over", string][]
-        ).map(([value, label]) => (
-          <button key={value} type="button" className={filter === value ? "on" : undefined} onClick={() => setFilter(value)}>
-            {label}
-          </button>
-        ))}
+      <div className="w-fit">
+        <Segmented
+          label="Filtr fraz"
+          value={filter}
+          onChange={setFilter}
+          options={[
+            { value: "all", label: `Wszystkie ${rows.length}` },
+            { value: "todo", label: `Do dopisania ${todo}` },
+            { value: "over", label: `Za często ${over}` },
+          ]}
+        />
       </div>
       {groups.map(([group, label, note]) => {
         const list = visible.filter((row) => row.term.group === group);
         if (!list.length) return null;
         return (
-          <div key={group} className="we-group">
-            <div className="we-group-head">
+          <div key={group} className="grid gap-2">
+            <div className="flex items-baseline gap-2 text-theme-sm font-medium">
               <span>{label}</span>
-              {note && <small>{note}</small>}
+              {note && <small className="text-theme-xs font-normal text-gray-500 dark:text-gray-400">{note}</small>}
             </div>
-            <div className="we-chips">
+            <div className="flex flex-wrap gap-1.5">
               {list.map(({ term, range, count: n, state }) => {
                 const title = [
                   term.where ? `Sekcja: ${term.where}` : "",
@@ -1222,9 +1328,19 @@ function TermsPane({
                   .filter(Boolean)
                   .join(" · ");
                 return (
-                  <button key={term.keyword} type="button" className={`we-chip ${state}${activeTerm === term.keyword ? " active" : ""}`} title={title} onClick={() => onTerm(term.keyword)}>
-                    <span className="we-chip-k">{term.keyword}</span>
-                    <span className="we-chip-n">{`${n} / ${range.min === range.max ? range.min : `${range.min}–${range.max}`}`}</span>
+                  <button
+                    key={term.keyword}
+                    type="button"
+                    className={cn(
+                      "inline-flex max-w-full items-baseline gap-2 rounded-sm border border-gray-200 px-2.25 py-1.25 text-left text-[.87rem]/[1.3] text-gray-800 hover:border-gray-500 dark:border-gray-800 dark:text-white/90",
+                      CHIP[state].box,
+                      activeTerm === term.keyword && "shadow-[0_0_0_2px_var(--color-brand-500)]",
+                    )}
+                    title={title}
+                    onClick={() => onTerm(term.keyword)}
+                  >
+                    <span className="min-w-0 [overflow-wrap:anywhere]">{term.keyword}</span>
+                    <span className={cn("text-theme-xs whitespace-nowrap", CHIP[state].count)}>{`${n} / ${range.min === range.max ? range.min : `${range.min}–${range.max}`}`}</span>
                   </button>
                 );
               })}
@@ -1232,8 +1348,8 @@ function TermsPane({
           </div>
         );
       })}
-      {!visible.length && <p className="we-empty">Nic w tym filtrze.</p>}
-      <p className="we-foot">
+      {!visible.length && <p className={FOOT}>Nic w tym filtrze.</p>}
+      <p className={FOOT}>
         {termsMeta.rivals
           ? `Zakres = typowa liczba wystąpień u ${termsMeta.rivals} konkurentów, przeliczona na długość tego tekstu.`
           : "Bez pobranych treści konkurentów – zakresy są orientacyjne. Pobierz je w widoku „Research i brief”."}
@@ -1241,6 +1357,14 @@ function TermsPane({
     </>
   );
 }
+
+/** Chip frazy: tło mówi, czy wystąpień jest za mało, w normie czy za dużo. */
+const CHIP: Record<TermState, { box: string; count: string }> = {
+  none: { box: "", count: "text-gray-500 dark:text-gray-400" },
+  low: { box: "border-transparent bg-orange-50 dark:border-transparent dark:bg-orange-500/15", count: "text-orange-600 dark:text-orange-400" },
+  ok: { box: "border-transparent bg-success-50 dark:border-transparent dark:bg-success-500/15", count: "text-success-600 dark:text-success-400" },
+  over: { box: "border-transparent bg-error-50 dark:border-transparent dark:bg-error-500/15", count: "text-error-600 dark:text-error-400" },
+};
 
 function PlanPane({ project, rows, blocks, goTo }: { project: Any; rows: Any[]; blocks: Map<string, Block>; goTo: (anchor: string) => void }) {
   const outline = (project.brief?.outline ?? []) as Any[];
@@ -1251,16 +1375,23 @@ function PlanPane({ project, rows, blocks, goTo }: { project: Any; rows: Any[]; 
     const tone = !target ? "" : ratio < 0.7 ? "low" : ratio > 1.3 ? "over" : "ok";
     return (
       <li key={key}>
-        <button type="button" className={`we-plan-row${muted ? " muted" : ""}`} onClick={() => goTo(anchor)}>
-          <span className="t">{label}</span>
-          <span className="w">
+        <button
+          type="button"
+          className={cn("group/plan grid w-full grid-cols-[minmax(0,1fr)_auto] gap-x-3 gap-y-1 border-t py-2.5 text-left", HAIR, muted && "opacity-45")}
+          onClick={() => goTo(anchor)}
+        >
+          <span className="text-theme-sm/snug group-hover/plan:text-brand-600 dark:group-hover/plan:text-brand-400">{label}</span>
+          <span className="text-theme-xs whitespace-nowrap text-gray-500 dark:text-gray-400">
             {fmtInt(words)}
             {target ? ` / ${fmtInt(target)}` : ""}
           </span>
           {target && (
-            <span className={`we-plan-bar ${tone}`}>
-              <span style={{ width: `${Math.round((ratio / 1.5) * 100)}%` }} />
-              <i style={{ left: `${Math.round((1 / 1.5) * 100)}%` }} />
+            <span className="relative col-span-full h-0.75 bg-gray-100 dark:bg-white/5">
+              <span
+                className={cn("block h-full", tone === "ok" ? "bg-success-500" : tone === "low" ? "bg-orange-500" : tone === "over" ? "bg-error-500" : "bg-gray-500")}
+                style={{ width: `${Math.round((ratio / 1.5) * 100)}%` }}
+              />
+              <i className="absolute -top-0.75 h-2.25 w-px bg-gray-800 dark:bg-white/90" style={{ left: `${Math.round((1 / 1.5) * 100)}%` }} />
             </span>
           )}
         </button>
@@ -1269,8 +1400,8 @@ function PlanPane({ project, rows, blocks, goTo }: { project: Any; rows: Any[]; 
   };
   return (
     <>
-      <p className="we-foot">Słowa sekcji wobec planu z briefu. Kreska na pasku to cel.</p>
-      <ol className="we-plan">
+      <p className={FOOT}>Słowa sekcji wobec planu z briefu. Kreska na pasku to cel.</p>
+      <ol className="grid">
         {line("lead", "Wstęp", countWords(blocks.get("lead")?.text ?? ""), null, "lead")}
         {sections.map((row, index) =>
           line(
@@ -1296,6 +1427,9 @@ function PlanPane({ project, rows, blocks, goTo }: { project: Any; rows: Any[]; 
 }
 
 /* ---------- dopracowanie: styl i fleksja, ekspert ---------- */
+
+const BLOCK = cn("grid gap-2.5 border-t pt-3.5 first:border-t-0 first:pt-0", HAIR);
+const BLOCK_HEAD = "text-[.98rem] font-medium";
 
 function RefinePane({
   project,
@@ -1448,8 +1582,8 @@ function RefinePane({
   return (
     <>
       {unsupported.length > 0 && (
-        <div className="we-note warn">
-          <strong>Model nie miał materiału na</strong>
+        <div className="grid gap-1.5 border-l-2 border-orange-500 bg-orange-50 px-3 py-2.5 text-theme-sm/snug dark:bg-orange-500/10 [&_span]:text-gray-600 dark:[&_span]:text-gray-300 [&_ul]:list-disc [&_ul]:pl-4">
+          <strong className="font-medium">Model nie miał materiału na</strong>
           <ul>
             {unsupported.map((row, i) => (
               <li key={i}>{row}</li>
@@ -1459,55 +1593,56 @@ function RefinePane({
         </div>
       )}
 
-      <div className="we-block">
-        <h3>Styl i fleksja</h3>
-        <p className="we-foot">Jeden przejazd redaktorski na cały tekst: odmiana fraz, powtórzenia, interpunkcja, fakty sprawdzane w sieci.</p>
+      <div className={BLOCK}>
+        <h3 className={BLOCK_HEAD}>Styl i fleksja</h3>
+        <p className={FOOT}>Jeden przejazd redaktorski na cały tekst: odmiana fraz, powtórzenia, interpunkcja, fakty sprawdzane w sieci.</p>
         {styleRun || style?.status === "running" ? (
-          <div className="we-running">
-            <span className="we-spinner" aria-hidden="true" />
-            <span>
-              Model czyta cały tekst – to trwa do dwóch minut.<small>{styleRun?.model ?? style?.model ?? STYLE_DEFAULT}</small>
+          <div className="flex items-center gap-3 border border-brand-500 bg-white px-3.5 py-3 text-theme-sm/snug dark:bg-gray-900">
+            <Loader2 className="size-4.5 shrink-0 animate-spin text-brand-500 motion-reduce:[animation-duration:3s]" aria-hidden="true" />
+            <span className="flex-1">
+              Model czyta cały tekst – to trwa do dwóch minut.
+              <small className="block text-theme-xs text-gray-500 dark:text-gray-400">{styleRun?.model ?? style?.model ?? STYLE_DEFAULT}</small>
             </span>
-            <button className="wr-btn small danger" type="button" onClick={stopStyle}>
+            <button className={BTN_SMALL_DANGER} type="button" onClick={stopStyle}>
               Zatrzymaj
             </button>
           </div>
         ) : (
           <>
-            <label className="wr-label">
+            <label className={LABEL}>
               Model
-              <input className="wr-input" list="we-style-models" placeholder={STYLE_DEFAULT} value={styleModel} onChange={(e) => setStyleModel(e.target.value)} spellCheck={false} autoComplete="off" />
+              <input className={input} list="we-style-models" placeholder={STYLE_DEFAULT} value={styleModel} onChange={(e) => setStyleModel(e.target.value)} spellCheck={false} autoComplete="off" />
               <datalist id="we-style-models">
                 {styleModels.map((id) => (
                   <option key={id} value={id} />
                 ))}
               </datalist>
-              <span className="we-foot">puste = domyślny {STYLE_DEFAULT}; dopisek :online włącza sprawdzanie faktów w sieci</span>
+              <span className={FOOT}>puste = domyślny {STYLE_DEFAULT}; dopisek :online włącza sprawdzanie faktów w sieci</span>
             </label>
-            <div className="we-row">
-              <button className="wr-btn" type="button" disabled={locked} onClick={runStyle}>
+            <div className={ROW}>
+              <button className={BTN} type="button" disabled={locked} onClick={runStyle}>
                 {style?.status === "done" ? "Popraw styl ponownie" : "Popraw styl i fleksję"}
               </button>
               {style?.status === "done" && (
-                <span className="we-foot">
+                <span className={FOOT}>
                   ostatnio zmienione sekcje: {fmtInt(style.changed)} z {fmtInt(style.sections_total)}
                   {style.model ? `, ${style.model}` : ""}
                 </span>
               )}
-              {style?.status === "cancelled" && <span className="we-foot">ostatni przejazd przerwany</span>}
+              {style?.status === "cancelled" && <span className={FOOT}>ostatni przejazd przerwany</span>}
             </div>
           </>
         )}
         {pendingStyle.length > 0 && (
-          <div className="we-bulk">
-            <span>
-              <strong>{pendingStyle.length}</strong> {pendingStyle.length === 1 ? "propozycja czeka" : "propozycji czeka"} na decyzję
+          <div className="flex flex-wrap items-center gap-2 bg-white px-3 py-2.5 text-theme-sm dark:bg-white/3">
+            <span className="basis-full">
+              <strong className="font-medium">{pendingStyle.length}</strong> {pendingStyle.length === 1 ? "propozycja czeka" : "propozycji czeka"} na decyzję
               {staleCount ? `, ${staleCount} nieaktualnych` : ""}
             </span>
-            <button className="wr-btn small primary" type="button" disabled={locked || pendingStyle.length === staleCount} onClick={() => decideAll("accepted")}>
+            <button className={btnSmallPrimary} type="button" disabled={locked || pendingStyle.length === staleCount} onClick={() => decideAll("accepted")}>
               {bulk && bulk.startsWith("Przyjmuję") ? bulk : `Przyjmij wszystkie${staleCount ? " aktualne" : ""}`}
             </button>
-            <button className="wr-btn small" type="button" disabled={locked} onClick={() => decideAll("rejected")}>
+            <button className={btnSmall} type="button" disabled={locked} onClick={() => decideAll("rejected")}>
               {bulk && bulk.startsWith("Odrzucam") ? bulk : "Odrzuć wszystkie"}
             </button>
           </div>
@@ -1520,28 +1655,28 @@ function RefinePane({
               await refresh();
             });
           return (
-            <div key={row.slot} className={`we-diff${stale ? " stale" : ""}`}>
-              <button type="button" className="we-diff-title" onClick={() => goTo(`sec-${row.slot}`)}>
+            <div key={row.slot} className={cn("grid gap-1.5 border px-3 py-2.5 text-theme-sm/snug", stale ? "border-orange-500" : HAIR)}>
+              <button type="button" className="text-left font-medium hover:text-brand-600 dark:hover:text-brand-400" onClick={() => goTo(`sec-${row.slot}`)}>
                 {row.title_after ?? row.title_before ?? `sekcja ${row.slot}`}
               </button>
               {(row.issues ?? []).length > 0 && (
-                <ul>
+                <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
                   {(row.issues as Any[]).map((issue, i) => (
                     <li key={i}>{typeof issue === "string" ? issue : (issue.note ?? issue.fix ?? JSON.stringify(issue))}</li>
                   ))}
                 </ul>
               )}
-              {(row.warnings ?? []).length > 0 && <p className="we-err">{(row.warnings as Any[]).map((w) => (typeof w === "string" ? w : JSON.stringify(w))).join(" · ")}</p>}
-              <del>{strip(row.text_before).slice(0, 260)}</del>
-              <ins>{strip(row.text_after).slice(0, 260)}</ins>
-              {stale && <p className="we-err">Sekcja zmieniła się po tej propozycji – przyjęcie nadpisałoby Twoje poprawki. Odrzuć ją albo uruchom styl ponownie.</p>}
-              <div className="we-row">
+              {(row.warnings ?? []).length > 0 && <p className={ERR}>{(row.warnings as Any[]).map((w) => (typeof w === "string" ? w : JSON.stringify(w))).join(" · ")}</p>}
+              <del className="text-gray-500 dark:text-gray-400">{strip(row.text_before).slice(0, 260)}</del>
+              <ins className="no-underline">{strip(row.text_after).slice(0, 260)}</ins>
+              {stale && <p className={ERR}>Sekcja zmieniła się po tej propozycji – przyjęcie nadpisałoby Twoje poprawki. Odrzuć ją albo uruchom styl ponownie.</p>}
+              <div className={ROW}>
                 {!stale && (
-                  <button className="wr-btn small primary" type="button" disabled={locked} onClick={() => decide("accepted")}>
+                  <button className={btnSmallPrimary} type="button" disabled={locked} onClick={() => decide("accepted")}>
                     Przyjmij
                   </button>
                 )}
-                <button className="wr-btn small" type="button" disabled={locked} onClick={() => decide("rejected")}>
+                <button className={btnSmall} type="button" disabled={locked} onClick={() => decide("rejected")}>
                   Odrzuć
                 </button>
               </div>
@@ -1551,16 +1686,14 @@ function RefinePane({
         <Msg value={messages.style ?? (style?.status === "failed" ? { text: style.error, tone: "" } : undefined)} />
       </div>
 
-      <div className="we-block">
-        <h3>Wypowiedź eksperta</h3>
+      <div className={BLOCK}>
+        <h3 className={BLOCK_HEAD}>Wypowiedź eksperta</h3>
         {expert?.status === "done" && (
           <>
-            <blockquote className="we-quote">
-              „{expert.quote}”<footer>{`${expert.expert}, ${expert.role}`}</footer>
-            </blockquote>
-            <div className="we-row">
+            <Quote expert={expert} />
+            <div className={ROW}>
               <button
-                className="wr-btn small danger"
+                className={BTN_SMALL_DANGER}
                 type="button"
                 disabled={locked}
                 onClick={() =>
@@ -1575,9 +1708,9 @@ function RefinePane({
             </div>
           </>
         )}
-        <label className="wr-label">
+        <label className={LABEL}>
           Ekspert (inna osoba niż autor)
-          <select className="wr-select" value={expertValue} onChange={(e) => setExpertName(e.target.value)}>
+          <select className={input} value={expertValue} onChange={(e) => setExpertName(e.target.value)}>
             {candidates.map((row) => (
               <option key={row.name} value={row.name}>
                 {row.name}
@@ -1586,9 +1719,9 @@ function RefinePane({
             ))}
           </select>
         </label>
-        <label className="wr-label">
+        <label className={LABEL}>
           Sekcja
-          <select className="wr-select" value={slotValue} onChange={(e) => setExpertSlot(e.target.value)}>
+          <select className={input} value={slotValue} onChange={(e) => setExpertSlot(e.target.value)}>
             {content.map((row) => (
               <option key={row.slot} value={row.slot}>
                 {row.title_after}
@@ -1596,9 +1729,9 @@ function RefinePane({
             ))}
           </select>
         </label>
-        <div className="we-row">
+        <div className={ROW}>
           <button
-            className="wr-btn"
+            className={BTN}
             type="button"
             disabled={!candidates.length || locked}
             onClick={() =>

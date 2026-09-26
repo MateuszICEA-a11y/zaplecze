@@ -1,5 +1,5 @@
 /* Cytat eksperta: shortcode [k_quote_box] do zapisu i kopiowania oraz karta
-   podglądu w edytorze. Przeniesione z legacy/edytor-script.ts. */
+   podglądu w edytorze. Przeniesione z dawnego edytor-script.ts. */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Job, Section } from "./types";
 

@@ -1,6 +1,6 @@
 /* Sanityzacja HTML dokumentu edytora wpisu i podgląd shortcode'ów motywu.
-   Przeniesione z legacy/edytor-script.ts – używa jej i dokument (legacy),
-   i panele React (migawka treści, podgląd całości). */
+   Używa jej dokument (DocSection.tsx) i migawka treści (snapshot.ts).
+   Przeniesione z dawnego edytor-script.ts. */
 
 /* ---------- sanityzacja HTML ----------
    Treść z WordPressa i z modelu to dane niezaufane – każdy render HTML

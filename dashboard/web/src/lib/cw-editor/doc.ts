@@ -1,7 +1,7 @@
 /* Układ dokumentu edytora wpisu: treść z WordPressa (wstęp, sekcje ACF,
    FAQ, Źródła) z nałożonymi propozycjami przebiegu. Czysta funkcja – render
    robi DocPanel.tsx. Reguły wstawiania nowych sekcji 1:1 z dawnego
-   applyJobToDoc (legacy/edytor-script.ts). */
+   applyJobToDoc (dawny edytor-script.ts). */
 import type { Content, Entry, Job, Section } from "./types";
 
 /** Sloty FAQ zaczynają się nad tą wartością (101+) – lustro FAQ_SLOT_BASE z config.py i cw-api.js. */

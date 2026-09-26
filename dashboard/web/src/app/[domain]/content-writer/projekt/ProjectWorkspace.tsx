@@ -8,9 +8,9 @@ import DataGrid from "@/components/grid/DataGrid";
 import Segmented from "@/components/Segmented";
 import { btn, btnDanger, btnPrimary, input, inlineLink, Status, type Tone } from "@/components/kit";
 import { Card, SectionHead } from "@/components/ui";
-import { ensureHighlights } from "@/legacy/LegacyHost";
 import { cn } from "@/lib/cn";
 import { fmtInt } from "@/lib/format";
+import { ensureHighlights } from "@/lib/highlights";
 import { phraseKey } from "@/lib/phrase-match.js";
 import { api, fmtDateTime, sleep, STATUS_LABEL, STATUS_TONE } from "@/lib/writer-client";
 import type { ColDef } from "ag-grid-community";
@@ -18,8 +18,6 @@ import { ArrowDown, ArrowLeft, ArrowUp, Check, Loader2, Plus, X } from "lucide-r
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import WriterEditor from "./WriterEditor";
-import "@/legacy/legacy.css";
-import "@/legacy/tokens.css";
 
 type Any = any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
@@ -177,9 +175,12 @@ export default function ProjectWorkspace({ domain }: { domain: string }) {
     if (!textReady) setEditorOpen(false);
   }, [textReady]);
 
+  // Edytor na pełny ekran blokuje przewijanie strony pod spodem.
   useEffect(() => {
-    document.documentElement.classList.toggle("we-open", editorOpen);
-    return () => document.documentElement.classList.remove("we-open");
+    for (const node of [document.documentElement, document.body]) node.classList.toggle("overflow-hidden", editorOpen);
+    return () => {
+      for (const node of [document.documentElement, document.body]) node.classList.remove("overflow-hidden");
+    };
   }, [editorOpen]);
 
   const openEditor = () => {
@@ -243,21 +244,19 @@ export default function ProjectWorkspace({ domain }: { domain: string }) {
       )}
 
       {textReady && base && (
-        <div className="legacy">
-          <WriterEditor
-            base={base}
-            project={project}
-            job={writeJob}
-            authors={publishing.authors}
-            categories={publishing.categories}
-            open={editorOpen}
-            refresh={refresh}
-            exit={() => {
-              history.replaceState(null, "", "#etapy");
-              setEditorOpen(false);
-            }}
-          />
-        </div>
+        <WriterEditor
+          base={base}
+          project={project}
+          job={writeJob}
+          authors={publishing.authors}
+          categories={publishing.categories}
+          open={editorOpen}
+          refresh={refresh}
+          exit={() => {
+            history.replaceState(null, "", "#etapy");
+            setEditorOpen(false);
+          }}
+        />
       )}
     </>
   );

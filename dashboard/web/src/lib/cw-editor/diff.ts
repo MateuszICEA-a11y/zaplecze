@@ -1,5 +1,5 @@
 /* Różnice między wersjami sekcji: udział zmiany, diff słowny (przejazd
-   redaktorski) i raport linków. Przeniesione z legacy/edytor-script.ts. */
+   redaktorski) i raport linków. Przeniesione z dawnego edytor-script.ts. */
 import type { Section } from "./types";
 
 export type Opcode = { op: string; before: string; after: string };

@@ -24,17 +24,20 @@ Wszystkie sekcje starego dashboardu:
 obok: `AnalysisPanels`, `PipelinePanel`, `DocPanel`/`DocSection`, `ScorePanel`,
 `EndCards`, `PreviewDialog`). Wspólny stan: `src/lib/cw-editor/store.ts` – zadanie
 zmienia się tylko przez `set()` z nowym obiektem; odpytywanie Workera w `jobs.ts`;
-czyste funkcje (układ dokumentu, diff, frazy, migawka, sanityzacja) obok. Style
-dokumentu, belki i kart idą jeszcze z `legacy.css` (kontenery `.legacy`, te same klasy
-co w dawnym edytorze) – do przeniesienia na Tailwind.
+czyste funkcje (układ dokumentu, diff, frazy, migawka, sanityzacja) obok. Klasy
+`ed-doc-section`, `ed-sec-head`, `ed-doc-body`, `ed-doc-expert` i `ed-faq-head` nie
+niosą stylu – to znaczniki, po których `snapshot.ts` czyta dokument (ocena, podgląd).
 
 **Edytor tekstu projektu** (`/content-writer/projekt/`, pełny ekran) to `WriterEditor.tsx`:
 pola `contentEditable` są niekontrolowane (rejestr bloków w refie, autozapis ~1,5 s po
 zmianie, `flush()` przed każdą akcją czytającą treść z bazy), panel boczny odświeża się
-licznikiem. Oba edytory biorą style z `src/legacy/legacy.css` (klasy zawężone do
-`.legacy`; `node scripts/build-legacy-css.mjs` po zmianie `src/legacy/css/*`) i kolory
-z mostka tokenów (`tokens.css`) – do przeniesienia na Tailwind. W `src/legacy/` nie ma
-już logiki, tylko style i reguły `::highlight()`.
+licznikiem.
+
+Style obu edytorów to utility Tailwinda w komponentach (klocki w `src/components/kit.tsx`).
+Wyjątek: typografia treści z WordPressa i modeli (HTML bez klas) – `.doc-prose` i rynienka
+typów bloków `.doc-gutter` w `src/app/editor-content.css` (`@apply`, jasny/ciemny).
+Podświetlenia fraz (`::highlight()`) wstrzykuje `src/lib/highlights.ts` – parser CSS
+Next.js ich nie zna.
 
 Worker czyta z buildu frontu pliki `/<domena>/content-watcher/catalog.json`,
 `/<domena>/content-writer/data.json` i `competitors.json` (ASSETS) – route handlery
