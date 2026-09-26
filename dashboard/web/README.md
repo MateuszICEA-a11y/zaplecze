@@ -20,11 +20,17 @@ Wszystkie sekcje starego dashboardu:
 - Asystent treści (kreator w `#hash`) oraz sekcja **Treści** – zakładki „Odświeżanie wpisów”
   (Content Watcher) i „Nowe teksty” (Content Writer); adresy stron zostały osobne
 
-**Edytory** (edytor wpisu `/content-watcher/edytor/`, projekt artykułu
-`/content-writer/projekt/`) działają przez `src/legacy/`: znaczniki i logika 1:1 ze starego
-frontu (`mount()`), host `LegacyHost`, style zawężone do `.legacy`
-(`node scripts/build-legacy-css.mjs` po zmianie `src/legacy/css/*`) i mostek tokenów na
-paletę iCEA (`tokens.css`). Do przepisania na React po kawałku.
+**Edytor wpisu** (`/content-watcher/edytor/`) jest w połowie w React (`PostEditor.tsx`):
+nagłówek, SERP, treść konkurencji, ocena treści z frazami i podgląd całości. Belka
+pipeline'u, dokument, ekspert, styl, infografiki, CTA i zapis do WP to jeszcze
+`src/legacy/edytor-script.ts` ze znacznikami `edytor-{top,side,doc}.html`. Obie strony
+dzielą stan przez `src/lib/cw-editor/store.ts` (legacy pisze `job` i `touchDoc()`,
+React czyta DOM dokumentu – `snapshot.ts`, `keywords.ts`).
+
+**Edytor tekstu projektu** (`/content-writer/projekt/`) to nadal moduł vanilla
+`src/legacy/writer-editor.ts` podpięty w `ProjectWorkspace.tsx`. Style legacy są zawężone
+do `.legacy` (`node scripts/build-legacy-css.mjs` po zmianie `src/legacy/css/*`), kolory
+z mostka tokenów na paletę iCEA (`tokens.css`).
 
 Worker czyta z buildu frontu pliki `/<domena>/content-watcher/catalog.json`,
 `/<domena>/content-writer/data.json` i `competitors.json` (ASSETS) – route handlery

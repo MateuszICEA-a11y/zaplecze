@@ -28,7 +28,9 @@ Punkt startu dla kolejnej sesji. Kontekst: dashboard przeszedł z Astro
 
 Plan etapami, każdy zamknięty **własnym testem w przeglądarce** na prawdziwym wpisie:
 
-1. **Panele tylko do odczytu** – nagłówek wpisu, ocena treści (`scoreParts`,
+1. ✅ **Panele tylko do odczytu** (zrobione 26.09, `edytor/PostEditor.tsx`,
+   `AnalysisPanels.tsx`, `ScorePanel.tsx`, `PreviewDialog.tsx`, wspólny stan
+   `src/lib/cw-editor/`) – nagłówek wpisu, ocena treści (`scoreParts`,
    `renderScore`), SERP (`renderSerp`, `loadSerp/pollSerp/runSerp`), treść konkurencji
    (`renderRivals`, `loadRivals/pollRivals/runRivals`), podgląd całości + eksport
    (`openPreview`, kopiuj do Google Docs, pobierz .doc).
