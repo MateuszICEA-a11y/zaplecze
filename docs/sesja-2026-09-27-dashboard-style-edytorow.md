@@ -37,6 +37,25 @@ Zadanie: przenieść style obu edytorów z `dashboard/web/src/legacy/legacy.css`
   Reszta renderuje **te same klasy co stary front** (`ed-*`, `we-*`, `wr-*`, `prose`,
   `fchip`, `section-head`…) w kontenerach `.legacy` i bierze wygląd z `legacy.css`.
 
+## Sprzątanie (26/27.09 w nocy) i stan na przerwę
+
+- Front Astro usunięty (`61cbedcd`): `dashboard/app` to sam Worker (`worker.js`, `cw-*.js`,
+  migracje, testy 239/239). `phrase-match.js` i `writer-gaps.js` przeniesione do
+  `dashboard/app/lib/` – identyczne kopie są w `dashboard/web/src/lib/`, zmiany w obu.
+  Lock pnpm odświeżony (bez zależności dashboardu; build widocznosc.ai nieodpalany).
+- Usunięta gałąź `dashboard-next` i martwa konfiguracja workera `zaplecze-dashboard-next`
+  (`2a0c8e4c`; na Cloudflare nigdy nie istniał). README z aktualną procedurą wdrożenia.
+- Produkcja: `bc4bd2cc` (style edytorów). Sprzątanie NIE jest wdrożone – worker działa
+  identycznie (zmiana tylko ścieżek importów i komentarzy), wejdzie przy następnym deployu.
+- **Czeka na testy usera** (user testuje sam, potem wracamy):
+  - edytor tekstu projektu CWr i ciemny motyw na produkcji (przed deployem sprawdzone
+    tylko na podglądzie lokalnym),
+  - akcje zapisujące po zmianie stylów: szkic w WP, infografika, CTA, decyzje ✓/✕.
+- Znane drobiazgi: w wąskiej kolumnie oceny treści opis objętości łamie się na dwie linie
+  (ScorePanel); nieśledzony `dashboard/app/package-lock.json` do usunięcia; push nie
+  wdraża (Workers Builds nie działa) – do ewentualnej naprawy.
+- Następna sesja: zacznij od uwag usera z testów.
+
 ## Co jest w src/legacy/
 
 | plik | linie | rola |
