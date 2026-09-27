@@ -1,5 +1,5 @@
 {
-"generated_at": "2026-09-26T09:31:28Z",
+"generated_at": "2026-09-27T10:11:50Z",
 "sites": [
 {
 "host": "widoczni.com",
@@ -47465,8 +47465,8 @@
 "title_fetched_at": "2026-09-26T09:31:54Z",
 "kind": "poradnik",
 "kind_basis": "Sformułowanie jak sprawdzić wskazuje na artykuł instruktażowy",
-"kind_source": "llm",
-"kind_title": "AI Content Gap - jak sprawdzić, gdzie AI poleca konkurencję?"
+"kind_title": "AI Content Gap - jak sprawdzić, gdzie AI poleca konkurencję?",
+"kind_source": "llm"
 },
 {
 "url": "https://delante.pl/dlaczego-ai-search-to-must-have-w-budzetach-marketingowych/",
@@ -47480,8 +47480,8 @@
 "title_fetched_at": "2026-09-26T09:31:54Z",
 "kind": "poradnik",
 "kind_basis": "Analiza zjawiska i argumentacja dlaczego warto uwzględnić technologię",
-"kind_source": "llm",
-"kind_title": "Dlaczego AI Search to must-have w budżetach marketingowych na 2027"
+"kind_title": "Dlaczego AI Search to must-have w budżetach marketingowych na 2027",
+"kind_source": "llm"
 },
 {
 "url": "https://delante.pl/tresci-seo-b2b-najlepsze-praktyki/",
@@ -47495,8 +47495,8 @@
 "title_fetched_at": "2026-09-26T09:31:53Z",
 "kind": "poradnik",
 "kind_basis": "Najlepsze praktyki oraz przewodnik wskazują na artykuł edukacyjny",
-"kind_source": "llm",
-"kind_title": "Treści SEO B2B w 2027: najlepsze praktyki - przewodnik dla marketing managerów"
+"kind_title": "Treści SEO B2B w 2027: najlepsze praktyki - przewodnik dla marketing managerów",
+"kind_source": "llm"
 },
 {
 "url": "https://delante.pl/czy-google-ads-beda-drozsze-w-przyszlym-roku/",
@@ -47504,14 +47504,14 @@
 "path": "/czy-google-ads-beda-drozsze-w-przyszlym-roku/",
 "slug_title": "czy google ads beda drozsze w przyszlym roku",
 "title": "Czy Google Ads będą droższe w 2027? Analiza kosztów i jak zabezpieczyć budżet",
-"lastmod": "2026-09-26T09:31:00+00:00",
+"lastmod": "2026-09-26T09:43:09+00:00",
 "first_seen": "2026-09-26",
 "baseline": false,
 "title_fetched_at": "2026-09-26T09:31:52Z",
 "kind": "poradnik",
 "kind_basis": "Analiza kosztów oraz porady jak zabezpieczyć budżet",
-"kind_source": "llm",
-"kind_title": "Czy Google Ads będą droższe w 2027? Analiza kosztów i jak zabezpieczyć budżet"
+"kind_title": "Czy Google Ads będą droższe w 2027? Analiza kosztów i jak zabezpieczyć budżet",
+"kind_source": "llm"
 },
 {
 "url": "https://traffictrends.pl/blog/jak-wypromowac-sklep-internetowy",
