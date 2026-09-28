@@ -12,6 +12,10 @@ Tytuł:
   Crawl-delay z robots.txt). Jednorazowe dociągnięcie całości robi
   competitor_titles.py.
 
+Data publikacji (`published`) z tego samego pobrania strony: reguły per host
+(data widoczna pod tytułem) → article:published_time → JSON-LD datePublished. Strona bez daty dostaje
+`published_checked` i nie jest pobierana ponownie tylko dla daty.
+
 Pierwszy przebieg dla konkurenta to punkt odniesienia: wszystkie adresy
 dostają `baseline: true` i nie są pokazywane jako „nowe” – trafiają tylko do
 mapy tematów, których nie mamy. Porównanie z naszymi wpisami (embeddingi)
@@ -42,7 +46,8 @@ MAX_URLS_PER_SITE = 6000
 TITLE_FETCH_PER_HOST = 30  # tytuły stron na hosta na przebieg collectora
 KIND_LIMIT = 400  # stron do klasyfikacji typu na przebieg (paczki po 40)
 TITLE_RETRY_DAYS = 7  # po błędzie pobrania próbujemy ponownie po tygodniu
-HEAD_MAX_BYTES = 64 * 1024
+# delante.pl ma ~170 KB w <head> (published_time daleko), traffictrends.pl JSON-LD w treści.
+PAGE_MAX_BYTES = 400 * 1024
 MIN_INTERVAL_S = 0.5  # max 2 żądania/s na hosta, chyba że robots.txt każe wolniej
 # Typowe śmieci w sitemapach wpisów – niezależnie od wzorców konkurenta.
 NOISE = re.compile(r"/(page|tag|tagi|kategoria|category|autor|author|feed)/|/wp-content/|\?", re.I)
@@ -123,21 +128,13 @@ def slug_title(path: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def _head_html(url: str) -> str:
-    """Początek strony do `</head>` (max 64 KB) – tytuł jest zawsze w nagłówku."""
+def _page_html(url: str) -> str:
+    """Strona (max 400 KB) – tytuł jest w nagłówku, data publikacji bywa w treści."""
     req = urllib.request.Request(url, headers={**DEFAULT_HEADERS, "Accept": "text/html,*/*"})
     with urllib.request.urlopen(req, timeout=TIMEOUT_S) as resp:
         charset = resp.headers.get_content_charset() or "utf-8"
-        chunks, size = [], 0
-        while size < HEAD_MAX_BYTES:
-            chunk = resp.read(8192)
-            if not chunk:
-                break
-            chunks.append(chunk)
-            size += len(chunk)
-            if b"</head>" in chunk.lower():
-                break
-    return b"".join(chunks)[:HEAD_MAX_BYTES].decode(charset, errors="replace")
+        body = resp.read(PAGE_MAX_BYTES)
+    return body.decode(charset, errors="replace")
 
 
 def _clean(text: str) -> str:
@@ -169,15 +166,46 @@ def extract_title(page: str, host: str) -> str | None:
     return None
 
 
-def page_title(url: str, host: str) -> tuple[str | None, str | None]:
-    """(tytuł, błąd) jednej strony."""
+# Data publikacji: najpierw to, co host pokazuje pod tytułem, potem znaczniki standardowe.
+PUBLISHED_PATTERNS = (
+    r'<meta[^>]+property=["\']article:published_time["\'][^>]+content=["\'](\d{4})-(\d\d)-(\d\d)',
+    r'<meta[^>]+content=["\'](\d{4})-(\d\d)-(\d\d)[^"\']*["\'][^>]+property=["\']article:published_time',
+    r'"datePublished"\s*:\s*"(\d{4})-(\d\d)-(\d\d)',
+)
+PUBLISHED_BY_HOST = {
+    # JSON-LD ma datę migracji serwisu (2025-12-13 na setkach wpisów), prawdziwa jest w „Dodano”.
+    "widoczni.com": (r'class="post__date">\s*Dodano\s+(\d{4})-(\d\d)-(\d\d)',),
+    # Data pod tytułem wpisu („24.09.2026”); karty „podobnych wpisów” mają mt-3, nie mb-6.
+    "traffictrends.pl": (r'class="text-sm text-gray-500 mb-6">\s*(\d\d)\.(\d\d)\.(\d{4})',),
+}
+
+
+def extract_published(page: str, host: str) -> str | None:
+    """Data publikacji wpisu jako RRRR-MM-DD albo None (starsze wpisy traffictrends.pl nie mają żadnej)."""
+    for pattern in PUBLISHED_BY_HOST.get(host.removeprefix("www."), ()) + PUBLISHED_PATTERNS:
+        match = re.search(pattern, page, re.I)
+        if not match:
+            continue
+        parts = match.groups()
+        year, month, day = parts if len(parts[0]) == 4 else parts[::-1]
+        try:
+            date = datetime(int(year), int(month), int(day))
+        except ValueError:
+            continue
+        if 1995 <= date.year <= datetime.now().year:
+            return date.strftime("%Y-%m-%d")
+    return None
+
+
+def page_meta(url: str, host: str) -> tuple[str | None, str | None, str | None]:
+    """(tytuł, data publikacji, błąd pobrania) jednej strony."""
     try:
-        title = extract_title(_head_html(url), host)
+        page = _page_html(url)
     except urllib.error.HTTPError as err:
-        return None, f"HTTP {err.code}"
+        return None, None, f"HTTP {err.code}"
     except Exception as err:  # noqa: BLE001 – brak tytułu nie przerywa przebiegu
-        return None, str(err)[:120] or type(err).__name__
-    return (title, None) if title else (None, "brak tytułu")
+        return None, None, str(err)[:120] or type(err).__name__
+    return extract_title(page, host), extract_published(page, host), None
 
 
 def _robots(host: str) -> urllib.robotparser.RobotFileParser | None:
@@ -222,23 +250,33 @@ def drop_generic_titles(items: list[dict]) -> int:
     return dropped
 
 
-def needs_title(item: dict, now: datetime) -> bool:
-    if item.get("title"):
-        return False
-    if not item.get("title_error"):
-        return True
-    if item["title_error"] == GENERIC_ERROR:
+def _failed_recently(item: dict, now: datetime) -> bool:
+    """Ostatnie pobranie strony padło (albo nie dało tytułu) mniej niż tydzień temu."""
+    if not item.get("title_error") or item["title_error"] == GENERIC_ERROR:
         return False
     try:
         at = datetime.strptime(item.get("title_fetched_at") or "", "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
     except ValueError:
-        return True
-    return now - at >= timedelta(days=TITLE_RETRY_DAYS)
+        return False
+    return now - at < timedelta(days=TITLE_RETRY_DAYS)
+
+
+def needs_title(item: dict, now: datetime) -> bool:
+    if item.get("title") or item.get("title_error") == GENERIC_ERROR:
+        return False
+    return not _failed_recently(item, now)
+
+
+def needs_page(item: dict, now: datetime) -> bool:
+    """Strona do pobrania: brakuje tytułu albo daty publikacji."""
+    if _failed_recently(item, now):
+        return False
+    return needs_title(item, now) or not (item.get("published") or item.get("published_checked"))
 
 
 def fetch_titles(items: list[dict], per_host: int | None, deadline: float | None = None,
                  workers_per_host: int = 3, log=None) -> dict:
-    """Uzupełnia `title`/`title_error`/`title_fetched_at` w miejscu.
+    """Uzupełnia `title`/`title_error`/`title_fetched_at` i `published`/`published_checked` w miejscu.
 
     Hosty idą równolegle, w obrębie hosta kilka wątków pod wspólnym limiterem
     (odstęp między startami żądań = max(0,5 s, Crawl-delay)). `deadline`
@@ -269,12 +307,23 @@ def fetch_titles(items: list[dict], per_host: int | None, deadline: float | None
                     return
                 next_at[0] = start + pace[0]
             time.sleep(max(0.0, start - time.monotonic()))
-            title, error = page_title(item["url"], host)
-            item["title_fetched_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+            want_title = needs_title(item, datetime.now(timezone.utc))
+            title, published, error = page_meta(item["url"], host)
+            fetched_at = datetime.now(timezone.utc)
+            item["title_fetched_at"] = fetched_at.strftime("%Y-%m-%dT%H:%M:%SZ")
+            if not error:
+                if published:
+                    item["published"] = published
+                    item.pop("published_checked", None)
+                else:
+                    item["published_checked"] = fetched_at.strftime("%Y-%m-%d")
+                if want_title and not title:
+                    error = "brak tytułu"
             with lock:
-                if title:
-                    item["title"] = title
-                    item.pop("title_error", None)
+                if not error:
+                    if want_title:
+                        item["title"] = title
+                        item.pop("title_error", None)
                     stats["ok"] += 1
                 else:
                     item["title_error"] = error
@@ -344,7 +393,8 @@ def fetch(cfg: dict, env: dict) -> dict:
             }
             # Pola liczone osobno (tytuł strony, typ z reguł/modelu) przechodzą między
             # przebiegami – bez tego każdy przebieg kasował typy (2026-09-25: 2503 strony).
-            for key in ("title_fetched_at", "title_error", "kind", "kind_basis", "kind_title", "kind_source"):
+            for key in ("title_fetched_at", "title_error", "published", "published_checked",
+                        "kind", "kind_basis", "kind_title", "kind_source"):
                 if old.get(key):
                     item[key] = old[key]
             if not old and not baseline:
@@ -352,8 +402,8 @@ def fetch(cfg: dict, env: dict) -> dict:
             items.append(item)
         site_rows.append({"host": host, "status": "ok", "count": kept, "baseline": baseline})
 
-    # Prawdziwe tytuły: nowe adresy pierwsze, potem zaległe (limit per host).
-    todo = sorted((item for item in items if needs_title(item, now)),
+    # Prawdziwe tytuły i daty publikacji: nowe adresy pierwsze, potem zaległe (limit per host).
+    todo = sorted((item for item in items if needs_page(item, now)),
                   key=lambda row: (row["first_seen"], row.get("lastmod") or ""), reverse=True)
     title_stats = fetch_titles(todo, TITLE_FETCH_PER_HOST, deadline=time.monotonic() + 8 * 60)
     drop_generic_titles(items)
@@ -382,6 +432,7 @@ def fetch(cfg: dict, env: dict) -> dict:
             "new_today": len(fresh),
             "titles_fetched": sum(row["ok"] for row in title_stats.values()),
             "titles_missing": sum(1 for item in items if not item.get("title")),
+            "published_known": sum(1 for item in items if item.get("published")),
             "kinds_classified": kind_stats["classified"],
             "kinds_missing": sum(1 for item in items if not item.get("kind")),
         },

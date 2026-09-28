@@ -1050,11 +1050,19 @@ function CompetitorsList({ domain, competitors, compError, route, SEEK, editorUr
         ),
       },
       {
+        field: "published",
+        headerName: "Opublikowano",
+        width: 140,
+        valueFormatter: ({ value }) => value || "–",
+      },
+      {
+        // Tylko w nowościach – przy starszych wpisach to data startu śledzenia, nic nie mówi.
         headerName: "W sitemapie od",
         colId: "seen",
         width: 140,
+        hide: seek !== "fresh",
         valueGetter: ({ data }) => (data?.baseline ? "" : (data?.first_seen ?? "")),
-        valueFormatter: ({ value }) => value || "przed śledzeniem",
+        valueFormatter: ({ value }) => value || "–",
         sort: seek === "fresh" ? "desc" : undefined,
       },
       {

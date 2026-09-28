@@ -1,8 +1,9 @@
 name: Competitor Titles (jednorazowo)
 
-# Jednorazowe dociągnięcie prawdziwych tytułów wpisów konkurencji do
-# dashboard/data/grupa-icea.pl/competitors.json. Codzienny collector bierze
+# Jednorazowe dociągnięcie prawdziwych tytułów i dat publikacji wpisów konkurencji
+# do dashboard/data/grupa-icea.pl/competitors.json. Codzienny collector bierze
 # tylko 30 na hosta. Start = push zmiany tego pliku (gh workflow run → 403).
+# 2026-09-28: przebieg po daty publikacji (pole `published`).
 # widoczni.com ma w robots.txt Crawl-delay 10 s → ~1850 adresów ≈ 5 h.
 
 on:
@@ -46,6 +47,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add dashboard/data/grupa-icea.pl/competitors.json
           git diff --cached --quiet && exit 0
-          git commit -m "dashboard: tytuły wpisów konkurencji"
+          git commit -m "dashboard: tytuły i daty publikacji wpisów konkurencji"
           git pull --rebase origin main
           git push

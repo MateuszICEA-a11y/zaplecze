@@ -54,7 +54,7 @@ def run(tmp_path, pages, previous=None):
     cfg = {"domain": "grupa-icea.pl", "sites": [{"host": "rywal.pl", "sitemaps": ["x"], "include": [r"^/blog/"]}]}
     with mock.patch.object(competitors, "DATA_DIR", tmp_path), \
             mock.patch.object(competitors, "sitemap_urls", return_value=pages), \
-            mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "MIN_INTERVAL_S", 0),             mock.patch.object(competitors, "page_title", return_value=("Prawdziwy tytuł", None)):
+            mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "MIN_INTERVAL_S", 0),             mock.patch.object(competitors, "page_meta", return_value=("Prawdziwy tytuł", "2024-05-01", None)):
         summary = competitors.fetch(cfg, {})["summary"]
     return summary, json.loads((domain_dir / "competitors.json").read_text(encoding="utf-8"))
 
@@ -66,6 +66,7 @@ def test_pierwszy_odczyt_to_punkt_odniesienia(tmp_path):
     assert data["items"][0]["baseline"] is True
     # Punkt odniesienia nie jest „nowy”, ale tytuł i tak dociągamy (zaległe).
     assert data["items"][0]["title"] == "Prawdziwy tytuł"
+    assert data["items"][0]["published"] == "2024-05-01"
     assert summary["titles_missing"] == 0
 
 
@@ -85,7 +86,7 @@ def test_awaria_sitemapy_zachowuje_wczorajsze_adresy(tmp_path):
     domain_dir = tmp_path / "grupa-icea.pl"
     cfg = {"domain": "grupa-icea.pl", "sites": [{"host": "rywal.pl", "sitemaps": ["x"]}]}
     with mock.patch.object(competitors, "DATA_DIR", tmp_path), \
-            mock.patch.object(competitors, "sitemap_urls", side_effect=OSError("403")),             mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "page_title", return_value=(None, "HTTP 403")):
+            mock.patch.object(competitors, "sitemap_urls", side_effect=OSError("403")),             mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "page_meta", return_value=(None, None, "HTTP 403")):
         try:
             competitors.fetch(cfg, {})
         except competitors.SourceError:
@@ -97,7 +98,7 @@ def test_awaria_sitemapy_zachowuje_wczorajsze_adresy(tmp_path):
 
 def test_limit_per_host_i_blad_zapisany(tmp_path):
     items = [{"url": f"https://rywal.pl/blog/{n}/", "host": "rywal.pl"} for n in range(5)]
-    with mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "MIN_INTERVAL_S", 0),             mock.patch.object(competitors, "page_title", return_value=(None, "HTTP 404")):
+    with mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "MIN_INTERVAL_S", 0),             mock.patch.object(competitors, "page_meta", return_value=(None, None, "HTTP 404")):
         stats = competitors.fetch_titles(items, per_host=2)
     assert stats["rywal.pl"]["error"] == 2
     assert [bool(item.get("title_error")) for item in items] == [True, True, False, False, False]
@@ -162,7 +163,7 @@ def test_reguly_nie_ida_do_modelu():
 
 def test_429_zwalnia_tempo():
     items = [{"url": f"https://rywal.pl/blog/{n}/", "host": "rywal.pl"} for n in range(3)]
-    with mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "MIN_INTERVAL_S", 0.001),             mock.patch.object(competitors, "page_title", return_value=(None, "HTTP 429")):
+    with mock.patch.object(competitors, "_robots", return_value=None),             mock.patch.object(competitors, "MIN_INTERVAL_S", 0.001),             mock.patch.object(competitors, "page_meta", return_value=(None, None, "HTTP 429")):
         stats = competitors.fetch_titles(items, per_host=None, workers_per_host=1)
     assert stats["rywal.pl"]["delay_s"] == 0.008  # 0,001 × 2 × 2 × 2
 
@@ -173,3 +174,34 @@ def test_typ_strony_przechodzi_miedzy_przebiegami(tmp_path):
     _, data = run(tmp_path, [{"url": "https://rywal.pl/blog/a/", "lastmod": None}], first)
     item = data["items"][0]
     assert (item["kind"], item["kind_source"], item["kind_title"]) == ("news", "llm", "Prawdziwy tytuł")
+
+
+def test_data_publikacji_ze_strony():
+    ext = competitors.extract_published
+    # delante.pl – meta w długim <head>
+    assert ext('<meta property="article:published_time" content="2022-09-29T07:46:23+00:00" />', "delante.pl") == "2022-09-29"
+    assert ext('<meta content="2022-09-29T07:46:23+00:00" property="article:published_time">', "delante.pl") == "2022-09-29"
+    # widoczni.com – JSON-LD ze spacją zamiast T
+    assert ext('{"datePublished": "2026-01-05 10:30:13"}', "widoczni.com") == "2026-01-05"
+    # …ale data migracji z JSON-LD przegrywa z widoczną „Dodano”
+    page = '{"datePublished": "2025-12-13 15:15:22"} <span class="post__date">Dodano 2020-08-05</span>'
+    assert ext(page, "widoczni.com") == "2020-08-05"
+    # traffictrends.pl – data pod tytułem, a nie z kart podobnych wpisów
+    page = '<div class="mt-3 text-sm text-gray-500">\n 08.09.2026</div><div class="text-sm text-gray-500 mb-6">\n  24.09.2026'
+    assert ext(page, "traffictrends.pl") == "2026-09-24"
+    assert ext('<div class="mt-3 text-sm text-gray-500">08.09.2026</div>', "traffictrends.pl") is None
+    assert ext('"datePublished": "2099-01-01"', "rywal.pl") is None
+
+
+def test_strona_bez_daty_nie_wraca_po_date():
+    now = datetime(2026, 9, 25, tzinfo=timezone.utc)
+    assert competitors.needs_page({"title": "T"}, now)
+    assert not competitors.needs_page({"title": "T", "published": "2020-01-01"}, now)
+    assert not competitors.needs_page({"title": "T", "published_checked": "2026-09-24"}, now)
+    items = [{"url": "https://rywal.pl/blog/a/", "host": "rywal.pl", "title": "Stary"}]
+    with mock.patch.object(competitors, "_robots", return_value=None), \
+            mock.patch.object(competitors, "MIN_INTERVAL_S", 0), \
+            mock.patch.object(competitors, "page_meta", return_value=("Inny", None, None)):
+        competitors.fetch_titles(items, per_host=None)
+    assert items[0]["title"] == "Stary"  # tytuł już był – pobranie tylko po datę go nie nadpisuje
+    assert items[0]["published_checked"] and "published" not in items[0]

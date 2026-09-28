@@ -602,10 +602,18 @@ function Competitors({ domain, editorUrl, pick }: { domain: string; editorUrl: (
       },
       { field: "host", headerName: "Konkurent", width: 150 },
       {
+        field: "published",
+        headerName: "Opublikowano",
+        width: 130,
+        valueFormatter: ({ value }) => value || "–",
+      },
+      {
+        // Tylko w nowych – przy starszych wpisach to data startu śledzenia, nic nie mówi.
         field: "first_seen",
         headerName: "Pojawił się",
         width: 130,
-        valueFormatter: ({ data: item }) => (item?.baseline ? "przed śledzeniem" : (item?.first_seen ?? "–")),
+        hide: view !== "new",
+        valueFormatter: ({ data: item }) => (item?.baseline ? "–" : (item?.first_seen ?? "–")),
       },
       {
         field: "action",
@@ -644,7 +652,7 @@ function Competitors({ domain, editorUrl, pick }: { domain: string; editorUrl: (
           ),
       },
     ],
-    [editorUrl, pick],
+    [editorUrl, pick, view],
   );
 
   return (

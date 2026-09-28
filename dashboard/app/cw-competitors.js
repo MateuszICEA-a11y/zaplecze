@@ -143,6 +143,8 @@ export async function competitorView(env, domain) {
       kind: item.kind ?? null,
       kind_basis: item.kind_basis ?? null,
       first_seen: item.first_seen ?? null,
+      // Data publikacji ze strony konkurenta (collector); starsze wpisy bywają bez niej.
+      published: item.published ?? null,
       lastmod: item.lastmod ?? null,
       baseline: Boolean(item.baseline),
       action: row?.action ?? null,

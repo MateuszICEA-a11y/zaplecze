@@ -21,6 +21,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ domain:
     title: item.title ?? null,
     slug_title: item.slug_title ?? null,
     first_seen: item.first_seen ?? null,
+    published: item.published ?? null,
     lastmod: item.lastmod ?? null,
     baseline: item.baseline ?? false,
     kind: item.kind ?? null,
