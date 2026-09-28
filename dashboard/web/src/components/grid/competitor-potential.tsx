@@ -14,7 +14,7 @@ import { useEffect, useRef, useState } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Any = any;
-type KeywordRow = [string, number, number, number];
+export type KeywordRow = [string, number, number, number];
 
 const muted = "text-theme-xs text-gray-500 dark:text-gray-400";
 
@@ -108,7 +108,7 @@ export function competitorPotentialColumns(onDetails: (item: Any) => void): ColD
 
 // Jedno pobranie listy fraz na sesję strony – plik ma ~1–2 MB.
 const keywordFiles = new Map<string, Promise<Record<string, KeywordRow[]>>>();
-function loadKeywords(domain: string) {
+export function loadKeywords(domain: string) {
   if (!keywordFiles.has(domain)) {
     keywordFiles.set(
       domain,

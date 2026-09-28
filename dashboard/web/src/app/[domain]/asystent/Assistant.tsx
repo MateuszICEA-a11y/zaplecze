@@ -4,7 +4,8 @@
    żeby przycisk Wstecz i linki działały jak w starej wersji. Logika 1:1
    z asystent.astro, ekrany jako komponenty React. */
 import DataGrid from "@/components/grid/DataGrid";
-import { CompetitorDetailDialog, competitorPotentialColumns } from "@/components/grid/competitor-potential";
+import { PositionBadge } from "@/components/grid/cells";
+import { CompetitorDetailDialog, competitorPotentialColumns, loadKeywords, type KeywordRow } from "@/components/grid/competitor-potential";
 import { Card } from "@/components/ui";
 import { cn } from "@/lib/cn";
 import { fmtInt } from "@/lib/format";
@@ -229,8 +230,8 @@ function PathAside({ route, intent, sub, SEEK, tone, inline = false }: { route: 
   if (intent === "nowy") {
     list.push({ q: "Masz już temat?", a: sub === "fraza" ? "Mam frazę" : sub === "propozycje" ? "Zaproponuj temat" : null, href: link("nowy") });
     if (sub === "propozycje") list.push({ q: "Który temat bierzemy?", a: null, href: "" });
-    if (sub === "fraza") list.push({ q: "Jaka fraza?", a: q.get("q") && !q.get("z") ? `„${q.get("q")}”` : null, href: link("nowy/fraza", q.get("q") ? { q: q.get("q")! } : {}) });
-    if (sub === "fraza" && q.get("q") && !q.get("z")) list.push({ q: "Co robimy?", a: null, href: "" });
+    if (sub === "fraza") list.push({ q: "Jaka fraza?", a: q.get("q") ? `„${q.get("q")}”` : null, href: link("nowy/fraza", q.get("z") ? { z: q.get("z")! } : {}) });
+    if (sub === "fraza" && q.get("q")) list.push({ q: "Co robimy?", a: null, href: "" });
   } else if (intent === "odswiez") {
     list.push({ q: "Który wpis?", a: sub === "pilne" ? "Najpilniejsze" : sub === "szukaj" ? "Konkretny wpis" : null, href: link("odswiez") });
     if (sub) list.push({ q: sub === "pilne" ? "Który z nich?" : "Znajdź po tytule", a: null, href: "" });
@@ -462,18 +463,29 @@ function NewChoice({ ideas }: Ctx) {
   );
 }
 
-function PhraseScreen({ route, domain, editorUrl, projectUrl }: Ctx) {
-  const phrase = route.q.get("q") ?? "";
+function PhraseScreen({ route, domain, editorUrl, projectUrl, competitors }: Ctx) {
   const from = route.q.get("z");
+  // Wpis konkurenta („Napisz nasz tekst”): frazy, na które rankuje (Senuto), i fraza główna od razu.
+  const source = from ? ((competitors?.items ?? []).find((i: Any) => i.url === from) ?? null) : null;
+  const [keywords, setKeywords] = useState<KeywordRow[] | null>(null);
+  useEffect(() => {
+    if (!from) return;
+    let alive = true;
+    loadKeywords(domain).then((all) => alive && setKeywords(all[from] ?? []));
+    return () => {
+      alive = false;
+    };
+  }, [domain, from]);
+  const mainPhrase = source?.rank?.keyword ?? keywords?.[0]?.[0] ?? source?.estimate?.phrase ?? null;
+  // Fraza z adresu albo – dla wpisu konkurenta – ta, która daje mu najwięcej ruchu.
+  const phrase = route.q.get("q") ?? (from ? (mainPhrase ?? "") : "");
   const [value, setValue] = useState(phrase);
   const input = useRef<HTMLInputElement>(null);
   useEffect(() => {
     setValue(phrase);
-    if (!phrase || from) {
-      input.current?.focus();
-      if (from) input.current?.select(); // tytuł konkurenta najpierw do skrócenia
-    }
-  }, [phrase, from]);
+    if (!phrase) input.current?.focus();
+  }, [phrase]);
+  const check = (q: string) => go("nowy/fraza", from ? { q, z: from } : { q });
 
   return (
     <>
@@ -484,7 +496,7 @@ function PhraseScreen({ route, domain, editorUrl, projectUrl }: Ctx) {
         autoComplete="off"
         onSubmit={(e) => {
           e.preventDefault();
-          if (value.trim()) go("nowy/fraza", { q: value.trim() });
+          if (value.trim()) check(value.trim());
         }}
       >
         <input
@@ -501,17 +513,76 @@ function PhraseScreen({ route, domain, editorUrl, projectUrl }: Ctx) {
           Sprawdź temat
         </button>
       </form>
-      {from && (
-        <p className="mt-3 text-theme-sm text-gray-500">
-          To tytuł wpisu konkurenta (
-          <a className={inlineLink} href={from} target="_blank" rel="noopener noreferrer">
-            otwórz
-          </a>
-          ). Skróć go do frazy, pod którą chcesz być widoczny.
-        </p>
+      {from && <SourceKeywords from={from} source={source} keywords={keywords} current={phrase} onPick={check} />}
+      {phrase ? (
+        <Verdict key={phrase} phrase={phrase} domain={domain} editorUrl={editorUrl} projectUrl={projectUrl} />
+      ) : (
+        from && keywords !== null && competitors && <p className="mt-4 text-theme-sm text-gray-500">Senuto nie zna fraz tego wpisu – wpisz frazę sam.</p>
       )}
-      {phrase && !from && <Verdict key={phrase} phrase={phrase} domain={domain} editorUrl={editorUrl} projectUrl={projectUrl} />}
     </>
+  );
+}
+
+/* Na co rankuje wpis konkurenta – frazy z Senuto (competitor-keywords.json), klik = sprawdzenie frazy. */
+function SourceKeywords({ from, source, keywords, current, onPick }: { from: string; source: Any; keywords: KeywordRow[] | null; current: string; onPick: (q: string) => void }) {
+  const top = (keywords ?? []).slice(0, 10);
+  return (
+    <Card className="mt-4 p-5">
+      <p className="text-theme-sm text-gray-600 dark:text-gray-300">
+        Wpis konkurenta:{" "}
+        {source?.host && (
+          <>
+            <Favicon host={source.host} />{" "}
+          </>
+        )}
+        <a className={inlineLink} href={from} target="_blank" rel="noopener noreferrer">
+          {source?.title ?? from}
+        </a>
+        {source?.published && <span className="text-gray-500"> · {source.published}</span>}
+      </p>
+      {keywords === null ? (
+        <p className="mt-3 text-theme-sm text-gray-500">
+          <Loader2 className="me-1.5 inline size-4 animate-spin" /> Wczytuję frazy z Senuto…
+        </p>
+      ) : top.length ? (
+        <>
+          <h3 className="mt-4 mb-2 text-theme-sm font-medium">
+            Na co rankuje ({fmtInt(source?.rank?.keywords ?? keywords.length)} fraz, od największego ruchu)
+          </h3>
+          <ul className="flex flex-col divide-y divide-gray-100 dark:divide-gray-800">
+            {top.map(([kw, position, searches, traffic]) => (
+              <li key={kw}>
+                <button
+                  type="button"
+                  onClick={() => onPick(kw)}
+                  className={cn(
+                    "grid w-full grid-cols-[minmax(0,1fr)_56px_120px_90px] items-center gap-3 rounded px-2 py-1.5 text-left text-theme-sm hover:bg-gray-50 dark:hover:bg-white/5",
+                    kw === current && "bg-brand-50 dark:bg-brand-500/10",
+                  )}
+                  title="Sprawdź tę frazę"
+                >
+                  <span className="truncate font-medium text-gray-800 dark:text-white/90">{kw}</span>
+                  <PositionBadge value={position} />
+                  <span className="text-right text-gray-500 tabular-nums">{fmtInt(searches)} wyszuk.</span>
+                  <span className="text-right text-gray-500 tabular-nums">{fmtInt(Math.round(traffic))} ruchu</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2 text-theme-xs text-gray-500">Kliknij frazę, żeby sprawdzić, czy mamy już wpis na ten temat. Dane Senuto z {source?.rank?.at ?? "–"}.</p>
+        </>
+      ) : source?.estimate ? (
+        <p className="mt-3 text-theme-sm text-gray-600 dark:text-gray-300">
+          Wpis jeszcze nie rankuje. Fraza główna z tytułu:{" "}
+          <button type="button" className={inlineLink} onClick={() => onPick(source.estimate.phrase)}>
+            „{source.estimate.phrase}”
+          </button>{" "}
+          ({source.estimate.searches ?? "brak danych o"} wyszukiwań, z powiązanymi ~{fmtInt(source.estimate.demand)} / mies.).
+        </p>
+      ) : (
+        <p className="mt-3 text-theme-sm text-gray-500">Senuto nie widzi tego wpisu na żadną frazę w TOP50.</p>
+      )}
+    </Card>
   );
 }
 
@@ -1115,7 +1186,7 @@ function CompetitorsList({ domain, competitors, compError, route, SEEK, editorUr
           const write = (primary: boolean) => (
             <a
               key="w"
-              href={link("nowy/fraza", { q: data.title, z: data.url })}
+              href={link("nowy/fraza", { z: data.url })}
               className={cn(btnSmall, primary ? "bg-brand-500 text-gray-950 hover:bg-brand-400" : "border border-gray-300 text-gray-700 dark:border-gray-700 dark:text-gray-300")}
             >
               Napisz nasz tekst
