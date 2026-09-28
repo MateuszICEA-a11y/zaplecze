@@ -1,5 +1,5 @@
 {
-"generated_at": "2026-09-27T10:11:50Z",
+"generated_at": "2026-09-28T08:00:20Z",
 "sites": [
 {
 "host": "widoczni.com",
@@ -30,11 +30,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:12:58Z",
+"title_fetched_at": "2026-09-28T08:00:56Z",
 "kind": "poradnik",
 "kind_basis": "poradnik jak przygotować stronę do pozycjonowania",
 "kind_title": "Korzystasz z SEO? Zacznij od tego!",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2024-02-27"
 },
 {
 "url": "https://widoczni.com/blog/pozycjonowanie-czy-adwords-co-wybrac/",
@@ -45,11 +46,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:08Z",
+"title_fetched_at": "2026-09-28T08:01:06Z",
 "kind": "poradnik",
 "kind_basis": "porównanie i wybór między SEO a Google Ads",
 "kind_title": "Co wybrać SEO czy Google Ads?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-01-05"
 },
 {
 "url": "https://widoczni.com/blog/tekst-na-strone-glowna/",
@@ -60,11 +62,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:18Z",
+"title_fetched_at": "2026-09-28T08:01:16Z",
 "kind": "poradnik",
 "kind_basis": "poradnik optymalizacji strony głównej pod kątem SEO i UX",
 "kind_title": "Strona główna, która sprzedaje. Optymalizacja strony od SEO po UX.",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-04-16"
 },
 {
 "url": "https://widoczni.com/blog/call-to-action-w-content-marketingu/",
@@ -75,11 +78,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:28Z",
+"title_fetched_at": "2026-09-28T08:01:26Z",
 "kind": "poradnik",
 "kind_basis": "wyjaśnienie czym jest CTA i przykłady zastosowania",
 "kind_title": "Czym jest wezwanie do działania i jakie są przykłady genialnego CTA?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-04-24"
 },
 {
 "url": "https://widoczni.com/blog/8-rzeczy-ktorych-unikac-w-social-mediach/",
@@ -90,11 +94,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:37Z",
+"title_fetched_at": "2026-09-28T08:01:35Z",
 "kind": "poradnik",
 "kind_basis": "lista porad czego unikać w social mediach",
 "kind_title": "8 rzeczy, których powinieneś wystrzegać się w social mediach",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2020-06-21"
 },
 {
 "url": "https://widoczni.com/blog/trendy-w-seo-na-2017-rok/",
@@ -105,11 +110,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:48Z",
+"title_fetched_at": "2026-09-28T08:01:45Z",
 "kind": "news",
 "kind_basis": "prognozy i trendy powiązane z konkretnym 2017 rokiem",
 "kind_title": "Trendy w seo na 2017 rok. Prognozy ekspertów",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2020-06-20"
 },
 {
 "url": "https://widoczni.com/blog/od-czego-zalezy-pozycja-w-google/",
@@ -120,11 +126,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:58Z",
+"title_fetched_at": "2026-09-28T08:01:56Z",
 "kind": "poradnik",
 "kind_basis": "omówienie czynników rankingowych Google i podejścia do SEO",
 "kind_title": "Czynniki rankingowe Google - Jak myśleć o SEO w 2026 roku?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-03-12"
 },
 {
 "url": "https://widoczni.com/blog/jak-napisac-strone-o-nas/",
@@ -135,11 +142,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:14:07Z",
+"title_fetched_at": "2026-09-28T08:02:06Z",
 "kind": "poradnik",
 "kind_basis": "instrukcja jak napisać stronę o nas pod AI SEO",
 "kind_title": "Strona “O nas” a AI SEO. Jak uczynić ją przyjazną sztucznej inteligencji?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-02-20"
 },
 {
 "url": "https://widoczni.com/blog/przetestuj-szybkosc-twojej-strony/",
@@ -150,11 +158,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:14:18Z",
+"title_fetched_at": "2026-09-28T08:02:16Z",
 "kind": "poradnik",
 "kind_basis": "instrukcja jak poprawić czas ładowania strony",
 "kind_title": "Jak poprawić czas ładowania strony?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2023-10-04"
 },
 {
 "url": "https://widoczni.com/blog/mobile-first-zmiany-w-indeksowaniu/",
@@ -165,11 +174,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:14:28Z",
+"title_fetched_at": "2026-09-28T08:02:26Z",
 "kind": "poradnik",
 "kind_basis": "wskazówki optymalizacji strony mobile friendly",
 "kind_title": "Strona mobile friendly w pigułce. Optymalizuj stronę, aby generować zyski",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2025-05-16"
 },
 {
 "url": "https://widoczni.com/blog/czy-protokol-ssl-wplywa-na-pozycjonowanie-strony/",
@@ -180,11 +190,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:14:38Z",
+"title_fetched_at": "2026-09-28T08:02:36Z",
 "kind": "poradnik",
 "kind_basis": "wyjaśnienie wpływu protokołu SSL i HTTPS na pozycjonowanie",
 "kind_title": "Czy protokół https ma wpływ na pozycjonowanie?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2024-07-26"
 },
 {
 "url": "https://widoczni.com/blog/jak-napisac-dobry-tekst-na-bloga/",
@@ -195,11 +206,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:14:48Z",
+"title_fetched_at": "2026-09-28T08:02:46Z",
 "kind": "poradnik",
 "kind_basis": "poradnik jak tworzyć skuteczne treści blogowe",
 "kind_title": "Sztuka blogowania – jak tworzyć skuteczne i angażujące treści?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2025-03-12"
 },
 {
 "url": "https://widoczni.com/blog/czy-twoj-e-sklep-wzbudza-zaufanie-klientow/",
@@ -210,11 +222,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:14:58Z",
+"title_fetched_at": "2026-09-28T08:02:56Z",
 "kind": "poradnik",
 "kind_basis": "porady jak budować zaufanie w e-commerce",
 "kind_title": "Zaufanie Twoją walutą e-commerce 2026 - jak je budować i zwiększać sprzedaż?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-04-25"
 },
 {
 "url": "https://widoczni.com/blog/content-marketing-ktory-sprzedaje/",
@@ -225,11 +238,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:15:08Z",
+"title_fetched_at": "2026-09-28T08:03:06Z",
 "kind": "poradnik",
 "kind_basis": "instrukcja jak tworzyć sprzedający content marketing",
 "kind_title": "Jak tworzyć treści, które sprzedają?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2022-04-19"
 },
 {
 "url": "https://widoczni.com/blog/jak-mierzyc-skutecznosc-seo/",
@@ -240,11 +254,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:15:18Z",
+"title_fetched_at": "2026-09-28T08:03:16Z",
 "kind": "poradnik",
 "kind_basis": "poradnik jak mierzyć efekty SEO i wskaźniki",
 "kind_title": "Jak sprawdzać efekty SEO? Śledź te wskaźniki SEO",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2025-12-11"
 },
 {
 "url": "https://widoczni.com/blog/jak-stworzyc-przyciagajacy-tytul/",
@@ -255,11 +270,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:15:28Z",
+"title_fetched_at": "2026-09-28T08:03:26Z",
 "kind": "poradnik",
 "kind_basis": "poradnik jak pisać przyciągające nagłówki",
 "kind_title": "Jak pisać nagłówki, by przyciągnąć uwagę czytelnika?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-04-24"
 },
 {
 "url": "https://widoczni.com/blog/czy-tresc-strony-zapewni-sukces/",
@@ -270,11 +286,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:15:38Z",
+"title_fetched_at": "2026-09-28T08:03:36Z",
 "kind": "poradnik",
 "kind_basis": "analiza zależności między contentem a pozycjonowaniem",
 "kind_title": "Content a SEO - czy można pozycjonować się tylko treścią?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-04-16"
 },
 {
 "url": "https://widoczni.com/blog/frazy-tanio-tylko-top10-rozliczania-za-pozycje/",
@@ -285,11 +302,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:15:47Z",
+"title_fetched_at": "2026-09-28T08:03:45Z",
 "kind": "poradnik",
 "kind_basis": "analiza zagrożeń rozliczania za pozycje",
 "kind_title": "Frazy, tanio, tylko TOP10 – czyli o zagrożeniach rozliczania za pozycje.",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2020-05-16"
 },
 {
 "url": "https://widoczni.com/blog/co-wybrac-pozycjonowanie-szerokie-czy-kampanie-adwords/",
@@ -300,11 +318,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:15:58Z",
+"title_fetched_at": "2026-09-28T08:03:56Z",
 "kind": "poradnik",
 "kind_basis": "porównanie SEO szerokiego z kampaniami AdWords",
 "kind_title": "Co wybrać SEO czy Google Ads?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-01-05"
 },
 {
 "url": "https://widoczni.com/blog/optymalizacja-sklepu-internetowego/",
@@ -315,11 +334,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:16:08Z",
+"title_fetched_at": "2026-09-28T08:04:06Z",
 "kind": "poradnik",
 "kind_basis": "poradnik optymalizacji i pozycjonowania sklepu internetowego",
 "kind_title": "Pozycjonowanie sklepu",
-"kind_source": "llm"
+"kind_source": "llm",
+"published_checked": "2026-09-28"
 },
 {
 "url": "https://widoczni.com/blog/konferencje-marketingowe-w-2017-w-polsce/",
@@ -330,11 +350,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:16:18Z",
+"title_fetched_at": "2026-09-28T08:04:15Z",
 "kind": "news",
 "kind_basis": "zestawienie konferencji marketingowych powiązane z rokiem 2017",
 "kind_title": "Konferencje i spotkania Marketingu Internetowego 2017 w Polsce",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2020-06-30"
 },
 {
 "url": "https://widoczni.com/blog/storytelling-jak-opowiadac-historie-marki/",
@@ -345,11 +366,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:16:28Z",
+"title_fetched_at": "2026-09-28T08:04:25Z",
 "kind": "poradnik",
 "kind_basis": "poradnik jak wykorzystać storytelling w reklamie",
 "kind_title": "Storytelling w reklamie - jak opowiadać historie, które sprzedają?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2023-01-23"
 },
 {
 "url": "https://widoczni.com/blog/nowy-pingwin-a-disavow-tool/",
@@ -360,11 +382,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:16:37Z",
+"title_fetched_at": "2026-09-28T08:04:35Z",
 "kind": "poradnik",
 "kind_basis": "analiza zasadności zrzekania się linków w Disavow Tool",
 "kind_title": "Disavow Tool, czyli czy warto zrzekać się nienaturalnych linków?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2020-06-01"
 },
 {
 "url": "https://widoczni.com/blog/jak-budowac-sile-marki-tekstami/",
@@ -375,11 +398,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:16:47Z",
+"title_fetched_at": "2026-09-28T08:04:46Z",
 "kind": "poradnik",
 "kind_basis": "poradnik jak budować siłę marki tekstami",
 "kind_title": "Content marketing - jak budować siłę marki tekstami?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2020-05-31"
 },
 {
 "url": "https://widoczni.com/blog/6-faktow-o-pozycjonowaniu/",
@@ -390,11 +414,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:16:58Z",
+"title_fetched_at": "2026-09-28T08:04:56Z",
 "kind": "poradnik",
 "kind_basis": "artykuł edukacyjny w formule pytań i odpowiedzi o SEO",
 "kind_title": "Pozycjonowanie stron w pytaniach i odpowiedziach",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2025-10-03"
 },
 {
 "url": "https://widoczni.com/blog/kto-sie-boi-pingwina-3-0/",
@@ -405,11 +430,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:17:07Z",
+"title_fetched_at": "2026-09-28T08:05:05Z",
 "kind": "news",
 "kind_basis": "omówienie nowej aktualizacji algorytmu Google Pingwin 3.0",
 "kind_title": "Kto się boi Pingwina 3.0? - czyli słów kilka o nowej aktualizacji Google",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2020-05-15"
 },
 {
 "url": "https://widoczni.com/slownik-pojec/rich-snippets-czyli-jak-wyroznic-swoja-strone-w-wyszukiwarce/",
@@ -420,11 +446,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:17:17Z",
+"title_fetched_at": "2026-09-28T08:05:15Z",
 "kind": "slownik",
 "kind_basis": "reguła: sekcja słownika pojęć",
 "kind_title": "Rich snippets - czym są i jak je wdrożyć?",
-"kind_source": "rule"
+"kind_source": "rule",
+"published": "2026-05-13"
 },
 {
 "url": "https://widoczni.com/blog/masz-seo-nie-masz-sprzedazy/",
@@ -451,11 +478,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:17:38Z",
+"title_fetched_at": "2026-09-28T08:05:26Z",
 "kind": "poradnik",
 "kind_basis": "poradnik jak zacząć karierę w marketingu internetowym",
 "kind_title": "Jak zacząć pracę w marketingu internetowym?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2023-03-03"
 },
 {
 "url": "https://widoczni.com/blog/dla-kogo-google-ad-grants/",
@@ -466,11 +494,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:17:47Z",
+"title_fetched_at": "2026-09-28T08:05:35Z",
 "kind": "poradnik",
 "kind_basis": "omówienie dla kogo jest przeznaczony program Google Ad Grants",
 "kind_title": "Dla kogo Google Ad Grants?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2020-05-27"
 },
 {
 "url": "https://widoczni.com/blog/pozycjonowanie-adwords-synergia-czy-kanibalizacja/",
@@ -481,11 +510,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:18:08Z",
+"title_fetched_at": "2026-09-28T08:05:46Z",
 "kind": "poradnik",
 "kind_basis": "analiza relacji synergii i kanibalizacji między SEO a AdWords",
 "kind_title": "Pozycjonowanie + AdWords. Synergia czy kanibalizacja?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2020-05-26"
 },
 {
 "url": "https://widoczni.com/blog/jak-prawidlowo-zoptymalizowac-strone-www/",
@@ -38324,22 +38354,6 @@
 "kind_source": "llm"
 },
 {
-"url": "https://delante.pl/15-platform-dla-sklepow-internetowych-ktore-warto-wybrac/",
-"host": "delante.pl",
-"path": "/15-platform-dla-sklepow-internetowych-ktore-warto-wybrac/",
-"slug_title": "15 platform dla sklepow internetowych ktore warto wybrac",
-"title": null,
-"lastmod": "2025-02-27T14:28:21+00:00",
-"first_seen": "2026-09-25",
-"baseline": true,
-"title_fetched_at": "2026-09-25T12:24:11Z",
-"title_error": "HTTP 429",
-"kind": "poradnik",
-"kind_basis": "zestawienie platform dla sklepów internetowych",
-"kind_title": "15 platform dla sklepow internetowych ktore warto wybrac",
-"kind_source": "llm"
-},
-{
 "url": "https://delante.pl/7-wspanialych-blogi-o-seo-ktore-warto-znac/",
 "host": "delante.pl",
 "path": "/7-wspanialych-blogi-o-seo-ktore-warto-znac/",
@@ -47087,11 +47101,12 @@
 "lastmod": "2026-08-27T18:53:29+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:09Z",
+"title_fetched_at": "2026-09-28T08:01:10Z",
 "kind": "poradnik",
 "kind_basis": "artykuł strategiczny doradzający o czym wiedzieć planując działania",
 "kind_title": "Social Media w 2026 roku: o czym warto wiedzieć planując strategię marketingową na Q2?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-04-07"
 },
 {
 "url": "https://delante.pl/jak-wykorzystac-ai-w-google-ads/",
@@ -47102,11 +47117,12 @@
 "lastmod": "2026-08-27T18:58:58+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:09Z",
+"title_fetched_at": "2026-09-28T08:01:10Z",
 "kind": "poradnik",
 "kind_basis": "fraza jak wykorzystać wskazuje na artykuł poradnikowy edukacyjny",
 "kind_title": "Jak wykorzystać AI w reklamach Google Ads i Meta Ads?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2025-06-25"
 },
 {
 "url": "https://delante.pl/raport-widocznosci-w-ai-w-branzy-automotive-2026-juz-dostepny/",
@@ -47117,11 +47133,12 @@
 "lastmod": "2026-08-27T19:02:32+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:08Z",
+"title_fetched_at": "2026-09-28T08:01:09Z",
 "kind": "news",
 "kind_basis": "raport z konkretnego roku z dopiskiem już dostępny",
 "kind_title": "Raport widoczności w AI w branży automotive 2026 już dostępny!",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-06-09"
 },
 {
 "url": "https://delante.pl/pozycjonowanie-w-branzy-logistycznej/",
@@ -47132,11 +47149,12 @@
 "lastmod": "2026-08-27T19:09:10+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:09Z",
+"title_fetched_at": "2026-09-28T08:01:09Z",
 "kind": "poradnik",
 "kind_basis": "analiza znaczenia SEO dla danej branży artykuł edukacyjny",
 "kind_title": "Pozycjonowanie w branży logistycznej - dlaczego SEO ma znaczenie dla firm logistycznych?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-06-02"
 },
 {
 "url": "https://delante.pl/ranking-top-10-widocznosci-ai-marek-beauty-kto-jest-cytowany-polecany-i-wybierany-przez-modele/",
@@ -47147,11 +47165,12 @@
 "lastmod": "2026-08-27T19:10:50+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:07Z",
+"title_fetched_at": "2026-09-28T08:01:08Z",
 "kind": "poradnik",
 "kind_basis": "ranking marek i analiza widoczności w modelach AI",
 "kind_title": "Ranking widoczności AI: TOP 10 marek beauty w Polsce. Kto wygrywa rekomendacje modeli?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-06-30"
 },
 {
 "url": "https://delante.pl/jak-pozyskiwac-wartosciowe-wzmianki-brandowe/",
@@ -47162,11 +47181,12 @@
 "lastmod": "2026-08-27T20:11:27+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:07Z",
+"title_fetched_at": "2026-09-28T08:01:08Z",
 "kind": "poradnik",
 "kind_basis": "konstrukcja jak pozyskiwać wskazuje na poradnik how-to",
 "kind_title": "Jak pozyskiwać wartościowe wzmianki brandowe poprawiające widoczność w AI i Google?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-08-27"
 },
 {
 "url": "https://delante.pl/jak-dziala-chatgpt-ads/",
@@ -47177,11 +47197,12 @@
 "lastmod": "2026-08-28T08:55:42+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:07Z",
+"title_fetched_at": "2026-09-28T08:01:07Z",
 "kind": "poradnik",
 "kind_basis": "wyjaśnienie jak działa nowe rozwiązanie reklamowe artykuł edukacyjny",
 "kind_title": "Jak działa ChatGPT Ads? Pierwsze informacje i wnioski o reklamach w ChatGPT",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-08-21"
 },
 {
 "url": "https://delante.pl/jak-pozyskiwac-linki-poprawiajace-widocznosc-w-modelach-ai/",
@@ -47192,11 +47213,12 @@
 "lastmod": "2026-09-01T12:25:56+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:06Z",
+"title_fetched_at": "2026-09-28T08:01:07Z",
 "kind": "poradnik",
 "kind_basis": "konstrukcja jak pozyskiwać wskazuje na treść poradnikową",
 "kind_title": "Jak pozyskiwać linki poprawiające widoczność w modelach AI?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-08-28"
 },
 {
 "url": "https://delante.pl/jak-mierzyc-widocznosc-i-sprzedaz-w-agentic-commerce-nowe-kpi/",
@@ -47207,11 +47229,12 @@
 "lastmod": "2026-09-07T16:38:42+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:05Z",
+"title_fetched_at": "2026-09-28T08:01:06Z",
 "kind": "poradnik",
 "kind_basis": "konstrukcja jak mierzyć opis nowych KPI w e-commerce",
 "kind_title": "Jak mierzyć widoczność i sprzedaż w Agentic Commerce? Nowe KPI dla e-commerce",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-07"
 },
 {
 "url": "https://delante.pl/jak-tworzyc-tresci-o-kosmetykach-ktore-buduja-widocznosc-w-google-i-rekomendacje-ai/",
@@ -47222,11 +47245,12 @@
 "lastmod": "2026-09-08T08:12:30+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:05Z",
+"title_fetched_at": "2026-09-28T08:01:06Z",
 "kind": "poradnik",
 "kind_basis": "tworzenie treści i poradnik jak pisać pod SEO i AI",
 "kind_title": "Tworzenie treści o kosmetykach – SEO i widoczność w AI",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-01"
 },
 {
 "url": "https://delante.pl/jak-klienci-szukaja-kosmetykow-w-google-i-ai-od-problemu-skornego-do-wyboru-produktu/",
@@ -47237,11 +47261,12 @@
 "lastmod": "2026-09-08T09:44:35+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:04Z",
+"title_fetched_at": "2026-09-28T08:01:05Z",
 "kind": "poradnik",
 "kind_basis": "analiza zachowań klientów i ścieżki zakupowej customer journey",
 "kind_title": "Jak klienci szukają kosmetyków w Google i AI? Od problemu skórnego do wyboru produktu",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-08"
 },
 {
 "url": "https://delante.pl/czego-klienci-oczekuja-od-sklepu-internetowego-w-2026/",
@@ -47252,11 +47277,12 @@
 "lastmod": "2026-09-10T16:52:18+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:04Z",
+"title_fetched_at": "2026-09-28T08:01:04Z",
 "kind": "poradnik",
 "kind_basis": "lista porad 10 rzeczy mających wpływ na zakup",
 "kind_title": "Czego klienci oczekują od sklepu internetowego w 2026? 10 rzeczy, które mają wpływ na zakup",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-10"
 },
 {
 "url": "https://delante.pl/jak-ai-zmienia-sposob-w-jaki-klienci-wybieraja-samochod-customer-journey-w-branzy-automotive-2026/",
@@ -47267,11 +47293,12 @@
 "lastmod": "2026-09-14T09:34:32+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:03Z",
+"title_fetched_at": "2026-09-28T08:01:04Z",
 "kind": "poradnik",
 "kind_basis": "analiza wpływu AI na zachowania klientów artykuł edukacyjny",
 "kind_title": "Jak AI zmienia wybór samochodu? Customer journey automotive 2026",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-14"
 },
 {
 "url": "https://delante.pl/jak-zbudowac-benchmark-konkurencji-w-ai-search/",
@@ -47282,11 +47309,12 @@
 "lastmod": "2026-09-15T19:03:22+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:03Z",
+"title_fetched_at": "2026-09-28T08:01:04Z",
 "kind": "poradnik",
 "kind_basis": "konstrukcja jak zbudować wskazuje na poradnik how-to",
 "kind_title": "Jak zbudować benchmark konkurencji w AI Search?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-15"
 },
 {
 "url": "https://delante.pl/top-15-polskich-marek-odziezowych-w-ai-raport-2026-ktore-maja-najwyzsza-widocznosc-w-oczach-sztucznej-inteligencji-a-ktore-dla-niej-nie-istnieja/",
@@ -47297,11 +47325,12 @@
 "lastmod": "2026-09-16T14:59:34+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:02Z",
+"title_fetched_at": "2026-09-28T08:01:03Z",
 "kind": "news",
 "kind_basis": "raport z konkretnego roku połączony z rankingiem marek",
 "kind_title": "TOP 15 polskich marek odzieżowych w AI (Raport 2026): Które mają najwyższą widoczność w oczach sztucznej inteligencji, a które dla niej… nie istnieją?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-16"
 },
 {
 "url": "https://delante.pl/ukryte-koszty-zlego-ux-jak-bledy-uzytecznosci-wplywaja-na-przychody-e-commerce/",
@@ -47312,11 +47341,12 @@
 "lastmod": "2026-09-17T13:29:31+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:02Z",
+"title_fetched_at": "2026-09-28T08:01:03Z",
 "kind": "poradnik",
 "kind_basis": "analiza zjawiska wpływu błędów UX na e-commerce",
 "kind_title": "Ukryte koszty złego UX w e-commerce",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-16"
 },
 {
 "url": "https://delante.pl/marketingowe-decyzje-ktore-zadecyduja-o-twoim-roi-za-rok/",
@@ -47327,11 +47357,12 @@
 "lastmod": "2026-09-18T07:49:29+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:01Z",
+"title_fetched_at": "2026-09-28T08:01:02Z",
 "kind": "poradnik",
 "kind_basis": "artykuł doradczy lista 3 decyzji marketingowych",
 "kind_title": "Marketing 2027 zaczyna się dziś - 3 decyzje, które zadecydują o Twoim ROI za rok",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-02"
 },
 {
 "url": "https://delante.pl/marka-modowa-vs-sklep-multibrand-dzialania-marketingowe/",
@@ -47342,11 +47373,12 @@
 "lastmod": "2026-09-18T14:40:32+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:01Z",
+"title_fetched_at": "2026-09-28T08:01:02Z",
 "kind": "poradnik",
 "kind_basis": "porównanie strategii marketingowych marka własna kontra multibrand",
 "kind_title": "Marketing w branży fashion: autorska marka modowa vs sklep multibrand",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-18"
 },
 {
 "url": "https://delante.pl/chatgpt-ads-sponsored-agents/",
@@ -47357,11 +47389,12 @@
 "lastmod": "2026-09-23T09:44:13+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:00Z",
+"title_fetched_at": "2026-09-28T08:01:01Z",
 "kind": "news",
 "kind_basis": "informacja o testach nowego formatu reklamowego przez OpenAI",
 "kind_title": "Sponsored Agents w ChatGPT Ads. OpenAI testuje nowy format reklam",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-18"
 },
 {
 "url": "https://delante.pl/google-discover-dive-deeper-ai/",
@@ -47372,11 +47405,12 @@
 "lastmod": "2026-09-23T09:45:01+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:00Z",
+"title_fetched_at": "2026-09-28T08:01:01Z",
 "kind": "news",
 "kind_basis": "informacja o testach nowej funkcji AI w Google Discover",
 "kind_title": "Google testuje AI w Discover. Poznaj „Dive deeper”",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-21"
 },
 {
 "url": "https://delante.pl/chatgpt-ads-ai-creative-tools/",
@@ -47387,11 +47421,12 @@
 "lastmod": "2026-09-23T10:18:59+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:12:59Z",
+"title_fetched_at": "2026-09-28T08:01:00Z",
 "kind": "news",
 "kind_basis": "nowość rynkowa OpenAI wprowadza nowe narzędzia kreatywne",
 "kind_title": "ChatGPT Ads z AI Creative Tools. OpenAI automatyzuje kreacje reklamowe",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-23"
 },
 {
 "url": "https://delante.pl/google-zakupy-ai-mode-usa-koniec-listingow-europa/",
@@ -47402,11 +47437,12 @@
 "lastmod": "2026-09-23T14:05:16+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:12:59Z",
+"title_fetched_at": "2026-09-28T08:01:00Z",
 "kind": "news",
 "kind_basis": "informacja o zmianach w Google AI Mode i wycofaniu listingów",
 "kind_title": "Google: zakupy w AI Mode w USA, koniec listingów w Europie",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-23"
 },
 {
 "url": "https://delante.pl/seo-i-aiso-dla-modeli-samochodow-jak-sprawic-zeby-google-i-ai-polecaly-twoj-samochod/",
@@ -47417,11 +47453,12 @@
 "lastmod": "2026-09-25T09:10:50+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:12:58Z",
+"title_fetched_at": "2026-09-28T08:00:59Z",
 "kind": "poradnik",
 "kind_basis": "fraza jak sprawić żeby Google i AI polecały",
 "kind_title": "SEO i AISO dla modeli samochodów. Jak zwiększyć widoczność w Google i AI? | Delante - Agencja SEO / SEM",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-24"
 },
 {
 "url": "https://delante.pl/chatgpt-ads-hubspot-integracja/",
@@ -47432,11 +47469,12 @@
 "lastmod": "2026-09-25T11:54:51+00:00",
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:12:58Z",
+"title_fetched_at": "2026-09-28T08:00:59Z",
 "kind": "poradnik",
 "kind_basis": "opis nowej integracji ChatGPT Ads z HubSpot i zarządzania kampaniami",
 "kind_title": "ChatGPT Ads w HubSpot. Kampanie, leady i konwersje w jednym miejscu",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-23"
 },
 {
 "url": "https://delante.pl/google-september-2026-spam-update/",
@@ -47447,11 +47485,12 @@
 "lastmod": "2026-09-25T12:37:53+00:00",
 "first_seen": "2026-09-25",
 "baseline": false,
-"title_fetched_at": "2026-09-25T17:38:46Z",
+"title_fetched_at": "2026-09-28T08:00:58Z",
 "kind": "news",
 "kind_basis": "reguła: przegląd nowości lub data w adresie",
 "kind_title": "Google September 2026 Spam Update już trwa. Co oznacza dla SEO?",
-"kind_source": "rule"
+"kind_source": "rule",
+"published": "2026-09-25"
 },
 {
 "url": "https://delante.pl/ai-content-gap-jak-sprawdzic-gdzie-ai-poleca-konkurencje/",
@@ -47462,11 +47501,12 @@
 "lastmod": "2026-09-26T07:26:59+00:00",
 "first_seen": "2026-09-26",
 "baseline": false,
-"title_fetched_at": "2026-09-26T09:31:54Z",
+"title_fetched_at": "2026-09-28T08:00:57Z",
 "kind": "poradnik",
 "kind_basis": "Sformułowanie jak sprawdzić wskazuje na artykuł instruktażowy",
 "kind_title": "AI Content Gap - jak sprawdzić, gdzie AI poleca konkurencję?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-22"
 },
 {
 "url": "https://delante.pl/dlaczego-ai-search-to-must-have-w-budzetach-marketingowych/",
@@ -47477,11 +47517,12 @@
 "lastmod": "2026-09-26T08:40:38+00:00",
 "first_seen": "2026-09-26",
 "baseline": false,
-"title_fetched_at": "2026-09-26T09:31:54Z",
+"title_fetched_at": "2026-09-28T08:00:57Z",
 "kind": "poradnik",
 "kind_basis": "Analiza zjawiska i argumentacja dlaczego warto uwzględnić technologię",
 "kind_title": "Dlaczego AI Search to must-have w budżetach marketingowych na 2027",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-03"
 },
 {
 "url": "https://delante.pl/tresci-seo-b2b-najlepsze-praktyki/",
@@ -47492,11 +47533,12 @@
 "lastmod": "2026-09-26T08:58:35+00:00",
 "first_seen": "2026-09-26",
 "baseline": false,
-"title_fetched_at": "2026-09-26T09:31:53Z",
+"title_fetched_at": "2026-09-28T08:00:57Z",
 "kind": "poradnik",
 "kind_basis": "Najlepsze praktyki oraz przewodnik wskazują na artykuł edukacyjny",
 "kind_title": "Treści SEO B2B w 2027: najlepsze praktyki - przewodnik dla marketing managerów",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-26"
 },
 {
 "url": "https://delante.pl/czy-google-ads-beda-drozsze-w-przyszlym-roku/",
@@ -47507,11 +47549,28 @@
 "lastmod": "2026-09-26T09:43:09+00:00",
 "first_seen": "2026-09-26",
 "baseline": false,
-"title_fetched_at": "2026-09-26T09:31:52Z",
+"title_fetched_at": "2026-09-28T08:00:56Z",
 "kind": "poradnik",
 "kind_basis": "Analiza kosztów oraz porady jak zabezpieczyć budżet",
 "kind_title": "Czy Google Ads będą droższe w 2027? Analiza kosztów i jak zabezpieczyć budżet",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-09-09"
+},
+{
+"url": "https://delante.pl/10-platform-dla-sklepow-internetowych-ktore-warto-wybrac/",
+"host": "delante.pl",
+"path": "/10-platform-dla-sklepow-internetowych-ktore-warto-wybrac/",
+"slug_title": "10 platform dla sklepow internetowych ktore warto wybrac",
+"title": "Platformy e-commerce 2027 - porównanie 10 platform sklepów internetowych",
+"lastmod": "2026-09-27T12:08:54+00:00",
+"first_seen": "2026-09-28",
+"baseline": false,
+"title_fetched_at": "2026-09-28T08:00:57Z",
+"published": "2026-09-04",
+"kind": "poradnik",
+"kind_basis": "porównanie platform e-commerce i lista rekomendacji dla sklepów",
+"kind_source": "llm",
+"kind_title": "Platformy e-commerce 2027 - porównanie 10 platform sklepów internetowych"
 },
 {
 "url": "https://traffictrends.pl/blog/jak-wypromowac-sklep-internetowy",
@@ -47522,12 +47581,13 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:12:59Z",
+"title_fetched_at": "2026-09-28T08:00:57Z",
 "title_error": "tytuł wspólny dla wielu stron",
 "kind": "poradnik",
 "kind_basis": "poradnikowy zwrot jak wypromowac sklep internetowy",
 "kind_title": "jak wypromowac sklep internetowy",
-"kind_source": "llm"
+"kind_source": "llm",
+"published_checked": "2026-09-28"
 },
 {
 "url": "https://traffictrends.pl/blog/wdrozenie-https-dla-sklepu-nieuniknione",
@@ -47538,11 +47598,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:12:59Z",
+"title_fetched_at": "2026-09-28T08:00:57Z",
 "kind": "poradnik",
 "kind_basis": "slug wskazuje na poradnik o wdrożeniu https dla sklepu",
 "kind_title": "Pozycjonowanie TRAFFIC AI - SEO i LLM dla e-Commerce",
-"kind_source": "llm"
+"kind_source": "llm",
+"published_checked": "2026-09-28"
 },
 {
 "url": "https://traffictrends.pl/blog/raport-sprzedaz-internetowa-w-niedziele-bez-handlu-jak-wyglada-ruch-konwersja-i-sprzedaz-w-sklepach-internetowych",
@@ -47553,12 +47614,13 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:12:59Z",
+"title_fetched_at": "2026-09-28T08:00:57Z",
 "title_error": "tytuł wspólny dla wielu stron",
 "kind": "poradnik",
 "kind_basis": "raport i analiza ruchu oraz konwersji w niedziele bez handlu",
 "kind_title": "raport sprzedaz internetowa w niedziele bez handlu jak wyglada ruch konwersja i sprzedaz w sklepach internetowych",
-"kind_source": "llm"
+"kind_source": "llm",
+"published_checked": "2026-09-28"
 },
 {
 "url": "https://traffictrends.pl/blog/jak-zwiekszyc-sprzedaz-przed-swietami-poradnik-dla-sklepow-internetowych",
@@ -47569,11 +47631,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:00Z",
+"title_fetched_at": "2026-09-28T08:00:58Z",
 "kind": "poradnik",
 "kind_basis": "poradnik jak zwiększyć sprzedaż przed świętami",
 "kind_title": "Jak zwiększyć sprzedaż w sklepie internetowym?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2026-07-13"
 },
 {
 "url": "https://traffictrends.pl/blog/7-pulapek-przy-wspolpracy-z-partnerami-zewnetrznymi",
@@ -47584,11 +47647,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:00Z",
+"title_fetched_at": "2026-09-28T08:00:58Z",
 "kind": "poradnik",
 "kind_basis": "lista 7 pułapek przy współpracy z partnerami",
 "kind_title": "7 pułapek przy współpracy z partnerami zewnętrznymi",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2011-07-13"
 },
 {
 "url": "https://traffictrends.pl/blog/domeny-jako-bariery-wejscia-dla-konkurencji",
@@ -47599,11 +47663,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:01Z",
+"title_fetched_at": "2026-09-28T08:00:58Z",
 "kind": "poradnik",
 "kind_basis": "edukacyjna analiza domen jako barier wejścia",
 "kind_title": "Domeny jako bariery wejścia dla konkurencji",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2011-07-13"
 },
 {
 "url": "https://traffictrends.pl/blog/czy-warto-zlecic-pozycjonowanie",
@@ -47614,11 +47679,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:01Z",
+"title_fetched_at": "2026-09-28T08:00:59Z",
 "kind": "poradnik",
 "kind_basis": "artykuł rozważający czy warto zlecić pozycjonowanie",
 "kind_title": "Czy warto zlecić pozycjonowanie?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2011-09-18"
 },
 {
 "url": "https://traffictrends.pl/blog/skuteczny-landing-page-jak-to-zrobic",
@@ -47629,11 +47695,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:02Z",
+"title_fetched_at": "2026-09-28T08:00:59Z",
 "kind": "poradnik",
 "kind_basis": "sformułowanie jak to zrobić odnośnie landing page",
 "kind_title": "Skuteczny Landing Page - jak to zrobić?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2011-10-25"
 },
 {
 "url": "https://traffictrends.pl/blog/najwiekszy-blad-seo-sklepow-internetowych",
@@ -47644,11 +47711,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:02Z",
+"title_fetched_at": "2026-09-28T08:01:00Z",
 "kind": "poradnik",
 "kind_basis": "omówienie błędu SEO w sklepach internetowych",
 "kind_title": "Największy błąd SEO sklepów internetowych!",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2012-03-13"
 },
 {
 "url": "https://traffictrends.pl/blog/jak-sprzedawac-w-sklepie-internetowym-towar-skierowany-do-instalatorow",
@@ -47659,11 +47727,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:02Z",
+"title_fetched_at": "2026-09-28T08:01:00Z",
 "kind": "poradnik",
 "kind_basis": "poradnikowe jak sprzedawać w sklepie internetowym",
 "kind_title": "Jak sprzedawać w sklepie internetowym towar skierowany do \"instalatorów\"?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2012-07-12"
 },
 {
 "url": "https://traffictrends.pl/blog/e-commerce-starter-kit",
@@ -47674,11 +47743,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:03Z",
+"title_fetched_at": "2026-09-28T08:01:01Z",
 "kind": "poradnik",
 "kind_basis": "starter kit czyli edukacyjny zestaw porad dla e-commerce",
 "kind_title": "E-commerce starter kit",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2012-08-28"
 },
 {
 "url": "https://traffictrends.pl/blog/testy-ab-czy-standardy-uzytecznosci",
@@ -47689,11 +47759,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:04Z",
+"title_fetched_at": "2026-09-28T08:01:01Z",
 "kind": "poradnik",
 "kind_basis": "porównanie testów AB i standardów użyteczności",
 "kind_title": "Testy AB czy standardy użyteczności?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2013-06-19"
 },
 {
 "url": "https://traffictrends.pl/blog/iai-sa-wspoludzialowcem-traffic-trends-sp-z-oo",
@@ -47704,11 +47775,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:04Z",
+"title_fetched_at": "2026-09-28T08:01:02Z",
 "kind": "firmowe",
 "kind_basis": "informacja o zmianach właścicielskich w agencji Traffic Trends",
 "kind_title": "IAI SA współudziałowcem Traffic Trends Sp. z o.o.",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2013-09-18"
 },
 {
 "url": "https://traffictrends.pl/blog/co-decyduje-o-sukcesie-sklepu-internetowego",
@@ -47719,11 +47791,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:04Z",
+"title_fetched_at": "2026-09-28T08:01:02Z",
 "kind": "poradnik",
 "kind_basis": "analiza co decyduje o sukcesie sklepu internetowego",
 "kind_title": "Co decyduje o sukcesie sklepu internetowego?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2014-01-23"
 },
 {
 "url": "https://traffictrends.pl/blog/platforma-sklepowa-czy-rozwiazanie-dedykowane",
@@ -47734,11 +47807,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:05Z",
+"title_fetched_at": "2026-09-28T08:01:03Z",
 "kind": "poradnik",
 "kind_basis": "porównanie platformy sklepowej i rozwiązania dedykowanego",
 "kind_title": "Platforma sklepowa czy rozwiązanie dedykowane?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2014-02-02"
 },
 {
 "url": "https://traffictrends.pl/blog/yeti-porywa-i-zwraca-uwage-na-wiekszy-problem-dlaczego-najwieksze-marki-czesto-nie-dbaja-o-marketing-internetowy",
@@ -47749,11 +47823,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:05Z",
+"title_fetched_at": "2026-09-28T08:01:03Z",
 "kind": "poradnik",
 "kind_basis": "analiza zjawiska dlaczego największe marki nie dbają o marketing",
 "kind_title": "„Yeti porywa” i zwraca uwagę na większy problem - dlaczego największe marki często nie dbają o marketing internetowy?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2014-02-10"
 },
 {
 "url": "https://traffictrends.pl/blog/jak-skutecznie-sprawdzic-efekty-dzialan-reklamowych-cz-2",
@@ -47764,11 +47839,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:06Z",
+"title_fetched_at": "2026-09-28T08:01:04Z",
 "kind": "poradnik",
 "kind_basis": "instruktażowy tytuł jak skutecznie sprawdzić efekty działań reklamowych",
 "kind_title": "Jak skutecznie sprawdzić efekty działań reklamowych? cz. 2",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2014-03-09"
 },
 {
 "url": "https://traffictrends.pl/blog/kompletna-strategia-promocji-ecommerce",
@@ -47779,11 +47855,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:06Z",
+"title_fetched_at": "2026-09-28T08:01:04Z",
 "kind": "poradnik",
 "kind_basis": "kompletna strategia edukacyjny poradnik tworzenia promocji",
 "kind_title": "Kompletna strategia promocji eCommerce",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2014-05-06"
 },
 {
 "url": "https://traffictrends.pl/blog/traffic-trends-ma-3-lata-sprawdz-nasze-urodzinowe-liczby-infografika",
@@ -47794,11 +47871,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:07Z",
+"title_fetched_at": "2026-09-28T08:01:05Z",
 "kind": "firmowe",
 "kind_basis": "reguła: wydarzenie lub sprawy agencji w adresie",
 "kind_title": "Traffic Trends ma 3 lata! Sprawdź nasze urodzinowe liczby [infografika]",
-"kind_source": "rule"
+"kind_source": "rule",
+"published": "2014-07-17"
 },
 {
 "url": "https://traffictrends.pl/blog/zostalismy-nominowani-w-konkursie-ekomersy",
@@ -47809,11 +47887,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:08Z",
+"title_fetched_at": "2026-09-28T08:01:05Z",
 "kind": "firmowe",
 "kind_basis": "zostaliśmy nominowani w konkursie sukces agencji",
 "kind_title": "Zostaliśmy nominowani w konkursie Ekomersy!",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2014-08-31"
 },
 {
 "url": "https://traffictrends.pl/blog/ekomers-dla-traffic-trends-5-powodow-dlaczego-my",
@@ -47824,11 +47903,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:08Z",
+"title_fetched_at": "2026-09-28T08:01:06Z",
 "kind": "firmowe",
 "kind_basis": "nagroda Ekomers dla agencji Traffic Trends",
 "kind_title": "Ekomers dla Traffic Trends! 5 powodów, dlaczego my!",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2014-09-02"
 },
 {
 "url": "https://traffictrends.pl/blog/google-panda-pogromca-skopiowanych-tresci",
@@ -47839,11 +47919,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:08Z",
+"title_fetched_at": "2026-09-28T08:01:06Z",
 "kind": "poradnik",
 "kind_basis": "edukacyjny opis algorytmu Google Panda i duplikacji treści",
 "kind_title": "Google Panda – pogromca skopiowanych treści",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2014-09-14"
 },
 {
 "url": "https://traffictrends.pl/blog/traffic-trends-radzi-jak-ustrzec-sie-przed-nieuczciwa-firma-pozycjonerska",
@@ -47854,11 +47935,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:09Z",
+"title_fetched_at": "2026-09-28T08:01:07Z",
 "kind": "poradnik",
 "kind_basis": "poradnik jak ustrzec się przed nieuczciwą firmą",
 "kind_title": "Traffic Trends radzi: jak ustrzec się przed nieuczciwą firmą pozycjonerską?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2014-11-06"
 },
 {
 "url": "https://traffictrends.pl/blog/enhanced-ecommerce-w-google-analytics-czy-warto",
@@ -47869,11 +47951,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:09Z",
+"title_fetched_at": "2026-09-28T08:01:07Z",
 "kind": "poradnik",
 "kind_basis": "analiza narzędzia Enhanced Ecommerce w Google Analytics",
 "kind_title": "Enhanced Ecommerce w Google Analytics - czy warto?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2014-11-17"
 },
 {
 "url": "https://traffictrends.pl/blog/na-goraco-dzien-darmowej-dostawy-warto",
@@ -47884,11 +47967,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:10Z",
+"title_fetched_at": "2026-09-28T08:01:08Z",
 "kind": "poradnik",
 "kind_basis": "analiza opłacalności udziału w Dniu Darmowej Dostawy",
 "kind_title": "Na gorąco: Dzień Darmowej Dostawy – warto?",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2014-12-02"
 },
 {
 "url": "https://traffictrends.pl/blog/kurs-google-analytics-w-e-commerce-za-darmo-dla-ciebie",
@@ -47899,11 +47983,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:10Z",
+"title_fetched_at": "2026-09-28T08:01:08Z",
 "kind": "firmowe",
 "kind_basis": "własny darmowy kurs agencji z Google Analytics",
 "kind_title": "Kurs Google Analytics w e-commerce za darmo dla Ciebie",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2015-01-22"
 },
 {
 "url": "https://traffictrends.pl/blog/nowe-formaty-i-nowe-mozliwosci-reklamy-zewnetrznej-facebook-ads",
@@ -47914,11 +47999,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:11Z",
+"title_fetched_at": "2026-09-28T08:01:09Z",
 "kind": "news",
 "kind_basis": "nowe formaty i nowe możliwości Facebook Ads",
 "kind_title": "Nowe formaty i nowe możliwości reklamy zewnętrznej Facebook Ads",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2015-02-19"
 },
 {
 "url": "https://traffictrends.pl/blog/nowosc-w-adwords-remarketing-w-kampaniach-produktowych",
@@ -47929,11 +48015,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:12Z",
+"title_fetched_at": "2026-09-28T08:01:09Z",
 "kind": "news",
 "kind_basis": "nowość w AdWords informacja o nowej funkcji",
 "kind_title": "Nowość w AdWords: Remarketing w kampaniach produktowych",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2015-03-04"
 },
 {
 "url": "https://traffictrends.pl/blog/traffic-day-2015-juz-20-maja-w-poznaniu",
@@ -47944,11 +48031,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:12Z",
+"title_fetched_at": "2026-09-28T08:01:10Z",
 "kind": "firmowe",
 "kind_basis": "reguła: wydarzenie lub sprawy agencji w adresie",
 "kind_title": "Traffic Day 2015 już 20 maja w Poznaniu!",
-"kind_source": "rule"
+"kind_source": "rule",
+"published": "2015-03-19"
 },
 {
 "url": "https://traffictrends.pl/blog/ruszyl-nasz-videoblog-8-krokow-na-szczyt-e-commerce",
@@ -47959,11 +48047,12 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:13:12Z",
+"title_fetched_at": "2026-09-28T08:01:10Z",
 "kind": "firmowe",
 "kind_basis": "ruszył nasz videoblog projekt własny agencji",
 "kind_title": "Ruszył nasz videoblog: 8 kroków na szczyt e-commerce!",
-"kind_source": "llm"
+"kind_source": "llm",
+"published": "2015-03-31"
 },
 {
 "url": "https://traffictrends.pl/blog/pierwsze-traffic-day-za-nami",
