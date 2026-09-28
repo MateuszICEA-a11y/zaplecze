@@ -592,7 +592,8 @@ export interface DomainSection {
   slug: string;
   label: string;
   source: string | null;
-  config?: string;
+  /** Funkcje z domains.yaml, które muszą mieć enabled: true (wszystkie). */
+  config?: readonly string[];
 }
 
 export const DOMAIN_SECTIONS: readonly DomainSection[] = [
@@ -605,9 +606,9 @@ export const DOMAIN_SECTIONS: readonly DomainSection[] = [
   { slug: 'clarity', label: 'Clarity', source: 'clarity' },
   { slug: 'boty-ai', label: 'Boty AI', source: 'cloudflare_ai' },
   { slug: 'matrix', label: 'Matrix', source: 'indexing' },
-  { slug: 'asystent', label: 'Asystent treści', source: null, config: 'content_watcher' },
-  { slug: 'content-watcher', label: 'Content Watcher', source: null, config: 'content_watcher' },
-  { slug: 'content-writer', label: 'Content Writer', source: null, config: 'content_writer' },
+  { slug: 'asystent', label: 'Asystent treści', source: null, config: ['content_watcher', 'content_writer'] },
+  { slug: 'content-watcher', label: 'Content Watcher', source: null, config: ['content_watcher'] },
+  { slug: 'content-writer', label: 'Content Writer', source: null, config: ['content_writer'] },
   { slug: 'leady', label: 'Leady', source: 'leads' },
 ];
 
@@ -616,8 +617,7 @@ export const DOMAIN_SECTIONS: readonly DomainSection[] = [
 export function sectionsFor(domain: DomainConfig): DomainSection[] {
   return DOMAIN_SECTIONS.filter((s) => {
     if (s.config) {
-      const feature = domain[s.config] as { enabled?: boolean } | undefined;
-      return feature?.enabled === true;
+      return s.config.every((key) => (domain[key] as { enabled?: boolean } | undefined)?.enabled === true);
     }
     if (!s.source) return true;
     const cfg = domain[s.source] as { enabled?: boolean } | undefined;
