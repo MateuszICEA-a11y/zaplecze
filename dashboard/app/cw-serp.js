@@ -199,21 +199,25 @@ export async function senutoUrlKeywords(url, env, fetchImpl = fetch) {
  * tylko podstrony (nie strony główne), tylko pozycje z RIVAL_POSITION_MAX,
  * jedna fraza raz – z najlepszą pozycją, jaką ma na nią którykolwiek rywal.
  */
-export async function competitorKeywords(urls, env, fetchImpl = fetch) {
+export async function competitorKeywords(urls, env, fetchImpl = fetch, limit = KEYWORDS_TOP) {
   const pages = (urls ?? []).filter((url) => url && !isHomepage(url));
   const best = new Map();
+  // Ile stron z czołówki rankuje na frazę – research frazy sortuje po tym pokrycie tematu.
+  const rivals = new Map();
   for (const url of pages) {
     for (const row of await senutoUrlKeywords(url, env, fetchImpl)) {
       if (row.position > RIVAL_POSITION_MAX) continue;
       const key = normalizeKeyword(row.keyword);
       if (!key) continue;
+      rivals.set(key, (rivals.get(key) ?? new Set()).add(url));
       const current = best.get(key);
       if (!current || row.position < current.position) best.set(key, { ...row, host: hostOf(url) });
     }
   }
-  return [...best.values()]
+  return [...best.entries()]
+    .map(([key, row]) => (rivals.get(key).size > 1 ? { ...row, rivals: rivals.get(key).size } : row))
     .sort((a, b) => a.position - b.position || (b.searches ?? 0) - (a.searches ?? 0))
-    .slice(0, KEYWORDS_TOP);
+    .slice(0, limit);
 }
 
 /**
@@ -221,7 +225,7 @@ export async function competitorKeywords(urls, env, fetchImpl = fetch) {
  * w ogóle; „słaba" = mamy, ale poza TOP 10. Nasze pozycje pochodzą z katalogu
  * (Senuto z collectora), pozycja rywala – z `competitorKeywords`.
  */
-export function buildGap(ownRows, competitorRows) {
+export function buildGap(ownRows, competitorRows, limit = GAP_SHOWN) {
   const own = new Map();
   for (const row of ownRows ?? []) {
     const key = normalizeKeyword(row.keyword);
@@ -246,6 +250,7 @@ export function buildGap(ownRows, competitorRows) {
       searches: row.searches ?? null,
       rival_position: row.position ?? null,
       rival_host: row.host ?? null,
+      rivals: row.rivals ?? 1,
       our_position: ourPosition,
       status: ours === null ? 'missing' : ourPosition !== null && ourPosition > 10 ? 'weak' : 'covered',
     });
@@ -254,7 +259,7 @@ export function buildGap(ownRows, competitorRows) {
   rows.sort((a, b) => (a.rival_position ?? 999) - (b.rival_position ?? 999)
     || (b.searches ?? 0) - (a.searches ?? 0));
   return {
-    rows: rows.slice(0, GAP_SHOWN),
+    rows: rows.slice(0, limit),
     summary: {
       total: rows.length,
       missing: rows.filter((row) => row.status === 'missing').length,
@@ -345,8 +350,11 @@ export async function runStep(env, domain, postId, state, fetchImpl = fetch) {
   const ownHost = hostOf(input.url);
   const topic = titleQuery(input.title) || input.title;
   const ownBest = [...(input.ownKeywords ?? [])].sort((a, b) => (a.position ?? 999) - (b.position ?? 999))[0] ?? null;
-  const ownKeyword =
-    ownBest?.keyword && normalizeKeyword(ownBest.keyword) !== normalizeKeyword(topic) ? ownBest.keyword : null;
+  // Research frazy (`titleOnly`) nie ma „naszej dzisiejszej frazy” – drugi SERP byłby
+  // zapytaniem o przypadkową najlepszą frazę serwisu, zapłaconym na darmo.
+  const ownKeyword = !input.titleOnly
+    && ownBest?.keyword && normalizeKeyword(ownBest.keyword) !== normalizeKeyword(topic) ? ownBest.keyword : null;
+  const keywordsTop = input.keywordsTop ?? KEYWORDS_TOP;
 
   if (stage === 'serp_title') {
     const { competitors, ours, checked } = await serpCompetitors(topic, ownHost, env, fetchImpl);
@@ -379,8 +387,8 @@ export async function runStep(env, domain, postId, state, fetchImpl = fetch) {
   const competitorUrls = [
     ...new Set((queries.find((row) => row.kind === 'title')?.competitors ?? []).map((item) => item.url)),
   ];
-  const rivalKeywords = await competitorKeywords(competitorUrls, env, fetchImpl);
-  const gap = buildGap(input.ownKeywords ?? [], rivalKeywords);
+  const rivalKeywords = await competitorKeywords(competitorUrls, env, fetchImpl, keywordsTop);
+  const gap = buildGap(input.ownKeywords ?? [], rivalKeywords, keywordsTop);
   const analysis = {
     title: input.title,
     url: input.url,
@@ -503,6 +511,8 @@ export async function handleSerpGap(request, env, domain, postId, ctx, fetchImpl
     title,
     url: pageUrl,
     ownKeywords: Array.isArray(body.own_keywords) ? body.own_keywords : [],
+    ...(body.title_only === true ? { titleOnly: true } : {}),
+    ...(Number.isInteger(body.keywords_top) ? { keywordsTop: Math.min(Math.max(body.keywords_top, 1), 60) } : {}),
   };
   // Kontynuujemy zaczętą analizę, o ile nie jest starsza niż kwadrans –
   // dłuższa cisza znaczy, że krok padł razem z Workerem.

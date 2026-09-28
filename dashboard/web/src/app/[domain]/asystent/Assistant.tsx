@@ -515,11 +515,168 @@ function PhraseScreen({ route, domain, editorUrl, projectUrl, competitors }: Ctx
       </form>
       {from && <SourceKeywords from={from} source={source} keywords={keywords} current={phrase} onPick={check} />}
       {phrase ? (
-        <Verdict key={phrase} phrase={phrase} domain={domain} editorUrl={editorUrl} projectUrl={projectUrl} />
+        <>
+          <Verdict key={phrase} phrase={phrase} domain={domain} editorUrl={editorUrl} projectUrl={projectUrl} />
+          <PhraseResearch key={`r-${phrase}`} phrase={phrase} domain={domain} onPick={check} />
+        </>
       ) : (
         from && keywords !== null && competitors && <p className="mt-4 text-theme-sm text-gray-500">Senuto nie zna fraz tego wpisu – wpisz frazę sam.</p>
       )}
     </>
+  );
+}
+
+/* Research frazy: kto jest w czołówce Google (SerpData) i na jakie frazy rankują te strony
+   (Senuto, pozycje 1–20) – z oznaczeniem, co już mamy. Worker: /api/cw/writer/research/:domena,
+   wynik trzymany tydzień. POST liczy całość w jednym żądaniu (~pół minuty do minuty); pętla
+   obsługuje tylko przypadek, gdy ta sama fraza liczy się już w innej karcie – wtedy GET
+   sprawdza stan, żeby po błędzie nie zaczynać od nowa płatnego SERP-a. */
+/** Polska odmiana: 1 fraza, 2–4 frazy, 5+ fraz (12–14 też „fraz”). */
+const plural = (n: number, one: string, few: string, many: string) =>
+  n === 1 ? one : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? few : many;
+
+const ownKeywordFiles = new Map<string, Promise<Any[]>>();
+function loadOwnKeywords(domain: string) {
+  if (!ownKeywordFiles.has(domain)) {
+    ownKeywordFiles.set(
+      domain,
+      fetch(`/${domain}/content-writer/data.json`)
+        .then((r) => (r.ok ? r.json() : {}))
+        .then((d: Any) => d.own_keywords ?? [])
+        .catch(() => []),
+    );
+  }
+  return ownKeywordFiles.get(domain)!;
+}
+
+const OUR_STATUS: Record<string, { label: (pos: number | null) => string; cls: string }> = {
+  missing: { label: () => "brak u nas", cls: "text-success-700 dark:text-success-400" },
+  weak: { label: (pos) => `my: ${pos}. poz.`, cls: "text-orange-600 dark:text-orange-400" },
+  covered: { label: (pos) => `mamy: ${pos}. poz.`, cls: "text-gray-500" },
+};
+
+function PhraseResearch({ phrase, domain, onPick }: { phrase: string; domain: string; onPick: (q: string) => void }) {
+  const [state, setState] = useState<{ analysis: Any | null; error: string | null }>({ analysis: null, error: null });
+  // Ponowienie tylko na klik – każde to płatne zapytanie SerpData.
+  const [attempt, setAttempt] = useState(0);
+  useEffect(() => {
+    let alive = true;
+    const url = `/api/cw/writer/research/${domain}${attempt ? "?force=1" : ""}`;
+    setState({ analysis: null, error: null });
+    (async () => {
+      try {
+        const own = await loadOwnKeywords(domain);
+        const body = { phrase, own_keywords: own.map((row: Any) => ({ keyword: row.keyword, position: row.position })) };
+        let { data } = await api<Any>(url, { method: "POST", body });
+        for (let step = 0; data.status === "running" && step < 30 && alive; step++) {
+          await new Promise((r) => setTimeout(r, 3000));
+          ({ data } = await api<Any>(`/api/cw/writer/research/${domain}?phrase=${encodeURIComponent(phrase)}`));
+          if (data.status === "running") ({ data } = await api<Any>(url, { method: "POST", body }));
+        }
+        if (!alive) return;
+        if (data.status === "done") setState({ analysis: data.analysis, error: null });
+        else setState({ analysis: null, error: data.status === "error" ? (data.error ?? "Analiza nie powiodła się.") : "Analiza trwa dłużej niż zwykle – wróć za chwilę." });
+      } catch (e) {
+        if (alive) setState({ analysis: null, error: (e as Error).message });
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [domain, phrase, attempt]);
+
+  const { analysis, error } = state;
+  // SerpData bywa niedostępne (503) albo wolne (45 s) – surowy komunikat HTTP nic redaktorowi nie mówi.
+  const errorText = error && /HTTP 5\d\d|unavailable|aborted|timeout/i.test(error) ? "Wyniki Google (SerpData) chwilowo nie odpowiadają. Spróbuj za kilka minut." : error;
+  const serp = analysis?.queries?.find((q: Any) => q.kind === "title");
+  const rows: Any[] = analysis?.gap ?? [];
+  const scanned = analysis?.keywords_scanned ?? 0;
+  return (
+    <Card className="mt-6 p-5">
+      <h3 className="text-lg font-medium">Kto rankuje na „{phrase}” i na jakie frazy</h3>
+      {error ? (
+        <div className="mt-2 flex flex-wrap items-center gap-3">
+          <p className="text-theme-sm text-error-600" title={error}>
+            {errorText}
+          </p>
+          <button type="button" className={btnSecondary} onClick={() => setAttempt((n) => n + 1)}>
+            Spróbuj ponownie
+          </button>
+        </div>
+      ) : !analysis ? (
+        <p className="mt-2 text-theme-sm text-gray-500">
+          <Loader2 className="me-1.5 inline size-4 animate-spin" /> Sprawdzam wyniki Google i frazy czołówki – do minuty…
+        </p>
+      ) : (
+        <>
+          <p className="mt-1 text-theme-sm text-gray-600 dark:text-gray-400">
+            {serp?.ours ? (
+              <>
+                Jesteśmy na {serp.ours.position}. miejscu:{" "}
+                <a className={inlineLink} href={serp.ours.url} target="_blank" rel="noopener noreferrer">
+                  {serp.ours.title ?? serp.ours.url}
+                </a>
+                .
+              </>
+            ) : (
+              `Nas nie ma w pierwszej dziesiątce (sprawdzone ${fmtInt(serp?.results_checked ?? 0)} wyników).`
+            )}
+          </p>
+          <ol className="mt-3 flex flex-col gap-1">
+            {(serp?.competitors ?? []).map((c: Any) => (
+              <li key={c.url} className="flex items-center gap-2 text-theme-sm">
+                <span className="w-6 text-right text-gray-400 tabular-nums">{c.position}.</span>
+                <Favicon host={c.host} />
+                <a className={cn(inlineLink, "truncate")} href={c.url} target="_blank" rel="noopener noreferrer" title={c.url}>
+                  {c.title ?? c.url}
+                </a>
+                <span className="shrink-0 text-theme-xs text-gray-500">{c.host}</span>
+              </li>
+            ))}
+          </ol>
+          {rows.length ? (
+            <>
+              <h4 className="mt-5 mb-2 text-theme-sm font-medium">
+                Frazy czołówki ({fmtInt(rows.length)} {plural(rows.length, "fraza", "frazy", "fraz")} z {fmtInt(scanned)} {scanned === 1 ? "podstrony" : "podstron"}, pozycje 1–20)
+              </h4>
+              <ul className="flex flex-col divide-y divide-gray-100 dark:divide-gray-800">
+                {rows.map((row: Any) => {
+                  const our = OUR_STATUS[row.status] ?? OUR_STATUS.missing;
+                  return (
+                    <li key={row.keyword}>
+                      <button
+                        type="button"
+                        onClick={() => onPick(row.keyword)}
+                        title="Sprawdź tę frazę"
+                        className={cn(
+                          "grid w-full grid-cols-[minmax(0,1fr)_110px_110px_150px_110px] items-center gap-3 rounded px-2 py-1.5 text-left text-theme-sm hover:bg-gray-50 dark:hover:bg-white/5",
+                          row.keyword === phrase && "bg-brand-50 dark:bg-brand-500/10",
+                        )}
+                      >
+                        <span className="truncate font-medium text-gray-800 dark:text-white/90">{row.keyword}</span>
+                        <span className="text-right text-gray-500 tabular-nums">{row.searches === null ? "–" : `${fmtInt(row.searches)} wyszuk.`}</span>
+                        <span className="text-gray-500">{row.rivals > 1 ? `${row.rivals} strony` : "1 strona"}</span>
+                        <span className="truncate text-gray-500">
+                          {row.rival_position}. · {row.rival_host}
+                        </span>
+                        <span className={cn("text-theme-xs", our.cls)}>{our.label(row.our_position)}</span>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          ) : (
+            <p className="mt-4 text-theme-sm text-gray-500">
+              Senuto nie zna fraz podstron z czołówki{analysis.keywords_skipped_home ? ` (${analysis.keywords_skipped_home} to strony główne – pomijamy)` : ""}.
+            </p>
+          )}
+          <p className="mt-3 text-theme-xs text-gray-500">
+            Kliknij frazę, żeby ją sprawdzić. Kolejność: najwyższa pozycja rywala, potem wolumen. Dane z {String(analysis.generated_at ?? "").slice(0, 10)} (SerpData + Senuto), ważne tydzień.
+          </p>
+        </>
+      )}
+    </Card>
   );
 }
 

@@ -579,3 +579,38 @@ test('handleSerpGap: drugi request w trakcie kroku nie odpala kolejnego zapytani
   // Po zakończeniu kroku dzierżawa znika – następny etap może ruszyć od razu.
   assert.equal(JSON.parse((await readRow(environment)).payload).step_at, undefined);
 });
+
+test('analiza: research frazy (titleOnly) – jedno zapytanie SERP i dłuższa lista fraz', async () => {
+  let serpCalls = 0;
+  const many = Array.from({ length: 15 }, (_, i) => ({ keyword: `fraza ${i}`, position: i + 1, searches: 100 }));
+  const fetchImpl = async (url) => {
+    if (String(url).includes('serpdata')) {
+      serpCalls += 1;
+      return new Response(JSON.stringify(serpResponse(['konkurent.pl'])), { status: 200 });
+    }
+    return new Response(JSON.stringify(senutoResponse(many)), { status: 200 });
+  };
+  const analysis = await runToEnd(env(), {
+    title: 'looker studio',
+    url: 'https://www.grupa-icea.pl/',
+    ownKeywords: OWN, // w projekcie dałoby drugi SERP na „looker studio cennik”
+    titleOnly: true,
+    keywordsTop: 40,
+  }, fetchImpl);
+  assert.equal(serpCalls, 1);
+  assert.equal(analysis.gap.length, 15);
+});
+
+test('competitorKeywords: fraza u kilku rywali niesie ich liczbę', async () => {
+  const fetchImpl = async (_url, init) => {
+    const target = JSON.parse(init.body).domain;
+    const rows = target.startsWith('a.pl') ? [{ keyword: 'wspólna', position: 3 }, { keyword: 'tylko a', position: 2 }] : [{ keyword: 'Wspólna', position: 5 }];
+    return new Response(JSON.stringify(senutoResponse(rows)), { status: 200 });
+  };
+  const rows = await competitorKeywords(['https://a.pl/x', 'https://b.pl/y'], env(), fetchImpl);
+  const common = rows.find((row) => normalizeKeyword(row.keyword) === 'wspolna');
+  assert.equal(common.rivals, 2);
+  assert.equal(common.position, 3);
+  assert.equal(rows.find((row) => row.keyword === 'tylko a').rivals, undefined);
+  assert.equal(buildGap([], rows).rows.find((row) => row.keyword === 'tylko a').rivals, 1);
+});

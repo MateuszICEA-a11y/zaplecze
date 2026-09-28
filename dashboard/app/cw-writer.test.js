@@ -12,6 +12,7 @@ import {
   MAX_PAYLOAD_FIELDS,
   normalizeBrief,
   parseProjectRequest,
+  phrasePostId,
   projectPostId,
   routeWriter,
   WRITER_KINDS,
@@ -383,4 +384,37 @@ test('research: treści konkurencji liczą się z frazą projektu jako tematem',
   assert.equal(data.analysis.facts.length, 1);
   // Nasza strona nie była czytana – nowy artykuł jeszcze nie istnieje.
   assert.ok(seen.every((url) => !url.includes('grupa-icea.pl')));
+});
+
+test('phrasePostId: stały, niezależny od zapisu i poza zakresem projektów', () => {
+  const id = phrasePostId('Audyt SEO');
+  assert.equal(id, phrasePostId('  audyt  seo! '));
+  assert.ok(id <= -1_000_000_000 && id > -2_000_000_000);
+  assert.notEqual(id, phrasePostId('audyt sklepu'));
+});
+
+test('research frazy: SERP tematu + frazy czołówki, drugi raz z cache', async () => {
+  const env = envFor(sqliteD1(), { SERPDATA_API_KEY: 's', SENUTO_API_KEY: 'k' });
+  let serpCalls = 0;
+  const fetchImpl = async (url) => {
+    if (String(url).includes('serpdata')) {
+      serpCalls += 1;
+      return new Response(JSON.stringify({ data: { results: { organic_results: [
+        { pos: 1, url: 'https://rywal.pl/blog/audyt-seo', domain: 'rywal.pl', title: 'Audyt SEO' },
+        { pos: 2, url: 'https://www.grupa-icea.pl/audyt/', domain: 'grupa-icea.pl', title: 'Nasz' },
+      ] } } }), { status: 200 });
+    }
+    return new Response(JSON.stringify({ data: [{ keyword: 'audyt seo cena', statistics: { position: { current: 2 }, searches: { current: 210 } } }] }), { status: 200 });
+  };
+  const first = await (await call(env, '/api/cw/writer/research/grupa-icea.pl', { method: 'POST', body: { phrase: 'audyt seo', own_keywords: [] }, fetchImpl })).json();
+  assert.equal(first.status, 'done');
+  assert.equal(first.analysis.queries[0].competitors[0].host, 'rywal.pl');
+  assert.equal(first.analysis.queries[0].ours.position, 2);
+  assert.equal(first.analysis.gap[0].keyword, 'audyt seo cena');
+  const again = await (await call(env, '/api/cw/writer/research/grupa-icea.pl', { method: 'POST', body: { phrase: 'Audyt SEO' }, fetchImpl })).json();
+  assert.equal(again.from_cache, true);
+  assert.equal(serpCalls, 1);
+  const read = await (await call(env, '/api/cw/writer/research/grupa-icea.pl?phrase=audyt%20seo')).json();
+  assert.equal(read.status, 'done');
+  assert.equal((await call(env, '/api/cw/writer/research/inna.pl', { method: 'POST', body: { phrase: 'x' } })).status, 400);
 });

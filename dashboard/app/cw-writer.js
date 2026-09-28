@@ -708,6 +708,53 @@ export async function handleCategories(env, domain, { fetchImpl = fetch } = {}) 
 
 /* ---------- trasy ---------- */
 
+/* Research frazy przed projektem: kto jest w TOP10 Google i na jakie frazy rankują
+   te strony (Senuto). Ta sama analiza SERP co w projekcie, w trybie „tylko temat”,
+   zapisana w serp_snapshots pod ujemnym id z hasha frazy – projekty mają -1…-999 999 999,
+   frazy od -1e9 w dół, wpisy WordPressa są dodatnie. Wynik ważny tydzień (SERP_CACHE_HOURS). */
+export function phrasePostId(phrase) {
+  let hash = 0x811c9dc5;
+  for (const char of normalizeKeyword(phrase)) {
+    hash ^= char.codePointAt(0);
+    hash = Math.imul(hash, 0x01000193) >>> 0;
+  }
+  return -(1_000_000_000 + (hash % 1_000_000_000));
+}
+
+const RESEARCH_KEYWORDS = 40;
+
+async function phraseResearch(request, env, domain, ctx, fetchImpl = fetch) {
+  const base = contentDomains(env).get(domain);
+  if (!base) return json({ error: 'Domena spoza CW_DOMAINS.' }, 400);
+  const url = new URL(request.url);
+  let phrase = url.searchParams.get('phrase') ?? '';
+  let forwarded = request;
+  if (request.method === 'POST') {
+    if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
+    const body = (await request.json().catch(() => null)) ?? {};
+    phrase = String(body.phrase ?? '').trim();
+    forwarded = new Request(request.url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        title: phrase,
+        url: `${base.replace(/\/$/, '')}/`,
+        own_keywords: Array.isArray(body.own_keywords) ? body.own_keywords.slice(0, 5000) : [],
+        title_only: true,
+        keywords_top: RESEARCH_KEYWORDS,
+      }),
+    });
+  }
+  phrase = phrase.trim();
+  if (!normalizeKeyword(phrase) || phrase.length > 120) return json({ error: 'Podaj frazę (do 120 znaków).' }, 400);
+  // Bez ctx: analiza liczy się w tym żądaniu, a klient czeka na wynik. SerpData potrafi
+  // odpowiadać 45 s (2026-09-28), a waitUntil żyje ~30 s po odpowiedzi – krok w tle był
+  // ucinany i ponawiany, czyli każda próba to kolejne płatne zapytanie. Czekanie na fetch
+  // nie wlicza się do limitu CPU Workera.
+  void ctx;
+  return handleSerpGap(forwarded, env, domain, phrasePostId(phrase), null, fetchImpl);
+}
+
 /** Trasy /api/cw/writer/*. Zwraca `null` dla ścieżek spoza modułu. */
 export async function routeWriter(request, env, { ctx = null, fetchImpl } = {}) {
   const url = new URL(request.url);
@@ -719,6 +766,12 @@ export async function routeWriter(request, env, { ctx = null, fetchImpl } = {}) 
     if (request.method === 'POST') return createProject(request, env);
     if (request.method === 'GET') return listProjects(env, url);
     return json({ error: 'Dozwolone metody: GET, POST.' }, 405);
+  }
+
+  const research = url.pathname.match(/^\/api\/cw\/writer\/research\/([a-z0-9.-]{1,253})\/?$/i);
+  if (research) {
+    if (request.method !== 'GET' && request.method !== 'POST') return json({ error: 'Dozwolone metody: GET, POST.' }, 405);
+    return phraseResearch(request, env, research[1], ctx, fetchImpl ?? fetch);
   }
 
   const categories = url.pathname.match(/^\/api\/cw\/writer\/categories\/([a-z0-9.-]{1,253})\/?$/i);
