@@ -61,8 +61,10 @@ export default function AppShell({ nav, children }: { nav: NavDomain[]; children
   const { isExpanded, isHovered, isMobileOpen, toggleMobileSidebar } = useSidebar();
   const wide = isExpanded || isHovered || isMobileOpen;
 
+  // 100vh − 1px: przy skalowaniu 125% wysokość okna jest ułamkowa (np. 845,14 px), a pełne 100vh
+  // po zaokrągleniu dawało fałszywy pasek przewijania, pojawiający się przy najechaniu na kafelek.
   return (
-    <div className="min-h-screen xl:flex">
+    <div className="min-h-[calc(100vh-1px)] xl:flex">
       <Sidebar nav={nav} />
       {isMobileOpen && (
         <div className="fixed inset-0 z-40 bg-gray-900/50 xl:hidden" onClick={toggleMobileSidebar} />

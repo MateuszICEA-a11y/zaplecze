@@ -200,6 +200,12 @@
     cursor: pointer;
   }
 
+  /* Miejsce na pasek przewijania zawsze zarezerwowane – treść nie skacze w bok,
+     gdy pasek się pojawia (dłuższa strona, przeliczenie układu przy skalowaniu 125%). */
+  html {
+    scrollbar-gutter: stable;
+  }
+
   body {
     @apply relative z-1 bg-gray-50 font-outfit font-normal;
   }
