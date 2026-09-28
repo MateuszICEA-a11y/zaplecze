@@ -674,7 +674,6 @@ function Research({
             columns={gapColumns}
             externalFilter={gapFilter === "all" ? null : (r: Any) => r.status === gapFilter}
             rowKey={(r) => r.keyword}
-            fitContent
             pageSize={15}
             actions={
               <Segmented

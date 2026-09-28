@@ -480,7 +480,6 @@ function Suggestions({
         columns={columns}
         externalFilter={external}
         rowKey={(r) => r.keyword}
-        fitContent
         filter
         csvName={`${domain}-content-writer-podpowiedzi`}
         empty="Brak podpowiedzi – w danych nie ma fraz z pozycją 11–50 bez własnego wpisu."
