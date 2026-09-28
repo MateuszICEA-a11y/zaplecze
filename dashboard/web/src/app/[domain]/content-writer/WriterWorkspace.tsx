@@ -4,7 +4,7 @@
    i lib/writer-competitors.ts – rekomendacje i werdykty z Workera
    (embeddingi wpisów + ranking), a przy pustym indeksie kontrola po słowach. */
 import DataGrid from "@/components/grid/DataGrid";
-import { competitorPotentialColumns } from "@/components/grid/competitor-potential";
+import { CompetitorDetailDialog, competitorPotentialColumns } from "@/components/grid/competitor-potential";
 import Segmented from "@/components/Segmented";
 import { Card, SectionHead } from "@/components/ui";
 import { cn } from "@/lib/cn";
@@ -527,6 +527,7 @@ function Competitors({ domain, editorUrl, pick }: { domain: string; editorUrl: (
   const [error, setError] = useState<string | null>(null);
   const [view, setView] = useState<"new" | "gap" | "all">("new");
   const [host, setHost] = useState("all");
+  const [detail, setDetail] = useState<Any | null>(null);
   const [sync, setSync] = useState<{ running: boolean; text: string; error?: boolean }>({ running: false, text: "" });
   const since = useMemo(() => new Date(Date.now() - NEW_DAYS * 86_400_000).toISOString().slice(0, 10), []);
   const isNew = useCallback((item: Any) => !item.baseline && String(item.first_seen ?? "") >= since, [since]);
@@ -590,61 +591,62 @@ function Competitors({ domain, editorUrl, pick }: { domain: string; editorUrl: (
         field: "title",
         headerName: "Temat u konkurencji",
         flex: 1,
-        minWidth: 280,
+        minWidth: 220,
+        // Konkurent pod tytułem – osobna kolumna wypychała ruch i potencjał za prawą krawędź.
         cellRenderer: ({ data: item }: { data?: Any }) =>
           item && (
             <span className="flex min-w-0 flex-col justify-center leading-tight">
               <a className={cn(link, "truncate")} href={item.url} target="_blank" rel="noopener noreferrer">
                 {item.title}
               </a>
-              {item.title_from === "slug" && <small className="text-theme-xs text-gray-500">tytuł z adresu</small>}
+              <small className="text-theme-xs text-gray-500">
+                {item.host}
+                {item.title_from === "slug" && " · tytuł z adresu"}
+              </small>
             </span>
           ),
       },
-      { field: "host", headerName: "Konkurent", width: 150 },
       {
         field: "published",
         headerName: "Opublikowano",
-        width: 130,
+        width: 116,
         valueFormatter: ({ value }) => value || "–",
       },
       {
         // Tylko w nowych – przy starszych wpisach to data startu śledzenia, nic nie mówi.
         field: "first_seen",
         headerName: "Pojawił się",
-        width: 130,
+        width: 116,
         hide: view !== "new",
         valueFormatter: ({ data: item }) => (item?.baseline ? "–" : (item?.first_seen ?? "–")),
       },
-      ...competitorPotentialColumns(),
+      ...competitorPotentialColumns(setDetail),
       {
+        // Ocena i nasz najbliższy wpis w jednej kolumnie – dwie osobne wypychały tabelę poza ekran.
         field: "action",
-        headerName: "Czy mamy",
-        width: 170,
-        cellRenderer: ({ value }: { value: string | null }) =>
-          value && COMP_REC[value] ? <Status tone={COMP_REC[value].tone}>{COMP_REC[value].label}</Status> : <span className="text-gray-400">czeka na porównanie</span>,
-      },
-      {
-        headerName: "Nasz najbliższy wpis",
-        colId: "target",
-        width: 260,
-        valueGetter: ({ data: item }) => item?.target?.title ?? "",
-        cellRenderer: ({ data: item }: { data?: Any }) =>
-          item?.target ? (
-            <span className="truncate">
-              <a className={link} href={item.target.catalog_id ? editorUrl(item.target.catalog_id) : item.target.url} target={item.target.catalog_id ? undefined : "_blank"} rel="noopener">
-                {item.target.title}
-              </a>{" "}
-              <small className="text-gray-500">{pct(item.score)}</small>
+        headerName: "Czy mamy / nasz wpis",
+        width: 250,
+        tooltipValueGetter: ({ data: item }) => (item?.target ? `${item.target.title} (${pct(item.score)})` : ""),
+        cellRenderer: ({ data: item, value }: { data?: Any; value: string | null }) =>
+          item && (
+            <span className="flex min-w-0 flex-col items-start justify-center gap-0.5 leading-tight">
+              {value && COMP_REC[value] ? <Status tone={COMP_REC[value].tone}>{COMP_REC[value].label}</Status> : <span className="text-gray-400">czeka na porównanie</span>}
+              {item.target && (
+                <small className="max-w-full truncate text-theme-xs">
+                  <a className={link} href={item.target.catalog_id ? editorUrl(item.target.catalog_id) : item.target.url} target={item.target.catalog_id ? undefined : "_blank"} rel="noopener">
+                    {item.target.title}
+                  </a>{" "}
+                  <span className="text-gray-500">{pct(item.score)}</span>
+                </small>
+              )}
             </span>
-          ) : (
-            <span className="text-gray-400">–</span>
           ),
       },
       {
         headerName: "",
         colId: "pick",
         width: 90,
+        pinned: "right",
         sortable: false,
         cellRenderer: ({ data: item }: { data?: Any }) =>
           item && item.action !== "refresh" && (
@@ -723,6 +725,7 @@ function Competitors({ domain, editorUrl, pick }: { domain: string; editorUrl: (
             rows={rows}
             columns={columns}
             rowKey={(i) => i.url}
+            rowHeight={48}
             filter
             filterPlaceholder="Szukaj w tytułach…"
             csvName={`${domain}-konkurencja-${view}`}
@@ -742,6 +745,7 @@ function Competitors({ domain, editorUrl, pick }: { domain: string; editorUrl: (
           />
         </>
       )}
+      <CompetitorDetailDialog item={detail} domain={domain} onClose={() => setDetail(null)} />
     </>
   );
 }

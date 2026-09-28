@@ -4,10 +4,12 @@ Ranking: pełna lista fraz domeny konkurenta (Analiza Widoczności, positions/ge
 Senuto liczy jedno zapytanie na domenę na dobę, nie na adres, więc całość to kilka
 zapytań tygodniowo. Frazy agregujemy per URL do `rank`:
 - traffic – suma visibility, czyli szacowany miesięczny ruch z pozycji w TOP10,
-- keywords / top10 – liczba fraz adresu i ile z nich w TOP10,
+- keywords / top3 / top10 / top50 – liczba fraz adresu i ile z nich w TOP3/10/50,
 - keyword / position – fraza, która daje najwięcej ruchu (bez ruchu – największa),
 - demand – suma wyszukiwań 10 największych fraz adresu z pozycji 1–20 (popyt tematu;
   ogólne frazy, na które wpis wisi na 40. miejscu, zawyżały go setki razy).
+Lista fraz wpisu (do 100, od największego ruchu) idzie do osobnego pliku
+competitor-keywords.json – okno ze statystykami wpisu wczytuje go dopiero na żądanie.
 Wiersze z breadcrumbem („delante.pl › Blog › …”) zamiast adresu pomijamy – Senuto
 ostrzega, że dopasowanie ich do adresu trafia w ~20%.
 
@@ -43,6 +45,7 @@ DEMAND_TOP = 10
 DEMAND_MAX_POSITION = 20
 PAGE_LIMIT = 100
 MAX_PAGES = 500  # 50 tys. fraz na domenę – delante.pl ma ~7 tys.
+KEYWORDS_PER_URL = 100
 ESTIMATE_LIMIT = 80  # szacunków na przebieg (1 zapytanie Senuto + ułamek wywołania modelu każdy)
 PHRASE_BATCH = 40
 TIMEOUT_S = 60
@@ -102,21 +105,36 @@ def positions(scope: str, fetch_mode: str, token: str) -> list[dict]:
     return rows
 
 
-def aggregate(rows: list[dict]) -> dict[str, dict]:
-    """Frazy → `rank` per klucz adresu (patrz docstring modułu)."""
+def _by_url(rows: list[dict]) -> dict[str, list[dict]]:
     by_url: dict[str, list[dict]] = {}
     for row in rows:
         key = url_key(row["url"])
         if key and isinstance(row.get("position"), int):
             by_url.setdefault(key, []).append(row)
+    return by_url
+
+
+def keyword_lists(rows: list[dict]) -> dict[str, list[list]]:
+    """Klucz adresu → [[fraza, pozycja, wyszukiwania, ruch], …] od największego ruchu, najwyżej 100."""
+    return {
+        key: [[r["keyword"], r["position"], r["searches"], round(r["visibility"], 1)]
+              for r in sorted(group, key=lambda r: (-r["visibility"], r["position"], -r["searches"]))[:KEYWORDS_PER_URL]]
+        for key, group in _by_url(rows).items()
+    }
+
+
+def aggregate(rows: list[dict]) -> dict[str, dict]:
+    """Frazy → `rank` per klucz adresu (patrz docstring modułu)."""
     out = {}
-    for key, group in by_url.items():
+    for key, group in _by_url(rows).items():
         main = max(group, key=lambda r: (r["visibility"], r["searches"]))
         biggest = sorted((r["searches"] for r in group if r["position"] <= DEMAND_MAX_POSITION), reverse=True)[:DEMAND_TOP]
         out[key] = {
             "traffic": round(sum(r["visibility"] for r in group), 1),
             "keywords": len(group),
+            "top3": sum(1 for r in group if r["position"] <= 3),
             "top10": sum(1 for r in group if r["position"] <= 10),
+            "top50": sum(1 for r in group if r["position"] <= 50),
             "keyword": main["keyword"],
             "position": main["position"],
             "demand": sum(biggest),
@@ -132,15 +150,19 @@ def rankings_due(meta: dict | None, now: datetime) -> bool:
     return now.replace(tzinfo=None) - last >= timedelta(days=RANK_EVERY_DAYS)
 
 
-def refresh_rankings(items: list[dict], sites: list[dict], token: str, now: datetime, log=print) -> dict:
-    """Ustawia `rank` na wpisach; konkurent z błędem Senuto zachowuje poprzednie dane."""
+def refresh_rankings(items: list[dict], sites: list[dict], token: str, now: datetime, log=print,
+                     lists: dict | None = None) -> dict:
+    """Ustawia `rank` na wpisach; konkurent z błędem Senuto zachowuje poprzednie dane.
+    `lists` (opcjonalnie) dostaje listy fraz wpisów: adres wpisu → wiersze z keyword_lists()."""
     today = now.strftime("%Y-%m-%d")
     status = {}
     for site in sites:
         host = site["host"]
         scope, mode = site_scope(site)
         try:
-            ranked = aggregate(positions(scope, mode, token))
+            rows = positions(scope, mode, token)
+            ranked = aggregate(rows)
+            per_url = keyword_lists(rows) if lists is not None else {}
         except Exception as err:  # noqa: BLE001 – jeden konkurent nie wywraca reszty
             status[host] = {"status": "error", "error": str(err)[:200]}
             log(f"  [competitors] senuto {host}: {err}")
@@ -149,9 +171,12 @@ def refresh_rankings(items: list[dict], sites: list[dict], token: str, now: date
         for item in items:
             if item["host"] != host:
                 continue
-            rank = ranked.get(url_key(item["url"]))
+            key = url_key(item["url"])
+            rank = ranked.get(key)
             matched += 1 if rank else 0
-            item["rank"] = {**(rank or {"traffic": 0, "keywords": 0, "top10": 0, "demand": 0}), "at": today}
+            item["rank"] = {**(rank or {"traffic": 0, "keywords": 0, "top3": 0, "top10": 0, "top50": 0, "demand": 0}), "at": today}
+            if lists is not None and key in per_url:
+                lists[item["url"]] = per_url[key]
         status[host] = {"status": "ok", "urls": len(ranked), "matched": matched}
     return status
 
@@ -278,15 +303,30 @@ def estimate_young(items: list[dict], token: str, api_key: str, now: datetime,
     return stats
 
 
-def update(items: list[dict], sites: list[dict], meta: dict | None, env, now: datetime, log=print) -> tuple[dict, dict]:
-    """Ranking (co tydzień) i szacunki. Zwraca (meta do pliku, liczniki do podsumowania)."""
+def save_keyword_lists(path, lists: dict, status: dict, now: datetime) -> None:
+    """Zapis list fraz; konkurent z błędem Senuto zachowuje wczorajsze listy."""
+    previous = json.loads(path.read_text(encoding="utf-8")).get("items", {}) if path.is_file() else {}
+    fresh_hosts = {host.removeprefix("www.") for host, row in status.items() if row.get("status") == "ok"}
+    kept = {url: rows for url, rows in previous.items()
+            if urllib.parse.urlsplit(url).netloc.removeprefix("www.") not in fresh_hosts}
+    path.write_text(json.dumps({"generated_at": now.strftime("%Y-%m-%d"), "items": {**kept, **lists}},
+                               ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+
+
+def update(items: list[dict], sites: list[dict], meta: dict | None, env, now: datetime, log=print,
+           keywords_path=None) -> tuple[dict, dict]:
+    """Ranking (co tydzień) i szacunki. Zwraca (meta do pliku, liczniki do podsumowania).
+    `keywords_path` – gdzie zapisać listy fraz wpisów (tylko przy odświeżeniu rankingu)."""
     meta = dict(meta or {})
     token = (env.get("SENUTO_API_KEY") or "").strip()
     if not token:
         return meta, {"skipped": "brak SENUTO_API_KEY"}
     stats = {}
     if rankings_due(meta, now):
-        meta["sites"] = refresh_rankings(items, sites, token, now, log=log)
+        lists = {} if keywords_path else None
+        meta["sites"] = refresh_rankings(items, sites, token, now, log=log, lists=lists)
+        if keywords_path:
+            save_keyword_lists(keywords_path, lists, meta["sites"], now)
         if any(row["status"] == "ok" for row in meta["sites"].values()):
             meta["fetched_at"] = now.strftime("%Y-%m-%d")
         stats["rankings"] = meta["sites"]

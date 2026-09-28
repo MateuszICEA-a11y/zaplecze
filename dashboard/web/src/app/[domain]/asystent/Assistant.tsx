@@ -4,7 +4,7 @@
    żeby przycisk Wstecz i linki działały jak w starej wersji. Logika 1:1
    z asystent.astro, ekrany jako komponenty React. */
 import DataGrid from "@/components/grid/DataGrid";
-import { competitorPotentialColumns } from "@/components/grid/competitor-potential";
+import { CompetitorDetailDialog, competitorPotentialColumns } from "@/components/grid/competitor-potential";
 import { Card } from "@/components/ui";
 import { cn } from "@/lib/cn";
 import { fmtInt } from "@/lib/format";
@@ -191,9 +191,12 @@ export default function Assistant({
     }
   })();
 
+  // Lista tematów konkurencji to szeroka tabela – ścieżka idzie nad nią, żeby kolumny
+  // z ruchem i potencjałem nie uciekały za prawą krawędź (przewijanie poziome na dole listy).
+  const wide = intent === "konkurencja" && sub === "lista";
   return (
-    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[260px_minmax(0,1fr)]">
-      <PathAside route={route} intent={intent} sub={sub} SEEK={SEEK} tone={tone} />
+    <div className={wide ? "flex flex-col gap-5" : "grid grid-cols-1 gap-6 lg:grid-cols-[260px_minmax(0,1fr)]"}>
+      <PathAside route={route} intent={intent} sub={sub} SEEK={SEEK} tone={tone} inline={wide} />
       <div ref={screenRef} className="min-w-0">
         {screen}
       </div>
@@ -220,7 +223,7 @@ type Ctx = {
 
 /* ---------- ścieżka decyzji (lewa kolumna) ---------- */
 
-function PathAside({ route, intent, sub, SEEK, tone }: { route: Route; intent: string; sub?: string; SEEK: Ctx["SEEK"]; tone?: Tone }) {
+function PathAside({ route, intent, sub, SEEK, tone, inline = false }: { route: Route; intent: string; sub?: string; SEEK: Ctx["SEEK"]; tone?: Tone; inline?: boolean }) {
   const { q } = route;
   const list: { q: string; a: string | null; href: string }[] = [{ q: "Co chcesz zrobić?", a: INTENT[intent]?.label ?? null, href: link("") }];
   if (intent === "nowy") {
@@ -242,6 +245,29 @@ function PathAside({ route, intent, sub, SEEK, tone }: { route: Route; intent: s
       list.push({ q: "Czego szukamy?", a: sub === "lista" && seek ? seek.answer : null, href: link("konkurencja/co", { h }) });
     }
     if (sub === "lista") list.push({ q: "Który temat?", a: null, href: "" });
+  }
+  if (inline) {
+    return (
+      <nav aria-label="Twoja ścieżka">
+        <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-theme-sm">
+          {list.map((step, i) => (
+            <li key={i} className="flex items-center gap-2">
+              {i > 0 && <span className="text-gray-300 dark:text-gray-600">/</span>}
+              {step.a ? (
+                <a href={step.href} className="flex items-center gap-1.5 rounded px-1.5 py-1 hover:bg-gray-100 dark:hover:bg-white/5" title={step.q}>
+                  <Check className="size-3.5 text-success-500" />
+                  <span className="text-gray-800 dark:text-white/90">{step.a}</span>
+                </a>
+              ) : (
+                <span aria-current="step" className="px-1.5 py-1 font-medium text-brand-600 dark:text-brand-400">
+                  {step.q}
+                </span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+    );
   }
   return (
     <aside aria-label="Twoja ścieżka" className="lg:sticky lg:top-24 lg:self-start">
@@ -1009,6 +1035,7 @@ function CompetitorsList({ domain, competitors, compError, route, SEEK, editorUr
   const h = route.q.get("h") ?? "all";
   // Filtr typów: domyślnie poradnik + słownik przy lukach, wszystko przy nowościach.
   const [active, toggle] = useToggleSet(SEEK[seek].contentOnly ? TYPES.filter((t) => t.content).map((t) => t.key) : TYPES.map((t) => t.key));
+  const [detail, setDetail] = useState<Any | null>(null);
   const rows = useMemo(
     () => (competitors?.items ?? []).filter((i: Any) => (!hosts || hosts.includes(i.host)) && SEEK[seek].test(i)),
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1020,7 +1047,7 @@ function CompetitorsList({ domain, competitors, compError, route, SEEK, editorUr
       {
         headerName: "Typ",
         colId: "kind",
-        width: 120,
+        width: 104,
         valueGetter: ({ data }) => TYPE_LABEL[typeOf(data)],
         tooltipValueGetter: ({ data }) => data?.kind_basis,
         cellRenderer: ({ value }: { value: string }) => <span className="rounded bg-gray-100 px-2 py-0.5 text-theme-xs dark:bg-white/5">{value}</span>,
@@ -1029,10 +1056,13 @@ function CompetitorsList({ domain, competitors, compError, route, SEEK, editorUr
         field: "title",
         headerName: "Temat u konkurencji",
         flex: 2,
-        minWidth: 260,
+        minWidth: 240,
+        // Konkurent jako ikona przy tytule (pełna nazwa w podpowiedzi) – osobna kolumna zabierała 170 px.
+        tooltipValueGetter: ({ data }) => (data ? `${data.host} · ${data.title}` : ""),
         cellRenderer: ({ data }: { data?: Any }) =>
           data && (
             <span className="truncate">
+              <Favicon host={data.host} />{" "}
               <a className={cn(inlineLink, "font-medium")} href={data.url} target="_blank" rel="noopener noreferrer">
                 {data.title}
               </a>
@@ -1041,19 +1071,9 @@ function CompetitorsList({ domain, competitors, compError, route, SEEK, editorUr
           ),
       },
       {
-        field: "host",
-        headerName: "Konkurent",
-        width: 170,
-        cellRenderer: ({ value }: { value: string }) => (
-          <span>
-            <Favicon host={value} /> {value}
-          </span>
-        ),
-      },
-      {
         field: "published",
         headerName: "Opublikowano",
-        width: 140,
+        width: 116,
         valueFormatter: ({ value }) => value || "–",
       },
       {
@@ -1066,7 +1086,7 @@ function CompetitorsList({ domain, competitors, compError, route, SEEK, editorUr
         valueFormatter: ({ value }) => value || "–",
         sort: seek === "fresh" ? "desc" : undefined,
       },
-      ...competitorPotentialColumns(),
+      ...competitorPotentialColumns(setDetail),
       {
         headerName: "Nasz najbliższy wpis",
         colId: "ours",
@@ -1143,6 +1163,7 @@ function CompetitorsList({ domain, competitors, compError, route, SEEK, editorUr
         rowHeight={48}
         csvName={`${domain}-asystent-konkurencja-${seek}`}
       />
+      <CompetitorDetailDialog item={detail} domain={domain} onClose={() => setDetail(null)} />
     </>
   );
 }

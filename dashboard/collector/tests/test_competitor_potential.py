@@ -29,7 +29,10 @@ def test_agregacja_per_adres():
     ranked = cp.aggregate(rows)
     assert list(ranked) == ["traffictrends.pl/blog/link"]
     rank = ranked["traffictrends.pl/blog/link"]
-    assert rank == {"traffic": 372.0, "keywords": 3, "top10": 2, "keyword": "link", "position": 10, "demand": 22500}
+    assert rank == {"traffic": 372.0, "keywords": 3, "top3": 1, "top10": 2, "top50": 3,
+                    "keyword": "link", "position": 10, "demand": 22500}
+    lists = cp.keyword_lists(rows)
+    assert lists["traffictrends.pl/blog/link"] == [["link", 10, 22200, 341.9], ["link zewnętrzny", 3, 300, 30.1], ["co to link", 40, 50, 0]]
 
 
 def test_ranking_tylko_raz_w_tygodniu():
@@ -52,10 +55,12 @@ def test_ranking_przypisuje_zera_i_zachowuje_dane_przy_bledzie():
             raise ValueError("HTTP 404")
         return [row("fraza", 2, 100, 20, "rywal.pl/blog/a")]
 
+    lists = {}
     with mock.patch.object(cp, "positions", side_effect=fake):
-        status = cp.refresh_rankings(items, sites, "t", NOW, log=lambda *_: None)
+        status = cp.refresh_rankings(items, sites, "t", NOW, log=lambda *_: None, lists=lists)
+    assert lists == {"https://rywal.pl/blog/a/": [["fraza", 2, 100, 20]]}
     assert items[0]["rank"]["traffic"] == 20 and items[0]["rank"]["at"] == "2026-09-28"
-    assert items[1]["rank"] == {"traffic": 0, "keywords": 0, "top10": 0, "demand": 0, "at": "2026-09-28"}
+    assert items[1]["rank"] == {"traffic": 0, "keywords": 0, "top3": 0, "top10": 0, "top50": 0, "demand": 0, "at": "2026-09-28"}
     assert items[2]["rank"] == {"traffic": 5}
     assert status["rywal.pl"] == {"status": "ok", "urls": 1, "matched": 1}
     assert status["inny.pl"]["status"] == "error"
@@ -108,3 +113,12 @@ def test_powiazana_fraza_zawiera_slowa():
     assert cp.related("platforma b2b", "platforma b2b dla hurtowni")
     assert not cp.related("qwen max", "max")
     assert not cp.related("q4 e-commerce", "e-commerce")
+
+
+def test_listy_fraz_zachowuja_konkurenta_z_bledem(tmp_path):
+    path = tmp_path / "competitor-keywords.json"
+    path.write_text('{"items": {"https://rywal.pl/a/": [["stara", 5, 10, 1]], "https://inny.pl/b/": [["zostaje", 1, 10, 5]]}}', encoding="utf-8")
+    status = {"rywal.pl": {"status": "ok"}, "inny.pl": {"status": "error"}}
+    cp.save_keyword_lists(path, {"https://rywal.pl/c/": [["nowa", 2, 20, 3]]}, status, NOW)
+    data = __import__("json").loads(path.read_text(encoding="utf-8"))
+    assert data["items"] == {"https://inny.pl/b/": [["zostaje", 1, 10, 5]], "https://rywal.pl/c/": [["nowa", 2, 20, 3]]}

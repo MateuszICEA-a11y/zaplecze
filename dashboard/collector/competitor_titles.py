@@ -59,7 +59,8 @@ def main() -> int:
         domain = next(d for d in config["domains"] if d["id"] == args.domain)
         meta = {**(data.get("senuto") or {}), "fetched_at": None}  # wymuszenie rankingu mimo tygodniowego rytmu
         data["senuto"], stats = competitor_potential.update(
-            data["items"], domain["competitors"]["sites"], meta, os.environ, datetime.now(timezone.utc), log=log)
+            data["items"], domain["competitors"]["sites"], meta, os.environ, datetime.now(timezone.utc), log=log,
+            keywords_path=path.parent / "competitor-keywords.json")
         path.write_text(json.dumps(data, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
         log(json.dumps(stats, ensure_ascii=False))
         return 0

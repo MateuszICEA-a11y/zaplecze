@@ -362,6 +362,17 @@ export function loadCompetitors(dirId: string): { generated_at?: string; sites: 
   }
 }
 
+/** Frazy wpisów konkurencji z Senuto (competitor_potential.py): adres → [fraza, pozycja, wyszukiwania, ruch]. */
+export function loadCompetitorKeywords(dirId: string): { generated_at?: string; items: Record<string, [string, number, number, number][]> } {
+  const path = resolve(DATA_DIR, dirId, 'competitor-keywords.json');
+  if (!existsSync(path)) return { items: {} };
+  try {
+    return JSON.parse(readFileSync(path, 'utf8'));
+  } catch {
+    return { items: {} };
+  }
+}
+
 /* ---------- Content Watcher – katalog treści z repozytorium ---------- */
 
 export interface ContentCatalogItem {

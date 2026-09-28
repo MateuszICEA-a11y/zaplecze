@@ -415,7 +415,8 @@ def fetch(cfg: dict, env: dict) -> dict:
         kind_stats = competitor_kind.classify(items, api_key, limit=KIND_LIMIT)
 
     # Potencjał z Senuto: ranking per URL raz w tygodniu, szacunek dla młodych wpisów.
-    senuto_meta, potential_stats = competitor_potential.update(items, sites, previous.get("senuto"), env or {}, now)
+    senuto_meta, potential_stats = competitor_potential.update(
+        items, sites, previous.get("senuto"), env or {}, now, keywords_path=path.parent / "competitor-keywords.json")
 
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps({
