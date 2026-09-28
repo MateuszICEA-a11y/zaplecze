@@ -4,6 +4,7 @@
    żeby przycisk Wstecz i linki działały jak w starej wersji. Logika 1:1
    z asystent.astro, ekrany jako komponenty React. */
 import DataGrid from "@/components/grid/DataGrid";
+import { competitorPotentialColumns } from "@/components/grid/competitor-potential";
 import { Card } from "@/components/ui";
 import { cn } from "@/lib/cn";
 import { fmtInt } from "@/lib/format";
@@ -1065,6 +1066,7 @@ function CompetitorsList({ domain, competitors, compError, route, SEEK, editorUr
         valueFormatter: ({ value }) => value || "–",
         sort: seek === "fresh" ? "desc" : undefined,
       },
+      ...competitorPotentialColumns(),
       {
         headerName: "Nasz najbliższy wpis",
         colId: "ours",

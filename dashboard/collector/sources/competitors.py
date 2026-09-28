@@ -36,7 +36,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from . import SourceError, competitor_kind
+from . import SourceError, competitor_kind, competitor_potential
 from ._http import DEFAULT_HEADERS
 
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
@@ -394,7 +394,7 @@ def fetch(cfg: dict, env: dict) -> dict:
             # Pola liczone osobno (tytuł strony, typ z reguł/modelu) przechodzą między
             # przebiegami – bez tego każdy przebieg kasował typy (2026-09-25: 2503 strony).
             for key in ("title_fetched_at", "title_error", "published", "published_checked",
-                        "kind", "kind_basis", "kind_title", "kind_source"):
+                        "kind", "kind_basis", "kind_title", "kind_source", "rank", "estimate"):
                 if old.get(key):
                     item[key] = old[key]
             if not old and not baseline:
@@ -414,10 +414,14 @@ def fetch(cfg: dict, env: dict) -> dict:
     if api_key:
         kind_stats = competitor_kind.classify(items, api_key, limit=KIND_LIMIT)
 
+    # Potencjał z Senuto: ranking per URL raz w tygodniu, szacunek dla młodych wpisów.
+    senuto_meta, potential_stats = competitor_potential.update(items, sites, previous.get("senuto"), env or {}, now)
+
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps({
         "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "sites": site_rows,
+        "senuto": senuto_meta,
         "items": items,
     }, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
 
@@ -435,6 +439,9 @@ def fetch(cfg: dict, env: dict) -> dict:
             "published_known": sum(1 for item in items if item.get("published")),
             "kinds_classified": kind_stats["classified"],
             "kinds_missing": sum(1 for item in items if not item.get("kind")),
+            "ranked": sum(1 for item in items if (item.get("rank") or {}).get("keywords")),
+            "estimates": sum(1 for item in items if item.get("estimate")),
+            "senuto": potential_stats,
         },
         "details": None,
     }

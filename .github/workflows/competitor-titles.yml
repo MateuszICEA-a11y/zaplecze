@@ -4,6 +4,7 @@ name: Competitor Titles (jednorazowo)
 # do dashboard/data/grupa-icea.pl/competitors.json. Codzienny collector bierze
 # tylko 30 na hosta. Start = push zmiany tego pliku (gh workflow run → 403).
 # 2026-09-28: przebieg po daty publikacji (pole `published`).
+# 2026-09-28 (2): delante.pl i traffictrends.pl pobrane lokalnie – zostało widoczni.com.
 # widoczni.com ma w robots.txt Crawl-delay 10 s → ~1850 adresów ≈ 5 h.
 
 on:

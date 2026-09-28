@@ -4,6 +4,7 @@
    i lib/writer-competitors.ts – rekomendacje i werdykty z Workera
    (embeddingi wpisów + ranking), a przy pustym indeksie kontrola po słowach. */
 import DataGrid from "@/components/grid/DataGrid";
+import { competitorPotentialColumns } from "@/components/grid/competitor-potential";
 import Segmented from "@/components/Segmented";
 import { Card, SectionHead } from "@/components/ui";
 import { cn } from "@/lib/cn";
@@ -615,6 +616,7 @@ function Competitors({ domain, editorUrl, pick }: { domain: string; editorUrl: (
         hide: view !== "new",
         valueFormatter: ({ data: item }) => (item?.baseline ? "–" : (item?.first_seen ?? "–")),
       },
+      ...competitorPotentialColumns(),
       {
         field: "action",
         headerName: "Czy mamy",

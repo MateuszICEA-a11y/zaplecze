@@ -145,6 +145,9 @@ export async function competitorView(env, domain) {
       first_seen: item.first_seen ?? null,
       // Data publikacji ze strony konkurenta (collector); starsze wpisy bywają bez niej.
       published: item.published ?? null,
+      // Potencjał z Senuto (collector, competitor_potential.py): ranking adresu i szacunek dla młodych wpisów.
+      rank: item.rank ?? null,
+      estimate: item.estimate ?? null,
       lastmod: item.lastmod ?? null,
       baseline: Boolean(item.baseline),
       action: row?.action ?? null,
