@@ -1,13 +1,5 @@
 [
   {
-    "title": "Koniec programu CPN. Tanie paliwo ma zniknąć, a kierowcy i firmy odczują to przy dystrybutorach",
-    "date": "2026-06-14",
-    "slug": "koniec-programu-cpn-tanie-paliwo-ma-zniknac-a-kierowcy-i-firmy-odczuja-to-przy",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Benzyna poniżej 6 zł. Od wtorku kierowcy zobaczą niższe ceny na stacjach",
     "date": "2026-06-15",
     "slug": "benzyna-ponizej-6-zl-od-wtorku-kierowcy-zobacza-nizsze-ceny-na-stacjach",
@@ -716,6 +708,14 @@
     "date": "2026-09-25",
     "slug": "chcial-kupic-kampera-z-niemiec-stracil-prawie-115-tys-zl",
     "section": "kampery",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Nowe ceny paliwa od 1 października. Co to oznacza dla busów i kamperów",
+    "date": "2026-09-29",
+    "slug": "nowe-ceny-paliwa-od-1-pazdziernika-co-to-oznacza-dla-busow-i-kamperow",
+    "section": "news",
     "format": "short",
     "source": "rss"
   }
