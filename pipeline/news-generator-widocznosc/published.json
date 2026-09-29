@@ -1,12 +1,5 @@
 [
   {
-    "title": "TikTok z większym udziałem AI slop niż YouTube",
-    "date": "2026-06-17",
-    "slug": "tiktok-z-wiekszym-udzialem-ai-slop-niz-youtube",
-    "source": "rss",
-    "source_name": "Search Engine Journal"
-  },
-  {
     "title": "Amerykanie używają chatbotów, ale obawiają się tempa rozwoju AI",
     "date": "2026-06-18",
     "slug": "amerykanie-uzywaja-chatbotow-ale-obawiaja-sie-tempa-rozwoju-ai",
@@ -634,5 +627,14 @@
     "source_title": "Trump’s China rivalry and “AI race” delusion may endanger US, experts say",
     "source_url": "https://arstechnica.com/tech-policy/2026/09/china-silent-as-us-touts-plan-for-ai-safety-alerts-that-omits-tech-experts/",
     "source_name": "Ars Technica AI"
+  },
+  {
+    "title": "Wstrzymanie GPT-6.1 Astra po testach bezpieczeństwa",
+    "date": "2026-09-29",
+    "slug": "wstrzymanie-gpt-61-astra-po-testach-bezpieczenstwa",
+    "source": "rss",
+    "source_title": "GPT-6.1 Astra is too deceptive for release, marking OpenAI's most dramatic safety intervention yet",
+    "source_url": "https://the-decoder.com/gpt-6-1-astra-is-too-deceptive-for-release-marking-openais-most-dramatic-safety-intervention-yet/",
+    "source_name": "The Decoder"
   }
 ]
