@@ -1,5 +1,5 @@
 {
-"generated_at": "2026-09-29T10:54:04Z",
+"generated_at": "2026-09-30T10:43:37Z",
 "sites": [
 {
 "host": "widoczni.com",
@@ -16,7 +16,7 @@
 {
 "host": "traffictrends.pl",
 "status": "ok",
-"count": 411,
+"count": 412,
 "baseline": false
 }
 ],
@@ -60148,31 +60148,6 @@
 }
 },
 {
-"url": "https://delante.pl/css-co-to-jest/",
-"host": "delante.pl",
-"path": "/css-co-to-jest/",
-"slug_title": "css co to jest",
-"title": "Czym jest CSS?",
-"lastmod": "2024-12-06T13:48:39+00:00",
-"first_seen": "2026-09-25",
-"baseline": true,
-"title_fetched_at": "2026-09-28T08:08:30Z",
-"published": "2024-11-27",
-"kind": "poradnik",
-"kind_basis": "wyjaśnienie czym jest technologia CSS",
-"kind_title": "Czym jest CSS?",
-"kind_source": "llm",
-"rank": {
-"traffic": 0,
-"keywords": 1,
-"top10": 0,
-"keyword": "css google",
-"position": 13,
-"demand": 110,
-"at": "2026-09-28"
-}
-},
-{
 "url": "https://delante.pl/seo-newsy-listopad-2024/",
 "host": "delante.pl",
 "path": "/seo-newsy-listopad-2024/",
@@ -75949,6 +75924,29 @@
 }
 },
 {
+"url": "https://delante.pl/przewaga-kosztowa-w-kampaniach-produktowych/",
+"host": "delante.pl",
+"path": "/przewaga-kosztowa-w-kampaniach-produktowych/",
+"slug_title": "przewaga kosztowa w kampaniach produktowych",
+"title": "Czym jest CSS?",
+"lastmod": "2026-09-30T07:51:38+00:00",
+"first_seen": "2026-09-30",
+"baseline": false,
+"title_fetched_at": "2026-09-30T10:43:46Z",
+"published": "2026-09-23",
+"kind": "poradnik",
+"kind_basis": "Pytanie czym jest CSS w kontekście kampanii produktowych",
+"kind_source": "llm",
+"kind_title": "Czym jest CSS?",
+"estimate": {
+"phrase": "css",
+"searches": 9900,
+"demand": 49100,
+"related": 50,
+"at": "2026-09-30"
+}
+},
+{
 "url": "https://traffictrends.pl/blog/jak-wypromowac-sklep-internetowy",
 "host": "traffictrends.pl",
 "path": "/blog/jak-wypromowac-sklep-internetowy",
@@ -85639,8 +85637,8 @@
 "published": "2026-09-28",
 "kind": "poradnik",
 "kind_basis": "porównanie dwóch platform e-commerce poradnik zakupowy",
-"kind_source": "llm",
 "kind_title": "Shoper czy Sky-Shop - którą platformę wybrać? Porównujemy!",
+"kind_source": "llm",
 "estimate": {
 "phrase": "shoper czy sky shop",
 "searches": 50,
@@ -85662,14 +85660,37 @@
 "published": "2026-09-28",
 "kind": "poradnik",
 "kind_basis": "porównanie i analiza wyboru platform sklepowych",
-"kind_source": "llm",
 "kind_title": "RedCart czy Shoper - na co zwrócić uwagę przy wyborze? Analizujemy!",
+"kind_source": "llm",
 "estimate": {
 "phrase": "redcart czy shoper",
 "searches": 20,
 "demand": 20,
 "related": 1,
 "at": "2026-09-29"
+}
+},
+{
+"url": "https://traffictrends.pl/blog/prestashop-czy-shoper-ktora-platforma-bedzie-najlepsza-dla-twojego-sklepu-internetowego",
+"host": "traffictrends.pl",
+"path": "/blog/prestashop-czy-shoper-ktora-platforma-bedzie-najlepsza-dla-twojego-sklepu-internetowego",
+"slug_title": "prestashop czy shoper ktora platforma bedzie najlepsza dla twojego sklepu internetowego",
+"title": "PrestaShop czy Shoper - która platforma będzie najlepsza dla Twojego sklepu internetowego?",
+"lastmod": null,
+"first_seen": "2026-09-30",
+"baseline": false,
+"title_fetched_at": "2026-09-30T10:43:47Z",
+"published": "2026-09-30",
+"kind": "poradnik",
+"kind_basis": "Porównanie dwóch platform e-commerce pod kątem wyboru dla sklepu",
+"kind_source": "llm",
+"kind_title": "PrestaShop czy Shoper - która platforma będzie najlepsza dla Twojego sklepu internetowego?",
+"estimate": {
+"phrase": "prestashop czy shoper",
+"searches": 10,
+"demand": 10,
+"related": 1,
+"at": "2026-09-30"
 }
 }
 ]
