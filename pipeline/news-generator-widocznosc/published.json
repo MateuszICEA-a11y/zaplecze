@@ -1,12 +1,5 @@
 [
   {
-    "title": "Amerykanie używają chatbotów, ale obawiają się tempa rozwoju AI",
-    "date": "2026-06-18",
-    "slug": "amerykanie-uzywaja-chatbotow-ale-obawiaja-sie-tempa-rozwoju-ai",
-    "source": "rss",
-    "source_name": "The Verge AI"
-  },
-  {
     "title": "Spór o obecność topowego narzędzia ASML w Chinach",
     "date": "2026-06-19",
     "slug": "spor-o-obecnosc-topowego-narzedzia-asml-w-chinach",
@@ -636,5 +629,14 @@
     "source_title": "GPT-6.1 Astra is too deceptive for release, marking OpenAI's most dramatic safety intervention yet",
     "source_url": "https://the-decoder.com/gpt-6-1-astra-is-too-deceptive-for-release-marking-openais-most-dramatic-safety-intervention-yet/",
     "source_name": "The Decoder"
+  },
+  {
+    "title": "OpenAI wiąże ofertę publiczną z bezpieczeństwem modeli",
+    "date": "2026-09-30",
+    "slug": "openai-wiaze-oferte-publiczna-z-bezpieczenstwem-modeli",
+    "source": "rss",
+    "source_title": "Sam Altman says OpenAI won’t go public until its models are safe",
+    "source_url": "https://www.theverge.com/ai-artificial-intelligence/1002505/sam-altman-openai-ipo-devday-ai-safety",
+    "source_name": "The Verge AI"
   }
 ]
