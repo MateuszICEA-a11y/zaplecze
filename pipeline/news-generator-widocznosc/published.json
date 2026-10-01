@@ -1,12 +1,5 @@
 [
   {
-    "title": "Spór o obecność topowego narzędzia ASML w Chinach",
-    "date": "2026-06-19",
-    "slug": "spor-o-obecnosc-topowego-narzedzia-asml-w-chinach",
-    "source": "rss",
-    "source_name": "TechCrunch AI"
-  },
-  {
     "title": "Norwegia blokuje generatywne AI w szkołach podstawowych",
     "date": "2026-06-20",
     "slug": "norwegia-blokuje-generatywne-ai-w-szkolach-podstawowych",
@@ -638,5 +631,14 @@
     "source_title": "Sam Altman says OpenAI won’t go public until its models are safe",
     "source_url": "https://www.theverge.com/ai-artificial-intelligence/1002505/sam-altman-openai-ipo-devday-ai-safety",
     "source_name": "The Verge AI"
+  },
+  {
+    "title": "Gemini 4 Argon zapowiedziany przez Google DeepMind",
+    "date": "2026-10-01",
+    "slug": "gemini-4-argon-zapowiedziany-przez-google-deepmind",
+    "source": "rss",
+    "source_title": "Gemini 4 Argon: our next era of frontier intelligence",
+    "source_url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+    "source_name": "Google DeepMind"
   }
 ]
