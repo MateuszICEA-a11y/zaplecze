@@ -1,5 +1,5 @@
 {
-"generated_at": "2026-09-30T10:43:37Z",
+"generated_at": "2026-10-01T11:10:27Z",
 "sites": [
 {
 "host": "widoczni.com",
@@ -10,13 +10,13 @@
 {
 "host": "delante.pl",
 "status": "ok",
-"count": 1315,
+"count": 1316,
 "baseline": false
 },
 {
 "host": "traffictrends.pl",
 "status": "ok",
-"count": 412,
+"count": 413,
 "baseline": false
 }
 ],
@@ -75936,14 +75936,37 @@
 "published": "2026-09-23",
 "kind": "poradnik",
 "kind_basis": "Pytanie czym jest CSS w kontekście kampanii produktowych",
-"kind_source": "llm",
 "kind_title": "Czym jest CSS?",
+"kind_source": "llm",
 "estimate": {
 "phrase": "css",
 "searches": 9900,
 "demand": 49100,
 "related": 50,
 "at": "2026-09-30"
+}
+},
+{
+"url": "https://delante.pl/czy-twoj-produkt-trafi-na-shortliste-chatgpt-przed-black-friday/",
+"host": "delante.pl",
+"path": "/czy-twoj-produkt-trafi-na-shortliste-chatgpt-przed-black-friday/",
+"slug_title": "czy twoj produkt trafi na shortliste chatgpt przed black friday",
+"title": "Shortlista ChatGPT przed Black Friday - jak trafić do rekomendacji AI?",
+"lastmod": "2026-09-30T11:59:18+00:00",
+"first_seen": "2026-10-01",
+"baseline": false,
+"title_fetched_at": "2026-10-01T11:10:48Z",
+"published": "2026-09-29",
+"kind": "poradnik",
+"kind_basis": "pytanie jak trafić do rekomendacji AI edukacyjny artykuł z poradami",
+"kind_source": "llm",
+"kind_title": "Shortlista ChatGPT przed Black Friday - jak trafić do rekomendacji AI?",
+"estimate": {
+"phrase": "widoczność w ai",
+"searches": null,
+"demand": 10,
+"related": 1,
+"at": "2026-10-01"
 }
 },
 {
@@ -85683,14 +85706,37 @@
 "published": "2026-09-30",
 "kind": "poradnik",
 "kind_basis": "Porównanie dwóch platform e-commerce pod kątem wyboru dla sklepu",
-"kind_source": "llm",
 "kind_title": "PrestaShop czy Shoper - która platforma będzie najlepsza dla Twojego sklepu internetowego?",
+"kind_source": "llm",
 "estimate": {
 "phrase": "prestashop czy shoper",
 "searches": 10,
 "demand": 10,
 "related": 1,
 "at": "2026-09-30"
+}
+},
+{
+"url": "https://traffictrends.pl/blog/tiktok-shop-ai-i-kreacja-w-e-commerce-co-dzis-naprawde-zwieksza-sprzedaz",
+"host": "traffictrends.pl",
+"path": "/blog/tiktok-shop-ai-i-kreacja-w-e-commerce-co-dzis-naprawde-zwieksza-sprzedaz",
+"slug_title": "tiktok shop ai i kreacja w e commerce co dzis naprawde zwieksza sprzedaz",
+"title": "TikTok Shop, AI i reklama w e-commerce, czyli jak zwiększać sprzedaż?",
+"lastmod": null,
+"first_seen": "2026-10-01",
+"baseline": false,
+"title_fetched_at": "2026-10-01T11:10:48Z",
+"published": "2026-09-30",
+"kind": "poradnik",
+"kind_basis": "wskazówki jak zwiększać sprzedaż w e-commerce za pomocą TikToka i AI",
+"kind_source": "llm",
+"kind_title": "TikTok Shop, AI i reklama w e-commerce, czyli jak zwiększać sprzedaż?",
+"estimate": {
+"phrase": "marketing e-commerce",
+"searches": 260,
+"demand": 500,
+"related": 8,
+"at": "2026-10-01"
 }
 }
 ]
