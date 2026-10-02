@@ -1,5 +1,5 @@
 {
-"generated_at": "2026-10-01T11:10:27Z",
+"generated_at": "2026-10-02T10:43:39Z",
 "sites": [
 {
 "host": "widoczni.com",
@@ -75959,8 +75959,8 @@
 "published": "2026-09-29",
 "kind": "poradnik",
 "kind_basis": "pytanie jak trafić do rekomendacji AI edukacyjny artykuł z poradami",
-"kind_source": "llm",
 "kind_title": "Shortlista ChatGPT przed Black Friday - jak trafić do rekomendacji AI?",
+"kind_source": "llm",
 "estimate": {
 "phrase": "widoczność w ai",
 "searches": null,
@@ -85729,8 +85729,8 @@
 "published": "2026-09-30",
 "kind": "poradnik",
 "kind_basis": "wskazówki jak zwiększać sprzedaż w e-commerce za pomocą TikToka i AI",
-"kind_source": "llm",
 "kind_title": "TikTok Shop, AI i reklama w e-commerce, czyli jak zwiększać sprzedaż?",
+"kind_source": "llm",
 "estimate": {
 "phrase": "marketing e-commerce",
 "searches": 260,
