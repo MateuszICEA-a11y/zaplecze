@@ -1,12 +1,5 @@
 [
   {
-    "title": "Norwegia blokuje generatywne AI w szkołach podstawowych",
-    "date": "2026-06-20",
-    "slug": "norwegia-blokuje-generatywne-ai-w-szkolach-podstawowych",
-    "source": "rss",
-    "source_name": "The Decoder"
-  },
-  {
     "title": "UE spiera się o to, czym jest deepfake",
     "date": "2026-06-21",
     "slug": "ue-spiera-sie-o-to-czym-jest-deepfake",
@@ -640,5 +633,14 @@
     "source_title": "Gemini 4 Argon: our next era of frontier intelligence",
     "source_url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
     "source_name": "Google DeepMind"
+  },
+  {
+    "title": "ChatGPT z wirtualną przymierzalnią ubrań",
+    "date": "2026-10-02",
+    "slug": "chatgpt-z-wirtualna-przymierzalnia-ubran",
+    "source": "rss",
+    "source_title": "ChatGPT can now virtually try on clothes for you",
+    "source_url": "https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/",
+    "source_name": "TechCrunch AI"
   }
 ]
