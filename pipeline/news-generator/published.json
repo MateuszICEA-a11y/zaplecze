@@ -1,13 +1,5 @@
 [
   {
-    "title": "Rząd wygasza pakiet CPN. Co to oznacza dla cen paliw i kosztów flot?",
-    "date": "2026-06-16",
-    "slug": "rzad-wygasza-pakiet-cpn-co-to-oznacza-dla-cen-paliw-i-kosztow-flot",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Hanoi zamknie część ulicy Van Cao. Utrudnienia od 18 czerwca przez budowę stacji S1",
     "date": "2026-06-17",
     "slug": "hanoi-zamknie-czesc-ulicy-van-cao-utrudnienia-od-18-czerwca-przez-budowe-stacji",
@@ -716,6 +708,14 @@
     "date": "2026-09-30",
     "slug": "bus-z-tachografem-a-szef-kazal-jechac-31-h-jazdy-w-48-h",
     "section": "modele",
+    "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Dom na kołach: kamper daje wolność, ale nie każdemu będzie z nim po drodze",
+    "date": "2026-10-02",
+    "slug": "dom-na-kolach-kamper-daje-wolnosc-ale-nie-kazdemu-bedzie-z-nim-po-drodze",
+    "section": "kampery",
     "format": "analysis",
     "source": "rss"
   }
