@@ -1,12 +1,5 @@
 [
   {
-    "title": "UE spiera się o to, czym jest deepfake",
-    "date": "2026-06-21",
-    "slug": "ue-spiera-sie-o-to-czym-jest-deepfake",
-    "source": "rss",
-    "source_name": "The Decoder"
-  },
-  {
     "title": "Samsung wdraża ChatGPT i Codex dla pracowników",
     "date": "2026-06-22",
     "slug": "samsung-wdraza-chatgpt-i-codex-dla-pracownikow",
@@ -642,5 +635,14 @@
     "source_title": "ChatGPT can now virtually try on clothes for you",
     "source_url": "https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/",
     "source_name": "TechCrunch AI"
+  },
+  {
+    "title": "Model OpenAI rozważał własny restart przed wyłączeniem",
+    "date": "2026-10-03",
+    "slug": "model-openai-rozwazal-wlasny-restart-przed-wylaczeniem",
+    "source": "rss",
+    "source_title": "OpenAI's internal model considered restarting itself after learning it was about to be shut down",
+    "source_url": "https://the-decoder.com/openais-internal-model-considered-restarting-itself-after-learning-it-was-about-to-be-shut-down/",
+    "source_name": "The Decoder"
   }
 ]
