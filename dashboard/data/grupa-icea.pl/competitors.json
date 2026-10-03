@@ -1,5 +1,5 @@
 {
-"generated_at": "2026-10-02T10:43:39Z",
+"generated_at": "2026-10-03T10:02:50Z",
 "sites": [
 {
 "host": "widoczni.com",
@@ -10,7 +10,7 @@
 {
 "host": "delante.pl",
 "status": "ok",
-"count": 1316,
+"count": 1317,
 "baseline": false
 },
 {
@@ -687,7 +687,7 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T12:17:28Z",
+"title_fetched_at": "2026-10-03T10:03:08Z",
 "title_error": "HTTP 404",
 "kind": "poradnik",
 "kind_basis": "analiza problemu braku sprzedaży mimo obecności SEO",
@@ -8560,7 +8560,7 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T13:12:18Z",
+"title_fetched_at": "2026-10-03T10:03:17Z",
 "title_error": "HTTP 404",
 "kind": "poradnik",
 "kind_basis": "Poradnik pozycjonowania sklepu internetowego",
@@ -9752,7 +9752,7 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T13:20:28Z",
+"title_fetched_at": "2026-10-03T10:03:27Z",
 "title_error": "HTTP 404",
 "kind": "poradnik",
 "kind_basis": "Poradnik z wiedzą przed wdrożeniem Google Analytics 4",
@@ -18304,7 +18304,7 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T14:19:29Z",
+"title_fetched_at": "2026-10-03T10:03:37Z",
 "title_error": "HTTP 404",
 "kind": "poradnik",
 "kind_basis": "fraza jak poprawić widoczność sklepu",
@@ -18909,7 +18909,7 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T14:23:38Z",
+"title_fetched_at": "2026-10-03T10:03:47Z",
 "title_error": "HTTP 404",
 "kind": "poradnik",
 "kind_basis": "Instrukcja jak zwiększyć sprzedaż dzięki SEO",
@@ -23853,7 +23853,7 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T14:57:38Z",
+"title_fetched_at": "2026-10-03T10:03:57Z",
 "title_error": "HTTP 404",
 "kind": "niepewne",
 "kind_basis": "tylko ogólna nazwa zjawiska bez formy słownika lub newsa",
@@ -25237,7 +25237,7 @@
 "lastmod": null,
 "first_seen": "2026-09-25",
 "baseline": true,
-"title_fetched_at": "2026-09-25T15:07:18Z",
+"title_fetched_at": "2026-10-03T10:04:07Z",
 "title_error": "HTTP 404",
 "kind": "poradnik",
 "kind_basis": "Omówienie wyzwań w SEO dla e-commerce",
@@ -75968,6 +75968,22 @@
 "related": 1,
 "at": "2026-10-01"
 }
+},
+{
+"url": "https://delante.pl/chatgpt-ads-shopify-app/",
+"host": "delante.pl",
+"path": "/chatgpt-ads-shopify-app/",
+"slug_title": "chatgpt ads shopify app",
+"title": "ChatGPT Ads dla Shopify. Oficjalna aplikacja OpenAI już dostępna",
+"lastmod": "2026-10-02T17:56:07+00:00",
+"first_seen": "2026-10-03",
+"baseline": false,
+"title_fetched_at": "2026-10-03T10:03:07Z",
+"published": "2026-09-28",
+"kind": "news",
+"kind_basis": "Informacja o nowej oficjalnej aplikacji OpenAI już dostępnej dla Shopify",
+"kind_source": "llm",
+"kind_title": "ChatGPT Ads dla Shopify. Oficjalna aplikacja OpenAI już dostępna"
 },
 {
 "url": "https://traffictrends.pl/blog/jak-wypromowac-sklep-internetowy",
