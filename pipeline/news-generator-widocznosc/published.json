@@ -1,12 +1,5 @@
 [
   {
-    "title": "Samsung wdraża ChatGPT i Codex dla pracowników",
-    "date": "2026-06-22",
-    "slug": "samsung-wdraza-chatgpt-i-codex-dla-pracownikow",
-    "source": "rss",
-    "source_name": "OpenAI"
-  },
-  {
     "title": "Roboty w fabryce EV po zwolnieniach pracowników",
     "date": "2026-06-23",
     "slug": "roboty-w-fabryce-ev-po-zwolnieniach-pracownikow",
@@ -643,6 +636,15 @@
     "source": "rss",
     "source_title": "OpenAI's internal model considered restarting itself after learning it was about to be shut down",
     "source_url": "https://the-decoder.com/openais-internal-model-considered-restarting-itself-after-learning-it-was-about-to-be-shut-down/",
+    "source_name": "The Decoder"
+  },
+  {
+    "title": "Gemini ogranicza darmowy dostęp do Flash-Lite",
+    "date": "2026-10-04",
+    "slug": "gemini-ogranicza-darmowy-dostep-do-flash-lite",
+    "source": "rss",
+    "source_title": "Google's new Gemini tiers cut free users to its weakest model and lock $5/month subscribers out of Pro",
+    "source_url": "https://the-decoder.com/googles-new-gemini-tiers-cut-free-users-to-its-weakest-model-and-lock-5-month-subscribers-out-of-pro/",
     "source_name": "The Decoder"
   }
 ]
