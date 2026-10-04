@@ -1,13 +1,5 @@
 [
   {
-    "title": "„Na sygnale” odc. 909 – „Kamper” już w TVP VOD",
-    "date": "2026-06-19",
-    "slug": "na-sygnale-odc-909-kamper-juz-w-tvp-vod",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Koniec limitu cen na stacjach paliw. Co to oznacza dla kierowców busów i flot",
     "date": "2026-06-20",
     "slug": "koniec-limitu-cen-na-stacjach-paliw-co-to-oznacza-dla-kierowcow-busow-i-flot",
@@ -715,6 +707,14 @@
     "title": "Od dziś rewolucja na stacjach. Nowe ceny benzyny i oleju napędowego",
     "date": "2026-10-03",
     "slug": "od-dzis-rewolucja-na-stacjach-nowe-ceny-benzyny-i-oleju-napedowego",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Po ile będziemy tankować w przyszłym tygodniu? Są dobre wieści",
+    "date": "2026-10-04",
+    "slug": "po-ile-bedziemy-tankowac-w-przyszlym-tygodniu-sa-dobre-wiesci",
     "section": "news",
     "format": "short",
     "source": "rss"
