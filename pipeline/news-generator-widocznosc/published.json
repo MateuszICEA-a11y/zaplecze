@@ -1,12 +1,5 @@
 [
   {
-    "title": "Roboty w fabryce EV po zwolnieniach pracowników",
-    "date": "2026-06-23",
-    "slug": "roboty-w-fabryce-ev-po-zwolnieniach-pracownikow",
-    "source": "rss",
-    "source_name": "Ars Technica AI"
-  },
-  {
     "title": "Claude trafia do Slacka jako współpracownik",
     "date": "2026-06-24",
     "slug": "claude-trafia-do-slacka-jako-wspolpracownik",
@@ -646,5 +639,14 @@
     "source_title": "Google's new Gemini tiers cut free users to its weakest model and lock $5/month subscribers out of Pro",
     "source_url": "https://the-decoder.com/googles-new-gemini-tiers-cut-free-users-to-its-weakest-model-and-lock-5-month-subscribers-out-of-pro/",
     "source_name": "The Decoder"
+  },
+  {
+    "title": "OpenAI rozwija reklamy wizualne w ChatGPT",
+    "date": "2026-10-05",
+    "slug": "openai-rozwija-reklamy-wizualne-w-chatgpt",
+    "source": "rss",
+    "source_title": "Building advertising for the way people use AI",
+    "source_url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+    "source_name": "OpenAI"
   }
 ]
