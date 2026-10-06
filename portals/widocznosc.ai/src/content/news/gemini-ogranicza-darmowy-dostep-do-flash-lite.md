@@ -1,6 +1,6 @@
 ---
 title: Gemini ogranicza darmowy dostęp do Flash-Lite
-lead: Google zmienia progi dostępu do modeli Gemini. Od października użytkownicy bez subskrypcji mają korzystać wyłącznie z najmniejszego modelu Flash-Lite.
+lead: Google zmienia progi dostępu do modeli Gemini. Od 9 października użytkownicy bez subskrypcji mają korzystać wyłącznie z najmniejszego modelu Flash-Lite.
 date: '2026-10-04'
 sourceName: The Decoder
 sourceUrl: https://the-decoder.com/googles-new-gemini-tiers-cut-free-users-to-its-weakest-model-and-lock-5-month-subscribers-out-of-pro/
@@ -13,9 +13,9 @@ image: ../../assets/images/news-2026-10-04-gemini-ogranicza-darmowy-dostep-do-fl
 ---
 ## Darmowe Gemini tylko z Flash-Lite, Flash i Pro za opłatą
 
-Google ma od października 2026 roku ograniczyć bezpłatny dostęp do rodziny modeli Gemini. Osoby, które nie korzystają z płatnej subskrypcji, otrzymają dostęp jedynie do Gemini Flash-Lite – najmniejszego modelu w tej ofercie.
+Google ma od 9 października 2026 roku ograniczyć bezpłatny dostęp do rodziny modeli Gemini. Osoby, które nie korzystają z płatnej subskrypcji, otrzymają dostęp jedynie do Gemini Flash-Lite – najmniejszego modelu w tej ofercie.
 
-Modele Gemini Flash oraz Gemini Pro będą natomiast dostępne wyłącznie dla subskrybentów. To wyraźna zmiana w podziale możliwości produktu: granica między darmowym a płatnym wariantem nie będzie dotyczyć wyłącznie limitów zapytań, lecz samej klasy udostępnianego modelu.
+Gemini Flash będzie dostępny od planu Google AI Plus (4,99 USD miesięcznie), a Gemini Pro dopiero w wyższych planach – Google AI Pro (19,99 USD miesięcznie) i AI Ultra. Najtańsza subskrypcja nie daje więc dostępu do modelu Pro. To wyraźna zmiana w podziale możliwości produktu: granica między darmowym a płatnym wariantem nie będzie dotyczyć wyłącznie limitów zapytań, lecz samej klasy udostępnianego modelu.
 
 Według informacji przytoczonych przez serwis *The Decoder* nowa struktura może również przygotowywać ofertę na wdrożenie Gemini 4 Argon. Ten model ma być bardziej wymagający pod względem zasobów, co sugeruje, że Google porządkuje dostęp do swoich systemów przed rozszerzeniem rodziny Gemini o kolejne warianty.
 
@@ -33,8 +33,10 @@ Taki układ dobrze pokazuje, jak zmienia się ekonomia narzędzi opartych na du�
 
 Uważamy też, że decyzja Google zwiększy znaczenie przejrzystej komunikacji o możliwościach poszczególnych modeli. Użytkownik darmowego planu może nadal korzystać z Gemini, ale jakość uzyskiwanych przez niego odpowiedzi będzie zależeć od najmniejszego modelu dostępnego w ofercie. Bezpośrednie porównywanie wyników lub jakości działania między użytkownikami może więc stać się mniej miarodajne, jeśli korzystają oni z różnych wariantów.
 
+> **Aktualizacja (06.10.2026):** Doprecyzowaliśmy podział planów. Pierwotna wersja tekstu nie rozróżniała płatnych progów, a najtańszy z nich nie obejmuje Gemini Pro.
+
 ## W skrócie
 
-- Od października darmowi użytkownicy Gemini mają otrzymać dostęp wyłącznie do modelu Flash-Lite.  
-- Modele Flash i Pro mają być zarezerwowane dla osób korzystających z płatnej subskrypcji.  
+- Od 9 października darmowi użytkownicy Gemini mają otrzymać dostęp wyłącznie do modelu Flash-Lite.  
+- Flash ma być dostępny od planu AI Plus (4,99 USD), a Pro dopiero od planu AI Pro (19,99 USD).  
 - Zmiana może przygotowywać ofertę na bardziej zasobożerny model Gemini 4 Argon.
