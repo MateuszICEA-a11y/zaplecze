@@ -1,5 +1,5 @@
 {
-"generated_at": "2026-10-05T13:45:09Z",
+"generated_at": "2026-10-06T11:29:41Z",
 "sites": [
 {
 "host": "widoczni.com",
@@ -10,7 +10,7 @@
 {
 "host": "delante.pl",
 "status": "ok",
-"count": 1317,
+"count": 1319,
 "baseline": false
 },
 {
@@ -82267,13 +82267,6 @@
 "kind_basis": "Pytanie czym jest CSS w kontekście kampanii produktowych",
 "kind_title": "Czym jest CSS?",
 "kind_source": "llm",
-"estimate": {
-"phrase": "css",
-"searches": 9900,
-"demand": 49100,
-"related": 50,
-"at": "2026-09-30"
-},
 "rank": {
 "traffic": 0,
 "keywords": 0,
@@ -82282,6 +82275,13 @@
 "top50": 0,
 "demand": 0,
 "at": "2026-10-05"
+},
+"estimate": {
+"phrase": "css",
+"searches": 9900,
+"demand": 49100,
+"related": 50,
+"at": "2026-09-30"
 }
 },
 {
@@ -82299,13 +82299,6 @@
 "kind_basis": "pytanie jak trafić do rekomendacji AI edukacyjny artykuł z poradami",
 "kind_title": "Shortlista ChatGPT przed Black Friday - jak trafić do rekomendacji AI?",
 "kind_source": "llm",
-"estimate": {
-"phrase": "widoczność w ai",
-"searches": null,
-"demand": 10,
-"related": 1,
-"at": "2026-10-01"
-},
 "rank": {
 "traffic": 0,
 "keywords": 0,
@@ -82314,6 +82307,13 @@
 "top50": 0,
 "demand": 0,
 "at": "2026-10-05"
+},
+"estimate": {
+"phrase": "widoczność w ai",
+"searches": null,
+"demand": 10,
+"related": 1,
+"at": "2026-10-01"
 }
 },
 {
@@ -82340,6 +82340,45 @@
 "demand": 0,
 "at": "2026-10-05"
 }
+},
+{
+"url": "https://delante.pl/porownania-samochodow-jako-content-seo-i-aiso-dlaczego-automotive-powinno-walczyc-o-frazy-x-vs-y/",
+"host": "delante.pl",
+"path": "/porownania-samochodow-jako-content-seo-i-aiso-dlaczego-automotive-powinno-walczyc-o-frazy-x-vs-y/",
+"slug_title": "porownania samochodow jako content seo i aiso dlaczego automotive powinno walczyc o frazy x vs y",
+"title": "Porównania samochodów w SEO i AISO – jak zdobywać frazy „X vs Y”?",
+"lastmod": "2026-10-06T06:45:36+00:00",
+"first_seen": "2026-10-06",
+"baseline": false,
+"title_fetched_at": "2026-10-06T11:29:50Z",
+"published": "2026-10-06",
+"kind": "poradnik",
+"kind_basis": "poradnik edukacyjny o strategii content SEO i zdobywaniu fraz",
+"kind_source": "llm",
+"kind_title": "Porównania samochodów w SEO i AISO – jak zdobywać frazy „X vs Y”?",
+"estimate": {
+"phrase": "dobór słów kluczowych",
+"searches": 50,
+"demand": 150,
+"related": 3,
+"at": "2026-10-06"
+}
+},
+{
+"url": "https://delante.pl/google-zaostrza-podejscie-do-tresci-ai-co-sie-zmienilo/",
+"host": "delante.pl",
+"path": "/google-zaostrza-podejscie-do-tresci-ai-co-sie-zmienilo/",
+"slug_title": "google zaostrza podejscie do tresci ai co sie zmienilo",
+"title": "Google zaostrza podejście do treści AI. Co zmieniło się na przełomie września i października 2026?",
+"lastmod": "2026-10-06T09:57:14+00:00",
+"first_seen": "2026-10-06",
+"baseline": false,
+"title_fetched_at": "2026-10-06T11:29:50Z",
+"published": "2026-10-05",
+"kind": "news",
+"kind_basis": "informacja o zmianach w algorytmie Google w konkretnym przedziale czasowym",
+"kind_source": "llm",
+"kind_title": "Google zaostrza podejście do treści AI. Co zmieniło się na przełomie września i października 2026?"
 },
 {
 "url": "https://traffictrends.pl/blog/jak-wypromowac-sklep-internetowy",
@@ -92870,13 +92909,6 @@
 "kind_basis": "porównanie dwóch platform e-commerce poradnik zakupowy",
 "kind_title": "Shoper czy Sky-Shop - którą platformę wybrać? Porównujemy!",
 "kind_source": "llm",
-"estimate": {
-"phrase": "shoper czy sky shop",
-"searches": 50,
-"demand": 100,
-"related": 2,
-"at": "2026-09-29"
-},
 "rank": {
 "traffic": 0,
 "keywords": 3,
@@ -92887,6 +92919,13 @@
 "position": 37,
 "demand": 0,
 "at": "2026-10-05"
+},
+"estimate": {
+"phrase": "shoper czy sky shop",
+"searches": 50,
+"demand": 100,
+"related": 2,
+"at": "2026-09-29"
 }
 },
 {
@@ -92904,13 +92943,6 @@
 "kind_basis": "porównanie i analiza wyboru platform sklepowych",
 "kind_title": "RedCart czy Shoper - na co zwrócić uwagę przy wyborze? Analizujemy!",
 "kind_source": "llm",
-"estimate": {
-"phrase": "redcart czy shoper",
-"searches": 20,
-"demand": 20,
-"related": 1,
-"at": "2026-09-29"
-},
 "rank": {
 "traffic": 0,
 "keywords": 2,
@@ -92921,6 +92953,13 @@
 "position": 24,
 "demand": 0,
 "at": "2026-10-05"
+},
+"estimate": {
+"phrase": "redcart czy shoper",
+"searches": 20,
+"demand": 20,
+"related": 1,
+"at": "2026-09-29"
 }
 },
 {
@@ -92938,13 +92977,6 @@
 "kind_basis": "Porównanie dwóch platform e-commerce pod kątem wyboru dla sklepu",
 "kind_title": "PrestaShop czy Shoper - która platforma będzie najlepsza dla Twojego sklepu internetowego?",
 "kind_source": "llm",
-"estimate": {
-"phrase": "prestashop czy shoper",
-"searches": 10,
-"demand": 10,
-"related": 1,
-"at": "2026-09-30"
-},
 "rank": {
 "traffic": 0,
 "keywords": 0,
@@ -92953,6 +92985,13 @@
 "top50": 0,
 "demand": 0,
 "at": "2026-10-05"
+},
+"estimate": {
+"phrase": "prestashop czy shoper",
+"searches": 10,
+"demand": 10,
+"related": 1,
+"at": "2026-09-30"
 }
 },
 {
@@ -92970,13 +93009,6 @@
 "kind_basis": "wskazówki jak zwiększać sprzedaż w e-commerce za pomocą TikToka i AI",
 "kind_title": "TikTok Shop, AI i reklama w e-commerce, czyli jak zwiększać sprzedaż?",
 "kind_source": "llm",
-"estimate": {
-"phrase": "marketing e-commerce",
-"searches": 260,
-"demand": 500,
-"related": 8,
-"at": "2026-10-01"
-},
 "rank": {
 "traffic": 0,
 "keywords": 0,
@@ -92985,6 +93017,13 @@
 "top50": 0,
 "demand": 0,
 "at": "2026-10-05"
+},
+"estimate": {
+"phrase": "marketing e-commerce",
+"searches": 260,
+"demand": 500,
+"related": 8,
+"at": "2026-10-01"
 }
 },
 {
@@ -93000,8 +93039,8 @@
 "published": "2026-10-05",
 "kind": "poradnik",
 "kind_basis": "fraza jak wykorzystać rozmowę do zwiększenia konwersji wskazuje na artykuł edukacyjny",
-"kind_source": "llm",
 "kind_title": "Conversational marketing AI w e-commerce - jak wykorzystać rozmowę do zwiększenia konwersji w sklepach internetowych",
+"kind_source": "llm",
 "rank": {
 "traffic": 0,
 "keywords": 0,
