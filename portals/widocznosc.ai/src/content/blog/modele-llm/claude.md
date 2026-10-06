@@ -3,7 +3,7 @@ title: 'Claude od Anthropic – kompletny przewodnik'
 subtitle: 'Poznaj architekturę, możliwości i plany modelu Claude, by wybrać rozwiązanie dopasowane do realnych potrzeb biznesowych'
 description: 'Czym jest Claude od firmy Anthropic, jak działa Constitutional AI, jakie modele są dostępne i do czego używać Claude''a w praktyce – kompletny przewodnik.'
 date: 2026-05-16
-updated: 2026-09-25
+updated: 2026-10-06
 image: ../../../assets/images/blog-modele-llm-claude.webp
 icon: '<path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.6 2.8 1.5 3.8L5 21h14l-2.5-10.2C17.4 9.8 18 8.5 18 7c0-2.5-2.5-5-6-5z"/><circle cx="9" cy="7" r="1"/><circle cx="15" cy="7" r="1"/>'
 author:
@@ -124,7 +124,7 @@ Zestawienie aktualnych klas modeli ułatwia wybór odpowiedniego wariantu (bez n
 | **Opus** | Złożone zadania analityczne | Wysokie zdolności rozumowania, droższy, przeznaczony do wieloetapowych zadań agentowych i inżynierii oprogramowania; Anthropic poleca go na start do większości zadań |
 | **Fable** | Najbardziej wymagające zadania | Najmocniejsza i najdroższa klasa, do złożonego rozumowania i długich zadań agentowych |
 
-We wrześniu 2026 roku aktualne modele to Claude Haiku 4.5, Sonnet 5 i Opus 5.5 (premiera 22 września 2026), a do najbardziej wymagającego rozumowania i długich zadań agentowych Anthropic oferuje ponadto Claude Fable 5.1 (w API 10 USD za milion tokenów wejściowych i 50 USD za wyjściowe, wobec 4/20 USD dla Opus 5.5 i 2/10 USD dla Sonnet 5). **Starsze modele trafiają do grupy legacy, a następnie są wycofywane z API według ogłoszonego harmonogramu, co wymusza regularną aktualizację integracji.** Przykładowo Opus 5, Opus 4.8 i Sonnet 4.6 mają już status legacy, a to stanowi kluczowy czynnik przy planowaniu wdrożeń produkcyjnych.
+Na początku października 2026 roku aktualne modele to Claude Haiku 4.5, Sonnet 5.5 (premiera 28 września 2026, następca Sonnet 5) i Opus 5.5 (premiera 22 września 2026), a do najbardziej wymagającego rozumowania i długich zadań agentowych Anthropic oferuje ponadto Claude Fable 5.1 (w API 10 USD za milion tokenów wejściowych i 50 USD za wyjściowe, wobec 4/20 USD dla Opus 5.5 i 2/10 USD dla Sonnet 5.5). **Starsze modele trafiają do grupy legacy, a następnie są wycofywane z API według ogłoszonego harmonogramu, co wymusza regularną aktualizację integracji.** Przykładowo Sonnet 5, Opus 5, Opus 4.8 i Sonnet 4.6 mają już status legacy, a to stanowi kluczowy czynnik przy planowaniu wdrożeń produkcyjnych.
 
 Claude Opus 5.5 zastąpił Opus 5 jako domyślnie polecany model – jest tańszy (4/20 USD zamiast 5/25 USD), ma okno 1 mln tokenów i 128 tys. tokenów wyjścia, a tryb adaptacyjnego myślenia jest w nim zawsze włączony.
 
@@ -146,7 +146,7 @@ Artifacts (artefakty) to funkcja pozwalająca Claude'owi generować interaktywn�
 
 ### Pojemne okno kontekstowe
 
-Claude obsługuje okno kontekstowe rzędu 1 miliona tokenów – w modelach Fable 5.1, Opus 5.5 i Sonnet 5 także w interfejsie czatu na planach płatnych, a ponadto przez API i w Claude Code (Haiku 4.5 – 200 000 tokenów). W praktyce oznacza to możliwość wczytania całej dokumentacji technicznej projektu, kilkudziesięciu stron umowy lub obszernego zbioru danych. Następnie możesz prowadzić z nimi spójną rozmowę analityczną. **To jeden z największych praktycznych kontekstów wśród komercyjnych modeli językowych na rynku.**
+Claude obsługuje okno kontekstowe rzędu 1 miliona tokenów – w modelach Fable 5.1, Opus 5.5 i Sonnet 5.5 także w interfejsie czatu na planach płatnych, a ponadto przez API i w Claude Code (Haiku 4.5 – 200 000 tokenów). W praktyce oznacza to możliwość wczytania całej dokumentacji technicznej projektu, kilkudziesięciu stron umowy lub obszernego zbioru danych. Następnie możesz prowadzić z nimi spójną rozmowę analityczną. **To jeden z największych praktycznych kontekstów wśród komercyjnych modeli językowych na rynku.**
 
 ### Computer Use – sterowanie komputerem
 

@@ -3,7 +3,7 @@ title: 'Modele językowe (LLM) – przewodnik po ekosystemie'
 subtitle: 'Poznaj różnice między ChatGPT, Claude, Gemini, Copilotem a modelami open source, żeby wybrać właściwy model do swojej strategii AI'
 description: 'Przewodnik po ekosystemie dużych modeli językowych (LLM): ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot i open source. Który model wybrać i dlaczego.'
 date: 2026-05-26
-updated: 2026-09-25
+updated: 2026-10-06
 image: ../../../assets/images/blog-modele-llm-przewodnik.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3M6.34 6.34l2.12 2.12M15.54 15.54l2.12 2.12M6.34 17.66l2.12-2.12M15.54 8.46l2.12-2.12"/>'
 author:
@@ -53,7 +53,7 @@ sources:
     note: 'OpenAI, dokumentacja. Role botów GPTBot (dane treningowe) i OAI-SearchBot (widoczność w wyszukiwaniu ChatGPT).'
   - title: 'Models overview'
     url: 'https://platform.claude.com/docs/en/about-claude/models/overview'
-    note: 'Anthropic, dokumentacja. Aktualne modele Claude (Fable 5.1, Opus 5.5, Sonnet 5 za 2/10 USD, Haiku 4.5), ich okna kontekstowe (1 mln tokenów) i ceny API; Opus 5, Fable 5, Opus 4.8 i Sonnet 4.6 jako modele legacy.'
+    note: 'Anthropic, dokumentacja. Aktualne modele Claude (Fable 5.1, Opus 5.5, Sonnet 5.5 za 2/10 USD, Haiku 4.5), ich okna kontekstowe (1 mln tokenów) i ceny API; Sonnet 5, Opus 5, Fable 5, Opus 4.8 i Sonnet 4.6 jako modele legacy.'
   - title: 'Does Anthropic crawl data from the web, and how can site owners block the crawler?'
     url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
     note: 'Anthropic, centrum pomocy. Role botów ClaudeBot (dane treningowe), Claude-User (pobieranie stron na prośbę użytkownika) i Claude-SearchBot (jakość wyników wyszukiwania).'
@@ -103,7 +103,7 @@ Poniższa tabela zestawia osiem najważniejszych ekosystemów w jednym miejscu. 
 | Model / ekosystem | Twórca | Dostęp dla użytkownika | Mocna strona | Klucz dla widoczności marki |
 |---|---|---|---|---|
 | ChatGPT (czat: GPT-5.6; GPT-6 Sol/Luna w ChatGPT Work i Codex; GPT-6 Pro na Astrze w planach Pro/Business/Enterprise) | OpenAI | Freemium + API | Szeroki korpus treningowy, wyszukiwanie w ChatGPT | Dostęp OAI-SearchBot; wyszukiwanie cytuje na żywo |
-| Claude (Fable 5.1 / Opus 5.5 / Sonnet 5) | Anthropic | Freemium + API | Długi kontekst, analiza dokumentów | Claude-SearchBot; silna w analizie B2B |
+| Claude (Fable 5.1 / Opus 5.5 / Sonnet 5.5) | Anthropic | Freemium + API | Długi kontekst, analiza dokumentów | Claude-SearchBot; silna w analizie B2B |
 | Gemini (3.1 Pro / 3.8 Flash) | Google | Freemium + API | Integracja z Google Search, AI Overviews | Bezpośrednie powiązanie z indeksem Google |
 | Copilot | Microsoft | Wbudowany w Windows/Edge + API | Integracja z Bing, Microsoft 365 | BingBot + Bing Search jako źródło |
 | Perplexity AI | Perplexity | Freemium + API | RAG w czasie rzeczywistym z linkami źródłowymi | PerplexityBot; cytuje URL bezpośrednio |
@@ -132,7 +132,7 @@ Szczegółowe omówienie możliwości i ograniczeń znajdziesz w artykule o [Cha
 
 ## Claude – model Anthropic
 
-Claude to bezpośredni rywal ChatGPT. Projektowano go z naciskiem na bezpieczeństwo, interpretację długich dokumentów i precyzję w analizach B2B. Najmocniejszym modelem Anthropic jest obecnie Claude Fable 5.1, a modelem rekomendowanym do większości zadań – Claude Opus 5.5 (premiera 22 września 2026, 4 USD za milion tokenów wejściowych i 20 USD za wyjściowe). Jednak to Claude Sonnet 5 pozostaje wyborem większości firm potrzebujących modelu do automatyzacji procesów. Przy koszcie 2 USD za milion tokenów wejściowych (10 USD za wyjściowe) oferuje doskonały stosunek jakości do ceny.
+Claude to bezpośredni rywal ChatGPT. Projektowano go z naciskiem na bezpieczeństwo, interpretację długich dokumentów i precyzję w analizach B2B. Najmocniejszym modelem Anthropic jest obecnie Claude Fable 5.1, a modelem rekomendowanym do większości zadań – Claude Opus 5.5 (premiera 22 września 2026, 4 USD za milion tokenów wejściowych i 20 USD za wyjściowe). Jednak to modele z linii Sonnet pozostają wyborem większości firm potrzebujących modelu do automatyzacji procesów. Aktualny Claude Sonnet 5.5 (premiera 28 września 2026, następca Sonnet 5) kosztuje 2 USD za milion tokenów wejściowych (10 USD za wyjściowe) i oferuje doskonały stosunek jakości do ceny.
 
 Wyróżniki architektury Anthropic:
 

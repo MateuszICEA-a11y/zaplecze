@@ -3,7 +3,7 @@ title: 'ChatGPT vs Gemini – porównanie funkcji i cen'
 subtitle: 'Sprawdź, który model pasuje do Twojego ekosystemu i sposobu pracy, zanim zapłacisz abonament'
 description: 'ChatGPT vs Gemini 2026: porównanie funkcji, planów, cen i zastosowań. Tabela, werdykt i praktyczne wskazówki dla zespołów Google i OpenAI.'
 date: 2026-05-13
-updated: 2026-09-25
+updated: 2026-10-06
 image: ../../../assets/images/blog-modele-llm-chatgpt-vs-gemini.webp
 icon: '<path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 6v12M17 6v12"/>'
 author:
@@ -148,7 +148,7 @@ Poniżej znajdziesz zestawienie kluczowych parametrów dla obu platform. Dane od
 | **Tani plan wejściowy** | Go – 8 USD/mies. | AI Plus – 4,99 USD/mies. |
 | **Plan zaawansowany** | Pro – 100–200 USD/mies. | AI Ultra – od 99,99 USD/mies. |
 | **Flagowy model w aplikacji (wrzesień 2026)** | GPT-5.6 Sol w czacie (Plus i wyżej); GPT-6 Pro (Astra) w planach Pro, Business i Enterprise | Gemini 3.1 Pro |
-| **Najmocniejszy / najnowszy model w API** | GPT-6 Astra; najnowsze GPT-6 Sol i Luna (22.09.2026) | Gemini 3.1 Pro (preview); najnowszy Flash – Gemini 3.8 Flash |
+| **Najmocniejszy / najnowszy model w API** | GPT-6 Astra; najnowszy GPT-6.1 Sol (29.09.2026) | Gemini 3.1 Pro (preview); najnowszy Flash – Gemini 3.8 Flash |
 | **Okno kontekstowe (Plus/Pro)** | 54 tys. / 256 tys. tokenów (Plus); 128 tys. / 400 tys. (Pro) | 1 mln tokenów (AI Pro i wyżej) |
 | **Multimodalność** | Tekst + obraz | Tekst + obraz + audio + wideo (natywnie) |
 | **Generowanie wideo** | Brak (aplikacja Sora zamknięta w kwietniu 2026) | Veo (od planu AI Plus; pełny dostęp do Veo 3.1 w Ultra) |

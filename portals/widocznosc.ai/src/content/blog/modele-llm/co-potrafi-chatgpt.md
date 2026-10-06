@@ -3,7 +3,7 @@ title: 'Co potrafi ChatGPT – przegląd funkcji dla początkujących'
 subtitle: 'Poznaj konkretne zastosowania ChatGPT, które od razu możesz wdrożyć w pracy i codziennych zadaniach'
 description: 'ChatGPT potrafi pisać, analizować, tłumaczyć i kodować. Sprawdź przegląd głównych funkcji dla początkujących z przykładami zastosowań.'
 date: 2026-05-01
-updated: 2026-09-25
+updated: 2026-10-06
 image: ../../../assets/images/blog-modele-llm-co-potrafi-chatgpt.webp
 icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 9h8M8 12h5M8 15h6"/>'
 author:
@@ -111,7 +111,7 @@ OpenAI oferuje kilka poziomów dostępu, a różnice są kluczowe w codziennej p
 | Go | 8 USD | GPT-5.6 Luna (wyższe limity; GPT-6 Luna w aplikacji desktopowej) | Dla codziennych użytkowników, w niektórych krajach zawiera reklamy |
 | Plus | 20 USD | GPT-5.6 Sol, Terra i Luna; GPT-6 Sol i Luna w ChatGPT Work i Codex | Zaawansowane funkcje (Deep Research, Codex), wyższe limity |
 | Business | 20 USD/stanowisko rocznie (25 USD miesięcznie), min. 2 stanowiska | Konfigurowalne; m.in. GPT-6 Pro (Astra), GPT-6 Sol i Luna | Przestrzeń zespołowa, dane nie służą do trenowania modeli |
-| Pro | 100 lub 200 USD | GPT-6 Pro (Astra), GPT-5.6 Sol Pro, Codex | 5× lub 20× wyższe limity niż Plus, dla zaawansowanych profesjonalistów i programistów |
+| Pro | 100, 200 lub 500 USD | GPT-6 Pro (Astra; w wariancie 500 USD także tryb Ultrafast), GPT-5.6 Sol Pro, Codex | 5×, 20× (od 30 października 2026 – 10×) lub 25× wyższe limity niż Plus, dla zaawansowanych profesjonalistów i programistów |
 
 **Dla większości użytkowników plan Plus zwraca się, jeśli ChatGPT oszczędza im co najmniej godzinę pracy tygodniowo.** Plan Free wystarcza do poznania możliwości narzędzia. Do regularnej pracy to jednak za mało.
 
@@ -194,7 +194,7 @@ Na rynku działają inne duże modele językowe (LLM – Large Language Model) o
 | Model | Producent | Mocne strony | Typowe zastosowanie |
 |---|---|---|---|
 | ChatGPT (GPT-5.6 w czacie; GPT-6 Astra, Sol i Luna w API i wybranych planach) | OpenAI | Ekosystem narzędzi, generowanie obrazów, Code Interpreter | Wszechstronne; copywriting, analiza, kod |
-| Claude (Sonnet 5 / Opus 5.5 / Fable 5.1) | Anthropic | Długie dokumenty (do 1M tokenów), precyzyjna instrukcja | Analiza obszernych raportów, pisanie złożone |
+| Claude (Sonnet 5.5 / Opus 5.5 / Fable 5.1) | Anthropic | Długie dokumenty (do 1M tokenów), precyzyjna instrukcja | Analiza obszernych raportów, pisanie złożone |
 | Gemini | Google | Integracja z Google Workspace, wyszukiwanie w czasie rzeczywistym | Analiza danych z arkuszy, research |
 | Copilot | Microsoft | Wbudowany w Microsoft 365 i Edge | Praca w środowisku MS |
 
