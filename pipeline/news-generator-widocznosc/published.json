@@ -1,12 +1,5 @@
 [
   {
-    "title": "Europa odpowiada na spór o starsze maszyny litograficzne",
-    "date": "2026-06-25",
-    "slug": "europa-odpowiada-na-spor-o-starsze-maszyny-litograficzne",
-    "source": "rss",
-    "source_name": "TechCrunch AI"
-  },
-  {
     "title": "Ford koryguje błędy po zbyt dużym zaufaniu do automatyzacji",
     "date": "2026-06-26",
     "slug": "ford-koryguje-bledy-po-zbyt-duzym-zaufaniu-do-automatyzacji",
@@ -650,5 +643,14 @@
     "source_title": "OpenAI To Watermark ChatGPT Text In The EU, Opens API Opt-In via @sejournal, @MattGSouthern",
     "source_url": "https://www.searchenginejournal.com/openai-to-watermark-chatgpt-text-in-the-eu-opens-api-opt-in/592014/",
     "source_name": "Search Engine Journal"
+  },
+  {
+    "title": "Claude wskazał nieznany system enzymatyczny",
+    "date": "2026-10-07",
+    "slug": "claude-wskazal-nieznany-system-enzymatyczny",
+    "source": "rss",
+    "source_title": "Claude discovers a novel enzyme system",
+    "source_url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+    "source_name": "Anthropic"
   }
 ]
