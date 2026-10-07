@@ -1,5 +1,5 @@
 {
-"generated_at": "2026-10-06T11:29:41Z",
+"generated_at": "2026-10-07T11:20:04Z",
 "sites": [
 {
 "host": "widoczni.com",
@@ -10,7 +10,7 @@
 {
 "host": "delante.pl",
 "status": "ok",
-"count": 1319,
+"count": 1320,
 "baseline": false
 },
 {
@@ -82354,8 +82354,8 @@
 "published": "2026-10-06",
 "kind": "poradnik",
 "kind_basis": "poradnik edukacyjny o strategii content SEO i zdobywaniu fraz",
-"kind_source": "llm",
 "kind_title": "Porównania samochodów w SEO i AISO – jak zdobywać frazy „X vs Y”?",
+"kind_source": "llm",
 "estimate": {
 "phrase": "dobór słów kluczowych",
 "searches": 50,
@@ -82377,8 +82377,31 @@
 "published": "2026-10-05",
 "kind": "news",
 "kind_basis": "informacja o zmianach w algorytmie Google w konkretnym przedziale czasowym",
+"kind_title": "Google zaostrza podejście do treści AI. Co zmieniło się na przełomie września i października 2026?",
+"kind_source": "llm"
+},
+{
+"url": "https://delante.pl/local-seo-i-ai-dla-dealerow-samochodowych-jak-zwiekszyc-widocznosc-salonu-w-google-i-odpowiedziach-ai/",
+"host": "delante.pl",
+"path": "/local-seo-i-ai-dla-dealerow-samochodowych-jak-zwiekszyc-widocznosc-salonu-w-google-i-odpowiedziach-ai/",
+"slug_title": "local seo i ai dla dealerow samochodowych jak zwiekszyc widocznosc salonu w google i odpowiedziach ai",
+"title": "Local SEO i AI dla dealerów samochodowych – jak zwiększyć widoczność salonu?",
+"lastmod": "2026-10-07T10:37:28+00:00",
+"first_seen": "2026-10-07",
+"baseline": false,
+"title_fetched_at": "2026-10-07T11:20:10Z",
+"published": "2026-10-07",
+"kind": "poradnik",
+"kind_basis": "fraza jak zwiększyć widoczność wskazuje na artykuł edukacyjny i porady",
 "kind_source": "llm",
-"kind_title": "Google zaostrza podejście do treści AI. Co zmieniło się na przełomie września i października 2026?"
+"kind_title": "Local SEO i AI dla dealerów samochodowych – jak zwiększyć widoczność salonu?",
+"estimate": {
+"phrase": "pozycjonowanie lokalne",
+"searches": 880,
+"demand": 2110,
+"related": 19,
+"at": "2026-10-07"
+}
 },
 {
 "url": "https://traffictrends.pl/blog/jak-wypromowac-sklep-internetowy",
