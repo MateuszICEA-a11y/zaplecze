@@ -1,13 +1,5 @@
 [
   {
-    "title": "Koniec limitu cen na stacjach paliw. Co to oznacza dla kierowców busów i flot",
-    "date": "2026-06-20",
-    "slug": "koniec-limitu-cen-na-stacjach-paliw-co-to-oznacza-dla-kierowcow-busow-i-flot",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Maksymalne ceny detaliczne paliw od 20 do 22 czerwca 2026 r. – opublikowano nowe stawki",
     "date": "2026-06-21",
     "slug": "maksymalne-ceny-detaliczne-paliw-od-20-do-22-czerwca-2026-r-opublikowano-nowe",
@@ -716,6 +708,14 @@
     "date": "2026-10-04",
     "slug": "po-ile-bedziemy-tankowac-w-przyszlym-tygodniu-sa-dobre-wiesci",
     "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Samochód dostawczy wjechał w powalone drzewo. Niebezpieczne zdarzenie w nocy",
+    "date": "2026-10-07",
+    "slug": "samochod-dostawczy-wjechal-w-powalone-drzewo-niebezpieczne-zdarzenie-w-nocy",
+    "section": "modele",
     "format": "short",
     "source": "rss"
   }
