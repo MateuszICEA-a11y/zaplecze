@@ -1,13 +1,5 @@
 [
   {
-    "title": "Maksymalne ceny detaliczne paliw od 20 do 22 czerwca 2026 r. – opublikowano nowe stawki",
-    "date": "2026-06-21",
-    "slug": "maksymalne-ceny-detaliczne-paliw-od-20-do-22-czerwca-2026-r-opublikowano-nowe",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Toyota mocniej stawia na caravaning. Nowy kamper ma być domem na kołach",
     "date": "2026-06-22",
     "slug": "toyota-mocniej-stawia-na-caravaning-nowy-kamper-ma-byc-domem-na-kolach",
@@ -716,6 +708,14 @@
     "date": "2026-10-07",
     "slug": "samochod-dostawczy-wjechal-w-powalone-drzewo-niebezpieczne-zdarzenie-w-nocy",
     "section": "modele",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Ceny paliwa na stacjach znowu w górę. Kierowcy busów i vanów płacą więcej",
+    "date": "2026-10-08",
+    "slug": "ceny-paliwa-na-stacjach-znowu-w-gore-kierowcy-busow-i-vanow-placa-wiecej",
+    "section": "news",
     "format": "short",
     "source": "rss"
   }
