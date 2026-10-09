@@ -1,12 +1,5 @@
 [
   {
-    "title": "GPT-5.6 Sol z ograniczonym startem",
-    "date": "2026-06-27",
-    "slug": "gpt-56-sol-z-ograniczonym-startem",
-    "source": "rss",
-    "source_name": "The Decoder"
-  },
-  {
     "title": "Orbitalne centra danych budzą coraz więcej pytań",
     "date": "2026-06-28",
     "slug": "orbitalne-centra-danych-budza-coraz-wiecej-pytan",
@@ -654,5 +647,14 @@
     "source_title": "ChatGPT&#8217;s &#8216;Intelligent UI&#8217; update fills its responses with pictures, charts, and buttons",
     "source_url": "https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6",
     "source_name": "The Verge AI"
+  },
+  {
+    "title": "Anthropic zaostrza zasady użycia Claude’a",
+    "date": "2026-10-09",
+    "slug": "anthropic-zaostrza-zasady-uzycia-claudea",
+    "source": "rss",
+    "source_title": "Anthropic changes usage policy to ban model abuse and election interference",
+    "source_url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/",
+    "source_name": "TechCrunch AI"
   }
 ]
