@@ -1,5 +1,5 @@
 {
-"generated_at": "2026-10-08T11:36:31Z",
+"generated_at": "2026-10-09T11:30:12Z",
 "sites": [
 {
 "host": "widoczni.com",
@@ -9,9 +9,9 @@
 },
 {
 "host": "delante.pl",
-"status": "error",
-"error": "The read operation timed out",
-"count": 1320
+"status": "ok",
+"count": 1321,
+"baseline": true
 },
 {
 "host": "traffictrends.pl",
@@ -82393,14 +82393,37 @@
 "published": "2026-10-07",
 "kind": "poradnik",
 "kind_basis": "fraza jak zwiększyć widoczność wskazuje na artykuł edukacyjny i porady",
-"kind_source": "llm",
 "kind_title": "Local SEO i AI dla dealerów samochodowych – jak zwiększyć widoczność salonu?",
+"kind_source": "llm",
 "estimate": {
 "phrase": "pozycjonowanie lokalne",
 "searches": 880,
 "demand": 2110,
 "related": 19,
 "at": "2026-10-07"
+}
+},
+{
+"url": "https://delante.pl/pierwszy-miesiac-chatgpt-ads-w-polsce-wnioski-z-kampanii/",
+"host": "delante.pl",
+"path": "/pierwszy-miesiac-chatgpt-ads-w-polsce-wnioski-z-kampanii/",
+"slug_title": "pierwszy miesiac chatgpt ads w polsce wnioski z kampanii",
+"title": "Pierwszy miesiąc ChatGPT Ads w Polsce. 690 tys. wyświetleń i pierwsze wnioski z kampanii Delante",
+"lastmod": "2026-10-08T05:28:42+00:00",
+"first_seen": "2026-10-09",
+"baseline": true,
+"title_fetched_at": "2026-10-09T11:30:18Z",
+"published": "2026-10-07",
+"kind": "case_study",
+"kind_basis": "wnioski i wyniki z własnej kampanii agencji",
+"kind_source": "llm",
+"kind_title": "Pierwszy miesiąc ChatGPT Ads w Polsce. 690 tys. wyświetleń i pierwsze wnioski z kampanii Delante",
+"estimate": {
+"phrase": "chatgpt ads",
+"searches": 210,
+"demand": 330,
+"related": 50,
+"at": "2026-10-09"
 }
 },
 {
@@ -93094,8 +93117,8 @@
 "published": "2026-10-08",
 "kind": "firmowe",
 "kind_basis": "Wnioski z konferencji Fashion Business Congress wskazują na relację z eventu",
-"kind_source": "llm",
-"kind_title": "Performance marketing w fashion 2026. Wnioski z Fashion Business Congress"
+"kind_title": "Performance marketing w fashion 2026. Wnioski z Fashion Business Congress",
+"kind_source": "llm"
 }
 ]
 }
