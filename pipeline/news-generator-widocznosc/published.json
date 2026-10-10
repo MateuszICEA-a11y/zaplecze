@@ -1,12 +1,5 @@
 [
   {
-    "title": "Orbitalne centra danych budzą coraz więcej pytań",
-    "date": "2026-06-28",
-    "slug": "orbitalne-centra-danych-budza-coraz-wiecej-pytan",
-    "source": "rss",
-    "source_name": "TechCrunch AI"
-  },
-  {
     "title": "Koreański skok inwestycyjny w pamięci dla AI",
     "date": "2026-06-29",
     "slug": "koreanski-skok-inwestycyjny-w-pamieci-dla-ai",
@@ -656,5 +649,14 @@
     "source_title": "Anthropic changes usage policy to ban model abuse and election interference",
     "source_url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/",
     "source_name": "TechCrunch AI"
+  },
+  {
+    "title": "Gemini 4 Carbon ma dorównywać Opus 5.5 w programowaniu",
+    "date": "2026-10-10",
+    "slug": "gemini-4-carbon-ma-dorownywac-opus-55-w-programowaniu",
+    "source": "rss",
+    "source_title": "Google's Gemini 4 \"Carbon\" model is reportedly matching Anthropic's Opus 5.5 coding performance",
+    "source_url": "https://the-decoder.com/googles-gemini-4-carbon-model-is-reportedly-matching-anthropics-opus-5-5-coding-performance/",
+    "source_name": "The Decoder"
   }
 ]
